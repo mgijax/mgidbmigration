@@ -9,7 +9,7 @@
 # Rules:	  5
 # Triggers:	150
 # User Tables:	189
-# Views:	196
+# Views:	197
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
@@ -94,6 +94,7 @@ ${newmgddbschema}/default/default_create.csh | tee -a ${LOG}
 ./acc.csh | tee -a $LOG
 ./mgiset.csh | tee -a $LOG
 ./mgimap.csh | tee -a $LOG
+./radar.csh | tee -a $LOG
 
 date | tee -a  $LOG
 

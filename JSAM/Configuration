@@ -25,6 +25,11 @@ setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
+# new (JSAM) RADAR schema configured to talk to JSAM RADAR database
+setenv newrdrdb /home/lec/db
+setenv newrdrdbschema ${newrdrdb}/radardbschema
+setenv newrdrdbperms ${newrdrdb}/radardbperms
+
 # the working directory
 setenv WORKDIR  /home/lec/db/mgidbmigration/JSAM/work
 

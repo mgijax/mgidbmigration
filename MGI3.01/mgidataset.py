@@ -1,6 +1,7 @@
 #!/usr/local/bin/python
 
 import os
+import sys
 import string
 import db
 import mgi_utils
@@ -22,7 +23,7 @@ for r in results:
 	if r['abbreviation'] == 'MLC/Allele':
 		key = 'MLC'
 
-	dataset[value] = r['_DataSet_key']
+	dataset[key] = r['_DataSet_key']
 
 assocKey = 1000
 
@@ -31,7 +32,7 @@ results = db.sql(cmd, 'auto')
 
 for r in results:
 	refsKey = r['_Refs_key']
-	dbs = r['dbs']
+	dbs = string.strip(r['dbs'])
 	sets = string.split(dbs, '/')
 
 	for s in sets:
@@ -53,8 +54,9 @@ for r in results:
 					'1000\t1000\t%s\t%s\n' % (todayDate, todayDate))
 
 				assocKey = assocKey + 1
-			else:
-				print d1
+			elif d1 != "Matrix":
+				print str(refsKey)
+				print '*' + d1 + '*'
 
 outFile.close()
 

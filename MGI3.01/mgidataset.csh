@@ -13,7 +13,7 @@ touch ${LOG}
 date >> ${LOG}
 echo 'DataSet Migration...' | tee -a ${LOG}
 
-#cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+#cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 #use ${DBNAME}
 #go
@@ -41,7 +41,7 @@ ${newmgddbperms}/public/table/BIB_DataSets_Assoc_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/BIB_DataSets_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/BIB_Refs_grant.object | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
 go
@@ -64,7 +64,7 @@ EOSQL
 
 # load new BIB_DataSets table
 
-./mgidataset.py >>& ${LOG}
+./mgidataset.py | tee -a& ${LOG}
 cat ${DBPASSWORDFILE} | bcp ${DBNAME}..BIB_DataSets_Assoc in BIB_DataSets_Assoc.bcp -S${DBSERVER} -U${DBUSER} -c -t"\t" | tee -a ${LOG}
 
 date >> ${LOG}

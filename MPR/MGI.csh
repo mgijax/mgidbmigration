@@ -64,7 +64,7 @@ ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 ${ALLLABELLOAD}/alllabel.sh
 ${MRKREFLOAD}/mrkref.sh
-
+${VOCLOAD}/runDAGIncLoad.sh MP.config
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

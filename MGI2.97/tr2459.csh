@@ -49,13 +49,22 @@ select @lowpriorityKey = _Term_key
 from VOC_Term_View where vocabName = 'GXD Index Priority' and term = 'Low'
 
 insert into GXD_Index
-select g.index_id, g._Refs_key, g._Marker_key, @lowpriorityKey, g.comments, 
-"${CREATEDBY}", "${CREATEDBY}", g.creation_date, g.modification_date
-from GXD_Index_Old g, BIB_Refs r
-where g._Refs_key = r._Refs_key
+select i.index_id, i._Refs_key, i._Marker_key, @lowpriorityKey, i.comments, 
+"${CREATEDBY}", "${CREATEDBY}", i.creation_date, i.modification_date
+from GXD_Index_Old i, BIB_Refs r
+where i._Refs_key = r._Refs_key
 go
 
-/* update to medium priority */
+/* retrieve references not fully coded */
+
+select distinct i._Refs_key
+into #notcoded
+from GXD_Index i
+where not exists (select 1 from GXD_Assay a where i._Refs_key = a._Refs_key)
+go
+
+/* upgrade to medium priority */
+/* all high priority journals */
 
 declare @medpriorityKey integer
 select @medpriorityKey = _Term_key 
@@ -63,9 +72,10 @@ from VOC_Term_View where vocabName = 'GXD Index Priority' and term = 'Medium'
 
 update GXD_Index
 set _Priority_key = @medpriorityKey
-from GXD_Index g, BIB_Refs r
-where g._Refs_key = r._Refs_key
-and r.journal in ("Development", "Dev Biol", "Mech Dev")
+from #notcoded n, GXD_Index i, BIB_Refs r
+where n._Refs_key = i._Refs_key
+and i._Refs_key = r._Refs_key
+and r.journal in ('Development', 'Dev Biol', 'Dev Dyn', 'Gene Expr Patterns', 'Genes Devel', 'Mech Dev', 'Nature', 'Nat Genet')
 go
 
 /* upgrade to high priority */
@@ -74,29 +84,116 @@ declare @highpriorityKey integer
 select @highpriorityKey = _Term_key 
 from VOC_Term_View where vocabName = 'GXD Index Priority' and term = 'High'
 
+/* all papers with blot only */
+
+update GXD_Index
+set _Priority_key = @highpriorityKey
+from #notcoded n, GXD_Index i
+where n._Refs_key = i._Refs_key
+and exists (select 1 from GXD_Index_Stages_Old s
+where i._Index_key = s.index_id
+and (s.northern = 1 or s.western = 1 or s.nuclease = 1 or s.rnase = 1 or s.rt_pcr = 1 or s.primer_extension = 1))
+and not exists (select 1 from GXD_Index_Stages_Old s
+where i._Index_key = s.index_id
+and (s.insitu_protein_section = 1
+or s.insitu_rna_section = 1
+or s.insitu_protein_mount = 1
+or s.insitu_rna_mount = 1
+or s.stage_id = 40))
+go
+
+/* all papers with high priority journals... */
+
 select distinct i._Refs_key
 into #refs
-from GXD_Index_Old i, GXD_Index_Stages_Old s, BIB_Refs b
-where i._Refs_key = b._Refs_key
-and b.journal in ("Development", "Dev Biol", "Mech Dev")
-and (insitu_protein_section = 1
-     or insitu_rna_section = 1
-     or insitu_protein_mount = 1 
-     or insitu_rna_mount = 1
-     or rnase = 1 
-     or nuclease = 1
-     or primer_extension =1
-     or northern = 1
-     or western = 1
-     or rt_pcr = 1
+from #notcoded n, GXD_Index_Old i, GXD_Index_Stages_Old s, BIB_Refs b
+where n._Refs_key = i._Refs_key
+and i._Refs_key = b._Refs_key
+and b.journal in ('Development', 'Dev Biol', 'Dev Dyn', 'Gene Expr Patterns', 'Genes Devel', 'Mech Dev', 'Nature', 'Nat Genet')
+and (s.insitu_protein_section = 1
+     or s.insitu_rna_section = 1
+     or s.insitu_protein_mount = 1 
+     or s.insitu_rna_mount = 1
+     or s.primer_extension = 1
+     or s.northern = 1 
+     or s.western = 1 
+     or s.nuclease = 1 
+     or s.rnase = 1 
+     or s.rt_pcr = 1
+     or s.clones = 1
 )
-and not exists (select 1 from GXD_Assay a where i._Refs_key = a._Refs_key)
+go
+
+/* exclude: */
+/*    blots with E? */
+/*    in situs with E? or A */
+
+select distinct i._Refs_key
+into #todelete
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id = 40
+and s.northern = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id = 40
+and s.western = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id = 40
+and s.rt_pcr = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id = 40
+and s.rnase = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id in (40, 41)
+and s.insitu_protein_section = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id in (40, 41)
+and s.insitu_rna_section = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id in (40, 41)
+and s.insitu_protein_mount = 1
+union
+select distinct i._Refs_key
+from #refs r, GXD_Index i, GXD_Index_Stages_Old s
+where r._Refs_key = i._Refs_key
+and i._Index_key = s.index_id
+and s.stage_id in (40, 41)
+and s.insitu_rna_mount = 1
+go
 
 delete #refs
-from #refs r, GXD_Index_Old i, GXD_Index_Stages_Old s
-where r._Refs_key = i._Refs_key
-and i.index_id = s.index_id
-and s.stage_id between 40 and 41
+from #refs r, #todelete d
+where d._Refs_key = r._Refs_key
+go
+
+declare @highpriorityKey integer
+select @highpriorityKey = _Term_key 
+from VOC_Term_View where vocabName = 'GXD Index Priority' and term = 'High'
 
 update GXD_Index
 set _Priority_key = @highpriorityKey
@@ -221,21 +318,6 @@ EOSQL
 
 ${newmgddbschema}/index/GXD_Index_create.object >> $LOG
 ${newmgddbschema}/index/GXD_Index_Stages_create.object >> $LOG
-
-#cat - <<EOSQL | doisql.csh $0 >> $LOG
-#
-#use $DBNAME
-#go
-#
-#drop table GXD_Index_Old
-#go
-#
-#drop table GXD_Index_Stages_Old
-#go
-#
-#end
-#
-#EOSQL
 
 date >> $LOG
 

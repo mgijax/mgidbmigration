@@ -3,7 +3,7 @@
 #
 # Migration for RADAR
 #
-# Tables:     31
+# Tables:     35
 # Triggers:   1
 # Procedures: 2
 # Views:
@@ -105,8 +105,8 @@ ${newrdrdbschema}/key/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/APP_JobStream_drop.object | tee -a ${LOG}
 ${newrdrdbschema}/key/APP_JobStream_create.object | tee -a ${LOG}
 
-${newrdrdbperms}/developers/table/QC_grant.logical | tee -a ${LOG}
-${newrdrdbperms}/public/table/QC_grant.logical | tee -a ${LOG}
+${newrdrdbperms}/developers/table/perm_grant.csh | tee -a ${LOG}
+${newrdrdbperms}/public/table/perm_grant.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   

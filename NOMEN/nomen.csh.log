@@ -1,0 +1,620 @@
+Fri Dec  5 15:39:01 EST 2003
+Nomen Migration...
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create table NOM_GeneFamily (
+3>  	_Nomen_key                     int             not null,
+4> 	_GeneFamily_key                int             not null,
+5> 	_CreatedBy_key                 int             not null,
+6> 	_ModifiedBy_key                int             not null,
+7> 	creation_date                  datetime        not null,
+8> 	modification_date              datetime        not null 
+9> )
+10> on seg0
+11> 
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create table NOM_Marker (
+3>  	_Nomen_key                     int             not null,
+4> 	_Marker_Type_key               int             not null,
+5> 	_NomenStatus_key               int             not null,
+6> 	_Marker_Event_key              int             not null,
+7> 	_Marker_EventReason_key        int             not null,
+8> 	_CurationState_key             int             not null,
+9> 	symbol                         varchar(25)     not null,
+10> 	name                           varchar(255)    not null,
+11> 	chromosome                     varchar(8)      not null,
+12> 	humanSymbol                    varchar(25)     null,
+13> 	statusNote                     varchar(255)    null,
+14> 	broadcast_date                 datetime        null,
+15> 	_BroadcastBy_key               int             null,
+16> 	_CreatedBy_key                 int             not null,
+17> 	_ModifiedBy_key                int             not null,
+18> 	creation_date                  datetime        not null,
+19> 	modification_date              datetime        not null 
+20> )
+21> on seg0
+22> 
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create table NOM_Synonym (
+3>  	_Synonym_key                   int             not null,
+4> 	_Nomen_key                     int             not null,
+5> 	_Refs_key                      int             null,
+6> 	name                           varchar(200)    not null,
+7> 	isAuthor                       bit             not null,
+8>         _CreatedBy_key                 int             not null,
+9>         _ModifiedBy_key                int             not null,
+10> 	creation_date                  datetime        not null,
+11> 	modification_date              datetime        not null 
+12> )
+13> on seg0
+14> 
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> exec sp_bindefault user_default, "NOM_GeneFamily._CreatedBy_key"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault user_default, "NOM_GeneFamily._ModifiedBy_key"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault current_date_default, "NOM_GeneFamily.creation_date"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault current_date_default, "NOM_GeneFamily.modification_date"
+Default bound to column.
+(return status = 0)
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> exec sp_bindefault user_default, "NOM_Marker._CreatedBy_key"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault user_default, "NOM_Marker._ModifiedBy_key"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault current_date_default, "NOM_Marker.creation_date"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault current_date_default, "NOM_Marker.modification_date"
+Default bound to column.
+(return status = 0)
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> exec sp_bindefault user_default, "NOM_Synonym._CreatedBy_key"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault user_default, "NOM_Synonym._ModifiedBy_key"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault current_date_default, "NOM_Synonym.creation_date"
+Default bound to column.
+(return status = 0)
+1> 
+2> exec sp_bindefault current_date_default, "NOM_Synonym.modification_date"
+Default bound to column.
+(return status = 0)
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> drop index ACC_Accession.index_Accession_key
+1> 
+2> drop index ACC_Accession.index_Object_key
+1> 
+2> drop index ACC_Accession.index_numericPart
+1> 
+2> drop index ACC_Accession.index_LogicalDB_key
+1> 
+2> drop index ACC_Accession.index_MGIType_key
+1> 
+2> drop index ACC_Accession.index_prefixPart
+1> 
+2> drop index ACC_Accession.index_modification_date
+1> 
+2> drop index ACC_Accession.index_accID
+1> 
+2> drop index ACC_Accession.index_LogicalDB_MGI_Type_key
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> drop index MGI_Note.idx_Note_key
+1> 
+2> drop index MGI_Note.idx_Object_MGI_Note_key
+1> 
+2> drop index MGI_Note.idx_Object_key
+1> 
+2> drop index MGI_Note.idx_MGIType_key
+1> 
+2> drop index MGI_Note.idx_NoteType_key
+1> 
+2> drop index MGI_Note.idx_CreatedBy_key
+1> 
+2> drop index MGI_Note.idx_ModifiedBy_key
+1> 
+2> drop index MGI_Note.idx_modification_date
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> drop index MGI_NoteChunk.idx_primary_key
+1> 
+2> drop index MGI_NoteChunk.idx_Note_key
+1> 
+2> drop index MGI_NoteChunk.idx_note
+1> 
+2> drop index MGI_NoteChunk.idx_CreatedBy_key
+1> 
+2> drop index MGI_NoteChunk.idx_ModifiedBy_key
+1> 
+2> drop index MGI_NoteChunk.idx_modification_date
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> drop trigger ACC_AccessionReference_Insert
+1> 
+2> drop trigger ACC_AccessionReference_Update
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create trigger ACC_AccessionReference_Insert
+3> on ACC_AccessionReference
+4> for insert
+5> as
+6> 
+7> if @@rowcount = 1
+8> begin
+9>   if (select a._MGIType_key from ACC_Accession a, inserted i
+10>       where a._Accession_key = i._Accession_key) = 2
+11>       and
+12>      (select m._Organism_key from ACC_Accession a, inserted i, MRK_Marker m
+13>       where a._Accession_key = i._Accession_key
+14>       and a._Object_key = m._Marker_key) = 1
+15>   begin
+16>         /* Insert entry in Marker Reference bucket if it doesn't already exist */
+17> 
+18>         if not exists (select * from MRK_Reference r, inserted i, ACC_Accession a
+19>             where i._Accession_key = a._Accession_key and
+20>                   a._Object_key = r._Marker_key and
+21>                   r._Refs_key = i._Refs_key)
+22>         begin
+23>                 insert MRK_Reference (_Marker_key, _Refs_key, auto) 
+24>                 select _Object_key, _Refs_key, 1 from inserted i, ACC_Accession a
+25>                 where i._Accession_key = a._Accession_key
+26>         end
+27>   end
+28> 
+29>   /* For InterPro, only allow use of Reference J:53168 (53672) */
+30> 
+31>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+32> 	where i._Accession_key = a._Accession_key) = 28 and
+33>      (select _Refs_key from inserted) != 53672
+34>   begin
+35> 	rollback transaction
+36> 	raiserror 99999 "You do not have permission to use any reference except J:53168 with InterPro Accession numbers."
+37> 	return
+38>   end
+39> 
+40>   /* For Ensembl, only allow use of Reference J:78288 (79249) */
+41> 
+42>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+43> 	where i._Accession_key = a._Accession_key) = 33 and
+44>      (select _Refs_key from inserted) != 79249
+45>   begin
+46> 	rollback transaction
+47> 	raiserror 99999 "You do not have permission to use any reference except J:78288 with Ensembl Accession numbers."
+48> 	return
+49>   end
+50> 
+51>   /* For TIGR, only allow use of Reference J:79330 (80291) */
+52> 
+53>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+54> 	where i._Accession_key = a._Accession_key) = 35 and
+55>      (select _Refs_key from inserted) != 80291
+56>   begin
+57> 	rollback transaction
+58> 	raiserror 99999 "You do not have permission to use any reference except J:79330 with TIGR Accession numbers."
+59> 	return
+60>   end
+61> 
+62>   /* For DOTS, only allow use of Reference J:79300 (80261) */
+63> 
+64>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+65> 	where i._Accession_key = a._Accession_key) = 36 and
+66>      (select _Refs_key from inserted) != 80261
+67>   begin
+68> 	rollback transaction
+69> 	raiserror 99999 "You do not have permission to use any reference except J:79300 with DOTS Accession numbers."
+70> 	return
+71>   end
+72> 
+73> end
+74> 
+75> 
+1> 
+2> create trigger ACC_AccessionReference_Update
+3> on ACC_AccessionReference
+4> for update
+5> as
+6> 
+7> if @@rowcount = 1
+8> begin
+9>   if update(_Refs_key) and
+10>      (select a._MGIType_key from ACC_Accession a, inserted i
+11>       where a._Accession_key = i._Accession_key) = 2
+12>       and
+13>      (select m._Organism_key from ACC_Accession a, inserted i, MRK_Marker m
+14>       where a._Accession_key = i._Accession_key
+15>       and a._Object_key = m._Marker_key) = 1
+16>   begin
+17>         /* Insert entry in Marker Reference bucket if it doesn't already exist */
+18> 
+19>         if not exists (select * from MRK_Reference r, inserted i, ACC_Accession a
+20>             where i._Accession_key = a._Accession_key and
+21>                   a._Object_key = r._Marker_key and
+22>                   r._Refs_key = i._Refs_key)
+23>         begin
+24>                 insert MRK_Reference (_Marker_key, _Refs_key, auto) 
+25>                 select _Object_key, _Refs_key, 1 from inserted i, ACC_Accession a
+26>                 where i._Accession_key = a._Accession_key
+27>         end
+28>   end
+29> 
+30>   /* For InterPro, only allow use of Reference J:53168 (53672) */
+31> 
+32>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+33> 	where i._Accession_key = a._Accession_key) = 28 and
+34>      (select _Refs_key from inserted) != 53672
+35>   begin
+36> 	rollback transaction
+37> 	raiserror 99999 "You do not have permission to use any reference except J:53168 with InterPro Accession numbers."
+38> 	return
+39>   end
+40> 
+41>   /* For Ensembl, only allow use of Reference J:78288 (79249) */
+42> 
+43>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+44> 	where i._Accession_key = a._Accession_key) = 33 and
+45>      (select _Refs_key from inserted) != 79249
+46>   begin
+47> 	rollback transaction
+48> 	raiserror 99999 "You do not have permission to use any reference except J:78288 with Ensembl Accession numbers."
+49> 	return
+50>   end
+51> 
+52>   /* For TIGR, only allow use of Reference J:9330 (80291) */
+53> 
+54>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+55> 	where i._Accession_key = a._Accession_key) = 35 and
+56>      (select _Refs_key from inserted) != 80291
+57>   begin
+58> 	rollback transaction
+59> 	raiserror 99999 "You do not have permission to use any reference except J:79330 with TIGR Accession numbers."
+60> 	return
+61>   end
+62> 
+63>   /* For DOTS, only allow use of Reference J:9330 (80291) */
+64> 
+65>   if (select a._LogicalDB_key from inserted i, ACC_Accession a
+66> 	where i._Accession_key = a._Accession_key) = 35 and
+67>      (select _Refs_key from inserted) != 80291
+68>   begin
+69> 	rollback transaction
+70> 	raiserror 99999 "You do not have permission to use any reference except J:79330 with DOTS Accession numbers."
+71> 	return
+72>   end
+73> 
+74> end
+75> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd
+1> 
+2> declare @curationKey integer
+3> select @curationKey = t._Term_key from VOC_Term t, VOC_Vocab v
+4> where t.term = 'Internal'
+5> and t._Vocab_key = v._Vocab_key
+6> and v.name = "Curation State"
+7> 
+8> insert into NOM_Marker
+9> select n._Nomen_key, n._Marker_Type_key, t._Term_key, n._Marker_Event_key, n._Marker_EventReason_key,
+10> @curationKey, n.symbol, n.name, n.chromosome, n.humanSymbol, n.statusNote, 
+11> n.broadcast_date, null, u1._User_key, u1._User_key, 
+12> n.creation_date, n.modification_date
+13> from nomen..MRK_Nomen n, nomen..MRK_Status s, VOC_Term t, VOC_Vocab v, MGI_User u1
+14> where n._Marker_Status_key = s._Marker_Status_key
+15> and s.status = t.term
+16> and t._Vocab_key = v._Vocab_key
+17> and v.name = "Nomen Status"
+18> and n.submittedBy = u1.login
+19> and n.broadcastBy is null
+20> 
+21> insert into NOM_Marker
+22> select n._Nomen_key, n._Marker_Type_key, t._Term_key, n._Marker_Event_key, n._Marker_EventReason_key,
+23> @curationKey, n.symbol, n.name, n.chromosome, n.humanSymbol, n.statusNote, 
+24> n.broadcast_date, u2._User_key, u1._User_key, u1._User_key, 
+25> n.creation_date, n.modification_date
+26> from nomen..MRK_Nomen n, nomen..MRK_Status s, VOC_Term t, VOC_Vocab v, MGI_User u1, MGI_User u2
+27> where n._Marker_Status_key = s._Marker_Status_key
+28> and s.status = t.term
+29> and t._Vocab_key = v._Vocab_key
+30> and v.name = "Nomen Status"
+31> and n.submittedBy = u1.login
+32> and n.broadcastBy = u2.login
+(1 row affected)
+(2993 rows affected)
+(54255 rows affected)
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> /* Gene Family */
+3> 
+4> insert into NOM_GeneFamily
+5> select n._Nomen_key, t._Term_key, 1200, 1200, n.creation_date, n.modification_date
+6> from nomen..MRK_Nomen_GeneFamily n, nomen..MRK_GeneFamily g, VOC_Term t, VOC_Vocab v
+7> where n._Marker_Family_key = g._Marker_Family_key
+8> and g.name = t.term
+9> and t._Vocab_key = v._Vocab_key
+10> and v.name = "Nomen Gene Family"
+(18 rows affected)
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> /* Synonyms */
+3> 
+4> insert into NOM_Synonym
+5> select _Other_key, _Nomen_key, _Refs_key, name, isAuthor, 1200, 1200, creation_date, modification_date
+6> from nomen..MRK_Nomen_Other
+(17298 rows affected)
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> /* Notes */
+3> 
+4> select distinct _Nomen_key, type = 2, seq = identity(5)
+5> into #notes 
+6> from nomen..MRK_Nomen_Notes where noteType = 'E'
+7> union
+8> select distinct _Nomen_key, type = 3, seq = identity(5)
+9> from nomen..MRK_Nomen_Notes where noteType = 'C'
+(5202 rows affected)
+1> 
+2> declare @maxKey integer
+3> select @maxKey = max(_Note_key) from MGI_Note
+4> if @maxKey is null
+5>         select @maxKey = 1000
+6> 
+7> insert into MGI_Note 
+8> select seq + @maxKey, _Nomen_key, 21, type, 1200, 1200, getdate(), getdate()
+9> from #notes
+10> 
+11> insert into MGI_NoteChunk
+12> select seq + @maxKey, n.sequenceNum, n.note, 1200, 1200, n.creation_date, n.modification_date
+13> from #notes s, nomen..MRK_Nomen_Notes n
+14> where s._Nomen_key = n._Nomen_key
+15> and s.type = 2
+16> and n.noteType = 'E'
+17> 
+18> insert into MGI_NoteChunk
+19> select seq + @maxKey, n.sequenceNum, n.note, 1200, 1200, n.creation_date, n.modification_date
+20> from #notes s, nomen..MRK_Nomen_Notes n
+21> where s._Nomen_key = n._Nomen_key
+22> and s.type = 3
+23> and n.noteType = 'C'
+24> 
+(1 row affected)
+(5202 rows affected)
+(27278 rows affected)
+(25169 rows affected)
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> /* References */
+3> 
+4> select _Nomen_key, _Refs_key, type = 3, seq = identity(5)
+5> into #refs
+6> from nomen..MRK_Nomen_Reference
+7> where isPrimary = 1
+8> union
+9> select _Nomen_key, _Refs_key, type = 4, seq = identity(5)
+10> from nomen..MRK_Nomen_Reference
+11> where isPrimary = 0 and broadcastToMGD = 1
+12> union
+13> select _Nomen_key, _Refs_key, type = 5, seq = identity(5)
+14> from nomen..MRK_Nomen_Reference
+15> where isPrimary = 0 and broadcastToMGD = 0
+(56600 rows affected)
+1> 
+2> declare @maxKey integer
+3> select @maxKey = max(_Assoc_key) from MGI_Reference_Assoc
+4> if @maxKey is null
+5>         select @maxKey = 1000
+6> 
+7> insert into MGI_Reference_Assoc
+8> select seq + @maxKey, _Refs_key, _Nomen_key, 21, type, 1200, 1200, getdate(), getdate()
+9> from #refs
+(1 row affected)
+(1 row affected)
+(56600 rows affected)
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> /* Accession IDs */
+3> 
+4> select *, seq = identity(5)
+5> into #accs
+6> from nomen..ACC_Accession
+7> where _LogicalDB_key = 1
+(57160 rows affected)
+1> 
+2> declare @maxKey integer
+3> select @maxKey = max(_Accession_key) from ACC_Accession
+4> 
+5> insert into ACC_Accession
+6> select seq + @maxKey, accID, prefixPart, numericPart, _LogicalDB_key, _Object_key, 
+7> 21, preferred, 1, creation_date, modification_date, release_date
+8> from #accs
+(1 row affected)
+(57160 rows affected)
+1> 
+2> drop table #accs
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> select *, seq = identity(5)
+3> into #accs
+4> from nomen..ACC_Accession
+5> where _LogicalDB_key != 1
+(43843 rows affected)
+1> 
+2> select r.*, seq = identity(5)
+3> into #accrefs
+4> from nomen..ACC_Accession a, nomen..ACC_AccessionReference r
+5> where a._LogicalDB_key != 1
+6> and a._Accession_key = r._Accession_key
+(43791 rows affected)
+1> 
+2> declare @maxKey integer
+3> select @maxKey = max(_Accession_key) from ACC_Accession
+4> 
+5> insert into ACC_Accession
+6> select seq + @maxKey, accID, prefixPart, numericPart, _LogicalDB_key, _Object_key, 
+7> 21, preferred, private, creation_date, modification_date, release_date
+8> from #accs
+9> 
+10> insert into ACC_AccessionReference
+11> select seq + @maxKey, _Refs_key, creation_date, modification_date, release_date
+12> from #accrefs
+(1 row affected)
+(43843 rows affected)
+(43791 rows affected)
+1> 
+2> dump tran mgd with truncate_only
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create unique clustered index idx_primary_key on NOM_GeneFamily (_Nomen_key, _GeneFamily_key) on seg0
+1> 
+2> create nonclustered index idx_GeneFamily_key_Index on NOM_GeneFamily (_GeneFamily_key) on seg1
+1> 
+2> create nonclustered index idx_Nomen_key on NOM_GeneFamily (_Nomen_key) on seg1
+1> 
+2> create nonclustered index idx_CreatedBy_key on NOM_GeneFamily (_CreatedBy_key) on seg1
+1> 
+2> create nonclustered index idx_ModifiedBy_key on NOM_GeneFamily (_ModifiedBy_key) on seg1
+1> 
+2> create nonclustered index idx_modification_date on NOM_GeneFamily (modification_date)
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create unique clustered index idx_Nomen_key on NOM_Marker (_Nomen_key) on seg0
+1> 
+2> create nonclustered index idx_Marker_Type_key on NOM_Marker (_Marker_Type_key) on seg1
+1> 
+2> create nonclustered index idx_NomenStatus_key on NOM_Marker (_NomenStatus_key) on seg1
+1> 
+2> create nonclustered index idx_Marker_Event_key on NOM_Marker (_Marker_Event_key) on seg1
+1> 
+2> create nonclustered index idx_Marker_EventReason_key on NOM_Marker (_Marker_EventReason_key) on seg1
+1> 
+2> create nonclustered index idx_CurationState_key on NOM_Marker (_CurationState_key) on seg1
+1> 
+2> create nonclustered index idx_symbol on NOM_Marker (symbol) on seg1
+1> 
+2> create nonclustered index idx_BroadcastBy_key on NOM_Marker (_BroadcastBy_key) on seg1
+1> 
+2> create nonclustered index idx_broadcast_date on NOM_Marker (broadcast_date) on seg1
+1> 
+2> create nonclustered index idx_CreatedBy_key on NOM_Marker (_CreatedBy_key) on seg1
+1> 
+2> create nonclustered index idx_ModifiedBy_key on NOM_Marker (_ModifiedBy_key) on seg1
+1> 
+2> create nonclustered index idx_modification_date on NOM_Marker (modification_date) on seg1
+1> 
+2> checkpoint
+Warning: ridiculously long PATH truncated
+Password: 
+1> 
+2> use mgd
+1> 
+2> create unique clustered index idx_Synonym_key on NOM_Synonym (_Synonym_key) on seg0
+1> 
+2> create unique nonclustered index idx_Nomen_key_name on NOM_Synonym (_Nomen_key, name) on seg1
+1> 
+2> create nonclustered index idx_Nomen_key on NOM_Synonym (_Nomen_key) on seg1
+1> 
+2> create nonclustered index idx_Refs_key on NOM_Synonym (_Refs_key) on seg1
+1> 
+2> create nonclustered index idx_name on NOM_Synonym (name) on seg1
+1> 
+2> create nonclustered index idx_CreatedBy_key on NOM_Synonym (_CreatedBy_key) on seg1
+1> 
+2> create nonclustered index idx_ModifiedBy_key on NOM_Synonym (_ModifiedBy_key) on seg1
+1> 
+2> create nonclustered index idx_modification_date on NOM_Synonym (modification_date) on seg1
+1> 
+2> checkpoint
+Fri Dec  5 15:42:22 EST 2003

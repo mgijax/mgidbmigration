@@ -55,17 +55,17 @@ ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
-./unmigratedAlleleState.py
-./allelecombination.csh
-./genotypeorder.csh
-./mutantescell.csh
-./mpannotations.csh
+./unmigratedAlleleState.py | tee -a ${LOG}
+./allelecombination.csh | tee -a ${LOG}
+./genotypeorder.csh | tee -a ${LOG}
+./mutantescell.csh | tee -a ${LOG}
+./mpannotations.csh | tee -a ${LOG}
 ./splitNotes.py | tee -a ${LOG}
-./vocheader.csh
+./vocheader.csh | tee -a ${LOG}
 
-${ALLLABELLOAD}/alllabel.sh
-${MRKREFLOAD}/mrkref.sh
-${VOCLOAD}/runDAGIncLoad.sh MP.config
+${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
+${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}
+${VOCLOAD}/runDAGIncLoad.sh MP.config | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -157,18 +157,10 @@ go
 drop table ALL_CellLine_Old
 go
 
-/*drop table GXD_AllelePair_Old */
-/*go */
+drop table GXD_AllelePair_Old
+go
 
 drop table GXD_AlleleGenotype_Old
-go
-
-delete from MGI_NoteChunk where note = ''
-go
-
-select getdate()
-exec VOC_processAnnotHeaderAll 5
-select getdate()
 go
 
 EOSQL

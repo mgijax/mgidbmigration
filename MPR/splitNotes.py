@@ -109,5 +109,8 @@ for k in notes.keys():
 	   continue
        db.sql(createNewNote(k, string.strip(t)), None, execute = not DEBUG)
 
+
+db.sql('delete from MGI_NoteChunk where note = ""', None)
+
 db.useOneConnection(0)
 

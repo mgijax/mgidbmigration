@@ -21,6 +21,9 @@ go
 sp_rename GXD_AllelePair, GXD_AllelePair_Old
 go
 
+sp_rename GXD_AlleleGenotype, GXD_AlleleGenotype_Old
+go
+
 end
 
 EOSQL
@@ -28,6 +31,10 @@ EOSQL
 ${newmgddbschema}/table/GXD_AllelePair_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/GXD_AllelePair_grant.object | tee -a ${LOG}
+
+${newmgddbschema}/table/GXD_AlleleGenotype_create.object | tee -a ${LOG}
+${newmgddbschema}/default/GXD_AlleleGenotype_bind.object | tee -a ${LOG}
+${newmgddbperms}/public/table/GXD_AlleleGenotype_grant.object | tee -a ${LOG}
 
 # keys/permissions will be handled in reconfig phase 
 
@@ -56,11 +63,18 @@ ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
 from GXD_AllelePair_Old o
 go
 
+insert into GXD_AlleleGenotype
+select o._Genotype_key, o._Marker_key, o._Allele_key, 1, 
+o._CreatedBy_key, o._ModifiedBy_key, o.creation_date, o.modification_date
+from GXD_AlleleGenotype_Old o
+go
+
 end
 
 EOSQL
 
 ${newmgddbschema}/index/GXD_AllelePair_create.object | tee -a ${LOG}
+${newmgddbschema}/index/GXD_AlleleGenotype_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

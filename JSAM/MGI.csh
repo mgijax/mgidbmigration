@@ -51,9 +51,23 @@ date | tee -a  $LOG
 #${DBUTILITIESDIR}/bin/dev/load_devdb.csh ${DBNAME} mgd_release.backup mgd_dbo | tee -a $LOG
 #date | tee -a  $LOG
 
+########################################
+# need to start with a MGI 2.98 database
+#
 # new way
+# load an empty database and fill it with current MGI 2.98 data
 #./loadData.csh
-${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
+
+# OR
+
+# load a backup of pre-loaded MGI 2.98 database
+./load_dev2db.csh dev2mgd.backup
+
+date | tee -a  $LOG
+
+########################################
+
+#${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
 date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG

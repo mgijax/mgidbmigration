@@ -12,13 +12,10 @@
 #
 #	3.  Load the old schema tables from the BCP files from step 1.
 #
-#	4.  Create indexes on the tables.
+#	4.  Create indexes, views, stored procedures, triggers on the tables.
 #
 #	5.  Bind rules and defaults on the tables.
 #
-#	6.  Run the JSAM migration.
-#	    This migration will rebuild all stored procedures, triggers,
-#	    views, keys, permissions.
 #
 
 cd `dirname $0` && source ./Configuration
@@ -39,14 +36,14 @@ dump transaction ${DBNAME} with truncate_only
 go
 EOSQL
 
-echo 'Create data files...' | tee -a ${LOG}
-rm -rf ${DATADIR}/*
-bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
+echo 'Load Empty Database...' | tee -a ${LOG}
+./load_dev2db.csh dev2mgdempty.backup | tee -a ${LOG}
 date | tee -a ${LOG}
 
-echo 'Dropping existing tables...' | tee -a ${LOG}
-date | tee -a ${LOG}
-${newmgddbschema}/all_drop.csh | tee -a ${LOG}
+echo 'Create data files...' | tee -a ${LOG}
+#rm -rf ${DATADIR}/*
+#bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 echo 'Creating tables...' | tee -a ${LOG}
 date | tee -a ${LOG}
@@ -76,6 +73,14 @@ ${oldmgddbschema}/index/index_create.csh | tee -a ${LOG}
 echo 'Creating Views...' | tee -a ${LOG}
 date | tee -a ${LOG}
 ${oldmgddbschema}/view/view_create.csh | tee -a ${LOG}
+
+echo 'Creating Stored Procedures...' | tee -a ${LOG}
+date | tee -a ${LOG}
+${oldmgddbschema}/procedure/procedure_create.csh | tee -a ${LOG}
+
+echo 'Creating Triggers...' | tee -a ${LOG}
+date | tee -a ${LOG}
+${oldmgddbschema}/trigger/trigger_create.csh | tee -a ${LOG}
 
 echo 'Making a binary dump...' | tee -a ${LOG}
 ./dump_dev2db.csh dev2mgd.backup

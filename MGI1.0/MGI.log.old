@@ -1,0 +1,7050 @@
+Tue Feb  3 07:50:01 EST 1998
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> /* This can be removed after release MGI 1.0 is completed */
+3> drop trigger ACCRef_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 3:
+Cannot drop the trigger 'ACCRef_Delete', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger ACC_AccessionReference_Delete
+1> 
+2> checkpoint
+1> 
+2> drop trigger ACC_LogicalDB_Delete
+1> 
+2> checkpoint
+1> 
+2> drop trigger ACC_LogicalDB_Update
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> /* Triggers re-named for MGI 1.0/IDDS */
+3> drop trigger BIB_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 3:
+Cannot drop the trigger 'BIB_Insert', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger BIB_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'BIB_Delete', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger BIB_ReviewStatus_Delete
+1> 
+2> checkpoint
+1> 
+2> drop trigger BIB_Refs_Insert
+1> 
+2> drop trigger BIB_Refs_Delete
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger CRS_Cross_Delete
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger HMD_Homology_Delete
+1> 
+2> drop trigger HMD_Homology_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Homology_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop trigger HMD_Reference_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Reference_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop trigger HMD_Assay_Delete
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger MLD_Marker_Update
+1> 
+2> drop trigger MLD_Expts_Insert
+1> 
+2> drop trigger MLD_Expts_Delete
+1> 
+2> drop trigger MLD_Expt_Marker_Insert
+1> 
+2> drop trigger MLD_Expt_Marker_Update
+1> 
+2> drop trigger MLD_Matrix_Delete
+1> 
+2> drop trigger MLD_Contig_Delete
+1> 
+2> drop trigger MLD_RI_Update
+1> 
+2> drop trigger MLD_Assay_Types_Delete
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> /* Triggers for MGI 1.0/IDDS renamed */
+3> drop trigger MRK_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 3:
+Cannot drop the trigger 'MRK_Insert', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger MRK_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Update', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger MRK_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Delete', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger MRK_Marker_Insert
+1> 
+2> drop trigger MRK_Marker_Update
+1> 
+2> drop trigger MRK_Marker_Delete
+1> 
+2> drop trigger MRK_Alias_Insert
+1> 
+2> drop trigger MRK_Alias_Delete
+1> 
+2> drop trigger MRK_Allele_Insert
+1>  
+2> drop trigger MRK_Allele_Update
+1>  
+2> drop trigger MRK_Allele_Delete
+1>  
+2> drop trigger MRK_Class_Delete
+1> 
+2> drop trigger MRK_History_Insert
+1>  
+2> drop trigger MRK_History_Update
+1>  
+2> drop trigger MRK_History_Delete
+1>  
+2> drop trigger MRK_Other_Insert
+1>  
+2> drop trigger MRK_Other_Update
+1>  
+2> drop trigger MRK_Other_Delete
+1>  
+2> drop trigger MRK_Species_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Species_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop trigger MRK_Species_Delete
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> /* Triggers for MGI 1.0/IDDS renamed*/
+3> drop trigger PRB_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 3:
+Cannot drop the trigger 'PRB_Insert', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger PRB_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Update', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger PRB_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Delete', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop trigger PRB_Probe_Insert
+1> 
+2> drop trigger PRB_Probe_Update
+1> 
+2> drop trigger PRB_Probe_Delete
+1> 
+2> drop trigger PRB_Allele_Delete
+1> 
+2> drop trigger PRB_Marker_Update
+1> 
+2> drop trigger PRB_Reference_Delete
+1> 
+2> drop trigger PRB_RFLV_Delete
+1> 
+2> drop trigger PRB_Source_Insert
+1> 
+2> drop trigger PRB_Source_Delete
+1> 
+2> drop trigger PRB_Strain_Delete
+1> 
+2> drop trigger PRB_Tissue_Delete
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger RI_RISet_Update
+1> 
+2> drop trigger RI_RISet_Delete
+1> 
+2> checkpoint
+Password: 
+1>  
+2> use mgd_new
+1>  
+2> checkpoint
+1> 
+2> drop index HMD_Assay.index_assay
+1> 
+2> drop index HMD_Assay.index_Assay_key
+1> 
+2> drop index HMD_Class.index_class_key
+1> 
+2> drop index HMD_Homology.index_Refs_fkey
+1> 
+2> drop index HMD_Homology.index_Class_fkey
+1> 
+2> drop index HMD_Homology.index_Homology_Marker_key
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'HMD_Homology.index_Homology_Marker_key', because it
+doesn't exist in the system catalogs.
+1> 
+2> drop index HMD_Homology.index_Homology_key
+1> 
+2> drop index HMD_Homology_Assay.index_Assay_key
+1> 
+2> drop index HMD_Homology_Assay.index_Homology_fkey
+1> 
+2> drop index HMD_Homology_Assay.index_Homology_Assay_key
+1> 
+2> drop index HMD_Homology_Marker.index_Marker_fkey
+1> 
+2> drop index HMD_Homology_Marker.index_Homology_fkey
+1> 
+2> drop index HMD_Homology_Marker.index_Homology_Marker_key
+1> 
+2> drop index HMD_Notes.index_Homology_fkey
+1> 
+2> drop index HMD_Notes.index_Homology_sequenceNum_key
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger HMD_Homology_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Homology_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop trigger HMD_Homology_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Homology_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop trigger HMD_Reference_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Reference_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop trigger HMD_Assay_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Assay_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> checkpoint
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd_new, "select into", true
+Database option 'select into/bulkcopy' turned ON for database 'mgd_new'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0)
+1>   
+2> use mgd_new
+1>    
+2> checkpoint
+1>  
+2> truncate table HMD_Class
+1> 
+2> truncate table HMD_Homology
+1> 
+2> truncate table HMD_Homology_Marker
+1> 
+2> truncate table HMD_Assay
+1> 
+2> truncate table HMD_Homology_Assay
+1> 
+2> truncate table HMD_Notes
+1> 
+2> drop trigger HMD_Homology_Marker_Delete
+1> 
+2> drop trigger HMD_Homology_Marker_Insert
+1> 
+2> /* HMD_Class */
+3> 
+4> insert HMD_Class (_Class_key)
+5> select distinct _Class_key from mgd..HMD_Homology
+(3451 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* HMD_Homology */
+3> 
+4> insert HMD_Homology (_Homology_key, _Class_key, _Refs_key, creation_date,
+5> modification_date)
+6> select distinct r._Homology_key, h._Class_key, r._Refs_key,
+7> r.creation_date, r.modification_date
+8> from mgd..HMD_Reference r, mgd..HMD_Homology h
+9> where r._Homology_key = h._Homology_key
+(11156 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* HMD_Homology_Marker */
+3> 
+4> insert HMD_Homology_Marker (_Homology_key, _Marker_key)
+5> select _Homology_key, _Marker_key
+6> from mgd..HMD_Homology
+(18756 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* HMD_Assay */
+3> 
+4> insert HMD_Assay (_Assay_key, assay)
+5> select _Assay_key, assay
+6> from mgd..HMD_Assay
+(13 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* HMD_Homology_Assay */
+3> 
+4> insert HMD_Homology_Assay (_Homology_key, _Assay_key)
+5> select _Homology_key, _Assay_key
+6> from mgd..HMD_Homology_Assay
+(4177 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* HMD_Notes */
+3> 
+4> insert HMD_Notes (_Homology_key, sequenceNum, notes)
+5> select _Homology_key, sequenceNum, notes
+6> from mgd..HMD_Notes
+(171 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* Change HMD_Assay 'Not specified' to 'Not Specified', key = -1 */
+3> 
+4> update HMD_Assay set assay = 'to be removed' where _Assay_key = 13
+(1 row affected)
+1> 
+2> insert into HMD_Assay values (-1, 'Not Specified', getdate(), getdate())
+(1 row affected)
+1> 
+2> update HMD_Homology_Assay set _Assay_key = -1 where _Assay_key = 13
+(327 rows affected)
+1> 
+2> delete from HMD_Assay where _Assay_key = 13
+(1 row affected)
+1> 
+2> /* Add an Assay of "Unreviewed" (15) for any Homology which does not have an Assay */
+3> /* Every Homology MUST have an assay */
+4> 
+5> select distinct m._Homology_key into #noassay
+6> from HMD_Homology_Marker m
+7> where not exists (select * from HMD_Homology_Assay a where m._Homology_key = a._Homology_key)
+(7942 rows affected)
+1> 
+2> insert into HMD_Homology_Assay (_Homology_key, _Assay_key)
+3> select _Homology_key, 15
+4> from #noassay
+(7942 rows affected)
+1> 
+2> checkpoint
+Tue Feb  3 07:53:33 EST 1998
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd_new, "select into", true
+Database option 'select into/bulkcopy' turned ON for database 'mgd_new'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0)
+1>   
+2> use mgd_new
+1>    
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> /* Probe updates */
+3> 
+4> exec sp_unbindrule 'PRB_Probe.DNAtype'
+Rule unbound from table column.
+(return status = 0)
+1>  
+2> drop rule check_DNAtype
+1>  
+2> CREATE RULE check_DNAtype AS @col IN ('DNA (construct)', 'EST', 'RNA', 'cDNA', 'genomic', 'mitochondrial', 'oligo', 'primer', 'Not Specified')
+1> 
+2> update PRB_Probe set DNAtype = 'Not Specified' where DNAtype = 'unspecified'
+(0 rows affected)
+1> 
+2> exec sp_bindrule check_DNAtype, 'PRB_Probe.DNAtype'
+Rule bound to table column.
+(return status = 0)
+1>  
+2> /* _Vector_key of 5 must be re-assigned a value of -1 */
+3> 
+4> insert into PRB_Vector_Types values (-1, 'Not Specified', getdate(), getdate())
+Msg 2601, Level 14, State 3:
+Server 'MGD_DEV', Line 4:
+Attempt to insert duplicate key row in object 'PRB_Vector_Types' with unique
+index 'index_Vector_key'
+Command has been aborted.
+1> 
+2> update PRB_Probe set _Vector_key = -1 where _Vector_key = 5
+(0 rows affected)
+1> 
+2> delete from PRB_Vector_Types where _Vector_key = 5
+(0 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* Reference updates */
+3> 
+4> update BIB_Refs
+5> set _ReviewStatus_key = 1
+6> where journal like 'Personal Comm%'
+(51 rows affected)
+1> 
+2> update BIB_Refs
+3> set _ReviewStatus_key = 1
+4> where journal like '%Database%'
+(25 rows affected)
+1> 
+2> update BIB_Refs
+3> set _ReviewStatus_key = 1
+4> where journal = 'Mouse News Lett'
+(1072 rows affected)
+1> 
+2> update BIB_Refs
+3> set _ReviewStatus_key = 1
+4> where title like '%abstr%'
+(19 rows affected)
+1> 
+2> update BIB_Refs
+3> set _ReviewStatus_key = 1
+4> where title like 'Personal Comm%'
+(7 rows affected)
+1> 
+2> /* Miscellanous updates */
+3> 
+4> update ACC_ActualDB set name = 'I.M.A.G.E. home page' where _ActualDB_key = 25
+(1 row affected)
+1> 
+2> update ACC_ActualDB set name = 'WashU home page' where _ActualDB_key = 24
+(1 row affected)
+1> 
+2> update ACC_ActualDB set name = 'GenBank' where _ActualDB_key = 12
+(1 row affected)
+1> 
+2> update ACC_ActualDB set name = 'GenBank (nid)' where _ActualDB_key = 16
+(1 row affected)
+1> 
+2> update ACC_ActualDB set name = 'GenBank (pid)' where _ActualDB_key = 17
+(1 row affected)
+1> 
+2> update MRK_Species set name = 'cattle' where _Species_key = 11
+(1 row affected)
+1> 
+2> update PRB_Source set species = 'cattle' where species = 'cow'
+(0 rows affected)
+1> 
+2> checkpoint
+1> 
+2> checkpoint
+1> 
+2> update GXD_Index set creation_date = modification_date
+(8321 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* Add Non-Fatal Error Message */
+3> 
+4> sp_addmessage 99999, "Deletion of record failed"
+A message with number 99999 in the specified language already exists.
+Drop the old message first if you still wish to add this one.
+(return status = 1)
+1> 
+2> sp_addmessage 88888, "Non-fatal error"
+A message with number 88888 in the specified language already exists.
+Drop the old message first if you still wish to add this one.
+(return status = 1)
+1> 
+2> /* Remove obsolete stored procedures */
+3> 
+4> drop procedure ACC_fetch
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 4:
+Cannot drop the procedure 'ACC_fetch', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop procedure PRB_Parent
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the procedure 'PRB_Parent', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop procedure procs
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the procedure 'procs', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop procedure rpctest
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the procedure 'rpctest', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop procedure MapAnchor
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the procedure 'MapAnchor', because it doesn't exist in the system
+catalogs.
+1> 
+2> drop procedure Map1Marker
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the procedure 'Map1Marker', because it doesn't exist in the system
+catalogs.
+Tue Feb  3 07:54:21 EST 1998
+Password: 
+1>  
+2> use mgd_new 
+1>  
+2> checkpoint
+1> 
+2> drop index CRS_Cross.index_Cross_key
+1> 
+2> drop index CRS_Cross.index_maleStrain_fkey
+1> 
+2> drop index CRS_Cross.index_femaleStrain_fkey
+1> 
+2> drop index CRS_Cross.index_strainHO_fkey
+1> 
+2> drop index CRS_Cross.index_strainHT_fkey
+1> 
+2> drop index CRS_Cross.index_type
+1> 
+2> drop index CRS_Cross.index_whoseCross
+1> 
+2> drop index MLD_FISH.index_Expt_key
+1> 
+2> drop index MLD_FISH.index_strain_fkey
+1> 
+2> drop index MLD_FISH_Region.index_Expt_sequenceNum_key
+1> 
+2> drop index MLD_FISH_Region.index_Expt_fkey
+1> 
+2> drop index MLD_InSitu.index_Expt_key
+1> 
+2> drop index MLD_InSitu.index_strain_fkey
+1> 
+2> drop index PRB_Allele_Strain.index_Allele_Strain_key
+1>  
+2> drop index PRB_Allele_Strain.index_Strain_fkey
+1>  
+2> drop index PRB_Allele_Strain.index_Allele_fkey
+1> 
+2> drop index PRB_Source.index_Source_key
+1> 
+2> drop index PRB_Source.index_strain_fkey
+1> 
+2> drop index PRB_Source.index_Tissue_fkey
+1> 
+2> drop index PRB_Source.index_Refs_fkey
+1> 
+2> drop index PRB_Source.index_name
+1> 
+2> drop index PRB_Source.index_species
+1> 
+2> drop index PRB_Strain.index_Strain_key
+1> 
+2> drop index PRB_Strain.index_strain
+1> 
+2> checkpoint
+Password: 
+1>  
+2> use mgd_new 
+1>  
+2> checkpoint
+1> 
+2> drop index PRB_Source.index_Source_key
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Source.index_Source_key', because it doesn't exist in
+the system catalogs.
+1> 
+2> drop index PRB_Source.index_strain_fkey
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Source.index_strain_fkey', because it doesn't exist
+in the system catalogs.
+1> 
+2> drop index PRB_Source.index_Tissue_fkey
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Source.index_Tissue_fkey', because it doesn't exist
+in the system catalogs.
+1> 
+2> drop index PRB_Source.index_Refs_fkey
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Source.index_Refs_fkey', because it doesn't exist in
+the system catalogs.
+1> 
+2> drop index PRB_Source.index_name
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Source.index_name', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop index PRB_Source.index_species
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Source.index_species', because it doesn't exist in
+the system catalogs.
+1> 
+2> drop index PRB_Strain.index_Strain_key
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Strain.index_Strain_key', because it doesn't exist in
+the system catalogs.
+1> 
+2> drop index PRB_Strain.index_strain
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Strain.index_strain', because it doesn't exist in the
+system catalogs.
+1> 
+2> drop index PRB_Tissue.index_Tissue_key
+1> 
+2> drop index PRB_Tissue.index_tissue
+Msg 3701, Level 11, State 3:
+Server 'MGD_DEV', Line 2:
+Cannot drop the index 'PRB_Tissue.index_tissue', because it doesn't exist in the
+system catalogs.
+1> 
+2> checkpoint
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd_new, "select into", true
+Database option 'select into/bulkcopy' turned ON for database 'mgd_new'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0)
+1>   
+2> use mgd_new
+1>    
+2> checkpoint
+1>  
+2> truncate table PRB_Strain
+1> 
+2> truncate table PRB_Tissue
+1> 
+2> truncate table PRB_Source
+1> 
+2> truncate table MLD_FISH
+1> 
+2> truncate table MLD_InSitu
+1> 
+2> truncate table CRS_Cross
+1> 
+2> truncate table PRB_Allele_Strain
+1> 
+2> checkpoint
+select strain, standard = 0 from mgd..PRB_Strain where strain is not null
+select strain, standard = 0 from mgd..PRB_Source where strain is not null
+select strain, standard = 0 from mgd..MLD_FISH where strain is not null
+select strain, standard = 0 from mgd..MLD_InSitu where strain is not null
+select strain = femaleStrain, standard = 0 from mgd..CRS_Cross where femaleStrain is not null
+select strain = maleStrain, standard = 0 from mgd..CRS_Cross where maleStrain is not null
+select strain = strainHO, standard = 0 from mgd..CRS_Cross where strainHO is not null
+select strain = strainHT, standard = 0 from mgd..CRS_Cross where strainHT is not null
+select tissue from mgd..PRB_Source where tissue is not null
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+
+3942 rows copied.
+Clock Time (ms.): total = 8000   Avg = 2      (492.75 rows per sec.)
+Password: 
+
+Starting copy...
+
+747 rows copied.
+Clock Time (ms.): total = 3000   Avg = 4      (249.00 rows per sec.)
+select _Source_key = -2, name = "Not Applicable", description = NULL, _Refs_key = NULL, species = "Not Applicable", _Strain_key = -2, _Tissue_key = -2, age = "Not Applicable", sex = "Not Applicable", cellLine = NULL, cd = NULL, md = NULL
+select _Source_key = -1, name = "Not Specified", description = NULL, _Refs_key = NULL, species = "Not Specified", _Strain_key = -1, _Tissue_key = -1, age = "Not Specified", sex = "Not Specified", cellLine = NULL, cd = NULL, md = NULL
+select _Source_key, name, description, _Refs_key, species, strain, tissue, age, sex, cellLine, cd = convert(varchar(20), creation_date), md = convert(varchar(20), modification_date) from mgd..PRB_Source
+unspecified E	could not convert
+
+unspecified E	could not convert
+
+select * from mgd..MLD_FISH
+select * from mgd..MLD_InSitu
+select * from mgd..CRS_Cross
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+Unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unpsecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspeicified
+unspecified
+unspeified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unpsecified
+unspecified
+unpsecified
+unspecified
+unspecified
+unpsecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unpsecified
+unpsecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unpsecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unknown
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unpsecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unknown
+unknown
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+unspecified
+select a._Allele_key, s.strain from mgd..PRB_Allele_Strain a, mgd..PRB_Strain s where a._Strain_key = s._Strain_key
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+
+29072 rows copied.
+Clock Time (ms.): total = 78000  Avg = 2      (372.72 rows per sec.)
+Password: 
+
+Starting copy...
+
+400 rows copied.
+Clock Time (ms.): total = 1000   Avg = 2      (400.00 rows per sec.)
+Password: 
+
+Starting copy...
+
+432 rows copied.
+Clock Time (ms.): total = 1000   Avg = 2      (432.00 rows per sec.)
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+
+3970 rows copied.
+Clock Time (ms.): total = 11000  Avg = 2      (360.91 rows per sec.)
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+
+126825 rows copied.
+Clock Time (ms.): total = 253000 Avg = 1      (501.28 rows per sec.)
+Password: 
+1>  
+2> use mgd_new
+1> 
+2> /* Counts */
+3>  
+4> select count(*) "mgd..PRB_Strain" from mgd..PRB_Strain
+ mgd..PRB_Strain 
+ --------------- 
+            2070 
+
+(1 row affected)
+1>  
+2> select count(*) "PRB_Strain" from PRB_Strain
+ PRB_Strain  
+ ----------- 
+        3942 
+
+(1 row affected)
+1>  
+2> select count(*) "mgd..PRB_Source" from mgd..PRB_Source
+ mgd..PRB_Source 
+ --------------- 
+           29071 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Strain (NULL)" from mgd..PRB_Source where strain is null
+ Source Strain (NULL) 
+ -------------------- 
+                19127 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Strain (not NULL)" from mgd..PRB_Source where strain is not null
+ Source Strain (not NULL) 
+ ------------------------ 
+                     9944 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Tissue (NULL)" from mgd..PRB_Source where tissue is null
+ Source Tissue (NULL) 
+ -------------------- 
+                13512 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Tissue (not NULL)" from mgd..PRB_Source where tissue is not null
+ Source Tissue (not NULL) 
+ ------------------------ 
+                    15559 
+
+(1 row affected)
+1>  
+2> select count(*) "PRB_Source" from PRB_Source
+ PRB_Source  
+ ----------- 
+       29072 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Strain (NULL)" from PRB_Source where _Strain_key < 0
+ Source Strain (NULL) 
+ -------------------- 
+                19128 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Strain (not NULL)" from PRB_Source where _Strain_key > 0
+ Source Strain (not NULL) 
+ ------------------------ 
+                     9944 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Tissue (NULL)" from PRB_Source where _Tissue_key < 0
+ Source Tissue (NULL) 
+ -------------------- 
+                13522 
+
+(1 row affected)
+1>  
+2> select count(*) "Source Tissue (not NULL)" from PRB_Source where _Tissue_key > 0
+ Source Tissue (not NULL) 
+ ------------------------ 
+                    15550 
+
+(1 row affected)
+1>  
+2> select count(*) "mgd..MLD_FISH" from mgd..MLD_FISH
+ mgd..MLD_FISH 
+ ------------- 
+           400 
+
+(1 row affected)
+1>  
+2> select count(*) "MLD_FISH" from MLD_FISH
+ MLD_FISH    
+ ----------- 
+         400 
+
+(1 row affected)
+1>  
+2> select count(*) "mgd..MLD_InSitu" from mgd..MLD_InSitu
+ mgd..MLD_InSitu 
+ --------------- 
+             432 
+
+(1 row affected)
+1>  
+2> select count(*) "MLD_InSitu" from MLD_InSitu
+ MLD_InSitu  
+ ----------- 
+         432 
+
+(1 row affected)
+1>  
+2> select count(*) "mgd..CRS_Cross" from mgd..CRS_Cross
+ mgd..CRS_Cross 
+ -------------- 
+           3970 
+
+(1 row affected)
+1>  
+2> select count(*) "CRS_Cross" from CRS_Cross
+ CRS_Cross   
+ ----------- 
+        3970 
+
+(1 row affected)
+1> 
+2> select m.strain from mgd..PRB_Source m, PRB_Source s
+3> where s._Strain_key < 0 and s._Source_key = m._Source_key and m.strain is not null
+ strain                                        
+ --------------------------------------------- 
+
+(0 rows affected)
+1> 
+2> select m.tissue from mgd..PRB_Source m, PRB_Source s
+3> where s._Tissue_key < 0 and s._Source_key = m._Source_key and m.tissue is not null
+ 
+	 tissue                                                                           
+  
+	-------------------------------------------------------------------------------- 
+ 
+	 unspecified                                                                      
+ 
+	                                                                                  
+ 
+	                                                                                  
+ 
+	                                                                                  
+ 
+	                                                                                  
+ 
+	                                                                                  
+ 
+	                                                                                  
+ 
+	                                                                                  
+
+(8 rows affected)
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use master
+1>  
+2> sp_dboption mgd_new, "select into", true
+Database option 'select into/bulkcopy' turned ON for database 'mgd_new'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0)
+1>   
+2> use mgd_new
+1>    
+2> checkpoint
+1> 
+2> select * into #refNoAuto from MRK_Reference where auto = 0
+(22763 rows affected)
+1> 
+2> drop table MRK_Reference
+1> 
+2> select distinct m._Marker_key, r._Refs_key, auto = 1,
+3> creation_date = getdate(), modification_date = getdate()
+4> into MRK_Reference
+5> from PRB_Marker m, PRB_Reference r
+6> where m._Probe_key = r._Probe_key
+7> union 
+8> select distinct hm._Marker_key, h._Refs_key, auto = 1, getdate(), getdate()
+9> from HMD_Homology_Marker hm, MRK_Marker m, HMD_Homology h
+10> where hm._Marker_key = m._Marker_key and
+11> m._Species_key = 1 and
+12> hm._Homology_key = h._Homology_key
+13> union 
+14> select distinct _Marker_key, _Refs_key, auto = 1, getdate(), getdate()
+15> from MRK_History
+16> where _Refs_key is not null
+17> union 
+18> select distinct _Marker_key, _Refs_key, auto = 1, getdate(), getdate()
+19> from MLD_Marker
+20> union 
+21> select distinct _Marker_key, _Refs_key, auto = 1, getdate(), getdate()
+22> from GXD_Index
+23> union 
+24> select distinct _Marker_key, _Refs_key, auto = 0, getdate(), getdate()
+25> from #refNoAuto
+(95451 rows affected)
+1> 
+2> checkpoint
+1> 
+2> /* Get rid of duplicate non-auto references */
+3>  
+4> select * into #duplicates
+5> from MRK_Reference group by _Marker_key, _Refs_key having count(*) > 1
+(0 rows affected)
+1>  
+2> delete MRK_Reference
+3> from #duplicates d, MRK_Reference r
+4> where d._Marker_key = r._Marker_key
+5> and d._Refs_key = r._Refs_key
+6> and r.auto = 0
+(0 rows affected)
+1>  
+2> checkpoint
+1>  
+2> exec sp_bindefault current_date_default,'MRK_Reference.creation_date'
+Default bound to column.
+(return status = 0)
+1>   
+2> exec sp_bindefault current_date_default,'MRK_Reference.modification_date'
+Default bound to column.
+(return status = 0)
+1>    
+2> create unique clustered index index_Marker_Refs_key on MRK_Reference(_Marker_key,_Refs_key) 
+3> with ignore_dup_key
+4> on mgd_seg_1
+1> 
+2> sp_primarykey MRK_Reference,_Marker_key,_Refs_key
+New primary key added.
+(return status = 0)
+1> 
+2> create nonclustered index index_Marker_key on MRK_Reference(_Marker_key) on mgd_seg_1
+1>  
+2> create nonclustered index index_Refs_key on MRK_Reference(_Refs_key) on mgd_seg_1
+1>  
+2> create nonclustered index index_auto on MRK_Reference(auto) on mgd_seg_1
+1>  
+2> create nonclustered index index_modification_date on MRK_Reference(modification_date) on mgd_seg_1
+1>  
+2> checkpoint
+1> 
+2> grant select on MRK_Reference to public
+1>  
+2> grant all on MRK_Reference to djr, plg
+1>   
+2> grant all on MRK_Reference to progs
+1>    
+2> drop view MRK_Reference_View
+1>  
+2> create view MRK_Reference_View
+3> as
+4> select r.*, m.symbol, b.jnumID, b.jnum, b.short_citation
+5> from MRK_Reference r, MRK_Marker m, BIB_View b
+6> where r._Marker_key = m._Marker_key
+7> and r._Refs_key = b._Refs_key
+1>  
+2> grant select on MRK_Reference_View to progs
+1>  
+2> grant select on MRK_Reference_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view ACC_View
+1> 
+2> create view ACC_View
+3> as
+4> select a.*, MGIType = m.name,
+5> LogicalDB = l.name, l.description, l._Species_key,
+6> ActualDB = d.name, d.url, d.allowsMultiple, d.delimiter
+7> from ACC_Accession a, ACC_MGIType m, ACC_LogicalDB l, ACC_ActualDB d
+8> where a._MGIType_key = m._MGIType_key
+9> and a._LogicalDB_Key = l._LogicalDB_key
+10> and l._LogicalDB_key = d._LogicalDB_key
+11> and d.active = 1
+1> 
+2> grant select on ACC_View to progs
+1>  
+2> grant select on ACC_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view BIB_Acc_View
+1> 
+2> create view BIB_Acc_View
+3> as
+4> select a.*, LogicalDB = l.name
+5> from ACC_Accession a, ACC_LogicalDB l
+6> where a._MGIType_key = 1
+7> and a._LogicalDB_key = l._LogicalDB_key
+1> 
+2> grant select on BIB_Acc_View to progs
+1>  
+2> grant select on BIB_Acc_View to public
+1>  
+2> /* BIB_All_View contains all BIB_Refs records, their J#s */
+3> /* a long citation and a short citation */
+4> 
+5> drop view BIB_All_View
+1>  
+2> create view BIB_All_View
+3> as
+4> select r.*, 
+5> reviewStatus = s.name,
+6> jnumID = a.accID, jnum = a.numericPart,
+7> citation = r.journal + " " + r.date + ";" + r.vol + "(" + r.issue + "):" + r.pgs,
+8> short_citation = r._primary + ", " + r.journal + " " + r.date + ";" + 
+9> r.vol + "(" + r.issue + "):" + r.pgs
+10> from BIB_Refs r, BIB_ReviewStatus s, ACC_Accession a
+11> where r._ReviewStatus_key = s._ReviewStatus_key
+12> and r._Refs_key = a._Object_key
+13> and a.prefixPart =  "J:"
+14> and a.preferred = 1
+1>  
+2> grant select on BIB_All_View to progs
+1>  
+2> grant select on BIB_All_View to public
+1>  
+2> /* BIB_View contains all non-Submission BIB_Refs records, */
+3> /* their J#s, a long citation and a short citation */
+4> /* Submission references are not currently accessible on the Web */
+5> 
+6> drop view BIB_View
+1> 
+2> create view BIB_View
+3> as
+4> select r.*,
+5> reviewStatus = s.name,
+6> jnumID = a.accID, jnum = a.numericPart,
+7> citation = r.journal + " " + r.date + ";" + r.vol + "(" + r.issue + "):" + r.pgs,
+8> short_citation = r._primary + ", " + r.journal + " " + r.date + ";" + 
+9> r.vol + "(" + r.issue + "):" + r.pgs
+10> from BIB_Refs r, BIB_ReviewStatus s, ACC_Accession a
+11> where r._ReviewStatus_key = s._ReviewStatus_key
+12> and r._Refs_key = a._Object_key
+13> and a.prefixPart =  "J:"
+14> and a.preferred = 1
+15> and (journal != 'Submission' or journal is null)
+1> 
+2> grant select on BIB_View to progs
+1> 
+2> grant select on BIB_View to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view CRS_Cross_View
+1> 
+2> create view CRS_Cross_View
+3> as
+4> select c.*, display = whoseCross + " [Type " + type + " (" + abbrevHO + "/" + abbrevHT + ")]",
+5> femaleStrain = s1.strain, maleStrain = s2.strain,
+6> strainHO = s3.strain, strainHT = s4.strain
+7> from CRS_Cross c, PRB_Strain s1, PRB_Strain s2, PRB_Strain s3, PRB_Strain s4
+8> where c._femaleStrain_key = s1._Strain_key
+9> and c._maleStrain_key = s2._Strain_key
+10> and c._StrainHO_key = s3._Strain_key
+11> and c._StrainHT_key = s4._Strain_key
+1> 
+2> grant select on CRS_Cross_View to progs
+1> 
+2> grant select on CRS_Cross_View to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view HMD_Homology_View
+1> 
+2> create view HMD_Homology_View
+3> as
+4> select r._Class_key, r._Refs_key, r.creation_date, r.modification_date,
+5> classRef = convert(varchar(10), r._Class_key) + ':' + convert(varchar(10), r._Refs_key),
+6> h._Homology_key, h._Marker_key,
+7> m.symbol, m.name, m.chromosome, m.cytogeneticOffset,
+8> m._Species_key, m.species, m.commonName, m.latinName,
+9> b.jnumID, b.jnum, b.short_citation,
+10> o.offset
+11> from HMD_Homology r, HMD_Homology_Marker h, 
+12> MRK_Marker_View m, BIB_View b, MRK_Offset o
+13> where r._Homology_key = h._Homology_key
+14> and h._Marker_key = m._Marker_key
+15> and r._Refs_key = b._Refs_key
+16> and h._Marker_key *= o._Marker_key
+17> and o.source = 0
+1> 
+2> grant select on HMD_Homology_View to progs
+1> 
+2> grant select on HMD_Homology_View to public
+1> 
+2> drop view HMD_Homology_Assay_View
+1> 
+2> create view HMD_Homology_Assay_View
+3> as
+4> select h.*, a.assay
+5> from HMD_Homology_Assay h, HMD_Assay a
+6> where h._Assay_key = a._Assay_key
+1> 
+2> grant select on HMD_Homology_Assay_View to progs
+1> 
+2> grant select on HMD_Homology_Assay_View to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view MLD_Acc_View
+1>  
+2> create view MLD_Acc_View
+3> as
+4> select a.*, LogicalDB = l.name
+5> from ACC_Accession a, ACC_LogicalDB l
+6> where a._MGIType_key = 4
+7> and a._LogicalDB_key = l._LogicalDB_key
+1>  
+2> grant select on MLD_Acc_View to progs
+1>  
+2> grant select on MLD_Acc_View to public
+1>  
+2> drop view MLD_Marker_View
+1> 
+2> create view MLD_Marker_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, g.*, m.symbol, c._primary, c.authors
+5> from BIB_View c, MLD_Marker g, MRK_Marker m
+6> where g._Refs_key = c._Refs_key
+7> and g._Marker_key = m._Marker_key
+1> 
+2> grant select on MLD_Marker_View to progs
+1> 
+2> grant select on MLD_Marker_View to public
+1> 
+2> drop view MLD_Expt_View
+1> 
+2> create view MLD_Expt_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, x.*, c._primary, c.authors, 
+5> mgiID = a.accID, a.prefixPart, a.numericPart
+6> from BIB_View c, MLD_Expts x, MLD_Acc_View a
+7> where c._Refs_key = x._Refs_key
+8> and x._Expt_key = a._Object_key
+9> and a.prefixPart = "MGI:"
+10> and a.preferred = 1
+1> 
+2> grant select on MLD_Expt_View to progs
+1> 
+2> grant select on MLD_Expt_View to public
+1> 
+2> drop view MLD_Expt_Marker_View
+1> 
+2> create view MLD_Expt_Marker_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, m.symbol, x.exptType, x.tag, e.*, 
+5> allele = al.symbol, assay = a.description, c._primary, c.authors
+6> from BIB_View c, MLD_Expts x, MLD_Expt_Marker e, MRK_Allele al, MLD_Assay_Types a, MRK_Marker m
+7> where c._Refs_key = x._Refs_key
+8> and x._Expt_key = e._Expt_key
+9> and e._Marker_key = m._Marker_key
+10> and e._Allele_key *= al._Allele_key
+11> and e._Assay_Type_key = a._Assay_Type_key
+1> 
+2> grant select on MLD_Expt_Marker_View to progs
+1> 
+2> grant select on MLD_Expt_Marker_View to public
+1> 
+2> drop view MLD_FISH_View
+1> 
+2> create view MLD_FISH_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, s.strain, c._primary, c.authors
+5> from BIB_View c, MLD_Expts x, MLD_FISH e, PRB_Strain s
+6> where c._Refs_key = x._Refs_key
+7> and x._Expt_key = e._Expt_key
+8> and e._Strain_key = s._Strain_key
+1> 
+2> grant select on MLD_FISH_View to progs
+1> 
+2> grant select on MLD_FISH_View to public
+1> 
+2> drop view MLD_Hybrid_View
+1> 
+2> create view MLD_Hybrid_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, c._primary, c.authors 
+5> from BIB_View c, MLD_Expts x, MLD_Hybrid e
+6> where c._Refs_key = x._Refs_key
+7> and x._Expt_key = e._Expt_key
+1> 
+2> grant select on MLD_Hybrid_View to progs
+1> 
+2> grant select on MLD_Hybrid_View to public
+1> 
+2> drop view MLD_Concordance_View
+1> 
+2> create view MLD_Concordance_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, m.symbol, c._primary, c.authors 
+5> from BIB_View c, MLD_Expts x, MLD_Concordance e, MRK_Marker m
+6> where c._Refs_key = x._Refs_key
+7> and x._Expt_key = e._Expt_key
+8> and e._Marker_key *= m._Marker_key
+1> 
+2> grant select on MLD_Concordance_View to progs
+1> 
+2> grant select on MLD_Concordance_View to public
+1> 
+2> drop view MLD_InSitu_View
+1> 
+2> create view MLD_InSitu_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, s.strain, c._primary, c.authors
+5> from BIB_View c, MLD_Expts x, MLD_InSitu e, PRB_Strain s
+6> where c._Refs_key = x._Refs_key
+7> and x._Expt_key = e._Expt_key
+8> and e._Strain_key = s._Strain_key
+1> 
+2> grant select on MLD_InSitu_View to progs
+1> 
+2> grant select on MLD_InSitu_View to public
+1> 
+2> drop view MLD_Matrix_View
+1> 
+2> create view MLD_Matrix_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, x.tag,
+5> e._Expt_key, e.female, e.female2, e.male, e.male2,
+6> s.*,
+7> femaleStrain = s1.strain, maleStrain = s2.strain,
+8> strainHO = s3.strain, strainHT = s4.strain,
+9> c._primary, c.authors
+10> from BIB_View c, MLD_Expts x, MLD_Matrix e, CRS_Cross s,
+11> PRB_Strain s1, PRB_Strain s2, PRB_Strain s3, PRB_Strain s4
+12> where c._Refs_key = x._Refs_key
+13> and x._Expt_key = e._Expt_key
+14> and e._Cross_key = s._Cross_key
+15> and s._femaleStrain_key = s1._Strain_key
+16> and s._maleStrain_key = s2._Strain_key
+17> and s._StrainHO_key = s3._Strain_key
+18> and s._StrainHT_key = s4._Strain_key
+1> 
+2> grant select on MLD_Matrix_View to progs
+1> 
+2> grant select on MLD_Matrix_View to public
+1> 
+2> drop view MLD_MC2point_View
+1> 
+2> create view MLD_MC2point_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, 
+5> symbol1 = m1.symbol, symbol2 = m2.symbol, c._primary, c.authors 
+6> from BIB_View c, MLD_Expts x, MLD_MC2point e, MRK_Marker m1, MRK_Marker m2
+7> where c._Refs_key = x._Refs_key
+8> and x._Expt_key = e._Expt_key
+9> and e._Marker_key_1 = m1._Marker_key
+10> and e._Marker_key_2 = m2._Marker_key
+1> 
+2> grant select on MLD_MC2point_View to progs
+1> 
+2> grant select on MLD_MC2point_View to public
+1> 
+2> drop view MLD_Statistics_View
+1> 
+2> create view MLD_Statistics_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, 
+5> symbol1 = m1.symbol, symbol2 = m2.symbol, x.exptType, x.tag, c._primary, c.authors
+6> from BIB_View c, MLD_Expts x, MLD_Statistics e, MRK_Marker m1, MRK_Marker m2
+7> where c._Refs_key = x._Refs_key
+8> and x._Expt_key = e._Expt_key
+9> and e._Marker_key_1 = m1._Marker_key
+10> and e._Marker_key_2 = m2._Marker_key
+1> 
+2> grant select on MLD_Statistics_View to progs
+1> 
+2> grant select on MLD_Statistics_View to public
+1> 
+2> drop view MLD_Distance_View
+1> 
+2> create view MLD_Distance_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, 
+5> symbol1 = m1.symbol, symbol2 = m2.symbol, c._primary, c.authors
+6> from BIB_View c, MLD_Expts x, MLD_Distance e, MRK_Marker m1, MRK_Marker m2
+7> where c._Refs_key = x._Refs_key
+8> and x._Expt_key = e._Expt_key
+9> and e._Marker_key_1 = m1._Marker_key
+10> and e._Marker_key_2 = m2._Marker_key
+1> 
+2> grant select on MLD_Distance_View to progs
+1> 
+2> grant select on MLD_Distance_View to public
+1> 
+2> drop view MLD_RI_View
+1> 
+2> create view MLD_RI_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, x.tag, e._Expt_key, e.RI_IdList, 
+5> s._RISet_key, s.origin, s.designation, abbrev1 = rtrim(s.abbrev1), abbrev2 = rtrim(s.abbrev2), 
+6> c._primary, c.authors 
+7> from BIB_View c, MLD_Expts x, MLD_RI e, RI_RISet s
+8> where c._Refs_key = x._Refs_key
+9> and x._Expt_key = e._Expt_key
+10> and e._RISet_key *= s._RISet_key
+1> 
+2> grant select on MLD_RI_View to progs
+1> 
+2> grant select on MLD_RI_View to public
+1> 
+2> drop view MLD_RIData_View
+1> 
+2> create view MLD_RIData_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, m.symbol, c._primary, c.authors 
+5> from BIB_View c, MLD_Expts x, MLD_RIData e, MRK_Marker m
+6> where c._Refs_key = x._Refs_key
+7> and x._Expt_key = e._Expt_key
+8> and e._Marker_key = m._Marker_key
+1> 
+2> grant select on MLD_RIData_View to progs
+1> 
+2> grant select on MLD_RIData_View to public
+1> 
+2> drop view MLD_RI2Point_View
+1> 
+2> create view MLD_RI2Point_View
+3> as
+4> select c.jnumID, c.jnum, c.short_citation, e.*, 
+5> symbol1 = m1.symbol, symbol2 = m2.symbol, c._primary, c.authors 
+6> from BIB_View c, MLD_Expts x, MLD_RI2Point e, MRK_Marker m1, MRK_Marker m2
+7> where c._Refs_key = x._Refs_key
+8> and x._Expt_key = e._Expt_key
+9> and e._Marker_key_1 = m1._Marker_key
+10> and e._Marker_key_2 = m2._Marker_key
+1> 
+2> grant select on MLD_RI2Point_View to progs
+1> 
+2> grant select on MLD_RI2Point_View to public
+1> 
+2> drop view MLD_Hit_View
+1>  
+2> create view MLD_Hit_View
+3> as
+4> select x.*, probeKey = h._Probe_key, probe = p1.name, 
+5> targetKey = h._Target_key, target = p2.name
+6> from MLD_Expts x, MLD_Hit h, PRB_Probe p1, PRB_Probe p2
+7> where x._Expt_key = h._Expt_key
+8> and h._Probe_key = p1._Probe_key
+9> and h._Target_key = p2._Probe_key
+1>  
+2> grant select on MLD_Hit_View to progs
+1>  
+2> grant select on MLD_Hit_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view MRK_Acc_View
+1> 
+2> create view MRK_Acc_View
+3> as
+4> select a.*, LogicalDB = l.name
+5> from ACC_Accession a, ACC_LogicalDB l
+6> where a._MGIType_key = 2
+7> and a._LogicalDB_key = l._LogicalDB_key
+1> 
+2> grant select on MRK_Acc_View to progs
+1>  
+2> grant select on MRK_Acc_View to public
+1>  
+2> drop view MRK_Marker_View
+1>  
+2> create view MRK_Marker_View
+3> as
+4> select m.*, 
+5> species = s.name + " (" + s.species + ")", 
+6> commonName = s.name, latinName = s.species
+7> from MRK_Marker m, MRK_Species s
+8> where m._Species_key = s._Species_key
+1> 
+2> grant select on MRK_Marker_View to progs
+1>  
+2> grant select on MRK_Marker_View to public
+1>  
+2> drop view MRK_Mouse_View
+1>  
+2> create view MRK_Mouse_View
+3> as
+4> select m.*, o.offset, offset_str = str(o.offset,10,2),
+5> species = s.name + " (" + s.species + ")", 
+6> commonName = s.name, latinName = s.species,
+7> mgiID = a.accID, a.prefixPart, a.numericPart, a._Accession_key,
+8> markerType = t.name
+9> from MRK_Marker m, MRK_Offset o, MRK_Species s, MRK_Acc_View a, MRK_Types t
+10> where m._Species_key = 1
+11> and m._Marker_key = o._Marker_key
+12> and o.source = 0
+13> and m._Species_key = s._Species_key
+14> and m._Marker_key = a._Object_key
+15> and a.prefixPart = "MGI:"
+16> and a.preferred = 1
+17> and m._Marker_Type_key = t._Marker_Type_key
+1> 
+2> grant select on MRK_Mouse_View to progs
+1>  
+2> grant select on MRK_Mouse_View to public
+1>  
+2> drop view MRK_NonMouse_View
+1> 
+2> create view MRK_NonMouse_View
+3> as
+4> select m.*,
+5> species = s.name + " (" + s.species + ")", 
+6> commonName = s.name, latinName = s.species,
+7> a.accID, a._Accession_key
+8> from MRK_Marker m, MRK_Species s, MRK_Acc_View a
+9> where m._Species_key != 1
+10> and m._Species_key = s._Species_key
+11> and m._Marker_key = a._Object_key
+1> 
+2> grant select on MRK_NonMouse_View to progs
+1> 
+2> grant select on MRK_NonMouse_View to public
+1> 
+2> drop view MRK_Alias_View
+1> 
+2> create view MRK_Alias_View
+3> as
+4> select a.*, alias = m1.symbol, m2.symbol
+5> from MRK_Alias a, MRK_Marker m1, MRK_Marker m2
+6> where a._Marker_key = m2._Marker_key
+7> and a._Alias_key = m1._Marker_key
+1> 
+2> grant select on MRK_Alias_View to progs
+1> 
+2> grant select on MRK_Alias_View to public
+1> 
+2> drop view MRK_Classes_View
+1> 
+2> create view MRK_Classes_View
+3> as
+4> select c.*, m.symbol, l.name
+5> from MRK_Classes c, MRK_Marker m, MRK_Class l
+6> where c._Marker_key = m._Marker_key
+7> and c._Class_key = l._Class_key
+1> 
+2> grant select on MRK_Classes_View to progs
+1> 
+2> grant select on MRK_Classes_View to public
+1> 
+2> drop view MRK_History_View
+1> 
+2> create view MRK_History_View
+3> as
+4> select h.*, event_display = convert(char(10), h.event_date, 101), history = m1.symbol, m2.symbol
+5> from MRK_History h, MRK_Marker m1, MRK_Marker m2
+6> where h._Marker_key = m2._Marker_key
+7> and h._History_key = m1._Marker_key
+1> 
+2> grant select on MRK_History_View to progs
+1> 
+2> grant select on MRK_History_View to public
+1> 
+2> drop view MRK_History_Ref_View
+1>  
+2> create view MRK_History_Ref_View
+3> as
+4> select h.*, event_display = convert(char(10), h.event_date, 101), 
+5> history = m1.symbol, m2.symbol,
+6> b.jnumID, b.jnum, b.short_citation
+7> from MRK_History h, MRK_Marker m1, MRK_Marker m2, BIB_View b
+8> where h._Marker_key = m2._Marker_key
+9> and h._History_key = m1._Marker_key
+10> and h._Refs_key = b._Refs_key
+1>  
+2> grant select on MRK_History_Ref_View to progs
+1>  
+2> grant select on MRK_History_Ref_View to public
+1>  
+2> drop view MRK_Current_View
+1> 
+2> create view MRK_Current_View
+3> as
+4> select c.*, current_symbol = m1.symbol, m2.symbol, m1.chromosome, m1._Marker_Type_key
+5> from MRK_Current c, MRK_Marker m1, MRK_Marker m2
+6> where c._Marker_key = m2._Marker_key
+7> and c._Current_key = m1._Marker_key
+1> 
+2> grant select on MRK_Current_View to progs
+1> 
+2> grant select on MRK_Current_View to public
+1> 
+2> drop view MRK_Anchors_View
+1> 
+2> create view MRK_Anchors_View
+3> as
+4> select a.*, m.symbol
+5> from MRK_Anchors a, MRK_Marker m
+6> where a._Marker_key = m._Marker_key
+1> 
+2> grant select on MRK_Anchors_View to progs
+1> 
+2> grant select on MRK_Anchors_View to public
+1> 
+2> drop view MRK_Reference_View
+1> 
+2> create view MRK_Reference_View
+3> as
+4> select r.*, m.symbol, b.jnumID, b.jnum, b.short_citation
+5> from MRK_Reference r, MRK_Marker m, BIB_View b
+6> where r._Marker_key = m._Marker_key
+7> and r._Refs_key = b._Refs_key
+1> 
+2> grant select on MRK_Reference_View to progs
+1> 
+2> grant select on MRK_Reference_View to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view PRB_Acc_View
+1> 
+2> create view PRB_Acc_View
+3> as
+4> select a.*, LogicalDB = l.name
+5> from ACC_Accession a, ACC_LogicalDB l
+6> where a._MGIType_key = 3
+7> and a._LogicalDB_key = l._LogicalDB_key
+1> 
+2> grant select on PRB_Acc_View to progs
+1>  
+2> grant select on PRB_Acc_View to public
+1> 
+2> drop view PRB_AccNoRef_View
+1> 
+2> create view PRB_AccNoRef_View
+3> as
+4> select a.*, LogicalDB = l.name, MGIType = m.name
+5> from ACC_Accession a, ACC_LogicalDB l, ACC_MGIType m
+6> where a._MGIType_key = 3
+7> and a._LogicalDB_key = l._LogicalDB_key
+8> and a._MGIType_key = m._MGIType_key
+9> and not exists (select r.* from ACC_AccessionReference r
+10> where a._Accession_key = r._Accession_key)
+1> 
+2> grant select on PRB_AccNoRef_View to progs
+1>  
+2> grant select on PRB_AccNoRef_View to public
+1> 
+2> drop view PRB_AccRef_View
+1> 
+2> create view PRB_AccRef_View
+3> as
+4> select a.*, LogicalDB = l.name, MGIType = m.name, r._Reference_key
+5> from ACC_Accession a, ACC_LogicalDB l, ACC_MGIType m, ACC_AccessionReference ar, PRB_Reference r
+6> where a._Accession_key = ar._Accession_key
+7> and a._LogicalDB_key = l._LogicalDB_key
+8> and a._MGIType_key = m._MGIType_key
+9> and a._Object_key = r._Probe_key
+10> and ar._Refs_key = r._Refs_key
+1> 
+2> grant select on PRB_AccRef_View to progs
+1>  
+2> grant select on PRB_AccRef_View to public
+1> 
+2> drop view PRB_Source_View
+1>  
+2> create view PRB_Source_View
+3> as
+4> select p.*, s.strain, sStandard = s.standard, t.tissue, tStandard = t.standard
+5> from PRB_Source p, PRB_Strain s, PRB_Tissue t
+6> where p._Strain_key = s._Strain_key 
+7> and p._Tissue_key = t._Tissue_key 
+1> 
+2> grant select on PRB_Source_View to progs
+1>  
+2> grant select on PRB_Source_View to public
+1>  
+2> drop view PRB_View
+1> 
+2> create view PRB_View
+3> as
+4> select p.*, v.vectorType, mgiID = a.accID, a.prefixPart, a.numericPart,
+5> s.species, s.age, s.sex, s.cellLine, library = s.name,
+6> s.description, s._Refs_key, s._Strain_key, s.strain, s._Tissue_key, s.tissue
+7> from PRB_Probe p, PRB_Acc_View a, PRB_Source_View s, PRB_Vector_Types v
+8> where p._Probe_key = a._Object_key
+9> and a.prefixPart = "MGI:"
+10> and a.preferred = 1
+11> and p._Vector_key = v._Vector_key
+12> and p._Source_key = s._Source_key
+1> 
+2> grant select on PRB_View to progs
+1>  
+2> grant select on PRB_View to public
+1> 
+2> drop view PRB_Primer_View
+1>  
+2> create view PRB_Primer_View
+3> as
+4> select p._Probe_key, p.name,
+5> p.regionCovered,
+6> p.regionCovered2,
+7> p.DNAtype, p.primer1sequence, p.primer2sequence,
+8> p.repeatUnit, p.productSize, p.moreProduct,
+9> p.creation_date, p.modification_date,
+10> mgiID = a.accID, a.prefixPart, a.numericPart
+11> from PRB_Probe p, PRB_Acc_View a
+12> where p.DNAtype = "primer"
+13> and p._Probe_key = a._Object_key
+14> and a.prefixPart = "MGI:"
+1>   
+2> grant select on PRB_Primer_View to progs
+1>    
+2> grant select on PRB_Primer_View to public
+1>     
+2> drop view PRB_Probe_View
+1>  
+2> create view PRB_Probe_View
+3> as
+4> select p._Probe_key, p.name,
+5> p.regionCovered,
+6> p.regionCovered2,
+7> p.insertSize, p.DNAtype,
+8> p.derivedFrom, parentClone = p2.name,
+9> p._Vector_key, v.vectorType, p.insertSite,
+10> p.creation_date, p.modification_date,
+11> s._Source_key, sourceName = s.name, s._Refs_key,
+12> s.species, s.age, s.sex, s.cellLine, s._Strain_key, s.strain, s._Tissue_key, s.tissue,
+13> mgiID = a.accID, a.prefixPart, a.numericPart
+14> from PRB_Probe p, PRB_Acc_View a, PRB_Source_View s, PRB_Vector_Types v, PRB_Probe p2
+15> where p.DNAtype != "primer"
+16> and p._Probe_key = a._Object_key
+17> and a.prefixPart = "MGI:"
+18> and p._Source_key = s._Source_key
+19> and p._Vector_key = v._Vector_key
+20> and p.derivedFrom *= p2._Probe_key
+1> 
+2> grant select on PRB_Probe_View to progs
+1>  
+2> grant select on PRB_Probe_View to public
+1>  
+2> drop view PRB_Parent_View
+1> 
+2> create view PRB_Parent_View
+3> as
+4> select p._Probe_key, p.name, a.accID, accPrefix = a.prefixPart, accNumeric = a.numericPart,
+5> parentKey = p2._Probe_key, parentClone = p2.name,
+6> parentID = a2.accID, parentPrefix = a2.prefixPart, parentNumeric = a2.numericPart
+7> from PRB_Probe p, PRB_Acc_View a, PRB_Probe p2, PRB_Acc_View a2
+8> where p._Probe_key = a._Object_key
+9> and a.prefixPart = "MGI:"
+10> and p.derivedFrom = p2._Probe_key
+11> and p2._Probe_key = a2._Object_key
+12> and a2.prefixPart = "MGI:"
+1> 
+2> grant select on PRB_Parent_View to progs
+1>  
+2> grant select on PRB_Parent_View to public
+1> 
+2> drop view PRB_Marker_View
+1> 
+2> create view PRB_Marker_View
+3> as
+4> select g._Probe_key, p.name, g._Marker_key, m.symbol, m.chromosome, g.relationship
+5> from PRB_Probe p, PRB_Marker g, MRK_Marker m
+6> where p._Probe_key = g._Probe_key
+7> and g._Marker_key = m._Marker_key
+1> 
+2> grant select on PRB_Marker_View to progs
+1> 
+2> grant select on PRB_Marker_View to public
+1> 
+2> drop view PRB_Reference_View
+1> 
+2> create view PRB_Reference_View
+3> as
+4> select c.jnum, c.jnumID, c.short_citation, r.*
+5> from PRB_Reference r, BIB_All_View c
+6> where r._Refs_key = c._Refs_key
+1> 
+2> grant select on PRB_Reference_View to progs
+1> 
+2> grant select on PRB_Reference_View to public
+1> 
+2> drop view PRB_RFLV_View
+1> 
+2> create view PRB_RFLV_View
+3> as
+4> select r.*, a._Allele_key, a.allele, a.fragments, s.strain, m.symbol
+5> from PRB_RFLV r, PRB_Allele a, PRB_Allele_Strain p, PRB_Strain s, MRK_Marker m
+6> where r._RFLV_key = a._RFLV_key
+7> and a._Allele_key = p._Allele_key
+8> and p._Strain_key = s._Strain_key
+9> and r._Marker_key = m._Marker_key
+1> 
+2> grant select on PRB_RFLV_View to progs
+1> 
+2> grant select on PRB_RFLV_View to public
+1> 
+2> drop view PRB_SourceRef_View
+1>  
+2> create view PRB_SourceRef_View
+3> as
+4> select p.*, c.jnumID, c.jnum, c.short_citation
+5> from PRB_Source_View p, BIB_All_View c
+6> where p._Refs_key = c._Refs_key
+1> 
+2> grant select on PRB_SourceRef_View to progs
+1>  
+2> grant select on PRB_SourceRef_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop view BIB_Summary_View
+1> 
+2> create view BIB_Summary_View
+3> as
+4> select a.*,
+5> mgiID = a2.accID,
+6> subType = null,
+7> description = b._primary + ", " + b.journal + " " + b.date + ";" + b.vol + "(" + b.issue + "):" + b.pgs
+8> from ACC_Accession a, ACC_Accession a2, BIB_Refs b
+9> where a._MGIType_key = 1
+10> and a.private = 0
+11> and a._Object_key = a2._Object_key
+12> and a2._LogicalDB_key = 1
+13> and a2._MGIType_key = 1
+14> and a2.prefixPart = "MGI:"
+15> and a2.preferred = 1
+16> and a._Object_key = b._Refs_key
+17> and (b.journal != 'Submission' or b.journal is null)
+1> 
+2> grant select on BIB_Summary_View to progs
+1>  
+2> grant select on BIB_Summary_View to public
+1>  
+2> drop view MRK_Summary_View
+1>  
+2> create view MRK_Summary_View
+3> as
+4> select a.*,
+5> mgiID = a2.accID,
+6> subType = mt.name,
+7> description = m.symbol + ", " + m.name + ", Chr " + m.chromosome
+8> from ACC_Accession a, ACC_Accession a2, MRK_Marker m, MRK_Types mt
+9> where a._MGIType_key = 2
+10> and a.private = 0
+11> and a._Object_key = a2._Object_key
+12> and a2._LogicalDB_key = 1
+13> and a2._MGIType_key = 2
+14> and a2.prefixPart = "MGI:"
+15> and a2.preferred = 1
+16> and a._Object_key = m._Marker_key
+17> and m._Species_key = 1
+18> and m._Marker_Type_key = mt._Marker_Type_key
+1>  
+2> grant select on MRK_Summary_View to progs
+1>  
+2> grant select on MRK_Summary_View to public
+1>  
+2> drop view HMD_Summary_View
+1>  
+2> create view HMD_Summary_View
+3> as
+4> select a.*,
+5> mgiID = null,
+6> subType = mt.name,
+7> description = m.symbol + ", " + m.name + ", Chr " + m.chromosome
+8> from ACC_Accession a, MRK_Marker m, MRK_Types mt
+9> where a._MGIType_key = 2
+10> and a.private = 0
+11> and a._Object_key = m._Marker_key
+12> and m._Species_key != 1
+13> and m._Marker_Type_key = mt._Marker_Type_key
+1>  
+2> grant select on HMD_Summary_View to progs
+1>  
+2> grant select on HMD_Summary_View to public
+1> 
+2> drop view PRB_Summary_View
+1>  
+2> create view PRB_Summary_View
+3> as
+4> select a.*,
+5> mgiID = a2.accID,
+6> subType = p.DNAtype,
+7> description = p.name
+8> from ACC_Accession a, ACC_Accession a2, PRB_Probe p
+9> where a._MGIType_key = 3
+10> and a.private = 0
+11> and a._Object_key = a2._Object_key
+12> and a2._LogicalDB_key = 1
+13> and a2._MGIType_key = 3
+14> and a2.prefixPart = "MGI:"
+15> and a._Object_key = p._Probe_key
+1>  
+2> grant select on PRB_Summary_View to progs
+1>  
+2> grant select on PRB_Summary_View to public
+1>  
+2> drop view MLD_Summary_View
+1>  
+2> create view MLD_Summary_View
+3> as
+4> select a.*,
+5> mgiID = a2.accID,
+6> subType = e.exptType,
+7> description = b._primary + ", " + b.journal + " " + b.date + ";" + b.vol + "(" + b.issue + "):" + b.pgs
+8> from ACC_Accession a, ACC_Accession a2, MLD_Expts e, BIB_Refs b
+9> where a._MGIType_key = 4
+10> and a.private = 0
+11> and a._Object_key = a2._Object_key
+12> and a2._LogicalDB_key = 1
+13> and a2._MGIType_key = 4
+14> and a2.prefixPart = "MGI:"
+15> and a2.preferred = 1
+16> and a._Object_key = e._Expt_key
+17> and e._Refs_key = b._Refs_key
+1>  
+2> grant select on MLD_Summary_View to progs
+1>  
+2> grant select on MLD_Summary_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger ACC_AccessionReference_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'ACC_AccessionReference_Delete', because it doesn't
+exist in the system catalogs.
+1> 
+2> create trigger ACC_AccessionReference_Delete
+3> on ACC_AccessionReference
+4> for delete
+5> as
+6> 
+7> /* If AccID is not referenced by other References in ACC_AccessionReference,
+8>    then delete AccID from ACC_Accesion table too.
+9> */
+10>  
+11> if (select count(*) from ACC_AccessionReference a, deleted d
+12>     where a._Accession_key = d._Accession_key) = 0
+13> begin
+14> 	delete ACC_Accession 
+15> 	from ACC_Accession a, deleted d
+16> 	where a._Accession_key = d._Accession_key
+17> end
+18> 
+1> 
+2> checkpoint
+1> 
+2> /* -----------------------------------------------------------------------
+3>  * triggers installed for dbedit (ACC_LogicalDB and ACC_ActualDB editor)
+4>  *---------------------------------------------------------------------- */
+5> 
+6> drop trigger ACC_LogicalDB_Delete 
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 6:
+Cannot drop the trigger 'ACC_LogicalDB_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger ACC_LogicalDB_Delete 
+3> on ACC_LogicalDB
+4> for delete
+5> as
+6> if (select count(*)
+7>         from deleted, ACC_Accession
+8>         where ACC_Accession._LogicalDB_key = deleted._LogicalDB_key) > 0
+9>  
+10>         begin
+11>                 rollback transaction
+12>                 raiserror 99999 "DELETE FAILURE: Reference found in ACC_Acession"
+13>         end
+14> else if (select count(*)
+15>                 from deleted, ACC_ActualDB
+16>                 where ACC_ActualDB._LogicalDB_key = deleted._LogicalDB_key) > 0
+17>         begin
+18>                 rollback transaction
+19>                 raiserror 99999 "DELETE FAILURE: Reference found in ACC_ActualDB"
+20>         end
+21> 
+22> select @@error
+23> 
+1>  
+2>  
+3> drop trigger ACC_LogicalDB_Update 
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 3:
+Cannot drop the trigger 'ACC_LogicalDB_Update', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger  ACC_LogicalDB_Update
+3> on ACC_LogicalDB
+4> for update
+5> as
+6> if
+7>         (select _Species_key from deleted ) != (select _Species_key from inserted ) and
+8>         (select count (*) from ACC_Accession, inserted
+9>                where
+10>                 Acc_Accession._LogicalDB_key = inserted._LogicalDB_key) > 0
+11>                 begin
+12>                     rollback transaction
+13>                     raiserror 99999 "UPDATE FAILURE: Accession Number attached to _LogicalDB_k
+14> ey"
+15>                 end
+16>  
+17> select @@error
+18> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger BIB_Refs_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'BIB_Refs_Insert', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger BIB_Refs_Insert
+3> on BIB_Refs
+4> for insert
+5> as
+6>  
+7> declare @pgs varchar(30)
+8> select @pgs = pgs from inserted
+9> 
+10> /* Determine if new record constitutes a duplicate record */
+11> /* within the Reference (BIB_Refs) table. */
+12> /* Parameters to check are journal, year, volume and pages */
+13>  
+14> /* Mouse News Letter references are ignored because more than one */
+15> /* reference can appear on the same page within this journal. */
+16>   
+17> if (select journal from inserted) != 'Mouse News Lett'
+18> begin
+19> 
+20>   /* If pages in format "x", check for pages = x and pages like "x-%" */
+21>   /* If pages in format "x-y", check for pages = x and pages like "x-%" */
+22> 
+23>   /* Strip off first page */
+24>   if charindex("-", @pgs) > 0
+25>   begin
+26>     select @pgs = substring(@pgs, 1, charindex("-", @pgs) - 1)
+27>   end
+28> 
+29>   if (select count(BIB_Refs._Refs_key) from BIB_Refs, inserted
+30>       where BIB_Refs.journal = inserted.journal and
+31>             BIB_Refs.year = inserted.year and
+32>             BIB_Refs.vol = inserted.vol and
+33>             (BIB_Refs.pgs = @pgs or BIB_Refs.pgs like @pgs + "-%")) > 1
+34>   begin
+35>     rollback transaction
+36>     raiserror 99999 "Reference Already Exists"
+37>     return
+38>   end
+39> end
+40> 
+41> declare @key integer
+42> select @key = _Refs_key from inserted
+43> exec ACC_assignMGI @key, "Reference"
+44> 
+1> 
+2> drop trigger BIB_Refs_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'BIB_Refs_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger BIB_Refs_Delete
+3> on BIB_Refs
+4> for delete
+5> as
+6> 
+7> /* Before deleting a record, verify that the J# is not being */
+8> /* referenced elsewhere in the database. */
+9> 
+10> if (select count(*) from MRK_History, deleted
+11>     where MRK_History._Refs_key = deleted._Refs_key) > 0
+12> begin
+13>         rollback transaction
+14>         raiserror 99999 "J# is referenced in Marker Record(s)"
+15> end
+16> 
+17> else if (select count(*) from HMD_Homology, deleted
+18>          where HMD_Homology._Refs_key = deleted._Refs_key) > 0
+19> begin
+20>         rollback transaction
+21>         raiserror 99999 "J# is referenced in Homology Record(s)"
+22> end
+23> 
+24> else if (select count(*) from MLC_Reference, deleted
+25>          where MLC_Reference._Refs_key = deleted._Refs_key) > 0
+26> begin
+27>         rollback transaction
+28>         raiserror 99999 "J# is referenced in MLC Record(s)"
+29> end
+30> 
+31> else if (select count(*) from MLC_Reference_edit, deleted
+32>          where MLC_Reference_edit._Refs_key = deleted._Refs_key) > 0
+33> begin
+34>         rollback transaction
+35>         raiserror 99999 "J# is referenced in MLC Edit Record(s)"
+36> end
+37> 
+38> else if (select count(*) from MLD_Expts, deleted
+39>          where MLD_Expts._Refs_key = deleted._Refs_key) > 0
+40> begin
+41>         rollback transaction
+42>         raiserror 99999 "J# is referenced in Mapping Record(s)"
+43> end
+44> 
+45> else if (select count(*) from PRB_Reference, deleted
+46>          where PRB_Reference._Refs_key = deleted._Refs_key) > 0
+47> begin
+48>         rollback transaction
+49>         raiserror 99999 "J# is referenced in Probe Record(s)"
+50> end
+51> 
+52> else if (select count(*) from PRB_Source, deleted
+53>          where PRB_Source._Refs_key = deleted._Refs_key) > 0
+54> begin
+55>         rollback transaction
+56>         raiserror 99999 "J# is referenced in Probe Source Record(s)"
+57> end
+58> 
+59> else if (select count(*) from GXD_Index, deleted
+60>          where GXD_Index._Refs_key = deleted._Refs_key) > 0
+61> begin
+62>         rollback transaction
+63>         raiserror 99999 "J# is referenced in GXD Index Record(s)"
+64> end
+65> 
+66> else
+67> begin
+68> 	delete BIB_Books from BIB_Books, deleted
+69> 	where BIB_Books._Refs_key = deleted._Refs_key
+70> 
+71> 	delete BIB_Notes from BIB_Notes, deleted
+72> 	where BIB_Notes._Refs_key = deleted._Refs_key
+73> 
+74>         delete ACC_Accession
+75>         from ACC_Accession a, ACC_MGIType m, deleted
+76>         where a._Object_key = deleted._Refs_key
+77>         and a._MGIType_key = m._MGIType_key
+78>         and m.name = "Reference"
+79> end
+1> 
+2> drop trigger BIB_ReviewStatus_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'BIB_ReviewStatus_Delete', because it doesn't exist in
+the system catalogs.
+1> 
+2> create trigger BIB_ReviewStatus_Delete
+3> on BIB_ReviewStatus
+4> for delete
+5> as
+6> 
+7> /* Before deleting a record, verify that the Status is not being */
+8> /* referenced elsewhere in the database. */
+9> 
+10> if (select count(*) from BIB_Refs, deleted
+11>     where BIB_Refs._ReviewStatus_key = deleted._ReviewStatus_key) > 0
+12> begin
+13>         rollback transaction
+14>         raiserror 99999 "Review Status is referenced in Reference Record(s)"
+15> end
+16> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger CRS_Cross_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'CRS_Cross_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger CRS_Cross_Delete
+3> on CRS_Cross
+4> for delete
+5> as
+6> 
+7> /* Disallow removal of a record if the Cross is referenced in MLDP */
+8> 
+9> if (select count(*) from MLD_Matrix, deleted
+10>     where MLD_Matrix._Cross_key = deleted._Cross_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Cross is referenced in MLDP Record(s)"
+14> end
+15> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger HMD_Class_Delete
+1> 
+2> create trigger HMD_Class_Delete
+3> on HMD_Class
+4> for delete
+5> as
+6> 
+7> /* Delete dependent records */
+8> 
+9> delete HMD_Homology from HMD_Homology, deleted
+10> where HMD_Homology._Class_key = deleted._Class_key
+11> 
+1> 
+2> drop trigger HMD_Homology_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Homology_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger HMD_Homology_Delete
+3> on HMD_Homology
+4> for delete
+5> as
+6> 
+7> /* Delete dependent records */
+8> 
+9> delete HMD_Homology_Marker from HMD_Homology_Marker, deleted
+10> where HMD_Homology_Marker._Homology_key = deleted._Homology_key
+11> 
+12> delete HMD_Homology_Assay from HMD_Homology_Assay, deleted
+13> where HMD_Homology_Assay._Homology_key = deleted._Homology_key
+14> 
+15> delete HMD_Notes from HMD_Notes, deleted
+16> where HMD_Notes._Homology_key = deleted._Homology_key
+17> 
+1> 
+2> drop trigger HMD_Homology_Marker_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Homology_Marker_Insert', because it doesn't exist
+in the system catalogs.
+1> 
+2> create trigger HMD_Homology_Marker_Insert
+3> on HMD_Homology_Marker
+4> for insert
+5> as
+6> 
+7> /* If Chromosome record for inserted Homology does not exist in MRK_Chromosome */
+8> /* for the Marker species then insert the chromosome into MRK_Chromosome. */
+9> /* MRK_Chromosome is used to sequentially order the Chromosome values within */
+10> /* a given Species for sorting in Homology, reports, Oxford Grids, etc. */
+11> 
+12> if (select count(MRK_Chromosome.chromosome) 
+13>     from MRK_Chromosome, inserted, MRK_Marker
+14>     where inserted._Marker_key = MRK_Marker._Marker_key
+15>     and MRK_Marker._Species_key = MRK_Chromosome._Species_key
+16>     and MRK_Marker.chromosome = MRK_Chromosome.chromosome) = 0
+17> begin
+18> 	/* Get next available sequence number */
+19> 	declare @nextseq integer
+20> 	select @nextseq = max(MRK_Chromosome.sequenceNum) + 1 
+21> 	from MRK_Chromosome, MRK_Marker, inserted
+22> 	where inserted._Marker_key = MRK_Marker._Marker_key
+23> 	      and MRK_Marker._Species_key = MRK_Chromosome._Species_key
+24> 
+25> 	insert into MRK_Chromosome (_Species_key, chromosome, sequenceNum)
+26> 	select MRK_Marker._Species_key, MRK_Marker.chromosome, @nextseq
+27> 	from MRK_Marker, inserted
+28> 	where inserted._Marker_key = MRK_Marker._Marker_key
+29> 
+30>        	raiserror 88888 "Please verify the Chromosome order for the Species record just added.\nThis can be reviewed using the Species editing screen."
+31> end
+32> 
+1> 
+2> drop trigger HMD_Assay_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'HMD_Assay_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger HMD_Assay_Delete
+3> on HMD_Assay
+4> for delete
+5> as
+6> 
+7> /* Disallow removal of the homology assay if it is being referenced in homology */
+8> 
+9> if (select count(*) from HMD_Homology_Assay, deleted
+10>     where HMD_Homology_Assay._Assay_key = deleted._Assay_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Assay is referenced in Homology Record(s)"
+14> end
+15>  
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger MLD_Marker_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Marker_Update', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MLD_Marker_Update
+3> on MLD_Marker
+4> for update
+5> as
+6> 
+7> /* If updating the Reference, propagate update to appropriate tables */
+8> 
+9> if update(_Refs_key)
+10> begin
+11> 	update MLD_Expts
+12> 	  set _Refs_key = inserted._Refs_key
+13> 	  from MLD_Expts, inserted, deleted
+14> 	  where MLD_Expts._Refs_key = deleted._Refs_key
+15> 
+16> 	update MLD_Notes
+17> 	  set _Refs_key = inserted._Refs_key
+18> 	  from MLD_Notes, inserted, deleted
+19> 	  where MLD_Notes._Refs_key = deleted._Refs_key
+20> end
+21> 
+22> /* If the Marker in the Primary list is modified, then propagate */
+23> /* the changes to the gene list of each experiment of the reference */
+24> 
+25> if update(_Marker_key)
+26> begin
+27> 	update MLD_Expt_Marker
+28>           set _Marker_key = inserted._Marker_key
+29> 	  from MLD_Expt_Marker, MLD_Expts, inserted, deleted
+30> 	  where MLD_Expts._Refs_key = inserted._Refs_key and
+31> 		MLD_Expts._Expt_key = MLD_Expt_Marker._Expt_key and
+32> 		MLD_Expt_Marker._Marker_key = deleted._Marker_key
+33> end
+34> 
+1> 
+2> drop trigger MLD_Expts_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Expts_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MLD_Expts_Insert
+3> on MLD_Expts
+4> for insert
+5> as
+6> 
+7> /* Assign MGI Accession number for each Experiment */
+8> 
+9> declare @key integer
+10> select @key = _Expt_key from inserted
+11> exec ACC_assignMGI @key, "Experiment"
+12> 
+1> 
+2> drop trigger MLD_Expts_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Expts_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MLD_Expts_Delete
+3> on MLD_Expts
+4> for delete
+5> as
+6> 
+7> /* Re-order the tag numbers for experiments if one is deleted */
+8> 
+9> update MLD_Expts
+10> set MLD_Expts.tag = MLD_Expts.tag - 1
+11> from MLD_Expts, deleted
+12> where MLD_Expts._Refs_key = deleted._Refs_key
+13> and MLD_Expts.exptType = deleted.exptType
+14> and MLD_Expts.tag > deleted.tag
+15> 
+16> /* Delete entries in all dependent experiment tables */
+17> 
+18> delete MLD_Expt_Marker from MLD_Expt_Marker, deleted
+19> where MLD_Expt_Marker._Expt_key = deleted._Expt_key
+20> 
+21> delete MLD_Expt_Notes from MLD_Expt_Notes, deleted
+22> where MLD_Expt_Notes._Expt_key = deleted._Expt_key
+23> 
+24> delete MLD_FISH from MLD_FISH, deleted
+25> where MLD_FISH._Expt_key = deleted._Expt_key
+26> 
+27> delete MLD_FISH_Region from MLD_FISH_Region, deleted
+28> where MLD_FISH_Region._Expt_key = deleted._Expt_key
+29> 
+30> delete MLD_Hybrid from MLD_Hybrid, deleted
+31> where MLD_Hybrid._Expt_key = deleted._Expt_key
+32> 
+33> delete MLD_Concordance from MLD_Concordance, deleted
+34> where MLD_Concordance._Expt_key = deleted._Expt_key
+35> 
+36> delete MLD_InSitu from MLD_InSitu, deleted
+37> where MLD_InSitu._Expt_key = deleted._Expt_key
+38> 
+39> delete MLD_ISRegion from MLD_ISRegion, deleted
+40> where MLD_ISRegion._Expt_key = deleted._Expt_key
+41> 
+42> delete MLD_Matrix from MLD_Matrix, deleted
+43> where MLD_Matrix._Expt_key = deleted._Expt_key
+44> 
+45> delete MLD_MC2point from MLD_MC2point, deleted
+46> where MLD_MC2point._Expt_key = deleted._Expt_key
+47> 
+48> delete MLD_MCDataList from MLD_MCDataList, deleted
+49> where MLD_MCDataList._Expt_key = deleted._Expt_key
+50> 
+51> delete MLD_RI from MLD_RI, deleted
+52> where MLD_RI._Expt_key = deleted._Expt_key
+53> 
+54> delete MLD_RIData from MLD_RIData, deleted
+55> where MLD_RIData._Expt_key = deleted._Expt_key
+56> 
+57> delete MLD_RI2Point from MLD_RI2Point, deleted
+58> where MLD_RI2Point._Expt_key = deleted._Expt_key
+59> 
+60> delete MLD_Hit from MLD_Hit, deleted
+61> where MLD_Hit._Expt_key = deleted._Expt_key
+62> 
+63> delete MLD_Contig from MLD_Contig, deleted
+64> where MLD_Contig._Expt_key = deleted._Expt_key
+65> 
+66> delete MLD_Statistics from MLD_Statistics, deleted
+67> where MLD_Statistics._Expt_key = deleted._Expt_key
+68> 
+69> delete ACC_Accession
+70> from ACC_Accession a, ACC_MGIType m, deleted
+71> where a._Object_key = deleted._Expt_key
+72> and a._MGIType_key = m._MGIType_key
+73> and m.name = "Experiment"
+74>  
+1> 
+2> drop trigger MLD_Expt_Marker_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Expt_Marker_Insert', because it doesn't exist in
+the system catalogs.
+1>  
+2> create trigger MLD_Expt_Marker_Insert
+3> on MLD_Expt_Marker
+4> for insert
+5> as
+6>  
+7> /* If the chromosome in the Marker table is UN, then...  */
+8>  
+9> if (select count(*) from MRK_Marker, MLD_Expts, inserted
+10>     where MLD_Expts._Expt_key = inserted._Expt_key and
+11>     MRK_Marker._Marker_key = inserted._Marker_key and
+12>     MRK_Marker.chromosome = "UN") > 0
+13> begin
+14>  
+15>     /* Update the chromosome to the MLDP chromosome assignment */
+16>  
+17>     update MRK_Marker
+18>     set chromosome = MLD_Expts.chromosome
+19>     from MRK_Marker, MLD_Expts, inserted
+20>     where MLD_Expts._Expt_key = inserted._Expt_key and
+21>           MRK_Marker._Marker_key = inserted._Marker_key
+22> end
+23>  
+1> 
+2> drop trigger MLD_Expt_Marker_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Expt_Marker_Update', because it doesn't exist in
+the system catalogs.
+1> 
+2> create trigger MLD_Expt_Marker_Update
+3> on MLD_Expt_Marker
+4> for update
+5> as
+6> 
+7> /* If modifying Assay type and this is the only instance of the */
+8> /* Assay type in MGD, then remove it from the Assay table */
+9> 
+10> if update(_Assay_Type_key) and 
+11>    (select count(*) from MLD_Expt_Marker, deleted
+12>     where MLD_Expt_Marker._Assay_Type_key = deleted._Assay_Type_key) = 0
+13> begin
+14>   delete MLD_Assay_Types from MLD_Assay_Types, deleted
+15>   where MLD_Assay_Types._Assay_Type_key = deleted._Assay_Type_key
+16> end
+17> 
+18> if update(_Marker_key)
+19> begin
+20> 	/* If the chromosome in the Marker table is UN, then...  */
+21> 
+22>   	if (select count(*) from MRK_Marker, MLD_Expts, inserted
+23>             where MLD_Expts._Expt_key = inserted._Expt_key and
+24> 	    MRK_Marker._Marker_key = inserted._Marker_key and 
+25> 	    MRK_Marker.chromosome = "UN") > 0
+26> 	begin
+27> 
+28> 	  /* Update the chromosome to the MLDP chromosome assignment */
+29> 
+30>   	  update MRK_Marker 
+31>   	  set chromosome = MLD_Expts.chromosome
+32>   	  from MRK_Marker, MLD_Expts, inserted
+33>           where MLD_Expts._Expt_key = inserted._Expt_key and
+34> 	        MRK_Marker._Marker_key = inserted._Marker_key
+35> 	end
+36> 
+37> 	/* Propagate modification of Marker to experiment tables */
+38> 
+39> 	update MLD_Concordance 
+40>           set _Marker_key = inserted._Marker_key
+41> 	  from MLD_Concordance, inserted, deleted
+42> 	  where MLD_Concordance._Expt_key = inserted._Expt_key and
+43> 		MLD_Concordance._Marker_key = deleted._Marker_key
+44> 
+45> 	update MLD_MC2point 
+46>           set _Marker_key_1 = inserted._Marker_key
+47> 	  from MLD_MC2point, inserted, deleted
+48> 	  where MLD_MC2point._Expt_key = inserted._Expt_key and
+49> 		MLD_MC2point._Marker_key_1 = deleted._Marker_key
+50> 
+51> 	update MLD_MC2point 
+52>           set _Marker_key_2 = inserted._Marker_key
+53> 	  from MLD_MC2point, inserted, deleted
+54> 	  where MLD_MC2point._Expt_key = inserted._Expt_key and
+55> 		MLD_MC2point._Marker_key_2 = deleted._Marker_key
+56> 
+57> 	update MLD_RIData 
+58>           set _Marker_key = inserted._Marker_key
+59> 	  from MLD_RIData, inserted, deleted
+60> 	  where MLD_RIData._Expt_key = inserted._Expt_key and
+61> 		MLD_RIData._Marker_key = deleted._Marker_key
+62> 
+63> 	update MLD_RI2Point 
+64>           set _Marker_key_1 = inserted._Marker_key
+65> 	  from MLD_RI2Point, inserted, deleted
+66> 	  where MLD_RI2Point._Expt_key = inserted._Expt_key and
+67> 		MLD_RI2Point._Marker_key_1 = deleted._Marker_key
+68> 
+69> 	update MLD_RI2Point 
+70>           set _Marker_key_2 = inserted._Marker_key
+71> 	  from MLD_RI2Point, inserted, deleted
+72> 	  where MLD_RI2Point._Expt_key = inserted._Expt_key and
+73> 		MLD_RI2Point._Marker_key_2 = deleted._Marker_key
+74> 
+75>         update MLD_Statistics
+76>           set _Marker_key_1 = inserted._Marker_key
+77>           from MLD_Statistics, inserted, deleted
+78>           where MLD_Statistics._Expt_key = inserted._Expt_key and
+79>                 MLD_Statistics._Marker_key_1 = deleted._Marker_key
+80> 
+81>         update MLD_Statistics
+82>           set _Marker_key_2 = inserted._Marker_key
+83>           from MLD_Statistics, inserted, deleted
+84>           where MLD_Statistics._Expt_key = inserted._Expt_key and
+85>                 MLD_Statistics._Marker_key_2 = deleted._Marker_key
+86> 
+87>         update MLD_Distance
+88>           set _Marker_key_1 = inserted._Marker_key
+89>           from MLD_Distance, inserted, deleted
+90>           where MLD_Distance._Expt_key = inserted._Expt_key and
+91>                 MLD_Distance._Marker_key_1 = deleted._Marker_key
+92> 
+93>         update MLD_Distance
+94>           set _Marker_key_2 = inserted._Marker_key
+95>           from MLD_Distance, inserted, deleted
+96>           where MLD_Distance._Expt_key = inserted._Expt_key and
+97>                 MLD_Distance._Marker_key_2 = deleted._Marker_key
+98> 
+99> end
+100> 
+1> 
+2> drop trigger MLD_Matrix_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Matrix_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MLD_Matrix_Delete
+3> on MLD_Matrix
+4> for delete
+5> as
+6> 
+7> /* Remove entries from Cross table upon deletion of Matrix */
+8> /* record, if the cross is not a named (i.e. specific) Cross */
+9> 
+10> if (select count(CRS_Cross._Cross_key) from CRS_Cross, deleted 
+11>     where CRS_Cross._Cross_key = deleted._Cross_key and CRS_Cross.whoseCross is null) > 0
+12> begin
+13> 	delete CRS_Cross from CRS_Cross, deleted
+14> 	where CRS_Cross._Cross_key = deleted._Cross_key
+15> end
+16> 
+1> 
+2> drop trigger MLD_Contig_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Contig_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MLD_Contig_Delete
+3> on MLD_Contig
+4> for delete
+5> as
+6> 
+7> /* Delete records in dependent tables */
+8> 
+9> delete MLD_ContigProbe from MLD_ContigProbe, deleted
+10> where MLD_ContigProbe._Contig_key = deleted._Contig_key
+11> 
+1> 
+2> drop trigger MLD_RI_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_RI_Update', because it doesn't exist in the system
+catalogs.
+1> 
+2> create trigger MLD_RI_Update
+3> on MLD_RI
+4> for update
+5> as
+6> 
+7> /* If modifying RI key in MLDP table, then */
+8> /* set appropriate column values in MLDP table */
+9> /* as they appear in the RI table */
+10> 
+11> if update (_RISet_key)
+12> begin
+13>   update MLD_RI
+14>   set designation = RI_RISet.designation,
+15>       origin = RI_RISet.origin,
+16>       abbrev1 = RI_RISet.abbrev1,
+17>       abbrev2 = RI_RISet.abbrev2
+18>   from MLD_RI, RI_RISet, inserted
+19>   where MLD_RI._Expt_key = inserted._Expt_key and
+20> 	inserted._RISet_key = RI_RISet._RISet_key
+21> end
+22> 
+1> 
+2> drop trigger MLD_Assay_Types_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MLD_Assay_Types_Delete', because it doesn't exist in
+the system catalogs.
+1> 
+2> create trigger MLD_Assay_Types_Delete
+3> on MLD_Assay_Types
+4> for delete
+5> as
+6> 
+7> /* Disallow removal of an Assay which is referenced in MLDP */
+8> 
+9> if (select count(*) from MLD_Expt_Marker, deleted
+10>     where MLD_Expt_Marker._Assay_Type_key = deleted._Assay_Type_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Assay is referenced in MLDP Record(s)"
+14> end
+15> 
+1> 
+2> drop trigger MLD_InSitu_Insert
+1> 
+2> create trigger MLD_InSitu_Insert
+3> on MLD_InSitu
+4> for insert
+5> as
+6> 
+7> /* If the Marker's cytogenetic band is null, then */
+8> /* assign the cytogenetic band for the Marker in the */
+9> /* experiment using the band information reported in the */
+10> /* experiment. */
+11> 
+12> if (select MRK_Marker.cytogeneticOffset 
+13>     from MRK_Marker, MLD_Expt_Marker, inserted
+14>     where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+15> 	  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+16> begin
+17> 	update MRK_Marker
+18> 	set cytogeneticOffset = inserted.band
+19> 	from MRK_Marker, MLD_Expt_Marker, inserted
+20>         where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+21> 	      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+22> end
+23> 
+1> 
+2> drop trigger MLD_InSitu_Update
+1> 
+2> create trigger MLD_InSitu_Update
+3> on MLD_InSitu
+4> for update
+5> as
+6> 
+7> /* If the Marker's cytogenetic band is null, then */
+8> /* assign the cytogenetic band for the Marker in the */
+9> /* experiment using the band information reported in the */
+10> /* experiment. */
+11> 
+12> if update(band)
+13> begin
+14> 	if (select MRK_Marker.cytogeneticOffset 
+15> 	    from MRK_Marker, MLD_Expt_Marker, inserted
+16> 	    where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+17> 		  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+18> 	begin
+19> 		update MRK_Marker
+20> 		set cytogeneticOffset = inserted.band
+21> 		from MRK_Marker, MLD_Expt_Marker, inserted
+22> 	        where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+23> 		      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+24> 	end
+25> end
+26> 
+1> 
+2> drop trigger MLD_FISH_Insert
+1> 
+2> create trigger MLD_FISH_Insert
+3> on MLD_FISH
+4> for insert
+5> as
+6> 
+7> /* If the Marker's cytogenetic band is null, then */
+8> /* assign the cytogenetic band for the Marker in the */
+9> /* experiment using the band information reported in the */
+10> /* experiment. */
+11> 
+12> if (select MRK_Marker.cytogeneticOffset 
+13>     from MRK_Marker, MLD_Expt_Marker, inserted
+14>     where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+15> 	  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+16> begin
+17> 	update MRK_Marker
+18> 	set cytogeneticOffset = inserted.band
+19> 	from MRK_Marker, MLD_Expt_Marker, inserted
+20>         where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+21> 	      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+22> end
+23> 
+1> 
+2> drop trigger MLD_FISH_Update
+1> 
+2> create trigger MLD_FISH_Update
+3> on MLD_FISH
+4> for update
+5> as
+6> 
+7> /* If the Marker's cytogenetic band is null, then */
+8> /* assign the cytogenetic band for the Marker in the */
+9> /* experiment using the band information reported in the */
+10> /* experiment. */
+11> 
+12> if update(band)
+13> begin
+14> 	if (select MRK_Marker.cytogeneticOffset 
+15> 	    from MRK_Marker, MLD_Expt_Marker, inserted
+16> 	    where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+17> 		  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+18> 	begin
+19> 		update MRK_Marker
+20> 		set cytogeneticOffset = inserted.band
+21> 		from MRK_Marker, MLD_Expt_Marker, inserted
+22> 	        where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+23> 		      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+24> 	end
+25> end
+26> 
+1> 
+2> drop trigger MLD_Hybrid_Insert
+1> 
+2> create trigger MLD_Hybrid_Insert
+3> on MLD_Hybrid
+4> for insert
+5> as
+6> 
+7> /* If the Marker's cytogenetic band is null, then */
+8> /* assign the cytogenetic band for the Marker in the */
+9> /* experiment using the band information reported in the */
+10> /* experiment. */
+11> 
+12> if (select MRK_Marker.cytogeneticOffset 
+13>     from MRK_Marker, MLD_Expt_Marker, inserted
+14>     where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+15> 	  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+16> begin
+17> 	update MRK_Marker
+18> 	set cytogeneticOffset = inserted.band
+19> 	from MRK_Marker, MLD_Expt_Marker, inserted
+20>         where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+21> end
+22> 
+1> 
+2> drop trigger MLD_Hybrid_Update
+1> 
+2> create trigger MLD_Hybrid_Update
+3> on MLD_Hybrid
+4> for update
+5> as
+6> 
+7> /* If the Marker's cytogenetic band is null, then */
+8> /* assign the cytogenetic band for the Marker in the */
+9> /* experiment using the band information reported in the */
+10> /* experiment. */
+11> 
+12> if update(band)
+13> begin
+14> 	if (select MRK_Marker.cytogeneticOffset 
+15> 	    from MRK_Marker, MLD_Expt_Marker, inserted
+16> 	    where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+17> 		  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+18> 	begin
+19> 		update MRK_Marker
+20> 		set cytogeneticOffset = inserted.band
+21> 		from MRK_Marker, MLD_Expt_Marker, inserted
+22> 	        where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+23> 		      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+24> 	end
+25> end
+26> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger MRK_Marker_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Marker_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MRK_Marker_Insert
+3> on MRK_Marker
+4> for insert
+5> as
+6> 
+7> /* For Mouse Species, insert records for Accession #, Name bucket, Symbol bucket, Current Symbol */
+8> /* For Other Species, insert record for Accession # */
+9> 
+10> if (select _Species_key from inserted) = 1
+11> begin
+12> 	insert MRK_Name (_Marker_key, _Marker_Type_key, name) 
+13> 		select _Marker_key, _Marker_Type_key, name from inserted
+14> 	insert MRK_Symbol (_Marker_key, _Marker_Type_key, symbol) 
+15> 		select _Marker_key, _Marker_Type_key, symbol from inserted
+16> 	insert MRK_Current (_Current_key, _Marker_key) 
+17> 		select _Marker_key, _Marker_key from inserted
+18> 
+19> 	declare @key integer
+20> 	select @key = _Marker_key from inserted
+21> 	exec ACC_assignMGI @key, "Marker"
+22> end
+23> 
+1> 
+2> drop trigger MRK_Marker_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Marker_Update', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MRK_Marker_Update
+3> on MRK_Marker
+4> for update
+5> as
+6> 
+7> /* If not Mouse, disallow duplicate Species/Symbol records */
+8> 
+9> if (select _Species_key from inserted) != 1
+10> begin
+11> 	if update(symbol) and
+12>            (select count(*) from MRK_Marker, inserted 
+13> 	    where inserted._Species_key = MRK_Marker._Species_key and
+14> 		  inserted.symbol = MRK_Marker.symbol) > 1
+15> 	begin
+16> 		rollback transaction
+17> 		raiserror 99999 "Marker Symbol For This Species Already Exists.\nDelete Existing Row And Add A New Row For This Symbol."
+18> 	end
+19> 	return
+20> end
+21> 
+22> /* If updating chromosome and changing from unknown to known, update offset to -1 */
+23> 
+24> if (select _Species_key from inserted) = 1 and update (chromosome)
+25> begin
+26>        if ((select chromosome from deleted) = "RE" or
+27>            (select chromosome from deleted) = "UN") and
+28>            (select chromosome from inserted) != "RE" and
+29>            (select chromosome from inserted) != "UN" and
+30>            (select chromosome from inserted) != "W"
+31> 	begin
+32>         	update MRK_Offset set offset = -1
+33>         	from inserted
+34>         	where inserted._Marker_key = MRK_Offset._Marker_key and MRK_Offset.source = 0
+35> 	end
+36> end
+37> 
+38> /* If updating symbol or Marker Type, check for duplicates and update Symbol bucket */
+39> 
+40> if update (symbol) or update(_Marker_Type_key)
+41> begin
+42> 	update MRK_Symbol 
+43> 	set symbol = inserted.symbol, _Marker_Type_key = inserted._Marker_Type_key
+44> 	from MRK_Symbol, inserted, deleted
+45> 	where MRK_Symbol._Marker_key = inserted._Marker_key and 
+46> 	      MRK_Symbol._Marker_Type_key = deleted._Marker_Type_key and
+47> 	      MRK_Symbol.symbol = deleted.symbol
+48> end
+49> 
+50> /* If updating name and name is currently null, update nulls in Name bucket, */
+51> /* else just update Name bucket */
+52> 
+53> if update (name)
+54> begin
+55> 	if (select chromosome from inserted) != "W"
+56> 	begin
+57> 		if (select name from deleted) is null
+58> 		begin
+59>         		update MRK_Name set name = inserted.name
+60> 	  		from MRK_Name, inserted, deleted
+61> 	  		where MRK_Name._Marker_key = inserted._Marker_key and
+62> 			      MRK_Name._Marker_Type_key = deleted._Marker_Type_key and
+63> 		      	      MRK_Name.name is null
+64> 		end
+65> 		else
+66> 		begin
+67>         		update MRK_Name set name = inserted.name
+68> 	  		from MRK_Name, inserted, deleted
+69> 	  		where MRK_Name._Marker_key = inserted._Marker_key and
+70> 			      MRK_Name._Marker_Type_key = deleted._Marker_Type_key and
+71> 		      	      MRK_Name.name = deleted.name
+72> 		end
+73> 	end
+74> end
+75> 
+1> 
+2> drop trigger MRK_Marker_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Marker_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MRK_Marker_Delete
+3> on MRK_Marker
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if Marker is currently referenced elsewhere */
+8> 
+9> if (select count(MRK_Alias._Alias_key) from MRK_Alias, deleted
+10>     where MRK_Alias._Alias_key = deleted._Marker_key) > 0
+11> begin
+12> 	rollback transaction
+13> 	raiserror 99999 "Marker Symbol is referenced in Alias Record(s)"
+14> end
+15> 
+16> /* Symbol is a Current Symbol of itself */
+17> 
+18> else if (select count(MRK_Current._Current_key) from MRK_Current, deleted
+19>          where MRK_Current._Current_key = deleted._Marker_key) > 1
+20> begin
+21> 	rollback transaction
+22> 	raiserror 99999 "Marker Symbol is referenced in Current Symbol Record(s)"
+23> end
+24> 
+25> else if (select count(MRK_History._History_key) from MRK_History, deleted
+26>          where MRK_History._History_key = deleted._Marker_key and
+27>                MRK_History._Marker_key != deleted._Marker_key) > 0
+28> begin
+29> 	rollback transaction
+30> 	raiserror 99999 "Marker Symbol is referenced in History Record(s)"
+31> end
+32> 
+33> else if (select count(PRB_Marker._Marker_key) from PRB_Marker, deleted
+34>          where PRB_Marker._Marker_key = deleted._Marker_key) > 0
+35> begin
+36> 	rollback transaction
+37> 	raiserror 99999 "Marker Symbol is referenced in Probe Marker Record(s)"
+38> end
+39> 
+40> else if (select count(PRB_RFLV._Marker_key) from PRB_RFLV, deleted
+41>          where PRB_RFLV._Marker_key = deleted._Marker_key) > 0
+42> begin
+43> 	rollback transaction
+44> 	raiserror 99999 "Marker Symbol is referenced in Probe RFLV Record(s)"
+45> end
+46> 
+47> else if (select count(MLD_Marker._Marker_key) from MLD_Marker, deleted
+48>          where MLD_Marker._Marker_key = deleted._Marker_key) > 0
+49> begin
+50> 	rollback transaction
+51> 	raiserror 99999 "Marker Symbol is referenced in MLDP Marker Record(s)"
+52> end
+53> 
+54> else if (select count(MLD_Expt_Marker._Marker_key) from MLD_Expt_Marker, deleted
+55>          where MLD_Expt_Marker._Marker_key = deleted._Marker_key) > 0
+56> begin
+57> 	rollback transaction
+58> 	raiserror 99999 "Marker Symbol is referenced in MLDP Experiment Marker Record(s)"
+59> end
+60> 
+61> else if (select count(MLD_Concordance._Marker_key) from MLD_Concordance, deleted
+62>          where MLD_Concordance._Marker_key = deleted._Marker_key) > 0
+63> begin
+64> 	rollback transaction
+65> 	raiserror 99999 "Marker Symbol is referenced in MLDP Hybrid Concordance Record(s)"
+66> end
+67> 
+68> else if (select count(MLD_MC2point._Marker_key_1) from MLD_MC2point, deleted
+69>          where MLD_MC2point._Marker_key_1 = deleted._Marker_key) > 0
+70> begin
+71> 	rollback transaction
+72> 	raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+73> end
+74> 
+75> else if (select count(MLD_MC2point._Marker_key_2) from MLD_MC2point, deleted
+76>          where MLD_MC2point._Marker_key_2 = deleted._Marker_key) > 0
+77> begin
+78> 	rollback transaction
+79> 	raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+80> end
+81> 
+82> else if (select count(MLD_RIData._Marker_key) from MLD_RIData, deleted
+83>          where MLD_RIData._Marker_key = deleted._Marker_key) > 0
+84> begin
+85> 	rollback transaction
+86> 	raiserror 99999 "Marker Symbol is referenced in MLDP RI Data Record(s)"
+87> end
+88> 
+89> else if (select count(MLD_RI2Point._Marker_key_1) from MLD_RI2Point, deleted
+90>          where MLD_RI2Point._Marker_key_1 = deleted._Marker_key) > 0
+91> begin
+92> 	rollback transaction
+93> 	raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+94> end
+95> 
+96> else if (select count(MLD_RI2Point._Marker_key_2) from MLD_RI2Point, deleted
+97>          where MLD_RI2Point._Marker_key_2 = deleted._Marker_key) > 0
+98> begin
+99> 	rollback transaction
+100> 	raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+101> end
+102> 
+103> else if (select count(MLD_Distance._Marker_key_1) from MLD_Distance, deleted
+104>          where MLD_Distance._Marker_key_1 = deleted._Marker_key) > 0
+105> begin
+106> 	rollback transaction
+107> 	raiserror 99999 "Marker Symbol is referenced in Physical Mapping Record(s)"
+108> end
+109> 
+110> else if (select count(MLD_Distance._Marker_key_2) from MLD_Distance, deleted
+111>          where MLD_Distance._Marker_key_2 = deleted._Marker_key) > 0
+112> begin
+113> 	rollback transaction
+114> 	raiserror 99999 "Marker Symbol is referenced in Physical Mapping Record(s)"
+115> end
+116> 
+117> else if (select count(HMD_Homology_Marker._Marker_key) from HMD_Homology_Marker, deleted
+118>          where HMD_Homology_Marker._Marker_key = deleted._Marker_key) > 0
+119> begin
+120> 	rollback transaction
+121> 	raiserror 99999 "Marker Symbol is referenced in Homology Record(s)"
+122> end
+123> 
+124> else if (select count(MLC_Text_edit._Marker_key) from MLC_Text_edit, deleted
+125>          where MLC_Text_edit._Marker_key = deleted._Marker_key) > 0
+126> begin
+127> 	rollback transaction
+128> 	raiserror 99999 "Marker Symbol is referenced in MLC Edit Record(s)"
+129> end
+130> 
+131> else if (select count(MLC_Marker_edit._Marker_key_2) from MLC_Marker_edit, deleted
+132>          where MLC_Marker_edit._Marker_key_2 = deleted._Marker_key) > 0
+133> begin
+134> 	rollback transaction
+135> 	raiserror 99999 "Marker Symbol is referenced in MLC Edit Record(s)"
+136> end
+137> 
+138> else if (select count(GXD_Index._Marker_key) from GXD_Index, deleted
+139>          where GXD_Index._Marker_key = deleted._Marker_key) > 0
+140> begin
+141> 	rollback transaction
+142> 	raiserror 99999 "Marker Symbol is referenced in GXD Index Record(s)"
+143> end
+144> 
+145> else
+146> begin
+147> 	delete MRK_Alias from MRK_Alias, deleted
+148> 	where MRK_Alias._Marker_key = deleted._Marker_key
+149> 
+150> 	delete MRK_Allele from MRK_Allele, deleted
+151> 	where MRK_Allele._Marker_key = deleted._Marker_key
+152> 
+153> 	delete MRK_Classes from MRK_Classes, deleted
+154> 	where MRK_Classes._Marker_key = deleted._Marker_key
+155> 
+156> 	delete MRK_Current from MRK_Current, deleted
+157> 	where MRK_Current._Marker_key = deleted._Marker_key
+158> 
+159> 	delete MRK_History from MRK_History, deleted
+160> 	where MRK_History._Marker_key = deleted._Marker_key
+161> 
+162> 	delete MRK_Notes from MRK_Notes, deleted
+163> 	where MRK_Notes._Marker_key = deleted._Marker_key
+164> 
+165> 	delete MRK_Offset from MRK_Offset, deleted
+166> 	where MRK_Offset._Marker_key = deleted._Marker_key
+167> 
+168> 	delete MRK_Other from MRK_Other, deleted
+169> 	where MRK_Other._Marker_key = deleted._Marker_key
+170> 
+171> 	delete MRK_Reference from MRK_Reference, deleted
+172> 	where MRK_Reference._Marker_key = deleted._Marker_key
+173> 
+174> 	delete MRK_Name from MRK_Name, deleted
+175> 	where MRK_Name._Marker_key = deleted._Marker_key
+176> 
+177> 	delete MRK_Symbol from MRK_Symbol, deleted
+178> 	where MRK_Symbol._Marker_key = deleted._Marker_key
+179> 
+180>         delete ACC_Accession
+181>         from ACC_Accession a, ACC_MGIType m, deleted
+182>         where a._Object_key = deleted._Marker_key
+183>         and a._MGIType_key = m._MGIType_key
+184>         and m.name = "Marker"
+185> end
+186> 
+1> 
+2> drop trigger MRK_Alias_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Alias_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MRK_Alias_Insert
+3> on MRK_Alias
+4> for insert
+5> as
+6> 
+7> /* Append Alias to Symbol bucket */
+8> 
+9> if (select count(MRK_Marker._Marker_key) from MRK_Marker, inserted
+10>          where inserted._Marker_key = inserted._Alias_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Symbol cannot use itself as an Alias"
+14> end
+15> else
+16> begin
+17> 	insert MRK_Symbol (_Marker_key, _Marker_Type_key, symbol) 
+18> 	select inserted._Marker_key, 4, MRK_Marker.symbol
+19> 	from inserted, MRK_Marker
+20> 	where inserted._Alias_key = MRK_Marker._Marker_key
+21> end
+22> 
+1> 
+2> drop trigger MRK_Alias_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Alias_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MRK_Alias_Delete
+3> on MRK_Alias
+4> for delete
+5> as
+6> 
+7> /* Delete Alias from Symbol Bucket */
+8> 
+9> delete MRK_Symbol from MRK_Symbol, MRK_Marker, deleted
+10> where MRK_Symbol._Marker_key = deleted._Marker_key and
+11>       MRK_Symbol._Marker_Type_key = 4 and
+12>       deleted._Alias_key = MRK_Marker._Marker_key and
+13>       MRK_Marker.symbol = MRK_Symbol.symbol
+14> 
+1> 
+2> drop trigger MRK_Allele_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Allele_Insert', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Allele_Insert
+3> on MRK_Allele
+4> for insert
+5> as
+6>  
+7> /* Append Allele Symbol to Symbol Bucket */
+8> 
+9> insert MRK_Symbol (_Marker_key, _Marker_Type_key, symbol)
+10> select inserted._Marker_key, 5, inserted.symbol
+11> from inserted
+12>  
+13> /* Append Allele Name to Symbol Bucket */
+14> 
+15> insert MRK_Name (_Marker_key, _Marker_Type_key, name)
+16> select inserted._Marker_key, 5, inserted.name
+17> from inserted
+18>  
+1>  
+2> drop trigger MRK_Allele_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Allele_Update', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Allele_Update
+3> on MRK_Allele
+4> for update
+5> as
+6>  
+7> /* Update entries in Symbol/Name Buckets */
+8> 
+9> if update(symbol)
+10> begin
+11> 	update MRK_Symbol set symbol = inserted.symbol
+12> 	from MRK_Symbol, inserted, deleted
+13> 	where MRK_Symbol._Marker_key = inserted._Marker_key and 
+14> 	      MRK_Symbol._Marker_Type_key = 5 and
+15> 	      MRK_Symbol.symbol = deleted.symbol
+16> end
+17> 
+18> if update(name)
+19> begin
+20> 	update MRK_Name set name = inserted.name
+21> 	from MRK_Name, inserted, deleted
+22> 	where MRK_Name._Marker_key = inserted._Marker_key and 
+23> 	      MRK_Name._Marker_Type_key = 5 and
+24> 	      MRK_Name.name = deleted.name
+25> end
+26> 
+1>  
+2> drop trigger MRK_Allele_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Allele_Delete', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Allele_Delete
+3> on MRK_Allele
+4> for delete
+5> as
+6> 
+7> /* If Allele is referenced in MLDP, disallow deletion */
+8> 
+9> if (select count(MLD_Expt_Marker._Allele_key) from MLD_Expt_Marker, deleted
+10>     where MLD_Expt_Marker._Allele_key = deleted._Allele_key) > 0
+11> begin
+12> 	rollback transaction
+13> 	raiserror 99999 "Allele Symbol is referenced in MLDP Record(s)"
+14> end
+15> 
+16> else
+17> begin
+18> 	/* Remove entries from Symbol/Name buckets */
+19> 
+20> 	delete MRK_Symbol from MRK_Symbol, deleted
+21> 	where MRK_Symbol._Marker_key = deleted._Marker_key and
+22>       	MRK_Symbol._Marker_Type_key = 5 and
+23>       	MRK_Symbol.symbol = deleted.symbol
+24>  
+25> 	delete MRK_Name from MRK_Name, deleted
+26> 	where MRK_Name._Marker_key = deleted._Marker_key and
+27>       	MRK_Name._Marker_Type_key = 5 and
+28>       	MRK_Name.name = deleted.name
+29> end
+30> 
+1>  
+2> drop trigger MRK_Class_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Class_Delete', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Class_Delete
+3> on MRK_Class
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if Class is referenced by a Marker */
+8>  
+9> if (select count(MRK_Classes._Class_key) from MRK_Classes, deleted
+10>     where MRK_Classes._Class_key = deleted._Class_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Class is referenced in Marker Record(s)"
+14> end
+15>  
+1>  
+2> drop trigger MRK_History_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_History_Insert', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_History_Insert
+3> on MRK_History
+4> for insert
+5> as
+6>  
+7> /* Insert entry in Name bucket if it doesn't already exist */
+8> 
+9> if (select count(MRK_Name._Marker_key) from MRK_Name, inserted, MRK_Marker
+10>     where MRK_Name._Marker_key = inserted._Marker_key and
+11> 	  MRK_Name.name = inserted.name and
+12>           MRK_Name._Marker_key = MRK_Marker._Marker_key and
+13> 	  MRK_Name._Marker_Type_key = MRK_Marker._Marker_Type_key) = 0
+14> begin
+15>         insert MRK_Name (_Marker_key, _Marker_Type_key, name)
+16>         select inserted._Marker_key, MRK_Marker._Marker_Type_key, inserted.name 
+17>         from inserted, MRK_Marker
+18>         where inserted._Marker_key = MRK_Marker._Marker_key
+19> end
+20> 
+21> /* Insert entry in Reference bucket if it doesn't already exist */
+22> 
+23> if (select count(MRK_Reference._Marker_key) from MRK_Reference, inserted
+24>     where MRK_Reference._Marker_key = inserted._Marker_key and
+25> 	  MRK_Reference._Refs_key = inserted._Refs_key) = 0
+26> begin
+27> 	insert MRK_Reference (_Marker_key, _Refs_key, auto) 
+28> 	select _Marker_key, _Refs_key, 1 from inserted
+29> 	where _Refs_key is not null
+30> end
+31> 
+1>  
+2> drop trigger MRK_History_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_History_Update', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_History_Update
+3> on MRK_History
+4> for update
+5> as
+6>  
+7> /* Update entry in Name bucket if it doesn't already exist */
+8> 
+9> if update(name)
+10>    and
+11>    (select count(MRK_Name._Marker_key) from MRK_Name, inserted, MRK_Marker
+12>     where MRK_Name._Marker_key = inserted._Marker_key and
+13> 	  MRK_Name.name = inserted.name and
+14>           MRK_Name._Marker_key = MRK_Marker._Marker_key and
+15> 	  MRK_Name._Marker_Type_key = MRK_Marker._Marker_Type_key) = 0
+16> begin
+17>         update MRK_Name set name = inserted.name
+18>         from MRK_Name, inserted, deleted
+19>         where MRK_Name._Marker_key = inserted._Marker_key and 
+20> 	      MRK_Name._Marker_Type_key is null and
+21> 	      MRK_Name.name = deleted.name
+22> end
+23> 
+24> /* Update entry in Reference bucket if it doesn't already exist */
+25> 
+26> if update(_Refs_key)
+27>    and
+28>    (select count(MRK_Reference._Marker_key) from MRK_Reference, inserted
+29>     where MRK_Reference._Marker_key = inserted._Marker_key and
+30> 	  MRK_Reference._Refs_key = inserted._Refs_key) = 0
+31> begin
+32> 	insert MRK_Reference (_Marker_key, _Refs_key, auto) 
+33> 	select _Marker_key, _Refs_key, 1 from inserted
+34> 	where _Refs_key is not null
+35> end
+36> 
+1> 
+2> drop trigger MRK_History_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_History_Delete', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_History_Delete
+3> on MRK_History
+4> for delete
+5> as
+6>  
+7> /* Remove entry from Name bucket */
+8> 
+9> delete MRK_Name from MRK_Name, deleted
+10> where MRK_Name._Marker_key = deleted._Marker_key and
+11>       MRK_Name._Marker_Type_key is null and
+12>       MRK_Name.name = deleted.name
+13>  
+1>  
+2> drop trigger MRK_Other_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Other_Insert', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Other_Insert
+3> on MRK_Other
+4> for insert
+5> as
+6>  
+7> /* Insert entry into Name bucket */
+8> 
+9> insert MRK_Name (_Marker_key, _Marker_Type_key, name)
+10> select inserted._Marker_key, MRK_Marker._Marker_Type_key, inserted.name 
+11> from inserted, MRK_Marker
+12> where inserted._Marker_key = MRK_Marker._Marker_key
+13>  
+1>  
+2> drop trigger MRK_Other_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Other_Update', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Other_Update
+3> on MRK_Other
+4> for update
+5> as
+6>  
+7> /* Update entry in Name bucket */
+8> 
+9> if update(name)
+10> begin
+11>         update MRK_Name set name = inserted.name
+12>         from MRK_Name, inserted, deleted
+13>         where MRK_Name._Marker_key = inserted._Marker_key and 
+14>               MRK_Name._Marker_Type_key is null and
+15> 	      MRK_Name.name = deleted.name
+16> end
+17>  
+1> 
+2> drop trigger MRK_Other_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Other_Delete', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger MRK_Other_Delete
+3> on MRK_Other
+4> for delete
+5> as
+6>  
+7> /* Delete entry from Name bucket */
+8> 
+9> delete MRK_Name from MRK_Name, deleted
+10> where MRK_Name._Marker_key = deleted._Marker_key and
+11>       MRK_Name._Marker_Type_key is null and
+12>       MRK_Name.name = deleted.name
+13>  
+1>  
+2> drop trigger MRK_Species_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'MRK_Species_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger MRK_Species_Delete
+3> on MRK_Species
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion of species which is referenced in MRK_Marker table */
+8> 
+9> if (select count(MRK_Marker._Marker_key) from MRK_Marker, deleted
+10>          where MRK_Marker._Species_key = deleted._Species_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Symbols Exist For This Species"
+14> end
+15> 
+16> /* Delete records in dependent tables */
+17> 
+18> delete MRK_Chromosome from MRK_Chromosome, deleted
+19> where MRK_Chromosome._Species_key = deleted._Species_key
+20> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger PRB_Probe_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Probe_Insert', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger PRB_Probe_Insert
+3> on PRB_Probe
+4> for insert
+5> as
+6>  
+7> /* Assign MGI Accession number for each Molecular Segment */
+8> 
+9> declare @key integer
+10> select @key = _Probe_key from inserted
+11> exec ACC_assignMGI @key, "Segment"
+12> 
+1>  
+2> drop trigger PRB_Probe_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Probe_Update', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger PRB_Probe_Update
+3> on PRB_Probe
+4> for update
+5> as
+6>  
+7> if update (_Source_key)
+8> begin
+9> 	/* Delete orphan Anonymous _Source_keys */
+10> 
+11> 	if (select PRB_Source.name from PRB_Source, deleted
+12> 	    where PRB_Source._Source_key = deleted._Source_key) is null
+13> 	    and
+14> 	   (select count(PRB_Probe._Source_key) from PRB_Probe, deleted
+15>             where PRB_Probe._Source_key = deleted._Source_key) = 0
+16> 	begin
+17> 		delete PRB_Source from PRB_Source, deleted
+18> 		where PRB_Source._Source_key = deleted._Source_key
+19> 	end
+20> 
+21> 	/* Update _Source_key for all children of Parent */
+22> 
+23> 	update PRB_Probe set _Source_key = inserted._Source_key
+24> 	from PRB_Probe, inserted
+25> 	where PRB_Probe.derivedFrom = inserted._Probe_key
+26> end
+27> 
+1>  
+2> drop trigger PRB_Probe_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Probe_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Probe_Delete
+3> on PRB_Probe
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if Molecular Segment is referenced elsewhere */
+8> 
+9> if (select count(PRB_Probe._Probe_key) 
+10>     from PRB_Probe, deleted
+11>     where PRB_Probe.derivedFrom = deleted._Probe_key) > 0
+12> begin
+13>         rollback transaction
+14>         raiserror 99999 "Probe is referenced as a Parent in Probe record(s)"
+15> end
+16>  
+17> else if (select count(MLD_Hit._Probe_key) 
+18>          from MLD_Hit, deleted
+19>          where MLD_Hit._Probe_key = deleted._Probe_key) > 0
+20> begin
+21>         rollback transaction
+22>         raiserror 99999 "Probe is referenced in MLDP Hit record(s)"
+23> end
+24>  
+25> else if (select count(MLD_Hit._Target_key) 
+26>          from MLD_Hit, deleted
+27>          where MLD_Hit._Target_key = deleted._Probe_key) > 0
+28> begin
+29>         rollback transaction
+30>         raiserror 99999 "Probe is referenced as a Target in MLDP Hit record(s)"
+31> end
+32>  
+33> else if (select count(MLD_ContigProbe._Probe_key) 
+34>          from MLD_ContigProbe, deleted
+35>          where MLD_ContigProbe._Probe_key = deleted._Probe_key) > 0
+36> begin
+37>         rollback transaction
+38>         raiserror 99999 "Probe is referenced in MLDP Contig/Probe record(s)"
+39> end
+40>  
+41> else
+42> begin
+43> 	delete PRB_Marker from PRB_Marker, deleted
+44> 	where PRB_Marker._Probe_key = deleted._Probe_key
+45> 
+46> 	delete PRB_Notes from PRB_Notes, deleted
+47> 	where PRB_Notes._Probe_key = deleted._Probe_key
+48> 
+49> 	delete PRB_Reference from PRB_Reference, deleted
+50> 	where PRB_Reference._Probe_key = deleted._Probe_key
+51> 
+52> 	/* If Probe Source Name is null, then Anonymous Source */
+53> 	/* If Anonymous Source, delete upon deletion of Probe */
+54> 
+55> 	if (select count(PRB_Probe._Source_key) from PRB_Probe, deleted
+56>     	    where PRB_Probe._Source_key = deleted._Source_key) = 0
+57> 	begin
+58>   		delete PRB_Source from PRB_Source, deleted
+59>   		where PRB_Source._Source_key = deleted._Source_key
+60> 		      and PRB_Source.name is null
+61> 	end
+62> 
+63> 	delete ACC_AccessionReference 
+64> 	from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m, deleted
+65> 	where a._Object_key = deleted._Probe_key
+66> 	and a._MGIType_key = m._MGIType_key
+67> 	and m.name = "Segment"
+68> 	and a._Accession_key = ar._Accession_key
+69>  
+70> 	delete ACC_Accession 
+71> 	from ACC_Accession a, ACC_MGIType m, deleted
+72> 	where a._Object_key = deleted._Probe_key
+73> 	and a._MGIType_key = m._MGIType_key
+74> 	and m.name = "Segment"
+75>  
+76> end
+77>  
+1> 
+2> drop trigger PRB_Allele_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Allele_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Allele_Delete
+3> on PRB_Allele
+4> for delete
+5> as
+6> 
+7> /* Delete dependent records */
+8> 
+9> delete PRB_Allele_Strain from PRB_Allele_Strain, deleted
+10> where PRB_Allele_Strain._Allele_key = deleted._Allele_key
+11> 
+1> 
+2> drop trigger PRB_Marker_Insert
+1> 
+2> create trigger PRB_Marker_Insert
+3> on PRB_Marker
+4> for insert
+5> as
+6> 
+7> declare @saveRowCount integer
+8> select @saveRowCount = @@rowcount
+9> 
+10> /* Relationship must be 'H' for Probes of non-mouse source */
+11> 
+12> if (select count(*) from inserted i, PRB_Probe p, PRB_Source s
+13>     where i._Probe_key = p._Probe_key
+14> 	  and p.DNAtype != 'primer'
+15> 	  and p._Source_key = s._Source_key
+16> 	  and s.species not in ('mouse, laboratory', 'Not Specified', 'Not Applicable')
+17> 	  and (i.relationship != 'H' or i.relationship is null)) > 0
+18> begin
+19>         rollback transaction
+20>         raiserror 99999 "Relationship Must be 'H'"
+21> end
+22> 
+23> /* Relationship 'P' can only be used during an EST bulk load */
+24> 
+25> if @saveRowCount = 1
+26> begin
+27> 	if (select relationship from inserted) = 'P'
+28> 	begin
+29>         	rollback transaction
+30>         	raiserror 99999 "Relationship 'P' can only be used during EST load"
+31> 	end
+32> end
+33> 
+1> 
+2> drop trigger PRB_Marker_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Marker_Update', because it doesn't exist in the
+system catalogs.
+1>  
+2> create trigger PRB_Marker_Update
+3> on PRB_Marker
+4> for update
+5> as
+6>  
+7> declare @saveRowCount integer
+8> select @saveRowCount = @@rowcount
+9> 
+10> if update (_Marker_key)
+11> begin
+12> 	update PRB_RFLV
+13> 	set _Marker_key = inserted._Marker_key
+14> 	from PRB_RFLV, PRB_Reference, inserted, deleted
+15> 	where inserted._Probe_key = PRB_Reference._Probe_key
+16> 	      and PRB_Reference._Reference_key = PRB_RFLV._Reference_key
+17> 	      and PRB_RFLV._Marker_key = deleted._Marker_key
+18> end
+19> 
+20> /* Relationship must be 'H' for Probes of non-mouse source */
+21> 
+22> if (select count(*) from inserted i, PRB_Probe p, PRB_Source s
+23>     where i._Probe_key = p._Probe_key
+24> 	  and p.DNAtype != 'primer'
+25> 	  and p._Source_key = s._Source_key
+26> 	  and s.species not in ('mouse, laboratory', 'Not Specified', 'Not Applicable')
+27> 	  and (i.relationship != 'H' or i.relationship is null)) > 0
+28> begin
+29>         rollback transaction
+30>         raiserror 99999 "Relationship Must be 'H'"
+31> end
+32> 
+33> /* Allow update of 'P' to other relationship */
+34> /* Disallow update of other relationship to 'P' */
+35> /* Only check on individual inserts */
+36> 
+37> if @saveRowCount = 1
+38> begin
+39> 	if ((select relationship from inserted) = 'P'
+40> 	    and (select _Marker_key from inserted) = (select _Marker_key from deleted))
+41> 	   or
+42> 	   ((select _Marker_key from inserted) != (select _Marker_key from deleted)
+43> 	    and (select relationship from inserted) = 'P'
+44> 	    and (select relationship from deleted) != 'P')
+45> 	begin
+46>         	rollback transaction
+47>         	raiserror 99999 "Relationship 'P' can only be used during EST load"
+48> 	end
+49> end
+50> 
+1> 
+2> drop trigger PRB_Reference_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Reference_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Reference_Delete
+3> on PRB_Reference
+4> for delete
+5> as
+6> 
+7> /* Delete dependent records */
+8> 
+9> delete PRB_Alias from PRB_Alias, deleted
+10> where PRB_Alias._Reference_key = deleted._Reference_key
+11> 
+12> delete PRB_Ref_Notes from PRB_Ref_Notes, deleted
+13> where PRB_Ref_Notes._Reference_key = deleted._Reference_key
+14> 
+15> delete PRB_RFLV from PRB_RFLV, deleted
+16> where PRB_RFLV._Reference_key = deleted._Reference_key
+17> 
+18> delete ACC_AccessionReference 
+19> from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m, deleted
+20> where a._Object_key = deleted._Probe_key
+21> and a._MGIType_key = m._MGIType_key
+22> and m.name = "Segment"
+23> and a._Accession_key = ar._Accession_key
+24> and ar._Refs_key = deleted._Refs_key
+25>  
+1> 
+2> drop trigger PRB_RFLV_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_RFLV_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_RFLV_Delete
+3> on PRB_RFLV
+4> for delete
+5> as
+6> 
+7> /* Delete dependent records */
+8> 
+9> delete PRB_Allele from PRB_Allele, deleted
+10> where PRB_Allele._RFLV_key = deleted._RFLV_key
+11> 
+1> 
+2> drop trigger PRB_Source_Insert
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Source_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Source_Insert
+3> on PRB_Source
+4> for insert
+5> as
+6> 
+7> /* The same exact logic to prevent invalid Age values must */
+8> /* be used in the update trigger as well */
+9> 
+10> /* Ignore multi-row data */
+11> 
+12> if @@rowcount > 1
+13> begin
+14> 	return
+15> end
+16> 
+17> declare @age varchar(50)
+18> select @age = inserted.age from inserted
+19> 
+20> /* If tissue = 'unfertilized egg', then age must be 'Not Applicable' */
+21> 
+22> if (select PRB_Tissue.tissue
+23> 	from PRB_Tissue, inserted
+24> 	where inserted._Tissue_key = PRB_Tissue._Tissue_key) = "unfertilized egg"
+25>    and @age != "Not Applicable"
+26> begin
+27>         rollback transaction
+28>         raiserror 99999 "Age for this tissue MUST be Not Applicable"
+29> end
+30> 
+31> /* If age is 'Not Applicable', then tissue must be 'unfertilized egg' */
+32> 
+33> if @age = "Not Applicable"
+34>    and
+35>    (select PRB_Tissue.tissue
+36> 	from PRB_Tissue, inserted
+37> 	where inserted._Tissue_key = PRB_Tissue._Tissue_key) != "unfertilized egg"
+38> begin
+39>         rollback transaction
+40>         raiserror 99999 "Age for this tissue CANNOT be Not Applicable"
+41> end
+42> 
+43> /* Separate agePrefix from ageSuffix (numerics) */
+44> 
+45> declare @agePrefix varchar(50)
+46> declare @ageSuffix varchar(50)
+47> declare @idx integer
+48> 
+49> select @agePrefix = @age
+50> select @idx = patindex("%[0-9]%", @age)
+51> 
+52> if @idx > 0
+53> begin
+54> 	select @agePrefix = substring(@age, 1, @idx - 1)
+55> 	select @ageSuffix = substring(@age, @idx, char_length(@age))
+56> end
+57> 
+58> /* If age is one of the following prefixes, then there can be no numeric values */
+59> 
+60> if @agePrefix in ('Not Specified', 'Not Applicable', 'embryonic', 'perinatal',
+61> 	'postnatal', 'postnatal newborn', 'postnatal immature', 'postnatal adult')
+62>    and @ageSuffix is not null
+63> begin
+64>         rollback transaction
+65>         raiserror 99999 "The Age value specified CANNOT contain numeric values"
+66> end
+67> 
+68> /* If age is one of the following prefixes, then there must be numeric values */
+69> 
+70> if @agePrefix in ('embryonic day', 'postnatal day', 'postnatal week',
+71> 	'postnatal month', 'postnatal year')
+72>    and @ageSuffix is null
+73> begin
+74>         rollback transaction
+75>         raiserror 99999 "The Age value specified MUST contain numeric values"
+76> end
+77> 
+1> 
+2> drop trigger PRB_Source_Update
+1> 
+2> create trigger PRB_Source_Update
+3> on PRB_Source
+4> for update
+5> as
+6> 
+7> /* The same exact logic to prevent invalid Age values must */
+8> /* be used in the insert trigger as well */
+9> 
+10> /* Ignore multi-row data */
+11> 
+12> if @@rowcount > 1
+13> begin
+14> 	return
+15> end
+16> 
+17> declare @age varchar(50)
+18> select @age = inserted.age from inserted
+19> 
+20> /* If tissue = 'unfertilized egg', then age must be 'Not Applicable' */
+21> 
+22> if (select PRB_Tissue.tissue
+23> 	from PRB_Tissue, inserted
+24> 	where inserted._Tissue_key = PRB_Tissue._Tissue_key) = "unfertilized egg"
+25>    and @age != "Not Applicable"
+26> begin
+27>         rollback transaction
+28>         raiserror 99999 "Age for this tissue MUST be Not Applicable"
+29> end
+30> 
+31> /* If age is 'Not Applicable', then tissue must be 'unfertilized egg' */
+32> 
+33> if @age = "Not Applicable"
+34>    and
+35>    (select PRB_Tissue.tissue
+36> 	from PRB_Tissue, inserted
+37> 	where inserted._Tissue_key = PRB_Tissue._Tissue_key) != "unfertilized egg"
+38> begin
+39>         rollback transaction
+40>         raiserror 99999 "Age for this tissue CANNOT be Not Applicable"
+41> end
+42> 
+43> /* Separate agePrefix from ageSuffix (numerics) */
+44> 
+45> declare @agePrefix varchar(50)
+46> declare @ageSuffix varchar(50)
+47> declare @idx integer
+48> 
+49> select @agePrefix = @age
+50> select @idx = patindex("%[0-9]%", @age)
+51> 
+52> if @idx > 0
+53> begin
+54> 	select @agePrefix = substring(@age, 1, @idx - 1)
+55> 	select @ageSuffix = substring(@age, @idx, char_length(@age))
+56> end
+57> 
+58> /* If age is one of the following prefixes, then there can be no numeric values */
+59> 
+60> if @agePrefix in ('Not Specified', 'Not Applicable', 'embryonic', 'perinatal',
+61> 	'postnatal', 'postnatal newborn', 'postnatal immature', 'postnatal adult')
+62>    and @ageSuffix is not null
+63> begin
+64>         rollback transaction
+65>         raiserror 99999 "The Age value specified CANNOT contain numeric values"
+66> end
+67> 
+68> /* If age is one of the following prefixes, then there must be numeric values */
+69> 
+70> if @agePrefix in ('embryonic day', 'postnatal day', 'postnatal week',
+71> 	'postnatal month', 'postnatal year')
+72>    and @ageSuffix is null
+73> begin
+74>         rollback transaction
+75>         raiserror 99999 "The Age value specified MUST contain numeric values"
+76> end
+77> 
+1> 
+2> drop trigger PRB_Source_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Source_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Source_Delete
+3> on PRB_Source
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if Source is referenced elsewhere */
+8> 
+9> if (select count(PRB_Probe._Source_key) from PRB_Probe, deleted
+10>          where PRB_Probe._Source_key = deleted._Source_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Probe Library is referenced in Probe Record(s)"
+14> end
+15>  
+1> 
+2> drop trigger PRB_Strain_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Strain_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Strain_Delete
+3> on PRB_Strain
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if Strain is referenced elsewhere */
+8> 
+9> if (select count(PRB_Source._Strain_key) from PRB_Source, deleted
+10>     where PRB_Source._Strain_key = deleted._Strain_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Strain is referenced in Probe Library Record(s)"
+14> end
+15> 
+16> else if (select count(MLD_FISH._Strain_key) from MLD_FISH, deleted
+17>          where MLD_FISH._Strain_key = deleted._Strain_key) > 0
+18> begin
+19>         rollback transaction
+20>         raiserror 99999 "Strain is referenced in FISH Record(s)"
+21> end
+22>  
+23> else if (select count(MLD_InSitu._Strain_key) from MLD_InSitu, deleted
+24>          where MLD_InSitu._Strain_key = deleted._Strain_key) > 0
+25> begin
+26>         rollback transaction
+27>         raiserror 99999 "Strain is referenced in InSitu Record(s)"
+28> end
+29>  
+30> else if (select count(CRS_Cross._femaleStrain_key) from CRS_Cross, deleted
+31>          where CRS_Cross._femaleStrain_key = deleted._Strain_key) > 0
+32> begin
+33>         rollback transaction
+34>         raiserror 99999 "Strain is referenced in Cross Record(s)"
+35> end
+36>  
+37> else if (select count(CRS_Cross._maleStrain_key) from CRS_Cross, deleted
+38>          where CRS_Cross._maleStrain_key = deleted._Strain_key) > 0
+39> begin
+40>         rollback transaction
+41>         raiserror 99999 "Strain is referenced in Cross Record(s)"
+42> end
+43>  
+44> else if (select count(CRS_Cross._StrainHO_key) from CRS_Cross, deleted
+45>          where CRS_Cross._StrainHO_key = deleted._Strain_key) > 0
+46> begin
+47>         rollback transaction
+48>         raiserror 99999 "Strain is referenced in Cross Record(s)"
+49> end
+50>  
+51> else if (select count(CRS_Cross._StrainHT_key) from CRS_Cross, deleted
+52>          where CRS_Cross._StrainHT_key = deleted._Strain_key) > 0
+53> begin
+54>         rollback transaction
+55>         raiserror 99999 "Strain is referenced in Cross Record(s)"
+56> end
+57>  
+1> 
+2> drop trigger PRB_Tissue_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'PRB_Tissue_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger PRB_Tissue_Delete
+3> on PRB_Tissue
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if Tissue is referenced elsewhere */
+8> 
+9> if (select count(PRB_Source._Tissue_key) from PRB_Source, deleted
+10>     where PRB_Source._Tissue_key = deleted._Tissue_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "Tissue is referenced in Probe Library Record(s)"
+14> end
+15>  
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop trigger RI_RISet_Update
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'RI_RISet_Update', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger RI_RISet_Update
+3> on RI_RISet
+4> for update
+5> as
+6> 
+7> /* Update origin, designation, abbreviation values in individual */
+8> /* experiment records whenever the "master" RI record is changed. */
+9> /* The fields in the MLD_RI table are actually obsolete and should */
+10> /* be removed from this table. */
+11> 
+12> update MLD_RI
+13> set origin = inserted.origin, 
+14>     designation = inserted.designation,
+15>     abbrev1 = inserted.abbrev1,
+16>     abbrev2 = inserted.abbrev2
+17> from MLD_RI, inserted
+18> where MLD_RI._RISet_key = inserted._RISet_key
+19> 
+1> 
+2> drop trigger RI_RISet_Delete
+Msg 3701, Level 11, State 1:
+Server 'MGD_DEV', Line 2:
+Cannot drop the trigger 'RI_RISet_Delete', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger RI_RISet_Delete
+3> on RI_RISet
+4> for delete
+5> as
+6> 
+7> /* Disallow deletion if RI Set is referenced elsewhere */
+8> 
+9> if (select count(*) from MLD_RI, deleted
+10>     where MLD_RI._RISet_key = deleted._RISet_key) > 0
+11> begin
+12>         rollback transaction
+13>         raiserror 99999 "RI is referenced in MLDP Record(s)"
+14> end
+15> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop procedure ACC_resetMax
+1> 
+2> create procedure ACC_resetMax
+3>   @objectKey int,
+4>   @mgiType varchar(80),
+5>   @prefixPart varchar(20) = "MGI:"
+6> as
+7> 
+8> /* If deleting object which is using the maxNumericPart 
+9>    from ACC_AccessionMax, then reset the maxNumericPart
+10>    so there aren't so many holes.  During withdrawals,
+11>    new Marker symbols may not receive MGI accession numbers,
+12>    but the MRK_Marker insert trigger will always insert one
+13> */
+14> 
+15> declare @numericPart int
+16> select @numericPart = a.numericPart 
+17> from ACC_Accession a, ACC_MGIType m
+18> where a._Object_key = @objectKey
+19> and a.prefixPart = @prefixPart
+20> and a._MGIType_key = m._MGIType_key
+21> and m.name = @mgiType
+22> 
+23> if (select maxNumericPart from ACC_AccessionMax where prefixPart = @prefixPart) = @numericPart
+24> begin
+25> 	update ACC_AccessionMax
+26> 	set maxNumericPart = maxNumericPart - 1
+27> 	where prefixPart = @prefixPart
+28> end
+29> 
+1> 
+2> grant execute on ACC_resetMax to progs
+1> 
+2> grant execute on ACC_resetMax to editors
+1> 
+2> drop procedure ACC_findMax
+1> 
+2> create procedure ACC_findMax
+3>   @prefixPart varchar(20) = "MGI:"
+4> as
+5> 
+6> /* Return maxNumericPart for given prefixPart */
+7> 
+8> select maxNumericPart
+9> from ACC_AccessionMax
+10> where prefixPart = @prefixPart
+1> 
+2> grant execute on ACC_findMax to progs
+1> 
+2> grant execute on ACC_findMax to editors
+1> 
+2> grant execute on ACC_findMax to public
+1> 
+2> drop procedure ACC_assignMGI
+1> 
+2> create procedure ACC_assignMGI
+3>   @objectKey int,
+4>   @mgiType varchar(80),
+5>   @prefixPart varchar(20) = "MGI:",
+6>   @nextMGI int = -1,
+7>   @preferred int = 1
+8> as
+9> 
+10> /* Assign MGI or J accession number
+11>    Allow override of J accession number
+12>    Increment ACC_AccessionMax.maxNumericPart
+13> */
+14> 
+15> declare @nextACC int
+16> select @nextACC = max(_Accession_key) + 1 from ACC_Accession
+17> 
+18> declare @mgiTypeKey int
+19> select @mgiTypeKey = _MGIType_key from ACC_MGIType where name = @mgiType
+20> 
+21> if @nextMGI = -1
+22> begin
+23> 	select @nextMGI = maxNumericPart + 1 
+24> 	from ACC_AccessionMax where prefixPart = @prefixPart
+25> end
+26> else if @prefixPart != "J:"
+27> begin
+28>     rollback transaction
+29>     raiserror 99999 "Cannot override generation of MGI accession number"
+30>     return
+31> end
+32> 
+33> declare @accID varchar(30)
+34> select @accID = @prefixPart + convert(varchar(20), @nextMGI)
+35> 
+36> insert into ACC_Accession 
+37> (_Accession_key, accID, prefixPart, numericPart, 
+38> _LogicalDB_key, _Object_key, _MGIType_key, preferred)
+39> values(@nextACC, @accID, @prefixPart, @nextMGI, 1, @objectKey, @mgiTypeKey, @preferred)
+40> 
+41> if (select maxNumericPart from ACC_AccessionMax
+42>     where prefixPart = @prefixPart) <= @nextMGI
+43> begin
+44> 	update ACC_AccessionMax 
+45> 	set maxNumericPart = @nextMGI 
+46> 	where prefixPart = @prefixPart
+47> end
+48> 
+1> 
+2> grant execute on ACC_assignMGI to progs
+1> 
+2> grant execute on ACC_assignMGI to editors
+1> 
+2> drop procedure ACC_assignJ
+1> 
+2> create procedure ACC_assignJ
+3>   @objectKey int,
+4>   @nextMGI int = -1
+5> as
+6> 
+7> if @nextMGI != -1
+8> begin
+9> 	declare @exists int
+10> 	select @exists = count(*) from BIB_Acc_View
+11>                where prefixPart = "J:" and 
+12> 	       numericPart = @nextMGI
+13> 	if @exists > 0
+14> 	begin
+15>   		rollback transaction
+16>   		raiserror 99999 "This J Number is already in use"
+17>   		return
+18> 	end
+19> end
+20> 
+21> exec ACC_assignMGI @objectKey, "Reference", "J:", @nextMGI
+22> 
+1> 
+2> grant execute on ACC_assignJ to progs
+1> 
+2> grant execute on ACC_assignJ to editors
+1> 
+2> drop procedure ACCRef_insert
+1>  
+2> create procedure ACCRef_insert
+3>   @accKey int,
+4>   @refsKey int
+5> as
+6>  
+7> insert into ACC_AccessionReference
+8> (_Accession_key, _Refs_key)
+9> values(@accKey, @refsKey)
+10> 
+1>  
+2> grant execute on ACCRef_insert to progs
+1>  
+2> grant execute on ACCRef_insert to editors
+1>  
+2> drop procedure ACC_insert
+1>  
+2> create procedure ACC_insert
+3>   @objectKey int,
+4>   @accID varchar(30),
+5>   @logicalDB int,
+6>   @mgiType varchar(80),
+7>   @refsKey int = -1,
+8>   @preferred int = 1,
+9>   @private int = 0
+10> as
+11>  
+12> if @accID is null
+13> 	return
+14> 
+15> declare @nextACC int
+16> select @nextACC = max(_Accession_key) + 1 from ACC_Accession
+17>  
+18> declare @mgiTypeKey int
+19> select @mgiTypeKey = _MGIType_key from ACC_MGIType where name = @mgiType
+20>  
+21> declare @prefixPart varchar(20)
+22> declare @numericPart int
+23> exec ACC_split @accID, @prefixPart out, @numericPart out
+24> 						      
+25> insert into ACC_Accession
+26> (_Accession_key, accID, prefixPart, numericPart, _LogicalDB_key, _Object_key, _MGIType_key, private, preferred)
+27> values(@nextACC, @accID, @prefixPart, @numericPart, @logicalDB, @objectKey, @mgiTypeKey, @private, @preferred)
+28> 
+29> if @refsKey != -1
+30> begin
+31> 	exec ACCRef_insert @nextACC, @refsKey
+32> end
+33> 
+1>  
+2> grant execute on ACC_insert to progs
+1>  
+2> grant execute on ACC_insert to editors
+1>  
+2> drop procedure ACC_insert_bySpecies
+1>  
+2> create procedure ACC_insert_bySpecies
+3>   @objectKey int,
+4>   @accID varchar(30),
+5>   @speciesKey int
+6> as
+7>  
+8> if @accID is null
+9> 	return
+10> 
+11> declare @logicalDBKey int
+12> select @logicalDBKey = _LogicalDB_key from ACC_LogicalDB 
+13> where _Species_key = @speciesKey
+14>  
+15> declare @private int
+16> 
+17> if @speciesKey = 40
+18> 	select @private = 1
+19> else
+20> 	select @private = 0
+21> 
+22> exec ACC_insert @objectKey, @accID, @logicalDBKey, "Marker", -1, 1, @private
+23>  
+1>  
+2> grant execute on ACC_insert_bySpecies to progs
+1>  
+2> grant execute on ACC_insert_bySpecies to editors
+1>  
+2> drop procedure ACCRef_process
+1>  
+2> create procedure ACCRef_process
+3>   @objectKey int,
+4>   @refsKey int,
+5>   @accID varchar(30),
+6>   @logicalDB int,
+7>   @mgiType varchar(80)
+8> as
+9>  
+10> declare @accKey integer
+11> select @accKey = a._Accession_key 
+12> from ACC_Accession a, ACC_MGIType m
+13> where accID = @accID
+14> and a._Object_key = @objectKey
+15> and a._MGIType_key = m._MGIType_key
+16> and m.name = @mgiType
+17> and a._LogicalDB_key = @logicalDB
+18> select @accKey
+19> 
+20> if @accKey is not null
+21> 	exec ACCRef_insert @accKey, @refsKey
+22> else
+23> 	exec ACC_insert @objectKey, @accID, @logicalDB, @mgiType, @refsKey
+24> 
+1>  
+2> grant execute on ACCRef_process to progs
+1>  
+2> grant execute on ACCRef_process to editors
+1>  
+2> drop procedure ACC_update
+1>  
+2> create procedure ACC_update
+3>   @accKey int,
+4>   @accID varchar(30)
+5> as
+6>  
+7> if @accID is null
+8> begin
+9> 	exec ACC_delete_byAccKey @accKey
+10> end
+11> else
+12> begin
+13> 	declare @prefixPart varchar(20)
+14> 	declare @numericPart int
+15> 	exec ACC_split @accID, @prefixPart out, @numericPart out
+16> 						      
+17> 	if (@prefixPart = "J:" or substring(@prefixPart,1,4) = "MGD-")
+18> 	begin
+19> 		if (select count(*) from ACC_Accession
+20> 	    	    where accID = @accID and
+21> 			  prefixPart = @prefixPart) >= 1
+22> 		begin
+23> 			rollback transaction
+24> 			raiserror 99999 "Duplicate MGI Accession Number"
+25> 			return
+26> 		end
+27> 	end
+28> 
+29> 	update ACC_Accession
+30>   	set accID = @accID, 
+31>       	prefixPart = @prefixPart, 
+32>       	numericPart = @numericPart,
+33>       	modification_date = getdate()
+34>   	where _Accession_key = @accKey
+35> end
+36> 
+1>  
+2> grant execute on ACC_update to progs
+1>  
+2> grant execute on ACC_update to editors
+1>  
+2> drop procedure ACC_delete_byObject
+1> 
+2> create procedure ACC_delete_byObject
+3>   @objectKey int,
+4>   @mgiType varchar(80)
+5> as
+6> 
+7> /* May have to reset the MGI or J: Max part */
+8> 
+9> exec ACC_resetMax @objectKey, @mgiType
+10> exec ACC_resetMax @objectKey, @mgiType, "J:"
+11> 
+12> /* Delete all ACC_Accession/ACC_AccessionReference records for a given Object */
+13> 
+14> delete ACC_AccessionReference 
+15> from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m
+16> where a._Object_key = @objectKey
+17> and a._MGIType_key = m._MGIType_key
+18> and m.name = @mgiType
+19> and a._Accession_key = ar._Accession_key
+20> 
+21> delete ACC_Accession 
+22> from ACC_Accession a, ACC_MGIType m
+23> where a._Object_key = @objectKey 
+24> and a._MGIType_key = m._MGIType_key
+25> and m.name = @mgiType
+26> 
+1>  
+2> grant execute on ACC_delete_byObject to progs
+1>  
+2> grant execute on ACC_delete_byObject to editors
+1>  
+2> drop procedure ACC_delete_byAccKey
+1> 
+2> create procedure ACC_delete_byAccKey
+3>   @accKey int,
+4>   @refsKey int = -1
+5> as
+6> 
+7> /* Delete ACC_Accession/ACC_AccessonReference records for a given _Accession_key */
+8> 
+9> if @refsKey = -1
+10> begin
+11> 	delete ACC_Accession where _Accession_key = @accKey
+12> 	delete ACC_AccessionReference where _Accession_key = @accKey
+13> end
+14> else
+15> begin
+16> 
+17> 	delete ACC_AccessionReference 
+18> 	where _Accession_key = @accKey
+19> 	and _Refs_key = @refsKey
+20> end
+21> 
+1>  
+2> grant execute on ACC_delete_byAccKey to progs
+1>  
+2> grant execute on ACC_delete_byAccKey to editors
+1>  
+2> drop procedure ACC_delete_byAccRef
+1> 
+2> create procedure ACC_delete_byAccRef
+3>   @objectKey int,
+4>   @refsKey int,
+5>   @mgiType varchar(80) = "Segment"
+6> as
+7> 
+8> /* Delete all ACC_AccessonReference records for a given Object/Reference */
+9> 
+10> delete ACC_AccessionReference 
+11> from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m
+12> where a._Object_key = @objectKey
+13> and a._MGIType_key = m._MGIType_key
+14> and m.name = @mgiType
+15> and a._Accession_key = ar._Accession_key
+16> and ar._Refs_key = @refsKey
+17>  
+1>  
+2> grant execute on ACC_delete_byAccRef to progs
+1>  
+2> grant execute on ACC_delete_byAccRef to editors
+1>  
+2> /* 1> declare @prefixPart varchar(20) */
+3> /* 2> declare @numericPart int */
+4> /* 3> exec ACC_split "MGI:12345", @prefixPart out, @numericPart out */
+5> /* 4> go */
+6> /* (return status = 0) */
+7> /* Return parameters: */
+8> /* ---- -----------  */
+9> /* MGI:       12345  */
+10> 
+11> drop procedure ACC_split
+1> 
+2> create procedure ACC_split
+3>   @accID varchar(20),
+4>   @prefixPart varchar(20) out,
+5>   @numericPart integer out
+6> as
+7> 
+8> declare @temp varchar(20) 
+9> declare @suffix varchar(20)
+10> declare @acclen integer
+11> declare @idx integer
+12> 
+13> select @acclen = char_length(@accID)
+14> select @temp = reverse(@accID)
+15> select @idx  = patindex("%[^0-9]%",@temp)
+16> 
+17> /* If @idx = 0, then no prefix */
+18> 
+19> if @idx = 0
+20> begin
+21>   select @numericPart = convert(integer, @accID)
+22>   select @prefixPart = NULL
+23> end
+24> 
+25> else
+26> 
+27> begin
+28>   select @prefixPart = reverse(substring(@temp,@idx,@acclen-@idx+1))
+29>   select @suffix = substring(@accID,
+30>                              char_length(@prefixPart)+1,
+31>                              @acclen - char_length(@prefixPart))
+32> 
+33>   if @suffix is not NULL
+34>      select @numericPart = convert(integer, @suffix)
+35>   else
+36>      select @numericPart = NULL
+37> end
+38> 
+1> 
+2> grant execute on ACC_split to progs
+1>  
+2> grant execute on ACC_split to editors
+1>  
+2> grant execute on ACC_split to public
+1>  
+2> drop procedure ACC_fetch_byLogical
+1>  
+2> create procedure ACC_fetch_byLogical
+3>   @objectKey integer,
+4>   @mgiType varchar(80),
+5>   @logicalDB varchar(80) = "MGI"
+6> as
+7>  
+8> select a.accID, a.prefixPart, a.numericPart
+9> from ACC_Accession a, ACC_MGIType m, ACC_LogicalDB l
+10> where a._Object_key = @objectKey
+11> and a._MGIType_key = m._MGIType_key
+12> and m.name = @mgiType
+13> and a._LogicalDB_key = l._LogicalDB_key
+14> and l.name = @logicalDB
+15> 
+1>  
+2> grant execute on ACC_fetch_byLogical to progs
+1>  
+2> grant execute on ACC_fetch_byLogical to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop procedure BIB_byJnum
+1> 
+2> create procedure BIB_byJnum
+3>   @jnum	integer
+4> as
+5> 
+6> /* Selects _Refs_key and short citation for given */
+7> /* numeric J: (ex. BIB_byJnum 12345) */
+8> 
+9> select b._Refs_key, b.short_citation 
+10> from BIB_View b, BIB_Acc_View ba
+11> where ba.numericPart = @jnum
+12> and ba._Object_key = b._Refs_key
+1> 
+2> grant execute on BIB_byJnum to progs
+1> 
+2> grant execute on BIB_byJnum to public
+1> 
+2> drop procedure BIB_HMD_Exists
+1> 
+2> create procedure BIB_HMD_Exists
+3>   @key integer
+4> as
+5> 
+6> /* Returns count of Homology records cross referencing */
+7> /* given Reference key (_Refs_key) */
+8> 
+9> select count(*) from HMD_Homology where _Refs_key = @key
+10> 
+1> 
+2> grant execute on BIB_HMD_Exists to public
+1> 
+2> drop procedure BIB_MLC_Exists
+1> 
+2> create procedure BIB_MLC_Exists
+3>   @key integer
+4> as
+5> 
+6> /* Returns count of MLC records cross referencing */
+7> /* given Reference key (_Refs_key) */
+8> 
+9> select count(*) from MLC_Reference where _Refs_key = @key
+10> 
+1> 
+2> grant execute on BIB_MLC_Exists to public
+1> 
+2> drop procedure BIB_MLD_Exists
+1> 
+2> create procedure BIB_MLD_Exists
+3>   @key integer
+4> as
+5> 
+6> /* Returns count of Mapping records cross referencing */
+7> /* given Reference key (_Refs_key) */
+8> 
+9> select count(*) from MLD_Marker where _Refs_key = @key
+10> 
+1> 
+2> grant execute on BIB_MLD_Exists to public
+1> 
+2> drop procedure BIB_PRB_Exists
+1> 
+2> create procedure BIB_PRB_Exists
+3>   @key integer
+4> as
+5> 
+6> /* Returns count of Molecular Segment records cross referencing */
+7> /* given Reference key (_Refs_key) */
+8> 
+9> select count(*) from PRB_Reference where _Refs_key = @key
+10> 
+1> 
+2> grant execute on BIB_PRB_Exists to public
+1> 
+2> drop procedure BIB_GXD_Exists
+1> 
+2> create procedure BIB_GXD_Exists
+3>   @key integer
+4> as
+5> 
+6> /* Returns count of GXD index records cross referencing */
+7> /* given Reference key (_Refs_key) */
+8> 
+9> select count(*) from GXD_Index where _Refs_key = @key
+10> 
+1> 
+2> grant execute on BIB_GXD_Exists to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop procedure GEN_rowcount
+1>  
+2> create procedure GEN_rowcount
+3>   @table varchar(30)
+4> as
+5> 
+6> select convert(char(10),rowcnt(MAX(doampg)))
+7> from sysobjects o, sysindexes i
+8> where o.name = @table
+9> and o.id = i.id
+1> 
+2> grant execute on GEN_rowcount to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop procedure HMD_getChromosomes
+1> 
+2> create procedure HMD_getChromosomes
+3>                 @_Species_key int = NULL
+4> as
+5> /*
+6>  * 	Procedure takes a species key and returns the ordered
+7>  *	list of chromosomes.
+8>  *
+9>  *	DOW Jan 17, 1996
+10>  */
+11> select chromosome 
+12> from MRK_Chromosome 
+13> where _Species_key = @_Species_key 
+14> order by sequenceNum
+1> 
+2> grant execute on HMD_getChromosomes to public
+1> 
+2> drop procedure HMD_getOxfordGrid
+1> 
+2> create procedure HMD_getOxfordGrid
+3>                 @Species1 int = NULL,
+4>                 @Species2 int = NULL
+5> as
+6> 
+7> /* Return all Chromosome Pairs/Homology Classes involving Species 1 & Species 2 */
+8> /* Include Chromosome UN. To exclude, add the following where clauses */
+9> /*	    m1.chromosome != 'UN' and	*/
+10> /*	    m2.chromosome != 'UN'	*/
+11> 
+12> select distinct c1 = m1.chromosome, c2 = m2.chromosome, h1._Class_key
+13>                 from    MRK_Marker m1,
+14>                         MRK_Marker m2,
+15>                         HMD_Homology h1,
+16>                         HMD_Homology h2,
+17>                         HMD_Homology_Marker hm1,
+18>                         HMD_Homology_Marker hm2
+19>                 where   m1._Species_key = @Species1 and
+20>                         m1._Marker_key = hm1._Marker_key and
+21> 			hm1._Homology_key = h1._Homology_key and
+22>                         h1._Class_key = h2._Class_key and
+23> 			h2._Homology_key = hm2._Homology_key and
+24>                         hm2._Marker_key = m2._Marker_key and
+25>                         m2._Species_key = @Species2 
+26> order by c1, c2
+27>  
+1> 
+2> grant execute on HMD_getOxfordGrid to public
+1>  
+2> drop procedure HMD_hasHomology
+1> 
+2> create procedure HMD_hasHomology
+3>                 @_Marker_key int = NULL,
+4>                 @_Refs_key int = NULL
+5> as
+6> /*
+7>  * 	Procedure takes either a Marker key or a Ref key,
+8>  *	and determines whether not a homology will exists.
+9>  *	For a homology to be returned, for a _Class_key,
+10>  *	there must be more than one marker.
+11>  *
+12>  *	DOW Jan 10, 1996
+13>  */
+14> declare @count int
+15> declare @has_Homology int
+16> create table #classes
+17>         (_Class_key int)
+18> 
+19> /*
+20>  *	has_Homology is the value to be returned.
+21>  *	Default is "no homology" 
+22>  */	
+23> select @has_Homology = 0
+24> 
+25> /*	Do with a query using a _Marker_key...	*/
+26> if (@_Marker_key != NULL and @_Refs_key = NULL)
+27>         insert #classes
+28>         select h._Class_key
+29>         from HMD_Homology h, HMD_Homology_Marker m
+30>         where m._Marker_key = @_Marker_key and
+31> 	      m._Homology_key = h._Homology_key
+32> /*	...or a _Refs_key...	*/
+33> else if (@_Refs_key != NULL and @_Marker_key = NULL)
+34>         insert #classes
+35>         select _Class_key
+36>         from HMD_Homology
+37>         where _Refs_key = @_Refs_key
+38> /*	...but not both!!	*/
+39> else
+40> begin
+41> 	print 'Cannot process with both _Refs_key AND _Marker_key!'
+42> 	select @has_Homology
+43> 	return 
+44> end
+45> 
+46> /*
+47>  *	Cursor simply does a count of distinct markers(species) in a class
+48>  */
+49> declare classCount cursor for
+50> select count(distinct m._Marker_key)
+51> from HMD_Homology h, HMD_Homology_Marker m, #classes c
+52> where h._Class_key = c._Class_key
+53>       and h._Homology_key = m._Homology_key
+54> group by h._Class_key
+55> for read only
+56> 
+57> open classCount
+58> 
+59> /*	Pull out classes, one by one...	*/
+60> fetch classCount
+61>         into @count
+62> 
+63> /*	Nothing here... bail out!	*/
+64> if (@@sqlstatus = 2)
+65> begin
+66> 	print 'Nothing found'
+67> 	select @has_Homology
+68>         return 
+69> end
+70> /*
+71>  * 	If cursor result is not empty, then process
+72>  * 	each row to determine if class has a homology
+73>  * 	including more than one species (marker).
+74>  */
+75> while (@@sqlstatus = 0)
+76> begin
+77>         if (@count > 1)
+78> /*	There is a valid homology within this class.	*/
+79>                 select @has_Homology = 1
+80> 
+81> /*	Fetch next row.	*/
+82>         fetch classCount
+83>                 into @count
+84> end
+85> /*	This select will return the value of @has_Homology as a row of data */
+86> select @has_Homology
+87> 
+88> close classCount
+89> 
+90> deallocate cursor classCount
+1> 
+2> grant execute on HMD_hasHomology to public
+1>  
+2> checkpoint
+1> 
+2> drop procedure HMD_updateClass
+1> 
+2> create procedure HMD_updateClass
+3>   @_Class_key integer
+4> as
+5> 
+6> /* Merge classes of Homologies which, due to a new Homology record */
+7> /* should really be one class (due to transitivity nature of Homology) */
+8> 
+9> /* For each Class which exists which contains Markers from New Class... */
+10> 
+11> select _Class_key = @_Class_key
+12> into #classes
+13> union
+14> select distinct h2._Class_key 
+15> from HMD_Homology h1, HMD_Homology_Marker hm1, 
+16>      HMD_Homology h2, HMD_Homology_Marker hm2
+17> where h1._Class_key = @_Class_key and
+18>       h1._Homology_key = hm1._Homology_key and
+19>       hm1._Marker_key = hm2._Marker_key and
+20>       hm2._Homology_key = h2._Homology_key and
+21>       h2._Class_key != @_Class_key
+22> 
+23> /* Select all Species/Symbol pairs from the New Class */
+24> 
+25> select distinct hm._Marker_key, m._Species_key
+26> into #markers
+27> from #classes c, HMD_Homology h, HMD_Homology_Marker hm, MRK_Marker m
+28> where c._Class_key = h._Class_key and
+29>       h._Homology_key = hm._Homology_key and
+30>       hm._Marker_key = m._Marker_key
+31> 
+32> declare @count integer
+33> declare @do_update integer
+34> select @do_update = 1
+35> 
+36> /* Fetch counts for Species/Symbol pairs */
+37> 
+38> declare classCount cursor for select count(*) from #markers group by _Species_key
+39> 
+40> open classCount
+41> 
+42> fetch classCount into @count
+43> 
+44> if (@@sqlstatus != 0)
+45> begin
+46> 	close classCount
+47> 	deallocate cursor classCount
+48> 	select @_Class_key
+49> 	return
+50> end
+51> 
+52> while (@@sqlstatus = 0)
+53> begin
+54> 	/* If > 1 reference to a Species/Symbol pair, don't update */
+55> 
+56> 	if (@count > 1)
+57> 	begin
+58> 		select @do_update = 0
+59> 	end
+60> 
+61> 	fetch classCount into @count
+62> end
+63> 
+64> close classCount
+65> 
+66> deallocate cursor classCount
+67> 
+68> if (@do_update = 1) /* Merge Classes */
+69> begin
+70>         update HMD_Homology
+71> 	set _Class_key = @_Class_key
+72> 	from #classes c, HMD_Homology h
+73> 	where c._Class_key = h._Class_key
+74> 
+75> 	select @_Class_key
+76> end
+77> else
+78> begin
+79> 	raiserror 99999 "Another Homology class has been detected which conflicts with this data.\n"
+80> end
+81> 
+1> 
+2> grant execute on HMD_updateClass to progs
+1> 
+2> grant execute on HMD_updateClass to editors
+1> 
+2> checkpoint
+1> 
+2> drop procedure HMD_Cleanup
+1> 
+2> create procedure HMD_Cleanup
+3>   @_Class_key integer,
+4>   @_Homology_key integer
+5> as
+6> 
+7> /* Clean up any orphan HMD_Class or HMD_Homology records after deletions */
+8> 
+9> if (select count(*) from HMD_Homology_Marker where _Homology_key = @_Homology_key) = 0
+10> begin
+11> 	delete HMD_Homology where _Homology_key = @_Homology_key
+12> end
+13> 
+14> if (select count(*) from HMD_Homology where _Class_key = @_Class_key) = 0
+15> begin
+16> 	delete HMD_Class where _Class_key = @_Class_key
+17> end
+18> 
+19> /* Delete all non-mouse, non-human Markers no longer referenced in Homology */
+20> 
+21> delete MRK_Marker from MRK_Marker m
+22> where m._Species_key != 1 and m._Species_key != 2
+23>       and not exists 
+24>       (select h.* from HMD_Homology_Marker h where m._Marker_key = h._Marker_key)
+25> 
+1> 
+2> grant execute on HMD_Cleanup to progs
+1> 
+2> grant execute on HMD_Cleanup to editors
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop procedure Current_Symbol
+1> 
+2> create procedure Current_Symbol 
+3>   @symbol varchar(25)
+4> as
+5> 
+6> 
+7> declare item cursor for
+8>    select m._Marker_key, m.symbol 
+9>    from MRK_Marker m 
+10>    where m.symbol = @symbol
+11>    and _Species_key = 1
+12> 
+13> declare @mk int
+14> declare @sym varchar(25) 
+15> open item 
+16> 
+17> while (@@sqlstatus = 0)
+18> begin
+19>    fetch item into @mk, @sym
+20>    if (@@sqlstatus = 2) break
+21>    select _Current_key = c._Current_key, 
+22>           _Marker_key =  c._Marker_key,
+23>           current_symbol = m.symbol, 
+24> 		  symbol = @sym
+25>    from MRK_Current c, MRK_Marker m
+26>    where c._Current_key = m._Marker_key
+27>    and m._Species_key = 1
+28>    and c._Marker_key = @mk
+29> end
+30> 
+31> close item
+32> 			
+1> 
+2> grant execute on Current_Symbol to public
+3> grant execute on Current_Symbol to progs
+4> grant execute on Current_Symbol to dpd
+5> grant execute on Current_Symbol to plg
+6> grant execute on Current_Symbol to djr
+7> grant execute on Current_Symbol to gld
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_new
+1> 
+2> checkpoint
+1> 
+2> drop procedure MRK_convertAllele
+1>  
+2> create procedure MRK_convertAllele
+3>   @oldKey integer,
+4>   @new_symbol varchar(25) = null,
+5>   @old_symbol varchar(25) = null,
+6>   @alleleOf integer
+7> as
+8>  
+9> /* Remove all Allele symbols from MRK_Symbol table */
+10> 
+11> delete from MRK_Symbol where _Marker_key = @oldKey and _Marker_Type_key = 5
+12> 
+13> /* If Old Symbol is NOT allele of New Symbol... */
+14> /* Convert new alleles:  oldallele<allele> --> newsymbol<allele> */
+15> /*                       oldallele         --> newsymbol         */
+16> 
+17> if @alleleOf = 0
+18> begin
+19> 
+20> update MRK_Allele
+21> set symbol = @new_symbol + "<" + substring(symbol, charindex("<", symbol) + 1, char_length(symbol))
+22> where _Marker_key = @oldKey and symbol like '%<%'
+23> 
+24> update MRK_Allele set symbol = @new_symbol
+25> where _Marker_key = @oldKey and symbol not like '%<%' and symbol = @old_symbol
+26> 
+27> end
+28> else
+29> begin
+30> 
+31> /* If Old Symbol is an Allele of New Symbol... */
+32> /* Convert new alleles:  oldallele<allele> --> newsymbol<oldallele-allele> */
+33> /*                       oldallele         --> newsymbol<oldallele>        */
+34> 
+35> update MRK_Allele
+36> set symbol = @new_symbol + "<" + substring(symbol, 1, charindex("<", symbol) - 1) + "-" + 
+37> 	     substring(symbol, charindex("<", symbol) + 1, char_length(symbol))
+38> where _Marker_key = @oldKey and symbol like '%<%'
+39> 
+40> update MRK_Allele
+41> set symbol = @new_symbol + "<" + symbol + ">"
+42> where _Marker_key = @oldKey and symbol not like '%<%'
+43> 
+44> end
+45> 
+46> /* Insert Allele symbols into MRK_Symbol table */
+47> 
+48> insert into MRK_Symbol (_Marker_key, _Marker_Type_key, symbol)
+49> select _Marker_key, 5, symbol from MRK_Allele where _Marker_key = @oldKey
+50> 
+1> 
+2> grant execute on MRK_convertAllele to djr
+1>  
+2> grant execute on MRK_convertAllele to progs
+1>  
+2> drop procedure MRK_copyAcc
+1>  
+2> create procedure MRK_copyAcc
+3>   @oldKey integer,
+4>   @newKey integer
+5> as
+6>  
+7> declare @accID varchar(30),
+8> 	@logicalDB int
+9> 
+10> /* Copy Old Accession Number from Old Key to new New Key */
+11> /* For each Marker Accession number which exists for Old Symbol, */
+12> /* Insert the Accession number as non-preferred for the New symbol */
+13>  
+14> declare acc_cursor cursor for
+15> select accID, _LogicalDB_key
+16> from ACC_Accession
+17> where _Object_key = @oldKey
+18> and _MGIType_key = 2
+19> for read only
+20>  
+21> open acc_cursor
+22>  
+23> fetch acc_cursor into @accID, @logicalDB
+24> 
+25> while (@@sqlstatus = 0)
+26> begin
+27> 	execute ACC_insert @newKey, @accID, @logicalDB, "Marker", -1, 0
+28>         fetch acc_cursor into @accID, @logicalDB
+29> end
+30>  
+31> close acc_cursor
+32> 
+33> deallocate cursor acc_cursor
+34> 
+1> 
+2> grant execute on MRK_copyAcc to djr
+1>  
+2> grant execute on MRK_copyAcc to progs
+1>  
+2> drop procedure MRK_copyHistory
+1>  
+2> create procedure MRK_copyHistory
+3>   @oldKey integer,
+4>   @newKey integer
+5> as
+6>  
+7> /* Copy Old History into MRK_History for New Key */
+8>  
+9> declare @maxSeq int
+10> select @maxSeq = max(sequenceNum) from MRK_History where _Marker_key = @newKey
+11> 
+12> if @maxSeq is null
+13> begin
+14> 	select @maxSeq = 0
+15> end
+16> 
+17> select _Marker_key, _History_key, _Refs_key, seq = identity(5), name, note, 
+18> event_date, creation_date, modification_date
+19> into #historyTemp from MRK_History where _Marker_key = @oldKey
+20> order by sequenceNum
+21>  
+22> insert into MRK_History 
+23> (_Marker_key, _History_key, _Refs_key, sequenceNum, name, note, 
+24> event_date, creation_date, modification_date)
+25> select distinct @newKey, _History_key, _Refs_key, @maxSeq + seq, name, note, 
+26> event_date, creation_date, modification_date
+27> from #historyTemp
+28> 
+1>  
+2> grant execute on MRK_copyHistory to djr
+1>  
+2> grant execute on MRK_copyHistory to progs
+1>  
+2> drop procedure MRK_insertAllele
+1>  
+2> create procedure MRK_insertAllele
+3>   @markerKey integer,
+4>   @symbol varchar(20) = null,
+5>   @name varchar(255) = null,
+6>   @oldSymbol varchar(20) = null
+7> as
+8> 
+9> declare @alleleKey integer
+10> select @alleleKey = max(_Allele_key) + 1 from MRK_Allele
+11> 
+12> /* Insert New Allele into MRK_Allele */
+13> 
+14> insert MRK_Allele (_Allele_key, _Marker_key, symbol, name)
+15> values(@alleleKey, @markerKey, @symbol, @name)
+16> 
+17> if @oldSymbol is not null
+18> begin
+19> 	update MLD_Expt_Marker set _Allele_key = @alleleKey
+20> 	where _Marker_key = @markerKey and gene = @oldSymbol
+21> end
+22> 
+1> 
+2> grant execute on MRK_insertAllele to djr
+1>  
+2> grant execute on MRK_insertAllele to progs
+1>  
+2> drop procedure MRK_insertHistory
+1>  
+2> create procedure MRK_insertHistory
+3>   @oldKey integer,
+4>   @newKey integer,
+5>   @refKey integer,
+6>   @name varchar(255) = null,
+7>   @note varchar(255)
+8> as
+9>  
+10> /* Insert New History into MRK_History */
+11>  
+12> declare @maxSeq int
+13> select @maxSeq = max(sequenceNum) from MRK_History where _Marker_key = @newKey
+14> 
+15> if @maxSeq is null
+16> begin
+17> 	select @maxSeq = 0
+18> end
+19> 
+20> insert MRK_History 
+21> (_Marker_key, _History_key, _Refs_key, sequenceNum, name, note, event_date)
+22> values(@newKey, @oldKey, @refKey, @maxSeq + 1, @name, @note, getdate())
+23> 
+1>  
+2> grant execute on MRK_insertHistory to djr
+1>  
+2> grant execute on MRK_insertHistory to progs
+1>  
+2> drop procedure MRK_updateKeys
+1> 
+2> create procedure MRK_updateKeys
+3>   @oldKey integer,
+4>   @newKey integer
+5> as
+6> 
+7> /* Executed during w/drawal process if only 1 new symbol is designated */
+8> 
+9> /* Associate all Accession numbers w/ new symbol
+10>    If an Acc# exists for the new symbol, then set the 
+11>    preferred bit for all other Acc# to 0.
+12>    If no Acc# exists for the new symbol, then leave the
+13>    preferred bit alone.
+14> */
+15> 
+16> declare @accKey integer
+17> select @accKey = _Accession_key from MRK_Acc_View
+18> where _Object_key = @newKey
+19> and prefixPart = "MGI:"
+20> and preferred = 1
+21> 
+22> if @accKey is null
+23> begin
+24> 	update ACC_Accession 
+25> 	set _Object_key = @newKey
+26> 	where _MGIType_key = 2 and _Object_key = @oldKey
+27> end
+28> else
+29> begin
+30> 	update ACC_Accession 
+31> 	set _Object_key = @newKey, preferred = 0
+32> 	where _MGIType_key = 2 and _Object_key = @oldKey
+33> end
+34> 
+35> /* Associate aliases, classes, other names, references w/ new symbol */
+36> 
+37> update MRK_Alias set _Marker_key = @newKey where _Marker_key = @oldKey
+38> update MRK_Alias set _Alias_key = @newKey where _Alias_key = @oldKey
+39> update MRK_Allele set _Marker_key = @newKey where _Marker_key = @oldKey
+40> update MRK_Anchors set _Marker_key = @newKey where _Marker_key = @oldKey
+41> update MRK_Other set _Marker_key = @newKey where _Marker_key = @oldKey
+42> 
+43> /* MRK_Classes may contain potential duplicates */
+44> 
+45> insert into MRK_Classes
+46> select @newKey, m._Class_key, m.creation_date, m.modification_date
+47> from MRK_Classes m
+48> where m._Marker_key = @oldKey
+49> and not exists (select m2.* from MRK_Classes m2
+50> where m2._Marker_key = @newKey
+51> and m2._Class_key = m._Class_key)
+52> 
+53> delete from MRK_Classes where _Marker_key = @oldKey
+54> 
+55> /* MRK_Name may contain potential duplicates */
+56> 
+57> insert into MRK_Name
+58> select @newKey, m._Marker_Type_key, m.name, m.creation_date, m.modification_date
+59> from MRK_Name m
+60> where m._Marker_key = @oldKey
+61> and not exists (select m2.* from MRK_Name m2
+62> where m2._Marker_key = @newKey
+63> and m2._Marker_Type_key = m._Marker_Type_key
+64> and m2.name = m.name)
+65> 
+66> delete from MRK_Name where _Marker_key = @oldKey
+67> 
+68> /* MRK_Reference may contain potential duplicates */
+69> 
+70> insert into MRK_Reference
+71> select @newKey, m._Refs_key, m.auto, m.creation_date, m.modification_date
+72> from MRK_Reference m
+73> where m._Marker_key = @oldKey
+74> and not exists (select m2.* from MRK_Reference m2
+75> where m2._Marker_key = @newKey
+76> and m2._Refs_key = m._Refs_key)
+77> 
+78> delete from MRK_Reference where _Marker_key = @oldKey
+79> 
+80> /* Update all auxiliary references to old symbol w/ new symbol */
+81> 
+82> update HMD_Homology_Marker set _Marker_key = @newKey where _Marker_key = @oldKey
+83> update GXD_Index set _Marker_key = @newKey where _Marker_key = @oldKey
+84> 
+85> update MLD_Marker set _Marker_key = @newKey where _Marker_key = @oldKey
+86> update MLD_Concordance set _Marker_key = @newKey where _Marker_key = @oldKey
+87> update MLD_Distance set _Marker_key_1 = @newKey where _Marker_key_1 = @oldKey
+88> update MLD_Distance set _Marker_key_2 = @newKey where _Marker_key_2 = @oldKey
+89> update MLD_MC2point set _Marker_key_1 = @newKey where _Marker_key_1 = @oldKey
+90> update MLD_MC2point set _Marker_key_2 = @newKey where _Marker_key_2 = @oldKey
+91> update MLD_RI2Point set _Marker_key_1 = @newKey where _Marker_key_1 = @oldKey
+92> update MLD_RI2Point set _Marker_key_2 = @newKey where _Marker_key_2 = @oldKey
+93> update MLD_Statistics set _Marker_key_1 = @newKey where _Marker_key_1 = @oldKey
+94> update MLD_Statistics set _Marker_key_2 = @newKey where _Marker_key_2 = @oldKey
+95>  
+96> /* PRB_Marker may contain potential duplicates */
+97> 
+98> insert into PRB_Marker
+99> select m._Probe_key, @newKey, m.relationship, m.creation_date, m.modification_date
+100> from PRB_Marker m
+101> where m._Marker_key = @oldKey
+102> and not exists (select m2.* from PRB_Marker m2
+103> where m2._Marker_key = @newKey
+104> and m2._Probe_key = m._Probe_key)
+105>   
+106> delete from PRB_Marker where _Marker_key = @oldKey
+107> update PRB_RFLV set _Marker_key = @newKey where _Marker_key = @oldKey
+108> 
+109> /* Update MLC Edit tables iff New Symbol entry doesn't exist in MLC */
+110> 
+111> if not exists (select * from MLC_Marker_edit where _Marker_key = @newKey)
+112> begin
+113>   update MLC_History_edit set _Marker_key = @newKey where _Marker_key = @oldKey
+114>   update MLC_Marker_edit set _Marker_key = @newKey where _Marker_key = @oldKey
+115>   update MLC_Reference_edit set _Marker_key = @newKey where _Marker_key = @oldKey
+116>   update MLC_Text_edit set _Marker_key = @newKey where _Marker_key = @oldKey
+117> end
+118> 
+1> 
+2> grant execute on MRK_updateKeys to djr
+1> 
+2> grant execute on MRK_updateKeys to progs
+1> 
+2> drop procedure MRK_updateCurrent
+1> 
+2> create procedure MRK_updateCurrent
+3>   @oldKey integer,
+4>   @newKey integer
+5> as
+6> 
+7> /* Associate current symbols for all past symbols w/ new symbol */
+8> /* Associate alias symbols in MRK_Symbol w/ new symbol */
+9> /* Associate allele symbols in MRK_Symbol w/ new symbol */
+10> 
+11> update MRK_Current set _Current_key = @newKey where _Current_key = @oldKey
+12> update MRK_Symbol set _Marker_key = @newKey where _Marker_key = @oldKey and _Marker_Type_key = 4
+13> update MRK_Symbol set _Marker_key = @newKey where _Marker_key = @oldKey and _Marker_Type_key = 5
+14> 
+1> 
+2> grant execute on MRK_updateCurrent to djr
+1> 
+2> grant execute on MRK_updateCurrent to progs
+1> 
+2> drop procedure MRK_updateOffset
+1> 
+2> create procedure MRK_updateOffset
+3>   @oldKey integer,
+4>   @newKey integer
+5> as
+6> 
+7> declare @oldCyto varchar(20)
+8> declare @newCyto varchar(20)
+9> 
+10> declare @oldMGD float
+11> declare @newMGD float
+12> 
+13> declare @oldCC float
+14> declare @newCC float
+15> 
+16> declare @oldMIT float
+17> declare @newMIT float
+18> 
+19> select @oldCyto = cytogeneticOffset from MRK_Marker where _Marker_key = @oldKey
+20> select @newCyto = cytogeneticOffset from MRK_Marker where _Marker_key = @newKey
+21> 
+22> select @oldMGD = offset from MRK_Offset where _Marker_key = @oldKey and source = 0
+23> select @oldCC = offset from MRK_Offset where _Marker_key = @oldKey and source = 1
+24> select @oldMIT = offset from MRK_Offset where _Marker_key = @oldKey and source = 2
+25> 
+26> select @newMGD = offset from MRK_Offset where _Marker_key = @newKey and source = 0
+27> select @newCC = offset from MRK_Offset where _Marker_key = @newKey and source = 1
+28> select @newMIT = offset from MRK_Offset where _Marker_key = @newKey and source = 2
+29> 
+30> -- If the new symbol lacks an Cytogenetic offset, then use the old symbols' offset
+31> 
+32> if @newCyto is null
+33> begin
+34>   update MRK_Marker set cytogeneticOffset = @oldCyto where _Marker_key = @newKey
+35> end
+36> 
+37> -- If the new symbol lacks an MGD offset, then use the old symbols' offset
+38> 
+39> if @newMGD < 0
+40> begin
+41>   update MRK_Offset set offset = @oldMGD where _Marker_key = @newKey and source = 0
+42> end
+43> 
+44> -- If the new symbol lacks a CC offset, then use the old symbol's CC offset
+45> 
+46> if @newCC < 0 and @oldCC > 0
+47> begin
+48>   update MRK_Offset set offset = @oldCC where _Marker_key = @newKey and source = 1
+49> end
+50> else if @newCC is null and @oldCC is not null
+51> begin
+52>   insert MRK_Offset (_Marker_key, source, offset) values(@newKey, 1, @oldCC)
+53> end
+54> 
+55> -- If the new symbol lacks an MIT offset, then use the old symbol's MIT offset
+56> 
+57> if @newMIT < 0 and @oldMIT > 0
+58> begin
+59>   update MRK_Offset set offset = @oldMIT where _Marker_key = @newKey and source = 2
+60> end
+61> else if @newMIT is null and @oldMIT is not null
+62> begin
+63>   insert MRK_Offset (_Marker_key, source, offset) values(@newKey, 2, @oldMIT)
+64> end
+65> 
+1> 
+2> grant execute on MRK_updateOffset to djr
+1> 
+2> grant execute on MRK_updateOffset to progs
+1> 
+2> 
+3> drop procedure MRK_MaxOffset
+1> 
+2> create procedure MRK_MaxOffset
+3> @chromosome varchar(2),
+4> @source int 
+5> as
+6> select maxOffset = max(o.offset)
+7> from MRK_Offset o, MRK_Marker m
+8> where o._Marker_key = m._Marker_key
+9> and o.source = @source 
+10> and m.chromosome = @chromosome 
+11> and m._Species_key = 1
+1> 
+2> grant execute on MRK_MaxOffset to public
+1> 
+2> 
+3> drop procedure MRK_MiniMapMarkers
+1> 
+2> create procedure MRK_MiniMapMarkers
+3> @_Marker_key int,
+4> @source int 
+5> as
+6> /* retrieve data for all anchor markers on the chromosome */
+7> select distinct
+8> m._Marker_key,
+9> m.symbol,
+10> m.name,
+11> m.chromosome,
+12> o.offset,
+13> m.cytogeneticOffset
+14> from MRK_Marker m, 
+15> MRK_Offset o, 
+16> MRK_Anchors a
+17> where
+18> m._Marker_key = a._Marker_key
+19> and o.source = @source
+20> and o._Marker_key = m._Marker_key
+21> and o.offset > -1.0
+22> and a.chromosome = (select m.chromosome 
+23> from MRK_Marker m
+24> where m._Marker_key = @_Marker_key)
+25> union
+26> /* get the data for the marker itself */
+27> select distinct
+28> m._Marker_key,
+29> m.symbol,
+30> m.name,
+31> m.chromosome,
+32> o.offset,
+33> m.cytogeneticOffset
+34> from MRK_Marker m,
+35> MRK_Offset o
+36> where
+37> m._Marker_key = @_Marker_key
+38> and o.source = @source
+39> and o._Marker_key = m._Marker_key
+40> and o.offset > -1.0
+1> 
+2> grant execute on MRK_MiniMapMarkers to public
+1> 
+2> checkpoint
+Tue Feb  3 08:21:48 EST 1998

@@ -1,0 +1,40 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+drop rule check_NLM_status
+go
+                                                                                                                                                                                                                                                               CREATE RULE check_NLM_status
+AS @col IN ('Y', 'N', 'X')
+                                                                                                                                                                                                     
+go
+drop rule check_Relationship
+go
+                                                                                                                                                                                                                                                               create rule check_Relationship as @col in ("A", 'E', 'H',
+'P', 'M')
+
+                                                                                                                                                                                          
+go
+drop rule check_Sex
+go
+                                                                                                                                                                                                                                                               create rule check_Sex as @col in ('female', 'male', 'pooled','unknown')
+                                                                                                                                                                                       
+go
+drop rule check_DNAtype
+go
+                                                                                                                                                                                                                                                               CREATE RULE check_DNAtype
+AS @col IN ('DNA (construct)', 'EST', 'RNA', 'cDNA', 'genomic',
+'mitochondrial', 'oligo', 'primer', 'unspecified')
+                                                                                                               
+go
+EOSQL
+cat $password | isql -Umgd_dbo -e -i $sql

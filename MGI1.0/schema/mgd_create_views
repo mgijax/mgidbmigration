@@ -1,0 +1,902 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+drop view MRK_Acc_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_Acc_View
+as
+select a.*, LogicalDB = l.name
+from ACC_Accession a, ACC_LogicalDB l
+where a._MGIType_key = 2
+and a._LogicalDB_key = l._LogicalDB_key
+                                                                                            
+go
+grant select on MRK_Acc_View to public
+go
+
+drop view MRK_Classes_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_Classes_View
+as
+select c.*, m.symbol, l.name
+from MRK_Classes c, MRK_Marker m, MRK_Class l
+where c._Marker_key = m._Marker_key
+and c._Class_key = l._Class_key
+                                                                               
+go
+grant select on MRK_Classes_View to public
+go
+
+drop view MRK_Summary_View
+go
+                                                                                                                                                                                                                                                                
+create view MRK_Summary_View
+as
+select a.*,
+mgiID = a2.accID,
+subType = mt.name,
+description = m.symbol + ", " + m.name + ", Chr " + m.chromosome
+from ACC_Accession a, ACC_Accession a2, MRK_Marker m, MRK_Types mt
+where a._MGIType_key = 2
+and a.private = 0
+and a._Object_key = a2._Object_key
+and a2._LogicalDB_key = 1
+and a2._MGIType_key = 2
+and a2.prefixPart = "MGI:"
+and a2.preferred = 1
+and a._Object_key = m._Marker_key
+and m._Species_key = 1
+and m._Marker_Type_key = mt._Marker_Type_key
+                 
+go
+grant select on MRK_Summary_View to public
+go
+
+drop view CRS_Cross_View
+go
+                                                                                                                                                                                                                                                               
+create view CRS_Cross_View
+as
+select c.*, display = whoseCross + " [Type " + type + " (" + abbrevHO + "/" + abbrevHT + ")]"
+from CRS_Cross c
+                                                                                                                 
+go
+grant select on CRS_Cross_View to public
+go
+
+drop view MLD_Expt_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Expt_View
+as
+select c.jnumID, c.jnum, c.short_citation, x.*, c._primary, c.authors, 
+mgiID = a.accID, a.prefixPart, a.numericPart
+from BIB_View c, MLD_Expts x, MLD_Acc_View a
+where c._Refs_key = x._Refs_key
+and x._Expt_key = a._Object_key
+and a.prefixPart = "MGI:"
+and a.preferred = 1
+                                                                                                                                                                                                                
+go
+grant select on MLD_Expt_View to public
+go
+
+drop view MLD_Acc_View
+go
+                                                                                                                                                                                                                                                                
+create view MLD_Acc_View
+as
+select a.*, LogicalDB = l.name
+from ACC_Accession a, ACC_LogicalDB l
+where a._MGIType_key = 4
+and a._LogicalDB_key = l._LogicalDB_key
+                                                                                           
+go
+grant select on MLD_Acc_View to public
+go
+
+drop view MLD_RI_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_RI_View
+as
+select c.jnumID, c.jnum, c.short_citation, x.tag, e._Expt_key, e.RI_IdList, 
+s._RISet_key, s.origin, s.designation, abbrev1 = rtrim(s.abbrev1), abbrev2 = rtrim(s.abbrev2), 
+c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_RI e, RI_RISet s
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._RISet_key *= s._RISet_key
+                                                                                                                                            
+go
+grant select on MLD_RI_View to public
+go
+
+drop view PRB_AccNoRef_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_AccNoRef_View
+as
+select a.*, LogicalDB = l.name, MGIType = m.name
+from ACC_Accession a, ACC_LogicalDB l, ACC_MGIType m
+where a._MGIType_key = 3
+and a._LogicalDB_key = l._LogicalDB_key
+and a._MGIType_key = m._MGIType_key
+and not exists (select r.* from ACC_AccessionReference r
+where a._Accession_key = r._Accession_key)
+                                                                                                                                                                             
+go
+grant select on PRB_AccNoRef_View to public
+go
+
+drop view PRB_Probe_View
+go
+                                                                                                                                                                                                                                                                
+create view PRB_Probe_View
+as
+select p._Probe_key, p.name,
+p.regionCovered,
+p.regionCovered2,
+p.insertSize, p.DNAtype, p.pcrAmplified,
+p.derivedFrom, parentClone = p2.name,
+p._Vector_key, v.vectorType, p.insertSite,
+p.creation_date, p.modification_date,
+s._Source_key, sourceName = s.name, s._Refs_key, 
+s.species, s.strain, s.tissue, s.age, s.sex, s.cellLine,
+mgiID = a.accID, a.prefixPart, a.numericPart
+from PRB_Probe p, PRB_Acc_View a, PRB_Source s, PRB_Vector_Types v, PRB_Probe p2
+where p.DNAtype != "primer"
+and p._Probe_key = a._Object_key
+and a.prefixPart = "MGI:"
+and p._Source_key = s._Source_key
+and p._Vector_key = v._Vector_key
+and p.derivedFrom *= p2._Probe_key
+                                                                                      
+go
+grant select on PRB_Probe_View to public
+go
+
+drop view BIB_Acc_View
+go
+                                                                                                                                                                                                                                                               
+create view BIB_Acc_View
+as
+select a.*, LogicalDB = l.name
+from ACC_Accession a, ACC_LogicalDB l
+where a._MGIType_key = 1
+and a._LogicalDB_key = l._LogicalDB_key
+                                                                                            
+go
+grant select on BIB_Acc_View to public
+go
+
+drop view MRK_NonMouse_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_NonMouse_View
+as
+select m.*,
+species = s.name + " (" + s.species + ")", 
+commonName = s.name, latinName = s.species,
+a.accID, a._Accession_key
+from MRK_Marker m, MRK_Species s, MRK_Acc_View a
+where m._Species_key != 1
+and m._Species_key = s._Species_key
+and m._Marker_key = a._Object_key
+                                                                                                                                                                                                             
+go
+grant select on MRK_NonMouse_View to public
+go
+
+drop view MRK_Current_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_Current_View
+as
+select c.*, current_symbol = m1.symbol, m2.symbol, m1.chromosome, m1._Marker_Type_key
+from MRK_Current c, MRK_Marker m1, MRK_Marker m2
+where c._Marker_key = m2._Marker_key
+and c._Current_key = m1._Marker_key
+              
+go
+grant select on MRK_Current_View to public
+go
+
+drop view MLD_Summary_View
+go
+                                                                                                                                                                                                                                                                
+create view MLD_Summary_View
+as
+select a.*,
+mgiID = a2.accID,
+subType = e.exptType,
+description = b._primary + ", " + b.journal + " " + b.date + ";" + b.vol + "(" + b.issue + "):" + b.pgs
+from ACC_Accession a, ACC_Accession a2, MLD_Expts e, BIB_Refs b
+where a._MGIType_key = 4
+and a.private = 0
+and a._Object_key = a2._Object_key
+and a2._LogicalDB_key = 1
+and a2._MGIType_key = 4
+and a2.prefixPart = "MGI:"
+and a2.preferred = 1
+and a._Object_key = e._Expt_key
+and e._Refs_key = b._Refs_key
+                  
+go
+grant select on MLD_Summary_View to public
+go
+
+drop view MLD_Hybrid_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Hybrid_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_Hybrid e
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+                                               
+go
+grant select on MLD_Hybrid_View to public
+go
+
+drop view MLD_Statistics_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Statistics_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, 
+symbol1 = m1.symbol, symbol2 = m2.symbol, x.exptType, x.tag, c._primary, c.authors
+from BIB_View c, MLD_Expts x, MLD_Statistics e, MRK_Marker m1, MRK_Marker m2
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key_1 = m1._Marker_key
+and e._Marker_key_2 = m2._Marker_key
+                                                                                                                                 
+go
+grant select on MLD_Statistics_View to public
+go
+
+drop view MLD_Hit_View
+go
+                                                                                                                                                                                                                                                                
+create view MLD_Hit_View
+as
+select x.*, probeKey = h._Probe_key, probe = p1.name, 
+targetKey = h._Target_key, target = p2.name
+from MLD_Expts x, MLD_Hit h, PRB_Probe p1, PRB_Probe p2
+where x._Expt_key = h._Expt_key
+and h._Probe_key = p1._Probe_key
+and h._Target_key = p2._Probe_key
+                                                                                                                                                                                                                                  
+go
+grant select on MLD_Hit_View to public
+go
+
+drop view PRB_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_View
+as
+select p.*, v.vectorType, mgiID = a.accID, a.prefixPart, a.numericPart,
+s.species, s.strain, s.tissue, s.age, s.sex, s.cellLine, library = s.name, s.description,
+s._Refs_key
+from PRB_Probe p, PRB_Acc_View a, PRB_Source s, PRB_Vector_Types v
+where p._Probe_key = a._Object_key
+and a.prefixPart = "MGI:"
+and a.preferred = 1
+and p._Vector_key = v._Vector_key
+and p._Source_key *= s._Source_key
+                                                                                              
+go
+grant select on PRB_View to public
+go
+
+drop view MLD_InSitu_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_InSitu_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_InSitu e
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+                                               
+go
+grant select on MLD_InSitu_View to public
+go
+
+drop view BIB_All_View
+go
+                                                                                                                                                                                                                                                                
+create view BIB_All_View
+as
+select r.*, jnumID = a.accID, jnum = a.numericPart,
+citation = r.journal + " " + r.date + ";" + r.vol + "(" + r.issue + "):" + r.pgs,
+short_citation = r._primary + ", " + r.journal + " " + r.date + ";" +
+r.vol + "(" + r.issue + "):" + r.pgs
+from BIB_Refs r, ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.prefixPart =  "J:"
+and a.preferred = 1
+                                                                                                                               
+go
+grant select on BIB_All_View to public
+go
+
+drop view MRK_Marker_View
+go
+                                                                                                                                                                                                                                                                
+create view MRK_Marker_View
+as
+select m.*, 
+species = s.name + " (" + s.species + ")", 
+commonName = s.name, latinName = s.species
+from MRK_Marker m, MRK_Species s
+where m._Species_key = s._Species_key
+                                                   
+go
+grant select on MRK_Marker_View to public
+go
+
+drop view MRK_History_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_History_View
+as
+select h.*, creation_display = convert(char(10), h.creation_date, 101), history = m1.symbol, m2.symbol
+from MRK_History h, MRK_Marker m1, MRK_Marker m2
+where h._Marker_key = m2._Marker_key
+and h._History_key = m1._Marker_key
+                                                                                                                                                                                                                                                            
+go
+grant select on MRK_History_View to public
+go
+
+drop view HMD_Homology_View
+go
+                                                                                                                                                                                                                                                               
+create view HMD_Homology_View
+as
+select r._Refs_key, b.jnumID, b.jnum, b.short_citation, h.*, 
+m.symbol, m.name, m.chromosome, m.cytogeneticOffset, o.offset,
+m._Species_key, m.species, m.commonName, m.latinName,
+r.creation_date, r.modification_date
+from HMD_Reference r, HMD_Homology h, 
+MRK_Marker_View m, BIB_View b, MRK_Offset o
+where r._Homology_key = h._Homology_key
+and h._Marker_key = m._Marker_key
+and r._Refs_key = b._Refs_key
+and h._Marker_key *= o._Marker_key
+and o.source = 0
+                     
+go
+grant select on HMD_Homology_View to public
+go
+
+drop view MLD_Expt_Marker_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Expt_Marker_View
+as
+select c.jnumID, c.jnum, c.short_citation, m.symbol, x.exptType, x.tag, e.*, 
+allele = al.symbol, assay = a.description, c._primary, c.authors
+from BIB_View c, MLD_Expts x, MLD_Expt_Marker e, MRK_Allele al, MLD_Assay_Types a, MRK_Marker m
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key = m._Marker_key
+and e._Allele_key *= al._Allele_key
+and e._Assay_Type_key = a._Assay_Type_key
+                                                            
+go
+grant select on MLD_Expt_Marker_View to public
+go
+
+drop view MLD_Matrix_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Matrix_View
+as
+select c.jnumID, c.jnum, c.short_citation, x.tag, 
+e._Expt_key, e.female, e.female2, e.male, e.male2, s.*, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_Matrix e, CRS_Cross s
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Cross_key = s._Cross_key
+                                                                                                                                                                                                      
+go
+grant select on MLD_Matrix_View to public
+go
+
+drop view MLD_RIData_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_RIData_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, m.symbol, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_RIData e, MRK_Marker m
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key = m._Marker_key
+                                                                                                                                                                                                                                                    
+go
+grant select on MLD_RIData_View to public
+go
+
+drop view PRB_Summary_View
+go
+                                                                                                                                                                                                                                                                
+create view PRB_Summary_View
+as
+select a.*,
+mgiID = a2.accID,
+subType = p.DNAtype,
+description = p.name
+from ACC_Accession a, ACC_Accession a2, PRB_Probe p
+where a._MGIType_key = 3
+and a.private = 0
+and a._Object_key = a2._Object_key
+and a2._LogicalDB_key = 1
+and a2._MGIType_key = 3
+and a2.prefixPart = "MGI:"
+and a._Object_key = p._Probe_key
+                                                                                                                                                                    
+go
+grant select on PRB_Summary_View to public
+go
+
+drop view PRB_AccRef_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_AccRef_View
+as
+select a.*, LogicalDB = l.name, MGIType = m.name, r._Reference_key
+from ACC_Accession a, ACC_LogicalDB l, ACC_MGIType m, ACC_AccessionReference ar, PRB_Reference r
+where a._Accession_key = ar._Accession_key
+and a._LogicalDB_key = l._LogicalDB_key
+and a._MGIType_key = m._MGIType_key
+and a._Object_key = r._Probe_key
+and ar._Refs_key = r._Refs_key
+                                                                                                                                   
+go
+grant select on PRB_AccRef_View to public
+go
+
+drop view PRB_Parent_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_Parent_View
+as
+select p._Probe_key, p.name, a.accID, accPrefix = a.prefixPart, accNumeric = a.numericPart,
+parentKey = p2._Probe_key, parentClone = p2.name,
+parentID = a2.accID, parentPrefix = a2.prefixPart, parentNumeric = a2.numericPart
+from PRB_Probe p, PRB_Acc_View a, PRB_Probe p2, PRB_Acc_View a2
+where p._Probe_key = a._Object_key
+and a.prefixPart = "MGI:"
+and p.derivedFrom = p2._Probe_key
+and p2._Probe_key = a2._Object_key
+and a2.prefixPart = "MGI:"
+                                 
+go
+grant select on PRB_Parent_View to public
+go
+
+drop view MRK_Alias_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_Alias_View
+as
+select a.*, alias = m1.symbol, m2.symbol
+from MRK_Alias a, MRK_Marker m1, MRK_Marker m2
+where a._Marker_key = m2._Marker_key
+and a._Alias_key = m1._Marker_key
+                                                                 
+go
+grant select on MRK_Alias_View to public
+go
+
+drop view MRK_Reference_View
+go
+                                                                                                                                                                                                                                                               
+create view MRK_Reference_View
+as
+select r.*, m.symbol, b.jnumID, b.jnum, b.short_citation
+from MRK_Reference r, MRK_Marker m, BIB_View b
+where r._Marker_key = m._Marker_key
+and r._Refs_key = b._Refs_key
+                                                  
+go
+grant select on MRK_Reference_View to public
+go
+
+drop view ACC_View
+go
+                                                                                                                                                                                                                                                               
+create view ACC_View
+as
+select a.*, MGIType = m.name,
+LogicalDB = l.name, l.description, l._Species_key,
+ActualDB = d.name, d.url, d.allowsMultiple, d.delimiter
+from ACC_Accession a, ACC_MGIType m, ACC_LogicalDB l, ACC_ActualDB d
+where a._MGIType_key = m._MGIType_key
+and a._LogicalDB_Key = l._LogicalDB_key
+and l._LogicalDB_key = d._LogicalDB_key
+and d.active = 1
+                                                                                                                                                
+go
+grant select on ACC_View to public
+go
+
+drop view MLD_Marker_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Marker_View
+as
+select c.jnumID, c.jnum, c.short_citation, g.*, m.symbol, c._primary, c.authors
+from BIB_View c, MLD_Marker g, MRK_Marker m
+where g._Refs_key = c._Refs_key
+and g._Marker_key = m._Marker_key
+                                 
+go
+grant select on MLD_Marker_View to public
+go
+
+drop view MLD_Concordance_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Concordance_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, m.symbol, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_Concordance e, MRK_Marker m
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key *= m._Marker_key
+                                                                                                                                                                                                                                         
+go
+grant select on MLD_Concordance_View to public
+go
+
+drop view MLD_Distance_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_Distance_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, 
+symbol1 = m1.symbol, symbol2 = m2.symbol, c._primary, c.authors
+from BIB_View c, MLD_Expts x, MLD_Distance e, MRK_Marker m1, MRK_Marker m2
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key_1 = m1._Marker_key
+and e._Marker_key_2 = m2._Marker_key
+                                                                                                                                                        
+go
+grant select on MLD_Distance_View to public
+go
+
+drop view HMD_Summary_View
+go
+                                                                                                                                                                                                                                                                
+create view HMD_Summary_View
+as
+select a.*,
+mgiID = null,
+subType = mt.name,
+description = m.symbol + ", " + m.name + ", Chr " + m.chromosome
+from ACC_Accession a, MRK_Marker m, MRK_Types mt
+where a._MGIType_key = 2
+and a.private = 0
+and a._Object_key = m._Marker_key
+and m._Species_key != 1
+and m._Marker_Type_key = mt._Marker_Type_key
+                                                                                                                                                                           
+go
+grant select on HMD_Summary_View to public
+go
+
+drop view user_columns
+go
+                                                                                                                                                                                                                                                               /**** THIS IS BROKEN -- USE SP__HELPCOLUMN instead. ****/
+create view user_columns (
+table_name,
+column_name,
+column_id,
+column_type,
+column_len,
+column_prec,
+column_scale,
+nulls
+)
+as
+select 
+tbl.name,
+c.name,
+c.colid,
+t.name,					/* sometimes NULL -- shouldn't be */
+c.length,
+c.prec,
+c.scale,
+/* allownulls & has bit 4 set (decimal = 8) */
+convert (bit, c.status & 8)
+from sysobjects tbl, syscolumns c, systypes t
+where tbl.id = c.id and tbl.type in ('U', 'V')
+and c.type *= t.type and c.usertype *= t.usertype
+                                                                                                                                                                                                                                   
+go
+grant select on user_columns to public
+go
+
+drop view PRB_Acc_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_Acc_View
+as
+select a.*, LogicalDB = l.name
+from ACC_Accession a, ACC_LogicalDB l
+where a._MGIType_key = 3
+and a._LogicalDB_key = l._LogicalDB_key
+                                                                                            
+go
+grant select on PRB_Acc_View to public
+go
+
+drop view PRB_Primer_View
+go
+                                                                                                                                                                                                                                                                
+create view PRB_Primer_View
+as
+select p._Probe_key, p.name,
+p.regionCovered,
+p.regionCovered2,
+p.DNAtype, p.primer1sequence, p.primer2sequence,
+p.repeatUnit, p.productSize, p.moreProduct,
+p.creation_date, p.modification_date,
+mgiID = a.accID, a.prefixPart, a.numericPart
+from PRB_Probe p, PRB_Acc_View a
+where p.DNAtype = "primer"
+and p._Probe_key = a._Object_key
+and a.prefixPart = "MGI:"
+                                                                                                                      
+go
+grant select on PRB_Primer_View to public
+go
+
+drop view BIB_Summary_View
+go
+                                                                                                                                                                                                                                                               
+create view BIB_Summary_View
+as
+select a.*,
+mgiID = a2.accID,
+subType = null,
+description = b._primary + ", " + b.journal + " " + b.date + ";" + b.vol + "(" + b.issue + "):" + b.pgs
+from ACC_Accession a, ACC_Accession a2, BIB_Refs b
+where a._MGIType_key = 1
+and a.private = 0
+and a._Object_key = a2._Object_key
+and a2._LogicalDB_key = 1
+and a2._MGIType_key = 1
+and a2.prefixPart = "MGI:"
+and a2.preferred = 1
+and a._Object_key = b._Refs_key
+and (b.journal != 'Submission' or b.journal is null)
+               
+go
+grant select on BIB_Summary_View to public
+go
+
+drop view user_rowcounts
+go
+                                                                                                                                                                                                                                                               create view user_rowcounts ( tablename, row_count )
+as
+select t.name, rowcnt(i.doampg)
+from sysobjects t, sysindexes i
+where i.id = t.id and i.doampg != 0 and t.type = 'U'
+                                                                              
+go
+grant select on user_rowcounts to public
+go
+
+drop view PRB_Reference_View
+go
+                                                                                                                                                                                                                                                                
+create view PRB_Reference_View
+as
+select c.jnum, c.jnumID, c.short_citation, r.*
+from PRB_Reference r, BIB_All_View c
+where r._Refs_key = c._Refs_key
+                                                                                                       
+go
+grant select on PRB_Reference_View to public
+go
+
+drop view MRK_Mouse_View
+go
+                                                                                                                                                                                                                                                                
+create view MRK_Mouse_View
+as
+select m.*, o.offset, offset_str = str(o.offset,10,2),
+species = s.name + " (" + s.species + ")", 
+commonName = s.name, latinName = s.species,
+mgiID = a.accID, a.prefixPart, a.numericPart, a._Accession_key,
+markerType = t.name
+from MRK_Marker m, MRK_Offset o, MRK_Species s, MRK_Acc_View a, MRK_Types t
+where m._Species_key = 1
+and m._Marker_key = o._Marker_key
+and o.source = 0
+and m._Species_key = s._Species_key
+and m._Marker_key = a._Object_key
+and a.prefixPart = "MGI:"
+and a.preferred = 1
+and m._Marker_Type_key = t._Marker_Type_key
+                                                                                                                                                                                                  
+go
+grant select on MRK_Mouse_View to public
+go
+
+drop view MRK_History_Ref_View
+go
+                                                                                                                                                                                                                                                                
+create view MRK_History_Ref_View
+as
+select h.*, creation_display = convert(char(10), h.creation_date, 101), 
+history = m1.symbol, m2.symbol,
+b.jnumID, b.jnum, b.short_citation
+from MRK_History h, MRK_Marker m1, MRK_Marker m2, BIB_View b
+where h._Marker_key = m2._Marker_key
+and h._History_key = m1._Marker_key
+and h._Refs_key = b._Refs_key
+                                                                                                                                                                        
+go
+grant select on MRK_History_Ref_View to public
+go
+
+drop view HMD_Homology_Assay_View
+go
+                                                                                                                                                                                                                                                               
+create view HMD_Homology_Assay_View
+as
+select h.*, a.assay
+from HMD_Homology_Assay h, HMD_Assay a
+where h._Assay_key = a._Assay_key
+                                                                                                                          
+go
+grant select on HMD_Homology_Assay_View to public
+go
+
+drop view MLD_FISH_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_FISH_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, c._primary, c.authors
+from BIB_View c, MLD_Expts x, MLD_FISH e
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+                                                    
+go
+grant select on MLD_FISH_View to public
+go
+
+drop view MLD_MC2point_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_MC2point_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, 
+symbol1 = m1.symbol, symbol2 = m2.symbol, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_MC2point e, MRK_Marker m1, MRK_Marker m2
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key_1 = m1._Marker_key
+and e._Marker_key_2 = m2._Marker_key
+                                                                                                                                                       
+go
+grant select on MLD_MC2point_View to public
+go
+
+drop view MLD_RI2Point_View
+go
+                                                                                                                                                                                                                                                               
+create view MLD_RI2Point_View
+as
+select c.jnumID, c.jnum, c.short_citation, e.*, 
+symbol1 = m1.symbol, symbol2 = m2.symbol, c._primary, c.authors 
+from BIB_View c, MLD_Expts x, MLD_RI2Point e, MRK_Marker m1, MRK_Marker m2
+where c._Refs_key = x._Refs_key
+and x._Expt_key = e._Expt_key
+and e._Marker_key_1 = m1._Marker_key
+and e._Marker_key_2 = m2._Marker_key
+                                                                                                                                                       
+go
+grant select on MLD_RI2Point_View to public
+go
+
+drop view MRK_Anchors_View
+go
+                                                                                                                                                                                                                                                               create view MRK_Anchors_View
+as
+select a.*, m.symbol
+from MRK_Anchors a, MRK_Marker m
+where a._Marker_key = m._Marker_key
+                                                                                                                                     
+go
+grant select on MRK_Anchors_View to public
+go
+
+drop view PRB_RFLV_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_RFLV_View
+as
+select r.*, a._Allele_key, a.allele, a.fragments, s.strain, m.symbol
+from PRB_Reference j, PRB_RFLV r, PRB_Allele a, PRB_Strain s, PRB_Allele_Strain p, MRK_Marker m
+where j._Reference_key = r._Reference_key
+and r._RFLV_key = a._RFLV_key
+and a._Allele_key = p._Allele_key
+and p._Strain_key = s._Strain_key
+and r._Marker_key = m._Marker_key
+                                                                                                                                             
+go
+grant select on PRB_RFLV_View to public
+go
+
+drop view PRB_SourceRef_View
+go
+                                                                                                                                                                                                                                                                
+create view PRB_SourceRef_View
+as
+select p.*, c.jnumID, c.jnum, c.short_citation
+from PRB_Source p, BIB_All_View c
+where p._Refs_key = c._Refs_key
+                                                                                                          
+go
+grant select on PRB_SourceRef_View to public
+go
+
+drop view PRB_Marker_View
+go
+                                                                                                                                                                                                                                                               
+create view PRB_Marker_View
+as
+select g._Probe_key, p.name, g._Marker_key, m.symbol, m.chromosome, g.relationship
+from PRB_Probe p, PRB_Marker g, MRK_Marker m
+where p._Probe_key = g._Probe_key
+and g._Marker_key = m._Marker_key
+                           
+go
+grant select on PRB_Marker_View to public
+go
+
+drop view BIB_View
+go
+                                                                                                                                                                                                                                                               
+create view BIB_View
+as
+select r.*, jnumID = a.accID, jnum = a.numericPart,
+citation = r.journal + " " + r.date + ";" + r.vol + "(" + r.issue + "):" + r.pgs,
+short_citation = r._primary + ", " + r.journal + " " + r.date + ";" + 
+r.vol + "(" + r.issue + "):" + r.pgs
+from BIB_Refs r, ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.prefixPart =  "J:"
+and a.preferred = 1
+and (journal != 'Submission' or journal is null)
+                                                                                  
+go
+grant select on BIB_View to public
+go
+
+EOSQL
+cat $password | isql -Umgd_dbo -e -i $sql

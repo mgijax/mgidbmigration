@@ -1,0 +1,211 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+
+exec sp_bindefault bit_default,'ACC_Accession.private'
+go
+
+exec sp_bindefault preferred,'ACC_Accession.preferred'
+go
+
+exec sp_bindefault current_date_default,'ACC_Accession.creationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_Accession.modificationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_Accession.releaseDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_AccessionMax.creationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_AccessionMax.modificationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_AccessionMax.releaseDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_AccessionReference.creationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_AccessionReference.modificationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_AccessionReference.releaseDate'
+go
+
+exec sp_bindefault bit_default,'ACC_ActualDB.active'
+go
+
+exec sp_bindefault bit_default,'ACC_ActualDB.allowsMultiple'
+go
+
+exec sp_bindefault current_date_default,'ACC_ActualDB.creationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_ActualDB.modificationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_ActualDB.releaseDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_LogicalDB.creationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_LogicalDB.modificationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_LogicalDB.releaseDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_MGIType.creationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_MGIType.modificationDate'
+go
+
+exec sp_bindefault current_date_default,'ACC_MGIType.releaseDate'
+go
+
+exec sp_bindefault current_date_default,'BIB_Refs.creation_date'
+go
+
+exec sp_bindefault current_date_default,'BIB_Refs.modification_date'
+go
+
+exec sp_bindefault current_date_default,'CRS_Cross.creation_date'
+go
+
+exec sp_bindefault current_date_default,'CRS_Cross.modification_date'
+go
+
+exec sp_bindefault bit_default,'CRS_Cross.alleleFromSegParent'
+go
+
+exec sp_bindefault bit_default,'CRS_Cross.F1DirectionKnown'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.insitu_protein_section'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.insitu_rna_section'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.insitu_protein_mount'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.insitu_rna_mount'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.northern'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.western'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.rt_pcr'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.clones'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.rnase'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.nuclease'
+go
+
+exec sp_bindefault bit_default,'GXD_Index_Stages.primer_extension'
+go
+
+exec sp_bindefault current_date_default,'HMD_Reference.creation_date'
+go
+
+exec sp_bindefault current_date_default,'HMD_Reference.modification_date'
+go
+
+exec sp_bindefault bit_default,'MLC_Lock_edit.checkedOut'
+go
+
+exec sp_bindefault bit_default,'MLD_Distance.units'
+go
+
+exec sp_bindefault bit_default,'MLD_Distance.realisticDist'
+go
+
+exec sp_bindefault bit_default,'MLD_Expt_Marker.matrixData'
+go
+
+exec sp_bindefault current_date_default,'MLD_Expts.creation_date'
+go
+
+exec sp_bindefault current_date_default,'MLD_Expts.modification_date'
+go
+
+exec sp_bindefault bit_default,'MLD_Hybrid.chrsOrGenes'
+go
+
+exec sp_bindefault bit_default,'MLD_PhysMap.definitiveOrder'
+go
+
+exec sp_bindefault current_date_default,'MRK_History.creation_date'
+go
+
+exec sp_bindefault current_date_default,'MRK_History.modification_date'
+go
+
+exec sp_bindefault current_date_default,'MRK_Marker.creation_date'
+go
+
+exec sp_bindefault current_date_default,'MRK_Marker.modification_date'
+go
+
+exec sp_bindefault bit_default,'PRB_Probe.pcrAmplified'
+go
+
+exec sp_bindefault bit_default,'PRB_Probe.moreProduct'
+go
+
+exec sp_bindefault current_date_default,'PRB_Probe.modification_date'
+go
+
+exec sp_bindefault current_date_default,'PRB_Probe.creation_date'
+go
+
+exec sp_bindefault bit_default,'PRB_Reference.hasRmap'
+go
+
+exec sp_bindefault bit_default,'PRB_Reference.hasSequence'
+go
+
+exec sp_bindefault current_date_default,'PRB_Reference.creation_date'
+go
+
+exec sp_bindefault current_date_default,'PRB_Reference.modification_date'
+go
+
+exec sp_bindefault current_date_default,'PRB_Source.creation_date'
+go
+
+exec sp_bindefault current_date_default,'PRB_Source.modification_date'
+go
+
+exec sp_bindefault current_date_default,'RI_RISet.creation_date'
+go
+
+exec sp_bindefault current_date_default,'RI_RISet.modification_date'
+go
+
+EOSQL
+cat $password | isql	-Umgd_dbo -e -i $sql

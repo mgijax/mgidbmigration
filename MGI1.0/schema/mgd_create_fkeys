@@ -1,0 +1,598 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+
+sp_dropkey foreign, ACC_Accession, ACC_LogicalDB
+go
+
+sp_foreignkey ACC_Accession, ACC_LogicalDB, _LogicalDB_key
+go
+
+sp_dropkey foreign, ACC_Accession, ACC_MGIType
+go
+
+sp_foreignkey ACC_Accession, ACC_MGIType, _MGIType_key
+go
+
+sp_dropkey foreign, ACC_AccessionReference, ACC_Accession
+go
+
+sp_foreignkey ACC_AccessionReference, ACC_Accession, _Accession_key
+go
+
+sp_dropkey foreign, ACC_AccessionReference, BIB_Refs
+go
+
+sp_foreignkey ACC_AccessionReference, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, ACC_ActualDB, ACC_LogicalDB
+go
+
+sp_foreignkey ACC_ActualDB, ACC_LogicalDB, _LogicalDB_key
+go
+
+sp_dropkey foreign, ACC_LogicalDB, MRK_Species
+go
+
+sp_foreignkey ACC_LogicalDB, MRK_Species, _Species_key
+go
+
+sp_dropkey foreign, BIB_Books, BIB_Refs
+go
+
+sp_foreignkey BIB_Books, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, BIB_Notes, BIB_Refs
+go
+
+sp_foreignkey BIB_Notes, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, CRS_Matrix, CRS_Cross
+go
+
+sp_foreignkey CRS_Matrix, CRS_Cross, _Cross_key
+go
+
+sp_dropkey foreign, CRS_Matrix, MRK_Marker
+go
+
+sp_foreignkey CRS_Matrix, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, CRS_Progeny, CRS_Cross
+go
+
+sp_foreignkey CRS_Progeny, CRS_Cross, _Cross_key
+go
+
+sp_dropkey foreign, CRS_References, CRS_Cross
+go
+
+sp_foreignkey CRS_References, CRS_Cross, _Cross_key
+go
+
+sp_dropkey foreign, CRS_References, MRK_Marker
+go
+
+sp_foreignkey CRS_References, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, CRS_References, BIB_Refs
+go
+
+sp_foreignkey CRS_References, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, CRS_Typings, CRS_Cross
+go
+
+sp_foreignkey CRS_Typings, CRS_Cross, _Cross_key
+go
+
+sp_dropkey foreign, GXD_Index, MRK_Marker
+go
+
+sp_foreignkey GXD_Index, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, GXD_Index, BIB_Refs
+go
+
+sp_foreignkey GXD_Index, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, HMD_Homology, MRK_Marker
+go
+
+sp_foreignkey HMD_Homology, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, HMD_Homology_Assay, HMD_Assay
+go
+
+sp_foreignkey HMD_Homology_Assay, HMD_Assay, _Assay_key
+go
+
+sp_dropkey foreign, HMD_Reference, BIB_Refs
+go
+
+sp_foreignkey HMD_Reference, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MLC_History, MRK_Marker
+go
+
+sp_foreignkey MLC_History, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_History_edit, MRK_Marker
+go
+
+sp_foreignkey MLC_History_edit, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Lock_edit, MRK_Marker
+go
+
+sp_foreignkey MLC_Lock_edit, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Marker, MRK_Marker
+go
+
+sp_foreignkey MLC_Marker, MRK_Marker, _Marker_key_2
+go
+
+sp_dropkey foreign, MLC_Marker, MRK_Marker
+go
+
+sp_foreignkey MLC_Marker, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Marker_edit, MRK_Marker
+go
+
+sp_foreignkey MLC_Marker_edit, MRK_Marker, _Marker_key_2
+go
+
+sp_dropkey foreign, MLC_Marker_edit, MRK_Marker
+go
+
+sp_foreignkey MLC_Marker_edit, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Reference, MRK_Marker
+go
+
+sp_foreignkey MLC_Reference, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Reference, BIB_Refs
+go
+
+sp_foreignkey MLC_Reference, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MLC_Reference_edit, MRK_Marker
+go
+
+sp_foreignkey MLC_Reference_edit, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Reference_edit, BIB_Refs
+go
+
+sp_foreignkey MLC_Reference_edit, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MLC_Text, MRK_Marker
+go
+
+sp_foreignkey MLC_Text, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLC_Text_edit, MRK_Marker
+go
+
+sp_foreignkey MLC_Text_edit, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLD_Concordance, MLD_Expts
+go
+
+sp_foreignkey MLD_Concordance, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Concordance, MRK_Marker
+go
+
+sp_foreignkey MLD_Concordance, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLD_Contig, MLD_Expts
+go
+
+sp_foreignkey MLD_Contig, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_ContigProbe, PRB_Probe
+go
+
+sp_foreignkey MLD_ContigProbe, PRB_Probe, _Probe_key
+go
+
+sp_dropkey foreign, MLD_ContigProbe, MLD_Contig
+go
+
+sp_foreignkey MLD_ContigProbe, MLD_Contig, _Contig_key
+go
+
+sp_dropkey foreign, MLD_Distance, MLD_Expts
+go
+
+sp_foreignkey MLD_Distance, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Distance, MRK_Marker
+go
+
+sp_foreignkey MLD_Distance, MRK_Marker, _Marker_key_2
+go
+
+sp_dropkey foreign, MLD_Distance, MRK_Marker
+go
+
+sp_foreignkey MLD_Distance, MRK_Marker, _Marker_key_1
+go
+
+sp_dropkey foreign, MLD_Expt_Marker, MLD_Assay_Types
+go
+
+sp_foreignkey MLD_Expt_Marker, MLD_Assay_Types, _Assay_Type_key
+go
+
+sp_dropkey foreign, MLD_Expt_Marker, MLD_Expts
+go
+
+sp_foreignkey MLD_Expt_Marker, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Expt_Marker, MRK_Marker
+go
+
+sp_foreignkey MLD_Expt_Marker, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLD_Expt_Notes, MLD_Expts
+go
+
+sp_foreignkey MLD_Expt_Notes, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Expts, BIB_Refs
+go
+
+sp_foreignkey MLD_Expts, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MLD_FISH, MLD_Expts
+go
+
+sp_foreignkey MLD_FISH, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_FISH_Region, MLD_Expts
+go
+
+sp_foreignkey MLD_FISH_Region, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Hit, MLD_Expts
+go
+
+sp_foreignkey MLD_Hit, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Hit, PRB_Probe
+go
+
+sp_foreignkey MLD_Hit, PRB_Probe, _Target_key
+go
+
+sp_dropkey foreign, MLD_Hit, PRB_Probe
+go
+
+sp_foreignkey MLD_Hit, PRB_Probe, _Probe_key
+go
+
+sp_dropkey foreign, MLD_Hybrid, MLD_Expts
+go
+
+sp_foreignkey MLD_Hybrid, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_InSitu, MLD_Expts
+go
+
+sp_foreignkey MLD_InSitu, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_ISRegion, MLD_Expts
+go
+
+sp_foreignkey MLD_ISRegion, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Marker, MRK_Marker
+go
+
+sp_foreignkey MLD_Marker, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLD_Marker, BIB_Refs
+go
+
+sp_foreignkey MLD_Marker, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MLD_Matrix, CRS_Cross
+go
+
+sp_foreignkey MLD_Matrix, CRS_Cross, _Cross_key
+go
+
+sp_dropkey foreign, MLD_Matrix, MLD_Expts
+go
+
+sp_foreignkey MLD_Matrix, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_MC2point, MLD_Expts
+go
+
+sp_foreignkey MLD_MC2point, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_MC2point, MRK_Marker
+go
+
+sp_foreignkey MLD_MC2point, MRK_Marker, _Marker_key_2
+go
+
+sp_dropkey foreign, MLD_MC2point, MRK_Marker
+go
+
+sp_foreignkey MLD_MC2point, MRK_Marker, _Marker_key_1
+go
+
+sp_dropkey foreign, MLD_MCDataList, MLD_Expts
+go
+
+sp_foreignkey MLD_MCDataList, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Notes, BIB_Refs
+go
+
+sp_foreignkey MLD_Notes, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MLD_PhysMap, MLD_Expts
+go
+
+sp_foreignkey MLD_PhysMap, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_RI, MLD_Expts
+go
+
+sp_foreignkey MLD_RI, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_RI2Point, MLD_Expts
+go
+
+sp_foreignkey MLD_RI2Point, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_RI2Point, MRK_Marker
+go
+
+sp_foreignkey MLD_RI2Point, MRK_Marker, _Marker_key_2
+go
+
+sp_dropkey foreign, MLD_RI2Point, MRK_Marker
+go
+
+sp_foreignkey MLD_RI2Point, MRK_Marker, _Marker_key_1
+go
+
+sp_dropkey foreign, MLD_RIData, MLD_Expts
+go
+
+sp_foreignkey MLD_RIData, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_RIData, MRK_Marker
+go
+
+sp_foreignkey MLD_RIData, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MLD_Statistics, MLD_Expts
+go
+
+sp_foreignkey MLD_Statistics, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, MLD_Statistics, MRK_Marker
+go
+
+sp_foreignkey MLD_Statistics, MRK_Marker, _Marker_key_2
+go
+
+sp_dropkey foreign, MLD_Statistics, MRK_Marker
+go
+
+sp_foreignkey MLD_Statistics, MRK_Marker, _Marker_key_1
+go
+
+sp_dropkey foreign, MRK_Alias, MRK_Marker
+go
+
+sp_foreignkey MRK_Alias, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_Allele, MRK_Marker
+go
+
+sp_foreignkey MRK_Allele, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_Anchors, MRK_Marker
+go
+
+sp_foreignkey MRK_Anchors, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_Chromosome, MRK_Species
+go
+
+sp_foreignkey MRK_Chromosome, MRK_Species, _Species_key
+go
+
+sp_dropkey foreign, MRK_Current, MRK_Marker
+go
+
+sp_foreignkey MRK_Current, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_History, MRK_Marker
+go
+
+sp_foreignkey MRK_History, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_History, BIB_Refs
+go
+
+sp_foreignkey MRK_History, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, MRK_Marker, MRK_Species
+go
+
+sp_foreignkey MRK_Marker, MRK_Species, _Species_key
+go
+
+sp_dropkey foreign, MRK_Notes, MRK_Marker
+go
+
+sp_foreignkey MRK_Notes, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_Offset, MRK_Marker
+go
+
+sp_foreignkey MRK_Offset, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, MRK_Other, MRK_Marker
+go
+
+sp_foreignkey MRK_Other, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, PRB_Marker, PRB_Probe
+go
+
+sp_foreignkey PRB_Marker, PRB_Probe, _Probe_key
+go
+
+sp_dropkey foreign, PRB_Marker, MRK_Marker
+go
+
+sp_foreignkey PRB_Marker, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, PRB_Notes, PRB_Probe
+go
+
+sp_foreignkey PRB_Notes, PRB_Probe, _Probe_key
+go
+
+sp_dropkey foreign, PRB_Probe, PRB_Vector_Types
+go
+
+sp_foreignkey PRB_Probe, PRB_Vector_Types, _Vector_key
+go
+
+sp_dropkey foreign, PRB_Probe, PRB_Source
+go
+
+sp_foreignkey PRB_Probe, PRB_Source, _Source_key
+go
+
+sp_dropkey foreign, PRB_Probe, PRB_Probe
+go
+
+sp_foreignkey PRB_Probe, PRB_Probe, derivedFrom
+go
+
+sp_dropkey foreign, PRB_Reference, PRB_Probe
+go
+
+sp_foreignkey PRB_Reference, PRB_Probe, _Probe_key
+go
+
+sp_dropkey foreign, PRB_Reference, BIB_Refs
+go
+
+sp_foreignkey PRB_Reference, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, PRB_RFLV, MRK_Marker
+go
+
+sp_foreignkey PRB_RFLV, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, PRB_Source, BIB_Refs
+go
+
+sp_foreignkey PRB_Source, BIB_Refs, _Refs_key
+go
+
+sp_dropkey foreign, RI_Summary, MRK_Marker
+go
+
+sp_foreignkey RI_Summary, MRK_Marker, _Marker_key
+go
+
+sp_dropkey foreign, RI_Summary_Expt_Ref, MLD_Expts
+go
+
+sp_foreignkey RI_Summary_Expt_Ref, MLD_Expts, _Expt_key
+go
+
+sp_dropkey foreign, RI_Summary_Expt_Ref, BIB_Refs
+go
+
+sp_foreignkey RI_Summary_Expt_Ref, BIB_Refs, _Refs_key
+go
+
+EOSQL
+cat $password | isql	-Umgd_dbo -e -i $sql

@@ -1,0 +1,92 @@
+#!/bin/csh
+
+set sql = /tmp/$$.sql
+set scripts = ~/admin
+set pythonpath = /usr/local/etc/httpd/python
+
+setenv MGD_SRC_SRV MGD_DEV
+setenv MGD_SRC_DB mgd_new
+setenv MGD_DST_SRV $1 
+setenv MGD_DST_DB $2 
+setenv server $1
+setenv database $2
+
+setenv DSQUERY MGD_DST_SRV
+#setenv MGD mgd_new
+
+date
+
+cd /usr/sybase/admin/utilities
+
+echo 'Starting Load of ' $1 $2
+#echo 'Reverse Engineering Database Scripts'
+#/usr/sybase/admin/schema/get_schema.py
+
+echo 'Dropping Tables from ' $MGD_DST_SRV $MGD_DST_DB
+#./mgd_drop_tables
+/opt/sybase/admin/tables/drop_tables.sh $MGD_DST_SRV $MGD_DST_DB
+
+date
+
+echo 'Running columns.sql'
+/opt/sybase/admin/migration/MGI1.0/columns.sql $MGD_DST_SRV $MGD_DST_DB
+
+date
+
+echo 'Create Remaining Tables'
+#./mgd_create_tables
+/opt/sybase/admin/tables/tables.sh $MGD_DST_SRV $MGD_DST_DB
+
+echo 'Create the primary keys'
+#./mgd_create_pKey
+/opt/sybase/admin/keys/pkeys.sh $MGD_DST_SRV $MGD_DST_DB
+
+echo 'Create foreign keys'
+#./mgd_create_fkeys
+/opt/sybase/admin/keys/fkeys.sh $MGD_DST_SRV $MGD_DST_DB
+
+echo 'Create rules, defaults, then bind them'
+#./mgd_create_rules
+/opt/sybase/admin/rules/rules.sh $MGD_DST_SRV $MGD_DST_DB
+
+#./mgd_create_defaults
+/opt/sybase/admin/defaults/defaults.sh $MGD_DST_SRV $MGD_DST_DB
+
+#./mgd_bind_defaults
+
+#./mgd_create_procedures
+/opt/sybase/admin/procedures/procedures.sh $MGD_DST_SRV $MGD_DST_DB
+
+#./mgd_create_views
+/opt/sybase/admin/views/views.sh $MGD_DST_SRV $MGD_DST_DB
+
+echo 'Set permissions'
+#./mgd_set_permissions
+/opt/sybase/admin/permissions/permissions.sh $MGD_DST_SRV $MGD_DST_DB
+
+date
+
+echo "Generate the indices"
+#./mgd_create_indices
+/opt/sybase/admin/indexes/indexes_drop.sh $MGD_DST_SRV $MGD_DST_DB
+/opt/sybase/admin/indexes/indexes_create.sh $MGD_DST_SRV $MGD_DST_DB
+
+date
+
+echo 'Run Lori script'
+/opt/sybase/admin/migration/MGI1.0/MGI.sh $MGD_DST_SRV $MGD_DST_DB
+
+date
+
+echo 'Create Triggers: dropping tables = dropping triggers'
+#./mgd_create_triggers
+/opt/sybase/admin/triggers/triggers.sh $MGD_DST_SRV $MGD_DST_DB
+
+echo "Generate the indices again: will do only indices dropped by Lori"
+#./mgd_create_indices
+/opt/sybase/admin/indexes/indexes_create.sh $MGD_DST_SRV $MGD_DST_DB
+
+echo 'Set permissions'
+#./mgd_set_permissions
+/opt/sybase/admin/permissions/permissions.sh $MGD_DST_SRV $MGD_DST_DB
+date

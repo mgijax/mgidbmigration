@@ -1,0 +1,159 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+drop table MLD_Notes
+go
+drop table MLD_MC2point
+go
+drop table MLD_Marker
+go
+drop table RI_Summary_Expt_Ref
+go
+drop table MLD_InSitu
+go
+drop table RI_RISet
+go
+drop table MLD_Hit
+go
+drop table MLD_FISH
+go
+drop table MLD_Expt_Notes
+go
+drop table MLD_Distance
+go
+drop table MLD_Contig
+go
+drop table MLD_Assay_Types
+go
+drop table MLC_Text
+go
+drop table MLC_Reference
+go
+drop table MLC_Marker
+go
+drop table MRK_Offsetload
+go
+drop table MLC_History_edit
+go
+drop table MRK_Notes
+go
+drop table MGD_tables
+go
+drop table MRK_Marker
+go
+drop table GXD_Index
+go
+drop table CRS_References
+go
+drop table CRS_Matrix
+go
+drop table BIB_Refs
+go
+drop table BIB_Books
+go
+drop table ACC_LogicalDB
+go
+drop table ACC_AccessionReference
+go
+drop table ACC_Accession
+go
+drop table MRK_Reference
+go
+drop table MRK_Classes
+go
+drop table MRK_Chromosome
+go
+drop table MRK_Allele
+go
+drop table MLD_Statistics
+go
+drop table MLD_RI2Point
+go
+drop table MLD_PhysMap
+go
+drop table MLD_MCDataList
+go
+drop table MLD_Matrix
+go
+drop table MLD_ISRegion
+go
+drop table RI_Summary
+go
+drop table MLD_Hybrid
+go
+drop table MLD_FISH_Region
+go
+drop table MLD_Expts
+go
+drop table MLD_Expt_Marker
+go
+drop table MLD_ContigProbe
+go
+drop table MLD_Concordance
+go
+drop table MLC_Text_edit
+go
+drop table MRK_Types
+go
+drop table MLC_Reference_edit
+go
+drop table MRK_Species
+go
+drop table MLC_Marker_edit
+go
+drop table MRK_Other
+go
+drop table MLC_Lock_edit
+go
+drop table MRK_Offset
+go
+drop table MLC_History
+go
+drop table MGD_Comments
+go
+drop table MRK_History
+go
+drop table GXD_Index_Stages
+go
+drop table CRS_Typings
+go
+drop table CRS_Progeny
+go
+drop table CRS_Cross
+go
+drop table BIB_Notes
+go
+drop table ACC_MGIType
+go
+drop table ACC_ActualDB
+go
+drop table ACC_AccessionMax
+go
+drop table MRK_Symbol
+go
+drop table MRK_Name
+go
+drop table MRK_Current
+go
+drop table MRK_Class
+go
+drop table MRK_Anchors
+go
+drop table MRK_Alias
+go
+drop table MLD_RIData
+go
+drop table MLD_RI
+go
+EOSQL
+cat $password | isql -Umgd_dbo -e -i $sql

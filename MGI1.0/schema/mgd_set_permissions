@@ -1,0 +1,1350 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+grant delete on MLD_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Notes to public
+go
+
+grant references on MLD_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_MC2point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_MC2point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_MC2point to public
+go
+
+grant references on MLD_MC2point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_MC2point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Marker to public
+go
+
+grant references on MLD_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on RI_Summary_Expt_Ref to progs
+go
+
+grant update on RI_Summary_Expt_Ref to progs
+go
+
+grant select on RI_Summary_Expt_Ref to public
+go
+
+grant references on RI_Summary_Expt_Ref to progs
+go
+
+grant insert on RI_Summary_Expt_Ref to progs
+go
+
+grant delete on MLD_InSitu to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_InSitu to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_InSitu to public
+go
+
+grant references on MLD_InSitu to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_InSitu to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on RI_RISet to sbs, plg, djr, progs
+go
+
+grant update on RI_RISet to sbs, plg, djr, progs
+go
+
+grant select on RI_RISet to public
+go
+
+grant references on RI_RISet to sbs, plg, djr, progs
+go
+
+grant insert on RI_RISet to sbs, plg, djr, progs
+go
+
+grant delete on MLD_Hit to progs
+go
+
+grant update on MLD_Hit to progs
+go
+
+grant select on MLD_Hit to public
+go
+
+grant references on MLD_Hit to progs
+go
+
+grant insert on MLD_Hit to progs
+go
+
+grant delete on PRB_Strain to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Strain to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Strain to public
+go
+
+grant references on PRB_Strain to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Strain to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_FISH to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_FISH to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_FISH to public
+go
+
+grant references on MLD_FISH to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_FISH to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_RFLV to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_RFLV to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_RFLV to public
+go
+
+grant references on PRB_RFLV to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_RFLV to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Expt_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Expt_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Expt_Notes to public
+go
+
+grant references on MLD_Expt_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Expt_Notes to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Ref_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Ref_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Ref_Notes to public
+go
+
+grant references on PRB_Ref_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Ref_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Distance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Distance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Distance to public
+go
+
+grant references on MLD_Distance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Distance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Notes to public
+go
+
+grant references on PRB_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Notes to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Contig to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Contig to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Contig to public
+go
+
+grant references on MLD_Contig to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Contig to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Allele_Strain to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Allele_Strain to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Allele_Strain to public
+go
+
+grant references on PRB_Allele_Strain to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Allele_Strain to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Assay_Types to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Assay_Types to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Assay_Types to public
+go
+
+grant references on MLD_Assay_Types to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Assay_Types to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Alias to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Alias to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Alias to public
+go
+
+grant references on PRB_Alias to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Alias to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLC_Text to editors, progs
+go
+
+grant update on MLC_Text to editors, progs
+go
+
+grant select on MLC_Text to public
+go
+
+grant references on MLC_Text to editors, progs
+go
+
+grant insert on MLC_Text to editors, progs
+go
+
+grant delete on MLC_Reference to editors, progs
+go
+
+grant update on MLC_Reference to editors, progs
+go
+
+grant select on MLC_Reference to public
+go
+
+grant references on MLC_Reference to editors, progs
+go
+
+grant insert on MLC_Reference to editors, progs
+go
+
+grant delete on MLC_Marker to editors, progs
+go
+
+grant update on MLC_Marker to editors, progs
+go
+
+grant select on MLC_Marker to public
+go
+
+grant references on MLC_Marker to editors, progs
+go
+
+grant insert on MLC_Marker to editors, progs
+go
+
+grant delete on MRK_Offsetload to progs
+go
+
+grant update on MRK_Offsetload to progs
+go
+
+grant select on MRK_Offsetload to public
+go
+
+grant references on MRK_Offsetload to progs
+go
+
+grant insert on MRK_Offsetload to progs
+go
+
+grant delete on MLC_History_edit to dpd, progs
+go
+
+grant update on MLC_History_edit to djr, dpd, progs
+go
+
+grant select on MLC_History_edit to public
+go
+
+grant references on MLC_History_edit to dpd, progs
+go
+
+grant insert on MLC_History_edit to dpd, progs
+go
+
+grant delete on MRK_Notes to djr, progs
+go
+
+grant update on MRK_Notes to djr, progs
+go
+
+grant select on MRK_Notes to public
+go
+
+grant references on MRK_Notes to djr, progs
+go
+
+grant insert on MRK_Notes to djr, progs
+go
+
+grant delete on MGD_tables to progs
+go
+
+grant update on MGD_tables to progs
+go
+
+grant select on MGD_tables to public
+go
+
+grant references on MGD_tables to progs
+go
+
+grant insert on MGD_tables to progs
+go
+
+grant delete on MRK_Marker to sbs, plg, djr, sfr, jab, ljm, progs
+go
+
+grant update on MRK_Marker to sbs, plg, djr, sfr, jab, ljm, lglass, progs
+go
+
+grant select on MRK_Marker to public
+go
+
+grant references on MRK_Marker to sbs, plg, djr, sfr, jab, ljm, progs
+go
+
+grant insert on MRK_Marker to sbs, plg, djr, sfr, jab, ljm, progs
+go
+
+grant delete on HMD_Reference to plg, djr, sfr, progs
+go
+
+grant update on HMD_Reference to plg, djr, sfr, progs
+go
+
+grant select on HMD_Reference to public
+go
+
+grant references on HMD_Reference to plg, djr, sfr, progs
+go
+
+grant insert on HMD_Reference to plg, djr, sfr, progs
+go
+
+grant delete on HMD_Homology_Assay to plg, djr, sfr, progs
+go
+
+grant update on HMD_Homology_Assay to plg, djr, sfr, progs
+go
+
+grant select on HMD_Homology_Assay to public
+go
+
+grant references on HMD_Homology_Assay to plg, djr, sfr, progs
+go
+
+grant insert on HMD_Homology_Assay to plg, djr, sfr, progs
+go
+
+grant delete on HMD_Assay to plg, djr, sfr, progs
+go
+
+grant update on HMD_Assay to plg, djr, sfr, progs
+go
+
+grant select on HMD_Assay to public
+go
+
+grant references on HMD_Assay to plg, djr, sfr, progs
+go
+
+grant insert on HMD_Assay to plg, djr, sfr, progs
+go
+
+grant delete on GXD_Index to djr, let, dab, sfr, ksf, psj, progs
+go
+
+grant update on GXD_Index to djr, let, dab, sfr, ksf, psj, progs
+go
+
+grant select on GXD_Index to public
+go
+
+grant references on GXD_Index to djr, let, dab, sfr, ksf, psj, progs
+go
+
+grant insert on GXD_Index to djr, let, dab, sfr, ksf, psj, progs
+go
+
+grant delete on CRS_References to sbs, plg, djr, dbradt, progs
+go
+
+grant update on CRS_References to sbs, plg, djr, dbradt, progs
+go
+
+grant select on CRS_References to public
+go
+
+grant references on CRS_References to sbs, plg, djr, dbradt, progs
+go
+
+grant insert on CRS_References to sbs, plg, djr, dbradt, progs
+go
+
+grant delete on CRS_Matrix to progs
+go
+
+grant update on CRS_Matrix to progs
+go
+
+grant select on CRS_Matrix to public
+go
+
+grant references on CRS_Matrix to progs
+go
+
+grant insert on CRS_Matrix to progs
+go
+
+grant delete on BIB_Refs to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant update on BIB_Refs to editors, progs
+go
+
+grant select on BIB_Refs to public
+go
+
+grant references on BIB_Refs to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant insert on BIB_Refs to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant delete on BIB_Books to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant update on BIB_Books to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant select on BIB_Books to public
+go
+
+grant references on BIB_Books to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant insert on BIB_Books to jeo, jjm, mgm, jab, dac, progs
+go
+
+grant delete on ACC_LogicalDB to progs
+go
+
+grant update on ACC_LogicalDB to progs
+go
+
+grant select on ACC_LogicalDB to public
+go
+
+grant references on ACC_LogicalDB to progs
+go
+
+grant insert on ACC_LogicalDB to progs
+go
+
+grant delete on ACC_AccessionReference to editors, progs
+go
+
+grant update on ACC_AccessionReference to editors, progs
+go
+
+grant select on ACC_AccessionReference to public
+go
+
+grant references on ACC_AccessionReference to editors, progs
+go
+
+grant insert on ACC_AccessionReference to editors, progs
+go
+
+grant delete on ACC_Accession to editors, progs
+go
+
+grant update on ACC_Accession to editors, progs
+go
+
+grant select on ACC_Accession to public
+go
+
+grant references on ACC_Accession to editors, progs
+go
+
+grant insert on ACC_Accession to editors, progs
+go
+
+grant delete on MRK_Reference to plg, djr, progs
+go
+
+grant update on MRK_Reference to plg, djr, progs
+go
+
+grant select on MRK_Reference to public
+go
+
+grant references on MRK_Reference to plg, djr, progs
+go
+
+grant insert on MRK_Reference to plg, djr, progs
+go
+
+grant delete on MRK_Classes to djr, dpd, progs
+go
+
+grant update on MRK_Classes to djr, dpd, progs
+go
+
+grant select on MRK_Classes to public
+go
+
+grant references on MRK_Classes to djr, dpd, progs
+go
+
+grant insert on MRK_Classes to djr, dpd, progs
+go
+
+grant delete on MRK_Chromosome to sbs, plg, djr, sfr, progs
+go
+
+grant update on MRK_Chromosome to sbs, plg, djr, sfr, progs
+go
+
+grant select on MRK_Chromosome to public
+go
+
+grant references on MRK_Chromosome to sbs, plg, djr, sfr, progs
+go
+
+grant insert on MRK_Chromosome to sbs, plg, djr, sfr, progs
+go
+
+grant delete on MRK_Allele to djr, progs
+go
+
+grant update on MRK_Allele to djr, progs
+go
+
+grant select on MRK_Allele to public
+go
+
+grant references on MRK_Allele to djr, progs
+go
+
+grant insert on MRK_Allele to djr, progs
+go
+
+grant delete on MLD_Statistics to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Statistics to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Statistics to public
+go
+
+grant references on MLD_Statistics to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Statistics to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_RI2Point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_RI2Point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_RI2Point to public
+go
+
+grant references on MLD_RI2Point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_RI2Point to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_PhysMap to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_PhysMap to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_PhysMap to public
+go
+
+grant references on MLD_PhysMap to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_PhysMap to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_MCDataList to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_MCDataList to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_MCDataList to public
+go
+
+grant references on MLD_MCDataList to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_MCDataList to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_Matrix to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Matrix to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Matrix to public
+go
+
+grant references on MLD_Matrix to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Matrix to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_ISRegion to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_ISRegion to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_ISRegion to public
+go
+
+grant references on MLD_ISRegion to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_ISRegion to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on RI_Summary to progs
+go
+
+grant update on RI_Summary to progs
+go
+
+grant select on RI_Summary to public
+go
+
+grant references on RI_Summary to progs
+go
+
+grant insert on RI_Summary to progs
+go
+
+grant delete on MLD_Hybrid to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Hybrid to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Hybrid to public
+go
+
+grant references on MLD_Hybrid to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Hybrid to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Vector_Types to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Vector_Types to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Vector_Types to public
+go
+
+grant references on PRB_Vector_Types to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Vector_Types to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_FISH_Region to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_FISH_Region to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_FISH_Region to public
+go
+
+grant references on MLD_FISH_Region to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_FISH_Region to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Source to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Source to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Source to public
+go
+
+grant references on PRB_Source to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Source to sbs, plg, djr, mem, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Expts to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Expts to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Expts to public
+go
+
+grant references on MLD_Expts to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Expts to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Reference to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Reference to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Reference to public
+go
+
+grant references on PRB_Reference to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Reference to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Expt_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Expt_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Expt_Marker to public
+go
+
+grant references on MLD_Expt_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Expt_Marker to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Probe to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Probe to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Probe to public
+go
+
+grant references on PRB_Probe to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Probe to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_ContigProbe to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_ContigProbe to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_ContigProbe to public
+go
+
+grant references on MLD_ContigProbe to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_ContigProbe to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Marker to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Marker to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Marker to public
+go
+
+grant references on PRB_Marker to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Marker to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLD_Concordance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_Concordance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_Concordance to public
+go
+
+grant references on MLD_Concordance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_Concordance to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on PRB_Allele to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant update on PRB_Allele to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant select on PRB_Allele to public
+go
+
+grant references on PRB_Allele to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant insert on PRB_Allele to sbs, plg, djr, let, jjm, sfr, ksf, mlp, jab, neb, progs
+go
+
+grant delete on MLC_Text_edit to djr, dpd, progs
+go
+
+grant update on MLC_Text_edit to djr, dpd, progs
+go
+
+grant select on MLC_Text_edit to public
+go
+
+grant references on MLC_Text_edit to djr, dpd, progs
+go
+
+grant insert on MLC_Text_edit to djr, dpd, progs
+go
+
+grant delete on MRK_Types to djr, progs
+go
+
+grant update on MRK_Types to djr, progs
+go
+
+grant select on MRK_Types to public
+go
+
+grant references on MRK_Types to djr, progs
+go
+
+grant insert on MRK_Types to djr, progs
+go
+
+grant delete on MLC_Reference_edit to dpd, progs
+go
+
+grant update on MLC_Reference_edit to djr, dpd, progs
+go
+
+grant select on MLC_Reference_edit to public
+go
+
+grant references on MLC_Reference_edit to dpd, progs
+go
+
+grant insert on MLC_Reference_edit to dpd, progs
+go
+
+grant delete on MRK_Species to sbs, plg, djr, sfr, progs
+go
+
+grant update on MRK_Species to sbs, plg, djr, sfr, progs
+go
+
+grant select on MRK_Species to public
+go
+
+grant references on MRK_Species to sbs, plg, djr, sfr, progs
+go
+
+grant insert on MRK_Species to sbs, plg, djr, sfr, progs
+go
+
+grant delete on MLC_Marker_edit to djr, dpd, progs
+go
+
+grant update on MLC_Marker_edit to djr, dpd, progs
+go
+
+grant select on MLC_Marker_edit to public
+go
+
+grant references on MLC_Marker_edit to djr, dpd, progs
+go
+
+grant insert on MLC_Marker_edit to djr, dpd, progs
+go
+
+grant delete on MRK_Other to djr, ljm, progs
+go
+
+grant update on MRK_Other to djr, ljm, progs
+go
+
+grant select on MRK_Other to public
+go
+
+grant references on MRK_Other to djr, ljm, progs
+go
+
+grant insert on MRK_Other to djr, ljm, progs
+go
+
+grant delete on MLC_Lock_edit to djr, jblake, dpd, progs
+go
+
+grant update on MLC_Lock_edit to djr, jblake, dpd, progs
+go
+
+grant select on MLC_Lock_edit to djr, jblake, dpd, progs
+go
+
+grant references on MLC_Lock_edit to djr, jblake, dpd, progs
+go
+
+grant insert on MLC_Lock_edit to djr, jblake, dpd, progs
+go
+
+grant delete on MRK_Offset to sbs, plg, djr, sfr, jab, progs
+go
+
+grant update on MRK_Offset to sbs, plg, djr, sfr, jab, progs
+go
+
+grant select on MRK_Offset to public
+go
+
+grant references on MRK_Offset to sbs, plg, djr, sfr, jab, progs
+go
+
+grant insert on MRK_Offset to sbs, plg, djr, sfr, jab, progs
+go
+
+grant delete on MLC_History to editors, progs
+go
+
+grant update on MLC_History to editors, progs
+go
+
+grant select on MLC_History to public
+go
+
+grant references on MLC_History to editors, progs
+go
+
+grant insert on MLC_History to editors, progs
+go
+
+grant delete on MGD_Comments to progs
+go
+
+grant update on MGD_Comments to progs
+go
+
+grant select on MGD_Comments to public
+go
+
+grant references on MGD_Comments to progs
+go
+
+grant insert on MGD_Comments to progs
+go
+
+grant delete on MRK_History to djr, progs
+go
+
+grant update on MRK_History to djr, lglass, progs
+go
+
+grant select on MRK_History to public
+go
+
+grant references on MRK_History to djr, progs
+go
+
+grant insert on MRK_History to djr, progs
+go
+
+grant delete on HMD_Notes to plg, djr, sfr, progs
+go
+
+grant update on HMD_Notes to plg, djr, sfr, progs
+go
+
+grant select on HMD_Notes to public
+go
+
+grant references on HMD_Notes to plg, djr, sfr, progs
+go
+
+grant insert on HMD_Notes to plg, djr, sfr, progs
+go
+
+grant delete on HMD_Homology to plg, djr, sfr, progs
+go
+
+grant update on HMD_Homology to plg, djr, sfr, progs
+go
+
+grant select on HMD_Homology to public
+go
+
+grant references on HMD_Homology to plg, djr, sfr, progs
+go
+
+grant insert on HMD_Homology to plg, djr, sfr, progs
+go
+
+grant delete on GXD_Index_Stages to let, dab, sfr, ksf, psj, progs
+go
+
+grant update on GXD_Index_Stages to let, dab, sfr, ksf, psj, progs
+go
+
+grant select on GXD_Index_Stages to public
+go
+
+grant references on GXD_Index_Stages to let, dab, sfr, ksf, psj, progs
+go
+
+grant insert on GXD_Index_Stages to djr, let, dab, sfr, ksf, psj, progs
+go
+
+grant delete on CRS_Typings to sbs, plg, djr, dbradt, progs
+go
+
+grant update on CRS_Typings to sbs, plg, djr, dbradt, progs
+go
+
+grant select on CRS_Typings to public
+go
+
+grant references on CRS_Typings to sbs, plg, djr, dbradt, progs
+go
+
+grant insert on CRS_Typings to sbs, plg, djr, dbradt, progs
+go
+
+grant delete on CRS_Progeny to sbs, plg, djr, dbradt, progs
+go
+
+grant update on CRS_Progeny to sbs, plg, djr, dbradt, progs
+go
+
+grant select on CRS_Progeny to public
+go
+
+grant references on CRS_Progeny to sbs, plg, djr, dbradt, progs
+go
+
+grant insert on CRS_Progeny to sbs, plg, djr, dbradt, progs
+go
+
+grant delete on CRS_Cross to sbs, plg, djr, dbradt, neb, progs
+go
+
+grant update on CRS_Cross to sbs, plg, djr, dbradt, neb, progs
+go
+
+grant select on CRS_Cross to public
+go
+
+grant references on CRS_Cross to sbs, plg, djr, dbradt, neb, progs
+go
+
+grant insert on CRS_Cross to sbs, plg, djr, dbradt, neb, progs
+go
+
+grant delete on BIB_Notes to editors, progs
+go
+
+grant update on BIB_Notes to editors, progs
+go
+
+grant select on BIB_Notes to public
+go
+
+grant references on BIB_Notes to editors, progs
+go
+
+grant insert on BIB_Notes to editors, progs
+go
+
+grant delete on ACC_MGIType to progs
+go
+
+grant update on ACC_MGIType to progs
+go
+
+grant select on ACC_MGIType to public
+go
+
+grant references on ACC_MGIType to progs
+go
+
+grant insert on ACC_MGIType to progs
+go
+
+grant delete on ACC_ActualDB to progs
+go
+
+grant update on ACC_ActualDB to progs
+go
+
+grant select on ACC_ActualDB to public
+go
+
+grant references on ACC_ActualDB to progs
+go
+
+grant insert on ACC_ActualDB to progs
+go
+
+grant delete on ACC_AccessionMax to editors, progs
+go
+
+grant update on ACC_AccessionMax to editors, progs
+go
+
+grant select on ACC_AccessionMax to public
+go
+
+grant references on ACC_AccessionMax to editors, progs
+go
+
+grant insert on ACC_AccessionMax to editors, progs
+go
+
+grant delete on MRK_Symbol to plg, djr, progs
+go
+
+grant update on MRK_Symbol to plg, djr, progs
+go
+
+grant select on MRK_Symbol to public
+go
+
+grant references on MRK_Symbol to plg, djr, progs
+go
+
+grant insert on MRK_Symbol to plg, djr, progs
+go
+
+grant delete on MRK_Name to plg, djr, progs
+go
+
+grant update on MRK_Name to plg, djr, progs
+go
+
+grant select on MRK_Name to public
+go
+
+grant references on MRK_Name to plg, djr, progs
+go
+
+grant insert on MRK_Name to plg, djr, progs
+go
+
+grant delete on MRK_Current to djr, progs
+go
+
+grant update on MRK_Current to djr, progs
+go
+
+grant select on MRK_Current to public
+go
+
+grant references on MRK_Current to djr, progs
+go
+
+grant insert on MRK_Current to djr, progs
+go
+
+grant delete on MRK_Class to djr, progs
+go
+
+grant update on MRK_Class to djr, progs
+go
+
+grant select on MRK_Class to public
+go
+
+grant references on MRK_Class to djr, progs
+go
+
+grant insert on MRK_Class to djr, progs
+go
+
+grant delete on MRK_Anchors to djr, progs
+go
+
+grant update on MRK_Anchors to djr, progs
+go
+
+grant select on MRK_Anchors to public
+go
+
+grant references on MRK_Anchors to djr, progs
+go
+
+grant insert on MRK_Anchors to djr, progs
+go
+
+grant delete on MRK_Alias to djr, ljm, progs
+go
+
+grant update on MRK_Alias to djr, ljm, progs
+go
+
+grant select on MRK_Alias to public
+go
+
+grant references on MRK_Alias to djr, ljm, progs
+go
+
+grant insert on MRK_Alias to djr, ljm, progs
+go
+
+grant delete on MLD_RIData to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_RIData to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_RIData to public
+go
+
+grant references on MLD_RIData to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_RIData to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant delete on MLD_RI to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant update on MLD_RI to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant select on MLD_RI to public
+go
+
+grant references on MLD_RI to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+grant insert on MLD_RI to sbs, plg, djr, dbradt, jjm, neb, progs
+go
+
+EOSQL
+cat $password | isql -Umgd_dbo -e -i $sql

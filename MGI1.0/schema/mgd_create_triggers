@@ -1,0 +1,1654 @@
+#!/bin/csh -f
+# This file was generated automatically -- edit with care.
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+set password = $scripts/.mgd_dbo_password
+#if (($MGD_DST_SRV == "MGD") && ($MGD_DST_DB == "mgd")) then
+#	echo "Sorry -- you cannot use this script with the production database"
+#	exit(1)
+#endif
+setenv DSQUERY $MGD_DST_SRV
+cat > $sql << EOSQL
+use $MGD_DST_DB
+go
+drop trigger PRB_Reference_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger PRB_Reference_Delete
+on PRB_Reference
+for delete
+as
+
+delete PRB_Alias from PRB_Alias, deleted
+where PRB_Alias._Reference_key = deleted._Reference_key
+
+delete PRB_Ref_Notes from PRB_Ref_Notes, deleted
+where PRB_Ref_Notes._Reference_key = deleted._Reference_key
+
+delete PRB_RFLV from PRB_RFLV, deleted
+where PRB_RFLV._Reference_key = deleted._Reference_key
+
+delete ACC_AccessionReference 
+from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m, deleted
+where a._Object_key = deleted._Probe_key
+and a._MGIType_key = m._MGIType_key
+and m.name = "Segment"
+and a._Accession_key = ar._Accession_key
+and ar._Refs_key = deleted._Refs_key
+ 
+select @@error
+
+                                                                                              
+go
+drop trigger MLD_Expt_Marker_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Expt_Marker_Update
+on MLD_Expt_Marker
+for update
+as
+
+/* If modifying Assay type and this is the only instance of the */
+/* Assay type in MGD, then remove it from the Assay table */
+
+if update(_Assay_Type_key) and 
+   (select count(*) from MLD_Expt_Marker, deleted
+    where MLD_Expt_Marker._Assay_Type_key = deleted._Assay_Type_key) = 0
+begin
+  delete MLD_Assay_Types from MLD_Assay_Types, deleted
+  where MLD_Assay_Types._Assay_Type_key = deleted._Assay_Type_key
+end
+
+if update(_Marker_key)
+begin
+	/* If the chromosome in the Marker table is UN, then...  */
+
+  	if (select count(*) from MRK_Marker, MLD_Expts, inserted
+            where MLD_Expts._Expt_key = inserted._Expt_key and
+	    MRK_Marker._Marker_key = inserted._Marker_key and 
+	    MRK_Marker.chromosome = "UN") > 0
+	begin
+
+	  /* Update the chromosome to the MLDP chromosome assignment */
+
+  	  update MRK_Marker 
+  	  set chromosome = MLD_Expts.chromosome
+  	  from MRK_Marker, MLD_Expts, inserted
+          where MLD_Expts._Expt_key = inserted._Expt_key and
+	        MRK_Marker._Marker_key = inserted._Marker_key
+	end
+
+	/* Propagate modification of Marker to experiment tables */
+
+	update MLD_Concordance 
+          set _Marker_key = inserted._Marker_key
+	  from MLD_Concordance, inserted, deleted
+	  where MLD_Concordance._Expt_key = inserted._Expt_key and
+		MLD_Concordance._Marker_key = deleted._Marker_key
+
+	update MLD_MC2point 
+          set _Marker_key_1 = inserted._Marker_key
+	  from MLD_MC2point, inserted, deleted
+	  where MLD_MC2point._Expt_key = inserted._Expt_key and
+		MLD_MC2point._Marker_key_1 = deleted._Marker_key
+
+	update MLD_MC2point 
+          set _Marker_key_2 = inserted._Marker_key
+	  from MLD_MC2point, inserted, deleted
+	  where MLD_MC2point._Expt_key = inserted._Expt_key and
+		MLD_MC2point._Marker_key_2 = deleted._Marker_key
+
+	update MLD_RIData 
+          set _Marker_key = inserted._Marker_key
+	  from MLD_RIData, inserted, deleted
+	  where MLD_RIData._Expt_key = inserted._Expt_key and
+		MLD_RIData._Marker_key = deleted._Marker_key
+
+	update MLD_RI2Point 
+          set _Marker_key_1 = inserted._Marker_key
+	  from MLD_RI2Point, inserted, deleted
+	  where MLD_RI2Point._Expt_key = inserted._Expt_key and
+		MLD_RI2Point._Marker_key_1 = deleted._Marker_key
+
+	update MLD_RI2Point 
+          set _Marker_key_2 = inserted._Marker_key
+	  from MLD_RI2Point, inserted, deleted
+	  where MLD_RI2Point._Expt_key = inserted._Expt_key and
+		MLD_RI2Point._Marker_key_2 = deleted._Marker_key
+
+        update MLD_Statistics
+          set _Marker_key_1 = inserted._Marker_key
+          from MLD_Statistics, inserted, deleted
+          where MLD_Statistics._Expt_key = inserted._Expt_key and
+                MLD_Statistics._Marker_key_1 = deleted._Marker_key
+
+        update MLD_Statistics
+          set _Marker_key_2 = inserted._Marker_key
+          from MLD_Statistics, inserted, deleted
+          where MLD_Statistics._Expt_key = inserted._Expt_key and
+                MLD_Statistics._Marker_key_2 = deleted._Marker_key
+
+        update MLD_Distance
+          set _Marker_key_1 = inserted._Marker_key
+          from MLD_Distance, inserted, deleted
+          where MLD_Distance._Expt_key = inserted._Expt_key and
+                MLD_Distance._Marker_key_1 = deleted._Marker_key
+
+        update MLD_Distance
+          set _Marker_key_2 = inserted._Marker_key
+          from MLD_Distance, inserted, deleted
+          where MLD_Distance._Expt_key = inserted._Expt_key and
+                MLD_Distance._Marker_key_2 = deleted._Marker_key
+
+end
+
+                                
+go
+drop trigger MRK_Alias_Insert
+go
+                                                                                                                                                                                                                                                               
+create trigger MRK_Alias_Insert
+on MRK_Alias
+for insert
+as
+
+/* Append Alias to Symbol bucket */
+
+if (select count(MRK_Marker._Marker_key) from MRK_Marker, inserted
+         where inserted._Marker_key = inserted._Alias_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Symbol cannot use itself as an Alias"
+end
+else
+begin
+	insert MRK_Symbol (_Marker_key, _Marker_Type_key, symbol) 
+	select inserted._Marker_key, 4, MRK_Marker.symbol
+	from inserted, MRK_Marker
+	where inserted._Alias_key = MRK_Marker._Marker_key
+end
+
+                                                                                                                                                                                                                                     
+go
+drop trigger MRK_Other_Delete
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_Other_Delete
+on MRK_Other
+for delete
+as
+ 
+/* Delete entry from Name bucket */
+
+delete MRK_Name from MRK_Name, deleted
+where MRK_Name._Marker_key = deleted._Marker_key and
+      MRK_Name._Marker_Type_key is null and
+      MRK_Name.name = deleted.name
+ 
+select @@error
+ 
+                                                                                                                                                                                                                            
+go
+drop trigger ACC_LogicalDB_Delete
+go
+                                                                                                                                                                                                                                                               create trigger ACC_LogicalDB_Delete 
+on ACC_LogicalDB
+for delete
+as
+if (select count(*)
+        from deleted, ACC_Accession
+        where ACC_Accession._LogicalDB_key = deleted._LogicalDB_key) > 0
+ 
+        begin
+                rollback transaction
+                raiserror 99999 "DELETE FAILURE: Reference found in ACC_Acession"
+        end
+else if (select count(*)
+                from deleted, ACC_ActualDB
+                where ACC_ActualDB._LogicalDB_key = deleted._LogicalDB_key) > 0
+        begin
+                rollback transaction
+                raiserror 99999 "DELETE FAILURE: Reference found in ACC_ActualDB"
+        end
+select @@error
+                                                                                                                 
+go
+drop trigger HMD_Homology_Insert
+go
+                                                                                                                                                                                                                                                               
+create trigger HMD_Homology_Insert
+on HMD_Homology
+for insert
+as
+
+/* Check for duplicate Reference/Species/Symbol records */
+
+if (select count(*) from inserted, HMD_Reference r1, HMD_Homology h1, HMD_Reference r2
+    where inserted._Marker_key = h1._Marker_key
+	  and h1._Homology_key = r1._Homology_key
+	  and r1._Refs_key = r2._Refs_key
+	  and r2._Homology_key = inserted._Homology_key) > 1
+begin
+        rollback transaction
+	delete HMD_Reference from HMD_Reference, inserted 
+	where HMD_Reference._Homology_key = inserted._Homology_key
+        raiserror 99999 "Homology Reference Already Exists for This J#/Species/Symbol"
+	return
+end
+
+/* If Chromosome record for inserted Homology does not exist in MRK_Chromosome... */
+
+if (select count(*) from inserted, MRK_Marker
+    where inserted._Marker_key = MRK_Marker._Marker_key
+	  and MRK_Marker._Species_key in (9,11,35,40,44)) > 0
+begin
+	if (select count(MRK_Chromosome.chromosome) 
+    	from MRK_Chromosome, inserted, MRK_Marker
+    	where inserted._Marker_key = MRK_Marker._Marker_key
+	  	and MRK_Marker._Species_key = MRK_Chromosome._Species_key
+	  	and MRK_Marker.chromosome = MRK_Chromosome.chromosome) = 0
+	begin
+		/* Get next available sequence number */
+		declare @nextseq integer
+		select @nextseq = max(MRK_Chromosome.sequenceNum) + 1 
+		from MRK_Chromosome, MRK_Marker, inserted
+		where inserted._Marker_key = MRK_Marker._Marker_key
+		      and MRK_Marker._Species_key = MRK_Chromosome._Species_key
+
+		insert into MRK_Chromosome (_Species_key, chromosome, sequenceNum)
+		select MRK_Marker._Species_key, MRK_Marker.chromosome, @nextseq
+		from MRK_Marker, inserted
+		where inserted._Marker_key = MRK_Marker._Marker_key
+
+        	raiserror 99999 "Please verify the Chromosome order for the Species record just added.\nThis can be reviewed using the Species editing screen."
+	end
+end
+
+                                                                                                                                                                                                   
+go
+drop trigger MLD_RI_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_RI_Update
+on MLD_RI
+for insert, update
+as
+
+/* If modifying RI key in MLDP table, then */
+/* set appropriate column values in MLDP table */
+/* as they appear in the RI table */
+
+if update (_RISet_key)
+begin
+  update MLD_RI
+  set designation = RI_RISet.designation,
+      origin = RI_RISet.origin,
+      abbrev1 = RI_RISet.abbrev1,
+      abbrev2 = RI_RISet.abbrev2
+  from MLD_RI, RI_RISet, inserted
+  where MLD_RI._Expt_key = inserted._Expt_key and
+	inserted._RISet_key = RI_RISet._RISet_key
+end
+
+                                                                                                                                                                                                                                                          
+go
+drop trigger MRK_Allele_Update
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_Allele_Update
+on MRK_Allele
+for update
+as
+ 
+/* Update entries in Symbol/Name Buckets */
+
+if update(symbol)
+begin
+	update MRK_Symbol set symbol = inserted.symbol
+	from MRK_Symbol, inserted, deleted
+	where MRK_Symbol._Marker_key = inserted._Marker_key and 
+	      MRK_Symbol._Marker_Type_key = 5 and
+	      MRK_Symbol.symbol = deleted.symbol
+end
+
+if update(name)
+begin
+	update MRK_Name set name = inserted.name
+	from MRK_Name, inserted, deleted
+	where MRK_Name._Marker_key = inserted._Marker_key and 
+	      MRK_Name._Marker_Type_key = 5 and
+	      MRK_Name.name = deleted.name
+end
+
+                                                                                                                                                                   
+go
+drop trigger BIB_Insert
+go
+                                                                                                                                                                                                                                                                
+create trigger BIB_Insert
+on BIB_Refs
+for insert
+as
+ 
+/* Check for duplicates */
+ 
+if (select journal from inserted) != 'Mouse News Lett'
+begin
+  if (select charindex("-", inserted.pgs) from inserted) > 0
+  begin
+    if (select count(BIB_Refs._Refs_key) from BIB_Refs, inserted
+        where BIB_Refs.journal = inserted.journal and
+              BIB_Refs.year = inserted.year and
+              BIB_Refs.vol = inserted.vol and
+              BIB_Refs.pgs like substring(inserted.pgs, 1, charindex("-", inserted.pgs) - 1) + "%") > 1
+    begin
+        rollback transaction
+        raiserror 99999 "Reference Already Exists"
+        select @@error
+        return
+    end
+  end
+  else
+  begin
+    if (select count(BIB_Refs._Refs_key) from BIB_Refs, inserted
+        where BIB_Refs.journal = inserted.journal and
+              BIB_Refs.year = inserted.year and
+              BIB_Refs.vol = inserted.vol and
+              BIB_Refs.pgs = inserted.pgs) > 1
+    begin
+        rollback transaction
+        raiserror 99999 "Reference Already Exists"
+        select @@error
+        return
+    end
+  end
+end
+ 
+declare @key integer
+select @key = _Refs_key from inserted
+exec ACC_assignMGI @key, "Reference"
+ 
+                                                                                
+go
+drop trigger MRK_Insert
+go
+                                                                                                                                                                                                                                                               
+create trigger MRK_Insert
+on MRK_Marker
+for insert
+as
+
+/* For Mouse Species, insert records for Accession #, Name bucket, Symbol bucket, Current Symbol */
+/* For Other Species, insert record for Accession # */
+
+if (select _Species_key from inserted) = 1
+begin
+	insert MRK_Name (_Marker_key, _Marker_Type_key, name) 
+		select _Marker_key, _Marker_Type_key, name from inserted
+	insert MRK_Symbol (_Marker_key, _Marker_Type_key, symbol) 
+		select _Marker_key, _Marker_Type_key, symbol from inserted
+	insert MRK_Current (_Current_key, _Marker_key) 
+		select _Marker_key, _Marker_key from inserted
+
+	declare @key integer
+	select @key = _Marker_key from inserted
+	exec ACC_assignMGI @key, "Marker"
+end
+
+                                                                   
+go
+drop trigger MLD_FISH_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_FISH_Update
+on MLD_FISH
+for insert, update
+as
+
+if update(band)
+begin
+	if (select MRK_Marker.cytogeneticOffset 
+	    from MRK_Marker, MLD_Expt_Marker, inserted
+	    where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+		  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+	begin
+		update MRK_Marker
+		set cytogeneticOffset = inserted.band
+		from MRK_Marker, MLD_Expt_Marker, inserted
+	        where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+		      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+	end
+end
+
+                                                                                                                                                                                                                 
+go
+drop trigger MRK_History_Update
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_History_Update
+on MRK_History
+for update
+as
+ 
+/* Update entry in Name bucket */
+
+if update(name)
+begin
+        update MRK_Name set name = inserted.name
+        from MRK_Name, inserted, deleted
+        where MRK_Name._Marker_key = inserted._Marker_key and 
+	      MRK_Name._Marker_Type_key is null and
+	      MRK_Name.name = deleted.name
+end
+
+if update(_Refs_key)
+begin
+	if (select count(MRK_Reference._Marker_key) from MRK_Reference, inserted
+    	    where MRK_Reference._Marker_key = inserted._Marker_key and
+	  	  MRK_Reference._Refs_key = inserted._Refs_key) = 0
+	begin
+		insert MRK_Reference (_Marker_key, _Refs_key, auto) 
+		select _Marker_key, _Refs_key, 1 from inserted
+		where _Refs_key is not null
+	end
+end
+
+                          
+go
+drop trigger RI_RISet_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger RI_RISet_Delete
+on RI_RISet
+for delete
+as
+
+if (select count(*) from MLD_RI, deleted
+    where MLD_RI._RISet_key = deleted._RISet_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "RI is referenced in MLDP Record(s)"
+end
+
+select @@error
+
+                                                                                                                                                                                                                                               
+go
+drop trigger PRB_Update
+go
+                                                                                                                                                                                                                                                                
+create trigger PRB_Update
+on PRB_Probe
+for update
+as
+ 
+if update (_Source_key)
+begin
+	/* Delete orphan Anonymous _Source_keys */
+
+	if (select PRB_Source.name from PRB_Source, deleted
+	    where PRB_Source._Source_key = deleted._Source_key) is null
+	    and
+	   (select count(PRB_Probe._Source_key) from PRB_Probe, deleted
+            where PRB_Probe._Source_key = deleted._Source_key) = 0
+	begin
+		delete PRB_Source from PRB_Source, deleted
+		where PRB_Source._Source_key = deleted._Source_key
+	end
+
+	/* Update _Source_key for all children of Parent */
+
+	update PRB_Probe set _Source_key = inserted._Source_key
+	from PRB_Probe, inserted
+	where PRB_Probe.derivedFrom = inserted._Probe_key
+end
+
+                                                                      
+go
+drop trigger MLD_Marker_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Marker_Update
+on MLD_Marker
+for update
+as
+
+if update(_Refs_key)
+begin
+	update MLD_Expts
+	  set _Refs_key = inserted._Refs_key
+	  from MLD_Expts, inserted, deleted
+	  where MLD_Expts._Refs_key = deleted._Refs_key
+
+	update MLD_Notes
+	  set _Refs_key = inserted._Refs_key
+	  from MLD_Notes, inserted, deleted
+	  where MLD_Notes._Refs_key = deleted._Refs_key
+end
+
+if update(_Marker_key)
+begin
+	/* If the Marker in the Primary list is modified, then propagate */
+	/* the changes to the gene list of each experiment of the reference */
+
+	update MLD_Expt_Marker
+          set _Marker_key = inserted._Marker_key
+	  from MLD_Expt_Marker, MLD_Expts, inserted, deleted
+	  where MLD_Expts._Refs_key = inserted._Refs_key and
+		MLD_Expts._Expt_key = MLD_Expt_Marker._Expt_key and
+		MLD_Expt_Marker._Marker_key = deleted._Marker_key
+end
+
+                                                                                                                                                                                 
+go
+drop trigger PRB_Marker_Update
+go
+                                                                                                                                                                                                                                                                
+create trigger PRB_Marker_Update
+on PRB_Marker
+for insert, update
+as
+ 
+if update (_Marker_key)
+begin
+	update PRB_RFLV
+	set _Marker_key = inserted._Marker_key
+	from PRB_RFLV, PRB_Reference, inserted, deleted
+	where inserted._Probe_key = PRB_Reference._Probe_key
+	      and PRB_Reference._Reference_key = PRB_RFLV._Reference_key
+	      and PRB_RFLV._Marker_key = deleted._Marker_key
+end
+
+if (select count(*) from inserted i, PRB_Probe p, PRB_Source s
+    where i._Probe_key = p._Probe_key
+	  and p.DNAtype != 'primer'
+	  and p._Source_key = s._Source_key
+	  and s.species not in ('mouse, laboratory', 'unspecified')
+	  and (i.relationship != 'H' or i.relationship is null)) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Relationship Must be 'H'"
+end
+ 
+                                                                                                                                                                                                                                                          
+go
+drop trigger MLD_Expt_Marker_Insert
+go
+                                                                                                                                                                                                                                                                
+create trigger MLD_Expt_Marker_Insert
+on MLD_Expt_Marker
+for insert
+as
+ 
+/* If the chromosome in the Marker table is UN, then...  */
+ 
+if (select count(*) from MRK_Marker, MLD_Expts, inserted
+    where MLD_Expts._Expt_key = inserted._Expt_key and
+    MRK_Marker._Marker_key = inserted._Marker_key and
+    MRK_Marker.chromosome = "UN") > 0
+begin
+ 
+    /* Update the chromosome to the MLDP chromosome assignment */
+ 
+    update MRK_Marker
+    set chromosome = MLD_Expts.chromosome
+    from MRK_Marker, MLD_Expts, inserted
+    where MLD_Expts._Expt_key = inserted._Expt_key and
+          MRK_Marker._Marker_key = inserted._Marker_key
+end
+ 
+                                                                                                                              
+go
+drop trigger MRK_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MRK_Update
+on MRK_Marker
+for update
+as
+
+/* If not Mouse, disallow duplicate Species/Symbol records */
+
+if (select _Species_key from inserted) != 1
+begin
+	if update(symbol) and
+           (select count(*) from MRK_Marker, inserted 
+	    where inserted._Species_key = MRK_Marker._Species_key and
+		  inserted.symbol = MRK_Marker.symbol) > 1
+	begin
+		rollback transaction
+		raiserror 99999 "Marker Symbol For This Species Already Exists.\nDelete Existing Row And Add A New Row For This Symbol."
+	end
+	return
+end
+
+/* If updating chromosome and changing from unknown to known, update offset to -1 */
+
+if (select _Species_key from inserted) = 1 and update (chromosome)
+begin
+       if ((select chromosome from deleted) = "RE" or
+           (select chromosome from deleted) = "UN") and
+           (select chromosome from inserted) != "RE" and
+           (select chromosome from inserted) != "UN" and
+           (select chromosome from inserted) != "W"
+	begin
+        	update MRK_Offset set offset = -1
+        	from inserted
+        	where inserted._Marker_key = MRK_Offset._Marker_key and MRK_Offset.source = 0
+	end
+end
+
+/* If updating symbol or Marker Type, check for duplicates and update Symbol bucket */
+
+if update (symbol) or update(_Marker_Type_key)
+begin
+	update MRK_Symbol 
+	set symbol = inserted.symbol, _Marker_Type_key = inserted._Marker_Type_key
+	from MRK_Symbol, inserted, deleted
+	where MRK_Symbol._Marker_key = inserted._Marker_key and 
+	      MRK_Symbol._Marker_Type_key = deleted._Marker_Type_key and
+	      MRK_Symbol.symbol = deleted.symbol
+end
+
+/* If updating name and name is currently null, update nulls in Name bucket, */
+/* else just update Name bucket */
+
+if update (name)
+begin
+	if (select chromosome from inserted) != "W"
+	begin
+		if (select name from deleted) is null
+		begin
+        		update MRK_Name set name = inserted.name
+	  		from MRK_Name, inserted, deleted
+	  		where MRK_Name._Marker_key = inserted._Marker_key and
+			      MRK_Name._Marker_Type_key = deleted._Marker_Type_key and
+		      	      MRK_Name.name is null
+		end
+		else
+		begin
+        		update MRK_Name set name = inserted.name
+	  		from MRK_Name, inserted, deleted
+	  		where MRK_Name._Marker_key = inserted._Marker_key and
+			      MRK_Name._Marker_Type_key = deleted._Marker_Type_key and
+		      	      MRK_Name.name = deleted.name
+		end
+	end
+end
+
+                                                                                                                                                                                              
+go
+drop trigger MRK_Other_Update
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_Other_Update
+on MRK_Other
+for update
+as
+ 
+/* Update entry in Name bucket */
+
+if update(name)
+begin
+        update MRK_Name set name = inserted.name
+        from MRK_Name, inserted, deleted
+        where MRK_Name._Marker_key = inserted._Marker_key and 
+              MRK_Name._Marker_Type_key is null and
+	      MRK_Name.name = deleted.name
+end
+ 
+                                                                                                                                               
+go
+drop trigger ACCRef_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger ACCRef_Delete
+on ACC_AccessionReference
+for delete
+as
+
+/* If AccID is not referenced by other References in ACC_AccessionReference,
+   then delete AccID from ACC_Accesion table too.
+*/
+ 
+if (select count(*) from ACC_AccessionReference a, deleted d
+    where a._Accession_key = d._Accession_key) = 0
+begin
+	delete ACC_Accession 
+	from ACC_Accession a, deleted d
+	where a._Accession_key = d._Accession_key
+end
+
+select @@error
+
+                                                                     
+go
+drop trigger PRB_Source_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger PRB_Source_Delete
+on PRB_Source
+for delete
+as
+
+if (select count(PRB_Probe._Source_key) from PRB_Probe, deleted
+         where PRB_Probe._Source_key = deleted._Source_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Probe Library is referenced in Probe Record(s)"
+end
+ 
+select @@error
+
+                                                                                                                                                                                             
+go
+drop trigger MLD_Contig_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Contig_Delete
+on MLD_Contig
+for delete
+as
+
+delete MLD_ContigProbe from MLD_ContigProbe, deleted
+where MLD_ContigProbe._Contig_key = deleted._Contig_key
+
+select @@error
+
+                                                                  
+go
+drop trigger MRK_Allele_Insert
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_Allele_Insert
+on MRK_Allele
+for insert
+as
+ 
+/* Append Allele Symbol to Symbol Bucket */
+
+insert MRK_Symbol (_Marker_key, _Marker_Type_key, symbol)
+select inserted._Marker_key, 5, inserted.symbol
+from inserted
+ 
+/* Append Allele Name to Symbol Bucket */
+
+insert MRK_Name (_Marker_key, _Marker_Type_key, name)
+select inserted._Marker_key, 5, inserted.name
+from inserted
+ 
+                                                                                                                       
+go
+drop trigger MRK_Species_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger MRK_Species_Delete
+on MRK_Species
+for delete
+as
+
+/* Disallow deletion of species which are referenced in MRK_Marker table */
+
+if (select count(MRK_Marker._Marker_key) from MRK_Marker, deleted
+         where MRK_Marker._Species_key = deleted._Species_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Symbols Exist For This Species"
+end
+
+delete MRK_Chromosome from MRK_Chromosome, deleted
+where MRK_Chromosome._Species_key = deleted._Species_key
+
+select @@error
+
+             
+go
+drop trigger MRK_Delete
+go
+                                                                                                                                                                                                                                                               create trigger MRK_Delete
+on MRK_Marker
+for delete
+as
+ 
+if (select count(MRK_Alias._Alias_key) from MRK_Alias, deleted
+    where MRK_Alias._Alias_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Alias Record(s)"
+end
+ 
+/* Symbol is a Current Symbol of itself */
+ 
+else if (select count(MRK_Current._Current_key) from MRK_Current, deleted
+         where MRK_Current._Current_key = deleted._Marker_key) > 1
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Current Symbol Record(s)"
+end
+ 
+else if (select count(MRK_History._History_key) from MRK_History, deleted
+         where MRK_History._History_key = deleted._Marker_key and
+               MRK_History._Marker_key != deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in History Record(s)"
+end
+ 
+else if (select count(PRB_Marker._Marker_key) from PRB_Marker, deleted
+         where PRB_Marker._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Probe Marker Record(s)"
+end
+ 
+else if (select count(PRB_RFLV._Marker_key) from PRB_RFLV, deleted
+         where PRB_RFLV._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Probe RFLV Record(s)"
+end
+ 
+else if (select count(MLD_Marker._Marker_key) from MLD_Marker, deleted
+         where MLD_Marker._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Marker Record(s)"
+end
+ 
+else if (select count(MLD_Expt_Marker._Marker_key) from MLD_Expt_Marker, deleted
+         where MLD_Expt_Marker._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Experiment Marker Record(s)"
+end
+ 
+else if (select count(MLD_Concordance._Marker_key) from MLD_Concordance, deleted
+         where MLD_Concordance._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Hybrid Concordance Record(s)"
+end
+ 
+else if (select count(MLD_MC2point._Marker_key_1) from MLD_MC2point, deleted
+         where MLD_MC2point._Marker_key_1 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+end
+ 
+else if (select count(MLD_MC2point._Marker_key_2) from MLD_MC2point, deleted
+         where MLD_MC2point._Marker_key_2 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+end
+ 
+else if (select count(MLD_RIData._Marker_key) from MLD_RIData, deleted
+         where MLD_RIData._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP RI Data Record(s)"
+end
+ 
+else if (select count(MLD_RI2Point._Marker_key_1) from MLD_RI2Point, deleted
+         where MLD_RI2Point._Marker_key_1 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+end
+ 
+else if (select count(MLD_RI2Point._Marker_key_2) from MLD_RI2Point, deleted
+         where MLD_RI2Point._Marker_key_2 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLDP Cross 2 Point Record(s)"
+end
+ 
+else if (select count(MLD_Distance._Marker_key_1) from MLD_Distance, deleted
+         where MLD_Distance._Marker_key_1 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Physical Mapping Record(s)"
+end
+ 
+else if (select count(MLD_Distance._Marker_key_2) from MLD_Distance, deleted
+         where MLD_Distance._Marker_key_2 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Physical Mapping Record(s)"
+end
+ 
+else if (select count(HMD_Homology._Marker_key) from HMD_Homology, deleted
+         where HMD_Homology._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in Homology Record(s)"
+end
+ 
+else if (select count(MLC_Text_edit._Marker_key) from MLC_Text_edit, deleted
+         where MLC_Text_edit._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLC Edit Record(s)"
+end
+ 
+else if (select count(MLC_Marker_edit._Marker_key_2) from MLC_Marker_edit, deleted
+         where MLC_Marker_edit._Marker_key_2 = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in MLC Edit Record(s)"
+end
+ 
+else if (select count(GXD_Index._Marker_key) from GXD_Index, deleted
+         where GXD_Index._Marker_key = deleted._Marker_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Marker Symbol is referenced in GXD Index Record(s)"
+end
+ 
+else
+begin
+        delete MRK_Alias from MRK_Alias, deleted
+        where MRK_Alias._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Allele from MRK_Allele, deleted
+        where MRK_Allele._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Classes from MRK_Classes, deleted
+        where MRK_Classes._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Current from MRK_Current, deleted
+        where MRK_Current._Marker_key = deleted._Marker_key
+ 
+        delete MRK_History from MRK_History, deleted
+        where MRK_History._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Notes from MRK_Notes, deleted
+        where MRK_Notes._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Offset from MRK_Offset, deleted
+        where MRK_Offset._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Other from MRK_Other, deleted
+        where MRK_Other._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Reference from MRK_Reference, deleted
+        where MRK_Reference._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Name from MRK_Name, deleted
+        where MRK_Name._Marker_key = deleted._Marker_key
+ 
+        delete MRK_Symbol from MRK_Symbol, deleted
+        where MRK_Symbol._Marker_key = deleted._Marker_key
+ 
+        delete ACC_Accession
+        from ACC_Accession a, ACC_MGIType m, deleted
+        where a._Object_key = deleted._Marker_key
+        and a._MGIType_key = m._MGIType_key
+        and m.name = "Marker"
+end
+ 
+select @@error
+ 
+                                                                                                                                                                                                                                 
+go
+drop trigger MLD_Hybrid_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Hybrid_Update
+on MLD_Hybrid
+for insert, update
+as
+
+if update(band)
+begin
+	if (select MRK_Marker.cytogeneticOffset 
+	    from MRK_Marker, MLD_Expt_Marker, inserted
+	    where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+		  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+	begin
+		update MRK_Marker
+		set cytogeneticOffset = inserted.band
+		from MRK_Marker, MLD_Expt_Marker, inserted
+	        where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+		      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+	end
+end
+
+                                                                                                                                                                                                             
+go
+drop trigger MLD_InSitu_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_InSitu_Update
+on MLD_InSitu
+for insert, update
+as
+
+if update(band)
+begin
+	if (select MRK_Marker.cytogeneticOffset 
+	    from MRK_Marker, MLD_Expt_Marker, inserted
+	    where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+		  and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key) is null
+	begin
+		update MRK_Marker
+		set cytogeneticOffset = inserted.band
+		from MRK_Marker, MLD_Expt_Marker, inserted
+	        where inserted._Expt_key = MLD_Expt_Marker._Expt_key
+		      and MLD_Expt_Marker._Marker_key = MRK_Marker._Marker_key
+	end
+end
+
+                                                                                                                                                                                                             
+go
+drop trigger MRK_History_Insert
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_History_Insert
+on MRK_History
+for insert
+as
+ 
+if update(name)
+begin
+	/* Insert entry into Name bucket */
+        insert MRK_Name (_Marker_key, _Marker_Type_key, name)
+        select inserted._Marker_key, MRK_Marker._Marker_Type_key, inserted.name 
+        from inserted, MRK_Marker
+        where inserted._Marker_key = MRK_Marker._Marker_key
+end
+
+if (select count(MRK_Reference._Marker_key) from MRK_Reference, inserted
+    where MRK_Reference._Marker_key = inserted._Marker_key and
+	  MRK_Reference._Refs_key = inserted._Refs_key) = 0
+begin
+	insert MRK_Reference (_Marker_key, _Refs_key, auto) 
+	select _Marker_key, _Refs_key, 1 from inserted
+	where _Refs_key is not null
+end
+
+                                                                  
+go
+drop trigger RI_RISet_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger RI_RISet_Update
+on RI_RISet
+for update
+as
+
+update MLD_RI
+set origin = inserted.origin, 
+    designation = inserted.designation,
+    abbrev1 = inserted.abbrev1,
+    abbrev2 = inserted.abbrev2
+from MLD_RI, inserted
+where MLD_RI._RISet_key = inserted._RISet_key
+
+                                                                                                                                                                                                                                          
+go
+drop trigger PRB_Insert
+go
+                                                                                                                                                                                                                                                                
+create trigger PRB_Insert
+on PRB_Probe
+for insert
+as
+ 
+declare @key integer
+select @key = _Probe_key from inserted
+exec ACC_assignMGI @key, "Segment"
+
+                                                                                                      
+go
+drop trigger HMD_Homology_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger HMD_Homology_Delete
+on HMD_Homology
+for delete
+as
+
+/* If the marker of the homology being deleted is non-mouse and non-human, */
+/* and this is the only instance of this marker in homology, then remove */
+/* the marker entry from the marker table */
+
+if (select count(*) from HMD_Homology, deleted
+    where HMD_Homology._Marker_key = deleted._Marker_key) = 0
+begin
+	delete MRK_Marker from MRK_Marker, deleted
+	where MRK_Marker._Marker_key = deleted._Marker_key
+	      and MRK_Marker._Species_key != 1
+	      and MRK_Marker._Species_key != 2
+end
+ 
+select @@error
+
+                                                                                                                                                                                         
+go
+drop trigger MLD_Expts_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Expts_Delete
+on MLD_Expts
+for delete
+as
+
+/* Re-order the tag numbers for experiments if one is deleted */
+
+update MLD_Expts
+set MLD_Expts.tag = MLD_Expts.tag - 1
+from MLD_Expts, deleted
+where MLD_Expts._Refs_key = deleted._Refs_key
+and MLD_Expts.exptType = deleted.exptType
+and MLD_Expts.tag > deleted.tag
+
+/* Delete entries in all experiment tables */
+
+delete MLD_Expt_Marker from MLD_Expt_Marker, deleted
+where MLD_Expt_Marker._Expt_key = deleted._Expt_key
+
+delete MLD_Expt_Notes from MLD_Expt_Notes, deleted
+where MLD_Expt_Notes._Expt_key = deleted._Expt_key
+
+delete MLD_FISH from MLD_FISH, deleted
+where MLD_FISH._Expt_key = deleted._Expt_key
+
+delete MLD_FISH_Region from MLD_FISH_Region, deleted
+where MLD_FISH_Region._Expt_key = deleted._Expt_key
+
+delete MLD_Hybrid from MLD_Hybrid, deleted
+where MLD_Hybrid._Expt_key = deleted._Expt_key
+
+delete MLD_Concordance from MLD_Concordance, deleted
+where MLD_Concordance._Expt_key = deleted._Expt_key
+
+delete MLD_InSitu from MLD_InSitu, deleted
+where MLD_InSitu._Expt_key = deleted._Expt_key
+
+delete MLD_ISRegion from MLD_ISRegion, deleted
+where MLD_ISRegion._Expt_key = deleted._Expt_key
+
+delete MLD_Matrix from MLD_Matrix, deleted
+where MLD_Matrix._Expt_key = deleted._Expt_key
+
+delete MLD_MC2point from MLD_MC2point, deleted
+where MLD_MC2point._Expt_key = deleted._Expt_key
+
+delete MLD_MCDataList from MLD_MCDataList, deleted
+where MLD_MCDataList._Expt_key = deleted._Expt_key
+
+delete MLD_RI from MLD_RI, deleted
+where MLD_RI._Expt_key = deleted._Expt_key
+
+delete MLD_RIData from MLD_RIData, deleted
+where MLD_RIData._Expt_key = deleted._Expt_key
+
+delete MLD_RI2Point from MLD_RI2Point, deleted
+where MLD_RI2Point._Expt_key = deleted._Expt_key
+
+delete MLD_Hit from MLD_Hit, deleted
+where MLD_Hit._Expt_key = deleted._Expt_key
+
+delete MLD_Contig from MLD_Contig, deleted
+where MLD_Contig._Expt_key = deleted._Expt_key
+
+delete MLD_Statistics from MLD_Statistics, deleted
+where MLD_Statistics._Expt_key = deleted._Expt_key
+
+delete ACC_Accession
+from ACC_Accession a, ACC_MGIType m, deleted
+where a._Object_key = deleted._Expt_key
+and a._MGIType_key = m._MGIType_key
+and m.name = "Experiment"
+ 
+select @@error
+
+                                                                                                                    
+go
+drop trigger HMD_Assay_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger HMD_Assay_Delete
+on HMD_Assay
+for delete
+as
+
+/* Disallow removal of the homology assay if it is being referenced in homology */
+
+if (select count(*) from HMD_Homology_Assay, deleted
+    where HMD_Homology_Assay._Assay_key = deleted._Assay_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Assay is referenced in Homology Record(s)"
+end
+ 
+select @@error
+
+                                                                                                                         
+go
+drop trigger MRK_Other_Insert
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_Other_Insert
+on MRK_Other
+for insert
+as
+ 
+/* Insert entry into Name bucket */
+
+insert MRK_Name (_Marker_key, _Marker_Type_key, name)
+select inserted._Marker_key, MRK_Marker._Marker_Type_key, inserted.name 
+from inserted, MRK_Marker
+where inserted._Marker_key = MRK_Marker._Marker_key
+ 
+                                                                                                                                                                                                           
+go
+drop trigger CRS_Cross_Delete
+go
+                                                                                                                                                                                                                                                               create trigger CRS_Cross_Delete
+on CRS_Cross
+for delete
+as
+/* Disallow removal of a record if the Cross is referenced in MLDP */
+if (select count(*) from MLD_Matrix, deleted
+where MLD_Matrix._Cross_key = deleted._Cross_key) > 0
+begin
+rollback transaction
+raiserror 99999 "Cross is referenced in MLDP Record(s)"
+end
+select @@error
+                                                                                                                                                                                    
+go
+drop trigger PRB_Allele_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger PRB_Allele_Delete
+on PRB_Allele
+for delete
+as
+
+delete PRB_Allele_Strain from PRB_Allele_Strain, deleted
+where PRB_Allele_Strain._Allele_key = deleted._Allele_key
+
+select @@error
+
+                                                            
+go
+drop trigger PRB_RFLV_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger PRB_RFLV_Delete
+on PRB_RFLV
+for delete
+as
+
+delete PRB_Allele from PRB_Allele, deleted
+where PRB_Allele._RFLV_key = deleted._RFLV_key
+
+select @@error
+
+                                                                                         
+go
+drop trigger MLD_Matrix_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Matrix_Delete
+on MLD_Matrix
+for delete
+as
+
+/* Remove entries from Cross table upon deletion of Matrix */
+/* record, if the cross is not a named (i.e. specific) Cross */
+
+if (select count(CRS_Cross._Cross_key) from CRS_Cross, deleted 
+    where CRS_Cross._Cross_key = deleted._Cross_key and CRS_Cross.whoseCross is null) > 0
+begin
+	delete CRS_Cross from CRS_Cross, deleted
+	where CRS_Cross._Cross_key = deleted._Cross_key
+
+	select @@error
+end
+
+                                               
+go
+drop trigger MRK_Alias_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger MRK_Alias_Delete
+on MRK_Alias
+for delete
+as
+
+/* Delete Alias from Symbol Bucket */
+
+delete MRK_Symbol from MRK_Symbol, MRK_Marker, deleted
+where MRK_Symbol._Marker_key = deleted._Marker_key and
+      MRK_Symbol._Marker_Type_key = 4 and
+      deleted._Alias_key = MRK_Marker._Marker_key and
+      MRK_Marker.symbol = MRK_Symbol.symbol
+
+select @@error
+
+                                                                                                                                               
+go
+drop trigger MRK_Species_Insert
+go
+                                                                                                                                                                                                                                                               
+create trigger MRK_Species_Insert
+on MRK_Species
+for insert
+as
+
+declare @nextlogicalDB integer
+
+select @nextlogicalDB = max(_LogicalDB_key) + 1 from ACC_LogicalDB
+
+insert ACC_LogicalDB (_LogicalDB_key, name, _Species_key) 
+  select @nextlogicalDB, inserted.name, inserted._Species_key from inserted
+
+                                                                                                                                                                                                                 
+go
+drop trigger ACC_LogicalDB_Update
+go
+                                                                                                                                                                                                                                                               
+create trigger  ACC_LogicalDB_Update
+on ACC_LogicalDB
+for update
+as
+if
+        (select _Species_key from deleted ) != (select _Species_key from inserted ) and
+        (select count (*) from ACC_Accession, inserted
+               where
+                Acc_Accession._LogicalDB_key = inserted._LogicalDB_key) > 0
+                begin
+                    rollback transaction
+                    raiserror 99999 "UPDATE FAILURE: Accession Number attached to _LogicalDB_k
+ey"
+                end
+ 
+ 
+select @@error
+                                                                                                                                                                                                                                                            
+go
+drop trigger MLD_Assay_Types_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Assay_Types_Delete
+on MLD_Assay_Types
+for delete
+as
+
+/* Disallow removal of an Assay which is referenced in MLDP */
+
+if (select count(*) from MLD_Expt_Marker, deleted
+    where MLD_Expt_Marker._Assay_Type_key = deleted._Assay_Type_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Assay is referenced in MLDP Record(s)"
+end
+
+select @@error
+
+                                                                                                                                  
+go
+drop trigger MRK_Allele_Delete
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_Allele_Delete
+on MRK_Allele
+for delete
+as
+
+/* If Allele is referenced in MLDP, disallow deletion */
+
+if (select count(MLD_Expt_Marker._Allele_key) from MLD_Expt_Marker, deleted
+    where MLD_Expt_Marker._Allele_key = deleted._Allele_key) > 0
+begin
+	rollback transaction
+	raiserror 99999 "Allele Symbol is referenced in MLDP Record(s)"
+end
+
+else
+begin
+	/* Remove entries from Symbol/Name buckets */
+
+	delete MRK_Symbol from MRK_Symbol, deleted
+	where MRK_Symbol._Marker_key = deleted._Marker_key and
+      	MRK_Symbol._Marker_Type_key = 5 and
+      	MRK_Symbol.symbol = deleted.symbol
+ 
+	delete MRK_Name from MRK_Name, deleted
+	where MRK_Name._Marker_key = deleted._Marker_key and
+      	MRK_Name._Marker_Type_key = 5 and
+      	MRK_Name.name = deleted.name
+end
+
+select @@error
+ 
+                                                                                                                                                                                                                            
+go
+drop trigger BIB_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger BIB_Delete
+on BIB_Refs
+for delete
+as
+
+/* Before deleting a record, verify that the J# is not being */
+/* referenced elsewhere in the database. */
+
+if (select count(*) from MRK_History, deleted
+    where MRK_History._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in Marker Record(s)"
+end
+
+else if (select count(*) from HMD_Reference, deleted
+         where HMD_Reference._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in Homology Record(s)"
+end
+
+else if (select count(*) from MLC_Reference, deleted
+         where MLC_Reference._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in MLC Record(s)"
+end
+
+else if (select count(*) from MLC_Reference_edit, deleted
+         where MLC_Reference_edit._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in MLC Edit Record(s)"
+end
+
+else if (select count(*) from MLD_Expts, deleted
+         where MLD_Expts._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in Mapping Record(s)"
+end
+
+else if (select count(*) from PRB_Reference, deleted
+         where PRB_Reference._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in Probe Record(s)"
+end
+
+else if (select count(*) from PRB_Source, deleted
+         where PRB_Source._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in Probe Source Record(s)"
+end
+
+else if (select count(*) from GXD_Index, deleted
+         where GXD_Index._Refs_key = deleted._Refs_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "J# is referenced in GXD Index Record(s)"
+end
+
+else
+begin
+	delete BIB_Books from BIB_Books, deleted
+	where BIB_Books._Refs_key = deleted._Refs_key
+
+	delete BIB_Notes from BIB_Notes, deleted
+	where BIB_Notes._Refs_key = deleted._Refs_key
+
+        delete ACC_Accession
+        from ACC_Accession a, ACC_MGIType m, deleted
+        where a._Object_key = deleted._Refs_key
+        and a._MGIType_key = m._MGIType_key
+        and m.name = "Reference"
+end
+
+select @@error
+
+                                                                                                                                                                                                                                
+go
+drop trigger MLD_Expts_Insert
+go
+                                                                                                                                                                                                                                                               
+create trigger MLD_Expts_Insert
+on MLD_Expts
+for insert
+as
+
+declare @key integer
+select @key = _Expt_key from inserted
+exec ACC_assignMGI @key, "Experiment"
+
+                                                                                                
+go
+drop trigger HMD_Reference_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger HMD_Reference_Delete
+on HMD_Reference
+for delete
+as
+
+delete HMD_Homology from HMD_Homology, deleted
+where HMD_Homology._Homology_key = deleted._Homology_key
+
+delete HMD_Homology_Assay from HMD_Homology_Assay, deleted
+where HMD_Homology_Assay._Homology_key = deleted._Homology_key
+
+delete HMD_Notes from HMD_Notes, deleted
+where HMD_Notes._Homology_key = deleted._Homology_key
+
+select @@error
+
+                                                                                                     
+go
+drop trigger MRK_History_Delete
+go
+                                                                                                                                                                                                                                                                
+create trigger MRK_History_Delete
+on MRK_History
+for delete
+as
+ 
+/* Remove entry from Name bucket */
+
+delete MRK_Name from MRK_Name, deleted
+where MRK_Name._Marker_key = deleted._Marker_key and
+      MRK_Name._Marker_Type_key is null and
+      MRK_Name.name = deleted.name
+ 
+select @@error
+ 
+                                                                                                                                                                                                                        
+go
+drop trigger PRB_Delete
+go
+                                                                                                                                                                                                                                                               
+create trigger PRB_Delete
+on PRB_Probe
+for delete
+as
+
+if (select count(PRB_Probe._Probe_key) 
+    from PRB_Probe, deleted
+    where PRB_Probe.derivedFrom = deleted._Probe_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Probe is referenced as a Parent in Probe record(s)"
+end
+ 
+else if (select count(MLD_Hit._Probe_key) 
+         from MLD_Hit, deleted
+         where MLD_Hit._Probe_key = deleted._Probe_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Probe is referenced in MLDP Hit record(s)"
+end
+ 
+else if (select count(MLD_Hit._Target_key) 
+         from MLD_Hit, deleted
+         where MLD_Hit._Target_key = deleted._Probe_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Probe is referenced as a Target in MLDP Hit record(s)"
+end
+ 
+else if (select count(MLD_ContigProbe._Probe_key) 
+         from MLD_ContigProbe, deleted
+         where MLD_ContigProbe._Probe_key = deleted._Probe_key) > 0
+begin
+        rollback transaction
+        raiserror 99999 "Probe is referenced in MLDP Contig/Probe record(s)"
+end
+ 
+else
+begin
+	delete PRB_Marker from PRB_Marker, deleted
+	where PRB_Marker._Probe_key = deleted._Probe_key
+
+	delete PRB_Notes from PRB_Notes, deleted
+	where PRB_Notes._Probe_key = deleted._Probe_key
+
+	delete PRB_Reference from PRB_Reference, deleted
+	where PRB_Reference._Probe_key = deleted._Probe_key
+
+	/* If Probe Source Name is null, then Anonymous Source */
+	/* If Anonymous Source, delete upon deletion of Probe */
+
+	if (select count(PRB_Probe._Source_key) from PRB_Probe, deleted
+    	    where PRB_Probe._Source_key = deleted._Source_key) = 0
+	begin
+  		delete PRB_Source from PRB_Source, deleted
+  		where PRB_Source._Source_key = deleted._Source_key
+		      and PRB_Source.name is null
+	end
+
+	delete ACC_AccessionReference 
+	from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m, deleted
+	where a._Object_key = deleted._Probe_key
+	and a._MGIType_key = m._MGIType_key
+	and m.name = "Segment"
+	and a._Accession_key = ar._Accession_key
+ 
+	delete ACC_Accession 
+	from ACC_Accession a, ACC_MGIType m, deleted
+	where a._Object_key = deleted._Probe_key
+	and a._MGIType_key = m._MGIType_key
+	and m.name = "Segment"
+ 
+end
+ 
+select @@error
+
+                                                                        
+go
+EOSQL
+cat $password | isql -Umgd_dbo -e -i $sql

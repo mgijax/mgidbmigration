@@ -47,6 +47,7 @@ $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 #date >> $LOG
 
 echo "Data Migration..." >> $LOG
+./tr4378.csh >>& $LOG
 ./tr4298.csh >>& $LOG
 
 #
@@ -74,6 +75,9 @@ date >> $LOG
 # Re-create all triggers, sps, views....
 #
 
+${newmgddbschema}/view/VOC_Term_View_drop.object >>& $LOG
+${newmgddbschema}/view/VOC_Term_View_create.object >>& $LOG
+${newmgddbperms}/public/view/VOC_Term_View_grant.object >>& $LOG
 #${newmgddbschema}/default/default_unbind.csh >>& $LOG
 #${newmgddbschema}/default/default_bind.csh >>& $LOG
 #${newmgddbschema}/key/key_drop.csh >>& $LOG

@@ -39,6 +39,10 @@ ${newmgddbschema}/key/MRK_EventReason_create.object >> $LOG
 ${newmgddbschema}/key/MRK_History_create.object >> $LOG
 ${newmgddbschema}/procedure/MRK_drop.logical >> $LOG
 ${newmgddbschema}/procedure/MRK_create.logical >> $LOG
+${newmgddbschema}/view/MRK_History_Ref_View_drop.object >> $LOG
+${newmgddbschema}/view/MRK_History_Ref_View_create.object >> $LOG
+${newmgddbschema}/view/MRK_History_View_drop.object >> $LOG
+${newmgddbschema}/view/MRK_History_View_create.object >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
@@ -58,6 +62,8 @@ EOSQL
 ${newmgddbschema}/index/MRK_History_create.object >> $LOG
 ${newmgddbperms}/curatorial/procedure/MRK_grant.logical >> $LOG
 ${newmgddbperms}/public/procedure/MRK_grant.logical >> $LOG
+${newmgddbperms}/public/view/MRK_History_Ref_View_grant.object >> $LOG
+${newmgddbperms}/public/view/MRK_History_View_grant.object >> $LOG
 ${newmgddbperms}/curatorial/table/MRK_History_grant.object >> $LOG
 ${newmgddbperms}/public/table/MRK_History_grant.object >> $LOG
 

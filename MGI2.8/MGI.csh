@@ -104,6 +104,9 @@ go
 drop table MGI_Columns_Old
 go
 
+drop table ACC_MGIType_Old
+go
+
 drop table GO_DataEvidence
 go
 

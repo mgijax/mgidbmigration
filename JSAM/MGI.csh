@@ -53,13 +53,13 @@ touch $LOG
  
 date | tee -a  $LOG
  
-${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
+${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 
 ########################################
 # need to start with a MGI 2.98-Nomen database
 #
 # load an empty database and fill it with current MGI 2.98-Nomen data
-./loadData.csh
+#./loadData.csh
 
 # OR
 
@@ -71,8 +71,8 @@ date | tee -a  $LOG
 ########################################
 
 echo "Update MGI DB Info..." | tee -a  $LOG
-${DBUTILITIESDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a $LOG
-${DBUTILITIESDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a $LOG
+${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a $LOG
+${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a $LOG
 
 # order is important!
 echo "Data Migration..." | tee -a  $LOG
@@ -98,7 +98,7 @@ date | tee -a  $LOG
 # Re-create all triggers, sps, views....
 #
 
-${DBUTILITIESDIR}/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
+${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." | tee -a $LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a  $LOG

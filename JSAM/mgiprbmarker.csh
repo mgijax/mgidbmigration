@@ -41,8 +41,8 @@ EOSQL
 #
 ${newmgddbschema}/table/PRB_Marker_create.object >> $LOG
 ${newmgddbschema}/default/PRB_Marker_bind.object >> $LOG
-${oldmgddbschema}/index/MRK_Reference_drop.objct >> $LOG
-${newmgddbschema}/index/MRK_Reference_create.objct >> $LOG
+${oldmgddbschema}/index/MRK_Reference_drop.object >> $LOG
+${newmgddbschema}/index/MRK_Reference_create.object >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 

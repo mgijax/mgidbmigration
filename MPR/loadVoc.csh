@@ -18,5 +18,8 @@ ${VOCLOAD} `pwd`/mutation.config >>& ${LOG}
 ${VOCLOAD} `pwd`/status.config >>& ${LOG}
 ${VOCLOAD} `pwd`/type.config >>& ${LOG}
 ${VOCLOAD} `pwd`/allelestate.config >>& ${LOG}
+${VOCLOAD} `pwd`/categories.config >>& ${LOG}
+${VOCLOAD} `pwd`/categories2.config >>& ${LOG}
+${VOCLOAD} `pwd`/compound.config >>& ${LOG}
 
 date >> ${LOG}

@@ -12,8 +12,8 @@ touch $LOG
  
 date | tee -a $LOG
  
-${newmgddbschema}/trigger/MRK_Marker_drop.object
-${newnomendbschema}/trigger/MRK_Nomen_drop.object
+${newmgddbschema}/trigger/MRK_Marker_drop.object | tee -a $LOG
+${newnomendbschema}/trigger/MRK_Nomen_drop.object | tee -a $LOG
 
 cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
@@ -55,8 +55,8 @@ quit
 
 EOSQL
 
-${newmgddbschema}/trigger/MRK_Marker_create.object
-${newnomendbschema}/trigger/MRK_Nomen_create.object
+${newmgddbschema}/trigger/MRK_Marker_create.object | tee -a $LOG
+${newnomendbschema}/trigger/MRK_Nomen_create.object | tee -a $LOG
 
 date | tee -a $LOG
 

@@ -11,8 +11,8 @@
 
 cd `dirname $0`
 
-setenv NOMEN nomen
-setenv STRAINS strains
+setenv NOMEN nomen_release
+setenv STRAINS strains_release
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
@@ -52,7 +52,7 @@ $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-3-0-3" >>& $LOG
 
 echo "Data Migration..." >> $LOG
-./MGItables.csh >>& LOG
+./MGItables.csh >>& $LOG
 ./tr256.csh >>& $LOG
 ./tr2714.csh >>& $LOG
 ./tr2718.csh >>& $LOG
@@ -78,6 +78,12 @@ drop table GXD_Antibody_Old
 go
 
 drop table GXD_GelLane_Old
+go
+
+drop table GXD_Genotype_Old
+go
+
+drop table GXD_AllelePair_Old
 go
 
 drop table PRB_Strain_Old
@@ -113,9 +119,6 @@ go
 drop table GO_Term
 go
 
-exec MGI_Table_Column_Cleanup
-go
-
 use ${NOMEN}
 go
 
@@ -140,6 +143,21 @@ date >> $LOG
 
 $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
+
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+  
+use ${DBNAME}
+go
+
+exec MGI_Table_Column_Cleanup
+go
+
+checkpoint
+go
+
+quit
+ 
+EOSQL
 
 date >> $LOG
 

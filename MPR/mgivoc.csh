@@ -104,6 +104,14 @@ insert into MGI_NoteType values(@noteTypeKey + 1, 12, 'Combination Type 2', 0, $
 insert into MGI_NoteType values(@noteTypeKey + 2, 12, 'Combination Type 3', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
+/* term note types */
+
+declare @noteTypeKey integer
+select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
+
+insert into MGI_NoteType values(@noteTypeKey, 13, 'Boolean Type 1', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
 /* notes */
 
 declare @noteTypeKey integer
@@ -274,7 +282,12 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, null, 'General (GO)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, null, 'exact', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 1, 13, null, 'related', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 2, 13, null, 'broad', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 3, 13, null, 'narrow', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 4, 13, null, 'Type 1', 'to be displayed on Allele Detail page, EI', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 5, 13, null, 'Type 2', 'to be displayed on', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns
@@ -296,9 +309,7 @@ dump tran $DBNAME with truncate_only
 go
 
 declare @syntypeKey integer
-select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
-
-insert into MGI_SynonymType values(@synTypeKey, 13, null, 'General (MP)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+select @syntypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'exact'
 
 select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns
@@ -320,9 +331,7 @@ dump tran $DBNAME with truncate_only
 go
 
 declare @syntypeKey integer
-select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
-
-insert into MGI_SynonymType values(@synTypeKey, 13, null, 'General (AD)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+select @syntypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'exact'
 
 select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns

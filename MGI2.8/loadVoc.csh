@@ -57,6 +57,7 @@ echo "PhenoSlim Annotation Load" >> $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME `pwd`/pslim.csmith.tab csmith new >>& $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME `pwd`/pslim.cwg.tab cwg append >>& $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME `pwd`/pslim.il.tab il append >>& $LOG
+${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME `pwd`/pslim.cml.tab il append >>& $LOG
 
 # Load GO Annotations
 echo "GO Annotation Load" >> $LOG

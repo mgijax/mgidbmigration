@@ -18,15 +18,15 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "PRB_Marker Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "PRB_Marker Migration..." | tee -a ${LOG}
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 sp_rename PRB_Marker, PRB_Marker_Old
@@ -39,17 +39,17 @@ EOSQL
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/PRB_Marker_create.object >> $LOG
-${newmgddbschema}/default/PRB_Marker_bind.object >> $LOG
-${oldmgddbschema}/index/MRK_Reference_drop.object >> $LOG
-${newmgddbschema}/index/MRK_Reference_create.object >> $LOG
+${newmgddbschema}/table/PRB_Marker_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Marker_bind.object >> ${LOG}
+${oldmgddbschema}/index/MRK_Reference_drop.object >> ${LOG}
+${newmgddbschema}/index/MRK_Reference_create.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 update statistics PRB_Marker_Old
@@ -123,7 +123,7 @@ go
 drop table MRK_RefNew
 go
 
-use $DBNAME
+use ${DBNAME}
 go
 
 select distinct _Marker_key, _Refs_key into tempdb..MRK_RefNoAuto
@@ -346,11 +346,11 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/PRB_Marker_create.object >> $LOG
+${newmgddbschema}/index/PRB_Marker_create.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 drop table PRB_Marker_Old
@@ -369,5 +369,5 @@ end
 
 EOSQL
 
-date >> $LOG
+date >> ${LOG}
 

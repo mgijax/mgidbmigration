@@ -7,15 +7,15 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "MGI Organism Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "MGI Organism Migration..." | tee -a ${LOG}
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 sp_rename ACC_LogicalDB, ACC_LogicalDB_Old
@@ -46,25 +46,25 @@ EOSQL
 #
 # Use new schema product to create new tables
 #
-${newmgddbschema}/table/MGI_Organism_create.object >> $LOG
-${newmgddbschema}/default/MGI_Organism_bind.object >> $LOG
-${newmgddbschema}/table/MGI_Organism_MGIType_create.object >> $LOG
-${newmgddbschema}/default/MGI_Organism_MGIType_bind.object >> $LOG
+${newmgddbschema}/table/MGI_Organism_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_Organism_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_Organism_MGIType_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_Organism_MGIType_bind.object >> ${LOG}
 
-${newmgddbschema}/table/ACC_LogicalDB_create.object >> $LOG
-${newmgddbschema}/default/ACC_LogicalDB_bind.object >> $LOG
-${newmgddbschema}/table/GXD_Antibody_create.object >> $LOG
-${newmgddbschema}/default/GXD_Antibody_bind.object >> $LOG
-${newmgddbschema}/table/MRK_Chromosome_create.object >> $LOG
-${newmgddbschema}/default/MRK_Chromosome_bind.object >> $LOG
-${newmgddbschema}/table/MRK_Label_create.object >> $LOG
-${newmgddbschema}/default/MRK_Label_bind.object >> $LOG
-${newmgddbschema}/table/PRB_Source_create.object >> $LOG
-${newmgddbschema}/default/PRB_Source_bind.object >> $LOG
+${newmgddbschema}/table/ACC_LogicalDB_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_LogicalDB_bind.object >> ${LOG}
+${newmgddbschema}/table/GXD_Antibody_create.object >> ${LOG}
+${newmgddbschema}/default/GXD_Antibody_bind.object >> ${LOG}
+${newmgddbschema}/table/MRK_Chromosome_create.object >> ${LOG}
+${newmgddbschema}/default/MRK_Chromosome_bind.object >> ${LOG}
+${newmgddbschema}/table/MRK_Label_create.object >> ${LOG}
+${newmgddbschema}/default/MRK_Label_bind.object >> ${LOG}
+${newmgddbschema}/table/PRB_Source_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Source_bind.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 insert into MGI_Organism
@@ -290,17 +290,17 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/MGI_Organism_create.object >> $LOG
-${newmgddbschema}/index/MGI_Organism_MGIType_create.object >> $LOG
-${newmgddbschema}/index/ACC_LogicalDB_create.object >> $LOG
-${newmgddbschema}/index/GXD_Antibody_create.object >> $LOG
-${newmgddbschema}/index/MRK_Chromosome_create.object >> $LOG
-${newmgddbschema}/index/MRK_Label_create.object >> $LOG
-${newmgddbschema}/index/PRB_Source_create.object >> $LOG
+${newmgddbschema}/index/MGI_Organism_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_Organism_MGIType_create.object >> ${LOG}
+${newmgddbschema}/index/ACC_LogicalDB_create.object >> ${LOG}
+${newmgddbschema}/index/GXD_Antibody_create.object >> ${LOG}
+${newmgddbschema}/index/MRK_Chromosome_create.object >> ${LOG}
+${newmgddbschema}/index/MRK_Label_create.object >> ${LOG}
+${newmgddbschema}/index/PRB_Source_create.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 drop table ACC_LogicalDB_Old
@@ -322,5 +322,5 @@ end
 
 EOSQL
 
-date >> $LOG
+date >> ${LOG}
 

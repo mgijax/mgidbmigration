@@ -9,10 +9,10 @@ cd `dirname $0` && source ./Configuration
 #source ${newmgddbschema}/Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date | tee -a  $LOG
+date | tee -a  ${LOG}
  
 # drop and re-create SP (Sharon)
 
@@ -27,12 +27,9 @@ date | tee -a  $LOG
 
 # un-partition tables
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
   
 use ${DBNAME}
-go
-
-exec SEQ_createDummyTest
 go
 
 update statistics SEQ_Sequence
@@ -61,8 +58,8 @@ EOSQL
 
 # load Sequence Cache tables
 
-${CACHELOAD}/seqmarker.csh | tee -a $LOG
-${CACHELOAD}/seqprobe.csh | tee -a $LOG
+${CACHELOAD}/seqmarker.csh | tee -a ${LOG}
+${CACHELOAD}/seqprobe.csh | tee -a ${LOG}
 
-date | tee -a  $LOG
+date | tee -a  ${LOG}
 

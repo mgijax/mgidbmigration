@@ -7,11 +7,11 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "Nomen Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "Nomen Migration..." | tee -a ${LOG}
  
 # for testing, drop the tables first
 #${newmgddbschema}/table/NOM_drop.logical
@@ -19,21 +19,21 @@ echo "Nomen Migration..." | tee -a $LOG
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/NOM_create.logical >>& $LOG
-${newmgddbschema}/default/NOM_bind.logical >>& $LOG
+${newmgddbschema}/table/NOM_create.logical >>& ${LOG}
+${newmgddbschema}/default/NOM_bind.logical >>& ${LOG}
 
 # remove indexes; this will make inserts faster
-${oldmgddbschema}/index/ACC_Accession_drop.object >>& $LOG
-${newmgddbschema}/index/MGI_Note_drop.object >>& $LOG
-${newmgddbschema}/index/MGI_NoteChunk_drop.object >>& $LOG
+${oldmgddbschema}/index/ACC_Accession_drop.object >>& ${LOG}
+${newmgddbschema}/index/MGI_Note_drop.object >>& ${LOG}
+${newmgddbschema}/index/MGI_NoteChunk_drop.object >>& ${LOG}
 
 # ACC_AccessionReference trigger references MRK_Marker._Organism_key
-${newmgddbschema}/trigger/ACC_AccessionReference_drop.object >>& $LOG
-${newmgddbschema}/trigger/ACC_AccessionReference_create.object >>& $LOG
+${newmgddbschema}/trigger/ACC_AccessionReference_drop.object >>& ${LOG}
+${newmgddbschema}/trigger/ACC_AccessionReference_create.object >>& ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 declare @curationKey integer
@@ -69,7 +69,7 @@ and n.submittedBy = u1.login
 and n.broadcastBy = u2.login
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 /* Synonyms */
@@ -79,7 +79,7 @@ select _Other_key, _Nomen_key, _Refs_key, name, isAuthor, ${CREATEDBY}, ${CREATE
 from ${NOMEN}..MRK_Nomen_Other
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 /* Notes */
@@ -117,7 +117,7 @@ and n.noteType = 'C'
 
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 /* References */
@@ -146,7 +146,7 @@ select seq + @maxKey, _Refs_key, _Nomen_key, 21, type, ${CREATEDBY}, ${CREATEDBY
 from #refs
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 /* Accession IDs */
@@ -169,7 +169,7 @@ go
 drop table #accs
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 select *, seq = identity(5)
@@ -198,7 +198,7 @@ select seq + @maxKey, _Refs_key, creation_date, modification_date, release_date
 from #accrefs
 go
 
-dump tran $DBNAME with truncate_only
+dump tran ${DBNAME} with truncate_only
 go
 
 checkpoint
@@ -208,9 +208,9 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/NOM_create.logical >>& $LOG
+${newmgddbschema}/index/NOM_create.logical >>& ${LOG}
 # re-create indexes on ACC_Accession
 #${newmgddbschema}/index/ACC_Accession_create.object
 
-date >> $LOG
+date >> ${LOG}
 

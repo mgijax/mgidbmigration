@@ -7,15 +7,15 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "Marker Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "Marker Migration..." | tee -a ${LOG}
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 sp_rename MRK_Marker, MRK_Marker_Old
@@ -28,12 +28,12 @@ EOSQL
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/MRK_Marker_create.object >> $LOG
-${newmgddbschema}/default/MRK_Marker_bind.object >> $LOG
+${newmgddbschema}/table/MRK_Marker_create.object >> ${LOG}
+${newmgddbschema}/default/MRK_Marker_bind.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 /* insert all markers into new table */
@@ -57,11 +57,11 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/MRK_Marker_create.object >> $LOG
+${newmgddbschema}/index/MRK_Marker_create.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 /* set MRK_Marker._CreatedBy_key from Nomen, where possible */
@@ -88,9 +88,9 @@ quit
 
 EOSQL
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 drop table MRK_Marker_Old
@@ -100,5 +100,5 @@ end
 
 EOSQL
 
-date >> $LOG
+date >> ${LOG}
 

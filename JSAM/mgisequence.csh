@@ -7,20 +7,20 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "MGI Sequences Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "MGI Sequences Migration..." | tee -a ${LOG}
  
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/SEQ_create.logical >> $LOG
+${newmgddbschema}/table/SEQ_create.logical >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 checkpoint
@@ -30,8 +30,8 @@ quit
 
 EOSQL
 
-${newmgddbschema}/default/SEQ_bind.logical >> $LOG
-${newmgddbschema}/index/SEQ_create.logical >> $LOG
+${newmgddbschema}/default/SEQ_bind.logical >> ${LOG}
+${newmgddbschema}/index/SEQ_create.logical >> ${LOG}
 
-date >> $LOG
+date >> ${LOG}
 

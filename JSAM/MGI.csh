@@ -51,12 +51,12 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date | tee -a  $LOG
+date | tee -a  ${LOG}
  
-${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
+${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 ########################################
 # need to start with a MGI 2.98-Nomen database
@@ -69,46 +69,46 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 # load a backup of pre-loaded MGI 2.98 database
 #load_dev1db.csh ${DBNAME} dev1mgd.backup
 
-date | tee -a  $LOG
+date | tee -a  ${LOG}
 
 ########################################
 
-echo "Update MGI DB Info..." | tee -a  $LOG
-${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a $LOG
-${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a $LOG
+echo "Update MGI DB Info..." | tee -a  ${LOG}
+${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a ${LOG}
+${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 # order is important!
-echo "Data Migration..." | tee -a  $LOG
-./defaults.csh | tee -a $LOG
-./accmgitype.csh | tee -a $LOG
-./loadVoc.csh | tee -a $LOG
-./mgiuserdefault.csh | tee -a $LOG
-./mgiuser.csh | tee -a $LOG
-./mgimisc.csh | tee -a $LOG
-./mginote.csh | tee -a $LOG
-./mgispecies.csh | tee -a $LOG
-./mgimarker.csh | tee -a $LOG
-./mgiprbmarker.csh | tee -a $LOG
-./mgisequence.csh | tee -a $LOG
-./mginew.csh | tee -a $LOG
-./acc.csh | tee -a $LOG
-./loadVoc2.csh | tee -a $LOG
-./mgiset.csh | tee -a $LOG
-./mgimap.csh | tee -a $LOG
+echo "Data Migration..." | tee -a  ${LOG}
+./defaults.csh | tee -a ${LOG}
+./accmgitype.csh | tee -a ${LOG}
+./loadVoc.csh | tee -a ${LOG}
+./mgiuserdefault.csh | tee -a ${LOG}
+./mgiuser.csh | tee -a ${LOG}
+./mgimisc.csh | tee -a ${LOG}
+./mginote.csh | tee -a ${LOG}
+./mgispecies.csh | tee -a ${LOG}
+./mgimarker.csh | tee -a ${LOG}
+./mgiprbmarker.csh | tee -a ${LOG}
+./mgisequence.csh | tee -a ${LOG}
+./mginew.csh | tee -a ${LOG}
+./acc.csh | tee -a ${LOG}
+./loadVoc2.csh | tee -a ${LOG}
+./mgiset.csh | tee -a ${LOG}
+./mgimap.csh | tee -a ${LOG}
 
-date | tee -a  $LOG
+date | tee -a  ${LOG}
 
 #
 # Re-create all triggers, sps, views....
 #
 
-${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
+${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 
-echo "Install Developer's Permissions..." | tee -a $LOG
-${newmgddbperms}/developers/perm_grant.csh | tee -a  $LOG
-date | tee -a  $LOG
+echo "Install Developer's Permissions..." | tee -a ${LOG}
+${newmgddbperms}/developers/perm_grant.csh | tee -a  ${LOG}
+date | tee -a  ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
   
 use ${DBNAME}
 go
@@ -156,14 +156,14 @@ quit
  
 EOSQL
 
-${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
+${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a ${LOG}
 
-./loadTrans.csh | tee -a $LOG
-./loadSet.csh | tee -a $LOG
+./loadTrans.csh | tee -a ${LOG}
+./loadSet.csh | tee -a ${LOG}
 
-${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
+${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a ${LOG}
 
-./radar.csh | tee -a $LOG
+./radar.csh | tee -a ${LOG}
 
-date | tee -a  $LOG
+date | tee -a  ${LOG}
 

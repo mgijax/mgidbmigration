@@ -10,23 +10,23 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "MGI new tables..." | tee -a $LOG
+date >> ${LOG}
+echo "MGI new tables..." | tee -a ${LOG}
  
 #
 # Use new schema product to create new table
 #
 
-${newmgddbschema}/table/MGI_AttributeHistory_create.object >>& $LOG
-${newmgddbschema}/default/MGI_AttributeHistory_bind.object >>& $LOG
-${newmgddbschema}/key/MGI_AttributeHistory_create.object >>& $LOG
+${newmgddbschema}/table/MGI_AttributeHistory_create.object >>& ${LOG}
+${newmgddbschema}/default/MGI_AttributeHistory_bind.object >>& ${LOG}
+${newmgddbschema}/key/MGI_AttributeHistory_create.object >>& ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 insert into MGI_AttributeHistory
@@ -94,7 +94,7 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/MGI_AttributeHistory_create.object >>& $LOG
+${newmgddbschema}/index/MGI_AttributeHistory_create.object >>& ${LOG}
 
-date >> $LOG
+date >> ${LOG}
 

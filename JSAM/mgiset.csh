@@ -7,15 +7,15 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "MGI Set Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "MGI Set Migration..." | tee -a ${LOG}
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 /* Restricted Sequences */
@@ -46,5 +46,5 @@ quit
 
 EOSQL
 
-date >> $LOG
+date >> ${LOG}
 

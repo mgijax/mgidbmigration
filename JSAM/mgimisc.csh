@@ -40,15 +40,15 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "Created By/Modified By Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "Created By/Modified By Migration..." | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 sp_rename ACC_ActualDB, ACC_ActualDB_Old
@@ -151,78 +151,78 @@ EOSQL
 #
 # create new tables
 #
-${newmgddbschema}/table/ACC_ActualDB_create.object >> $LOG
-${newmgddbschema}/default/ACC_ActualDB_bind.object >> $LOG
-${newmgddbschema}/table/ACC_LogicalDB_create.object >> $LOG
-${newmgddbschema}/default/ACC_LogicalDB_bind.object >> $LOG
-${newmgddbschema}/table/ACC_MGIType_create.object >> $LOG
-${newmgddbschema}/default/ACC_MGIType_bind.object >> $LOG
-${newmgddbschema}/table/ALL_Allele_create.object >> $LOG
-${newmgddbschema}/default/ALL_Allele_bind.object >> $LOG
+${newmgddbschema}/table/ACC_ActualDB_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_ActualDB_bind.object >> ${LOG}
+${newmgddbschema}/table/ACC_LogicalDB_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_LogicalDB_bind.object >> ${LOG}
+${newmgddbschema}/table/ACC_MGIType_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_MGIType_bind.object >> ${LOG}
+${newmgddbschema}/table/ALL_Allele_create.object >> ${LOG}
+${newmgddbschema}/default/ALL_Allele_bind.object >> ${LOG}
 
-${newmgddbschema}/table/GXD_AlleleGenotype_create.object >> $LOG
-${newmgddbschema}/default/GXD_AlleleGenotype_bind.object >> $LOG
-${newmgddbschema}/table/GXD_Assay_create.object >> $LOG
-${newmgddbschema}/default/GXD_Assay_bind.object >> $LOG
-${newmgddbschema}/table/GXD_Genotype_create.object >> $LOG
-${newmgddbschema}/default/GXD_Genotype_bind.object >> $LOG
-${newmgddbschema}/table/GXD_Index_create.object >> $LOG
-${newmgddbschema}/default/GXD_Index_bind.object >> $LOG
-${newmgddbschema}/table/GXD_Index_Stages_create.object >> $LOG
-${newmgddbschema}/default/GXD_Index_Stages_bind.object >> $LOG
+${newmgddbschema}/table/GXD_AlleleGenotype_create.object >> ${LOG}
+${newmgddbschema}/default/GXD_AlleleGenotype_bind.object >> ${LOG}
+${newmgddbschema}/table/GXD_Assay_create.object >> ${LOG}
+${newmgddbschema}/default/GXD_Assay_bind.object >> ${LOG}
+${newmgddbschema}/table/GXD_Genotype_create.object >> ${LOG}
+${newmgddbschema}/default/GXD_Genotype_bind.object >> ${LOG}
+${newmgddbschema}/table/GXD_Index_create.object >> ${LOG}
+${newmgddbschema}/default/GXD_Index_bind.object >> ${LOG}
+${newmgddbschema}/table/GXD_Index_Stages_create.object >> ${LOG}
+${newmgddbschema}/default/GXD_Index_Stages_bind.object >> ${LOG}
 
-${newmgddbschema}/table/MGI_Note_create.object >> $LOG
-${newmgddbschema}/default/MGI_Note_bind.object >> $LOG
-${newmgddbschema}/table/MGI_NoteChunk_create.object >> $LOG
-${newmgddbschema}/default/MGI_NoteChunk_bind.object >> $LOG
-${newmgddbschema}/table/MGI_NoteType_create.object >> $LOG
-${newmgddbschema}/default/MGI_NoteType_bind.object >> $LOG
-${newmgddbschema}/table/MGI_RefAssocType_create.object >> $LOG
-${newmgddbschema}/default/MGI_RefAssocType_bind.object >> $LOG
-${newmgddbschema}/table/MGI_Reference_Assoc_create.object >> $LOG
-${newmgddbschema}/default/MGI_Reference_Assoc_bind.object >> $LOG
-${newmgddbschema}/table/MGI_Set_create.object >> $LOG
-${newmgddbschema}/default/MGI_Set_bind.object >> $LOG
-${newmgddbschema}/table/MGI_SetMember_create.object >> $LOG
-${newmgddbschema}/default/MGI_SetMember_bind.object >> $LOG
-${newmgddbschema}/table/MGI_Translation_create.object >> $LOG
-${newmgddbschema}/default/MGI_Translation_bind.object >> $LOG
-${newmgddbschema}/table/MGI_TranslationType_create.object >> $LOG
-${newmgddbschema}/default/MGI_TranslationType_bind.object >> $LOG
+${newmgddbschema}/table/MGI_Note_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_Note_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_NoteChunk_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_NoteChunk_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_NoteType_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_NoteType_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_RefAssocType_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_RefAssocType_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_Reference_Assoc_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_Reference_Assoc_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_Set_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_Set_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_SetMember_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_SetMember_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_Translation_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_Translation_bind.object >> ${LOG}
+${newmgddbschema}/table/MGI_TranslationType_create.object >> ${LOG}
+${newmgddbschema}/default/MGI_TranslationType_bind.object >> ${LOG}
 
-${newmgddbschema}/table/MLD_Marker_create.object >> $LOG
-${newmgddbschema}/default/MLD_Marker_bind.object >> $LOG
-${newmgddbschema}/table/MRK_Chromosome_create.object >> $LOG
-${newmgddbschema}/default/MRK_Chromosome_bind.object >> $LOG
-${newmgddbschema}/table/MRK_History_create.object >> $LOG
-${newmgddbschema}/default/MRK_History_bind.object >> $LOG
+${newmgddbschema}/table/MLD_Marker_create.object >> ${LOG}
+${newmgddbschema}/default/MLD_Marker_bind.object >> ${LOG}
+${newmgddbschema}/table/MRK_Chromosome_create.object >> ${LOG}
+${newmgddbschema}/default/MRK_Chromosome_bind.object >> ${LOG}
+${newmgddbschema}/table/MRK_History_create.object >> ${LOG}
+${newmgddbschema}/default/MRK_History_bind.object >> ${LOG}
 
-${newmgddbschema}/table/NOM_Marker_create.object >> $LOG
-${newmgddbschema}/default/NOM_Marker_bind.object >> $LOG
-${newmgddbschema}/table/NOM_Synonym_create.object >> $LOG
-${newmgddbschema}/default/NOM_Synonym_bind.object >> $LOG
+${newmgddbschema}/table/NOM_Marker_create.object >> ${LOG}
+${newmgddbschema}/default/NOM_Marker_bind.object >> ${LOG}
+${newmgddbschema}/table/NOM_Synonym_create.object >> ${LOG}
+${newmgddbschema}/default/NOM_Synonym_bind.object >> ${LOG}
 
-${newmgddbschema}/table/PRB_Probe_create.object >> $LOG
-${newmgddbschema}/default/PRB_Probe_bind.object >> $LOG
-${newmgddbschema}/table/PRB_Alias_create.object >> $LOG
-${newmgddbschema}/default/PRB_Alias_bind.object >> $LOG
-${newmgddbschema}/table/PRB_Allele_create.object >> $LOG
-${newmgddbschema}/default/PRB_Allele_bind.object >> $LOG
-${newmgddbschema}/table/PRB_Allele_Strain_create.object >> $LOG
-${newmgddbschema}/default/PRB_Allele_Strain_bind.object >> $LOG
-${newmgddbschema}/table/PRB_Reference_create.object >> $LOG
-${newmgddbschema}/default/PRB_Reference_bind.object >> $LOG
-${newmgddbschema}/table/PRB_RFLV_create.object >> $LOG
-${newmgddbschema}/default/PRB_RFLV_bind.object >> $LOG
+${newmgddbschema}/table/PRB_Probe_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Probe_bind.object >> ${LOG}
+${newmgddbschema}/table/PRB_Alias_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Alias_bind.object >> ${LOG}
+${newmgddbschema}/table/PRB_Allele_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Allele_bind.object >> ${LOG}
+${newmgddbschema}/table/PRB_Allele_Strain_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Allele_Strain_bind.object >> ${LOG}
+${newmgddbschema}/table/PRB_Reference_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_Reference_bind.object >> ${LOG}
+${newmgddbschema}/table/PRB_RFLV_create.object >> ${LOG}
+${newmgddbschema}/default/PRB_RFLV_bind.object >> ${LOG}
 
-${newmgddbschema}/table/VOC_Evidence_create.object >> $LOG
-${newmgddbschema}/default/VOC_Evidence_bind.object >> $LOG
-${newmgddbschema}/table/VOC_Term_create.object >> $LOG
-${newmgddbschema}/default/VOC_Term_bind.object >> $LOG
+${newmgddbschema}/table/VOC_Evidence_create.object >> ${LOG}
+${newmgddbschema}/default/VOC_Evidence_bind.object >> ${LOG}
+${newmgddbschema}/table/VOC_Term_create.object >> ${LOG}
+${newmgddbschema}/default/VOC_Term_bind.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 insert into ACC_ActualDB
@@ -595,48 +595,48 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/ACC_ActualDB_create.object >> $LOG
-${newmgddbschema}/index/ACC_LogicalDB_create.object >> $LOG
-${newmgddbschema}/index/ACC_MGIType_create.object >> $LOG
-${newmgddbschema}/index/ALL_Allele_create.object >> $LOG
+${newmgddbschema}/index/ACC_ActualDB_create.object >> ${LOG}
+${newmgddbschema}/index/ACC_LogicalDB_create.object >> ${LOG}
+${newmgddbschema}/index/ACC_MGIType_create.object >> ${LOG}
+${newmgddbschema}/index/ALL_Allele_create.object >> ${LOG}
 
-${newmgddbschema}/index/GXD_AlleleGenotype_create.object >> $LOG
-${newmgddbschema}/index/GXD_Assay_create.object >> $LOG
-${newmgddbschema}/index/GXD_Genotype_create.object >> $LOG
-${newmgddbschema}/index/GXD_Index_create.object >> $LOG
-${newmgddbschema}/index/GXD_Index_Stages_create.object >> $LOG
+${newmgddbschema}/index/GXD_AlleleGenotype_create.object >> ${LOG}
+${newmgddbschema}/index/GXD_Assay_create.object >> ${LOG}
+${newmgddbschema}/index/GXD_Genotype_create.object >> ${LOG}
+${newmgddbschema}/index/GXD_Index_create.object >> ${LOG}
+${newmgddbschema}/index/GXD_Index_Stages_create.object >> ${LOG}
 
-${newmgddbschema}/index/MGI_Note_create.object >> $LOG
-${newmgddbschema}/index/MGI_NoteChunk_create.object >> $LOG
-${newmgddbschema}/index/MGI_NoteType_create.object >> $LOG
-${newmgddbschema}/index/MGI_RefAssocType_create.object >> $LOG
-${newmgddbschema}/index/MGI_Reference_Assoc_create.object >> $LOG
-${newmgddbschema}/index/MGI_Translation_create.object >> $LOG
-${newmgddbschema}/index/MGI_TranslationType_create.object >> $LOG
-${newmgddbschema}/index/MGI_Set_create.object >> $LOG
-${newmgddbschema}/index/MGI_SetMember_create.object >> $LOG
-${newmgddbschema}/index/MLD_Marker_create.object >> $LOG
+${newmgddbschema}/index/MGI_Note_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_NoteChunk_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_NoteType_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_RefAssocType_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_Reference_Assoc_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_Translation_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_TranslationType_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_Set_create.object >> ${LOG}
+${newmgddbschema}/index/MGI_SetMember_create.object >> ${LOG}
+${newmgddbschema}/index/MLD_Marker_create.object >> ${LOG}
 
-${newmgddbschema}/index/NOM_Marker_create.object >> $LOG
-${newmgddbschema}/index/NOM_Synonym_create.object >> $LOG
+${newmgddbschema}/index/NOM_Marker_create.object >> ${LOG}
+${newmgddbschema}/index/NOM_Synonym_create.object >> ${LOG}
 
-${newmgddbschema}/index/PRB_Alias_create.object >> $LOG
-${newmgddbschema}/index/PRB_Allele_create.object >> $LOG
-${newmgddbschema}/index/PRB_Allele_Strain_create.object >> $LOG
-${newmgddbschema}/partition/PRB_Probe_create.object >> $LOG
-${newmgddbschema}/index/PRB_Probe_create.object >> $LOG
-${newmgddbschema}/index/PRB_Reference_create.object >> $LOG
-${newmgddbschema}/index/PRB_RFLV_create.object >> $LOG
+${newmgddbschema}/index/PRB_Alias_create.object >> ${LOG}
+${newmgddbschema}/index/PRB_Allele_create.object >> ${LOG}
+${newmgddbschema}/index/PRB_Allele_Strain_create.object >> ${LOG}
+${newmgddbschema}/partition/PRB_Probe_create.object >> ${LOG}
+${newmgddbschema}/index/PRB_Probe_create.object >> ${LOG}
+${newmgddbschema}/index/PRB_Reference_create.object >> ${LOG}
+${newmgddbschema}/index/PRB_RFLV_create.object >> ${LOG}
 
-${newmgddbschema}/index/MRK_Chromosome_create.object >> $LOG
-${newmgddbschema}/index/MRK_History_create.object >> $LOG
+${newmgddbschema}/index/MRK_Chromosome_create.object >> ${LOG}
+${newmgddbschema}/index/MRK_History_create.object >> ${LOG}
 
-${newmgddbschema}/index/VOC_Evidence_create.object >> $LOG
-${newmgddbschema}/index/VOC_Term_create.object >> $LOG
+${newmgddbschema}/index/VOC_Evidence_create.object >> ${LOG}
+${newmgddbschema}/index/VOC_Term_create.object >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 drop table ACC_ActualDB_Old
@@ -736,5 +736,5 @@ end
 
 EOSQL
 
-date >> $LOG
+date >> ${LOG}
 

@@ -8,12 +8,12 @@ setenv SCHEMADIR $1
 source ${SCHEMADIR}/Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date | tee -a  $LOG
+date | tee -a  ${LOG}
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
   
 use ${DBNAME}
 go
@@ -37,5 +37,5 @@ quit
  
 EOSQL
 
-date | tee -a  $LOG
+date | tee -a  ${LOG}
 

@@ -7,18 +7,18 @@
 cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+rm -rf ${LOG}
+touch ${LOG}
  
-date >> $LOG
-echo "ACC Accession Migration..." | tee -a $LOG
+date >> ${LOG}
+echo "ACC Accession Migration..." | tee -a ${LOG}
  
 # ACC_Accession indexes where dropped in nomen.csh
 # we drop ACC_AccessionReference_Old indexes to save space
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-use $DBNAME
+use ${DBNAME}
 go
 
 sp_rename ACC_Accession, ACC_Accession_Old
@@ -50,22 +50,16 @@ EOSQL
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/ACC_Accession_create.object >> $LOG
-${newmgddbschema}/default/ACC_Accession_bind.object >> $LOG
-${newmgddbschema}/table/ACC_AccessionReference_create.object >> $LOG
-${newmgddbschema}/default/ACC_AccessionReference_bind.object >> $LOG
-${newmgddbschema}/table/ACC_AccessionMax_create.object >> $LOG
-${newmgddbschema}/default/ACC_AccessionMax_bind.object >> $LOG
+${newmgddbschema}/table/ACC_Accession_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_Accession_bind.object >> ${LOG}
+${newmgddbschema}/table/ACC_AccessionReference_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_AccessionReference_bind.object >> ${LOG}
+${newmgddbschema}/table/ACC_AccessionMax_create.object >> ${LOG}
+${newmgddbschema}/default/ACC_AccessionMax_bind.object >> ${LOG}
 
-#bcpout.csh ${newmgddbschema} ACC_Accession_Old . ACC_Accession_Old.bcp >> $LOG
-#bcpout.csh ${newmgddbschema} ACC_AccessionReference_Old . ACC_AccessionReference_Old.bcp >> $LOG
-#acc.py >> $LOG
-#bcpin.csh ${newmgddbschema} ACC_Accession . ACC_Accession.bcp >> $LOG
-#bcpin.csh ${newmgddbschema} ACC_AccessionReference . ACC_AccessionReference.bcp >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
-
-use $DBNAME
+use ${DBNAME}
 go
 
 insert into ACC_AccessionMax
@@ -237,15 +231,15 @@ go
 
 EOSQL
 
-${newmgddbschema}/partition/ACC_Accession_create.object >> $LOG
-${newmgddbschema}/index/ACC_Accession_create.object >> $LOG
-${newmgddbschema}/index/ACC_AccessionReference_create.object >> $LOG
-${newmgddbschema}/index/ACC_AccessionMax_create.object >> $LOG
-${newmgddbschema}/key/ACC_Accession_drop.object >> $LOG
-${newmgddbschema}/key/ACC_AccessionReference_drop.object >> $LOG
-${newmgddbschema}/key/ACC_Accession_create.object >> $LOG
-${newmgddbschema}/key/ACC_AccessionReference_create.object >> $LOG
-${newmgddbschema}/key/ACC_AccessionMax_create.object >> $LOG
+${newmgddbschema}/partition/ACC_Accession_create.object >> ${LOG}
+${newmgddbschema}/index/ACC_Accession_create.object >> ${LOG}
+${newmgddbschema}/index/ACC_AccessionReference_create.object >> ${LOG}
+${newmgddbschema}/index/ACC_AccessionMax_create.object >> ${LOG}
+${newmgddbschema}/key/ACC_Accession_drop.object >> ${LOG}
+${newmgddbschema}/key/ACC_AccessionReference_drop.object >> ${LOG}
+${newmgddbschema}/key/ACC_Accession_create.object >> ${LOG}
+${newmgddbschema}/key/ACC_AccessionReference_create.object >> ${LOG}
+${newmgddbschema}/key/ACC_AccessionMax_create.object >> ${LOG}
 
-date >> $LOG
+date >> ${LOG}
 

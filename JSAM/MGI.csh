@@ -14,6 +14,12 @@
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
 #
+# Full Test: 12/29/2003 (using backup)
+# Time: 09:00-11:00 (2 hours)
+#
+# Full Test: 12/19/2003 (using backup)
+# Time: 13:27-15:36 (2 hours)
+#
 # Full Test: 12/03/2003
 # Time: 9:11-12:43 (3.5 hours)
 #
@@ -49,14 +55,9 @@ date | tee -a  $LOG
  
 ${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 
-# old way
-#${DBUTILITIESDIR}/bin/dev/load_devdb.csh ${DBNAME} mgd_release.backup mgd_dbo | tee -a $LOG
-#date | tee -a  $LOG
-
 ########################################
 # need to start with a MGI 2.98 database
 #
-# new way
 # load an empty database and fill it with current MGI 2.98 data
 #./loadData.csh
 

@@ -100,10 +100,8 @@ insert into MGI_User values (1015, @seKey, @activeKey, "djd", "Diane Dahmen", 10
 insert into MGI_User values (1016, @seKey, @activeKey, "jlewis", "Jill Lewis", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1017, @seKey, @activeKey, "mikem", "Mike McCrossin", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1018, @seKey, @activeKey, "dbm", "David Miers", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1019, @seKey, @activeKey, "dm", "Daniel Modrusan", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1020, @seKey, @activeKey, "mbw", "Michael Walker", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1021, @seKey, @activeKey, "mjv", "Matthew Vincent", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1022, @seKey, @activeKey, "pvile", "Peter Vile", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1023, @seKey, @activeKey, "jw", "Josh Winslow", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1024, @seKey, @activeKey, "dow", "David O. Walton", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1025, @seKey, @activeKey, "pf", "Peter Frost", 1000, 1000, getdate(), getdate())
@@ -125,7 +123,6 @@ insert into MGI_User values (1045, @piKey, @activeKey, "jer", "Joel Richardson",
 
 /* User Support */
 
-insert into MGI_User values (1050, @curKey, @activeKey, "dmg", "David Garippa", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1051, @supportKey, @activeKey, "ps", "Paul Szauter", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1052, @curKey, @activeKey, "drs", "David Shaw", 1000, 1000, getdate(), getdate())
 
@@ -167,14 +164,12 @@ insert into MGI_User values (1092, @curKey, @activeKey, "wjb", "John Boddy", 100
 insert into MGI_User values (1093, @curKey, @activeKey, "yz", "Yunixa Sophia Zhu", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1094, @curKey, @activeKey, "adiehl", "Alex Diehl", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1095, @curKey, @activeKey, "tbreddy", "TBK Reddy", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1096, @curKey, @activeKey, "ta", "Theresa Allio", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1096, @curKey, @activeKey, "tca", "Theresa Allio", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1097, @curKey, @activeKey, "furuno", "Masaaki Furuno", 1000, 1000, getdate(), getdate())
 
 /* Inactive */
 
 insert into MGI_User values (1100, @curKey, @inactiveKey, "ajp", "Antonio J. Planchart", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1101, @seKey, @inactiveKey, "lauramc", "Laura McCarthy", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1102, @seKey, @inactiveKey, "rlt", "Robert Tukey", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1103, @seKey, @inactiveKey, "tcw", "Tom Wiegers", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1104, @curKey, @inactiveKey, "srp", "Stephanie Pretel", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1105, @curKey, @inactiveKey, "tc", "Teresa Chu", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1106, @curKey, @inactiveKey, "lly", "Longlong Yang", 1000, 1000, getdate(), getdate())
@@ -183,7 +178,6 @@ insert into MGI_User values (1108, @curKey, @inactiveKey, "gxd editor", "Anonymo
 insert into MGI_User values (1109, @curKey, @inactiveKey, "apd", "Alan Davis", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1110, @curKey, @inactiveKey, "retired_editors", "Retired Editors", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1111, @curKey, @inactiveKey, "unknown editor", "Unknown Editor", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1112, @seKey, @inactiveKey, "pm", "Prita Mani", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1113, @curKey, @inactiveKey, "sr", "Sridhar Ramachandran", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1114, @curKey, @inactiveKey, "lmm", "Louise McKenzie", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1115, @curKey, @inactiveKey, "dnaf", "Dieter Naf", 1000, 1000, getdate(), getdate())

@@ -28,18 +28,10 @@ setenv oldmgddbschema ${oldmgddb}/mgddbschema
 
 # new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
-setenv newmgddb /home/lec/db/jsam
-#setenv newmgddb /home/lec/db/jsam2
+#setenv newmgddb /home/lec/db/jsam
+setenv newmgddb /home/lec/db/jsam2
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
-
-# existing (MGI 2.98) nomen schema configured to talk to a JSAM nomen database (see NOMEN)
-#setenv newnomendb //usr/local/mgi/dbutils/nomen
-setenv newnomendb /home/lec/db/jsam
-setenv newnomendbschema ${newmgddb}/nomendbschema
-setenv newnomendbperms ${newmgddb}/nomendbperms
-#setenv NOMEN nomen_lec
-setenv NOMEN nomen
 
 # the working directory
 setenv WORKDIR  /home/lec/db/mgidbmigration/JSAM/work

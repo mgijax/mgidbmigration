@@ -6,7 +6,7 @@ import string
 import regsub
 import db
 
-DEBUG = 1
+DEBUG = 0
 
 passwordFileName = os.environ['DBPASSWORDFILE']
 

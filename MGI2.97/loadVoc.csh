@@ -15,5 +15,6 @@ date >> $LOG
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/indexpriority.config
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/indexassay.config
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/indexstages.config
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/reportergene.config
 
 date >> $LOG

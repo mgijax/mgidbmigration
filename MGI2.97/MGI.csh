@@ -31,10 +31,10 @@ $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 #$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
 #date >> $LOG
 
-#accmgitype.csh >>& $LOG
-#loadVoc.csh >>& $LOG
+accmgitype.csh >>& $LOG
+loadVoc.csh >>& $LOG
 tr2459.csh >>& $LOG
-exit 0
+tr3710.csh >>& $LOG
 
 # reconfiguration
 ${newmgddbschema}/key/key_drop.csh

@@ -222,39 +222,6 @@ EOSQL
 ${newmgddbschema}/index/GXD_Index_create.object >> $LOG
 ${newmgddbschema}/index/GXD_Index_Stages_create.object >> $LOG
 
-${newmgddbschema}/key/BIB_Refs_drop.object >> $LOG
-${newmgddbschema}/key/BIB_Refs_create.object >> $LOG
-${newmgddbschema}/key/GXD_Index_create.object >> $LOG
-${newmgddbschema}/key/GXD_Index_Stages_create.object >> $LOG
-${newmgddbschema}/key/MRK_Marker_drop.object >> $LOG
-${newmgddbschema}/key/MRK_Marker_create.object >> $LOG
-${newmgddbschema}/key/VOC_Term_drop.object >> $LOG
-${newmgddbschema}/key/VOC_Term_create.object >> $LOG
-
-${newmgddbschema}/procedure/BIB_GXD_Exists_drop.object >> $LOG
-${newmgddbschema}/procedure/BIB_GXD_Exists_create.object >> $LOG
-${newmgddbschema}/procedure/MRK_reloadReference_drop.object >> $LOG
-${newmgddbschema}/procedure/MRK_reloadReference_create.object >> $LOG
-${newmgddbschema}/procedure/MRK_updateKeys_drop.object >> $LOG
-${newmgddbschema}/procedure/MRK_updateKeys_create.object >> $LOG
-
-${newmgddbschema}/trigger/BIB_Refs_drop.object >> $LOG
-${newmgddbschema}/trigger/BIB_Refs_create.object >> $LOG
-${newmgddbschema}/trigger/GXD_Index_drop.object >> $LOG
-${newmgddbschema}/trigger/GXD_Index_create.object >> $LOG
-${newmgddbschema}/trigger/MRK_Marker_drop.object >> $LOG
-${newmgddbschema}/trigger/MRK_Marker_create.object >> $LOG
-${newmgddbschema}/view/GXD_Index_View_drop.object >> $LOG
-${newmgddbschema}/view/GXD_Index_View_create.object >> $LOG
-
-${newmgddbperms}/curatorial/table/GXD_grant.object >> $LOG
-${newmgddbperms}/curatorial/procedure/BIB_grant.object >> $LOG
-${newmgddbperms}/curatorial/procedure/MRK_grant.object >> $LOG
-${newmgddbperms}/public/procedure/BIB_grant.object >> $LOG
-${newmgddbperms}/public/procedure/MRK_grant.object >> $LOG
-${newmgddbperms}/public/table/GXD_grant.object >> $LOG
-${newmgddbperms}/public/view/GXD_grant.object >> $LOG
-
 #cat - <<EOSQL | doisql.csh $0 >> $LOG
 #
 #use $DBNAME

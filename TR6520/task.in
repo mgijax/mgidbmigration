@@ -1,4 +1,5 @@
 pheno:create/modify references			create/modify reference if status != Deleted	
+pheno:create/modify references/deleted			create/modify reference if status = Deleted	
 pheno:create/modify pending			create/modify allele with Pending status	
 pheno:create/modify pending if owner			create/modify allele with Pending status if owner	
 pheno:create/modify reserved			create/modify allele with Reserved status	
@@ -23,3 +24,4 @@ pheno:edit nomen data approved			edit nomen data of allele with Approved status
 pheno:edit nomen data deleted			edit nomen data of allele with Deleted status	
 nomen:merges, renames			nomenclature merges, renames, etc.	
 strain:merges			strain merges	
+user:roles			assign user to roles	

@@ -4,9 +4,9 @@
 # Migration for TR 6520
 #
 # Defaults:       6
-# Procedures:   113
+# Procedures:   114
 # Rules:          5
-# Triggers:     157
+# Triggers:     159
 # User Tables:  189
 # Views:        215
 

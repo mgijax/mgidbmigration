@@ -19,6 +19,7 @@ Pheno:Tier 4 (curator)	pheno:change deleted/reserved to pending/approved
 Pheno:Tier 4 (curator)	pheno:edit nomen data pending
 Pheno:Tier 4 (curator)	pheno:edit nomen data reserved if owner
 Pheno:Tier 5 (guru)	pheno:create/modify references
+Pheno:Tier 5 (guru)	pheno:create/modify references/deleted
 Pheno:Tier 5 (guru)	pheno:create/modify pending
 Pheno:Tier 5 (guru)	pheno:create/modify reserved
 Pheno:Tier 5 (guru)	pheno:create/modify approved
@@ -35,3 +36,4 @@ Pheno:Tier 5 (guru)	pheno:edit nomen data approved
 Pheno:Tier 5 (guru)	pheno:edit nomen data deleted
 Nomenclature Merges/Renames	nomen:merges, renames
 Strain Merges	strain:merges
+User Permissions	user:roles

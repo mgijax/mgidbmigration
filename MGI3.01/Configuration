@@ -2,7 +2,8 @@
 
 setenv PYTHONPATH /usr/local/mgi/live/lib/python
 
-setenv SETLOAD	/usr/local/mgi/live/dataload/setload
+#setenv SETLOAD	/usr/local/mgi/live/dataload/setload
+setenv SETLOAD	/home/lec/loads/setload
 
 # new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd

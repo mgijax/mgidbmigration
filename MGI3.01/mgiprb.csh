@@ -21,7 +21,7 @@ go
 sp_rename PRB_Probe, PRB_Probe_Old
 go
 
-sp_rename PRB_ProbeReference, PRB_ProbeReference_Old
+sp_rename PRB_Reference, PRB_Reference_Old
 go
 
 end
@@ -44,8 +44,7 @@ go
 insert into PRB_Probe
 select _Probe_key, name, derivedFrom, 
 _Source_key, _Vector_key, _SegmentType_key,
-primer1Sequence, primer2Sequence, regionCovered, regionCovered2,
-insertSite, insertSize, productSize,
+primer1Sequence, primer2Sequence, regionCovered, insertSite, insertSize, productSize,
 _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 from PRB_Probe_Old
 go

@@ -110,8 +110,6 @@ ${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load | tee -a ${LOG}
 ./mgiallele.py | tee -a ${LOG}
 cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql | tee -a ${LOG}
 
-exit 0
-
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}

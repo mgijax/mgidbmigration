@@ -30,6 +30,8 @@ echo "Reconfigure Nomen..." >> $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
 date >> $LOG
 
+./tr4705.csh >> $LOG
+
 ${newmgddbschema}/table/MGI_Note_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_NoteChunk_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_NoteType_create.object >>& $LOG

@@ -30,6 +30,18 @@ date | tee -a  ${LOG}
 
 ########################################
 
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
+
+use ${DBNAME}
+go
+
+drop index MGI_Note.idx_Object_MGI_Note_key
+go
+
+quit
+
+EOSQL
+
 ./loadVoc.csh | tee -a ${LOG}
 ./mgivoc.csh | tee -a ${LOG}
 ./mgiallelepair.csh | tee -a ${LOG}
@@ -84,9 +96,6 @@ drop view ALL_Synonym_View
 go
 
 drop procedure ALL_updateReference
-go
-
-drop procedure SEQ_deleteByLogicalDB
 go
 
 EOSQL

@@ -52,8 +52,6 @@ db.set_sqlLogFunction(db.sqlLogAll)
 
 print 'split Allele notes'
 
-db.sql('drop index MGI_Note.idx_Object_MGI_Note_key', None)
-
 results = db.sql('select max(_Note_key) + 1 from MGI_Note', 'auto')
 noteKey = results[0]['']
 

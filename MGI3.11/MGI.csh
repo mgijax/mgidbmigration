@@ -22,6 +22,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${RADARDB} /shire/sybase/radar.backup
 
 date | tee -a  ${LOG}
 
@@ -37,7 +38,8 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 
-${MRKREFLOAD | tee -a ${LOG}
+${MRKREFLOAD} | tee -a ${LOG}
+${MRKLABELLOAD} | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

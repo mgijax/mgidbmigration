@@ -7,7 +7,7 @@
 # Procedures:   113
 # Rules:          5
 # Triggers:     155
-# User Tables:  187
+# User Tables:  186
 # Views:        209
 
 cd `dirname $0` && source ./Configuration
@@ -33,6 +33,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 
 # order is important!
 ./tr6351.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} | tee -a ${LOG}
+./markersynonym.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 

@@ -18,10 +18,13 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
+# new RADAR tables are needed for vocload
+
+#./mgiradar.csh | tee -a ${LOG}
+
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-#load_db.csh ${DBSERVER} mgd_wi2 /extra2/sybase/mgi3.2.backup
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
@@ -180,7 +183,5 @@ exec MGI_Table_Column_Cleanup
 go
 
 EOSQL
-
-#./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}

@@ -49,6 +49,106 @@ isComplex = []
 for r in results:
     isComplex.append(r['_Genotype_key'])
 
+# strain ordering
+
+db.sql('select ap._Genotype_key, ap._Allele_key_1, ap._Allele_key_2, p._Strain_key, s.strain ' + \
+	'into #allelepairs ' + \
+	'from GXD_AllelePair ap, GXD_Genotype p, PRB_Strain s ' + \
+	'where ap._Genotype_key = p._Genotype_key ' + \
+	'and p._Strain_key = s._Strain_key ', None)
+
+db.sql('select distinct _Allele_key_1, _Allele_key_2, _Strain_key, strain into #uniqap from #allelepairs', None)
+
+db.sql('select * into #orderbystrain from #uniqap group by _Allele_key_1, _Allele_key_2 having count(*) > 1', None)
+
+results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain != "Not Specified" ' + \
+	'and s.strain not like "involves:%" ' + \
+	'and s.strain not like "either:%" ' + \
+	'and s._Strain_key = a._Strain_key ' + \
+	'union ' + \
+	'select distinct a._Genotype_key, a._Allele_key_2 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain != "Not Specified" ' + \
+	'and s.strain not like "involves:%" ' + \
+	'and s.strain not like "either:%" ' + \
+	'and s._Strain_key = a._Strain_key ', 'auto')
+
+isNine = {}
+for r in results:
+    key = r['_Genotype_key']
+    if not isNine.has_key(key):
+	isNine[key] = []
+    isNine[key].append(r['_Allele_key_1'])
+
+results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain like "involves:%" ' + \
+	'and s._Strain_key = a._Strain_key ' + \
+	'union ' + \
+	'select distinct a._Genotype_key, a._Allele_key_2 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain like "involves:%" ' + \
+	'and s._Strain_key = a._Strain_key ', 'auto')
+
+isTen = {}
+for r in results:
+    key = r['_Genotype_key']
+    if not isTen.has_key(key):
+	isTen[key] = []
+    isTen[key].append(r['_Allele_key_1'])
+
+results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain like "either:%" ' + \
+	'and s._Strain_key = a._Strain_key ' + \
+	'union ' + \
+	'select distinct a._Genotype_key, a._Allele_key_2 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain like "either:%" ' + \
+	'and s._Strain_key = a._Strain_key ', 'auto')
+
+isEleven = {}
+for r in results:
+    key = r['_Genotype_key']
+    if not isEleven.has_key(key):
+	isEleven[key] = []
+    isEleven[key].append(r['_Allele_key_1'])
+
+results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain = "Not Specified" ' + \
+	'and s._Strain_key = a._Strain_key ' + \
+	'union ' + \
+	'select distinct a._Genotype_key, a._Allele_key_2 ' + \
+	'from #orderbystrain s, #allelepairs a ' + \
+	'where s._Allele_key_1 = a._Allele_key_1 ' + \
+	'and s._Allele_key_2 = a._Allele_key_2 ' + \
+	'and s.strain = "Not Specified" ' + \
+	'and s._Strain_key = a._Strain_key ', 'auto')
+
+isTwelve = {}
+for r in results:
+    key = r['_Genotype_key']
+    if not isTwelve.has_key(key):
+	isTwelve[key] = []
+    isTwelve[key].append(r['_Allele_key_1'])
+
 results = db.sql('select * from #alleles order by _Allele_key_1, _Genotype_key', 'auto')
 alleles = {}
 for r in results:
@@ -84,6 +184,22 @@ for a in alleles.keys():
 	        sequenceNum = 6
 	    elif alleleState == 'Indeterminate':
 	        sequenceNum = 7
+
+	if isNine.has_key(genotype):
+	    if a in isNine[genotype]:
+	        sequenceNum = 9
+
+	if isTen.has_key(genotype):
+	    if a in isTen[genotype]:
+	        sequenceNum = 10
+
+	if isEleven.has_key(genotype):
+	    if a in isEleven[genotype]:
+	        sequenceNum = 11
+
+	if isTwelve.has_key(genotype):
+	    if a in isTwelve[genotype]:
+	        sequenceNum = 12
 
 	fp.write(str(genotype) + TAB)
 	fp.write(str(marker) + TAB)

@@ -51,7 +51,7 @@ where name = 'Clone Set'
 select seq = identity(5), @setKey "_Set_key", _LogicalDB_key
 into #members
 from ACC_LogicalDB
-where name in ('RIKEN', 'NIA', 'NIA7.4K', 'NIA15K')
+where name in ('RIKEN', 'NIA', 'NIA 7.4K', 'NIA 15K')
 
 declare @memberKey integer
 select @memberKey = max(_SetMember_key)

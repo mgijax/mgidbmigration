@@ -51,8 +51,7 @@ ${oldmgddbschema}/table/table_create.csh | tee -a ${LOG}
 
 echo 'Loading tables...' | tee -a ${LOG}
 date | tee -a ${LOG}
-cd ${DATADIR}
-foreach i (*.bcp)
+foreach i (${DATADIR}/*.bcp)
 set table=`basename $i .bcp`
 cat ${DBPASSWORDFILE} | bcp ${DBNAME}..$table in $i -e errors -S${DBSERVER} -U${DBUSER} -c -t"&=&" -r"#=#\n" | tee -a ${LOG}
 cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -U${DBUSER} -i ${WORKDIR}/truncateLog.sql | tee -a ${LOG}

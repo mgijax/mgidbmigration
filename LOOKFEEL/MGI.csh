@@ -56,7 +56,7 @@ echo "Data Migration..." >> $LOG
 ./tr3802.csh >>& $LOG
 ./tr3588.csh >>& $LOG
 ./tr3516.csh >>& $LOG
-/mgi/all/wts_projects/4200/4222/tr4222.csh $DBSERVER $DBNAME
+./tr4222.csh >>& $LOG
 
 echo "Drop and re-create Keys..." >> $LOG
 ${newmgddbschema}/key/key_drop.csh >> $LOG

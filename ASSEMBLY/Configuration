@@ -1,6 +1,6 @@
 #!/bin/csh -f
 
-setenv INSTALLDIR	/home/lec/db/mgidbmigration/ASSEMBLY
+setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/ASSEMBLY
 
 #setenv VOCLOAD       /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv VOCLOAD       /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh

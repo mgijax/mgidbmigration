@@ -617,6 +617,9 @@ ${newmgddbschema}/index/MGI_Set_create.object >> $LOG
 ${newmgddbschema}/index/MGI_SetMember_create.object >> $LOG
 ${newmgddbschema}/index/MLD_Marker_create.object >> $LOG
 
+${newmgddbschema}/index/NOM_Marker_create.object >> $LOG
+${newmgddbschema}/index/NOM_Synonym_create.object >> $LOG
+
 ${newmgddbschema}/index/PRB_Alias_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Allele_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Allele_Strain_create.object >> $LOG

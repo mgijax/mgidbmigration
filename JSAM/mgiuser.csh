@@ -52,10 +52,6 @@ declare @pubKey  integer
 select @pubKey = _Term_key from VOC_Term t, VOC_Vocab v 
 where t.term = "Public" and t._Vocab_key = v._Vocab_key and v.name = "User Type"
 
-declare @testKey  integer
-select @testKey = _Term_key from VOC_Term t, VOC_Vocab v 
-where t.term = "Tester" and t._Vocab_key = v._Vocab_key and v.name = "User Type"
-
 declare @supportKey  integer
 select @supportKey = _Term_key from VOC_Term t, VOC_Vocab v 
 where t.term = "User Support" and t._Vocab_key = v._Vocab_key and v.name = "User Type"
@@ -81,13 +77,6 @@ insert into MGI_User values (1001, @dboKey, @activeKey, "mgd_dbo", "MGD Database
 
 insert into MGI_User values (1002, @pubKey, @activeKey, "mgd_public", "Public MGI", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1003, @pubKey, @activeKey, "mouseblast", "MouseBLAST MGI", 1000, 1000, getdate(), getdate())
-
-/* Tester */
-
-insert into MGI_User values (1004, @testKey, @activeKey, "tier2", "Tester 2", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1005, @testKey, @activeKey, "tier3", "Tester 3", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1006, @testKey, @activeKey, "tier4", "Tester 4", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1007, @testKey, @activeKey, "tier5", "Tester 5", 1000, 1000, getdate(), getdate())
 
 /* Software Engineers */
 
@@ -186,11 +175,17 @@ insert into MGI_User values (1115, @curKey, @inactiveKey, "dnaf", "Dieter Naf", 
 insert into MGI_User values (1200, @loaderKey, @activeKey, "jsam_load", "JSAM Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1201, @loaderKey, @activeKey, "RPCI_Load", "RPCI Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1202, @loaderKey, @activeKey, "fantom2_autoload", "Fantom2 (RIKEN) Load", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1203, @loaderKey, @activeKey, "swissload", "SWISS-PROT Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1203, @loaderKey, @activeKey, "swissload", "SwissPROT Association Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1204, @loaderKey, @activeKey, "riken_autoload", "Fantom1 (RIKEN) Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1205, @loaderKey, @activeKey, "rh_mapped_est_autoload", "RH Mapped EST Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1206, @loaderKey, @activeKey, "MGI_2.97", "GXD Release (MGI 2.97)", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1207, @loaderKey, @activeKey, "MGI_2.98", "MGI 2.98", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1208, @loaderKey, @activeKey, "genbank_load", "GenBank Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1209, @loaderKey, @activeKey, "refseq_load", "RefSeq Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1210, @loaderKey, @activeKey, "swissprot_seqload", "SwissPROT Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1211, @loaderKey, @activeKey, "trembl_load", "TrEMBL Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1212, @loaderKey, @activeKey, "dots_load", "DoTS Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1213, @loaderKey, @activeKey, "tigr_load", "TIGR Sequence Load", 1000, 1000, getdate(), getdate())
 
 /* Mergers */
 insert into MGI_User values (1300, @mergerKey, @activeKey, "strainmerge", "Strain Merge", 1000, 1000, getdate(), getdate())

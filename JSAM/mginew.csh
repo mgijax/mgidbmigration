@@ -5,6 +5,7 @@
 #
 # Add:
 #	MGI_AttributeHistory
+#	MAP_*
 #
 
 cd `dirname $0` && source ./Configuration
@@ -19,11 +20,14 @@ echo "MGI new tables..." | tee -a $LOG
 #
 # Use new schema product to create new table
 #
-#${newmgddbschema}/table/MGI_AttributeHistory_drop.object >>& $LOG
 
 ${newmgddbschema}/table/MGI_AttributeHistory_create.object >>& $LOG
 ${newmgddbschema}/default/MGI_AttributeHistory_bind.object >>& $LOG
 ${newmgddbschema}/key/MGI_AttributeHistory_create.object >>& $LOG
+
+${newmgddbschema}/table/MAP_create.logical >>& $LOG
+${newmgddbschema}/default/MAP_bind.logical >>& $LOG
+${newmgddbschema}/key/MAP_create.logical >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
@@ -101,6 +105,7 @@ quit
 EOSQL
 
 ${newmgddbschema}/index/MGI_AttributeHistory_create.object >>& $LOG
+${newmgddbschema}/index/MAP_create.csh >>& $LOG
 
 date >> $LOG
 

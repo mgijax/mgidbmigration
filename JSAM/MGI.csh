@@ -67,8 +67,8 @@ date | tee -a  $LOG
 
 ########################################
 
-${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
-date | tee -a  $LOG
+#${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
+#date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG
 ${DBUTILITIESDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a $LOG
@@ -81,6 +81,7 @@ ${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 
 # order is important!
 echo "Data Migration..." | tee -a  $LOG
+${newmgddbschema}/default/default_create.csh | tee -a ${LOG}
 ./accmgitype.csh | tee -a $LOG
 ./loadVoc.csh | tee -a $LOG
 ./mgiuserdefault.csh | tee -a $LOG

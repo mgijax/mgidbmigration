@@ -81,13 +81,22 @@ go
 exec MGI_Table_Column_Cleanup
 go
 
+end
+
+EOSQL
+
+${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+
+use ${DBNAME}
+go
+
 exec MGI_createReferenceSet
 go
 
 end
 
 EOSQL
-
-${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 
 date | tee -a  ${LOG}

@@ -3,6 +3,11 @@
 #
 # MGI 2.97
 #
+# procedures: 84
+# triggers:  138
+# tables:    176
+# views:     147
+#
 
 cd `dirname $0` && source ./Configuration
 

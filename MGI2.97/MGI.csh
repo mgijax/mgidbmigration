@@ -5,8 +5,8 @@
 #
 # procedures: 84
 # triggers:  140
-# tables:    176
-# views:     146
+# tables:    177
+# views:     147
 #
 
 cd `dirname $0` && source ./Configuration

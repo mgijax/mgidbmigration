@@ -9,3 +9,4 @@ Actual DB	Actual DB	TrEMBL (SIB)	mgd_dbo
 Actual DB	Actual DB	TIGR	mgd_dbo
 Actual DB	Actual DB	DoTS	mgd_dbo
 Actual DB	Actual DB	ENSEMBL	mgd_dbo
+Actual DB	Actual DB	NIA Mouse Gene Index	mgd_dbo

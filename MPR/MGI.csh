@@ -6,9 +6,9 @@
 # Defaults:       6
 # Procedures:   114
 # Rules:          5
-# Triggers:     164
-# User Tables:  189
-# Views:        216
+# Triggers:     163
+# User Tables:  181
+# Views:        217
 
 cd `dirname $0` && source ./Configuration
 
@@ -83,16 +83,10 @@ go
 drop view ALL_Synonym_View
 go
 
-drop table GXD_AllelePair_Old
-go
-
-drop trigger ACC_AccessionReference_Insert
-go
-
-drop trigger ACC_AccessionReference_Update
-go
-
 drop procedure ALL_updateReference
+go
+
+drop procedure SEQ_deleteByLogicalDB
 go
 
 EOSQL
@@ -103,6 +97,9 @@ use ${DBNAME}
 go
 
 drop table ALL_Allele_Old
+go
+
+drop table ALL_CellLine_Old
 go
 
 drop table GXD_AllelePair_Old

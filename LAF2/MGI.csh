@@ -24,8 +24,8 @@ source ${newmgddbschema}/Configuration
 
 setenv LOG $0.log
 
-#setenv labelload /usr/local/mgi/dbutils/mrklabelload
-setenv labelload /home/lec/loads/mrklabelload
+setenv labelload /usr/local/mgi/dbutils/mrklabelload
+#setenv labelload /home/lec/loads/mrklabelload
 
 rm -rf $LOG
 touch $LOG
@@ -42,7 +42,7 @@ $DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
 date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
-$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 3.0" >>& $LOG
+$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.9" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-4-0-0" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
@@ -82,7 +82,6 @@ date >> $LOG
 
 ${newmgddbschema}/view/VOC_Term_View_drop.object >>& $LOG
 ${newmgddbschema}/view/VOC_Term_View_create.object >>& $LOG
-${newmgddbperms}/public/perm_grant.csh >> $LOG
 
 ${newmgddbschema}/default/default_unbind.csh >>& $LOG
 ${newmgddbschema}/default/default_bind.csh >>& $LOG
@@ -97,6 +96,11 @@ date >> $LOG
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
 use ${DBNAME}
+go
+
+update ACC_MGIType
+set dbView = "PRB_Source_Summary_View"
+where _MGIType_key = 5
 go
 
 exec MGI_Table_Column_Cleanup

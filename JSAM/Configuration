@@ -1,6 +1,7 @@
 #!/bin/csh -f
 
-setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
+#setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
+setenv DBUTILITIESDIR	/home/lec/db/mgidbutilities
 #setenv TRANSLOAD        /usr/local/mgi/3.0/dataload/translationload
 setenv TRANSLOAD        /home/lec/loads/translationload
 #setenv SETLOAD		/usr/local/mgi/3.0/dataload/setload

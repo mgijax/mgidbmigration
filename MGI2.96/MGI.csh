@@ -115,6 +115,12 @@ go
 update ACC_ActualDB set name = 'IMAGE home page' where _ActualDB_key = 25
 go
 
+update ACC_ActualDB set name = 'RIKEN' where _ActualDB_key = 34
+go
+
+update ACC_LogicalDB set name = 'RIKEN' where _LogicalDB_key = 26
+go
+
 dump tran $DBNAME with truncate_only
 go
 

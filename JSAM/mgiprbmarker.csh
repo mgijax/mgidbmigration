@@ -47,6 +47,9 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
+dump tran $DBNAME with truncate_only
+go
+
 update statistics PRB_Marker_Old
 go
 

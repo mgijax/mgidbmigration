@@ -18,15 +18,6 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
-insert into MGI_NoteType values(1003, NULL, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
-insert into MGI_NoteType values(1004, 21, 'Editor', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
-insert into MGI_NoteType values(1005, 21, 'Coordinator', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
 insert into MGI_NoteType values(1006, 5, 'General', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 

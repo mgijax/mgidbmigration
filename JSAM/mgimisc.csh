@@ -16,6 +16,8 @@
 #	MGI_Note 
 #	MGI_NoteChunk
 #	MGI_NoteType
+#	MGI_RefAssocType
+#	MGI_Reference_Assoc
 #	MGI_Set
 #	MGI_SetMember
 #	MGI_Translation
@@ -84,6 +86,12 @@ sp_rename MGI_NoteChunk, MGI_NoteChunk_Old
 go
 
 sp_rename MGI_NoteType, MGI_NoteType_Old
+go
+
+sp_rename MGI_RefAssocType, MGI_RefAssocType_Old
+go
+
+sp_rename MGI_Reference_Assoc, MGI_Reference_Assoc_Old
 go
 
 sp_rename MGI_Set, MGI_Set_Old
@@ -173,6 +181,10 @@ ${newmgddbschema}/table/MGI_NoteChunk_create.object >> $LOG
 ${newmgddbschema}/default/MGI_NoteChunk_bind.object >> $LOG
 ${newmgddbschema}/table/MGI_NoteType_create.object >> $LOG
 ${newmgddbschema}/default/MGI_NoteType_bind.object >> $LOG
+${newmgddbschema}/table/MGI_RefAssocType_create.object >> $LOG
+${newmgddbschema}/default/MGI_RefAssocType_bind.object >> $LOG
+${newmgddbschema}/table/MGI_Reference_Assoc_create.object >> $LOG
+${newmgddbschema}/default/MGI_Reference_Assoc_bind.object >> $LOG
 ${newmgddbschema}/table/MGI_Set_create.object >> $LOG
 ${newmgddbschema}/default/MGI_Set_bind.object >> $LOG
 ${newmgddbschema}/table/MGI_SetMember_create.object >> $LOG
@@ -352,6 +364,28 @@ go
 dump tran ${DBNAME} with truncate_only
 go
 
+insert into MGI_Reference_Assoc
+select o._Assoc_key, o._Refs_key, o._Object_key, o._MGIType_key, o._RefAssocType_key,
+u1._User_key, u2._User_key, o.creation_date, o.modification_date
+from MGI_Reference_Assoc_Old o, MGI_User u1, MGI_User u2
+where o.createdBy = u1.login
+and o.modifiedBy = u2.login
+go
+
+dump tran ${DBNAME} with truncate_only
+go
+
+insert into MGI_RefAssocType
+select o._RefAssocType_key, o._MGIType_key, o.assocType, o.allowOnlyOne,
+u1._User_key, u2._User_key, o.creation_date, o.modification_date
+from MGI_RefAssocType_Old o, MGI_User u1, MGI_User u2
+where o.createdBy = u1.login
+and o.modifiedBy = u2.login
+go
+
+dump tran ${DBNAME} with truncate_only
+go
+
 insert into MGI_Set
 select o._Set_key, o._MGIType_key, o.name,
 u1._User_key, u2._User_key, o.creation_date, o.modification_date
@@ -454,7 +488,7 @@ o.symbol, o.name, o.chromosome, o.humanSymbol, o.statusNote,
 o.broadcast_date, u3._User_key,
 u1._User_key, u2._User_key, o.creation_date, o.modification_date
 from NOM_Marker_Old o, MGI_User u1, MGI_User u2, MGI_User u3
-where o.broadcastBy = u3.login,
+where o.broadcastBy = u3.login
 and o.createdBy = u1.login
 and o.modifiedBy = u2.login
 go
@@ -650,6 +684,12 @@ drop table MGI_NoteChunk_Old
 go
 
 drop table MGI_NoteType_Old
+go
+
+drop table MGI_RefAssocType_Old
+go
+
+drop table MGI_Reference_Assoc_Old
 go
 
 drop table MGI_Set_Old

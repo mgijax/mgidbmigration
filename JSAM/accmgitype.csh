@@ -30,10 +30,6 @@ insert into ACC_MGIType
 values (20, 'Organism', 'MGI_Organism', '_Organism_key', 'commonName', 'MGI_Organism_Summary_View', getdate(), getdate(), getdate())
 go
 
-insert into ACC_MGIType 
-values (21, 'Nomenclature', 'NOM_Marker', '_Nomen_key', 'symbol', null, getdate(), getdate(), getdate())
-go
-
 checkpoint
 go
 

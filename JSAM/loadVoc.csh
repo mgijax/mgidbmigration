@@ -16,7 +16,6 @@ echo "Vocabulary Migration..." | tee -a $LOG
 cellLine.py
 
 ${VOCLOAD} `pwd`/gender.config >>& $LOG
-${VOCLOAD} `pwd`/genefamily.config >>& $LOG
 ${VOCLOAD} `pwd`/cellLine.config >>& $LOG
 ${VOCLOAD} `pwd`/sequencequal.config >>& $LOG
 ${VOCLOAD} `pwd`/sequencestatus.config >>& $LOG

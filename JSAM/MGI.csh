@@ -63,7 +63,7 @@ ${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-#./load_dev2db.csh dev2mgd.backup
+./load_dev2db.csh dev1mgd.backup
 
 date | tee -a  $LOG
 
@@ -85,7 +85,6 @@ ${newmgddbschema}/default/default_create.csh | tee -a ${LOG}
 ./mgispecies.csh | tee -a $LOG
 ./mgimarker.csh | tee -a $LOG
 ./mgiprbmarker.csh | tee -a $LOG
-./mgiref.csh | tee -a $LOG
 ./mgisequence.csh | tee -a $LOG
 ./mginew.csh | tee -a $LOG
 ./acc.csh | tee -a $LOG
@@ -146,10 +145,6 @@ quit
  
 EOSQL
 
-# add indexes not added before
-${newmgddbschema}/index/MGI_Note_create.object | tee -a $LOG
-${newmgddbschema}/index/MGI_NoteChunk_create.object | tee -a $LOG
-${newmgddbschema}/index/MGI_Reference_Assoc_create.object | tee -a $LOG
 ${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
 
 updateStatisticsAll.csh ${newmgddbschema}

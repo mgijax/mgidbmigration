@@ -67,15 +67,13 @@ go
 /* set MRK_Marker._CreatedBy_key from Nomen, where possible */
 
 update MRK_Marker
-set _CreatedBy_key = u._User_key
-from MRK_Marker m, MGI_User u, ACC_Accession a, ${NOMEN}..ACC_Accession a2, ${NOMEN}..MRK_Nomen n
+set _CreatedBy_key = n._CreatedBy_key
+from MRK_Marker m, MRK_Acc_View a, NOM_Acc_View a2, NOM_Marker n
 where m._Marker_key = a._Object_key
 and a._LogicalDB_key = 1
-and a._MGIType_key = 2
 and a.prefixPart = "MGI:"
 and a.accID = a2.accID
 and a2._Object_key = n._Nomen_key
-and n.submittedBy = u.login
 go
 
 dump tran ${DBNAME} with truncate_only

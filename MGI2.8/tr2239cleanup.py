@@ -22,7 +22,7 @@ def cleanup(cmds, hasAllele = 0):
 	for r in results[-1]:
 
 		if prevObject != r['_Genotype_key'] and keepRec > -5 and deleteRec > 0:
-			delit = cleanUp % (keepRec, deleteRec, keepRec, deleteRec, keepRec, deleteRec) + \
+			delit = cleanUp % (keepRec, deleteRec, keepRec, deleteRec, keepRec, deleteRec, keepRec, deleteRec) + \
 			'\ndelete from GXD_Genotype where _Genotype_key = %d' % (deleteRec)
 
 			if not DEBUG:
@@ -54,7 +54,7 @@ def cleanup(cmds, hasAllele = 0):
 		prevObject = r['_Genotype_key']
 
 	if keepRec > -5 and deleteRec > 0:
-		delit = cleanUp % (keepRec, deleteRec, keepRec, deleteRec, keepRec, deleteRec) + \
+		delit = cleanUp % (keepRec, deleteRec, keepRec, deleteRec, keepRec, deleteRec, keepRec, deleteRec) + \
 		'\ndelete from GXD_Genotype where _Genotype_key = %d' % (deleteRec)
 
 		if not DEBUG:
@@ -123,6 +123,7 @@ db.set_sqlPassword(string.strip(open('/usr/local/mgi/dbutils/mgidbutilities/.mgd
 
 cleanUp = "update GXD_GelLane set _Genotype_key = %d where _Genotype_key = %d " + \
 	  "\nupdate GXD_Specimen set _Genotype_key = %d where _Genotype_key = %d " + \
+	  "\nupdate VOC_Annot set _Object_key = %d where _Object_key = %d and _AnnotType_key = 1001 " + \
 	  "\nupdate GXD_Expression set _Genotype_key = %d where _Genotype_key = %d"
 
 nopairs()

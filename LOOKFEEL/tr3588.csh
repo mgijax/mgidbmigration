@@ -50,8 +50,6 @@ and a.symbol = m.symbol + "<+>")
 for read only
 go
 
-begin transaction
-
 declare @key int
 declare @symbol varchar(30)
 
@@ -67,7 +65,6 @@ end
 
 close mrk_cursor
 deallocate cursor mrk_cursor
-commit transaction
 go
 
 checkpoint

@@ -37,10 +37,10 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-#$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-#date >> $LOG
-#$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
-#date >> $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+date >> $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+date >> $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $newnomendb >>& $LOG
 date >> $LOG
 

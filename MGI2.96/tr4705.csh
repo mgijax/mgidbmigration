@@ -51,7 +51,7 @@ go
 
 insert into MRK_History
 select _Marker_key, _Marker_Event_key, _Marker_EventReason_key, _History_key, _Refs_key, sequenceNum,
-name, event_date, "mgd_dbo", "mgd_dbo", creation_date, modification_date
+name, event_date, "dbo", "dbo", creation_date, modification_date
 from MRK_History_Old
 go
 

@@ -31,11 +31,23 @@ ${newmgddbschema}/key/MLP_create.logical
 #
 
 cd straindata
-mv MLP_Notes.bcp MLP_Extra.bcp
+rm MLP_Notes.bcp
 foreach i (MLP*)
 set f=`basename $i .bcp`
 bcpin.csh ${newmgddbschema} $f
 end
+
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+  
+use ${DBNAME}
+go
+
+insert into MLP_Extra (_Strain_key, reference, dataset, note1, note2, creation_date, modification_date)
+select _Strain_key, convert(varchar(25), reference), dataset, note1, note2, creation_date, modification_date
+from $STRAINS..MLP_Notes
+go
+
+EOSQL
 
 cd ..
 ${newmgddbschema}/index/MLP_create.logical

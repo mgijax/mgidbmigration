@@ -71,7 +71,6 @@ update MGI_Synonym
 set _SynonymType_key = @synTypeKey
 where _MGIType_key = 2
 and synonym like 'MGC%'
-go
 
 update MGI_Synonym
 set _SynonymType_key = @synTypeKey + 4
@@ -79,6 +78,9 @@ where _MGIType_key = 21
 go
 
 checkpoint
+go
+
+delete from MGI_SynonymType where _MGIType_key = 21 and synonymType in ("Author", "Other")
 go
 
 quit

@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     155
 # User Tables:  186
-# Views:        209
+# Views:        208
 
 cd `dirname $0` && source ./Configuration
 
@@ -49,7 +49,7 @@ go
 drop table MRK_Other
 go
 
-drop procedure MRK_insertOther
+drop procedure MRK_insertOtherName
 go
 
 drop view MRK_Other_View

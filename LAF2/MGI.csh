@@ -27,6 +27,8 @@ setenv LOG $0.log
 setenv labelload /usr/local/mgi/dbutils/mrklabelload
 #setenv labelload /home/lec/loads/mrklabelload
 
+setenv NOMEN nomen_release
+
 rm -rf $LOG
 touch $LOG
  

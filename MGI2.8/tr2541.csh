@@ -33,6 +33,9 @@ EOSQL
 ${newmgddbschema}/table/PRB_Strain_create.object
 ${newmgddbschema}/default/PRB_Strain_bind.object
 ${newmgddbschema}/key/PRB_Strain_create.object
+${newmgddbschema}/table/PRB_Strain_Synonym_create.object
+${newmgddbschema}/default/PRB_Strain_Synonym_bind.object
+${newmgddbschema}/key/PRB_Strain_Synonym_create.object
 
 #
 # changes made to this procedure must be installed prior to data migration
@@ -96,5 +99,6 @@ quit
 EOSQL
   
 ${newmgddbschema}/index/PRB_Strain_create.object
+${newmgddbschema}/index/PRB_Strain_Synonym_create.object
 
 date >> $LOG

@@ -71,17 +71,13 @@ ${VOCLOAD}/loadTerms.py -f -l output.terms $DBSERVER $DBNAME mgd_dbo `cat $DBPAS
 # Load PhenoSlim Annotations
 
 echo "PhenoSlim Annotation Load" >> $LOG
-date >> $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME pslim.csmith.tab csmith new >>& $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME pslim.cwg.tab cwg append >>& $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME pslim.il.tab il append >>& $LOG
-date >> $LOG
 
 # Load GO Annotations
 echo "GO Annotation Load" >> $LOG
-date >> $LOG
 ${ANNOTLOAD}/gomarker.csh $DBSERVER $DBNAME ${GODATA}/ontology.txt new >>& $LOG
-date >> $LOG
 
 ./posttr2867.csh $DBSERVER $DBNAME >>& $LOG
 

@@ -31,12 +31,17 @@ ${newmgddbschema}/index/MGI_RoleTask_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MGI_RoleTask_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MGI_UserRole_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MGI_UserRole_create.object | tee -a ${LOG}
+${newmgddbschema}/index/MGI_UserTask_create.object | tee -a ${LOG}
 
 ${newmgddbschema}/procedure/PRB_processAnonymousSource_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/PRB_processAnonymousSource_create.object | tee -a ${LOG}
 
+${newmgddbschema}/view/MGI_UserRole_View_create.object | tee -a ${LOG}
+
 ${newmgddbperms}/curatorial/table/MGI_UserRole_grant.object | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/PRB_processAnonymousSource_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/MGI_UserRole_View_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/MGI_UserTask_View_grant.object | tee -a ${LOG}
 
 ./roletaskload.csh | tee -a ${LOG}
 

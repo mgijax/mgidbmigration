@@ -8,10 +8,6 @@
 #
 #	MGI_RoleTask
 #
-# Assumes:
-#
-#	That no one else is adding Mapping or Accession IDs records to the database.
-#
 # Side Effects:
 #
 #	None
@@ -75,7 +71,8 @@ inputFile = ''		# file descriptor
 diagFile = ''		# file descriptor
 errorFile = ''		# file descriptor
 
-roletaskFile = ''		# file descriptor
+roletaskFile = ''	# file descriptor
+roletaskTable = 'MGI_RoleTask'
 
 diagFileName = ''	# file name
 errorFileName = ''	# file name
@@ -219,7 +216,7 @@ def init():
 	head, tail = os.path.split(inputFileName) 
 	diagFileName = tail + '.' + fdate + '.diagnostics'
 	errorFileName = tail + '.' + fdate + '.error'
-	roletaskFileName = tail + '.' + fdate + '.MLD_Expts.bcp'
+	roletaskFileName = tail + '.' + fdate + '.' + roletaskTable + '.bcp'
 
 	try:
 		inputFile = open(inputFileName, 'r')
@@ -384,7 +381,7 @@ def bcpFiles():
 
 	cmd = 'cat %s | bcp %s..%s in %s -c -t\"%s" -S%s -U%s' \
 		% (passwordFileName, db.get_sqlDatabase(), \
-	   	'MLD_Expts', roletaskFileName, bcpdelim, db.get_sqlServer(), db.get_sqlUser())
+	   	roletaskTable, roletaskFileName, bcpdelim, db.get_sqlServer(), db.get_sqlUser())
 
 	diagFile.write('%s\n' % cmd)
 

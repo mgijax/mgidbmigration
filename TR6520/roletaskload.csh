@@ -6,11 +6,7 @@
 # Usage:  roletaskload.csh
 #
 
-cd `dirname $0`
-
-# DB schema directory; its Configuration file will set up all you need
-setenv SCHEMADIR $1
-source ${SCHEMADIR}/Configuration
+cd `dirname $0` && source ./Configuration
 
 setenv INPUTFILE	roletask.in
 setenv MODE		full

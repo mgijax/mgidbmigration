@@ -34,6 +34,9 @@ setenv newrdrdbperms ${newrdrdb}/radardbperms
 # the working directory
 setenv WORKDIR  /extra1/sybase
 
+# the backup directory
+setenv BACKUPDIR  /extra2/sybase
+
 # the path where the bcp files have been installed
 setenv DATADIR  ${WORKDIR}/data
 

@@ -77,6 +77,17 @@ deallocate cursor strain_cursor
 commit transaction
 go
 
+select _Strain_key, synonym = substring(note1, 6, 255), seq = identity(5)
+into #synonyms
+from MLP_Extra
+where note1 like 'syn:%'
+go
+
+insert into PRB_Strain_Synonym (_Synonym_key, _Strain_key, synonym)
+select seq + 1, _Strain_key, synonym
+from #synonyms
+go
+
 checkpoint
 go
 

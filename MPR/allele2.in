@@ -1,17 +1,19 @@
-Targeted	Targeted (Floxed/Frt)
-Targeted	Targeted (Reporter)
-Targeted	Targeted (knock-out)
-Targeted	Targeted (knock-in)
-Targeted	Targeted (other)
+Targeted, knock-out	Targeted (knock-out)
+Targeted, other	Targeted (Floxed/Frt)
+Targeted, other	Targeted (Reporter)
+Targeted, other	Targeted (knock-in)
+Targeted, other	Targeted (other)
+Gene trapped	Gene trapped
+Transgenic	Transgenic (random, gene disruption)
+Transgenic	Transgenic (random, expressed)
+Transgenic	Transgenic (Cre/Flp)
 Spontaneous	Spontaneous
-Radiation induced	Radiation induced
 Chemically induced	Chemically induced (ENU)
 Chemically induced	Chemically induced (other)
-Other	Gene trapped
-Other	Chemically and radiation induced
-Other	Transgenic (random, gene disruption)
-Other	Transgenic (random, expressed)
-Other	Transgenic (Cre/Flp)
-Other	QTL
+Chemically induced	Chemically and radiation induced
+Radiation induced	Radiation induced
+Radiation induced	Chemically and radiation induced
+QTL	QTL
 Other	Not Applicable
 Other	Not Specified
+Other	Transgenic (reporter)

@@ -110,8 +110,6 @@ for k in notes.keys():
     allNotes = string.rstrip(string.join(n, ''))
 
     allNotes = superscript(allNotes)
-    allNotes = regsub.gsub('<SUP>br</SUP>', '<br>', allNotes)
-    allNotes = regsub.gsub('<SUP>17</SUP>', '<17>', allNotes)
 
     db.sql(createNewNote(k, allNotes), None, execute = not DEBUG)
 

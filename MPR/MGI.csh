@@ -4,7 +4,7 @@
 # Migration for TR 6520
 #
 # Defaults:       6
-# Procedures:   117
+# Procedures:   119
 # Rules:          5
 # Triggers:     155
 # User Tables:  183
@@ -21,6 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
+load_db.csh ${DBSERVER} mgd_wi2 /extra2/sybase/mgi3.2.backup
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
@@ -92,10 +93,34 @@ go
 drop view ALL_Reference_View
 go
 
+drop view ALL_Reference_Additional_View
+go
+
+drop view ALL_Reference_Molecular_View
+go
+
+drop view ALL_Reference_Original_View
+go
+
 drop view ALL_Note_View
 go
 
+drop view ALL_Note_General_View
+go
+
+drop view ALL_Note_Molecular_View
+go
+
+drop view ALL_Note_Nomenclature_View
+go
+
+drop view ALL_Note_Promoter_View
+go
+
 drop view ALL_Synonym_View
+go
+
+drop view ALL_Type_Summary_View
 go
 
 drop procedure ALL_updateReference
@@ -114,23 +139,20 @@ go
 drop table ALL_CellLine_Old
 go
 
-drop table GXD_AllelePair_Old
-go
+/*drop table GXD_AllelePair_Old */
+/*go */
 
 drop table GXD_AlleleGenotype_Old
 go
 
 select getdate()
-exec VOC_processAnnotHeaderAll
-select getdate()
-go
-
-select getdate()
-exec ALL_processAlleleCombAll
+exec VOC_processAnnotHeaderAll 5
 select getdate()
 go
 
 EOSQL
+
+./combination.csh
 
 #./mgiradar.csh | tee -a ${LOG}
 

@@ -34,47 +34,6 @@ ${MGIDBUTILS}/bin/load_db.csh ${DBSERVER} ${DBNAME} ${MGD_BACKUP}
 date | tee -a ${LOG}
 
 ############################################################
-# Add new clone sets to the MGI_SetMember table.
-#
-echo "Add new clone sets" | tee -a ${LOG}
-echo "" | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
-  
-use ${DBNAME}
-go
-
-declare @setKey integer
-select @setKey = _Set_key
-from MGI_Set
-where name = 'Clone Set'
-
-select seq = identity(5), @setKey "_Set_key", _LogicalDB_key
-into #members
-from ACC_LogicalDB
-where name in ('RIKEN', 'NIA', 'NIA 7.4K', 'NIA 15K')
-
-declare @memberKey integer
-select @memberKey = max(_SetMember_key)
-from MGI_SetMember
-
-declare @sequenceNum integer
-select @sequenceNum = max(sequenceNum)
-from MGI_SetMember
-where _Set_key = @setKey
-
-insert into MGI_SetMember
-select @memberKey + seq, _Set_key, _LogicalDB_key, @sequenceNum + seq,
-       ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
-from #members
-go
-
-checkpoint
-go
-
-quit
-EOSQL
-
-############################################################
 # Establish configuration settings for the RADAR database
 # and load the database from the production backup.
 #

@@ -86,6 +86,9 @@ go
 drop table PRB_Strain_Synonym
 go
 
+drop view NOM_Synonym_View
+go
+
 end
 
 EOSQL

@@ -76,6 +76,9 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use ${DBNAME}
 go
 
+drop table BIB_Refs_Old
+go
+
 drop table GXD_Antibody_Old
 go
 

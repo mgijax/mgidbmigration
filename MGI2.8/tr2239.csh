@@ -77,16 +77,5 @@ EOSQL
 ${newmgddbschema}/key/GXD_Genotype_create.object
 ${newmgddbschema}/index/GXD_Genotype_create.object
 
-# New VOC and DAG tables
-
-${newmgddbschema}/table/DAG_create.logical
-${newmgddbschema}/table/VOC_create.logical
-${newmgddbschema}/key/DAG_create.logical
-${newmgddbschema}/key/VOC_create.logical
-${newmgddbschema}/index/DAG_create.logical
-${newmgddbschema}/index/VOC_create.logical
-${newmgddbschema}/default/DAG_bind.logical
-${newmgddbschema}/default/VOC_bind.logical
-
 date >> $LOG
 

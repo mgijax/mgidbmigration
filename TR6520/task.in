@@ -3,6 +3,7 @@ pheno:create/modify references/deleted			create/modify reference if status = Del
 pheno:create/modify pending			create/modify allele with Pending status	
 pheno:create/modify pending if owner			create/modify allele with Pending status if owner	
 pheno:create/modify reserved			create/modify allele with Reserved status	
+pheno:create/modify deleted			create/modify allele with Delete status	
 pheno:create/modify approved			create/modify allele with Approved status	
 pheno:create/modify approved if owner			create/modify allele with Approved status if owner	
 pheno:change pending to approved			change Pending status to Approved	

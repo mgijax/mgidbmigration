@@ -24,6 +24,7 @@ Pheno:Tier 5 (guru)	pheno:create/modify references
 Pheno:Tier 5 (guru)	pheno:create/modify references/deleted
 Pheno:Tier 5 (guru)	pheno:create/modify pending
 Pheno:Tier 5 (guru)	pheno:create/modify reserved
+Pheno:Tier 5 (guru)	pheno:create/modify deleted
 Pheno:Tier 5 (guru)	pheno:create/modify approved
 Pheno:Tier 5 (guru)	pheno:change pending to approved
 Pheno:Tier 5 (guru)	pheno:change pending/deleted to reserved

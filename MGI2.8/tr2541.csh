@@ -101,7 +101,7 @@ EOSQL
 ${newmgddbschema}/index/PRB_Strain_create.object
 ${newmgddbschema}/index/PRB_Strain_Synonym_create.object
 
-cat - <<EOSQL | doisql.csh $0
+cat - <<EOSQL | doisql.csh $0 >>& $LOG
 
 use tempdb
 go
@@ -130,6 +130,7 @@ mgikey1    integer not null,
 mgikey2    integer null,
 mgikey3    integer null
 )
+go
 
 checkpoint
 go
@@ -138,10 +139,10 @@ quit
  
 EOSQL
  
-cat $DBPASSWORDFILE | bcp tempdb..JRSStrain in tr2541.txt -c -t\\t -U$DBUSER
-cat $DBPASSWORDFILE | bcp tempdb..JRSType in tr2541.type.tab -c -t\\t -U$DBUSER
+cat $DBPASSWORDFILE | bcp tempdb..JRSStrain in tr2541.txt -c -t\\t -U$DBUSER >>& $LOG
+cat $DBPASSWORDFILE | bcp tempdb..JRSType in tr2541.type.tab -c -t\\t -U$DBUSER >>& $LOG
 
-cat - <<EOSQL | doisql.csh $0
+cat - <<EOSQL | doisql.csh $0 >>& $LOG
  
 use tempdb
 go

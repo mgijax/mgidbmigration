@@ -75,5 +75,7 @@ go
 
 quit
 
+EOSQL
+
 date >> $LOG
 

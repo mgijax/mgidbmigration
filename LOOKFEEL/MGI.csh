@@ -17,9 +17,11 @@ setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 setenv PYTHONPATH	/usr/local/mgi/lib/python
 
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
+#setenv newnomendb /usr/local/mgi/dbutils/nomen
 setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
+setenv newnomendb /home/lec/db
 
 source ${newmgddbschema}/Configuration
 
@@ -34,19 +36,23 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-#$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-#date >> $LOG
-#$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
-#date >> $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+date >> $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+date >> $LOG
+$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $nomendb >>& $LOG
+date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
-#$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
-#$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-12" >>& $LOG
-#$DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
+$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-12" >>& $LOG
+$DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
 echo "Data Migration..." >> $LOG
 
 ./tr3802.csh >>& $LOG
+./tr3588.csh >>& $LOG
+./tr3516.csh >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   

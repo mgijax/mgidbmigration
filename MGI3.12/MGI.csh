@@ -21,7 +21,7 @@ go
 
 declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
-insert into MGI_NoteType values(@noteTypeKey, 2, 'GO Text', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey, 2, 'GO Text', 0, 1000, 1000, getdate(), getdate())
 go
 
 update IMG_Image

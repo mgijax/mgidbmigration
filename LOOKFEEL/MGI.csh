@@ -12,7 +12,7 @@
 
 cd `dirname $0`
 
-setenv SYBASE	/opt/sybase
+setenv SYBASE	/opt/sybase/12.5
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 setenv PYTHONPATH	/usr/local/mgi/lib/python
 

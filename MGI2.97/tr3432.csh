@@ -55,9 +55,9 @@ ${newmgddbperms}/public/table/GXD_Structure_grant.object >> $LOG
 
 # generate SQL updates for topological sorting
 
-topoSort.py
+topoSort.py >>& $LOG
 chmod +x topoSort.csh
-topoSort.csh
+topoSort.csh >>& $LOG
 
 date >> $LOG
 

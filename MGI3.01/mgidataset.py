@@ -8,10 +8,10 @@ import mgi_utils
 
 todayDate = mgi_utils.date('%m/%d/%Y')
 
-outFile = open('BIB_DataSets_Assoc.bcp', 'w')
+outFile = open('BIB_DataSet_Assoc.bcp', 'w')
 
 dataset = {}
-cmd = 'select _DataSet_key, abbreviation from BIB_DataSets'
+cmd = 'select _DataSet_key, abbreviation from BIB_DataSet'
 results = db.sql(cmd, 'auto')
 for r in results:
 

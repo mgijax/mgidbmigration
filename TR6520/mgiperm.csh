@@ -38,6 +38,8 @@ ${newmgddbschema}/view/MGI_UserTask_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/VOC_Term_UserRole_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/VOC_Term_UserTask_View_create.object | tee -a ${LOG}
 
+${newmgddbschema}/procedure/NOM_transferToMGD_drop.object | tee -a ${LOG}
+${newmgddbschema}/procedure/NOM_transferToMGD_create.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/PRB_processAnonymousSource_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/PRB_processAnonymousSource_create.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}

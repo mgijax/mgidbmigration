@@ -91,6 +91,6 @@ end
 
 EOSQL
 
-${DBUTILSBINDIR}/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
+${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 
 date | tee -a  ${LOG}

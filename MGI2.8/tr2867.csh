@@ -36,6 +36,22 @@ ${newmgddbschema}/default/BIB_Refs_bind.object
 ${newmgddbschema}/table/ACC_MGIType_create.object
 ${newmgddbschema}/default/ACC_MGIType_bind.object
 
+# New VOC and DAG tables
+
+${newmgddbschema}/table/DAG_create.logical
+${newmgddbschema}/table/VOC_create.logical
+${newmgddbschema}/key/DAG_create.logical
+${newmgddbschema}/key/VOC_create.logical
+${newmgddbschema}/index/DAG_create.logical
+${newmgddbschema}/index/VOC_create.logical
+${newmgddbschema}/default/DAG_bind.logical
+${newmgddbschema}/default/VOC_bind.logical
+
+${newmgddbschema}/key/BIB_Refs_create.object
+${newmgddbschema}/index/BIB_Refs_create.object
+${newmgddbschema}/key/ACC_MGIType_create.object
+${newmgddbschema}/index/ACC_MGIType_create.object
+
 bcpin.csh ${newmgddbschema} BIB_Refs
 
 date >> $LOG
@@ -63,25 +79,13 @@ insert into ACC_MGIType
 values (14, 'Vocabulary', 'VOC_Vocab', '_Vocab_key', NULL, getdate(), getdate(), getdate())
 go
 
+insert into ACC_LogicalDB
+values (-1, 'Not Specified', 'Not Specified', NULL, getdate(), getdate(), getdate())
+go
+
 end
 
 EOSQL
-
-# New VOC and DAG tables
-
-${newmgddbschema}/table/DAG_create.logical
-${newmgddbschema}/table/VOC_create.logical
-${newmgddbschema}/key/DAG_create.logical
-${newmgddbschema}/key/VOC_create.logical
-${newmgddbschema}/index/DAG_create.logical
-${newmgddbschema}/index/VOC_create.logical
-${newmgddbschema}/default/DAG_bind.logical
-${newmgddbschema}/default/VOC_bind.logical
-
-${newmgddbschema}/key/BIB_Refs_create.object
-${newmgddbschema}/index/BIB_Refs_create.object
-${newmgddbschema}/key/ACC_MGIType_create.object
-${newmgddbschema}/index/ACC_MGIType_create.object
 
 # Load VOC tables
 

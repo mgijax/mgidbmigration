@@ -36,6 +36,7 @@ dump transaction ${DBNAME} with truncate_only
 go
 EOSQL
 
+# for development build only; comment out during production build
 echo 'Load MGD 2.98 Database...' | tee -a ${LOG}
 load_devdb.csh mgd_lec mgd.backup | tee -a ${LOG}
 echo 'Save copy of MGD 2.98 backup...' | tee -a ${LOG}
@@ -43,14 +44,21 @@ rm -rf ${BACKUPDIR}/mgd298.backup*
 cp ${BACKUPDIR}/mgd.backup1 ${BACKUPDIR}/mgd298.backup1
 cp ${BACKUPDIR}/mgd.backup2 ${BACKUPDIR}/mgd298.backup2
 
-echo 'Load Empty Database...' | tee -a ${LOG}
-load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
-date | tee -a ${LOG}
-
+# for development build only; comment out during production build
+# for production migration, this will be a manual step
 echo 'Create data files...' | tee -a ${LOG}
 rm -rf ${DATADIR}/*
 bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
 date | tee -a ${LOG}
+
+# for development build only; comment out during production build
+echo 'Load Empty Database...' | tee -a ${LOG}
+load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
+date | tee -a ${LOG}
+
+# from here down, keep the same for development or production build
+echo 'Create MGI_DBinfo table...' | tee -a ${LOG}
+${DBUTILSBINDIR}/createloadMGIdbinfo.csh ${oldmgddbschema} ${oldmgddbperms} ${PUBLIC_VERSION} ${PRODUCT_NAME} ${SCHEMA_TAG}
 
 echo 'Creating tables...' | tee -a ${LOG}
 date | tee -a ${LOG}

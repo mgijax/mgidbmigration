@@ -1,0 +1,91 @@
+Whole Brain	TS28: : organ system: nervous system: central nervous system: brain
+
+Cortex	TS28: : organ system: nervous system: central nervous system: brain: forebrain: telencephalon: cerebral cortex
+
+Hippocampus	TS28: : organ system: nervous system: central nervous system: brain: forebrain: telencephalon: hippocampus
+
+Mid brain	TS28: : organ system: nervous system: central nervous system: brain: midbrain
+
+Striatum	TS28: : organ system: nervous system: central nervous system: brain: forebrain: telencephalon: corpus striatum
+
+Olfactory bulb	TS28: : organ system: nervous system: central nervous system: brain: forebrain: telencephalon: olfactory bulb
+
+Cerebellum	TS28: : organ system: nervous system: central nervous system: brain: hindbrain: metencephalon: cerebellum
+
+Spinal cord	TS28: : organ system: nervous system: central nervous system: spinal cord
+
+Pituitary gland	TS28: : organ system: endocrine system: pituitary gland
+
+Eye	TS28: : organ system: sensory organ: eye
+
+Skeletal muscle	TS28: : muscle: skeletal muscle
+
+Heart	TS28: : organ system: cardiovascular system: heart
+
+Lung	TS28: : organ system: visceral organ: respiratory system: lung
+
+Spleen	TS28: : organ system: haemolymphoid system: spleen
+
+Liver	TS28: : organ system: visceral organ: liver and biliary system: liver
+
+Gall bladder	TS28: : organ system: visceral organ: liver and biliary system: gall bladder
+
+Pancreas	TS28: : organ system: endocrine system: pancreas
+
+Kidney	TS28: : organ system: visceral organ: renal/urinary system: kidney
+
+Bladder	TS28: : organ system: visceral organ: renal/urinary system: bladder
+
+Adrenal gland	TS28: : organ system: endocrine system: adrenal gland
+
+Skin	TS28: : organ system: integumental system: skin
+
+Adipose tissue	TS28: : organ system: adipose tissue
+
+Long bone\/marrow	TS28: : limb: hindlimb: leg: upper leg: skeleton: femur
+
+Paws	TS28: : limb: forelimb: handplate
+
+Teeth	TS28: : organ system: visceral organ: alimentary system: oral region: tooth: incisor
+
+Tongue	TS28: : organ system: visceral organ: alimentary system: pharynx: tongue
+
+Salivary gland	TS28: : organ system: visceral organ: alimentary system: oral region: salivary gland
+
+Oesophagus	TS28: : organ system: visceral organ: alimentary system: oesophagus
+
+Fundus	TS28: : organ system: visceral organ: alimentary system: stomach: fundus
+
+Antrum	TS28: : organ system: visceral organ: alimentary system: stomach: pyloric antrum
+
+Duodenum	TS28: : organ system: visceral organ: alimentary system: intestine: small intestine: duodenum
+
+Jejunum	TS28: : organ system: visceral organ: alimentary system: intestine: small intestine: jejunum
+
+Ileum	TS28: : organ system: visceral organ: alimentary system: intestine: small intestine: ileum
+
+Caecum	TS28: : organ system: visceral organ: alimentary system: intestine: large intestine: caecum
+
+Ascending	TS28: : organ system: visceral organ: alimentary system: intestine: large intestine: colon: ascending colon
+
+Descending	TS28: : organ system: visceral organ: alimentary system: intestine: large intestine: colon: descending colon
+
+Appendix	TS28: : organ system: visceral organ: alimentary system: intestine: large intestine: caecum: apex of caecum
+
+Thymus	TS28: : organ system: haemolymphoid system: thymus
+
+Mammary gland  Non preg.	TS28: : organ system: integumental system: gland: mammary gland
+
+Mammary gland  preg.	TS28: : organ system: integumental system: gland: mammary gland
+
+Testis	TS28: : organ system: visceral organ: reproductive system: male: testis
+
+Epididymis	TS28: : organ system: visceral organ: reproductive system: male: epididymis
+
+Ovary	TS28: : organ system: visceral organ: reproductive system: female: ovary
+
+Cervix	TS28: : organ system: visceral organ: reproductive system: female: uterus: cervix
+
+Placenta	TS28: : organ system: visceral organ: reproductive system: female: placenta
+
+Mid-term foetus	TS23: : embryo

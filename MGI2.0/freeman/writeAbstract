@@ -1,0 +1,202 @@
+#!/usr/local/bin/python
+
+import sys
+import string
+import mgdlib
+
+##############################################################
+
+mgiserver = None
+mgidatabase = None
+mgiuser = None
+mgipassword = None
+mgischema = None
+
+#
+# The is the J# for Tom's Freeman's reference.
+#
+tomsJnumber = "J:46439"	
+
+#######################################################################
+
+###################################################################
+# debug
+# Write a log message to the log file and to stderr.
+###################################################################
+
+def debug(s):
+	if logfd:
+		logfd.write( s + '\n' )
+	if logfd != sys.stderr:
+		sys.stderr.write(s + '\n')
+
+###################################################################
+# die
+# Write an error message and exit.
+###################################################################
+
+def die(s):
+	debug(s)
+	sys.exit(-1)
+
+###################################################################
+# usage
+# Print a usage string and exit.
+###################################################################
+
+def usage():
+	die(("Usage: %s  " + \
+		"<server> <database> <user> <password file>") % sys.argv[0] )
+
+###################################################################
+# MAIN
+###################################################################
+
+if len(sys.argv) != 5:
+	usage()
+
+mgiserver = sys.argv[1]
+mgidatabase = sys.argv[2]
+mgiuser = sys.argv[3]
+mgipasswordFile = sys.argv[4]
+
+fd = open(mgipasswordFile, 'r')
+mgipassword = string.strip(fd.readline())
+fd.close()
+
+mgdlib.set_sqlLogin( mgiuser, mgipassword, mgiserver, mgidatabase )
+
+#
+# Get the reference for Tom's data
+#
+cmd = 'select _Object_key from ACC_Accession where accID = "%s"' % tomsJnumber
+results = mgdlib.sql(cmd, "auto")
+if len(results) != 1:
+	die("loadMGIdata: query for reference %s yielded %d results." %(tomsJnumber, len(results)))
+refsKey = results[0]["_Object_key"]
+
+cmd = '''
+	update BIB_Refs
+	set abstract = "
+Summary
+
+Tom C. Freeman1, Alistair K. Dixon1, Elizabeth A. Campbell1, Tere-Michelle
+Tait1, Peter J. Richardson1,2, Kate M. Rice1, Gareth L. Maslen1, Anthony D.
+Metcalfe3, Charles H. Streuli3, David R. Bentley1.
+
+1. The Sanger Centre, Wellcome Trust Genome Campus, Hinxton, Cambs., CB10
+1SA. UK
+2. Department of Pharmacology, University of Cambridge, Tennis Court Road,
+Cambridge CB2 1QJ, UK
+3. School of Biological Sciences, University of Manchester, 3.239 Stopford
+Building, Oxford Road, Manchester M13 9PT, UK
+
+We wished to establish feasibility of mapping systematically the expression
+of a large number of genes as an essential aid to their functional
+characterisation.  The mouse was selected for this pilot study due to its
+popularity as a genetic model, and the availability of gene sequence and
+tissue.  A wide range of tissues were obtained and cDNA prepared from total
+RNA.  PCR assays were developed to 3' gene sequences from the public
+databases.  To date, this panel has been used to determine tissue-specific
+expression profiles of 517 genes across 46 tissues.  In one tissue (the
+mammary gland), we also examined the temporal expression profiles of 44
+genes during
+differentiation (data not included).  A wide range of expression patterns
+was observed, including examples of genes with tissue-independent profiles
+and genes with very specific profiles that reflect the functional role of
+the gene product.  The methodology has been demonstrated to be robust,
+sensitive and capable of providing an indication of the relative expression
+level of each gene across the various tissue types. With the recent rapid
+increase in available mammalian gene sequences, particularly as a result of
+the expressed sequence tag (EST) sequencing projects, the sequence of most
+mammalian genes will soon be known.  We propose that this model could be
+extended to develop a co-ordinated approach to the generation of databases
+of gene expression.
+
+
+
+Methods
+
+RNA extraction and reverse transcription
+
+Tissues from 2 - 10 male and/or female, 6 - 8 week old C57BL/6 mice were
+pooled and snap frozen.  Total RNA was extracted using the RNAce DNA-free
+total RNA extraction kit (BioExpress, London, UK).  50 µg total RNA was
+DNase1 digested (0.1 U/µg, 30 min), heated for 2 min at 90°C and chilled on
+ice.  cDNA synthesis was performed in the presence of 20 µM anchored
+T-primer, T17(AGC) and MMLV reverse transcriptase (Life Technologies)
+according to the manufacturer's recommendations. The amount of cDNA
+required for each reaction was standardised so that the level of ribosomal
+protein S29 gene PCR product was the same in each sample.  This was chosen
+as a representative gene that is expressed at a comparable level in all
+tissues and the results are therefore relative to this standard.
+Sufficient cDNA stocks were prepared for the entire study and stored at
+-20°C in multiple aliquots containing 0.2% glycogen as carrier.
+
+
+
+Primer design and PCR
+
+PCR primers of 20 ± 2 bp in length with a 20-80% GC content and Tm of 60°C
+± 3°C  were selected using the program PRIMER (Whitehead Institute,
+Cambridge, MA) to amplify products of 120-190 bp in length from within 300
+bp of the 3' end of the sequence.  Primers were pre-screened to determine
+the optimal conditions for specific cDNA amplification on 7 pools of cDNAs
+in the full expression profiling panel, plus mouse genomic DNA.  They were
+tested using 35 and 45 PCR cycles at 55°C annealing temperature under
+standard assay conditions (see below), but if this failed to give a single
+band of the predicted size a second pre-screen was performed using 40 and
+50 cycles at 60°C annealing temperature.
+
+Hot-lid PCR amplification of cDNA equivalent to 10 ng of total RNA was
+carried out in 1x PCR buffer (3.5 mM MgCl2, pH 8.8) containing, 12.5%
+sucrose, 0.1 mM cresol red, 12 mM ß-mercaptoethanol, 0.5 mM dNTPs
+(Pharmacia, Milton Keynes, UK), 0.6 U AmpliTaq DNA polymerase (Applied
+Biosystems, Warrington, UK), and primers were used at 100 ng/reaction.
+Amplifications were carried out on PTC-225 thermal cyclers (Tetrad, MJ
+Research, US).  Following an initial 2 min denaturing step (92°C), each PCR
+cycle consisted of 30 sec denaturing (92°C), 90 sec annealing (55 or 60°C),
+and 60 sec elongation (72°C).  In a small number of assays the amount of
+cDNA was increased to 50 or 100 ng per well, or the concentration of primer
+decreased, to improve the signal.  Otherwise all assays were conducted
+under identical conditions and only the number of cycles or annealing
+temperature varied.  After the final cycle, the reaction was held for 10
+min at 72°C.  The PCR products were then separated on a 2.5% agarose gel,
+stained with ethidium bromide and photographed.
+
+
+
+Figures
+
+Each figure shows the results of a single RT-PCR expression profiling
+assay.  Duplicate reactions performed on the cDNA panel are shown one above
+the other.  To aid comparison of expression levels across tissues, the
+amount of PCR product generated has been indicated using arbitrary scoring
+system:  dark blue - comparatively strong signal in both duplicates; light
+blue - both duplicates positive with moderate to weak signal; green - weak
+signal in one of the duplicates; red- relatively strong signal in one
+duplicate but not other, indicating a discrepancy in the amplification
+procedure or experimental error; yellow - no signal in either duplicate.
+Experimental conditions are shown to the right of the results.
+
+
+
+Disclaimer and copyright notice
+
+If an expression figure is reproduced in a publication, the figure legend
+should include an explicit statement concerning the source of the
+information.  In most instances, expression data has been generated by a
+single experiment using a single primer pair with no prior knowledge of the
+expected expression pattern.  We recommend therefore, that users might wish
+to carry out appropriate confirmatory checks.  If you have any questions
+regarding the expression data or their use in publications, please contact
+Tom Freeman (tcf@sanger.ac.uk).  The Sanger Centre provides these data in
+good faith, but makes no warranty, express or implied, nor assumes any
+legal liability or responsibility for any purpose for which the data are
+used."
+	where _Refs_key =  ''' + `refsKey`
+
+#print cmd
+mgdlib.sql(cmd, 'auto')
+
+sys.exit(0)

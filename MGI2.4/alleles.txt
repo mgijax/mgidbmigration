@@ -1,0 +1,2110 @@
+a	A(+)	Dominant	Not curated	Not curated	Yes	agouti					cml				
+a	A<hvy>	Dominant	C3H/HeSnJ	Spontaneous	Yes	hyper variable yellow		24247			cml				
+a	A<i>	Dominant	    C57BL/6J	Spontaneous	Yes	intermediate agouti		13410			cml				
+a	A<iapy>	Dominant	B6C3F1/J	Spontaneous	Yes	intracisternal A particle yellow		18848			cml				
+a	A<iy>	Dominant	    C3H/He	Spontaneous	Yes	intermediate yellow		13441			cml				
+a	A<s>	Semidominant	(C3H x 101)F1	Radiation induced	Yes	agouti suppressor		5027			cml	Inversion			
+a	A<sy>	Semidominant	    C57BL/6J	Spontaneous	Yes	sienna yellow		13497			cml				
+a	A<vy-J>	Dominant	Not curated	Not curated	Yes	viable yellow    Jackson		16984			cml				
+a	A<vy>	Dominant	    C3H/HeJ	Not curated	Yes	viable yellow		13080			cml				
+a	A<w-15J>	Dominant	    DBA/2J	Spontaneous	Yes	white bellied agouti  15  Jackson		30778			cml				
+a	A<w-20J>	Dominant	    C57BL/6J	Spontaneous	Yes	white bellied agouti   20   Jackson		30778			cml				
+a	A<w-22J>	Dominant	C57BL/10Rk	Spontaneous	Yes	white bellied agouti   22   Jackson		30778			cml				
+a	A<w-26J>	Dominant	    C57BL/6J	Spontaneous	Yes	white bellied agouti   26  Jackson		30778			cml			
+a	A<w-27J>	Dominant	    C57BL/6J	Spontaneous	Yes	white bellied agouti   27  Jackson		30778			cml			
+a	A<w-34J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   34  Jackson		16984			cml			
+a	A<w-35J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   35  Jackson		16984			cml			
+a	A<w-36J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   36  Jackson		16984			cml			
+a	A<w-37J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   37  Jackson		16984			cml			
+a	A<w-38J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   38  Jackson		16984			cml			
+a	A<w-39J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   39  Jackson		16984			cml			
+a	A<w-40J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   40  Jackson		16984			cml			
+a	A<w-41J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   41  Jackson		16984			cml			
+a	A<w-42J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   42  Jackson		16984			cml			
+a	A<w-43J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   43  Jackson		16984			cml			
+a	A<w-J>	Dominant	Not curated	Not curated	Yes	white bellied agouti   Jackson					cml			
+a	A<w>	Dominant	Not curated	Not curated	Yes	white bellied agouti					cml			
+a	A<y>	Semidominant	Not curated	Not curated	Yes	yellow		12954			cml	Other (see notes)		mutation is due to a structural alteration 
+a	A<y-J>	Dominant	C3HeB/FeJ	Spontaneous	Yes	yellow  Jackson		30778			cml			
+a	  a                	Recessive	Not curated	Not curated	Yes	non agouti					cml	
+a	a<16H>	Recessive	(C3H x 101)F1	Chemical induced (ENU)	Yes	non agouti 16 Harwell		8093			cml	
+a	a<18H>	Recessive	Not curated	Not curated	Yes	non agouti lethal 18 Harwell		24934			cml	
+a	a<4J>	Recessive	Not curated	Not curated	Yes	agouti 4  Jackson					cml	
+a	a<5mnu>	Recessive	(C3H x 101)F1	Chemical induced (ENU)	Yes	non agouti 5MNU		16567			cml	Deletion
+a	a<da>	Recessive	Not curated	Radiation induced	Yes	non agouti with dark agouti belly		13694			cml	
+a	a<e>	Recessive	Not curated	Not curated	Yes	extreme non agouti		13070			cml	
+a	a<j>	Recessive	Not curated	Radiation induced	Yes	jet black		16567			cml	Inversion
+a	a<jl10>	Recessive	Not curated	Radiation induced	Yes	jet black lethal 10		16567			cml	Deletion
+a	a<jl41>	Recessive	Not curated	Chemical induced (EMS)	Yes	jet black lethal 41		16567			cml	Deletion
+a	a<jl85>	Recessive	Not curated	Radiation induced	Yes	jet black lethal 85		16567			cml	Deletion
+a	a<l>	Recessive	(C3H x 101)F1	Radiation induced	Yes	non agouti lethal		8093			cml	Deletion
+a	a<m-J>	Recessive	(C57BL/6J x C3H/HeJ)F1	Spontaneous	Yes	mottled agouti  Jackson		16570			cml	
+a	a<m>	Recessive	Not curated	Radiation induced	Yes	mottled agouti		29504			cml	
+a	a<t-27J>	Recessive	Not curated	Not curated	Yes	black and tan   27   Jackson					cml	
+a	a<t-33J>	Recessive	Not curated	Not curated	Yes	black and tan   33  Jackson					cml	
+a	a<t-3Gso>	Recessive	Not curated	Not curated	Yes	agouti t 3Gso		16984			cml
+a	a<t-41J>	Recessive	AKXL-14/Ty	Spontaneous	Yes	black and tan   41  Jackson		30778			cml
+a	a<t-43J>	Recessive	C3HeB/FeJLe-a/a-Hcph<me>	Spontaneous	Yes	black and tan   43  Jackson		30778			cml
+a	a<t-44J>	Recessive	B6.C(HZ18)/By	Spontaneous	Yes	black and tan   44  Jackson		30778			cml
+a	a<t-46J>	Recessive	Not specified	Not curated	Yes	black and tan   46  Jackson		16984			cml
+a	a<t-47J>	Recessive	Not specified	Not curated	Yes	black and tan   47  Jackson		16984			cml
+a	a<t-48J>	Recessive	Not specified	Not curated	Yes	black and tan   48  Jackson		16984			cml
+a	a<t-49J>	Recessive	Not specified	Not curated	Yes	black and tan   49  Jackson		16984			cml
+a	a<t-50J>	Recessive	Not specified	Not curated	Yes	black and tan   50  Jackson		16984			cml
+a	a<t-51J>	Recessive	Not curated	Not curated	Yes	black and tan   51  Jackson		16984			cml
+a	a<t-52J>	Recessive	Not curated	Not curated	Yes	black and tan   52  Jackson		16984			cml
+a	a<t-53J>	Recessive	Not curated	Not curated	Yes	black and tan   53  Jackson		16984			cml
+a	a<t-54J>	Recessive	Not curated	Not curated	Yes	black and tan   54  Jackson		16984			cml
+a	a<t-55J>	Recessive	Not curated	Not curated	Yes	black and tan   55  Jackson		16984			cml
+a	a<t-56J>	Recessive	Not curated	Not curated	Yes	black and tan   56  Jackson		16984			cml
+a	a<t2H>	Recessive	Not curated	Not curated	Yes	black and tan 2 Harwell		30568			cml
+a	a<t>	Recessive	Not curated	Spontaneous	Yes	black and tan		15011			cml			
+a	a<td>	Recessive	    C57BL/6J	Not curated	Yes	tanoid		13082			cml			
+a	a<twp>	Recessive	AB/Hum-1	Spontaneous	Yes	black, white bellied and patch		16588			cml			
+a	a<u>	Recessive	Not curated	Radiation induced	Yes	non agouti umbrous		13694			cml			
+a	a<x>	Recessive	Not curated	Radiation induced	Yes	lethal non agouti		11953			cml			
+a	a<t-2H>	Recessive	Not curated	Not curated	Yes	black and tan 2 Harwell	Nomen	30568			cml			
+a	a<t-57J>	Recessive	C57BL/6-Camk2a<tm1>	Spontaneous	Yes	black and tan 57  Jackson		51014			cml			
+a	A<w-45J>	Not curated	C57BL/10-Il10<tm1Cg>	Not curated	Yes	mottled 9  Jackson	J Bobbish	51014			cml			
+														
+Scd1	Scd1<ab-J>	Recessive	ABJ/Le	Spontaneous	Yes	asebia   Jackson		13725			cml			
+Scd1	Scd1<ab>	Recessive	BALB/cCrglGa	Spontaneous	Yes	asebia	cml	13143			cml	Deletion	58283	exons 1-4 deleted
+Scd1	Scd1<ab-2J>	Recessive	DBA/1LacJ	Spontaneous	Yes	asebia  2  Jackson	cml	58383			cml	Deletion	58383	18 bp deletion in exon2/inrton2 boundary
+
+Abca4	Abca4<tm1Ght>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gabriel H. Travis	apd	56317			cml	Deletion		
+
+Ace	Ace<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	25284			cml			
+Ace	Ace<tm2Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, University of North Carolina	IMR	25284			cml
+
+Acox pending	Acox<tm1Jkr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Janardan K. Reddy	apd	35794			cml
+
+Acvr2b	Acvr2b<tm1Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	activin receptor IIB, targeted mutation 1, En Li	apd	42018			cml
+Acvrlk2	Acvrlk2<tm1Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, En Li	apd	54394			cml
+Acvr1b	Acvr1b<tm1Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, En Li	apd	46637			cml
+Ada	Ada<tm1Mw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Maki Wakamiya	IMR	25085			cml
+Adam17	Adam17<tm1Imx>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Immunex	APD MLC	51053			cml
+
+Adcy1	Adcy1<brl>	Not curated	Not curated	Spontaneous	Yes	barrelless	cat	32194	59906		cml
+Adcy1	Adcy1<tm1Drs>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Daniel R. Storm	apd	22287			cml
+
+Adprt1	Adprt1<tm1Jmdm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Josiane Menissier de Murcia	apd	41742			cml
+Adprt1	Adprt1<tm1Wag>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Erwin F. Wagner	apd	23942			cml
+Adprt1	Adprt1<tm1Hsmm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Hiroshi Suzuki Mitsuko Masutani	apd	53360			cml
+
+Adra1b	Adra1bTgN(CAMalpha1b)7Wjk	Not curated	Not curated	Transgene induced	Yes	transgenic, nonhomologous insert 7, Walter Koch	IMR	17862			cml		
+Adra2b	Adra2b<tm1Gsb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gregory S. Barsh	IMR	15640			cml		
+Adra2c	Adra2c<tm1Gsb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gregory S.Barsh	IMR	29109			cml		
+Adrb1	Adrb1<tm1Gsb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gregory S. Barsh	IMR	34659			cml		
+
+Slc4a1	Slc4a1<tm1Llp>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Luanne Peters	IMR	35487			cml		
+
+Agc	Agc<cmd-Bc>                  	Recessive	BALB/cGaBc	Spontaneous	Yes	cartilege matrix deficiency  British Columbia		8363			cml		
+Agc	Agc<cmd>	Recessive	Not curated	Spontaneous	Yes	cartilage matric deficiency		5952			cml	Deletion	18520
+
+Agt	Agt<tm1Unc>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	24156			cml	Deletion	
+Agt	AgtTgH(Agtdup)1Unc	Not curated	Not curated	Transgene induced	Yes	transgenic, homologous recombination 1, University of North Carolina	IMR	18272			cml		
+
+Agtr1a	Agtr1a<tm1Unc>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	24354			cml		
+
+Agtr2	Agtr2<tm1Gsb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gregory S. Barsh	IMR	29456			cml
+
+Akp2	Akp2<tm1Sor>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Philippe Soriano	IMR	25249			cml
+
+Alox5	Alox5<tm1Fun>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Colin Funk	IMR	21372			cml
+Alx4	Alx4<lst-J>	Not curated	Not curated	Not curated	Yes	Strong's luxoid  Jackson	lois	49152			cml
+Alx4	Alx4<lst-Alb>	Not curated	Not curated	Not curated	Yes	Strong's luxoid Albany	lois	49152			cml
+Alx4	Alx4<tm1Rwi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ronald Wisdom	Dale GXD	43769			cml
+Alx4	Alx4<lst-D>	Not curated	Not curated	Not curated	Yes	Strong's luxoid D	LT GXD	50307			cml
+Amh	Amh<tm1Bhr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard R. Behringer	IMR	21396			cml
+
+Apaf1	Apaf1<tm1Pgr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Gruss	Apd	49840			cml
+
+Apc	Apc<Min>	Not curated	Not curated	Not curated	Yes	multiple intestinal neoplasia	IMR	830	10209		cml
+Apc	Apc<tm1Rak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Raju Kucherlapati	Dieter	20433		Apc1638N	cml
+Apc	Apc<tm1Mmt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Makoto M. Taketo	Dieter	25200		Apc<delta716>	cml
+Apc	Apc<tm1.1Tno>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1.1, Tetsuo Noda	Dieter	43301		Apc<580S>	cml
+Apc	Apc<tm1.2Tno>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1.2, Tetsuo Noda	Dieter	43301		Apc<580D>	cml
+Apc	Apc<tm1Rfo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Riccardo Fodde	Dieter	55416		Apc<1638T>	cml
+Apc	Apc<tm2Rfo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Riccardo Fodde	Dieter	55416		Apc<1572T>	cml
+Apex	Apex<tm1Djc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David J. Chen	cat	50702			cml
+Apex	Apex<tm1Cur>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tom Curran	cat	34891			cml
+Apoa1	Apoa1<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	2109			cml
+
+Apob	Apob<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	16352			cml
+Apob	Apob<tm1Sgy>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stephen G. Young	IMR	33830			cml
+Apob	Apob<tm2Sgy>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Stephen G. Young	IMR	33830			cml
+Apob	Apob<tm3Sgy>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 3, Stephen G.  Young	D Begley GXD	23315			cml
+
+Apoc3	Apoc3<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	21750			cml
+
+Apoe	Apoe<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	1050			cml
+
+Aprt	Aprt<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1	IMR	23942			cml
+
+Aqp1	Aqp1<tm1Ask>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Alan S. Verkman	apd	45888			cml
+
+Aqp4	Aqp4<tm1Ask>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Alan S. Verkman	apd	45888			cml
+
+Ar	Ar<Tfm-Lac>          	Recessive	Not curated	Not curated	Yes	testicular feminization   Laboratory Animal Centre		7179			cml
+Ar	Ar<Tfm>	Recessive	Not curated	Not curated	Yes	testicular feminization		30664			cml
+Ar	Ar<Tfm-Jms>	Recessive	Not curated	Not curated	Yes	testicular feminization Japanese Institute of Medical Science		19298			cml
+
+Asgr2	Asgr2<tm1Her>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	asialoglycoprotein receptor 2, targeted mutation 1, Joachim Herz	IMR	21380			cml
+
+Ass1	Ass1<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	arginosuccinate synthetase 1, targeted mutation 1, Baylor College of Medicine	IMR	18326			cml
+
+Atm	Atm<tm1Awb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	ataxia telangiectasia mutated, targeted mutation 1, Anthony Wynshaw Boris	IMR	34193			cml
+
+Atp7a	Atp7a<Mo-5J>	Semidominant	BXD-28/Ty	Spontaneous	Yes	mottled 5  Jackson		30778			cml				
+Atp7a	Atp7a<Mo-8J>	Semidominant	B6C3Fe-a/a-Glrb<spa>	Spontaneous	Yes	mottled 8  Jackson		30778			cml				
+Atp7a	Atp7a<Mo-10H>	Semidominant	Not specified	Other (see notes)	Yes	mottled 10 Harwell		16303			cml				chemical and radiation induced 
+Atp7a	Atp7a<Mo-11H>	Semidominant	Not specified	Other (see notes)	Yes	mottled 11 Harwell		16303			cml				chemical and radiation induced 
+Atp7a	Atp7a<Mo-12H>	Semidominant	Not specified	Not specified	Yes	mottled 12 Harwell		16303			cml				
+Atp7a	Atp7a<Mo-13H>	Semidominant	Not specified	Spontaneous	Yes	mottled 13 Harwell		12800			cml				
+Atp7a	Atp7a<Mo-14H>	Semidominant	Not specified	Not specified	Yes	mottled 14 Harwell		34477			cml				
+Atp7a	Atp7a<Mo-pew2J>	Semidominant	(C57BL/6J x SJL/J)F1	Spontaneous	Yes	pewter 2  Jackson		30778			cml				
+Atp7a	Atp7a<Mo>	Semidominant	Not specified	Spontaneous	Yes	mottled		13041			cml				
+Atp7a	Atp7a<Mo-brJ>	Semidominant	    C3H/HeJ	Spontaneous	Yes	brindled  Jackson		23000			cml				
+Atp7a	Atp7a<Mo-blo>	Semidominant	Not specified	Spontaneous	Yes	blotchy		189			cml		17493	possible splice mutation	
+Atp7a	Atp7a<Mo-br>	Semidominant	C57BL	Spontaneous	Yes	brindled		164			cml				
+Atp7a	Atp7a<Mo-dp>	Semidominant	Not specified	Radiation induced	Yes	dappled		12943			cml				
+Atp7a	Atp7a<Mo-ms>	Semidominant	Not specified	Spontaneous	Yes	mosaic		15062			cml				
+Atp7a	Atp7a<Mo-vbr>	Semidominant	Not specified	Spontaneous	Yes	viable brindled		13473			cml				
+Atp7a	Atp7a<Mo-pew>	Semidominant	CBA/J	Spontaneous	Yes	pewter		23989			cml
+Atp7a	Atp7a<Mo-to>	Semidominant	Not specified	Spontaneous	Yes	tortoiseshell		24988			cml
+Atp7a	Atp7a<Mo-ml>	Semidominant	Not specified	Spontaneous	Yes	macular      		15759			cml
+Atp7a	Atp7a<Mo-N>	Not curated	Not curated	Not curated	Yes	mottled Neuherberg		14901			cml
+Atp7a	Atp7a<Mo-9J>	Semidominant	C57BL/6J-Tcrd<tm1Mom>	Spontaneous	Yes	mottled 9  Jackson	J Bobbish	51014			cml
+Atp7a	Atp7a<Mo-Xm>	Semidominant	Not specified	Spontaneous	Yes			38977			
+
+
+Atp6i	Atp6i<tm1Ypl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Yi Ping Li	Cat	58795			cml
+av	av<J>	Recessive	Not curated	Not curated	Yes	Ames waltzer   Jackson		28688			cml
+av	av<3J>	Recessive	    C57BL/6J	Spontaneous	Yes	Ames waltzer 3  Jackson		28688			cml
+av	av<2J>	Recessive	Not specified	Spontaneous	Yes	Ames waltzer 2  Jackson		28688			cml
+av	av	Recessive	Not curated	Not curated	Yes	Ames waltzer		14990			cml
+av	av<5J>	Recessive	Not curated	Not curated	Yes	Ames waltzer 5  Jackson	Mouse Mutant Resource	23000			cml
+
+ax	ax<J>                  	Not curated	Not curated	Not curated	Yes	ataxia J		180			cml
+ax	ax	Not curated	Not curated	Not curated	Yes	ataxia		27868			cml
+
+Axin<Fu Tg1>	Axin<Fu-Tg1>	Not curated	Not curated	Not curated	Yes	fused trasngenic 1	rich	28303			cml
+
+Bapx1	Bapx1<tm1Tlu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Thomas Lufkin	sasner	55583			cml
+
+bc	bc	Not curated	Not curated	Not curated	Yes	bouncy		6710			cml
+bc	bc<2J>                  	Not curated	Not curated	Not curated	Yes	bouncy 2  Jackson		6710			cml
+bc	bc<3J>	Not curated	Not curated	Not curated	Yes	bouncy 3  Jackson		6710			cml
+bc	bc<4J>	Not curated	Not curated	Not curated	Yes	bouncy 4  Jackson		30778			cml
+
+Bcl2	Bcl2<tm1Sjk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	B cell leukemia/lymphoma 2, targeted mutation 1, Stanley J. Korsmeyer	IMR	15224			cml
+
+Bcl2l2	Bcl2l2<Gtrosa41>	Not curated	Not curated	Not curated	Yes	gene trap ROSA 41	Editor	46386			cml
+
+Bdkrb2	Bdkrb2<tm1Jfh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	bradykinin receptor, beta 2, targeted mutation 1, J. Fred Hess	IMR	25953			cml
+
+Bdnf	Bdnf<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	brain derived neurotrophic factor, targeted mutation 1, Rudolph Jaenisch	IMR	17123			cml
+
+bg	bg                 	Not curated	Not curated	Not curated	Yes	beige		29744			cml
+bg	bg<10J>	Not curated	Not curated	Not curated	Yes	beige 10   Jackson		30778			cml
+bg	bg<11J>	Not curated	Not curated	Not curated	Yes	beige 11  Jackson		30778			cml
+bg	bg<2J>	Not curated	Not curated	Not curated	Yes	beige 2  Jackson		34205			cml
+bg	bg<8J>	Not curated	Not curated	Not curated	Yes	beige 8  Jackson		30778			cml
+bg	bg<J>	Not curated	Not curated	Not curated	Yes	beige   Jackson		5311			cml
+bg	bg<Lac>	Not curated	Not curated	Not curated	Yes	beige Lac		29745			cml
+
+Blm	Blm<tm1Ches>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Bloom syndrome homolog (human), targeted mutation 1, Nicholas Chester	apd	50843			cml
+
+Bmi1	Bmi1<tm1Brn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Anton Berns	D Hill GXD	17712			cml
+
+Bmp1	Bmp1<tm1Blh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Brigid L. Hogan	apd	36830			cml
+
+Bmp2	Bmp2<tm1Brd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Allan Bradley	hill	36213		Bmp2<m1>	cml				
+
+Bmp4	Bmp4<tm1Blh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	bone morphogenetic protein 4, targeted mutation 1, Brigid L. Hogan	IMR	28717			cml				
+
+Bmp5	Bmp5<se-4J>                 	Recessive	Not curated	Not curated	Yes	short ear 4  Jackson		30778			cml				
+Bmp5	Bmp5<se-l>	Recessive	Not curated	Not curated	Yes	short ear lethal		12013			cml				
+Bmp5	Bmp5<se-sv>	Recessive	Not curated	Not curated	Yes	short eared waltzer		12013			cml				
+Bmp5	Bmp5<se-x>	Recessive	Not curated	Not curated	Yes	intermediate short ear		12013			cml				
+Bmp5	Bmp5<se>	Recessive	Not curated	Not curated	Yes	short ear		14849			cml				
+Bmp5	Bmp5<se-5H>	Recessive	Not curated	Not curated	Yes	short ear 5 Harwell					cml				
+Bmp5	Bmp5<se-30DThWb>	Recessive	C3H/Rl or 101/Rl	Other (see notes)	Yes	short ear ThWb	Dirck	45426			cml				chlorambucil or x-ray induced
+Bmp5	Bmp5<se-4CHLd>	Recessive	C3H/Rl or 101/Rl	Other (see notes)	Yes	short ear 4CHld		45426			cml				chlorambucil or x-ray induced
+Bmp5	Bmp5<se-1FrThc>	Recessive	C3H/Rl or 101/Rl	Other (see notes)	Yes	short ear 1FrThc		45426			cml				chlorambucil or x-ray induced
+Bmp5	Bmp5<se-20Zb>	Recessive	C3H/Rl or 101/Rl	Other (see notes)	Yes	short ear 20Zb		45426			cml				chlorambucil or x-ray induced
+
+Bmp7	Bmp7<tm1Rob>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Elizabeth J. Robertson	D Hill GXD	30057			cml
+
+Bmp8a	Bmp8a<tm1Blh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Brigid L. Hogan	Apd	46927			cml
+Bmp8b	Bmp8b<tm1Blh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Brigid L. Hogan	Apd	34057			cml
+
+Brca1	Brca1<tm1Bhk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Beverly H. Koller	krupke	31571	52011		cml
+Brca1	Brca1<tm1Whl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Weu-Hwa Lee	dieter	34458			cml
+Brca1	Brca1<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak Mak	dieter	33880			cml
+
+bt	bt<2J>                 	Not curated	Not curated	Not curated	Yes	belted 2  Jackson		23000			cml
+bt	bt	Not curated	Not curated	Not curated	Yes	belted		283			cml
+bt	bt<4J>	Not curated	Not curated	Not curated	Yes	belted 4  Jackson		30778			cml
+bt	bt<6J>	Not curated	Not curated	Not curated	Yes	belted 6  Jackson		30778			cml
+bt	bt<5J>	Not curated	Not curated	Not curated	Yes	belted 5  Jackson		30778			cml
+bt	bt<H>	Not curated	Not curated	Not curated	Yes	belted Harwell            		27499			cml
+bt	bt<8J>	Not curated	Not curated	Not curated	Yes	belted 8  Jackson	J Bobbish	51014			cml
+
+bt2	bt2	Not curated	Not curated	Not curated	Yes	belted 2		13678			cml
+
+Btk	Btk<xid>                  	Not curated	Not curated	Not curated	Yes	X linked immune deficiency		6296			cml
+Btk	Btk<tm1Wk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Bruton agammaglobulinemia tyrosine kinase, targeted mutation 1, Wasif Kahn	IMR	28968			cml
+
+Ca	Ca                  	Not curated	Not curated	Not curated	Yes	caracul		13054			cml
+Ca	Ca<13J>	Not curated	Not curated	Not curated	Yes	caracul 13  Jackson		24231			cml
+Ca	Ca<9J>	Not curated	Not curated	Not curated	Yes	caracul 9  Jackson		30778			cml
+Ca	Ca<d>	Not curated	Not curated	Not curated	Yes	directional caracul		13491			cml
+Ca	Ca<J>	Not curated	Not curated	Not curated	Yes	caracul   Jackson					cml
+Ca	Ca<11J>	Not curated	Not curated	Not curated	Yes	caracul 11  Jackson					cml
+Ca	Ca<7J>	Not curated	Not curated	Not curated	Yes	caracul 7  Jackson		30778			cml
+Ca	Ca<8J>	Not curated	Not curated	Not curated	Yes	caracul 8  Jackson		30778			cml
+Ca	Ca<10J>	Not curated	Not curated	Not curated	Yes	caracul 10  Jackson		30778			cml
+Ca	Ca<12J>	Not curated	Not curated	Not curated	Yes	caracul 12  Jackson		27516			cml
+Ca	Ca<14J>	Not curated	Not curated	Not curated	Yes	caracul 14  Jackson		50994			cml
+Ca	Ca<15J>	Not curated	Not curated	Not curated	Yes	caracul 15  Jackson		50994			cml
+
+Cacna1a	Cacna1a<tg>                	Not curated	Not curated	Transgene induced	Yes	tottering		262			cml
+Cacna1a	Cacna1a<tg-la>	Not curated	Not curated	Transgene induced	Yes	leaner		13510			cml
+Cacna1a	Cacna1a<tg-rol>	Not curated	Not curated	Transgene induced	Yes	rolling Nagoya		15016			cml
+Cacna1a	Cacna1a<tg-3J>	Not curated	Not curated	Transgene induced	Yes	tottering 3  Jackson		23000			cml
+
+Camk2a	Camk2a<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	calmodulin kinase II, alpha subunit, targeted mutation 1	IMR	1421			cml
+
+Cart1	Cart1<tm1Bdc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	cartilage homeo protein 1, targeted mutation 1, Benoit de Crombrugghe	D Begley GXD	33716			cml
+
+Cat	Cat<AA>                 	Not curated	Not curated	Not curated	Yes	cataract Ann Arbor		13940			cml
+Cat	Cat<Fr>	Not curated	Not curated	Not curated	Yes	dominant cataract Frazier		5045			cml
+Cat	Cat<Lop>	Not curated	Not curated	Not curated	Yes	cataract lens opacity		6702			cml
+Cat	Cat	Not curated	Not curated	Not curated	Yes	dominant cataract		285			cml
+
+Cat2	Cat2	Not curated	Not curated	Not curated	Yes	donimant cataract 2		6686			cml
+Cat2	Cat2<elo> 	Not curated	Not curated	Not curated	Yes	eye lens obsolescence		15383			cml
+Cat2	Cat2<no2>	Not curated	Not curated	Not curated	Yes	nuclear opacity 2, dominant		16569			cml
+Cat2	Cat2<no>                  	Not curated	Not curated	Not curated	Yes	dominant cataract 2, nuclear opacity		7589			cml
+Cat2	Cat2<ns>	Not curated	Not curated	Not curated	Yes	dominant cataract 2, nuclear and anterior suture opacity		9528			cml
+Cat2	Cat2<nz>	Not curated	Not curated	Not curated	Yes	dominant cataract 2, nuclear and zonular opacity		6686			cml
+Cat2	Cat2<ro>	Not curated	Not curated	Not curated	Yes	dominant cataract 2, radial opacity		24033			cml
+Cat2	Cat2<t> 	Not curated	Not curated	Not curated	Yes	dominant cataract 2, total opacity and microphthalmia		9528			cml
+Cat2	Cat2<tol>	Not curated	Not curated	Not curated	Yes	total opacity with lens vacuoles		23988			cml
+
+Cat3	Cat3<vao>                  	Not curated	Not curated	Not curated	Yes	dominant cataract 3, vaculoes, axial opacity and microphthal		9528			cml
+Cat3	Cat3<vl>	Not curated	Not curated	Not curated	Yes	dominat cataract 3, vacuolated lens and microphthalmia		6686			cml
+Cat3	Cat3	Not curated	Not curated	Not curated	Yes	dominat cataract 3		6686			cml
+
+Catnb	Catnb<tm1Max>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Max Planck Institut fur Immunbiologie	D  Hill GXD	29881			cml
+Catnb	Catnb<tm1.1Mmt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1.1 Makoto M. Taketo	dieter	58367		Catnb<lox(e3)>	cml
+Catnb	Catnb<tm1.2Mmt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1.2 Makoto M. Taketo	dieter	58367		Catnb<deltaex3>	cml
+
+Cbfa2	Cbfa2<tm1Dow>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, James R. Downing	LT GXD	31130			cml
+
+Cbs	Cbs<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	23321			cml
+
+Cbx2	Cbx2<tm1Ciml>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Centre d'Immunologie de Marseille Luminy	D Hill GXD	38487			cml
+
+Cchl1a3	Cchl1a3<mdg>                  	Not curated	Not curated	Not curated	Yes	muscular dygenesis		28893			cml
+
+Ccnd1	Ccnd1<tm1Wbg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	cyclin D1, targeted mutation 1, Robert Weinberg	IMR	28419			cml
+
+Cd1	Cd1<tm1Gru>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	CD1 antigen complex, targeted mutation 1, Michael Grusby	IMR	47769			cml
+
+Cd14	Cd14<tm1Smg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Samuel M. Goyer	IMR	32729			cml
+
+Cd3z	Cd3z<tm1Lov>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	CD3 antigen, zeta polypeptide, targeted mutation 1, Paul Love	IMR	14170			cml
+
+Cd4	Cd4<tm1Knw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Barbara B. Knowles	IMR	48775			cml
+Cd4	Cd4<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak Mak	IMR	18756			cml
+Cd4	Cd4<tm1Litt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation , Dan R. Littman	IMR	50435			cml
+
+Cd28	Cd28<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak Mak	IMR	14194			cml
+
+Cd40l	Cd40l<tm1Imx>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Immunex	IMR	21137			cml
+
+Cdh1	Cdh1<tm1Kem>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rolf Kemler 	IMR	19904			cml
+
+Cdh3	Cdh3<tm1Hyn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard O. Hynes	krupke	44359			cml
+
+Cdh5	Cdh5<tm1Hub>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Philippe Huber	LT GXD	54177			cml
+
+Cdkn1b	Cdkn1b<tm1Mlf>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Matthew Fero	IMR	33400			cml
+
+Cdkn2a	Cdkn2a<tm1Rdp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ronald DePinho	krupke	53805		INK4a< / >	cml
+
+Cdx2	Cdx2<tm1Fbe>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, F. Beck	krupke	38772			cml
+
+Cftr	Cftr<tm1Kth>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Kirk R. Thomas	IMR	29074			cml
+Cftr	Cftr<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	2079			cml
+Cftr	Cftr<TgH(neoim)1Hgu>	Not curated	Not curated	Not curated	Yes	transgenic, homologous recombination 1, MRC Human Genetics Unit	MLC	14614			cml
+Cftr	Cftr<tm1Bay>	Not curated	Not curated	Not curated	Yes	targeted mutation 1, Baylor college of medicine	MLC	15244			cml
+Cftr	Cftr<tm1Cam>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Cambridge University	MLC/Rich	2584			cml
+Cftr	Cftr<tm1Hsc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Hospital for Sick Children	MLC/Rich	31759			cml
+Cftr	Cftr<tm3Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 3, Baylor college of medicine	MLC	29656			cml
+Cftr	Cftr<tm2Cam>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Cambridge University	cat 	27734			cml
+Cftr	Cftr<tm1Eur>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1 Erasmus University Rotterdam	cat	28979			cml
+
+Cf2r	Cf2r<tm1Ajc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Andrew Connolly	IMR	33380			cml
+
+Cga	Cga<tm1Sac>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Sally Camper	IMR	28450			cml
+
+Chuk	Chuk<tm1Aki>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Shizuo Akira	APD	54315			cml
+Chuk	Chuk<tm1Mka>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Karin	Apd	54316			cml
+
+Chx10	Chx10<or-2J>                  	Not curated	Not curated	Not curated	Yes	ocular retardation 2  Jackson		30714			cml
+Chx10	Chx10<or-J>	Not curated	Not curated	Not curated	Yes	ocular retardation   Jackson		5767			cml
+Chx10	Chx10<or>	Not curated	Not curated	Not curated	Yes	ocular retardation		307			cml
+
+Clc1	Clc1<adr-crp>                 	Not curated	Not curated	Not curated	Yes	myotonia crp		14986			cml
+Clc1	Clc1<adr-K>	Not curated	Not curated	Not curated	Yes	myotonia K		17757			cml
+Clc1	Clc1<adr-mto-2J>	Not curated	Not curated	Not curated	Yes	myotonia 2  Jackson		14251			cml
+Clc1	Clc1<adr-mto-3J>	Not curated	Not curated	Not curated	Yes	myotonia 3  Jackson		14251			cml
+Clc1	Clc1<adr-mto>	Not curated	Not curated	Not curated	Yes	myotonia		6814			cml
+Clc1	Clc1<adr>	Not curated	Not curated	Not curated	Yes	arrested development of righting response		4480			cml
+
+Cmkar2	Cmkar2<tm1Mwm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mark Moore	IMR	19570			cml
+
+Cnr1	Cnr1<tm1Map>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Marc Parmentier	APD	52188			cml
+Cnr1	Cnr1<tm1Zim>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Andreas Zimmer	APD	54995			cml
+
+Cntf	Cntf<tm1Mpin>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Max Planck Institute for Neurobiology	apd	15313			cml
+											
+Coa	Coa<5J>	Recessive	B10.A/SgSnJ	Spontaneous	Yes	cocoa 5  Jackson		30778			cml
+
+Cola1	Cola1<Mov13>	Not curated	Not curated	Not curated	Yes	Moloney leukemia virus 13	IMR	7142			cml
+Cola1	Cola1<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	26504			cml
+
+Cola2	Cola2<oim>                 	Not curated	Not curated	Not curated	Yes	osteogenesis imperfecta murine		4348			cml
+
+Col11a1	Col11a1<cho>                  	Not curated	Not curated	Not curated	Yes	chondrodysplasia		5198			cml
+
+Col2a1	Col2a1<Dmm>	Not curated	Not curated	Not curated	Yes	disproportionate micromelia	Nomen Comm	37522			cml
+
+Colq	Colq<tm1Jrs>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Joshua R. Sanes	APD	54006			cml
+Colq	Colq<tm2Jrs>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Joshua R. Sanes	APD	54006			cml
+
+Cp	Cp<tm1Hrs>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1,  Z. Leah Harris	IMR	57730			cml
+
+Cpe	Cpe<fat>                  	Not curated	Not curated	Not curated	Yes	fat		13651			cml
+
+Crabp1	Crabp1<tm1Adg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted muataion 1, Ad Guerts van Kessel	DAB	22943			cml
+
+Crabp2	Crabp2<tm1Ut>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of Toronto	LT GXD	23772			cml
+
+Creb2	Creb2<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1	IMR	30611			cml			
+
+Crh	Crh<tm1Maj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Joseph Majzoub	IMR	23082			cml			
+
+Crm	Crm                  	Not curated	Not curated	Not curated	Yes	cream		15080			cml			
+Crm	Crm<2J>	Not curated	Not curated	Not curated	Yes	cream 2  Jackson		23000			cml			
+Crm	Crm<J>	Not curated	Not curated	Not curated	Yes	cream   Jackson		30778			cml			
+
+Crtl1	Crtl1<tm1Nid>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, National Institute of Dental and Craniofacial Research.	APD MLC	52575			cml			
+
+Crya1	Crya1<tm1Wawr>	Recessive	    129/Sv 	Transgene induced (gene targeted)	Yes	targeted mutation 1, Eric F.Wawrousek	cml	38210			cml	Insertion/deletion	38210	
+Crya1	Crta1<lop18>	Recessive	CBA/CaGnLe	Spontaneous	Yes	lens opacity 18 	cml	34933	59428		cml	Point mutation (transition)	59428	G161A; Arg 54 His
+
+Cryba1	Cryba1<Po1>	Not curated	Not curated	Not curated	Yes	progressive opacity 1		58912			cml			
+
+Cryga	Cryga<1Neu>	Not curated	Not curated	Not curated	Yes	Neu 436	jjm	50319			cml			
+
+Crygb	Crygb<nop>	Not curated	Not curated	Not curated	Yes	nuclear opacity	jjm	7589	50319	Cat2<no>	cml			
+
+Crygd	Crygd<Lop12>	Semidominant	BALB/cJ or SJL/J	Spontaneous	Yes	lens opacity 12	bradt	60856			cml	Point mutation (transition)	60856	mutation resultd in an in frame stop codon
+
+Cryge	Cryge<Elo>	Not curated	Not curated	Not curated	Yes	eye lens obsolescence	15383	50319		Cat2<Elo>	cml			
+Cryge	Cryge<t>	Not curated	Not curated	Not curated	Yes	total opacity and microphthalmia	23991	50319		Cat2<t>	cml			
+
+Csfg	Csfg<tm1Ard>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ashley R. Dunn	IMR	20400			cml			
+
+Csfm	Csfm<op>                 	Not curated	Not curated	Not curated	Yes	osteopetrosis		5634			cml			
+
+Csrp3	Csrp3<tm1Crni>	Recessive	Not specified	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pico Caroni	D. Shaw	38213			cml	Deletion		del of exons 1 and 2
+
+Cspg2	Cspg2<hdf>	Not curated	Not curated	Not curated	Yes	heart defect	RMB	50233			cml			
+
+cw	cw<thd>                  	Not curated	Not curated	Not curated	Yes	tail hair depletion		5006			cml			
+cw	cw	Not curated	Not curated	Not curated	Yes	curly whiskers		15004			cml			
+
+Ctla1	Ctla1<tm1Ley>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Timothy Ley	IMR	23560			cml			
+
+Cybb	Cybb<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, allele name in progress	IMR	22868			cml			
+
+Cyp2e1	Cyp2e1<tm1Gonz>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Dr. Frank Gonzalez	IMR	48196			cml			
+
+Cyp7a1	Cyp7a1<tm1Rus>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Dr. David Russel	IMR	34870			cml			
+
+Dac	Dac<J>	Not curated	Not curated	Not curated	Yes	dactylaplasia  Jackson		6607			cml			
+Dac	Dac<2J>	Not curated	Not curated	Not curated	Yes	dactylaplasia 2  Jackson		23000			cml			
+
+Dab1	Dab1<scm>	Not curated	Not curated	Not curated	Yes	scrambler	jjm	37166			cml		43304	
+Dab1	Dab1<yot>	Recessive	C57BL/6 and 129	Spontaneous	Yes	yotari	jjm	45277	59881		cml	Insertion	43304	Line 1 insertion
+
+Dbf	Dbf	Not curated	Not curated	Not curated	Yes	doublefoot	LT GXD	46225			cml			
+
+Dbh	Dbh<tm1Wum>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Washington School of Medicine	LT GXD	24414			cml			
+
+Dct	Dct<slt-2J>                  	Not curated	Not curated	Not curated	Yes	slaty 2  Jackson		23000			cml			
+Dct	Dct<Slt-lt>	Semidominant	Not curated	Not curated	Yes	slaty light		27515			cml			
+Dct	Dct<slt>	Not curated	Not curated	Not curated	Yes	slaty		13624			cml			
+
+de	de                	Not curated	Not curated	Not curated	Yes	droopy ear		233			cml			
+de	de<H>	Not curated	Not curated	Not curated	Yes	droopy ear Harwell		23000			cml			
+
+dfw	dfw	Not curated	Not curated	Not curated	Yes	deaf waddler	MGD	14114			cml			
+dfw	dfw<2J>	Not curated	Not curated	Not curated	Yes	deaf waddler 2  Jackson	Lois	38429			cml			
+
+Edar	Edar<dl>                  	Recessive	A/H	Spontaneous	Yes	downless		5139			cml	Nucleotide substitution		56496
+Edar	Edar<dl-J>	Recessive	Not specified	Spontaneous	Yes	downless   Jackson		23000			cml			
+Edar	Edar<Dl-slk>	Dominant	Stock Rb(4.6)2Bnr	Transposon induced	Yes	sleek		5886			cml	Insertion		56496
+Edar	Edar<TgN(OVE1A)Ove>	Recessive	C57BL/6 and 129	Transgene induced	Yes	transgene insertion, OVE1A, Paul Overbeek		10318			cml	Insertion/deletion		
+Edar	Edar<TgN(OVE1B)Ove>	Recessive	C57BL/6 and 129	Transgene induced	Yes	transgene insertion, OVE1B, Paul Overbeek		10318			cml	Insertion/deletion		
+Edar	Edar<dl-3J>	Recessive	C57BL/6J x Stock nclf	Spontaneous	Yes	downless 3  Jackson		59274			cml			
+
+Ep300	Ep300<tm1Dli>	Semidominant	Not specified	Transgene induced (gene targeted)	Yes	targeted mutation 1, David Livingston	dieter	47301			cml	insertion/deletion		
+
+Dlx1	Dlx1<tm1Jlr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, John L. Rubenstein	cat	40427			cml			
+Dlx2	Dlx2<tm1Jlr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, John L. Rubenstein	cat	29443			cml			
+
+Dlx5	Dlx5<tm1Ucsf>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	allele name in progress	D.Hill	56559			cml			
+
+Dmd	Dmd<mdx-2Cv>                  	Not curated	Not curated	Not curated	Yes	X linked muscular dystrophy 2Cv		9638			cml			
+Dmd	Dmd<mdx-3Cv>	Not curated	Not curated	Not curated	Yes	X linked muscular dystrophy 3Cv		9638			cml			
+Dmd	Dmd<mdx-4Cv>	Not curated	Not curated	Not curated	Yes	X linked muscular dystrophy 4Cv		9638			cml			
+Dmd	Dmd<mdx-5Cv>	Not curated	Not curated	Not curated	Yes	X linked muscular dystrophy 5Cv		9638			cml
+Dmd	Dmd<mdx>	Not curated	Not curated	Not curated	Yes	X linked muscular dystrophy		28684			cml
+
+Dnmt	Dnmt<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	1157			cml
+Dnmt	Dnmt<tm1Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, En Li	apd	36234			cml
+
+dr	dr                  	Not curated	Not curated	Not curated	Yes	dreher		15346			cml
+dr	dr<2J>	Not curated	Not curated	Not curated	Yes	dreher 2  Jackson		14095			cml
+dr	dr<sst>	Not curated	Not curated	Not curated	Yes	shaker short tail		12032			cml
+dr	dr<6J>	Not curated	Not curated	Not curated	Yes	dreher 6  Jackson		30778			cml
+dr	dr<sst-J>	Not curated	Not curated	Not curated	Yes	shaker short tail  Jackson		13949			cml
+
+Drd1a	Drd1a<tm1Jcd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted muatatio 1, John Drago	IMR	22076			cml
+Drd2	Drd2<tm1Low>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Malcolm J. Low	IMR	41858			cml
+Drd3	Drd3<tm1Dac>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Domenico Accili	IMR	32128			cml
+
+Dsg3	Dsg3<bal>	Not curated	Not curated	Not curated	Yes	balding	MNL	13702			cml
+Dsg3	Dsg3<bal-Pas>	Not curated	Not curated	Not curated	Yes	balding Pasteur	JAX Notes	46865			cml
+Dsg3	Dsg3<bal-2J>	Not curated	Not curated	Not curated	Yes	balding 2  Jackson	JAX Notes	46865			cml
+Dsg3	Dsg3<tm1Stan>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, John R. Stanley	Jax Notes	40804			cml
+
+Dst	Dst<Bpag1>                 	Not curated	Not curated	Not curated	Yes	bullous pemphigoid antigen 1, 230kD		26733			cml
+Dst	Dst<dt-alb>	Not curated	Not curated	Not curated	Yes	dystonia musculorum Albany		6316			cml
+Dst	Dst<dt-J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum   Jackson		19227			cml
+Dst	Dst<dt>	Not curated	Not curated	Not curated	Yes	dystonia musculorum		15323			cml
+Dst	Dst<dt-23J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum 23  Jackson		1718			cml
+Dst	Dst<dt-24J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum 24  Jackson		1718			cml
+Dst	Dst<dt-22J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum 22  Jackson		30778			cml
+Dst	Dst<dt-25J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum 25  Jackson		30778			cml
+Dst	Dst<dt-26J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum 26  Jackson		30778			cml
+Dst	Dst<dt-27J>	Not curated	Not curated	Not curated	Yes	dystonia musculorum 27  Jackson		27517			cml
+Dst	Dst<dt-30J>	Not curated	Not curated	Not curated	Yes	dystonian musculorum 30  Jackson		50994			cml
+Dst	Dst<dt-31J>	Not curated	Not curated	Not curated	Yes	dystonian musculorum 31  Jackson		50994			cml
+
+du	du                  	Not curated	Not curated	Not curated	Yes	ducky		116			cml
+du	du<td>	Not curated	Not curated	Not curated	Yes	torpid		13433			cml
+
+D1Lub1	D1Lub1<MUT-dl>	Not curated	Not curated	Not curated	Yes	mutten deletion	Nomen	49053			cml
+
+D17Aus9	D17Aus9<df2J>	Not curated	Not curated	Not curated	Yes	DNA segement, Chr 17, Austin 9,  df2J	Nomen	50247			cml
+D17Aus9	D17Aus9<df4J>	Not curated	Not curated	Not curated	Yes	DNA segement, Chr 17, Austin 9,  df4J 	Nomen	50247			cml
+D17Aus9	D17Aus9<df5J>	Not curated	Not curated	Not curated	Yes	DNA segement, Chr 17, Austin 9,  df5J  	Nomen	50247			cml
+D17Aus9	D17Aus9<df18J>	Not curated	Not curated	Not curated	Yes	DNA segement, Chr 17, Austin 9,  df18J 	Nomen	50247			cml
+D17Aus9	D17Aus9<df27J>	Not curated	Not curated	Not curated	Yes	DNA segement, Chr 17, Austin 9,  df27J	Nomen	50247			cml
+
+E2f1	E2f1<tm1Meg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael E.  Greenburg	IMR	33100			cml
+E2f1	E2f1<tm1Njd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Targeted mutation 1, Nicholas J. Dyson	krupke	33099			cml
+
+Ebp	Ebp<Td>	Not curated	Not curated	Not curated	Yes	Tattered	Deb Reed	55860			cml
+
+Edn1	Edn1<tm1Utj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	endothelin 1, targeted mutation 1, University of Tokyo	LT GXD	17694			cml
+
+Edn3	Edn3<ls>                  	Not curated	Not curated	Not curated	Yes	lethal spotting		13391			cml
+Edn3	Edn3<tm1Ywa>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	endothelin 3, targeted mutation 1, Masashi Yanagisawa	IMR	22207			cml
+
+Ednrb	Ednrb<s-l>                  	Not curated	Not curated	Not curated	Yes	piebald lethal		5008			cml
+Ednrb	Ednrb<s>	Not curated	Not curated	Not curated	Yes	piebald		23183			cml
+Ednrb	Ednrb<s-1Chlc>	Not curated	Not curated	Not curated	Yes	chlorambucil 1		16291			cml
+Ednrb	Ednrb<s-27Pub>	Not curated	Not curated	Not curated	Yes	Pu239 citrate alpha ray induced 27		16291			cml
+Ednrb	Ednrb<s-15DttMb>	Not curated	Not curated	Not curated	Yes	ractionated x irradiation induced 15		16291			cml
+Ednrb	Ednrb<s-36Pub>	Not curated	Not curated	Not curated	Yes	Pu239 citrate alpha ray induced 36		16291			cml
+Ednrb	Ednrb<s-24Pub>	Not curated	Not curated	Not curated	Yes	Pu239 citrate alpha ray induced 24		16291			cml
+Ednrb	Ednrb<s-17Pub>	Not curated	Not curated	Not curated	Yes	Pu239 citrate alpha ray induced 17		16291			cml
+Ednrb	Ednrb<s-1Acrg>	Not curated	Not curated	Not curated	Yes	acrylamide monomer induced 1		16291			cml
+Ednrb	Ednrb<s-4Chlc>	Not curated	Not curated	Not curated	Yes	chlorambucil 4		16291			cml
+Ednrb	Ednrb<s-4Pub>	Not curated	Not curated	Not curated	Yes	Pu239 citrate alpha ray induced 4		16291			cml
+Ednrb	Ednrb<tm1Ywa>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Masashi Yanagisawa	IMR	22206			cml
+
+Edr	Edr<tm1Os>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Osaka University Medical School	D Hill GXD	43764			cml
+
+Egfr	Egfr<tm1Cwr>                  	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Case Western Reserve		26833			cml
+Egfr	Egfr<wa2>	Not curated	Not curated	Not curated	Yes	waved 2		13052			cml
+Egfr	Egfr<wa2-4J>	Not curated	Not curated	Not curated	Yes	waved 2 4J		30778			cml
+
+
+Egr2	Egr2<tm1Pch>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Patrick Charnay	D. Hill	16077	30822, 55208	krox 20< >	cml
+
+
+Ehhadh	Ehhadh<tm1Jkr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Janardan K. Reddy	apd	55395			cml
+
+Eklf	Eklf<tm1Sho>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stuart Orkin	IMR	25651			cml
+Eklf	Eklf<tm1Nimr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, National Institute of Medical Research	D Hill GXD	25650			cml
+
+Emv30	Emv30<a>	Not curated	Not curated	Not curated	Yes	endogenous ecotropic murine leukemia virus, present	apd	14300			cml
+Emv30	Emv30<b>	Not curated	Not curated	Not curated	Yes	endogenous ecotropic murine leukemia virus, absent	apd	14300			cml
+
+En1	En1<tm1Alj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	engrailed 1, targeted mutation 1,  Alexandra L. Joyner	IMR	19212			cml
+En1	En1<tm2Alj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	engrailed 1, targeted mutation 2,  Alexandra L. Joyner	D Hill 	27767			cml
+
+En2	En2<tm1Alj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	engrailed 2, targeted mutation 1, Alexandra L. Joyner	IMR	17203			cml
+
+Epha4	Epha4<tm1Oci>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ontario Cancer Institute	MS GXD	51597			cml
+
+Epo	Epo<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	Sasner	53805			cml
+
+Epor	Epor<tm1Cos>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Franklin Costantini	LT GXD	31156			cml
+	Epor<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	Sasner	53805			cml	
+
+Erbb2	Erbb2TgN(MMTVneu)202Mul	Not curated	Not curated	Not curated	Yes	transgenic, nonhomologous insert 202, William Muller	IMR				cml	
+
+Err2	Err2<tm1Mcg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, McGill University	Nomen	42488			cml	
+
+Es3	Es3<c-nH>                  	Recessive	    C3H/HeH	Radiation induced	Yes	c null Harwell		14247			cml	
+
+Eya1	Eya1<bor>	Not curated	Not curated	Not curated	Yes	branchio otorenal syndrome	deb reed	54408			cml	
+
+Fadk	Fadk<tm1Imeg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Institute of Molecular Embryology and Genetics	LT GXD	29273			cml	
+
+Fancc	Fancc<tm1Mab>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Manuel Buchard	dieter	32080			cml	Insertion/Deletion
+Fancc	Fancc<tm1Mgo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Markus Grompe	dieter	61512			cml	Insertion/Deletion
+
+Fas	Fas<lpr-cg>                  	Not curated	Not curated	Not curated	Yes	lymphoproliferation complementing gld		24805			cml	
+Fas	Fas<lpr>	Not curated	Not curated	Not curated	Yes	lymphoproliferation		28885			cml
+
+Fasl	Fasl<gld>	Not curated	Not curated	Not curated	Yes	generalized lymphoproliferative disease		29572			cml
+
+Fcer1g	Fcer1g<tm1Rav>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jeffrey Ravetch	IMR	39248			cml
+
+Fcgr2	Fcgr2<tm1Rav>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jeffrey Ravetch	IMR	31133			cml
+
+Fech	Fech <m1Pas>                 	Not curated	Not curated	Not curated	Yes	ferrochelatase deficiency	IMR	2021			cml
+
+Fgf6	Fgf6<tm1Ffi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Frederic Fiore	M. Sasner	42542			cml
+
+Fgf5	Fgf5<go>                  	Not curated	Not curated	Not curated	Yes	angora		13413			cml
+Fgf5	Fgf5<go-Y>	Not curated	Not curated	Not curated	Yes	angora Y		29474			cml
+Fgf5	Fgf5<Mrt>	Not curated	Not curated	Not curated	Yes	targeted mutation 1, Gail R. Martin		20551		Fgf5<neo>	cml
+
+fit1	fit1<494SB>	Not curated	Not curated	Not curated	Yes	fitness 1, 494SB	cat	43350			cml
+fit1	fit1<764SB>	Not curated	Not curated	Not curated	Yes	fitness 1, 764SB		43350			cml
+fit1	fit1<3452SB>	Not curated	Not curated	Not curated	Yes	fitness 1, 3452SB		43350			cml
+fit1	fit1<4226SB>	Not curated	Not curated	Not curated	Yes	fitness 1, 4226SB		43350			cml
+fit1	fit1<4397SB>	Not curated	Not curated	Not curated	Yes	fitness 1, 4397SB		43350			cml
+
+Fkh14	Fkh14<tm1Miu>	Not curated	Not curated	Not curated	Yes	targeted mutation 1, Naoyuki Miura  	MS GXd	55316	55575, 55316		cml
+Fkh14	Fkh14<tm1Blh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Brigid L. Hogan	apd	39636			cml
+
+Flap	Flap<tm1Jdm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	five   lipoxygenases activating protein, targeted mutation 1, John D. McNeish	IMR	29897			cml
+
+fld	fld<2J>	Not curated	Not curated	Not curated	Yes	fatty liver dystrophy 2  Jackson	J Bobbish	51014			cml
+
+Flk1	Flk1<tm1Jrt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Janet Rossant	IMR	26846			cml
+
+Flt1	Flt1<tm1Jrt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Janet Rossant	D Hill	26845			cml
+
+Flv	r	Not curated	Not curated	Not curated	Yes	C3H.PRI allele	deb reed	54414			cml
+Flv	rd	Not curated	Not curated	Not curated	Yes	C3H.M.domesticus allele	deb reed	54414			cml
+Flv	mr	Not curated	Not curated	Not curated	Yes	C3H.MOLD allele	deb reed	54414			cml
+
+Fmn	Fmn<ld-2J>                  	Not curated	Not curated	Not curated	Yes	limb deformity 2J		19230			cml
+Fmn	Fmn<ld-In2>	Not curated	Not curated	Not curated	Yes	limb deformity In2		8077			cml
+Fmn	Fmn<ld-J>	Not curated	Not curated	Not curated	Yes	limb deformity J		180			cml
+Fmn	Fmn<ld-TgBri137>	Not curated	Not curated	Not curated	Yes	limb deformity TgBri137		22163			cml
+Fmn	Fmn<ld-TgHD>	Not curated	Not curated	Not curated	Yes	limb deformity TgHD		8077			cml
+Fmn	Fmn<ld>	Not curated	Not curated	Not curated	Yes	limb deformity		22158			cml
+
+Fmr1	Fmr1<tm1Cgr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ben Oostra	IMR	19220			cml
+
+Fn1	Fn1<tm1Hyn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard Hynes	IMR	16247			cml
+
+Fos	Fos<tm1Pa>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Virginia Papaioannou	IMR	3233			cml
+
+Frl	Frl<a>                  	Not curated	Not curated	Not curated	Yes	furloss a		7103			cml
+Frl	Frl<b>	Not curated	Not curated	Not curated	Yes	furloss b		7103			cml
+Frl	Frl<c>	Not curated	Not curated	Not curated	Yes	furloss c		7103			cml
+
+Fst	Fst<tm1Zuk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Dr. Martin Matzuk	IMR	23925			cml
+
+Ftnb	Ftnb<tm1Dgm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Diana G. Myles	APD	50040			cml
+
+Fu	Fu                  	Not curated	Not curated	Not curated	Yes	fused		12953			cml
+Fu	Fu<kb>	Not curated	Not curated	Not curated	Yes	knobbly		13056			cml
+Fu	Fu<ki>	Not curated	Not curated	Not curated	Yes	kinky		7449			cml
+
+
+Ftzf1	Ftzf1<tm1Klp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Keith L. Parker	IMR	20830			cml
+Ftzf1	Ftzf1<tm1Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, En Li	apd	28971			cml
+
+Fyn	Fyn<tm1Sor>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Philippe Soriano	IMR	2242			cml
+
+fz	fz                 	Not curated	Not curated	Not curated	Yes	fuzzy		90			cml
+fz	fz<2J>	Not curated	Not curated	Not curated	Yes	fuzzy 2  Jackson		30778			cml
+fz	fz<4J>	Not curated	Not curated	Not curated	Yes	fuzzy 4  Jackson		30778			cml
+fz	fz<fy>	Not curated	Not curated	Not curated	Yes	frowzy		13380			cml
+
+Gabra6	Gabra6<tm1Geh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gregg E. Homanics, PhD	IMR	40242			cml
+
+Gabrb3	Gabrb3<tm1Geh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gregg E. Homanics, PhD	IMR	39801			cml
+Gabrb3	Gabrb3<Cp1>	Not curated	Not curated	Not curated	Yes	cleft palate 1	MGD	30107			cml
+
+Galgt2	 Galgt2<Mvwf>	Not curated	Not curated	Not curated	Yes	modifier of von Willebrand factor	Deb Reed	52069			cml
+
+Gata1	Gata1<tm1Sho>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stuart Orkin	MS GXD	36249			cml
+
+Gba	Gba<tm1Nsb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Edward Ginns	IMR	1100			cml
+
+Gbx2	Gbx2<tm1Mrt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gail R. Martin	D Hill	42110			cml
+
+Gck	Gck<tm1Ts>	Not curated	Not curated	Transgene induced (gene targeted)	Yes		IMR	29255			cml
+
+Gdf5	Gdf5<bp-3J>                 	Not curated	Not curated	Not curated	Yes	brachypodism 3  Jackson		16313			cml
+Gdf5	Gdf5<bp-H>	Not curated	Not curated	Not curated	Yes	brachypodism Harwell		13391			cml
+Gdf5	Gdf5<bp-J>	Not curated	Not curated	Not curated	Yes	brachypodism  Jackson		17582			cml
+Gdf5	Gdf5<bp>	Not curated	Not curated	Not curated	Yes	brachypodism		19596			cml
+
+Gfap	Gfap<tm1Mes>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Albee Messing	IMR				cml
+
+Ggtp	Ggtp<enu1>	Not curated	Not curated	Not curated	Yes	enu1	apd	55222			cml
+Ggtp	Ggtp<tm1Zuk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Martin M. Matzuk	apd	34309			cml
+
+Ghrhr	Ghrhr<lit>                  	Not curated	Not curated	Not curated	Yes	little		5647			cml
+
+Gja1	Gja1<tm1Kdr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gerald M. Kidder	IMR	38048			cml
+
+Gja8	Gja8<No2>	Not curated	Not curated	Not curated	Yes	nuclear opacity 2	Nomen	49942			cml
+
+Gjb1	Gjb1<tm1Kwi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Klaus Willecke	krupke	36146	42938	Cx32 / 	cml
+
+Gli	Gli<tm1Alj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Alexandra L. Joyner	M. Sasner	49251			cml
+
+Gli2	Gli2<tm1Alj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Alexandra L. Joyner	LT GXD	38381	49251, 54746		cml
+
+Gli3	Gli3<add>                  	Recessive	Not curated	Not curated	Yes	anterior digit pattern deformity		11318			cml
+Gli3	Gli3<Pdn>	Semidominant	Not curated	Not curated	Yes	polydactyly Nagoya		12736			cml
+Gli3	Gli3<Xt-2H>	Semidominant	Not curated	Not curated	Yes	extra toes 2 Harwell		5053			cml
+Gli3	Gli3<Xt-3H>	Semidominant	Not curated	Not curated	Yes	extra toes 3 Harwell		5053			cml
+Gli3	Gli3<Xt-4H>	Semidominant	Not curated	Not curated	Yes	extra toes 4 Harwell		5053			cml
+Gli3	Gli3<Xt-5H>	Semidominant	Not curated	Not curated	Yes	extra toes 5 Harwell		5053			cml
+Gli3	Gli3<Xt-6H>	Semidominant	Not curated	Not curated	Yes	extra toes 6 Harwell		5053			cml
+Gli3	Gli3<Xt-7H>	Semidominant	Not curated	Not curated	Yes	extra toes 7 Harwell		5053			cml
+Gli3	Gli3<Xt-bph>	Semidominant	Not curated	Not curated	Yes	brachyphalangy		5021			cml
+Gli3	Gli3<Xt-J>	Semidominant	Not curated	Not curated	Yes	extra toes  Jackson		4086			cml
+Gli3	Gli3<Xt>	Semidominant	Not curated	Not curated	Yes	extra toes		5053			cml
+
+Glra1	Glra1<spd-ot>	Not curated	Not curated	Not curated	Yes	spasmodic oscillator		13463			cml
+Glra1	Glra1<spd>	Not curated	Not curated	Not curated	Yes	spasmodic		9027			cml
+
+Glrb	Glrb<spa-Alb>                  	Not curated	Not curated	Not curated	Yes	spastic Albany		23000			cml
+Glrb	Glrb<spa>	Not curated	Not curated	Not curated	Yes	spastic		13079			cml
+
+Gnrh	Gnrh<hpg>                  	Not curated	Not curated	Not curated	Yes	hypogonadal		5877			cml
+
+Golga3	Golga3<TgN(06MGMT)T604Kccri>	Not curated	Not curated	Not curated	Yes	transgene insertionT604, Kanagawa Cancer Center Research Institute	SR	52847			cml
+
+Gpi1-s	Gpi1-s<b m1Neu>	Not curated	Not curated	Not curated	Yes	allele name in progress	Nomen	35956			cml
+Gpi1-s	Gpi1-s<b m2Neu>	Not curated	Not curated	Not curated	Yes	allele name in progress	Nomen	35956			cml
+
+Gprc1a	Gprc1a<tm1Crpl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Francis Crepel	cat	21644			cml
+Gprc1a	Gprc1a<tm1Stl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Susumu Tonegawa	cat	21086			cml
+Gprc1b	Gprc1b<tm1Nak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Shigetada Nakanishi	cat	34606			cml
+Gprc1e	Gprc1e<tm1Rod>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, John C. Roder	cat	41096			cml
+Gprc1d	Gprc1d<tm1Hpn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David R. Hampson	IMR	35793			cml
+Gprc1f	Gprc1f<tm1Nak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Shigetada Nakanishi	Cat	48532			cml
+Gprc1g	Gprc1g<tm1Nak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Shigetada Nakanishi	Cat	52411			cml
+
+Grik2	Grik2<tm1Sfh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stephen F. Heinemann	IMR	46932			cml
+
+Gr1	Gr1<a1Neu>	Not curated	Not curated	Not curated	Yes	glutathione reductase 1, Neuherberg	deb reed	54306			cml
+
+Grid2	Grid2<Lc-J>	Not curated	Not curated	Not curated	Yes	lurcher   Jackson	Data editor	42385			cml
+Grid2	Grid2<Lc>	Not curated	Not curated	Not curated	Yes	lurcher		42431			cml
+Grid2	Grid2<ho-4J>	Not curated	Not curated	Not curated	Yes	hotfoot 4  Jackson	Nomen	48151			cml
+Grid2	Grid2<ho-TgN37Inra>	Not curated	Not curated	Not curated	Yes	hotfoot transgenic, nonhomologous insert 37, Institute National de la Rechevche	Nomen	48151			cml
+Grid2	Grid2<ho-13J>	Not curated	Not curated	Not curated	Yes	hotfoot 13  Jackson	J Bobbish	50994			cml
+Grid2	Grid2<ho-14J>	Not curated	Not curated	Not curated	Yes	hotfoot 14  Jackson	J. Bobbish	50994			cml
+Grid2	Grid2<ho>                	Not curated	Not curated	Not curated	Yes	hotfoot		13443			cml
+Grid2	Grid2<ho-4J>	Not curated	Not curated	Not curated	Yes	hotfoot 4  Jackson		19227			cml
+Grid2	Grid2<ho-5J>	Not curated	Not curated	Not curated	Yes	hotfoot 5  Jackson		13443			cml
+Grid2	Grid2<ho-cpr>	Not curated	Not curated	Not curated	Yes	creeper		13944			cml
+Grid2	Grid2<ho-Jic>	Not curated	Not curated	Not curated	Yes	hotfoot Jic		14256			cml
+Grid2	Grid2<ho-Jwg>	Not curated	Not curated	Not curated	Yes	hotfoot Jwg		14140			cml
+Grid2	Grid2<ho-7J>	Not curated	Not curated	Not curated	Yes	hotfoot 7  Jackson		30778			cml
+Grid2	Grid2<ho-8J>	Not curated	Not curated	Not curated	Yes	hotfoot 8  Jackson		19229			cml
+
+Grl1	Grl1<tm1Gsc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	 targeted mutation 1, Gunther Schutz	Nomen Dhill	27441			cml
+
+Gsc	Gsc<tm1Pgr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Gruss	LT GXD	29421			cml
+Gsc	Gsc<tm1Bhr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard R. Behringer	Ms Gxd	28702	41809		cml
+
+Gus	gus<mps>                  	Not curated	Not curated	Not curated	Yes	beta glucuronidase, mucopolysaccharidosis VII		9705			cml
+
+H2-DMa	H2-DMa<tm1Luc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Luc van Kaer	IMR	31625			cml
+
+Hal	Hal<Ed1>                  	Not curated	Not curated	Not curated	Yes	histidinemia, Edinburgh 1		15065			cml
+Hal	Hal<his>	Not curated	Not curated	Not curated	Yes	histidinemia		4406			cml
+
+Hand2	Hand2<tm1Dsr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Deepak Srivastava	LT GXD	40768			cml
+
+Hba-a1	Hba a1<tm1Paz>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Chris Paszty	IMR	28392			cml
+
+Hba-a2	Hba a2<tm1Paz>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Chris Paszty	IMR	28392			cml
+
+Hba	Hba                  	Not curated	Not curated	Not curated	Yes	hemoglobin alpha chain complex					cml
+Hba	Hba<Th-J> 	Codominant	Not curated	Chemical induced	Yes	alpha thalassemia  Jackson					cml
+Hba	Hba<b2(th)>	Recessive	101 or C3H	Radiation induced	Yes	b2(th)		6452		352HB	cml
+Hba	Hba<b3(th)>	Recessive	101 or C3H	Radiation induced	Yes	b3(th)		6452		27HB	cml
+Hba	Hba<g2>	Recessive	DBA/2	Chemical induced (ENU)	Yes	g2		7188		y9	cml
+
+Hbb	Hbb                  	Not curated	Not curated	Not curated	Yes	hemoglobin beta chain complex					cml
+Hbb	Hbb<d3(th)>	Not curated	DBA/2	Not curated	Yes	beta thalassemia		7209			cml
+Hbb	Hbb<d4>	Not curated	Not curated	Not curated	Yes	polycythaemia		13920			cml
+Hbb	Hbb<th 1>	Not curated	Not curated	Not curated	Yes	beta thalassemia					cml
+Hbb	Hbb<s2>	Not curated	C57BL/6	Chemical induced (ENU)	Yes	s2		8002			cml
+Hbb	Hbb<d2>	Not curated	    C3H/He	Chemical induced	Yes	d2		6846			cml
+Hbb	Hbb<d>	Not curated	Not curated	Not curated	Yes	d		5500			cml
+Hbb	Hbb<p>	Not curated	Not curated	Not curated	Yes	p					cml
+Hbb	Hbb<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	hemoglobin beta chain complex, targeted mutation 1, University of North Carolina	IMR	4932			cml
+
+Hbb-b1	Hbb-b1<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	30155			cml
+
+Hbb-b2	Hbb-b2<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	30155			cml
+
+Hcph	Hcph<me>                 	Not curated	Not curated	Not curated	Yes	motheaten		5579			cml
+Hcph	Hcph<me-v>	Not curated	Not curated	Not curated	Yes	viable motheaten		7531			cml
+Hcph	Hcph<me-2J>	Not curated	Not curated	Not curated	Yes	motheaten 2  Jackson		5579			cml
+
+Hdh	Hdh<tm1Mem>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Marcy MacDonald	IMR	27183			cml
+Hdh	Hdh<tm1Szi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Scott Zeitlin	D Hill	29267			cml
+Hdh	Hdh<tm1Szi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Scott Zeitlin	D. Hill	47784			cml
+
+Herc2	Herc2<jdf2-932SJ>	Not curated	Not curated	Not curated	Yes	juvenile development and fertility 2 932S  Jackson	Nomen	53404			cml
+Herc2	Herc2<jdf2-322SJ>	Not curated	Not curated	Not curated	Yes	juvenile development and fertility 2 322S  Jackson	Nomen	53404			cml
+Herc2	Herc2<jdf2-850SJ>	Not curated	Not curated	Not curated	Yes	juvenile development and fertility 2 850S  Jackson	apd	56827			cml
+Herc2	Herc2<jdf2-374SJ>	Not curated	Not curated	Not curated	Yes	juvenile development and fertility 2 374S  Jackson	apd	56827			cml
+Herc2	Herc2<jdf2-1881SJ>	Not curated	Not curated	Not curated	Yes	juvenile development and fertility 2 1881S  Jackson	apd	56827			cml
+Herc2	Herc2<jdf2-1971SJ>	Not curated	Not curated	Not curated	Yes	juvenile development and fertility 2 1971S  Jackson	Nomen	53404			cml
+Herc2	Herc2<p-6H>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 6 Harwell	apd	49046			cml
+Herc2	Herc2<p-25H>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 25 Harwell	apd	49046			cml
+Herc2	Herc2<p-bs>	Not curated	Not curated	Not curated	Yes	pink eyed dilution black eyed sterile	apd	49046			cml
+Herc2	Herc2<p-7FR60Lb>	Not curated	Not curated	Not curated	Yes	 pink eyed dilution 7FR60Lb	apd	29903			cml
+Herc2	Herc2<p-132G>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 132G	apd	29903			cml
+Herc2	Herc2<p-116G>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 116G	apd	29903			cml
+Herc2	Herc2<p-12R25OM>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 12R25OM	apd	29903			cml
+Herc2	Herc2<p-12DTR>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 12DTR	apd	29903			cml
+Herc2	Herc2<p-48PB>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 48PB	apd	29903			cml
+Herc2	Herc2<p-9DTW>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 9DTW	apd	29903			cml
+Herc2	Herc2<p-103G>	Not curated	Not curated	Not curated	Yes	 pink eyed dilution 103G	apd	29903			cml
+Herc2	Herc2<p-39DSD>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 39DSD	apd	29903			cml
+Herc2	Herc2<p-17FATWb>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 17FATWb	apd	29903			cml
+Herc2	Herc2<p-46DfiOD>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 46DfiOD	apd	29903			cml
+
+Hexa	Hexa<tm1Rlp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard L. Proia	IMR	21008			cml
+
+Hfhbf1	Hfhbf1<tm1M>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Memorial Sloan Kettering Cancer Center (allele name in progress)	dph	26720			cml
+
+Hfh11	Hfh11<nc-Bc>                  	Not curated	Not curated	Not curated	Yes	nude, British Columbia					cml
+Hfh11	Hfh11<nu-str>	Not curated	Not curated	Not curated	Yes	streaker		24755			cml
+Hfh11	Hfh11<nu>	Not curated	Not curated	Not curated	Yes	nude		30772			cml
+Hfh11	Hfh11<nu-Y>	Not curated	Not curated	Not curated	Yes	nude Y		4060			cml
+
+Hif1a	Hif1a<tm1Jhu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Johns Hopkins University	D Hill	45554			cml
+
+Hmgic	Hmgic<pg>                  	Not curated	Not curated	Not curated	Yes	pygmy		13064			cml
+Hmgic	Hmgic<pg-J>	Not curated	Not curated	Not curated	Yes	pygmy J					cml
+Hmgic	Hmgic<pg-TgN40BCha>	Not curated	Not curated	Not curated	Yes	isoform C transgenic, nonhomologous insert 40B, Kiran Chada	IMR	10325			cml
+Hmgic	Hmgic<pg-TgN40ACha>	Not curated	Not curated	Not curated	Yes	isoform C transgenic, nonhomologous insert 40A, Kiran Chada	MLC	10325			cml
+
+Hmx3	Hmx3<tm1Ebo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Eva Bober	LT GXD	45576			cml
+Hmx3	Hmx3<tm1Tlu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tom Lufkin	LT GXD	46379			cml
+Hmx3	Hmx3<tm2Tlu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Tom Lufkin	LT GXD	46379			cml
+
+Hnf3b	Hnf3b<tm1Jrt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Janet Rossant	sasner	19895	41809		cml
+
+hop	hop                 	Not curated	Not curated	Not curated	Yes	hop sterile		5206			cml
+hop	hop<hpy>	Not curated	Not curated	Not curated	Yes	hydrocepalic polydactyl		14943			cml
+
+Hoxa1	Hoxa1<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	LT GXD	23837	46973		cml
+Hoxa1	Hoxa1<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	Cat	1776			cml
+Hoxa1	Hoxa1<tm2Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Pierre Chambon		23000			cml
+Hoxa1	Hoxa1<tm2Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Mario R. Capecchi		58093	60095	Hoxa1<Cla>	cml
+
+Hoxa2	Hoxa2<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	D Hill GXD	16388			cml
+Hoxa2	Hoxa2<tm1Grid>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tom Gridley	LT GXD	16389			cml
+	Hoxa2<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	hill	58093	60095		cml
+
+Hoxa3	Hoxa3<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	hill	17753	26753	hox 1.5<->	cml
+
+Hoxa4	Hoxa4<tm1Bhr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Richard R. Behringer	Dale	22077			cml
+
+Hoxb1	Hoxb1<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	dale	46973			cml
+	Hoxb1<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	let	36235			cml
+	Hoxb1<tm2Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Mario R. Capecchi	let	36235			cml
+	Hoxb1<tm3Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 3, Mario R. Capecchi	let	41540			cml
+
+Hoxb4	Hoxb4<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Baylor College of Medicicne	IMR	4612			cml
+
+Hoxc4	Hoxc4<tm1Hsu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Hirofumi Suemori	LT GXD	31635			cml
+
+Hoxd	Hoxd<tm1Ddu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Denis Duboule	D. hill	47900		neo	cml
+	Hoxd<tm2Ddu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Denis Duboule	D. Hill	36443		neoB	cml
+
+Hoxd3	Hoxd3<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	hill	15678			cml
+
+Hoxd10	Hoxd10<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	apd	44765			cml
+
+Hoxd11	Hoxd11<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	apd	19630			cml
+
+
+Hoxd12	Hoxd12<tm1Ddu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Denis Duboule	ms	47900			cml
+	Hoxd12<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	apd	32603			cml
+
+Hoxd13	Hoxd13<spdh>	Not curated	Not curated	Not curated	Yes	synopolydactyly homolog	dirck	47974			cml
+	Hoxd13<tm1Ddu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Denis Duboule	hill	15507			cml
+	Hoxd13<tm1Mrc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mario R. Capecchi	apd	44765			cml
+
+Hpd	Hpd<hty>                  	Not curated	Not curated	Not curated	Yes	hypertyrosinemia		14313			cml
+
+Hpl	Hpl<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	22938			cml
+
+Hprt	Hprt<b-m1>	Not curated	Not curated	Not curated	Yes	hypoxanthine guanine phosph-oribosyl transferase B, mutation 1	MLC	3354			cml
+Hprt	Hprt<b-m2>	Not curated	Not curated	Not curated	Yes	hypoxanthine guanine phosph-oribosyl transferase B, mutation 2	MLC	3354			cml
+Hprt	Hprt<b-m3>	Not curated	Not curated	Not curated	Yes	hypoxanthine guanine phosph-oribosyl transferase B, mutation 3	IMR	15483			cml
+
+hr	hr                 	Not curated	Not curated	Not curated	Yes	hairless		2405			cml
+hr	he<ba>	Not curated	Not curated	Not curated	Yes	bald		13067			cml
+hr	hr<N>	Not curated	Not curated	Not curated	Yes	near naked		7103			cml
+hr	hr<rh-7J>	Not curated	Not curated	Not curated	Yes	rhino 7  Jackson		30778			cml
+hr	hr<rh-J>	Not curated	Not curated	Not curated	Yes	rhino   Jackson		23000			cml
+hr	hr<rh>	Not curated	Not curated	Not curated	Yes	rhino		13057			cml
+hr	hr<TgN5053Mm>	Not curated	Not curated	Not curated	Yes	transgenic insertion, Miriam Meisler		15642			cml
+hr	hr<rh-2J>	Not curated	Not curated	Not curated	Yes	rhino 2  Jackson		27523			cml
+hr	hr<rh-8J>	Not curated	Not curated	Not curated	Yes	rhino 8  Jackson		30778			cml
+
+Hsp84-1	Hsp84-1<tm1Avo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Anne K. Voss	Dph	58075			cml
+
+Htr2c	Htr2c<tm1Jul>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David Julius	IMR	24339			cml
+
+ic	ic                  	Not curated	Not curated	Not curated	Yes	ichthyosis		13065			cml
+ic	ic<J>	Not curated	Not curated	Not curated	Yes	ichthyosis  Jackson		24755			cml
+ic	ic<5J>	Not curated	Not curated	Not curated	Yes	ichthyosis 5  Jackson		30778			cml
+ic	ic<4J>	Not curated	Not curated	Not curated	Yes	ichthyosis 4  Jackson 		30778			cml
+
+Icam1	Icam1<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	intercellular adhesion molecule, targeted mutation 1, Baylor College of Medicine	IMR	14565			cml
+Icam1	Icam1<tm1Jcgr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	intercellular adhesion molecule, targeted mutation 1, Jose Carlos Gutierrez Ramos	IMR	18743			cml
+
+Igf1	Igf1<tm1Ts>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Timothy Stewart	IMR	24953			cml
+											
+
+Igl-1	lgl-1<b>                 	Not curated	Not curated	Not curated	Yes	allele b		12981			cml
+Igl-1	Igl-1<a>	Not curated	Not curated	Not curated	Yes	allele a		12981			cml
+Igl-1	Igl-1<c>	Not curated	Not curated	Not curated	Yes	allele c		7061			cml
+
+Ikbkb	Ikbkb<tm1Mka>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Karin	APD	55737			cml
+Ikbkb	Ikbkb<tm1Trk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tularik Inc	APD	55680			cml
+
+Il2	Il2<tm1Hor>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	interleukin 2, targeted mutation 1, Ivan Horak	IMR	39989			cml
+
+Il2rb	Il2rb<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	interleukin 2 receptor, beta chain, targeted mutation 1, Tak Mak	IMR	25940			cml
+
+Il2rg	Il2rg<tm1Wjl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Warren J. Leonard	IMR	24117			cml
+
+Il4	Il4<tm1Cgn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Klaus Rajewsky	IMR	704			cml
+Il4	Il4<tm1Nnt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Nancy Noben Trauth	IMR	37196			cml
+Il4	Il4<tm2Nnt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Nancy Noben Trauth	IMR	31486			cml
+
+
+Il6	Il6<tm1Koe>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Georges Kohler	IMR	17360			cml
+Il6	Il6<tm1Kopf>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Manfred Kopf	IMR	17360			cml
+
+Il7	Il7<tm1Dnax>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, DNAX Research Institute of Cellular and Molecular Biology	D Hill GXD	24165			cml
+
+Il7r	Il7r<tm1Imx>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Immunex	IMR	21135			cml
+
+Il10	Il10<tm1Cgn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Klaus Rajewsky	IMR	15222			cml
+
+Il12a	Il12a<tm1Jm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jeanne Magram	IMR	34164			cml
+
+Il12b	Il12b<tm1Jm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jeanne Magram	IMR	34164			cml
+
+
+
+
+Inha	Inha<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Baylor College of Medicine	IMR	3315			cml
+
+Inhbb	Inhbb<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	16995			cml
+
+Insr	Insr<tm1Dac>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Domenico Accili	IMR	33408			cml
+
+Invs	Invs<inv>	Not curated	Not curated	Not curated	Yes	inversion of embryonic turning	apd	50117			cml
+
+Itga3	Itga3<tm1Jak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jordan A. Kreidberg	David hill	36831			cml
+
+Itga4	Itga4<tm1Hyn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Richard Hynes	Cat	23140			cml
+
+Itga5	Itga5<tm1Hyn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Richard Hynes	cat	16248			cml
+
+Itga6	Itga6<tm1Egl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Elisabeth Georges Labouesse	D. Hill	33712			cml
+
+Itgav	Itgav<tm1Hyn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Richard Hynes	hill	50951			cml
+
+Itgb2	Itgb2<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Baylor College of Medicine	IMR	13599			cml
+
+Jag1	Jag1<tm1Grid>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tom Gridley	Nomen	54907			cml
+
+Jak3	Jak3<tm1Ljb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Janus kinase 3, targeted mutation 1	IMR	29722			cml
+
+Jun	Jun<tm1Pa>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	Jun oncogene, targeted mutation 1, Virginia Papaioannou	IMR	13175			cml			
+Jun	Jun<tm1Wag>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Erwin F. Wagner	apd	53481			cml			
+Jun	Jun<tm2Wag>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Erwin F. Wagner	apd	53481			cml			
+
+Jup	Jup<tm1Kem>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	junction plakoglobin, targeted mutation 1, Rolf Kemler	D Begley GXD	38047			cml			
+
+Nek1	Nek<kat>	Recessive	RBF/Dn	Spontaneous	Yes	kidney, anemia and testis		37799			cml	Deletion	59363	nucleotides 791-2105 deleted
+Nek1	Nek<kat-2J>	Recessive	    C57BL/6J	Spontaneous	Yes	kidney, anemia and testis 2J	Nomen	37799			cml	Insertion	59363	G insertion at position 966 causes frameshift and premature stop
+
+
+Kit	Kit<W >	Not curated	Not curated	Not curated	Yes	dominant spotting					cml			
+Kit	Kit<W-17J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 17  Jackson					cml			
+Kit	Kit<W-18J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 18  Jackson					cml			
+Kit	Kit<W-19H>	Not curated	Not curated	Not curated	Yes	dominant spotting 19  Jackson		7681			cml			
+Kit	Kit<W-20J>	Not curated	Not curated	Not curated	Yes	dominant spotting 20  Jackson					cml			
+Kit	Kit<W-24J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 24  Jackson					cml			
+Kit	Kit<W-25J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 25  Jackson					cml
+Kit	Kit<W-27H>	Not curated	Not curated	Not curated	Yes	dominant spotting 27 Harwell		13934			cml
+Kit	Kit<W-28H>	Not curated	Not curated	Not curated	Yes	dominant spotting 28 Harwell		18375			cml
+Kit	Kit<W-29H>	Not curated	Not curated	Not curated	Yes	dominant spotting 29 Harwell		18375			cml
+Kit	Kit<W-2J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 2  Jackson					cml
+Kit	Kit<W-34J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 34  Jackson		27512			cml
+Kit	Kit<W-35J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 35  Jackson		27512			cml
+Kit	Kit<W-36H>	Not curated	Not curated	Not curated	Yes	dominant spotting 36 Harwell		20782			cml
+Kit	Kit<W-37J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 37  Jackson		27512			cml
+Kit	Kit<W-38J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 38  Jackson		27512			cml
+Kit	Kit<W-39J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 39  Jackson		27512			cml
+Kit	Kit<W-40J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 40  Jackson		27512			cml
+Kit	Kit<W-41J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 41 Jackson		27512			cml
+Kit	Kit<W-42J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 42  Jackson		27512			cml
+Kit	Kit<W-43J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 43  Jackson		27512			cml
+Kit	Kit<W-44J>                  	Not curated	Not curated	Not curated	Yes	dominant spotting 44  Jackson		27512			cml
+Kit	Kit<W-45J>	Not curated	Not curated	Not curated	Yes	dominant spotting 45  Jackson					cml
+Kit	Kit<W-49J>	Not curated	Not curated	Not curated	Yes	dominant spotting 49 Jackson					cml
+Kit	Kit<W-50J>	Not curated	Not curated	Not curated	Yes	dominant spotting 50  Jackson		30778			cml
+Kit	Kit<W-51J>	Not curated	Not curated	Not curated	Yes	dominant spotting 51  Jackson					cml
+Kit	Kit<W-54J>	Not curated	Not curated	Not curated	Yes	dominant spotting 54  Jackson					cml
+Kit	Kit<W-55J>	Not curated	Not curated	Not curated	Yes	dominant spotting 55  Jackson		1856			cml
+Kit	Kit<W-56J>	Not curated	Not curated	Not curated	Yes	dominant spotting 56  Jackson					cml
+Kit	Kit<W-57J>	Not curated	Not curated	Not curated	Yes	dominant spotting 57  Jackson		1856			cml
+Kit	Kit<W-58J>	Not curated	Not curated	Not curated	Yes	dominant spotting 58  Jackson		30778			cml
+Kit	Kit<W-59J>	Not curated	Not curated	Not curated	Yes	dominant spotting 59  Jackson					cml
+Kit	Kit<W-60J>	Not curated	Not curated	Not curated	Yes	dominant spotting 60  Jackson		30778			cml
+Kit	Kit<W-62J>	Not curated	Not curated	Not curated	Yes	dominant spotting 62  Jackson		30778			cml
+Kit	Kit<W-64J>	Not curated	Not curated	Not curated	Yes	dominant spotting 64  Jackson		30778			cml
+Kit	Kit<W-65J>	Not curated	Not curated	Not curated	Yes	dominant spotting 65  Jackson		30778			cml
+Kit	Kit<W-66J>	Not curated	Not curated	Not curated	Yes	dominant spotting 66  Jackson		30778			cml
+Kit	Kit<W-67J>	Not curated	Not curated	Not curated	Yes	dominant spotting 67  Jackson		30778			cml
+Kit	Kit<W-69J>	Not curated	Not curated	Not curated	Yes	dominant spotting 69  Jackson		30778			cml
+Kit	Kit<W-70J>	Not curated	Not curated	Not curated	Yes	dominant spotting 70  Jackson		30778			cml
+Kit	Kit<W-71J>	Not curated	Not curated	Not curated	Yes	dominant spotting 71  Jackson		30778			cml
+Kit	Kit<W-73J>	Not curated	Not curated	Not curated	Yes	dominant spotting 73  Jackson		16572			cml
+Kit	Kit<W-74J>	Not curated	Not curated	Not curated	Yes	dominant spotting 74  Jackson		30778			cml
+Kit	Kit<W-76J>	Not curated	Not curated	Not curated	Yes	dominant spotting 76  Jackson		30778			cml
+Kit	Kit<W-78J>	Not curated	Not curated	Not curated	Yes	dominant spotting 78  Jackson					cml
+Kit	Kit<W-79J>	Not curated	Not curated	Not curated	Yes	dominant spotting 79  Jackson					cml
+Kit	Kit<W-80J>	Not curated	Not curated	Not curated	Yes	dominant spotting 80  Jackson					cml
+Kit	Kit<W-81J>	Not curated	Not curated	Not curated	Yes	dominant spotting 81  Jackson					cml
+Kit	Kit<W-a>	Not curated	Not curated	Not curated	Yes	Ames's dominant spotting		28886			cml
+Kit	Kit<W-b>	Not curated	Not curated	Not curated	Yes	Ballantyne's dominant spotting		13078			cml
+Kit	Kit<W-bd>	Not curated	Not curated	Not curated	Yes	banded		14074			cml
+Kit	Kit<W-ct>	Not curated	Not curated	Not curated	Yes	Cattanach's dominant spotting		7216			cml
+Kit	Kit<W-e>	Not curated	Not curated	Not curated	Yes	extreme dominant spotting		13756			cml
+Kit	Kit<W-ei>	Not curated	Not curated	Not curated	Yes	Eiche's dominant spotting		28100			cml
+Kit	Kit<W-f>	Not curated	Not curated	Not curated	Yes	fertile dominant spotting		733			cml
+Kit	Kit<W-j>	Not curated	Not curated	Not curated	Yes	Jay's dominant spotting		3398			cml
+Kit	Kit<W-Jic>	Not curated	Not curated	Not curated	Yes	Kawasaki dominant spotting		27513			cml
+Kit	Kit<W-n>	Not curated	Not curated	Not curated	Yes	Nagoya dominant spotting		12107			cml
+Kit	Kit<W-pw>	Not curated	Not curated	Not curated	Yes	panda white		13655			cml
+Kit	Kit<W-rio>	Not curated	Not curated	Not curated	Yes	dominant spotting rio		29400			cml
+Kit	Kit<W-s>	Not curated	Not curated	Not curated	Yes	Strong's dominant spotting		15330			cml
+Kit	Kit<W-sh>	Not curated	Not curated	Not curated	Yes	sash		6857			cml
+Kit	Kit<W-tox>	Not curated	Not curated	Not curated	Yes	tox dominant spotting					cml
+Kit	Kit<W-v83J>	Not curated	Not curated	Not curated	Yes	viable dominant spotting 83  Jackson		28843			cml
+Kit	Kit<W-v>	Not curated	Not curated	Not curated	Yes	viable dominant spotting		2447			cml
+Kit	Kit<W-x>	Not curated	Not curated	Not curated	Yes	dominant spotting x		3398			cml
+
+Klra4	Klra4<Chok>	Not curated	Not curated	Not curated	Yes	Chinese hamster ovary killing allele	Nomenclature	55124	51604		cml
+
+Kras2	Kras2<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tyler Jacks	IMR	43433			cml
+
+Krml	Krml<kr>                 	Not curated	Not curated	Not curated	Yes	kreisler		208			cml
+
+Krt1-19	Krt1-19<tm1Mmt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Makoto M. Taketo	Dieter	58367		Krt1 19<cre>	cml
+
+Lama2	Lama2<dy-2J>                 	Not curated	Not curated	Not curated	Yes	dystrophia muscularis 2  Jackson		5151			cml
+Lama2	Lama2<dy>	Not curated	Not curated	Not curated	Yes	dystrophia muscularis		13125			cml
+Lama2	Lama2<dy-6J>	Not curated	Not curated	Not curated	Yes	dystrophia muscularis 6  Jackson	Direct sub	59374			cml
+
+Lat	Lat<tm1Les>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Lawrence E. Samelson	apd	54059			cml
+
+Lats1	Lats1<tm1Tx>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tian Xu	apd	52536			cml
+
+Lbp	Lbp<tm1Buru>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Boston University School of Medicine	IMR	44878			cml
+Lbp	Lbp<tm1Csc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Christine Schutt		43514			cml
+
+Lck	Lck<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak Mak	IMR	1119			cml
+
+Ldlr	Ldlr<tm1Her>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Joachim Herz	IMR	37394			cml
+
+Lep	Lep<ob>                 	Not curated	Not curated	Not curated	Yes	obese		13066			cml
+Lep	Lep<ob-2J>	Not curated	Not curated	Not curated	Yes	obese 2  Jackson		30778			cml
+
+Lepr	Lepr<db>                  	Not curated	Not curated	Not curated	Yes	diabetes		5010			cml
+Lepr	Lepr<db-2J>	Not curated	Not curated	Not curated	Yes	diabetes 2  Jackson		13477			cml
+Lepr	Lepr<db-3J>	Not curated	Not curated	Not curated	Yes	diabetes 3  Jackson		6337			cml
+Lepr	Lepr<db- ad>	Not curated	Not curated	Not curated	Yes	adipose		31691			cml
+Lepr	Lepr<db-Pas>	Not curated	Not curated	Not curated	Yes	diabetes Pasteur Institiute		31095			cml
+
+lg	lg<Ml>	Not curated	Not curated	Not curated	Yes	Miller		5056			cml
+lg	lg<Stn>	Not curated	Not curated	Not curated	Yes	Stein		5166			cml
+lg	lg<St>	Not curated	Not curated	Not curated	Yes	Strong		5166			cml
+lg	lg<Ga>	Not curated	Not curated	Not curated	Yes	Gates	MLC Moyha	7160			cml
+
+Lhx1	Lhx1<tm1Bhr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted Mutation 1, Richard R. Behringer	Sasner	24115	53656	Lim1< / >	cml
+
+Lifr	Lifr<tm1Imx>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Immunex	IMR	25253			cml
+
+Lig4	Lig4<tm1Icrf>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Imperial Cancer research Fund	APD	51608			cml
+Lig4	Lig4<tm1Fwa>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Frederick W. Alt	APD	50865			cml
+
+Lp	Lp	Not curated	Not curated	Not curated	Yes	loop tail	LT GXD	29379			cml
+
+Lrpap1	Lrpap1<tm1Her>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Joachim Herz	IMR	37394			cml
+
+lst	lst               	Not curated	Not curated	Not curated	Yes	Strong's luxoid					cml
+lst	lst<J>	Not curated	Not curated	Not curated	Yes	Strong's luxoid  Jackson		30778			cml
+
+Lta	Lta<tm1Dch>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David Chaplin	IMR	17976			cml
+
+Madh2	Madh2<tm1Rob>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Elizabeth Robertson	apd	46532			cml
+Madh2	Madh2<tm1Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, En Li	apd	48467			cml
+Madh2	Madh2<tm2Enl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, En Li	apd	48467			cml
+Madh2	Madh2<tm1Cxd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Chu Xia Deng	apd	49084			cml
+
+Madh3	Madh3<tm1Cxd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Chu Xia Deng	apd	53510			cml
+Madh3	Madh3<tm1Xfw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Xiao Fan Wang	apd	53948			cml
+Madh3	Madh3<tm1Par>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Luis Parada	d hill	49839			cml
+
+Madh4	Madh4<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak Mak	Nomen	45399			cml
+Madh4	Madh4<tm1Mmt>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Makoto M. Taketo	apd	46242			cml
+Madh4	Madh4<tm1Cxd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Chu Xia Deng	apd	46852			cml
+Madh4	Madh4<tm1Ari>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Amgen Research Institute					cml
+
+Madh5	Madh5<tm1Zuk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Martin M. Matzuk	mlc	53293			cml
+Madh5	Madh5<tm1Cxd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Chu Xia Deng	apd	53289			cml
+
+Mag	Mag<tm1Rod>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, John Roder	IMR	18407			cml
+
+Mbp	Mbp<shi-mld>                 	Not curated	Not curated	Not curated	Yes	myelin deficient		5917			cml
+Mbp	Mbp<shi>	Not curated	Not curated	Not curated	Yes	shiverer 		6578			cml
+Mbp	Mbp<shi-hus>	Not curated	Not curated	Not curated	Yes	Hula dance Sendai	email from Lois	36841			cml
+Mbp	Mbp<shi-mld+>	Not curated	Not curated	Not curated	Yes	myelin deficient, wild type revertant	email frm Janan 4/5/99	1873			cml
+
+Mc1r	Mc1r<E-so>                  	Not curated	Not curated	Not curated	Yes	sombre		13077			cml
+Mc1r	Mc1r<E-so-3J>	Not curated	Not curated	Not curated	Yes	sombre 3  Jackson		4636			cml
+Mc1r	Mc1r<E-tob>	Not curated	Not curated	Not curated	Yes	tobacco darkening		22593			cml
+Mc1r	Mc1r<e>	Not curated	Not curated	Not curated	Yes	recessive yellow		5110			cml
+Mcr1	Mc1r<taw>	Not curated	Not curated	Not curated	Yes	tawny	Deb Reed	55617			cml
+
+md	md                  	Not curated	Not curated	Not curated	Yes	mahoganoid		13379			cml			
+md	md<2J>	Not curated	Not curated	Not curated	Yes	mahoganoid 2  Jackson		30778			cml			
+md	md<4J>	Not curated	Not curated	Not curated	Yes	mahoganoid 4  Jackson		30778			cml			
+md	md<5J>	Not curated	Not curated	Not curated	Yes	mahoganoid 5  Jackson		30778			cml			
+md	md<6J>	Not curated	Not curated	Not curated	Yes	mahoganoid 6  Jackson		30778			cml			
+md	md<nc>	Not curated	Not curated	Not curated	Yes	non agouti curly		15051			cml			
+
+Met	Met<tm1Cbm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Carmen Birchmeier	cat	53292			cml	Insertion/deletion	53292	
+Met	Met<tm3Cpo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 3, Carola Ponzetta	cat	36244		Met<wt>	cml	Other (see notes)	36244	This allele consists of  using fused mouse and human Met sequencce.
+Met	Met<tm1Cpo>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Carola Ponzetto	hill	36244	60988	Met<D>	cml	Other (see notes)	36244	Y1349F, Y1356F resulting in a severe loss of function phenotype.  The knock-in was created using fused mouse and human Met sequencce.
+Met	Met<tm2Cpo>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Carola Ponzetto	hill	36244		Met<Grb>	cml	Other (see notes)	36244	Y1358N resulting in a hypomorph.  The knock-in was created using fused mouse and human Met sequencce.
+
+Mdm2	Mdm2<tm1Glo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Guillermina Lozano	krupke	29810			cml			
+
+mea	mea                  	Not curated	Not curated	Not curated	Yes	meander tail		5951			cml			
+mea	mea<2J>	Not curated	Not curated	Not curated	Yes	meander tail 2  Jackson		30778			cml			
+mea	mea<J>	Not curated	Not curated	Not curated	Yes	meander tail   Jackson		30778			cml
+
+Mef2c	Mef2c<tm1Ols>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	myocyte enhancer factor 2C, targeted mutation 1, Eric Olson	MS GXD	40724			cml
+
+Mesp1	Mesp1<tm1Ysa>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Yumiko Saga	Dale	55840			cml
+
+Mf1	Mf1<tm1Blh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Brigid L.M. Hogan	Hill	48079	57677	Mf1<lacz>	cml
+
+mg	mg                  	Not curated	Not curated	Not curated	Yes	mahogany		103			cml
+mg	mg<3J>	Not curated	Not curated	Not curated	Yes	mahogany 3  Jackson		30778			cml
+
+Mgat3	Mgat3<tm1Pst>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pamela Stanley	Cat	48441			cml
+Mgat3	Mgat3<tm1Jxm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jamey D. Marth	Cat	39067			cml
+
+Mgf	Mgf<Sl-12H>                  	Semidominant	Not curated	Not curated	Yes	steel 12 Harwell		5931			cml
+Mgf	Mgf<Sl-16J>	Semidominant	Not curated	Not curated	Yes	steel 16  Jackson		30778			cml
+Mgf	Mgf<Sl-17J>	Semidominant	Not curated	Not curated	Yes	steel 17  Jackson		30778			cml
+Mgf	Mgf<Sl-18H>	Semidominant	Not curated	Not curated	Yes	steel 18 Harwell		6031			cml
+Mgf	Mgf<Sl-18J>	Semidominant	Not curated	Not curated	Yes	steel 18  Jackson		30778			cml
+Mgf	Mgf<Sl-19J>	Semidominant	Not curated	Not curated	Yes	steel 19  Jackson		30778			cml
+Mgf	Mgf<Sl-cg>	Semidominant	Not curated	Not curated	Yes	cloud gray		13613			cml
+Mgf	Mgf<Sl-con>	Semidominant	Not curated	Not curated	Yes	contrasted		20215			cml
+Mgf	Mgf<Sl-d>	Semidominant	Not curated	Not curated	Yes	steel Dickie		24729			cml
+Mgf	Mgf<sl-du>	Recessive	Not curated	Not curated	Yes	dusty		13634			cml
+Mgf	Mgf<Sl-gb>	Semidominant	Not curated	Not curated	Yes	grizzel belly		13414			cml
+Mgf	Mgf<Sl-J>	Semidominant	Not curated	Not curated	Yes	steel  Jackson					cml
+Mgf	Mgf<Sl-m>	Semidominant	Not curated	Not curated	Yes	steel Miller     		13416			cml
+Mgf	Mgf<Sl-p>	Semidominant	Not curated	Not curated	Yes	steel Peru					cml
+Mgf	Mgf<Sl-pan>	Semidominant	Not curated	Not curated	Yes	panda		14075			cml
+Mgf	Mgf<Sl-so>	Semidominant	Not curated	Not curated	Yes	sooty           		13416			cml
+Mgf	Mgf<Sl-t>	Semidominant	Not curated	Not curated	Yes	Steel Tutikawa					cml
+Mgf	Mgf<Sl>	Semidominant	Not curated	Not curated	Yes	steel		3399			cml
+Mgf	Mgf<Sl-8H>	Semidominant	Not curated	Not curated	Yes	steel 8 Harwell                		10748			cml
+Mgf	Mgf<Sl-10H>	Semidominant	Not curated	Not curated	Yes	steel 10 Harwell       		10748			cml
+Mgf	Mgf<Sl-17H>	Semidominant	Not curated	Not curated	Yes	steel 17 Harwell		10748			cml
+Mgf	Mgf<Sl-17H>	Semidominant	Not curated	Not curated	Yes	steel 17 Harwell	D Hill GXD	2880			cml
+Mgf	Mgf<Sl-9H>	Semidominant	Not curated	Not curated	Yes	steel 9 Harwell                		14014			cml
+Mgf	Mgf<Sl-Ssm>	Semidominant	Not curated	Not curated	Yes	spotted sterile male		14020			cml
+Mgf	Mgf<Sl-11H>	Semidominant	Not curated	Not curated	Yes	steel 11 Harwell      		14014			cml
+Mgf	Mgf<Sl-25H>	Semidominant	Not curated	Not curated	Yes	steel 25 Harwell	Lois	52859			cml
+
+Mgmt	Mgmt<tm1Mse>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mutsuo SEkiguchi	krupke	33696	41434		cml
+
+mh	mh                 	Not curated	Not curated	Not curated	Yes	mocha		5511			cml
+mh	mh<2J>	Not curated	Not curated	Not curated	Yes	mocha 2  Jackson		23000			cml
+
+Mitf	Mitf<Mi-b>                  	Semidominant	Not curated	Not curated	Yes	microphthalmia brownish		15061			cml
+Mitf	Mitf<mi-bw>	Recessive	Not curated	Not curated	Yes	black eyed white		13071			cml
+Mitf	Mitf<mi-di>	Recessive	Not curated	Not curated	Yes	microphthalmia defective iris		8196			cml
+Mitf	Mitf<mi-ew>	Recessive	Not curated	Not curated	Yes	eyeless white		30755			cml
+Mitf	Mitf<Mi-or>	Semidominant	Not curated	Not curated	Yes	microphthalmia Oak Ridge		13426			cml
+Mitf	Mitf<mi-rw>	Recessive	Not curated	Not curated	Yes	red eyed white		13661			cml
+Mitf	Mitf<mi-sp>	Recessive	Not curated	Not curated	Yes	microphthalmia spotted		12946			cml
+Mitf	Mitf<mi-vit>	Recessive	Not curated	Not curated	Yes	vitiligo		14091			cml
+Mitf	Mitf<Mi-wh>	Semidominant	Not curated	Not curated	Yes	white		13058			cml
+Mitf	Mitf<Mi-ws>	Semidominant	Not curated	Not curated	Yes	white spot      		13417			cml
+Mitf	Mitf<Mi>	Recessive	Not curated	Not curated	Yes	microphthalmia		208			cml
+Mitf	Mitf<mi-ce>	Recessive	Not curated	Not curated	Yes	cloudy eyed           		30356			cml
+Mitf	Mitf<mi-tg>	Recessive	Not curated	Not curated	Yes	microphthialmia associated transcription factor		15143			cml
+Mitf	Mitf<mi-J>	Recessive	Not curated	Not curated	Yes	microphthalmia  Jackson		30778			cml
+Mitf	Mitf<mi-bws>	Recessive	Not curated	Not curated	Yes	black and white spotting	Judy (CCR ?)	45568			cml
+Mift	Mitf<mi-enu122>	Recessive	Not curated	Not curated	Yes	microphthialmia enu 122	jjm	46254			cml
+
+mk	mk                  	Not curated	Not curated	Not curated	Yes	microcytic anemia		5167			cml
+mk	mk<van>	Not curated	Not curated	Not curated	Yes	viable anaemic		9161			cml	
+
+Mlh1	Mlh1<tm1Lisk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Liskay	krupke	34291	46382		cml	
+Mlh1	Mlh1<tm1Rak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Raju Kucherlapati	dieter	33878			cml	
+												
+Mmp7	Mmp7<tm1Lmm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Lynn M. Matrisian	krupke	38609			cml	
+
+
+morc	morc<TgN(Tyr)1Az>	Not curated	Not curated	Not curated	Yes	microrchidia transgenic, nonhomologous insert Tyr, Andrew R Zinn	djr	51211			cml	
+
+Mos	Mos<tm1Ev>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Martin Evans	IMR	19118			cml	
+
+Mpv17	Mpv17	Not curated	Not curated	Not curated	Yes	Mpv17 transgene, kidney disease mutant	IMR	10661			cml	
+
+Msh2	Msh2<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak W. Mak	krupke	28397	34940		cml	
+Msh2	Msh2<tm1Htr>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, H. te Riele	dieter	27469				Deletion
+
+Msh3	Msh3<tm1Wed>	Recessive	C57BL/6J x 129/Sv x SJL/J	Transgene induced (gene targeted)	Yes	targeted mutation 1, Winfried Edelman	dieter	60604			cml	insertion/deletion
+
+Msh5	Msh5<tm1Rak>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Raju Kucherlapati	dieter	51921			cml	Deletion
+Msh6	Msh6<tm1Wed>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Winfried Edelman	dieter	44428			cml	Deletion
+
+Mt1	Mt1<tm1Bri>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ralph L. Brinster	IMR	16487			cml	
+
+Mt2	Mt2<tm1Bri>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	metallothionein 2, targeted mutation 1, Ralph L. Brinster	IMR	16487			cml	
+
+mu	mu	Not curated	Not curated	Not curated	Yes	muted		29164			cml	
+mu	mu<J>	Not curated	Not curated	Not curated	Yes	muted  Jackson		23861			cml	
+
+Mut	Mut<del>	Not curated	Not curated	Not curated	Yes	deletion	lois	49053			cml	
+
+
+
+Myf5	Myf5<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	myogenic factor 5, targeted mutation 1, Rudolph Jaenisch	IMR	3013			cml
+Myf5	Myf5<tm1Pas>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	myogenic factor 5, targeted mutation 1, Pasteur Institute	D Hill  GXD	30348			cml
+
+Myf6	Myf6<tm1Wb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	myogenic factor 6, targeted mutation 1, Barbara Wold	IMR	29279			cml
+
+Myo5a	Myo5a<d-15>                 	Not curated	Not curated	Not curated	Yes	dilute 15		13409			cml
+Myo5a	Myo5a<d-J>	Not curated	Not curated	Not curated	Yes	dilute   Jackson		24230			cml
+Myo5a	Myo5a<d-l>	Not curated	Not curated	Not curated	Yes	dilute lethal		12978			cml
+Myo5a	Myo5a<d-n>	Not curated	Not curated	Not curated	Yes	dilute neurological		16313			cml
+Myo5a	Myo5a<d-s>	Not curated	Not curated	Not curated	Yes	slight dilution		13413			cml
+Myo5a	Myo5a<d>	Not curated	Not curated	Not curated	Yes	dilute		12958			cml
+Myo5a	Myo5a<d-18J>	Not curated	Not curated	Not curated	Yes	dilute 18  Jackson					cml
+Myo5a	Myo5a<d-19J>	Not curated	Not curated	Not curated	Yes	dilute 19  Jackson					cml
+Myo5a	Myo5a<d-20J>	Not curated	Not curated	Not curated	Yes	dilute 20  Jackson					cml
+Myo5a	Myo5a<d-21J>	Not curated	Not curated	Not curated	Yes	dilute 21  Jackson					cml
+Myo5a	Myo5a<d-22J>	Not curated	Not curated	Not curated	Yes	dilute 22  Jackson					cml
+Myo5a	Myo5a<d-23J>	Not curated	Not curated	Not curated	Yes	dilute 23  Jackson					cml
+Myo5a	Myo5a<d-24J>	Not curated	Not curated	Not curated	Yes	dilute 24  Jackson					cml
+Myo5a	Myo5a<d-25J>	Not curated	Not curated	Not curated	Yes	dilute 25  Jackson					cml
+Myo5a	Myo5a<d-26J>	Not curated	Not curated	Not curated	Yes	dilute 26  Jackson					cml
+Myo5a	Myo5a<d-27J>	Not curated	Not curated	Not curated	Yes	dilute 27  Jackson					cml
+Myo5a	Myo5a<d-28J>	Not curated	Not curated	Not curated	Yes	dilute 28  Jackson					cml
+Myo5a	Myo5a<d-29J>	Not curated	Not curated	Not curated	Yes	dilute 29  Jackson					cml
+Myo5a	Myo5a<d-30J>	Not curated	Not curated	Not curated	Yes	dilute 30  Jackson		30778			cml
+Myo5a	Myo5a<d-31J>	Not curated	Not curated	Not curated	Yes	dilute 31  Jackson					cml
+Myo5a	Myo5a<d-32J>	Not curated	Not curated	Not curated	Yes	dilute 32  Jackson					cml
+Myo5a	Myo5a<d-33J>	Not curated	Not curated	Not curated	Yes	dilute 33  Jackson					cml
+Myo5a	Myo5a<d-34J>	Not curated	Not curated	Not curated	Yes	dilute 34  Jackson					cml
+Myo5a	Myo5a<d-35J>	Not curated	Not curated	Not curated	Yes	dilute 35  Jackson					cml
+Myo5a	Myo5a<d-36J>	Not curated	Not curated	Not curated	Yes	dilute 36  Jackson					cml
+Myo5a	Myo5a<d-l-17J>	Not curated	Not curated	Not curated	Yes	dilute lethal 17  Jackson					cml
+Myo5a	Myo5a<d-l-20J>	Not curated	Not curated	Not curated	Yes	dilute lethal 20  Jackson					cml
+Myo5a	Myo5a<d-l-21J>	Not curated	Not curated	Not curated	Yes	dilute lethal 21  Jackson					cml
+Myo5a	Myo5a<d-l-22J>	Not curated	Not curated	Not curated	Yes	dilute lethal 22  Jackson					cml
+Myo5a	Myo5a<d-l-23J>	Not curated	Not curated	Not curated	Yes	dilute lethal 23  Jackson					cml
+Myo5a	Myo5a<d-l-24J>	Not curated	Not curated	Not curated	Yes	dilute lethal 24  Jackson					cml
+Myo5a	Myo5a<d-l-25J>	Not curated	Not curated	Not curated	Yes	dilute lethal 25  Jackson					cml
+
+Myo5a	Myo5a<d-1-28J>	Not curated	Not curated	Not curated	Yes	dilute lethal 28  Jackson	J Bobbish	51014			cml
+
+Myo7a	Myo7a<sh1-9J>	Not curated	Not curated	Not curated	Yes	shaker 1 9  Jackson	J Bobbish	49039			cml
+
+Myod1	Myod1<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	3070			cml
+
+Mxi1	Mxi1<tm1Rdp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ronald DePinho	krupke	48236			cml
+
+Ncam	Ncam<tm1Cgn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Klaus Rajewsky	IMR	16590			cml
+
+Nfl	Nfl<tm1Fcr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Frederick Cancer Center	IMR	18048			cml
+Nf1	Nf1<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tyler Jacks	Cat	18542			cml
+
+Nf2	Nf2<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tyler Jacks	krupke	40597	47282		cml
+
+Nfe2	Nfe2<tm1Sho>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stuart Orkin	IMR	20132			cml
+
+Nfkb1	Nfkb1<tm1Bal>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David Baltimore	IMR	37184			cml
+
+Nfkbia	Nfkbia<tm1Bal>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David Baltimore	IMR update	28390			cml
+
+Ngfb	Ngfb<tm1Gne>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Genentech	LT GXD	17792	51990		cml
+
+Ngfr	Ngfr<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	43748			cml
+
+Nkx2-5	Nkx2-5<tm1Siz>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Seigo Izumo	DAvid Hill	52597			cml
+
+Nmyc1	Nmyc1<tm1Par>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Luis Parada	LT GXD	48400			cml
+
+Nos1	Nos1<tm1Plh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Paul Huang	IMR	16390			cml
+
+Nos2	Nos2<tm1Lau>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Victor Laubach	IMR	29677			cml
+
+Nos3	Nos3<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	36559			cml
+
+Notch1	Notch1<tm1Con>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard L conlon	IMR	25248			cml
+Notch1	Notch1<tm1Grid>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tom Gridley	lois	17509			cml
+
+Notch2	Notch2<tm1Yha>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Yoshio Hamaha	Dale	55841			cml
+
+Notch4	Notch4TgN(MMTVInt3)3Rnc	Not curated	Not curated	Not curated	Yes	transgenic, nonhomologous insert 3, Robert Callahan	IMR	11644			cml
+Notch4	Notch4TgN(WapInt3)#Rnc	Not curated	Not curated	Not curated	Yes	transgenic, nonhomologous insert #, Robert Callahan	IMR	33193			cml
+
+
+
+Slc11a1	Slc11a1<Bcg>                 	Not curated	Not curated	Not curated	Yes	BCG resisitance		6637			cml
+Slc11a1	Slc11a1<Ity>	Not curated	Not curated	Not curated	Yes	immunity to S. typhimurium		13005			cml
+Slc11a1	Slc11a1<Lsh>	Not curated	Not curated	Not curated	Yes	leishmaniasis resistance		5928			cml
+
+Nrp	Nrp<tm1Hfu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Hajme Fujisawa	hill	44328	58077		cml
+
+Ntf3	Ntf3<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	23882			cml
+
+Ntf4	Ntf4<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	25566			cml
+
+Odc	OdcTgN(K6ODCtr)55Tgo	Not curated	Not curated	Not curated	Yes	transgenic, nonhomologous insert 55, Thomas O'Brien	IMR	29098			cml
+
+Otc	Otc<spf-ash>                	Not curated	Not curated	Not curated	Yes	abnormal skin and hair		5476			cml
+Otc	Otc<spf-J>	Not curated	Not curated	Not curated	Yes	sparse fur  Jackson		30778			cml
+Otc	Otc<spf>	Not curated	Not curated	Not curated	Yes	sparse fur		26975			cml
+
+Otx2	Otx2<tm1Sla>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Siew Lan Ang	LT GXD	30828			cml
+Otx2	Otx2<tm2Sla>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Siew Lan Ang	LT GXD	46641			cml
+Otx2	Otx2<tm1Sia>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Shinicho Aizawa	D Hill GXD	29682			cml
+Otx2	Otx2<tm1Pas>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Institut Pasteur	LT GXD	29276			cml
+
+p	p                  	Not curated	Not curated	Not curated	Yes	pink eyed dilution                         		100			cml
+p	p<12J>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 12  Jackson		30778			cml
+p	p<13J>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 13  Jackson		30778			cml
+p	p<14J>	Not curated	Not curated	Not curated	Yes	pink eyed dilution 14  Jackson		23000			cml
+p	p<25H>	Not curated	Not curated	Not curated	Yes	pink eyed 25 Harwell		15082			cml
+p	p<6H>	Not curated	Not curated	Not curated	Yes	pink eyed 6 Harwell		13720			cml
+p	p<81H>	Not curated	Not curated	Not curated	Yes	pink eyed 81 Harwell		2108			cml
+p	p<82H>	Not curated	Not curated	Not curated	Yes	pink eyed 82 Harwell		2108			cml
+p	p<84H>	Not curated	Not curated	Not curated	Yes	pink eyed 84 Harwell		2108			cml
+p	p<86H>	Not curated	Not curated	Not curated	Yes	pink eyed 86 Harwell		2108			cml
+p	p<87H>	Not curated	Not curated	Not curated	Yes	pink eyed 87 Harwell		2108			cml
+p	p<88H>	Not curated	Not curated	Not curated	Yes	pink eyed 88 Harwell		2108			cml
+p	p<bs>	Not curated	Not curated	Not curated	Yes	pink eyed black eyed sterile		13430			cml
+p	p<cp>	Not curated	Not curated	Not curated	Yes	pink eyed cleft palate		13618			cml
+p	p<d>	Not curated	Not curated	Not curated	Yes	dark pink eye		15050			cml
+p	p<dn>	Not curated	Not curated	Not curated	Yes	pink eyed darkening		15082			cml
+p	p<H>	Not curated	Not curated	Not curated	Yes	pink eyed dilution Harwell		27500			cml
+p	p<isr>	Not curated	Not curated	Not curated	Yes	pink eyed israel					cml
+p	p<J>	Not curated	Not curated	Not curated	Yes	pink eyed dilution  Jackson     		2108			cml
+p	p<jlm>	Not curated	Not curated	Not curated	Yes	pink eyed lethality mild		29903			cml
+p	p<jls>	Not curated	Not curated	Not curated	Yes	pink eyed juvenile lethality severe		29903			cml
+p	p<m1>	Not curated	Not curated	Not curated	Yes	pink eyed mottled 1                    		29504			cml
+p	p<m2>	Not curated	Not curated	Not curated	Yes	pink eyed mottled 2                   		29504			cml
+p	p<nl>	Not curated	Not curated	Not curated	Yes	pink eyed neonatal death		29903			cml
+p	p<pl-1>	Not curated	Not curated	Not curated	Yes	pink eyed prenatal death 1		29903			cml
+p	p<pl-2>	Not curated	Not curated	Not curated	Yes	pink eyed prenatal death 2		29903			cml
+p	p<r>	Not curated	Not curated	Not curated	Yes	Japanese ruby		14915			cml
+p	p<s>	Not curated	Not curated	Not curated	Yes	pink eyed sterile		12939			cml
+p	p<un-J>	Not curated	Not curated	Not curated	Yes	pink eyed unstable  Jackson					cml
+p	p<un>	Not curated	Not curated	Not curated	Yes	pink eyed unstable		5226			cml
+p	p<x>	Not curated	Not curated	Not curated	Yes	pink eyed extra dark		15082			cml
+p	p<cas>	Not curated	Not curated	Not curated	Yes	pinl eyed castaneus		29808			cml
+p	p<46DfiOD>	Not curated	Not curated	Not curated	Yes	 pink eyed 46DfiOD		29903			cml
+p	p<7FR60Lb>	Not curated	Not curated	Not curated	Yes	pink eyed 7FR60Lb		29903			cml
+p	p<132G>	Not curated	Not curated	Not curated	Yes	pink eyed 132G		29903			cml
+p	p<116G>	Not curated	Not curated	Not curated	Yes	pink eyed 116G		29903			cml
+p	p<17FATWb>	Not curated	Not curated	Not curated	Yes	 pink eyed 17FATWb		29903			cml
+p	p<12R25OM>	Not curated	Not curated	Not curated	Yes	pink eyed 12R25OM		29903			cml
+p	p<12DTR>	Not curated	Not curated	Not curated	Yes	pink eyed 12DTR		29903			cml
+p	p<48PB>	Not curated	Not curated	Not curated	Yes	pink eyed 48PB		29903			cml
+p	p<9DTW>	Not curated	Not curated	Not curated	Yes	pink eyed DTW		29903			cml
+p	p<103G>	Not curated	Not curated	Not curated	Yes	pink eyed 103G		29903			cml
+p	p<39DSD>	Not curated	Not curated	Not curated	Yes	pink eyed 39DSD		29903			cml
+
+Pah	Pah<enu1>	Not curated	Not curated	Not curated	Yes	enu 1	IMR	10355			cml
+Pah	Pah<enu2>	Not curated	Not curated	Not curated	Yes	enu 2	IMR	13320			cml
+
+Pax1	Pax1<un-ex>	Recessive	Not curated	Not curated	Yes	undulated extensive		15087			cml
+Pax1	Pax1<un-m>	Recessive	Not curated	Not curated	Yes	undulated minimal		15087			cml
+Pax1	Pax1<Un-s>	Semidominant	Not curated	Not curated	Yes	undulated short tail		13676			cml
+Pax1	Pax1<un>	Recessive	Not curated	Not curated	Yes	undulated		314			cml
+Pax1	Pax1<tm1Neu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	 targeted mutation 1, Neuherberg	D Hill GXD	49339			cml
+Pax1	Pax1<tm2Neu>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	 targeted mutation 2, Neuherberg	MS GXD	55575			cml
+
+Pax2	Pax2<tm1Pgr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Gruss	hill	30343			cml
+
+Pax3	Pax3<Sp-1H>                 	Not curated	Not curated	Not curated	Yes	splotch Harwell 1		14096			cml
+Pax3	Pax3<Sp-2H>	Not curated	Not curated	Not curated	Yes	splotch Harwell 2		14096			cml
+Pax3	Pax3<Sp-2J>	Not curated	Not curated	Not curated	Yes	splotch  Jackson 2		238			cml
+Pax3	Pax3<Sp-3J>	Not curated	Not curated	Not curated	Yes	splotch  Jackson 3		238			cml
+Pax3	Pax3<Sp-4H>	Not curated	Not curated	Not curated	Yes	splotch Harwell 4		13559			cml
+Pax3	Pax3<Sp-d>	Not curated	Not curated	Not curated	Yes	delayed splotch		238			cml
+Pax3	Pax3<Sp-J>	Not curated	Not curated	Not curated	Yes	splotch  Jackson		238			cml
+Pax3	Pax3<Sp-r>	Not curated	Not curated	Not curated	Yes	retarded splotch		14096		Pax<Sp 3H>	cml
+Pax3	Pax3<Sp>	Not curated	Not curated	Not curated	Yes	splotch		120			cml
+Pax3	Pax3<Sp-5H>	Not curated	Not curated	Not curated	Yes	splotch Harwell 5		23000			cml
+Pax3	Pax3<Sp-6H>	Not curated	Not curated	Not curated	Yes	splotch Harwell 6		23000			cml
+
+Pax6	Pax6<Sey-Dey>                 	Not curated	Not curated	Not curated	Yes	small eye, Dickie		14099			cml
+Pax6	Pax6<Sey-H>	Not curated	Not curated	Not curated	Yes	small eye, Harwell		8534			cml
+Pax6	Pax6<Sey-Neu>	Not curated	Not curated	Not curated	Yes	small eye, Neuherberg		2301			cml
+Pax6	Pax6<Sey>	Not curated	Not curated	Not curated	Yes	small eye		5093			cml
+
+Pax7	Pax7<tm1Pgr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Gruss	cat	32018			cml
+
+pcd	pcd<Jwg>                  	Not curated	Not curated	Not curated	Yes	Purkinje cell degeneration Jwg		14991			cml
+pcd	pcd	Not curated	Not curated	Not curated	Yes	Purkinje cell degeneration		5613			cml
+pcd	pcd<2J>	Not curated	Not curated	Not curated	Yes	Purkinje cell degeneration 2  Jackson		23000			cml
+pcd	pcd<sid>	Not curated	Not curated	Not curated	Yes	Purkinje cell degeneration Sidman		23000			cml
+pcd	pcd<3J>	Not curated	Not curated	Not curated	Yes	Purkinje cell degeneration 3  Jackson	J Bobbish	50994			cml
+
+Pcsk3	Pcsk3<tm1Ajmr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation Anton J.M. Roebroek	GXD	50582			cml
+
+Pdeb	Pdeb<rd1>                 	Not curated	Not curated	Not curated	Yes	 retinal degeneration 1		24999			cml
+
+Pdgfra	Pdgfra<Ph-e>                 	Not curated	Not curated	Not curated	Yes	patch extended		5811			cml
+Pdgfra	Pdgfra<Ph>	Not curated	Not curated	Not curated	Yes	patch		99			cml
+Pdgfra	Pdgfra<Ph-3H>	Not curated	Not curated	Not curated	Yes	patch 3 Harwell		27502			cml
+
+
+
+pe	pe<8J>	Not curated	Not curated	Not curated	Yes	pearl 8  Jackson	Lois	52879			cml
+pe	pe<rim2>	Not curated	Not curated	Not curated	Yes	recomination induced remutation 2		42685			cml
+
+Pempt	Pempt<tm1J>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	phosph-atidylethanolamine N methyltransferase, targeted mutation 1, The  Jackson Laboratory	IMR	44607			cml
+
+Penk2	Penk2<tm1Pig>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pain Investigation Group	IMR	35826			cml
+
+Pfp	Pfp<tm1Sdz>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	pore forming protein, targeted mutation 1, Sandoz Pharmaceutical	IMR	17986			cml
+
+Pgr	Pgr<tm1Bwo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Bert W.  O'Malley	krupke	28980			cml
+
+
+
+Pit1	Pit1<dw-J>               	Not curated	Not curated	Not curated	Yes	dwarf  Jackson		6342			cml
+Pit1	Pit1<dw>	Not curated	Not curated	Not curated	Yes	dwarf		13120			cml
+
+Pitx2	Pitx2<tm1Sac>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Sally camper	sasner	51160		Pitx2<neo>	cml
+Pitx2	Pitx2<tm2Sac>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Sally camper	sasner	51160	43352	Pitx2<null>	cml
+Pitx2	Pitx2<tm1Kki>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Kunio Kiyamura	sasner	55455			cml
+
+Pkcc	Pkcc<tm1Stl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Susumu Tonegawa	IMR	16392			cml
+
+Pklr	Pklr<slc>                  	Not curated	Not curated	Not curated	Yes	pyruvate kinase deficiency		29199			cml
+
+Planh1	Planh1<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	allele name in progress	IMR	39819			cml
+
+Plat	Plat<tm1Mlg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard C. Mulligan	IMR	17427			cml
+
+
+Plau	Plau<tm1Mlg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard C. Mulligan	IMR	17427			cml
+
+Plaur	Plaur<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	allele name in progress	IMR	26874			cml
+
+Plg	Plg<tm1Jld>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jay L. Degen	IMR	39419			cml
+
+Plp	Plp<jp-3J>                  	Not curated	Not curated	Not curated	Yes	jimpy 3  Jackson		30778			cml
+Plp	Plp<jp-4J>	Not curated	Not curated	Not curated	Yes	jimpy 4  Jackson		30778			cml
+Plp	Plp<jp- msd>	Not curated	Not curated	Not curated	Yes	myelin synthesis deficiency		5322			cml
+Plp	Plp<jp- rsh>	Not curated	Not curated	Not curated	Yes	rump shaker		14143			cml
+Plp	Plp<jp>	Not curated	Not curated	Not curated	Yes	jimpy		288			cml
+
+Pmp22	Pmp22<Tr-J>                  	Not curated	Not curated	Not curated	Yes	trembler  Jackson		7222			cml
+Pmp22	Pmp22<Tr-Ncnp>	Not curated	Not curated	Not curated	Yes	trembler National Center of Neurology and Psychiatry					cml
+Pmp22	Pmp22<Tr>	Not curated	Not curated	Not curated	Yes	trembler		13038			cml
+
+Pms1	Pms1<tm1Lisk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Liskay	krupke	46382			cml
+Pms2	Pms2<tm1Lisk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Liskay	krupke	27389			cml
+
+Pmx1	Pmx1<tm1Tex>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of Texas	LT GXD	25649			cml
+Pmx1	Pmx1<tm1Jfm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation,  James F. Martin	MS GXD	51596			cml
+
+
+Pnliprp2	Pnliprp2<tm1Lowe>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Mark E. Lowe	apd	51627			cml
+
+Pomc1	Pomc1<tm1Low>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Dr. Malcolm J. Low	IMR	47711			cml
+
+Pou3f1	Pou3f1<tm1Rsd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael G. Rosenfeld	cat	34460			cml
+Pou3f1	Pou3f1<tm1Mejr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Dies Meijer	cat	34465			cml
+
+Pou3f2	Pou3f2<tm1Rsd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael G. Rosenfeld	cat	30430			cml
+
+Pou3f4	Pou3f4<Slf>	Not curated	Not curated	Not curated	Yes	sex linked fidget	cat	59387			cml
+Pou3f4	Pou3f4<tm1Tno>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, T. Noda	cat	57298			cml
+Pou3f4	Pou3f4<tm1Cren>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Bryan Crenshaw III	cat	56294			cml
+
+Ppara	Ppara<tm1Gonz>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Frank J. Gonzalez	apd	25516			cml
+
+Prkdc	Prkdc<tm1Gcl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Gloria C. Li	krupke	53765	46382		cml
+
+Prkmk3	Prkmk3<tm1Flv>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard A. Flavell	apd mlc	54078			cml
+
+Prph2	Prph2<Rd2>                 	Not curated	Not curated	Not curated	Yes	retinal degeneration 2		6051			cml
+
+
+Psen1	Psen1<tm1Shn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Jie Shen	IMR	40365			cml
+
+Ptch	Ptch<tm1Zim>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Andreas Zimmer	krupke	47421		Ptc<neo67>	cml
+
+Pten	Pten<tm1Ppp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutaion 1, Pier Paolo Pandolfi	krupke	49532			cml
+	Pten<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tak W. Mak	krupke	50437		mPten<3 5>	cml
+
+Ptgs2	Ptgs2<tm1Jed>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Joe Dinchuk	IMR	29974			cml
+
+Ptprc	Ptprc<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1	IMR	33466			cml
+
+qk	qk<e>                  	Not curated	Not curated	Not curated	Yes	quaking ethylnitrosourea induced		31757			cml
+qk	qk<kt>	Not curated	Not curated	Not curated	Yes	quaking kt                  		27474			cml
+qk	qk<v>	Not curated	Not curated	Not curated	Yes	quaking viable		31757			cml
+qk	qk<k2>	Not curated	Not curated	Not curated	Yes	quaking k2		27474			cml
+qk	qk<kt1>	Not curated	Not curated	Not curated	Yes	quaking kt1		27474			cml
+qk	qk<kt4>	Not curated	Not curated	Not curated	Yes	quaking kt4		27474			cml
+qk	qk<l-1>	Not curated	Not curated	Not curated	Yes	quaking lethal 1		9032			cml
+qk	qk	Not curated	Not curated	Not curated	Yes	quaking		13141			cml
+
+qv	qv                 	Not curated	Not curated	Not curated	Yes	quivering		167			cml
+qv	qv<3J>	Not curated	Not curated	Not curated	Yes	quivering 3  Jackson		14995			cml
+qv	qv<J>	Not curated	Not curated	Not curated	Yes	quivering   Jackson		30778			cml
+qv	qv<2J>	Not curated	Not curated	Not curated	Yes	quivering 2  Jackson		20207			cml
+qv	qv<lnd-2J>	Recessive	    C3H/He	Spontaneous	Yes	lumbosacral neuroaxonal dystrophy 2  Jackson	39099	30329			cml
+qv	qv<lnd>	Not curated	Not curated	Not curated	Yes	lumbosacral neuroaxonal dystrophy 	39099	11718			cml
+
+Ra	Ra                  	Not curated	Not curated	Not curated	Yes	ragged		86			cml
+Ra	Ra<J>	Not curated	Not curated	Not curated	Yes	ragged   Jackson					cml
+Ra	Ra<op>	Not curated	Not curated	Not curated	Yes	opossum		260			cml
+
+
+
+rac1	Rac1<tm1Jms>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Institute of Medical Science, Japan	apd	52224			cml
+
+Rac2	Rac2<tm1Daw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David A. Williams	apd	53362			cml
+
+Rag1	Rag1<tm1Mom>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Mombaerts	IMR	1934			cml
+
+Rara	Rara<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	let	13574			cml
+Rara	Rara<tm2Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Pierre Chambon	let	13574			cml
+
+
+Rarb	Rarb<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	let	21486	52599, 41511	exon 8 del	cml
+Rarb	Rarb<tm1Mma>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Manuel Mark	let	43344	52599	exon3 del	cml
+
+Raldh2	Raldh2<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	hill	54067			cml
+
+Rasa	Rasa<tm1Paw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1  Tony Pawson	Nomen	29825			cml
+Rasa	Rasa<tm2Paw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2  Tony Pawson	Nomen	29825			cml
+Rasa	Rasa<tm3Paw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 3  Tony Pawson	Nomen	29825			cml
+Rasa	Rasa<tm4Paw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 4  Tony Pawson	Nomen	29825			cml
+
+rb	rb	Not curated	Not curated	Not curated	Yes	rabbit	Nomen	23000			cml
+
+Rb1	Rb1<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	retinoblastoma 1, targeted mutation 1, Tyler Jacks	IMR	2511			cml
+Rb1	Rb1<tm1Brd>	Not curated	Not curated	Not curated	Yes	targeted mutation 1, Allan Bradley	dieter	2516		Rb1<d20>	cml
+Rb1	Rb1<tm1Mlh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Martin L. Hooper	dieter Naf	2498		Rb1<t19hyg>	cml
+Rb1	Rb1<tm2Mlh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Martin L. Hooper	dieter	2498		Rb1<t19neo>	cml
+
+Rbl1	Rbl1<tm1Mru>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Rudnicki	author	51060			cml
+Rbl1	Rbl1<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted muataion 1, Tyler Jacks	cat	34058			cml
+
+Rbl2	Rbl2<tm1Mru>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Rudnicki	D Begley GXD	50516			cml
+Rbl2	Rbl2<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tyler Jacks	cat	34725			cml
+
+Rbpsuh	Rbpsuh<tm1Kyo>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Kyoto University		29277			cml
+
+Rce1	Rce1<tm1Kim>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Edward Kim	APD	53886			cml
+
+Re	Re                  	Not curated	Not curated	Not curated	Yes	rex		15328			cml
+Re	Re<5J>	Not curated	Not curated	Not curated	Yes	rex 5  Jackson		30778			cml
+Re	Re<den>	Not curated	Not curated	Not curated	Yes	denuded		13486			cml
+Re	Re<ri>	Not curated	Not curated	Not curated	Yes	riccioli		13802			cml
+Re	Re<wc>	Not curated	Not curated	Not curated	Yes	wavy coat      		15247			cml
+Re	Re<3J>	Not curated	Not curated	Not curated	Yes	rex 3  Jackson		30778			cml
+Re	Re<4J>	Not curated	Not curated	Not curated	Yes	rex 4  Jackson		30778			cml
+
+Rela	Rela<tm1Bal>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David Baltimore	IMR	28390			cml
+
+
+
+Reln	Reln<rl-Alb>                	Not curated	Not curated	Not curated	Yes	Albany recessive		27506			cml
+Reln	Reln<rl-J>	Not curated	Not curated	Not curated	Yes	reeler  Jackson		24460			cml
+Reln	Reln<rl-Orl>	Not curated	Not curated	Not curated	Yes	reeler Orleans		24460			cml
+Reln	Reln<rl-tg>	Not curated	Not curated	Not curated	Yes	reeler tg		21534			cml
+Reln	Reln<rl>	Not curated	Not curated	Not curated	Yes	reeler		13038			cml
+Reln	Reln<rl-2J>	Not curated	Not curated	Not curated	Yes	reeler 2  Jackson		16313			cml
+Reln	Reln<rl-Alb2>	Not curated	Not curated	Not curated	Yes	Albany recessive 2		41458			cml
+
+Rn	Rn                	Not curated	Not curated	Not curated	Yes	roan		13445			cml
+Rn	Rn<fkl>	Not curated	Not curated	Not curated	Yes	freckled		13488			cml
+
+ru	ru<5J>                  	Not curated	Not curated	Not curated	Yes	 ruby-eye 5  Jackson		26546			cml
+ru	ru<6J>	Not curated	Not curated	Not curated	Yes	 ruby-eye 6  Jackson		29157			cml
+ru	ru<8J>	Not curated	Not curated	Not curated	Yes	 ruby-eye 8  Jackson		29158			cml
+ru	ru	Not curated	Not curated	Not curated	Yes	 ruby-eye		13122			cml
+ru	ru<3J>	Not curated	Not curated	Not curated	Yes	 ruby-eye 3  Jackson		30778			cml
+ru	ru<4J>	Not curated	Not curated	Not curated	Yes	 ruby-eye 4  Jackson		30778			cml
+
+ru2	ru2                 	Not curated	Not curated	Not curated	Yes	ruby-eye 2		20282			cml
+ru2	ru2<hz>	Not curated	Not curated	Not curated	Yes	haze		15055			cml
+ru2	ru2<J>	Not curated	Not curated	Not curated	Yes	ruby-eye 2  Jackson		6422			cml
+ru2	ru2<mr>	Not curated	Not curated	Not curated	Yes	maroon		15003			cml
+ru2	ru2<8J>	Not curated	Not curated	Not curated	Yes	ruby-eye 2  8  Jackson		29156			cml
+
+Rxra	Rxra<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	D Begley GXD	50515			cml
+Rxra	Rxra<tm1Rev>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ronald M. Evans	D Hill GXD	18047			cml
+
+Rxrb	Rxrb<tm1Ipc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Pierre Chambon	dale	30560			cml
+
+Scvr	Scvr<tm1>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	allele name in progress	cat	39079	58338		cml
+
+Scn8a	Scn8a<med-J>                  	Not curated	Not curated	Not curated	Yes	motor end plate disease  Jackson		6191			cml
+Scn8a	Scn8a<med-jo>	Not curated	Not curated	Not curated	Yes	jolting		15056			cml
+Scn8a	Scn8a<med-TgNA4Bs>	Not curated	Not curated	Not curated	Yes	motor end plate disease (TgNA4Bs)		24228			cml
+Scn8a	Scn8a<med>	Not curated	Not curated	Not curated	Yes	motor end plate disease		28679			cml
+
+Scp2	Scp2<tm1Usee>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Udo Seedorf	apd	47580			cml
+
+Scya3	Scya3<tm1Unc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, University of North Carolina	IMR	28704			cml
+
+Sd	Sd	Not curated	Not curated	Not curated	Yes	Danforth's short tail	MS GXD	13055			cml
+
+Sele	Sele<tm1Hyn>	Not curated	Not curated	Not curated	Yes	targeted mutation 1, Richard Hynes	CAt	31626			cml
+
+Selp	Selp<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Baylor College of Medicine	IMR	24239			cml
+Selp	Selp<tm1Hyn>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard Hynes	IMR	31626			cml
+
+Shh	Shh<tm1Chg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Chin Chiang	Hill	35802			cml
+
+Smok1	Smok1<tw12>	Not curated	Not curated	Spontaneous	Yes	t, wild 12	SR	58548		Smok<Tcr>	cml
+Smok2	Smok2<tw5>	Not curated	BALB/c	Spontaneous	Yes	t, wild 5 (lethal group)	SR	58548			
+
+Slc4a1	Slc4a1<wan>	Not curated	Not curated	Not curated	Yes	wan	Lois/Muriel	23000			cml
+Slc4a1	Slc4a1<tm1Llp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Luanne Peters	IMR	35487			cml
+
+Shh	Shh<tm1Chg>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Chin Chiang	Hill	35802			cml
+
+Sod1	Sod1<tm1Cep>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Cephelom, Inc.	Cat	33472	57435		cml
+
+
+Sod2	Sod2<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Baylor College of Medicime		29899			cml
+Sod2	Sod2<tm1Cje>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Charles J. Epstein		36148			cml
+Sod2	Sod2<tm1Leb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Russell Lebovitz	IMR	36148			cml
+
+Spn	Spn<tm1Bam>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	sialophorin, targeted mutation 1, Blair Ardman	IMR	29272			cml
+
+Spna1	Spna1<sph-2Bc>                  	Not curated	Not curated	Not curated	Yes	sph-erocytosis British Columbia		7048			cml
+Spna1	Spna1<sph- ha>	Not curated	Not curated	Not curated	Yes	hemolytic anemia		24729			cml
+Spna1	Spna1<sph-J>	Not curated	Not curated	Not curated	Yes	sph-erocytosis  Jackson					cml
+Spna1	Spna1<sph>	Not curated	Not curated	Not curated	Yes	sph-erocytosis		12276			cml
+Spna1	Spna1<sph-2J>	Not curated	Not curated	Not curated	Yes	sperocytosis 2  Jackson		7501			cml
+
+Spnb1	Spnb1<ja>                  	Not curated	Not curated	Not curated	Yes	jaundiced		305			cml
+
+
+
+Stat4	Stat4<tm1Gru>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Michael Grusby	IMR	34059			cml
+
+
+
+stg	stg	Not curated	Not curated	Not curated	Yes	stargazer		11008			cml
+stg	stg<2J>	Not curated	Not curated	Not curated	Yes	stargazer 2  Jackson		30778			cml
+stg	stg<wag>                	Not curated	Not curated	Not curated	Yes	waggler		14311			cml
+
+sy	sy	Not curated	Not curated	Not curated	Yes	shaker with syndactylism		208			cml
+sy	sy<fp>	Not curated	Not curated	Not curated	Yes	fused phalanges		13514			cml
+sy	sy<ns>	Not curated	Not curated	Not curated	Yes	no syndactylism	Lois	50578			cml
+sy	sy<fp-2J>	Not curated	Not curated	Not curated	Yes	fused phalanges 2  Jackson	Lois	51131			cml
+
+Syk	Syk<tm1Paw>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tony Pawson	nomen	29797			cml
+
+Syn1	Syn1<tm1Sud>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Thomas C. Sudhof	IMR	15701			cml
+
+Syn2	Syn2<tm1Sud>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Thomas C. Sudhof	IMR	26920			cml
+
+Syt1	Syt1<tm1Sud>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Thomas C. Sudhof	IMR	21602			cml
+
+S8	S8<tm1Hub>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	surface antigen, homeo box of paired rule	LT GXD	50488			cml
+S8	S8<tm1Mjk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	surface antigen, homeo box of paired rule	LT GXD	52212			cml
+
+T	T                	Not curated	Not curated	Not curated	Yes	brachyury                                             		14909			cml
+T	T<1Or>	Not curated	Not curated	Not curated	Yes	T-Oak Ridge 1                                     		11933			cml
+T	T<2J>	Not curated	Not curated	Not curated	Yes	brachyury 1					cml
+T	T<4J>	Not curated	Not curated	Not curated	Yes	brachury 4  Jackson		30778			cml
+T	T<4Or>	Not curated	Not curated	Not curated	Yes	T-OakRidge 4					cml
+T	T<5J>	Not curated	Not curated	Not curated	Yes	brachyuru 5 J ackson                                       		30778			cml
+T	T<c-2H>	Not curated	Not curated	Not curated	Yes	curtailed 2 Harwell					cml
+T	T<c>	Not curated	Not curated	Not curated	Yes	curtailed                                               		5003			cml
+T	T<H> 	Not curated	Not curated	Not curated	Yes	T-Harwell                                            		13072			cml
+T	T<hp>	Not curated	Not curated	Not curated	Yes	hairpin tail					cml
+T	T<Jic>	Not curated	Not curated	Not curated	Yes	brachyury Jic		14257			cml
+T	T<kt>	Not curated	Not curated	Not curated	Yes	brachyury kt					cml
+T	T<Or>	Not curated	Not curated	Not curated	Yes	T-Oak Ridge					cml
+T	T<Orl>	Not curated	Not curated	Not curated	Yes	T-Orleans                                            		15078			cml
+T	T<Wis>	Not curated	Not curated	Not curated	Yes	brachyury Wisconsin                           	1989	9547			cml
+T	T<6J>	Not curated	Not curated	Not curated	Yes	brachyury 6  Jackson                                      	1995	30778			cml
+T	T<29H>	Not curated	Not curated	Not curated	Yes	brachyury  29  Harwell	Nomen	50247			cml
+T	T<32H>	Not curated	Not curated	Not curated	Yes	brachyury  32  Harwell	Nomen	50247			cml
+T	T<33H>	Not curated	Not curated	Not curated	Yes	brachyury  33 Harwell	Nomen	50247			cml
+T	T<34H>	Not curated	Not curated	Not curated	Yes	brachyury  34 Harwell	Nomen	50247			cml
+T	T<22H>	Not curated	Not curated	Not curated	Yes	brachyury  22 Harwell	Nomen	50247			cml
+t	t<0>                 	Not curated	Not curated	Not curated	Yes	t, 0 (lethal group t<0>, t<6>)					cml
+t	t<12>	Not curated	Not curated	Not curated	Yes	t, 12 (lethal group t<12>, t< 32>)					cml
+t	t<1>	Not curated	Not curated	Not curated	Yes	t, 1		11625			cml
+t	t<3>	Not curated	Not curated	Not curated	Yes	t, 3		8922			cml
+t	t<4>	Not curated	Not curated	Not curated	Yes	t, 4 (lethal group t<4>, t<9>, t<w18>)					cml
+t	t<6>	Not curated	Not curated	Not curated	Yes	t, (Complementation group: t<0>, t<6>)					cml
+t	t<6s>	Not curated	Not curated	Not curated	Yes	t, 6s		7707			cml
+t	t<73>	Not curated	Not curated	Not curated	Yes	t, 73		557			cml
+t	t<a35>	Not curated	Not curated	Not curated	Yes	a, 35		8922			cml
+t	t<AE5>	Not curated	Not curated	Not curated	Yes	t, Albert Einstein 5					cml
+t	t<btm>	Not curated	Not curated	Not curated	Yes	brachyury interacting tail length		14919			cml
+t	t<csh121>	Not curated	Not curated	Not curated	Yes	Cold Spring Harbor 121		8324			cml
+t	t<h17>	Not curated	Not curated	Not curated	Yes	t, Harwell 17		7337			cml
+t	t<h18>	Not curated	Not curated	Not curated	Yes	t, Harwell 18					cml
+t	t<h20>	Not curated	Not curated	Not curated	Yes	t, Harwell 20		7337			cml
+t	t<h2>	Not curated	Not curated	Not curated	Yes	t, Harewll 2		11625			cml
+t	t<h44>	Not curated	Not curated	Not curated	Yes	t, Harwell 44		11625			cml
+t	t<h45>	Not curated	Not curated	Not curated	Yes	t, Harwell 45		11625			cml
+t	t<h49>	Not curated	Not curated	Not curated	Yes	t, Harwell 49		11625			cml
+t	t<h51>	Not curated	Not curated	Not curated	Yes	t, Harwell 51		8922			cml
+t	t<h53>	Not curated	Not curated	Not curated	Yes	t, Harwell 53		8190			cml
+t	t<h55>	Not curated	Not curated	Not curated	Yes	t, Harwell 55					cml
+t	t<h7>	Not curated	Not curated	Not curated	Yes	t, Harwell 7					cml
+t	t<h8>	Not curated	Not curated	Not curated	Yes	t, Harwell 8		11625			cml
+t	t<Jr1>	Not curated	Not curated	Not curated	Yes	t, Jr1		3018			cml
+t	t<K100>	Not curated	Not curated	Not curated	Yes	t, k100		7253			cml
+t	t<K115>	Not curated	Not curated	Not curated	Yes	t, k115		7253			cml
+t	t<K120>	Not curated	Not curated	Not curated	Yes	t, k120		7253			cml
+t	t<K130>	Not curated	Not curated	Not curated	Yes	t, k130		7253			cml
+t	t<ks1>	Not curated	Not curated	Not curated	Yes	t, ks1		3821			cml
+t	t<low3H>	Not curated	Not curated	Not curated	Yes	t, low Harwell 3		7707			cml
+t	t<low>	Not curated	Not curated	Not curated	Yes	t, low		7443			cml
+t	t<lowH>	Not curated	Not curated	Not curated	Yes	t, low Harwell		7707			cml
+t	t<Lub1>                 	Not curated	Not curated	Not curated	Yes	t, Lubeck 1		23665			cml
+t	t<Lub2>	Not curated	Not curated	Not curated	Yes	t, Lubeck 2					cml
+t	t<Lub4>	Not curated	Not curated	Not curated	Yes	t, Lubeck 4		11625			cml
+t	t<Lub7>	Not curated	Not curated	Not curated	Yes	t, Lubeck 7		8775			cml
+t	t<Lub9>	Not curated	Not curated	Not curated	Yes	t, Lubeck 9		8775			cml
+t	t<M3>	Not curated	Not curated	Not curated	Yes	t, M3		3821			cml
+t	t<M7>	Not curated	Not curated	Not curated	Yes	t, M7		3821			cml
+t	t<M8>	Not curated	Not curated	Not curated	Yes	t, M8		26135			cml
+t	t<M9>	Not curated	Not curated	Not curated	Yes	t, M9		26135			cml
+t	t<MC1>	Not curated	Not curated	Not curated	Yes	t, MC1		26135			cml
+t	t<p12>	Not curated	Not curated	Not curated	Yes	t, p12		9310			cml
+t	t<p14>	Not curated	Not curated	Not curated	Yes	t, p14		9310			cml
+t	t<p4>	Not curated	Not curated	Not curated	Yes	t, p4		9310			cml
+t	t<S510>	Not curated	Not curated	Not curated	Yes	t, S510		7253			cml
+t	t<s6>	Not curated	Not curated	Not curated	Yes	t, s6		11036			cml
+t	t<S735>	Not curated	Not curated	Not curated	Yes	t, S735		7253			cml
+t	t<sh120>	Not curated	Not curated	Not curated	Yes	t, sh120		8324			cml
+t	t<Tu1>	Not curated	Not curated	Not curated	Yes	t, Tubingen 1					cml
+t	t<Tu2>	Not curated	Not curated	Not curated	Yes	t, Tubingen 2					cml
+t	t<Tu3>	Not curated	Not curated	Not curated	Yes	t, Tubingen 3					cml
+t	t<Tu4>	Not curated	Not curated	Not curated	Yes	t, Tubingen 4					cml
+t	t<Tuw10>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 10		11625			cml
+t	t<Tuw11>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 11		8775			cml
+t	t<Tuw12>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 12		11625			cml
+t	t<Tuw15>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 15		11625			cml
+t	t<Tuw18>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 18		11625			cml
+t	t<Tuw20>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 20		11625			cml
+t	t<Tuw23>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 23		11625			cml
+t	t<Tuw24>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 24		11625			cml
+t	t<Tuw25>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 25		11625			cml
+t	t<Tuw26>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 26		11625			cml
+t	t<Tuw27>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 27		11625			cml
+t	t<Tuw28>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 28		8775			cml
+t	t<Tuw29>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 29		11625			cml
+t	t<Tuw2>                 	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 2		11625			cml
+t	t<Tuw30>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 30		11625			cml
+t	t<Tuw32>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 32		11625			cml
+t	t<Tuw3Z>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 3Z		3018			cml
+t	t<Tuw6>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 6		8775			cml
+t	t<Tuw8>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 8		11625			cml
+t	t<v>	Not curated	Not curated	Not curated	Yes	t, viable (t<AE>, t<h2>, tw35>)					cml
+t	t<w106>	Not curated	Not curated	Not curated	Yes	t, wild 106					cml
+t	t<w120>	Not curated	Not curated	Not curated	Yes	t, wild 120		557			cml
+t	t<w121>	Not curated	Not curated	Not curated	Yes	t, wild 121		557			cml
+t	t<w121a>	Not curated	Not curated	Not curated	Yes	t, wild 121a		11036			cml
+t	t<w124>	Not curated	Not curated	Not curated	Yes	t, wild 124		14421			cml
+t	t<w12>	Not curated	Not curated	Not curated	Yes	t, wild 12					cml
+t	t<w130>	Not curated	Not curated	Not curated	Yes	t, wild 130		557			cml
+t	t<w18>	Not curated	Not curated	Not curated	Yes	t, wild 18		34878			cml
+t	t<w1>	Not curated	Not curated	Not curated	Yes	t, wild 1 (lethal group t<w1>, t<w12>					cml
+t	t<w2>	Not curated	Not curated	Not curated	Yes	t, wild 2 (semilet,hal)					cml
+t	t<w32>	Not curated	Not curated	Not curated	Yes	t, wild 32		11625			cml
+t	t<w5>	Not curated	Not curated	Not curated	Yes	t, wild 5 (lethal group t<w5>)					cml
+t	t<w5G>	Not curated	Not curated	Not curated	Yes	t, wild 5G		8713			cml
+t	t<w5x>	Not curated	Not curated	Not curated	Yes	t, wild 5x		3018			cml
+t	t<w6>	Not curated	Not curated	Not curated	Yes	t, wild 6		14421			cml
+t	t<w71>	Not curated	Not curated	Not curated	Yes	t, wild 71		6934			cml
+t	t<w73>	Not curated	Not curated	Not curated	Yes	t, wild 73 (lethal group t<w73>)					cml
+t	t<w73f>	Not curated	Not curated	Not curated	Yes	t, wild 73 (lethal group t<w73>)		11036			cml
+t	t<w75>	Not curated	Not curated	Not curated	Yes	t, wild 75		6934			cml
+t	t<w82>	Not curated	Not curated	Not curated	Yes	t, wild 82 (Complementation group, t<w82>)					cml
+t	t<w8>	Not curated	Not curated	Not curated	Yes	t, wild 8		557			cml
+t	t<wLub1>	Not curated	Not curated	Not curated	Yes	t, wild Lubeck 1		8324			cml
+t	t<wLub2>	Not curated	Not curated	Not curated	Yes	t, wild Lubeck 2		8922			cml
+t	t<wLub7>	Not curated	Not curated	Not curated	Yes	t, wild Lubeck 7		7707			cml
+t	t<wMp1>	Not curated	Not curated	Not curated	Yes	t, wild Mp1		26135			cml
+t	t<wN10>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 10		32745			cml
+t	t<wN11>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 11		8775			cml
+t	t<wN13>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 13		32745			cml
+t	t<wN15>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 15		8775			cml
+t	t<wN19>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 19		8775			cml
+t	t<wN20>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 20		8775			cml
+t	t<wN25>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 25		8775			cml
+t	t<wN27>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 27		8775			cml
+t	t<wN29>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 29		8775			cml
+t	t<wN36>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 36		8775			cml
+t	t<wN37>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 37		8775			cml
+t	t<wN38>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 38		8775			cml
+t	t<wN39>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 39		8775			cml
+t	t<wN40>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 40		8775			cml
+t	t<wN47>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 47		8775			cml
+t	t<wN5>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 5		32745			cml
+t	t<wN8>	Not curated	Not curated	Not curated	Yes	t, wild Novosibirsk 8		8775			cml
+t	t<wPa1>                  	Not curated	Not curated	Not curated	Yes	t, wild Pasteur 1		26135			cml
+t	t<wPa2>	Not curated	Not curated	Not curated	Yes	t, wild Pasteur 2					cml
+t	t<wPa3>	Not curated	Not curated	Not curated	Yes	t, wild Pasteur 3					cml
+t	t<Tuw7>	Not curated	Not curated	Not curated	Yes	t, wild Tubingen 7	Lois	9493			cml
+t	t<Lmb>	Not curated	Not curated	Not curated	Yes	t,  Laboratory of Molecular Biology	Lois	7707			cml
+
+T2	T2<TgN(H2K)1Art	Not curated	Not curated	Not curated	Yes	H2 K transgene insertion Karen Artzt	SR	29666	50797		cml
+
+Eda	Eda<Ta>                  	Not curated	Not curated	Not curated	Yes	tabby		249			cml
+Eda	Eda<Ta-25H>	Not curated	Not curated	Not curated	Yes	tabby 25 Harwell		14235			cml
+Eda	Eda<Ta-2J>	Not curated	Not curated	Not curated	Yes	tabby 2 Jackson					cml
+Eda	Eda<Ta-3J>	Not curated	Not curated	Not curated	Yes	tabby 3 Jackson					cml
+Eda	Eda<Ta-4J>	Not curated	Not curated	Not curated	Yes	tabby 4 Jackson					cml
+Eda	Eda<Ta-5J>	Not curated	Not curated	Not curated	Yes	tabby 5 Jackson		30778			cml
+Eda	Eda<Ta-6J>	Not curated	Not curated	Not curated	Yes	tabby 6 Jackson		30778			cml
+Eda	Eda<Ta-7J>	Not curated	Not curated	Not curated	Yes	tabby 7 Jackson					cml
+Eda	Eda<Ta-8J>	Not curated	Not curated	Not curated	Yes	tabby 8 Jackson					cml
+Eda	Eda<Ta-By>	Not curated	Not curated	Not curated	Yes	tabby Bailey		30778			cml
+Eda	Eda<Ta-c>	Not curated	Not curated	Not curated	Yes	tabby c		14382			cml
+Eda	Eda<Ta-J>	Not curated	Not curated	Not curated	Yes	tabby  Jackson		15052			cml		
+Eda	Eda<Ta-10J>	Not curated	Not curated	Not curated	Yes	tabby 10 Jackson		23000			cml		
+Eda	Eda<Ta-23H>	Not curated	Not curated	Not curated	Yes	tabby 23 Harwell		14235			cml		
+Eda	Eda<Ta-26H>	Not curated	Not curated	Not curated	Yes	tabby 26 Harwell		4296			cml		
+Eda	Eda<Ta-29H>	Not curated	Not curated	Not curated	Yes	tabby 29 Harwell		4296			cml		
+Eda	Eda<Ta-30H>	Not curated	Not curated	Not curated	Yes	tabby 30 Harwell		4296			cml		
+Eda	Eda<Ta-32H>	Not curated	Not curated	Not curated	Yes	tabby 32 Harwell		4296			cml		
+Eda	Eda<Ta-33H>	Not curated	Not curated	Not curated	Yes	tabby 33 Harwell		4296			cml		
+Eda	Eda<Ta-9J>	Not curated	Not curated	Not curated	Yes	tabby 9 Jackson		23000			cml		
+
+
+
+
+Tal1	Tal1<tm1Sho>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stuart Orkin	IMR	23061			cml		
+Tal1	Tal1<tm1Wehi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Walter and Eliza Hall Institute of Medical Research	LT GXD	27458			cml	Insertion/deletion	27458
+Tal1	Tal1<tm2Wehi	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Walter and Eliza Hall Institute of Medical Research		50149	58825	SCL<LacZ>	cml	Insertion/deletion	50149
+
+Tap1	Tap1<tm1Arp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Philip Ashton Rickardt	IMR	3524			cml	
+Tap1	Tap1<tm1Hpl>	Recessive	Not specified	Transgene induced (gene targeted)	Yes	targeted mutation 1, Hidde Ploegh	dieter	60782			cml	Deletion
+
+tb	tb                	Not curated	Not curated	Not curated	Yes	tumbler		13434			cml	
+tb	tb<2J>	Not curated	Not curated	Not curated	Yes	tumbler 2  Jackson		30778			cml	
+
+Tcf2	Tcf2<tm1Sce>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Silvia Cereghini	Hill	58079		vHnf1< >	cml	
+Tcf2	Tcf2<tm1Mya>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Moshe Yaniv	Hill	58080		vHnf< >	cml	
+
+Tcf8	Tcf8<tm1Yhi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Yujiro Higashi		39865			cml	
+Tcf8	Tcf8<tm2Yhi>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 2, Yujiro Higashi	LT GXD	45575			cml	
+
+Tcra	Tcra<tm1Mom>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Mombaerts	IMR	3206			cml	
+
+Tcrb	Tcrb<tm1Mom>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Mombaerts	IMR	3206			cml	
+
+Tcrd	Tcrd<tm1Mom>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Peter Mombaerts	IMR	3865			cml
+
+Td	Td<ho>	Not curated	Not curated	Not curated	Yes	tattered Hokkaido	D Bradt	42173			cml
+
+Terc	Terc<tm1Rdp>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation1, Ronald Depinho	krupke	43517	53350		cml
+
+tf	tf<J>                 	Not curated	Not curated	Not curated	Yes	tufted  Jackson	1987	24744			cml
+tf	tf<kt>	Not curated	Not curated	Not curated	Yes	tufted kt					cml
+tf	tf	Not curated	Not curated	Not curated	Yes	tufted	1956	273			cml
+
+Tgfa	Tgfa<tm1Ard>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Ashley R. Dunn	MLC (in IMR)	4606			cml
+Tgfa	Tgfa<wa1-5J>	Not curated	Not curated	Not curated	Yes	waved 1 5  Jackson		30778			cml
+Tgfa	Tgfa<wa1>	Not curated	Not curated	Not curated	Yes	waved 1		13034			cml
+
+
+Tgfb1	Tgfb1<tm1Doe>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Thomas Doetschman	IMR	2892			cml
+Tgfb1	Tgfb1<tm1N>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, National Institutes of Health	D Hill GXD	50848			cml
+
+Tgfb3	Tgfb3<tm1Doe>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	transforming growth factor, beta 3, targeted mutation 1, Thomas Doetschman	IMR	29901			cml
+
+Thbd	Thbd<tm1Emc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Edward M. Conway	CAt	54997		TM<cyt/cyt>	cml
+Thbd	Thbd<tm1Rdr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Robert D. Rosenberg	Cat	22630			cml
+
+thd	thd                  	Not curated	Not curated	Not curated	Yes	tilted head		15007			cml
+thd	thd<ub>	Not curated	Not curated	Not curated	Yes	unbalanced		15054			cml
+
+Titf1	Titf1<tm1Shk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	allele name in progress	D Begley GXD	30559			cml
+
+Tlr4	Tlr4<Lps-d>	Not curated	Not curated	Not curated	Yes	defective lipopolysaccharide response	MLC	51522			cml
+Tlr4	Tlt4<lps-n>	Not curated	Not curated	Not curated	Yes	normal lipopolysaccharide response	MLC	51522			cml
+
+Tlx1	Tlx1<tm1Sjk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stanley J. Korsmeyer	IMR	17695			cml
+
+Tlx2	Tlx2<tm1Ut>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	T cell leukemia, homeobox 2, targeted mutation 1, University of Toronto	LT GXD	48372			cml
+
+Tnf	Tnf<tm1Gkl>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1,  George Kollias	IMR	47673			cml
+Tnf	Tnf<z>	Not curated	Not curated	Not curated	Yes	tumor necrosis facto, z haplotype (NZW)	spontaneous	50687			cml
+
+Tnfr1	Tnfr1<tm1Mak>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	tumor necrosis factor receptor 1, targeted mutation 1, Tak Mak	IMR	4753			cml
+Tnfr1	Tnfr1<tm1Imx>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Immunex Research and Development Corporation	IMR	45147			cml
+
+Tnfr2	Tnfr2<tm1Mwm>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	tumor necrosis factor receptor 2, targeted mutation 1, Mark Moore	IMR	21815			cml
+
+tp	tp                  	Not curated	Not curated	Not curated	Yes	taupe		251			cml
+tp	tp<3J>	Not curated	Not curated	Not curated	Yes	taupe 3  Jackson		30778			cml
+tp	tp<4J>	Not curated	Not curated	Not curated	Yes	taupe 4  Jackson		30778			cml
+tp	tp<5J>	Not curated	Not curated	Not curated	Yes	taupe 5  Jackson		30778			cml
+tp	tp<6J>	Not curated	Not curated	Not curated	Yes	taupe 6  Jackson		30778			cml
+
+Trp53	Trp53<tm1Tyj>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tyler Jacks	IMR	17728			cml
+Trp53	Trp53TgN(Trp53R172H)8512Jmr	Not curated	Not curated	Not curated	Yes	transgenic nonhomologous insert 8512, Jeffrey Rosen		46426			cml
+Trp53	Trp53TgN(Trp53R172L)4491Jmr	Not curated	Not curated	Not curated	Yes	transgenic nonhomologous insert 4491, Jeffrey Rosen		56433			cml
+Trp53	Trp53<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Baylor College of Medicine	D Hill GXD	1999			cml
+Trp53	Trp53<tm1Mlh>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1,  M. L. Hooper	dieter	60008			cml
+
+Tsc2	Tsc2<tm1Djk>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, David J. Kwiatkowski	krupke	57631			cml
+
+Tstap91a	Tstap91a<P815tum>	Not curated	Not curated	Not curated	Yes	tumor minus ( P815 derived)	RMB	50234			cml
+
+Tstap35b	Tstap35b<P815tum>	Not curated	Not curated	Not curated	Yes	tumor minus (P815 derived)	RMB	50234			cml
+
+Ttr	Ttr<tm1Wsb>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, William S. Blaner	IMR	4183			cml
+
+Galc	Galc<twi>                  	Not curated	Not curated	Not curated	Yes	twitcher		6390			cml
+Galc	Galc<twi-2J>	Not curated	Not curated	Not curated	Yes	twitcher 2  Jackson		30778			cml
+Galc	Galc<twi-3J>	Not curated	Not curated	Not curated	Yes	twitcher 3  Jackson		30778			cml
+
+Twist	Twist<tm1Bhr>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Richard R. Behringer	IMR	24349			cml
+
+Atp7b	Atp7b<tx>                  	Not curated	Not curated	Not curated	Yes	toxic milk		7102			cml
+Atp7b	Atp7b<tx-J>	Not curated	Not curated	Not curated	Yes	toxic milk  Jackson		28232			cml
+
+Tyr	Tyr<c-10J>                 	Not curated	Not curated	Not curated	Yes	albino 10  Jackson		30778			cml
+Tyr	Tyr<c-112K>	Not curated	Not curated	Not curated	Yes	albino 112 Oak ridge		5435			cml
+Tyr	Tyr<c-11J>	Not curated	Not curated	Not curated	Yes	albino 11  Jackson		30778			cml
+Tyr	Tyr<c-13J>	Not curated	Not curated	Not curated	Yes	albino 13  Jackson		30778			cml
+Tyr	Tyr<c-14CoS>	Not curated	Not curated	Not curated	Yes	albino deletion 14 Cos		5063			cml
+Tyr	Tyr<c-17J>	Not curated	Not curated	Not curated	Yes	albino 17  Jackson		30778			cml
+Tyr	Tyr<c-18J>	Not curated	Not curated	Not curated	Yes	albino 18  Jackson		29155			cml
+Tyr	Tyr<c-25H>	Not curated	Not curated	Not curated	Yes	albino 25 Harwell		6256			cml
+Tyr	Tyr<c-2J>	Not curated	Not curated	Not curated	Yes	albino 2  Jackson		27522			cml
+Tyr	Tyr<c-3H>	Not curated	Not curated	Not curated	Yes	albino 3 Harwell		5435			cml
+Tyr	Tyr<c-44H>	Not curated	Not curated	Not curated	Yes	albino 44 Harwell		12721			cml
+Tyr	Tyr<c-4J>	Not curated	Not curated	Not curated	Yes	albino 4  Jackson		27522			cml
+Tyr	Tyr<c-65K>	Not curated	Not curated	Not curated	Yes	albino 65 Oak Ridge		5435			cml
+Tyr	Tyr<c-6H>	Not curated	Not curated	Not curated	Yes	albino 6 Harwell		5741			cml
+Tyr	Tyr<c-9J>	Not curated	Not curated	Not curated	Yes	albino 9  Jackson		30778			cml
+Tyr	Tyr<c-a>	Not curated	Not curated	Not curated	Yes	acromelanic		14994			cml
+Tyr	Tyr<c-Bc2>	Not curated	Not curated	Not curated	Yes	albino 2 British Columbia		27519			cml
+Tyr	Tyr<c-Bc3>	Not curated	Not curated	Not curated	Yes	albino 3 British Columbia		27519			cml
+Tyr	Tyr<c-Bc>	Not curated	Not curated	Not curated	Yes	albino British Columbia		62			cml
+Tyr	Tyr<c-ch>	Not curated	Not curated	Not curated	Yes	chinchilla		14850			cml
+Tyr	Tyr<c-e>	Not curated	Not curated	Not curated	Yes	extreme dilution		14848			cml
+Tyr	Tyr<c-h>	Not curated	Not curated	Not curated	Yes	himalayan		13075			cml
+Tyr	Tyr<c-J>	Not curated	Not curated	Not curated	Yes	albino  Jackson		23000			cml
+Tyr	Tyr<c-m>	Not curated	Not curated	Not curated	Yes	chinchilla mottled		13502			cml
+Tyr	Tyr<c-p>	Not curated	Not curated	Not curated	Yes	platinum		13442			cml
+Tyr	Tyr<c-r>	Not curated	Not curated	Not curated	Yes	ruby eyed dilute		13962			cml
+Tyr	Tyr<c>	Not curated	Not curated	Not curated	Yes	albino					cml
+Tyr	Tyr<c-111k>	Not curated	Not curated	Not curated	Yes	albino 111 Oak Ridge		5435			cml
+Tyr	Tyr<c-45H>	Not curated	Not curated	Not curated	Yes	albino 45 Harwell					cml
+Tyr	Tyr<c-46H>	Not curated	Not curated	Not curated	Yes	albino 46 Harwell					cml
+Tyr	Tyr<c-Ai1>	Not curated	Not curated	Not curated	Yes	albino deletion Ai1	Lois	10097			cml
+Tyr	Tyr<c-Fp1>	Not curated	Not curated	Not curated	Yes	albino deletion Fp1	Lois	10097			cml
+Tyr	Tyr<c-Fq1>	Not curated	Not curated	Not curated	Yes	albino deletion Fq1	Lois	10097			cml
+
+Tyrp1	Tyrp1<b-15J>                	Not curated	Not curated	Not curated	Yes	brown 15  Jackson		16313			cml
+Tyrp1	Tyrp1<b-8J>	Not curated	Not curated	Not curated	Yes	brown 8  Jackson					cml
+Tyrp1	Tyrp1<b-c>	Not curated	Not curated	Not curated	Yes	cordovan		15167			cml
+Tyrp1	Tyrp1<b-c2J>	Not curated	Not curated	Not curated	Yes	cordovan 2  Jackson		16313			cml
+Tyrp1	Tyrp1<b-cJ>	Not curated	Not curated	Not curated	Yes	cordovan   Jackson					cml
+Tyrp1	Tyrp1<b-J>	Not curated	Not curated	Not curated	Yes	brown   Jackson					cml
+Tyrp1	Tyrp1<B-lt>	Not curated	Not curated	Not curated	Yes	light		13061			cml
+Tyrp1	Tyrp1<B-w>	Not curated	Not curated	Not curated	Yes	white based brown		13492			cml
+Tyrp1	Tyrp1<b>	Not curated	Not curated	Not curated	Yes	brown					cml
+Tyrp1	Tyrp1<b-l>	Not curated	Not curated	Not curated	Yes	lethal brown		18898			cml
+Tyrp1	Tyrp1<b-11R30M>	Not curated	Not curated	Not curated	Yes	brown 11R30M	Janan	18898			cml
+Tyrp1	Tyrp1<b-13R75M>	Not curated	Not curated	Not curated	Yes	brown 13R75M	Janan	18898			cml
+Tyrp1	Tyrp1<b-26R60L>	Not curated	Not curated	Not curated	Yes	brown 26R60L	Janan	18898			cml
+Tyrp1	Tyrp1<b-9R75VH>	Not curated	Not curated	Not curated	Yes	brown 9R75VH	Janan	18898			cml
+Tyrp1	Tyrp1<b-47DThWb>	Not curated	Not curated	Not curated	Yes	brown 47DThWb	Janan	18898			cml
+Tyrp1	Tyrp1<b-51DThWb>	Not curated	Not curated	Not curated	Yes	brown 51DThWb	Janan	18898			cml
+Tyrp1	Tyrp1<b-13DT>	Not curated	Not curated	Not curated	Yes	brown 13DT	Janan	18898			cml
+Tyrp1	Tyrp1<b-37DTD>	Not curated	Not curated	Not curated	Yes	brown 37DTD	Janan	18898			cml
+Tyrp1	Tyrp1<b-49HATh>	Not curated	Not curated	Not curated	Yes	brown 49HATh	Janan	18898			cml
+Tyrp1	Tyrp1<b-331K>	Not curated	Not curated	Not curated	Yes	brown 331K	Janan	18898			cml
+Tyrp1	Tyrp1<b-3YPSc>	Not curated	Not curated	Not curated	Yes	brown 3YPSc	Janan	18898			cml
+Tyrp1	Tyrp1<b-3YPSh>	Not curated	Not curated	Not curated	Yes	brown 3YPSh	Janan	18898			cml
+Tyrp1	Tyrp1<b-3GG>	Not curated	Not curated	Not curated	Yes	brown 3GG	Janan	18898			cml
+Tyrp1	Tyrp1<b-173G>	Not curated	Not curated	Not curated	Yes	brown 173G	Janan	18898			cml
+Tyrp1	Tyrp1<b-1DFiOD>	Not curated	Not curated	Not curated	Yes	brown 1DFiOD	Janan	18898			cml
+Tyrp1	Tyrp1<b-IOZ>	Not curated	Not curated	Not curated	Yes	brown IOZ	Janan	18898			cml
+Tyrp1	Tyrp1<b-33G>	Not curated	Not curated	Not curated	Yes	brown 33G	Janan	18898			cml
+Tyrp1	Tyrp1<b-37FrThc>	Not curated	Not curated	Not curated	Yes	brown 37FrThc	Janan	18898			cml
+Tyrp1	Tyrp1<b-46UThc>	Not curated	Not curated	Not curated	Yes	brown 46UThc	Janan	18898			cml
+Tyrp1	Tyrp1<b-55CoS>	Not curated	Not curated	Not curated	Yes	brown 55CoS	Janan	18898			cml
+Tyrp1	Tyrp1<b-9PU>	Not curated	Not curated	Not curated	Yes	brown 9PU	Janan	18898			cml
+Tyrp1	Tyrp1<b-11PU>	Not curated	Not curated	Not curated	Yes	brown 11PU	Janan	18898			cml
+Tyrp1	Tyrp1<b-12PU>	Not curated	Not curated	Not curated	Yes	brown 12PU	Janan	18898			cml
+Tyrp1	Tyrp1<b-8PUb>	Not curated	Not curated	Not curated	Yes	brown 8PUb	Janan	18898			cml
+Tyrp1	Tyrp1<b-37Pub>	Not curated	Not curated	Not curated	Yes	brown 37PUb	Janan	18898			cml
+Tyrp1	Tyrp1<b-3CHLe>	Not curated	Not curated	Not curated	Yes	brown 3CHLe	Janan	18898			cml
+Tyrp1	Tyrp1<b-5CHLe>	Not curated	Not curated	Not curated	Yes	brown 5CHLe	Janan	18898			cml
+Tyrp1	Tyrp1<b-4ACRg>	Not curated	Not curated	Not curated	Yes	brown 4ACRg	Janan	18898			cml
+Tyrp1	Tyrp1<b-1THO-IV>	Not curated	Not curated	Not curated	Yes	brown 1THO-IV	Janan	18898			cml
+											
+Uox	Uox<tm1Bay>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Baylor College of Medicine	IMR	16490			cml
+											
+uw	uw<bls>                	Not curated	Not curated	Not curated	Yes	underwhite blanc sale		13805			cml
+uw	Uw<dbr>	Not curated	Not curated	Not curated	Yes	dominant brown		13967			cml
+uw	un	Not curated	Not curated	Not curated	Yes	underwhite		13420			cml
+uw	uw<d>	Not curated	Not curated	Not curated	Yes	underwhite dense	Lois	41299			cml
+											
+v	v                  	Not curated	Not curated	Not curated	Yes	waltzer		30784			cml
+v	v<df>	Not curated	Not curated	Not curated	Yes	deaf		12997			cml
+v	v<J>	Not curated	Not curated	Not curated	Yes	waltzer   Jackson		29159			cml
+v	v<Alb>	Not curated	Not curated	Not curated	Yes	Albany	Nomen	38058			cml
+v	v<4J>	Not curated	Not curated	Not curated	Yes	waltzer 4  Jackson	J Bobbish	49039			cml
+v	v<5J>	Not curated	Not curated	Not curated	Yes	waltzer 5  Jackson	J Bobbish	49035			cml
+v	v<bus>	Not curated	Not curated	Not curated	Yes	bustling	Lois	23000			cml		
+													
+Va	Va                  	Not curated	Not curated	Not curated	Yes	varitint waddler		13133			cml		
+Va	Va<J>	Not curated	Not curated	Not curated	Yes	varitint waddler  Jackson		5268			cml		
+
+Vasp	Vasp<tm1Mzim>	Recessive	 129/SvOla	Transgene induced (gene targeted)	Yes	targeted mutation1, Michael Zimmer		56356			cml	Insertion/deletion	56356
+
+													
+Vcl	Vcl<tm1Eda>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	allele name in progress	MS GXD	45781			cml		
+													
+Vhlh	Vhlh<tm1Wml>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, W. Marston Linehan	apd	42486			cml		
+													
+Vldlr	Vldlr<tm1Her>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Joachim Herz	IMR				cml		
+													
+we	we                  	Not curated	Not curated	Not curated	Yes	wellharrig		208			cml		
+we	we<Bkr>	Not curated	Not curated	Not curated	Yes	wellhaarig Bunker					cml		
+we	we<3J>	Not curated	Not curated	Not curated	Yes	wellhaarig 3  Jackson		30778			cml
+											
+wl	wl	Not curated	Not curated	Not curated	Yes	wabbler lethal		13068			cml
+wl	wl<2J>	Not curated	Not curated	Not curated	Yes	wabbler lethal 2  Jackson		23000			cml
+wl	wl<3J>	Not curated	Not curated	Not curated	Yes	wabbler lethal 3  Jackson		29158			cml
+wl	wl<vmd>	Not curated	Not curated	Not curated	Yes	vestibulomotor degeneration		11718			cml
+											
+wn	wn	Recessive	129 and C57BL/6J	Spontaneous	Yes	white nose		56082			cml
+wn	wn<J>	Recessive	C57BL/6JEi	Spontaneous	Yes	white nose  Jackson		61053			cml
+											
+Wnt1	Wnt1<sw>                 	Not curated	Not curated	Not curated	Yes	swaying		15063			cml
+Wnt1	Wnt1	Not curated	Not curated	Not curated	Yes	wingless related		6976			cml
+Wnt1	Wnt1TgN(Wnt1)1Hev	Not curated	Not curated	Not curated	Yes	wingless related MMTV integration site 1 transgenic, nonhomologous insert 1, Harold E. Varmus	IMR	28473			cml
+Wnt1	Wnt1<tm1Brd>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	wingless related MMTV integration site 1, targeted mutation 1, Allan Bradley	MS GXD	10730	50279	Wnt1<neo>	cml
+											
+Wnt3a	Wnt3a<tm1Amc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	wingless related MMTV integration site 3A, targeted mutation 1, Andrew P. McMahon	MS GXD	16716	50279		cml
+											
+Wnt5a	Wnt5a<tm1Amc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	wingless related MMTV integration site 5A, targeted mutation 1, Andrew P. McMahon	D Hill GXD	52600			cml
+											
+Wnt7a	Wnt7a<px-r>	Not curated	Not curated	Not curated	Yes	postaxial hemimelia Russell	apd	13614			cml
+Wnt7a	Wnt7a<tm1Amc>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Andrew P. McMahon	apd	23922			cml
+
+Wt1	Wt1<tm1Jae>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Rudolph Jaenisch	IMR	14317			cml
+
+Xce	Xce<a>	Not curated	Not curated	Not curated	Yes	X Chromosome controlling element a	apd	52791			cml
+Xce	Xce<b>	Not curated	Not curated	Not curated	Yes	X Chromosome controlling element b	apd	52791			cml
+Xce	Xce<c>	Not curated	Not curated	Not curated	Yes	X Chromosome controlling element c	apd	52791			cml
+
+Xpa	Xpa<tm1Hvs>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Harry van Steeg	krupke	28710	49319		cml
+
+Xs	Xs<J>               	Not curated	Not curated	Not curated	Yes	extra toes spotting J		4291			cml
+Xs	Xs	Not curated	Not curated	Not curated	Yes	extra toes spotting		14234			cml
+
+Yaa	Yaa                 	Not curated	Not curated	Not curated	Yes	accelerated autoimmunity and lymphoproliferation		6235			cml		
+
+Yes	Yes<tm1Sor>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Philippe Soriano	IMR	20346			cml		
+
+Zfp144	Zfp<tm1Hko>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Haruhiko Koseki	D Hill GXD	33159			cml		
+
+Zfpm1	Zfpm1<tm1Sho>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Stuart Orkin	DH GXD	47281			cml		
+
+Zp3	Zp3<tm1Tra>	Not curated	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Tracy Rankin	cat	36772			cml		
+
+								 					
+
+Vps26	Vps26<Tg(HB58)Cos>	Recessive	(CBA/J x C57BL/6J)F2	Transgene induced	Yes	transgenic, H beta 58, Franklin Costantini	cat	11387	1105	HB58	cml	Deletion	1105
+
+Pik3cg	Pik3cg<tm1Dwu>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Dianqing Wu	cat	60348			cml	Deletion	60348
+Pik3cg	Pik3cg<tm1Wym>	Recessive	Not curated	Transgene induced (gene targeted)	Yes	targeted mutation 1, Matthias P. Wymann	Cat	60349			cml	Deletion	60349
+Pik3cg	Pik3cg<tm1Pngr>	Recessive	C57BL/6 and 129	Transgene induced (gene targeted)	Yes	targeted mutation 1, Josef  M. Penninger	CAt	60347			cml	Deletion	60347

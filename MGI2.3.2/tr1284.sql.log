@@ -1,0 +1,160 @@
+Thu Mar 23 02:31:49 EST 2000
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd, "select into", true
+Database option 'select into/bulkcopy/pllsort' turned ON for database 'mgd'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0) 
+1>   
+2> use mgd
+1>    
+2> checkpoint
+1>  
+2> drop table tempdb..MRK_Marker1284
+1> 
+2> drop table tempdb..HMD_Homology_Marker1284
+1> 
+2> drop table tempdb..HMD_Homology1284
+1> 
+2> drop table tempdb..HMD_Homology_Assay1284
+1> 
+2> drop table tempdb..HMD_Class1284
+1> 
+2> /* Select mouse as well...it's a keeper! */
+3> 
+4> select *
+5> into #marker
+6> from MRK_Marker
+7> where _Species_key not in (1,18,22,37,34,19,21,48,58,10,47,9,20,13,44,39,35,11,40,2)
+(0 rows affected)
+1> 
+2> select h.*
+3> into #homologymarker
+4> from #marker m, HMD_Homology_Marker h
+5> where m._Marker_key = h._Marker_key
+(0 rows affected)
+1> 
+2> select h.*
+3> into #homology
+4> from #homologymarker m, HMD_Homology h, MRK_Marker r
+5> where m._Homology_key = h._Homology_key
+6> and m._Marker_key = r._Marker_key
+7> and _Species_key not in (1,18,22,37,34,19,21,48,58,10,47,9,20,13,44,39,35,11,40,2)
+(0 rows affected)
+1> 
+2> select a.*
+3> into #homologyassay
+4> from #homology h, HMD_Homology_Assay a
+5> where h._Homology_key = a._Homology_key
+(0 rows affected)
+1> 
+2> select c.*
+3> into #homologyclass
+4> from #homology h, HMD_Class c
+5> where h._Class_key = c._Class_key
+(0 rows affected)
+1> 
+2> select *
+3> into tempdb..MRK_Marker1284
+4> from #marker
+(0 rows affected)
+1> 
+2> select *
+3> into tempdb..HMD_Homology_Marker1284
+4> from #homologymarker
+(0 rows affected)
+1> 
+2> select *
+3> into tempdb..HMD_Homology1284
+4> from #homology
+(0 rows affected)
+1> 
+2> select *
+3> into tempdb..HMD_Homology_Assay1284
+4> from #homologyassay
+(0 rows affected)
+1> 
+2> select *
+3> into tempdb..HMD_Class1284
+4> from #homologyclass
+(0 rows affected)
+1> 
+2> select distinct v.symbol, v.chromosome, substring(v.commonName,1,30), substring(v.jnumID,1,10)
+3> from #homologymarker h, HMD_Homology_View v
+4> where h._Homology_key = v._Homology_key
+5> and v._Species_key not in (1,18,22,37,34,19,21,48,58,10,47,9,20,13,44,39,35,11,40,2)
+6> order by v.commonName
+Msg 208, Level 16, State 1:
+Line 2:
+MRK_Marker_View not found. Specify owner.objectname or use sp_help to check
+whether the object exists (sp_help may produce lots of output).
+Msg 4413, Level 16, State 1:
+Line 2:
+View resolution could not succeed because the previously mentioned objects, upon
+which the view directly or indirectly relies, do not currently exist.  These
+objects need to be recreated for the view to be usable.
+Password: 
+
+Starting copy...
+
+0 rows copied.
+Clock Time (ms.): total = 1
+Password: 
+
+Starting copy...
+
+0 rows copied.
+Clock Time (ms.): total = 1
+Password: 
+
+Starting copy...
+
+0 rows copied.
+Clock Time (ms.): total = 1
+Password: 
+
+Starting copy...
+
+0 rows copied.
+Clock Time (ms.): total = 1
+Password: 
+
+Starting copy...
+
+0 rows copied.
+Clock Time (ms.): total = 1
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd, "select into", true
+Database option 'select into/bulkcopy/pllsort' turned ON for database 'mgd'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0) 
+1>   
+2> use mgd
+1>    
+2> checkpoint
+1>  
+2> /* Select mouse as well! */
+3> 
+4> select *
+5> into #marker
+6> from MRK_Marker
+7> where _Species_key not in (1,18,22,37,34,19,21,48,58,10,47,9,20,13,44,39,35,11,40,2)
+(0 rows affected)
+1> 
+2> /* Delete HMD_Homology_Marker to remove the undesired homology record */
+3> 
+4> delete HMD_Homology_Marker
+5> from #marker m, HMD_Homology_Marker h
+6> where m._Marker_key = h._Marker_key
+(0 rows affected)
+1> 
+2> checkpoint
+/opt/sybase/admin/migration/MGI2.3.2 /opt/sybase/admin/migration/MGI2.3.2 
+/opt/sybase/admin/utilities/MRK /opt/sybase/admin/migration/MGI2.3.2 /opt/sybase/admin/migration/MGI2.3.2 
+/opt/sybase/admin/migration/MGI2.3.2 /opt/sybase/admin/migration/MGI2.3.2 
+Thu Mar 23 02:43:51 EST 2000

@@ -1,0 +1,721 @@
+Zivic-Miller rat		11329	mol	library	leave as is
+ M. dom-Pgn 1 			master	wild	leave as is
+ M. mol-Kgs			master	wild	leave as is
+ M. sub-Ias 3			master	wild	leave as is
+ M. sub-Jyg			master	wild	leave as is
+((C3H/HeJ x (Lp/+ x (C57BL/6Ks x C3H/HeJ-Fasl<gld>) x C3H/HeJ-Fasl<gld>))	or				leave as is
+(102/El x C3H/El)F1 or Stock Cat3<vao>	or				leave as is
+(11G x SEC)F1		109	map	not explained	leave as is
+(3H1 or C3H x M. spretus)F1	or				leave as is
+(AKR or LFA or LVI x SEG)F1	or				leave as is
+(AKR/J C58/J or NFS/N x SKIVE)F1	or				leave as is
+(AKR/J NFS/N or C58/J x SKIVE)	or				leave as is
+(AKR/J x M. spretus)F1 or (C57BL/6J-Kit<W-41>/+ x M. spretus)F1	or				leave as is
+(AKR/J x MOL-ANJ)F1		8850	map	Japan -ANJ not elucidated	leave as is
+(AKU x PWK)F1		38918	map	AKU author didn't elucidate	leave as is
+(B10.BUA16 x THF)F1		6859	map	BUA1 in J:7795	leave as is
+(B10.LP-H3<a> x C57BL/10Sn)F1 or (B10.UW-H3<a> x C57BL/10Sn)F1	or				leave as is	
+(B10.MOL-SGR x B10.D2)F1 (d2mR1)		20599	rflp	Bracketed info is a recombinant	leave as is	
+(B10.MOL-SGR x B10.D2)F1 (d2mR2)		20599	rflp	Bracketed info is a recombinant	leave as is	
+(B6C3F1-a/a Hoxa13<Hd> Va<J> x CASA/Rk)F1-Hoxa13<Hd>/+)F1 and C57BL/6J	and/or	30835			leave as is	
+(BALB/c +/+ x C57BL/6J-sla)F1 and C57BL/6J-sla/-	and				leave as is	
+(BALB/c and (C57BL/6 x M. spretus))F1 x C57BL/6	and				leave as is	
+(BALB/c or BALB congenic x BAC-LAH)	or	7686	map	authors didn't elucidate	leave as is	
+(BALB/c x MOL-ANJ)F1		8850	map	Japan -ANJ not elucidated	leave as is	
+"(BALB/c, CFW or FU x C57BL/6J)F1"	or				leave as is	
+(BALB/c-ebo/+ x PWK/Pas and DBA/2JIco)F1	and				leave as is	
+(BALB/cAnPt-Rb(4.12) x C.B-20)F1		20531	mol	Authors didn't elucidate the Rb(4.12)	leave as is	
+(BALB/cN or C57BL/6J x M. spretus)F1	or				leave as is	
+(BTBR-Fu<Ki> tf/+ tf x M. spretus)F1		20145	map	Axin<kb> see MGD	Pat	corrected
+(C3H x C57BL/6 K289/+)F1		37055	map	author didn't elucidate	leave as is	
+(C3H/HeH x 101/H)F1 or (AN x M. spretus)F1	or				leave as is	
+(C3H/HeH x 101/H)F1 or AN	or				leave as is	
+(C3Hf/R1-Mgf<Sl-2ENURg> x M. spretus)F1				lo okayed		corrected
+(C3Hf/Rl-Mgf<Sl-2ENURg>/+ x M. spretus)F1		32822	map	allele not in MGD lo okayed	Lo*	corrected
+(C3Hf/Rl-Mgf<Sl-ENURg>/+ x M. spretus)F1		31808	map	allele not in MGD lo okayed	Lo*	corrected
+(C3Hf/Rl-Mgf<Sl-2ENURg> x M. spretus)F1		83929	map	allele not in MGD lo okayed	Lo*	corrected
+(C57BL-Wld<s> x M. spretus or DBA/2J)F1	and/or				leave as is	
+(C57BL/10 x Brevi-MOR)F1		7686	map	M.m.dom. (brevirostris) Morocco	leave as is	
+(C57BL/10 x LP or B10.LP)F1	or				leave as is	
+(C57BL/10-H2<g7> x NOD/Mrk)F1 x NOD/Mrk and (NOD/Mrk x B6.PL-Thy1<a>/Cy)F1	and				leave as is	
+(C57BL/10Gn-lu x Trf<a> and Trf<b>)	and				leave as is	
+(C57BL/10ScSnPh-T x C3H/Di)F1 or (B10C3F1-T/+ x C57BL/10ScSnPh-T)F1	or				leave as is	
+(C57BL/6 or BALB/c x SPE/Pas)F1	or				leave as is	
+(C57BL/6 x C3H)F1 or (C57BL/6 x C3H)N2	or				leave as is	
+(C57BL/6 x SPE)F1 or (BALB/c x SPE)F1	or				leave as is	
+(C57BL/6 x SPE/Pas)F1 or (BALB/c x SPE/Pas)F1	or				leave as is	
+(C57BL/6.KB2-mnd/Msr x AKR/J or C3H/HeJ)F1	or				leave as is	
+(C57BL/6Ei-Pmp22<Tr-J> Re x DBA/2J or C57BL/6J)F1	or				leave as is	
+(C57BL/6Fla x C3Hf/Rl or 101/Rl)F1	or				leave as is	
+(C57BL/6J or C3H/St or BALB/c x M. spretus)F1	or				leave as is	
+(C57BL/6J or C57BL/6JEi x M. spretus or SPRET/Ei)F1	or				leave as is	
+(C57BL/6J or DBA/2 x JF1)F1	or	42684	map		leave as is	
+(C57BL/6J or DBA/2J x M. m. castaneus)F1	or				leave as is	
+(C57BL/6J x BALB/cByJ or C3H/HeJ)F1	or				leave as is	
+(C57BL/6J x Danish wild mice)F1		5600	map	M. m. musculus	leave as is	
+(C57BL/6J x Danish wild mice)F1 or C57BL/6J	or				leave as is	
+(C57BL/6J x DBA/2J)F1 or (C57BL/6J x SJL/J)F1	or				leave as is	
+(C57BL/6J x MOL-ANJ)F1		8850	map	Japan -ANJ not elucidated	leave as is	
+(C57BL/6J x SPR or SEG/Pas)F1	or				leave as is	
+(C57BL/6J x SPR or SEG/Pas)F1-Galc<twi>/+	or				leave as is	
+(C57BL/6J-Kit<W-sh>/Kit<W-sh> x PAC or PWK)F1	or				leave as is	
+(C57BL/6J-Lep<ob>/Lep<ob> x DBA/2J and M. spretus)F1	and				leave as is	
+(C57BL/6J-spretus pe<+Pin>/pe<+Pin> x C57BL/6JPin-pe/pe)F1		4110	map	larry pinto@nwu.edu 2.2.99	have*	corrected
+(C57BL/6JRos x M. spretus or M. m. musculus)F1	or				leave as is	
+(C57BL/6Pas or BALB/cPas x SPE/Pas)F1	or				leave as is
+(C58/J or NFS/N x M. m. musculus)F1	or				leave as is
+(C58/J or NFS/N x SKIVE)F1	or				leave as is
+"(C58/J, NFS/N, AKR/J x M. m. musculus)F1"		998	map	can't be changed in MLDP	leave as is
+AK-Fr-1b		46281	mol	authors didn't elucidate	leave as is
+(CAST/Ei +/+ x C3HeB/FeJ-Atp2b2<dfw>/Atp2b2<dfw> or Atp2b2<dfw>/+)F1	or				leave as is
+(Danish wild mice x LII)F1		6612	map	author didn't elucidate	leave as is
+(DBA/1 or C3H x C3H.K)F1	or				leave as is
+(DH or DHF stock x C57BL/OlaWs)F1	or				leave as is
+(El x DBA/2J or ABP/LeJ)F1	or				leave as is
+(FLEX/2 x SEC)F1		109	map	not explained	leave as is
+(Frings x C57BL/6J)F1		47657	map	Discuss with Festing	leave as is
+(HcB-19/Dem x C57BL/10ScSnA)F1		47109	map	author didn't elucidate	leave as is
+(Laboratory strain x M. spretus)F1		3709	map	author didn't elucidate	leave as is
+(Laboratory strain x PWK)F1		3709	map	author didn't elucidate	leave as is
+(LVI or LFA x SEG/1)F1	or				leave as is
+(M. m. domesticus +/pmn x STF/Pas or SEG/PAS)F1	or				leave as is
+(M. spretus x Oak Ridge 22A)F1 or (M. spretus x C57BL/10 Oak Ridge)F1	or				leave as is
+(Mor2<am1H> x PCE)F1		21916	map	allele not in MGD	Lo*
+(mutant stock x linkage stock)F1		17606	map	author didn't elucidate	leave as is
+(NFS/N or AKR/J or C58/J x M. m. musculus)F1	or				leave as is
+(NFS/N or C58 x M. m. musculus)F1	or				leave as is
+(NFS/N or C58/J or AKR/J x M. m. musculus)F1	or				leave as is
+(NFS/N or C58/J x M. m. musculus or M. spretus)F1	or				leave as is
+(NFS/N or C58/J x M. m. musculus)F1	or				leave as is
+(NFS/N or C58/J x M. m. musculus)F1 and (NFS/N or C58/J x M. spretus)F1	and				leave as is
+(NFS/N or C58/J x M. m. musculus)F1 and (NFS/N x M. spretus)F1	and				leave as is
+(NFS/N or C58/J x M. m. musculus)F1 or (NFS/N x M. spretus)F1	or				leave as is
+(NFS/N or C58/J x M. m. musculus)F1 x (NFS/N x M. spretus)F1	or				leave as is
+(NFS/N or C58/J x M. spretus)F1	or				leave as is
+(NFS/N or C58/J) x SKIVE)F1	or				leave as is
+(NFS/N x M. spretus)F1 or (NFS/N or C58/J x M. m. musculus)F1	or				leave as is
+"(NFS/N, C58/J or AKR/J x M. m. musculus)F1"	or				leave as is
+(NIH x V1 hybrid)F1		5307	map	MLDP notes field clarifies	leave as is
+(NMRI x CD/CD)F1		16735	map	CD antigen	leave as is
+(NMRI/F x kl/oci)F1		6619	map	author didn't elucidate	leave as is
+(NS.Hx<2n> x C4W)F1		7357	map	Convoluted author constructs	leave as is
+(Schneider stock x Cd/+)F1		6803	map	author didn't elucidate	leave as is
+(SI/Col x M. spretus)F1 x SI/Col or SI/Col x M. m. musculus	or				leave as is
+(SM/Ckc-Dac x NZB/BlNJ)F1 and (SM/Ckc-Dac/+ x BALB/cBy)F1	and				leave as is
+(SSL/Le-Ednrb<s>/Ednrb<s> or SSL/Le-Ednrb<s-l>/Ednrb<s-l> x CAST/Ei)F1	or				leave as is
+(Stock Cat3<vao> x DBA or AKR)F1-Cat3<vao>	or				leave as is
+(SW1 x BALB/c)F1		6803	map	SW1 - Swiss Webster 1	leave as is
+(SW1 x C57BL/6J)F1		6803	map	SW1 - Swiss Webster 1	leave as is
+(Wild x C57BL/6J)F1		5572	map	author didn't elucidate	leave as is
+(Wild x SWR/J)F1		5572	map	author didn't elucidate	leave as is
++ +/+ +		6008	map	 + +/etc	Pat*
+101/OR (101/Orr)		2944	rflp	Oak Ridge Orr	changed record
+11G		109	map	not explained	leave as is	
+129/144		8190	rflp	author didn't elucidate	leave as is	
+129/Sv and CD1   		49164	express	Author very nonspecific 	leave as is	
+129/SvEms-+<Ter>?			genet res		leave as is	
+129/SvEms-+<Ter>?/J			genet res		leave as is	
+129/SvEv-Hprt<bm-2>		2027	genet res	129/SvEv-Hprt<b-m2>		
+129/SvEv-Il1r2b<tm1Jm>		2984	genet res			
+129/SvEv-Il1r2b<tm1Jm>		2984	genet res			
+129/SvEv-Il1rb<tm1Jm>						
+129/SvSLA		9263	rflp	Vh gene family variant	leave as is	
+22A/Or		10246	rflp	author didn't elucidate	leave as is	
+3F2		39838	map	chromosomal location in FISH	Pat*	
+3H1 or C3H	or				leave as is	
+A/J and C57BL/6J	and				leave as is	
+A/J or C57BL/6J	or				leave as is	
+A/J or M. m. domesticus	or				leave as is	
+A/J-Es10<c-mJ>		1425	genet res		
+Aa2 (19R145H)		8135	rflp		leave as is
+Aa3 (19DThWb)		8135	rflp		leave as is
+Ab1 (1dl)		8135	rflp		leave as is
+Ac1 (3FAFyc )		8135	rflp		leave as is
+Ac2 (19Zb)		8135	rflp		leave as is
+Ae1 (9R250M)		8135	rflp		leave as is
+AEJ or M. spretus	or				leave as is
+AEJ/Gn or M. spretus	or				leave as is
+Af1 (3FrS)		8135	rflp		leave as is
+Af2 (21R75M)		8135	rflp		leave as is
+Af3 (3FR60Hc)		8135	rflp		leave as is
+Aj1 (15DTD)		8135	rflp		leave as is
+AKR or LFA or LVI	or				leave as is
+AKR or SEG	or				leave as is
+AKR-X/Y<dom>		29526	rflp	obscure	leave as is
+AKR.L-Cha/4Cy		9263	rflp	author didn't elucidate	leave as is
+AKR/J or C3H/HeJ	or				leave as is
+"AKR/J, C58/J or NFS/N"		2272	map	Can't be changed	leave as is
+allele that is mutant		11216	map	10.13 Pat will fix paper	Pat
+alleles that are mutant		11216	map	10.13 Pat will fix paper	Pat
+alleles that are wild type +		11216	map	10.13 Pat will fix paper	Pat
+(C57BL/K1 x DBA/2K1)F1		5420	map	author didn't elucidate	leave as is
+AT29		4391	rflp	from V Chapman	leave as is
+ATL		7930	rflp	author didn't elucidate	leave as is
+AX or MWT/Le	or				leave as is
+Axin<kb>/+ and C57BL/6	and				leave as is
+b haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+B10.A x BW5147		15353	mol	thymoma cell line	leave as is
+B10.BAC/K		12570	rflp	author didn't elucidate	leave as is
+B10.BR and C57BL/10	and				leave as is
+B10.BR(R228) x B10		20599	rflp		leave as is
+B10.BUA1		2794	rflp	wild-derived Germany	leave as is
+B10.BUA16		2794	rflp	wild-derived Germany	leave as is
+B10.BUA19		12570	rflp	author didn't elucidate	leave as is
+B10.CAA2		6576	map	German strain	leave as is
+B10.CHA2		2794	rflp	wild-derived Germany	leave as is
+B10.CHR51		2794	rflp	wild-derived Germany	leave as is
+B10.GAA20		2794	rflp	wild-derived Germany	leave as is
+B10.H2<nod>		10652	rflp	"Nod or nod, okay otherwise"	Lo*
+B10.KEA2		2794	map	wild-derived Germany	leave as is
+B10.KEA5		2794	map	wild-derived Germany	leave as is
+B10.KPB128		7795	rflp	Origin not elucidated	leave as is
+B10.KPB68		7816	rflp	wild	leave as is
+B10.L1B18		2794	rflp	wild-derived Germany	leave as is
+B10.LIB55		2794	rflp	wild-derived Germany	leave as is
+B10.LP-H3<a> and B10.UW-H3<a>	and				leave as is
+B10.LP-H3<a> or B10.UW-H3<a>	or				leave as is
+B10.MOL1		2794	rflp	wild-derived Germany	leave as is
+B10.MR1		17343	rflp		Get
+B10.SAA48		2794	rflp	wild-derived Germany	leave as is
+B10.SBR		9208	rflp	Origin not elucidated	leave as is
+B10.SM-H2<v>H2-T18<b> (70NS)/Sn cw		456	genet res	B10.SM-H2<v> H2-T18<b>(70NS)/Sn-cw	
+B10.SNA57		2794	rflp	wild-derived Germany	leave as is
+B10.SNA70		2794	rflp	wild-derived Germany	leave as is
+B10.SQR		9208	rflp	Origin not elucidated	leave as is
+B10.STC77		2794	rflp	wild-derived Germany	leave as is
+B10.STC90		2794	rflp	wild-derived Germany	leave as is
+B10.TFR5		17343	rflp		get
+B10.TFRI		17343	rflp		Get
+B10.W10LT		12570	rflp	authors didn't elucidate	leave as is
+B10.WOA105		2794	rflp	wild-derived Germany	leave as is
+B2m<a> strains		7212	rflp	Not elucidated	leave as is
+B6 x (B6 x AKR-heb)F1		497	genet res		
+B6 x 129/SvEi-+<p> <Tyr-c> Chx10<or-J>		822	genet res
+B6 x B6C3Fe-a/a-Itpr1<opt>		2262	genet res
+B6 x B6C3H-a/A-T17H/+		602	genet res
+B6 x B6C3H-a/A-T27H		1538	genet res
+B6 x B6C3H-a/A-T31H/+		916	genet res
+B6 x B6CBA/Ca-A<w-J>/A-T264Ca Kit<W-v>		599	genet res
+B6 x B6CBACa-A<w-J>/A-flail		502	genet res
+B6 x B6CBACa-A<w-J>/A-Grid2<Lc> T7Ca Mitf<Mi-wh>		593	genet res
+B6 x B6EiC3H-a/A-Otc<spf>		507	genet res
+B6 x B6EiC3H-a/A-T164Dn/+		1831	genet res
+B6 x B6EiC3H-a/A-T198Dn/+		1926	genet res
+B6 x B6EiC3H-a/A-T202Dn/+		2071	genet res
+B6 x B6EiC3H-a/A-T225Dn		2069	genet res
+B6 x B6EiC3H-a/A-T232Dn		2061	genet res
+B6 x B6EiC3H-a/A-T233Dn/+		2068	genet res
+B6 x B6EiC3H-a/A-T238Dn/+		2113	genet res
+B6 x B6EiC3H-a/A-T41Dn/+		1819	genet res
+B6 x B6EiC3H-a/A-T45Dn/+		1833	genet res
+B6 x B6EiC3H-a/A-T57Dn/+		1903	genet res
+B6 x B6EiC3H-a/A-T60Dn/+		1832	genet res
+B6 x B6EiC3H-a/A-T65Dn/+		1872	genet res
+B6 x B6EiC3H-a/A-T69Dn/+		1535	genet res
+B6 x B6EiC3H-a/A-T97Dn/+		1821	genet res
+B6 x BALB-Mov15		2525	genet res
+B6 x BALB/cBy-cla/+		1765	genet res
+B6 x BALB/cBy-T<4J>		953	genet res
+B6 x BALB/cByJ-Crm			genet res
+B6 x BALB/cByJ-fld/+		2533	genet res
+B6 x BALB/cByJ-Grid2<Lc-J>		2440	genet res
+B6 x C.AKR-cog/+		2549	genet res
+B6 x C3H/HeJ-qv<lnd-2J>		2487	genet res
+B6 x C57BLKS-ak		942	genet res
+B6 x FSB/GnEi-fs		618	genet res
+B6 x STOCK a p ru2 Ednrb<s> 		577	genet res
+B6 x STOCK het 		61	genet res
+B6 x STOCK In58Rk 		2022	genet res
+B6 x STOCK rb		938	genet res
+B6 x STOCK Rb(6.15)1Ald 		610	genet res
+B6 x STOCK T tf/t<h45> tf		1518	genet res
+B6 x STOCK T(12:17)4Rk/+		1488	genet res
+B6 x STOCK T(2;11)4Dn/+		1820	genet res
+B6 x STOCK T11H		595	genet res
+B6 x STOCK T13H a/T13H a 		592	genet res
+B6 x STOCK T18H		951	genet res
+B6 x STOCK T1Ca 		591	genet res
+B6 x STOCK T24H		961	genet res
+B6 x STOCK T26H 		950	genet res
+B6 x STOCK T28H/+		597	genet res
+B6 x STOCK T50H/+ a/a		601	genet res		
+B6 x STOCK Tyr<c-ch> Bmp5<se> +/+ Myo6<sv> 		578	genet res		
+B6.129-Hmx3<neo>		46379	express	neo not in MGI	have   See Lo
+B6.AKL		17343	rflp		
+(C57BL/6J x B6(CAST-H19))F1		50087	express		get
+(B6(CAST-H19 x C57BL/6J))F1		24120	express		get
+B6(CAST-H19)  		50087	express		get
+B6.C-H15<c>/By (HW13J)		382	genet res		
+B6.C-H16<c>/By (HW13K)		381	genet res		
+B6.C-H17<c>/By (HW14)		130	genet res		
+B6.C-H18<c>/By (HW17)		380	genet res		
+B6.C-H19h<c>/By (HW20)		135	genet res		
+B6.C-H22<c> Gpi1<a>/By (HW38)		377	genet res		
+B6.C-H23<c>/By (HW53)		376	genet res		
+B6.C-H24<c> Gpi1<a>/By (HW54)		123	genet res		
+B6.C-H25<c>/By (HW65)		114	genet res		
+B6.C-H28<c> If1<h>/dBy (HW110)		116	genet res			
+B6.C-H28<c> If1<l>/aBy (HW81)		146	genet res			
+B6.C-H28<c> If1<l>/bBy (HW94)0		384	genet res			
+B6.C-H28<c> If1<l>/cBy (HW97)		142	genet res			
+B6.C-H29<c>/By (HW88)		373	genet res			
+B6.C-H30<c> /By (HW105)		138	genet res			
+B6.C-H34<c>/By (HW22)		136	genet res			
+B6.C-H37<c>/By (HW106)		371	genet res			
+B6.C-H38<c>/By (HW119)		370	genet res			
+B6.C-H7<b> Mod1<a>/By (HW23)		137	genet res			
+B6.C-H8<c>/By (HW96)		113	genet res			
+B6.Gus<b> or B6.Gus<h>	or				leave as is	
+B6.M. spretus-pe<+PIN>N12F6		33579	rflp	allele not in MGD Lo okayed	Lo*	corrected
+B6.MUT		25257	mol	German author said	leave as is	
+B6C3F1/J or M. spretus or M. m. castaneus	or				leave as is	
+B6C3Fe-a/a F1		1022	genet res	placing of F1		
+B6EiC3H-a/A F1		1875	genet res	placing of F1		
+B6J.M. spretus-pe<+PIN>N12F6		33579	rflp	allele not in MGD Lo okayed	Lo*	corrected
+Ba1 (11R145L)		8135	rflp		leave as is	
+BAC-LAH		7686	map	authors didn't elucidate 	leave as is	
+BALB.(hz)Fv4<r>		7357	rflp	Convoluted author constructs	leave as is	
+BALB.A10		9208	rflp	Origin not elucidated	leave as is	
+BALB.A11		9208	rflp	Origin not elucidated	leave as is	
+BALB/c and C57BL	and				leave as is	
+BALB/c and C57BL/6	and				leave as is	
+BALB/c and C57BL/6J	and				leave as is	
+BALB/c and FBV/N	and/or	48933	map		leave as is	
+BALB/c or C3H/DiSn	or				leave as is	
+BALB/c or C57BL/6	or				leave as is	
+BALB/c or C57BL/6J		48933	map		leave as is	
+BALB/c-PC1		7763	rflp	Made up by author	leave as is	
+BALB/cAn or BALB/cByJ or BALB/cHeA	or				leave as is	
+BALB/cBD		11839	rflp	author didn't elucidate	leave as is
+BALB/cBy(E228)		1244	genet res		
+BALB/cBy-H(E2) 		1556	genet res		
+BALB/cBy-H(E3) 		1557	genet res		
+BALB/cBy-H(E4) 		1558	genet res		
+BALB/cBy-H(E6) 		1560	genet res		
+BALB/cBy-H(F5) 		1562	genet res		
+BALB/cJ or C57BL/6-Kcnj6<wv>/Kcnj6<wv>	or				leave as is
+BALB/cN or C57BL/6J or NFS/N	or				leave as is
+BALB/cN or NFS/N	or				leave as is
+BALB/cORNL		7763	rflp	Made up by author	leave as is
+BALB/Mo		6152	rflp	author didn't elucidate	leave as is
+Bb1 (1R75H)		8135	rflp		leave as is
+Bc1 (13R60L)		8135	rflp		leave as is
+Bc2 (1R145H)		8135	rflp		leave as is
+Bd1 (39FATw)		8135	rflp		leave as is
+Bd4 (94FBFo)		8135	rflp		leave as is
+Bd6 (8FR60L)		8135	rflp		leave as is
+Bd7 (1DTD)		8135	rflp		leave as is
+Be1 (4DTD)		8135	rflp		leave as is
+Be3 (11FHAFo)		8135	rflp		leave as is
+Be5 (13SaSd)		8135	rflp		leave as is
+BEM		15210	rflp	author didn't elucidate	leave as is
+Bf2 (37FBFo)		8135	rflp		leave as is
+Bf4 (17Zb)		8135	rflp		leave as is
+Bf5 (18FATw)		8135	rflp		leave as is
+Bf6 (23YPSa)		8135	rflp		leave as is
+Bf7 (10FDFoD)		8135	rflp		leave as is
+Bg1 (2R250M)		8135	rflp		leave as is
+Bh1 (209G)		8135	rflp		leave as is
+BIA		15210	rflp	author didn't elucidate	leave as is
+BNK266		7816	rflp	wild	leave as is
+BNK761		7816	rflp	wild	leave as is
+BQ2		8190	rflp	author didn't elucidate	leave as is
+Brevi-MOR		7686	map	M.m.dom. (brevirostris) Morocco	leave as is
+BRU382		7816	rflp	wild	leave as is
+BRV-MPL		10357	rflp	Wild mice from France	leave as is
+BRW942		7816	rflp	wild	leave as is
+BSC or DBA	or				leave as is
+BTBR-t<PA027>/t<PA027>		2051	rflp	nomen question for Lo	Lo*
+BXD-32 or SWR/J	or				leave as is
+BXD-32/J or SWR/J	or				leave as is
+BXD-32/Ty or SWR/J	or				leave as is
+C26		34795	mol	colon carcinoma cells	leave as is
+C3B10RF1		36032	mol	author didn't elucidate (R)	leave as is
+(C3H x 101)F1.t<w32>		50247	rflp		get
+C3H.R41		13181	rflp	author didn't elucidate	leave as is
+C3H.RKK		4411	rflp	author didn't elucidate	leave as is
+C3H.W3		12570	rflp	author didn't elucidate	leave as is
+C3H.WOA1		2794	rflp	wild-derived Germany	leave as is
+C3H/Di or wild	or				leave as is
+C3H/DiSn or BTBRTF/Nev	or				leave as is
+C3H/He and C57BL/6J	and				leave as is
+C3H/He or C3H/He-Fasl<gld>/Fasl<gld>	or				leave as is
+C3H/He or C57BL/6J	or				leave as is
+C3H/HeH and 101/H	and				leave as is
+C3H/HeH or 101/H or (C3H/HeH x 101/H)F1	or				leave as is
+C3H/HeH x 101/H or AN	or				leave as is
+C3H/HeJ-Fasl<gld> and C57BL/6J	and				leave as is
+"C3H/Rl, 101/Rl, T or C57BL/6"	or				leave as is
+C3H/SW		9142	rflp	Pasteur authors didn't elucidate	leave as is
+C3H10T1/2		21514	mol	tumor cell line	leave as is
+C3HeB/FeJ and SEC/ReJ	and				leave as is
+C3HeB/FeJ or BALB/cGr	or				leave as is
+C3Hf or M. spretus	or				leave as is
+C3HMMTV		10238	mol	mammary tumor virus cell line	leave as is
+C57/e/Ha		11060	rflp	authors didn't elucidate 	leave as is
+C57/eHaRos		11828	rflp	author didn't elucidate	leave as is
+C57BL/10 or B10.RIII	or				leave as is
+C57BL/10 or M. spretus	or				leave as is
+"C57BL/10, B10.A, B10.BR or B10.D2"	or				leave as is
+C57BL/10ScSnPh-T or wild	or				leave as is
+C57BL/6 and B6.C-H28<c>	and				leave as is
+C57BL/6 or (C57BL/6 x CBA)F1	or				leave as is
+C57BL/6 or BALB/c	or				leave as is
+C57BL/6 or DBA/2	or				leave as is
+C57BL/6 or M. spretus	or				leave as is
+C57BL/6 or M. spretus/Crc	or				leave as is
+C57BL/6 or MSM	or				leave as is
+C57BL/6 or SEG	or				leave as is
+"C57BL/6, BALB/c"		39137	map	In situ - can't be changed	leave as is
+"C57BL/6, CBA/J"		35799	mol	Can't be changed	leave as is
+C57BL/6-Il12rb<tm1Jm>		2984	genet res		
+C57BL/6Ei-Pmp22<Tr-J> Re or C57L/J or C57BL/6	or				leave as is
+C57BL/6J and (C57BL/6 x CBA)F1	and				leave as is
+C57BL/6J and AEJ/GnRk	and				leave as is
+C57BL/6J and CBA	and				leave as is
+C57BL/6J and DBA/2J	and				leave as is
+C57BL/6J and M. m. musculus	and				leave as is
+C57BL/6J and NFS/N	and				leave as is
+C57BL/6J and SWR/J	and				leave as is
+C57BL/6J or (C57BL/6 x CBA)F1	or				leave as is
+C57BL/6J or BALB/c	or				leave as is
+C57BL/6J or C57BL/6JEi	or				leave as is
+C57BL/6J or DBA/2	or				leave as is
+C57BL/6J or DBA/2J	or				leave as is
+C57BL/6J or LP/J	or				leave as is	
+C57BL/6J or M. spretus	or				leave as is	
+C57BL/6J or SPRET/Ei	or				leave as is	
+C57BL/6J or SWR/J	or				leave as is	
+C57BL/6J pe<+Pin>/pe<+Pin>		4110	map	larry pinto@nwu.edu 2/2/99	have*	corrected
+C57BL/6J x STOCK In17Rk		1962	genet res			
+C57BL/6J++ or C3H/HeJ++	or				leave as is	
+"C57BL/6J, BALB/cJ"		26310	map	Can't change in FISH	leave as is	
+C57BL/6J-Clock<m1Jt>			genet res	nomenclature (allele)	Lo*	
+C57BL/6J-D1Lub1Hsr/+		1914	genet res	Is(HSR;1)1Lub in MGI		
+C57BL/6J-Ghrhr<lit>/Ghrhr<lit> and +/+	and				leave as is	
+C57BL/6J-pk and C57L/J	and				leave as is	
+C57BL/6J-Pmp22<Tr-J> and SPRET/Ei -pe<+Pin>	and/or	31147	mol		leave as is	
+C57BL/6J-Psp<b> a d = Psp<c> A<y>		24247	map		leave as is	
+C57BL/6J-Psp<b> a; d = Psp<b> a<t>		24247	map		leave as is	
+C57BL/6J-Psp<b> A<w>; d = Psp<b> a		24247	map		leave as is	
+C57BL/6J-spretus		4110	map	larry pinto@nwu.edu 2/2/99	have*
+C57BL/6J.b7 or laboratory stock alleles	or				leave as is
+C57BL/6Pas or BALB/cPas	or				leave as is
+C57L/J and C57BL/6J	and				leave as is
+C57L/J or NFS/N	or				leave as is
+C57L/J or RSV/Le	or				leave as is
+C58/J or NFS/N	or				leave as is
+"C58/J, NFS/N, AKR/J"		998	map	can't be changed in MLDP	leave as is
+CA		21042	rflp	author didn't elucidate	leave as is
+CAS-QZN		10357	rflp	wild mice Phillipines	leave as is
+CAS-QZN-Mt2<a>		10357	rflp	wild mice Phillipines	leave as is
+CAS-TCH-Mt1<b>		10357	rflp	wild mice from Taiwan	leave as is
+CASA/Rk and (B6C3F-a/a-Hoxa13<Hd> Va<J> x CASA/Rk)F1	and				leave as is
+CAST/Ei and BXD-32 or SWR/J	or				leave as is
+CAST/Ei or B6C3Fe-a/a myd/+	or				leave as is
+CAST/Ei x C57BL/6J-283-mnd2/+ - or 283-mnd2/+ +	or				leave as is
+CAST/Ei x C57BL/6J-283-mnd2/+ - or 283-mnd2/+ x CAST/Rk +	or				leave as is
+"CAST/Ei, BXD-32 or SWR/J"	or				leave as is
+"CAST/Ei, C57BL/6J, C57BL/6J-Apc<min>"		830	mol		leave as is
+CBA and C57BL/6J	and				leave as is
+CBA and C57BL/6J-A<w-J>	and				leave as is
+CBA/B6		46975	mol	author didn't elucidate	leave as is
+CD/CD		18174	map	author didn't elucidate	leave as is
+CD1/129		30828	Exp	author didn't elucidate	leave as is
+Ce3 (11FrTh)		8135	rflp		leave as is
+Ce4 (3UThb)		8135	rflp		leave as is
+Ce6 (40k)		8135	rflp		leave as is
+Ce7 (55K)		8135	rflp		leave as is
+cell line 416B		7890	map	as author says	leave as is
+CFW/D		20960	mol	author didn't elucidate	leave as is
+cHS/cHS		21100	mol	cytoplasmic HS izozyme	leave as is
+CLA or BALB/c-Hfh11<nu>/Hfh11<nu>	or				leave as is
+CRO435		7816	rflp	wild	leave as is
+CRO437		7816	rflp	wild	leave as is
+CXBG and BALB/c	and				leave as is
+d haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+DA (rat)		8711	mol	Rat	leave as is
+Da1 (5RD300H)		8135	rflp		leave as is
+Danish wild mice		5600	map	M. m. musculus	leave as is
+Db1 (52CoS)		8135	rflp		leave as is
+DBA or AKR	or				leave as is
+DBA/2 and C57BL/6J	and				leave as is
+DBA/2HaAo-d<+Ha>		7092	rflp	shld be Myo5a but <+Ha>?	Lo*
+DBA/2J or ABP/LeJ	or				leave as is
+DBA/2J or C57BL/6J	or				leave as is
+DBH		3336	mol	dopamine beta-hydroxylase	leave as is
+DBP			Master list	"Wild, Pomorie, Bulgaria"	leave as is
+DBR7		6859	map	author didn't elucidate	leave as is
+Dc1 (32DTD)		8135	rflp		leave as is
+Dd1 (10R205H)		8135	rflp		leave as is
+ddY/std		23799	mol	Japan closed colony	leave as is
+Debelgica		22806	rflp	M. hortulanus	leave as is
+DH or DHF	or				leave as is
+DOM-BLG		10357	rflp	Wild mice from Bulgaria	leave as is
+DOM-PGN		10357	rflp	Wild mice from Canada	leave as is
+Dst<Tg4>/Dst<Tg4>		36985	mol	spinal cord RNA	leave as is
+dx haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+EDY589		7816	rflp	wild	leave as is
+ERP1465		7816	rflp	wild	leave as is
+FAIYUM-3		32578	rflp	author didn't elucidate	leave as is
+FLEX/2		109	map	not explained	leave as is
+Frings		47657	map	Discuss with Festing	leave as is
+FVB or M. m. castaneus	or				leave as is
+FVB/N and 129/SvJae	and				leave as is
+Gen Toshevo		35799	rflp	Pasteur author said	leave as is
+GPC183		7816	rflp	wild	leave as is
+GPC882		7816	rflp	wild	leave as is
+GPDX		38088	mol	Author says not inbred and extinct	leave as is
+H7031K		20599	rflp	authors didn't elucidate	leave as is
+heterozygous		17854 etc	map	21 records MLDP	leave as is
+homozygous		17854	map	21 records MLDP	leave as is
+HUCI		10616	map	Tg w. 1 copy of hum. COL1A1	leave as is
+hybrid RTM9		8425	map	rat/mouse hybrid	leave as is
+HZ4-FeSV		9325	mol	HZ4 feline sarcoma virus	leave as is
+I/LnJ and NZW	and				leave as is
+ICR and C57BL/6	and				leave as is
+Inbred		7062	map	Notes field indcate three strains	leave as is
+IPI		45878	map	Japan author said	leave as is
+(Stock Pdnp1<ttw>/Pdnp1<ttw> x IPI)F1		45878	map	Japan author said	leave as is
+IRE3(RAG)		34399	rflp	author didn't elucidate	leave as is
+ISL33		7816	rflp	wild (Israel)	leave as is
+k haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+Laboratory strain		3709	map	author didn't elucidate	leave as is
+Laboratory strain or M. spretus	or				leave as is
+Laboratory strain or PWK	or				leave as is
+LC		8575	rflp	author didn't elucidate	leave as is
+LC<RR>		8575	rflp	very inventive author name	leave as is
+LGN925		7816	rflp	wild	leave as is
+LI and C3H/HeH	and				leave as is
+linkage stock		17606	map	author didn't elucidate	leave as is
+LRA410		7816	rflp	wild	leave as is
+LVI or LFA	or				leave as is
+M. cas-Bgr 1  			Master list	Wild	leave as is
+M. dom-Pgn 			Master list	Wild	leave as is
+M. hortulanus and M. m. macedonicus	and				leave as is
+M. m. bactrinus x C57BL/6 or DD	or	9138	map		leave as is
+M. m. castaneus or C3H/HeHa or C57BL/6J	or				leave as is
+M. m. domesticus or C57BL/6J	or				leave as is
+M. m. domesticus or M. spretus	or				leave as is
+M. m. domesticus x M. spretus		9005	map		leave as is
+"M. m. macedonicus, M. m. musculus"		29334	map	Can't change in FISH	leave as is
+M. m. musculus and M. spretus and C58/J	and				leave as is
+M. m. musculus and M. spretus or C58/J	and				leave as is
+M. m. musculus or M. spretus	or				leave as is
+M. m. musculus or M. spretus and C58/J	or				leave as is
+M. m. musculus or M. spretus or C58/J	or				leave as is
+M. mol-Aiz1		45470	rflp	Wild M. m. molossinus Japan	leave as is
+M. mol-HKz		45470	rflp	Wild M. m. molossinus Japan	leave as is
+M. mol-Kgs			Master list	Wild	leave as is
+M. spretus (D3878 Morocco)		48983	rflp	author said (outbred stocks)	leave as is
+M. spretus (D3879 Morocco)		48983	rflp	author said (outbred stocks)	leave as is
+M. spretus (D3889 Spain)		48983	rflp	author said (outbred stocks)	leave as is
+M. spretus (D3890 Spain)		48983	rflp	author said (outbred stocks)	leave as is	
+M. spretus (D3891 Spain)		48983	rflp	author said (outbred stocks)	leave as is	
+M. spretus and C57BL/6J	and				leave as is	
+M. spretus or C58/J	or				leave as is	
+M. spretus or C58/J and M. m. musculus	or				leave as is	
+M. spretus or C58/J or M. m. musculus	or				leave as is	
+M. spretus or M. m. musculus	or				leave as is	
+M. spretus or SPRET/Ei	or				leave as is	
+M. sub-Cht			master		leave as is	
+MAE28 mouse X Chinese hamster hybrid		18817	mol		leave as is	
+MBT			Master list	Wild	leave as is	
+MEV and BXD-32	and				leave as is	
+"MEV, BXD-32 or SWR/J"	or	11034	map		leave as is	
+"MEV/Ty, BXD-32/J, SWR/J"		21465	map	can't change in this box	leave as is	
+MGA		39039	rflp	"M. m. musculus, Georgia"	leave as is	
+MGL		39039	rflp	"M. m. musculus, Georgia"	leave as is	
+MGT		39039	rflp	"M. m. musculus, Georgia"	leave as is	
+Mil II		22806	rflp	"M. m. domesticus, CA"	leave as is	
+MINI IGF-1			genet res			
+MOL-A		5753	map	authors didn't elucidate 	leave as is	
+MOL-ANF		8850	map	Japan -ANJ not elucidated	leave as is	
+MOL-ANJ		8850	map	Japan -ANJ not elucidated	leave as is	
+MOL-ANJ		9712	rflp	Origin not elucidated	leave as is	
+MOL-MSM		7686	rflp	M. m. molossinus Japan	leave as is	
+MOL-NEM		3249	rflp	wild from Japan	leave as is	
+MOL-NIS		26112	rflp	M. m. molossinus	leave as is	
+MOL-NIS/Nga			master	M. m. molossinus	leave as is	
+MOL-TEN2			master	wild mice	leave as is	
+MOL-TSU		3249	rflp	wild from Japan	leave as is	
+MOL3/JA		10357	rflp	Wild mice from Japan	leave as is	
+Mor2<am1H>		21916	map	allele not in MGD	Lo*	
+Mor2<am4Neu		21916	map	allele not in MGD	Lo*	
+MORO		17714	mol	author didn't elucidate	leave as is	
+MOY336		7816	rflp	wild	leave as is	
+MPA434 transgenic		11437	mol	author didn't elucidate	leave as is	
+MR21b		20599	rflp	Authors didn't elucidate	leave as is	
+MRL/1		2162	mol	Japan strain	leave as is	
+MSP15 (M. spretus)		9742	rflp		leave as is	
+MSP16 (M. spretus)		9742	rflp		leave as is	
+MSV (B10.M/Sn)		6382	mol	Moloney sarc.virus/no strains	leave as is	
+MSW251		7816	rflp	wild	leave as is	
+MUS-BLG			master		leave as is	
+Mut/Mut  		49053	rflp		get	
+Mut<del>/Mut<del>		49053	rflp		get	
+NAK		2306	rflp	author didn't elucidate	leave as is	
+NB-9		22806	rflp	M. m. domesticus	leave as is	
+NC and CBA/J	and				leave as is	
+NFS/N and C57BL/6J	and				leave as is	
+NFS/N and C57L/J	and				leave as is	
+NFS/N and C58/J	and				leave as is	
+NFS/N or A/J	or				leave as is	
+NFS/N or AKR/J	or				leave as is	
+NFS/N or AKR/J or C58/J	or				leave as is	
+NFS/N or BALB/cN	or				leave as is	
+NFS/N or C58	or				leave as is	
+NFS/N or C58/J	or				leave as is	
+NFS/N or C58/J or AKR/J	or				leave as is	
+"NFS/N, C58/J or AKR/J"	or				leave as is	
+NMRI and B10.CAS2	and				leave as is	
+NOD or PWK	or				leave as is	
+"NOD/Mrk, (B10.H2<g7> x NOD/Mrk)F1 and NOD/Mrk"	and				leave as is	
+NOD/Uf and C57BL/6J	and				leave as is	
+nude		8353	mol	"""nude mouse tumor"""	leave as is	
+NZB/BlNJ or BALB/cBy	or				leave as is	
+NZW/LacJ x BXSB/MpJ		1058	genet res		leave as is
+Oak Ridge		10302	map		leave as is
+Oak Ridge 22A or C57BL/10	or				leave as is
+Oak Ridge 22A or C57BL/10 Oak Ridge	or				leave as is
+OF1		1113	mol	outbred	leave as is
+OVE1B transgenic		10318	mol	dl - downless transgenic	leave as is
+OVE3A		10611	mol	author's creative designation	leave as is
+p haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+P1 Kcnj6<wv>/+		19884	mol	cerebellar cDNA library	leave as is
+p2 haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+P432 transgenic line		9814	mol	Authors didn't elucidate	leave as is
+PAC or PWK	or				leave as is
+Parkes		49222	express	Outbred	leave as is
+Parkes		49702	express	Outbred	leave as is
+PLD826		7816	rflp	wild	leave as is
+PMA		50318	rflp	authors didn't elucidate (Japan)	leave as is
+PWK/Pas and DBA/2JIco	and				leave as is
+q haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+Rb(6.15)1Ald or Rb163H/Ei	or	9263	rflp		leave as is
+Rb(6.16)24Lub-Cacna1a<tg-3J>		1234	genet res		Linda
+Reeves' sex-averaged intersubspecific mapping panel		42076	map		leave as is
+retinoblastoma transgenic mouse		10320	map	author didn't elucidate	leave as is
+"Rockefeller, Swiss-related"		8228	mol	author didn't elucidate	leave as is
+ROD1455		7816	rflp	wild	leave as is
+RSV/Le or C57L/J	or				leave as is
+RT1		10826	mol	rat	leave as is
+s haplotype		17315	rflp	Convoluted /authors didn't clarify	leave as is
+S0021d		20599	rflp	Authors didn't elucidate	leave as is
+S801/a		20599	rflp	Authors didn't elucidate	leave as is
+S802/a		20599	rflp	Authors didn't elucidate	leave as is
+Schmidt-Ruppin		7320	mol	A strain of Rous sarcoma virus	leave as is
+Schneider		29528	map	author didn't elucidate	leave as is
+Schneider stock		29528	map	Authors didn't elucidate	leave as is
+SE		master		Outbred Netherlands	leave as is
+SEW		master		Part inbred	leave as is
+SEW1		master		Part inbred	leave as is
+SEWA Tumor		8818	map		leave as is
+sf/sf transgenic		21534	mol	author didn't elucidate	leave as is
+SJL and C57BL/6		30651	mol	DNA	leave as is
+SMZ		48293	rflp	M. spretus from Montpellier	leave as is
+(129/SvEv x Black Swiss)		51570	express	authors didn't elucidate 	leave as is
+NKT/Pas   		54856	map	partial congenic in 1999	leave as is
+MolWkiT					
+MolWkiS					
+MolSkiR					
+MolSkiO					
+MolMinF					
+MolSkiD					
+MolSkia					
+ROSA41         					
+GL/Le-dl<J> +/+ gl or C57BL/6J    	or				leave as is
+AK-Fr-1b  					
+NCD-1      					
+(C57BL/6 x S3L/3)F1   			express	authors (Chambon) didn't elucidate	leave as is
+CITB-CJ7-B 		55324	mol	Mouse BAC library from Research Genetics	leave as is
+C57BL/6-129/Sv-wn/wn    		56028	map	authors call C57BL/6-129/Sv a transgenic	leave as is
+(C57BL/6-129/Sv-wn/wn x C3H/HeJ)F1 		56028	map	authors call C57BL/6-129/Sv a transgenic	leave as is
+C57BL/6-129/Sv 		56028	map		
+C57BL/6 or BALB/c and 129X1/SvJ 	or/and				leave as is
+C57BL/6 and 129/SvEv  	and				leave as is
+C57BL/6 and 129   	and				leave as is
+(Parkes x NIH)F1 x NIH   		4372	express	Outbred	leave as is
+Parkes		26101	express	Outbred	leave as is
+Parkes		49222	express	Outbred	leave as is
+Swiss and TO	and				leave as is
+SPE1		7686	map	authors didn't elucidate 	leave as is
+SPR		459	rflp	M. spretus	leave as is
+SPR or SEG/Pas	or				leave as is
+SPR or SEG/Pas or C57BL/6J	or				leave as is
+Sprague Dawley     		46742	mol	rat	leave as is
+SSL/Le-Ednrb<s>/Ednrb<s> or SSL/Le-Ednrb<s-l>	or				leave as is
+SSL/Le-Ednrb<s>/Ednrb<s> or SSL/Le-Ednrb<s-l>/Ednrb<s-l>	or				leave as is
+STF/Pas or SEG/PAS	or				leave as is
+Stock Dwf/Dwf		9813	rflp	author didn't elucidate dwf?	leave as is
+C57BL/KSJ		55357	rflp		
+STOCK Is1Ct		582	genet res		
+"STOCK Rb3,4,7Bnr/Ei"		2435	genet res		
+Stock T(2;16)28H/T(2;16)28H and C3H/HeJ	and				leave as is
+Stock T(2;8)2Wa and C3H/HeJ	and				leave as is
+STOCK T30H/+ x AEJ-a Gdf5<bp-H> or A/J-a Gdf5<bp-J>	or				leave as is
+Stock Tyr<c-10R75M>/Tyr<c-10R75M>		2638	rflp	Nomen  lo has paper and has okayed	Lo*	corrected
+Stock Tyr<c-11DSD>/Tyr<c-ch>		2638	rflp	Nomen  lo has paper and has okayed	Lo*	corrected
+Stock Tyr<c-24R75M>/Tyr<c-24R75M>		2947	mol	lo has okayed and has paper	*	corrected
+Stock Tyr<c-2YPSj>/Tyr<c-3H>		2961	Mol	lo has okayed and has paper	Lo*	corrected
+SUB-BJN			master	ok	leave as is	
+SUB-KJR			master	ok	leave as is	
+SUB-LAS			master	ok	leave as is	
+SUB-SHH			master	"M. m. molossinus Shanghai,China"	leave as is	
+SV11		40017	mol	SV40 transgenic	leave as is	
+Swiss		605	rflp	author didn't elucidate	leave as is	
+Swiss		12699	rflp	author didn't elucidate	leave as is	
+Swiss 3T3 cells		28606	mol	cell line	leave as is	
+Swiss nude		1145	mol	author didn't elucidate	leave as is	
+SWN		52028	rflp	Wild	leave as is	
+SWR/J and A/WySn	and				leave as is	
+SWV/Bc or ICR/Bc	or				leave as is	
+T/t<csh201>		8324	rflp	Nomen questions	Lo has paper
+T/t<csh202>		8324	rflp	Nomen questions	Lo has paper
+T138		8224	rflp	author didn't elucidate	leave as is
+T9 M. m. domesticus		9452	rflp	author didn't elucidate	leave as is
+t<Jr1>		3018	rflp	nomen question for Lo	Lo*
+t<k100>		7253	rflp	nomen decision needed	Lo has paper
+t<k115>		7253	rflp	nomen decision needed	Lo has paper
+t<k120>		7253	rflp	nomen decision needed	Lo has paper
+t<k130>		7253	rflp	nomen decision needed	Lo has paper
+t<ks1>		3821	rflp	nomen question for Lo	Lo has paper
+t<M3>		3821	rflp	nomen question for Lo	Lo has paper
+t<M7>		3821	rflp	nomen question for Lo	Lo has paper
+t<M8>		26135	rflp	allele not in MGD	Lo has paper
+t<M9>		26135	rflp	allele not in MGD	Lo*
+t<MC1>		26135	rflp	allele not in MGD	Lo*
+t<p12>		9310	rflp	Nomen questions	Lo*
+t<p14>		9310	rflp	Nomen questions	Lo*
+t<p4>		9310	rflp	Nomen questions	Lo*
+t<PA027>/t<PA027>		11527	mol	Nomen	Lo*
+t<s510>		7253	rflp	nomen decision needed	Lo has paper
+t<s735>		7253	rflp	nomen decision needed	Lo has paper
+T<wis>/+		21263	mol	not in MGD	Lo*
+t<wMP1>		26135	rflp	allele not in MGD	Lo*
+Ta<Fa>		36484	rflp	author didn't elucidate	leave as is
+tg(13HBV)E36-Pas		2945	mol	author didn't elucidate	leave as is
+Tg6208		10899	rflp	couldn't track origin	leave as is
+Tg74/Tg74 and Tg74/+ transgenics	and				leave as is
+TgN.BPFD #36		16281	map	basic protein factor depletion 	leave as is
+TgN.TTR		9303	mol	Japan authors didn't elucidate	leave as is
+TgOVE3A-sys/sys		10611	rflp	author's creative designation	leave as is
+transgenic line 358-3		11318	mol	author didn't elucidate	leave as is
+transgenic PyLMP.5		18214	mol	connected of Epstein Barr vir.	leave as is
+TUC CF1		47373	mol	Upjohn - didn't elucidate	leave as is
+TW1/A		9452	rflp	Swiss author	leave as is
+tw2		13241	rflp	?	get
+various		37827	map	notes in MLDP shows strains	leave as is
+W/Fu		7572	mol	rat	leave as is
+wild		5521	map	author didn't elucidate	leave as is
+wild #111		5521	map	author didn't elucidate	leave as is
+wild #67		5521	map	author didn't elucidate	leave as is
+wild type		847	rflp	14 records	leave as is
+wild type		6433	map		leave as is
+wild type		10415	rflp		leave as is
+wild; Chr 17f		5521	map	author didn't elucidate	leave as is
+wild; Chr 17w		5521	map	author didn't elucidate	leave as is
+WL76		9170	rflp	Wild M. m. domesticus	leave as is
+"WMP, C57BL/6"		18901	map	In situ - can't be changed	leave as is
+ZADAR		22806	rflp	author didn't elucidate	leave as is
+

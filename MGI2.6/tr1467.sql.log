@@ -1,0 +1,34 @@
+Wed Feb  7 06:10:40 EST 2001
+Password: 
+1>    
+2> use mgd_release
+1> 
+2> checkpoint
+1> 
+2> /* set all Mouse Marker LocusLink IDS to public */
+3> 
+4> update ACC_Accession
+5> set private = 0
+6> from ACC_Accession a, MRK_Marker m
+7> where a._MGIType_key = 2
+8> and a._LogicalDB_key = 24
+9> and a._Object_key = m._Marker_key
+10> and m._Species_key = 1
+(16351 rows affected)
+1> 
+2> checkpoint
+1> 
+2> use nomen_release
+1> 
+2> checkpoint
+1> 
+2> /* set all LocusLink IDS to public */
+3> 
+4> update ACC_Accession
+5> set private = 0
+6> from ACC_Accession
+7> where _LogicalDB_key = 24
+(343 rows affected)
+1> 
+2> checkpoint
+Wed Feb  7 06:13:21 EST 2001

@@ -1,0 +1,19 @@
+#!/bin/csh
+
+set SERVER=$1
+set DATABASE=$2
+set USER=$3
+set PASSWORDFILE=$4
+
+echo $SERVER $DATABASE $USER $PASSWORDFILE
+
+echo parseFreeman dump_1998-02-17_A.1.ace stsToLoad.txt spreadsheet.txt tissuemapping.txt $SERVER $DATABASE $USER $PASSWORDFILE
+parseFreeman dump_1998-02-17_A.1.ace stsToLoad.txt spreadsheet.txt tissuemapping.txt $SERVER $DATABASE $USER $PASSWORDFILE
+
+
+if ( ! $status) then
+    echo loadBcps $SERVER $DATABASE $USER $PASSWORDFILE
+    loadBcps $SERVER $DATABASE $USER $PASSWORDFILE
+    echo writeAbstract $SERVER $DATABASE $USER $PASSWORDFILE
+    writeAbstract $SERVER $DATABASE $USER $PASSWORDFILE
+endif

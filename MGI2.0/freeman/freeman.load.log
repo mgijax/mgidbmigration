@@ -1,0 +1,3102 @@
+The time is: June  1 1998 21:04:15
+Reading dbo password...
+SERVER=MGD_DEV, DATABASE=mgd_new, USER=mgd_dbo
+Loading list of STSs to load...
+554 names loaded
+Loading data from MGI...
+Loading tissue keys...
+Loading tissue mapping file...
+Whole Brain = 7005
+Cortex = 7018
+Hippocampus = 7016
+Mid brain = 7006
+Striatum = 7017
+Olfactory bulb = 7015
+Cerebellum = 7012
+Spinal cord = 7004
+Pituitary gland = 7087
+Eye = 6993
+Skeletal muscle = 7125
+Heart = 7103
+Lung = 6948
+Spleen = 7038
+Liver = 6963
+Gall bladder = 6964
+Pancreas = 7092
+Kidney = 6960
+Bladder = 6961
+Adrenal gland = 7097
+Skin = 7025
+Adipose tissue = 7108
+Long bone\/marrow = 7132
+Paws = 7140
+Teeth = 6974
+Tongue = 6970
+Salivary gland = 6975
+Oesophagus = 6976
+Fundus = 6968
+Antrum = 6967
+Duodenum = 6981
+Jejunum = 6979
+Ileum = 6980
+Caecum = 6988
+Ascending = 6987
+Descending = 6986
+Appendix = 6989
+Thymus = 7037
+Mammary gland  Non preg. = 7035
+Mammary gland  preg. = 7035
+Testis = 6952
+Epididymis = 6953
+Ovary = 6958
+Cervix = 6956
+Placenta = 6957
+Mid-term foetus = 6925
+Loading database schema from MGD_DEV.mgd_new
+getMaxKey: select max(_Probe_key) from PRB_Probe
+getMaxKey: 588208
+getMaxKey: select max(_Reference_key) from PRB_Reference
+getMaxKey: 89824
+getMaxKey: select max(_Accession_key) from ACC_Accession
+getMaxKey: 1906907
+getMaxKey: select max(_Genotype_key) from GXD_Genotype
+getMaxKey: -1
+getMaxKey: select max(_ProbePrep_key) from GXD_ProbePrep
+getMaxKey: 1000
+getMaxKey: select max(_Assay_key) from GXD_Assay
+getMaxKey: 1000
+getMaxKey: select max(_GelLane_key) from GXD_GelLane
+getMaxKey: 1000
+getMaxKey: select max(_GelRow_key) from GXD_GelRow
+getMaxKey: 1000
+getMaxKey: select max(_GelBand_key) from GXD_GelBand
+getMaxKey: 1000
+getMaxKey: select max(_Expression_key) from GXD_Expression
+getMaxKey: 1000
+getMaxKey: select max(_Image_key) from IMG_Image
+getMaxKey: 1000
+getMaxKey: select max(_ImagePane_key) from IMG_ImagePane
+getMaxKey: 1000
+getCVrecord: select _Vector_key from PRB_Vector_Types where vectorType = "Not Applicable"
+getCVkey: -2
+getCVrecord: select _Sense_key from GXD_ProbeSense where sense = "Not Applicable"
+getCVkey: -2
+getCVrecord: select _Label_key from GXD_Label where label = "Not Applicable"
+getCVkey: -2
+getCVrecord: select _Coverage_key from GXD_LabelCoverage where coverage = "Not Applicable"
+getCVkey: -2
+getCVrecord: select _Visualization_key from GXD_VisualizationMethod where visualization = "Ethidium bromide"
+getCVkey: 4
+getCVrecord: select _AssayType_key from GXD_AssayType where assayType = "RT-PCR"
+getCVkey: 5
+getCVrecord: select _GelRNAType_key from GXD_GelRNAType where rnaType = "total"
+getCVkey: 2
+getCVrecord: select _GelUnits_key from GXD_GelUnits where units = "bp"
+getCVkey: 2
+getCVrecord: select _Strength_key from GXD_Strength where strength = "Strong"
+getCVkey: 7
+getCVrecord: select _Strength_key from GXD_Strength where strength = "Moderate"
+getCVkey: 6
+getCVrecord: select _Strength_key from GXD_Strength where strength = "Trace"
+getCVkey: 4
+getCVrecord: select _Strength_key from GXD_Strength where strength = "Absent"
+getCVkey: 1
+getCVrecord: select _Strength_key from GXD_Strength where strength = "Not Specified"
+getCVkey: -1
+getCVrecord: select _Strength_key from GXD_Strength where strength = "Not Applicable"
+getCVkey: -2
+getCVrecord: select _FieldType_key from IMG_FieldType where fieldType = "Not Applicable"
+getCVkey: -2
+getCVrecord: select _Strain_key from PRB_Strain where strain = "C57BL/6J"
+WARNING: getCVkey: C57BL/6J occurs multiple times in PRB_Strain.
+getCVkey: 1517
+getCVrecord: select _Strain_key from PRB_Strain where strain = "Not Applicable"
+getCVkey: -2
+Max MGI# = 1203975
+getCVrecord: select _MGIType_key from ACC_MGIType where name = "Segment"
+getCVkey: 3
+getCVrecord: select _MGIType_key from ACC_MGIType where name = "Assay"
+getCVkey: 8
+getCVrecord: select _MGIType_key from ACC_MGIType where name = "Image"
+getCVkey: 9
+getCVrecord: select _LogicalDB_key from ACC_LogicalDB where name = "MGI"
+getCVkey: 1
+getCVrecord: select _LogicalDB_key from ACC_LogicalDB where name = "Sequence DB"
+getCVkey: 9
+Loading GenBank numbers...
+96/189: WARNING: MGI does not associate A26182 with Adrb3
+96/327: WARNING: MGI does not associate L49180 with Cea5
+Could not find marker ESTM21
+Could not find marker ESTM22
+Could not find marker ESTM21
+97/714: WARNING: MGI does not associate AA475909 with ESTM23
+97/715: WARNING: MGI does not associate AA511515 with ESTM24
+Opening ACEDB file...
+Loading classes...
+(<AcedbClass instance at 140680be0>, <AcedbClass instance at 1415e9e30>, <AcedbClass instance at 1401f8d20>, <AcedbClass instance at 140d086b0>, <AcedbClass instance at 1415e8470>)
+st95_8: processing...
+	st95_8 has results
+	IMAGE: 95/8	x45@55C
+	writeBcp: st95_8 (2 copies)
+st95_9: processing...
+	st95_9 has results
+	IMAGE: 95/9	x50@55C
+	writeBcp: st95_9 (1 copies)
+st95_10: processing...
+	st95_10 has results
+	IMAGE: 95/10	x40@55C
+	writeBcp: st95_10 (1 copies)
+st95_12: processing...
+	st95_12: Tissue not in standard list: mouse DNA (Strong)
+	st95_12 has results
+	IMAGE: 95/12	x45@60C
+	writeBcp: st95_12 (2 copies)
+st95_13: processing...
+	st95_13: Tissue not in standard list: mouse DNA (Strong)
+	st95_13 has results
+	IMAGE: 95/13	x40@55C
+	writeBcp: st95_13 (1 copies)
+st95_14: processing...
+	st95_14: Tissue not in standard list: mouse DNA (Strong)
+	st95_14: Tissue not in standard list: human DNA (Trace)
+	st95_14 has results
+	IMAGE: 95/14	x40@55C
+	writeBcp: st95_14 (2 copies)
+st95_15: processing...
+	st95_15: Tissue not in standard list: mouse DNA (Strong)
+	st95_15 has results
+	IMAGE: 95/15	x35@55C
+	writeBcp: st95_15 (1 copies)
+st95_17: processing...
+	st95_17: Tissue not in standard list: mouse DNA (Moderate)
+	st95_17 has results
+	IMAGE: 95/17	x35@55C
+	writeBcp: st95_17 (1 copies)
+st95_19: processing...
+	st95_19: Tissue not in standard list: mouse DNA (Moderate)
+	st95_19 has results
+	IMAGE: 95/19	x50@55C
+	writeBcp: st95_19 (2 copies)
+st95_22: processing...
+	st95_22: Tissue not in standard list: mouse DNA (Strong)
+	st95_22 has results
+	IMAGE: 95/22	x45@55C
+	writeBcp: st95_22 (1 copies)
+st95_25: processing...
+	st95_25: Tissue not in standard list: mouse DNA (Strong)
+	st95_25: Tissue not in standard list: human DNA (Moderate)
+	st95_25 has results
+	IMAGE: 95/25	x40@55C
+	writeBcp: st95_25 (3 copies)
+st95_26: processing...
+	st95_26: Tissue not in standard list: mouse DNA (Strong)
+	st95_26 has results
+	IMAGE: 95/26	x40@55C
+	writeBcp: st95_26 (2 copies)
+st95_27: processing...
+	st95_27: Tissue not in standard list: 1 day mouse (Strong)
+	st95_27: Tissue not in standard list: mouse DNA (Strong)
+	st95_27 has results
+	IMAGE: 95/27	x40@55C
+	writeBcp: st95_27 (1 copies)
+st95_28: processing...
+	st95_28 has results
+	IMAGE: 95/28	x40@55C
+	writeBcp: st95_28 (1 copies)
+st95_29: processing...
+	st95_29: Tissue not in standard list: mouse DNA (Moderate)
+	st95_29 has results
+	IMAGE: 95/29	x30@55C
+	writeBcp: st95_29 (3 copies)
+st95_30: processing...
+	st95_30 has results
+	IMAGE: 95/30	x45@55C
+	writeBcp: st95_30 (2 copies)
+st95_32: processing...
+	st95_32: Tissue not in standard list: mouse DNA (Strong)
+	st95_32 has results
+	IMAGE: 95/32	x40@55C
+	writeBcp: st95_32 (1 copies)
+st95_33: processing...
+	st95_33: Tissue not in standard list: mouse DNA (Strong)
+	st95_33 has results
+	IMAGE: 95/33	x50@55C
+	writeBcp: st95_33 (2 copies)
+st95_34: processing...
+	st95_34 has results
+	IMAGE: 95/34	x50@55C
+	writeBcp: st95_34 (2 copies)
+st95_35: processing...
+	st95_35: Tissue not in standard list: mouse DNA (Strong)
+	st95_35 has results
+	IMAGE: 95/35	x50@55C
+	writeBcp: st95_35 (1 copies)
+st95_37: processing...
+	st95_37: Tissue not in standard list: mouse DNA (Strong)
+	st95_37 has results
+	IMAGE: 95/37	x50@55C
+	writeBcp: st95_37 (1 copies)
+st95_38: processing...
+	st95_38: Tissue not in standard list: mouse DNA (Moderate)
+	st95_38 has results
+	IMAGE: 95/38	x40@55C
+	writeBcp: st95_38 (2 copies)
+st95_39: processing...
+	st95_39: Tissue not in standard list: mouse DNA (Strong)
+	st95_39 has results
+	IMAGE: 95/39	x40@55C
+	writeBcp: st95_39 (2 copies)
+st95_41: processing...
+	st95_41: Tissue not in standard list: mouse DNA (Strong)
+	st95_41 has results
+	IMAGE: 95/41	x45@55C
+	writeBcp: st95_41 (1 copies)
+st95_42: processing...
+	st95_42: Tissue not in standard list: mouse DNA (Strong)
+	st95_42 has results
+	IMAGE: 95/42	x40@55C
+	writeBcp: st95_42 (2 copies)
+st95_43: processing...
+	st95_43: Tissue not in standard list: mouse DNA (Strong)
+	st95_43 has results
+	IMAGE: 95/43	x50@55C
+	writeBcp: st95_43 (1 copies)
+st95_44: processing...
+	st95_44: Tissue not in standard list: mouse DNA (Strong)
+	st95_44: Tissue not in standard list: human DNA (Strong)
+	st95_44 has results
+	IMAGE: 95/44	x40@55C
+	writeBcp: st95_44 (1 copies)
+st95_45: processing...
+	st95_45: Tissue not in standard list: mouse DNA (Strong)
+	st95_45 has results
+	IMAGE: 95/45	x40@55C
+	writeBcp: st95_45 (1 copies)
+st95_47: processing...
+	st95_47 has results
+	IMAGE: 95/47	x35@55C
+	writeBcp: st95_47 (1 copies)
+st95_48: processing...
+	st95_48: Tissue not in standard list: mouse DNA (Moderate)
+	st95_48 has results
+	IMAGE: 95/48	x50@55C
+	writeBcp: st95_48 (2 copies)
+st95_49: processing...
+	st95_49: Tissue not in standard list: mouse DNA (Strong)
+	st95_49 has results
+	IMAGE: 95/49	x45@55C
+	writeBcp: st95_49 (2 copies)
+st95_50: processing...
+	st95_50: Tissue not in standard list: mouse DNA (Strong)
+	st95_50 has results
+	IMAGE: 95/50	x40@55C
+	writeBcp: st95_50 (1 copies)
+st95_52: processing...
+	st95_52 has results
+	IMAGE: 95/52	x40@55C
+	writeBcp: st95_52 (1 copies)
+st95_53: processing...
+	st95_53: Tissue not in standard list: mouse DNA (Strong)
+	st95_53: Tissue not in standard list: human DNA (Moderate)
+	st95_53 has results
+	IMAGE: 95/53	x50@55C
+	writeBcp: st95_53 (2 copies)
+st95_54: processing...
+	st95_54: Tissue not in standard list: mouse DNA (Strong)
+	st95_54 has results
+	IMAGE: 95/54	x35@55C
+	writeBcp: st95_54 (1 copies)
+st95_56: processing...
+	st95_56: Tissue not in standard list: mouse DNA (Moderate)
+	st95_56 has results
+	IMAGE: 95/56	x40@55C
+	writeBcp: st95_56 (2 copies)
+st95_57: processing...
+	st95_57: Tissue not in standard list: Sternum (Strong)
+	st95_57: Tissue not in standard list: mouse DNA (Strong)
+	st95_57: Tissue not in standard list: 1 day mouse (Moderate)
+	st95_57 has results
+	IMAGE: 95/57	x40@55C
+	writeBcp: st95_57 (1 copies)
+st95_58: processing...
+	st95_58 has results
+	IMAGE: 95/58	x35@55C
+	writeBcp: st95_58 (1 copies)
+st95_59: processing...
+	st95_59: Tissue not in standard list: mouse DNA (Strong)
+	st95_59 has results
+	IMAGE: 95/59	x45@55C
+	writeBcp: st95_59 (2 copies)
+st95_60: processing...
+	st95_60: Tissue not in standard list: mouse DNA (Strong)
+	st95_60 has results
+	IMAGE: 95/60	x50@55C
+	writeBcp: st95_60 (2 copies)
+st95_61: processing...
+	st95_61: Tissue not in standard list: mouse DNA (Strong)
+	st95_61: Tissue not in standard list: human DNA (Moderate)
+	st95_61 has results
+	IMAGE: 95/61	x50@55C
+	writeBcp: st95_61 (2 copies)
+st95_62: processing...
+	st95_62: Tissue not in standard list: mouse DNA (Strong)
+	st95_62 has results
+	IMAGE: 95/62	x50@55C
+	writeBcp: st95_62 (2 copies)
+st95_63: processing...
+	st95_63: Tissue not in standard list: mouse DNA (Strong)
+	st95_63 has results
+	IMAGE: 95/63	x50@55C
+	writeBcp: st95_63 (1 copies)
+st95_64: processing...
+	st95_64: Tissue not in standard list: human DNA (Moderate)
+	st95_64: Tissue not in standard list: mouse DNA (Moderate)
+	st95_64 has results
+	IMAGE: 95/64	x45@55C
+	writeBcp: st95_64 (1 copies)
+st95_65: processing...
+	st95_65: Tissue not in standard list: human DNA (Strong)
+	st95_65: Tissue not in standard list: mouse DNA (Strong)
+	st95_65 has results
+	IMAGE: 95/65	x45@55C
+	writeBcp: st95_65 (1 copies)
+st95_66: processing...
+	st95_66: Tissue not in standard list: mouse DNA (Strong)
+	st95_66 has results
+	IMAGE: 95/66	x35@55C
+	writeBcp: st95_66 (1 copies)
+st95_67: processing...
+	st95_67 has results
+	IMAGE: 95/67	x40@55C
+	writeBcp: st95_67 (1 copies)
+st95_68: processing...
+	st95_68: Tissue not in standard list: mouse DNA (Strong)
+	st95_68: Tissue not in standard list: human DNA (Moderate)
+	st95_68 has results
+	IMAGE: 95/68	x35@55C
+	writeBcp: st95_68 (2 copies)
+st95_69: processing...
+	st95_69: Tissue not in standard list: mouse DNA (Strong)
+	st95_69: Tissue not in standard list: human DNA (Moderate)
+	st95_69 has results
+	IMAGE: 95/69	x45@55C
+	writeBcp: st95_69 (2 copies)
+st95_70: processing...
+	st95_70: Tissue not in standard list: mouse DNA (Strong)
+	st95_70: Tissue not in standard list: human DNA (Moderate)
+	st95_70 has results
+	IMAGE: 95/70	x40@60C
+	writeBcp: st95_70 (3 copies)
+st95_71: processing...
+	st95_71: Tissue not in standard list: mouse DNA (Strong)
+	st95_71 has results
+	IMAGE: 95/71	x50@55C
+	writeBcp: st95_71 (3 copies)
+st95_72: processing...
+	st95_72: Tissue not in standard list: mouse DNA (Strong)
+	st95_72 has results
+	IMAGE: 95/72	x40@55C
+	writeBcp: st95_72 (1 copies)
+st95_74: processing...
+	st95_74: Tissue not in standard list: mouse DNA (Strong)
+	st95_74 has results
+	IMAGE: 95/74	x40@55C
+	writeBcp: st95_74 (1 copies)
+st95_75: processing...
+	st95_75: Tissue not in standard list: mouse DNA (Strong)
+	st95_75 has results
+	IMAGE: 95/75	x40@55C
+	writeBcp: st95_75 (2 copies)
+st95_76: processing...
+	st95_76: Tissue not in standard list: mouse DNA (Strong)
+	st95_76 has results
+	IMAGE: 95/76	x50@55C
+	writeBcp: st95_76 (1 copies)
+st95_77: processing...
+	st95_77: Tissue not in standard list: mouse DNA (Strong)
+	st95_77: Tissue not in standard list: human DNA (Moderate)
+	st95_77 has results
+	IMAGE: 95/77	x40@60C
+	writeBcp: st95_77 (1 copies)
+st95_80: processing...
+	st95_80: Tissue not in standard list: mouse DNA (Strong)
+	st95_80: Tissue not in standard list: human DNA (Strong)
+	st95_80 has results
+	IMAGE: 95/80	x45@60C
+	writeBcp: st95_80 (2 copies)
+st95_83: processing...
+	st95_83: Tissue not in standard list: mouse DNA (Strong)
+	st95_83 has results
+	IMAGE: 95/83	x50@55C
+	writeBcp: st95_83 (1 copies)
+st95_84: processing...
+	st95_84: Tissue not in standard list: mouse DNA (Strong)
+	st95_84 has results
+	IMAGE: 95/84	x45@55C
+	writeBcp: st95_84 (2 copies)
+st95_85: processing...
+	st95_85: Tissue not in standard list: mouse DNA (Moderate)
+	st95_85 has results
+	IMAGE: 95/85	x35@55C
+	writeBcp: st95_85 (1 copies)
+st95_86: processing...
+	st95_86: Tissue not in standard list: mouse DNA (Strong)
+	st95_86 has results
+	IMAGE: 95/86	x40@55C
+	writeBcp: st95_86 (1 copies)
+st95_87: processing...
+	st95_87: Tissue not in standard list: mouse DNA (Moderate)
+	st95_87 has results
+	IMAGE: 95/87	x35@55C
+	writeBcp: st95_87 (1 copies)
+st95_89: processing...
+	st95_89: Tissue not in standard list: mouse DNA (Strong)
+	st95_89 has results
+	IMAGE: 95/89	x45@55C
+	writeBcp: st95_89 (2 copies)
+st95_91: processing...
+	st95_91: Tissue not in standard list: mouse DNA (Strong)
+	st95_91 has results
+	IMAGE: 95/91	x35@55C
+	writeBcp: st95_91 (1 copies)
+st95_92: processing...
+	st95_92 has results
+	IMAGE: 95/92	x40@55C
+	writeBcp: st95_92 (1 copies)
+st95_96: processing...
+	st95_96 has results
+	IMAGE: 95/96	x40@55C
+	writeBcp: st95_96 (1 copies)
+st96_97: processing...
+	st96_97: Tissue not in standard list: human DNA (Moderate)
+	st96_97: Tissue not in standard list: mouse DNA (Moderate)
+	st96_97 has results
+	IMAGE: 96/97	x35@55C
+	writeBcp: st96_97 (2 copies)
+st96_98: processing...
+	st96_98: Tissue not in standard list: mouse DNA (Strong)
+	st96_98 has results
+	IMAGE: 96/98	x40@55C
+	writeBcp: st96_98 (1 copies)
+st96_99: processing...
+	st96_99: Tissue not in standard list: mouse DNA (Strong)
+	st96_99 has results
+	IMAGE: 96/99	x30@55C
+	writeBcp: st96_99 (1 copies)
+st96_100: processing...
+	st96_100: Tissue not in standard list: mouse DNA (Strong)
+	st96_100: Tissue not in standard list: human DNA (Strong)
+	st96_100 has results
+	IMAGE: 96/100	x50@55C
+	writeBcp: st96_100 (1 copies)
+st96_101: processing...
+	st96_101: Tissue not in standard list: mouse DNA (Strong)
+	st96_101 has results
+	IMAGE: 96/101	x35@55C
+	writeBcp: st96_101 (1 copies)
+st96_102: processing...
+	st96_102: Tissue not in standard list: mouse DNA (Strong)
+	st96_102: Tissue not in standard list: human DNA (Trace)
+	st96_102 has results
+	IMAGE: 96/102	x30@55C
+	writeBcp: st96_102 (1 copies)
+st96_103: processing...
+	st96_103: Tissue not in standard list: mouse DNA (Strong)
+	st96_103 has results
+	IMAGE: 96/103	x50@55C
+	writeBcp: st96_103 (3 copies)
+st96_104: processing...
+	st96_104: Tissue not in standard list: mouse DNA (Strong)
+	st96_104 has results
+	IMAGE: 96/104	x40@55C
+	writeBcp: st96_104 (1 copies)
+st96_105: processing...
+	st96_105: Tissue not in standard list: mouse DNA (Strong)
+	st96_105: Tissue not in standard list: human DNA (Strong)
+	st96_105 has results
+	IMAGE: 96/105	x40@55C
+	writeBcp: st96_105 (1 copies)
+st96_107: processing...
+	st96_107: Tissue not in standard list: mouse DNA (Strong)
+	st96_107 has results
+	IMAGE: 96/107	x50@55C
+	writeBcp: st96_107 (3 copies)
+st96_108: processing...
+	st96_108: Tissue not in standard list: mouse DNA (Strong)
+	st96_108: Tissue not in standard list: human DNA (Moderate)
+	st96_108 has results
+	IMAGE: 96/108	x40@55C
+	writeBcp: st96_108 (1 copies)
+st96_109: processing...
+	st96_109: Tissue not in standard list: mouse DNA (Strong)
+	st96_109: Tissue not in standard list: human DNA (Moderate)
+	st96_109 has results
+	IMAGE: 96/109	x35@55C
+	writeBcp: st96_109 (1 copies)
+st96_110: processing...
+	st96_110: Tissue not in standard list: human DNA (Strong)
+	st96_110: Tissue not in standard list: mouse DNA (Strong)
+	st96_110 has results
+	IMAGE: 96/110	x40@55C
+	writeBcp: st96_110 (1 copies)
+st96_111: processing...
+	st96_111: Tissue not in standard list: mouse DNA (Strong)
+	st96_111: Tissue not in standard list: human DNA (Moderate)
+	st96_111 has results
+	IMAGE: 96/111	x40@55C
+	writeBcp: st96_111 (2 copies)
+st96_112: processing...
+	st96_112: Tissue not in standard list: human DNA (Strong)
+	st96_112: Tissue not in standard list: mouse DNA (Strong)
+	st96_112 has results
+	IMAGE: 96/112	x50@55C
+	writeBcp: st96_112 (2 copies)
+st96_115: processing...
+	st96_115: Tissue not in standard list: mouse DNA (Strong)
+	st96_115: Tissue not in standard list: human DNA (Trace)
+	st96_115 has results
+	IMAGE: 96/115	x40@60C
+	writeBcp: st96_115 (1 copies)
+st96_117: processing...
+	st96_117 has results
+	IMAGE: 96/117	x50@55C
+	writeBcp: st96_117 (2 copies)
+st96_119: processing...
+	st96_119: Tissue not in standard list: mouse DNA (Strong)
+	st96_119: Tissue not in standard list: human DNA (Moderate)
+	st96_119 has results
+	IMAGE: 96/119	x50@60C
+	writeBcp: st96_119 (2 copies)
+st96_121: processing...
+	st96_121: Tissue not in standard list: mouse DNA (Trace)
+	st96_121 has results
+	IMAGE: 96/121	x40@55C
+	writeBcp: st96_121 (1 copies)
+st96_122: processing...
+	st96_122: Tissue not in standard list: mouse DNA (Strong)
+	st96_122: Tissue not in standard list: human DNA (Moderate)
+	st96_122 has results
+	IMAGE: 96/122	x45@55C
+	writeBcp: st96_122 (2 copies)
+st96_123: processing...
+	st96_123: Tissue not in standard list: mouse DNA (Strong)
+	st96_123: Tissue not in standard list: human DNA (Strong)
+	st96_123 has results
+	IMAGE: 96/123	x45@60C
+	writeBcp: st96_123 (2 copies)
+st96_124: processing...
+	st96_124: Tissue not in standard list: mouse DNA (Strong)
+	st96_124 has results
+	IMAGE: 96/124	x30@55C
+	writeBcp: st96_124 (1 copies)
+st96_125: processing...
+	st96_125: Tissue not in standard list: mouse DNA (Strong)
+	st96_125: Tissue not in standard list: human DNA (Strong)
+	st96_125 has results
+	IMAGE: 96/125	x35@55C
+	writeBcp: st96_125 (1 copies)
+st96_127: processing...
+	st96_127: Tissue not in standard list: mouse DNA (Strong)
+	st96_127: Tissue not in standard list: human DNA (Moderate)
+	st96_127 has results
+	IMAGE: 96/127	x40@55C
+	writeBcp: st96_127 (1 copies)
+st96_128: processing...
+	st96_128: Tissue not in standard list: mouse DNA (Strong)
+	st96_128 has results
+	IMAGE: 96/128	x35@55C
+	writeBcp: st96_128 (1 copies)
+st96_130: processing...
+	st96_130: Tissue not in standard list: mouse DNA (Strong)
+	st96_130 has results
+	IMAGE: 96/130	x40@55C
+	writeBcp: st96_130 (2 copies)
+st96_131: processing...
+	st96_131: Tissue not in standard list: mouse DNA (Strong)
+	st96_131 has results
+	IMAGE: 96/131	x50@55C
+	writeBcp: st96_131 (2 copies)
+st96_132: processing...
+	st96_132: Tissue not in standard list: mouse DNA (Strong)
+	st96_132: Tissue not in standard list: human DNA (Moderate)
+	st96_132 has results
+	IMAGE: 96/132	x40@55C
+	writeBcp: st96_132 (1 copies)
+st96_133: processing...
+	st96_133: Tissue not in standard list: mouse DNA (Moderate)
+	st96_133 has results
+	IMAGE: 96/133	x30@55C
+	writeBcp: st96_133 (1 copies)
+st96_134: processing...
+	st96_134: Tissue not in standard list: mouse DNA (Strong)
+	st96_134: Tissue not in standard list: human DNA (Strong)
+	st96_134 has results
+	IMAGE: 96/134	x45@60C
+	writeBcp: st96_134 (3 copies)
+st96_135: processing...
+	st96_135: Tissue not in standard list: mouse DNA (Strong)
+	st96_135: Tissue not in standard list: human DNA (Moderate)
+	st96_135 has results
+	IMAGE: 96/135	x35@55C
+	writeBcp: st96_135 (1 copies)
+st96_136: processing...
+	st96_136: Tissue not in standard list: mouse DNA (Strong)
+	st96_136 has results
+	IMAGE: 96/136	x30@55C
+	writeBcp: st96_136 (1 copies)
+st96_139: processing...
+	st96_139: Tissue not in standard list: mouse DNA (Strong)
+	st96_139 has results
+	IMAGE: 96/139	x40@55C
+	writeBcp: st96_139 (1 copies)
+st96_140: processing...
+	st96_140 has results
+	IMAGE: 96/140	x40@55C
+	writeBcp: st96_140 (1 copies)
+st96_141: processing...
+	st96_141: Tissue not in standard list: mouse DNA (Strong)
+	st96_141: Tissue not in standard list: human DNA (Moderate)
+	st96_141 has results
+	IMAGE: 96/141	x40@55C
+	writeBcp: st96_141 (1 copies)
+st96_142: processing...
+	st96_142: Tissue not in standard list: mouse DNA (Strong)
+	st96_142: Tissue not in standard list: human DNA (Moderate)
+	st96_142 has results
+	IMAGE: 96/142	x50@55C
+	writeBcp: st96_142 (2 copies)
+st96_143: processing...
+	st96_143: Tissue not in standard list: mouse DNA (Strong)
+	st96_143 has results
+	IMAGE: 96/143	x35@55C
+	writeBcp: st96_143 (2 copies)
+st96_144: processing...
+	st96_144: Tissue not in standard list: human DNA (Strong)
+	st96_144: Tissue not in standard list: mouse DNA (Strong)
+	st96_144 has results
+	IMAGE: 96/144	x45@55C
+	writeBcp: st96_144 (1 copies)
+st96_145: processing...
+	st96_145: Tissue not in standard list: human DNA (Strong)
+	st96_145: Tissue not in standard list: mouse DNA (Strong)
+	st96_145 has results
+	IMAGE: 96/145	x50@55C
+	writeBcp: st96_145 (2 copies)
+st96_146: processing...
+	st96_146: Tissue not in standard list: mouse DNA (Moderate)
+	st96_146 has results
+	IMAGE: 96/146	x45@55C
+	writeBcp: st96_146 (1 copies)
+st96_147: processing...
+	st96_147: Tissue not in standard list: mouse DNA (Strong)
+	st96_147: Tissue not in standard list: human DNA (Strong)
+	st96_147 has results
+	IMAGE: 96/147	x40@55C
+	writeBcp: st96_147 (2 copies)
+st96_148: processing...
+	st96_148: Tissue not in standard list: mouse DNA (Strong)
+	st96_148 has results
+	IMAGE: 96/148	x30@55C
+	writeBcp: st96_148 (1 copies)
+st96_149: processing...
+	st96_149: Tissue not in standard list: mouse DNA (Strong)
+	st96_149 has results
+	IMAGE: 96/149	x35@55C
+	writeBcp: st96_149 (2 copies)
+st96_150: processing...
+	st96_150: Tissue not in standard list: mouse DNA (Strong)
+	st96_150 has results
+	IMAGE: 96/150	x50@55C
+	writeBcp: st96_150 (2 copies)
+st96_151: processing...
+	st96_151: Tissue not in standard list: mouse DNA (Strong)
+	st96_151 has results
+	IMAGE: 96/151	x50@55C
+	writeBcp: st96_151 (1 copies)
+st96_152: processing...
+	st96_152: Tissue not in standard list: mouse DNA (Strong)
+	st96_152: Tissue not in standard list: Glycogen-blank (Trace)
+	st96_152 has results
+	IMAGE: 96/152	x50@55C
+	writeBcp: st96_152 (2 copies)
+st96_153: processing...
+	st96_153: Tissue not in standard list: mouse DNA (Strong)
+	st96_153 has results
+	IMAGE: 96/153	x30@55C
+	writeBcp: st96_153 (1 copies)
+st96_154: processing...
+	st96_154: Tissue not in standard list: mouse DNA (Moderate)
+	st96_154 has results
+	IMAGE: 96/154	x40@55C
+	writeBcp: st96_154 (1 copies)
+st96_155: processing...
+	st96_155: Tissue not in standard list: mouse DNA (Strong)
+	st96_155 has results
+	IMAGE: 96/155	x40@55C
+	writeBcp: st96_155 (1 copies)
+st96_156: processing...
+	st96_156: Tissue not in standard list: mouse DNA (Strong)
+	st96_156 has results
+	IMAGE: 96/156	x40@55C
+	writeBcp: st96_156 (1 copies)
+st96_158: processing...
+	st96_158: Tissue not in standard list: mouse DNA (Strong)
+	st96_158: Tissue not in standard list: human DNA (Moderate)
+	st96_158 has results
+	IMAGE: 96/158	x50@55C
+	writeBcp: st96_158 (2 copies)
+st96_163: processing...
+	st96_163: Tissue not in standard list: mouse DNA (Strong)
+	st96_163 has results
+	IMAGE: 96/163	x50@60C
+	writeBcp: st96_163 (1 copies)
+st96_164: processing...
+	st96_164: Tissue not in standard list: human DNA (Moderate)
+	st96_164: Tissue not in standard list: mouse DNA (Moderate)
+	st96_164 has results
+	IMAGE: 96/164	x35@55C
+	writeBcp: st96_164 (2 copies)
+st96_165: processing...
+	st96_165: Tissue not in standard list: mouse DNA (Strong)
+	st96_165 has results
+	IMAGE: 96/165	x30@55C
+	writeBcp: st96_165 (1 copies)
+st96_167: processing...
+	st96_167: Tissue not in standard list: mouse DNA (Moderate)
+	st96_167 has results
+	IMAGE: 96/167	x40@55C
+	writeBcp: st96_167 (1 copies)
+st96_169: processing...
+	st96_169: Tissue not in standard list: mouse DNA (Strong)
+	st96_169: Tissue not in standard list: human DNA (Moderate)
+	st96_169 has results
+	IMAGE: 96/169	x35@55C
+	writeBcp: st96_169 (2 copies)
+st96_170: processing...
+	st96_170: Tissue not in standard list: mouse DNA (Moderate)
+	st96_170: Tissue not in standard list: human DNA (Moderate)
+	st96_170 has results
+	IMAGE: 96/170	x35@55C
+	writeBcp: st96_170 (1 copies)
+st96_172: processing...
+	st96_172: Tissue not in standard list: mouse DNA (Moderate)
+	st96_172 has results
+	IMAGE: 96/172	x30@55C
+	writeBcp: st96_172 (1 copies)
+st96_174: processing...
+	st96_174: Tissue not in standard list: mouse DNA (Strong)
+	st96_174 has results
+	IMAGE: 96/174	x30@55C
+	writeBcp: st96_174 (1 copies)
+st96_175: processing...
+	st96_175: Tissue not in standard list: mouse DNA (Strong)
+	st96_175 has results
+	IMAGE: 96/175	x35@55C
+	writeBcp: st96_175 (1 copies)
+st96_176: processing...
+	st96_176: Tissue not in standard list: mouse DNA (Strong)
+	st96_176: Tissue not in standard list: human DNA (Strong)
+	st96_176 has results
+	IMAGE: 96/176	X50@60C
+	writeBcp: st96_176 (1 copies)
+st96_177: processing...
+	st96_177: Tissue not in standard list: human DNA (Strong)
+	st96_177: Tissue not in standard list: mouse DNA (Strong)
+	st96_177 has results
+	IMAGE: 96/177	x40@55C
+	writeBcp: st96_177 (1 copies)
+st96_178: processing...
+	st96_178: Tissue not in standard list: mouse DNA (Strong)
+	st96_178 has results
+	IMAGE: 96/178	x45@55C
+	writeBcp: st96_178 (1 copies)
+st96_179: processing...
+	st96_179: Tissue not in standard list: mouse DNA (Strong)
+	st96_179 has results
+	IMAGE: 96/179	x45@55C
+	writeBcp: st96_179 (1 copies)
+st96_181: processing...
+	st96_181: Tissue not in standard list: mouse DNA (Strong)
+	st96_181 has results
+	IMAGE: 96/181	x30@55C
+	writeBcp: st96_181 (1 copies)
+st96_182: processing...
+	st96_182: Tissue not in standard list: mouse DNA (Strong)
+	st96_182: Tissue not in standard list: human DNA (Moderate)
+	st96_182 has results
+	IMAGE: 96/182	x40@55C
+	writeBcp: st96_182 (2 copies)
+st96_183: processing...
+	st96_183: Tissue not in standard list: mouse DNA (Strong)
+	st96_183 has results
+	IMAGE: 96/183	x30@55C
+	writeBcp: st96_183 (1 copies)
+st96_184: processing...
+	st96_184 has results
+	IMAGE: 96/184	x40@55C
+	writeBcp: st96_184 (1 copies)
+st96_185: processing...
+	st96_185: Tissue not in standard list: mouse DNA (Strong)
+	st96_185 has results
+	IMAGE: 96/185	x35@55C
+	writeBcp: st96_185 (1 copies)
+st96_186: processing...
+	st96_186: Tissue not in standard list: mouse DNA (Strong)
+	st96_186 has results
+	IMAGE: 96/186	x40@55C
+	writeBcp: st96_186 (1 copies)
+st96_187: processing...
+	st96_187 has results
+	IMAGE: 96/187	x50@55C
+	writeBcp: st96_187 (3 copies)
+st96_188: processing...
+	st96_188: Tissue not in standard list: mouse DNA (Strong)
+	st96_188 has results
+	IMAGE: 96/188	x40@55C
+	writeBcp: st96_188 (3 copies)
+st96_190: processing...
+	st96_190: Tissue not in standard list: mouse DNA (Strong)
+	st96_190 has results
+	IMAGE: 96/190	x45@55C
+	writeBcp: st96_190 (1 copies)
+st96_191: processing...
+	st96_191: Tissue not in standard list: mouse DNA (Strong)
+	st96_191 has results
+	IMAGE: 96/191	x40@55C
+	writeBcp: st96_191 (2 copies)
+st96_194: processing...
+	st96_194: Tissue not in standard list: mouse DNA (Moderate)
+	st96_194 has results
+	IMAGE: 96/194	X50@60C
+	writeBcp: st96_194 (1 copies)
+st96_195: processing...
+	st96_195: Tissue not in standard list: mouse DNA (Strong)
+	st96_195 has results
+	IMAGE: 96/195	x40@55C
+	writeBcp: st96_195 (1 copies)
+st96_196: processing...
+	st96_196: Tissue not in standard list: mouse DNA (Strong)
+	st96_196: Tissue not in standard list: human DNA (Moderate)
+	st96_196 has results
+	IMAGE: 96/196	x45@55C
+	writeBcp: st96_196 (1 copies)
+st96_197: processing...
+	st96_197: Tissue not in standard list: mouse DNA (Strong)
+	st96_197: Tissue not in standard list: human DNA (Moderate)
+	st96_197 has results
+	IMAGE: 96/197	x40@55C
+	writeBcp: st96_197 (1 copies)
+st96_198: processing...
+	st96_198: Tissue not in standard list: mouse DNA (Strong)
+	st96_198: Tissue not in standard list: human DNA (Moderate)
+	st96_198 has results
+	IMAGE: 96/198	x50@55C
+	writeBcp: st96_198 (3 copies)
+st96_200: processing...
+	st96_200: Tissue not in standard list: mouse DNA (Strong)
+	st96_200 has results
+	IMAGE: 96/200	x50@60C
+	writeBcp: st96_200 (2 copies)
+st96_201: processing...
+	st96_201: Tissue not in standard list: mouse DNA (Strong)
+	st96_201: Tissue not in standard list: human DNA (Strong)
+	st96_201 has results
+	IMAGE: 96/201	x50@55C
+	writeBcp: st96_201 (1 copies)
+st96_202: processing...
+	st96_202: Tissue not in standard list: mouse DNA (Moderate)
+	st96_202: Tissue not in standard list: human DNA (Moderate)
+	st96_202 has results
+	IMAGE: 96/202	x40@55C
+	writeBcp: st96_202 (1 copies)
+st96_203: processing...
+	st96_203: Tissue not in standard list: mouse DNA (Strong)
+	st96_203: Tissue not in standard list: human DNA (Moderate)
+	st96_203 has results
+	IMAGE: 96/203	x40@55C
+	writeBcp: st96_203 (1 copies)
+st96_205: processing...
+	st96_205: Tissue not in standard list: human DNA (Strong)
+	st96_205: Tissue not in standard list: mouse DNA (Strong)
+	st96_205 has results
+	IMAGE: 96/205	x45@55C
+	writeBcp: st96_205 (1 copies)
+st96_207: processing...
+	st96_207: Tissue not in standard list: mouse DNA (Strong)
+	st96_207 has results
+	IMAGE: 96/207	x50@55C
+	writeBcp: st96_207 (1 copies)
+st96_209: processing...
+	st96_209: Tissue not in standard list: mouse DNA (Strong)
+	st96_209: Tissue not in standard list: human DNA (Strong)
+	st96_209 has results
+	IMAGE: 96/209	x50@55C
+	writeBcp: st96_209 (2 copies)
+st96_210: processing...
+	st96_210: Tissue not in standard list: mouse DNA (Strong)
+	st96_210 has results
+	IMAGE: 96/210	x35@55C
+	writeBcp: st96_210 (1 copies)
+st96_211: processing...
+	st96_211: Tissue not in standard list: mouse DNA (Strong)
+	st96_211 has results
+	IMAGE: 96/211	x45@55C
+	writeBcp: st96_211 (1 copies)
+st96_212: processing...
+	st96_212: Tissue not in standard list: mouse DNA (Trace)
+	st96_212 has results
+	IMAGE: 96/212	x40@55C
+	writeBcp: st96_212 (2 copies)
+st96_213: processing...
+	st96_213: Tissue not in standard list: mouse DNA (Strong)
+	st96_213 has results
+	IMAGE: 96/213	x45@55C
+	writeBcp: st96_213 (1 copies)
+st96_214: processing...
+	st96_214: Tissue not in standard list: mouse DNA (Strong)
+	st96_214 has results
+	IMAGE: 96/214	x40@55C
+	writeBcp: st96_214 (1 copies)
+st96_215: processing...
+	st96_215: Tissue not in standard list: mouse DNA (Strong)
+	st96_215: Tissue not in standard list: human DNA (Moderate)
+	st96_215 has results
+	IMAGE: 96/215	x50@55C
+	writeBcp: st96_215 (1 copies)
+st96_216: processing...
+	st96_216: Tissue not in standard list: mouse DNA (Strong)
+	st96_216 has results
+	IMAGE: 96/216	x40@55C
+	writeBcp: st96_216 (1 copies)
+st96_217: processing...
+	st96_217: Tissue not in standard list: mouse DNA (Strong)
+	st96_217: Tissue not in standard list: human DNA (Moderate)
+	st96_217 has results
+	IMAGE: 96/217	x35@55C
+	writeBcp: st96_217 (1 copies)
+st96_218: processing...
+	st96_218: Tissue not in standard list: mouse DNA (Strong)
+	st96_218 has results
+	IMAGE: 96/218	x40@55C
+	writeBcp: st96_218 (1 copies)
+st96_219: processing...
+	st96_219: Tissue not in standard list: mouse DNA (Strong)
+	st96_219: Tissue not in standard list: human DNA (Strong)
+	st96_219 has results
+	IMAGE: 96/219	x40@55C
+	writeBcp: st96_219 (2 copies)
+st96_220: processing...
+	st96_220 has results
+	IMAGE: 96/220	x45@55C
+	writeBcp: st96_220 (2 copies)
+st96_221: processing...
+	st96_221: Tissue not in standard list: mouse DNA (Strong)
+	st96_221 has results
+	IMAGE: 96/221	x45@55C
+	writeBcp: st96_221 (1 copies)
+st96_222: processing...
+	st96_222: Tissue not in standard list: mouse DNA (Strong)
+	st96_222 has results
+	IMAGE: 96/222	x40@55C
+	writeBcp: st96_222 (1 copies)
+st96_223: processing...
+	st96_223: Tissue not in standard list: mouse DNA (Strong)
+	st96_223 has results
+	IMAGE: 96/223	x50@60C
+	writeBcp: st96_223 (1 copies)
+st96_224: processing...
+	st96_224: Tissue not in standard list: mouse DNA (Strong)
+	st96_224: Tissue not in standard list: human DNA (Moderate)
+	st96_224 has results
+	IMAGE: 96/224	x50@55C
+	writeBcp: st96_224 (1 copies)
+st96_225: processing...
+	st96_225: Tissue not in standard list: mouse DNA (Strong)
+	st96_225 has results
+	IMAGE: 96/225	X50@60C
+	writeBcp: st96_225 (1 copies)
+st96_227: processing...
+	st96_227: Tissue not in standard list: mouse DNA (Strong)
+	st96_227: Tissue not in standard list: human DNA (Strong)
+	st96_227 has results
+	IMAGE: 96/227	x50@55C
+	writeBcp: st96_227 (2 copies)
+st96_228: processing...
+	st96_228: Tissue not in standard list: mouse DNA (Strong)
+	st96_228 has results
+	IMAGE: 96/228	x40@55C
+	writeBcp: st96_228 (1 copies)
+st96_229: processing...
+	st96_229: Tissue not in standard list: mouse DNA (Strong)
+	st96_229 has results
+	IMAGE: 96/229	x45@55C
+	writeBcp: st96_229 (1 copies)
+st96_230: processing...
+	st96_230: Tissue not in standard list: mouse DNA (Strong)
+	st96_230 has results
+	IMAGE: 96/230	x50@60C
+	writeBcp: st96_230 (1 copies)
+st96_232: processing...
+	st96_232: Tissue not in standard list: mouse DNA (Strong)
+	st96_232: Tissue not in standard list: human DNA (Moderate)
+	st96_232 has results
+	IMAGE: 96/232	x40@55C
+	writeBcp: st96_232 (2 copies)
+st96_233: processing...
+	st96_233: Tissue not in standard list: human DNA (Strong)
+	st96_233: Tissue not in standard list: mouse DNA (Moderate)
+	st96_233 has results
+	IMAGE: 96/233	x40@60C
+	writeBcp: st96_233 (2 copies)
+st96_235: processing...
+	st96_235: Tissue not in standard list: mouse DNA (Strong)
+	st96_235: Tissue not in standard list: human DNA (Trace)
+	st96_235 has results
+	IMAGE: 96/235	x40@55C
+	writeBcp: st96_235 (1 copies)
+st96_236: processing...
+	st96_236: Tissue not in standard list: mouse DNA (Strong)
+	st96_236: Tissue not in standard list: human DNA (Moderate)
+	st96_236 has results
+	IMAGE: 96/236	x50@60C
+	writeBcp: st96_236 (1 copies)
+st96_238: processing...
+	st96_238: Tissue not in standard list: mouse DNA (Strong)
+	st96_238: Tissue not in standard list: human DNA (Moderate)
+	st96_238 has results
+	IMAGE: 96/238	x35@60C
+	writeBcp: st96_238 (2 copies)
+st96_239: processing...
+	st96_239: Tissue not in standard list: mouse DNA (Strong)
+	st96_239: Tissue not in standard list: human DNA (Moderate)
+	st96_239 has results
+	IMAGE: 96/239	x35@60C
+	writeBcp: st96_239 (3 copies)
+st96_240: processing...
+	st96_240: Tissue not in standard list: mouse DNA (Strong)
+	st96_240: Tissue not in standard list: human DNA (Strong)
+	st96_240 has results
+	IMAGE: 96/240	x40@60C
+	writeBcp: st96_240 (1 copies)
+st96_241: processing...
+	st96_241: Tissue not in standard list: mouse DNA (Strong)
+	st96_241: Tissue not in standard list: human DNA (Strong)
+	st96_241 has results
+	IMAGE: 96/241	x40@55C
+	writeBcp: st96_241 (1 copies)
+st96_242: processing...
+	st96_242: Tissue not in standard list: mouse DNA (Strong)
+	st96_242: Tissue not in standard list: human DNA (Moderate)
+	st96_242 has results
+	IMAGE: 96/242	x40@60C
+	writeBcp: st96_242 (1 copies)
+st96_243: processing...
+	st96_243: Tissue not in standard list: mouse DNA (Strong)
+	st96_243 has results
+	IMAGE: 96/243	x35@60C
+	writeBcp: st96_243 (1 copies)
+st96_244: processing...
+	st96_244: Tissue not in standard list: mouse DNA (Strong)
+	st96_244 has results
+	IMAGE: 96/244	X50@60C
+	writeBcp: st96_244 (2 copies)
+st96_246: processing...
+	st96_246: Tissue not in standard list: mouse DNA (Strong)
+	st96_246 has results
+	IMAGE: 96/246	x35@60C
+	writeBcp: st96_246 (1 copies)
+st96_247: processing...
+	st96_247: Tissue not in standard list: mouse DNA (Strong)
+	st96_247 has results
+	IMAGE: 96/247	x50@60C
+	writeBcp: st96_247 (2 copies)
+st96_248: processing...
+	st96_248: Tissue not in standard list: mouse DNA (Strong)
+	st96_248: Tissue not in standard list: human DNA (Moderate)
+	st96_248 has results
+	IMAGE: 96/248	x50@60C
+	writeBcp: st96_248 (4 copies)
+st96_249: processing...
+	st96_249: Tissue not in standard list: mouse DNA (Strong)
+	st96_249 has results
+	IMAGE: 96/249	x50@60C
+	writeBcp: st96_249 (3 copies)
+st96_250: processing...
+	st96_250: Tissue not in standard list: mouse DNA (Strong)
+	st96_250 has results
+	IMAGE: 96/250	x50@60C
+	writeBcp: st96_250 (1 copies)
+st96_251: processing...
+	st96_251: Tissue not in standard list: mouse DNA (Strong)
+	st96_251 has results
+	IMAGE: 96/251	x50@60C
+	writeBcp: st96_251 (2 copies)
+st96_252: processing...
+	st96_252: Tissue not in standard list: mouse DNA (Strong)
+	st96_252 has results
+	IMAGE: 96/252	x45@55C
+	writeBcp: st96_252 (1 copies)
+st96_254: processing...
+	st96_254: Tissue not in standard list: mouse DNA (Strong)
+	st96_254 has results
+	IMAGE: 96/254	x50@55C
+	writeBcp: st96_254 (1 copies)
+st96_255: processing...
+	st96_255: Tissue not in standard list: mouse DNA (Strong)
+	st96_255: Tissue not in standard list: human DNA (Moderate)
+	st96_255 has results
+	IMAGE: 96/255	x50@55C
+	writeBcp: st96_255 (2 copies)
+st96_257: processing...
+	st96_257: Tissue not in standard list: mouse DNA (Strong)
+	st96_257 has results
+	IMAGE: 96/257	x45@55C
+	writeBcp: st96_257 (1 copies)
+st96_258: processing...
+	st96_258: Tissue not in standard list: mouse DNA (Strong)
+	st96_258 has results
+	IMAGE: 96/258	X50@60C
+	writeBcp: st96_258 (1 copies)
+st96_259: processing...
+	st96_259: Tissue not in standard list: mouse DNA (Strong)
+	st96_259 has results
+	IMAGE: 96/259	x45@55C
+	writeBcp: st96_259 (1 copies)
+st96_260: processing...
+	st96_260: Tissue not in standard list: mouse DNA (Strong)
+	st96_260 has results
+	IMAGE: 96/260	X50@60C
+	writeBcp: st96_260 (1 copies)
+st96_261: processing...
+	st96_261: Tissue not in standard list: mouse DNA (Moderate)
+	st96_261: Tissue not in standard list: human DNA (Moderate)
+	st96_261 has results
+	IMAGE: 96/261	x40@55C
+	writeBcp: st96_261 (2 copies)
+st96_262: processing...
+	st96_262: Tissue not in standard list: mouse DNA (Strong)
+	st96_262 has results
+	IMAGE: 96/262	x45@55C
+	writeBcp: st96_262 (1 copies)
+st96_263: processing...
+	st96_263 has results
+	IMAGE: 96/263	x45@55C
+	writeBcp: st96_263 (1 copies)
+st96_264: processing...
+	st96_264: Tissue not in standard list: mouse DNA (Strong)
+	st96_264 has results
+	IMAGE: 96/264	x50@60C
+	writeBcp: st96_264 (2 copies)
+st96_265: processing...
+	st96_265: Tissue not in standard list: mouse DNA (Strong)
+	st96_265 has results
+	IMAGE: 96/265	x50@60C
+	writeBcp: st96_265 (1 copies)
+st96_266: processing...
+	st96_266: Tissue not in standard list: mouse DNA (Strong)
+	st96_266 has results
+	IMAGE: 96/266	x35@55C
+	writeBcp: st96_266 (1 copies)
+st96_267: processing...
+	st96_267: Tissue not in standard list: mouse DNA (Strong)
+	st96_267 has results
+	IMAGE: 96/267	x35@55C
+	writeBcp: st96_267 (1 copies)
+st96_268: processing...
+	st96_268: Tissue not in standard list: mouse DNA (Strong)
+	st96_268: Tissue not in standard list: human DNA (Moderate)
+	st96_268 has results
+	IMAGE: 96/268	x45@55C
+	writeBcp: st96_268 (1 copies)
+st96_269: processing...
+	st96_269: Tissue not in standard list: mouse DNA (Strong)
+	st96_269: Tissue not in standard list: human DNA (Strong)
+	st96_269 has results
+	IMAGE: 96/269	x45@55C
+	writeBcp: st96_269 (1 copies)
+st96_270: processing...
+	st96_270: Tissue not in standard list: mouse DNA (Strong)
+	st96_270: Tissue not in standard list: human DNA (Moderate)
+	st96_270 has results
+	IMAGE: 96/270	x45@55C
+	writeBcp: st96_270 (3 copies)
+st96_271: processing...
+	st96_271: Tissue not in standard list: mouse DNA (Strong)
+	st96_271: Tissue not in standard list: human DNA (Strong)
+	st96_271 has results
+	IMAGE: 96/271	x45@55C
+	writeBcp: st96_271 (3 copies)
+st96_273: processing...
+	st96_273: Tissue not in standard list: mouse DNA (Strong)
+	st96_273: Tissue not in standard list: human DNA (Moderate)
+	st96_273 has results
+	IMAGE: 96/273	x35@55C
+	st96_273: No product length field.
+	writeBcp: st96_273 (1 copies)
+st96_274: processing...
+	st96_274: Tissue not in standard list: mouse DNA (Strong)
+	st96_274 has results
+	IMAGE: 96/274	x45@60C
+	st96_274: No product length field.
+	writeBcp: st96_274 (2 copies)
+st96_275: processing...
+	st96_275: Tissue not in standard list: mouse DNA (Strong)
+	st96_275 has results
+	IMAGE: 96/275	x35@60C
+	st96_275: No product length field.
+	writeBcp: st96_275 (2 copies)
+st96_276: processing...
+	st96_276: Tissue not in standard list: mouse DNA (Strong)
+	st96_276: Tissue not in standard list: human DNA (Moderate)
+	st96_276 has results
+	IMAGE: 96/276	X40@60C
+	writeBcp: st96_276 (2 copies)
+st96_277: processing...
+	st96_277: Tissue not in standard list: mouse DNA (Strong)
+	st96_277: Tissue not in standard list: human DNA (Moderate)
+	st96_277 has results
+	IMAGE: 96/277	x45@55C
+	writeBcp: st96_277 (1 copies)
+st96_278: processing...
+	st96_278: Tissue not in standard list: mouse DNA (Strong)
+	st96_278: Tissue not in standard list: human DNA (Trace)
+	st96_278 has results
+	IMAGE: 96/278	x35@55C
+	writeBcp: st96_278 (1 copies)
+st96_279: processing...
+	st96_279: Tissue not in standard list: mouse DNA (Strong)
+	st96_279 has results
+	IMAGE: 96/279	x35@55C
+	writeBcp: st96_279 (1 copies)
+st96_280: processing...
+	st96_280: Tissue not in standard list: mouse DNA (Strong)
+	st96_280: Tissue not in standard list: human DNA (Moderate)
+	st96_280 has results
+	IMAGE: 96/280	x35@55C
+	writeBcp: st96_280 (1 copies)
+st96_281: processing...
+	st96_281: Tissue not in standard list: mouse DNA (Moderate)
+	st96_281 has results
+	IMAGE: 96/281	x35@55C
+	writeBcp: st96_281 (1 copies)
+st96_282: processing...
+	st96_282: Tissue not in standard list: mouse DNA (Strong)
+	st96_282 has results
+	IMAGE: 96/282	x30@55C
+	writeBcp: st96_282 (1 copies)
+st96_283: processing...
+	st96_283: Tissue not in standard list: mouse DNA (Strong)
+	st96_283 has results
+	IMAGE: 96/283	x30@55C
+	writeBcp: st96_283 (1 copies)
+st96_284: processing...
+	st96_284: Tissue not in standard list: human DNA (Strong)
+	st96_284: Tissue not in standard list: mouse DNA (Strong)
+	st96_284 has results
+	IMAGE: 96/284	x40@55C
+	writeBcp: st96_284 (1 copies)
+st96_285: processing...
+	st96_285: Tissue not in standard list: mouse DNA (Strong)
+	st96_285 has results
+	IMAGE: 96/285	x35@55C
+	writeBcp: st96_285 (1 copies)
+st96_286: processing...
+	st96_286: Tissue not in standard list: mouse DNA (Strong)
+	st96_286 has results
+	IMAGE: 96/286	x40@55C
+	writeBcp: st96_286 (1 copies)
+st96_287: processing...
+	st96_287: Tissue not in standard list: mouse DNA (Strong)
+	st96_287 has results
+	IMAGE: 96/287	x40@55C
+	writeBcp: st96_287 (1 copies)
+st96_288: processing...
+	st96_288: Tissue not in standard list: mouse DNA (Strong)
+	st96_288 has results
+	IMAGE: 96/288	x35@55C
+	writeBcp: st96_288 (1 copies)
+st96_289: processing...
+	st96_289: Tissue not in standard list: mouse DNA (Moderate)
+	st96_289 has results
+	IMAGE: 96/289	x30@55C
+	writeBcp: st96_289 (1 copies)
+st96_290: processing...
+	st96_290: Tissue not in standard list: mouse DNA (Moderate)
+	st96_290 has results
+	IMAGE: 96/290	x45@55C
+	writeBcp: st96_290 (1 copies)
+st96_292: processing...
+	st96_292: Tissue not in standard list: mouse DNA (Strong)
+	st96_292: Tissue not in standard list: human DNA (Moderate)
+	st96_292 has results
+	IMAGE: 96/292	X40@55C
+	writeBcp: st96_292 (1 copies)
+st96_293: processing...
+	st96_293: Tissue not in standard list: mouse DNA (Strong)
+	st96_293: Tissue not in standard list: human DNA (Moderate)
+	st96_293 has results
+	IMAGE: 96/293	x45@55C
+	writeBcp: st96_293 (1 copies)
+st96_294: processing...
+	st96_294: Tissue not in standard list: mouse DNA (Strong)
+	st96_294 has results
+	IMAGE: 96/294	x30@55C
+	writeBcp: st96_294 (1 copies)
+st96_296: processing...
+	st96_296: Tissue not in standard list: mouse DNA (Strong)
+	st96_296 has results
+	IMAGE: 96/296	x35@55C
+	writeBcp: st96_296 (1 copies)
+st96_297: processing...
+	st96_297: Tissue not in standard list: mouse DNA (Strong)
+	st96_297 has results
+	IMAGE: 96/297	x35@55C
+	writeBcp: st96_297 (2 copies)
+st96_298: processing...
+	st96_298: Tissue not in standard list: mouse DNA (Strong)
+	st96_298 has results
+	IMAGE: 96/298	x45@55C
+	writeBcp: st96_298 (1 copies)
+st96_300: processing...
+	st96_300: Tissue not in standard list: mouse DNA (Strong)
+	st96_300 has results
+	IMAGE: 96/300	x30@55C
+	writeBcp: st96_300 (1 copies)
+st96_301: processing...
+	st96_301: Tissue not in standard list: human DNA (Moderate)
+	st96_301: Tissue not in standard list: mouse DNA (Moderate)
+	st96_301 has results
+	IMAGE: 96/301	x30@55C
+	writeBcp: st96_301 (1 copies)
+st96_302: processing...
+	st96_302: Tissue not in standard list: mouse DNA (Strong)
+	st96_302 has results
+	IMAGE: 96/302	x30@55C
+	writeBcp: st96_302 (1 copies)
+st96_303: processing...
+	st96_303: Tissue not in standard list: mouse DNA (Strong)
+	st96_303: Tissue not in standard list: human DNA (Strong)
+	st96_303 has results
+	IMAGE: 96/303	x40@55C
+	writeBcp: st96_303 (1 copies)
+st96_304: processing...
+	st96_304: Tissue not in standard list: human DNA (Strong)
+	st96_304: Tissue not in standard list: mouse DNA (Strong)
+	st96_304 has results
+	IMAGE: 96/304	x35@55C
+	writeBcp: st96_304 (2 copies)
+st96_305: processing...
+	st96_305: Tissue not in standard list: mouse DNA (Strong)
+	st96_305 has results
+	IMAGE: 96/305	X35@55C
+	writeBcp: st96_305 (1 copies)
+st96_306: processing...
+	st96_306: Tissue not in standard list: human DNA (Moderate)
+	st96_306: Tissue not in standard list: mouse DNA (Moderate)
+	st96_306 has results
+	IMAGE: 96/306	x30@55C
+	writeBcp: st96_306 (1 copies)
+st96_307: processing...
+	st96_307: Tissue not in standard list: mouse DNA (Strong)
+	st96_307 has results
+	IMAGE: 96/307	x35@55C
+	writeBcp: st96_307 (1 copies)
+st96_308: processing...
+	st96_308: Tissue not in standard list: mouse DNA (Strong)
+	st96_308: Tissue not in standard list: human DNA (Moderate)
+	st96_308 has results
+	IMAGE: 96/308	x45@55C
+	writeBcp: st96_308 (1 copies)
+st96_309: processing...
+	st96_309: Tissue not in standard list: mouse DNA (Moderate)
+	st96_309 has results
+	IMAGE: 96/309	x35@55C
+	writeBcp: st96_309 (1 copies)
+st96_310: processing...
+	st96_310: Tissue not in standard list: mouse DNA (Strong)
+	st96_310 has results
+	IMAGE: 96/310	x30@55C
+	writeBcp: st96_310 (2 copies)
+st96_311: processing...
+	st96_311: Tissue not in standard list: mouse DNA (Strong)
+	st96_311 has results
+	IMAGE: 96/311	x35@55C
+	writeBcp: st96_311 (1 copies)
+st96_312: processing...
+	st96_312: Tissue not in standard list: mouse DNA (Strong)
+	st96_312 has results
+	IMAGE: 96/312	x40@55C
+	writeBcp: st96_312 (1 copies)
+st96_314: processing...
+	st96_314: Tissue not in standard list: mouse DNA (Strong)
+	st96_314 has results
+	IMAGE: 96/314	x40@55C
+	writeBcp: st96_314 (1 copies)
+st96_315: processing...
+	st96_315: Tissue not in standard list: mouse DNA (Strong)
+	st96_315 has results
+	IMAGE: 96/315	X40@55C
+	writeBcp: st96_315 (1 copies)
+st96_319: processing...
+	st96_319: Tissue not in standard list: mouse DNA (Strong)
+	st96_319: Tissue not in standard list: human DNA (Moderate)
+	st96_319 has results
+	IMAGE: 96/319	x45@55C
+	writeBcp: st96_319 (1 copies)
+st96_320: processing...
+	st96_320: Tissue not in standard list: mouse DNA (Moderate)
+	st96_320 has results
+	IMAGE: 96/320	x30@55C
+	writeBcp: st96_320 (1 copies)
+st96_321: processing...
+	st96_321 has results
+	IMAGE: 96/321	x35@55C
+	writeBcp: st96_321 (1 copies)
+st96_322: processing...
+	st96_322: Tissue not in standard list: mouse DNA (Strong)
+	st96_322 has results
+	IMAGE: 96/322	x45@55C
+	writeBcp: st96_322 (1 copies)
+st96_325: processing...
+	st96_325: Tissue not in standard list: mouse DNA (Strong)
+	st96_325: Tissue not in standard list: human DNA (Moderate)
+	st96_325 has results
+	IMAGE: 96/325	x35@55C
+	writeBcp: st96_325 (1 copies)
+st96_326: processing...
+	st96_326: Tissue not in standard list: mouse DNA (Strong)
+	st96_326 has results
+	IMAGE: 96/326	x45@55C
+	writeBcp: st96_326 (1 copies)
+st96_328: processing...
+	st96_328: Tissue not in standard list: mouse DNA (Strong)
+	st96_328 has results
+	IMAGE: 96/328	x35@55C
+	writeBcp: st96_328 (1 copies)
+st96_329: processing...
+	st96_329 has results
+	IMAGE: 96/329	x30@55C
+	writeBcp: st96_329 (1 copies)
+st96_331: processing...
+	st96_331: Tissue not in standard list: mouse DNA (Strong)
+	st96_331: Tissue not in standard list: human DNA (Moderate)
+	st96_331 has results
+	IMAGE: 96/331	X40@55C
+	writeBcp: st96_331 (2 copies)
+st96_332: processing...
+	st96_332: Tissue not in standard list: mouse DNA (Strong)
+	st96_332 has results
+	IMAGE: 96/332	X40@55C
+	writeBcp: st96_332 (1 copies)
+st96_333: processing...
+	st96_333: Tissue not in standard list: mouse DNA (Moderate)
+	st96_333 has results
+	IMAGE: 96/333	x30@55C
+	writeBcp: st96_333 (1 copies)
+st96_334: processing...
+	st96_334: Tissue not in standard list: mouse DNA (Strong)
+	st96_334 has results
+	IMAGE: 96/334	x45@55C
+	writeBcp: st96_334 (1 copies)
+st96_335: processing...
+	st96_335: Tissue not in standard list: mouse DNA (Strong)
+	st96_335: Tissue not in standard list: human DNA (Moderate)
+	st96_335 has results
+	IMAGE: 96/335	x45@55C
+	writeBcp: st96_335 (1 copies)
+st96_336: processing...
+	st96_336: Tissue not in standard list: mouse DNA (Moderate)
+	st96_336 has results
+	IMAGE: 96/336	x30@55C
+	writeBcp: st96_336 (1 copies)
+st96_337: processing...
+	st96_337: Tissue not in standard list: mouse DNA (Strong)
+	st96_337: Tissue not in standard list: human DNA (Moderate)
+	st96_337 has results
+	IMAGE: 96/337	x35@55C
+	writeBcp: st96_337 (1 copies)
+st96_338: processing...
+	st96_338: Tissue not in standard list: mouse DNA (Strong)
+	st96_338: Tissue not in standard list: human DNA (Moderate)
+	st96_338 has results
+	IMAGE: 96/338	x45@55C
+	writeBcp: st96_338 (1 copies)
+st96_339: processing...
+	st96_339: Tissue not in standard list: human DNA (Strong)
+	st96_339: Tissue not in standard list: mouse DNA (Strong)
+	st96_339 has results
+	IMAGE: 96/339	x30@55C
+	writeBcp: st96_339 (1 copies)
+st96_341: processing...
+	st96_341: Tissue not in standard list: mouse DNA (Strong)
+	st96_341 has results
+	IMAGE: 96/341	x40@55C
+	writeBcp: st96_341 (1 copies)
+st96_343: processing...
+	st96_343: Tissue not in standard list: mouse DNA (Strong)
+	st96_343 has results
+	IMAGE: 96/343	x45@55C
+	writeBcp: st96_343 (1 copies)
+st96_344: processing...
+	st96_344: Tissue not in standard list: mouse DNA (Strong)
+	st96_344 has results
+	IMAGE: 96/344	x30@55C
+	writeBcp: st96_344 (1 copies)
+st96_345: processing...
+	st96_345: Tissue not in standard list: mouse DNA (Strong)
+	st96_345 has results
+	IMAGE: 96/345	x35@55C
+	writeBcp: st96_345 (1 copies)
+st96_347: processing...
+	st96_347: Tissue not in standard list: mouse DNA (Strong)
+	st96_347 has results
+	IMAGE: 96/347	x40@55C
+	writeBcp: st96_347 (1 copies)
+st96_348: processing...
+	st96_348: Tissue not in standard list: mouse DNA (Strong)
+	st96_348 has results
+	IMAGE: 96/348	x35@55C
+	writeBcp: st96_348 (1 copies)
+st96_349: processing...
+	st96_349: Tissue not in standard list: mouse DNA (Strong)
+	st96_349: Tissue not in standard list: human DNA (Moderate)
+	st96_349 has results
+	IMAGE: 96/349	x45@55C
+	writeBcp: st96_349 (1 copies)
+st96_351: processing...
+	st96_351: Tissue not in standard list: mouse DNA (Strong)
+	st96_351 has results
+	IMAGE: 96/351	x45@60C
+	writeBcp: st96_351 (1 copies)
+st96_352: processing...
+	st96_352: Tissue not in standard list: mouse DNA (Strong)
+	st96_352 has results
+	IMAGE: 96/352	x35@60C
+	writeBcp: st96_352 (2 copies)
+st96_354: processing...
+	st96_354: Tissue not in standard list: mouse DNA (Strong)
+	st96_354 has results
+	IMAGE: 96/354	x30@55C
+	writeBcp: st96_354 (2 copies)
+st96_355: processing...
+	st96_355: Tissue not in standard list: mouse DNA (Strong)
+	st96_355 has results
+	IMAGE: 96/355	x40@55C
+	writeBcp: st96_355 (1 copies)
+st96_356: processing...
+	st96_356: Tissue not in standard list: mouse DNA (Strong)
+	st96_356 has results
+	IMAGE: 96/356	x40@55C
+	writeBcp: st96_356 (1 copies)
+st96_357: processing...
+	st96_357: Tissue not in standard list: mouse DNA (Strong)
+	st96_357 has results
+	IMAGE: 96/357	x30@55C
+	writeBcp: st96_357 (2 copies)
+st96_358: processing...
+	st96_358: Tissue not in standard list: mouse DNA (Strong)
+	st96_358 has results
+	IMAGE: 96/358	x40@55C
+	writeBcp: st96_358 (1 copies)
+st96_359: processing...
+	st96_359: Tissue not in standard list: mouse DNA (Strong)
+	st96_359 has results
+	IMAGE: 96/359	x35@55C
+	writeBcp: st96_359 (1 copies)
+st96_360: processing...
+	st96_360: Tissue not in standard list: mouse DNA (Strong)
+	st96_360 has results
+	IMAGE: 96/360	x35@55C
+	writeBcp: st96_360 (1 copies)
+st96_361: processing...
+	st96_361: Tissue not in standard list: mouse DNA (Strong)
+	st96_361 has results
+	IMAGE: 96/361	x40@55C
+	writeBcp: st96_361 (1 copies)
+st96_362: processing...
+	st96_362: Tissue not in standard list: mouse DNA (Strong)
+	st96_362 has results
+	IMAGE: 96/362	x50@60C
+	writeBcp: st96_362 (1 copies)
+st96_363: processing...
+	st96_363: Tissue not in standard list: mouse DNA (Strong)
+	st96_363 has results
+	IMAGE: 96/363	x30@55C
+	writeBcp: st96_363 (1 copies)
+st96_364: processing...
+	st96_364: Tissue not in standard list: human DNA (Strong)
+	st96_364: Tissue not in standard list: mouse DNA (Strong)
+	st96_364 has results
+	IMAGE: 96/364	x45@55C
+	writeBcp: st96_364 (1 copies)
+st96_365: processing...
+	st96_365: Tissue not in standard list: human DNA (Strong)
+	st96_365: Tissue not in standard list: mouse DNA (Moderate)
+	st96_365 has results
+	IMAGE: 96/365	x50@55C
+	writeBcp: st96_365 (2 copies)
+st96_366: processing...
+	st96_366: Tissue not in standard list: mouse DNA (Strong)
+	st96_366 has results
+	IMAGE: 96/366	x40@55C
+	writeBcp: st96_366 (1 copies)
+st96_367: processing...
+	st96_367: Tissue not in standard list: mouse DNA (Strong)
+	st96_367: Tissue not in standard list: human DNA (Moderate)
+	st96_367 has results
+	IMAGE: 96/367	x40@55C
+	writeBcp: st96_367 (1 copies)
+st96_368: processing...
+	st96_368: Tissue not in standard list: mouse DNA (Strong)
+	st96_368: Tissue not in standard list: human DNA (Moderate)
+	st96_368 has results
+	IMAGE: 96/368	x50@60C
+	writeBcp: st96_368 (1 copies)
+st96_369: processing...
+	st96_369: Tissue not in standard list: mouse DNA (Strong)
+	st96_369 has results
+	IMAGE: 96/369	x45@55C
+	writeBcp: st96_369 (1 copies)
+st96_370: processing...
+	st96_370: Tissue not in standard list: mouse DNA (Strong)
+	st96_370: Tissue not in standard list: human DNA (Moderate)
+	st96_370 has results
+	IMAGE: 96/370	x40@55C
+	writeBcp: st96_370 (2 copies)
+st96_371: processing...
+	st96_371: Tissue not in standard list: mouse DNA (Strong)
+	st96_371 has results
+	IMAGE: 96/371	x35@55C
+	writeBcp: st96_371 (2 copies)
+st96_372: processing...
+	st96_372: Tissue not in standard list: mouse DNA (Strong)
+	st96_372 has results
+	IMAGE: 96/372	x35@55C
+	writeBcp: st96_372 (1 copies)
+st96_373: processing...
+	st96_373 has results
+	IMAGE: 96/373	x35@55C
+	writeBcp: st96_373 (1 copies)
+st96_374: processing...
+	st96_374: Tissue not in standard list: mouse DNA (Strong)
+	st96_374: Tissue not in standard list: human DNA (Strong)
+	st96_374 has results
+	IMAGE: 96/374	x45@55C
+	writeBcp: st96_374 (1 copies)
+st96_375: processing...
+	st96_375: Tissue not in standard list: mouse DNA (Strong)
+	st96_375 has results
+	IMAGE: 96/375	x30@55C
+	writeBcp: st96_375 (1 copies)
+st96_376: processing...
+	st96_376: Tissue not in standard list: mouse DNA (Moderate)
+	st96_376 has results
+	IMAGE: 96/376	x40@55C
+	writeBcp: st96_376 (1 copies)
+st96_377: processing...
+	st96_377: Tissue not in standard list: mouse DNA (Strong)
+	st96_377 has results
+	IMAGE: 96/377	x50@55C
+	writeBcp: st96_377 (1 copies)
+st96_378: processing...
+	st96_378: Tissue not in standard list: mouse DNA (Strong)
+	st96_378 has results
+	IMAGE: 96/378	x45@55C
+	writeBcp: st96_378 (1 copies)
+st96_379: processing...
+	st96_379: Tissue not in standard list: mouse DNA (Strong)
+	st96_379: Tissue not in standard list: human DNA (Moderate)
+	st96_379 has results
+	IMAGE: 96/379	x40@55C
+	writeBcp: st96_379 (1 copies)
+st96_380: processing...
+	st96_380: Tissue not in standard list: mouse DNA (Trace)
+	st96_380 has results
+	IMAGE: 96/380	x45@55C
+	writeBcp: st96_380 (1 copies)
+st96_381: processing...
+	st96_381: Tissue not in standard list: mouse DNA (Strong)
+	st96_381 has results
+	IMAGE: 96/381	x40@55C
+	writeBcp: st96_381 (1 copies)
+st96_382: processing...
+	st96_382: Tissue not in standard list: mouse DNA (Strong)
+	st96_382 has results
+	IMAGE: 96/382	x50@55C
+	writeBcp: st96_382 (1 copies)
+st96_383: processing...
+	st96_383: Tissue not in standard list: human DNA (Moderate)
+	st96_383 has results
+	IMAGE: 96/383	x40@55C
+	writeBcp: st96_383 (1 copies)
+st96_384: processing...
+	st96_384: Tissue not in standard list: mouse DNA (Strong)
+	st96_384 has results
+	IMAGE: 96/384	x40@55C
+	writeBcp: st96_384 (1 copies)
+st96_385: processing...
+	st96_385: Tissue not in standard list: mouse DNA (Strong)
+	st96_385 has results
+	IMAGE: 96/385	x50@60C
+	writeBcp: st96_385 (1 copies)
+st96_386: processing...
+	st96_386: Tissue not in standard list: mouse DNA (Strong)
+	st96_386: Tissue not in standard list: human DNA (Strong)
+	st96_386 has results
+	IMAGE: 96/386	x40@55C
+	writeBcp: st96_386 (1 copies)
+st96_387: processing...
+	st96_387: Tissue not in standard list: mouse DNA (Strong)
+	st96_387 has results
+	IMAGE: 96/387	x35@55C
+	writeBcp: st96_387 (1 copies)
+st96_388: processing...
+	st96_388: Tissue not in standard list: mouse DNA (Strong)
+	st96_388 has results
+	IMAGE: 96/388	x35@55C
+	writeBcp: st96_388 (1 copies)
+st96_389: processing...
+	st96_389: Tissue not in standard list: mouse DNA (Strong)
+	st96_389 has results
+	IMAGE: 96/389	x40@55C
+	writeBcp: st96_389 (1 copies)
+st96_390: processing...
+	st96_390: Tissue not in standard list: mouse DNA (Strong)
+	st96_390 has results
+	IMAGE: 96/390	x35@55C
+	writeBcp: st96_390 (1 copies)
+st96_391: processing...
+	st96_391: Tissue not in standard list: mouse DNA (Moderate)
+	st96_391 has results
+	IMAGE: 96/391	x45@55C
+	writeBcp: st96_391 (1 copies)
+st96_392: processing...
+	st96_392: Tissue not in standard list: mouse DNA (Strong)
+	st96_392 has results
+	IMAGE: 96/392	x40@55C
+	writeBcp: st96_392 (1 copies)
+st96_393: processing...
+	st96_393: Tissue not in standard list: mouse DNA (Strong)
+	st96_393: Tissue not in standard list: human DNA (Strong)
+	st96_393 has results
+	IMAGE: 96/393	x40@55C
+	writeBcp: st96_393 (2 copies)
+st96_394: processing...
+	st96_394: Tissue not in standard list: mouse DNA (Moderate)
+	st96_394 has results
+	IMAGE: 96/394	x40@55C
+	writeBcp: st96_394 (2 copies)
+st96_395: processing...
+	st96_395: Tissue not in standard list: mouse DNA (Strong)
+	st96_395 has results
+	IMAGE: 96/395	x40@55C
+	writeBcp: st96_395 (1 copies)
+st96_396: processing...
+	st96_396: Tissue not in standard list: mouse DNA (Strong)
+	st96_396 has results
+	IMAGE: 96/396	x45@55C
+	writeBcp: st96_396 (1 copies)
+st96_398: processing...
+	st96_398: Tissue not in standard list: mouse DNA (Moderate)
+	st96_398 has results
+	IMAGE: 96/398	x40@55C
+	writeBcp: st96_398 (1 copies)
+st96_399: processing...
+	st96_399: Tissue not in standard list: mouse DNA (Strong)
+	st96_399 has results
+	IMAGE: 96/399	x45@55C
+	writeBcp: st96_399 (1 copies)
+st96_400: processing...
+	st96_400: Tissue not in standard list: mouse DNA (Strong)
+	st96_400 has results
+	IMAGE: 96/400	x35@55C
+	writeBcp: st96_400 (1 copies)
+st96_401: processing...
+	st96_401: Tissue not in standard list: mouse DNA (Strong)
+	st96_401: Tissue not in standard list: human DNA (Strong)
+	st96_401 has results
+	IMAGE: 96/401	x50@55C
+	writeBcp: st96_401 (1 copies)
+st96_403: processing...
+	st96_403: Tissue not in standard list: mouse DNA (Strong)
+	st96_403 has results
+	IMAGE: 96/403	x40@60C
+	writeBcp: st96_403 (1 copies)
+st96_404: processing...
+	st96_404: Tissue not in standard list: mouse DNA (Strong)
+	st96_404 has results
+	IMAGE: 96/404	x35@55C
+	writeBcp: st96_404 (1 copies)
+st96_405: processing...
+	st96_405: Tissue not in standard list: mouse DNA (Strong)
+	st96_405: Tissue not in standard list: human DNA (Moderate)
+	st96_405 has results
+	IMAGE: 96/405	x45@55C
+	writeBcp: st96_405 (1 copies)
+st96_406: processing...
+	st96_406: Tissue not in standard list: mouse DNA (Moderate)
+	st96_406 has results
+	IMAGE: 96/406	x30@55C
+	writeBcp: st96_406 (1 copies)
+st96_407: processing...
+	st96_407: Tissue not in standard list: mouse DNA (Strong)
+	st96_407: Tissue not in standard list: human DNA (Moderate)
+	st96_407 has results
+	IMAGE: 96/407	x45@55C
+	writeBcp: st96_407 (1 copies)
+st96_409: processing...
+	st96_409: Tissue not in standard list: mouse DNA (Strong)
+	st96_409 has results
+	IMAGE: 96/409	x40@55C
+	writeBcp: st96_409 (1 copies)
+st96_414: processing...
+	st96_414: Tissue not in standard list: mouse DNA (Strong)
+	st96_414: Tissue not in standard list: human DNA (Strong)
+	st96_414 has results
+	IMAGE: 96/414	x40@55C
+	writeBcp: st96_414 (1 copies)
+st96_415: processing...
+	st96_415: Tissue not in standard list: mouse DNA (Moderate)
+	st96_415 has results
+	IMAGE: 96/415	X40@55C
+	writeBcp: st96_415 (2 copies)
+st96_416: processing...
+	st96_416 has results
+	IMAGE: 96/416	x35@55C
+	writeBcp: st96_416 (1 copies)
+st96_417: processing...
+	st96_417: Tissue not in standard list: mouse DNA (Strong)
+	st96_417 has results
+	IMAGE: 96/417	X50@55C
+	writeBcp: st96_417 (1 copies)
+st96_418: processing...
+	st96_418: Tissue not in standard list: mouse DNA (Strong)
+	st96_418 has results
+	IMAGE: 96/418	x30@55C
+	writeBcp: st96_418 (1 copies)
+st96_419: processing...
+	st96_419: Tissue not in standard list: mouse DNA (Moderate)
+	st96_419: Tissue not in standard list: human DNA (Moderate)
+	st96_419 has results
+	IMAGE: 96/419	x35@55C
+	writeBcp: st96_419 (1 copies)
+st96_420: processing...
+	st96_420: Tissue not in standard list: mouse DNA (Strong)
+	st96_420 has results
+	IMAGE: 96/420	x45@55C
+	writeBcp: st96_420 (1 copies)
+st96_421: processing...
+	st96_421: Tissue not in standard list: mouse DNA (Strong)
+	st96_421 has results
+	IMAGE: 96/421	x45@55C
+	writeBcp: st96_421 (1 copies)
+st96_422: processing...
+	st96_422: Tissue not in standard list: mouse DNA (Strong)
+	st96_422: Tissue not in standard list: human DNA (Moderate)
+	st96_422 has results
+	IMAGE: 96/422	x40@55C
+	writeBcp: st96_422 (1 copies)
+st96_423: processing...
+	st96_423: Tissue not in standard list: human DNA (Strong)
+	st96_423: Tissue not in standard list: mouse DNA (Strong)
+	st96_423 has results
+	IMAGE: 96/423	x45@55C
+	writeBcp: st96_423 (2 copies)
+st96_424: processing...
+	st96_424: Tissue not in standard list: human DNA (Moderate)
+	st96_424: Tissue not in standard list: mouse DNA (Moderate)
+	st96_424 has results
+	IMAGE: 96/424	x35@55C
+	writeBcp: st96_424 (2 copies)
+st96_425: processing...
+	st96_425: Tissue not in standard list: mouse DNA (Strong)
+	st96_425: Tissue not in standard list: human DNA (Moderate)
+	st96_425 has results
+	IMAGE: 96/425	x45@55C
+	writeBcp: st96_425 (1 copies)
+st96_427: processing...
+	st96_427: Tissue not in standard list: mouse DNA (Strong)
+	st96_427: Tissue not in standard list: human DNA (Moderate)
+	st96_427 has results
+	IMAGE: 96/427	x40@55C
+	writeBcp: st96_427 (1 copies)
+st96_428: processing...
+	st96_428: Tissue not in standard list: mouse DNA (Strong)
+	st96_428 has results
+	IMAGE: 96/428	x35@55C
+	writeBcp: st96_428 (1 copies)
+st96_429: processing...
+	st96_429: Tissue not in standard list: mouse DNA (Strong)
+	st96_429: Tissue not in standard list: human DNA (Moderate)
+	st96_429 has results
+	IMAGE: 96/429	x40@55C
+	writeBcp: st96_429 (1 copies)
+st96_430: processing...
+	st96_430: Tissue not in standard list: mouse DNA (Trace)
+	st96_430 has results
+	IMAGE: 96/430	x45@55C
+	writeBcp: st96_430 (1 copies)
+st96_431: processing...
+	st96_431: Tissue not in standard list: mouse DNA (Moderate)
+	st96_431: Tissue not in standard list: human DNA (Moderate)
+	st96_431 has results
+	IMAGE: 96/431	x40@55C
+	writeBcp: st96_431 (1 copies)
+st96_432: processing...
+	st96_432: Tissue not in standard list: mouse DNA (Strong)
+	st96_432: Tissue not in standard list: human DNA (Moderate)
+	st96_432 has results
+	IMAGE: 96/432	X50@55C
+	writeBcp: st96_432 (1 copies)
+st96_433: processing...
+	st96_433: Tissue not in standard list: mouse DNA (Strong)
+	st96_433: Tissue not in standard list: human DNA (Moderate)
+	st96_433 has results
+	IMAGE: 96/433	x40@55C
+	writeBcp: st96_433 (1 copies)
+st96_434: processing...
+	st96_434: Tissue not in standard list: mouse DNA (Strong)
+	st96_434 has results
+	IMAGE: 96/434	x30@55C
+	writeBcp: st96_434 (1 copies)
+st96_435: processing...
+	st96_435: Tissue not in standard list: mouse DNA (Strong)
+	st96_435: Tissue not in standard list: human DNA (Moderate)
+	st96_435 has results
+	IMAGE: 96/435	X40@55C
+	writeBcp: st96_435 (1 copies)
+st96_436: processing...
+	st96_436: Tissue not in standard list: mouse DNA (Strong)
+	st96_436 has results
+	IMAGE: 96/436	x35@55C
+	writeBcp: st96_436 (1 copies)
+st96_437: processing...
+	st96_437: Tissue not in standard list: mouse DNA (Strong)
+	st96_437 has results
+	IMAGE: 96/437	x35@55C
+	writeBcp: st96_437 (1 copies)
+st96_438: processing...
+	st96_438: Tissue not in standard list: mouse DNA (Strong)
+	st96_438: Tissue not in standard list: human DNA (Moderate)
+	st96_438 has results
+	IMAGE: 96/438	X40@55C
+	writeBcp: st96_438 (1 copies)
+st96_440: processing...
+	st96_440: Tissue not in standard list: mouse DNA (Strong)
+	st96_440 has results
+	IMAGE: 96/440	x35@55C
+	writeBcp: st96_440 (1 copies)
+st96_441: processing...
+	st96_441: Tissue not in standard list: human DNA (Moderate)
+	st96_441 has results
+	IMAGE: 96/441	x35@55C
+	writeBcp: st96_441 (2 copies)
+st96_442: processing...
+	st96_442: Tissue not in standard list: mouse DNA (Strong)
+	st96_442: Tissue not in standard list: human DNA (Moderate)
+	st96_442 has results
+	IMAGE: 96/442	x45@55C
+	writeBcp: st96_442 (1 copies)
+st96_443: processing...
+	st96_443: Tissue not in standard list: mouse DNA (Strong)
+	st96_443 has results
+	IMAGE: 96/443	x35@55C
+	writeBcp: st96_443 (2 copies)
+st96_444: processing...
+	st96_444: Tissue not in standard list: mouse DNA (Strong)
+	st96_444: Tissue not in standard list: human DNA (Moderate)
+	st96_444 has results
+	IMAGE: 96/444	x35@55C
+	writeBcp: st96_444 (2 copies)
+st96_445: processing...
+	st96_445: Tissue not in standard list: mouse DNA (Strong)
+	st96_445 has results
+	IMAGE: 96/445	x40@55C
+	writeBcp: st96_445 (1 copies)
+st96_446: processing...
+	st96_446: Tissue not in standard list: mouse DNA (Strong)
+	st96_446: Tissue not in standard list: human DNA (Moderate)
+	st96_446 has results
+	IMAGE: 96/446	x40@55C
+	writeBcp: st96_446 (1 copies)
+st96_447: processing...
+	st96_447: Tissue not in standard list: mouse DNA (Strong)
+	st96_447: Tissue not in standard list: human DNA (Moderate)
+	st96_447 has results
+	IMAGE: 96/447	x35@55C
+	writeBcp: st96_447 (1 copies)
+st96_450: processing...
+	st96_450: Tissue not in standard list: mouse DNA (Strong)
+	st96_450 has results
+	IMAGE: 96/450	x35@55C
+	writeBcp: st96_450 (1 copies)
+st96_451: processing...
+	st96_451: Tissue not in standard list: mouse DNA (Moderate)
+	st96_451: Tissue not in standard list: human DNA (Moderate)
+	st96_451 has results
+	IMAGE: 96/451	x40@55C
+	writeBcp: st96_451 (1 copies)
+st96_452: processing...
+	st96_452: Tissue not in standard list: mouse DNA (Strong)
+	st96_452: Tissue not in standard list: human DNA (Moderate)
+	st96_452 has results
+	IMAGE: 96/452	x40@55C
+	writeBcp: st96_452 (2 copies)
+st96_453: processing...
+	st96_453: Tissue not in standard list: mouse DNA (Strong)
+	st96_453 has results
+	IMAGE: 96/453	x45@55C
+	writeBcp: st96_453 (1 copies)
+st96_454: processing...
+	st96_454: Tissue not in standard list: mouse DNA (Strong)
+	st96_454 has results
+	IMAGE: 96/454	x35@55C
+	writeBcp: st96_454 (1 copies)
+st96_455: processing...
+	st96_455: Tissue not in standard list: mouse DNA (Strong)
+	st96_455 has results
+	IMAGE: 96/455	x35@55C
+	writeBcp: st96_455 (1 copies)
+st96_456: processing...
+	st96_456: Tissue not in standard list: human DNA (Moderate)
+	st96_456: Tissue not in standard list: mouse DNA (Moderate)
+	st96_456 has results
+	IMAGE: 96/456	x30@55C
+	writeBcp: st96_456 (2 copies)
+st96_457: processing...
+	st96_457: Tissue not in standard list: human DNA (Moderate)
+	st96_457: Tissue not in standard list: mouse DNA (Moderate)
+	st96_457 has results
+	IMAGE: 96/457	x30@55C
+	writeBcp: st96_457 (2 copies)
+st96_458: processing...
+	st96_458: Tissue not in standard list: mouse DNA (Strong)
+	st96_458 has results
+	IMAGE: 96/458	x35@55C
+	writeBcp: st96_458 (1 copies)
+st96_459: processing...
+	st96_459: Tissue not in standard list: mouse DNA (Strong)
+	st96_459 has results
+	IMAGE: 96/459	x40@55C
+	writeBcp: st96_459 (1 copies)
+st96_461: processing...
+	st96_461: Tissue not in standard list: mouse DNA (Strong)
+	st96_461 has results
+	IMAGE: 96/461	x30@55C
+	writeBcp: st96_461 (1 copies)
+st96_462: processing...
+	st96_462: Tissue not in standard list: mouse DNA (Strong)
+	st96_462: Tissue not in standard list: human DNA (Moderate)
+	st96_462 has results
+	IMAGE: 96/462	X40@55C
+	writeBcp: st96_462 (1 copies)
+st96_463: processing...
+	st96_463: Tissue not in standard list: mouse DNA (Strong)
+	st96_463 has results
+	IMAGE: 96/463	x45@55C
+	writeBcp: st96_463 (1 copies)
+st96_464: processing...
+	st96_464: Tissue not in standard list: mouse DNA (Strong)
+	st96_464 has results
+	IMAGE: 96/464	x40@55C
+	writeBcp: st96_464 (1 copies)
+st96_465: processing...
+	st96_465: Tissue not in standard list: mouse DNA (Strong)
+	st96_465 has results
+	IMAGE: 96/465	x35@55C
+	writeBcp: st96_465 (1 copies)
+st96_466: processing...
+	st96_466: Tissue not in standard list: mouse DNA (Strong)
+	st96_466: Tissue not in standard list: human DNA (Moderate)
+	st96_466 has results
+	IMAGE: 96/466	x40@55C
+	writeBcp: st96_466 (1 copies)
+st96_468: processing...
+	st96_468: Tissue not in standard list: mouse DNA (Strong)
+	st96_468: Tissue not in standard list: human DNA (Strong)
+	st96_468 has results
+	IMAGE: 96/468	X40@55C
+	writeBcp: st96_468 (1 copies)
+st96_469: processing...
+	st96_469: Tissue not in standard list: mouse DNA (Strong)
+	st96_469 has results
+	IMAGE: 96/469	x30@55C
+	writeBcp: st96_469 (1 copies)
+st96_471: processing...
+	st96_471: Tissue not in standard list: mouse DNA (Strong)
+	st96_471: Tissue not in standard list: human DNA (Strong)
+	st96_471 has results
+	IMAGE: 96/471	x40@55C
+	writeBcp: st96_471 (1 copies)
+st96_472: processing...
+	st96_472: Tissue not in standard list: mouse DNA (Strong)
+	st96_472 has results
+	IMAGE: 96/472	x45@55C
+	writeBcp: st96_472 (1 copies)
+st96_473: processing...
+	st96_473: Tissue not in standard list: mouse DNA (Moderate)
+	st96_473 has results
+	IMAGE: 96/473	x30@55C
+	writeBcp: st96_473 (1 copies)
+st96_474: processing...
+	st96_474: Tissue not in standard list: mouse DNA (Strong)
+	st96_474: Tissue not in standard list: human DNA (Moderate)
+	st96_474 has results
+	IMAGE: 96/474	x35@55C
+	writeBcp: st96_474 (1 copies)
+st96_475: processing...
+	st96_475: Tissue not in standard list: mouse DNA (Strong)
+	st96_475 has results
+	IMAGE: 96/475	x35@55C
+	writeBcp: st96_475 (1 copies)
+st96_476: processing...
+	st96_476: Tissue not in standard list: mouse DNA (Strong)
+	st96_476 has results
+	IMAGE: 96/476	x35@55C
+	writeBcp: st96_476 (1 copies)
+st96_477: processing...
+	st96_477: Tissue not in standard list: mouse DNA (Strong)
+	st96_477 has results
+	IMAGE: 96/477	x35@55C
+	writeBcp: st96_477 (1 copies)
+st96_478: processing...
+	st96_478: Tissue not in standard list: mouse DNA (Moderate)
+	st96_478 has results
+	IMAGE: 96/478	x45@55C
+	writeBcp: st96_478 (1 copies)
+st96_479: processing...
+	st96_479: Tissue not in standard list: mouse DNA (Strong)
+	st96_479 has results
+	IMAGE: 96/479	x40@55C
+	writeBcp: st96_479 (1 copies)
+st96_480: processing...
+	st96_480: Tissue not in standard list: mouse DNA (Strong)
+	st96_480: Tissue not in standard list: human DNA (Moderate)
+	st96_480 has results
+	IMAGE: 96/480	x40@55C
+	writeBcp: st96_480 (1 copies)
+st96_481: processing...
+	st96_481: Tissue not in standard list: mouse DNA (Strong)
+	st96_481 has results
+	IMAGE: 96/481	x35@55C
+	writeBcp: st96_481 (1 copies)
+st96_483: processing...
+	st96_483: Tissue not in standard list: mouse DNA (Strong)
+	st96_483: Tissue not in standard list: human DNA (Moderate)
+	st96_483 has results
+	IMAGE: 96/483	x40@55C
+	writeBcp: st96_483 (2 copies)
+st96_485: processing...
+	st96_485: Tissue not in standard list: mouse DNA (Strong)
+	st96_485 has results
+	IMAGE: 96/485	x35@55C
+	writeBcp: st96_485 (1 copies)
+st96_486: processing...
+	st96_486: Tissue not in standard list: mouse DNA (Strong)
+	st96_486 has results
+	IMAGE: 96/486	x35@55C
+	writeBcp: st96_486 (1 copies)
+st96_487: processing...
+	st96_487: Tissue not in standard list: mouse DNA (Strong)
+	st96_487 has results
+	IMAGE: 96/487	x35@55C
+	writeBcp: st96_487 (1 copies)
+st96_489: processing...
+	st96_489: Tissue not in standard list: mouse DNA (Strong)
+	st96_489: Tissue not in standard list: human DNA (Moderate)
+	st96_489 has results
+	IMAGE: 96/489	x50@55C
+	writeBcp: st96_489 (1 copies)
+st96_490: processing...
+	st96_490: Tissue not in standard list: mouse DNA (Strong)
+	st96_490: Tissue not in standard list: human DNA (Moderate)
+	st96_490 has results
+	IMAGE: 96/490	x50@55C
+	writeBcp: st96_490 (2 copies)
+st96_491: processing...
+	st96_491: Tissue not in standard list: mouse DNA (Strong)
+	st96_491 has results
+	IMAGE: 96/491	x40@55C
+	writeBcp: st96_491 (1 copies)
+st96_493: processing...
+	st96_493: Tissue not in standard list: mouse DNA (Strong)
+	st96_493: Tissue not in standard list: human DNA (Strong)
+	st96_493 has results
+	IMAGE: 96/493	x45@55C
+	writeBcp: st96_493 (1 copies)
+st96_494: processing...
+	st96_494: Tissue not in standard list: mouse DNA (Strong)
+	st96_494: Tissue not in standard list: human DNA (Moderate)
+	st96_494 has results
+	IMAGE: 96/494	x40@55C
+	writeBcp: st96_494 (1 copies)
+st96_496: processing...
+	st96_496: Tissue not in standard list: mouse DNA (Strong)
+	st96_496 has results
+	IMAGE: 96/496	x40@55C
+	writeBcp: st96_496 (1 copies)
+st96_498: processing...
+	st96_498: Tissue not in standard list: mouse DNA (Strong)
+	st96_498: Tissue not in standard list: human DNA (Moderate)
+	st96_498 has results
+	IMAGE: 96/498	x50@55C
+	writeBcp: st96_498 (1 copies)
+st96_499: processing...
+	st96_499: Tissue not in standard list: mouse DNA (Strong)
+	st96_499 has results
+	IMAGE: 96/499	x40@55C
+	writeBcp: st96_499 (1 copies)
+st96_501: processing...
+	st96_501: Tissue not in standard list: mouse DNA (Strong)
+	st96_501: Tissue not in standard list: human DNA (Moderate)
+	st96_501 has results
+	IMAGE: 96/501	x50@60C
+	writeBcp: st96_501 (3 copies)
+st96_504: processing...
+	st96_504: Tissue not in standard list: mouse DNA (Strong)
+	st96_504 has results
+	IMAGE: 96/504	x50@55C
+	writeBcp: st96_504 (2 copies)
+st96_508: processing...
+	st96_508: Tissue not in standard list: mouse DNA (Strong)
+	st96_508: Tissue not in standard list: human DNA (Moderate)
+	st96_508 has results
+	IMAGE: 96/508	x45@60C
+	writeBcp: st96_508 (1 copies)
+st96_512: processing...
+	st96_512: Tissue not in standard list: mouse DNA (Strong)
+	st96_512 has results
+	IMAGE: 96/512	x45@55C
+	writeBcp: st96_512 (1 copies)
+st96_514: processing...
+	st96_514: Tissue not in standard list: mouse DNA (Strong)
+	st96_514 has results
+	IMAGE: 96/514	x35@55C
+	writeBcp: st96_514 (1 copies)
+st96_515: processing...
+	st96_515: Tissue not in standard list: mouse DNA (Strong)
+	st96_515: Tissue not in standard list: human DNA (Moderate)
+	st96_515 has results
+	IMAGE: 96/515	x50@60C
+	writeBcp: st96_515 (1 copies)
+st96_516: processing...
+	st96_516: Tissue not in standard list: mouse DNA (Strong)
+	st96_516 has results
+	IMAGE: 96/516	x35@55C
+	writeBcp: st96_516 (1 copies)
+st96_517: processing...
+	st96_517: Tissue not in standard list: mouse DNA (Strong)
+	st96_517 has results
+	IMAGE: 96/517	x40@55C
+	writeBcp: st96_517 (1 copies)
+st96_519: processing...
+	st96_519 has results
+	IMAGE: 96/519	X45@55C
+	writeBcp: st96_519 (2 copies)
+st96_520: processing...
+	st96_520: Tissue not in standard list: human DNA (Strong)
+	st96_520: Tissue not in standard list: mouse DNA (Strong)
+	st96_520 has results
+	IMAGE: 96/520	x45@55C
+	writeBcp: st96_520 (1 copies)
+st96_522: processing...
+	st96_522: Tissue not in standard list: mouse DNA (Strong)
+	st96_522: Tissue not in standard list: human DNA (Moderate)
+	st96_522 has results
+	IMAGE: 96/522	x40@55C
+	writeBcp: st96_522 (1 copies)
+st96_523: processing...
+	st96_523: Tissue not in standard list: mouse DNA (Strong)
+	st96_523: Tissue not in standard list: human DNA (Moderate)
+	st96_523 has results
+	IMAGE: 96/523	x40@55C
+	writeBcp: st96_523 (3 copies)
+st96_525: processing...
+	st96_525: Tissue not in standard list: mouse DNA (Strong)
+	st96_525 has results
+	IMAGE: 96/525	x45@55C
+	writeBcp: st96_525 (1 copies)
+st96_527: processing...
+	st96_527: Tissue not in standard list: mouse DNA (Strong)
+	st96_527 has results
+	IMAGE: 96/527	x50@60C
+	writeBcp: st96_527 (1 copies)
+st96_530: processing...
+	st96_530: Tissue not in standard list: mouse DNA (Strong)
+	st96_530: Tissue not in standard list: human DNA (Moderate)
+	st96_530 has results
+	IMAGE: 96/530	x45@55C
+	writeBcp: st96_530 (1 copies)
+st96_531: processing...
+	st96_531: Tissue not in standard list: mouse DNA (Strong)
+	st96_531: Tissue not in standard list: human DNA (Strong)
+	st96_531 has results
+	IMAGE: 96/531	x35@55C
+	writeBcp: st96_531 (1 copies)
+st96_532: processing...
+	st96_532: Tissue not in standard list: mouse DNA (Strong)
+	st96_532: Tissue not in standard list: human DNA (Moderate)
+	st96_532 has results
+	IMAGE: 96/532	x35@55C
+	writeBcp: st96_532 (1 copies)
+st96_533: processing...
+	st96_533: Tissue not in standard list: mouse DNA (Moderate)
+	st96_533 has results
+	IMAGE: 96/533	x45@55C
+	writeBcp: st96_533 (1 copies)
+st96_534: processing...
+	st96_534: Tissue not in standard list: mouse DNA (Strong)
+	st96_534: Tissue not in standard list: human DNA (Moderate)
+	st96_534 has results
+	IMAGE: 96/534	x45@55C
+	writeBcp: st96_534 (1 copies)
+st97_550: processing...
+	st97_550: Tissue not in standard list: mouse DNA (Strong)
+	st97_550: Tissue not in standard list: human DNA (Strong)
+	st97_550 has results
+	IMAGE: 97/550	x40@55C
+	writeBcp: st97_550 (2 copies)
+st97_551: processing...
+	st97_551: Tissue not in standard list: mouse DNA (Strong)
+	st97_551: Tissue not in standard list: human DNA (Strong)
+	st97_551 has results
+	IMAGE: 97/551	x40@55C
+	writeBcp: st97_551 (1 copies)
+st97_552: processing...
+	st97_552: Tissue not in standard list: mouse DNA (Strong)
+	st97_552 has results
+	IMAGE: 97/552	x40@55C
+	writeBcp: st97_552 (1 copies)
+st97_554: processing...
+	st97_554: Tissue not in standard list: mouse DNA (Strong)
+	st97_554: Tissue not in standard list: human DNA (Moderate)
+	st97_554 has results
+	IMAGE: 97/554	x40@55C
+	writeBcp: st97_554 (2 copies)
+st97_557: processing...
+	st97_557: Tissue not in standard list: mouse DNA (Moderate)
+	st97_557 has results
+	IMAGE: 97/557	x40@55C
+	writeBcp: st97_557 (1 copies)
+st97_558: processing...
+	st97_558: Tissue not in standard list: mouse DNA (Strong)
+	st97_558 has results
+	IMAGE: 97/558	x50@55C
+	writeBcp: st97_558 (1 copies)
+st97_559: processing...
+	st97_559: Tissue not in standard list: mouse DNA (Moderate)
+	st97_559 has results
+	IMAGE: 97/559	x40@55C
+	writeBcp: st97_559 (2 copies)
+st97_560: processing...
+	st97_560: Tissue not in standard list: mouse DNA (Strong)
+	st97_560 has results
+	IMAGE: 97/560	x40@55C
+	writeBcp: st97_560 (1 copies)
+st97_561: processing...
+	st97_561: Tissue not in standard list: mouse DNA (Strong)
+	st97_561 has results
+	IMAGE: 97/561	x50@55C
+	writeBcp: st97_561 (1 copies)
+st97_562: processing...
+	st97_562: Tissue not in standard list: mouse DNA (Strong)
+	st97_562: Tissue not in standard list: human DNA (Strong)
+	st97_562 has results
+	IMAGE: 97/562	x50@55C
+	writeBcp: st97_562 (2 copies)
+st97_563: processing...
+	st97_563: Tissue not in standard list: mouse DNA (Strong)
+	st97_563 has results
+	IMAGE: 97/563	x45@60C
+	writeBcp: st97_563 (1 copies)
+st97_564: processing...
+	st97_564 has results
+	IMAGE: 97/564	x50@60C
+	writeBcp: st97_564 (1 copies)
+st97_566: processing...
+	st97_566: Tissue not in standard list: mouse DNA (Strong)
+	st97_566: Tissue not in standard list: human DNA (Strong)
+	st97_566 has results
+	IMAGE: 97/566	x45@55C
+	writeBcp: st97_566 (1 copies)
+st97_567: processing...
+	st97_567: Tissue not in standard list: mouse DNA (Strong)
+	st97_567 has results
+	IMAGE: 97/567	x40@55C
+	writeBcp: st97_567 (1 copies)
+st97_568: processing...
+	st97_568 has results
+	IMAGE: 97/568	x40@60C
+	writeBcp: st97_568 (1 copies)
+st97_569: processing...
+	st97_569: Tissue not in standard list: mouse DNA (Strong)
+	st97_569: Tissue not in standard list: human DNA (Moderate)
+	st97_569 has results
+	IMAGE: 97/569	x35@55C
+	writeBcp: st97_569 (1 copies)
+st97_570: processing...
+	st97_570: Tissue not in standard list: mouse DNA (Strong)
+	st97_570 has results
+	IMAGE: 97/570	x50@60C
+	writeBcp: st97_570 (2 copies)
+st97_571: processing...
+	st97_571: Tissue not in standard list: mouse DNA (Moderate)
+	st97_571 has results
+	IMAGE: 97/571	x45@55C
+	writeBcp: st97_571 (1 copies)
+st97_573: processing...
+	st97_573: Tissue not in standard list: mouse DNA (Strong)
+	st97_573 has results
+	IMAGE: 97/573	x40@55C
+	writeBcp: st97_573 (1 copies)
+st97_574: processing...
+	st97_574: Tissue not in standard list: mouse DNA (Moderate)
+	st97_574 has results
+	IMAGE: 97/574	x30@55C
+	writeBcp: st97_574 (1 copies)
+st97_575: processing...
+	st97_575: Tissue not in standard list: mouse DNA (Strong)
+	st97_575: Tissue not in standard list: human DNA (Moderate)
+	st97_575 has results
+	IMAGE: 97/575	x40@55C
+	writeBcp: st97_575 (1 copies)
+st97_576: processing...
+	st97_576: Tissue not in standard list: human DNA (Moderate)
+	st97_576: Tissue not in standard list: mouse DNA (Moderate)
+	st97_576 has results
+	IMAGE: 97/576	x50@60C
+	writeBcp: st97_576 (1 copies)
+st97_577: processing...
+	st97_577: Tissue not in standard list: mouse DNA (Strong)
+	st97_577: Tissue not in standard list: human DNA (Moderate)
+	st97_577 has results
+	IMAGE: 97/577	x40@55C
+	writeBcp: st97_577 (1 copies)
+st97_578: processing...
+	st97_578: Tissue not in standard list: mouse DNA (Strong)
+	st97_578 has results
+	IMAGE: 97/578	x40@55C
+	writeBcp: st97_578 (1 copies)
+st97_579: processing...
+	st97_579: Tissue not in standard list: mouse DNA (Strong)
+	st97_579 has results
+	IMAGE: 97/579	x45@55C
+	writeBcp: st97_579 (1 copies)
+st97_580: processing...
+	st97_580: Tissue not in standard list: mouse DNA (Moderate)
+	st97_580: Tissue not in standard list: human DNA (Moderate)
+	st97_580 has results
+	IMAGE: 97/580	x30@55C
+	writeBcp: st97_580 (1 copies)
+st97_581: processing...
+	st97_581: Tissue not in standard list: mouse DNA (Moderate)
+	st97_581: Tissue not in standard list: human DNA (Moderate)
+	st97_581 has results
+	IMAGE: 97/581	x45@55C
+	writeBcp: st97_581 (1 copies)
+st97_582: processing...
+	st97_582: Tissue not in standard list: mouse DNA (Strong)
+	st97_582: Tissue not in standard list: human DNA (Moderate)
+	st97_582 has results
+	IMAGE: 97/582	x45@55C
+	writeBcp: st97_582 (1 copies)
+st97_583: processing...
+	st97_583: Tissue not in standard list: mouse DNA (Strong)
+	st97_583: Tissue not in standard list: human DNA (Moderate)
+	st97_583 has results
+	IMAGE: 97/583	x50@60C
+	writeBcp: st97_583 (1 copies)
+st97_585: processing...
+	st97_585: Tissue not in standard list: mouse DNA (Strong)
+	st97_585: Tissue not in standard list: human DNA (Strong)
+	st97_585 has results
+	IMAGE: 97/585	x45@55C
+	writeBcp: st97_585 (1 copies)
+st97_586: processing...
+	st97_586: Tissue not in standard list: mouse DNA (Strong)
+	st97_586 has results
+	IMAGE: 97/586	x45@55C
+	writeBcp: st97_586 (1 copies)
+st97_587: processing...
+	st97_587: Tissue not in standard list: mouse DNA (Strong)
+	st97_587 has results
+	IMAGE: 97/587	x30@55C
+	writeBcp: st97_587 (1 copies)
+st97_588: processing...
+	st97_588: Tissue not in standard list: mouse DNA (Strong)
+	st97_588: Tissue not in standard list: human DNA (Moderate)
+	st97_588 has results
+	IMAGE: 97/588	x40@55C
+	writeBcp: st97_588 (1 copies)
+st97_589: processing...
+	st97_589: Tissue not in standard list: mouse DNA (Strong)
+	st97_589 has results
+	IMAGE: 97/589	x50@60C
+	writeBcp: st97_589 (1 copies)
+st97_590: processing...
+	st97_590: Tissue not in standard list: mouse DNA (Strong)
+	st97_590 has results
+	IMAGE: 97/590	x45@55C
+	writeBcp: st97_590 (1 copies)
+st97_591: processing...
+	st97_591: Tissue not in standard list: mouse DNA (Moderate)
+	st97_591 has results
+	IMAGE: 97/591	x40@55C
+	writeBcp: st97_591 (1 copies)
+st97_592: processing...
+	st97_592: Tissue not in standard list: mouse DNA (Strong)
+	st97_592: Tissue not in standard list: human DNA (Moderate)
+	st97_592 has results
+	IMAGE: 97/592	x45@55C
+	writeBcp: st97_592 (1 copies)
+st97_593: processing...
+	st97_593 has results
+	IMAGE: 97/593	x45@60C
+	writeBcp: st97_593 (1 copies)
+st97_595: processing...
+	st97_595: Tissue not in standard list: mouse DNA (Strong)
+	st97_595: Tissue not in standard list: human DNA (Moderate)
+	st97_595 has results
+	IMAGE: 97/595	x40@55C
+	writeBcp: st97_595 (1 copies)
+st97_596: processing...
+	st97_596: Tissue not in standard list: mouse DNA (Strong)
+	st97_596 has results
+	IMAGE: 97/596	x50@60C
+	writeBcp: st97_596 (1 copies)
+st97_597: processing...
+	st97_597: Tissue not in standard list: mouse DNA (Strong)
+	st97_597: Tissue not in standard list: human DNA (Moderate)
+	st97_597 has results
+	IMAGE: 97/597	x50@60C
+	writeBcp: st97_597 (2 copies)
+st97_598: processing...
+	st97_598: Tissue not in standard list: mouse DNA (Strong)
+	st97_598: Tissue not in standard list: human DNA (Moderate)
+	st97_598 has results
+	IMAGE: 97/598	x45@60C
+	writeBcp: st97_598 (1 copies)
+st97_599: processing...
+	st97_599: Tissue not in standard list: mouse DNA (Strong)
+	st97_599 has results
+	IMAGE: 97/599	x50@60C
+	writeBcp: st97_599 (1 copies)
+st97_600: processing...
+	st97_600: Tissue not in standard list: mouse DNA (Strong)
+	st97_600: Tissue not in standard list: human DNA (Moderate)
+	st97_600 has results
+	IMAGE: 97/600	x40@55C
+	writeBcp: st97_600 (1 copies)
+st97_601: processing...
+	st97_601: Tissue not in standard list: mouse DNA (Strong)
+	st97_601: Tissue not in standard list: human DNA (Moderate)
+	st97_601 has results
+	IMAGE: 97/601	x50@60C
+	writeBcp: st97_601 (1 copies)
+st97_603: processing...
+	st97_603: Tissue not in standard list: mouse DNA (Strong)
+	st97_603 has results
+	IMAGE: 97/603	x35@55C
+	writeBcp: st97_603 (1 copies)
+st97_604: processing...
+	st97_604: Tissue not in standard list: human DNA (Strong)
+	st97_604: Tissue not in standard list: mouse DNA (Strong)
+	st97_604 has results
+	IMAGE: 97/604	x40@55C
+	writeBcp: st97_604 (1 copies)
+st97_607: processing...
+	st97_607: Tissue not in standard list: mouse DNA (Moderate)
+	st97_607: Tissue not in standard list: human DNA (Moderate)
+	st97_607 has results
+	IMAGE: 97/607	x35@55C
+	writeBcp: st97_607 (1 copies)
+st97_608: processing...
+	st97_608: Tissue not in standard list: mouse DNA (Moderate)
+	st97_608 has results
+	IMAGE: 97/608	x45@55C
+	writeBcp: st97_608 (1 copies)
+st97_609: processing...
+	st97_609: Tissue not in standard list: mouse DNA (Strong)
+	st97_609: Tissue not in standard list: human DNA (Strong)
+	st97_609 has results
+	IMAGE: 97/609	x35@55C
+	writeBcp: st97_609 (1 copies)
+st97_612: processing...
+	st97_612: Tissue not in standard list: mouse DNA (Moderate)
+	st97_612 has results
+	IMAGE: 97/612	x30@55C
+	writeBcp: st97_612 (1 copies)
+st97_613: processing...
+	st97_613: Tissue not in standard list: mouse DNA (Strong)
+	st97_613 has results
+	IMAGE: 97/613	x45@55C
+	writeBcp: st97_613 (1 copies)
+st97_614: processing...
+	st97_614 has results
+	IMAGE: 97/614	x45@60C
+	writeBcp: st97_614 (2 copies)
+st97_615: processing...
+	st97_615: Tissue not in standard list: mouse DNA (Strong)
+	st97_615 has results
+	IMAGE: 97/615	x35@55C
+	writeBcp: st97_615 (1 copies)
+st97_616: processing...
+	st97_616: Tissue not in standard list: mouse DNA (Strong)
+	st97_616 has results
+	IMAGE: 97/616	x35@55C
+	writeBcp: st97_616 (1 copies)
+st97_617: processing...
+	st97_617: Tissue not in standard list: mouse DNA (Strong)
+	st97_617 has results
+	IMAGE: 97/617	x30@55C
+	writeBcp: st97_617 (1 copies)
+st97_618: processing...
+	st97_618: Tissue not in standard list: mouse DNA (Moderate)
+	st97_618 has results
+	IMAGE: 97/618	x35@55C
+	writeBcp: st97_618 (1 copies)
+st97_619: processing...
+	st97_619: Tissue not in standard list: mouse DNA (Strong)
+	st97_619 has results
+	IMAGE: 97/619	x40@55C
+	writeBcp: st97_619 (1 copies)
+st97_621: processing...
+	st97_621: Tissue not in standard list: mouse DNA (Strong)
+	st97_621 has results
+	IMAGE: 97/621	x35@55C
+	writeBcp: st97_621 (1 copies)
+st97_623: processing...
+	st97_623: Tissue not in standard list: mouse DNA (Moderate)
+	st97_623 has results
+	IMAGE: 97/623	x40@55C
+	writeBcp: st97_623 (1 copies)
+st97_625: processing...
+	st97_625: Tissue not in standard list: mouse DNA (Strong)
+	st97_625 has results
+	IMAGE: 97/625	x45@55C
+	writeBcp: st97_625 (1 copies)
+st97_627: processing...
+	st97_627: Tissue not in standard list: mouse DNA (Strong)
+	st97_627 has results
+	IMAGE: 97/627	x40@55C
+	writeBcp: st97_627 (1 copies)
+st97_628: processing...
+	st97_628: Tissue not in standard list: mouse DNA (Strong)
+	st97_628 has results
+	IMAGE: 97/628	x45@55C
+	writeBcp: st97_628 (1 copies)
+st97_629: processing...
+	st97_629: Tissue not in standard list: mouse DNA (Strong)
+	st97_629: Tissue not in standard list: Glycogen-blank (Trace)
+	st97_629: Tissue not in standard list: human DNA (Moderate)
+	st97_629 has results
+	IMAGE: 97/629	x40@60C
+	writeBcp: st97_629 (2 copies)
+st97_630: processing...
+	st97_630: Tissue not in standard list: Glycogen-blank (Trace)
+	st97_630: Tissue not in standard list: mouse DNA (Moderate)
+	st97_630: Tissue not in standard list: human DNA (Moderate)
+	st97_630 has results
+	IMAGE: 97/630	x40@60C
+	writeBcp: st97_630 (1 copies)
+st97_632: processing...
+	st97_632: Tissue not in standard list: mouse DNA (Strong)
+	st97_632 has results
+	IMAGE: 97/632	x50@55C
+	writeBcp: st97_632 (1 copies)
+st97_635: processing...
+	st97_635: Tissue not in standard list: human DNA (Strong)
+	st97_635: Tissue not in standard list: mouse DNA (Strong)
+	st97_635 has results
+	IMAGE: 97/635	x50@60C
+	writeBcp: st97_635 (1 copies)
+st97_636: processing...
+	st97_636: Tissue not in standard list: mouse DNA (Strong)
+	st97_636: Tissue not in standard list: human DNA (Strong)
+	st97_636 has results
+	IMAGE: 97/636	x45@55C
+	writeBcp: st97_636 (1 copies)
+st97_637: processing...
+	st97_637: Tissue not in standard list: mouse DNA (Strong)
+	st97_637 has results
+	IMAGE: 97/637	x40@55C
+	writeBcp: st97_637 (1 copies)
+st97_639: processing...
+	st97_639: Tissue not in standard list: mouse DNA (Strong)
+	st97_639: Tissue not in standard list: human DNA (Strong)
+	st97_639 has results
+	IMAGE: 97/639	x40@55C
+	writeBcp: st97_639 (2 copies)
+st97_640: processing...
+	st97_640: Tissue not in standard list: mouse DNA (Strong)
+	st97_640: Tissue not in standard list: human DNA (Moderate)
+	st97_640 has results
+	IMAGE: 97/640	x50@60C
+	writeBcp: st97_640 (1 copies)
+st97_641: processing...
+	st97_641: Tissue not in standard list: mouse DNA (Strong)
+	st97_641: Tissue not in standard list: human DNA (Strong)
+	st97_641 has results
+	IMAGE: 97/641	x40@55C
+	writeBcp: st97_641 (2 copies)
+st97_643: processing...
+	st97_643 has results
+	IMAGE: 97/643	@
+	writeBcp: st97_643 (1 copies)
+st97_645: processing...
+	st97_645: Tissue not in standard list: mouse DNA (Strong)
+	st97_645: Tissue not in standard list: human DNA (Moderate)
+	st97_645 has results
+	IMAGE: 97/645	x30@55C
+	writeBcp: st97_645 (2 copies)
+st97_646: processing...
+	st97_646: Tissue not in standard list: mouse DNA (Strong)
+	st97_646: Tissue not in standard list: human DNA (Moderate)
+	st97_646 has results
+	IMAGE: 97/646	x40@55C
+	writeBcp: st97_646 (1 copies)
+st97_648: processing...
+	st97_648: Tissue not in standard list: mouse DNA (Strong)
+	st97_648: Tissue not in standard list: human DNA (Moderate)
+	st97_648 has results
+	IMAGE: 97/648	x45@55C
+	writeBcp: st97_648 (1 copies)
+st97_650: processing...
+	st97_650: Tissue not in standard list: mouse DNA (Strong)
+	st97_650 has results
+	IMAGE: 97/650	x40@55C
+	writeBcp: st97_650 (1 copies)
+st97_652: processing...
+	st97_652: Tissue not in standard list: mouse DNA (Strong)
+	st97_652 has results
+	IMAGE: 97/652	x35@55C
+	writeBcp: st97_652 (1 copies)
+st97_653: processing...
+	st97_653: Tissue not in standard list: mouse DNA (Strong)
+	st97_653: Tissue not in standard list: human DNA (Moderate)
+	st97_653 has results
+	IMAGE: 97/653	x40@55C
+	writeBcp: st97_653 (2 copies)
+st97_654: processing...
+	st97_654: Tissue not in standard list: mouse DNA (Strong)
+	st97_654: Tissue not in standard list: human DNA (Moderate)
+	st97_654 has results
+	IMAGE: 97/654	x40@55C
+	writeBcp: st97_654 (1 copies)
+st97_657: processing...
+	st97_657: Tissue not in standard list: mouse DNA (Strong)
+	st97_657: Tissue not in standard list: human DNA (Strong)
+	st97_657 has results
+	IMAGE: 97/657	x45@55C
+	writeBcp: st97_657 (2 copies)
+st97_658: processing...
+	st97_658 has results
+	IMAGE: 97/658	x35@55C
+	writeBcp: st97_658 (2 copies)
+st97_659: processing...
+	st97_659 has results
+	IMAGE: 97/659	x50@60C
+	writeBcp: st97_659 (1 copies)
+st97_661: processing...
+	st97_661: Tissue not in standard list: mouse DNA (Strong)
+	st97_661: Tissue not in standard list: human DNA (Strong)
+	st97_661 has results
+	IMAGE: 97/661	x45@55C
+	writeBcp: st97_661 (2 copies)
+st97_662: processing...
+	st97_662: Tissue not in standard list: mouse DNA (Strong)
+	st97_662 has results
+	IMAGE: 97/662	x35@55C
+	writeBcp: st97_662 (1 copies)
+st97_663: processing...
+	st97_663 has results
+	IMAGE: 97/663	x30@55C
+	writeBcp: st97_663 (1 copies)
+st97_665: processing...
+	st97_665: Tissue not in standard list: mouse DNA (Strong)
+	st97_665: Tissue not in standard list: human DNA (Strong)
+	st97_665 has results
+	IMAGE: 97/665	x40@55C
+	writeBcp: st97_665 (1 copies)
+st97_666: processing...
+	st97_666: Tissue not in standard list: mouse DNA (Strong)
+	st97_666 has results
+	IMAGE: 97/666	x45@55C
+	writeBcp: st97_666 (1 copies)
+st97_667: processing...
+	st97_667: Tissue not in standard list: mouse DNA (Strong)
+	st97_667 has results
+	IMAGE: 97/667	x40@55C
+	writeBcp: st97_667 (1 copies)
+st97_669: processing...
+	st97_669: Tissue not in standard list: mouse DNA (Strong)
+	st97_669 has results
+	IMAGE: 97/669	x35@55C
+	writeBcp: st97_669 (1 copies)
+st97_671: processing...
+	st97_671: Tissue not in standard list: mouse DNA (Strong)
+	st97_671: Tissue not in standard list: human DNA (Moderate)
+	st97_671 has results
+	IMAGE: 97/671	x45@55C
+	writeBcp: st97_671 (1 copies)
+st97_673: processing...
+	st97_673: Tissue not in standard list: mouse DNA (Strong)
+	st97_673: Tissue not in standard list: human DNA (Strong)
+	st97_673 has results
+	IMAGE: 97/673	x40@55C
+	writeBcp: st97_673 (1 copies)
+st97_674: processing...
+	st97_674: Tissue not in standard list: mouse DNA (Strong)
+	st97_674: Tissue not in standard list: human DNA (Moderate)
+	st97_674 has results
+	IMAGE: 97/674	x40@55C
+	writeBcp: st97_674 (1 copies)
+st97_675: processing...
+	st97_675: Tissue not in standard list: mouse DNA (Strong)
+	st97_675 has results
+	IMAGE: 97/675	x40@60C
+	writeBcp: st97_675 (2 copies)
+st97_676: processing...
+	st97_676: Tissue not in standard list: mouse DNA (Strong)
+	st97_676 has results
+	IMAGE: 97/676	x40@55C
+	writeBcp: st97_676 (1 copies)
+st97_677: processing...
+	st97_677: Tissue not in standard list: mouse DNA (Strong)
+	st97_677: Tissue not in standard list: human DNA (Trace)
+	st97_677 has results
+	IMAGE: 97/677	x35@55C
+	writeBcp: st97_677 (1 copies)
+st97_678: processing...
+	st97_678: Tissue not in standard list: mouse DNA (Strong)
+	st97_678: Tissue not in standard list: human DNA (Moderate)
+	st97_678 has results
+	IMAGE: 97/678	x45@55C
+	writeBcp: st97_678 (2 copies)
+st97_679: processing...
+	st97_679: Tissue not in standard list: mouse DNA (Strong)
+	st97_679 has results
+	IMAGE: 97/679	x35@55C
+	writeBcp: st97_679 (1 copies)
+st97_680: processing...
+	st97_680: Tissue not in standard list: human DNA (Strong)
+	st97_680: Tissue not in standard list: mouse DNA (Strong)
+	st97_680 has results
+	IMAGE: 97/680	x35@55C
+	writeBcp: st97_680 (1 copies)
+st97_681: processing...
+	st97_681: Tissue not in standard list: mouse DNA (Strong)
+	st97_681 has results
+	IMAGE: 97/681	x35@55C
+	writeBcp: st97_681 (1 copies)
+st97_682: processing...
+	st97_682: Tissue not in standard list: mouse DNA (Strong)
+	st97_682 has results
+	IMAGE: 97/682	x30@55C
+	writeBcp: st97_682 (1 copies)
+st97_683: processing...
+	st97_683: Tissue not in standard list: mouse DNA (Strong)
+	st97_683: Tissue not in standard list: human DNA (Moderate)
+	st97_683 has results
+	IMAGE: 97/683	x30@55C
+	writeBcp: st97_683 (1 copies)
+st97_684: processing...
+	st97_684: Tissue not in standard list: mouse DNA (Strong)
+	st97_684: Tissue not in standard list: human DNA (Moderate)
+	st97_684 has results
+	IMAGE: 97/684	x35@55C
+	writeBcp: st97_684 (1 copies)
+st97_686: processing...
+	st97_686: Tissue not in standard list: mouse DNA (Strong)
+	st97_686 has results
+	IMAGE: 97/686	x30@55C
+	writeBcp: st97_686 (1 copies)
+st97_687: processing...
+	st97_687: Tissue not in standard list: mouse DNA (Strong)
+	st97_687: Tissue not in standard list: human DNA (Strong)
+	st97_687 has results
+	IMAGE: 97/687	x40@55C
+	writeBcp: st97_687 (1 copies)
+st97_688: processing...
+	st97_688: Tissue not in standard list: mouse DNA (Strong)
+	st97_688: Tissue not in standard list: human DNA (Moderate)
+	st97_688 has results
+	IMAGE: 97/688	x40@55C
+	writeBcp: st97_688 (2 copies)
+st97_689: processing...
+	st97_689: Tissue not in standard list: mouse DNA (Strong)
+	st97_689: Tissue not in standard list: human DNA (Strong)
+	st97_689 has results
+	IMAGE: 97/689	x35@55C
+	writeBcp: st97_689 (1 copies)
+st97_690: processing...
+	st97_690: Tissue not in standard list: mouse DNA (Moderate)
+	st97_690 has results
+	IMAGE: 97/690	x30@55C
+	writeBcp: st97_690 (1 copies)
+st97_691: processing...
+	st97_691: Tissue not in standard list: mouse DNA (Strong)
+	st97_691 has results
+	IMAGE: 97/691	x40@55C
+	writeBcp: st97_691 (1 copies)
+st97_692: processing...
+	st97_692: Tissue not in standard list: mouse DNA (Strong)
+	st97_692: Tissue not in standard list: human DNA (Strong)
+	st97_692 has results
+	IMAGE: 97/692	x45@60C
+	writeBcp: st97_692 (1 copies)
+st97_693: processing...
+	st97_693: Tissue not in standard list: mouse DNA (Strong)
+	st97_693 has results
+	IMAGE: 97/693	X45@60C
+	writeBcp: st97_693 (1 copies)
+st97_695: processing...
+	st97_695: Tissue not in standard list: mouse DNA (Strong)
+	st97_695: Tissue not in standard list: human DNA (Strong)
+	st97_695 has results
+	IMAGE: 97/695	x45@55C
+	writeBcp: st97_695 (2 copies)
+st97_696: processing...
+	st97_696: Tissue not in standard list: mouse DNA (Moderate)
+	st97_696: Tissue not in standard list: human DNA (Moderate)
+	st97_696 has results
+	IMAGE: 97/696	x40@55C
+	writeBcp: st97_696 (2 copies)
+st97_697: processing...
+	st97_697 has results
+	IMAGE: 97/697	x35@55C
+	writeBcp: st97_697 (1 copies)
+st97_704: processing...
+	st97_704: Tissue not in standard list: mouse DNA (Strong)
+	st97_704 has results
+	IMAGE: 97/704	x40@55C
+	st97_704: No product length field.
+	writeBcp: st97_704 (2 copies)
+st97_709: processing...
+	st97_709: Tissue not in standard list: mouse DNA (Moderate)
+	st97_709: Tissue not in standard list: human DNA (Moderate)
+	st97_709 has results
+	IMAGE: 97/709	x30@55C
+	writeBcp: st97_709 (1 copies)
+st97_710: processing...
+	st97_710: Tissue not in standard list: mouse DNA (Strong)
+	st97_710: Tissue not in standard list: human DNA (Strong)
+	st97_710 has results
+	IMAGE: 97/710	x45@55C
+	writeBcp: st97_710 (3 copies)
+st97_711: processing...
+	st97_711: Tissue not in standard list: mouse DNA (Strong)
+	st97_711 has results
+	IMAGE: 97/711	x40@55C
+	writeBcp: st97_711 (2 copies)
+st97_712: processing...
+	st97_712: Tissue not in standard list: mouse DNA (Strong)
+	st97_712: Tissue not in standard list: human DNA (Moderate)
+	st97_712 has results
+	IMAGE: 97/712	x35@55C
+	writeBcp: st97_712 (1 copies)
+st97_714: processing...
+	st97_714: Tissue not in standard list: human DNA (Strong)
+	st97_714: Tissue not in standard list: mouse DNA (Moderate)
+	st97_714 has results
+	IMAGE: 97/714	x35@55C
+	writeBcp: st97_714 (1 copies)
+st97_715: processing...
+	st97_715: Tissue not in standard list: mouse DNA (Strong)
+	st97_715: Tissue not in standard list: human DNA (Moderate)
+	st97_715 has results
+	IMAGE: 97/715	x35@55C
+	writeBcp: st97_715 (1 copies)
+st97_716: processing...
+	st97_716: Tissue not in standard list: mouse DNA (Strong)
+	st97_716: Tissue not in standard list: human DNA (Moderate)
+	st97_716 has results
+	IMAGE: 97/716	x35@55C
+	writeBcp: st97_716 (1 copies)
+st97_717: processing...
+	st97_717: Tissue not in standard list: mouse DNA (Strong)
+	st97_717: Tissue not in standard list: human DNA (Moderate)
+	st97_717 has results
+	IMAGE: 97/717	x40@55C
+	writeBcp: st97_717 (1 copies)
+st97_718: processing...
+	st97_718: Tissue not in standard list: mouse DNA (Strong)
+	st97_718 has results
+	IMAGE: 97/718	x30@55C
+	writeBcp: st97_718 (1 copies)
+st97_719: processing...
+	st97_719: Tissue not in standard list: mouse DNA (Strong)
+	st97_719 has results
+	IMAGE: 97/719	x35@55C
+	writeBcp: st97_719 (1 copies)
+st97_720: processing...
+	st97_720: Tissue not in standard list: human DNA (Strong)
+	st97_720: Tissue not in standard list: mouse DNA (Strong)
+	st97_720 has results
+	IMAGE: 97/720	x30@55C
+	writeBcp: st97_720 (1 copies)
+st97_721: processing...
+	st97_721: Tissue not in standard list: mouse DNA (Strong)
+	st97_721 has results
+	IMAGE: 97/721	X50@60C
+	writeBcp: st97_721 (2 copies)
+st97_722: processing...
+	st97_722: Tissue not in standard list: mouse DNA (Strong)
+	st97_722: Tissue not in standard list: human DNA (Moderate)
+	st97_722 has results
+	IMAGE: 97/722	x40@55C
+	writeBcp: st97_722 (1 copies)
+st97_723: processing...
+	st97_723 has results
+	IMAGE: 97/723	x30@55C
+	writeBcp: st97_723 (1 copies)
+st97_724: processing...
+	st97_724: Tissue not in standard list: mouse DNA (Strong)
+	st97_724: Tissue not in standard list: human DNA (Moderate)
+	st97_724 has results
+	IMAGE: 97/724	x35@55C
+	writeBcp: st97_724 (2 copies)
+st97_725: processing...
+	st97_725: Tissue not in standard list: human DNA (Strong)
+	st97_725: Tissue not in standard list: mouse DNA (Strong)
+	st97_725 has results
+	IMAGE: 97/725	X50@60C
+	writeBcp: st97_725 (2 copies)
+st97_726: processing...
+	st97_726: Tissue not in standard list: human DNA (Strong)
+	st97_726: Tissue not in standard list: mouse DNA (Strong)
+	st97_726 has results
+	IMAGE: 97/726	x35@55C
+	writeBcp: st97_726 (1 copies)
+st97_727: processing...
+	st97_727: Tissue not in standard list: mouse DNA (Strong)
+	st97_727 has results
+	IMAGE: 97/727	x30@55C
+	writeBcp: st97_727 (1 copies)
+st97_728: processing...
+	st97_728: Tissue not in standard list: mouse DNA (Strong)
+	st97_728 has results
+	IMAGE: 97/728	x40@55C
+	writeBcp: st97_728 (1 copies)
+st97_729: processing...
+	st97_729: Tissue not in standard list: human DNA (Strong)
+	st97_729: Tissue not in standard list: mouse DNA (Strong)
+	st97_729 has results
+	IMAGE: 97/729	x35@55C
+	writeBcp: st97_729 (1 copies)
+st97_730: processing...
+	st97_730: Tissue not in standard list: mouse DNA (Strong)
+	st97_730 has results
+	IMAGE: 97/730	x35@55C
+	writeBcp: st97_730 (1 copies)
+st97_733: processing...
+	st97_733 has results
+	IMAGE: 97/733	x35@55C
+	writeBcp: st97_733 (2 copies)
+
+        update ACC_AccessionMax
+        set maxNumericPart = 1205941
+        where prefixPart = "MGI:"
+        
+The time is: June  1 1998 21:12:32
+Done.

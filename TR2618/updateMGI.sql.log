@@ -1,0 +1,12 @@
+Tue Jun 26 09:41:21 EDT 2001
+Password: 
+1>    
+2> update mgd_release..MGI_dbinfo set schema_version = "mgddbschema-1-0-1"
+(1 row affected)
+1> 
+2> update nomen_release..MGI_dbinfo set schema_version = "nomendbschema-1-0-1"
+(1 row affected)
+1> 
+2> update strains_release..MGI_dbinfo set schema_version = "strainsdbschema-1-0-0"
+(1 row affected)
+Tue Jun 26 09:41:21 EDT 2001

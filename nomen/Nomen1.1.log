@@ -1,0 +1,67 @@
+Thu Sep  9 06:56:24 EDT 1999
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption nomen, "select into", true
+Database option 'select into/bulkcopy' turned ON for database 'nomen'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0)
+1>   
+2> use nomen
+1>    
+2> checkpoint
+1>  
+2> /* 
+3>  * TR# 518
+4>  *
+5>  * Migrated EC numbers
+6> */
+7> 
+8> delete from ACC_Accession where _LogicalDB_Key = 8
+(29 rows affected)
+1> 
+2> declare ec_cursor cursor for
+3> select _Nomen_key, ECNumber 
+4> from nomen..MRK_Nomen
+5> where ECNumber is not null
+Msg 207, Level 16, State 2:
+Line 3:
+Invalid column name 'ECNumber'.
+Msg 207, Level 16, State 2:
+Line 3:
+Invalid column name 'ECNumber'.
+1>           
+2> declare @nomenKey integer
+3> declare @ec varchar(25)
+4>           
+5> open ec_cursor
+6> fetch ec_cursor into @nomenKey, @ec
+7>           
+8> while (@@sqlstatus = 0)
+9> begin
+10> execute ACC_insert @nomenKey, @ec, 8, "Nomenclature"
+11> fetch ec_cursor into @nomenKey, @ec
+12> end
+13> 
+14> close ec_cursor
+15> deallocate cursor ec_cursor
+Msg 557, Level 16, State 1:
+Line 2:
+The cursor 'ec_cursor' can not be used as it could not be found. It is possible
+that either it was not declared or it is not available in the current context.
+Msg 557, Level 16, State 1:
+Line 2:
+The cursor 'ec_cursor' can not be used as it could not be found. It is possible
+that either it was not declared or it is not available in the current context.
+Msg 557, Level 16, State 1:
+Line 8:
+The cursor 'ec_cursor' can not be used as it could not be found. It is possible
+that either it was not declared or it is not available in the current context.
+Msg 557, Level 16, State 1:
+Line 8:
+The cursor 'ec_cursor' can not be used as it could not be found. It is possible
+that either it was not declared or it is not available in the current context.
+1>                  
+2> checkpoint
+Thu Sep  9 06:56:32 EDT 1999

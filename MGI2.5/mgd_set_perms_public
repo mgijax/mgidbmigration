@@ -1,0 +1,895 @@
+#!/bin/csh -f
+
+setenv SYBASE /opt/sybase
+setenv DBSERVER $1
+setenv DATABASE $2
+setenv DBO mgd_dbo
+setenv PASSWORD $SYBASE/admin/.mgd_dbo_password
+
+set sql = /tmp/$$.sql
+
+cat > $sql << EOSQL
+
+use $DATABASE
+go
+
+grant select on ACC_Accession to public
+go
+
+grant select on ACC_AccessionMax to public
+go
+
+grant select on ACC_AccessionReference to public
+go
+
+grant select on ACC_ActualDB to public
+go
+
+grant select on ACC_LogicalDB to public
+go
+
+grant select on ACC_MGIType to public
+go
+
+grant select on ALL_Allele to public
+go
+
+grant select on ALL_Allele_Mutation to public
+go
+
+grant select on ALL_Inheritance_Mode to public
+go
+
+grant select on ALL_Molecular_Mutation to public
+go
+
+grant select on ALL_Molecular_Note to public
+go
+
+grant select on ALL_Note to public
+go
+
+grant select on ALL_Synonym to public
+go
+
+grant select on ALL_Type to public
+go
+
+grant select on BIB_Books to public
+go
+
+grant select on BIB_Notes to public
+go
+
+grant select on BIB_Refs to public
+go
+
+grant select on BIB_ReviewStatus to public
+go
+
+grant select on CRS_Cross to public
+go
+
+grant select on CRS_Matrix to public
+go
+
+grant select on CRS_Progeny to public
+go
+
+grant select on CRS_References to public
+go
+
+grant select on CRS_Typings to public
+go
+
+grant select on GO_DataEvidence to public
+go
+
+grant select on GO_Evidence to public
+go
+
+grant select on GO_MarkerGO to public
+go
+
+grant select on GO_Ontology to public
+go
+
+grant select on GO_Term to public
+go
+
+grant select on GXD_AllelePair to public
+go
+
+grant select on GXD_Antibody to public
+go
+
+grant select on GXD_AntibodyAlias to public
+go
+
+grant select on GXD_AntibodyClass to public
+go
+
+grant select on GXD_AntibodyMarker to public
+go
+
+grant select on GXD_AntibodyPrep to public
+go
+
+grant select on GXD_AntibodySpecies to public
+go
+
+grant select on GXD_AntibodyType to public
+go
+
+grant select on GXD_Antigen to public
+go
+
+grant select on GXD_Assay to public
+go
+
+grant select on GXD_AssayNote to public
+go
+
+grant select on GXD_AssayType to public
+go
+
+grant select on GXD_EmbeddingMethod to public
+go
+
+grant select on GXD_Expression to public
+go
+
+grant select on GXD_FixationMethod to public
+go
+
+grant select on GXD_GelBand to public
+go
+
+grant select on GXD_GelControl to public
+go
+
+grant select on GXD_GelLane to public
+go
+
+grant select on GXD_GelLaneStructure to public
+go
+
+grant select on GXD_GelRNAType to public
+go
+
+grant select on GXD_GelRow to public
+go
+
+grant select on GXD_GelUnits to public
+go
+
+grant select on GXD_Genotype to public
+go
+
+grant select on GXD_ISResultStructure to public
+go
+
+grant select on GXD_InSituResult to public
+go
+
+grant select on GXD_InSituResultImage to public
+go
+
+grant select on GXD_Index to public
+go
+
+grant select on GXD_Index_Stages to public
+go
+
+grant select on GXD_Label to public
+go
+
+grant select on GXD_LabelCoverage to public
+go
+
+grant select on GXD_Pattern to public
+go
+
+grant select on GXD_ProbePrep to public
+go
+
+grant select on GXD_ProbeSense to public
+go
+
+grant select on GXD_Secondary to public
+go
+
+grant select on GXD_Specimen to public
+go
+
+grant select on GXD_Strength to public
+go
+
+grant select on GXD_Structure to public
+go
+
+grant select on GXD_StructureClosure to public
+go
+
+grant select on GXD_StructureName to public
+go
+
+grant select on GXD_TheilerStage to public
+go
+
+grant select on GXD_VisualizationMethod to public
+go
+
+grant select on HMD_Assay to public
+go
+
+grant select on HMD_Class to public
+go
+
+grant select on HMD_Homology to public
+go
+
+grant select on HMD_Homology_Assay to public
+go
+
+grant select on HMD_Homology_Marker to public
+go
+
+grant select on HMD_Notes to public
+go
+
+grant select on IMG_FieldType to public
+go
+
+grant select on IMG_Image to public
+go
+
+grant select on IMG_ImageNote to public
+go
+
+grant select on IMG_ImagePane to public
+go
+
+grant select on MGI_dbInfo to public
+go
+
+grant select on MGI_Columns to public
+go
+
+grant select on MGI_Tables to public
+go
+
+grant select on MLC_Lock_edit to public
+go
+
+grant select on MLC_Marker_edit to public
+go
+
+grant select on MLC_Reference_edit to public
+go
+
+grant select on MLC_Text_edit to public
+go
+
+grant select on MLC_Marker to public
+go
+
+grant select on MLC_Reference to public
+go
+
+grant select on MLC_Text to public
+go
+
+grant select on MLD_Assay_Types to public
+go
+
+grant select on MLD_Concordance to public
+go
+
+grant select on MLD_Contig to public
+go
+
+grant select on MLD_ContigProbe to public
+go
+
+grant select on MLD_Distance to public
+go
+
+grant select on MLD_Expt_Marker to public
+go
+
+grant select on MLD_Expt_Notes to public
+go
+
+grant select on MLD_Expts to public
+go
+
+grant select on MLD_FISH to public
+go
+
+grant select on MLD_FISH_Region to public
+go
+
+grant select on MLD_Hit to public
+go
+
+grant select on MLD_ISRegion to public
+go
+
+grant select on MLD_InSitu to public
+go
+
+grant select on MLD_MC2point to public
+go
+
+grant select on MLD_MCDataList to public
+go
+
+grant select on MLD_Marker to public
+go
+
+grant select on MLD_Matrix to public
+go
+
+grant select on MLD_Notes to public
+go
+
+grant select on MLD_PhysMap to public
+go
+
+grant select on MLD_RI to public
+go
+
+grant select on MLD_RI2Point to public
+go
+
+grant select on MLD_RIData to public
+go
+
+grant select on MLD_Statistics to public
+go
+
+grant select on MRK_Alias to public
+go
+
+grant select on MRK_Anchors to public
+go
+
+grant select on MRK_Chromosome to public
+go
+
+grant select on MRK_Class to public
+go
+
+grant select on MRK_Classes to public
+go
+
+grant select on MRK_Current to public
+go
+
+grant select on MRK_Event to public
+go
+
+grant select on MRK_EventReason to public
+go
+
+grant select on MRK_History to public
+go
+
+grant select on MRK_Label to public
+go
+
+grant select on MRK_Marker to public
+go
+
+grant select on MRK_Notes to public
+go
+
+grant select on MRK_Offset to public
+go
+
+grant select on MRK_Other to public
+go
+
+grant select on MRK_Reference to public
+go
+
+grant select on MRK_Species to public
+go
+
+grant select on MRK_Status to public
+go
+
+grant select on MRK_Types to public
+go
+
+grant select on PRB_Alias to public
+go
+
+grant select on PRB_Allele to public
+go
+
+grant select on PRB_Allele_Strain to public
+go
+
+grant select on PRB_Marker to public
+go
+
+grant select on PRB_Notes to public
+go
+
+grant select on PRB_Probe to public
+go
+
+grant select on PRB_RFLV to public
+go
+
+grant select on PRB_Ref_Notes to public
+go
+
+grant select on PRB_Reference to public
+go
+
+grant select on PRB_Source to public
+go
+
+grant select on PRB_Strain to public
+go
+
+grant select on PRB_Strain_Marker to public
+go
+
+grant select on PRB_Tissue to public
+go
+
+grant select on PRB_Vector_Types to public
+go
+
+grant select on RI_RISet to public
+go
+
+grant select on RI_Summary to public
+go
+
+grant select on RI_Summary_Expt_Ref to public
+go
+
+grant select on PRB_AccRefNoSeq_View to public
+go
+
+grant select on GXD_GelLaneStructure_View to public
+go
+
+grant select on PRB_AccNoRef_View to public
+go
+
+grant select on GXD_GelRow_View to public
+go
+
+grant select on GXD_ISResultImage_View to public
+go
+
+grant select on GXD_Genotype_View to public
+go
+
+grant select on GXD_AntibodyPrep_View to public
+go
+
+grant select on GXD_AntibodyMarker_View to public
+go
+
+grant select on GXD_Antibody_Acc_View to public
+go
+
+grant select on GO_Marker_View to public
+go
+
+grant select on BIB_View to public
+go
+
+grant select on BIB_Acc_View to public
+go
+
+grant select on ALL_Allele_Mutation_View to public
+go
+
+grant select on ALL_Acc_View to public
+go
+
+grant select on ACC_LogicalDB_View to public
+go
+
+grant select on MRK_AccNoRef_View to public
+go
+
+grant select on MRK_Current_View to public
+go
+
+grant select on MRK_History_View to public
+go
+
+grant select on MRK_Alias_View to public
+go
+
+grant select on MRK_Acc_View to public
+go
+
+grant select on IMG_Image_Summary_View to public
+go
+
+grant select on GXD_Antigen_Summary_View to public
+go
+
+grant select on MLD_Summary_View to public
+go
+
+grant select on HMD_Summary_View to public
+go
+
+grant select on BIB_Summary_View to public
+go
+
+grant select on PRB_Strain_Marker_View to public
+go
+
+grant select on MLD_Acc_View to public
+go
+
+grant select on PRB_RFLV_View to public
+go
+
+grant select on MGI_Table_Column_View to public
+go
+
+grant select on PRB_Marker_View to public
+go
+
+grant select on ACC_View to public
+go
+
+grant select on IMG_ImagePane_View to public
+go
+
+grant select on IMG_Image_Acc_View to public
+go
+
+grant select on PRB_Strain_Acc_View to public
+go
+
+grant select on GXD_ISResultStructure_View to public
+go
+
+grant select on PRB_AccRef_View to public
+go
+
+grant select on GXD_GelBand_View to public
+go
+
+grant select on PRB_Acc_View to public
+go
+
+grant select on GXD_InSituResult_View to public
+go
+
+grant select on GXD_AllelePair_View to public
+go
+
+grant select on GXD_ProbePrep_View to public
+go
+
+grant select on GXD_AntibodyAlias_View to public
+go
+
+grant select on GXD_Assay_Acc_View to public
+go
+
+grant select on GXD_Antigen_Acc_View to public
+go
+
+grant select on CRS_Cross_View to public
+go
+
+grant select on BIB_All_View to public
+go
+
+grant select on ALL_Synonym_View to public
+go
+
+grant select on ALL_Allele_View to public
+go
+
+grant select on HMD_Homology_Assay_View to public
+go
+
+grant select on MRK_Anchors_View to public
+go
+
+grant select on MRK_Classes_View to public
+go
+
+grant select on MLD_Hit_View to public
+go
+
+grant select on MRK_Marker_View to public
+go
+
+grant select on ALL_Summary_View to public
+go
+
+grant select on GXD_Assay_Summary_View to public
+go
+
+grant select on GXD_Antibody_Summary_View to public
+go
+
+grant select on PRB_Summary_View to public
+go
+
+grant select on MRK_Summary_View to public
+go
+
+grant select on BIB_Summary_All_View to public
+go
+
+grant select on MLC_Marker_edit_View to public
+go
+
+grant select on PRB_Source_View to public
+go
+
+grant select on GXD_Index_View to public
+go
+
+grant select on MLD_Concordance_View to public
+go
+
+grant select on IMG_Image_View to public
+go
+
+grant select on MLD_InSitu_View to public
+go
+
+grant select on PRB_Primer_View to public
+go
+
+grant select on IMG_ImagePaneRef_View to public
+go
+
+grant select on MRK_Mouse_View to public
+go
+
+grant select on MRK_NonMouse_View to public
+go
+
+grant select on MLD_MC2point_View to public
+go
+
+grant select on GXD_Assay_View to public
+go
+
+grant select on MLD_Marker_View to public
+go
+
+grant select on GXD_Antigen_View to public
+go
+
+grant select on MLD_Expt_View to public
+go
+
+grant select on GXD_Antibody_View to public
+go
+
+grant select on MRK_History_Ref_View to public
+go
+
+grant select on GXD_AntibodyRef_View to public
+go
+
+grant select on MLD_FISH_View to public
+go
+
+grant select on GXD_AntibodyAntigen_View to public
+go
+
+grant select on MLD_Hybrid_View to public
+go
+
+grant select on MLD_Statistics_View to public
+go
+
+grant select on MRK_Reference_View to public
+go
+
+grant select on PRB_View to public
+go
+
+grant select on MRK_AccRef_View to public
+go
+
+grant select on GXD_AntibodyAliasRef_View to public
+go
+
+grant select on MLD_Matrix_View to public
+go
+
+grant select on PRB_Probe_View to public
+go
+
+grant select on MRK_Other_View to public
+go
+
+grant select on PRB_Parent_View to public
+go
+
+grant select on HMD_Homology_View to public
+go
+
+grant select on MLD_Expt_Marker_View to public
+go
+
+grant select on PRB_Reference_View to public
+go
+
+grant select on MLD_RI_View to public
+go
+
+grant select on MLD_Distance_View to public
+go
+
+grant select on MLD_RIData_View to public
+go
+
+grant select on GXD_Specimen_View to public
+go
+
+grant select on MLD_RI2Point_View to public
+go
+
+grant select on GXD_GelLane_View to public
+go
+
+grant select on ACC_Reference_View to public
+go
+
+grant select on ALL_Allele_Refs_View to public
+go
+
+grant select on PRB_SourceRef_View to public
+go
+
+grant select on ALL_Allele_MolRefs_View to public
+go
+
+grant execute on MGI_Table_Column_Cleanup to public
+go
+
+grant execute on GEN_rowcount to public
+go
+
+grant execute on Current_Symbol to public
+go
+
+grant execute on MRKXfer_count_MLD to public
+go
+
+grant execute on MRKXfer_MLD to public
+go
+
+grant execute on MRKXfer_count_HMD to public
+go
+
+grant execute on MRKXfer_count_GXDIndex to public
+go
+
+grant execute on MRKXfer_count_GXDAntibody to public
+go
+
+grant execute on MRKXfer_count_GXDAntibodyAssay to public
+go
+
+grant execute on MRKXfer_GXDAntibodyAssay to public
+go
+
+grant execute on MRKXfer_GXDAntibody to public
+go
+
+grant execute on MRKXfer_count_GXDAssay to public
+go
+
+grant execute on MRKXfer_GXDAssay to public
+go
+
+grant execute on MRKXfer_count_MLC to public
+go
+
+grant execute on MRKXfer_count_PRB to public
+go
+
+grant execute on MRKXfer_PRB to public
+go
+
+grant execute on MRKXfer_count_PRBAssay to public
+go
+
+grant execute on MRKXfer_PRBAssay to public
+go
+
+grant execute on MRKXfer_count_PRBReference to public
+go
+
+grant execute on MRKXfer_PRBReference to public
+go
+
+grant execute on MRKXfer_count_PRBNote to public
+go
+
+grant execute on MRKXfer_count_MRKAccession to public
+go
+
+grant execute on MRKXfer_MRKAccession to public
+go
+
+grant execute on PRB_getStrainReferences to public
+go
+
+grant execute on PRB_getStrainDataSets to public
+go
+
+grant execute on PRB_getTissueDataSets to public
+go
+
+grant execute on MRK_MaxOffset to public
+go
+
+grant execute on MRK_MiniMapMarkers to public
+go
+
+grant execute on MRK_isAnchor to public
+go
+
+grant execute on ACC_findMax to public
+go
+
+grant execute on ACC_split to public
+go
+
+grant execute on ACC_fetch_byLogical to public
+go
+
+grant execute on BIB_byJnum to public
+go
+
+grant execute on BIB_HMD_Exists to public
+go
+
+grant execute on BIB_MLC_Exists to public
+go
+
+grant execute on BIB_MLD_Exists to public
+go
+
+grant execute on BIB_PRB_Exists to public
+go
+
+grant execute on BIB_GXD_Exists to public
+go
+
+grant execute on BIB_getYear to public
+go
+
+grant execute on HMD_getChromosomes to public
+go
+
+grant execute on HMD_getOxfordGrid to public
+go
+
+grant execute on HMD_hasHomology to public
+go
+
+checkpoint
+go
+
+EOSQL
+
+cat $PASSWORD | isql -S$DBSERVER -U$DBO -e -i $sql
+rm $sql

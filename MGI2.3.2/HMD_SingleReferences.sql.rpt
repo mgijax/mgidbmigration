@@ -1,0 +1,14 @@
+Msg 208, Level 16, State 1:
+Line 6:
+MRK_Marker_View not found. Specify owner.objectname or use sp_help to check whether the object exists (sp_help may produce lots of output).
+Msg 4413, Level 16, State 1:
+Line 6:
+View resolution could not succeed because the previously mentioned objects, upon which the view directly or indirectly relies, do not currently exist.  These objects need to be recreated for the view
+to be usable.
+Msg 208, Level 16, State 1:
+Line 6:
+MRK_Marker_View not found. Specify owner.objectname or use sp_help to check whether the object exists (sp_help may produce lots of output).
+Msg 4413, Level 16, State 1:
+Line 6:
+View resolution could not succeed because the previously mentioned objects, upon which the view directly or indirectly relies, do not currently exist.  These objects need to be recreated for the view
+to be usable.

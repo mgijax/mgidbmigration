@@ -1,0 +1,27 @@
+#!/usr/local/bin/python
+
+import sys
+import mgdlib
+
+Jnum = "J:46439"
+
+if len(sys.argv) != 3:
+	print "usage: %s server database " % sys.argv[0]
+	sys.exit(-1)
+
+server = sys.argv[1]
+database = sys.argv[2]
+
+mgdlib.set_sqlServer(server)
+mgdlib.set_sqlDatabase(database)
+
+def parse(t):
+	fname = t['figureLabel'][2:] + '.jpg'
+	print fname + '\t' + Jnum + '\t' + t['figureLabel']
+
+cmd = '''
+	select figureLabel, mgiID
+	from IMG_Image_View
+	where jnumID = "%s"
+	''' % Jnum
+mgdlib.sql(cmd, parse)

@@ -1,0 +1,115 @@
+#!/bin/csh -x -f
+
+#
+# Script loads public database from production backup
+#
+
+setenv SYBASE /opt/sybase
+set path = ($path $SYBASE/bin)
+setenv DSQUERY MGD_DEV
+setenv DUMP_DATABASE mgd_release
+setenv DATABASE pub_1
+setenv BACKUP_FILE mgd.release.backup
+setenv BACKUP_DIR /extra2/sybase
+setenv DBUSER mgd_dbo
+setenv DBPASSWORD $SYBASE/admin/.mgd_dbo_password
+setenv SCRIPTS /usr/local/mgi/dbutils/dbschema-MGI2.7
+setenv DUMP_SCRIPT $SYBASE/admin/utilities/dump_devdb.sh
+
+setenv LOG pubLoad.log
+rm -rf $LOG
+touch $LOG
+
+date >>& $LOG
+
+
+# First dump mgd_release
+
+echo "Dumping $DSQUERY $DUMP_DATABASE..."
+echo "Dumping $DSQUERY $DUMP_DATABASE..." >>& $LOG
+cat $DBPASSWORD | $DUMP_SCRIPT $DUMP_DATABASE $BACKUP_FILE $DBUSER >>& $LOG
+
+# Next load and set up the "public" database
+echo "Loading $DSQUERY $DATABASE..."
+echo "Loading $DSQUERY $DATABASE..." >>& $LOG
+set sql = /tmp/$$.sql
+
+cat > $sql << EOSQL
+
+use master 
+go
+
+sp_dboption $DATABASE, 'single', true
+go
+
+use $DATABASE 
+go
+
+checkpoint
+go
+
+use master 
+go
+
+load database $DATABASE from "$BACKUP_DIR/$BACKUP_FILE"
+go
+
+online database $DATABASE
+go
+
+use master
+go
+
+sp_dboption $DATABASE, 'single', false
+go
+
+checkpoint
+go
+
+EOSQL
+
+cat $DBPASSWORD | isql -S$DSQUERY -U$DBUSER -i $sql >>& $LOG
+
+rm $sql
+
+
+# Now load the latest version of MGI_deletePrivateData
+# and run the procedure
+echo "Loading the latest version of MGI_deletePrivateData..."
+echo "Loading the latest version of MGI_deletePrivateData..." >>& $LOG
+$SCRIPTS/procedures/mgd/MISC.pr $DSQUERY $DATABASE >>& $LOG
+
+
+echo "Running MGI_deletePrivateData..."
+echo "Running MGI_deletePrivateData..." >>& $LOG
+set sql = /tmp/$$.sql
+
+cat > $sql << EOSQL
+
+use $DATABASE
+go
+
+checkpoint
+go
+
+exec MGI_deletePrivateData
+go
+
+checkpoint
+go
+
+EOSQL
+
+
+cat $DBPASSWORD | isql -S$DSQUERY -U$DBUSER -i $sql >>& $LOG
+
+rm $sql
+
+#
+# Extract PixelDB tar file
+#
+
+#ASK Lori If I should comment this out!!!
+# /usr/local/mgi/pixeldb/current/admin/extract_images
+
+date >>& $LOG

@@ -1,0 +1,39 @@
+Wed May 24 02:31:32 EDT 2000
+Password: 
+1>    
+2> use mgd
+1> 
+2> checkpoint
+1> 
+2> truncate table MLC_Marker
+1> 
+2> truncate table MLC_Marker_edit
+1> 
+2> checkpoint
+Password: 
+
+Starting copy...
+
+0 rows copied.
+Clock Time (ms.): total = 1
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+2000 rows sent to SQL Server.
+3000 rows sent to SQL Server.
+4000 rows sent to SQL Server.
+5000 rows sent to SQL Server.
+6000 rows sent to SQL Server.
+7000 rows sent to SQL Server.
+8000 rows sent to SQL Server.
+9000 rows sent to SQL Server.
+10000 rows sent to SQL Server.
+11000 rows sent to SQL Server.
+12000 rows sent to SQL Server.
+13000 rows sent to SQL Server.
+14000 rows sent to SQL Server.
+
+14384 rows copied.
+Clock Time (ms.): total = 6000  Avg = 0 (2397.33 rows per sec.)
+Wed May 24 02:31:40 EDT 2000

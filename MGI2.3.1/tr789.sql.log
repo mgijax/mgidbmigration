@@ -1,0 +1,31 @@
+Wed Dec 15 21:05:28 EST 1999
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd_release, "select into", true
+Database option 'select into/bulkcopy/pllsort' turned ON for database
+'mgd_release'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0) 
+1>   
+2> use mgd_release
+1>    
+2> checkpoint
+1>  
+2> select distinct e._Expt_key
+3> into #expts
+4> from MLD_Expts e, MLD_Expt_Notes n
+5> where e.exptType like 'Text%'
+6> and e._Expt_key = n._Expt_key
+7> and n.note like '%radiation hybrid%'
+(39 rows affected)
+1> 
+2> update MLD_Expts
+3> set e.exptType = 'TEXT-Radiation Hybrid'
+4> from #expts e, MLD_Expts x
+5> where e._Expt_key = x._Expt_key
+(39 rows affected)
+1> 
+2> checkpoint
+Wed Dec 15 21:05:32 EST 1999

@@ -1,0 +1,876 @@
+#!/bin/csh
+
+#JCG: February 22, 1999 
+#Usage: release_script.txt <server> <database>
+# TR#28, 327, 135, 188, 244, 322, 249
+
+setenv SERVER $1
+setenv DATABASE $2
+setenv DSQUERY $1
+
+set scripts = $SYBASE/admin
+set sql = /tmp/$$.sql
+
+cat > $sql << EOSQL
+
+use $DATABASE 
+go
+
+select 'TR#244 change ACC_ActualDB.url column from null to not null.'
+go
+
+execute sp_unbindefault "ACC_ActualDB.active"
+go
+
+execute sp_unbindefault "ACC_ActualDB.allowsMultiple"
+go
+
+execute sp_unbindefault "ACC_ActualDB.creation_date"
+go
+
+execute sp_unbindefault "ACC_ActualDB.modification_date"
+go
+
+execute sp_unbindefault "ACC_ActualDB.release_date"
+go
+      
+execute sp_rename ACC_ActualDB,ACC_ActualDB_Temp
+go
+
+CREATE TABLE ACC_ActualDB (
+       _ActualDB_key        int NOT NULL,
+       _LogicalDB_key       int NOT NULL,
+       name                 varchar(80) NOT NULL,
+       active               bit NOT NULL,
+       url                  varchar(255) NOT NULL,
+       allowsMultiple       bit NOT NULL,
+       delimiter            char(8) NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL,
+       release_date         datetime NULL
+) on mgd_seg_0
+go
+
+CREATE UNIQUE INDEX index_name ON ACC_ActualDB
+(
+       name
+) on mgd_seg_0
+go
+
+CREATE INDEX index_LogicalDB_key ON ACC_ActualDB
+(
+       _LogicalDB_key
+) on mgd_seg_1
+go
+
+CREATE INDEX index_modification_date ON ACC_ActualDB
+(
+       modification_date
+) on mgd_seg_1
+go
+
+exec sp_primarykey ACC_ActualDB, _ActualDB_key
+go
+
+exec sp_bindefault bit_default, 'ACC_ActualDB.active'
+go
+
+exec sp_bindefault bit_default, 'ACC_ActualDB.allowsMultiple'
+go
+
+exec sp_bindefault current_date_default, 'ACC_ActualDB.creation_date'
+go
+
+exec sp_bindefault current_date_default, 'ACC_ActualDB.modification_date'
+go
+
+exec sp_bindefault current_date_default, 'ACC_ActualDB.release_date'
+go
+
+INSERT INTO ACC_ActualDB 
+(_ActualDB_key, _LogicalDB_key, name, active, url, 
+allowsMultiple, delimiter, creation_date, modification_date, release_date) 
+SELECT _ActualDB_key, _LogicalDB_key, name, active, url, allowsMultiple, 
+delimiter, creation_date, modification_date, release_date
+FROM 
+ACC_ActualDB_Temp
+go
+
+DROP TABLE ACC_ActualDB_Temp
+go
+
+exec sp_foreignkey ACC_ActualDB, ACC_LogicalDB, _LogicalDB_key
+go
+
+select 'TR#135 CREATE new Table GXD_GelControl WTS'
+go
+
+CREATE TABLE GXD_GelControl (
+       _GelControl_key      int NOT NULL,
+       gelLaneContent       varchar(255) NOT NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+/*
+Data migration: GelLane.isControl=0 to 'No' in GXD_GelControl.gelLaneContent
+                GelLane.isControl=1 to 'Control: no data stored' in GXD_GelControl.gelLaneContent 
+Other values:  'Transgenic: no data stored'
+               'In Vitro data: no data stored'
+               'Non-mouse species: no data stored'
+*/
+
+insert into GXD_GelControl values (1, 'No', getDate(), getDate()) /*Control keys don't start at zero: lec */
+go
+
+insert into GXD_GelControl values (2, 'Control: no data stored', getDate(), getDate())
+go
+
+insert into GXD_GelControl values (3, 'Transgenic: no data stored', getDate(), getDate())
+go
+
+insert into GXD_GelControl values (4, 'In Vitro data: no data stored', getDate(), getDate())
+go
+
+insert into GXD_GelControl values (5, 'Non-mouse species: no data stored', getDate(), getDate())
+go
+
+/* Indexes */
+
+create unique clustered index index_GelControl_key on GXD_GelControl
+(_GelControl_key)
+on mgd_seg_0
+go
+
+create nonclustered index index_modification_date on GXD_GelControl (modification_date)
+on mgd_seg_1
+go
+
+/*Keys*/
+
+execute sp_primarykey GXD_GelControl, _GelControl_key
+go
+
+select 'WTS TR#188 Modify GXD_GelLane.laneLabel from varchar(20) to varchar(255)'
+go
+
+select * into tempdb.dbo.GXD_GelLane
+from $DATABASE.dbo.GXD_GelLane
+go
+
+DROP TABLE GXD_GelLane
+go
+
+CREATE TABLE GXD_GelLane (
+       _GelLane_key         int NOT NULL,
+       _Assay_key           int NOT NULL,
+       _Genotype_key        int NOT NULL,
+       _GelRNAType_key      int NOT NULL,
+       _GelControl_key      int NOT NULL,   /* tr#135 */
+       sequenceNum          int NOT NULL,
+       laneLabel            varchar(255) NULL,
+       sampleAmount         float NULL,
+       sex                  varchar(15) NOT NULL,
+       age                  varchar(50) NOT NULL,
+       ageMin               float NULL,
+       ageMax               float NULL,
+       ageNote              varchar(255) NULL,
+       laneNote             varchar(255) NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+/* Data migration*/
+ 
+insert into GXD_GelLane select _GelLane_key, _Assay_key, 
+_Genotype_key, _GelRNAType_key, isControl, sequenceNum, 
+laneLabel, sampleAmount, sex, age, ageMin, ageMax, ageNote, 
+laneNote, creation_date, modification_date
+from tempdb.dbo.GXD_GelLane
+go
+
+/* The _GelControl_key can't start at 0 so need to shift 0 to 1 and 1 to 2 */
+update GXD_Gellane
+set _GelControl_key = 2
+where _GelControl_key = 1
+go
+
+update GXD_Gellane
+set _GelControl_key = 1
+where _GelControl_key =0
+go
+
+drop table tempdb.dbo.GXD_GelLane
+go
+
+/* Indexes*/
+
+CREATE UNIQUE CLUSTERED INDEX index_GelLane_key ON GXD_GelLane (_GelLane_key)
+with sorted_data
+on mgd_seg_0
+go
+
+create nonclustered index index_modification_date on GXD_GelLane (modification_date)
+on mgd_seg_1
+go
+
+create nonclustered index index_Assay_key on GXD_GelLane(_Assay_key)
+on mgd_seg_1
+go
+
+create nonclustered index index_Genotype_key on GXD_GelLane(_Genotype_key)
+on mgd_seg_1
+go
+
+create nonclustered index index_GelRNAType_key on GXD_GelLane(_GelRNAType_key)
+on mgd_seg_1
+go
+
+create nonclustered index index_GelControl_key on GXD_GelLane (_GelControl_key)
+on mgd_seg_1
+go
+
+
+/*Keys*/
+
+exec sp_primarykey GXD_GelLane, _GelLane_key
+go
+
+/*Triggers*/
+
+DROP TRIGGER GXD_GelLane_Delete
+go
+
+CREATE TRIGGER
+GXD_GelLane_Delete
+on GXD_GelLane
+for DELETE
+as
+delete GXD_GelLaneStructure from GXD_GelLaneStructure, deleted
+where GXD_GelLaneStructure._GelLane_key = deleted._GelLane_key
+
+/* If Genotypes are specific to each specimen... */
+
+if (select count(*) from GXD_GelLane, deleted
+        where GXD_GelLane._Genotype_key = deleted._Genotype_key) = 1
+begin
+        delete GXD_Genotype from GXD_Genotype, deleted
+        where GXD_Genotype._Genotype_key = deleted._Genotype_key
+end
+go
+
+/*
+------------------------------------------------------------------------
+*/
+select 'WTS TR#28 IMG_ImageNote table and IMG_Image table'
+go
+
+CREATE TABLE IMG_ImageNote (
+       _Image_key           int NOT NULL,
+       sequenceNum          int NOT NULL,
+       imageNote            varchar(255) NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+/*
+Data migration:
+Migrate data from IMG_Image.imageNote to IMG_ImageNote.imageNote
+*/
+
+insert into IMG_ImageNote select _Image_key, 1, imageNote,
+creation_date, modification_date
+from
+$DATABASE.dbo.IMG_Image
+go
+
+/*Indexes*/
+
+CREATE UNIQUE CLUSTERED INDEX index_Image_key_sequenceNum ON IMG_ImageNote
+(_Image_key, sequenceNum)
+with sorted_data
+on mgd_seg_0
+go
+
+create nonclustered index index_Image_key on IMG_ImageNote (_Image_key) on mgd_seg_1
+go
+
+create nonclustered index index_image_note on IMG_ImageNote (imageNote) on mgd_seg_1
+go
+
+create nonclustered index index_modification_date on IMG_ImageNote (modification_date)
+on mgd_seg_1
+go
+
+/*Keys*/
+
+exec sp_primarykey IMG_ImageNote, _Image_key, sequenceNum
+go
+
+select * into tempdb.dbo.IMG_Image
+from IMG_Image
+go
+
+drop table IMG_Image
+go
+
+CREATE TABLE IMG_Image (
+       _Image_key           int NOT NULL,
+       _Refs_key            int NOT NULL,
+       xDim                 int NULL,
+       yDim                 int NULL,
+       figureLabel          varchar(255) NOT NULL, /* Removed imageNote */
+       copyrightNote        varchar(255) NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+)
+on mgd_seg_0
+go
+
+/*Data migration*/
+
+insert into IMG_Image select _Image_key, _Refs_key, 
+xDim, yDim, figureLabel, copyrightNote, creation_date, modification_date
+from
+tempdb.dbo.IMG_Image
+go
+
+drop table tempdb.dbo.IMG_Image
+go
+
+/* Indexes*/
+
+CREATE UNIQUE CLUSTERED INDEX _IMG_Image_idx ON IMG_Image (_Image_key) WITH SORTED_DATA
+ON mgd_seg_0
+go
+
+CREATE INDEX index_modification_date ON IMG_Image (modification_date)
+ON mgd_seg_1
+go
+
+CREATE INDEX index_Refs_key ON IMG_Image (_Refs_key)
+ON mgd_seg_1
+go
+
+/*Keys*/
+
+exec sp_primarykey IMG_Image, _Image_key
+go
+
+/*Views*/
+
+drop view IMG_Image_View
+go
+
+create view IMG_Image_View
+as
+select i.*, mgiID = a.accID, a.prefixPart, a.numericPart,
+c.jnumID, c.jnum, c.short_citation
+from IMG_Image i, IMG_Image_Acc_View a, BIB_All_View c
+where i._Image_key = a._Object_key
+and a.prefixPart = "MGI:"
+and a.preferred = 1
+and i._Refs_key = c._Refs_key
+go
+
+/* 
+--------------------------------------------------------------------
+*/
+select 'GXD_Specimen WTS TR#135 '
+go
+
+select * into tempdb.dbo.GXD_Specimen
+from GXD_Specimen
+go
+
+drop table GXD_Specimen
+go
+
+CREATE TABLE GXD_Specimen (
+       _Specimen_key        int NOT NULL,
+       _Assay_key           int NOT NULL,
+       _Embedding_key       int NOT NULL,
+       _Fixation_key        int NOT NULL,
+       _Genotype_key        int NOT NULL,
+       sequenceNum          int NOT NULL,
+       specimenLabel        varchar(255) NULL,
+       sex                  varchar(15) NOT NULL,
+       age                  varchar(50) NOT NULL,
+       ageMin               float NULL,
+       ageMax               float NULL,
+       ageNote              varchar(255) NULL,
+       hybridization        varchar(255) NOT NULL,  /* Changed from 15 to 255 */
+       specimenNote         varchar(255) NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+)
+on mgd_seg_0
+go
+
+/*Data migration*/
+
+INSERT INTO GXD_Specimen (_Specimen_key, _Assay_key, _Embedding_key, 
+    _Fixation_key, _Genotype_key, sequenceNum, specimenLabel, sex, age, ageMin, 
+    ageMax, ageNote, hybridization, specimenNote, creation_date, 
+    modification_date) SELECT _Specimen_key, _Assay_key, _Embedding_key, 
+    _Fixation_key, _Genotype_key, sequenceNum, specimenLabel, sex, age, ageMin, 
+    ageMax, ageNote, hybridization, specimenNote, creation_date, 
+    modification_date 
+FROM 
+tempdb.dbo.GXD_Specimen
+go
+
+DROP TABLE tempdb.dbo.GXD_Specimen
+go
+
+/*Indexes*/
+
+create unique clustered index index_Specimen_key on GXD_Specimen
+(
+	_Specimen_key
+) 
+with sorted_data
+on mgd_seg_0
+go
+
+CREATE INDEX index_modification_date ON GXD_Specimen
+(
+       modification_date
+) on mgd_seg_1
+go
+
+CREATE INDEX index_Assay_key ON GXD_Specimen
+(
+       _Assay_key
+) on mgd_seg_1
+go
+
+CREATE INDEX index_Embedding_key ON GXD_Specimen
+(
+       _Embedding_key
+) on mgd_seg_1
+go
+
+CREATE INDEX index_Fixation_key ON GXD_Specimen
+(
+       _Fixation_key
+) on mgd_seg_1
+go
+
+CREATE INDEX index_Genotype_key ON GXD_Specimen
+(
+       _Genotype_key
+) on mgd_seg_1
+go
+
+/* Keys */
+
+exec sp_primarykey GXD_Specimen, _Specimen_key
+go
+
+
+/* Can't create triggers on system objects */
+
+select 'WTS TR#322 MLC modifications'
+go
+
+/* Drop the MLC_History and MLC_History_edit tables.*/
+
+drop table MLC_History
+go
+
+drop table MLC_History_edit
+go
+
+/* Add the following column to MLC_Text and MLC_Text_edit for storing the user id of the Editor who modifies the record: 
+
+userID  varchar(30)     not null
+*/
+
+execute sp_unbindefault "MLC_Text_edit.creation_date"
+go
+
+execute sp_unbindefault "MLC_Text_edit.modification_date"
+go
+      
+/* make dpd the default for userID*/
+sp_adduser dpd
+go
+
+/* Need to allow select into */
+use master
+go
+
+sp_dboption $DATABASE, "select into", true
+go
+
+use $DATABASE 
+go
+
+checkpoint
+go
+
+select _Marker_key ,mode,description, userID = name,creation_date, modification_date
+into MLC_Text_edit_Temp
+from
+MLC_text_edit, sysusers
+where
+name =  'dpd'
+go
+
+drop table MLC_Text_edit
+go
+
+CREATE TABLE MLC_Text_edit (
+       _Marker_key          int NOT NULL,
+       mode                 varchar(60) NULL,
+       description          text NULL,
+       userID               varchar(30) NOT NULL, 
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+insert into MLC_Text_edit
+select * from MLC_Text_edit_Temp
+go
+
+CREATE INDEX index_modification_date ON MLC_Text_edit
+(
+       modification_date
+)
+go
+
+exec sp_primarykey MLC_Text_edit,
+       _Marker_key
+go
+
+exec sp_bindefault current_date_default, 'MLC_Text_edit.creation_date'
+go
+
+exec sp_bindefault current_date_default, 'MLC_Text_edit.modification_date'
+go
+
+DROP TABLE MLC_Text_edit_Temp
+go
+
+exec sp_foreignkey MLC_Text_edit, MRK_Marker,
+       _Marker_key
+go
+
+/* Changes to MLC_Text */
+
+execute sp_unbindefault "MLC_Text.creation_date"
+go
+
+execute sp_unbindefault "MLC_Text.modification_date"
+go
+
+select _Marker_key ,mode,description, userID = name,creation_date, modification_date
+into MLC_Text_Temp
+from
+MLC_text, sysusers
+where
+name =  'dpd'
+go
+
+drop table MLC_Text
+go
+
+CREATE TABLE MLC_Text (
+       _Marker_key          int NOT NULL,
+       mode                 varchar(60) NULL,
+       description          text NULL,
+       userID               varchar(30) NOT NULL, 
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+CREATE INDEX index_modification_date ON MLC_Text
+(
+       modification_date
+)
+go
+
+INSERT INTO MLC_Text 
+SELECT * FROM MLC_Text_Temp
+go
+
+exec sp_primarykey MLC_Text,
+       _Marker_key
+go
+
+exec sp_bindefault current_date_default, 'MLC_Text.creation_date'
+go
+
+exec sp_bindefault current_date_default, 'MLC_Text.modification_date'
+go
+
+DROP TABLE MLC_Text_Temp
+go
+
+exec sp_foreignkey MLC_Text, MRK_Marker,
+       _Marker_key
+go
+
+select 'WTS TR#327 Increase MLD_Expts.exptType from varchar(8) to a more appropriate length, say varchar(255).'  
+go
+
+execute sp_rename MLD_Expts, MLD_Expts_Temp
+go
+
+CREATE TABLE MLD_Expts
+(
+_Expt_key	int	not null,
+_Refs_key	int	not null,
+exptType	varchar(255)	not null,
+tag		int	not null,
+chromosome	varchar(8)	not null,
+creation_date	datetime	not null,
+modification_date	datetime	not null
+)
+on mgd_seg_0
+go
+
+insert into MLD_Expts
+select * 
+FROM
+MLD_Expts_Temp 
+go
+
+drop table MLD_Expts_temp
+go
+
+exec sp_primarykey MLD_Expts, _Expt_key
+go
+
+create unique clustered index index_Expt_key on MLD_Expts (_Expt_key)
+on mgd_seg_0
+go
+
+create nonclustered index index_Refs_key on MLD_Expts (_Refs_key)
+on mgd_seg_1
+go
+
+create nonclustered index index_chromosome on MLD_Expts (chromosome)
+on mgd_seg_1
+go
+
+create nonclustered index index_exptType on MLD_Expts (exptType)
+on mgd_seg_1
+go
+
+create nonclustered index index_modification_date on MLD_Expts (modification_date)
+on mgd_seg_1
+go
+
+sp_bindefault current_date_default, 'MLD_Expts.creation_date'
+go
+
+sp_bindefault current_date_default, 'MLD_Expts.modification_date'
+go
+
+/*
+WTS TR#249 MGI_Tables and MGI_Columns
+-------------------------------------
+This script is to update MGD_Tables and MGD_Comments for the Feb 1999 Release 
+JCG: Jan. 5, 1999 
+*/
+
+select 'MGI Tables'
+go
+
+/* TABLES */
+
+drop table MGI_Tables
+go
+
+/* MGI_Tables: species is not needed */
+
+CREATE TABLE MGI_Tables (
+       _Table_id            int NOT NULL,      /* names can be obtained by joining ids to sysobjects */
+       description          text NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+/* migration from data in MGD_Tables */
+
+insert into MGI_Tables 
+select s.id, t.description, t.creation_date, t.modification_date
+from sysobjects s, MGD_Tables t
+where
+s.name = t.name
+and
+s.type = 'U'
+go
+
+drop table MGI_Columns
+go
+
+/* For a unique primary key, need table and column number */
+
+CREATE TABLE MGI_Columns (
+       _Table_id            int NOT NULL,
+       _Column_id           int NOT NULL,
+       description          varchar(255) NULL,
+       example              varchar(255) NULL,
+       creation_date        datetime NOT NULL,
+       modification_date    datetime NOT NULL
+) on mgd_seg_0
+go
+
+/* data migration from MGD_Comments */
+
+insert into MGI_Columns
+SELECT 
+sysobjects.id, syscolumns.colid, 
+MGD_Comments.description, MGD_Comments.example, 
+MGD_Comments.creation_date, MGD_Comments.modification_date
+FROM 
+$DATABASE.dbo.MGD_Comments MGD_Comments, syscolumns syscolumns, 
+sysobjects sysobjects
+WHERE 
+sysobjects.id = syscolumns.id AND 
+sysobjects.name = MGD_Comments.table_name AND 
+syscolumns.name = MGD_Comments.col_name AND ((sysobjects.type='U'))
+go
+
+drop table MGD_Comments
+go
+
+drop table MGD_Tables
+go
+
+select 'Defaults'
+go
+
+/* DEFAULTS */
+
+exec sp_bindefault current_date_default, 'MGI_Tables.creation_date'
+go
+
+exec sp_bindefault current_date_default, 'MGI_Tables.modification_date'
+go
+
+exec sp_bindefault current_date_default, 'MGI_Columns.creation_date'
+go
+
+exec sp_bindefault current_date_default, 'MGI_Columns.modification_date'
+go
+
+select 'Keys'
+go
+
+/* KEYS */
+
+sp_primarykey MGI_Tables,
+       _Table_id
+go
+
+sp_primarykey MGI_Columns,
+       _Table_id, _Column_id
+go
+
+sp_foreignkey MGI_Tables, sysobjects, 
+       _Table_id
+go
+
+sp_foreignkey MGI_Columns, MGI_Tables,
+       _Table_id
+go
+
+/* 
+Can't do this foreign key because MGI_Columns doesn't have number sp_foreignkey MGI_Columns, syscolumns, id, number, colid
+*/
+
+select 'Indices'
+go
+
+/* INDICES */
+
+CREATE UNIQUE CLUSTERED INDEX index_Table_key ON MGI_Tables
+(
+       _Table_id
+)
+       ON mgd_seg_0
+go
+
+
+CREATE INDEX index_modification_date ON MGI_Tables
+(
+       modification_date
+)
+       ON mgd_seg_1
+go
+
+CREATE INDEX index_creation_date ON MGI_Tables
+(
+       creation_date
+)
+       ON mgd_seg_1
+go
+
+CREATE UNIQUE CLUSTERED INDEX index_Table_key ON MGI_Columns
+(
+       _Table_id, _Column_id
+)
+       ON mgd_seg_0
+go
+
+
+CREATE INDEX index_modification_date ON MGI_Columns
+(
+       modification_date
+)
+       ON mgd_seg_1
+go
+
+CREATE INDEX index_creation_date ON MGI_Columns
+(
+       creation_date
+)
+       ON mgd_seg_1
+go
+use master
+go
+
+sp_dboption $DATABASE, "select into", false 
+go
+
+use $DATABASE 
+go
+
+checkpoint
+go
+
+EOSQL
+
+$scripts/dbo_sql $sql 
+rm $sql
+
+/opt/sybase/admin/permissions/users.sh $SERVER $DATABASE
+
+/opt/sybase/admin/indexes/indexes_create.sh $SERVER $DATABASE
+
+/opt/sybase/admin/keys/drop_fkeys.sh $SERVER $DATABASE
+
+/opt/sybase/admin/keys/fkeys.sh $SERVER $DATABASE
+
+/opt/sybase/admin/rules/rules.sh $SERVER $DATABASE
+
+/opt/sybase/admin/defaults/defaults.sh $SERVER $DATABASE
+
+/opt/sybase/admin/triggers/triggers.sh $SERVER $DATABASE
+
+/opt/sybase/admin/procedures/procedures.sh $SERVER $DATABASE
+
+/opt/sybase/admin/views/views.sh $SERVER $DATABASE
+
+/opt/sybase/admin/permissions/permissions.sh $SERVER $DATABASE
+

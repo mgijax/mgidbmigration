@@ -1,0 +1,49 @@
+Script started on Wed Sep 08 20:23:12 1999
+sybase@kelso:1> isql -Usa -SMGD_DEV -itr857_jcg.sql
+Password: 
+Msg 2714, Level 16, State 1:
+Procedure 'check_noteType', Line 2:
+There is already an object named 'check_noteType' in the database.
+Msg 2714, Level 16, State 1:
+Procedure 'current_date_default', Line 2:
+There is already an object named 'current_date_default' in the database.
+New primary key added.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+New primary key added.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+New primary key added.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Default bound to column.
+(return status = 0)
+Primary key table doesn't exist.
+(return status = 1)
+New foreign key added.
+(return status = 0)
+New foreign key added.
+(return status = 0)
+Primary key table doesn't exist.
+(return status = 1)
+(1 row affected)
+sybase@kelso:2> exit
+sybase@kelso:3> 
+script done on Wed Sep 08 20:23:59 1999

@@ -1,0 +1,749 @@
+Tue Apr  6 08:32:58 EDT 1999
+Password: 
+1>  
+2> use master
+1>  
+2> sp_dboption mgd, "select into", true
+Database option 'select into/bulkcopy' turned ON for database 'mgd'.
+Run the CHECKPOINT command in the database that was changed.
+(return status = 0)
+1>   
+2> use mgd
+1>    
+2> checkpoint
+1>  
+2> /* This SP is obsolete and was replaced by MGI_resetSequenceNum in 7/28/1998 */
+3> 
+4> drop procedure GXD_resetSequenceNum
+1> 
+2> /* 
+3>  * TR# 120
+4>  *
+5>  * Execute breakpoint split for all insertions, inversions, deletions
+6>  * or duplications which have identified more than one breakpoint within
+7>  * the same chromosome. 
+8>  *
+9>  * band1 & band2
+10>  *
+11> */
+12> 
+13> /* As of 03/05/1999, no Insertions are eligible for this migration */
+14> 
+15> declare marker_cursor cursor for
+16> select _Marker_key 
+17> from MRK_Marker
+18> where cytogeneticOffset like '%&%'
+19> and symbol not like 'Is(%'
+1> 
+2> declare @markerKey integer
+3> 
+4> open marker_cursor
+5> fetch marker_cursor into @markerKey
+6> 
+7> while (@@sqlstatus = 0)
+8> begin
+9> 	execute MRK_breakpointSplit @markerKey
+10> 	fetch marker_cursor into @markerKey
+11> end
+12> 
+13> close marker_cursor
+14> deallocate cursor marker_cursor
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23573 Del(1)27H-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39671 Del(1)27H-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23574 Del(1)33H-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39672 Del(1)33H-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23583 In(1)1Icg-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39673 In(1)1Icg-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23584 In(1)1Lub-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39674 In(1)1Lub-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23585 In(1)1Rk-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39675 In(1)1Rk-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23587 In(1)10Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39676 In(1)10Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23588 In(1)12Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39677 In(1)12Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23590 In(1)24Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39678 In(1)24Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23655 In(2)2H-p                 
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39679 In(2)2H-d                 
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23656 In(2)3Dn-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39680 In(2)3Dn-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23657 In(2)5Rk-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39681 In(2)5Rk-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23658 In(2)19Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39682 In(2)19Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23728 In(3)11Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39683 In(3)11Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23729 In(3)15Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39684 In(3)15Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23730 In(3)55Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39685 In(3)55Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23767 In(4)1Dn-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39686 In(4)1Dn-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23768 In(4)28Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39687 In(4)28Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23769 In(4)32Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39688 In(4)32Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23821 In(5)2Rk-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39689 In(5)2Rk-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23822 In(5)9Rk-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39690 In(5)9Rk-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23823 In(5)30Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39691 In(5)30Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23824 In(5)33Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39692 In(5)33Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23920 Dp(7)16H-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39693 Dp(7)16H-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23926 In(7)13Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39694 In(7)13Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23975 In(8)14Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39695 In(8)14Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       23976 In(8)16Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39696 In(8)16Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24008 In(9)Rl-p                 
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39697 In(9)Rl-d                 
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24009 In(9)26Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39698 In(9)26Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24043 In(10)6Rk-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39699 In(10)6Rk-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24044 In(10)17Rk-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39700 In(10)17Rk-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24085 In(11)2Dn-p               
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39701 In(11)2Dn-d               
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24115 In(12)25Rk-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39702 In(12)25Rk-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24129 In(13)31Rk-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39703 In(13)31Rk-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24154 Del(14)67H-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39704 Del(14)67H-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24157 In(14)22Rk-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39705 In(14)22Rk-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24170 In(15)4H-p                
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39706 In(15)4H-d                
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24171 In(15)18Rk-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39707 In(15)18Rk-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24172 In(15)21Rk-p              
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39708 In(15)21Rk-d              
+
+(1 row affected, return status = 0)
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       24230 In(X)3H-p                 
+
+(1 row affected)
+                                       
+ ----------- ------------------------- 
+       39709 In(X)3H-d                 
+
+(1 row affected, return status = 0)
+(0 rows affected)
+1> 
+2> /* End TR# 120 */
+3> 
+4> checkpoint
+1> 
+2> /* 
+3>  * TR# 327
+4>  *
+5>  * Migrate TEXT Experiment Types to new TEXT Experiment Types
+6>  *
+7> */
+8> 
+9> select e._Expt_key, type = "physical"
+10> into #all
+11> from MLD_Expts e, MLD_Expt_Notes n
+12> where e.exptType = "TEXT"
+13> and e._Expt_key = n._Expt_key
+14> and (n.note like '%physical%' or n.note like '%overlapping%')
+15> union
+16> select e._Expt_key, type = "cyto"
+17> from MLD_Expts e, MLD_Expt_Notes n
+18> where e.exptType = "TEXT"
+19> and e._Expt_key = n._Expt_key
+20> and (n.note like '%somatic%' or n.note like '%fish%' or n.note like '%situ%')
+21> union
+22> select e._Expt_key, type = "qtl"
+23> from MLD_Expts e, MLD_Expt_Notes n
+24> where e.exptType = "TEXT"
+25> and e._Expt_key = n._Expt_key
+26> and (n.note like '%QTL%' or n.note like '%quantitative%')
+27> union
+28> select e._Expt_key, type = "cross"
+29> from MLD_Expts e, MLD_Expt_Notes n
+30> where e.exptType = "TEXT"
+31> and e._Expt_key = n._Expt_key
+32> and (n.note like '%cross%' or n.note like '%EUCIB%' or n.note like '%JAX%')
+(1957 rows affected)
+1> 
+2> /* Select Experiments of type TEXT which belong to more than one category */
+3> 
+4> select distinct _Expt_key, type
+5> into #exclude
+6> from #all
+7> group by _Expt_key
+8> having count(*) > 1
+(306 rows affected)
+1> 
+2> /* Select all Experiments of type TEXT */
+3> 
+4> select _Expt_key
+5> into #migrate
+6> from MLD_Expts
+7> where exptType = "TEXT"
+(2913 rows affected)
+1> 
+2> /* Do not migrate Experiment Types for those which contain search terms from more than one categor */
+3> 
+4> delete #migrate
+5> from #migrate m, #exclude e
+6> where e._Expt_key = m._Expt_key
+(151 rows affected)
+1> 
+2> update MLD_Expts
+3> set exptType = "TEXT-Physical Mapping"
+4> from #migrate m, MLD_Expts e, MLD_Expt_Notes n
+5> where m._Expt_key = e._Expt_key
+6> and e._Expt_key = n._Expt_key
+7> and (n.note like '%physical%' or n.note like '%overlapping%')
+(338 rows affected)
+1> 
+2> update MLD_Expts
+3> set exptType = "TEXT-Cytogenetic Localization"
+4> from #migrate m, MLD_Expts e, MLD_Expt_Notes n
+5> where m._Expt_key = e._Expt_key
+6> and e._Expt_key = n._Expt_key
+7> and (n.note like '%somatic%' or n.note like '%fish%' or n.note like '%situ%')
+(283 rows affected)
+1> 
+2> update MLD_Expts
+3> set exptType = "TEXT-QTL"
+4> from #migrate m, MLD_Expts e, MLD_Expt_Notes n
+5> where m._Expt_key = e._Expt_key
+6> and e._Expt_key = n._Expt_key
+7> and (n.note like '%QTL%' or n.note like '%quantitative%')
+(80 rows affected)
+1> 
+2> update MLD_Expts
+3> set exptType = "TEXT-Genetic Cross"
+4> from #migrate m, MLD_Expts e, MLD_Expt_Notes n
+5> where m._Expt_key = e._Expt_key
+6> and e._Expt_key = n._Expt_key
+7> and (n.note like '%cross%' or n.note like '%EUCIB%' or n.note like '%JAX%')
+(950 rows affected)
+1> 
+2> /* End TR# 327 */
+3> 
+4> checkpoint
+1> 
+2> /* TR# 400 */
+3> /* Update Modification dates for records which differ only in milliseconds */
+4> 
+5> select m.symbol, te.modification_date, tm.modification_date
+6> from MLC_Text_Edit te, MLC_Text tm, MRK_Marker m
+7> where te._Marker_key = tm._Marker_key 
+8> and tm._Marker_key = m._Marker_key
+9> and te.modification_date > tm.modification_date
+10> and datediff(second, te.modification_date, tm.modification_date) = 0
+ symbol                    modification_date          modification_date          
+ ------------------------- -------------------------- -------------------------- 
+ bus                              Mar 17 1999  8:19AM        Mar 17 1999  8:19AM 
+ Cftr                             Mar 25 1999  1:56PM        Mar 25 1999  1:56PM 
+ ch                               Mar 23 1999  2:57PM        Mar 23 1999  2:57PM 
+ f                                Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ H3                               Mar 25 1999  2:14PM        Mar 25 1999  2:14PM 
+ je                               Mar 23 1999  2:57PM        Mar 23 1999  2:57PM 
+ Nramp1                           Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Cct4                             Mar 18 1999  7:34AM        Mar 18 1999  7:34AM 
+ Cct3                             Mar 18 1999  7:34AM        Mar 18 1999  7:34AM 
+ Cct7                             Mar 18 1999  7:34AM        Mar 18 1999  7:34AM 
+ Ifna9                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna8                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna7                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna5                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna4                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna3                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna2                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna10                           Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Ifna1                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Cct1                             Mar 18 1999  7:34AM        Mar 18 1999  7:34AM 
+ Cct6a                            Mar 18 1999  7:34AM        Mar 18 1999  7:34AM 
+ Dyrk1a                           Mar 18 1999  8:57AM        Mar 18 1999  8:57AM 
+ Soat1                            Mar 18 1999  7:34AM        Mar 18 1999  7:34AM 
+ Cfm1                             Mar 25 1999  1:56PM        Mar 25 1999  1:56PM 
+ Tlr4                             Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+ Fancc                            Apr  1 1999  1:00PM        Apr  1 1999  1:00PM 
+
+(26 rows affected)
+1>             
+2> update MLC_Text_Edit
+3> set te.modification_date = tm.modification_date
+4> from MLC_Text_edit te, MLC_Text tm
+5> where te._Marker_key = tm._Marker_key
+6> and te.modification_date > tm.modification_date
+7> and datediff(second, te.modification_date, tm.modification_date) = 0
+(26 rows affected)
+1> 
+2> /* End TR# 400 */
+3> 
+4> checkpoint
+1> 
+2> /* TR# 130 */
+3> 
+4> /* Drop indexes on Accession tables */
+5> 
+6> drop index ACC_Accession.index_accID
+1>  
+2> drop index ACC_Accession.index_Object_key
+1>  
+2> drop index ACC_Accession.index_prefixPart
+1>  
+2> drop index ACC_Accession.index_MGIType_key
+1>  
+2> drop index ACC_Accession.index_numericPart
+1>  
+2> drop index ACC_Accession.index_Accession_key
+1>  
+2> drop index ACC_Accession.index_LogicalDB_key
+1>  
+2> drop index ACC_Accession.index_modification_date
+1>  
+2> drop index ACC_Accession.index_LogicalDB_MGI_Type_key
+1>  
+2> drop index ACC_AccessionReference.index_Refs_key
+1>  
+2> drop index ACC_AccessionReference.index_Acc_Refs_key
+1>  
+2> drop index ACC_AccessionReference.index_Accession_key
+1>  
+2> drop index ACC_AccessionReference.index_modification_date
+1>  
+2> checkpoint
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+
+11419 rows copied.
+Clock Time (ms.): total = 1000   Avg = 0      (11419.00 rows per sec.)
+Password: 
+
+Starting copy...
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+1000 rows sent to SQL Server.
+
+16346 rows copied.
+Clock Time (ms.): total = 1000   Avg = 0      (16346.00 rows per sec.)
+Password: 
+1>  
+2> use mgd
+1> 
+2> /* TR# 130 */
+3> 
+4> /* Re-create indexes on Accession tables */
+5> 
+6> create unique clustered  index index_Accession_key on ACC_Accession (_Accession_key) 
+7> with sorted_data on mgd_seg_0
+1>  
+2> create nonclustered  index index_Object_key on ACC_Accession (_Object_key) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_numericPart on ACC_Accession (numericPart) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_LogicalDB_key on ACC_Accession (_LogicalDB_key) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_MGIType_key on ACC_Accession (_MGIType_key) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_prefixPart on ACC_Accession (prefixPart) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_modification_date on ACC_Accession (modification_date) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_accID on ACC_Accession (accID) 
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_LogicalDB_MGI_Type_key on ACC_Accession (_LogicalDB_key, _MGIType_key)
+3> on mgd_seg_1
+1>  
+2> create unique clustered  index index_Acc_Refs_key on ACC_AccessionReference (_Accession_key, _Refs_key)
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_Accession_key on ACC_AccessionReference (_Accession_key)
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_modification_date on ACC_AccessionReference (modification_date)
+3> on mgd_seg_1
+1>  
+2> create nonclustered  index index_Refs_key on ACC_AccessionReference (_Refs_key)
+3> on mgd_seg_1
+1>  
+2> checkpoint
+Tue Apr  6 09:11:45 EDT 1999

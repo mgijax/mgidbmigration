@@ -1,0 +1,12 @@
+Wed Feb  7 08:53:49 EST 2001
+Password: 
+1>    
+2> update mgd_release..MGI_dbinfo set public_version = "MGI 2.6"
+(1 row affected)
+1> 
+2> update nomen_release..MGI_dbinfo set public_version = "MGI 2.6"
+(1 row affected)
+1> 
+2> update strains_release..MGI_dbinfo set public_version = "MGI 2.6"
+(1 row affected)
+Wed Feb  7 08:53:50 EST 2001

@@ -1,0 +1,947 @@
+Script started on Wed Sep 01 19:39:02 1999
+sybase@kelso:1> Nomen1.1.sh MGD_DEV nomen_dev mgd_release
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop procedure ACCRef_insert
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACCRef_insert', because it doesn't exist in the
+system catalogs.
+1>  
+2> create procedure ACCRef_insert
+3>   @accKey int,
+4>   @refsKey int
+5> as
+6>  
+7> /* Insert record into ACC_AccessionReference table */
+8> 
+9> insert into ACC_AccessionReference
+10> (_Accession_key, _Refs_key)
+11> values(@accKey, @refsKey)
+12> 
+1>  
+2> grant execute on ACCRef_insert to progs
+1>  
+2> grant execute on ACCRef_insert to editors
+1>  
+2> drop procedure ACC_insert
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACC_insert', because it doesn't exist in the system
+catalogs.
+1>  
+2> create procedure ACC_insert
+3>   @objectKey int,
+4>   @accID varchar(30),
+5>   @logicalDB int,
+6>   @mgiType varchar(80),
+7>   @refsKey int = -1,
+8>   @preferred int = 1,
+9>   @private int = 0
+10> as
+11>  
+12> /* Insert record into master Accession table. */
+13> /* If reference is given, insert record into Accession Reference table. */
+14> 
+15> if @accID is null
+16>     return
+17> 
+18> declare @nextACC int
+19> select @nextACC = max(_Accession_key) + 1 from ACC_Accession
+20> 
+21> if @nextACC is null
+22> begin
+23>     select @nextACC = 1
+24> end
+25> 
+26> declare @mgiTypeKey int
+27> select @mgiTypeKey = _MGIType_key from ACC_MGIType where name = @mgiType
+28>  
+29> declare @prefixPart varchar(20)
+30> declare @numericPart int
+31> exec ACC_split @accID, @prefixPart out, @numericPart out
+32>                                                   
+33> insert into ACC_Accession
+34> (_Accession_key, accID, prefixPart, numericPart, _LogicalDB_key, _Object_key, _MGIType_key, private, preferred)
+35> values(@nextACC, @accID, @prefixPart, @numericPart, @logicalDB, @objectKey, @mgiTypeKey, @private, @preferred)
+36> 
+37> if @refsKey != -1
+38> begin
+39>     exec ACCRef_insert @nextACC, @refsKey
+40> end
+41> 
+Msg 2007, Level 11, State 1:
+Procedure 'ACC_insert':
+Cannot add rows to sysdepends for the current stored procedure because it
+depends on the missing object 'ACC_split'. The stored procedure will still be
+created.
+1>  
+2> grant execute on ACC_insert to progs
+1>  
+2> grant execute on ACC_insert to editors
+1>  
+2> drop procedure ACCRef_process
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACCRef_process', because it doesn't exist in the
+system catalogs.
+1>  
+2> create procedure ACCRef_process
+3>   @objectKey int,
+4>   @refsKey int,
+5>   @accID varchar(30),
+6>   @logicalDB int,
+7>   @mgiType varchar(80)
+8> as
+9>  
+10> /* If the Object/Acc ID pair already exists, then use that _Accession_key */
+11> /* and simply insert a new ACC_AccessionReference record (ACCRef_insert) */
+12> /* Else, create a new ACC_Accession and ACC_AccessionReference record (ACC_insert) */
+13> 
+14> declare @accKey integer
+15> select @accKey = a._Accession_key 
+16> from ACC_Accession a, ACC_MGIType m
+17> where accID = @accID
+18> and a._Object_key = @objectKey
+19> and a._MGIType_key = m._MGIType_key
+20> and m.name = @mgiType
+21> and a._LogicalDB_key = @logicalDB
+22> 
+23> if @accKey is not null
+24>     exec ACCRef_insert @accKey, @refsKey
+25> else
+26>     exec ACC_insert @objectKey, @accID, @logicalDB, @mgiType, @refsKey
+27> 
+1>  
+2> grant execute on ACCRef_process to progs
+1>  
+2> grant execute on ACCRef_process to editors
+1>  
+2> drop procedure ACC_update
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACC_update', because it doesn't exist in the system
+catalogs.
+1>  
+2> create procedure ACC_update
+3>   @accKey int,
+4>   @accID varchar(30),
+5>   @origRefsKey int = -1,
+6>   @refsKey int = -1
+7> as
+8>  
+9> /* Update the Accession record for a given Accession key */
+10> 
+11> if @accID is null
+12> begin
+13>     exec ACC_delete_byAccKey @accKey
+14> end
+15> else
+16> begin
+17>     declare @prefixPart varchar(20)
+18>     declare @numericPart int
+19>     exec ACC_split @accID, @prefixPart out, @numericPart out
+20>                                                   
+21>     if (@prefixPart = "J:" or substring(@prefixPart,1,4) = "MGD-")
+22>     begin
+23>             if (select count(*) from ACC_Accession
+24>                 where numericPart = @numericPart and
+25>                       prefixPart = @prefixPart) >= 1
+26>             begin
+27>                     rollback transaction
+28>                     raiserror 99999 "Duplicate MGI Accession Number"
+29>                     return
+30>             end
+31>     end
+32> 
+33>     update ACC_Accession
+34>     set accID = @accID, 
+35>             prefixPart = @prefixPart, 
+36>             numericPart = @numericPart,
+37>             modification_date = getdate()
+38>     where _Accession_key = @accKey
+39> 
+40>     if @refsKey > 0
+41>     begin
+42>             update ACC_AccessionReference
+43>             set _Refs_key = @refsKey
+44>             where _Accession_key = @accKey and
+45>                   _Refs_key = @origRefsKey
+46>     end
+47> end
+48> 
+Msg 2007, Level 11, State 1:
+Procedure 'ACC_update':
+Cannot add rows to sysdepends for the current stored procedure because it
+depends on the missing object 'ACC_delete_byAccKey'. The stored procedure will
+still be created.
+Msg 2007, Level 11, State 1:
+Procedure 'ACC_update':
+Cannot add rows to sysdepends for the current stored procedure because it
+depends on the missing object 'ACC_split'. The stored procedure will still be
+created.
+1>  
+2> grant execute on ACC_update to progs
+1>  
+2> grant execute on ACC_update to editors
+1>  
+2> drop procedure ACC_delete_byObject
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACC_delete_byObject', because it doesn't exist in the
+system catalogs.
+1> 
+2> create procedure ACC_delete_byObject
+3>   @objectKey int,
+4>   @mgiType varchar(80)
+5> as
+6> 
+7> /* Delete all ACC_Accession/ACC_AccessionReference records for a given Object */
+8> 
+9> delete ACC_AccessionReference 
+10> from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m
+11> where a._Object_key = @objectKey
+12> and a._MGIType_key = m._MGIType_key
+13> and m.name = @mgiType
+14> and a._Accession_key = ar._Accession_key
+15> 
+16> delete ACC_Accession 
+17> from ACC_Accession a, ACC_MGIType m
+18> where a._Object_key = @objectKey 
+19> and a._MGIType_key = m._MGIType_key
+20> and m.name = @mgiType
+21> 
+1>  
+2> grant execute on ACC_delete_byObject to progs
+1>  
+2> grant execute on ACC_delete_byObject to editors
+1>  
+2> drop procedure ACC_delete_byAccKey
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACC_delete_byAccKey', because it doesn't exist in the
+system catalogs.
+1> 
+2> create procedure ACC_delete_byAccKey
+3>   @accKey int,
+4>   @refsKey int = -1
+5> as
+6> 
+7> /* Delete ACC_Accession/ACC_AccessonReference records for a given _Accession_key */
+8> 
+9> if @refsKey = -1
+10> begin
+11>     delete ACC_Accession where _Accession_key = @accKey
+12>     delete ACC_AccessionReference where _Accession_key = @accKey
+13> end
+14> else
+15> begin
+16> 
+17>     delete ACC_AccessionReference 
+18>     where _Accession_key = @accKey
+19>     and _Refs_key = @refsKey
+20> end
+21> 
+1>  
+2> grant execute on ACC_delete_byAccKey to progs
+1>  
+2> grant execute on ACC_delete_byAccKey to editors
+1>  
+2> drop procedure ACC_delete_byAccRef
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the procedure 'ACC_delete_byAccRef', because it doesn't exist in the
+system catalogs.
+1> 
+2> create procedure ACC_delete_byAccRef
+3>   @objectKey int,
+4>   @refsKey int,
+5>   @mgiType varchar(80) = "Segment"
+6> as
+7> 
+8> /* Delete all ACC_AccessonReference records for a given Object/Reference */
+9> 
+10> delete ACC_AccessionReference 
+11> from ACC_Accession a, ACC_AccessionReference ar, ACC_MGIType m
+12> where a._Object_key = @objectKey
+13> and a._MGIType_key = m._MGIType_key
+14> and m.name = @mgiType
+15> and a._Accession_key = ar._Accession_key
+16> and ar._Refs_key = @refsKey
+17>  
+1>  
+2> grant execute on ACC_delete_byAccRef to progs
+1>  
+2> grant execute on ACC_delete_byAccRef to editors
+1>  
+2> /* 1> declare @prefixPart varchar(20) */
+3> /* 2> declare @numericPart int */
+4> /* 3> exec ACC_split "MGI:12345", @prefixPart out, @numericPart out */
+5> /* 4> go */
+6> /* (return status = 0) */
+7> /* Return parameters: */
+8> /* ---- -----------  */
+9> /* MGI:       12345  */
+10> 
+11> drop procedure ACC_split
+Msg 3701, Level 11, State 1:
+Line 11:
+Cannot drop the procedure 'ACC_split', because it doesn't exist in the system
+catalogs.
+1> 
+2> create procedure ACC_split
+3>   @accID varchar(20),
+4>   @prefixPart varchar(20) out,
+5>   @numericPart integer out
+6> as
+7> 
+8> declare @temp varchar(20) 
+9> declare @suffix varchar(20)
+10> declare @acclen integer
+11> declare @idx integer
+12> 
+13> /* Remove trailing blanks */
+14> select @accID = rtrim(@accID)
+15> select @acclen = char_length(@accID)
+16> select @temp = reverse(@accID)
+17> select @idx  = patindex("%[^0-9]%",@temp)
+18> 
+19> /* If @idx = 0, then no prefix */
+20> 
+21> if @idx = 0
+22> begin
+23>   select @numericPart = convert(integer, @accID)
+24>   select @prefixPart = NULL
+25> end
+26> 
+27> else
+28> 
+29> begin
+30>   select @prefixPart = reverse(substring(@temp,@idx,@acclen-@idx+1))
+31>   select @suffix = substring(@accID,
+32>                              char_length(@prefixPart)+1,
+33>                              @acclen - char_length(@prefixPart))
+34> 
+35>   if @suffix is not NULL
+36>      select @numericPart = convert(integer, @suffix)
+37>   else
+38>      select @numericPart = NULL
+39> end
+40> 
+1> 
+2> grant execute on ACC_split to progs
+1>  
+2> grant execute on ACC_split to editors
+1>  
+2> grant execute on ACC_split to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop procedure MGI_Table_Column_Cleanup
+1> 
+2> CREATE PROCEDURE MGI_Table_Column_Cleanup
+3> /*
+4> JCG: Jan. 7, 1999
+5> This procedure attempts to get MGI_Tables and MGI_Columns in sync with
+6> sysobjects and syscolumns
+7> */
+8> 
+9> as
+10> 
+11> /* Make sure that an old temp table with this name doesn't exists */
+12> if exists (select name from sysobjects
+13>            where name = '#temp_add_table'
+14>            and type = 'U')
+15>    drop table #temp_add_table
+16> 
+17> /*
+18> NEW TABLE ADDED TO SCHEMA
+19> */
+20> /* Find tables in sysobjects which are not in MGI_Tables and insert them
+21> into a temp table */
+22> SELECT
+23> MGI_Tables._Table_id, sysobjects.name
+24> into #temp_add_table
+25> FROM
+26> MGI_Tables MGI_Tables, sysobjects sysobjects
+27> WHERE
+28> MGI_Tables._Table_id =* sysobjects.id
+29> AND
+30> sysobjects.type='U'
+31> ORDER BY
+32> sysobjects.name
+33> 
+34> /* From the temp table, select only those values where the table name is not
+35> found in MGI_Tables. */
+36> insert into MGI_Tables
+37> SELECT object_id(name), NULL, getDate(), getDate()
+38> FROM
+39> #temp_add_table
+40> WHERE
+41> _Table_id is NULL
+42> 
+43> /* Also, find the appropriate columns and put into MGI_Columns so
+44> that MGI_Tables and MGI_Columns are in sync */
+45> insert into MGI_Columns
+46> SELECT object_id(t.name), colid, NULL, NULL, getDate(), getDate()
+47> FROM
+48> #temp_add_table t, syscolumns c
+49> WHERE
+50> _Table_id is NULL
+51> AND
+52> object_id(t.name) = id
+53> 
+54> if exists (select name from sysobjects
+55>            where name = '#temp_add_table'
+56>            and type = 'U')
+57>    drop table #temp_add_table
+58> 
+59> /*
+60> WHAT IF YOU BCP IN A TRUNCATED COLUMN LIST?
+61> THIS SECTION ADDS COLUMN DEFINITIONS FOR TABLES THAT ARE IN MGI_TABLES
+62> BUT NOT MGI_COLUMNS - SYNCS COLUMNS WITH TABLES
+63> */
+64> 
+65> if exists (select name from sysobjects
+66>            where name = '#temp_update_table'
+67>            and type = 'U')
+68>    drop table #temp_update_table
+69> 
+70> SELECT
+71> MGI_Columns._Table_id, syscolumns.id, syscolumns.colid
+72> into #temp_update_table
+73> FROM
+74> MGI_Columns MGI_Columns,
+75> syscolumns syscolumns,
+76> sysobjects sysobjects
+77> WHERE
+78> syscolumns.id *= MGI_Columns._Table_id
+79> and
+80> syscolumns.id = sysobjects.id
+81> and
+82> sysobjects.type = 'U'
+83> 
+84> insert into MGI_Columns
+85> SELECT
+86> id, colid, NULL, NULL, getDate(), getDate()
+87> FROM
+88> #temp_update_table
+89> WHERE
+90> _Table_id is NULL
+91> 
+92> if exists (select name from sysobjects
+93>            where name = '#temp_update_table'
+94>            and type = 'U')
+95>    drop table #temp_update_table
+96> 
+97> /*
+98> THIS SECTION DELETES TABLES DEFINITION WHEN A TABLE IS DELETED
+99> */
+100> 
+101> /*Algorithm:
+102> 
+103> If table not found in sysobjects, delete from MGI_Tables and
+104> remove all column entries. Do a join to find _Table_id with no id
+105> */
+106> 
+107> DELETE from MGI_Tables
+108> where _Table_id in
+109> (select DISTINCT _Table_id
+110> from
+111> MGI_Tables t, sysobjects o
+112> WHERE
+113> _Table_id NOT in (select id from sysobjects where type = 'U'))
+114> 
+115> if exists (select name from sysobjects
+116>            where name = '#temp_delete_table'
+117>            and type = 'U')
+118>    drop table #temp_delete_table
+119> 
+120> 
+121> SELECT DISTINCT _Table_id, id
+122> into #temp_delete_table
+123> FROM
+124> MGI_Columns, sysobjects
+125> WHERE
+126> _Table_id *= id
+127> 
+128> /* If there is an id in MGI_Columns which is not in syscolumns then delete its entri
+129> es */
+130> delete from MGI_Columns
+131> WHERE
+132> _Table_id in (select _Table_id from #temp_delete_table where id is NULL)
+133> 
+134> if exists (select name from sysobjects
+135>            where name = '#temp_delete_table'
+136>            and type = 'U')
+137>    drop table #temp_delete_table
+138> 
+139> RETURN
+1> 
+2> grant execute on MGI_Table_Column_Cleanup to public
+1> 
+2> drop procedure GEN_rowcount
+1>  
+2> create procedure GEN_rowcount
+3>   @table varchar(30)
+4> as
+5> 
+6> select convert(char(10),rowcnt(MAX(doampg)))
+7> from sysobjects o, sysindexes i
+8> where o.name = @table
+9> and o.id = i.id
+1> 
+2> grant execute on GEN_rowcount to public
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop procedure NOMEN_verifyMarker
+1> 
+2> create procedure NOMEN_verifyMarker
+3>   @symbol varchar(25)
+4> as
+5> 
+6> /* Verify if marker symbol exists in Nomen or MGD master Marker list */
+7> 
+8> declare @status varchar(255)
+9> 
+10> if (select count(*) 
+11>     from mgd_release..MRK_Marker m, mgd_release..MRK_Species s
+12>     where m.symbol = @symbol
+13>     and m._Species_key = s._Species_key
+14>     and s.name = "mouse, laboratory") > 0
+15> begin
+16>     select @status = "Symbol '" + @symbol + "' exists in MGD\n"
+17> end
+18> 
+19> if (select count(*) from MRK_Nomen where proposedSymbol = @symbol) > 0
+20> begin
+21>     select @status = @status + "Symbol '" + @symbol + "' exists in Nomen as a Proposed Symbol\n"
+22> end
+23> 
+24> if (select count(*) from MRK_Nomen where approvedSymbol = @symbol) > 0
+25> begin
+26>     select @status = @status + "Symbol '" + @symbol + "' exists in Nomen as an Approved Symbol\n"
+27> end
+28> 
+29> if @status is not null
+30> begin
+31>     raiserror 99999 @status
+32> end
+33> 
+1> 
+2> grant execute on NOMEN_verifyMarker to public
+1> 
+2> drop procedure NOMEN_updateBroadcastStatus
+1> 
+2> create procedure NOMEN_updateBroadcastStatus
+3>   @nomenKey integer,
+4>   @broadcastDate datetime
+5> as
+6> 
+7> /* Update the Status to 'Broadcast' and the broadcast date for given Marker */
+8> 
+9> declare @bkey integer
+10> select @bKey = _Marker_Status_key from MRK_Status where status = 'Broadcast'
+11> 
+12> update MRK_Nomen
+13> set _Marker_Status_key = @bkey, broadcast_date = @broadcastDate
+14> where _Nomen_key = @nomenKey
+15> 
+1> 
+2> grant execute on NOMEN_updateBroadcastStatus to ljm, djr, mgm
+1> 
+2> grant execute on NOMEN_updateBroadcastStatus to progs
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop view MGI_Table_Column_View
+1> 
+2> create view MGI_Table_Column_View
+3> as 
+4> SELECT _Table_id = t._Table_id, table_name = o.name, table_description = t.description,
+5> column_name = c.name, _Column_id = cc._Column_id, column_description = cc.description,
+6> example = cc.example, t.creation_date, t.modification_date
+7> FROM
+8> syscolumns c, MGI_Columns cc, sysobjects o, MGI_Tables t
+9> WHERE
+10> o.id = t._Table_id AND cc._Column_id = c.colid AND
+11> o.id = c.id AND cc._Table_id = t._Table_id AND ((o.type='U'))
+1> 
+2> grant select on MGI_Table_Column_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop view MRK_Nomen_View
+1> 
+2> create view MRK_Nomen_View
+3> as
+4> select n.*, s.status, e.event, markerType = t.name, userName = u.name
+5> from MRK_Nomen n, MRK_Status s, MRK_Event e, mgd_release..MRK_Types t, sysusers u
+6> where n._Marker_Status_key = s._Marker_Status_key
+7> and n._Marker_Event_key = e._Marker_Event_key
+8> and n._Marker_Type_key = t._Marker_Type_key
+9> and n._Suid_key = u.suid
+1> 
+2> grant select on MRK_Nomen_View to public
+1> 
+2> drop view MRK_Nomen_Reference_View
+1> 
+2> create view MRK_Nomen_Reference_View
+3> as
+4> select r.*, b.jnumID, b.jnum, b.short_citation, firstAuthor = b._primary
+5> from MRK_Nomen_Reference r, mgd_release..BIB_All_View b
+6> where r._Refs_key = b._Refs_key
+1> 
+2> grant select on MRK_Nomen_Reference_View to public
+1>  
+2> drop view MRK_Nomen_GeneFamily_View
+1> 
+2> create view MRK_Nomen_GeneFamily_View
+3> as
+4> select n.*, g.name
+5> from MRK_Nomen_GeneFamily n, MRK_GeneFamily g
+6> where n._Marker_Family_key = g._Marker_Family_key
+1> 
+2> grant select on MRK_Nomen_GeneFamily_View to public
+1>  
+2> drop view MRK_Nomen_Marker_View
+1> 
+2> create view MRK_Nomen_Marker_View
+3> as
+4> select distinct m.current_symbol, a.accID, m.symbol
+5> from MRK_Nomen n, mgd_release..MRK_Current_View m, mgd_release..MRK_Acc_View a
+6> where n.approvedSymbol = m.symbol
+7> and n._Marker_Type_key = m._Marker_Type_key
+8> and m._Current_key = a._Object_key
+9> and a.preferred = 1
+1> 
+2> grant select on MRK_Nomen_Marker_View to public
+1> 
+2> drop view MRK_Nomen_Homology_View
+1> 
+2> create view MRK_Nomen_Homology_View
+3> as
+4> select n.*
+5> from MRK_Nomen n, mgd_release..MRK_Marker m, mgd_release..HMD_Homology_Marker h
+6> where n.humanSymbol = m.symbol
+7> and m._Species_key = 2
+8> and m._Marker_key = h._Marker_key
+1> 
+2> grant select on MRK_Nomen_Homology_View to public
+1> 
+2> drop view MRK_Nomen_User_View
+1> 
+2> create view MRK_Nomen_User_View
+3> as
+4> select l.suid, l.name, l.fullname, l.status
+5> from master..syslogins l, nomen_dev..sysusers u, nomen_dev..sysusers g
+6> where l.suid = u.suid
+7> and u.gid = g.gid
+8> and g.name = 'editors'
+9> and l.name not in ('jeo', 'plg', 'neb', 'lglass')
+1> 
+2> grant select on MRK_Nomen_User_View to public
+1> 
+2> drop view MRK_Nomen_CoordNotes_View
+1> 
+2> create view MRK_Nomen_CoordNotes_View
+3> as
+4> select * from MRK_Nomen_Notes where noteType = 'C'
+1> 
+2> grant all on MRK_Nomen_CoordNotes_View to ljm, rmb
+1> 
+2> grant all on MRK_Nomen_CoordNotes_View to progs
+1> 
+2> grant select on MRK_Nomen_CoordNotes_View to public
+1> 
+2> drop view MRK_Nomen_EditorNotes_View
+1> 
+2> create view MRK_Nomen_EditorNotes_View
+3> as
+4> select * from MRK_Nomen_Notes where noteType = 'E'
+1> 
+2> grant all on MRK_Nomen_EditorNotes_View to editors
+1> 
+2> grant all on MRK_Nomen_EditorNotes_View to progs
+1> 
+2> grant select on MRK_Nomen_EditorNotes_View to public
+1> 
+2> drop view MRK_Nomen_AccRef_View
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the view 'MRK_Nomen_AccRef_View', because it doesn't exist in the
+system catalogs.
+1>  
+2> create view MRK_Nomen_AccRef_View
+3> as
+4> select a.*, LogicalDB = l.name, MGIType = m.name, ar._Refs_key, b.jnumID, b.jnum, b.short_citation
+5> from ACC_Accession a, mgd_release..ACC_LogicalDB l, ACC_MGIType m, ACC_AccessionReference ar, mgd_release..BIB_All_View b
+6> where a._MGIType_key = 1
+7> and a._Accession_key = ar._Accession_key
+8> and a._LogicalDB_key = l._LogicalDB_key
+9> and a._MGIType_key = m._MGIType_key
+10> and ar._Refs_key = b._Refs_key
+1>  
+2> grant select on MRK_Nomen_AccRef_View to public
+1> 
+2> drop view MRK_Nomen_AccNoRef_View
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the view 'MRK_Nomen_AccNoRef_View', because it doesn't exist in the
+system catalogs.
+1>  
+2> create view MRK_Nomen_AccNoRef_View
+3> as
+4> select a.*, LogicalDB = l.name, MGIType = m.name,
+5> subType = mt.name,
+6> description = ma.approvedSymbol + ", " + ma.approvedName
+7> from ACC_Accession a, mgd_release..ACC_LogicalDB l, ACC_MGIType m, MRK_Nomen ma, mgd_release..MRK_Types mt
+8> where a._MGIType_key = 1
+9> and a._LogicalDB_key = l._LogicalDB_key
+10> and a._MGIType_key = m._MGIType_key
+11> and a._Object_key = ma._Nomen_key
+12> and ma._Marker_Type_key = mt._Marker_Type_key
+13> and not exists (select r.* from ACC_AccessionReference r
+14> where a._Accession_key = r._Accession_key)
+1>  
+2> grant select on MRK_Nomen_AccNoRef_View to public
+1>  
+2> checkpoint
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop trigger ACC_Accession_Insert
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the trigger 'ACC_Accession_Insert', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger ACC_Accession_Insert
+3> on ACC_Accession
+4> for insert
+5> as
+6> 
+7> if @@rowcount = 1
+8> begin
+9>   declare @accID varchar(30)
+10>   select @accID = accID from inserted
+11> 
+12>   /* If inserting the Sequence ID for a Marker */
+13>   /* and the same ID exists for another Marker...*/
+14> 
+15>   if (select _LogicalDB_key from inserted) in (9) and
+16>       (select _MGIType_key from inserted) = 1 and
+17>       exists (select a._Accession_key
+18>               from ACC_Accession a, inserted i
+19>               where i.accID = a.accID and
+20>                 i._Object_key != a._Object_key and
+21>                 a._MGIType_key = 1)
+22>   begin
+23>     print "The Accession ID '%1!' is associated with another Symbol.", @accID
+24>   end
+25> 
+26> end
+27> 
+1> 
+2> drop trigger ACC_Accession_Update
+Msg 3701, Level 11, State 1:
+Line 2:
+Cannot drop the trigger 'ACC_Accession_Update', because it doesn't exist in the
+system catalogs.
+1> 
+2> create trigger ACC_Accession_Update
+3> on ACC_Accession
+4> for update
+5> as
+6> 
+7> if @@rowcount = 1
+8> begin
+9>   declare @accID varchar(30)
+10>   select @accID = accID from inserted
+11> 
+12>   /* If updating the Sequence ID for a Marker */
+13>   /* and the same ID exists for another Marker...*/
+14> 
+15>   if (select _LogicalDB_key from inserted) in (9) and
+16>       (select _MGIType_key from inserted) = 1 and
+17>       exists (select a._Accession_key
+18>               from ACC_Accession a, inserted i
+19>               where i.accID = a.accID and
+20>                 i._Object_key != a._Object_key and
+21>                 a._MGIType_key = 1)
+22>   begin
+23>     print "The Accession ID '%1!' is associated with another Symbol.", @accID
+24>   end
+25> end
+26> 
+1> 
+2> drop trigger ACC_AccessionReference_Delete
+1> 
+2> create trigger ACC_AccessionReference_Delete
+3> on ACC_AccessionReference
+4> for delete
+5> as
+6> 
+7> /* If AccID is not referenced by other References in ACC_AccessionReference,
+8>    then delete AccID from ACC_Accesion table too.
+9> */
+10>  
+11> if (select count(*) from ACC_AccessionReference a, deleted d
+12>     where a._Accession_key = d._Accession_key) = 0
+13> begin
+14>     delete ACC_Accession 
+15>     from ACC_Accession a, deleted d
+16>     where a._Accession_key = d._Accession_key
+17> end
+18> 
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use nomen_dev
+1> 
+2> checkpoint
+1> 
+2> drop trigger MRK_Nomen_Update
+1> 
+2> create trigger MRK_Nomen_Update
+3> on MRK_Nomen
+4> for update
+5> as
+6> 
+7> if @@rowcount > 1
+8> begin
+9>      return
+10> end
+11> 
+12> declare @bKey integer
+13> declare @dKey integer
+14> select @bKey = _Marker_Status_key from MRK_Status where status = 'Broadcast'
+15> select @dKey = _Marker_Status_key from MRK_Status where status = 'Deleted'
+16> 
+17> /* Set Broadcast Date to NULL automatically, if user changes Status from Broadcast */
+18> 
+19> if (select _Marker_Status_key from deleted) = @bKey and
+20>    (select _Marker_Status_key from inserted) != @bKey and
+21>    (select broadcast_date from inserted) != null
+22> begin
+23>     update MRK_Nomen
+24>     set broadcast_date = NULL
+25>     from MRK_Nomen n, inserted i
+26>     where n._Nomen_key = i._Nomen_key
+27> end
+28> 
+29> /* If Broadcast date is entered and Status is not Broadcast or Deleted, */
+30> /* then update Status to Broadcast */
+31> 
+32> else if (select broadcast_date from inserted) != null and
+33>         (select _Marker_Status_key from inserted) != @bKey and
+34>         (select _Marker_Status_key from inserted) != @dKey
+35> begin
+36>     update MRK_Nomen
+37>     set _Marker_Status_key = @bKey
+38>     from MRK_Nomen n, inserted i
+39>     where n._Nomen_key = i._Nomen_key
+40> end
+41> 
+42> /* If Broadcast date is removed and Status is still Broadcast, deny update */
+43> 
+44> else if (select broadcast_date from inserted) = null and
+45>         (select _Marker_Status_key from inserted) = @bKey
+46> begin
+47>     rollback transaction
+48>     raiserror 99999 "Cannot remove Broadcast Date if status is Broadcast."
+49>     return
+50> end
+51> 
+1> 
+2> drop trigger MRK_Nomen_Delete
+1> 
+2> create trigger MRK_Nomen_Delete
+3> on MRK_Nomen
+4> for delete
+5> as
+6> 
+7> delete MRK_Nomen_GeneFamily from MRK_Nomen_GeneFamily, deleted
+8> where MRK_Nomen_GeneFamily._Nomen_key = deleted._Nomen_key
+9>  
+10> delete MRK_Nomen_Notes from MRK_Nomen_Notes, deleted
+11> where MRK_Nomen_Notes._Nomen_key = deleted._Nomen_key
+12>  
+13> delete MRK_Nomen_Other from MRK_Nomen_Other, deleted
+14> where MRK_Nomen_Other._Nomen_key = deleted._Nomen_key
+15>  
+16> delete MRK_Nomen_Reference from MRK_Nomen_Reference, deleted
+17> where MRK_Nomen_Reference._Nomen_key = deleted._Nomen_key
+18>  
+1> 
+2> drop trigger MRK_Nomen_Reference_Insert
+1> 
+2> create trigger MRK_Nomen_Reference_Insert
+3> on MRK_Nomen_Reference
+4> for insert, update
+5> as
+6> 
+7> if @@rowcount > 1
+8> begin
+9>      return
+10> end
+11> 
+12> /* Whenever a Reference is added to Nomen, make sure the Nomen database */
+13> /* is selected in the BIB_Refs table */
+14> 
+15> declare @dbs varchar(60)
+16> 
+17> select @dbs = b.dbs
+18> from mgd_release..BIB_Refs b, inserted i
+19> where i._Refs_key = b._Refs_key
+20> 
+21> if (charindex("Nomen", @dbs) = 0)
+22> begin
+23>     if substring(@dbs, char_length(@dbs), char_length(@dbs)) = "/"
+24>     begin
+25>             select @dbs = @dbs + "Nomen/"
+26>     end
+27>     else
+28>     begin
+29>             select @dbs = @dbs + "/Nomen/"
+30>     end
+31>     update mgd_release..BIB_Refs
+32>     set b.dbs = @dbs
+33>     from mgd_release..BIB_Refs b, inserted i
+34>     where b._Refs_key = i._Refs_key
+35> end
+36> 
+1> 
+2> checkpoint
+sybase@kelso:2> exit
+sybase@kelso:3> 
+script done on Wed Sep 01 19:39:33 1999

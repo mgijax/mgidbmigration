@@ -1,0 +1,712 @@
+95/01	Butyrate response factor 2 (5' primers) 	Brf2	M58564	Brf2 	butyrate response factor 2	
+95/02	Butyrate response factor 1 (5' primers) 	Brf1	M58566	Brf1 	butyrate response factor 1	
+95/03	Somatostatin receptor type 4 (5' primers) 	Smstr4	U26176	Smstr4 	somatostatin receptor 4	
+95/04	Glucagon receptor (5' primers) 	Gcgr	L38613	Gcgr 	glucagon receptor	
+95/05	Somatostatin receptor isoform 1 (5' primers) 	Smstr1	M81831	Smstr1 	somatostatin receptor 1	
+95/06	Somatostatin receptor isoform 2 (5' primers) 	Smstr2	M81832	Smstr2 	somatostatin receptor 2	
+95/07	Somatostatin receptor (SSTR3) (5' primers) 	Smstr3	M91000	Smstr3 	somatostatin receptor 3	
+95/08	Zinc finger protein-36 (5' primers) 	Zfp36	X14678	Zfp36 	zinc finger protein 36	
+95/09	Hepatocyte growth factor 	Hgf	D10213	Hgf 	hepatocyte growth factor	
+95/10	Meiosis-specific nuclear structural protein 1 	Mns1	D14849	Mns1 	meiosis-specific nuclear structural protein 1	
+95/11	TGF-beta type I receptor 	Tgfbr1	D25540	Tgfbr1 	"transforming growth factor, beta receptor I"	
+95/12	Glial cell line derived neurotrophic factor 	Gdnf	D49921	Gdnf 	glial cell line derived neurotrophic factor	
+95/13	Pleiotrophin 	Ptn	D90225	Ptn 	pleiotrophin	
+95/14	Homeobox B6 	Hoxb6	J03782	Hoxb6 	homeo box B6	
+95/15	Immunoglobulin associated beta 	Igb	J03857	Igb 	immunoglobulin-associated beta
+95/16	Housekeeping 2 	null	J04761	DXHXS254E	"DNA segment, Chr X, human DXS254E"
+95/17	Growth hormone 	Gh	K03232	Gh 	growth hormone
+95/18	Caudal type homeobox-4 	Cdx4	L08061	Cdx4 	caudal type homeo box 4
+95/19	Homeo box A10 	Hoxa10	L08757	Hoxa10 	homeo box A10
+95/20	Neural retina-specific leucine zipper 	Nrl	L14935	Nrl 	neural retina leucine zipper gene
+95/21	"Drosophila NK2 transcription factor related, locus 5  "	Nkx2-5	L20300	Nkx2-5 	"Drosophila NK2 transcription factor related, locus 5"
+95/22	"Solute carrier family 17 (sodium/hydrogen exchanger) isoform 2 (antiporter, sodium/hydrogen, amiloride sensitive)  "	Sk17a2	L33878	Slc17a2 	"solute carrier family 17 (sodium/hydrogen exchanger), member 2"
+95/23	Glucagon receptor 	Gcgr	L38613	Gcgr 	glucagon receptor
+95/24	Amelogenin (enamel-specific) 	Amel	M10095	Amel 	amelogenin
+95/25	Adenosine deaminase 	Ada	M10319	Ada 	adenosine deaminase
+95/26	"Nerve growth factor, alpha  "	Ngfa	M11434	Ngfa 	"nerve growth factor, alpha"
+95/27	Cholecystokinin 	Cck	M11739	Cck 	cholecystokinin
+95/28	"Amylase-2, pancreatic  "	Amy2	M11895	Amy2 	"amylase 2, pancreatic"
+95/29	"Actin, alpha1, skeletal muscle"	Acta1	M12866	Acta1 	"actin, alpha 1, skeletal muscle"
+95/30	Cysteine-rich intestinal protein 	Crip	M13018	Crip 	cysteine rich intestinal protein
+95/31	Transforming growth factor beta 	Tgfb1	M13177	Tgfb1 	"transforming growth factor, beta 1"
+95/32	Nerve growth factor beta 	Ngfb	M14805	Ngfb	"nerve growth factor, beta"
+95/33	Insulin-like growth factor-2 	Igf2	M14951	Igf2 	insulin-like growth factor 2
+95/34	"Lactate dehydrogenase-3, C chain, sperm specific  "	Ldh3	M17587	Ldh3 	"lactate dehydrogenase 3, C chain, sperm specific"
+95/35	Calbindin-28K 	Calb1	M21531	Calb1 	calbindin-28K
+95/36	"cytochrome P450, 2a5  "	Cyp2a5	M21855	Cyp2b9 	"cytochrome P450, 2b9, phenobarbitol inducible, type a"
+95/37	"Glucose transporter-1, erythrocyte  "	Glut1	M22998	Slc2a1 	"solute carrier family 2 (facilitated glucose transporter), member 1 "
+95/38	"Glucose transporter-4, muscle and fat  "	Glut4	M23383	Slc2a4 	"solute carrier family 2 (facilitated glucose transporter), member 4 "
+95/39	"Glucose transporter-1, erythrocyte  "	Glut1	M23384	Slc2a1 	"solute carrier family 2 (facilitated glucose transporter), member 1 "
+95/40	Complement receptor spleen specific (partial cds) 	Crry	M23446	Crry	complement receptor related protein
+95/41	Complement receptor related protein 	Crry	M23529	Crry 	complement receptor related protein
+95/42	Calbindin 28K 	Calb1	M23663	Calb1 	calbindin-28K
+95/43	Homeo box B5 	Hoxb5	M26283	Hoxb5 	homeo box B5
+95/44	"Ribonuclease-1, pancreatic  "	Rib1	M27814	Rib1 	"ribonuclease 1, pancreatic"
+95/45	Anti-oxidant protein 1 	Aop1	M28723	Aop1 	anti-oxidant protein 1
+95/46	Brain-specific small nuclear RNA 	Bc1	M29340	Bc1 	brain cytoplasmic RNA 1
+95/47	"Platelet derived growth factor, alpha  "	Pdgfa	M29464	Pdgfa 	"platelet derived growth factor, alpha"
+95/48	Growth hormone releasing hormone 	Ghrh	M31654	Ghrh	growth hormone releasing hormone
+95/49	Growth hormone receptor 	Ghr	M31680	Ghr 	growth hormone receptor
+95/50	Growth hormone receptor 	Ghr	M33324	Ghr 	growth hormone receptor
+95/51	Homeo box B1 	Hoxb1	M34005	Hoxb1	homeo box B1
+95/52	Caudal type Homeo box 1 	Cdx1	M37163	Cdx1 	caudal type homeo box 1
+95/53	Estrogen receptor 	Estr	M38651	Estra 	estrogen receptor alpha
+95/54	Angiotensin-converting enzyme 	Ace	M55333	Ace 	angiotensin converting enzyme
+95/55	Butyrate response factor 2 	Brf2	M58564	Brf2 	butyrate response factor 2
+95/56	Butyrate response factor 1 	Brf1	M58566	Brf1 	butyrate response factor 1
+95/57	Fat specific gene 27 	Fsp27	M61737	Fsp27 	fat specific gene 27
+95/58	"Fatty acid binding protein, intestinal  "	Fabpi	M65034	Fabpi 	fatty acid binding protein intestinal
+95/59	House-keeping protein 1 	Hkp1	M74555	Hkp1	house-keeping protein 1 
+95/60	"Glucose transporter-3, brain  "	Glut3	M75135	Slc2a3 	"solute carrier family 2 (facilitated glucose transporter), member 3 "
+95/61	Somatostatin receptor-1 	Smstr1	M81831	Smstr1 	somatostatin receptor 1
+95/62	Somatostatin receptor-2 	Smstr2	M81832	Smstr2 	somatostatin receptor 2
+95/63	Somatostatin receptor-3 	Smstr3	M91000	Smstr3 	somatostatin receptor 3
+95/64	Transforming growth factor alpha 	Tgfa	M92420	Tgfa 	transforming growth factor alpha
+95/65	Homeo box A2 	Hoxa2	M93292	Hoxa2 	homeo box A2
+95/66	Vascular endothelial growth factor 	Vegf	M95200	Vegf 	vascular endothelial growth factor
+95/67	Villin 	Vil	M98454	Vil	villin
+95/68	Receptor-like tyrosine kinase 	Ryk	M98547	Ryk	receptor-like tyrosine kinase
+95/69	Adenosine A1 receptor 	Adora1	U05671	Adora1 	adenosine A1 receptor
+95/70	Adenosine A2a receptor 	Adora2a	U05672	Adora2a 	adenosine A2a receptor
+95/71	Adenosine A2b receptor 	Adora2b	U05673	Adora2b 	adenosine A2b receptor
+95/72	Insulin II 	Ins2	U05730	Ins2 	insulin II
+95/73	Secretin 	Sct	U07568	Sct 	secretin
+95/74	"NADH dehydrogenase 3, mitochondrial  "	mt-Nd3	U09638	mt-Nd3 	"NADH dehydrogenase 3, mitochondrial"
+95/75	"Potassium inwardly-rectifying channel, subfamily J, member 3  "	Kcnj3	U11075	Kcnj4	"potassium inwardly rectifying channel, subfamily J, member 4"
+95/76	"Potassium inwardly rectifying channel, sub family J, member 6  "	Kcnj6	U11859	Kcnj6 	"potassium inwardly rectifying channel, subfamily J, member 6"
+95/77	"Potassium inwardly-rectifying channel, subfamily J, member 5  "	Kcnj5	U11860	Kcnj9 	"potassium inwardly-rectifying channel, subfamily J, member 9"
+95/78	Follicle stimulating hormone beta 	Fshb	U12932	Fshb 	follicle stimulating hormone beta
+95/79	Calcitonin receptor 	Calcr	U18542	Calcr 	calcitonin receptor
+95/80	Mi protein heart-specific form (mi) 	null	U19874	Mitf 	microphthalmia-associated transcription factor
+95/81	Mi protein skin-specific form (mi) 	null	U19875	Mitf 	microphthalmia-associated transcription factor
+95/82	Cannabinoid receptor 2 (macrophage) 	Cnr2	U21681	Cnr2	cannabinoid receptor 2 (macrophage)
+95/83	Luteinizing hormone beta 	Lhb	U25145	Lhb 	luteinizing hormone beta
+95/84	Somatostatin receptor type 4 	Smstr4	U26176	Smstr4 	somatostatin receptor 4
+95/85	Uterine-specific proline-rich acidic protein	null	U28486	Upa 	uterine-specific proline-rich acidic protein
+95/86	Zinc finger protein-36 	Zfp36	X14678	Zfp36 	zinc finger protein 36
+95/87	Fatty acid binding protein heart 1 	Fabph1	X14961	Fabph1 	fatty acid binding protein heart 1
+95/88	"Potassium inwardly-rectifying channel, subfamily J, member 2  "	Kcnj2	X73052	Kcnj2 	"potassium inwardly rectifying channel, subfamily J, member 2"
+95/89	Pancreatic and duodenal homeobox gene-1 	Pdx1	X74342	Pdx1 	pancreatic and duodenal homeobox gene 1
+95/90	"Potassium inwardly-rectifying channel, subfamily J, member 4  "	Kcnj4	X80417	Kcnj12 	"potassium inwardly rectifying channel, subfamily J, member 12"
+95/91	Vasoactive intestinal polypeptide 	Vip	Z31361	Vip 	vasoactive intestinal polypeptide
+95/92	Glucagon 	Gcg	Z46845	Gcg 	glucagon
+95/93	Epidermal growth factor (5' primers) 	Egf	J00380	Egf 	epidermal growth factor
+95/94	"Dystrophin, muscular dystrophy (exons 1-7, 5' primers)  "	Dmd	M68859	Dmd 	"dystrophin, muscular dystrophy"
+95/95	Cystic fibrosis transmembrane conductance regulator homolog (5' primers) 	Cftr	M60493	Cftr 	cystic fibrosis transmembrane conductance regulator homolog
+95/96	P glycoprotein 3 (5' primers) 	Pgy3	M33581	Pgy3 	P glycoprotein 3
+96/97	Neural precursor cell expressed developmentally down-regulated gene-2 	Nedd2	D10713	Nedd2 	"neural precursor cell expressed, developmentally down regulated gene 2"
+96/98	"Protein kinase, mitogen-activated kinase 1  "	Prkm1	D10939	Prkm1 	"protein kinase, mitogen activated kinase 1"
+96/99	Tight junction protein 1 	Tjp1	D14340	Tjp1 	tight junction protein 1
+96/100	Transcription factor 4 	Tcf4	D29015	Tcf14 	transcription factor 14
+96/101	Epidermal growth factor 	Egf	J00380	Egf 	epidermal growth factor
+96/102	Laminin receptor 1 	Lamr1	J02870	P40-8 	"P40-8, functional"
+96/103	Jun oncogene 	Jun	J04115	Jun 	Jun oncogene
+96/104	Kirsten rat sarcoma oncogene-2 	Kras2	K01927	Kras2 	"Kirsten rat sarcoma oncogene 2, expressed"
+96/105	Integrin beta 4 	Itgb4	L04678	Itgb4 	integrin beta 4
+96/106	Engrailed-1 	En1	L12703	En1 	engrailed 1
+96/107	Engrailed-2 	En2	L12705	En2 	engrailed 2
+96/108	MEK kinase 	Mekk	L13103	Mekk 	MEK kinase
+96/109	Prolactin receptor (Long form) 	Prlr	L13593	Prlr 	prolactin receptor
+96/110	Janus kinase 2 (5' end only) 	Jak2	L16956	Jak2 	Janus kinase 2
+96/111	Vinculin 	Vcl	L18880	Vcl	vinculin
+96/112	Bcl2-associated x protein 	Bax	L22472	Bax 	Bcl2-associated X protein
+96/113	"Protein kinase C, gamma  "	Pkcc	L28035	Pkcc	"protein kinase C, gamma"
+96/114	Wingless-related MMTV integration site-12 	Wnt12	L33719	Wnt10b 	Wingless related MMTV integration site 10b
+96/115	Desmocollin 2 	Dsc2	L33779	Dsc2 	desmocollin 2
+96/116	Avian erythroblastosis oncogene B-2 	Erbb2	L47239	Erbb2 	avian erythroblastosis oncogene B 2
+96/117	Avian erythroblastosis oncogene B-3 	Erbb3	L47240	Erbb3 	avian erythroblastosis oncogene B 3
+96/118	Avian erythroblastosis oncogene B-4 	Erbb4	L47241	Erbb4 	avian erythroblastosis oncogene B 4
+96/119	Wingless-related MMTV integration site-1 	Wnt1	M11943	Wnt1 	wingless-related MMTV integration site 1
+96/120	"Actin, alpha 1, skeletal muscle  "	Acta1	M12347	Acta1 	"actin, alpha 1, skeletal muscle"
+96/121	"Procollagen, type IV, alpha 1  "	Col4a1	M15832	Col4a1 	"procollagen, type IV, alpha 1"
+96/122	B-cell leukemia / lymphoma-2 	Bcl2	M16506	Bcl2 	B-cell leukemia/lymphoma 2
+96/123	C-src tyrosine kinase 	Csk	M17031	Src 	Rous sarcoma oncogene
+96/124	"Harvey rat sarcoma oncogene, subgroup R  "	Rras	M21019	Rras 	"Harvey rat sarcoma oncogene, subgroup R"
+96/125	Fibroblast growth factor receptor-1 	Fgfr1	M28998	Fgfr1 	fibroblast growth factor receptor 1
+96/126	Wingless-related MMTV integration site-3 	Wnt3	M32502	Wnt3 	wingless-related MMTV integration site 3
+96/127	Lamin B1 	Lmnb1	M35153	Lmnb1 	lamin B1
+96/128	Casein alpha 	Csna	M36780	Csna 	casein alpha
+96/129	"Transforming growth factor, beta 1  "	Tgfb1	M57902	Tgfb1 	"transforming growth factor, beta 1"
+96/130	Cystic fibrosis transmembrane conductance regulator homolog 	Cftr	M60493	Cftr 	cystic fibrosis transmembrane conductance regulator homolog
+96/131	Cyclin D1 	Ccnd1	M64403	Ccnd1 	cyclin D1
+96/132	Yamaguichi sarcoma viral (v-myc) oncogene homolog 	Lyn	M64608	Lyn 	Yamaguchi sarcoma viral (v-yes-1) oncogene homolog
+96/133	Perlecan (heparan sulphate proteoglycan 2) 	Hspg2	M77174	Hspg2 	perlecan (heparan sulfate proteoglycan 2)
+96/134	Rhodopsin 	Rho	M79315	Arhd 	aplysia ras-related homolog D (RhoD) 
+96/135	Mammary tumor integration site 3 	Int3	M80456	Notch4 	"Notch gene homolog 4, (Drosophila)"
+96/136	"Lactalbumin, alpha  "	Lalba	M80909	Lalba 	"lactalbumin, alpha"
+96/137	Cadherin-1 	Cdh1	M81449	Cdh1 	cadherin 1
+96/138	Somatostatin 	Smst	M81831	Smstr1 	somatostatin receptor 1
+96/139	Fas antigen 	Fas	M83649	Fas 	Fas antigen
+96/140	Cyclin D2 	Ccnd2	M86182	Ccnd2 	cyclin D2
+96/141	Adenomatosis polyposis coli 	Apc	M88127	Apc 	adenomatosis polyposis coli
+96/142	Wingless-related MMTV integration site 5A 	Wnt5a	M89798	Wnt5a 	wingless-related MMTV integration site 5A
+96/143	Catenin beta 	Catnb	M90364	Catnb 	catenin beta
+96/144	Junction plakoglobin 	Jup	M90365	Jup 	junction plakoglobin
+96/145	Transforming growth factor alpha 	Tgfa	M92420	Tgfa 	transforming growth factor alpha
+96/146	Thymoma viral proto-oncogene 	Akt	M94335	Akt	thymoma viral proto-oncogene
+96/147	Focal adhesion kinase 	Fadk	M95408	Fadk 	focal adhesion kinase
+96/148	Insulin-like growth factor II receptor 	Igf2r	M97300	Igf2r	insulin-like growth factor II receptor
+96/149	Janus kinase 1 	Jak1	S63728	Jak1 	Janus kinase 1
+96/150	Caudal type homeo box-2 	Cdx2	S74520	Cdx2 	caudal type homeo box 2
+96/151	Insulin-like growth factor-1 receptor 	Igf1r	U00182	Igf1r 	insulin-like growth factor I receptor
+96/152	Ileal lipid binding protein 	Illbp	U00938	Illbp 	ileal lipid binding protein
+96/153	Mammary-derived growth inhibitor 	Mdgi	U02883	Fabph1 	fatty acid binding protein heart 1
+96/154	Hepatoma transmembrane kinase 	Htk	U06834	Ephb4 	Eph receptor B4 
+96/155	Signal transducer and activator of transcription 3 	Stat3	U06922	Stat3 	signal transducer and activator of transcription 3
+96/156	Signal transducer and activator of transcription 1 	Stat1	U06924	Stat1 	signal transducer and activator of transcription 1
+96/157	Fas antigen ligand 	Fas1	U06948	Fasl 	Fas antigen ligand
+96/158	Growth factor receptor-bound protein 2 	Grb2	U07617	Grb2 	growth factor receptor bound protein 2
+96/159	Laminin alpha 2 	Lama2	U12147	Lama2 	"laminin, alpha 2"	
+96/160	Integrin alpha v (cds1) 	Tgav	U14135	Itgav 	integrin alpha V (Cd51)	
+96/161	Cannabinoid receptor 1(brain) 	Cnr1	U21681	Cnr2	cannabinoid receptor 2 (macrophage)	
+96/162	MAP kinase kinase kinase (Mekk1) 	null	U23470	Mekk 	MEK kinase	
+96/163	Somatostatin receptor 4 	Smstr4	U26176	Smstr4 	somatostatin receptor 4	
+96/164	Breast cancer 1 	Brca1	U32446	Brca1 	breast cancer 1	
+96/165	Cell division cycle 42 	Cdc42	U37720	Cdc42 	cell division cycle 42	
+96/166	Laminin gamma 2	null	U42227	Sequence not in MGD		Yeast sequence.  On CD and Word document - EP FAIL
+96/167	"Laminin, beta 3  "	Lamb3	U43298	Lamb3 	"laminin, beta 3"	
+96/168	Dystroglycan 1 	Dag1	U43512	Dag1 	dystroglycan 1	
+96/169	FJB osteosarcoma oncogene 	Fos	V00727	Fos 	FBJ osteosarcoma oncogene	
+96/170	Whey acidic protein 	Wap	V00856	Wap 	whey acidic protein	
+96/171	Transforming-related protein 53 	Trp53	X00741	Trp53 	transformation related protein 53	
+96/172	Casein beta 	Csnb	X04490	Csnb 	casein beta	
+96/173	Homeo box C8 	Hoxc8	X07646	Hoxc8 	homeo box C8	
+96/174	Nidogen 	Nid	X14194	Nid 	nidogen	
+96/175	Jun protooncogene related gene-d1 	Jund1	X15358	Jund1 	Jun protooncogene related gene d1
+96/176	Retinoic acid receptor gamma 	Rarg	X15848	Rarg 	"retinoic acid receptor, gamma"
+96/177	"Protein kinase C, alpha  "	Pkca	X52685	Pkca 	"protein kinase C, alpha"
+96/178	Neurofibromatosis 	Nf1	X54924	Nf1 	neurofibromatosis
+96/179	Myogenic factor 5 	Myf5	X56182	Myf5 	myogenic factor 5
+96/180	"Retinoic acid receptor, beta  "	Rarb	X56569	Rarb 	"retinoic acid receptor, beta"
+96/181	"Retinoic acid receptor, alpha  "	Rara	X57528	Rara 	"retinoic acid receptor, alpha"
+96/182	"Cyclin B1, related sequence 1  "	Ccnb1-rs1	X58708	Ccnb1-rs1 	"cyclin B1, related sequence 1"
+96/183	Villin 2 	Vil2	X60671	Vil2 	villin 2
+96/184	Integrin alpha 6 	Itga6	X63251	Itga6 	integrin alpha 6
+96/185	Growth arrest specific-1 	Gas1	X65128	Gas1 	growth arrest specific 1
+96/186	Insulin receptor substrate 1 	Irs1	X69722	Irs1 	insulin receptor substrate 1
+96/187	Hepatocyte growth factor 	Hgf	X72307	Hgf 	hepatocyte growth factor
+96/188	Pancreatic and duodenal homeobox gene-1 	Pdx1	X74342	Pdx1 	pancreatic and duodenal homeobox gene 1
+96/189	"Adrenergic receptor, beta-3  "	Adrb3	A26182	Adrb3	"adrenergic receptor, beta 3"
+96/190	CD7 antigen 	Cd7	D10329	Cd7 	CD7 antigen
+96/191	Interleukin 2 	Il2	D13821	Il2rg 	"interleukin 2 receptor, gamma chain"
+96/192	"Adrenergic receptor, alpha-2B  "	Adra2b	L00979	Adra2b 	"adrenergic receptor, alpha 2b"
+96/194	"Adrenergic receptor, beta 1  "	Adrb1	L10084	Adrb1 	"adrenergic receptor, beta 1"
+96/195	Cd38 antigen related sequence 1 	Cd38-rs1	L11332	Cd38 	CD38 antigen
+96/196	Engrailed-2 	En2	L12703	En1 	engrailed 1
+96/197	CD22 antigen 	Cd22	L16928	Cd22 	CD22 antigen
+96/198	Dopamine receptor 5 	Drd5	L20330	Drd5 	dopamine receptor 5
+96/199	G-protein coupled receptor-8 	Gpcr8	L20333	Gpcr8 	G-protein coupled receptor 8
+96/200	Dopamine receptor D1A 	Drd1a	L20336	Drd1a 	dopamine receptor D1A
+96/201	CD27 antigen 	Cd27	L24495	Cd27 	CD27 antigen
+96/202	"Myosin heavy chain 11, smooth muscle  "	Myh11	L25860	Myh11 	"myosin heavy chain 11, smooth muscle"
+96/203	Protein kinase C-gamma 	Pkcc	L28035	Pkcc	"protein kinase C, gamma"
+96/204	Wingless-related MMTV integration site-12 	Wnt12	L33719	Wnt10b 	Wingless related MMTV integration site 10b
+96/205	Avian erythroblastosis oncogene B-2 	Erbb2	L47239	Erbb2 	avian erythroblastosis oncogene B 2
+96/206	Avian erythroblastosis oncogene B-4 	Erbb4	L47241	Erbb4 	avian erythroblastosis oncogene B 4
+96/207	Homeo box A6 	Hoxa6	M11988	Hoxa6	homeo box A6
+96/208	Alpha actinin 3 	Actn3	M12347	Acta1 	"actin, alpha 1, skeletal muscle"
+96/209	Tumor necrosis factor 	Tnf	M13049	Tnf 	tumor necrosis factor
+96/210	Enkephalin 	null	M13227	Penk2 	preproenkephalin 2
+96/211	CD2 antigen 	Cd2	M18934	Cd2 	CD2 antigen
+96/212	Atrial / fetal myosin alkali light chain (Myla) 	null	M19436	Myla 	"myosin light chain, alkali, cardiac atria"
+96/213	Wingless-related MMTV integration site-3 	Wnt3	M32502	Wnt3 	wingless-related MMTV integration site 3
+96/214	"CD3 antigen, eta polypeptide  "	null	M33158	Cd3z 	"CD3 antigen, zeta polypeptide"
+96/215	CD14 antigen 	Cd14	M34510	Cd14 	CD14 antigen
+96/216	CD20 antigen 	Cd20	M62541	Cd20 	CD20 antigen
+96/217	Chromogranin A 	Chga	M64278	Chga 	chromogranin A
+96/218	5-Hydroxytryptamine (serotonin) receptor 3A 	Htr3a	M74425	Htr3a 	5-hydroxytryptamine (serotonin) receptor 3A
+96/219	Cadherin 1 	Cdh1	M81449	Cdh1 	cadherin 1
+96/220	Membrane metallo-endopeptidase 	Mme	M81591	Mme 	membrane metallo endopeptidase
+96/221	Somatostatin receptor 1 	Smstr1	M81831	Smstr1 	somatostatin receptor 1
+96/222	CD40 antigen 	Cd40	M83312	Cd40 	CD40 antigen
+96/223	5-Hydroxytryptamine (serotonin) receptor 1B 	Htr1b	M85151	Htr1b 	5-hydroxytryptamine (serotonin) receptor 1B
+96/224	"Selectin, endothelial cell  "	Sele	M87862	Sele 	"selectin, endothelial cell"	
+96/225	"Myosin heavy chain, skeletal muscle adult-2  "	Myhsf2	M92099	Myhsf2 	"myosin heavy chain, skeletal muscle adult 2"	
+96/226	Dopamine receptor 5 	Drd5	S77992	Drd5 	dopamine receptor 5 	
+96/227	Olfactory marker protein 	Omp	U02557	Omp 	olfactory marker protein	
+96/228	Secretogranin III 	Scg3	U02982	Scg3 	secretogranin III	
+96/229	"Non-muscle myosin, light-chain 3 (MLC3nm)  "	null	U04443	Myln 	"myosin light chain, alkali, nonmuscle"	
+96/230	Fas antigen ligand 	Fasl	U06948	Fasl 	Fas antigen ligand	
+96/231	Integrin alpha V (Cd51) 	ItgaV	U14135	Itgav 	integrin alpha V (Cd51)	
+96/232	Dopamine receptor 4 	Drd4	U19880	Drd4 	dopamine receptor 4	
+96/233	MAP kinase kinase kinase (Mekk1) 	null	U23470	Mekk 	MEK kinase	
+96/234	"Pottasium inwardly-rectifying channel, subfamily J, member 6  "	Kini6	U34397	D16Ium10e 	"DNA segment, Chr 16, Indiana University Medical 10, expressed "	
+96/235	"CD8 antigen, alpha chain  "	Cd8a	U34881	Cd8a 	"CD8 antigen, alpha chain"	
+96/236	5-Hydroxytryptamine (serotonin) receptor 1A 	Htr1a	U39391	Htr1a 	5-hydroxytryptamine (serotonin) receptor 1A	
+96/237	"Laminin, gamma 2  "	Lamc2	U42227	Sequence not in MGD		Yeast sequence.  On CD and Word document - EP FAIL
+96/238	Transformation-related protein 53 	Trp53	X00741	Trp53 	transformation related protein 53	
+96/239	CD4 antigen 	Cd4	X04836	Cd4 	CD4 antigen	
+96/240	Homeo box C8 	Hoxc8	X07646	Hoxc8 	homeo box C8
+96/241	Integrin beta 2 	Itgb2	X14951	Itgb2 	integrin beta 2
+96/242	Homeo box C6 	Hoxc6	X16510	Hoxc6 	homeo box C6
+96/243	Chromogranin B 	Chgb	X51429	Chgb 	chromogranin B
+96/244	Dopamine receptor 2 	Drd2	X55674	Drd2 	dopamine receptor 2
+96/245	"Fc receptor, IgE, low affinity II, alpha  "	Fcer2a	X64223	Fcer2a 	"Fc receptor, IgE, low affinity II, alpha polypeptide"
+96/246	CD44 antigen 	Cd44	X66081	Cd44 	CD44 antigen
+96/247	Dopamine recepor D3 	Drd3	X67274	Drd3 	dopamine receptor 3
+96/248	Ret proto-oncogene 	Ret	X67812	Ret 	ret proto-oncogene
+96/249	Secretogranin II 	Scg2	X68838	Scg2 	secretogranin II
+96/250	5-Hydroxytryptamine (serotonin) receptor 5B 	Htr5b	X69867	Htr5b 	5-hydroxytryptamine (serotonin) receptor 5B
+96/251	5-hydroxytryptamine (serotonin) receptor 1C 	Htr1c	X72230	Htr1c 	5-hydroxytryptamine (serotonin) receptor 1C
+96/252	Integrin alpha 2 (Cd49b) 	Itga2	X75427	Itga2 	integrin alpha 2 (Cd49b)
+96/253	"Sonic hedgehog homolog, (Drosophila)  "	Shh	X76290	Shh 	"sonic hedgehog homolog, (Drosophila)"
+96/254	"Indian hedgehog homolog, (Drosophila)  "	Ihh	X76291	Ihh 	"Indian hedgehog homolog, (Drosophila)"
+96/255	"Desert hedgehog homolog, (Drosophila)  "	Dhh	X76292	Dhh 	"desert hedgehog homolog, (Drosophila)"
+96/257	"Potassium inwardly-rectifying channel, subfamily J, member 4  "	Kcnj4	X80417	Kcnj12 	"potassium inwardly rectifying channel, subfamily J, member 12"
+96/258	Bcl2-like (Bclx) 	Bcl2l	X83574	Bcl2l	Bcl2-like
+96/259	5-hydroxytryptamine (serotonin) receptor 1D 	Htr1d	X94908	Htr1d 	5-hydroxytryptamine (serotonin) receptor 1D
+96/260	5-hydroxytryptamine (serotonin) receptor 1E beta 	Htr1eb	Z14224	Htr1eb 	5-hydroxytryptamine (serotonin) receptor 1E beta
+96/261	Extra cellular signal regulated kinase 1 	Esrk1	Z14249	Esrk1 	extra cellular signal regulated kinase 1
+96/262	5-Hydroxytryptamine (serotonin) receptor 2C 	Htr2c	Z15119	Htr2b 	5-hydroxytryptamine (serotonin) receptor 2B
+96/263	CD53 antigen 	Cd53	Z16071	Cd53 	CD53 antigen
+96/264	5-Hydroxytryptamine (serotonin) receptor 5A 	Htr5a	Z18278	Htr5a 	5-hydroxytryptamine (serotonin) receptor 5A
+96/265	5HTx serotonin receptor 	null	Z23107	Htr7 	5-hydroxytryptamine (serotonin) receptor 7
+96/266	Integrin associated protein 	Itgp	Z25524	Itgp 	integrin-associated protein
+96/267	Cyclin A 	Ccna	Z26580	Ccna2 	cyclin A2
+96/268	Signal transducer and activator of transcription 5A 	Stat5a	Z48538	Stat5a 	signal transducer and activator of transcription 5A
+96/269	Signal transducer and activator of transcription 5B 	Stat5b	Z48539	Stat5b 	signal transducer and activator of transcription 5B
+96/270	Intestinal tyrosine kinase (Iyk) 	null	Z48757	Frk 	B-cell Src-homology tyrosine kinase
+96/271	Dystrophin-related protein 2 	Drp2	U43520	Drp2 	dystrophin related protein 2
+96/273	Rat sucrase-isomaltase 	Si	X15546	Si-s	"sucrase isomaltase, structural"
+96/274	Dystroglycan 1 	Dag1	U43512	Dag1 	dystroglycan 1
+96/275	Utrophin 	Utrn	X83506	Utrn 	utrophin
+96/276	Calmegin 	Clgn	D14117	Clgn 	calmegin
+96/277	Immunoglobin gamma-3 V-D-J region and secreted constant region 	null	D14625	Igh-8	immunoglobulin heavy chain 8 (heavy chain of IgG3)
+96/278	Immunoglobin kappa chain V-J region and constant region 	null	D14630	Igk-C	"immunoglobulin kappa chain, constant region"
+96/279	Male-enhanced antigen (Mea) 	null	D17341	Mea1 	male enhanced antigen 1
+96/280	"Alpha-2-glycoprotein 1, zinc  "	Azgp1	D21059	Azgp1 	"alpha-2-glycoprotein 1, zinc"
+96/281	Serine/threonine kinase STK-1 	null	D21099	Stk5 	serine/threonine kinase 5
+96/282	Mini chromosome maintenance deficient 2 (S. cerevisiae) 	Mcmd2	D26091	Mcmd2 	mini chromosome maintenance deficient 2 (S. cerevisiae)
+96/283	Hydroxyacyl-CoA-dehydrogenase 	Hadh	D29639	Hadh 	hydroxylacyl-CoA-dehydrogenase
+96/284	Cyclin dependant kinase 5 	Cdk5	D29678	Cdk5 	cyclin dependent kinase 5
+96/285	"Trefoil factor 3, intestinal  "	Tff3	D38410	Tff3 	"trefoil factor 3, intestinal"
+96/286	Squalene epoxidase 	null	D42048	Sqle 	squalene epoxidase
+96/287	Sulphate transporter	null	D42049	Dtd 	diastrophic dysplasia
+96/288	"Fructose 1,6-biphosphatase  "	null	D42083	Fbp1 	fructose bisphosphatase 1
+96/289	Stromal cell derived factor 1 	Sdf1	D43804	Sdf1 	stromal cell derived factor 1
+96/290	Stromal cell derived factor 1 	Sdf1	D43805	Sdf1 	stromal cell derived factor 1	
+96/291	Dexamethasone induced product	null	D44443	Sequence not in MGD		Vector/viral sequence.  On CD and Word document - EP FAIL
+96/292	"U2 small nuclear ribonucleoprotein auxiliary factor (U2AF), 35 kD, related sequence 2  "	U2af1-rs2	D45205	U2af1-rs2 	"U2 small nuclear ribonucleoprotein auxiliary factor (U2AF), 35 kDa, related sequence 2"	
+96/293	Srm (tyrosine kinase) 	null	D49427	Srms	Src-related kinase lacking                                          C-terminal regulatory tyrosine and                                          N-terminal myristylation sites	
+96/294	PW29 	null	D49429	Rad21 	RAD21 homolog (S. pombe)	
+96/295	TATA box binding protein 	Tbp	D49439	Taf2e 	"TATA box binding protein (Tbp)-associated factor, RNA polymerase II, E"	
+96/296	Germ cell specific protein APG-1 	null	D49482	Osp94 	osmotic stress protein 94 kDa	
+96/297	"Farnesyltransferase, CAAX box, alpha  "	Fnta	D49744	Fnta 	"farnesyltransferase, CAAX box, alpha"	
+96/298	Zinc finger protein of the cerebellum 2 	Zic2	D70848	Zic2 	zinc finger protein of the cerebellum 2	
+96/299	Zinc finger protein of the cerebellum 3 	Zic3	D70849	Zic3 	zinc finger protein of the cerebellum 3	
+96/300	Seizure related gene 12 	Sez12	D78641	Sez12 	seizure related gene 12	
+96/301	"Glucose regulated protein, 78kD  "	Grp78	D78645	Grp78 	"glucose regulated protein, 78 kDa"	
+96/302	Phospholipase A2 	null	D78647	Ywhaz 	"tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, zeta polypeptide"	
+96/303	Nociceptin/Orphanin FQ 	null	D82866	Npnc1 	neuropeptide nociceptin 1	
+96/304	Ubiquitin carboxyl-terminal hydrolase (UBP)	null	D84096	Uchrp 	ubiquintin c-terminal hydrolase related polypeptide 	
+96/305	"Protein tyrosine phosphatase, non-receptor type 11  "	Ptpn11	D84372	Ptpn11 	"protein tyrosine phosphatase, non-receptor type 11"	
+96/306	Cellular nucleic acid binding protein-like 1 Cnbpl1 	Cnbpl2	L12693	Cnbp	This locus could be either Cnbpl1 or Cnbpl2.
+96/307	Natural resistance associated macrophage protein 1 	Nramp1	L13732	Nramp1 	natural resistance-associated macrophage protein 1	
+96/308	Glutamic acid decarboxylase 1 	Gad1	L16980	Gad2 	glutamic acid decarboxylase 2	
+96/309	Eukaryotic translation elongation factor 1 alpha 	Eef1a2	L26479	Eef1a2 	eukaryotic translation elongation factor 1 alpha	
+96/310	Ribosomal protein S29 	Rps29	L31609	Rps29 	ribosomal protein S29	
+96/311	MHC class I H2G7 	null	L36068	H2-D 	"histocompatibility 2, D region locus 1"	
+96/312	Matrix metalloproteinase 7 	Mmp7	L36244	Mmp7 	matrix metalloproteinase 7	
+96/313	LIM homeo box protein 3 	Lhx3	L38248	Lhx3 	LIM homeo box protein 3	
+96/314	Lymphotoxin B receptor 	Ltbr	L38423	Ltbr 	lymphotoxin B receptor	
+96/315	"Sialyltransferase 8 (alpha-2, 8-sialytransferase) A  "	Siat8a	L38677	Siat8a 	"sialyltransferase 8 (alpha-2, 8-sialytransferase) A"	
+96/316	Mad protein 	null	L38926	Mad 	Max dimerization protein	
+96/317	Glucokinase activity 	Gk	L38990	Gk 	glucokinase activity	
+96/318	Surfactant associated protein 4 	Sftp4	L40156	Sftpd 	surfactant associated protein D	
+96/319	Janus kinase 3 	Jak3	L40172	Jak3 	Janus kinase 3	
+96/320	"Heat shock protein, 105kD  "	Hsp105	L40406	Hsp105 	"heat shock protein, 105 kDa"	
+96/321	Decay accelerating factor 1 	Daf1	L41366	Daf1	decay accelerating factor 1	
+96/322	"Hydroxysteroid dehydrogenase 5, delta<5>-3-beta  "	Hsd3b5	L41519	Hsd3b5 	"hydroxysteroid dehydrogenase 5, delta<5>-3-beta"
+96/323	Dihydrolipoamide branched chain transacylase E2 	Dbt	L42996	Dbt 	dihydrolipoamide branched chain transacylase E2
+96/324	Activin A receptor type II-like kinase 1 	Acvrlk1	L48015	Acvrlk1 	activin A receptor type II-like kinase 1
+96/325	Paraoxonase 2 	Pon2	L48514	Pon2 	paraoxonase 2
+96/326	"Potassium voltage gated channel, Shab-related subfamily, member 3  "	Kcnb3	L48983	Kcnab2 	"potassium voltage gated channel, shaker related subfamily, beta member 2"
+96/327	Cea5	null	L49180	Cea5	carcinoembryonic antigen 5
+96/328	Cyclin G 	Ccng	L49507	Ccng 	cyclin G
+96/329	Follistatin-like 2 	Fstl2	L75822	Fstl2 	follistatin-like 2
+96/330	Paraoxonase 3 	Pon3	L76193	Pon3 	paraoxonase 3
+96/331	Calmodulin-dependant phosphodiesterase 	null	L76946	Pde1c 	phosphodiesterase 1C
+96/332	Zinc finger protein (kid-1) gene 	null	L77247	Tcf17 	transcription factor 17
+96/333	"Protein synthesis elongation factor Tu (eFT-Tu, eEf-1-alpha)  "	null	M22432	Eef1a1	eukaryotic translation elongation factor 1 alpha 1
+96/334	Androgen-regulated protein 	null	M22810	Kap 	kidney androgen regulated protein
+96/335	Myelin associated-glycoprotein (MAG) 	null	M31811	Mag 	myelin-associated glycoprotein
+96/336	"Cytochrome C oxidase, subunit IV  "	Cox4	M37829	Cox4 	"cytochrome C oxidase, subunit IV"
+96/337	Amino levulinate synthase	null	M63244	Alas2	"aminolevulinic acid synthase 2, erythroid"
+96/338	B-raf oncogene 	null	M64429	Braf	Braf transforming gene	
+96/339	"Ribosomal protein S4, X-linked  "	Rps4x	M73436	Rps4x 	"ribosomal protein S4, X-linked"	
+96/340	RNA-dependant EIF-2 alpha kinase	null	M93663	Sequence not in MGD		E. coli sequence.  On CD and Word document - No Data
+96/341	Bone morphogenic protein 8a 	Bmp8a	M97017	Bmp8a 	bone morphogenetic protein 8a	
+96/342	Testis-specific serine/threonine kinase 	Tssk	U01840	Tssk 	testis-specific serine/threonine kinase	
+96/343	X-ray repair complementing defective repair in Chinese hamster 	Xrcc1	U02887	Xrcc1 	X-ray repair complementing defective repair in Chinese hamster	
+96/344	Transketolase 	Tkt	U05809	Tkt 	transketolase	
+96/345	Epidermal surface antigen MS17S1 	Esa	U07890	Esa 	epidermal surface antigen	
+96/346	Tetranectin (plasminogen-binding protein) 	Tna	U08595	Tna 	tetranectin (plasminogen-binding protein)	
+96/347	"Orphan receptor, TR4  "	Tr4	U11688	Tr4 	"orphan receptor, TR4"	
+96/348	Conserved helix-loop-helix ubiquitous kinase 	Chuk	U12473	Chuk 	conserved helix-loop-helix ubiquitous kinase	
+96/349	Germinal center expressed transcript 	Gcet	U13263	Gcet 	germinal center expressed transcript	
+96/350	Bactrianus MHC class II antigen H-2E alpha precursor (allele w301) 	null	U13649	H2-Ea 	"histocompatibility 2, class II antigen E alpha"	
+96/351	Chemokine receptor 	null	U15208	Cmkbr4 	chemokine (C-C) receptor 4	
+96/352	Fertilin beta 	Ftnb	U16242	Ftnb 	fertilin beta	
+96/353	Eph-related receptor tyrosine kinase ligand 5 	Epl5	U16819	Efnb2 	ephrin B2 	
+96/354	Abl-interactor 1 	Abi1	U17698	Abi1 	abl-interactor 1
+96/355	Glutaryl Coenzyme A dehydrogenase 	Gcdh	U18992	Gcdh 	glutaryl Coenzyme A dehydrogenase
+96/356	Transcription factor LRG-21 	null	U19118	Atf3 	activating transcription factor 3
+96/357	Interferon inducible protein 1 	Ifi1	U19119	Ifi1 	interferon inducible protein 1
+96/358	Ubiquitin-conjugating enzyme E2H 	Ube2h	U19854	Ube2h 	ubiquitin-conjugating enzyme E2H
+96/359	"Putative CCAAT binding factor 1 (mcBF) mRNA, alternatively spliced transcript mCBF1  "	null	U19891	Cebpa-rs1 	"CCAAT/enhancer binding protein alpha (C/EBP), related sequence 1"
+96/360	"Putative CCAAT binding factor 2 (mcBF) mRNA, alternatively spliced transcript mCBF2  "	null	U19892	Cebpa-rs1 	"CCAAT/enhancer binding protein alpha (C/EBP), related sequence 1"
+96/361	"Calcium channel, B3 subunit  "	Cchb3	U20372	Cacnb3 	calcium channel beta 3 subunit 
+96/362	Homeobox Gsh-1 	null	U21224	Gsh1 	genomic screened homeo box 1
+96/363	Ac39 / physophilin	null	U21549	Atp6e 	"ATPase, H+ transporting lysosomal vacuolar proton pump 32kDa "
+96/364	Facigential dysplasis (Fgd1) 	null	U22325	Fgd1 	faciogenital dysplasia homolog
+96/365	"Purinergic receptor P2Y, G-protein coupled 1  "	P2ry1	U22829	P2ry1 	"purinergic receptor P2Y, G-protein coupled 1"
+96/366	"Dishevelled 2, dsh homolog (Drosophila)  "	Dvl2	U24160	Dvl2 	"dishevelled 2, dsh homolog (Drosophila)"
+96/367	Protoporphyrinogen oxidase 	Ppox	U25114	Ppox 	protoporphyrinogen oxidase
+96/368	CD30 	null	U25416	Cd30 	CD30 antigen
+96/369	Yolk sac permease-like molecule 1 	Yspl1	U25739	Yspl1 	yolk sac permease-like molecule 1
+96/370	Adenosine kinase 	Adk	U26589	Adk 	adenosine kinase
+96/371	Sulphated glycoprotein (Sgp1) 	null	U27340	Psap 	prosaposin
+96/372	Major intrinsic protein of eye lens fiber 	Mip	U27502	Mip 	major intrinsic protein of eye lens fiber
+96/373	"Protein kinase, interferon-inducible double stranded RNA  "	Prkri	U28423	Prkri 	"protein kinase, interferon inducible double stranded RNA"
+96/374	HU-antigen D 	Hud	U29088	Hud 	HU-antigen D
+96/375	Annexin V 	Anx5	U29396	Anx5 	annexin V
+96/376	ADP-ribosyltransferase 1 	Art1	U31510	Art1 	ADP-ribosyltransferase 1
+96/377	Acrosomal vesicle protein 1 	Acrv1	U31992	Acrv1 	acrosomal vesicle protein 1
+96/378	Mature T-cell proliferation 1 	Mtcp1	U32332	Mtcp1 	mature T-cell proliferation 1
+96/379	Paraoxonase 1 	Pon1	U32684	Pon1 	paraoxonase 1
+96/380	Lysosomal acid lipase 1 	Lip1	U33169	Cel 	carobyl ester lipase 
+96/381	Intranuclear matrix protein 	Inmp	U33198	Inmp 	intranuclear matrix protein
+96/382	Fibroblast growth factor 9 	Fgf9	U33535	Fgf9 	fibroblast growth factor 9
+96/383	Folypolyglutamyl synthetase 	Fpgs	U33557	Fpgs 	folylpolyglutamyl synthetase
+96/384	Promyelocytic leukemia 	Pml	U33626	Pml 	promyelocytic leukemia
+96/385	"Potassium inwardly rectifying channel, subfamily J, member 5  "	Kcnj5	U33631	Kcnj5 	"potassium inwardly rectifying channel, subfamily J, member 5"
+96/386	RAG (recombination activating gene) cohort 2 	Rch2	U34228	Rch2 	RAG (recombination activating gene) cohort 2
+96/387	RAG (recombination activating gene) cohort 1 	Rch1	U34229	Rch1 	RAG (recombination activating gene) cohort 1
+96/388	Membrane transporter protein 	Mtrp	U34259	Mtrp 	membrane transporter protein
+96/389	"CD8 mRNA, Lyt3a allele  "	null	U34882	Cd8b 	"CD8 antigen, beta chain"
+96/390	White homolog (white) 	null	U34920	Abc8 	ATP-binding cassette 8
+96/391	Endothelin 1 	Edn1	U35233	Edn1 	endothelin 1
+96/392	Menage a trois 1 	Mnat	U35249	Mnat1 	menage a trois 1
+96/393	"Histocompatability 2, class II, locus Ma  "	H2-Ma	U35325	H2-Ma 	"histocompatibility 2, class II, locus Ma"
+96/394	"Histocompatability 2, class II, locus Mb1  "	H2-Mb1	U35330	H2-Mb1 	"histocompatibility 2, class II, locus Mb1"
+96/395	"FK506 binding protein 5, 51kDa  "	Fkbp5	U36220	Fkbp5 	"FK506 binding protein 5, 51 kDa"
+96/396	Basic Kruppel-like factor 	Bklf	U36340	Bklf 	basic Kruppel-like factor
+96/397	T cell transcription factor NFAT1 isoform B 	null	U36575	Nfatc2 	"nuclear factor of activated T cells, cytoplasmic 2"
+96/398	Holocytochrome c synthetase 	Hccs	U36788	Hccs 	holocytochrome c synthetase
+96/399	Apoptosis inhibitory protein A 	Aipa	U36842	Aipa 	apoptosis inhibitory protein A
+96/400	"Cytochrome P450, 7b1  "	Cyp7b1	U36993	Cyp7b1 	"cytochrome P450, 7b1"
+96/401	Vav2 oncogene 	null	U37017	Vav2 	Vav2 oncogene
+96/402	"Protein kinase, mitogen activated, kinase 6  "	Prkm6	U39066	Prkmk6 	"protein kinase, mitogen activated, kinase 6"	
+96/403	Thymopoietin 	Tmpo	U39073	Tmpo 	thymopoietin	
+96/404	Thymopoietin 	Tmpo	U39075	Tmpo 	thymopoietin	
+96/405	Thymopoietin 	Tmpo	U39078	Tmpo 	thymopoietin	
+96/406	26S Proteasome subunit 4 ATPase 	null	U39302	Psmc1 	"protease (prosome, macropain) 26S subunit, ATPase 1"	
+96/407	Histidyl tRNA synthetase 	Hars	U39473	Hars 	histidyl tRNA synthetase	
+96/408	FAF1 	null	U39643	Faf1 	Fas-associated factor 1	
+96/409	G-protein coupled receptor 25 	Gpcr25	U39827	Gpcr25 	G-protein coupled receptor 25	
+96/410	"Synthetic construct T cell receptor beta chain mRNA, human/mouse chimeric"	null	U40406	Sequence not in MGD		Human sequence - synthetic construct.  On CD and Word document - No Data
+96/411	"Synthetic construct T cell receptor alpha chain mRNA, human/mouse chimeric"	null	U40407	Sequence not in MGD		Human sequence - synthetic construct.  On CD and Word document - EP FAIL
+96/412	Single-minded 2 	Sim2	U40576	Sim2 	single-minded 2	
+96/413	Homeo box gene expressed in ES cells 	Hesx1	U40720	Hesx1 	homeo box gene expressed in ES cells	
+96/414	"Dishevelled 3, dsh homolog (Drosophila)  "	Dvl3	U41285	Dvl3 	"dishevelled 3, dsh homolog (Drosophila)"	
+96/415	B-cell leukemia/lymphoma 6 	Bcl6	U41465	Bcl6 	B-cell leukemia/lymphoma 6	
+96/416	Split hand/foot gene 	Shf	U41626	Shfdg1 	split hand/foot deleted gene 1	
+96/417	Deubiquitinating enzyme 1 	Dub1	U41636	Dub1 	deubiquitinating enzyme 1	
+96/418	Etoposide induced 2.4 mRNA 	Ei24	U41751	Ei24 	etoposide induced 2.4 mRNA
+96/419	Fibroblast growth factor inducible 13 	Fin13	U42383	Fin13 	fibroblast growth factor inducible 13
+96/420	Fibroblast growth factor inducible 15 	Fin15	U42384	Fin15 	fibroblast growth factor inducible 15
+96/421	Fibroblast growth factor inducible 16 	Fin16	U42385	Fin16 	fibroblast growth factor inducible 16
+96/422	Fibroblast growth factor inducible 14 	Fin14	U42386	Fin14 	fibroblast growth factor inducible 14
+96/423	Mast cell protease 7 	Mcpt7	U42405	Mcpt7 	mast cell protease 7
+96/424	Gp91phox (Cybb) 	null	U43384	Cybb 	"cytochrome b-245, beta polypeptide"
+96/425	"POU domain, class 2, associating factor 1  "	Pou2af1	U43788	Pou2af1 	"POU domain, class 2, associating factor 1"
+96/426	Transcription factor Id1B (Id1B) 	null	U43884	Idb1 	inhibitor of DNA binding 1
+96/427	Coagulation factor VII (f VII) 	null	U44795	Cf7 	coagulation factor VII
+96/428	"Calcium binding protein, 45kDa  "	Cab45	U45978	Cab45 	"calcium binding protein, 45 kDa"
+96/429	Glutamine repeat protein 1 	Glrp1	U46463	Glrp1 	glutamine repeat protein 1
+96/430	BIO.BR T-cell receptor alpha-chain precursor 	null	U46581	Tcra-C	"T cell receptor alpha, constant region"
+96/431	T-cell receptor beta-chain 	null	U46841	Tcrb-C	"T cell receptor beta, constant region"
+96/432	"SHC transforming protein 3, Src homology 2 domain-containing  "	Shc3	U46854	Shc3 	"SHC transforming protein 3, Src homology 2 domain-containing"
+96/433	G protein-coupled receptor 	null	U46923	Gpr19 	G protein coupled receptor 19
+96/434	Maternal embryonic message 3 	Mem3	U47024	Mem3 	maternal embryonic message 3
+96/435	Chemokine (C-C) receptor 5 	Cmkbr5	U47036	Cmkbr5	chemokine (C-C) receptor 1
+96/436	Complement component factor i 	Cfi	U47810	Cfi 	complement component factor i
+96/437	Transformed mouse 3T3 cell double minute 2? 	Mdm2	U47934	Mdm2 	transformed mouse 3T3 cell double minute 2
+96/438	G protein-coupled receptor 1.3 	null	U48235	Gpcr26 	G-protein coupled receptor 26
+96/439	Aquaporin 4 	Aqp4	U48397	Aqp4 	aquaporin 4
+96/440	"Glutathione S-transferase, theta 2  "	Gstt2	U48420	Gstt2 	"glutathione S-transferase, theta 2"
+96/441	Vascular endothelial growth factor related protein 	Vrf	U48800	Vrf 	vascular endothelial growth factor related protein
+96/442	v-Crk-associated tyrosine kinase substrate 	Cas	U48853	Cas 	v-Crk-associated tyrosine kinase substrate
+96/443	Occludin 	Ocl	U49185	Ocl 	occludin
+96/444	Ceruloplasmin 	Cp	U49430	Cp 	ceruloplasmin
+96/445	Macrophage inflammatory protein-1 gamma 	null	U49513	Scya9 	small inducible cytokine A9
+96/446	Blue cone pigment 	Bcp	U49720	Bcp 	blue cone pigment
+96/447	Protein tyrosine phosphate 	null	U49853	Ptpn18 	"protein tyrosine phosphatase, non-receptor type 18"
+96/448	Type 1 deiodinase 	null	U49861	Dio1 	"iodothyronine 5' deiodinase, type I"
+96/449	5E6 (5E6/Ly-49C) 	null	U49865	Ly49c 	"lymphocyte antigen 49 complex, locus C"
+96/450	Mort 1 Fas-associated protein 	null	U50406	Fadd 	Fas-associating protein with death domain
+96/451	RAB8 interacting protein 	Rab8ip	U50595	Rab8ip 	RAB8 interacting protein
+96/452	Heat-responsive protein (HRP12)	null	U50631	Hrsp12	heat-responsive protein 12
+96/453	Alpha-galactosidase 	Ags	U50716	Ags 	alpha-galactosidase
+96/454	Maternal transcript (Mem4) 	null	U50734	Maid 	maternal inhibitation of differentiation
+96/455	Prolidase (pep4)	null	U51014	Pep4	peptidase 4
+96/456	11-zinc-finger transcription factor (CTCF) 	null	U51037	Ctcf 	CCCTC-binding factor
+96/457	Isocitrate dehydrogenase 2 	Idh2	U51167	Idh2 	isocitrate dehydrogenase 2
+96/458	APC-binding protein EB1 homolog 	null	U51196	Eb1 	adenomatosis polyposis coli binding protein Eb1
+96/459	Lysosomal-associated protein transmembrane 5 	Laptm5	U51239	Laptm5 	lysosomal-associated protein transmembrane 5
+96/460	Fcgamma RIIB 	null	U51629	Fcgr2b 	"Fc receptor, IgG, low affinity IIb"
+96/461	Thioredoxin peroxidase (Tpx) 	null	U51679	Tdpx1 	thioredoxin peroxidase 1
+96/462	Chemokine (C-C) receptor 2 	Cmkbr2	U51717	Cmkbr2 	chemokine (C-C) receptor 2
+96/463	"Arginase 1, liver  "	Arg1	U51805	Arg1 	"arginase 1, liver"
+96/464	Casein kinase II alpha subunit	null	U51866	Csnk2a1-rs4 	"casein kinase II, alpha 1, related sequence 4 "
+96/465	TRAF family member associated Nf-kappa B activator 	Tank	U51907	Tank 	TRAF family member-associated Nf-kappa B activator
+96/466	Interferon dependent positive acting transcription factor 3 gamma 	Isgf3g	U51992	Isgf3g 	interferon dependent positive acting transcription factor 3 gamma
+96/467	Poly (A) polymerase III 	null	U52197	Plap 	poly (A) polymerase
+96/468	Melatonin receptor 1A 	Mtnr1a	U52222	Mtnr1a 	melatonin receptor 1A
+96/469	Ornithine decarboxylase antizyme 	null	U52822	Oaz 	ornithine decarboxylase antizyme
+96/470	Tubby 	tub	U52824	tub 	tubby
+96/471	Kidney-specific transport protein	null	U52842	Orctl1 	organic catronic transporter-like 1
+96/472	B219/OB receptor MuB219 precursor 	null	U52915	Lepr 	leptin receptor
+96/473	Tumor susceptibility gene 101 	Tsg101	U52945	tsg101 	tumor susceptibility gene 101
+96/474	Enhancer of zeste homolog (Drosophila) 	Enx1h	U52951	Enx1h 	enhancer of zeste homolog (Drosophila)
+96/475	Zuotin related factor 1 	Zrf1	U53208	Zrf1 	zuotin related factor 1
+96/476	RAR-related orphan receptor alpha 	Rora	U53228	Rora 	RAR-related orphan receptor alpha
+96/477	Rhotekin 	Rtkn	U54638	Rtkn 	rhotekin
+96/478	"Ral guanine nucleotide dissociation stimulator, like 2  "	Rgl2	U54639	Rgl2 	"ral guanine nucleotide dissociation stimulator,-like 2"
+96/479	Tumor supressor maspin 	null	U54705	Spi7 	serine protease inhibitor 7
+96/480	14-3-3 eta protein 	null	U57311	Ywhah 	"tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, eta polypeptide"
+96/481	14-3-3 theta protein 	null	U57312	Ywhaq 	"tyrosine 3-monooxygenase/tryptophan 5-monooxygenase activation protein, theta polypeptide"
+96/482	STONE14	null	U57413	Osi	oxidative stress induced	
+96/483	Embryonal Fyn-associated substrate 	Efs	U57686	Efs 	embryonal Fyn-associated substrate	
+96/484	Ubiquitin-conjugating enzyme E214K 	null	U57690	Ube2b 	ubiquitin-conjugating enzyme E2B (RAD6 homology)	
+96/485	N-terminal asparagine amidohydrolase (Ntan1) 	null	U57692	Ntan1 	N-terminal Asn amidase	
+96/486	Platelet-activating factor acetylhydrolase isoform I6 gamma subunit (PAF-AH gamma) 	null	U57746	Pafahg 	"platelet-activating factor acetylhydrolase, gamma subunit"	
+96/487	Platelet-activating factor acetylhydrolase isoform I6 beta subunit (PAF-AH gamma) 	null	U57747	Pafahb 	"platelet-activating factor acetylhydrolase, beta subunit"	
+96/488	"Glutamate receptor, ionotropic, NMDA1 (zeta 1)  "	Grin1	D10028	Grin1 	"glutamate receptor, ionotropic, NMDA1 (zeta 1)"	
+96/489	"Glutamate receptor, ionotropic, kainate 2 (beta 2)  "	Grik2	D10054	Grik2 	"glutamate receptor, ionotropic, kainate 2 (beta 2)"	
+96/490	"Glutamate receptor, ionotropic, delta 1  "	Grid1	D10171	Grid1 	"glutamate receptor, ionotropic, delta 1"	
+96/491	Prostaglandin E receptor EP3 subtype 	Ptgerep3	D10204	Ptgerep3 	prostaglandin E receptor EP3 subtype	
+96/493	"Glutamate receptor, ionotropic, NMDA2C (epsilon 3)  "	Grin2c	D10694	Grin2c 	"glutamate receptor, ionotropic, NMDA2C (epsilon 3)"	
+96/494	Thromboxane A2 receptor 	Tbxa2r	D10849	Tbxa2r 	thromboxane A2 receptor	
+96/495	"Glutamate receptor, ionotropic, NMDA2D (epsilon 4)  "	Grin2d	D12822	Grin2d 	"glutamate receptor, ionotropic, NMDA2D (epsilon 4)"	
+96/496	Rat mRNA for adenylate kinase 2	null	D13061	Ak2	adenylate kinase 2	
+96/497	Glutamate receptor channel delta 2 subunit	null	D13062	Sequence not in MGD		Rat sequence.  On CD - EP FAIL
+96/498	Glutamate receptor channel delta 2 subunit 	null	D13266	Grid2 	"glutamate receptor, ionotropic, delta 2"	
+96/499	Prostaglandin E receptor EP3 subtype 	Ptgerep3	D13321	Ptgerep3 	prostaglandin E receptor EP3 subtype	
+96/500	Rat mRNA for adenylate kinase 1	null	D13376	Sequence not in MGD		Rat sequence.  On CD and Word document - EP FAIL
+96/501	Prostaglandin E receptor EP1 subtype 	Ptgerep1	D16338	Ptgerep1 	prostaglandin E receptor EP1 subtype	
+96/502	Prostaglandin E receptor EP3 subtype 	Ptgerep3	D17406	Ptgerep3 	prostaglandin E receptor EP3 subtype	
+96/503	Tachykinin 1 	Tac1	D17584	Tac1 	tachykinin 1	
+96/504	Prostaglandin I receptor (IP) 	Ptgir	D26157	Ptgir 	prostaglandin I receptor (IP)	
+96/505	Prostaglandin D receptor 	Ptgdr	D29764	Ptgdr 	prostaglandin D receptor	
+96/506	Prostaglandin E receptor EP2 subtype 	Ptgerep2	D50589	Ptgerep2 	prostaglandin E receptor EP2 subtype	
+96/507	Humiria balsaminifera chloroplast ribulosebisphosphate carboxylase (rbcL) gene	null	L01926	Sequence not in MGD		Plant sequence.  On CD and Word document - EP FAIL
+96/508	"Opioid receptor, delta 1  "	Oprd1	L11064	Oprd1 	"opioid receptor, delta 1"	
+96/509	5' nucleotidase 	Nt5	L12059	Nt5 	5' nucleotidase	
+96/510	G-protein coupled receptor 2 	Gpcr2	L20331	Gpcr2 	G-protein coupled receptor 2	
+96/511	"Brain substance P, NK-1 receptor  "	null	L27826	Tac1r 	tachykinin 1 receptor	
+96/512	"AMPA receptor subunit (GluR-B) gene, 2 alternative transcripts  "	null	L32372	Gria2 	"glutamate receptor, ionotropic, AMPA2 (alpha 2)"	
+96/513	AMPD1	null	M58688	Sequence not in MGD		Rat sequence.  On CD and Word document - EP FAIL
+96/514	"Phospholipase C, alpha  "	Plca	M73329	Erp 	endoplasmic reticulum protein	
+96/515	Glucocorticoid induced receptor 	Gir	M80481	Gir 	glucocorticoid induced receptor	
+96/516	Rat adenylyl cyclase type (IV)	null	M80633	Adcy4	adenylate cyclase 4	
+96/517	"Rattus norvegicus adenylyl cyclase type V mRNA, 3' end."	null	M96159	Adcy5	adenylate cyclase 5	
+96/518	"Actinobacillus pleuropneumoniae K17 RTX-1 toxin determinant (apxIA) gene, complete cds. "	null	U04954	Sequence not in MGD		Bacteria sequence.  On CD and Word document - No Data
+96/519	Opioid receptor-like 	Oprl	U09421	Oprl 	opioid receptor-like	
+96/520	"Opioid receptor, kappa 1  "	Oprk1	U16998	Oprk1	"opioid receptor, kappa 1"	
+96/521	Metabotropic glutamate receptor 8 (mGluR8) 	null	U17252	Grm8 	"glutamate receptor, metabotropic 8"	
+96/522	Cannabinoid receptor 1 (brain) 	Cnr1	U17985	Cnr1 	cannabinoid receptor 1 (brain)	
+96/523	Testis-specific low molecular weight phospholipase A2 	null	U18119	Pla2g2c 	"phospholipase A2, group IIC"	
+96/524	"Opioid receptor, mu  "	Oprm	U19380	Oprm 	"opioid receptor, mu"	
+96/525	"Phospholipase A2, group IIA (platelets, synovial fluid)  "	Pla2g2a	U28244	Pla2g2a 	"phospholipase A2, group IIA (platelets, synovial fluid)"	
+96/526	"Phospholipase A2, group IB, pancreas  "	Pla2g1b	U32358	Pla2g2a 	"phospholipase A2, group IIA (platelets, synovial fluid)"	
+96/527	Inducible nitric oxide synthase 	null	U43428	Nos2 	"nitric oxide synthase 2, inducible, macrophage"	
+96/528	ma34g12.r1 Life Tech mouse brain Mus musculus cDNA clone 312646 5' similar to gb:S46950 Adenosine A2A Receptor (HUMAN);	null	W59687	ESTM21	expressed sequence tag mouse EST 21	
+96/529	ma26g07.r1 Life Tech mouse brain Mus musculus cDNA clone 311868 5' similar to gb:L22214 Adenosine A1 receptor (HUMAN);	null	W61814	ESTM22	expressed sequence tag mouse EST 22	
+96/530	Acetylcholinesterase 	Ache	X56518	Ache 	acetylcholinesterase	
+96/531	"Glutamate receptor, ionotropic, AMPA1 (alpha 1)  "	Gria1	X57497	Gria1 	"glutamate receptor, ionotropic, AMPA1 (alpha 1)"	
+96/532	G-protein beta-subunit 	null	X62634	Gnb1 	"guanine nucleotide binding protein, beta 1"	
+96/533	Phospholipase C beta 1 	null	X95344	Plcb 	"phospholipase C, beta"	
+96/534	"Phospholipase C, gamma 1  "	Plcg1	X95346	Plcg1 	"phospholipase C, gamma 1"	
+96/535	H.sapiens (D6S1717) DNA segment containing (CA) repeat; clone AFM119yb6.	null	Z50990	Sequence not in MGD		Human sequence.  On CD - No Data.  On Word document - EP Fail
+97/550	"Glutamate receptor, ionotropic, NMDA2A (epsilon 1)"	Grin2a	D10217	Grin2a 	"glutamate receptor, ionotropic, NMDA2A (epsilon 1)"	
+97/551	"Glutamate receptor, ionotropic, NMDA2B (epsilon 2)"	Grin2b	D10651	Grin2b 	"glutamate receptor, ionotropic, NMDA2B (epsilon 2)"	
+97/552	" Protein kinase C, theta"	Pkcq	D11091	Pkcq 	"protein kinase C, theta"	
+97/553	"Glutamate receptor, ionotropic, NMDA2D (epsilon 4)"	Grin2d	D12822	Grin2d 	"glutamate receptor, ionotropic, NMDA2D (epsilon 4)"	
+97/554	Tachykinin 2	Tac2	D14423	Tac2 	tachykinin 2	
+97/555	"Nitric oxide synthase 1, neuronal"	Nos1	D14552	Nos1 	"nitric oxide synthase 1, neuronal"	
+97/556	Protein kinase C lambda	null	D28577	Pkcl	"protein kinase C, lamda"	
+97/557	"Solute carrier family 1, member 1"	Slc1a1	D43797	Slc1a1 	"solute carrier family 1, member 1"	
+97/558	"Potassium inwardly rectifying channel, subfamily J, member 3"	Kcnj3	D45022	Kcnj3 	"potassium inwardly rectifying channel, subfamily J, member 3"	
+97/559	"Protein kinase C, eta"	Pkch	D90242	Pkch	"protein kinase C, eta"	
+97/560	"Protein kinase, cAMP dependent, catalytic, beta"	Pkacb	J02626	Pkacb	"protein kinase, cAMP dependent, catalytic, beta"	
+97/561	"Protein kinase, cAMP dependent regulatory, type II alpha"	Prkar2a	J02935	Prkar2a 	"protein kinase, cAMP dependent regulatory, type II alpha"
+97/562	Homeo box D4	Hoxd4	J03770	Hoxd4 	homeo box D4
+97/563	"Protein kinase inhibitor beta, cAMP dependent, testis specific"	Pkib	L02241	Pkib 	"protein kinase inhibitor beta, cAMP dependent, testis specific"
+97/564	Macrophage scavenger receptor type I 	null	L04274	Scvr	scavenger receptor
+97/565	Macrophage scavenger receptor type II 	null	L04275	Scvr	scavenger receptor
+97/566	Gamma-aminobutyric acid (GABA-A) transporter 4	Gabt4	L04662	Gabt4 	gamma-aminobutyric acid (GABA-A) transporter 4
+97/567	Gamma-aminobutyric acid (GABA-A) transporter 3	Gabt3	L04663	Gabt3 	gamma-aminobutyric acid (GABA-A) transporter 3
+97/568	Coagulation factor VIII	Cf8	L05573	Cf8 	coagulation factor VIII
+97/569	FMS-like tyrosine kinase 1	Flt1	L07297	Flt1 	FMS-like tyrosine kinase 1
+97/570	Smk/Plk-akin kinase	Sak	L29480	Sak 	Smk/Plk-akin kinase
+97/571	Receptor for advanced glycosylation end products (RAGE) gene	null	L33412	Ager 	advanced glycosylation end product-specific receptor
+97/572	HMG-box transcription factor (sox18)	null	L35032	Sox18 	SRY-box containing gene 18
+97/573	Alzheimer disease 3 homologue	Ad3h	L42177	Ad3h 	alzheimer disease 3 homologue
+97/574	"Protein kinase, cAMP dependent, catalytic, alpha"	Pkaca	M12303	Pkaca 	"protein kinase, cAMP dependent, catalytic, alpha"
+97/575	Homeo box A7	Hoxa7	M17192	Hoxa7	homeo box A7
+97/576	"Protein kinase, cAMP dependant regulatory, type I beta"	Prkar1b	M20473	Prkar1b 	"protein kinase, cAMP dependent regulatory, type I beta"
+97/577	Wingless-related MMTV integration site-3	Wnt3	M32502	Wnt3 	wingless-related MMTV integration site 3
+97/578	"Protein kinase inhibitor, alpha"	Pkia	M63554	Pkia 	"protein kinase inhibitor, alpha"
+97/579	Calmodulin kinase IV	Camk4	M64266	Camk4 	calmodulin kinase IV
+97/580	"Protein kinase C, delta"	Pkcd	M69042	Pkcd 	"protein kinase C, delta"
+97/581	"Nitric oxide synthase 2, inducible, macrophage"	Nos2	M87039	Nos2 	"nitric oxide synthase 2, inducible, macrophage"
+97/582	Wingless-related MMTV integration site 5A	Wnt5a	M89798	Wnt5a 	wingless-related MMTV integration site 5A
+97/583	Wingless-related MMTV integration site 5B	Wnt5b	M89799	Wnt5b 	wingless-related MMTV integration site 5B
+97/584	Wnt-6	null	M89800	Wnt6 	wingless-related MMTV integration site 6
+97/585	Wingless-related MMTV integration site 7a	Wnt7a	M89801	Wnt7a 	wingless-related MMTV integration site 7A
+97/586	Gamma-aminobutyric acid (GABA-A) transporter 1	Gabt1	M92378	Gabt1 	gamma-aminobutyric acid (GABA-A) transporter 1
+97/587	"Protein kinase C, zeta"	Pkcz	M94632	Pkcz 	"protein kinase C, zeta"
+97/588	Gamma-aminobutyric acid(GABA-A) transporter 2	Gabt2	M97632	Gabt2 	gamma-aminobutyric acid (GABA-A) transporter 2
+97/589	5-hydroxytryptamine (serotonin) receptor 2A	Htr2a	S49542	Htr2a 	5-hydroxytryptamine (serotonin) receptor 2 A
+97/590	Fetal liver kinase 1	Flk1	S53103	Flk1 	fetal liver kinase 1
+97/591	Homeo box B9	Hoxb9	S66855	Hoxb9	homeo box B9
+97/592	Opioid receptor-like	Oprl	U04952	Oprl	opioid receptor-like
+97/593	"Solute carrier family 1, member 2"	Slc1a2	U11763	Slc1a2 	"solute carrier family 1, member 2"
+97/594	Wnt-10b	null	U20658	Wnt10b 	Wingless related MMTV integration site 10b
+97/595	SRY-box containing gene 2	Sox2	U31967	Sox2 	SRY-box containing gene 2
+97/596	SRY-box containing gene 6	Sox6	U32614	Sox6 	SRY-box containing gene 6
+97/597	Homeo box A3	Hoxa3	U56399	Hoxa3 	homeo box A3
+97/598	Homeo box D3	Hoxd3	U56400	Hoxd3 	homeo box D3
+97/599	Homeo box A13	Hoxa13	U59322	Hoxa13	homeo box A13
+97/600	Homeo box C9	Hoxc9	X07647	Hoxc9 	homeo box C9
+97/601	"Calmodulin kinase II, alpha subunit"	Camk2a	X14836	Camk2a 	"calmodulin kinase II, alpha subunit"
+97/602	Somatostatin	Smst	X51468	Smst 	somatostatin
+97/603	"Enolase 2, gamma neuronal"	Eno2	X52380	Eno2 	"enolase 2, gamma neuronal"
+97/604	"Protein kinase C, alpha"	Pkca	X52685	Pkca 	"protein kinase C, alpha"
+97/605	Hox-2.9 gene for homeodomain protein	null	X53063	Hoxb1	homeo box B1
+97/606	Protein kinase C beta-II	null	X53532	Pkcb	"protein kinase C, beta"
+97/607	Parvalbumin	Pva	X54613	Pva	parvalbumin
+97/608	Wingless-related MMTV integration site	Wnt3a	X56842	Wnt3a 	wingless-related MMTV integration site 3A
+97/609	"Protein kinase, mitogen activated kinase 1"	Prkm1	X58712	Prkm1 	"protein kinase, mitogen activated kinase 1"
+97/610	Hox-4.9	null	X60034	Hoxd1 	homeo box D1
+97/611	Tachykinin 1 receptor	Tac1r	X62934	Tac1r 	tachykinin 1 receptor
+97/612	"Calmodulin kinase II, beta subunit"	Camk2b	X63615	Camk2b 	"calmodulin kinase II, beta subunit"
+97/613	SRY-box containing gene 5	Sox5	X65657	Sox5 	SRY-box containing gene 5
+97/614	SRY-box containing gene 7	Sox7	X65660	Sox7 	SRY-box containing gene 7
+97/615	Thyoma viral proto-oncogene	Akt	X65687	Akt 	thymoma viral proto-oncogene
+97/616	Glycine transporter 1	Glyt1	X67056	Glyt1 	glycine transporter 1
+97/617	Peptidylprolyl isomerase C-associated protein	Ppicap	X67809	Ppicap 	peptidylprolyl isomerase C-associated protein
+97/618	SRY-box containing gene 4	Sox4	X70298	Sox4 	SRY-box containing gene 4
+97/619	Wingless-related MMTV integration site 11	Wnt11	X70800	Wnt11 	wingless-related MMTV integration site 11
+97/620	Sox-15	null	X70909	Sox15 	SRY-box containing gene 15
+97/621	Calbindin 2	Calb2	X73985	Calb2 	calbindin 2
+97/622	GLUT2 gene for glucose transporter	null	X78722	Slc2a2 	"solute carrier family 2 (facilitated glucose transporter), member 2"
+97/623	"LIM-domain containing, protein kinase"	Limk1	X86569	Limk1 	"LIM-domain containing, protein kinase"
+97/624	SOX3 	null	X94125	Sox3 	SRY-box containing gene 3
+97/625	SRY-box containing gene 1	Sox1	X94126	Sox1 	SRY-box containing gene 1	
+97/626	SOX19	null	X98368	Sox19	SRY-box containing gene 19	
+97/627	SRY-box containing gene 15	Sox15	X98369	Sox15	SRY-box containing gene 15	Unpublished sequence - Blasts to Sox15
+97/628	Homeo box A5	Hoxa5	Y00208	Hoxa5	homeo box A5	
+97/629	SRY-box containing gene 8	Sox8	Z18957	Sox8 	SRY-box containing gene 8	
+97/630	SRY-box containing gene 9	Sox9	Z18958	Sox9 	SRY-box containing gene 9	
+97/631	Sox 10 (partial)	null	Z18959	Sox10 	SRY-box containing gene 10	
+97/632	SRY-box containing gene 11	Sox11	Z18960	Sox11 	SRY-box containing gene 11	
+97/633	Sox 12 (partial)	null	Z18961	Sox12 	SRY-box containing gene 12	
+97/634	Sox 13 (partial)	null	Z18962	Sox13 	SRY-box containing gene 13	
+97/635	SRY-box containing gene 14	Sox14	Z18963	Sox14 	SRY-box containing gene 14	
+97/636	"Protein kinase C, mu"	Pkcm	Z34524	Pkcm 	"protein kinase C, mu"	
+97/637	Glutamic acid decarboxylase 1	Gad1	Z49976	Gad1 	glutamic acid decarboxylase 1	
+97/638	wnt-8D	null	Z68889	Stra11 	stimulated by retinoic acid gene 11	
+97/639	Homeo box D9	Hoxd9	X62669	Hoxd10	homeo box D10	
+97/640	Homeo box D9	Hoxd9	X62669	Hoxd9	homeo box D9	
+97/641	Homeo box C4	Hoxc4	X63507	Hoxc10 	homeo box C10	
+97/642	Hox-1.4 gene	null	X66861	Hoxa4 	homeo box A4	
+97/643	"Glutamate receptor, ionotropic, NMDA1 (zeta 1)"	Grin1	D10028	Grin1 	"glutamate receptor, ionotropic, NMDA1 (zeta 1)"	
+97/644	"Glutamate receptor, ionotropic, NMDA2D (epsilon 4)"	Grin2d	D12822	Grin2d 	"glutamate receptor, ionotropic, NMDA2D (epsilon 4)"	
+97/645	Male enhanced antigen 1	Mea1	D17341	Mea1 	male enhanced antigen 1	
+97/646	Prostaglandin E receptor EP3 subtype (EP3-gamma isoform)	Ptgerep3	D17406	Ptgerep3 	prostaglandin E receptor EP3 subtype	
+97/647	Tachykinin 1	Tac1	D17584	Tac1 	tachykinin 1	
+97/648	Prostaglandin D receptor	Ptgdr	D29764	Ptgdr 	prostaglandin D receptor	
+97/649	Dexamethasone induced product	null	D44443	Sequence not in MGD		Vector sequence.  On Word document - EP Fail
+97/650	Prostaglandin E receptor EP2 subtype	Ptgerep2	D50589	Ptgerep2 	prostaglandin E receptor EP2 subtype	
+97/651	Zinc finger protein of the cerebellum 3	Zic3	D70849	Zic3 	zinc finger protein of the cerebellum 3	
+97/652	Seizure related gene 12	Sez12	D78641	Sez12 	seizure related gene 12	
+97/653	5' Nucleotidase	Nt5	L12059	Nt5 	5' nucleotidase	
+97/654	"Protein kinase C, gamma"	Pkcc	L28035	Pkcc	"protein kinase C, gamma"	
+97/655	LIM homeo box protein 3	Lhx3	L38248	Lhx3 	LIM homeo box protein 3	
+97/656	Max dimerization protein	Mad	L38926	Mad 	Max dimerization protein	
+97/657	Glucokinase activity	Gk	L38990	Gk 	glucokinase activity
+97/658	Paraoxonase 3	Pon3	L76193	Pon3 	paraoxonase 3
+97/659	"Glutamate receptor, metabotropic 8"	Grm8	U17252	Grm8 	"glutamate receptor, metabotropic 8"
+97/660	"Opioid receptor, mu"	Oprm	U19380	Oprm 	"opioid receptor, mu"
+97/661	Cannabinoid receptor 2 (macrophage)	Cnr2	U21681	Cnr2	cannabinoid receptor 2 (macrophage)
+97/662	"Protein kinase, mitogen activated, kinase 6"	Prkmk6	U39066	Prkmk6 	"protein kinase, mitogen activated, kinase 6"
+97/663	Fas-associated factor 1	Faf1	U39643	Faf1 	Fas-associated factor 1
+97/664	Single-minded 2	Sim2	U40576	Sim2 	single-minded 2
+97/665	Inhibitor of DNA binding 1	Idb1	U43884	Idb1 	inhibitor of DNA binding 1
+97/666	Aquaporin 4	Aqp4	U48397	Aqp4 	aquaporin 4
+97/667	"Iodothyronine 5' deiodinase, type 1"	Dio1	U49861	Dio1 	"iodothyronine 5' deiodinase, type I"
+97/668	Poly (A) polymerase	Plap	U52197	Plap 	poly (A) polymerase
+97/669	Oxidative stress induced	Osi	U57413	Osi	oxidative stress induced
+97/670	ma34g12.r1 Life Tech mouse brain Mus musculus cDNA clone 312646 5' similar to gb:S46950 ADENOSINE A2A RECEPTOR (HUMAN);.	null	W59687	ESTM21	expressed sequence tag mouse EST 21
+97/671	Dopamine receptor 2	Drd2	X55674	Drd2 	dopamine receptor 2
+97/672	5-Hydroxytryptamine (serotonin) receptor 1c	Htr1c	X72230	Htr1c 	5-hydroxytryptamine (serotonin) receptor 1C
+97/673	"Potassium inwardly rectifying channel, subfamily J, member 2"	Kcnj2	X73052	Kcnj2 	"potassium inwardly rectifying channel, subfamily J, member 2"
+97/674	5-Hydroxytryptamine (serotonin) receptor 1D	Htr1d	X94908	Htr1d 	5-hydroxytryptamine (serotonin) receptor 1D
+97/675	5-Hydroxytryptamine (serotonin) receptor 1E beta	Htr1eb	Z14224	Htr1eb 	5-hydroxytryptamine (serotonin) receptor 1E beta
+97/676	5-Hydroxytryptamine (serotonin) receptor 7	Htr7	Z23107	Htr7 	5-hydroxytryptamine (serotonin) receptor 7
+97/677	Potassium channel subunit (m-eag)	null	U04294	Lqt2 	long (electocardiographic) QT syndrome 2
+97/678	"Nitric oxide synthase 1, neuronal"	Nos1	D14552	Nos1 	"nitric oxide synthase 1, neuronal"
+97/679	"Heat shock protein cognate 70, testis"	Hsc70t	L27086	Hsc70t	"heat shock protein cognate 70, testis"
+97/680	"Neurofilament, light polypeptide"	Nfl	M20480	Nfl 	"neurofilament, light polypeptide"
+97/681	"Tubulin, beta 4"	Tubb4	M28730	Tubb4 	"tubulin, beta 4"
+97/682	"Tubulin, beta 5"	Tubb5	M28732	Tubb5 	"tubulin, beta 5"
+97/683	"Tubulin, beta 2"	Tubb2	M28739	Tubb2 	"tubulin, beta 2"
+97/684	"Neurofilament, heavy polypeptide"	Nfh	M35131	Nfh	"neurofilament, heavy polypeptide"
+97/685	Tachykinin-A (gamma-PPT-A)	null	M68909	Tac1	tachykinin 1
+97/686	Heat shock protein 25 kDa	Hsp25	U03560	Hsp25 	heat shock protein 25 kDa
+97/687	Glial cell line derived neurotrophic factor	Gdnf	U36449	Gdnf 	glial cell line derived neurotrophic factor
+97/688	"Nitric oxide synthase 2, inducible, macrophage"	Nos2	U43428	Nos2 	"nitric oxide synthase 2, inducible, macrophage"
+97/689	"Nitric oxide synthase 3, endothelial cell"	Nos3	U53142	Nos3 	"nitric oxide synthase 3, endothelial cell"	
+97/690	"Tubulin, beta 5"	Tubb5	X04663	Tubb5 	"tubulin, beta 5"	
+97/691	"Neurofilament, medium polypeptide"	Nfm	X05640	Nfm 	"neurofilament, medium polypeptide"	
+97/692	Somatostatin	Smst	X51468	Smst 	somatostatin	
+97/693	"Enolase 2, gamma neuronal"	Eno2	X52380	Eno2 	"enolase 2, gamma neuronal"	
+97/694	Tachykinin 1 receptor	Tac1r	X62934	Tac1r 	tachykinin 1 receptor	
+97/695	"Enolase 3, beta muscle"	Eno3	X70182	Eno3	"enolase 3, beta muscle"	
+97/696	Neuromedin K receptor (NK3 ??)	null	X87823	Tac3r	tachykinin 3 receptor	Unpublished sequence - blasts to Tac3r
+97/697	Galanin	Galn	Z23069	Galn 	galanin	
+97/698	Ddp homolog.(Ddp-D)	null	AA030583	Sequence not in MGD		Will not be on the CD
+97/699	Ddp homolog (Ddp-N)	null	AA030799	Sequence not in MGD		Will not be on the CD
+97/700	Ddp homolog (Ddp-J)	null	AA105917	Sequence not in MGD		Will not be on the CD
+97/701	mc26d12.r1 Soares mouse p3NMF19.5 Mus musculus cDNA clone 349655 5'	null	W30206	Sequence not in MGD		Will not be on the CD
+97/702	Ddp homolog (Ddp-S)	null	W64899	Sequence not in MGD		Will not be on the CD
+97/703	me85d11.r1 Soares mouse embryo NbME13.5 14.5 Mus musculus cDNA clone 402357 5'.	null	W78363	Sequence not in MGD		Will not be on the CD
+97/704	Brca2	Brca2	U82270	Brca2	breast cancer 2	
+97/705	"RAD52 homolog, (S. Cerevisiae)"	Rad52	U06837	Rad52 	"RAD52 homolog, (S. cerevisiae)"
+97/706	"RAD52 homolog, (S. Cerevisiae)"	Rad52	U06837	Rad52 	"RAD52 homolog, (S. cerevisiae)"
+97/707	"RAD52 homolog, (S. Cerevisiae)"	Rad52	U06837	Rad52 	"RAD52 homolog, (S. cerevisiae)"
+97/708	Amyloid beta (A4) precursor protein	App	M18373	App	amyloid beta (A4) precursor protein
+97/709	Apolipoprotein E 	Apoe	M73490	Apoe	apolipoprotein E
+97/710	"Notch gene homolog 2, (Drosophila)"	Notch2	X68279	Notch2 	"Notch gene homolog 2, (Drosophila)"
+97/711	"Notch gene homolog 3, (Drosophila)"	Notch3	X74760	Notch3 	"Notch gene homolog 3, (Drosophila)"
+97/712	"Notch gene homolog 1, (Drosophila)"	Notch1	Z11886	Notch1 	"Notch gene homolog 1, (Drosophila)"
+97/714	vh24h06.r1 Soares mouse mammary gland NbMMG Mus musculus cDNA clone 876443 5' similar to gb:J05633 INTEGRIN BETA-5 SUBUNIT PRECURSOR (HUMAN)	null	AA475909	ESTM23	expressed sequence tag mouse EST 23
+97/715	vj28c04.r1 Stratagene mouse diaphragm (#937303) Mus musculus cDNA clone 930342 5' similar to TR:G1146129 G1146129 INTEGRIN-LINKED KINASE	null	AA511515	ESTM24	expressed sequence tag mouse EST 24
+97/716	(clone 41510) BAD protein	null	L37296	Bad	Bcl-associated death promoter
+97/717	Integrin alpha 3A 	null	S66292	Itga3	integrin alpha 3 (Cd49c)
+97/718	Bcl2-associated athanogene 1	Bag1	U17162	Bag1 	Bcl2-associated athanogene 1
+97/719	leptin	Lep	U18812	Lep 	leptin
+97/720	MCL-1	null	U35623	Mcl1	myeloid cell leukemia sequence 1
+97/721	Bcl2-like 2	Bcl2l2	U59746	Bcl2l2 	Bcl2-like 2
+97/722	BH3 interacting domain death agonist	Bid	U75506	Bid 	BH3 interacting domain death agonist	
+97/723	Defender against cell death 1	Dad1	U83628	Dad1	defender against cell death 1	Unpublished sequence - Blasts to Dad1
+97/724	Integrin alpha 6	Itga6	X69902	Itga6 	integrin alpha 6	
+97/725	BFL1	null	X73077	Igh-V7183	"immunoglobulin heavy chain, (V7183 family)"	
+97/726	Integrin alpha 5 subunit	null	X79003	Itga5	integrin alpha 5 (fibronectin receptor alpha)	Unpublished sequence - blasts to Itga5
+97/727	integrin beta 1 (fibronectin receptor beta)	Itgb1	Y00769	Itgb1 	integrin beta 1 (fibronectin receptor beta)	
+97/728	Bak	null	Y13231	Bak	Bcl2 homologous antagonist/killer	
+97/729	Integrin alpha 7	Itga7	L23423	Itga7 	integrin alpha 7	
+97/730	integrin alpha 4 (Cd49d)	Itga4	X53176	Itga4	integrin alpha 4 (Cd49d)	
+97/733	slowpoke homolog	Slo	U09383	Kcnma1	potassium large conductance calcium-activated channel, subfamily M, alpha member 1 

@@ -12,6 +12,8 @@ setenv MRKREFLOAD	/home/lec/loads/mrkrefload
 # use current MGI 2.98 version of vocload because we load
 # the vocabularies BEFORE converting to the new schema
 setenv VOCLOAD          /home/lec/loads/vocload-2.98/runSimpleFullLoadNoArchive.sh
+# load provider AFTER conversion because descriptions won't fit
+setenv NEWVOCLOAD       /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
 
 # existing (MGI 2.98) schema configured to talk to an MGI 2.98 database
 setenv existingmgddbschema /home/lec/db/mgi2.98/mgddbschema

@@ -162,8 +162,7 @@ ${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
 
 ${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
 
-# load translations and sets
-
+./loadVoc2.csh | tee -a $LOG
 ./loadTrans.csh | tee -a $LOG
 ./loadSet.csh | tee -a $LOG
 ./radar.csh | tee -a $LOG

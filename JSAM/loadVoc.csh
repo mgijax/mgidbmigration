@@ -23,6 +23,5 @@ ${VOCLOAD} `pwd`/sequencetype.config >>& $LOG
 ${VOCLOAD} `pwd`/userstatus.config >>& $LOG
 ${VOCLOAD} `pwd`/usertype.config >>& $LOG
 ${VOCLOAD} `pwd`/vectortype.config >>& $LOG
-${VOCLOAD} `pwd`/provider.config >>& $LOG
 
 date >> $LOG

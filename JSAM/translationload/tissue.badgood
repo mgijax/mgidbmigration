@@ -187,7 +187,7 @@ Total distinct GenBank tissue: 1081 Total tissue match MGI: 237
 304	Brain, enriched mouse brain 12.5dpc	brain	
 302	Brain, mouse, 13.5, 14.5, 16.5, 17.5 dpc	brain	
 294	Mammary gland, lactating mouse	mammary gland	
-291	embryonic body between diaphragm and neck	embryonic body between diaphragm region  and neck	
+291	embryonic body between diaphragm and neck	embryonic body between diaphragm region and neck	
 286	hybridoma	FALSE	
 282	flow-sorted, bone marrow progenitors	bone marrow	
 253	Inferior Colliculus Commissural Region	inferior colliculus
@@ -571,7 +571,7 @@ Total distinct GenBank tissue: 1081 Total tissue match MGI: 237
 1	10-day old placenta	placenta	
 1	10.5 day postcoitum embryo	embryo	
 1	14.5 dpc placenta	placenta	
-1	3 and 4 day involuting mammary gland	mammary galnd	
+1	3 and 4 day involuting mammary gland	mammary gland	
 1	3-6 day old epidermis	epidermis	
 1	3T3 fibroblast	fibroblast	
 1	6-8 week lung; 14.5 day placenta	lung and placenta	lung and placenta	

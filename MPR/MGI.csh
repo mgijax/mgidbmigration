@@ -6,7 +6,7 @@
 # Defaults:       6
 # Procedures:   114
 # Rules:          5
-# Triggers:     166
+# Triggers:     164
 # User Tables:  189
 # Views:        216
 
@@ -84,6 +84,12 @@ drop view ALL_Synonym_View
 go
 
 drop table GXD_AllelePair_Old
+go
+
+drop trigger ACC_AccessionReference_Insert
+go
+
+drop trigger ACC_AccessionReference_Update
 go
 
 EOSQL

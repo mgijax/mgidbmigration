@@ -530,6 +530,7 @@ ${newmgddbschema}/index/MGI_NoteChunk_create.object >> $LOG
 ${newmgddbschema}/index/MGI_NoteType_create.object >> $LOG
 ${newmgddbschema}/index/MGI_Set_create.object >> $LOG
 ${newmgddbschema}/index/MGI_SetMember_create.object >> $LOG
+${newmgddbschema}/index/MLD_Marker_create.object >> $LOG
 
 ${newmgddbschema}/index/PRB_Alias_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Allele_create.object >> $LOG
@@ -594,6 +595,9 @@ drop table MGI_Translation_Old
 go
 
 drop table MGI_TranslationType_Old
+go
+
+drop table MLD_Marker_Old
 go
 
 drop table MRK_Chromosome_Old

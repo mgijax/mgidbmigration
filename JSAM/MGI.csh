@@ -5,8 +5,8 @@
 #
 # updated:  
 # Defaults:	  6
-# Tables:	191
-# Procedures:	100
+# Tables:	190
+# Procedures:	101
 # Rules:	  5
 # Triggers:	150
 # Views:	197
@@ -159,6 +159,7 @@ tr4849.csh | tee -a $LOG
 
 ${CACHELOAD}/seqmarker.csh | tee -a $LOG
 ${CACHELOAD}/seqprobe.csh | tee -a $LOG
+${MRKREFLOAD}/mrkref.csh | tee -a $LOG
 
 date | tee -a  $LOG
 

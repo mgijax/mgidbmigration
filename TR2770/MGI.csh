@@ -27,7 +27,6 @@ touch $LOG
  
 date >> $LOG
  
-
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev/load_devdb.csh $MGD mgd.backup
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev/load_devdb.csh $NOMEN nomen.backup
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev/load_devdb.csh $STRAINS strains.backup

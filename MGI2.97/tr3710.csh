@@ -11,7 +11,7 @@ rm -rf $LOG
 touch $LOG
  
 date >> $LOG
- 
+
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME
@@ -38,16 +38,16 @@ go
 insert into GXD_AssayType values (9, 'In situ reporter (knock in)', 1, 0, getdate(), getdate())
 go
 
-declare sKey integer
+declare @sKey integer
 select @sKey = max(_ProbeSpecies_key) + 1 from PRB_Species
 
-insert into PRB_Species(sKey, 'E. coli', getdate(), getdate())
-insert into PRB_Species(sKey + 1, 'jellyfish', getdate(), getdate())
+insert into PRB_Species values(@sKey, 'E. coli', getdate(), getdate())
+insert into PRB_Species values(@sKey + 1, 'jellyfish', getdate(), getdate())
 go
 
+insert into GXD_Assay 
 select _Assay_key, _AssayType_key, _Refs_key, _Marker_key, _ProbePrep_key, _AntibodyPrep_key,
-_ImagePane_key, null, creation_date, modification_date
-into GXD_Assay
+_ImagePane_key, null, "${CREATEDBY}", "${CREATEDBY}", creation_date, modification_date
 from GXD_Assay_Old
 go
 

@@ -46,6 +46,7 @@ load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
 load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
 
 echo "Update MGI DB Info..." >> $LOG
+updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
 updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
 updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-3-0-3" >>& $LOG
 

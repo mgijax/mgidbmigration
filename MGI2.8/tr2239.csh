@@ -16,7 +16,7 @@ tr2239cleanup.py $DBSERVER $DBNAME
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
-use $DBNAMSE
+use $DBNAME
 go
 
 insert into ACC_MGIType 

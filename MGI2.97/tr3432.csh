@@ -56,17 +56,5 @@ topoSort.py
 chmod +x topoSort.csh
 topoSort.csh
 
-#cat - <<EOSQL | doisql.csh $0 >> $LOG
-#
-#use $DBNAME
-#go
-#
-#drop table GXD_Structure_Old
-#go
-#
-#end
-#
-#EOSQL
-
 date >> $LOG
 

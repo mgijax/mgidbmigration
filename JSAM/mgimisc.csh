@@ -23,6 +23,9 @@
 #	MLD_Marker
 #	MRK_Chromosome
 #	MRK_History
+#	NOM_GeneFamily
+#	NOM_Marker
+#	NOM_Synonym
 #	PRB_Alias
 #	PRB_Allele
 #	PRB_Allele_Strain

@@ -28,8 +28,8 @@ setenv oldmgddbschema ${oldmgddb}/mgddbschema
 
 # new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
-#setenv newmgddb /home/lec/db/jsam
-setenv newmgddb /home/lec/db/jsam2
+setenv newmgddb /home/lec/db/jsam
+#setenv newmgddb /home/lec/db/jsam2
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 

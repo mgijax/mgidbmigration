@@ -40,3 +40,5 @@ Pheno:Tier 5 (guru)	pheno:edit marker clip
 Nomenclature Merges/Renames	nomen:merges, renames
 Strain Merges	strain:merges
 User Permissions	user:roles
+Vocabulary Annotations	vocab:annotations
+Genotype	genotypes (all)

@@ -26,3 +26,5 @@ pheno:edit marker clip			edit marker clip
 nomen:merges, renames			nomenclature merges, renames, etc.	
 strain:merges			strain merges	
 user:roles			assign user to roles	
+vocab:annotations			vocabulary annotations (GO, MP)	
+genotypes (all)			genotypes (all)	

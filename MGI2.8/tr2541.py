@@ -96,6 +96,9 @@ def process_adds(results):
 				if st == 31:
 					speciesKey = -1
 
+		if r['strain'] in ['POHN/Deh', 'CZECHI/Ei (Mus musculus)']:
+			speciesKey = 108	# M. m. musculus
+
 		if r['privacy'] == 'private':
 			isPrivate = 1
 		else:
@@ -148,7 +151,6 @@ def process_adds(results):
 		strainKey = strainKey + 1
 		diagFile.write(str(add) + '\n\n')
 		addFile.write(str(r) + '\n\n')
-		print str(add)
 
 	addFile.close()
 	addmarkerFile.close()
@@ -242,7 +244,6 @@ def process_updates(results):
 			db.sql(upd, None, execute = DOIT)
 			diagFile.write(str(upd) + '\n\n')
 			updateFile.write(str(r) + '\n\n')
-			print str(upd)
 
 	updateFile.close()
 	updmarkerFile.close()

@@ -60,6 +60,9 @@ go
 drop table VOC_Evidence_Old
 go
 
+exec MGI_Table_Column_Cleanup
+go
+
 end
 
 EOSQL

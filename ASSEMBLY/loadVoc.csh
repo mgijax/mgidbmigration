@@ -14,5 +14,7 @@ date >> ${LOG}
 echo "Vocabulary Migration..." | tee -a ${LOG}
  
 ${VOCLOAD} `pwd`/qualifier.config >>& ${LOG}
+${VOCLOAD} `pwd`/maptype.config >>& ${LOG}
+${VOCLOAD} `pwd`/mapunits.config >>& ${LOG}
 
 date >> ${LOG}

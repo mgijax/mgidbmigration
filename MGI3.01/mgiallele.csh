@@ -34,10 +34,12 @@ ${newmgddbschema}/view/ALL_Allele_View_drop.object | tee -a ${LOG}
 ${newmgddbschema}/view/ALL_Allele_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/ALL_Summary_View_drop.object | tee -a ${LOG}
 ${newmgddbschema}/view/ALL_Summary_View_create.object | tee -a ${LOG}
+${newmgddbschema}/view/ALL_Type_Summary_View_create.object | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/ALL_Type_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/ALL_Type_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/ALL_Allele_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/ALL_Summary_View_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/ALL_Type_Summary_View_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
@@ -50,7 +52,7 @@ from ALL_Type_Old o
 go
 
 insert into ACC_MGIType 
-values (26, 'Allele Type', 'ALL_Type', '_Allele_Type_key', null, 'ALL_Summary_View', 1000, 1000, getdate(), getdate())
+values (26, 'Allele Type', 'ALL_Type', '_Allele_Type_key', null, 'ALL_Type_Summary_View', 1000, 1000, getdate(), getdate())
 go
 
 end

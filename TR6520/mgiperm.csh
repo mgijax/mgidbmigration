@@ -50,7 +50,13 @@ ${newmgddbperms}/public/view/MGI_UserTask_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/VOC_Term_UserRole_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/VOC_Term_UserTask_View_grant.object | tee -a ${LOG}
 
+${newmgddbschema}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Reference_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Reference_create.object | tee -a ${LOG}
+
 ./roletaskload.csh | tee -a ${LOG}
+./userroleload.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

@@ -1,3 +1,4 @@
+pheno:create/modify references			create/modify reference if status != Deleted	
 pheno:create/modify pending			create/modify allele with Pending status	
 pheno:create/modify pending if owner			create/modify allele with Pending status if owner	
 pheno:create/modify reserved			create/modify allele with Reserved status	
@@ -16,14 +17,9 @@ pheno:change approved to deleted/reserved/pending			change Approved status to De
 pheno:use Delete button			use Delete button to remove an Allele record	
 pheno:edit nomen data pending			edit nomen data of allele with Pending status	
 pheno:edit nomen data pending if owner			edit nomen data of allele with Pending status if owner	
-pheno:edit non-nomen data pending			edit non-nomen data of allele with Pending status	
-pheno:edit non-nomen data pending if owner			edit non-nomen data of allele with Pending status if owner	
 pheno:edit nomen data reserved			edit nomen data of allele with Reserved status	
 pheno:edit nomen data reserved if owner			edit nomen data of allele with Reserved status if owner	
-pheno:edit non-nomen data reserved			edit non-nomen data of allele with Reserved status	
 pheno:edit nomen data approved			edit nomen data of allele with Approved status	
-pheno:edit non-nomen data approved			edit non-nomen data of allele with Approved status	
 pheno:edit nomen data deleted			edit nomen data of allele with Deleted status	
-pheno:edit non-nomen data deleted			edit non-nomen data of allele with Deleted status	
 nomen:merges, renames			nomenclature merges, renames, etc.	
 strain:merges			strain merges	

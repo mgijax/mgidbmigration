@@ -56,8 +56,8 @@ ${newmgddbperms}/public/table/GXD_Structure_grant.object | tee -a $LOG
 # generate SQL updates for topological sorting
 
 topoSort.py | tee -a $LOG
-chmod +x topoSort.csh
-topoSort.csh | tee -a $LOG
+chmod +x topoSort.sql
+topoSort.sql | tee -a $LOG
 
 date | tee -a $LOG
 

@@ -10,9 +10,9 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
  
-date >> $LOG
+date | tee -a $LOG
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
 use $DBNAME
 go
@@ -30,14 +30,14 @@ EOSQL
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/GXD_Index_create.object >> $LOG
-${newmgddbschema}/default/GXD_Index_bind.object >> $LOG
-${newmgddbschema}/table/GXD_Index_Stages_create.object >> $LOG
-${newmgddbschema}/default/GXD_Index_Stages_bind.object >> $LOG
-${newmgddbschema}/view/VOC_Term_View_drop.object >> $LOG
-${newmgddbschema}/view/VOC_Term_View_create.object >> $LOG
+${newmgddbschema}/table/GXD_Index_create.object | tee -a $LOG
+${newmgddbschema}/default/GXD_Index_bind.object | tee -a $LOG
+${newmgddbschema}/table/GXD_Index_Stages_create.object | tee -a $LOG
+${newmgddbschema}/default/GXD_Index_Stages_bind.object | tee -a $LOG
+${newmgddbschema}/view/VOC_Term_View_drop.object | tee -a $LOG
+${newmgddbschema}/view/VOC_Term_View_create.object | tee -a $LOG
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
 use $DBNAME
 go
@@ -316,8 +316,8 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/GXD_Index_create.object >> $LOG
-${newmgddbschema}/index/GXD_Index_Stages_create.object >> $LOG
+${newmgddbschema}/index/GXD_Index_create.object | tee -a $LOG
+${newmgddbschema}/index/GXD_Index_Stages_create.object | tee -a $LOG
 
-date >> $LOG
+date | tee -a $LOG
 

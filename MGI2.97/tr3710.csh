@@ -10,9 +10,9 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
  
-date >> $LOG
+date | tee -a $LOG
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
 use $DBNAME
 go
@@ -27,10 +27,10 @@ EOSQL
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/GXD_Assay_create.object >> $LOG
-${newmgddbschema}/default/GXD_Assay_bind.object >> $LOG
+${newmgddbschema}/table/GXD_Assay_create.object | tee -a $LOG
+${newmgddbschema}/default/GXD_Assay_bind.object | tee -a $LOG
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
 use $DBNAME
 go
@@ -58,7 +58,7 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/GXD_Assay_create.object >> $LOG
+${newmgddbschema}/index/GXD_Assay_create.object | tee -a $LOG
 
-date >> $LOG
+date | tee -a $LOG
 

@@ -10,9 +10,9 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
  
-date >> $LOG
+date | tee -a $LOG
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
 use $DBNAME
 go
@@ -27,10 +27,10 @@ EOSQL
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/GXD_Structure_create.object >> $LOG
-${newmgddbschema}/default/GXD_Structure_bind.object >> $LOG
+${newmgddbschema}/table/GXD_Structure_create.object | tee -a $LOG
+${newmgddbschema}/default/GXD_Structure_bind.object | tee -a $LOG
 
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
 use $DBNAME
 go
@@ -48,16 +48,16 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/GXD_Structure_create.object >> $LOG
+${newmgddbschema}/index/GXD_Structure_create.object | tee -a $LOG
 
 # topoSort.py needs public permission to read GXD_Structure
-${newmgddbperms}/public/table/GXD_Structure_grant.object >> $LOG
+${newmgddbperms}/public/table/GXD_Structure_grant.object | tee -a $LOG
 
 # generate SQL updates for topological sorting
 
-topoSort.py >>& $LOG
+topoSort.py | tee -a $LOG
 chmod +x topoSort.csh
-topoSort.csh >>& $LOG
+topoSort.csh | tee -a $LOG
 
-date >> $LOG
+date | tee -a $LOG
 

@@ -1,9 +1,9 @@
-000001	B6.C3 A/a md	A	md	public		Stocks Carrying Specific Mutant Genes
-000002	B6.C3-Pde6b<rd1> le	Pde6b<rd1>	le	public		Stocks Carrying Specific Mutant Genes
+000001	B6.C3 A/a md	A|md	public		Stocks Carrying Specific Mutant Genes
+000002	B6.C3-Pde6b<rd1> le	Pde6b<rd1>|le	public		Stocks Carrying Specific Mutant Genes
 000003	C57BL/6J-Matp<uw>	Matp<uw>	public		Stocks Carrying Specific Mutant Genes
-000004	ABP/Le	Bmp5<se>	Tgfa<wa1>	Tyrp1<b>	a	bt	p	public		Stocks Carrying Specific Mutant Genes
+000004	ABP/Le	Bmp5<se>|Tgfa<wa1> 000004\tTyrp1<b> 000004\ta 000004\tbt 000004\tp	public		Stocks Carrying Specific Mutant Genes
 000005	B6C3Fe-a/a-Wc	Wc	public		Stocks Carrying Specific Mutant Genes
-000006	STOCK Hk/+ Tyr<c>/Tyr<c>	Hk	Tyr<c>	public		Stocks Carrying Specific Mutant Genes
+000006	STOCK Hk/+ Tyr<c>/Tyr<c>	Hk|Tyr<c>	public		Stocks Carrying Specific Mutant Genes
 000007	BXD-6/Ty		public		Recombinant Inbred Strains
 000008	BXH-9/Ty		public		Recombinant Inbred Strains
 000009	BXH-14/Ty		public		Recombinant Inbred Strains
@@ -47,7 +47,7 @@
 000047	BXD-28/Ty		public		Recombinant Inbred Strains
 000048	AKXL-5/Ty		private		Recombinant Inbred Strains
 000049	C57BL/6J-Kit<W-v>	Kit<W-v>	public		Stocks Carrying Specific Mutant Genes
-000050	B6.C3Fe-H51 ep /By	H51	ep	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000050	B6.C3Fe-H51 ep /By	H51|ep	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000051	C57BL/6J-A<w-J>	A<w-J>	public		Stocks Carrying Specific Mutant Genes
 000052	DBA/2DeJ		public		Miscellaneous Inbred and Congenic Strains
 000053	B6.Cg-Atp7a<Mo-to>	Atp7a<Mo-to>	public		Stocks Carrying Specific Mutant Genes
@@ -62,7 +62,7 @@
 000062	C57BL/6J-Kit<W-39J>	Kit<W-39J>	public		Stocks Carrying Specific Mutant Genes
 000063	B6C3Fe-a/a-sy	sy	public		Stocks Carrying Specific Mutant Genes
 000064	STOCK a Tyrp1<b> si	si	public		Stocks Carrying Specific Mutant Genes
-000065	B6C3Fe-a/a-we Pax1<un> a<t>	Pax1<un>	a<t>	we	public		Stocks Carrying Specific Mutant Genes
+000065	B6C3Fe-a/a-we Pax1<un> a<t>	Pax1<un>|a<t> 000065\twe	public		Stocks Carrying Specific Mutant Genes
 000066	B6.Cg-Glrb<spa>	Glrb<spa>	public		Stocks Carrying Specific Mutant Genes
 000067	DBA/2J-Myo5a<d+2J>/Myo5a<d>	Myo5a<d+2J>	public		Stocks Carrying Specific Mutant Genes
 000068	C57BL/6J-Tyrp1<b-J>	Tyrp1<b-J>	public		Stocks Carrying Specific Mutant Genes
@@ -88,8 +88,8 @@
 000088	AKXL-17/Ty		public		Recombinant Inbred Strains
 000089	AKXL-13/Ty		private		Recombinant Inbred Strains
 000090	129S1/Sv-p<+> Tyr<+> Kitl<Sl-J>/+	Kitl<Sl-J>	public		Stocks Carrying Specific Mutant Genes
-000091	129T1/Sv-+<p> Tyr<c-ch> Ter/+	Ter	Tyr<c-ch>	public		Stocks Carrying Specific Mutant Genes
-000092	FL/1Re-Kit<W>	Kit<W>	Sfxn1<f>	public		Stocks Carrying Specific Mutant Genes
+000091	129T1/Sv-+<p> Tyr<c-ch> Ter/+	Ter|Tyr<c-ch>	public		Stocks Carrying Specific Mutant Genes
+000092	FL/1Re-Kit<W>	Kit<W>|Sfxn1<f>	public		Stocks Carrying Specific Mutant Genes
 000093	C57BL/6J-Tyrp1<b-cJ>	Tyrp1<b-cJ>	public		Stocks Carrying Specific Mutant Genes
 000094	129/Sv		private		Miscellaneous Inbred and Congenic Strains
 000095	BXD-15/Ty		public		Recombinant Inbred Strains
@@ -99,7 +99,7 @@
 000099	C3HeB/FeJ-A<vy>	A<vy>	public		Stocks Carrying Specific Mutant Genes
 000100	B6.C3-lu	lu	public		Stocks Carrying Specific Mutant Genes
 000101	AKXL-8/Ty		private		Recombinant Inbred Strains
-000102	B6.C3-Ap3b1<pe>	Ap3b1<pe>	pe	public		Stocks Carrying Specific Mutant Genes
+000102	B6.C3-Ap3b1<pe>	Ap3b1<pe>|pe	public		Stocks Carrying Specific Mutant Genes
 000103	B6.Cg-ru	ru	public		Stocks Carrying Specific Mutant Genes
 000104	B6.Cg-Tyr<c-h>	Tyr<c-h>	public		Stocks Carrying Specific Mutant Genes
 000105	BXD-9/Ty		public		Recombinant Inbred Strains
@@ -109,11 +109,11 @@
 000109	STOCK Myo15<sh2>/+	Myo15<sh2>	public		Stocks Carrying Specific Mutant Genes
 000110	C57BL/6J-Rabggta<gm>/+	Rabggta<gm>	public		Stocks Carrying Specific Mutant Genes
 000111	LT/ChRe	Typr1<B-lt>	private		Miscellaneous Inbred and Congenic Strains
-000112	B6.Cg-fz Mlph<ln> H54/+ + H54	H54	Mlph<ln>	fz	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000112	B6.Cg-fz ln H54/+ + H54	H54|Mlph<ln> 000112\tfz	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000113	B6.C-H8<c>/By (HW96)	H8<c>	public	HW96	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000114	B6.C-H25<c>/By (HW65)	H25<c>	public	HW65	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000115	B6.C(HW13)/By		public	HW13	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000116	B6.C-H28<c> If1<h>/dBy (HW110)	H28<c>	If1<h>	public	HW110	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000116	B6.C-H28<c> If1<h>/dBy (HW110)	H28<c>|If1<h>	public	HW110	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000117	C57BL/6J-Kit<W-34J>	Kit<W-34J>	public		Stocks Carrying Specific Mutant Genes
 000118	C57BL/6J-Ph	Ph	public		Stocks Carrying Specific Mutant Genes
 000119	C57BL/6J-Kit<W-41J>	Kit<W-41J>	public		Stocks Carrying Specific Mutant Genes
@@ -122,8 +122,8 @@
 000122	C57BL/6J-Kit<W-44J>	Kit<W-44J>	public		Stocks Carrying Specific Mutant Genes
 000123	B6.C-H24<c> Gpi1<a>/By (HW54)	H24<c>	public	HW54	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000124	B6.Cg-Kitl<Sl> Ca	Ca	public	Mgf<Sl>	Stocks Carrying Specific Mutant Genes
-000125	C57BL/6By-Sox18<Ra> Pt Os	Os	Pt	Sox18<Ra>	public		Stocks Carrying Specific Mutant Genes
-000126	B6By.Cg-Re Sd Va<J>	Re	Sd	Va<J>	public		Stocks Carrying Specific Mutant Genes
+000125	C57BL/6By-Sox18<Ra> Pt Os	Os|Pt 000125\tSox18<Ra>	public		Stocks Carrying Specific Mutant Genes
+000126	B6By.Cg-Re Sd Va<J>	Re|Sd 000126\tVa<J>	public		Stocks Carrying Specific Mutant Genes
 000127	C57BL/6J-Kit<W-42J>	Kit<W-42J>	public		Stocks Carrying Specific Mutant Genes
 000128	C57BL/6J-Kit<W-35J>	Kit<W-35J>	public		Stocks Carrying Specific Mutant Genes
 000129	C57BL/6J-Kit<W-43J>	Kit<W-43J>	public		Stocks Carrying Specific Mutant Genes
@@ -132,19 +132,19 @@
 000132	B10.129P-H10<b>(9M)/Sn	H10<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000133	B6.Cg-Kit<W-24J>	Kit<W-24J>	public		Stocks Carrying Specific Mutant Genes
 000134	C57BL/6J-Kit<W-37J>	Kit<W-37J>	public		Stocks Carrying Specific Mutant Genes
-000135	B6.C-H19h<c>/By (HW20)	H19h	H19h<c>	public	HW20	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000135	B6.C-H19h<c>/By (HW20)	H19h|H19h<c>	public	HW20	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000136	B6.C-H34<c>/By (HW22)	H34<c>	public	HW22	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000137	B6.C-H61<b> Mod<a>/By (HW23)	H61<b>	Mod<a>	public	HW23	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000137	B6.C-H61<b> Mod<a>/By (HW23)	H61<b>|Mod<a>	public	HW23	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000138	B6.C-H30<c>/By (HW105)	H30<c>	public	HW105	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000139	B6.Cg-Kit<W-25J>	Kit<W-25J>	public		Stocks Carrying Specific Mutant Genes
-000140	A.BY-H2<b> H2-T18<b>/SnJ	H2-T18	H2<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000140	A.BY-H2<b> H2-T18<b>/SnJ	H2-T18|H2<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000141	WC/Re-Kit<W>	Kit<W>	private		Stocks Carrying Specific Mutant Genes
-000142	B6.C-H28<c> If1<l>/cBy (HW97)	H28<c>	If1<l>	public	HW97	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000142	B6.C-H28<c> If1<l>/cBy (HW97)	H28<c>|If1<l>	public	HW97	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000143	B6.C-H35<c>/By	H35<c>	public	HW56	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000144	C57BLKS-sch/+	sch	public		Stocks Carrying Specific Mutant Genes
 000145	B6.C-H2<bm14>/By	H2<bm14>	public	HZW42	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000146	B6.C-H28<c> If1<l>/aBy (HW81)	H28<c>	If1<l>	public	HW81	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000147	WLHR/Le	Es10<c>	hr	wl	public		Stocks Carrying Specific Mutant Genes
+000146	B6.C-H28<c> If1<l>/aBy (HW81)	H28<c>|If1<l>	public	HW81	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000147	WLHR/Le	Es10<c>|hr 000147\twl	public		Stocks Carrying Specific Mutant Genes
 000148	B6.C(HW13F)/By		public	HW13F	Linkage Testing Stocks
 000149	C57BL/6J-A<w-J>/A<w-J>-a<e> (Extinct Re)		private		
 000150	B6Ei.Cg-Rb(11.16)2H/+		public		Chromosome Aberrations
@@ -174,7 +174,7 @@
 000174	SEC/1Re-Hba<th-J>	Hba<th-J>	private		Stocks Carrying Specific Mutant Genes
 000175	WB/Re	Kit<W>	private		Miscellaneous Inbred and Congenic Strains
 000176	WB/Re-mk		private		
-000177	129/Sv-p<+> Tyr<c-ch> Ter/+	Ter	Tyr<c-ch>	private		Stocks Carrying Specific Mutant Genes
+000177	129/Sv-p<+> Tyr<c-ch> Ter/+	Ter|Tyr<c-ch>	private		Stocks Carrying Specific Mutant Genes
 000178	WH/Re		private		
 000179	WK/Re		private		
 000180	STOCK Rf/+	Rf	private		Stocks Carrying Specific Mutant Genes
@@ -186,24 +186,24 @@
 000186	B6.Cg-Alb1<c>	Alb1	public	BC15	Stocks Carrying Specific Mutant Genes
 000187	LT.CAST-Amy1<b>	Amy1	private		Miscellaneous Inbred and Congenic Strains
 000188	SEC/1Re		private		
-000189	WB/Re-an Tyrp1<B-lt>/++	Typr1<B-lt>	an	private		
+000189	WB/Re-an Tyrp1<B-lt>/++	Typr1<B-lt>|an	private		
 000190	PH/Re		private		
 000191	B6.SM-Hba<d>	Hba	public		Stocks Carrying Specific Mutant Genes
 000192	WB/Re-lx Kit<W-v>		private		
-000193	C57BL/6J-an Tyrp1<B-lt>/+ +	Typr1<B-lt>	an	private		
-000194	C57BL/6J-lx Kit<W-v>	Kit<W-v>	lx	public		Stocks Carrying Specific Mutant Genes
+000193	C57BL/6J-an Tyrp1<B-lt>/+ +	Typr1<B-lt>|an	private		
+000194	C57BL/6J-lx Kit<W-v>	Kit<W-v>|lx	public		Stocks Carrying Specific Mutant Genes
 000195	C57BL/6J-Ph +/+ W<v>		private		
 000196	SEC/1Re-wa2 Hba<c> sh2		private		
 000197	LT/SvEi-b<8J>		private		
 000198	C3FeLe.B6-a	a	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000199	AEJ/GnLe	A<w-J>	a<e>	public		Stocks Carrying Specific Mutant Genes
+000199	AEJ/GnLe	A<w-J>|a<e>	public		Stocks Carrying Specific Mutant Genes
 000200	C3FeB6-A/A<w-J>-ank	ank	public		Stocks Carrying Specific Mutant Genes
 000201	B6C3Fe-a/a-bc		private		
 000202	AEJ/Gn-bd/+	bd	public		Stocks Carrying Specific Mutant Genes
 000203	B6.C3H-A<iy>/a	A<iy>	public		Stocks Carrying Specific Mutant Genes
 000204	B6.Cg-Lyst<bg>/+	Lyst<bg>	public		Stocks Carrying Specific Mutant Genes
-000205	B6C3Fe-a/a-Papss2<bm>	Papss2<bm>	Papss2<bm>/+	public		Stocks Carrying Specific Mutant Genes
-000206	STOCK a/a Tyr<c-h>/Tyr<c-h>	Tyr<c-h>	public		Stocks Carrying Specific Mutant Genes
+000205	B6C3Fe-a/a-Papss2<bm>	Papss2<bm>|Papss2<bm>/+	public		Stocks Carrying Specific Mutant Genes
+000206	STOCK a/a Tyr<c-h>	Tyr<c-h>	public		Stocks Carrying Specific Mutant Genes
 000207	B6C3Fe-a/a-cr	cr	public		Stocks Carrying Specific Mutant Genes
 000208	B6C3Fe-a/a-dep jb	dep	private		Stocks Carrying Specific Mutant Genes
 000209	B6C3Fe-a/a-Dh	Dh	public		Stocks Carrying Specific Mutant Genes
@@ -222,11 +222,11 @@
 000222	B6C3Fe-a/a-ma		private		
 000223	C3H/HeJ-md/+	md	public		Stocks Carrying Specific Mutant Genes
 000224	B6C3Fe-a/a-mdf	mdf	public		Stocks Carrying Specific Mutant Genes
-000225	C3FeLe.B6-a/a-Hcph<me>/+	Hcph<me>/+	public		Stocks Carrying Specific Mutant Genes
+000225	C3FeLe.B6 a/a-Hcph<me>/+	Hcph<me>/+	public		Stocks Carrying Specific Mutant Genes
 000226	B6C3Fe-a/a-Large<myd>/+	Large<myd>	public		Stocks Carrying Specific Mutant Genes
 000227	MYD/Le-Large<myd>		private		
 000228	MYD/Le		private		
-000229	C3Fe.CGr-nr	nr	nr/+	public		Stocks Carrying Specific Mutant Genes
+000229	C3Fe.CGr-nr	nr|nr/+	public		Stocks Carrying Specific Mutant Genes
 000230	B6C3Fe-a/a-Tcirg1<oc>/+	Tcirg1<oc>	public		Stocks Carrying Specific Mutant Genes
 000231	B6C3Fe-a/a-Csf1<op>	Csf1<op>	public		Stocks Carrying Specific Mutant Genes
 000232	C3HeB/FeJ-Ap3b1<pe>	Ap3b1<pe>	private		Stocks Carrying Specific Mutant Genes
@@ -245,81 +245,81 @@
 000245	B6C3Fe-a/a-tn	tn	public		Stocks Carrying Specific Mutant Genes
 000246	B6C3Fe-a/a-Pitpn<vb>	Pitpn<vb>	public		Stocks Carrying Specific Mutant Genes
 000247	B6CBACa-A<w-J>/A-Kcnj6<wv>	Kcnj6<wv>	public		Stocks Carrying Specific Mutant Genes
-000248	B6C3Fe-a/a-Xpl	Xpl	public		Stocks Carrying Specific Mutant Genes
+000248	B6C3Fe a/a-Xpl	Xpl	public		Stocks Carrying Specific Mutant Genes
 000249	DBA/2J-A<w-15J>	A<w-15J>	private		
 000250	BNT/Le	Zic3<Bn>	public		Stocks Carrying Specific Mutant Genes
-000251	AEJ.Cg-a<e> +/a Gdf5<bp-H>	Gdf5<bp-H>	a<e>	public		Stocks Carrying Specific Mutant Genes
+000251	AEJ.Cg-a<e> +/a Gdf5<bp-H>	Gdf5<bp-H>|a<e>	public		Stocks Carrying Specific Mutant Genes
 000252	DC/Le	Dc	public		Stocks Carrying Specific Mutant Genes
-000253	DLS/Le	Bmp5<se>	Myo5a<d-l>	public		Stocks Carrying Specific Mutant Genes
+000253	DLS/Le	Bmp5<se>|Myo5a<d-l>	public		Stocks Carrying Specific Mutant Genes
 000254	129/Sv-+<p> Tyr<c-ch>-Kit<W-54J>	Kit<W-54J>	private		Stocks Carrying Specific Mutant Genes
-000255	GL/Le Edar<dl-J> +/+ gl	Edar<dl-J>	dl<J>	gl	public		Stocks Carrying Specific Mutant Genes
+000255	GL/Le Edar<dl-J> +/+ gl	Edar<dl-J>|dl<J> 000255\tgl	public		Stocks Carrying Specific Mutant Genes
 000256	B6.C-H2<bm1>/ByBir-Gus<mps>/+	Gus<mps>	public		Stocks Carrying Specific Mutant Genes
 000257	L.AKR A(111)/Cy		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000258	C57BL/6J-A<i>/a	A<i>	public		Stocks Carrying Specific Mutant Genes
-000259	JE/Le	Espn<je>	Sfxn1<f>	ru	public		Stocks Carrying Specific Mutant Genes
-000260	JGBF/Le	bf	jg	public		Stocks Carrying Specific Mutant Genes
+000259	JE/Le	Espn<je>|Sfxn1<f> 000259\tru	public		Stocks Carrying Specific Mutant Genes
+000260	JGBF/Le	bf|jg	public		Stocks Carrying Specific Mutant Genes
 000261	BRX58N-10/Ty		private		Recombinant Inbred Strains
-000262	LS/Le	Edn3<ls>	a<t>	public		Stocks Carrying Specific Mutant Genes
-000263	MWT/Le	Kit<W-v>	Mitf<Mi-wh>	T	a<t>	private		
+000262	LS/Le	Edn3<ls>|a<t>	public		Stocks Carrying Specific Mutant Genes
+000263	MWT/Le	Kit<W-v>|Mitf<Mi-wh> 000263\tT 000263\ta<t>	private		
 000264	SM/Ckc-Fbxw4<Dac>/+	Fbxw4<Dac>	public		Stocks Carrying Specific Mutant Genes
 000265	MY/HuLe	my	public		Stocks Carrying Specific Mutant Genes
 000266	RHJ/Le	hr<rh-J>	public		Stocks Carrying Specific Mutant Genes
-000267	ROP/GnLe	Os	Pt	public		Stocks Carrying Specific Mutant Genes
-000268	RSV/Le	Re	Sd	Va	public		Stocks Carrying Specific Mutant Genes
-000269	SB/Le	Lyst<bg>	Pde6b<rd1>	sa	public		Stocks Carrying Specific Mutant Genes
+000267	ROP/GnLe	Os|Pt	public		Stocks Carrying Specific Mutant Genes
+000268	RSV/Le	Re|Sd 000268\tVa	public		Stocks Carrying Specific Mutant Genes
+000269	SB/Le	Lyst<bg>|Pde6b<rd1> 000269\tsa	public		Stocks Carrying Specific Mutant Genes
 000270	SEC/1GnLe	Bmp5<se>	public		Stocks Carrying Specific Mutant Genes
-000271	SH1/Le	Myo7a<sh1>	Tyr<c-ch>	public		Stocks Carrying Specific Mutant Genes
-000272	STX/Le	Gli3<Xt-J>	Mc1r<E-so>	private		
-000273	TF/Le	T	tf	private		Stocks Carrying Specific Mutant Genes
+000271	SH1/Le	Myo7a<sh1>|Tyr<c-ch>	public		Stocks Carrying Specific Mutant Genes
+000272	STX/Le	Gli3<Xt-J>|Mc1r<E-so>	private		
+000273	TF/Le	T|tf	private		Stocks Carrying Specific Mutant Genes
 000274	TSJ/Le	Ts	public		Stocks Carrying Specific Mutant Genes
-000275	V/Le	Cdh23<v>	Ednrb<s>	Mlph<ln>	fz	public		Stocks Carrying Specific Mutant Genes
+000275	V/Le	Cdh23<v>|Ednrb<s> 000275\tMlph<ln> 000275\tfz	public		Stocks Carrying Specific Mutant Genes
 000276	ABJ/Le	Scd1<ab-J>	public		Stocks Carrying Specific Mutant Genes
-000277	ATEB/Le	at	eb	public		Stocks Carrying Specific Mutant Genes
-000278	B6C3Fe-a/a-Papss2<bm> ep ru	Papss2<bm>	ep	ru	public		Stocks Carrying Specific Mutant Genes
-000279	STOCK gr +/+ Ap3d<mh>	gr	mh	public		Stocks Carrying Specific Mutant Genes
+000277	ATEB/Le	at|eb	public		Stocks Carrying Specific Mutant Genes
+000278	B6C3Fe-a/a-Papss2<bm> ep ru	Papss2<bm>|ep 000278\tru	public		Stocks Carrying Specific Mutant Genes
+000279	STOCK gr +/+ Ap3d<mh>	gr|mh	public		Stocks Carrying Specific Mutant Genes
 000280	SF/CamEi		public		Wild-Derived Strains
-000281	STOCK a/a ma ft/ma ft	ft	ma	public		Stocks Carrying Specific Mutant Genes
+000281	STOCK a/a ma ft/ma ft	ft|ma	public		Stocks Carrying Specific Mutant Genes
 000282	BRX58N-12/Ty		private		Recombinant Inbred Strains
 000283	LT.CAST-A		public		Stocks Carrying Specific Mutant Genes
 000284	CWD/Le	cw	public		Stocks Carrying Specific Mutant Genes
-000285	B6.Cg-Rora<sg> + +/+ Myo5a<d> Bmp5<se>	Bmp5<se>	Myo5a<d>	Rora<sg>	public		Stocks Carrying Specific Mutant Genes
-000286	STOCK a/a Myo5a<d> fd/+ +	Myo5a<d>	fd	public		Stocks Carrying Specific Mutant Genes
-000287	B6CBACa-A<w-J>/A-Eda<Ta> Plp<jp>	Eda<Ta>	Plp<jp>	public		Stocks Carrying Specific Mutant Genes
-000288	B6CBACa-A<w-J>/A-we a Mafb<Krml-kr>	Mafb<kr>	we	public	Krml<kr>	Stocks Carrying Specific Mutant Genes
-000289	LDJ/Le	Atrn<mg>	Fmn<ld-J>	public		Stocks Carrying Specific Mutant Genes
+000285	B6.Cg-Rora<sg> + +/+ Myo5a<d> Bmp5<se>	Bmp5<se>|Myo5a<d> 000285\tRora<sg>	public		Stocks Carrying Specific Mutant Genes
+000286	STOCK a/a Myo5a<d> fd/+ +	Myo5a<d>|fd	public		Stocks Carrying Specific Mutant Genes
+000287	B6CBACa-A<w-J>/A-Eda<Ta> Plp<jp>	Eda<Ta>|Plp<jp>	public		Stocks Carrying Specific Mutant Genes
+000288	B6CBACa-A<w-J>/A-we a Mafb<Krml-kr>	Mafb<kr>|we	public	Krml<kr>	Stocks Carrying Specific Mutant Genes
+000289	LDJ/Le	Atrn<mg>|Fmn<ld-J>	public		Stocks Carrying Specific Mutant Genes
 000290	B6C3Fe-a/a-Sox10<Dom>	Sox10<Dom>	public		Stocks Carrying Specific Mutant Genes
-000291	C3FeLe.Cg-a/a-Ca<J> Kitl<Sl> Hm	Ca<J>	Hm	Kitl<Sl>	public		Stocks Carrying Specific Mutant Genes
+000291	C3FeLe.Cg-a/a-Ca<J> Kitl<Sl> Hm	Ca<J>|Hm 000291\tKitl<Sl>	public		Stocks Carrying Specific Mutant Genes
 000292	C3HeB/FeJ-a/a-Dom		private		
-000293	CHMU/Le	ch	mu	public		Stocks Carrying Specific Mutant Genes
+000293	CHMU/Le	ch|mu	public		Stocks Carrying Specific Mutant Genes
 000294	STOCK a/a Tyr<c>/Tyr<c> cn/+	cn	public		Stocks Carrying Specific Mutant Genes
 000295	SK/CamRk		private		
-000296	B6C3Fe-a/a-Hoxa13<Hd> Va<J>	Hoxa13<Hd>	Va<J>	public		Stocks Carrying Specific Mutant Genes
+000296	B6C3Fe-a/a-Hoxa13<Hd> Va<J>	Hoxa13<Hd>|Va<J>	public		Stocks Carrying Specific Mutant Genes
 000297	SF/CamRk		private		
 000298	SK/CamEi (Skokholm)		private		Wild-Derived Strains
 000299	LXB-2/Ty		private		Recombinant Inbred Strains
-000300	MYD/Le-Os +/+ Large<myd>	Large<myd>	Os	public		Stocks Carrying Specific Mutant Genes
+000300	MYD/Le-Os +/+ Large<myd>	Large<myd>|Os	public		Stocks Carrying Specific Mutant Genes
 000301	LXPL-1/Ty		private		Recombinant Inbred Strains
-000302	STOCK a/a Mitf<Mi-wh> +/+ Itpr1<opt>	Itpr1<opt>	Mitf<Mi-wh>	public		Stocks Carrying Specific Mutant Genes
+000302	STOCK a/a Mitf<Mi-wh> +/+ Itpr1<opt>	Itpr1<opt>|Mitf<Mi-wh>	public		Stocks Carrying Specific Mutant Genes
 000303	LXPL-2/Ty		public		Recombinant Inbred Strains
-000304	B6C3Fe-a/a-Ca Scn8a<med-J>	Ca	Scn8a<med-J>	public		Stocks Carrying Specific Mutant Genes
-000305	B6.Cg-Fbn1<Tsk> +/+ Pldn<pa>	Fbn1<Tsk>	Pldn<pa>	public		Stocks Carrying Specific Mutant Genes
+000304	B6C3Fe-a/a-Ca Scn8a<med-J>	Ca|Scn8a<med-J>	public		Stocks Carrying Specific Mutant Genes
+000305	B6.Cg-Fbn1<Tsk> +/+ Pldn<pa>	Fbn1<Tsk>|Pldn<pa>	public		Stocks Carrying Specific Mutant Genes
 000306	STOCK Dll3<pu> + Tyr<c-ch>/+ p Tyr<c-ch>	Dll3<pu>	public		Stocks Carrying Specific Mutant Genes
 000307	LXPL-6/Ty		public		Recombinant Inbred Strains
-000308	SSL/Le	Ednrb<s-l>	Ednrb<s>	public		Stocks Carrying Specific Mutant Genes
+000308	SSL/Le	Ednrb<s-l>|Ednrb<s>	public		Stocks Carrying Specific Mutant Genes
 000309	B6.C3-md/+	md	public		Stocks Carrying Specific Mutant Genes
 000310	B6C3Fe-a/a-N Sp		private		
-000311	B6-Pax3<Sp>.Cg-N	N	Pax3<Sp>	public		Stocks Carrying Specific Mutant Genes
-000312	STOCK stb + a/+ Fign<fi> a	fi	stb	public		Stocks Carrying Specific Mutant Genes
+000311	B6-Pax3<Sp>.Cg-N	N|Pax3<Sp>	public		Stocks Carrying Specific Mutant Genes
+000312	STOCK stb + a/+ Fign<fi> a	fi|stb	public		Stocks Carrying Specific Mutant Genes
 000313	58NXL-4/Ty		private		Recombinant Inbred Strains
 000314	B6CBACa-A<w-J>/A-Eda<Ta>/O	Eda<Ta>	public		Stocks Carrying Specific Mutant Genes
-000315	TT6/Le	T	t<6>	private		Stocks Carrying Specific Mutant Genes
+000315	TT6/Le	T|t<6>	private		Stocks Carrying Specific Mutant Genes
 000316	C3H/HeSn-vl/+	vl	public		Stocks Carrying Specific Mutant Genes
 000317	STOCK a/a Egfr<wa2>/+	Egfr<wa2>	public		Stocks Carrying Specific Mutant Genes
 000318	DBA/2J-Lyst<bg-8J>		private		Stocks Carrying Specific Mutant Genes
-000319	STOCK a/a us/us	us	public		Stocks Carrying Specific Mutant Genes
+000319	STOCK a/a us	us	public		Stocks Carrying Specific Mutant Genes
 000320	58NXL-1/Ty		private		Recombinant Inbred Strains
 000321	AKR/J-ho<2J>		private		
-000322	C57BL/6J-Pde6b<rd1> le Gus-s<h>	Gus-s	Pde6b<rd1>	le	private		Miscellaneous Inbred and Congenic Strains
+000322	C57BL/6J-Pde6b<rd1> le Gus-s<h>	Gus-s|Pde6b<rd1> 000322\tle	private		Miscellaneous Inbred and Congenic Strains
 000323	C57BL/6J-A<w-J>-Eda<Ta> Ty		private		
 000324	AKXL-7/Ty		private		Recombinant Inbred Strains
 000325	AKXL-9/Ty		private		Recombinant Inbred Strains
@@ -345,9 +345,9 @@
 000345	C57BL/6JBy-ma		private		
 000346	C57BL/6JBy-Rabggta<gm>		private		
 000347	C57BL/6By-Tsk		private		
-000348	C57BL/6J-fz Mlph<ln>		private		
-000349	C57BL/6By-p Ve/+	Ve	p	private		
-000350	B6By.Cg-Kit<W-v> Mitf<Mi-wh> T	Kit<W-v>	Mitf<Mi-wh>	T	public		Stocks Carrying Specific Mutant Genes
+000348	C57BL/6J-fz ln		private		
+000349	C57BL/6By-p Ve/+	Ve|p	private		
+000350	B6By.Cg-Kit<W-v> Mitf<Mi-wh> T	Kit<W-v>|Mitf<Mi-wh> 000350\tT	public		Stocks Carrying Specific Mutant Genes
 000351	CXB-1/By		public		Recombinant Inbred Strains
 000352	CXB-2/By		public		Recombinant Inbred Strains
 000353	CXB-3/By		public		Recombinant Inbred Strains
@@ -357,7 +357,7 @@
 000357	CXB-7/By		public		Miscellaneous Inbred and Congenic Strains
 000358	B6.C-H2<d>/cBy	H2<d>	private	HW101	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000359	B6.C-H2<d>/bBy	H2<d>	public	HW41	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000360	B6.C-H2<d> Mdmg1<c>/aBy	H2<d>	Mdmg1<c>	public	HW19	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000360	B6.C-H2<d> Mdmg1<c>/aBy	H2<d>|Mdmg1<c>	public	HW19	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000361	B6.C(HV20)/By		private	HV20	Linkage Testing Stocks
 000362	B6.C(HV12)/By		private	HV12	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000363	B6.C(HZ54)/By		private	HZ54	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -374,23 +374,23 @@
 000374	B6.C-H27<c>/By	H27<c>	public	HW77A	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000375	B6.C-H26<c>/By	H26<c>	public	HW72	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000376	B6.C-H23<c>/By (HW53)	H23<c>	public	HW53	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000377	B6.C-H22<c> Gpi1<a>/By (HW38)	Gpi1<a>	H22<c>	public	HW38	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000377	B6.C-H22<c> Gpi1<a>/By (HW38)	Gpi1<a>|H22<c>	public	HW38	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000378	B6.C-H21<c>/By	H21<c>	public	HW35	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000379	B6.C-H20<c>/By	H20<c>	public	HW21	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000380	B6.C-H18<c>/By (HW17)	H18<c>	public	HW17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000381	B6.C-H16<c>/By (HW13K)	H16<c>	public	HW13K	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000382	B6.C-H15<c>/By (HW13J)	H15<c>	public	HW13J	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000383	B6.C-Tyr<c> H1<b> Hbb<d>/By	H1<b>	public	HW80	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000384	B6.C-H28<c> If1<l>/bBy (HW94)	H28<c>	If1<l>	public	HW94	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000384	B6.C-H28<c> If1<l>/bBy (HW94)	H28<c>|If1<l>	public	HW94	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000385	129S;AKR-bs/+	bs	public		Stocks Carrying Specific Mutant Genes
 000386	C3H.NB/SnCy-rk		private		
 000387	129/Sv-Eda<Ta-J> ter		private		
 000388	129/Sv-A<y>/A<w> +<p> +<Tyr-c>	A<y>	private		
 000389	129/Sv-Dnahc11<iv> ter		private		
-000390	STOCK Ds/+ Myo5a<d>/Myo5a<d>	Ds	Myo5a<d>	public		Stocks Carrying Specific Mutant Genes
+000390	STOCK Myo5a<d> Ds/+	Ds|Myo5a<d>	public		Stocks Carrying Specific Mutant Genes
 000391	B6EiC3Sn-a/A-Pax6<Sey-Dey>	Pax6<Sey-Dey>	public		Stocks Carrying Specific Mutant Genes
 000392	129/Sv-Kit<W-v> ter		private		
-000393	129/Sv-Kitl<Sl-d>/+ +<Tyr-c> +<p>	Kitl<Sl-d>	private		
+000393	129S1/Sv-p<+> Tyr<+> Kitl<Sl-d>/+	Kitl<Sl-d>	private		
 000394	STOCK a fzt		private		
 000395	129S/Sv-Chx10<or-J>/+	Chx10<or-J>	public		Stocks Carrying Specific Mutant Genes
 000396	A/HeJSv		private		
@@ -404,28 +404,28 @@
 000404	AKXL-16A/Ty		private		Recombinant Inbred Strains
 000405	C57BL/10ScSn-T/+	T	private		Stocks Carrying Specific Mutant Genes
 000406	B6.PL-Thy1<a>/Cy	Thy1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000407	B6.PL-Cd8a<a> Cd8b<a>/Cy	Cd8a<a>	Cd8b<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000407	B6.PL-Cd8a<a> Cd8b<a>/Cy	Cd8a<a>|Cd8b<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000408	B6.Cg-Cd5<a>/Cy	Cd5<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000409	B10.129P-H1<b> Hbb<d> Tyr<c> Ea7<a>(5M)/oSn	Ea7<a>	H1<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000410	C57BL/10-Ea2<a>Ea7<2>/SnCy		private		
+000409	B10.129P-H1<b> Hbb<d> Tyr<c> Ea7<a>(5M)/oSn	Ea7<a>|H1<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000410	C57BL/10-Ea2<a> Ea7<2>/SnCy		private		
 000411	B10.RIII-Ea2<a> (72NS)/Sn	Ea2<a>	public		Congenic Strains
 000412	B6.RIII-Ea2<a> (76NS)/Sn	Ea2<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000413	C3.K-H1<b>/nSn	H1<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000414	B10.129P-H46<b> H47<b>(21M)/Sn	H46<b>	H47<b>	p	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000414	B10.129P-H46<b> H47<b>(21M)/Sn	H46<b>|H47<b> 000414\tp	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000415	B10.129(12M)/Sn	H12<b>	private		
-000416	B10.129P-H11<b>(10M)/Sn	H11<?>	H11<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000416	B10.129P-H11<b>(10M)/Sn	H11<?>|H11<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000417	B10.129P-H12<b>(6M)/Sn	H12<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000418	B10.129P-H1<b> Tyr<c> Hbb<d>(5M)/nSn	H1<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000419	B10.UW-H3<b> we Pax1<un> a<t>/Sn	H3<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000420	B10.LP-H13<b> A<w>/Sn	H13<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000421	B10.LP-H3<b>/Sn	H3<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000422	B10.LP-H3<b> H13<b>/Sn (36NS)	H13<b>	H3<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000422	B10.LP-H3<b> H13<b>/Sn (36NS)	H13<b>|H3<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000423	B10.KR-H13<?> A/Sn	H13<?>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000424	B10.KR-H3<d>/Sn	H3<d>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000425	B10.D2-H1<a>(58N)/Sn	H1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000426	B10.D2-H8<b>(57N)/Sn	H8<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000427	B10.CE-H13<b> A<w>(30NX)/Sn	A<w>	H13<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000428	B10.D2-H11<?>(55N)/Sn	H11<?>	H11<?>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000427	B10.CE-H13<b> A<w>(30NX)/Sn	A<w>|H13<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000428	B10.D2-H11<?>(55N)/Sn	H11<?>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000429	B10.C-H3<c>/Sn	H3<c>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000430	B10.C-H7<b>(47N)/Sn	H7<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000431	B10.C-H9<b>(45N)/Sn	H9<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -438,7 +438,7 @@
 000438	C3.SW-H2<b>/SnJ	H2<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000439	C3.NB-H2<p> H2-T18<c?>/Sn	H2<p>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000440	C3.LG-H2<ar1>/CkcCy	H2<ar1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000441	C3.JK-H2<j> H2-T18<b>/Sn	H2-T18	H2<j>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000441	C3.JK-H2<j> H2-T18<b>/Sn	H2-T18|H2<j>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000442	C3H-H2<o2>/SfSnJ		private		
 000443	C3.HTG-H2<g> H2-T18<b?>/Sn	H2<g>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000444	B10.Y-H2<pa> H2-T18<c>/Sn	H2<pa>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -453,22 +453,22 @@
 000453	WB/Re-Ank1<nb>	Ank1<nb>	private		Stocks Carrying Specific Mutant Genes
 000454	WB.C3-Spna1<sph>	Spna1<sph>	private		Stocks Carrying Specific Mutant Genes
 000455	STOCK a Sl<du>		private		
-000456	B10.SM-H2<v> H2-T18<b>(70NS)/Sn cw	H2<v>	cw	public	70NS	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000456	B10.SM-H2<v> H2-T18<b>(70NS)/Sn cw	H2<v>|cw	public	70NS	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000457	B10.RIII-H2<r> H2-T18<b>(71NS)/Sn	H2<r>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000458	B10.PL-H2<u> H2-T18<a>(73NS)/Sn	H2<u>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000459	B10.M-H2<f> H2-T18<a?>/Sn	H2<f>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000460	B10.D2-H2<d> H2-T18<c> Hc<0>/o2Sn	H2-T18	H2<d>	Hc<0>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000461	B10.D2-H2<d> H2-T18<c> Hc<0>/oSnJ	H2-T18	H2<d>	Hc<0>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000460	B10.D2-H2<d> H2-T18<c> Hc<0>/o2Sn	H2-T18|H2<d> 000460\tHc<0>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000461	B10.D2-H2<d> H2-T18<c> Hc<0>/oSnJ	H2-T18|H2<d> 000461\tHc<0>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000462	B10.D2-H2<d>/n2Sn	H2<d>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000463	B10.D2-H2<d> H2-T18<c> Hc<1>/nSnJ	H2-T18	Hc<1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000463	B10.D2-H2<d> H2-T18<c> Hc<1>/nSnJ	H2-T18|Hc<1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000464	B10.DA-H2<qp1> H2-T18<b> (80NS)/Sn	H2<qp1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000465	B10.BR-H2<k> H2-T18<a>/SgSnJ	Emv33	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000466	B10.AKM-H2<m> H2-T18<a>/SnJ	H2-T18	H2<m>	Svp3	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000467	B10.A-H2<i5> H2-T18<a> (5R)/SqSnJ	H2-T18	H2<i5>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000468	B10.A-H2<h2> (2R)/SqSnJ	H2<h2>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000469	B10.A-H2<a> H2-T18<a>/SgSnJ	H2-T18	H2<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000466	B10.AKM-H2<m> H2-T18<a>/SnJ	H2-T18|H2<m> 000466\tSvp3	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000467	B10.A-H2<i5> H2-T18<a>/(5R)SgSnJ	H2-T18|H2<i5>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000468	B10.A-H2<h2>/(2R)SgSnJ	H2<h2>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000469	B10.A-H2<a> H2-T18<a>/SgSnJ	H2-T18|H2<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000470	AKR.M-H2<m> H2-T18<a>/nSn	H2<m>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-000471	A.SW-H2<s> H2-T18<b>/SnJ	H2-T18	H2<s>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000471	A.SW-H2<s> H2-T18<b>/SnJ	H2-T18|H2<s>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000472	A.CA-H2<f> H2-T18<a>/Sn	H2<f>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000473	C3H-H2<o2> C4<b>/SfSn	H2<o2>	public	C3H.OH	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000474	C3H/HeSn		public		Inbred Strains
@@ -482,7 +482,7 @@
 000482	B6.MRL-Tnfrsf6<lpr>	Tnfrsf6<lpr>	public		Stocks Carrying Specific Mutant Genes
 000483	B6.SB-Yaa	Yaa	public		Stocks Carrying Specific Mutant Genes
 000484	CBA/NSmn	Btk<xid>	private		Miscellaneous Inbred and Congenic Strains
-000485	MRL/MpJ-Tnfrsf6<lpr>	Tnfrsf6<lpr>	Tyr<c>	public		Stocks Carrying Specific Mutant Genes
+000485	MRL/MpJ-Tnfrsf6<lpr>	Tnfrsf6<lpr>|Tyr<c>	public		Stocks Carrying Specific Mutant Genes
 000486	MRL/MpJ	+<Fas-lpr>	public		Stocks Carrying Specific Mutant Genes
 000487	NZB/BlNJ-lpr/+		private		
 000488	NZB/BlNJ-Yaa		private		
@@ -501,7 +501,7 @@
 000501	B6CBACa-A<w-J>/A-Hq	Hq	public		Stocks Carrying Specific Mutant Genes
 000502	B6 x B6CBACa-A<w-J>/A-Myo5a<flr> Gnb5<flr>	flr	public		Stocks Carrying Specific Mutant Genes
 000503	B6EiC3Sn-a/A-Phex<Gy>	Phex<Gy>	public		Stocks Carrying Specific Mutant Genes
-000504	B6EiC3Sn-a/A-Cacnb4<lh>	Cacnb4<lh>/+	public		Stocks Carrying Specific Mutant Genes
+000504	B6EiC3Sn a/A-Cacnb4<lh>	Cacnb4<lh>/+	public		Stocks Carrying Specific Mutant Genes
 000505	B6C3H-A<w-J>/A-mu/+	mu	public		Stocks Carrying Specific Mutant Genes
 000506	B6C3Fe-a/a-qk/+	qk/+	public		Stocks Carrying Specific Mutant Genes
 000507	B6 x B6EiC3H-a/A-Otc<spf>	Otc<spf>	public		Stocks Carrying Specific Mutant Genes
@@ -549,15 +549,15 @@
 000549	B10.LP-H13<b> A<w> ash<3J>/SnCy		private		
 000550	MOLF/Ei (M. m. molossinus)		public		Wild-Derived Strains
 000551	B6EiC3H-a/A-de<H>	de<H>	public		Stocks Carrying Specific Mutant Genes
-000552	B6-A<w-J>-Eda<Ta-6J>.Cg-Sxr<a>	Eda<Ta-6J>	Sxr<a>	public		Chromosome Aberrations
-000553	B6EiC3Sn-a/A-Egfr<wa2> Wnt3a<vt>	Egfr<wa2>	Wnt3a<vt>	public		Stocks Carrying Specific Mutant Genes
+000552	B6-A<w-J>-Eda<Ta-6J>.Cg-Sxr	Eda<Ta-6J>|Sxr<a>	public		Chromosome Aberrations
+000553	B6EiC3Sn-a/A-Egfr<wa2> Wnt3a<vt>	Egfr<wa2>|Wnt3a<vt>	public		Stocks Carrying Specific Mutant Genes
 000554	RF/J-hyt/+		private		
 000555	MOLG/Dn (M. m. molossinus)		public		Wild-Derived Strains
 000556	HTG/GoSfSn		public		Miscellaneous Inbred and Congenic Strains
 000557	B6EiC3H-+ a/Hoxd<Ul> A	Hoxd<Ul>	public		Stocks Carrying Specific Mutant Genes
 000558	B6C3H-A/A-Eda<Ta> jp<msd>		private		
 000559	C57BL/6By-Eh Sig		private		
-000560	B6.C-H7<b>/By-Kit<W-50J>	Kit<W-50J>	public		Stocks Carrying Specific Mutant Genes
+000560	B6.C-H7<b>/By Kit<W-50J>	Kit<W-50J>	public		Stocks Carrying Specific Mutant Genes
 000561	B6.Cg-Ps	Ps	public		Stocks Carrying Specific Mutant Genes
 000562	C57BL/6J-tub/+	tub	public		Stocks Carrying Specific Mutant Genes
 000563	C57BL/6J-jc/+	jc	public		Stocks Carrying Specific Mutant Genes
@@ -565,17 +565,17 @@
 000565	C57BL/6J-Pax3<Sp-d>/+	Pax3<Sp-d>	public		Stocks Carrying Specific Mutant Genes
 000566	B6.Cg-Os +/+ Cacna1a<tg-la>	Cacna1a<tg-la>	public		Stocks Carrying Specific Mutant Genes
 000567	B6.Cg-T<2J> +/+ qk	qk	public		Stocks Carrying Specific Mutant Genes
-000568	B6.Cg-Pmp22<Tr-J> Re/+ +	Pmp22<Tr-J>	Re	public		Stocks Carrying Specific Mutant Genes
-000569	C57BL/6J-A<w-J>-Eda<Ta> +/+ Ar<Tfm>	Ar<Tfm>	Eda<Ta>	public		Stocks Carrying Specific Mutant Genes
-000570	C57BL/6J-Matp<uw> bt<2J>/+ +	Matp<uw>	bt<2J>	public		Stocks Carrying Specific Mutant Genes
+000568	B6.Cg-Pmp22<Tr-J> Re/+ +	Pmp22<Tr-J>|Re	public		Stocks Carrying Specific Mutant Genes
+000569	C57BL/6J-A<w-J>-Eda<Ta> +/+ Ar<Tfm>	Ar<Tfm>|Eda<Ta>	public		Stocks Carrying Specific Mutant Genes
+000570	C57BL/6J-Matp<uw> bt<2J>/+ +	Matp<uw>|bt<2J>	public		Stocks Carrying Specific Mutant Genes
 000571	B6.Cg-wi Tyrp1<b>/+ +	wi	public		Stocks Carrying Specific Mutant Genes
-000572	JIGR/Dn	gr	ji	public		Stocks Carrying Specific Mutant Genes
+000572	JIGR/Dn	gr|ji	public		Stocks Carrying Specific Mutant Genes
 000573	IS/CamRk	Es11<b>	public		Wild-Derived Strains
 000574	CBA/CaH-kd	kd	private		Stocks Carrying Specific Mutant Genes
-000575	TKDU/Dn	Cacna2d2<du>	tk	public		Stocks Carrying Specific Mutant Genes
+000575	TKDU/Dn	Cacna2d2<du>|tk	public		Stocks Carrying Specific Mutant Genes
 000576	STOCK nu		private		
-000577	B6 x STOCK a p ru2 Ednrb<s>	p	ru2	public		Stocks Carrying Specific Mutant Genes
-000578	B6 x STOCK Tyr<c-ch> Bmp5<se> +/+ Myo6<sv>	Bmp5<se>	Myo6<sv>	public		Stocks Carrying Specific Mutant Genes
+000577	B6 x STOCK a p ru2 Ednrb<s>	p|ru2	public		Stocks Carrying Specific Mutant Genes
+000578	B6 x STOCK Tyr<c-ch> Bmp5<se> +/+ Myo6<sv>	Bmp5<se>|Myo6<sv>	public		Stocks Carrying Specific Mutant Genes
 000579	STOCK a/a tp/+	tp	public		Stocks Carrying Specific Mutant Genes
 000580	B10.D2/nSn-Tyr<c-4J>/+	Tyr<c-4J>	public		Stocks Carrying Specific Mutant Genes
 000581	B6CBACa-Eda<Ta> O		private		
@@ -589,11 +589,11 @@
 000589	STOCK T24H a/T24H a +/Tyrp1<b>		private		Chromosome Aberrations
 000590	STOCK T(2;4)1Sn a/T(2;4)1Sn a		public		Chromosome Aberrations
 000591	B6 x STOCK T(2;4)1Ca		public		Chromosome Aberrations
-000592	B6 x STOCK T13H a/T13H a		public		Chromosome Aberrations
-000593	B6 x B6CBACa-A<w-J>/A-Grid2<Lc> T(2;6)7Ca Mitf<Mi-wh>	Grid<Lc>	Mitf<Mi-wh>	public		Chromosome Aberrations
+000592	B6 x STOCK T(2;4)13H a		public		Chromosome Aberrations
+000593	B6 x B6CBACa-A<w-J>/A-Grid2<Lc> T(2;6)7Ca Mitf<Mi-wh>	Grid<Lc>|Mitf<Mi-wh>	public		Chromosome Aberrations
 000594	STOCK T(2;8)26H a/T(2;8)26H a Tyrp1<+>/Tyrp1<b>		public		Chromosome Aberrations
 000595	B6 x STOCK T(2;9)11H		public		Chromosome Aberrations
-000596	STOCK T30H/+ x AEJ-a Gdf5<bp-H> or A/J-a Gdf5<bp-J>		public		Chromosome Aberrations
+000596	STOCK T(2;11)30H/+ x AEJ-a Gdf5<bp-H> or A/J-a Gdf5<bp-J>		public		Chromosome Aberrations
 000597	B6 x STOCK T(2;16)28H/+		public		Chromosome Aberrations
 000598	B6CBACa-A<w-J>/A-T36H		private		
 000599	B6 x B6CBACa-A<w-J>/A-T(5;13)264Ca Kit<W-v>	Kit<W-v>	public		Chromosome Aberrations
@@ -601,7 +601,7 @@
 000601	B6 x STOCK T(7;18)50H/+ a/a		public		Chromosome Aberrations
 000602	B6 x B6C3Sn-a/A-T(8;16)17H/+		public		Chromosome Aberrations
 000603	STOCK T(9;17)138Ca		public		Chromosome Aberrations
-000604	B6C3H-a/A-T199H +/+ Lyst<bg-J> or Lyst<bg-2J>	Lyst<bg-2J>	Lyst<bg-J>	private		Chromosome Aberrations
+000604	B6C3H-a/A-T199H +/+ Lyst<bg-J> or Lyst<bg-2J>	Lyst<bg-2J>|Lyst<bg-J>	private		Chromosome Aberrations
 000605	STOCK T(10;18)18H		private		Chromosome Aberrations
 000606	SJL/JMp		private		
 000607	C3H/HeJ-T43H +/+ md		private		
@@ -616,18 +616,18 @@
 000616	CBA/H-T6/JEi		private		
 000617	CE/JEi		private		
 000618	B6 x FSB/GnEi a/a Ctsl<fs>/+	Ctsl<fs>	public		Stocks Carrying Specific Mutant Genes
-000619	FS/Ei	Myo7a<sh1>	Tyr<c-ch>	fr	p	public		Stocks Carrying Specific Mutant Genes
+000619	FS/Ei	Myo7a<sh1>|Tyr<c-ch> 000619\tfr 000619\tp	public		Stocks Carrying Specific Mutant Genes
 000620	STOCK In(15)18Rk		public		Chromosome Aberrations
 000621	C3H.SW/SnJLt-Lepr<db>/+	Lepr<db>	private		Stocks Carrying Specific Mutant Genes
-000622	SHR/GnEi	Re	shm	public		Stocks Carrying Specific Mutant Genes
+000622	SHR/GnEi	Re|shm	public		Stocks Carrying Specific Mutant Genes
 000623	TR/DiEi	Atp7a<Mo-to>	public		Stocks Carrying Specific Mutant Genes
 000624	B6C3Fe-a/a-anx	anx	public		Stocks Carrying Specific Mutant Genes
 000625	AKR/J-hid		private		
 000626	BALB/cJ-Cr<a>		private		
 000627	C3H/HeJ-Kit<W-x>/+	Kit<W-x>	public		Stocks Carrying Specific Mutant Genes
-000628	C57BL/6J-A Amy1<b> Amy2<b>	Amy1	Amy2	public		Stocks Carrying Specific Mutant Genes
+000628	C57BL/6J-A Amy1<b> Amy2<b>	Amy1|Amy2	public		Stocks Carrying Specific Mutant Genes
 000629	C57BL/6J-Lyst<bg-J>/+	Lyst<bg-J>	public		Stocks Carrying Specific Mutant Genes
-000630	C57BL/6J-A Amy1<b> Amy2<b> Gdc1<d> Mpi1<a>	Gdc1<d>	Mpi1	private	Comb1	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000630	C57BL/6J-A Amy1<b> Amy2<b> Gdc1<d> Mpi1<a>	Gdc1<d>|Mpi1	private	Comb1	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000631	B6.129P1-Lama2<dy>	Lama2<dy>	public		Stocks Carrying Specific Mutant Genes
 000632	B6.V-Lep<ob>	Lep<ob>	public		Stocks Carrying Specific Mutant Genes
 000633	IDH2/Ei	Idh2<b>	private		Miscellaneous Inbred and Congenic Strains
@@ -639,65 +639,65 @@
 000639	129/Sv-A<w> +<p> +<c>		private		
 000640	129B6F1/J-Lama2<dy>	Lama2<dy>	private		Mutant Stocks
 000641	129P1/ReJ-Lama2<dy>	Lama2<dy>	public		Stocks Carrying Specific Mutant Genes
-000642	BKS.Cg-m +/+ Lepr<db>	Lepr<db>	Pit1<dw-J>	m	public		Stocks Carrying Specific Mutant Genes
-000643	DW/J Pit1<dw>/+ Mlph<ln>/Mlph<ln>	Mlph<ln>	Pit1<dw>	public		Stocks Carrying Specific Mutant Genes
+000642	BKS.Cg-m +/+ Lepr<db>	Lepr<db>|Pit1<dw-J> 000642\tm	public		Stocks Carrying Specific Mutant Genes
+000643	DW/J ln Pit1<dw>/+	Mlph<ln>|Pit1<dw>	public		Stocks Carrying Specific Mutant Genes
 000644	SEA/GnJ	Bmp5<se>	public		Miscellaneous Inbred and Congenic Strains
 000645	A/HeJ		public		Miscellaneous Inbred and Congenic Strains
 000646	A/J		public		Miscellaneous Inbred and Congenic Strains
 000647	A/WySnJ		public		Miscellaneous Inbred and Congenic Strains
-000648	AKR/J	Acact<ald>	Emv11	Emv14	hid	public		Miscellaneous Inbred and Congenic Strains
+000648	AKR/J	Acact<ald>|Emv11 000648\tEmv14 000648\thid	public		Miscellaneous Inbred and Congenic Strains
 000649	AU/SsJ	U	public		Miscellaneous Inbred and Congenic Strains
-000650	BALB/cBy	If3<l>	If4<l>	private		Miscellaneous Inbred and Congenic Strains
+000650	BALB/cBy	If3<l>|If4<l>	private		Miscellaneous Inbred and Congenic Strains
 000651	BALB/cJ		public		Miscellaneous Inbred and Congenic Strains
-000652	BDP/J	Bmp5<se>	Myo5a<d>	public		Miscellaneous Inbred and Congenic Strains
+000652	BDP/J	Bmp5<se>|Myo5a<d>	public		Miscellaneous Inbred and Congenic Strains
 000653	BUB/BnJ		public		Miscellaneous Inbred and Congenic Strains
 000654	CBA/CaJ		public		Miscellaneous Inbred and Congenic Strains
 000655	CBA/CaH-T6/J		public		Miscellaneous Inbred and Congenic Strains
 000656	CBA/J		public		Miscellaneous Inbred and Congenic Strains
 000657	CE/J	Tyr<c-e>	public		Miscellaneous Inbred and Congenic Strains
 000658	C3HeB/FeJ	Lps<n>	public		Miscellaneous Inbred and Congenic Strains
-000659	C3H/HeJ	Pde6b<rd1>	Tlr4<Lps-d>	public		Miscellaneous Inbred and Congenic Strains
+000659	C3H/HeJ	Pde6b<rd1>|Tlr4<Lps-d>	public		Miscellaneous Inbred and Congenic Strains
 000660	DA/HuSn		public		Miscellaneous Inbred and Congenic Strains
 000661	C3H/HeSnJ	Lps<n>	public		Miscellaneous Inbred and Congenic Strains
 000662	C57BLKS/J		public		Miscellaneous Inbred and Congenic Strains
-000663	C57BL/6By	If3<h>	If4<h>	private		Miscellaneous Inbred and Congenic Strains
+000663	C57BL/6By	If3<h>|If4<h>	private		Miscellaneous Inbred and Congenic Strains
 000664	C57BL/6J		public		Miscellaneous Inbred and Congenic Strains
 000665	C57BL/10J		public		Miscellaneous Inbred and Congenic Strains
 000666	C57BL/10SnJ		public		Miscellaneous Inbred and Congenic Strains
 000667	C57BR/cdJ		public		Miscellaneous Inbred and Congenic Strains
-000668	C57L/J	Mlph<ln>	ecl	public		Miscellaneous Inbred and Congenic Strains
+000668	C57L/J	Mlph<ln>|ecl	public		Miscellaneous Inbred and Congenic Strains
 000669	C58/J		public		Miscellaneous Inbred and Congenic Strains
 000670	DBA/1J	Emv3	public		Miscellaneous Inbred and Congenic Strains
-000671	DBA/2J	Emv3	asp1	public		Miscellaneous Inbred and Congenic Strains
+000671	DBA/2J	Emv3|asp1	public		Miscellaneous Inbred and Congenic Strains
 000672	DW/JBm		private		
-000673	HRS/J hr/+	Tyr<c>	hr	public		Stocks Carrying Specific Mutant Genes
-000674	I/LnJ	Ednrb<s>	Phk	public		Miscellaneous Inbred and Congenic Strains
+000673	HRS/J hr/+	Tyr<c>|hr	public		Stocks Carrying Specific Mutant Genes
+000674	I/LnJ	Ednrb<s>|Phk	public		Miscellaneous Inbred and Congenic Strains
 000675	LG/J		public		Miscellaneous Inbred and Congenic Strains
-000676	LP/J	A<w>	Ednrb<s>	public		Inbred Strains
+000676	LP/J	A<w>|Ednrb<s>	public		Inbred Strains
 000677	MA/MyJ	hf	public		Miscellaneous Inbred and Congenic Strains
-000678	NZB/BlNRe	Aia1	Aia2	private		Inbred Strains
-000679	P/J	Bmp5<se>	p	public		Miscellaneous Inbred and Congenic Strains
+000678	NZB/BlNRe	Aia1|Aia2	private		Inbred Strains
+000679	P/J	Bmp5<se>|p	public		Miscellaneous Inbred and Congenic Strains
 000680	PL/J		public		Miscellaneous Inbred and Congenic Strains
-000681	DW.C3-+<Pit1-dw>-+<Mlph-ln>	+<Mlph-ln>	+<Pit1-dw>	public		Stocks Carrying Specific Mutant Genes
+000681	DW.C3-ln<+> Pit1<+>	+<Mlph-ln>|+<Pit1-dw>	public		Stocks Carrying Specific Mutant Genes
 000682	RF/J		public		Miscellaneous Inbred and Congenic Strains
 000683	RIIIS/J		public		Miscellaneous Inbred and Congenic Strains
 000684	NZB/BlNJ		public		Miscellaneous Inbred and Congenic Strains
-000685	SEC/1ReJ	Tyr<c-ch>	Tyrp1<b>	a	private		Miscellaneous Inbred and Congenic Strains
+000685	SEC/1ReJ	Tyr<c-ch>|Tyrp1<b> 000685\ta	private		Miscellaneous Inbred and Congenic Strains
 000686	SJL/J	Rhv1	public		Miscellaneous Inbred and Congenic Strains
 000687	SM/J		public		Miscellaneous Inbred and Congenic Strains
 000688	ST/bJ		public		Miscellaneous Inbred and Congenic Strains
-000689	SWR/J	Soa	ecs	hti	public		Miscellaneous Inbred and Congenic Strains
-000690	129P3/J	A<w>	Tyr<c-ch>	p	public		Miscellaneous Inbred and Congenic Strains
+000689	SWR/J	Soa|ecs 000689\thti	public		Miscellaneous Inbred and Congenic Strains
+000690	129P3/J	A<w>|Tyr<c-ch> 000690\tp	public		Miscellaneous Inbred and Congenic Strains
 000691	129X1/SvJ		public		Miscellaneous Inbred and Congenic Strains
 000692	WB/ReJ Kit<W>/+	Kit<W>	public		Stocks Carrying Specific Mutant Genes
 000693	WC/ReJ-Kitl<Sl>/+	Kitl<Sl>	public		Stocks Carrying Specific Mutant Genes
 000694	C3HeB/FeJ-Lepr<db>/+	Lepr<db>	private		Stocks Carrying Specific Mutant Genes
 000695	C57BLKS-Cpe<fat>	Cpe<fat>	private		Stocks Carrying Specific Mutant Genes
 000696	BKS.V-Lep<ob>/+	Lep<ob>	public		Stocks Carrying Specific Mutant Genes
-000697	B6.Cg-m +/+ Lepr<db>	Lepr<db>	m	public		Stocks Carrying Specific Mutant Genes
+000697	B6.Cg-m +/+ Lepr<db>	Lepr<db>|m	public		Stocks Carrying Specific Mutant Genes
 000698	BRX58N-8/Ty		private		Recombinant Inbred Strains
-000699	B6.Cg-m Lepr<db>/+ +	Lepr<db>	m	public		Stocks Carrying Specific Mutant Genes
-000700	BKS.Cg-m Lepr<db>/+ +	Lepr<db>	m	public		Stocks Carrying Specific Mutant Genes
+000699	B6.Cg-m Lepr<db>/+ +	Lepr<db>|m	public		Stocks Carrying Specific Mutant Genes
+000700	BKS.Cg-m Lepr<db>/+ +	Lepr<db>|m	public		Stocks Carrying Specific Mutant Genes
 000701	BALB/cHu-Dnahc11<iv>		private		
 000702	C3H/HeJ-ru2<2J>		private		
 000703	C57BL/6J-ho<3J>		private		
@@ -786,13 +786,13 @@
 000786	BALB/cBy-T<4J>	T<4J>	private		Stocks Carrying Specific Mutant Genes
 000787	BALB/cByJ-Y<MET>		public		Chromosome Aberrations
 000788	C57BL/6J-Es8<b>		private		
-000789	C57BL/6J-Es10<c> Np1<b>	Es10<c>	Np	private	BC10	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000789	C57BL/6J-Es10<c> Np1<b>	Es10<c>|Np	private	BC10	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000790	LT.MOL-Es10<c>	Es10<c>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000791	WB/Re-Sfxn1<f>	Sfxn1<f>	public		Stocks Carrying Specific Mutant Genes
 000792	C57BL/6J-Gdc1<d>	Gdc1<d>	private		
-000793	LT.CAST-Gpt1<a>/Gpt1<b> Gdc1<b>/Gdc1<d>	Gdc1<d>	Gpt1<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000793	LT.CAST-Gpt1<a>/Gpt1<b> Gdc1<b>/Gdc1<d>	Gdc1<d>|Gpt1<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000794	LT.MA-Glo1<b>		private		
-000795	B6By.C-H52 Fgf5<go>	Fgf5<go>	H52	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000795	B6By.C-H52 Fgf5<go>	Fgf5<go>|H52	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000796	C57BL/6J-Got1<b>		private	BC5	
 000797	B6.CAST-Gpi1<a>/Ei	Gpi1-s	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000798	LT.B6-Gpi1<b>	Gpi1-s	private		Miscellaneous Inbred and Congenic Strains
@@ -820,7 +820,7 @@
 000820	AKR/J-Foxn1<nu-str>/+	Foxn1<nu-str>	public	Hfh11<nu-s	Mutant Stocks
 000821	B6 x STOCK lop13	lop13	private		Stocks Carrying Specific Mutant Genes
 000822	B6 x 129/SvEi-+<p> +<Tyr-c> Chx10<or-J>	Chx10<or-J>	public		Stocks Carrying Specific Mutant Genes
-000823	STOCK p<d>/p<6H>	p<6H>	p<d>	public		Stocks Carrying Specific Mutant Genes
+000823	STOCK p<d>/p<6H>	p<6H>|p<d>	public		Stocks Carrying Specific Mutant Genes
 000824	LT.B6-Pep3<a>	Pep3	public		Stocks Carrying Specific Mutant Genes
 000825	LT.CALIF-Pgd<a>	Pgd<a>	private		Miscellaneous Inbred and Congenic Strains
 000826	BALB/cBy-Pgk1<a>		private		
@@ -839,7 +839,7 @@
 000839	WB/Re-Spna1<sph-J>	Spna1<sph-J>	private		Stocks Carrying Specific Mutant Genes
 000840	B6C3Fe-a/a-stu		private		
 000841	B6-A<w-J>.CBy-Eda<Ta-By>/+	Eda<Ta-By>	public		Stocks Carrying Specific Mutant Genes
-000842	C57BL/6JEi-T<hp>	T<hp>	Tas	private		
+000842	C57BL/6JEi-T<hp>	T<hp>|Tas	private		
 000843	B6.C-a Eda<Ta-By>/+ (extinct)		private		
 000844	C3H/HeJ-W<51J>		private		
 000845	B6.CE-Galc<twi>	Galc<twi>/+	public		Stocks Carrying Specific Mutant Genes
@@ -896,7 +896,7 @@
 000896	STOCK Rb(2.18)6Rma Rb(12.14)8Rma		public	RBI/Dn	Chromosome Aberrations
 000897	STOCK In(4)32Rk		public		Chromosome Aberrations
 000898	STOCK Rb(16.17)8Lub		public		Chromosome Aberrations
-000899	C.B6-Tyr<+> Hbb<s>	+<Tyr-c>	Hbb	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+000899	C.B6-Tyr<+> Hbb<s>	+<Tyr-c>|Hbb	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000900	AKR.L/Ei-c<+> Hbb<s>		private		
 000901	B6.L-Cyp2a5<h>/Ty	Cyp2a5<h>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 000902	DBA/2J-cpk/+		private		
@@ -959,7 +959,7 @@
 000959	AKXD-3/Ty		public		Recombinant Inbred Strains
 000960	B6.Cg-Rb(2.8)2Lub		public		Chromosome Aberrations
 000961	B6 x STOCK T(2;3)24H		public		Chromosome Aberrations
-000962	DBA/1J-Myo5a<d+16J>	Myo5a<d+16J>	Myo5a<d>	private		Stocks Carrying Specific Mutant Genes
+000962	DBA/1J-Myo5a<d+16J>	Myo5a<d+16J>|Myo5a<d>	private		Stocks Carrying Specific Mutant Genes
 000963	DBA/2J-Myo5a<d+17J>/Myo5a<d>	Myo5a<d+17J>	public		Stocks Carrying Specific Mutant Genes
 000964	DBA/2J-Myo5a<d+18J>/Myo5a<d>	Myo5a<d+18J>	public		Stocks Carrying Specific Mutant Genes
 000965	CBACa.C3-Kit<W-x>	Kit<W-x>	public		Stocks Carrying Specific Mutant Genes
@@ -970,7 +970,7 @@
 000970	STOCK T(2;16)28H A/T(2;16)28H a		public		Chromosome Aberrations
 000971	B6EiC3H-a/A-Och	Och	public		Stocks Carrying Specific Mutant Genes
 000972	GT/Le		private		
-000973	DBA/2HaSmn	Bmfr1	Bmfr2	public		Miscellaneous Inbred and Congenic Strains
+000973	DBA/2HaSmn	Bmfr1|Bmfr2	public		Miscellaneous Inbred and Congenic Strains
 000974	C57BL/6J-clp/+	clp	public	nm649	Stocks Carrying Specific Mutant Genes
 000975	STOCK Rb(1.3)1Ei		public		Chromosome Aberrations
 000976	C57BL/6J-cht/+	cht	public		Stocks Carrying Specific Mutant Genes
@@ -1018,7 +1018,7 @@
 001018	C3H/HeSn-T tf/t<w5> +		private		
 001019	C3H/HeSn-T tf/t<w12> +		private		
 001020	STOCK In(8)34Rk		public		Chromosome Aberrations
-001021	B6Smn.C3H-Tnfsf6<gld>		public		Stocks Carrying Specific Mutant Genes
+001021	B6Smn.C3-Tnfsf6<gld>		public		Stocks Carrying Specific Mutant Genes
 001022	B6C3FeF1-a/a	a	public		Special F1 Hybrids
 001023	STOCK In(15)35Rk		public		Chromosome Aberrations
 001024	STOCK In(14)36Rk		public		Chromosome Aberrations
@@ -1046,7 +1046,7 @@
 001046	B6CBACa-A<w-J>/A-Grid2<Lc>	Grid<Lc>	public		Stocks Carrying Specific Mutant Genes
 001047	CBySmn.MRL-lpr		private		
 001048	C3HeB/FeJ-md sm		private		
-001049	BKS.Cg-mea<2J> m/+ +	m	mea<2J>	public		Stocks Carrying Specific Mutant Genes
+001049	BKS.Cg-mea<2J> m/+ +	m|mea<2J>	public		Stocks Carrying Specific Mutant Genes
 001050	C57BL/6J-mi		private		
 001051	B6C3Fe-a/a-pk sy<fp>		private		
 001052	B6.L-rv/+	rv	public		Stocks Carrying Specific Mutant Genes
@@ -1064,7 +1064,7 @@
 001064	C3H/HeJ-W<v>/+		private		
 001065	B6.PL(85NS)/Cy	Thy1<a>	public	85NS	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001066	A.TH-H2<t2>/SfDvEgMob	H2<t2>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-001067	A.TL-H2<t1>/SfDvEgMob	H2<g7>	H2<t1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+001067	A.TL-H2<t1>/SfDvEgMob	H2<g7>|H2<t1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001068	B10.M-H2<f>/nMob	H2<f>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001069	B10.RIII-H2<r>(71NS)/nMob	H2<r>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001070	BALB/cWtBm		private		
@@ -1098,9 +1098,9 @@
 001098	STOCK T11H		private		Chromosome Aberrations
 001099	AEJ/GnRk-Rb(11.14)1Dn		public		Chromosome Aberrations
 001100	STOCK Rb(13.16)1Mpl		public		Chromosome Aberrations
-001101	STOCK T5Rk Tyrp1<b>/T5Rk Tyrp1<b>	Tyrp1<b>	public		Chromosome Aberrations
+001101	STOCK T(3;4)5Rk Tyrp1<b>	Tyrp1<b>	public		Chromosome Aberrations
 001102	AEJ.Cg-T(5;8)3Rk		public		Chromosome Aberrations
-001103	HRS/J-hr Es10<b>/+ Es10<b>	Es10<b>	hr	public	Old line	Miscellaneous Inbred and Congenic Strains
+001103	HRS/J-hr Es10<b>/+ Es10<b>	Es10<b>|hr	public	Old line	Miscellaneous Inbred and Congenic Strains
 001104	B6.Cg-tlt	tlt	public		Stocks Carrying Specific Mutant Genes
 001105	C.B-Igh-C<b> Igh-V<a>		private	BAB-25	
 001106	B6.C-Igh<a>		private	B6.C20	
@@ -1160,7 +1160,7 @@
 001160	B6.C-H2<bm10>/KhEg	H2<bm10>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001161	B6.C-H2<bm11>/KhEg	H2<bm11>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001162	B6.C-H2<bm12>/KhEg	H2<bm12>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-001163	B10.D2-H2<bm23>/Eg	H2<bm23>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+001163	B10.D2-H2<bm23>/Eg	H2<bm23>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001164	B10.D2-H2<dm1>/Eg	H2<dm1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001165	BALB/c-H2<dm2>/KhEg	H2<dm2>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001166	B6.A-H2-T18<a>/BoyEg	H2-T18<a>	public	B6-Tla	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -1189,7 +1189,7 @@
 001189	STOCK T(12;17)4Rk		private		Chromosome Aberrations
 001190	Rb(5.19)1Wh x Rb(9.19)163H F1		private		
 001191	Rb(9.19)163H x Rb(5.19)1Wh F1		private		
-001192	BKS.Cg-mea<J> Lepr<db > +/+ + m	Lepr<db>	m	mea<J>	public		Stocks Carrying Specific Mutant Genes
+001192	BKS.Cg-mea<J> Lepr<db> +/+ + m	Lepr<db>|m 001192\tmea<J>	public		Stocks Carrying Specific Mutant Genes
 001193	NX129-1/Ty		public		Recombinant Inbred Strains
 001194	NX129-2/Ty		private		
 001195	NX129-5/Ty		private		
@@ -1227,11 +1227,11 @@
 001227	DBA/2J-Reln<rl-2J>/+		private		
 001228	C57BL/6J-ru<3J>		private		
 001229	Lipari-Kitl<Sl-16J>		private		
-001230	C3H/HeB/FeJ-nr/+ Kitl<Sl-17J>	Kitl<Sl-17J>	nr	private		
+001230	C3HeB/FeJ-nr/+ Kitl<Sl-17J>	Kitl<Sl-17J>|nr	private		
 001231	C3H/HeSn-Kitl<Sl-18J>	Kitl<Sl-18J>	private		
 001232	C3H/HeJ-Eda<Ta-5J>		public		Stocks Carrying Specific Mutant Genes
 001233	C3H/HeSnJ-shm<2J>/+		private		
-001234	Rb(6.16)24Lub-Cacna1a<tg-3J>		private		
+001234	STOCK Rb(6.16)24Lub-Cacna1a<tg-3J>		private		
 001235	DBA/2J-tp<4J>/+		private		
 001236	AKXL-37/Ty-Pmp22<Tr>		private		
 001237	BXD-32/Ty-Tgfa<wa1-5J>	Tgfa<wa1>	private		
@@ -1250,7 +1250,7 @@
 001250	C57BL/6By(HZ300)		private		
 001251	C57BL/6By(HZ400)		private		
 001252	129/Rk		private		
-001253	STOCK Mitf<Mi-wh> +/+ Wnt7a<px>	Mitf<Mi-wh>	Wnt7a<px>	public		Stocks Carrying Specific Mutant Genes
+001253	STOCK Mitf<Mi-wh> +/+ Wnt7a<px>	Mitf<Mi-wh>|Wnt7a<px>	public		Stocks Carrying Specific Mutant Genes
 001254	MEV/1Ty		private	MEV-3B1/Ty	Linkage Testing Stocks
 001255	BALB/cHeA		private		
 001256	9XAB/Sv		private		Recombinant Inbred Strains
@@ -1274,9 +1274,9 @@
 001274	BALB/cBy-Ca<9J>	Ca<9J>	public	Nm1459	Stocks Carrying Specific Mutant Genes
 001275	MXA/Sv		private		
 001276	C3H/HeJ-Atp2b2<dfw>/+	Atp2b2<dfw>	public		Stocks Carrying Specific Mutant Genes
-001277	STOCK md Igl-1<b> Igl1-r<lo>/md Igl-1<b> Igl1-r<lo>	Igl-1<b>	md	public		Stocks Carrying Specific Mutant Genes
+001277	STOCK md Igl-1<b> Igl1-r<lo>/md Igl-1<b> Igl1-r<lo>	Igl-1<b>|md	public		Stocks Carrying Specific Mutant Genes
 001278	B6C3Fe-a/a-Glra1<spd>/+	Glra1<spd>/+	public		Stocks Carrying Specific Mutant Genes
-001279	129T1/Sv-p<+> Tyr<c-ch>-Aft	Aft	Tyr<c-ch>	public		Stocks Carrying Specific Mutant Genes
+001279	129T1/Sv-p<+> Tyr<c-ch>-Aft	Aft|Tyr<c-ch>	public		Stocks Carrying Specific Mutant Genes
 001280	B6C3Fe-a/a-Lse	Lse	public		Stocks Carrying Specific Mutant Genes
 001281	B6.B10-Ea9<b>/Cy	Ea9<b>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001282	C3H.B6(86NS)/Cy		public	86NS	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -1309,12 +1309,12 @@
 001309	STOCK Rb2Dn		private		
 001310	C3H/HeSnJ-sut/+	sut	public		Stocks Carrying Specific Mutant Genes
 001311	BALB/cWtEi		public		Chromosome Aberrations
-001312	C3HeB/FeJ-a<t-43J>	a<t-43J>	a<t>	private		
+001312	C3HeB/FeJ-a<t-43J>	a<t-43J>|a<t>	private		
 001313	C.B-17/IcrSmn-scid Igh<b>		private		
 001314	B10Smn.C-scid		private		
 001315	C57BL/6J-Gpi1<a> Thy1<a>		private		
 001316	C57BL/6J-Igh<a> Thy1<a>		private		
-001317	C57BL/6J-Igh<a> Thy1<a> Gpi1<a>	Gpi1<a>	Igh-1<a>	Thy1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+001317	C57BL/6J-Igh<a> Thy1<a> Gpi1<a>	Gpi1<a>|Igh-1<a> 001317\tThy1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001318	B6Smn.D2HaSmn-Bmfr1		private		
 001319	B6Smn.D2HaSmn-Bmfr1 Bmfr2		private		
 001320	C3H/He-gld Igh<b>		private		
@@ -1366,9 +1366,9 @@
 001366	C3H/HeJSnJ-T tf/t<w71Jr1>		private		
 001367	C57BL/6J-Sl<con>		private		
 001368	B6.Cg-Bsk/+	Bsk	public		Stocks Carrying Specific Mutant Genes
-001369	C57BL/6J-Mpi1<a>	Mpi1	public		Stocks Carrying Specific Mutant Genes
-001370	C57BL/6J-Mor1<b>	Mor1<b>	public		Stocks Carrying Specific Mutant Genes
-001371	B6.SW-Gsr<b> Ldr1<b>	Gsr	Ldr1	public	BC11	Stocks Carrying Specific Mutant Genes
+001369	B6.CAST-Mpi1<a>	Mpi1	public		Stocks Carrying Specific Mutant Genes
+001370	B6.MOR-Mor1<b>	Mor1<b>	public		Stocks Carrying Specific Mutant Genes
+001371	B6.SW-Gsr<b> Ldr1<b>	Gsr|Ldr1	public	BC11	Stocks Carrying Specific Mutant Genes
 001372	B6.Cg-Sdh1<b>	Sdh1<b>	public	BC17	Stocks Carrying Specific Mutant Genes
 001373	C57BL/6J-Ldh1<b>	Ldh1	public	BC18	Stocks Carrying Specific Mutant Genes
 001374	C57BL/6J-Es2<c>	Es2<c>	public	BC19	Stocks Carrying Specific Mutant Genes
@@ -1431,7 +1431,7 @@
 001431	C3H/HeSn-ocd/+	ocd	public		Stocks Carrying Specific Mutant Genes
 001432	STOCK a/a Tyrp1<b> sks/Tyrp1<b> +	sks	public		Stocks Carrying Specific Mutant Genes
 001433	STOCK a/a skt/+	skt	public		Stocks Carrying Specific Mutant Genes
-001434	C3HeB/FeJ x STX/Le-Mc1r<E-so>/+ Gli3<Xt-J>/+ Tw/+	Mc1r<E-so>	Tw	public		Stocks Carrying Specific Mutant Genes
+001434	C3HeB/FeJ x STX/Le-Mc1r<E-so>/+ Gli3<Xt-J>/+ Tw/+	Mc1r<E-so>|Tw	public		Stocks Carrying Specific Mutant Genes
 001435	C57BL/6J-A<w-20J>		private		
 001436	C57BL/6J-A<w-27J>		private		
 001437	B10.BR/SgSnJ-Tnfrsf6<lpr> H2<k> Hps3<coa-3J>/+		private		
@@ -1502,7 +1502,7 @@
 001502	C3Sn.B6-rb	rb	private		Stocks Carrying Specific Mutant Genes
 001503	C3H/HeJ-nm1263/+ (see JR 2075)		private		
 001504	NOR2/LtDn-Chx10<or-2J>/+	Chx10<or-2J>	private		Stocks Carrying Specific Mutant Genes
-001505	STOCK Matp<uw> Gpt1<b> Gdc1<d> bt<2J>	Matp<uw>	bt<2J>	private		Linkage Testing Stocks
+001505	STOCK Matp<uw> Gpt1<b> Gdc1<d> bt<2J>	Matp<uw>|bt<2J>	private		Linkage Testing Stocks
 001506	C57BL/6J-p<un+3J>	p<un+3J>	public		Stocks Carrying Specific Mutant Genes
 001507	BALB/cByJ-Crm	Crm	private		Stocks Carrying Specific Mutant Genes
 001508	C3B6F1-W<x>/W<v>		private		
@@ -1511,7 +1511,7 @@
 001511	STOCK TgN(GPDH-A1)6Bir		public	GPDH-A1	Transgenic Stocks
 001512	B6C3Fe-a/a-mdm	mdm	public		Stocks Carrying Specific Mutant Genes
 001513	C57BL/6J-p<un+5J>	p<un+5J>	public		Stocks Carrying Specific Mutant Genes
-001514	CX8-C/Ei	Tyr<c>	Tyrp1<b>	public		Recombinant Inbred Strains
+001514	CX8-C/Ei	Tyr<c>|Tyrp1<b>	public		Recombinant Inbred Strains
 001515	STOCK TgN(L-FABP, S-GH)7Bir		public		Transgenic Stocks
 001516	B6D2-ho<4J>/+		private		
 001517	C3Sn.Peru-rs<grc>	rs<grc>	public		Stocks Carrying Specific Mutant Genes
@@ -1529,8 +1529,8 @@
 001529	C3H/HeSn-Paf	Paf	public		Stocks Carrying Specific Mutant Genes
 001530	C3H/HeJ-md<6J>/+		private		
 001531	STOCK 77-2 C-4		private		Stocks Carrying Specific Mutant Genes
-001532	CX8-N/Ei	Tyr<c>	Tyrp1<b>	a	public		Recombinant Inbred Strains
-001533	C3HeB/FeJ-Mc1r<E-so>/Mc1r<E-so> Gli3<Xt-J>/+	Gli3<Xt-J>	Mc1r<E-so>	public		Stocks Carrying Specific Mutant Genes
+001532	CX8-N/Ei	Tyr<c>|Tyrp1<b> 001532\ta	public		Recombinant Inbred Strains
+001533	C3HeB/FeJ-Mc1r<E-so>/Mc1r<E-so> Gli3<Xt-J>/+	Gli3<Xt-J>|Mc1r<E-so>	public		Stocks Carrying Specific Mutant Genes
 001534	STOCK T18Dn		private		
 001535	B6 x B6EiC3Sn-a/A-T(8A4;12D1)69Dn/+		public		Chromosome Aberrations
 001536	STOCK T85Dn		private		Chromosome Aberrations
@@ -1566,9 +1566,9 @@
 001566	CX8-G/Ei		public		Recombinant Inbred Strains
 001567	C3HeB/FeJChp-Myo5a<d-l23J>	Myo5a<d-l23J>	private		
 001568	CX8-B/Ei	a	public		Recombinant Inbred Strains
-001569	CX8-D/Ei	Tyrp1<b>	a	public		Recombinant Inbred Strains
-001570	CX8-I1/Ei	Akp1<b>	Tyr<c>	Tyrp1<b>	a	public		Recombinant Inbred Strains
-001571	CX8-I2/Ei	Akp1<a>	Tyr<c>	Tyrp1<b>	a	public		Recombinant Inbred Strains
+001569	CX8-D/Ei	Tyrp1<b>|a	public		Recombinant Inbred Strains
+001570	CX8-I1/Ei	Akp1<b>|Tyr<c> 001570\tTyrp1<b> 001570\ta	public		Recombinant Inbred Strains
+001571	CX8-I2/Ei	Akp1<a>|Tyr<c> 001571\tTyrp1<b> 001571\ta	public		Recombinant Inbred Strains
 001572	B6.Cg-a<m-J>	a<m-J>	public		Stocks Carrying Specific Mutant Genes
 001573	B6C3Fe-a/a-Mitf<mi>	Mitf<mi>/+	public		Stocks Carrying Specific Mutant Genes
 001574	C57BL/6JEi-Y<WSB>		private		Consomic Strains
@@ -1581,8 +1581,8 @@
 001581	CXJ-8/SlkJ		public		Recombinant Inbred Strains
 001582	CXJ-9/SlkJ		public		Recombinant Inbred Strains
 001583	CXJ-15/SlkJ		public		Recombinant Inbred Strains
-001584	STOCK p<J>/p<bs>	p<J>	p<bs>	public		Stocks Carrying Specific Mutant Genes
-001585	STOCK p<d>/p<25H>	p<25H>	p<d>	public		Stocks Carrying Specific Mutant Genes
+001584	STOCK p<J>/p<bs>	p<J>|p<bs>	public		Stocks Carrying Specific Mutant Genes
+001585	STOCK p<d>/p<25H>	p<25H>|p<d>	public		Stocks Carrying Specific Mutant Genes
 001586	LT/SvEiEpg		private		
 001587	STOCK H2<936> line 2		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001588	C3H/HeJ-jd/+	jd	public		Stocks Carrying Specific Mutant Genes
@@ -1598,7 +1598,7 @@
 001598	B6.C3-Gus<h>	Gus	public		Stocks Carrying Specific Mutant Genes
 001599	B6.CAST-Gus<cs>	Gus<cs>	public		Stocks Carrying Specific Mutant Genes
 001600	C57BL/6J-Gus<cl>	Gus	private		Stocks Carrying Specific Mutant Genes
-001601	C57BL/6J-Eg<o> Es1<b>	Eg	Es1<b>	public		Stocks Carrying Specific Mutant Genes
+001601	B6.YBR-Es1<b> Es22<h>/CvJ	Es1<b>|Es22<h>	public		Stocks Carrying Specific Mutant Genes
 001602	B6.MOR-Gus<w5>/Cv	Gus	public		Stocks Carrying Specific Mutant Genes
 001603	B6.A-Gus<a>	Gus	public		Stocks Carrying Specific Mutant Genes
 001604	C57BL/6J-Es22<h> Es1<b> Gus<h>	Gus	public	Eg<0>	Stocks Carrying Specific Mutant Genes
@@ -1622,7 +1622,7 @@
 001622	B6.CAST-Gpi1<a>.Cg-Hba<th-J>	Hba<th-J>	public		Stocks Carrying Specific Mutant Genes
 001623	B6.D2-Car2<o>	Car2	public		Stocks Carrying Specific Mutant Genes
 001624	129/Sv-Sfxn1<f>		private		
-001625	NOD.NON-Thy1<a>  (see 002721)	Thy1<a>	private		
+001625	NOD.NON-Thy1<a>	Thy1<a>	private	SeeJR#2721	
 001626	NOD.NON-H2<nb1>/LtJ	H2<nb1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001627	NON.NOD-H2<g7>/LtJ	H2<g7>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001628	STOCK T(9;17)10Ad		public		Chromosome Aberrations
@@ -1668,7 +1668,7 @@
 001668	LXPL-7/Ty		private		
 001669	LXPL-11/Ty		private		Recombinant Inbred Strains
 001670	LXPL-13/Ty		private		
-001671	MEV/1Ty-Hm Kitl<Sl> Ca<J>	Ca<J>	Hm	private		Linkage Testing Stocks
+001671	MEV/1Ty-Hm Kitl<Sl> Ca<J>	Ca<J>|Hm	private		Linkage Testing Stocks
 001672	C57BL/6J-Otc<spf-J>	Otc<spf-J>	public		Stocks Carrying Specific Mutant Genes
 001673	AXB-1/Pgn		public		Recombinant Inbred Strains
 001674	AXB-2/Pgn		public		Recombinant Inbred Strains
@@ -1709,14 +1709,14 @@
 001709	BXA-23/Pgn		private		
 001710	BXA-24/Pgn		public		Recombinant Inbred Strains
 001711	BXA-25/Pgn		public		Recombinant Inbred Strains
-001712	B6.CE-Cd72<c> Mup1<a>	Cd72<c>	Mup1<a>	public	B6-Lyb-2.3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+001712	B6.CE-Cd72<c> Mup1<a>	Cd72<c>|Mup1<a>	public	B6-Lyb-2.3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001713	129B6F1/J-A<w>/A<w-J>		private		
 001714	C.BKa-Igh<b>/Icr-Prkdc<scid>/Sz	Prkdc<scid>	private		Stocks Carrying Specific Mutant Genes
 001715	CBy.CB17-Prkdc<scid>/Sz	Prkdc<scid>	private	JR1803	
 001716	C3H/HeJ-Prkdc<scid>/Sz		private		
 001717	DBA/2J-Prkdc<scid>/Sz	Prkdc<scid>	private		
 001718	CBA/NJ-Prkdc<scid>/Sz		private		
-001719	C57BL/6J-Prkdc<scid> Lyst<bg-J>/Sz	Lyst<bg-J>	Prkdc<scid>	private		
+001719	C57BL/6J-Prkdc<scid> Lyst<bg-J>/Sz	Lyst<bg-J>|Prkdc<scid>	private		
 001720	SJL/J-scid bg/Sz		private		
 001721	C57BL/6J-hr<rh>		private		
 001722	C.BKa-Igh<b>/IcrSz		private	C.B-17	Stocks Carrying Specific Mutant Genes
@@ -1727,14 +1727,14 @@
 001727	B6.WMP-Rb(2.16)3Mpl/+		public		Chromosome Aberrations
 001728	B6.WMP-Rb(3.12)4Mpl/+		public		Chromosome Aberrations
 001729	B6.WMP-Rb(4.6)5Mpl/+		public		Chromosome Aberrations
-001730	B6-A<w-J>-Eda<Ta-6J>.Cg-Sxr<b> Hya<->	Hya	Sxr<b>	public		Chromosome Aberrations
+001730	B6-A<w-J>-Eda<Ta-6J>.Cg-Sxr<b> Hya<->	Hya|Sxr<b>	public		Chromosome Aberrations
 001731	B6CBACa-A<w-J>/A-Grid2<Lc> T(2;6)7Ca Mitf<Mi-wh>	Grid<Lc>	private		
 001732	B6.WMP-Rb(8.9)8Mpl/+		public		Chromosome Aberrations
 001733	B6.WMP-Rb(10.17)9Mpl/+		public		Chromosome Aberrations
 001734	B6.WMP-Rb(13.15)10Mpl/+		public		Chromosome Aberrations
 001735	C.B17 x B10-Dmd<mdx> scid/Sz	Dmd<mdx>	private		
 001736	NFS/N-Fgv2	Fgv2	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-001737	B6.A-H2-T18<a>.HRS-hr	H2-T18<a>	hr	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+001737	B6.A-H2-T18<a>.HRS-hr	H2-T18<a>|hr	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001738	C57BL/6J-Galc<twi-3J>	Galc<twi-3J>	private		
 001739	BXD-28-Atp7a<Mo-5J>		private		
 001740	NUJM/Ls-Foxn1<nu>/+		private		
@@ -1742,12 +1742,12 @@
 001742	B6C3Fe-a/a-tp<5J>		private		
 001743	STOCK dwg/+	dwg	public		Stocks Carrying Specific Mutant Genes
 001744	C3H/HeSnJ-T tf/t<lub2> +		private		
-001745	B6CBA-A<w>/A-Tyl +/+ Eda<Ta>	Tyl	private		Stocks Carrying Specific Mutant Genes
+001745	B6CBA-A<w>/A Tyl +/+ Eda<Ta>	Tyl	private		Stocks Carrying Specific Mutant Genes
 001746	WMP/PasDn		public		Chromosome Aberrations
-001747	STOCK p<d>/p<cp>	p<cp>	p<d>	public		Stocks Carrying Specific Mutant Genes
+001747	STOCK p<d>/p<cp>	p<cp>|p<d>	public		Stocks Carrying Specific Mutant Genes
 001748	NFS.C3Fg-Emv32	Emv32	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001749	B6 x B6C3H-a/a-T17H		private		
-001750	B6C3Fe-a/a-Xs<J>	Xs<J>	public		Stocks Carrying Specific Mutant Genes
+001750	B6C3Fe a/a-Xs<J>	Xs<J>	public		Stocks Carrying Specific Mutant Genes
 001751	BALB/cGrLs		private		
 001752	B6CBACa-A<w-J>/A-T(7;15)9H		public		Chromosome Aberrations
 001753	STOCK T13H		private		
@@ -1920,8 +1920,8 @@
 001920	LT/SvEi-Y<*>	1920	public		Chromosome Aberrations
 001921	B6Ei.Cg-Rb(1.7)1Rma/+		public		Chromosome Aberrations
 001922	STOCK TgBir16		private		Targeted and Chemically Induced Mutant Stocks
-001923	B6EiC3Sn-a/A-Ts(4<17>)2Lws Tim		public		Chromosome Aberrations
-001924	B6EiC3Sn-a/A-Ts(17<16>)65Dn		public		Chromosome Aberrations
+001923	B6EiC3Sn a/A-Ts(4<17>)2Lws Tim		public		Chromosome Aberrations
+001924	B6EiC3Sn a/A-Ts(17<16>)65Dn		public		Chromosome Aberrations
 001925	BXSB.B6-+<Yaa>/Mob		public		Stocks Carrying Specific Mutant Genes
 001926	B6 x B6EiC3Sn-a/A-T(15;16)198Dn/+		public		Chromosome Aberrations
 001927	C57BL/6-TgN(APOA1)1Rub		public		Transgenic Stocks
@@ -1947,14 +1947,14 @@
 001947	B10.A(2R)/SgSnJ-tp<6J>/+		private		
 001948	STOCK TA -/+ Plp<jp-4J> x + +/Y F1		private		
 001949	C57BL/6-p<12J>/+		private		
-001950	SM-T Glo1<b> H2<571>	Glo1	Glo1<b>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+001950	SM-T Glo1<b> H2<571>	Glo1|Glo1<b>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001951	C.C3-H2<k>/LilMcdJ	H2<k>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001952	C.B10-H2<b>/LilMcdJ	H2<b>	public	BALB.B	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001953	B10.S-H2<s>/SgMcdJ	H2<s>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001954	B10.AQR-H2<y1>/KljMcdJ	H2<y1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 001955	B10.HTT/PhMcdJ		private		
 001956	EL/Suz		public		Miscellaneous Inbred and Congenic Strains
-001957	C3A Pde6b<rd1>.O20/A-Prph2<Rd2>	Pde6b<rd1>	Prph2<Rd2>	public		Stocks Carrying Specific Mutant Genes
+001957	C3A Pde6b<rd1>.O20/A-Prph2<Rd2>	Pde6b<rd1>|Prph2<Rd2>	public		Stocks Carrying Specific Mutant Genes
 001958	C57BL/6JEi x B6C3HF1-T40Dn		private		Chromosome Aberrations
 001959	B6.Cg-jb	jb	public		Stocks Carrying Specific Mutant Genes
 001960	C3HeB/FeJLe		private		
@@ -1964,20 +1964,20 @@
 001964	Mus Saxicola		private		
 001965	C57BL/6J-Pep3<b> Ptprc<a> Hcph<me-v>	Hcph<me-v>	private		
 001966	C57BL/6J-Pep3<b> Prkdc<scid>		private		
-001967	C57BL/6J-scid nu		private		
-001968	C57BL/6J-Prkdc<scid> Dsg3<bal>	Dsg3<bal>	Prkdc<scid>	private		
+001967	C57BL/6J-Prkdc<scid> Foxn1<nu>		private		
+001968	C57BL/6J-Prkdc<scid> Dsg3<bal>	Dsg3<bal>|Prkdc<scid>	private		
 001969	NOD.HRS-Prkdc<scid> hr		private		
 001970	CB17 x BALB/CBy-Prkdc<scid> fsn	fsn	private		
 001971	C57BL/6J-Pep3<b>	Pep3<b>	private		
 001972	B6C3Fe-a/a x BL/6-Csfm<op> Hcph<me-v>		private		
 001973	C57BL/6J-op		private		
-001974	C57BL/6J-Prkdc<scid> Hcph<me-v>	Hcph<me-v>	Prkdc<scid>	private		
+001974	C57BL/6J-Prkdc<scid> Hcph<me-v>	Hcph<me-v>|Prkdc<scid>	private		
 001975	C3H/HeOuJ-Prkdc<scid>		private		
 001976	NOD/LtJ		public		Inbred Strains
 001977	C3H-+/+		private		
 001978	C3H-rd1/rd1		private		
 001979	C3A.BLiA-Pde6b<+>.O20-Prph2<Rd2>	Prph2<Rd2>	public		Stocks Carrying Specific Mutant Genes
-001980	C3H-Pde6b<rd1> Rd2		private		
+001980	C3H-Pde6b<rd1> Prph2<Rd2>		private		
 001981	O20/A-Prph2<Rd2>	Prph2<Rd2>	public		Stocks Carrying Specific Mutant Genes
 001982	IN(2)6Dn		private		
 001983	IN(1)5Dn		private		
@@ -2007,11 +2007,11 @@
 002007	C3HeB/FeJ-Kit<W-76J>/+		private		
 002008	C3HeB/FeJ-Dst<dt-26J>/+		private		
 002009	C57BL/6J-azh/+	azh	public		Stocks Carrying Specific Mutant Genes
-002010	SM/Ckc-Lep<ob-2J>/+	Lep<ob-2J>	Lep<ob>	private		Stocks Carrying Specific Mutant Genes
+002010	SM/Ckc-Lep<ob-2J>/+	Lep<ob-2J>|Lep<ob>	private		Stocks Carrying Specific Mutant Genes
 002011	STOCK TgN(FSE124A)17Bir		public		Transgenic Stocks
 002012	STOCK TgN(GPDH)18Bir		public		Transgenic Stocks
 002013	STOCK TgN(GPDH)19Bir		public		Transgenic Stocks
-002014	B6.SJL-Ptprc<a> Pep3<b>/BoyJ	Pep3<b>	Ptprc	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002014	B6.SJL-Ptprc<a> Pep3<b>/BoyJ	Pep3<b>|Ptprc	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002015	B6;129P-Cftr<tm1Unc>	Cftr<tm1Unc>	public		Targeted and Chemically Induced Mutant Stocks
 002016	C57BL/6-Y<B6-Sxr-a>	Sxr<a>	private		Chromosome Aberrations
 002017	STOCK Tp1Rk		public		Stocks Carrying Specific Mutant Genes
@@ -2023,8 +2023,8 @@
 002023	SWR.M-Emv21/22		public		
 002024	B10.D1-H2<q>/SgJ		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002025	C57BL/6J-Ts65Dn		private		
-002026	BALB/cHeA-Foxe3<dyl>/Foxe3<dyl>	Foxe3	Foxe3<dyl>	public		Stocks Carrying Specific Mutant Genes
-002027	129S8/SvEv@J-Gpi1<c> Hprt<b-m2>	Gpi1<c>	Hprt	public		Targeted and Chemically Induced Mutant Stocks
+002026	BALB/cHeA-Foxe3<dyl>/Foxe3<dyl>	Foxe3|Foxe3<dyl>	public		Stocks Carrying Specific Mutant Genes
+002027	129S8/SvEv@J-Gpi1<c> Hprt<b-m2>	Gpi1<c>|Hprt	public		Targeted and Chemically Induced Mutant Stocks
 002028	DBA/2-TgN(pHRD)1Storb		public		Transgenic Stocks
 002029	C57BL/6-TgN(lambda2E[H])2Storb		public		Transgenic Stocks
 002030	C57BL/6-TgN(g2b/mumem)3Storb		public		Transgenic Stocks
@@ -2035,7 +2035,7 @@
 002035	NOD/Lt-Tg(H2-Ea<d>)12Lt		public		Transgenic Stocks
 002036	B/Ks.B6/J-Tfm		private		
 002037	C57BL/6J-cpy/+	cpy	public		Stocks Carrying Specific Mutant Genes
-002038	CB17;HPG-Prkdc<scid> Gnrh<hpg>/Bm	Gnrh<hpg>	Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
+002038	CB17;HPG-Prkdc<scid> Gnrh<hpg>/Bm	Gnrh<hpg>|Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
 002039	C57BL/6JEi-Eh	Eh	private		Stocks Carrying Specific Mutant Genes
 002040	RB126Bnr/Ei		public		Combined Robertsonian (Rb) Stocks
 002041	RB16Bnr/Ei		public		Combined Robertsonian (Rb) Stocks
@@ -2044,7 +2044,7 @@
 002044	B6Ei.Cg-Atp7a<Mo-blo>	Atp7a<Mo-blo>	public		Stocks Carrying Specific Mutant Genes
 002045	C.SJL-Tcra<c>/Slk	Tcra<c>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002046	C.SJL-Tcrb<a>/Slk	Tcrb<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-002047	C.SJL-Tcrb<a> Tcra<c>/Slk	Tcra<c>	Tcrb<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002047	C.SJL-Tcrb<a> Tcra<c>/Slk	Tcra<c>|Tcrb<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002048	B6 x C57BLKS-m Lepr<db> Myo15<sh2-J>	Myo15<sh2-J>	public		Stocks Carrying Specific Mutant Genes
 002049	B6C3H-T65Dn		private		
 002050	NOR/LtJ		public		Miscellaneous Inbred and Congenic Strains
@@ -2071,7 +2071,7 @@
 002071	B6 x B6EiC3Sn-a/A-T(11;17)202Dn/+		public		Chromosome Aberrations
 002072	C57BL/6J-Pcdh15<av-3J>/+	Pcdh15<av-3J>	public		Stocks Carrying Specific Mutant Genes
 002073	B6;129S-Gtrosa26		public		Transgenic Stocks
-002074	B6.Cg-H1<b> Hbb<d> Gpi1<a>/Deh	Gpi1<a>	Hbb<d>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002074	B6.Cg-Gpi1<a> Hbb<d> H1<b>/Deh	Gpi1<a>|Hbb<d>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002075	C3H/HeJ-Dct<Slt-lt>	Dct<Slt-lt>	private		Stocks Carrying Specific Mutant Genes
 002076	B6.D2-Mtv7<a>/Ty (Same as 1930)		private		
 002077	B6;129S7-Ldlr<tm1Her>	Ldlr	public		Targeted and Chemically Induced Mutant Stocks
@@ -2118,8 +2118,8 @@
 002118	B6.129P2-Tcrb<tm1Mom>	Tcrb	public		Targeted and Chemically Induced Mutant Stocks
 002119	B6;129P2-Tcrd<tm1Mom>	Tcrd	public		Targeted and Chemically Induced Mutant Stocks
 002120	B6.129P2-Tcrd<tm1Mom>	Tcrd	public		Targeted and Chemically Induced Mutant Stocks
-002121	B6;129P-Tcrb<tm1Mom> Tcrd<tm1Mom>	Tcrb	Tcrd	public		Targeted and Chemically Induced Mutant Stocks
-002122	B6.129P2-Tcrb<tm1Mom> Tcrd<tm1Mom>	Tcrb	Tcrd	public		Targeted and Chemically Induced Mutant Stocks
+002121	B6;129P-Tcrb<tm1Mom> Tcrd<tm1Mom>	Tcrb|Tcrd	public		Targeted and Chemically Induced Mutant Stocks
+002122	B6.129P2-Tcrb<tm1Mom> Tcrd<tm1Mom>	Tcrb|Tcrd	public		Targeted and Chemically Induced Mutant Stocks
 002123	B6;129S-Dnmt<tm1Jae>	Dnmt	public		Targeted and Chemically Induced Mutant Stocks
 002124	C;129S-Ngfr<tm1Jae>	Ngfr	public		Targeted and Chemically Induced Mutant Stocks
 002125	STOCK Mpv17	Mpv17	private		
@@ -2132,19 +2132,19 @@
 002132	STOCK nm1839		private		
 002133	STOCK nm1863		private		Stocks Carrying Specific Mutant Genes
 002134	C57BL/6J-Mitf<mi-vit>	Mitf<mi-vit>	public		Stocks Carrying Specific Mutant Genes
-002135	C.Cg-In1Rk		public		Chromosome Aberrations
-002136	C.Cg-In13Rk		public		Chromosome Aberrations
-002137	C.Cg-In12Rk		public		Chromosome Aberrations
+002135	C.Cg-In(1)1Rk		public		Chromosome Aberrations
+002136	C.Cg-In(7)13Rk		public		Chromosome Aberrations
+002137	C.Cg-In(1)12Rk		public		Chromosome Aberrations
 002138	STOCK 77-2 line 7		private		Miscellaneous Inbred and Congenic Strains
 002139	STOCK Nr2e3<rd7>	Nr2e3<rd7>	public		Stocks Carrying Specific Mutant Genes
 002140	C3H/HeJ-Ap3b1<pe> Pde6b<+>		private		
 002141	B6Pin.SPRET-Ap3b1<+>	Ap3b1-<pe-+Pin>	public		Stocks Carrying Specific Mutant Genes
 002142	STOCK 11R30m		public		
-002143	C3H.B-p<+> Mtv1<o>		private		
+002143	C3.B-p<+> Mtv1<o>		private		
 002144	129-Beta2M		private		
 002145	B6.B10-Y<del> Line 1		public		Consomic Strains
 002146	B6.B10-Y<del> Line 2		public		Consomic Strains
-002147	STOCK T/t<w2>	T	t<w2>	private		Stocks Carrying Specific Mutant Genes
+002147	STOCK T/t<w2>	T|t<w2>	private		Stocks Carrying Specific Mutant Genes
 002148	STOCK t<w82>/t<w82>	t<w82>	private		Stocks Carrying Specific Mutant Genes
 002149	STOCK t<h49>/t<h49>	t<h49>	private		Stocks Carrying Specific Mutant Genes
 002150	STOCK Tg(3A7)		private		
@@ -2155,7 +2155,7 @@
 002155	C57BL/6J-Tg2Jcs		private		
 002156	C57BL/6J-Tg(DONORA)		private		
 002157	C57BL/6J-Tg(DONORD)		private		
-002158	STOCK T t<s6>/+ +	T	t<s6>	private		Stocks Carrying Specific Mutant Genes
+002158	STOCK T t<s6>/+ +	T|t<s6>	private		Stocks Carrying Specific Mutant Genes
 002159	STOCK Tg1.6-Tcr-Lac-Sv		private		Transgenic Stocks
 002160	129/SvJ-T t<low3H>/+		private		
 002161	STOCK T t<h50>/+	t<h50>	private		Stocks Carrying Specific Mutant Genes
@@ -2186,7 +2186,7 @@
 002186	STOCK Trp53<m1Tyj> (Same as 2103)		private		
 002187	B6;129S7-Amh<tm1Bhr>	Amh	private		Targeted and Chemically Induced Mutant Stocks
 002188	B6.129S7-Amh<tm1Bhr>	Amh	public		Targeted and Chemically Induced Mutant Stocks
-002189	B6;129S-Ass1<tm1Bay>	Ass1	public		Targeted and Chemically Induced Mutant Stocks
+002189	B6;129S7-Ass1<tm1Bay>	Ass1	public		Targeted and Chemically Induced Mutant Stocks
 002190	C57BL/6J-Ass1<tm1Bay>		private		
 002191	STOCK TgN(MTnlacZ)204Bri		private		
 002192	B6.129S7-Gtrosa26		public		Transgenic Stocks
@@ -2208,13 +2208,13 @@
 002208	CFW-Mpv17	Mpv17	public		Transgenic Stocks
 002209	STOCK TgN(Mt1)174Bri	Mt1	public		Transgenic Stocks
 002210	C57BL/6J-TgN(Mt1)174Bri	Mt1	public		Transgenic Stocks
-002211	129S7/SvEvBrd-Mt1<tm1Bri> Mt2<tm1Bri>	+<Tyr-c>	Mt1	Mt2	public		Targeted and Chemically Induced Mutant Stocks
+002211	129S7/SvEvBrd-Mt1<tm1Bri> Mt2<tm1Bri>	+<Tyr-c>|Mt1 002211\tMt2	public		Targeted and Chemically Induced Mutant Stocks
 002212	C57BL/6J-Mt1<tm1Bri> Mt2<tm1Bri>		private		
 002213	B6.129S4-Ngfr<tm1Jae>	Ngfr	public		Targeted and Chemically Induced Mutant Stocks
 002214	B6SJL-TgN(Alb1Plau)144Bri		public		Transgenic Stocks
 002215	C57BL/6J-TgN(Alb1Plau)144Bri		private		
 002216	B6.129S7-Rag1<tm1Mom>	Rag1	public		Targeted and Chemically Induced Mutant Stocks
-002217	B6;129S2-Selp<tm1Hyn	Selp	public		Targeted and Chemically Induced Mutant Stocks
+002217	B6;129S2-Selp<tm1Hyn>	Selp	public		Targeted and Chemically Induced Mutant Stocks
 002218	C57BL/6J-Selp<m1>	Selp	private		
 002219	B6.129P2-Tgfa<tm1Ard>	Tgfa	public		Targeted and Chemically Induced Mutant Stocks
 002220	B6.129S2-Tgfb1<tm1Doe>	Tgfb1	public		Targeted and Chemically Induced Mutant Stocks
@@ -2242,8 +2242,8 @@
 002242	B10.PL(73NS)/Sn-Dst<dt-27J>		private		
 002243	DDY/Jcl		public		Miscellaneous Inbred and Congenic Strains
 002244	C57BL/6J-TgN(Apoa2)1Lus	Apoa2	public		Transgenic Stocks
-002245	B6;129-Apoe<tm1Unc> Ldlr<tm1Her>	Apoe	Ldlr	public		Targeted and Chemically Induced Mutant Stocks
-002246	B6.129-Apoe<tm1Unc> Ldlr<tm1Her>	Apoe	Ldlr	public		Targeted and Chemically Induced Mutant Stocks
+002245	B6;129-Apoe<tm1Unc> Ldlr<tm1Her>	Apoe|Ldlr	public		Targeted and Chemically Induced Mutant Stocks
+002246	B6.129-Apoe<tm1Unc> Ldlr<tm1Her>	Apoe|Ldlr	public		Targeted and Chemically Induced Mutant Stocks
 002247	B6;129S2-Gzmb<tm1Ley>	Gzmb	public		Targeted and Chemically Induced Mutant Stocks
 002248	B6.129S2-Gzmb<tm1Ley>	Gzmb	public		Targeted and Chemically Induced Mutant Stocks
 002249	B10.129S2(B6)-Igh-6<tm1Cgn>	Igh-6	public		Targeted and Chemically Induced Mutant Stocks
@@ -2282,7 +2282,7 @@
 002282	BTBR T<+> tf/tf		public		Miscellaneous Inbred and Congenic Strains
 002283	C57BL/6JEi-Kit<W-19H>	Kit<W-19H>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002284	B6.129-Ab<o>/Dcr		private		
-002285	B6.129S7-Icam1<tm1Bay> Selp<tm1Bay>	Icam1	Selp	public		Targeted and Chemically Induced Mutant Stocks
+002285	B6.129S7-Icam1<tm1Bay> Selp<tm1Bay>	Icam1|Selp	public		Targeted and Chemically Induced Mutant Stocks
 002286	C.129S7(B6)-Ifng<tm1Ts>	Ifng	public		Targeted and Chemically Induced Mutant Stocks
 002287	B6.129S7-Ifng<tm1Ts>	Ifng	public		Targeted and Chemically Induced Mutant Stocks
 002288	B6.129S2-Igh-6<tm1Cgn>	Igh-6	public		Targeted and Chemically Induced Mutant Stocks
@@ -2307,11 +2307,11 @@
 002307	WB/Re-an	an	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002308	STOCK rd5		private		
 002309	NOD.129P2(B6)-B2m<tm1Unc>	B2m	public		Targeted and Chemically Induced Mutant Stocks
-002310	NOD-H2<nb1> B2m<tm1Unc>	B2m	H2<nb1>	private		
-002311	NOD-H2<q> B2m<tm1Unc>	B2m	H2<q>	private		
+002310	NOD-H2<nb1> B2m<tm1Unc>	B2m|H2<nb1>	private		
+002311	NOD-H2<q> B2m<tm1Unc>	B2m|H2<q>	private		
 002312	NOD.CB17-Prkdc<scid>	Prkdc<scid>	private		Stocks Carrying Specific Mutant Genes
-002313	NOD/LtSz-Prkdc<scid> Emv30<b>	Emv30	Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
-002314	NOD.B6-Il2 Tshb	Il2	Tshb	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002313	NOD.Cg-Prkdc<scid> Emv30<b>/Dvs	Emv30|Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
+002314	NOD.B6-Il2 Tshb	Il2|Tshb	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002315	NOD-D3Nds12 D3Mit51		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002316	NOD.B6-(D3Mit51-D3Nds8)/Dvs		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002317	B6;129S7-Akp2<tm1Sor>	Akp2	public		Targeted and Chemically Induced Mutant Stocks
@@ -2335,7 +2335,7 @@
 002335	SKH2/J hr	hr	public		Stocks Carrying Specific Mutant Genes
 002336	B6EiC3H-a/A-T239Dn		private		
 002337	DBA/2J-pdw	pdw	public		Stocks Carrying Specific Mutant Genes
-002338	NFS.Cg-Hm	Hm	Rmcf<s>	public	NFS.HM	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002338	NFS.Cg-Hm	Hm|Rmcf<s>	public	NFS.HM	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002339	B6C3Fe-a/a-nma	nma	public	nm1247	Stocks Carrying Specific Mutant Genes
 002340	C3H/HeJ-nm1760		private		Stocks Carrying Specific Mutant Genes
 002341	BL/KAAL-cpdm		private		Stocks Carrying Specific Mutant Genes
@@ -2343,7 +2343,7 @@
 002343	B6EiC3Sn-a/A-Otc<spf>	Otc<spf>	public		Stocks Carrying Specific Mutant Genes
 002344	B6CBACa-A<w-J>/A-T9H Ca<13J>		private	nm1990	
 002345	NXSM-C/Ei-Dct<slt-2J>/+	Dct<slt-2J>	public		Stocks Carrying Specific Mutant Genes
-002346	NOD.NOR-(D2Mit490-D2Mit144)	Idd13<NOR>	Il1b<B6>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002346	NOD.NOR-(D2Mit490-D2Mit144)	Idd13<NOR>|Il1b<B6>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002347	NOR.NOD-Il1	Il1	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002348	NOcCB1/Lt		public		Recombinant Inbred Strains
 002349	CBcNO6/Lt		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -2360,8 +2360,8 @@
 002360	C57BL/6J-Asgr2<tm1Her>		private		
 002361	B6;129S7-Asgr2<tm1Her>	Asgr2	public		Targeted and Chemically Induced Mutant Stocks
 002362	B6.129P2-Camk2a<tm1Sva>	Camk2a	public		Targeted and Chemically Induced Mutant Stocks
-002363	C57BL/6J-Cftr<tm1Unc>-TgN(FABPCFTR)#Jaw		private		
-002364	STOCK Cftr<tm1Unc>-TgN(FABPCFTR)#Jaw	Cftr	public		Transgenic Stocks
+002363	C57BL/6J-Cftr<tm1Unc>-TgN(FABPCFTR)1Jaw		private		
+002364	STOCK Cftr<tm1Unc>-TgN(FABPCFTR)1Jaw	Cftr	public		Transgenic Stocks
 002365	B6.129S6-Cybb<tm1Din>	Cybb	public		Targeted and Chemically Induced Mutant Stocks
 002366	C57BL/6J-Cybb<tm1>	Cybb	private		
 002367	B6;129S4-Hexa<tm1Rlp>	Hexa	public		Targeted and Chemically Induced Mutant Stocks
@@ -2379,14 +2379,14 @@
 002379	B6Ros.Cg-Dmd<mdx-5Cv>	Dmd<mdx-5Cv>	public		Targeted and Chemically Induced Mutant Stocks
 002380	NOD/Lt-Tg(RipTAg)1Lt Prkdc<scid>/DvsJ		public		Transgenic Stocks
 002381	B6;129S7-Src<tm1Sor>	Src	public		Targeted and Chemically Induced Mutant Stocks
-002382	B6;129S-Ttr<tm1Wsb>	Ttr	public		Targeted and Chemically Induced Mutant Stocks
+002382	B6;129S6-Ttr<tm1Wsb>	Ttr	public		Targeted and Chemically Induced Mutant Stocks
 002383	129/Sv-Ttr<tm1Wsb>	Ttr	private		
 002384	FVB/N-TgN(UcpDta)1Kz		public		Transgenic Stocks
 002385	B6;129S7-Fyn<tm1Sor>	Fyn	public		Targeted and Chemically Induced Mutant Stocks
 002386	C57BL/6JEi-T<22H>	T	private		Stocks Carrying Specific Mutant Genes
 002387	129-Asgr2<tm1Her>	Asgr2	public		Targeted and Chemically Induced Mutant Stocks
 002388	B6Ros.Cg-Dmd<mdx-2Cv>	Dmd<mdx-2Cv>	public		Targeted and Chemically Induced Mutant Stocks
-002389	B6.S/Ut-Fv1<b> Mst1r<Fv2-s> Mod1<a>	Fv1<b>	Mod1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002389	B6.S/Ut-Fv1<b> Mst1r<Fv2-s> Mod1<a>	Fv1<b>|Mod1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002390	SIM/Ut		public		Miscellaneous Inbred and Congenic Strains
 002391	BKS.HRS-Cpe<fat>/J	Cpe<fat>	public		Stocks Carrying Specific Mutant Genes
 002392	STOCK T1F8		private		
@@ -2400,7 +2400,7 @@
 002400	C57BL/6-Igk-C<tm1Cgn>	Igk-C	public		Targeted and Chemically Induced Mutant Stocks
 002401	B6.129S2-Igl-5<tm1Cgn>	Igl-5	public		Targeted and Chemically Induced Mutant Stocks
 002402	B6;129S7-Lifr<tm1Imx>	Lifr	public		Targeted and Chemically Induced Mutant Stocks
-002403	STOCK Mag<tm1Rod>	Mag	Mos	public		Targeted and Chemically Induced Mutant Stocks
+002403	STOCK Mag<tm1Rod>	Mag|Mos	public		Targeted and Chemically Induced Mutant Stocks
 002404	STOCK Mos<tm1Ev>	Mos	public		Targeted and Chemically Induced Mutant Stocks
 002405	B6.129P2-Ncam<tm1Cgn>	Ncam	public		Targeted and Chemically Induced Mutant Stocks
 002406	C57BL/6-TgN(PRG1)17Wlvr		private		Transgenic Stocks
@@ -2429,7 +2429,7 @@
 002429	B6,129-Nfe2<tm1Sho>	Nfe2	private		
 002430	B6;129S4-Tal1<tm1Sho>	Tal1	public		Targeted and Chemically Induced Mutant Stocks
 002431	SJL-Thy1<a>	Thy1<a>	private		
-002432	B6J x B6.C-H2<bm1>/ByJ-Cdh23<v-J>/+	Cdh23<v-J>	H2<bm1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002432	B6J x B6.C-H2<bm1>/ByJ-Cdh23<v-J>/+	Cdh23<v-J>|H2<bm1>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002433	C3H/HeJ-Spnb4<qv-lnd2J>/+	Spnb4<qv-lnd2J>	public	nm1667	Stocks Carrying Specific Mutant Genes
 002434	B6 x BALB/cByJ-mceph/+	mceph	public		Stocks Carrying Specific Mutant Genes
 002435	STOCK Rb3,4,7Bnr/Ei		private		Combined Robertsonian (Rb) Stocks
@@ -2452,17 +2452,17 @@
 002452	SJL.129P2(B6)-B2m<tm1Unc>	B2m	public		Targeted and Chemically Induced Mutant Stocks
 002453	MRL.129P2(B6)-B2m<tm1Unc>	B2m	public		Targeted and Chemically Induced Mutant Stocks
 002454	B10.129P2(B6)-B2m<tm1Unc>	B2m	public		Targeted and Chemically Induced Mutant Stocks
-002455	MRL-Tnfrsf6<lpr>.129P2(B6)-B2m<tm1Unc>	B2m	Tnfrsf6<lpr>	public		Targeted and Chemically Induced Mutant Stocks
+002455	MRL-Tnfrsf6<lpr>.129P2(B6)-B2m<tm1Unc>	B2m|Tnfrsf6<lpr>	public		Targeted and Chemically Induced Mutant Stocks
 002456	FVB/N-TgN(CryHIVPR)72Gjj		public		Transgenic Stocks
 002457	CBA/J-wl<3J>/+	wl<3J>	private	nm2017	Stocks Carrying Specific Mutant Genes
 002458	B6;129S2-Abcb2<tm1Arp>		public		Targeted and Chemically Induced Mutant Stocks
 002459	B6D2-TgN(MMTVTGFA)254Rjc		public		Transgenic Stocks
-002460	C3H/HeJ-p<J>/p<J> Is40H		public		Chromosome Aberrations
+002460	C3H/HeJ-p<J>/p<J> Is(7;1)40H		public		Chromosome Aberrations
 002461	B6;129P2-Cbs<tm1Unc>	Cbs	public		Targeted and Chemically Induced Mutant Stocks
 002462	B6;129S4-Il2ra<tm1Dw>	Il2ra	public		Targeted and Chemically Induced Mutant Stocks
 002463	B6.129S-Itga4<tm1Hyn>	Itga4	public		Targeted and Chemically Induced Mutant Stocks
 002464	B6;129S7-Lrpap1<tm1Her>	Lrpap1	public		Targeted and Chemically Induced Mutant Stocks
-002465	B6;129S-Ldlr<tm1Her> Lrpap1<tm1Her>	Ldlr	Lrpap1	public		Targeted and Chemically Induced Mutant Stocks
+002465	B6;129S-Ldlr<tm1Her> Lrpap1<tm1Her>	Ldlr|Lrpap1	public		Targeted and Chemically Induced Mutant Stocks
 002466	B6;129P2-Prkcc<tm1Stl>	Prkcc	public		Targeted and Chemically Induced Mutant Stocks
 002467	C57BL/6JEi-Y<TIR>		private		Consomic Strains
 002468	KK.Cg-A<y>/J	A<y>	public		Stocks Carrying Specific Mutant Genes
@@ -2470,8 +2470,8 @@
 002470	B6EiC3Sn x B6-Rb(5.8)3Dn		public		Chromosome Aberrations
 002471	STOCK TgN(hCMV-Cre)140Sau		public		Transgenic Stocks
 002472	B10.A/SgSnJ-Hps3<coa-5J>/+	Hps3<coa-5J>	public		Stocks Carrying Specific Mutant Genes
-002473	B6,129S2-Cdh1<tm1Kem>	Cd40l	Cdh1	public		Targeted and Chemically Induced Mutant Stocks
-002474	B6;129S4-Klf1<tm1Sho>	Klf1	Klf1<tm1Sho>	public		Targeted and Chemically Induced Mutant Stocks
+002473	B6;129S2-Cdh1<tm1Kem>	Cd40l|Cdh1	public		Targeted and Chemically Induced Mutant Stocks
+002474	B6;129S4-Klf1<tm1Sho>	Klf1|Klf1<tm1Sho>	public		Targeted and Chemically Induced Mutant Stocks
 002475	B6.129S1-Myf6<tm1Wb>	Myf6	public		Targeted and Chemically Induced Mutant Stocks
 002476	B6;129S7-Ptgs2<tm1Jed>	Ptgs2	public		Targeted and Chemically Induced Mutant Stocks
 002477	B6;129S-Syn2<tm1Sud>	Syn2	public		Targeted and Chemically Induced Mutant Stocks
@@ -2488,7 +2488,7 @@
 002488	C57BL/6J-H2<bm3>/Eg-Tyr<c-18J>		private		
 002489	CBA/CaGnLe-Cryaa<lop18>	Cryaa<lop18>	public		Stocks Carrying Specific Mutant Genes
 002490	B6.B10-Y<RIII>		public		Consomic Strains
-002491	B6.Cg-TgN(MbpReg)36Pop enr<Tgn36Pop>	Mbp	enr	public		Transgenic Stocks
+002491	B6.Cg-TgN(MbpReg)36Pop enr<Tgn36Pop>	Mbp|enr	public		Transgenic Stocks
 002492	B6.MDB-Mbp<shi-mld>	Mbp<shi-mld>	public		Stocks Carrying Specific Mutant Genes
 002493	STOCK Ada<tm1Mw>	Ada	public		Targeted and Chemically Induced Mutant Stocks
 002494	B6;129S2-Cga<tm1Sac>	Cga	public		Targeted and Chemically Induced Mutant Stocks
@@ -2555,27 +2555,27 @@
 002555	C57BL/6J-nm2095		private		
 002556	C57BL/6J-ob-v<2J>  (see JR2552)		private		
 002557	B6Ei.GL-het/+	het	public		Stocks Carrying Specific Mutant Genes
-002558	BALB/cByJ-Hbb<s> Gpi1<b>	Gpi1<b>	Hbb<s>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002558	BALB/cByJ-Hbb<s> Gpi1<b>	Gpi1<b>|Hbb<s>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002559	DBA/2J-Hbb<s> Gpi1<b>		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002560	B6.STOCK-sti	sti	private		Stocks Carrying Specific Mutant Genes
 002561	C57BL/6J-jck	jck	public		Stocks Carrying Specific Mutant Genes
-002562	MEV/4Ty	Emv11	Emv14	Emv20	Emv23	Emv24	Emv25	Emv26	Emv27	Emv3	Emv34	Emv35	Emv40	Emv49	Emv54	Emv56	a<t>	private		
-002563	MEV/4Ty-+<Ps> Mitf<Mi-wh> Ca<J>	Ca<J>	Emv11	Emv14	Emv20	Emv23	Emv24	Emv25	Emv26	Emv27	Emv3	Emv34	Emv35	Emv40	Emv49	Emv54	Emv56	Mitf<Mi-wh>	private		
+002562	MEV/4Ty	Emv11|Emv14 002562\tEmv20 002562\tEmv23 002562\tEmv24 002562\tEmv25 002562\tEmv26 002562\tEmv27 002562\tEmv3 002562\tEmv34 002562\tEmv35 002562\tEmv40 002562\tEm	private		
+002563	MEV/4Ty-+<Ps> Mitf<Mi-wh> Ca<J>	Ca<J>|Emv11 002563\tEmv14 002563\tEmv20 002563\tEmv23 002563\tEmv24 002563\tEmv25 002563\tEmv26 002563\tEmv27 002563\tEmv3 002563\tEmv34 002563\tEmv35 002563\tEm	private		
 002564	C57BL/6J-cmp	cmp	private		
-002565	A.B6-Tyr<+>	+<Tyr-c>	+<cmp>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002565	A.B6-Tyr<+>	+<Tyr-c>|+<cmp>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002566	C57BL/6-Atp7a<Mo-br>	Atp7a<Mo-br>	public		Stocks Carrying Specific Mutant Genes
 002567	DW/J-nm2335		private		
 002568	C57BL/6J-TgN(pPWL88puro)4Ems		private		
 002569	C57BL/6J-TgN(Zfy1lacZ)218Bri	Zfy1	private		
-002570	NOD.Cg-Prkdc<scid> B2m<tm1Unc>/J	B2m	Prkdc<scid>	public		Targeted and Chemically Induced Mutant Stocks
-002571	NOD.Cg-Prkdc<scid>-B2m<b>/Dvs	B2m	Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
+002570	NOD.Cg-Prkdc<scid> B2m<tm1Unc>/J	B2m|Prkdc<scid>	public		Targeted and Chemically Induced Mutant Stocks
+002571	NOD.Cg-Prkdc<scid>-B2m<b>/Dvs	B2m|Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
 002572	NOD.129S2(B6)-Igh-6<tm1Cgn>	Igh-6	public		Targeted and Chemically Induced Mutant Stocks
-002573	NOD-Il2<tm1Hor>	Il2	private		Targeted and Chemically Induced Mutant Stocks
+002573	NOD.129P2(B6)-Il2<tm1Hor>/Dvs	Il2	private		Targeted and Chemically Induced Mutant Stocks
 002574	NOD.129P2(B6)-Il4<tm1Cgn>/Dvs	Il4	private		Targeted and Chemically Induced Mutant Stocks
 002575	NOD.129S7(B6)-Ifng<tm1Ts>/DvsJ	Ifng	public		Targeted and Chemically Induced Mutant Stocks
-002576	NOD.B6D2-TgN(TcrLCMV)327Sdz/Dvs	Tcra	Tcrb	public		Targeted and Chemically Induced Mutant Stocks
-002577	B6;CB17-Ghrhr<lit> Prkdc<scid>/Bm	Ghrhr<lit>	Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
-002578	STOCK Ar<Tfm> Prkdc<scid>/Bm	Ar<Tfm>	Prkdc<scid>	private		
+002576	NOD.B6D2-TgN(TcrLCMV)327Sdz/Dvs	Tcra|Tcrb	public		Targeted and Chemically Induced Mutant Stocks
+002577	B6;CB17-Ghrhr<lit> Prkdc<scid>/Bm	Ghrhr<lit>|Prkdc<scid>	public		Stocks Carrying Specific Mutant Genes
+002578	STOCK Ar<Tfm> Prkdc<scid>/Bm	Ar<Tfm>|Prkdc<scid>	private		
 002579	NOD.Cg-Prkdc<scid>-TgN(L-FABP, S-GH)7Bir/Bm		public		Stocks Carrying Specific Mutant Genes
 002580	STOCK Agt<tm1Unc>		private		
 002581	STOCK Agt<tm2Unc>		private		
@@ -2613,7 +2613,7 @@
 002613	C.B10-H2<b>/LilMcdJ-sy<fp-2J>/+	sy<fp-2J>	private		Stocks Carrying Specific Mutant Genes
 002614	B6.B10-Y<del> Line 3		public		Consomic Strains
 002615	B6.B10-Y<del> Line 4		public		Consomic Strains
-002616	B6.129S7-Hba-a1<tm1Paz> Hba-a2<tm1Paz>	Hba-a1	Hba-a2	public		Targeted and Chemically Induced Mutant Stocks
+002616	B6.129S7-Hba-a1<tm1Paz> Hba-a2<tm1Paz>	Hba-a1|Hba-a2	public		Targeted and Chemically Induced Mutant Stocks
 002617	C57BL/6-Lef1<tm1>		private		
 002618	C57BL/6J-TgN(MMTVtTA)1Mam		public		Transgenic Stocks
 002619	B6.129-Tgfb3<tm1Doe>	Tgfb3	public		Targeted and Chemically Induced Mutant Stocks
@@ -2651,7 +2651,7 @@
 002651	B6.Cg-Rora<sg>/+	Rora<sg>	public		Stocks Carrying Specific Mutant Genes
 002652	STOCK a/a Es1<e>/Es1<e> lu<3J>		private	nm2186	Stocks Carrying Specific Mutant Genes
 002653	C3H,D2-Atrn<mg-5J>	Atrn<mg-5J>	private		Stocks Carrying Specific Mutant Genes
-002654	C57BL/6-Nr5a1<tm1Klp>	Nr5a1	private	Ftzf1	Targeted and Chemically Induced Mutant Stocks
+002654	B6.129P2-Nr5a1<tm1Klp>	Nr5a1	private	Ftzf1	Targeted and Chemically Induced Mutant Stocks
 002655	Mus pahari/Ei		public		Wild-Derived Strains
 002656	STOCK En1<tm1Alj>	En1	public		Targeted and Chemically Induced Mutant Stocks
 002657	B6;129S2-En2<tm1Alj>	En2	public		Targeted and Chemically Induced Mutant Stocks
@@ -2661,7 +2661,7 @@
 002661	B6;SJL-TgN(EPO33)72Ptc		public		Transgenic Stocks
 002662	BALB/c-Fech<m1Pas>	Fech	public		Targeted and Chemically Induced Mutant Stocks
 002663	B6.129S2-Cd4<tm1Mak>	Cd4	public		Targeted and Chemically Induced Mutant Stocks
-002664	B6;129S-Cd4<tm1Mak> Cd8a<tm1Mak>	Cd4	Cd8a	public		Targeted and Chemically Induced Mutant Stocks
+002664	B6;129S-Cd4<tm1Mak> Cd8a<tm1Mak>	Cd4|Cd8a	public		Targeted and Chemically Induced Mutant Stocks
 002665	B6.129S2-Cd8a<tm1Mak>	Cd8a	public		Targeted and Chemically Induced Mutant Stocks
 002666	B6.129S2-Cd28<tm1Mak>	Cd28	public		Targeted and Chemically Induced Mutant Stocks
 002667	C.129S2(B6)-Cd28<tm1Mak>	Cd28	public		Targeted and Chemically Induced Mutant Stocks
@@ -2677,10 +2677,10 @@
 002677	FVB/N-TgN(WapMyc)212Bri		public		Transgenic Stocks
 002678	FVB/N-TgN(WapTgfa)215Bri		public		Transgenic Stocks
 002679	B6.129P2-Ace<tm1Unc>	Ace	public		Targeted and Chemically Induced Mutant Stocks
-002680	B6.129P2-Ace<tm2Unc>	Ace	Agt	public		Targeted and Chemically Induced Mutant Stocks
+002680	B6.129P2-Ace<tm2Unc>	Ace|Agt	public		Targeted and Chemically Induced Mutant Stocks
 002681	B6.129P2-Agt<tm1Unc>	Agt	public		Targeted and Chemically Induced Mutant Stocks
 002682	B6.129P2-Agtr1a<tm1Unc>	Agtr1a	public		Targeted and Chemically Induced Mutant Stocks
-002683	B6.129P2-Hbb-b1<tm1Unc> Hbb-b2<tm1Unc>	Hbb-b1	Hbb-b2	public		Targeted and Chemically Induced Mutant Stocks
+002683	B6.129P2-Hbb-b1<tm1Unc> Hbb-b2<tm1Unc>	Hbb-b1|Hbb-b2	public		Targeted and Chemically Induced Mutant Stocks
 002684	B6.129P2-Nos3<tm1Unc>	Nos3	public		Targeted and Chemically Induced Mutant Stocks
 002685	B6.129P2-Nppa<tm1Unc>	Nppa	public		Targeted and Chemically Induced Mutant Stocks
 002686	B6.129P2-Ptgs1<tm1Unc>/Sj	Ptgs1	private	Cox1(0)B6	Targeted and Chemically Induced Mutant Stocks
@@ -2707,8 +2707,8 @@
 002707	KOH(ICE)164BBC		private		
 002708	C57BL/6JEi-Y<AKR> TgN(Sry)2Ei		private		Transgenic Stocks
 002709	B6;C3-TgN(TettTALuc)1Dgs		public		Transgenic Stocks
-002710	B6;129S-Gabra6<tm1Geh>	Gabra6	public		Targeted and Chemically Induced Mutant Stocks
-002711	B6;129S-Gabrb3<tm1Geh>	Gabrb3	public		Targeted and Chemically Induced Mutant Stocks
+002710	B6;129-Gabra6<tm1Geh>	Gabra6	public		Targeted and Chemically Induced Mutant Stocks
+002711	B6;129-Gabrb3<tm1Geh>	Gabrb3	public		Targeted and Chemically Induced Mutant Stocks
 002712	FVB/N-TgN(PF4MER)6Kra		public		Transgenic Stocks
 002713	B6;129S-Oxt<tm1Wsy>	Oxt	public		Targeted and Chemically Induced Mutant Stocks
 002714	FVB/NJ-Crm<3J>		public		Stocks Carrying Specific Mutant Genes
@@ -2724,7 +2724,7 @@
 002724	C.129S2(B6)-Il8rb<tm1Mwm>	Il8rb<tm1Mwm>	public	Cmkar2<tm>	Targeted and Chemically Induced Mutant Stocks
 002725	B6.129-Ptprc<tm1Holm>	Ptprc	public		Targeted and Chemically Induced Mutant Stocks
 002726	B6SJL-TgN(SOD1-G93A)1Gur		public		Transgenic Stocks
-002727	B6;129S-Ahr<tm1Bra>	Ahr	public		Targeted and Chemically Induced Mutant Stocks
+002727	B6;129-Ahr<tm1Bra>	Ahr	public		Targeted and Chemically Induced Mutant Stocks
 002728	C57BL/6J-TgN(IghMyc)22Bri		public		Transgenic Stocks
 002729	B6.129S6-Ii<tm1Liz>	Ii	public		Targeted and Chemically Induced Mutant Stocks
 002730	CAn.129S6(B6)-Ii<tm1Liz>	Ii	public		Targeted and Chemically Induced Mutant Stocks
@@ -2754,8 +2754,8 @@
 002754	C57BL/6-TgN(LacZpl)60Vij		public		Transgenic Stocks
 002755	FVB/N-TgN(WapInt3)10Rnc		public		Transgenic Stocks
 002756	B6.CAST-Ahl<+>		public		Stocks Carrying Specific Mutant Genes
-002757	MK;B6-Slc12a2<sy-ns>/+	Slc12a2<sy-ns>	sy<ns>	public		Stocks Carrying Specific Mutant Genes
-002758	C3.Cg-scb/+	scb	public		Stocks Carrying Specific Mutant Genes
+002757	MK;B6-Slc12a2<sy-ns>/+	Slc12a2<sy-ns>|sy<ns>	public		Stocks Carrying Specific Mutant Genes
+002758	C3.Cg-scb/+	scb	private		Stocks Carrying Specific Mutant Genes
 002759	SMNZB-Fbxw4<Dac>	Fbxw4<Dac>	public		Stocks Carrying Specific Mutant Genes
 002760	C57BLKS/J-Npc1<spm>/+	Npc1<spm>	public		Stocks Carrying Specific Mutant Genes
 002761	B10.Cg-TgN(TcrAND)53Hed		public		Transgenic Stocks
@@ -2785,12 +2785,12 @@
 002785	B6;129S4-E2f1<tm1Meg>	E2f1	public		Targeted and Chemically Induced Mutant Stocks
 002786	C57BL/6-Fgf4<tm1>	Fgf4	public		Targeted and Chemically Induced Mutant Stocks
 002787	DBA/1LacJ-Alox5ap<tm1Jdm>	Alox5ap	public		Targeted and Chemically Induced Mutant Stocks
-002788	B6;129S-Fst<tm1Zuk>	Fst	public		Targeted and Chemically Induced Mutant Stocks
+002788	B6;129S7-Fst<tm1Zuk>	Fst	public		Targeted and Chemically Induced Mutant Stocks
 002789	B6,129-Gjb1<tm1>	Gjb1	private		
 002790	B6;129S-Itga1<tm1Jae>	Itga1<tm1Jae>	public		Targeted and Chemically Induced Mutant Stocks
-002791	STOCK Pdx1<tm1>	Pdx1	private		Targeted and Chemically Induced Mutant Stocks
+002791	STOCK Pdx1<tm1>	Pdx1	private		
 002792	B6.129P2-Psap<tm1Suz>	Psap	public		Targeted and Chemically Induced Mutant Stocks
-002793	B6;129S-Srd5a1<tm1Mahe>	Srd5a1	public		Targeted and Chemically Induced Mutant Stocks
+002793	B6;129S7-Srd5a1<tm1Mahe>	Srd5a1	public		Targeted and Chemically Induced Mutant Stocks
 002794	C.129S4-Tcfap2a<tm1Jae>	Tcfap2a	public		Targeted and Chemically Induced Mutant Stocks
 002795	129P3.129P2-Agtr1a<tm1Unc> Ptgs1<tm1Unc> Tg(Agtdup)1Unc/Sj		private	129-APA	Targeted and Chemically Induced Mutant Stocks
 002796	129P3.129P2-Nppa<tm1Unc> Ace<tm1Unc> Agt<tm1Unc>/Sj		private	129-NAA	Targeted and Chemically Induced Mutant Stocks
@@ -2799,10 +2799,10 @@
 002799	CZECHI/Ei (Mus musculus)		public		Wild-Derived Strains
 002800	C3H/HeJ-Gpi1<a>		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002801	CWXS/Agl-nm2249		private		Stocks Carrying Specific Mutant Genes
-002802	C3.BLiA-Pde6b<+>-Krd/+	+<Pde6b>	Krd	public		Stocks Carrying Specific Mutant Genes
+002802	C3.BLiA-Pde6b<+>-Krd/+	+<Pde6b>|Krd	public		Stocks Carrying Specific Mutant Genes
 002803	STOCK nm2253		private		
 002804	C3Sn.BLiA-Pde6b<+>/Dn-TgN(S100b)5.12Rhr		public		Transgenic Stocks
-002805	C3Sn.BLiA-Pde6b<+>/Dn-TgN(Pfkl)224Yg	+<Pde6b>	TgN(Pfkl)224Yg	public		Transgenic Stocks
+002805	C3Sn.BLiA-Pde6b<+>/Dn-TgN(Pfkl)224Yg	+<Pde6b>|TgN(Pfkl)224Yg	public		Transgenic Stocks
 002806	B6 X B6;129-TgN(B142F9)Py8.2Jdg (APP)	TgN(B142F9)Py8.2Jdg	private	APP	Transgenic Stocks
 002807	B6C3Fe-a/a-nm1482		private		Stocks Carrying Specific Mutant Genes
 002808	NZM88/J		public		Miscellaneous Inbred and Congenic Strains
@@ -2813,24 +2813,24 @@
 002813	EL/Sal		public		Miscellaneous Inbred and Congenic Strains
 002814	DDY/Sal		public		Miscellaneous Inbred and Congenic Strains
 002815	ABP.EL-El2<e>	El2<e>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-002816	B6.129-Il2rb<tm1Mak>	Il2rb	public		Targeted and Chemically Induced Mutant Stocks
-002817	B6.129-Lck<tm1Mak>	Lck	public		Targeted and Chemically Induced Mutant Stocks
+002816	B6.129P2-Il2rb<tm1Mak>	Il2rb	public		Targeted and Chemically Induced Mutant Stocks
+002817	B6.129S2-Lck<tm1Mak>	Lck	public		Targeted and Chemically Induced Mutant Stocks
 002818	B6.129-Tnfrsf1a<tm1Mak>	Tnfrsf1a	public	Tnfr1	Targeted and Chemically Induced Mutant Stocks
-002819	ABP.EL-El1 El4	El1<a>	El4<a>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002819	ABP.EL-El1 El4	El1<a>|El4<a>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002820	ABP.EL-El3<e>	El3	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002821	EL.ABP-El2<a>	El2<a>	private		
-002822	EL.ABP-El1<a> El4<a>	El1<a>	El4<a>	private		
-002823	ABP.EL-El1 El2 El4	El1<a>	El2<e>	El4<a>	private		
+002822	EL.ABP-El1<a> El4<a>	El1<a>|El4<a>	private		
+002823	ABP.EL-El1 El2 El4	El1<a>|El2<e> 002823\tEl4<a>	private		
 002824	ABP.EL-El1 El3 El4		private		
 002825	STOCK a/a-Lse	Lse	public		Stocks Carrying Specific Mutant Genes
 002826	C.129S2-Stat4<tm1Gru>	Stat4	public		Targeted and Chemically Induced Mutant Stocks
-002827	C,129S-Stat4<tm1Gru> Stat6<tm1Gru>	Stat4	Stat6	private		Targeted and Chemically Induced Mutant Stocks
+002827	C,129S-Stat4<tm1Gru> Stat6<tm1Gru>	Stat4|Stat6	private		Targeted and Chemically Induced Mutant Stocks
 002828	C.129S2-Stat6<tm1Gru>	Stat6	public		Targeted and Chemically Induced Mutant Stocks
-002829	B6.129-Plaur<tm1>	Plaur	public		Targeted and Chemically Induced Mutant Stocks
+002829	B6.129P2-Plaur<tm1Jld>	Plaur	public		Targeted and Chemically Induced Mutant Stocks
 002830	B6.129P2-Plg<tm1Jld>	Plg	public		Targeted and Chemically Induced Mutant Stocks
 002831	B6.129-Ahr<tm1Bra>	Ahr	public		Targeted and Chemically Induced Mutant Stocks
-002832	B6;129S-Slc4a1<tm1Llp>	Slc4a1	public		Targeted and Chemically Induced Mutant Stocks
-002833	B6;129S-Stat5a<tm1Mam>	Stat5a	public		Targeted and Chemically Induced Mutant Stocks
+002832	B6;129S4-Slc4a1<tm1Llp>	Slc4a1	public		Targeted and Chemically Induced Mutant Stocks
+002833	B6;129S6-Stat5a<tm1Mam>	Stat5a	public		Targeted and Chemically Induced Mutant Stocks
 002834	STOCK Sod1<tm1Cep>	Sod1	private		
 002835	C57BL/6-TgN(H2KhGH1)106Bri Relb<TgN106Bri>		public		Transgenic Stocks
 002836	FVB/N-TGKD		private		
@@ -2841,14 +2841,14 @@
 002841	B6.PL-Thy1<a> Grid2<ho-9J>/Cy		private	nm2280	Stocks Carrying Specific Mutant Genes
 002842	C.HTG-H2<g>/Lil	H2<g>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002843	BALB.2R-H2<h2>/Lil	H2<h2>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-002844	BALB.5R-H2<i5>/Lil	H2<i5>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-002845	C.B6-TgN(H2-D<d>)1Lil		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002844	BALB.5R-H2<i5>/Lil	H2<i5>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+002845	C.B6-TgN(H2-D<d>)1Lil		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002846	BALB/cAnLil		public		Miscellaneous Inbred and Congenic Strains
-002847	B6;129P-Fcer1g<tm1Rav>	Fcer1g	public		Targeted and Chemically Induced Mutant Stocks
-002848	B6;129S-Fcgr2b<tm1Rav>	Fcgr2b	public		Targeted and Chemically Induced Mutant Stocks
-002849	B6;129P-Nfkb1<tm1Bal>	Nfkb1	public		Targeted and Chemically Induced Mutant Stocks
-002850	B6;129S-Nfkbia<tm1Bal>	Nfkbia	public		Targeted and Chemically Induced Mutant Stocks
-002851	B6;129S-Rela<tm1Bal>	Rela	public		Targeted and Chemically Induced Mutant Stocks
+002847	B6;129P2-Fcer1g<tm1Rav>	Fcer1g	public		Targeted and Chemically Induced Mutant Stocks
+002848	B6;129S4-Fcgr2b<tm1Rav>	Fcgr2b	public		Targeted and Chemically Induced Mutant Stocks
+002849	B6;129P2-Nfkb1<tm1Bal>	Nfkb1	public		Targeted and Chemically Induced Mutant Stocks
+002850	B6;129S4-Nfkbia<tm1Bal>	Nfkbia	public		Targeted and Chemically Induced Mutant Stocks
+002851	B6;129S4-Rela<tm1Bal>	Rela	public		Targeted and Chemically Induced Mutant Stocks
 002852	B6.129S4-Jak3<tm1Ljb>	Jak3	public		Targeted and Chemically Induced Mutant Stocks
 002853	B6.129P2-Cbs<tm1Unc>	Cbs	public		Targeted and Chemically Induced Mutant Stocks
 002854	C57BL/6J-Nek1<kat-2J>/+	Nek1<kat-2J>	public	nm1633	Stocks Carrying Specific Mutant Genes
@@ -2868,15 +2868,15 @@
 002868	MRL/MpJ-Tnfrsf6<lpr>-Icam1<tm1Jcgr>	Icam1	private		
 002869	MRL/MpJ-Tnfrsf6<lpr>-hr<rh-9J>		private	nm2261	
 002870	B6SJL-TgN(Wnt1)1Hev		public		Transgenic Stocks
-002871	C57BL/6J-TgN(RIP1-Tag)4Dh		private		Transgenic Stocks
+002871	C57BL/6J-TgN(RIP1-TAg)4Dh		private		Transgenic Stocks
 002872	TNFR1XR2X1FN Gamma		private		
 002873	TNFR1XR2		private		
 002874	STOCK Igf1<tm1Ts>/Genentech		private	MINI IGF-1	
 002875	B6C3Fe-a/a-Hoxd13<spdh>	Hoxd13<spdh>	public	nm2152	Stocks Carrying Specific Mutant Genes
 002876	B6;129S-Apob<tm1Sgy>	Apob	public		Targeted and Chemically Induced Mutant Stocks
-002877	B6,129S-Apob<tm2Sgy>	Apob	public		Targeted and Chemically Induced Mutant Stocks
-002878	B6;129-Apob<tm1Sgy> Apoe<tm1Unc>	Apob	Apoe	public		Targeted and Chemically Induced Mutant Stocks
-002879	B6;129-Apob<tm2Sgy> Apoe<tm1Unc>	Apob	Apoe	public		Targeted and Chemically Induced Mutant Stocks
+002877	B6;129S7-Apob<tm2Sgy>	Apob	public		Targeted and Chemically Induced Mutant Stocks
+002878	B6;129-Apob<tm1Sgy> Apoe<tm1Unc>	Apob|Apoe	public		Targeted and Chemically Induced Mutant Stocks
+002879	B6;129-Apob<tm2Sgy> Apoe<tm1Unc>	Apob|Apoe	public		Targeted and Chemically Induced Mutant Stocks
 002880	B6.129-Penk-rs<tm1Pig>	Penk-rs	private		Targeted and Chemically Induced Mutant Stocks
 002881	D2.129(B6)-Penk-rs<tm1Pig>	Penk-rs	public		Targeted and Chemically Induced Mutant Stocks
 002882	C57BL/6J-TgN(PLTP)1Pgn		public		Transgenic Stocks
@@ -2893,13 +2893,13 @@
 002893	BALB/cByJ-Atp2b2<dfw-2J>		private		
 002894	CBy.A-fsn<+?> Atp2b2<dfw-2J>	Atp2b2<dfw-2J>	public	nm2187	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 002895	BALB/cByJ x CBy.A-fsn/J-+<fsn>? Atp2b2<dfw-2J>	Atp2b2<dfw-2J>	private		Stocks Carrying Specific Mutant Genes
-002896	B6;129S-Soat1<tm1Far>	Soat1<tm1Far>	public		Targeted and Chemically Induced Mutant Stocks
+002896	B6;129S4-Soat1<tm1Far>	Soat1<tm1Far>	public		Targeted and Chemically Induced Mutant Stocks
 002897	C57BL/6-Soat1<tm1>	Soat1<tm1>	private	Acact<tm1>	
 002898	STOCK tc Rosa26		private		
 002899	FVB.129S2(B6)-Trp53<tm1Tyj>	Trp53	public		Targeted and Chemically Induced Mutant Stocks
 002900	FVB.129S2(B6)-Rb1<tm1Tyj>	Rb1	public		Targeted and Chemically Induced Mutant Stocks
 002901	SM/J-Y<POSZ>		private		
-002902	STOCK Mlph<ln> Pax3<Sp>		public		Stocks Carrying Specific Mutant Genes
+002902	STOCK Pax3<Sp> ln		public		Stocks Carrying Specific Mutant Genes
 002903	BXD-9/Ty-Grid2<ho-10J>		private		
 002904	C57BL/6J-Pms2<tm1Lisk>	Pms2	private		
 002905	B6.129S1-Cnca<tm1Ngai>	Cnca	public		Targeted and Chemically Induced Mutant Stocks
@@ -2908,13 +2908,13 @@
 002908	129-Col4a3<tm1Dec>	Col4a3	public		Targeted and Chemically Induced Mutant Stocks
 002909	129/Sv-Cyp1a2<tm1Gonz>	Cyp1a2	public		Targeted and Chemically Induced Mutant Stocks
 002910	129/Sv-Cyp2e1<tm1Gonz>	Cyp2e1	public		Targeted and Chemically Induced Mutant Stocks
-002911	B6;129X-Dsg3<tm1Stan>	Dsg3	public		Targeted and Chemically Induced Mutant Stocks
+002911	B6;129X1-Dsg3<tm1Stan>	Dsg3	public		Targeted and Chemically Induced Mutant Stocks
 002912	STOCK Ggta1<tm1Jbl>	Ggta1	private		Targeted and Chemically Induced Mutant Stocks
 002913	STOCK Gria2<tm1Rod>	Gria2	public		Targeted and Chemically Induced Mutant Stocks
-002914	B6;129S-Hexb<tm1Rlp>	Hexb	public		Targeted and Chemically Induced Mutant Stocks
-002915	B6;129S-Sele<tm1Hyn>	Sele	public		Targeted and Chemically Induced Mutant Stocks
-002916	B6;129S-Sele<tm1Hyn> Selp<tm1Hyn>	Sele	Selp	public		Targeted and Chemically Induced Mutant Stocks
-002917	B6;129S-Sell<tm1Hyn>	Sell	public		Targeted and Chemically Induced Mutant Stocks
+002914	B6;129S4-Hexb<tm1Rlp>	Hexb	public		Targeted and Chemically Induced Mutant Stocks
+002915	B6;129S2-Sele<tm1Hyn>	Sele	public		Targeted and Chemically Induced Mutant Stocks
+002916	B6;129S2-Sele<tm1Hyn> Selp<tm1Hyn>	Sele|Selp	public		Targeted and Chemically Induced Mutant Stocks
+002917	B6;129S2-Sell<tm1Hyn>	Sell	public		Targeted and Chemically Induced Mutant Stocks
 002918	STOCK TgN(XGFAPLacZ)3Mes		private		
 002919	STOCK Myo7a<sh1-7J>/+	Myo7a<sh1-7J>	public	nm2194	Stocks Carrying Specific Mutant Genes
 002920	B6(D2N).Spretus-Ahr<b-3>		public		Congenic Strains
@@ -2926,10 +2926,10 @@
 002926	AKXD-20/Ty-Reln<rl-3J>		private		Recombinant Inbred Strains
 002927	CNcr.129P2-Tnfrsf5<tm1Kik>	Tnfrsf5	public	Cd40	Targeted and Chemically Induced Mutant Stocks
 002928	B6.129P2-Tnfrsf5<tm1Kik>	Tnfrsf5	public	Cd40	Targeted and Chemically Induced Mutant Stocks
-002929	C57BL/6-TgN(TcrOva)1100.1Mjb		public		Transgenic Stocks
+002929	C57BL/6-TgN(TcrOva)1100Mjb		public		Transgenic Stocks
 002930	C.C3H-Tlr4<Lps-d>	Tlr4<Lps-d>	public		Congenic Strains
 002931	SSIN/Utsp		private		
-002932	CPt.C3H-Tnfsf6<gld>	Tnfsf6<gld>	public		Stocks Carrying Specific Mutant Genes
+002932	CPt.C3-Tnfsf6<gld>	Tnfsf6<gld>	public		Stocks Carrying Specific Mutant Genes
 002933	FVB/NJ-TgN(MMTVTGFB1)46Hlm		public		Transgenic Stocks
 002934	FVB/NJ-TgN(Wnt1)1Hev		public		Transgenic Stocks
 002935	FVB.129S2(B6)-Ccnd1<tm1Wbg>	Ccnd1<tm1Wbg>	public		Targeted and Chemically Induced Mutant Stocks
@@ -2946,10 +2946,10 @@
 002946	DBA/2J-Dst<dt-29J>		private		
 002947	C57BL/6JEi-Y<129/Bur>		private		Consomic Strains
 002948	B6.129S4-Tal1<tm1Sho>	Tal1	public		Targeted and Chemically Induced Mutant Stocks
-002949	B6.129S4-Klf1<tm1Sho>	Klf1	Klf1<tm1Sho>	public		Targeted and Chemically Induced Mutant Stocks
+002949	B6.129S4-Klf1<tm1Sho>	Klf1|Klf1<tm1Sho>	public		Targeted and Chemically Induced Mutant Stocks
 002950	B6.Cg-TgN(SOD1G37R)106Pcw		public		Transgenic Stocks
 002951	FVB-TgN(MMTVCCND1)TG.MPEsmp		private		Transgenic Stocks
-002952	B6.129-Il2ra<tm1Dw>		public		Targeted and Chemically Induced Mutant Stocks
+002952	B6.129S4-Il2ra<tm1Dw>		public		Targeted and Chemically Induced Mutant Stocks
 002953	FVB/NJ-TgN(MMTVTGFA)254Rjc		public		Transgenic Stocks
 002954	B6129S3F1@Mob		private		Special F1 Hybrids
 002955	C.129S7-Gtrosa26		public		Transgenic Stocks
@@ -2957,19 +2957,19 @@
 002957	B6.129-Dll1<tm1Gos>	Dll1	public		Targeted and Chemically Induced Mutant Stocks
 002958	B6.129S4-Drd3<tm1Dac>	Drd3	public		Targeted and Chemically Induced Mutant Stocks
 002959	B6.129S4-Drd1a<tm1Jcd>	Drd1a	public		Targeted and Chemically Induced Mutant Stocks
-002960	B6CBA-TgN(Cntf)#Dih		private		
+002960	B6CBA-TgN(Cntf)1Dih		private		
 002961	FVB/N-TgN(KRT10BMP6)VI632Mbl Y<FVB/N>		public		Targeted and Chemically Induced Mutant Stocks
 002962	C;129S-Cd1<tm1Gru>	Cd1	public		Targeted and Chemically Induced Mutant Stocks
 002963	B6;129-Pcsk2<tm1Dfs>	Pcsk2	public		Targeted and Chemically Induced Mutant Stocks
 002964	C.129S2-Itgae<tm1Cmp>	Itgae	private		Targeted and Chemically Induced Mutant Stocks
 002965	C57BL/6-Itgb7<tm1Cgn>	Itgb7	public		Targeted and Chemically Induced Mutant Stocks
-002966	B6,129-Nos3 Nos1<tm1Plh>	Nos1	Nos3	private		
+002966	B6,129-Nos3 Nos1<tm1Plh>	Nos1|Nos3	private		
 002967	B6;129-Gdf8<tm1Sjl>	Gdf8	private		Targeted and Chemically Induced Mutant Stocks
-002968	B6,129S-Mdm2<tm1Bay>	Mdm2	public		Targeted and Chemically Induced Mutant Stocks
+002968	B6;129S7-Mdm2<tm1Bay>	Mdm2	public		Targeted and Chemically Induced Mutant Stocks
 002969	B6 x P15-Line188		private		Targeted and Chemically Induced Mutant Stocks
 002970	ICR x PTK4-Line126		private		Targeted and Chemically Induced Mutant Stocks
 002971	FVB-TgN(BCL2OVARY)1Ah		public		Transgenic Stocks
-002972	B6;129S-Sod1<tm1Leb>	Sod1	public		Targeted and Chemically Induced Mutant Stocks
+002972	B6;129S7-Sod1<tm1Leb>	Sod1	public		Targeted and Chemically Induced Mutant Stocks
 002973	B6.129S7-Sod2<tm1Leb>		public		Targeted and Chemically Induced Mutant Stocks
 002974	STOCK Es1<e>/Es1<e> H2<d>/H2<d>		public		Stocks Carrying Specific Mutant Genes
 002975	B6,129-Meg3<TgN(lacZ)5Gos>	Meg3<TgN(LacZ)5Gos>	private		Transgenic Stocks
@@ -2987,25 +2987,25 @@
 002987	B6.129S7-Lrpap1<tm1Her>	Lrpap1	public		Targeted and Chemically Induced Mutant Stocks
 002988	129/Sv-Rbl1<tm1Tyj>	Rbl1	private		
 002989	129/Sv-Rbl2<tm1Tyj>	Rbl2	private		
-002990	B6;129S-Inhba<tm1Zuk>	Inhba	public		Targeted and Chemically Induced Mutant Stocks
+002990	B6;129S7-Inhba<tm1Zuk>	Inhba	public		Targeted and Chemically Induced Mutant Stocks
 002991	B6.129-Ascl1<tm1And>	Ascl1<tm1And>	public		Targeted and Chemically Induced Mutant Stocks
-002992	B6,129S-Vcam1<tm1Roml>	Vcam1	public		Targeted and Chemically Induced Mutant Stocks
+002992	B6;129S1-Vcam1<tm1Roml>	Vcam1	public		Targeted and Chemically Induced Mutant Stocks
 002993	C57BL/6JEi-Kitl<Sl-18H>	Kitl<Sl-18H>	private		Stocks Carrying Specific Mutant Genes
 002994	B6.129X1-Bax<tm1Sjk>	Bax	public		Targeted and Chemically Induced Mutant Stocks
 002995	B6 x C.B10-H2<b>/LiMcdJ-sy<fp-2J>	sy<fp-2J>	public		Stocks Carrying Specific Mutant Genes
 002996	B6ByJ;D2-Spnb4<qv-4J>	Spnb4<qv-4J>	public		Stocks Carrying Specific Mutant Genes
 002997	ES CCR2(-/-) Line 157		private		
 002998	CD34 x Glycam DKO(-/-)		private		
-002999	B6;129S-Apob<tm1Sgy> Ldlr<tm1Her>	Apob	Ldlr	private		Targeted and Chemically Induced Mutant Stocks
-003000	B6;129S-Apob<tm2Sgy> Ldlr<tm1Her>	Apob	Ldlr	public		Targeted and Chemically Induced Mutant Stocks
+002999	B6;129S-Apob<tm1Sgy> Ldlr<tm1Her>	Apob|Ldlr	private		Targeted and Chemically Induced Mutant Stocks
+003000	B6;129S-Apob<tm2Sgy> Ldlr<tm1Her>	Apob|Ldlr	public		Targeted and Chemically Induced Mutant Stocks
 003001	SJL.B		private		
 003002	CD34 x MPL		private		
 003003	B10.D2PL(2)-rsl		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003004	BPN/3@J		public		Miscellaneous Inbred and Congenic Strains
 003005	BPH/2@J		public		Miscellaneous Inbred and Congenic Strains
 003006	BPL/1@J		public		Miscellaneous Inbred and Congenic Strains
-003007	B6;129S-Hoxb4<tm1Bay>	Hoxb4	public		Targeted and Chemically Induced Mutant Stocks
-003008	B6;129S-Tnf<tm1Gkl>	Tnf	public		Targeted and Chemically Induced Mutant Stocks
+003007	B6;129S7-Hoxb4<tm1Bay>	Hoxb4	public		Targeted and Chemically Induced Mutant Stocks
+003008	B6;129S6-Tnf<tm1Gkl>	Tnf	public		Targeted and Chemically Induced Mutant Stocks
 003009	129/Sv-Kcne1<tm1Sfh>		public		Targeted and Chemically Induced Mutant Stocks
 003010	B6;CBA-TgN(CamK2tTA)1Mmay		public		Transgenic Stocks
 003011	SJL/J-Slc9a1<swe>/+	Slc9a1<swe>/+	public	nm1989	Stocks Carrying Specific Mutant Genes
@@ -3015,14 +3015,14 @@
 003015	ABP.EL-El1<e>		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003016	FVB/NJ-TgN(MMTVTGFA)29Rjc		public		Transgenic Stocks
 003017	C.129S1-Il12rb1<tm1Jm>	Il12rb1	public		Targeted and Chemically Induced Mutant Stocks
-003018	B6;129S-Il1r1<tm1Roml>	Il1r1	public		Targeted and Chemically Induced Mutant Stocks
+003018	B6;129S1-Il1r1<tm1Roml>	Il1r1	public		Targeted and Chemically Induced Mutant Stocks
 003019	STOCK Grik1<tm1Sfh>		private	Glur5<tm1S	Targeted and Chemically Induced Mutant Stocks
 003020	B6C3Fe-a/a-dep	dep	public		Stocks Carrying Specific Mutant Genes
 003021	129P3.129P2-Npr1<tm1Unc> Tg(Npr1dup)1Unc/Sj	Npr1	private	Npr1(2)	Targeted and Chemically Induced Mutant Stocks
 003022	STOCK Cd/+	Cd	private		Stocks Carrying Specific Mutant Genes
 003023	B6,129-Nr5a1<tm1> (see JR2654)		private		
 003024	FVB.129P2(B6)-Fmr1<tm1Cgr>	Fmr1	public		Targeted and Chemically Induced Mutant Stocks
-003025	B6.129-Fmr1<tm1Cgr>	Fmr1	public		Targeted and Chemically Induced Mutant Stocks
+003025	B6.129P2-Fmr1<tm1Cgr>	Fmr1	public		Targeted and Chemically Induced Mutant Stocks
 003026	129P3.129P2-Ace<tm1Unc>	Ace	private		
 003027	C57BL/6J-TgH(Acedup)1Unc/Sj		private		Targeted and Chemically Induced Mutant Stocks
 003028	129P3.129P2-TgH(Agtdup)1Unc/Sj		private	Agt(2)129/	
@@ -3047,8 +3047,8 @@
 003047	STOCK nm2411		private		Stocks Carrying Specific Mutant Genes
 003048	STOCK nm2620		private		Stocks Carrying Specific Mutant Genes
 003049	same as 002346		private		
-003050	NOD.NOR-(Zfp106-Il1a)	Idd13<NOR>	Il1a<B6>	Pcna<NOD>	Zfp106<B6>	public		Stocks Carrying Specific Mutant Genes
-003051	NOD.NOR-(Il1a-Pcna)	Idd13<NOR>	Il1a<B6>	Pcna<B6>	public		Stocks Carrying Specific Mutant Genes
+003050	NOD.NOR-(Zfp106-Il1a)	Idd13<NOR>|Il1a<B6> 003050\tPcna<NOD> 003050\tZfp106<B6>	public		Stocks Carrying Specific Mutant Genes
+003051	NOD.NOR-(Il1a-Pcna)	Idd13<NOR>|Il1a<B6> 003051\tPcna<B6>	public		Stocks Carrying Specific Mutant Genes
 003052	CBcNO7A/Lt		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003053	CBcNO7B/Lt		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003054	CBcNO7C/Lt		public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -3056,19 +3056,19 @@
 003056	NOD.NON-Thy1<a>/1Lt	Thy1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003057	NOD.NON-Thy1<a>/2Lt	Thy1<a>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003058	NOD.NON-(D9Mit2-D9Mit286) Thy1<b> (D9Mit21-D9Mit207)	Thy1<b>	public	Chr9 N-D-N	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003059	B6.NOD-(D3Mit132-Tshb)	Idd10<NOD>	Idd3<NOD>	Tshb<NOD>	public	B6.NOD-c3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003060	B6.NOD-D17Mit21-D17Mit10 (H2<g7>, Idd1)	H2<g7>	Idd1	private	JR003300	
+003059	B6.NOD-(D3Mit132-Tshb)	Idd10<NOD>|Idd3<NOD> 003059\tTshb<NOD>	public	B6.NOD-c3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003060	B6.NOD-D17Mit21-D17Mit10 (H2<g7>, Idd1)	H2<g7>|Idd1	private	JR003300	
 003061	B6.NOD-D1Mit5-D1Mit15 (Idd5)	Idd5	private	see 003866	
-003062	B6.NOD-(D1Mit3-Bcl2)	Bcl2<NOD>	Idd5<NOD>	public	B6.NODc1c	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003062	B6.NOD-(D1Mit3-Bcl2)	Bcl2<NOD>|Idd5<NOD>	public	B6.NODc1c	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003063	B6.NOD-(D6Mit54-D6Mit14)	Idd6<NOD>	public	B6.NOD-c6	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003064	B6.NOD-(D2Mit17-D2Mit48)	Idd13<NOD>	public	B6.NOD-c2	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003065	B6.NOD-(Csf2-D11Mit42)	Csf2<NOD>	Idd4<NOD>	public	c11	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003066	B6.NOD-(D6Mit54-D6Mit14) (D17Mit21-D17Mit10)	H2<g7>	Idd1<NOD>	Idd6<NOD>	public	c6 c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003067	B6.NOD-(D3Mit132-Tshb) (D17Mit21-D17Mit10)	H2<g7>	Idd10<NOD>	Idd1<NOD>	Idd3	Tshb<NOD>	public	c3 c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003068	B6.NOD-(Csf2-D11Mit42) (D17Mit21-D17Mit10)	H2<g7>	Idd1<NOD>	Idd4<NOD>	public	c11 c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003069	B6.NOD-(D1Mit3-Bcl2) (D17Mit21-D17Mit10)	Csf2<NOD>	H2<g7>	Idd1<NOD>	Idd5<NOD>	public	c1c c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003065	B6.NOD-(Csf2-D11Mit42)	Csf2<NOD>|Idd4<NOD>	public	c11	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003066	B6.NOD-(D6Mit54-D6Mit14) (D17Mit21-D17Mit10)	H2<g7>|Idd1<NOD> 003066\tIdd6<NOD>	public	c6 c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003067	B6.NOD-(D3Mit132-Tshb) (D17Mit21-D17Mit10)	H2<g7>|Idd10<NOD> 003067\tIdd1<NOD> 003067\tIdd3 003067\tTshb<NOD>	public	c3 c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003068	B6.NOD-(Csf2-D11Mit42) (D17Mit21-D17Mit10)	H2<g7>|Idd1<NOD> 003068\tIdd4<NOD>	public	c11 c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003069	B6.NOD-(D1Mit3-Bcl2) (D17Mit21-D17Mit10)	Csf2<NOD>|H2<g7> 003069\tIdd1<NOD> 003069\tIdd5<NOD>	public	c1c c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003070	ALR/LtJ		public		Miscellaneous Inbred and Congenic Strains
-003071	B6.NOD-(D1Mit5-D1Mit15) (D17Mit21-D17Mit10)	H2<g7>	Idd1<NOD>	Idd5<NOD>	public	c1t c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003071	B6.NOD-(D1Mit5-D1Mit15) (D17Mit21-D17Mit10)	H2<g7>|Idd1<NOD> 003071\tIdd5<NOD>	public	c1t c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003072	ALS/LtJ		public		Miscellaneous Inbred and Congenic Strains
 003073	NOD/Lt-Tg(GAD2)2Lt		public	GAD65;Alin	Transgenic Stocks
 003074	NOD/Lt-Tg(GAD2)1Lt		public	GAD65;YLin	Transgenic Stocks
@@ -3089,7 +3089,7 @@
 003089	NOD.129P2-Il10<tm1Cgn>/Dvs	Il10	public		Targeted and Chemically Induced Mutant Stocks
 003090	NOD.129S6(B6)-Cd4<tm1Knw>/DvsJ	Cd4	public		Targeted and Chemically Induced Mutant Stocks
 003091	NH/KiPt		public		Miscellaneous Inbred and Congenic Strains
-003092	BALB/cNctr-npc1<N>/+	npc1<N>	npc<N>	public		Stocks Carrying Specific Mutant Genes
+003092	BALB/cNctr-npc1<N>/+	npc1<N>|npc<N>	public		Stocks Carrying Specific Mutant Genes
 003093	C57BL/6J-Tg(Mos) line 4		private		
 003094	FVB/N-Tg(Mos) line 3		private		
 003095	C57BL/6J-nm1718		private	nm1718	Stocks Carrying Specific Mutant Genes
@@ -3117,11 +3117,11 @@
 003117	129S-Smst<tm1Ute>	Smst	public		Targeted and Chemically Induced Mutant Stocks
 003118	STOCK Es1<e>/Es1<e> Foxn1<nu>/+	Foxn1<nu>	public	Hfh11<nu>	Stocks Carrying Specific Mutant Genes
 003119	STOCK Sp4<tm1Ssp>	Sp4	public		Targeted and Chemically Induced Mutant Stocks
-003120	B6;129S-L1cam<tm1Sor>	L1cam	public		Targeted and Chemically Induced Mutant Stocks
-003121	B6,129-Gprc1e<tm1Rod>	Gprc1e	public		Targeted and Chemically Induced Mutant Stocks
+003120	B6;129S7-L1cam<tm1Sor>	L1cam	public		Targeted and Chemically Induced Mutant Stocks
+003121	B6;129-Gprc1e<tm1Rod>	Gprc1e	public		Targeted and Chemically Induced Mutant Stocks
 003122	129-Cdkn1b<tm1Mlf>	Cdkn1b	public		Targeted and Chemically Induced Mutant Stocks
 003123	129S;ICR-Vhlh<tm1Bjg>	Vhlh	public		Targeted and Chemically Induced Mutant Stocks
-003124	B6.129-Ucp<tm1Kz>	Ucp	public		Targeted and Chemically Induced Mutant Stocks
+003124	B6.129-Ucp1<tm1Kz>	Ucp	public		Targeted and Chemically Induced Mutant Stocks
 003125	C57BL/6J-Mlh1<tm1Lisk>	Mlh1	private		
 003126	B6,129X-Grpr<tm1Jfb>	Grpr	public		Targeted and Chemically Induced Mutant Stocks
 003127	129,FVB-Bcl3<tm1>	Bcl3	private		Targeted and Chemically Induced Mutant Stocks
@@ -3130,11 +3130,11 @@
 003130	C57BL/6ByJ-Spnb4<qv-4J>	Spnb4<qv-4J>	public		Linkage Testing Stocks
 003131	CT1		private		
 003132	GDNF		private		
-003133	C57BL/6-TgN(TAgPb)#NMG1		public		Transgenic Stocks
+003133	C57BL/6-TgN(TAgPb)1NMG1		public		Transgenic Stocks
 003134	C57BL/6-TgN(TAgPb)8247NMG1		public		Transgenic Stocks
 003135	C57BL/6-TgN(TRAMP)8247Ng		public		Transgenic Stocks
 003136	C57BL/6-TgN(CETP)#Pgn (see 1929)		private		
-003137	B6,129-Gabrg2L<tm1Geh>	Gabrg2L	public		Targeted and Chemically Induced Mutant Stocks
+003137	B6;129-Gabrg2L<tm1Geh>	Gabrg2L	public		Targeted and Chemically Induced Mutant Stocks
 003138	B6,129 Hprt<tm1Detl>	Hprt	private		Targeted and Chemically Induced Mutant Stocks
 003139	B6.Cg-TgN(DBHnlacZ)8Rpk		public		Transgenic Stocks
 003140	FVB/N-TgN(PAI1LacZ)1Jjb		public		Transgenic Stocks
@@ -3151,7 +3151,7 @@
 003151	BALB/cAnPt		private		Miscellaneous Inbred and Congenic Strains
 003152	ICR		private		
 003153	WLC.C2-H2<d>.GR-Mtv2/Mor		private	WLC-2/d	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003154	WLC.GR-Mtv2/Mor		private	WLC-0/d	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003154	WLC.GR-Mtv2/Mor		public	WLC-0/d	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003155	STOCK Ifg1<tm1Ts>		private	MINI IGF-1	
 003156	STOCK Igf1<tm2Ts>		private	IGF-1 Midi	
 003157	FVB/NJ-TgN(SryEGFP)40Ei		private	FVBTg40	Targeted and Chemically Induced Mutant Stocks
@@ -3166,15 +3166,15 @@
 003166	129/Sv-+<p> +<Tyr-c> +<Mgf-Sl> Ts65Dn		private		
 003167	B6,SJL-TgN(HCMVtTA)#Mam		public		Targeted and Chemically Induced Mutant Stocks
 003168	C57BL/6-Camk2a<tm1>-a<t-57J>		private		
-003169	C.129-Il2rg<tm1Wjl>	Il2rg	public		Targeted and Chemically Induced Mutant Stocks
+003169	C.129S4-Il2rg<tm1Wjl>	Il2rg	public		Targeted and Chemically Induced Mutant Stocks
 003170	FVB/N-TgN(MHCAtTA)6Smbf		public		Transgenic Stocks
 003171	B6.129P2-Fcgr3<tm1Sjv>	Fcgr3	public		Targeted and Chemically Induced Mutant Stocks
 003172	NOD.D2(B10)-TgN(Igh2K<k>3-83)1Nemz/Dvs		private		Transgenic Stocks
 003173	B6.129-Itgp<tm1Fpl>		public		Targeted and Chemically Induced Mutant Stocks
-003174	B6.129-Il2rg<tm1Wjl>	Il2rg	public		Targeted and Chemically Induced Mutant Stocks
+003174	B6.129S4-Il2rg<tm1Wjl>	Il2rg	public		Targeted and Chemically Induced Mutant Stocks
 003175	C57BL/6-Il5<tm1Kopf>	Il5	public		Targeted and Chemically Induced Mutant Stocks
 003176	C57BL/6J-Dst<dt-30J>		private	nm2360	
-003177	B6;129S-Gm2a<tm1Rlp>	Gm2a	public		Targeted and Chemically Induced Mutant Stocks
+003177	B6;129S2-Gm2a<tm1Rlp>	Gm2a	public		Targeted and Chemically Induced Mutant Stocks
 003178	B6.129-Arnt<tm1Mcs>	Arnt	public		Targeted and Chemically Induced Mutant Stocks
 003179	STOCK Cdh2<tm1Hyn>	Cdh2	public		Targeted and Chemically Induced Mutant Stocks
 003180	B6.129S-Cdh3<tm1Hyn>	Cdh3	public		Targeted and Chemically Induced Mutant Stocks
@@ -3184,7 +3184,7 @@
 003184	B6.Cg-Myo7a<sh1-8J>	Myo7a<sh1-8J>	public		Stocks Carrying Specific Mutant Genes
 003185	C57BL/6-TgN(PRG1)18Wlad		public		Transgenic Stocks
 003186	C57BL/6-TgN(PRG3)9Wlad		public		Transgenic Stocks
-003187	B6;129P-Pemt<tm1J>	Pemt	public		Targeted and Chemically Induced Mutant Stocks
+003187	B6;129P2-Pemt<tm1J>	Pemt	public		Targeted and Chemically Induced Mutant Stocks
 003188	C57BL/6J-TgN(WapTAg)1Knw		public	WAPT1	Transgenic Stocks
 003189	C57BL/6J-TgN(WapTAg)3Knw		public	WAPT3	Transgenic Stocks
 003190	B6.129S2-Drd2<tm1Low>	Drd2	public		Targeted and Chemically Induced Mutant Stocks
@@ -3206,7 +3206,7 @@
 003206	BALB/cJ-Npr3<lgj>/+	Npr3<lgj>	public	nm792	Stocks Carrying Specific Mutant Genes
 003207	BALB/cJ-Nm2472		private		Stocks Carrying Specific Mutant Genes
 003208	STOCK TgN(DR4)1Jae		public		Transgenic Stocks
-003209	C57BLKS/J-m +/+ Lepr<db>-Cdh23<v-4J>	Cdh23<v-4J>	private	nm2306	
+003209	BKS.Cg m +/+ Lepr<db>-Cdh23<v-4J>	Cdh23<v-4J>	private	nm2306	
 003210	C57BL/6-TgN(CRF)227.1Pbl		private		Transgenic Stocks
 003211	FVB-TgN(SrySox9)52Ei		private		Transgenic Stocks
 003212	C57BL/6JEi-Nm2348		private	Nm2348	Stocks Carrying Specific Mutant Genes
@@ -3228,8 +3228,8 @@
 003228	BXD-39/Ty		public		Recombinant Inbred Strains
 003229	BXD-40/Ty		public		Recombinant Inbred Strains
 003230	BXD-42/Ty		public		Recombinant Inbred Strains
-003231	129/Sv-Sec8<tm1Sor>	Sec8	public		Targeted and Chemically Induced Mutant Stocks
-003232	B6.129S7-Chrna7<tm1Bay>	Acra7	public		Targeted and Chemically Induced Mutant Stocks
+003231	129-Sec8<tm1Sor>	Sec8	public		Targeted and Chemically Induced Mutant Stocks
+003232	B6.129S7-Chrna7<tm1Bay>	Acra7	private		
 003233	B6.129P2-Tnfrsf6<tm1Osa>	Tnfrsf6<tm1Osa>	public		Targeted and Chemically Induced Mutant Stocks
 003234	MRL.129P2(B6)-Tnfrsf6<tm1Osa>	Tnfrsf6<lpr>	public		Targeted and Chemically Induced Mutant Stocks
 003235	FVB-TgN(SrySox9)58Ei		private		Transgenic Stocks
@@ -3238,32 +3238,32 @@
 003238	C.129S2(B6)-C2ta<tm1Ccum>	C2ta	public		Targeted and Chemically Induced Mutant Stocks
 003239	B6.129S2-C2ta<tm1Ccum>	C2ta	public		Targeted and Chemically Induced Mutant Stocks
 003240	B6;B10.A-H2<a>-TgN(H2KmPCC)2939Stoe		public		Transgenic Stocks
-003241	129/Sv-Rbl1<tm1Tyj> Rbl2<tm1Tyj>		private	p107, p130	Targeted and Chemically Induced Mutant Stocks
+003241	129/Sv-Rbl1<tm1Tyj> Rbl2<tm1Tyj>		private	p107, p130	
 003242	C57BL/6-Tnfrsf1a<tm1Imx>	Tnfrsf1a	public	Tnfr1	Targeted and Chemically Induced Mutant Stocks
-003243	B6;129S-Tnfrsf1a<tm1Imx> Tnfrsf1b<tm1Imx>	Tnfrsf1a	Tnfrsf1b	public		Targeted and Chemically Induced Mutant Stocks
-003244	B6;129S-Tnfrsf1a<tm1Imx> Il1r1<tm1Imx>	Il1r1	Tnfrsf1a	public	Tnfr1	Targeted and Chemically Induced Mutant Stocks
+003243	B6;129S-Tnfrsf1a<tm1Imx> Tnfrsf1b<tm1Imx>	Tnfrsf1a|Tnfrsf1b	public		Targeted and Chemically Induced Mutant Stocks
+003244	B6;129S-Tnfrsf1a<tm1Imx> Il1r1<tm1Imx>	Il1r1|Tnfrsf1a	public	Tnfr1	Targeted and Chemically Induced Mutant Stocks
 003245	B6.129S7-Il1r1<tm1Imx>	Il1r1	public		Targeted and Chemically Induced Mutant Stocks
 003246	B6.129S7-Tnfrsf1b<tm1Imx>	Tnfrsf1b	public	Tnfr2	Targeted and Chemically Induced Mutant Stocks
-003247	C,129-Il12rb2<tm1Jm>	Il12rb	Il12rb2	private		
-003248	B6.129S1-Il12rb2<tm1Jm>	Il12rb	Il12rb2	public		Targeted and Chemically Induced Mutant Stocks
+003247	C,129-Il12rb2<tm1Jm>	Il12rb|Il12rb2	private		
+003248	B6.129S1-Il12rb2<tm1Jm>	Il12rb|Il12rb2	public		Targeted and Chemically Induced Mutant Stocks
 003249	BALB/c-Cd1<tm1Gru> - discontinued	Cd1	private		
-003250	B6,129P-Hbb<tm2Unc>	Hbb	public		Targeted and Chemically Induced Mutant Stocks
+003250	B6;129P2-Hbb<tm2Unc>	Hbb	public		Targeted and Chemically Induced Mutant Stocks
 003251	Void		private		
 003252	C57BL/6J-Kitl<Sl-20J>		public		Stocks Carrying Specific Mutant Genes
-003253	B6;129P-Hbb-b1<tm1Unc> Hbb-b2<tm1Unc>	Hbb-b1	Hbb-b2	public		Targeted and Chemically Induced Mutant Stocks
+003253	B6;129P-Hbb-b1<tm1Unc> Hbb-b2<tm1Unc>	Hbb-b1|Hbb-b2	public		Targeted and Chemically Induced Mutant Stocks
 003254	B6,129-Grik<tm1Sfh>	Grik	public		Targeted and Chemically Induced Mutant Stocks
-003255	B6,129-Plp<tm1Kan>	Plp	public		Targeted and Chemically Induced Mutant Stocks
+003255	B6;129-Plp<tm1Kan>	Plp	public		Targeted and Chemically Induced Mutant Stocks
 003256	STOCK Fgf2<tm1Doe>	Fgf2	public		Targeted and Chemically Induced Mutant Stocks
 003257	FVB/N-TgN(GFAPGFP)14Mes		public		Transgenic Stocks
 003258	STOCK Igf1<tm1Ts>/Im		public	IGF-1 Mini	Targeted and Chemically Induced Mutant Stocks
 003259	STOCK Igf1<tm2Ts>/Im		private	IGF-1 Midi	Targeted and Chemically Induced Mutant Stocks
 003260	B6CBA-TgN/Buck		private		
-003261	B6,129-Abcd1<tm1Kan>	Abcd1	Abcd1<tm1Kan>	private		
+003261	B6,129-Abcd1<tm1Kan>	Abcd1|Abcd1<tm1Kan>	private		
 003262	STOCK TgN(Trp53A135V)2Ber		public		Transgenic Stocks
-003263	B6;129-Cdkn1a<tm1Tyj>	Cdkn1a	public		Targeted and Chemically Induced Mutant Stocks
-003264	B6.129-Gck<tm1Ts>	Gck	public	GLK	Targeted and Chemically Induced Mutant Stocks
+003263	B6;129S2-Cdkn1a<tm1Tyj>	Cdkn1a	public		Targeted and Chemically Induced Mutant Stocks
+003264	B6.129S7-Gck<tm1Ts>	Gck	public	GLK	Targeted and Chemically Induced Mutant Stocks
 003265	FVB,129-Ada<tm1Mw>-TgN(PLADA)4118Rkmb		public		Transgenic Stocks
-003266	B6;129-Epas1<tm1Rus>	Epas1	public		Targeted and Chemically Induced Mutant Stocks
+003266	B6;129S7-Epas1<tm1Rus>	Epas1	public		Targeted and Chemically Induced Mutant Stocks
 003267	B6,129-Mar1<tm1Wtg>	Mar1	private		Targeted and Chemically Induced Mutant Stocks
 003268	FVB-TgN(IRS1)1Mhep		public		Transgenic Stocks
 003269	C57BL/6J-Hoxa2<tm1Grid>	Hoxa2	private		Targeted and Chemically Induced Mutant Stocks
@@ -3274,14 +3274,14 @@
 003274	STOCK TgN(tetNZL)2Uh		public		Transgenic Stocks
 003275	STOCK TgN(tetL)1Uh		public		Transgenic Stocks
 003276	C57BL/10-Il10<tm1Cgn> A<w-45J>	A<w-45J>	private		
-003277	B6;129-Acvr2<tm1Zwk>	Acvr2<tm1Zwk>	public	Acvr2aq	Targeted and Chemically Induced Mutant Stocks
+003277	B6;129S7-Acvr2<tm1Zwk>	Acvr2<tm1Zwk>	public	Acvr2aq	Targeted and Chemically Induced Mutant Stocks
 003278	STOCK TGN(INFAHi)#Ts		private	IiaCD1	
 003279	STOCK TgN(INFALow)#Ts (1039 CD1)		private	1039CD1	
 003280	NOD-Ifng<tm1Ts>		private	GKONOD	
 003281	HGF KO		private	HGF	
 003282	C57BL/6-Gck<tm1Ts>/Genentech		private	GLK	
-003283	B6,129-Fshb<tm1Zuk>		public		Targeted and Chemically Induced Mutant Stocks
-003284	B6;129S-Il1rap<tm1Roml>	Il1rap	public		Targeted and Chemically Induced Mutant Stocks
+003283	B6;129S7-Fshb<tm1Zuk>		public		Targeted and Chemically Induced Mutant Stocks
+003284	B6;129S1-Il1rap<tm1Roml>	Il1rap	public		Targeted and Chemically Induced Mutant Stocks
 003285	C57BL/6-TgN(LIPC)6784His		public		Transgenic Stocks
 003286	STOCK Fos<tm1Pa>	Fos	public		Targeted and Chemically Induced Mutant Stocks
 003287	C57BLKS/J-m +/+ Lepr<db> ho<12J>		private	nm2309	
@@ -3291,13 +3291,13 @@
 003291	C57BL/6-TgN(ACTbEGFP)1Osb		public		Transgenic Stocks
 003292	129S6/SvEvTac-Was<tm1Sbs>		public		Targeted and Chemically Induced Mutant Stocks
 003293	C.129S2(B6)-Pnliprp2<tm1Gru>		public		Targeted and Chemically Induced Mutant Stocks
-003294	C3.MRL-Tnfrsf6<lpr>-Myo7a<shi-9J>		private	nm2501	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003294	C3.MRL Tnfrsf6<lpr>-Myo7a<shi-9J>		private	nm2501	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003295	B6;129-Ednrb<tm1Ywa>	Ednrb	public		Targeted and Chemically Induced Mutant Stocks
 003296	C57BL/6J-bt<8J>	bt<8J>	private	nm2506	
 003297	FVB,129-Ada<tm1Mw>-TgN(PLFSADA)2465Rkmb		public		Transgenic Stocks
 003298	SENCARA/PtJ-Cdh23<v-5J>	Cdh23<v-5J>	private		
 003299	B6;SWJ-TgN(TIMP3LacZ)7Jeb		public		Transgenic Stocks
-003300	B6.NOD-(D17Mit21-D17Mit10)/LtJ	H2<g7>	Idd1<NOD>	public	c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003300	B6.NOD-(D17Mit21-D17Mit10)/LtJ	H2<g7>|Idd1<NOD>	public	c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003301	B6C3FeF1-a/A-Eya1<bor>	Eya1<bor>	public	nm1190	Stocks Carrying Specific Mutant Genes
 003302	B6;129-wn	wn	public		Stocks Carrying Specific Mutant Genes
 003303	BALB/c-TgN(DO11.10)10Loh		public		Transgenic Stocks
@@ -3306,8 +3306,8 @@
 003306	C57BL/6J-nm2590		private	nm2590	
 003307	B10.Q-H2<q>/SgJ-het<2J>		private	nm2601	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003308	C57BL/6Ei-App<tm1>	App	private		Targeted and Chemically Induced Mutant Stocks
-003309	B6;129S-Gtrosa26<tm1Sor>		public		Transgenic Stocks
-003310	129-Gtrosa26<tm1Sor>		public		Transgenic Stocks
+003309	B6;129S4-Gt(ROSA)26Sor<tm1Sor>		public		Transgenic Stocks
+003310	129S-Gt(ROSA)26Sor<tm1Sor>		public		Transgenic Stocks
 003311	B6;SJL-TgN(rPEPCKSREBF2)788Reh		public		Transgenic Stocks
 003312	B6.129S7-Ngfb<tm1Agt>	Ngfb	public		Transgenic Stocks
 003313	B6,129-Shh<tm1>		public		Targeted and Chemically Induced Mutant Stocks
@@ -3325,14 +3325,14 @@
 003325	C57BL/6-TgN(LFA-3IE)#Biogen		private		
 003326	C57BL/6-TgN(LFA-3HE)#Biogen		private		
 003327	B10.D2/nSnJ-Grid2<ho-13J>		private	nm2336	
-003328	129-TgN(PRM-Cre)58Og		public		Transgenic Stocks
+003328	129S-TgN(PRM-Cre)58Og		public		Transgenic Stocks
 003329	B6.129S7-Itgb2<tm2Bay>		public		Targeted and Chemically Induced Mutant Stocks
 003330	B6;D2-TgN(LCK-NFKBIA)5Dwb		public		Transgenic Stocks
 003331	C57BL/6-TgN(Cd8aCd8b)3Erob		public		Transgenic Stocks
 003332	C57BL/6-TgN(LckNotch1)9Erob		public		Transgenic Stocks
 003333	C57BL/6-TgN(TF-CAT)48Gsa		public		Transgenic Stocks
 003334	B6.129-Jup<tm1Ruiz>		public		Targeted and Chemically Induced Mutant Stocks
-003335	FVB/N-TgN(ZP3A)7812Dean		private		Targeted and Chemically Induced Mutant Stocks
+003335	FVB/N-TgN(ZP3A)7812Dean		public		Targeted and Chemically Induced Mutant Stocks
 003336	B6.129S7-Cdkn1c<tm1Sje>	Cdkn1c<tm1Sje>	public		Targeted and Chemically Induced Mutant Stocks
 003337	STOCK TgN(MMTVPIP)1Shu		public		Transgenic Stocks
 003338	129/SvImJ-frc		private		Stocks Carrying Specific Mutant Genes
@@ -3363,8 +3363,8 @@
 003363	MM14.4tcr675		private		Targeted and Chemically Induced Mutant Stocks
 003364	MM14.4tcr690		private		Targeted and Chemically Induced Mutant Stocks
 003365	assigned in error		private		
-003366	B6;129-Cutl1<tm1Ejn>		public		Targeted and Chemically Induced Mutant Stocks
-003367	B6,129-Cutl1<tm2Ejn>		public		Targeted and Chemically Induced Mutant Stocks
+003366	B6;129S4-Cutl1<tm1Ejn>		public		Targeted and Chemically Induced Mutant Stocks
+003367	B6;129S4-Cutl1<tm2Ejn>		public		Targeted and Chemically Induced Mutant Stocks
 003368	NOD-Ifng<tm1Ts>		private		
 003369	assigned in error		private		
 003370	FVB-TgN(SrySox9)56Ei		private		Transgenic Stocks
@@ -3376,7 +3376,7 @@
 003376	FVB/N-TgN(ACTB-Cre)2Mrt		public		Transgenic Stocks
 003377	FVB/N-TgN(Zp3-Cre)3Mrt	TgN(Zp3Cre)3Mrt	public		Transgenic Stocks
 003378	B6C3F1-TgN(Prn-APP695)3Dbo TgN(Prn-PSEN1)5Dbo		public		Transgenic Stocks
-003379	B6;129S-Srb1<tm1>		public		Targeted and Chemically Induced Mutant Stocks
+003379	B6;129S2-Srb1<tm1Kri>		public		Targeted and Chemically Induced Mutant Stocks
 003380	C57BL/6J-TgN(C3-1-TAg)cJeg		public		Transgenic Stocks
 003381	FVB-TgN(C3-1-TAg)cJeg		public		Transgenic Stocks
 003382	B10.D2-TgN(C3-1-TAg)cJeg		public		Transgenic Stocks
@@ -3446,7 +3446,7 @@
 003446	C57BL/6J-TgN(Amy1TAg)501Knw		public		Transgenic Stocks
 003447	BALB/cByJ-Tcrb		private		Targeted and Chemically Induced Mutant Stocks
 003448	BALB/cByJ-Tcrd		private		Targeted and Chemically Induced Mutant Stocks
-003449	NOD/LtSz-Prkdc<scid> B2m<tm1Unc>	B2m	Prkdc<scid>	private		Targeted and Chemically Induced Mutant Stocks
+003449	NOD/LtSz-Prkdc<scid> B2m<tm1Unc>	B2m|Prkdc<scid>	private		Targeted and Chemically Induced Mutant Stocks
 003450	C57BL/6J-Zfa<tm1Ems>		private		Targeted and Chemically Induced Mutant Stocks
 003451	129S2/SvPasIco-Madh3<tm1Par>	Madh3	public		Targeted and Chemically Induced Mutant Stocks
 003452	B6,129-Madh3<tm1Par>	Madh3	public		Targeted and Chemically Induced Mutant Stocks
@@ -3454,7 +3454,7 @@
 003454	B6.129-Hdh<tm3Mem>	Hdh<tm3Mem>	public		Targeted and Chemically Induced Mutant Stocks
 003455	STOCK Hdh<tm4Mem>	Hdh<tm4Mem>	public		Targeted and Chemically Induced Mutant Stocks
 003456	STOCK Hdh<tm5Mem>	Hdh<tm5Mem>	public		Targeted and Chemically Induced Mutant Stocks
-003457	B.D/22Ei-Ca<16J>	Ca<16J>	private		Stocks Carrying Specific Mutant Genes
+003457	B6.D2/22Ei-Ca<16J>	Ca<16J>	private		Stocks Carrying Specific Mutant Genes
 003458	B6;129-Penk-rs<tm1Pig>	Penk-rs<tm1Pig>	public		Targeted and Chemically Induced Mutant Stocks
 003459	STOCK Craft1<tm1Pig>	Craft1<tm1>	public		Targeted and Chemically Induced Mutant Stocks
 003460	STOCK Braft<tm1Pig>	Braft<tm1>	public		Targeted and Chemically Induced Mutant Stocks
@@ -3462,7 +3462,7 @@
 003462	B6.129S1-Thrb<tm1Df>	Thrb<tm1>	public		Targeted and Chemically Induced Mutant Stocks
 003463	STOCK Aga<tm1Vk>	Aga<tm1>	public		Targeted and Chemically Induced Mutant Stocks
 003464	B6.129-Lbp<tm1Buru>	Lbp<tm1>	public		Targeted and Chemically Induced Mutant Stocks
-003465	BALB/c-TgN(CMV-Cre)#Cgn		public		Transgenic Stocks
+003465	BALB/c-TgN(CMV-Cre)1Cgn		public		Transgenic Stocks
 003466	B6;D2-TgN(Sycp1-Cre)4Min		public		Transgenic Stocks
 003467	B6.129S2-Srb1<tm1Kri>	Srb1<tm1>	public		Targeted and Chemically Induced Mutant Stocks
 003468	NSE-cdk/P25 Line A		private		
@@ -3471,7 +3471,7 @@
 003471	B6;C3H-TgN(CNP-GEO)1Ldh		public		Transgenic Stocks
 003472	FVB-TgN(SrySox9)51Ei		private		Transgenic Stocks
 003473	FVB-TgN(SrySox3)36Ei		private		Transgenic Stocks
-003474	B6.129S4-Gtrosa26<tm1Sor>	Gtrosa26<tm1Sor>	public		Targeted and Chemically Induced Mutant Stocks
+003474	B6.129S4-Gt(ROSA)26Sor<tm1Sho>	Gtrosa26<tm1Sor>	public		Targeted and Chemically Induced Mutant Stocks
 003475	C57BL/6-TgN(HLA-A2.1)1Enge		public		Transgenic Stocks
 003476	C57BL/6J-TgN(SV)427Bri		private		Transgenic Stocks
 003477	C57BL/6J-TgN(SV)419Bri		public		Transgenic Stocks
@@ -3493,7 +3493,7 @@
 003493	FVB.MEV-Emv64	Emv64	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003494	FVB.MEV-Emv66	Emv66	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003495	B6.A-D4Mit15, D4Mit11, D4Mit127/Ty		private		Stocks Carrying Specific Mutant Genes
-003496	C57BL/6-Rag1<tm1Mom> TgN(TcrOva)1100Mjb	Rag1<tm1Mom>	TgN(TcrOva)	private		Targeted and Chemically Induced Mutant Stocks
+003496	C57BL/6-Rag1<tm1Mom> TgN(TcrOva)1100Mjb	Rag1<tm1Mom>|TgN(TcrOva)	private		Targeted and Chemically Induced Mutant Stocks
 003497	FVB-TgN(Sry Sox3)35Ei		private		Transgenic Stocks
 003498	FVB-TgN(SrySox3)78Ei		private		Transgenic Stocks
 003499	NOD-TgN(RIP-Tnfsf6)24Ach		public	RIP-Fasl	Stocks Carrying Specific Mutant Genes
@@ -3501,7 +3501,7 @@
 003501	C57BL/6J-TgN(rtTAhCMV)4Uh		private		Transgenic Stocks
 003502	FVB.129S6-Stat5a<tm1Mam>	Stat5a<tm1Mam>	public		Targeted and Chemically Induced Mutant Stocks
 003503	NOD-TgN(RIP-Tnfsf6)32Ach		private	RIP-Fasl	Stocks Carrying Specific Mutant Genes
-003504	B6;129-Gtrosa26<tm1Sho>	Gtrosa26<tm1Sho>	public		Targeted and Chemically Induced Mutant Stocks
+003504	B6;129S4-Gt(ROSA)26Sor<Sho>	Gtrosa26<tm1Sho>	public		Targeted and Chemically Induced Mutant Stocks
 003505	NOD.B6-Pfp<tm1Sdz>	Pfp<tm1>	public		Targeted and Chemically Induced Mutant Stocks
 003506	B6;BALB/cJ-Npr3<lgj>	Npr3<lgj>	private		Stocks Carrying Specific Mutant Genes
 003507	D2;B6-Npr3<lgj-2J>	Npr3<lgj-2J>	public		Stocks Carrying Specific Mutant Genes
@@ -3510,7 +3510,7 @@
 003510	C57BL/6J-Girk2<tm1>	Girk2	private		
 003511	C57BL/6J-Dec1/+	Dec1/+	private		
 003512	FVB-TgN(SrySox9)79Ei		private		Transgenic Stocks
-003513	129-Rb1<tm1Tyj>-Dst<dt-32J>	Dst<dt-32J>	Rb1<tm1Tyj>	private		Stocks Carrying Specific Mutant Genes
+003513	129-Rb1<tm1Tyj>-Dst<dt-32J>	Dst<dt-32J>|Rb1<tm1Tyj>	private		Stocks Carrying Specific Mutant Genes
 003514	BALB/c-Il4ra<tm1Sz>		public		Targeted and Chemically Induced Mutant Stocks
 003515	B6.129S4-Lyn<tm1Sor>	Lyn	private		Targeted and Chemically Induced Mutant Stocks
 003516	FVB.Cg-Tg(GFPU)5Nagy	TgN(GFPU)5Nagy	private		Transgenic Stocks
@@ -3521,7 +3521,7 @@
 003521	D2.129S4(B6)-Bdnf<tm1Jae>/Sj	Bdnf<tm1Jae>	private	Bdnf(0)D2	Targeted and Chemically Induced Mutant Stocks
 003522	AKXD-28/Ty-Bdnf<tm1Jae>	Bdnf<tm1Jae>	private		Targeted and Chemically Induced Mutant Stocks
 003523	B6.ROP/Le-Os	Os	public		Stocks Carrying Specific Mutant Genes
-003524	B6;129S-Lrp8<tm1Her>	Lrp8<tm1Her>	public		Targeted and Chemically Induced Mutant Stocks
+003524	B6;129S6-Lrp8<tm1Her>	Lrp8<tm1Her>	public		Targeted and Chemically Induced Mutant Stocks
 003525	C3H/HeOuJ-Gus<mps-2J>	Gus<mps-2J>	public		Stocks Carrying Specific Mutant Genes
 003526	B6;129S5-Trp63<tm1Brd>	Trp63<tm1Brd>	public		Targeted and Chemically Induced Mutant Stocks
 003527	C57BL/10SnJ-ru2<10J>	ru2<10J>	private		Stocks Carrying Specific Mutant Genes
@@ -3530,7 +3530,7 @@
 003530	B6,129-Ltb<tm1Flv>	Ltb<tm1Flv>	public		Targeted and Chemically Induced Mutant Stocks
 003531	B6.129-Ltb<tm1Flv>	Ltb<tm1Flv>	public		Targeted and Chemically Induced Mutant Stocks
 003532	C3HeB.129S7(B6)-Kcna1<tm1Tem>	Kcna1<tm1Tem>	public		Targeted and Chemically Induced Mutant Stocks
-003533	B6.129P-B2m<tm1Unc>-rs<2J>	B2m	rs<2J>	public		Stocks Carrying Specific Mutant Genes
+003533	B6.129P-B2m<tm1Unc>-rs<2J>	B2m|rs<2J>	public		Stocks Carrying Specific Mutant Genes
 003534	STOCK Inpp5d<tm1Dmt>	Inpp5d<tm1Dmt>	public		Targeted and Chemically Induced Mutant Stocks
 003535	B6,129-Gla<tm1Kul>		public		Targeted and Chemically Induced Mutant Stocks
 003536	B6,129-Cdk5<tm1Kul>	Cdk5<tm1Kul>	public		Targeted and Chemically Induced Mutant Stocks
@@ -3599,15 +3599,15 @@
 003599	B10.RIII-H2<r> H2-T18<b>(71NS)/Sn-Ap3b1<pe-11J>	Ap3b1<pe-11J>	public		Stocks Carrying Specific Mutant Genes
 003600	BALB/cAnn-TgN(HUG)		private		
 003601	B6.Cg-nm2193		private		Stocks Carrying Specific Mutant Genes
-003602	C57BL/6J x STOCK Cln6<nclf>-Edar<dl-3J>/+	Edar<dl-3J>	public	nm2313	Stocks Carrying Specific Mutant Genes
+003602	C57BL/6J x STOCK Cln6<nclf>-Edar<dl-3J>/+	Cln6<nclf>|Edar<dl-3J>	public	nm2313	Stocks Carrying Specific Mutant Genes
 003603	AKXL-41/Ty		private		Recombinant Inbred Strains
 003604	D.B11-nm2451		private		Stocks Carrying Specific Mutant Genes
 003605	B6.Cg-Cln6<nclf>	Cln6<nclf>	public		Stocks Carrying Specific Mutant Genes
-003606	C57BLKS/J-m +/+ Lepr<db> Egfr<wa2-5J> (nm2584)	Egfr<wa2-5J>	Lepr<db>	private		
+003606	BKS.Cg m +/+ Lepr<db>-nm2584	Lepr<db>	private		Stocks Carrying Specific Mutant Genes
 003607	129,CF1-Plb	Plb	private		Targeted and Chemically Induced Mutant Stocks
 003608	B10.PL-Thy1<a>		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003609	B6.129S4-Cd86<tm1Shr>	Cd86<tm1Shr>	public		Targeted and Chemically Induced Mutant Stocks
-003610	B6.129-Cd80<tm1Shr> Cd86<tm1Shr>	Cd80<tm1Shr>	Cd86<tm1Shr>	public		Targeted and Chemically Induced Mutant Stocks
+003610	B6.129S4-Cd80<tm1Shr> Cd86<tm1Shr>	Cd80<tm1Shr>|Cd86<tm1Shr>	public		Targeted and Chemically Induced Mutant Stocks
 003611	B6.129S4-Cd80<tm1Shr>	Cd80<tm1Shr>	public		Targeted and Chemically Induced Mutant Stocks
 003612	B6C3Fe-a/a-nm1952		private		Stocks Carrying Specific Mutant Genes
 003613	BXD-32-nm2180		private		Stocks Carrying Specific Mutant Genes
@@ -3618,14 +3618,14 @@
 003618	B6.Cg-Dmc1h<tm1Jcs>	Dmc1h<tm1Jcs>	private		Targeted and Chemically Induced Mutant Stocks
 003619	B6.129-Gprc1d<tm1Hpn>	Gprc1d	public		Targeted and Chemically Induced Mutant Stocks
 003620	C57BL/6J-TgN(APOA1)1Rub Apoa1<tm1Unc>		private		Transgenic Stocks
-003621	C57BL/6J-Ptprc<a> Pep<3b>	Pep<3b>	Ptprc<a>	private		Stocks Carrying Specific Mutant Genes
+003621	C57BL/6J-Ptprc<a> Pep<3b>	Pep<3b>|Ptprc<a>	private		Stocks Carrying Specific Mutant Genes
 003622	C57BL/6J-TgN(PgkAPO)01Deh		private		Transgenic Stocks
-003623	C57BL/6J-Kit<W-41J> Gpi1<a>	Gpi1<a>	Kit<W-41J>	private		Stocks Carrying Specific Mutant Genes
+003623	C57BL/6J-Kit<W-41J> Gpi1<a>	Gpi1<a>|Kit<W-41J>	private		Stocks Carrying Specific Mutant Genes
 003624	STOCK nm2714		private		Stocks Carrying Specific Mutant Genes
 003625	B6.C-H2<bm12>/KhEg-Mc1r<e-J>	Mclr<eJ>	public		Stocks Carrying Specific Mutant Genes
 003626	C57BL/6-Cp<tm1Hrs>	Cp<tm1Hrs>	public		Targeted and Chemically Induced Mutant Stocks
 003627	B6C3F1/J-TgN(HD82Gln)81Dbo		public		Transgenic Stocks
-003628	B6.Cg-cub-Mcub	Mcub	cub	private	nm1440,156	Stocks Carrying Specific Mutant Genes
+003628	B6.Cg-cub-Mcub	Mcub|cub	private	nm1440,156	Stocks Carrying Specific Mutant Genes
 003629	NOD.129S7(B6)-Rag1<tm1Mom>	Rag1	private		Targeted and Chemically Induced Mutant Stocks
 003630	C57BL/6Ei-Y<AKR><SMCY-Mus>		private		Stocks Carrying Specific Mutant Genes
 003631	S-24bm		private		
@@ -3644,7 +3644,7 @@
 003644	C57BL/6J-TgN(LacZpl)30Vij	TgN(LacZpl)30Vij	private		Transgenic Stocks
 003645	C57BL/6J-Ts(12<16C4-tel>)1Cje		private		Chromosome Aberrations
 003646	B6EiC3Sn a/A-Ts(10<16>)232Dn		private		Chromosome Aberrations
-003647	B6EiC3Sn.BLiAF1		public		Special F1 Hybrids
+003647	B6EiC3Sn.BLiAF1		private		Special F1 Hybrids
 003648	C3Sn.BLiA-Pde6b<+>/Dn	+<Pde6b>	public		Stocks Carrying Specific Mutant Genes
 003649	C57BL/6-TgN(Zp3-Cre)89Knw		private		Transgenic Stocks
 003650	C57BL/6-TgN(Zp3-Cre)82Knw		private		Transgenic Stocks
@@ -3663,7 +3663,7 @@
 003663	C57BL/6JEi-Tg(ADARB1)6Dn	ADARB1	private		Stocks Carrying Specific Mutant Genes
 003664	C57BL/6JEi-Tg(ADARB1)7Dn	ADARB1	private		Stocks Carrying Specific Mutant Genes
 003665	C57BL/6JEi-Tg(ADARB1)8Dn	ADARB1	private		Stocks Carrying Specific Mutant Genes
-003666	B6,129-Map2k4<tm1Liz>	Map2k4	public		Targeted and Chemically Induced Mutant Stocks
+003666	B6;129S1-Map2k4<tm1Liz>	Map2k4	public		Targeted and Chemically Induced Mutant Stocks
 003667	B6,CAST-Tub8.01		private		
 003668	NONcNZO1		public		Recombinant Inbred Strains
 003669	NONcNZO2		public		Recombinant Inbred Strains
@@ -3689,7 +3689,7 @@
 003689	STOCK TgN(Pbsn-Cdc37)1Stp		public		Transgenic Stocks
 003690	STOCK TgN(MMTV-Cdc37)1Stp		public		Transgenic Stocks
 003691	C57BL/6Cr		private		Miscellaneous Inbred and Congenic Strains
-003692	B6;129X-Snca<tm1Rosl>		public		Targeted and Chemically Induced Mutant Stocks
+003692	B6;129X1-Snca<tm1Rosl>		public		Targeted and Chemically Induced Mutant Stocks
 003693	Calpain		private		Transgenic Stocks
 003694	B6;129S-Vamp8<tm1Lex>		private		Targeted and Chemically Induced Mutant Stocks
 003695	B6;129S-Scg3<tm1Lex>		private		Targeted and Chemically Induced Mutant Stocks
@@ -3738,7 +3738,7 @@
 003738	B6;129S-Ube2n<tm1Lex>		private		Targeted and Chemically Induced Mutant Stocks
 003739	FVB.Cg-TgN(Pbsn-Cdc37)1Stp		private		Transgenic Stocks
 003740	FVB.Cg-TgN(MMTV-Cdc37)1Stp		private		Transgenic Stocks
-003741	B6SJL-TgN(Prnp-MAPT)43Vle		private		Transgenic Stocks
+003741	B6SJL-Tg(Prnp-MAPT)43Vle		private		Transgenic Stocks
 003742	B6.129S6-Cdh6<tm1Sma>		private		Targeted and Chemically Induced Mutant Stocks
 003743	B6.129S7-Ngfb<tm1>Genentech		private		
 003744	B6;129S-Nlk<tm1Lex>		public		Targeted and Chemically Induced Mutant Stocks
@@ -3746,15 +3746,15 @@
 003746	B6;129S-Limk2<tm1Lex>		private		Targeted and Chemically Induced Mutant Stocks
 003747	B6;129S-Mdm4<tm1Lex>		private		Targeted and Chemically Induced Mutant Stocks
 003748	C57BL/IKO		private		
-003749	B6;129S-Cpsf3<tm1Lex>		public		Targeted and Chemically Induced Mutant Stocks
+003749	B6;129S5-Cpsf3<tm1Lex>		public		Targeted and Chemically Induced Mutant Stocks
 003750	C.129S2-Stat4<tm1Gru> Stat6<tm1Gru>		public		Targeted and Chemically Induced Mutant Stocks
-003751	B6;129S-Igh-6<tm1Che>		public		Targeted and Chemically Induced Mutant Stocks
+003751	B6;129S4-Igh-6<tm1Che>		public		Targeted and Chemically Induced Mutant Stocks
 003752	C57BL/10ScN	Tlr4<lps-del>	public	ScNCr,ScCr	Miscellaneous Inbred and Congenic Strains
 003753	FVB/N-TgN(Eno2CDK5R1)1Jdm		public		Transgenic Stocks
-003754	B6.129S4-shrm<Gt(ROSA)53Sor	shrm<Gt(ROSA)53Sor	public	shrm<Gtros	Transgenic Stocks
+003754	B6.129S4-shrm<Gt(ROSA)53Sor>	shrm<Gt(ROSA)53Sor	public	shrm<Gtros	Transgenic Stocks
 003755	B6.129S4-Meox2<CreSor>		private		Targeted and Chemically Induced Mutant Stocks
 003756	BALB/cByJ-nr/+	nr	private		Stocks Carrying Specific Mutant Genes
-003757	C3Sn.BLiA-+<Pde6b>/Dn-TgN(B142F9)Py8.2Jdg (APP)	+<Pde6b>	TgN(B142F9)Py8.2Jdg	private	APP	Transgenic Stocks
+003757	C3Sn.BLiA-+<Pde6b>/Dn-TgN(B142F9)Py8.2Jdg (APP)	+<Pde6b>|TgN(B142F9)Py8.2Jdg	private	APP	Transgenic Stocks
 003758	B6 x B6EiC3Sn a/A-T65Dn/+		public		Chromosome Aberrations
 003759	B6 x B6EiC3Sn a/A-T232Dn		public		Chromosome Aberrations
 003760	B6.129S2/SvPas-F2<tm2>		private		Targeted and Chemically Induced Mutant Stocks
@@ -3802,19 +3802,19 @@
 003802	B6.Cg-TgN(LckCre)548Jxm		private		Transgenic Stocks
 003803	STOCK Bcr<tm1Hkp>		public		Targeted and Chemically Induced Mutant Stocks
 003804	B6SJL-TgN(Myl2SLC2A1)2Mue		public		Transgenic Stocks
-003805	B6;129S-Selp<tm1Hyn>Sell<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
-003806	B6;129S-Sele<tm1Hyn>Sell<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
-003807	B6;129S-Sele<tm1Hyn>Sell<tm1Hyn>Selp<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
+003805	B6;129S-Selp<tm1Hyn> Sell<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
+003806	B6;129S-Sele<tm1Hyn> Sell<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
+003807	B6;129S-Sele<tm1Hyn> Sell<tm1Hyn> Selp<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
 003808	B6.Cg(129S2)-Prl<tm1Hmn>		private		Targeted and Chemically Induced Mutant Stocks
-003809	B6.129S6-Mos<tm1Ev>-fz<5J>/+	Mos<tm1Ev>	fz<5J>	private		Stocks Carrying Specific Mutant Genes
-003810	STOCK Adrb1<tm1Bkk> Adrb2<tm1Bkk>		private		Targeted and Chemically Induced Mutant Stocks
+003809	B6.129S6-Mos<tm1Ev>-fz<5J>/+	Mos<tm1Ev>|fz<5J>	private		Stocks Carrying Specific Mutant Genes
+003810	STOCK Adrb1<tm1Bkk> Adrb2<tm1Bkk>		public		Targeted and Chemically Induced Mutant Stocks
 003811	B6D2-TgN(Pcp2SCA2)11Plt		private		Transgenic Stocks
 003812	B6.129P2-Hfe<tm1Gfn>		private		Targeted and Chemically Induced Mutant Stocks
 003813	B6,129-Hcrt<tm1Ywa>		private		Targeted and Chemically Induced Mutant Stocks
 003814	C.129S2-Cd1<tm1Gru>		private		Targeted and Chemically Induced Mutant Stocks
 003815	C57BL/6J-Spna1<sph-Dem>	Spna1<sph-Dem>	private		Stocks Carrying Specific Mutant Genes
 003816	WB/Re-Spna1<sph-Dem>	Spna1<sph-Dem>	private		Stocks Carrying Specific Mutant Genes
-003817	B6;129S-Fcgr2b<tm1Rav>-Clcn1<adr-mto5J>	Clcn1<adr-mto5J>	public	nm2801	Stocks Carrying Specific Mutant Genes
+003817	B6;129S Fcgr2b<tm1Rav>-Clcn1<adr-mto5J>	Clcn1<adr-mto5J>	public	nm2801	Stocks Carrying Specific Mutant Genes
 003818	STOCK us<+>/+ A<w>/A<w>-nm1864/+		private		Stocks Carrying Specific Mutant Genes
 003819	B6.129S7-Per2<tm1Brd>		private		Targeted and Chemically Induced Mutant Stocks
 003820	STOCK sy<fp-3J>	sy<fp-3J>	private		
@@ -3833,14 +3833,14 @@
 003833	C57BL/6J-TgN(NSEIghmbp2)17Cx		private		Transgenic Stocks
 003834	C57BL/6J-TgN(NSEIghmbp2)90Cx		private		Transgenic Stocks
 003835	STOCK nm2619		private	lollipop	Stocks Carrying Specific Mutant Genes
-003836	B6;C.B10-H2<b>-sy<fp-2J>	H2<b>	sy<fp-2J>	private		
+003836	B6;C.B10-H2<b>-sy<fp-2J>	H2<b>|sy<fp-2J>	private		
 003837	B6.Cg-+<T-Hp>-A		private		Stocks Carrying Specific Mutant Genes
 003838	A/J-nm3062		private		Stocks Carrying Specific Mutant Genes
 003839	B6.NOD-nm2897		private		Stocks Carrying Specific Mutant Genes
 003840	AKR/J-Tl/+	Tl	private	nm2425	Stocks Carrying Specific Mutant Genes
 003841	NOD.129P2(B6)-B2m<tm1Unc>/Dcr	B2m<tm1Unc>	private		Targeted and Chemically Induced Mutant Stocks
 003842	CTS/Shi		private		Miscellaneous Inbred and Congenic Strains
-003843	NOD/Lt-Prkdc<scid> Tg(GAD2)1Lt	Prkdc<scid>	Tgn(RIP7hGAD65)Lt4-Y	public		Transgenic Stocks
+003843	NOD/Lt-Prkdc<scid> Tg(GAD2)1Lt	Prkdc<scid>|Tgn(RIP7hGAD65)Lt4-Y	public		Transgenic Stocks
 003844	NOD/Lt-Prkdc<scid> Tg(GAD2)2Lt	Prkdc<scid>	public		Transgenic Stocks
 003845	ALR/Lt		private		Miscellaneous Inbred and Congenic Strains
 003846	ALS/Lt		private		Miscellaneous Inbred and Congenic Strains
@@ -3850,7 +3850,7 @@
 003850	NOD.B6(PL)-(D3Mit213-D3Mit124)/Lt	Idd10<B6>	public	Idd10 (R2)	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003851	ALR.NOD-H2<g7>	H2<g7>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003852	NOD.B6-Il2	Il2	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003853	NOD.B6(PL)-(D3Mit93-D3Mit124)	Idd10<B6>	Idd3<B6>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003853	NOD.B6(PL)-(D3Mit93-D3Mit124)	Idd10<B6>|Idd3<B6>	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003854	NOD.RIPCreIX		private		Transgenic Stocks
 003855	NOD.RIPCreV		private		Transgenic Stocks
 003856	NOD.B6-Tshb	Tshb	public		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -3859,7 +3859,7 @@
 003859	NONcNZO10		public	NONcNZO16	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003860	NOD.129P2(B6)-Sell<tm1Tft>/1Lt	Sell<tm1Tft>	public	NOD-Sell<-	Targeted and Chemically Induced Mutant Stocks
 003861	NOD.129P2(B6)-Sell<tm1Tft>/2Lt	Sell<tm1Tft>	public	N10	Targeted and Chemically Induced Mutant Stocks
-003862	NOD.B6(PL)-(D3Mit167-D3Mit94)	Idd3<B6>	Il2<B6>	public	Idd3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003862	NOD.B6(PL)-(D3Mit167-D3Mit94)	Idd3<B6>|Il2<B6>	public	Idd3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003863	B6.129S6-Tapbp<tm1Luc>		private		Targeted and Chemically Induced Mutant Stocks
 003864	B6;D2-pa<l>	pa<l>	private		Stocks Carrying Specific Mutant Genes
 003865	B6.129S2-Itgav<tm1Hyn>		public		Targeted and Chemically Induced Mutant Stocks
@@ -3876,7 +3876,7 @@
 003876	B6.B10Sn-Lepr<db-dmpg>	Lepr<db-dmpg>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003877	B6.CBA-Lepr<db-rtnd>	Lepr<db-rtnd>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003878	NU/J-Lepr<db-rlpy>	Lepr<db-rlpy>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003879	B10;TFLe-a/a T tf/+ tf	T	tf	public		Stocks Carrying Specific Mutant Genes
+003879	B10;TFLe-a/a T tf/+ tf	T|tf	public		Stocks Carrying Specific Mutant Genes
 003880	C57BL/6JEi-Lyst<bg-13J>	Lyst<bg-13J>	private		
 003881	B6Ei.129S-Sod1<tm1Leb>		private		Targeted and Chemically Induced Mutant Stocks
 003882	B6-Tg1Sj		private	Myoc338B6	Transgenic Stocks
@@ -3893,7 +3893,7 @@
 003893	B6.129P2-Ace<tm1Unc>/Sj		private		Targeted and Chemically Induced Mutant Stocks
 003894	STOCK Tg(GART)1Eri		private		Transgenic Stocks
 003895	STOCK Tg(SLC9A1)2Eri		private		Transgenic Stocks
-003896	MRL/MpJ-Tnfrsf6<lpr>-sa<J>	sa<J>	public	nm2905	Stocks Carrying Specific Mutant Genes
+003896	MRL/MpJ-Tnfrsf6<lpr>-sa<J>	Tnfrsf6<lpr>|sa<J>	public	nm2905	Stocks Carrying Specific Mutant Genes
 003897	B6;D1-Abca1<tm1Jdm>		private		Targeted and Chemically Induced Mutant Stocks
 003898	C57BLKS/J-m +/+ Lepr<db>-Dst<dt-34J>/+	Dst<dt-34J>	private	nm2998	Stocks Carrying Specific Mutant Genes
 003899	B6;129-Cd44<tm1Hbg>		private		Targeted and Chemically Induced Mutant Stocks
@@ -3906,10 +3906,10 @@
 003906	AK.B6-mnd/+	mnd	public		Stocks Carrying Specific Mutant Genes
 003907	STOCK nm2411/+		private		Stocks Carrying Specific Mutant Genes
 003908	B6,129S-Gtrosa26<tm1Sor>-Dst<dt-35J>/+	Dst<dt-35J>	private	nm3034	
-003909	SWR.SJL-DXMit55-DXMit46/Bm		public	SWR.SJL-X1	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003910	SWR.SJL-DXMit46-DXMit158 (Gct4)/Bm		public	SWR.SJL-X2	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003909	SWR.SJL-(DXMit55-DXMit46)/Bm		public	SWR.SJL-X1	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003910	SWR.SJL-(DXMit46-DXMit158)/Bm	Gct4	public	SWR.SJL-X2	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003911	SWR.SJL-DXMit210-DXMit38 (Gct4)/Bm		public	SWR.SJL-X3	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-003912	SWR.SJL-DXMit38-DXMit182/Bm		public	SWR.SJL-X4	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+003912	SWR.SJL-(DXMit38-DXMit182)/Bm		public	SWR.SJL-X4	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 003913	C;STOCK cn/+		public		Stocks Carrying Specific Mutant Genes
 003914	NOD.129P2-B2m<tm1Unc>/Dvs		private		Targeted and Chemically Induced Mutant Stocks
 003915	B6xBALB/cAnBomUrd-Foxn1<nu>/+-nm2785		private	dwarf circ	Stocks Carrying Specific Mutant Genes
@@ -4016,7 +4016,7 @@
 004016	MRL.BXSB-Yaa/Dcr		private		Targeted and Chemically Induced Mutant Stocks
 004017	MRL.Cg-B2m<tm1Unc> Yaa/Dcr		private		Targeted and Chemically Induced Mutant Stocks
 004018	MRL.Cg-B2m<tm1Unc> Tg(HLA-B)22Hpl Tg(B2M)55Hpl/Dcr		private		Targeted and Chemically Induced Mutant Stocks
-004019	 SJL.Cg-B2m<tm1Unc> Tg(HLA-B)22Hpl Tg(B2M)55Hpl/Dcr		private		Targeted and Chemically Induced Mutant Stocks
+004019	SJL.Cg-B2m<tm1Unc> Tg(HLA-B)22Hpl Tg(B2M)55Hpl/Dcr		public		Targeted and Chemically Induced Mutant Stocks
 004020	SJL.Cg-B2m<tm1Unc> Tg(B2M)55Hpl/Dcr		private		Targeted and Chemically Induced Mutant Stocks
 004021	SJL.Cg-B2m <tm1Unc> D6Mit233<B6>/Dcr		private		Targeted and Chemically Induced Mutant Stocks
 004022	SJL.129S(C)-Cd1<tm1Gru>/Dcr		private		Targeted and Chemically Induced Mutant Stocks
@@ -4024,7 +4024,7 @@
 004024	SJL.Cg-Cd8a<tm1Mak> Pfp<tm1Sdz>/Dcr		private		Targeted and Chemically Induced Mutant Stocks
 004025	SJL.B6-Pfp<tm1Sdz>/Dcr		private		Targeted and Chemically Induced Mutant Stocks
 004026	SJL.129S2(B6)-Abcb2<tm1Arp>/Dcr		private		Targeted and Chemically Induced Mutant Stocks
-004027	C3H.Cg-Tg(HLA-B2705) Tg(B2M)		private		
+004027	C3.Cg-Tg(B2M)1Trg Tg(HLA-B)1Trg		private		
 004028	B10.CE-H3b<b> H13<b> A<w> (30NX)/SnDcr		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004029	B10.129P-H46<b> H47<b> p (21M)/SnDcr		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004030	B10.C-H7<b> (47N)/SnDcr		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
@@ -4181,7 +4181,7 @@
 004181	B6;129-TR2R<tm>		private		Targeted and Chemically Induced Mutant Stocks
 004182	B6;129-TR4R<tm>		private		Targeted and Chemically Induced Mutant Stocks
 004183	B6.129-Bak1<tm1Thsn>		private		Targeted and Chemically Induced Mutant Stocks
-004184	B6;FVB-TgN(WapHRAS)69Lln Y<SJL>-cr<3J>	cr<3J>	private		Stocks Carrying Specific Mutant Genes
+004184	B6;FVB-TgN(WapHRAS)69Lln Y<SJL>-cr<3J>	cr<3J>	private		
 004185	B6.129S4-Soat2<tm1Far>		private		Targeted and Chemically Induced Mutant Stocks
 004186			private		
 004187	B6;SJL-Tg(MCL1)8Caig		private		Transgenic Stocks
@@ -4197,20 +4197,20 @@
 004197	B6.129S6-Rac2<tm1Mddw>		private		Targeted and Chemically Induced Mutant Stocks
 004198	RBF/DnJ-Lxl/+	Lxl	public	Nm2769	Stocks Carrying Specific Mutant Genes
 004199	B6.129P2-Apoe<tm1Unc>-Tl3/+	Tl3	public	Nm2858	Stocks Carrying Specific Mutant Genes
-004200	B6;CBACa-A<w-J>/A-Kcnj6<wv>/+ cn<2J>/+	cn<2J>	public	nm2779	Stocks Carrying Specific Mutant Genes
+004200	B6;CBACa A<w-J>/A Kcnj6<wv>/+-cn<2J>/+	cn<2J>	public	nm2779	Stocks Carrying Specific Mutant Genes
 004201	B6.Cg-Selpl<tm1Fur>		private		Targeted and Chemically Induced Mutant Stocks
-004202	B6.C3-Pde6b<rd1> le/+ +-Lmx1a<dr-8J>/+	Lmx1a<dr-8J>	public		
+004202	B6.C3 Pde6b<rd1> le/+ +-Lmx1a<dr-8J>/+	Lmx1a<dr-8J>	public		Stocks Carrying Specific Mutant Genes
 004203	B6 X B10.A-H2<a> H2-T18<a>/SgSnJ-Lmx1a<dr-7J>	Lmx1a<dr-7J>	private		Stocks Carrying Specific Mutant Genes
 004204	B10.C-H3<c>/SnDcr	H3<c>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004205	B6.CE(B10)-H13<b> A<w> (30NX)/Dcr	H13<b>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-004206	B10.UW-H3<b> we Pax1<un> a<t>/SnDcr	H3<b>	Pax1<un>	a<t>	we	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+004206	B10.UW-H3<b> we Pax1<un> a<t>/SnDcr	H3<b>|Pax1<un> 004206\ta<t> 004206\twe	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004207	B6.Cg-H60<c> Ptprc<a> Pep3<b>/Dcr		private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-004208	B6.Cg-Fcgr2b<tm1Rav> Yaa/Dcr	Fcgr2b<tm1Rav>	Yaa	private		Stocks Carrying Specific Mutant Genes
+004208	B6.Cg-Fcgr2b<tm1Rav> Yaa/Dcr	Fcgr2b<tm1Rav>|Yaa	private		Stocks Carrying Specific Mutant Genes
 004209	B6;129-Psmb9<tm1Stl>/Dcr	Psmb9<tm1Stl>	private		Targeted and Chemically Induced Mutant Stocks
 004210	C57BL/6-Il15<tm1Imx>/ImxDcr	Il15<tm1Imx>	private		Targeted and Chemically Induced Mutant Stocks
 004211	SJL.B6-Il15<tm1Imx>/Dcr	Il15<tm1Imx>	private		Targeted and Chemically Induced Mutant Stocks
-004212	BXSB.B6-IL15<tm1Imx>/Dcr	Il15<tm1Imx>	private		Targeted and Chemically Induced Mutant Stocks
-004213	NOD.Cg-B2m<tm1Unc> Yaa/Dcr	B2m<tm1Unc>	Yaa	private		Targeted and Chemically Induced Mutant Stocks
+004212	BXSB.B6-Il15<tm1Imx>/Dcr	Il15<tm1Imx>	private		Targeted and Chemically Induced Mutant Stocks
+004213	NOD.Cg-B2m<tm1Unc> Yaa/Dcr	B2m<tm1Unc>|Yaa	private		Targeted and Chemically Induced Mutant Stocks
 004214	CByJ.B10-H2<b>/Dcr	H2<b>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004215	SJL.129S2(B6)-Cd8a<tm1Mak>/2Dcr	Cd8a<tm1Mak>	private		Targeted and Chemically Induced Mutant Stocks
 004216	SJL.129S2(B6)-CD8a<tm1Mak>/3Dcr	CD8a<tm1Mak>	private		Targeted and Chemically Induced Mutant Stocks
@@ -4225,12 +4225,12 @@
 004225	B6.129-Zap70<tm1Weis>		private		Targeted and Chemically Induced Mutant Stocks
 004226	NOD/Lt-Tg(RIP E3-309)5Dvs	Tg(RIP E3-309)5Dvs	private		Transgenic Stocks
 004227	NOD/Lt-Tg(RIP E3-704)2Dvs	Tg(RIP E3-704)2Dvs	private		Transgenic Stocks
-004228	NOD.Cg-Il10<tm1Cgn> Il4<tm1Cgn>/Dvs	Il10<tm1Cgn>	Il4<tm1Cgn>	private		Targeted and Chemically Induced Mutant Stocks
+004228	NOD.Cg-Il10<tm1Cgn> Il4<tm1Cgn>/Dvs	Il10<tm1Cgn>|Il4<tm1Cgn>	private		Targeted and Chemically Induced Mutant Stocks
 004229	NOD.129S1(B6)-Ifngr2<tm1Pbro>/Dvs	Ifngr2<tm1Pbro>	private		Targeted and Chemically Induced Mutant Stocks
-004230	NOD.Cg-Prkdc<scid> TgN(RIP E3)1Dvs	Prkdc<scid>	TgN(RIP E3)1Dvs	public		Transgenic Stocks
-004231	NOD/Lt-Tg(RipTAg)1Lt Prkdc<scid>/Dvs	Prkdc<scid>	Tg(RipTAg)1Lt	private		Transgenic Stocks
+004230	NOD.Cg-Prkdc<scid> TgN(RIP E3)1Dvs	Prkdc<scid>|TgN(RIP E3)1Dvs	public		Transgenic Stocks
+004231	NOD/Lt-Tg(RipTAg)1Lt Prkdc<scid>/Dvs	Prkdc<scid>|Tg(RipTAg)1Lt	private		Transgenic Stocks
 004232	NOD.Cg-Rag1<tm1Mom> Tg(TcraAI4)1Dvs/Dvs	Tg(TcraAI4)1Dvs	private		Transgenic Stocks
-004233	NOD.Cg-Rag1<tm1Mom> Tg(TcrbAI4)1Dvs/Dvs	Tcra	Tcrb	private		Transgenic Stocks
+004233	NOD.Cg-Rag1<tm1Mom> Tg(TcrbAI4)1Dvs/Dvs	Tcra|Tcrb	private		Transgenic Stocks
 004234	B6;129S-Fgfr3<tm1Dor>		private		Targeted and Chemically Induced Mutant Stocks
 004235	C57BL/6J-Apc<min>-Nm2928		private	Nm2928	Stocks Carrying Specific Mutant Genes
 004236	B6.129-Irf1<tm1Mak>-Nm2981		private	Nm2981	Stocks Carrying Specific Mutant Genes
@@ -4312,8 +4312,8 @@
 004312	B6.129P2-Cd38<tm1Lnd>/Lt	Cd38<tm1Lnd>	private		Targeted and Chemically Induced Mutant Stocks
 004313	B6;129-Ppt<tm1Hof>		private		Targeted and Chemically Induced Mutant Stocks
 004314	B6;129-Ppt2<tm1Hof>		private		Targeted and Chemically Induced Mutant Stocks
-004315	NOD/Lt-Sell<+>/1Lt	Sell<+>	public	Sell<+> (N	Stocks Carrying Specific Mutant Genes
-004316	NOD/Lt-Sell<+>/2Lt	Sell<+>	public	N10	Stocks Carrying Specific Mutant Genes
+004315	NOD.129P2(B6) Sell<NOD>/1Lt	Sell<NOD>	public	Sell<+> (N	Stocks Carrying Specific Mutant Genes
+004316	NOD.129P2(B6) Sell<NOD>/2Lt	Sell<NOD>	public	N10	Stocks Carrying Specific Mutant Genes
 004317	BALB/cBy-sfx	sfx	public		Stocks Carrying Specific Mutant Genes
 004318	B6.129(FVB/N)-Gabra1<tm1Geh>		private		Targeted and Chemically Induced Mutant Stocks
 004319	B6.129-Mapk8<tm1Flv>		private		Targeted and Chemically Induced Mutant Stocks
@@ -4322,14 +4322,14 @@
 004322	B6.129-Mapk10<tm1Flv>		private		Targeted and Chemically Induced Mutant Stocks
 004323	C57BL/6J-Hcph<me-v>/Sz	Hcph<me-v>	private	000811	Stocks Carrying Specific Mutant Genes
 004324	C3H/HeJBir		public		Inbred Strains
-004325	C3H/HeJBir-Il10<+>		public	.IL10+/+	Targeted and Chemically Induced Mutant Stocks
+004325	C3Bir.129P2(B6) Il10<C3>/Lt	Il10<C3>	public	.IL10+/+	Targeted and Chemically Induced Mutant Stocks
 004326	C3Bir.129P2(B6)-Il10<tm1Cgn>/Lt	Il10<tm1Cgn>	public	.IL10 -/-	Targeted and Chemically Induced Mutant Stocks
 004327	C57BL/6J-Il10<+>		public	.IL10 +/+	Targeted and Chemically Induced Mutant Stocks
 004328	NOD/Lt-H2<nb1> Il10<tm1Cgn>	H2<nb1>	public		Targeted and Chemically Induced Mutant Stocks
 004329	B6;129Sv-GFalpha3		private		
 004330	NOD.NON-H2<nb1>/Lt	H2<nb1>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004331	NON.NOD-H2<g7>/Lt	H2<g7>	private		Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
-004332	B6.NOD-(D17Mit21-D17Mit10)/Lt	H2<g7>	Idd1<NOD>	private	c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
+004332	B6.NOD-(D17Mit21-D17Mit10)/Lt	H2<g7>|Idd1<NOD>	private	c17	Congenics - Histocompatibility, Cellular Antigens + Immunoglobulin
 004333	C.129-Il10<tm1Cgn>		private		Targeted and Chemically Induced Mutant Stocks
 004334	NOD/Lt-Tg(TcraAI4)1Dvs		public		Transgenic Stocks
 004335	NOD/Lt-Tg(TcrbAI4)1Dvs		public		Transgenic Stocks
@@ -4351,3 +4351,49 @@
 004351	NOD.129S6(B6)-Cd4<tm1Knw>/Dvs		private		Targeted and Chemically Induced Mutant Stocks
 004352	NOD.129S1(B6)-Ifngr2<tm1Pbro>/DvsJ		public		Targeted and Chemically Induced Mutant Stocks
 004353	C57BL/6-Tg(UBC-GFP)30Scha		private		Transgenic Stocks
+004354	B6.129SvEms-obq1		private		Congenic Strains
+004355	B6.EL-obq1		private	00.32	Congenic Strains
+004356	B6.KK-ch9		private	00.33	Congenic Strains
+004357	B6.NZO-ch2		private	00.34	Congenic Strains
+004358	B6.NZO-ch6		private	00.35	Congenic Strains
+004359	B6.NZO-ch17		private	00.36	Congenic Strains
+004360	B6;SJL-Tg(HD)63Aron		private		Transgenic Stocks
+004361	B6.129-Xrcc5<tm1Gcl>		private		Targeted and Chemically Induced Mutant Stocks
+004362	reserved for IMR		private		
+004363	reserved for IMR		private		
+004364	reserved for IMR		private		
+004365	reserved for IMR		private		
+004366	reserved for IMR		private		
+004367	reserved for IMR		private		
+004368	reserved for IMR		private		
+004369	reserved for IMR		private		
+004370	reserved for IMR		private		
+004371	reserved for IMR		private		
+004372	reserved for IMR		private		
+004373	reserved for IMR		private		
+004374	reserved for IMR		private		
+004375	reserved for IMR		private		
+004376	reserved for IMR		private		
+004377	MLB RESERVED		private		
+004378	MLB RESERVED2		private		
+004379	C57BL/6J-1<A>/Na		private		
+004380	C57BL/6J-2<A>/Na		private		
+004381	C57BL/6J-3<A>/Na		private		
+004382	C57BL/6J-4<A>/Na		private		
+004383	C57BL/6J-5<A>/Na		private		
+004384	C57BL/6J-6<A>/Na		private		
+004385	C57BL/6J-7<A>/Na		private		
+004386	C57BL/6J-8<A>/Na		private		
+004387	C57BL/6J-9<A>/Na		private		
+004388	C57BL/6J-10<A>/Na		private		
+004389	C57BL/6J-11<A>/Na		private		
+004390	C57BL/6J-12<A>/Na		private		
+004391	C57BL/6J-13<A>/Na		private		
+004392	C57BL/6J-14<A>/Na		private		
+004393	C57BL/6J-15<A>/Na		private		
+004394	C57BL/6J-16<A>/Na		private		
+004395	C57BL/6J-17<A>/Na		private		
+004396	C57BL/6J-18<A>/Na		private		
+004397	C57BL/6J-19<A>		private		
+004398	C57BL/6J-X<A>/Na		private		
+004399	C57BL/6J-Y<A>/Na		private		

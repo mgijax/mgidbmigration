@@ -83,6 +83,39 @@ deallocate cursor acc_cursor
 commit transaction
 go
 
+/* Swap Allele 1 and Allele 2 where Allele 1 is wild type */
+/* All wild types should be Allele 2 */
+
+declare acc_cursor cursor for
+select _AllelePair_key, _Allele_key_1, _Allele_key_2
+from GXD_AllelePair_View
+where allele1 like "%<+>"
+for read only
+go
+
+begin transaction
+
+declare @allelepairKey int
+declare @allele1 int
+declare @allele2 int
+
+open acc_cursor
+fetch acc_cursor into @allelepairKey, @allele1, @allele2
+
+while (@@sqlstatus = 0)
+begin
+        update GXD_AllelePair
+		set _Allele_key_1 = @allele2, _Allele_key_2 = @allele1
+		where _AllelePair_key = @allelepairKey
+        fetch acc_cursor into @allelepairKey, @allele1, @allele2
+end
+
+close acc_cursor
+deallocate cursor acc_cursor
+commit transaction
+go
+
+
 EOSQL
 
 ${newmgddbschema}/key/GXD_AllelePair_create.object

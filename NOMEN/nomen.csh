@@ -13,22 +13,6 @@ touch $LOG
 date >> $LOG
 echo "Nomen Migration..." | tee -a $LOG
  
-# for testing, drop the tables first
-${newmgddbschema}/table/NOM_drop.logical
-cat - <<EOSQL | doisql.csh $0 >> $LOG
-
-use $DBNAME
-go
-
-delete from MGI_Note where _MGIType_key = 21
-go
-
-checkpoint
-go
-
-EOSQL
-
-
 #
 # Use new schema product to create new table
 #
@@ -36,8 +20,6 @@ ${newmgddbschema}/table/NOM_create.logical >>& $LOG
 ${newmgddbschema}/default/NOM_bind.logical >>& $LOG
 
 # remove indexes; this will make inserts faster
-#${newmgddbschema}/index/ACC_Accession_drop.object >>& $LOG
-#${newmgddbschema}/index/ACC_AccessionReference_drop.object >>& $LOG
 ${newmgddbschema}/index/MGI_Note_drop.object >>& $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_drop.object >>& $LOG
 
@@ -50,7 +32,7 @@ insert into ACC_MGIType
 values (21, 'Nomenclature', 'NOM_Marker', '_Nomen_key', 'symbol', null, getdate(), getdate(), getdate())
 go
 
-insert into MGI_NoteType values(1003, NULL, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_NoteType values(1003, 21, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
 insert into MGI_NoteType values(1004, 21, 'Editor', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
@@ -119,11 +101,11 @@ go
 
 /* Notes */
 
-select distinct _Nomen_key, type = 2, seq = identity(5)
+select distinct _Nomen_key, type = 1004, seq = identity(5)
 into #notes 
 from ${NOMEN}..MRK_Nomen_Notes where noteType = 'E'
 union
-select distinct _Nomen_key, type = 3, seq = identity(5)
+select distinct _Nomen_key, type = 1005, seq = identity(5)
 from ${NOMEN}..MRK_Nomen_Notes where noteType = 'C'
 go
 
@@ -140,14 +122,14 @@ insert into MGI_NoteChunk
 select seq + @maxKey, n.sequenceNum, n.note, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
 from #notes s, ${NOMEN}..MRK_Nomen_Notes n
 where s._Nomen_key = n._Nomen_key
-and s.type = 2
+and s.type = 1004
 and n.noteType = 'E'
 
 insert into MGI_NoteChunk
 select seq + @maxKey, n.sequenceNum, n.note, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
 from #notes s, ${NOMEN}..MRK_Nomen_Notes n
 where s._Nomen_key = n._Nomen_key
-and s.type = 3
+and s.type = 1005
 and n.noteType = 'C'
 
 go
@@ -157,16 +139,16 @@ go
 
 /* References */
 
-select _Nomen_key, _Refs_key, type = 3, seq = identity(5)
+select _Nomen_key, _Refs_key, type = 1003, seq = identity(5)
 into #refs
 from ${NOMEN}..MRK_Nomen_Reference
 where isPrimary = 1
 union
-select _Nomen_key, _Refs_key, type = 4, seq = identity(5)
+select _Nomen_key, _Refs_key, type = 1004, seq = identity(5)
 from ${NOMEN}..MRK_Nomen_Reference
 where isPrimary = 0 and broadcastToMGD = 1
 union
-select _Nomen_key, _Refs_key, type = 5, seq = identity(5)
+select _Nomen_key, _Refs_key, type = 1005, seq = identity(5)
 from ${NOMEN}..MRK_Nomen_Reference
 where isPrimary = 0 and broadcastToMGD = 0
 go
@@ -246,8 +228,6 @@ EOSQL
 ${newmgddbschema}/index/NOM_create.logical >>& $LOG
 ${newmgddbschema}/index/MGI_Note_create.object | tee -a $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_create.object | tee -a $LOG
-#${newmgddbschema}/index/ACC_Accession_create.object | tee -a $LOG
-#${newmgddbschema}/index/ACC_AccessionReference_create.object | tee -a $LOG
 ${newmgddbschema}/index/MGI_Reference_Assoc_create.object | tee -a $LOG
 
 

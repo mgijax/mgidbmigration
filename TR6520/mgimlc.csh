@@ -43,6 +43,9 @@ ${newmgddbschema}/procedure/MGI_deletePrivateData_create.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/MLC_Text_grant.object | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/MRK_updateKeys_grant.object | tee -a ${LOG}
 
+${newmgddbperms}/curatorial/table/MLC_revoke.logical | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/MLC_grant.logical | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}

@@ -27,6 +27,9 @@ date | tee -a ${LOG}
 
 echo "Allele Vocabulary Migration..." | tee -a ${LOG}
  
+# run it twice...some notes have 2 sets of delete tags
+
+./deleteNotes.py | tee -a ${LOG}
 ./deleteNotes.py | tee -a ${LOG}
 ./badDeleteNotes.py | tee -a ${LOG}
 
@@ -39,7 +42,7 @@ update ALL_Allele
 set _Mode_key = t._Term_key
 from ALL_Allele a, ALL_Inheritance_Mode o, VOC_Term t, VOC_Vocab v
 where a._Mode_key = o._Mode_key
-and o.status = t.term
+and o.mode = t.term
 and t._Vocab_key = v._Vocab_key
 and v.name = "Allele Inheritance Mode"
 go
@@ -88,7 +91,7 @@ go
 declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
-insert into MGI_NoteType values(@noteTypeKey, 25, 'Background Sensitivity', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey, 25, 'Background Sensitivity', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 /* notes */
@@ -96,30 +99,102 @@ go
 declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
-insert into MGI_NoteType values(@noteTypeKey, 11, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_NoteType values(@noteTypeKey + 1, 11, 'Molecular', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_NoteType values(@noteTypeKey + 2, 11, 'Nomenclature', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey, 11, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey + 1, 11, 'Molecular', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey + 2, 11, 'Nomenclature', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
-select distinct n._Allele_key, noteTypeKey = n._NoteType_key, seq = identity(5)
+select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, seq = identity(5)
 into #notes 
 from ALL_Note n, ALL_NoteType an, MGI_NoteType nt
 where n._NoteType_key = an._NoteType_key
 and an.noteType = nt.noteType
 and nt._MGIType_key = 11
+and nt.noteType = 'General'
 go
 
 declare @maxKey integer
 select @maxKey = max(_Note_key) from MGI_Note
 
 insert into MGI_Note 
-select seq + @maxKey, _Allele_key, 11, noteType, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
+where noteTypeKey = @noteTypeKey
 
 insert into MGI_NoteChunk
-select seq + @maxKey, n.sequenceNum, n.note, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
-from #notes s, ALL_Note n
+select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
+from #notes s, ALL_Note n, ALL_NoteType an, MGI_NoteType nt
 where s._Allele_key = n._Allele_key
+and s.noteType = 'General'
+and s.noteTypeKey = n._NoteType_key
+and s.noteTypeKey = an._NoteType_key
+and an.noteType = nt.noteType
+and nt._MGIType_key = 11
+go
+
+drop table #notes
+go
+
+select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, seq = identity(5)
+into #notes 
+from ALL_Note n, ALL_NoteType an, MGI_NoteType nt
+where n._NoteType_key = an._NoteType_key
+and an.noteType = nt.noteType
+and nt._MGIType_key = 11
+and nt.noteType = 'Molecular'
+go
+
+declare @maxKey integer
+select @maxKey = max(_Note_key) from MGI_Note
+
+insert into MGI_Note 
+select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+from #notes
+where noteTypeKey = @noteTypeKey
+
+insert into MGI_NoteChunk
+select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
+from #notes s, ALL_Note n, ALL_NoteType an, MGI_NoteType nt
+where s._Allele_key = n._Allele_key
+and s.noteType = 'Molecular'
+and s.noteTypeKey = n._NoteType_key
+and s.noteTypeKey = an._NoteType_key
+and an.noteType = nt.noteType
+and nt._MGIType_key = 11
+go
+
+drop table #notes
+go
+
+select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, seq = identity(5)
+into #notes 
+from ALL_Note n, ALL_NoteType an, MGI_NoteType nt
+where n._NoteType_key = an._NoteType_key
+and an.noteType = nt.noteType
+and nt._MGIType_key = 11
+and nt.noteType = 'Nomenclature'
+go
+
+declare @maxKey integer
+select @maxKey = max(_Note_key) from MGI_Note
+
+insert into MGI_Note 
+select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+from #notes
+where noteTypeKey = @noteTypeKey
+
+insert into MGI_NoteChunk
+select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
+from #notes s, ALL_Note n, ALL_NoteType an, MGI_NoteType nt
+where s._Allele_key = n._Allele_key
+and s.noteType = 'Nomenclature'
+and s.noteTypeKey = n._NoteType_key
+and s.noteTypeKey = an._NoteType_key
+and an.noteType = nt.noteType
+and nt._MGIType_key = 11
+go
+
+drop table #notes
 go
 
 dump tran $DBNAME with truncate_only
@@ -130,20 +205,20 @@ go
 declare @reftypeKey integer
 select @reftypeKey = max(_RefAssocType_key) + 1 from MGI_RefAssocType
 
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Original', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey + 1, 11, 'Molecular', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey + 2, 11, 'Indexed', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey + 3, 11, 'Not Used', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey + 4, 11, 'Used-PS', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey + 5, 11, 'Used-CUR', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey + 6, 11, 'Used-FC', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey, 11, 'Original', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 1, 11, 'Molecular', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 2, 11, 'Indexed', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 3, 11, 'Not Used', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 4, 11, 'Used-PS', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 5, 11, 'Used-CUR', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 6, 11, 'Used-FC', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
-select distinct r._Allele_key, r._Refs_key, refTypeKey = r._RefsType_key, seq = identity(5)
+select distinct r._Allele_key, r._Refs_key, refTypeKey = rt._RefAssocType_key, seq = identity(5)
 into #refs
 from ALL_Reference r, ALL_ReferenceType rn, MGI_RefAssocType rt
 where r._RefsType_key = rn._RefsType_key
-and rn.referenceType = rt.referenceType
+and rn.referenceType = rt.assocType
 and rt._MGIType_key = 11
 go
 
@@ -151,7 +226,7 @@ declare @maxKey integer
 select @maxKey = max(_Assoc_key) from MGI_Reference_Assoc
 
 insert into MGI_Reference_Assoc
-select seq + @maxKey, _Refs_key, _Allele_key, 11, refsTypeKey, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+select seq + @maxKey, _Refs_key, _Allele_key, 11, refTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #refs
 go
 
@@ -163,9 +238,9 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 11, 'General', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 11, null, 'General', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
-select s._Allele_key, s._Refs_key, s.synonym, @synTypeKey, seq = identity(5)
+select s._Allele_key, s._Refs_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns
 from ALL_Synonym s
 go
@@ -174,7 +249,7 @@ declare @maxKey integer
 select @maxKey = max(_Synonym_key) from MGI_Synonym
 
 insert into MGI_Synonym
-select seq + @maxKey, _Allele_key, 11, synTypeKey, _Refs_key, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+select seq + @maxKey, _Allele_key, 11, synTypeKey, _Refs_key, synonym, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #syns
 go
 
@@ -189,7 +264,7 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, 'General (GO)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, 'General (GO)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
 into #syns
@@ -200,7 +275,7 @@ declare @maxKey integer
 select @maxKey = max(_Synonym_key) from MGI_Synonym
 
 insert into MGI_Synonym
-select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #syns
 go
 
@@ -213,7 +288,7 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, 'General (MP)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, 'General (MP)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
 into #syns
@@ -224,7 +299,7 @@ declare @maxKey integer
 select @maxKey = max(_Synonym_key) from MGI_Synonym
 
 insert into MGI_Synonym
-select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #syns
 go
 
@@ -237,7 +312,7 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, 'General (AD)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, 'General (AD)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
 into #syns
@@ -248,7 +323,7 @@ declare @maxKey integer
 select @maxKey = max(_Synonym_key) from MGI_Synonym
 
 insert into MGI_Synonym
-select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #syns
 go
 

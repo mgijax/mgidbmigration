@@ -7,7 +7,7 @@
 # Procedures:   121
 # Rules:          5
 # Triggers:     156
-# User Tables:  183
+# User Tables:  182
 # Views:        226
 
 cd `dirname $0` && source ./Configuration
@@ -110,6 +110,9 @@ drop table ALL_Synonym
 go
 
 drop table VOC_Synonym
+go
+
+drop table MLC_Lock
 go
 
 drop view ALL_Reference_View

@@ -94,7 +94,6 @@ echo "Data Migration..." | tee -a  $LOG
 ./acc.csh | tee -a $LOG
 ./mgiset.csh | tee -a $LOG
 ./mgimap.csh | tee -a $LOG
-./radar.csh | tee -a $LOG
 
 date | tee -a  $LOG
 
@@ -167,7 +166,7 @@ updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
 
 ./loadTrans.csh | tee -a $LOG
 ./loadSet.csh | tee -a $LOG
-
+./radar.csh | tee -a $LOG
 
 date | tee -a  $LOG
 

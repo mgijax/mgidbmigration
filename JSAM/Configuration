@@ -42,6 +42,7 @@ setenv UNKNOWNEDITOR	1111
 setenv SCHEMA_TAG	mgddbschema-8-0-0
 setenv PUBLIC_VERSION	"MGI 3.0"
 setenv PRODUCT_NAME	MGD
+setenv RADAR_SCHEMA_TAG	radardbschema-2-0-0
 
 source ${newmgddbschema}/Configuration
 

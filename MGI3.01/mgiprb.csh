@@ -123,15 +123,6 @@ ${newmgddbschema}/procedure/SEQ_createDummy_create.object >> ${LOG}
 ${newmgddbschema}/procedure/SEQ_deleteObsoleteDummy_drop.object >> ${LOG}
 ${newmgddbschema}/procedure/SEQ_deleteObsoleteDummy_create.object >> ${LOG}
 
-${newmgddbperms}/curatorial/procedure/ACC_verifySequenceAnnotation_grant.object >> ${LOG}
-${newmgddbperms}/public/procedure/BIB_PRB_Exists_grant.object >> ${LOG}
-${newmgddbperms}/curatorial/procedure/MLP_mergeStrain_grant.object >> ${LOG}
-${newmgddbperms}/curatorial/procedure/MRK_deleteIMAGESeqAssoc_grant.object >> ${LOG}
-${newmgddbperms}/curatorial/procedure/MRK_updateIMAGESeqAssoc_grant.object >> ${LOG}
-${newmgddbperms}/curatorial/procedure/MRK_reloadReference_grant.object >> ${LOG}
-${newmgddbperms}/public/procedure/PRB_grant.logical >> ${LOG}
-${newmgddbperms}/curatorial/procedure/PRB_grant.logical >> ${LOG}
-
 ${newmgddbschema}/view/GXD_ProbePrep_View_drop.object >> ${LOG}
 ${newmgddbschema}/view/GXD_ProbePrep_View_create.object >> ${LOG}
 ${newmgddbschema}/view/MLD_Hit_View_drop.object >> ${LOG}
@@ -140,15 +131,6 @@ ${newmgddbschema}/view/PRB_drop.logical >> ${LOG}
 ${newmgddbschema}/view/PRB_create.logical >> ${LOG}
 ${newmgddbschema}/view/SEQ_Probe_Cache_View_drop.object >> ${LOG}
 ${newmgddbschema}/view/SEQ_Probe_Cache_View_create.object >> ${LOG}
-${newmgddbperms}/public/view/GXD_ProbePrep_View_grant.object >> ${LOG}
-${newmgddbperms}/public/view/MLD_Hit_View_grant.object >> ${LOG}
-${newmgddbperms}/public/view/PRB_grant.logical >> ${LOG}
-${newmgddbperms}/public/view/SEQ_Probe_Cache_View_grant.object >> ${LOG}
-
-${newmgddbperms}/curatorial/table/PRB_Probe_grant.object >> ${LOG}
-${newmgddbperms}/public/table/PRB_Probe_grant.object >> ${LOG}
-${newmgddbperms}/curatorial/table/PRB_Reference_grant.object >> ${LOG}
-${newmgddbperms}/public/table/PRB_Reference_grant.object >> ${LOG}
 
 date >> ${LOG}
 

@@ -84,6 +84,8 @@ end
 
 EOSQL
 
+${newmgddbperms}/developers/procedure/perm_grant.csh | tee -a ${LOG}
+${newmgddbperms}/developers/table/perm_grant.csh | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/perm_grant.csh | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/perm_grant.csh | tee -a ${LOG}
 ${newmgddbperms}/public/table/perm_grant.csh | tee -a ${LOG}

@@ -58,14 +58,6 @@ ${newmgddbschema}/procedure/MGI_createRestrictedMolSegSet_create.object | tee -a
 ${newmgddbschema}/procedure/MGI_createRestrictedSeqSet_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MGI_createRestrictedSeqSet_create.object | tee -a ${LOG}
 
-${newmgddbperms}/curatorial/table/MGI_Set_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/MGI_Set_grant.object | tee -a ${LOG}
-
-${newmgddbperms}/public/view/MGI_Set_CloneLibrary_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_Set_CloneSet_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_Set_ResMolSeg_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_Set_ResSequence_View_grant.object | tee -a ${LOG}
-
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
 use ${DBNAME}

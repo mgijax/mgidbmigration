@@ -37,11 +37,6 @@ ${newmgddbschema}/trigger/ALL_Type_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Type_create.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Allele_create.object | tee -a ${LOG}
-${newmgddbperms}/curatorial/table/ALL_Type_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/ALL_Type_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/ALL_Allele_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/ALL_Summary_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/ALL_Type_Summary_View_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

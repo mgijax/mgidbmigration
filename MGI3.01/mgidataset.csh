@@ -51,16 +51,6 @@ ${newmgddbschema}/view/IMG_Image_Summary_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MLD_Summary_View_drop.object | tee -a ${LOG}
 ${newmgddbschema}/view/MLD_Summary_View_create.object | tee -a ${LOG}
 
-${newmgddbperms}/curatorial/table/BIB_DataSet_Assoc_grant.object | tee -a ${LOG}
-${newmgddbperms}/curatorial/table/BIB_Refs_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/BIB_DataSet_Assoc_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/BIB_DataSet_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/BIB_Refs_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/procedure/BIB_isNOGO_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/BIB_grant.logical | tee -a ${LOG}
-${newmgddbperms}/public/view/IMG_Image_Summary_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MLD_Summary_View_grant.object | tee -a ${LOG}
-
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}

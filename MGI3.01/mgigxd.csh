@@ -68,11 +68,6 @@ ${newmgddbschema}/view/GXD_ISResultImage_View_drop.object >> ${LOG}
 ${newmgddbschema}/view/GXD_ISResultImage_View_create.object >> ${LOG}
 ${newmgddbschema}/view/IMG_ImagePaneRef_View_drop.object >> ${LOG}
 ${newmgddbschema}/view/IMG_ImagePaneRef_View_create.object >> ${LOG}
-${newmgddbperms}/public/view/GXD_ISResultImage_View_grant.object >> ${LOG}
-${newmgddbperms}/public/view/IMG_ImagePaneRef_View_grant.object >> ${LOG}
-
-${newmgddbperms}/curatorial/table/IMG_ImagePane_grant.object >> ${LOG}
-${newmgddbperms}/public/table/IMG_ImagePane_grant.object >> ${LOG}
 
 date >> ${LOG}
 

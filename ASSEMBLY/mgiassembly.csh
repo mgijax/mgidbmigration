@@ -55,12 +55,6 @@ cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 use ${DBNAME}
 go
 
-insert into ACC_MGIType values (27, 'Chromosome', 'MRK_Chromosome', '_Chromosome_key', null, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
-insert into MGI_RefAssocType values(1008, 19, 'Load', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
 update VOC_Term set sequenceNum = 12 where _Term_key = 316381
 update VOC_Term set sequenceNum = 13 where _Term_key = 316382
 update VOC_Term set sequenceNum = 14 where _Term_key = 316383
@@ -70,14 +64,10 @@ go
 
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, 25, 'Ensembl Gene Model', 'Ensembl Gene Model', 10, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into VOC_Term values (@termKey + 1, 25, 'NCBI Gene Model', 'NCBI Gene Model', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
-declare @userKey integer
-select @userKey = max(_User_key) + 1 from MGI_User
-insert into MGI_User values (@userKey, 316353, 316350, 'ncbi_assemblyseqload', 'NCBI Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into MGI_User values (@userKey + 1, 316353, 316350, 'ensembl_assemblyseqload', 'Ensembl Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values 
+(@termKey, 25, 'Ensembl Gene Model', 'Ensembl Gene Model', 10, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values 
+(@termKey + 1, 25, 'NCBI Gene Model', 'NCBI Gene Model', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 declare @setKey integer

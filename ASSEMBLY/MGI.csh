@@ -22,7 +22,6 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
-exit 0
 
 date | tee -a  ${LOG}
 

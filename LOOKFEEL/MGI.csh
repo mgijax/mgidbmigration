@@ -16,10 +16,10 @@ setenv SYBASE		/opt/sybase/12.5
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 setenv PYTHONPATH	/usr/local/mgi/lib/python
 
-setenv newmgddb /usr/local/mgi/dbutils/mgd_release
-setenv newnomendb /usr/local/mgi/dbutils/nomen_release
-#setenv newmgddb /home/lec/db
-#setenv newnomendb /home/lec/db
+#setenv newmgddb /usr/local/mgi/dbutils/mgd_release
+#setenv newnomendb /usr/local/mgi/dbutils/nomen_release
+setenv newmgddb /home/lec/db
+setenv newnomendb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
@@ -55,6 +55,10 @@ echo "Data Migration..." >> $LOG
 ./tr3802.csh >>& $LOG
 ./tr3588.csh >>& $LOG
 ./tr3516.csh >>& $LOG
+
+echo "Drop and re-create Keys..." >> $LOG
+${newdbschema}/key/key_drop.csh >> $LOG
+${newdbschema}/key/key_create.csh >> $LOG
 
 echo "Drop and re-create Triggers..." >> $LOG
 ${newdbschema}/trigger/trigger_drop.csh >> $LOG

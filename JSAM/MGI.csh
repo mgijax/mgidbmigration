@@ -67,7 +67,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-#load_dev1db.csh ${DBNAME} dev1mgd.backup
+load_dev1db.csh ${DBNAME} dev1mgd.backup
 
 date | tee -a  $LOG
 
@@ -82,6 +82,7 @@ echo "Data Migration..." | tee -a  $LOG
 ./defaults.csh | tee -a $LOG
 ./accmgitype.csh | tee -a $LOG
 ./loadVoc.csh | tee -a $LOG
+exit 0
 ./mgiuserdefault.csh | tee -a $LOG
 ./mgiuser.csh | tee -a $LOG
 ./mgimisc.csh | tee -a $LOG

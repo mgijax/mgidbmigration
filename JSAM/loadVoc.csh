@@ -13,7 +13,7 @@ touch $LOG
 date >> $LOG
 echo "Vocabulary Migration..." | tee -a $LOG
  
-cellLine.py
+./cellLine.py
 
 ${VOCLOAD} `pwd`/gender.config >>& $LOG
 ${VOCLOAD} `pwd`/cellLine.config >>& $LOG

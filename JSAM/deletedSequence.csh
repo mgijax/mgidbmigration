@@ -19,7 +19,7 @@ use ${DBNAME}
 go
 
 declare @statusKey integer
-select @statusKey from VOC_Term_SequenceStatus_View where term = "DELETED"
+select @statusKey = _Term_key from VOC_Term_SequenceStatus_View where term = "DELETED"
 
 declare @seqKey integer
 select @seqKey = _Object_key from ACC_Accession

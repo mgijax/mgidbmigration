@@ -13,7 +13,7 @@ touch ${LOG}
 date >> ${LOG}
 echo 'RADAR Migration...' | tee -a ${LOG}
 
-load_db.csh ${DBSERVER} ${RADARDB} /shire/sybase/radar.backup
+#load_db.csh ${DBSERVER} ${RADARDB} /shire/sybase/radar.backup
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${RADARDB} ${RADARSCHEMA_TAG} | tee -a ${LOG}
 
 ${newradardbschema}/table/TXT_create.logical | tee -a ${LOG}

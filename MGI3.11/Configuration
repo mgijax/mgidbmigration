@@ -13,6 +13,7 @@ setenv EGLOAD	/home/lec/loads/entrezgeneload
 
 setenv EGLOADFILES ${EGLOAD}/loadFiles.csh
 setenv EGLOADHUMAN ${EGLOAD}/human/load.csh
+setenv EGLOADRAT ${EGLOAD}/rat/load.csh
 
 # new schema configured to talk to the MGI 3.11 database
 

@@ -94,6 +94,7 @@ insert into MGI_User values (1021, @seKey, @activeKey, "mjv", "Matthew Vincent",
 insert into MGI_User values (1023, @seKey, @activeKey, "jw", "Josh Winslow", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1024, @seKey, @activeKey, "dow", "David O. Walton", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1025, @seKey, @activeKey, "pf", "Peter Frost", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1026, @seKey, @activeKey, "lnh", "Lucie Hutchins", 1000, 1000, getdate(), getdate())
 
 /* BioAnalyst */
 
@@ -118,7 +119,6 @@ insert into MGI_User values (1052, @curKey, @activeKey, "drs", "David Shaw", 100
 /* Curators */
 
 insert into MGI_User values (1060, @curKey, @activeKey, "not specified", "Not Specified", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1061, @curKey, @activeKey, "bat", "Ben Taylor", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1062, @curKey, @activeKey, "bobs", "Bob Sinclair", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1063, @curKey, @activeKey, "cml", "Cathy Lutz", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1064, @curKey, @activeKey, "cms", "Connie Smith", 1000, 1000, getdate(), getdate())
@@ -174,6 +174,7 @@ insert into MGI_User values (1213, @curKey, @inactiveKey, "sr", "Sridhar Ramacha
 insert into MGI_User values (1214, @curKey, @inactiveKey, "lmm", "Louise McKenzie", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1215, @curKey, @inactiveKey, "dnaf", "Dieter Naf", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1216, @curKey, @inactiveKey, "rjc", "Rebecca Corey", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1217, @curKey, @inactiveKey, "bat", "Ben Taylor", 1000, 1000, getdate(), getdate())
 
 /* Loaders */
 insert into MGI_User values (1300, @loaderKey, @activeKey, "jsam_load", "JSAM Load", 1000, 1000, getdate(), getdate())

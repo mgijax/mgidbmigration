@@ -36,6 +36,7 @@
 	mouse, laboratory	Mus spicilegus	jsam_load
 	mouse, laboratory	Mus spretus	jsam_load
 	mouse, laboratory	Mus musculus x Mus spretus.	jsam_load
+	mouse, laboratory	Mus musculus x Mus spretus	jsam_load
 	human	Homo sapiens	jsam_load
 	human	Homo sapiens neanderthalensis	jsam_load
 	rat	Mus musculus x Rattus norvegicus	jsam_load

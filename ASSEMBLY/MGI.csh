@@ -6,9 +6,9 @@
 # Defaults:       6
 # Procedures:   112
 # Rules:          5
-# Triggers:     158
-# User Tables:  192
-# Views:        198
+# Triggers:     155
+# User Tables:  187
+# Views:        202
 
 cd `dirname $0` && source ./Configuration
 
@@ -21,7 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 date | tee -a  ${LOG}
 
@@ -43,9 +43,6 @@ ${SEQMARKER} | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
 use ${DBNAME}
-go
-
-exec SEQ_deriveRepAll
 go
 
 drop procedure MRK_breakpointSplit

@@ -105,7 +105,6 @@ go
 EOSQL
 
 echo "Data Migration..." >> $LOG
-${VOCLOAD}/runSimpleFullLoad.sh IP.config >>& $LOG
 ${VOCLOAD}/runDAGIncLoad.sh GO.config >>& $LOG
 
 echo "Install Developer's Permissions..." >>$LOG

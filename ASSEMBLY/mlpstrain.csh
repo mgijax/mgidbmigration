@@ -104,11 +104,11 @@ declare @synTypeKey integer
 declare @synKey integer
 select @synTypeKey = 1000
 select @synKey = 1000
-insert into MGI_SynonymType values(@synTypeKey, 10, 'synonym', 1086, 1086, getdate(), getdate())
-insert into MGI_SynonymType values(@synTypeKey + 1, 10, 'nomenclature history', 1086, 1086, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 10, 'synonym', 'synonym used in community', 1086, 1086, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 1, 10, 'nomenclature history', 'synonym due to nomenclature changes', 1086, 1086, getdate(), getdate())
 select _Strain_key, synonym, seq = identity(10) into #syns from PRB_Strain_Synonym
 insert into MGI_Synonym
-select @synKey + seq, _Strain_key, 10, @synTypeKey + 1, null, synonym, null, 1086, 1086, getdate(), getdate()
+select @synKey + seq, _Strain_key, 10, @synTypeKey + 1, null, synonym, 1086, 1086, getdate(), getdate()
 from #syns
 go
 

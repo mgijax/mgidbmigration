@@ -1,3 +1,10 @@
+TAG: mgidbmigration-8-0-15
+DATE: 03/10/2004
+STAFF: lec
+RELEASE: A
+CHANGES: 
+1) added users to mgiuser.csh
+
 TAG: mgidbmigration-8-0-14
 DATE: 03/05/2004
 STAFF: lec

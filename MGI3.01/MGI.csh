@@ -39,6 +39,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 ./mgiallele.csh | tee -a ${LOG}
 ./mgiprb.csh | tee -a ${LOG}
 ./mgigxd.csh | tee -a ${LOG}
+./mgimarker.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
@@ -75,6 +76,12 @@ drop table ALL_Type_Old
 go
 
 drop table MGI_Set_Old
+go
+
+drop table MRK_Marker_Old
+go
+
+drop table NOM_Marker_Old
 go
 
 exec MGI_Table_Column_Cleanup

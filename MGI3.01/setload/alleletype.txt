@@ -1,0 +1,17 @@
+Targeted	Allele Type	Targeted (knock-out)	mgd_dbo
+Targeted	Allele Type	Targeted (knock-in)	mgd_dbo
+Targeted	Allele Type	Targeted (Floxed/Frt)	mgd_dbo
+Targeted	Allele Type	Targeted (Reporter)	mgd_dbo
+Targeted	Allele Type	Targeted (other)	mgd_dbo
+Spontaneous	Allele Type	Spontaneous	mgd_dbo
+Chemically induced	Allele Type	Chemically induced (ENU)	mgd_dbo
+Chemically induced	Allele Type	Chemically induced (other)	mgd_dbo
+Radiation induced	Allele Type	Radiation induced	mgd_dbo
+Other	Allele Type	Gene trapped	mgd_dbo
+Other	Allele Type	Chemically and radiation induced	mgd_dbo
+Other	Allele Type	Transgenic (random, gene disruption)	mgd_dbo
+Other	Allele Type	Transgenic (random, expressed)	mgd_dbo
+Other	Allele Type	Transgenic (Cre/Flp)	mgd_dbo
+Other	Allele Type	QTL	mgd_dbo
+Other	Allele Type	Not Applicable	mgd_dbo
+Other	Allele Type	Not Specified	mgd_dbo

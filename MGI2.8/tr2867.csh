@@ -85,10 +85,11 @@ ${newmgddbschema}/index/ACC_MGIType_create.object
 
 # Load VOC tables
 
-set SIMPLELOAD /home/lec/loads/simplevocload/simplevocload.csh
-${SIMPLELOAD} ${DBSERVER} ${DBNAME} phenoslim.out PhenoSlim 72460 P
-${SIMPLELOAD} ${DBSERVER} ${DBNAME} go.ecodes "GO Evidence Codes" 73041 N
-${SIMPLELOAD} ${DBSERVER} ${DBNAME} ps.ecodes "PhenoSlim Evidence Codes" 72460 N
+set SIMPLELOAD /home/lec/loads/simplevocload
+cd ${SIMPLELOAD}
+${SIMPLELOAD}/simplevocload.csh ${DBSERVER} ${DBNAME} phenoslim.out PhenoSlim 72460 P
+${SIMPLELOAD}/simplevocload.csh ${DBSERVER} ${DBNAME} go.ecodes "GO Evidence Codes" 73041 N
+${SIMPLELOAD}/simplevocload.csh ${DBSERVER} ${DBNAME} ps.ecodes "PhenoSlim Evidence Codes" 72460 N
 
 date >> $LOG
 

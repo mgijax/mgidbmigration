@@ -35,6 +35,7 @@ date | tee -a  ${LOG}
 ./mgiallelepair.csh | tee -a ${LOG}
 ./mgiassociation.csh | tee -a ${LOG}
 ./mgiheader.csh | tee -a ${LOG}
+./splitNotes.py | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 
@@ -68,6 +69,9 @@ drop table ALL_ReferenceType
 go
 
 drop table ALL_Synonym
+go
+
+drop table VOC_Synonym
 go
 
 drop view ALL_Reference_View

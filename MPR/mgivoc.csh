@@ -14,6 +14,8 @@
 # ALL_ReferenceType
 # ALL_Synonym
 #
+# VOC_Synonym (GO (4), MP (5), AD (6))
+#
 
 cd `dirname $0` && source ./Configuration
 
@@ -173,6 +175,83 @@ select @maxKey = max(_Synonym_key) from MGI_Synonym
 insert into MGI_Synonym
 select seq + @maxKey, _Allele_key, 11, synTypeKey, _Refs_key, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
 from #syns
+go
+
+drop table #syns
+go
+
+dump tran $DBNAME with truncate_only
+go
+
+/* voc synonyms */
+
+declare @syntypeKey integer
+select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+
+insert into MGI_SynonymType values(@synTypeKey, 13, 'General (GO)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+
+select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
+into #syns
+from VOC_Synonym s, VOC_Term t where t._Vocab_key = 4 and t._Term_key = s._Term_key
+go
+
+declare @maxKey integer
+select @maxKey = max(_Synonym_key) from MGI_Synonym
+
+insert into MGI_Synonym
+select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+from #syns
+go
+
+drop table #syns
+go
+
+dump tran $DBNAME with truncate_only
+go
+
+declare @syntypeKey integer
+select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+
+insert into MGI_SynonymType values(@synTypeKey, 13, 'General (MP)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+
+select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
+into #syns
+from VOC_Synonym s, VOC_Term t where t._Vocab_key = 5 and t._Term_key = s._Term_key
+go
+
+declare @maxKey integer
+select @maxKey = max(_Synonym_key) from MGI_Synonym
+
+insert into MGI_Synonym
+select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+from #syns
+go
+
+drop table #syns
+go
+
+dump tran $DBNAME with truncate_only
+go
+
+declare @syntypeKey integer
+select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+
+insert into MGI_SynonymType values(@synTypeKey, 13, 'General (AD)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+
+select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
+into #syns
+from VOC_Synonym s, VOC_Term t where t._Vocab_key = 6 and t._Term_key = s._Term_key
+go
+
+declare @maxKey integer
+select @maxKey = max(_Synonym_key) from MGI_Synonym
+
+insert into MGI_Synonym
+select seq + @maxKey, _Term_key, 13, synTypeKey, null, synonym, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
+from #syns
+go
+
+drop table #syns
 go
 
 dump tran $DBNAME with truncate_only

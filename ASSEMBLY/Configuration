@@ -1,0 +1,18 @@
+#!/bin/csh -f
+
+#setenv VOCLOAD       /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
+setenv VOCLOAD       /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
+
+# new (JSAM) schema configured to talk to the JSAM database
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddb /home/lec/db/assembly
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
+
+setenv CREATEDBY        1300
+setenv SCHEMA_TAG	mgddbschema-10-0-0
+setenv PUBLIC_VERSION	"MGI 3.1"
+setenv PRODUCT_NAME	MGD
+
+source ${newmgddbschema}/Configuration
+

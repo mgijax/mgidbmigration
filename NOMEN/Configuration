@@ -15,10 +15,9 @@ setenv newmgddbperms ${newmgddb}/mgddbperms
 setenv newnomendb /home/lec/db
 setenv newnomendbschema ${newmgddb}/nomendbschema
 setenv newnomendbperms ${newmgddb}/nomendbperms
-#setenv NOMEN nomen_release
 setenv NOMEN nomen_lec
 
-setenv CREATED_BY	"dbo"
+setenv CREATEDBY	"dbo"
 setenv SCHEMA_TAG	mgddbschema-7-1-0
 
 source ${newmgddbschema}/Configuration

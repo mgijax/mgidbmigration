@@ -21,6 +21,7 @@
 	mouse, laboratory	Mus musculus gentilulus	jsam_load
 	mouse, laboratory	Mus musculus homourus	jsam_load
 	mouse, laboratory	Mus musculus molossinus	jsam_load
+	mouse, laboratory	Mus musculus molossinus.	jsam_load
 	mouse, laboratory	Mus musculus musculus	jsam_load
 	mouse, laboratory	Mus musculus praetextus	jsam_load
 	mouse, laboratory	Mus musculus praetextus.	jsam_load
@@ -34,6 +35,7 @@
 	mouse, laboratory	Mus sp.	jsam_load
 	mouse, laboratory	Mus spicilegus	jsam_load
 	mouse, laboratory	Mus spretus	jsam_load
+	mouse, laboratory	Mus musculus x Mus spretus.	jsam_load
 	human	Homo sapiens	jsam_load
 	human	Homo sapiens neanderthalensis	jsam_load
 	rat	Mus musculus x Rattus norvegicus	jsam_load

@@ -35,6 +35,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 ./loadVoc.csh | tee -a ${LOG}
 ./mgiassembly.csh | tee -a ${LOG}
 ./mlpstrain.csh | tee -a ${LOG}
+./mgisynonym.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 

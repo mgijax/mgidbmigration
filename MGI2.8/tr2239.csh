@@ -19,6 +19,9 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
+sp_rename GXD_AllelePair, GXD_AllelePair_Old
+go
+
 sp_rename GXD_Genotype, GXD_Genotype_Old
 go
 
@@ -29,12 +32,20 @@ EOSQL
 #
 # Use new schema product to create new table
 #
+${newmgddbschema}/table/GXD_AllelePair_create.object
+${newmgddbschema}/default/GXD_AllelePair_bind.object
 ${newmgddbschema}/table/GXD_Genotype_create.object
 ${newmgddbschema}/default/GXD_Genotype_bind.object
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME
+go
+
+insert into GXD_AllelePair
+(_AllelePair_key, _Genotype_key, sequenceNum, _Allele_key_1, _Allele_key_2, _Marker_key, isUnknown, creation_date, modification_date)
+select _AllelePair_key, _Genotype_key, sequenceNum, _Allele_key_1, _Allele_key_2, _Marker_key, 0, creation_date, modification_date
+from GXD_AllelePair_Old
 go
 
 insert into GXD_Genotype 
@@ -74,6 +85,8 @@ go
 
 EOSQL
 
+${newmgddbschema}/key/GXD_AllelePair_create.object
+${newmgddbschema}/index/GXD_AllelePair_create.object
 ${newmgddbschema}/key/GXD_Genotype_create.object
 ${newmgddbschema}/index/GXD_Genotype_create.object
 

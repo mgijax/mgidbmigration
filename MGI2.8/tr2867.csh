@@ -12,6 +12,9 @@ touch $LOG
  
 date >> $LOG
  
+# Save BIB_Refs data
+bcpout.csh ${newmgddbschema} BIB_Refs `pwd`
+
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME
@@ -29,19 +32,7 @@ EOSQL
 #
 ${newmgddbschema}/table/BIB_Refs_create.object
 ${newmgddbschema}/default/BIB_Refs_bind.object
-
-cat - <<EOSQL | doisql.csh $0 >> $LOG
-
-use $DBNAME
-go
-
-insert into BIB_Refs
-select *
-from BIB_Refs_Old
-go
-
-EOSQL
-
+bcpin.csh ${newmgddbschema} BIB_Refs
 ${newmgddbschema}/key/BIB_Refs_create.object
 ${newmgddbschema}/index/BIB_Refs_create.object
 

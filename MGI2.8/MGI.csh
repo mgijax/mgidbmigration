@@ -11,18 +11,20 @@
 
 cd `dirname $0`
 
-setenv NOMEN nomen_release
-setenv STRAINS strains_release
+setenv NOMEN nomen_lec
+setenv STRAINS strains_lec
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
-setenv newmgddb /usr/local/mgi/dbutils/mgd_release
+#setenv newmgddb /usr/local/mgi/dbutils/mgd_release
+setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
-setenv newnomendb /usr/local/mgi/dbutils/nomen_release
+#setenv newnomendb /usr/local/mgi/dbutils/nomen_release
+setenv newnomendb /home/lec/db
 setenv newnomendbschema ${newnomendb}/nomendbschema
 setenv newnomendbperms ${newnomendb}/nomendbperms
 
@@ -57,6 +59,7 @@ echo "Data Migration..." >> $LOG
 ./tr2358.csh >>& $LOG
 ./tr2541.csh >>& $LOG
 ./tr2239.csh >>& $LOG
+./tr2867.csh >>& $LOG
 
 #
 # Re-create all triggers, sps, views....
@@ -101,6 +104,21 @@ drop table MGI_Tables_Old
 go
 
 drop table MGI_Columns_Old
+go
+
+drop table GO_DataEvidence
+go
+
+drop table GO_Evidence
+go
+
+drop table GO_MarkerGO
+go
+
+drop table GO_Ontology
+go
+
+drop table GO_Term
 go
 
 exec MGI_Table_Column_Cleanup

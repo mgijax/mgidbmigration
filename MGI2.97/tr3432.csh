@@ -50,6 +50,9 @@ EOSQL
 
 ${newmgddbschema}/index/GXD_Structure_create.object >> $LOG
 
+# topoSort.py needs public permission to read GXD_Structure
+${newmgddbperms}/public/table/GXD_Structure_grant.object >> $LOG
+
 # generate SQL updates for topological sorting
 
 topoSort.py

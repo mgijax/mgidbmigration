@@ -60,17 +60,5 @@ EOSQL
 
 ${newmgddbschema}/index/GXD_Assay_create.object >> $LOG
 
-#cat - <<EOSQL | doisql.csh $0 >> $LOG
-#
-#use $DBNAME
-#go
-#
-#drop table GXD_Assay_Old
-#go
-#
-#end
-#
-#EOSQL
-
 date >> $LOG
 

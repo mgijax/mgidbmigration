@@ -4,10 +4,10 @@
 # Migration for TR 6520
 #
 # Defaults:       6
-# Procedures:   115
+# Procedures:   117
 # Rules:          5
 # Triggers:     155
-# User Tables:  182
+# User Tables:  183
 # Views:        221
 
 cd `dirname $0` && source ./Configuration
@@ -121,5 +121,7 @@ drop table GXD_AlleleGenotype_Old
 go
 
 EOSQL
+
+./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}

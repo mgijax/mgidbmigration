@@ -17,7 +17,6 @@ ${newmgddbschema}/table/VOC_AnnotHeader_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/VOC_AnnotHeader_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/VOC_AnnotHeader_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/VOC_AnnotHeader_bind.object | tee -a ${LOG}
-${newmgddbschema}/trigger/VOC_AnnotHeader_create.object | tee -a ${LOG}
 
 # keys/permissions will be handled in reconfig phase 
 

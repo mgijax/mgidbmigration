@@ -65,6 +65,11 @@ from ALL_Allele_Old o
 where o.symbol like '%<+>'
 go
 
+update ALL_Allele
+set _MutantESCellLine_key = -2
+where _HostESCellLine_key = -2
+go
+
 insert into ALL_CellLine
 select o._CellLine_key, o.cellLine, o._Strain_key, null, 0, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
 from ALL_CellLine_Old o

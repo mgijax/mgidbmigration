@@ -17,5 +17,12 @@ outFile.write('Not Specified' + TAB + TAB + 'NS' + TAB + 'Not Specified' + TAB +
 outFile.write('Not Applicable' + TAB + TAB + 'NA' + TAB + 'Not Applicable' + TAB + CRT)
 outFile.write('Not Resolved' + TAB + TAB + 'NR' + TAB + 'Not Resolved' + TAB + CRT)
 
+inFile = open('translationload/cellline.badgood', 'r')
+for line in inFile.readlines():
+    tokens = string.split(line[:-1], '\t')
+    if tokens[2] != 'FALSE':
+        outFile.write(tokens[2] + TAB + TAB + TAB + TAB + CRT)
+inFile.close()
+
 outFile.close()
 

@@ -1,0 +1,25 @@
+#!/bin/csh -f
+
+setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
+setenv PYTHONPATH       /usr/local/mgi/lib/python
+
+#setenv VOCLOAD /usr/local/mgi/dataload/vocload
+setenv VOCLOAD /home/lec/loads/vocload-trunk
+
+#setenv newmgddb /usr/local/mgi/dbutils/mgd
+setenv newmgddb /home/lec/db
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
+
+#setenv newnomendb /usr/local/mgi/dbutils/nomen
+setenv newnomendb /home/lec/db
+setenv newnomendbschema ${newnomendb}/nomendbschema
+setenv newnomendbperms ${newnomendb}/nomendbperms
+setenv NOMEN nomen_release
+
+setenv CREATEDBY gxd_release
+
+source ${newmgddbschema}/Configuration
+
+setenv DSQUERY ${DBSERVER}
+setenv MGD ${DBNAME}

@@ -78,12 +78,6 @@ go
 drop table MGI_Set_Old
 go
 
-drop table MRK_Marker_Old
-go
-
-drop table NOM_Marker_Old
-go
-
 exec MGI_Table_Column_Cleanup
 go
 

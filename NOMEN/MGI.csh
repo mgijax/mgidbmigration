@@ -24,9 +24,9 @@ touch $LOG
  
 date | tee -a  $LOG
  
+# testing only
 load_devdb.csh ${DBNAME} mgd.backup | tee -a $LOG
 date | tee -a  $LOG
-
 load_devdb.csh ${NOMEN} nomen.backup | tee -a $LOG
 date | tee -a  $LOG
 

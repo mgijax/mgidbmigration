@@ -119,7 +119,7 @@ select @maxKey = max(_Note_key) from MGI_Note
 insert into MGI_Note 
 select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
-where noteTypeKey = @noteTypeKey
+where noteType = 'General'
 
 insert into MGI_NoteChunk
 select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
@@ -150,7 +150,7 @@ select @maxKey = max(_Note_key) from MGI_Note
 insert into MGI_Note 
 select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
-where noteTypeKey = @noteTypeKey
+where noteType = 'Molecular'
 
 insert into MGI_NoteChunk
 select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
@@ -181,7 +181,7 @@ select @maxKey = max(_Note_key) from MGI_Note
 insert into MGI_Note 
 select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
-where noteTypeKey = @noteTypeKey
+where noteType = 'Nomenclature'
 
 insert into MGI_NoteChunk
 select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
@@ -264,9 +264,9 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, 'General (GO)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, null, 'General (GO)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
-select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
+select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns
 from VOC_Synonym s, VOC_Term t where t._Vocab_key = 4 and t._Term_key = s._Term_key
 go
@@ -288,9 +288,9 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, 'General (MP)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, null, 'General (MP)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
-select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
+select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns
 from VOC_Synonym s, VOC_Term t where t._Vocab_key = 5 and t._Term_key = s._Term_key
 go
@@ -312,9 +312,9 @@ go
 declare @syntypeKey integer
 select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
-insert into MGI_SynonymType values(@synTypeKey, 13, 'General (AD)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey, 13, null, 'General (AD)', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
-select s._Term_key, s.synonym, @synTypeKey, seq = identity(5)
+select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns
 from VOC_Synonym s, VOC_Term t where t._Vocab_key = 6 and t._Term_key = s._Term_key
 go

@@ -92,6 +92,22 @@ go
 drop trigger ACC_AccessionReference_Update
 go
 
+drop procedure ALL_updateReference
+go
+
+EOSQL
+
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
+
+use ${DBNAME}
+go
+
+drop table ALL_Allele_Old
+go
+
+drop table GXD_AllelePair_Old
+go
+
 EOSQL
 
 date | tee -a  ${LOG}

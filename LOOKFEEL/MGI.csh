@@ -16,10 +16,8 @@ setenv SYBASE		/opt/sybase/12.5
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 setenv PYTHONPATH	/usr/local/mgi/lib/python
 
-#setenv newmgddb /usr/local/mgi/dbutils/mgd_release
-#setenv newnomendb /usr/local/mgi/dbutils/nomen_release
-setenv newmgddb /home/lec/db
-setenv newnomendb /home/lec/db
+setenv newmgddb /usr/local/mgi/dbutils/mgd
+setenv newnomendb /usr/local/mgi/dbutils/nomen
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
@@ -37,20 +35,20 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-date >> $LOG
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
-date >> $LOG
+#$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+#date >> $LOG
+#$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+#date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.9" >>& $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-0" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-11" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-4-0-10" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
-echo "Reconfigure Nomen..." >> $LOG
-$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $newnomendb >>& $LOG
-date >> $LOG
+#echo "Reconfigure Nomen..." >> $LOG
+#$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $newnomendb >>& $LOG
+#date >> $LOG
 
 echo "Data Migration..." >> $LOG
 

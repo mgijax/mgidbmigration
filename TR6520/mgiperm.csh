@@ -52,8 +52,14 @@ ${newmgddbperms}/public/view/VOC_Term_UserTask_View_grant.object | tee -a ${LOG}
 
 ${newmgddbschema}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Allele_Mutation_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Allele_Mutation_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Note_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Note_create.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Reference_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Reference_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Synonym_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Synonym_create.object | tee -a ${LOG}
 
 ./roletaskload.csh | tee -a ${LOG}
 ./userroleload.csh | tee -a ${LOG}

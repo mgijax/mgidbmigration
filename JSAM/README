@@ -1,0 +1,174 @@
+Details of JSAM Migration - 04/13/2004 (Lori Corbani)
+-----------------------------------------------------
+
+--------------------------------------------------------------------------------
+I. Overview
+
+The goal of the JSAM migration is to take an existing MGI 2.98 database and
+convert it to a JSAM database.  This includes the schema and the data itself.
+
+The JSAM migration process consists of the following tasks:
+
+	1.  Building a JSAM-compatible database with MGI 2.98 schema & data.
+	2.  Migrating the MGI 2.98 schema/data to the JSAM version.
+	3.  Re-creating all primary/foreign keys, stored procedures, views
+	    and triggers on the JSAM database.
+	4.  Granting all public, curatorial (& development) permissions on
+	    all database objects.
+	5.  Migrating RADAR.
+	6.  Verifying the migration.
+
+Some files of note:
+
+	1.  Configuration
+
+	    Contains definitions/paths for schema products, loads, etc.
+
+	2.  MGI.csh
+
+	    The master job stream script which runs everything.
+
+II.  Build a JSAM-compatible database with MGI 2.98 schema & data
+	(loadData.csh)
+
+With most migrations, we can simply take a binary dump of the existing production
+database (/extra2/sybase/mgd.backup1, mgd.backup2) and load it into our target
+JSAM database, thus accomplishing Task #1.
+
+However, the JSAM database is of a different architecture than MGI 2.98 and the 
+segments in the JSAM database are different.  Therefore, we cannot use a binary
+dump of a MGI 2.98 database and simply load it into our target JSAM database (TJD).
+Instead we have to actually build a MGI 2.98 schema in our TJD and then load the 
+MGI 2.98 data into that database.
+
+To accomplish this we:
+
+	1.  Choose a source MGI 2.98 database (DEV_MGI..mgd_lec).
+	2.  Load the source MGI 2.98 database with the most recent production
+	    data (/extra2/sybase/mgd.backup.*).
+	3.  Make a copy of the production backups for SQA db 
+	    (/extra2/sybase/mgd298.backup.*).
+	4.  BCP out the MGI 2.98 data into bcp files (/extra2/sybase/data).
+
+	5.  Load the TJD with an empty JSAM database 
+	    (/extra2/sybase/dev1mgdempty.*).
+	6.  Build the MGI 2.98 tables in the TJD.
+	7.  Load the BCP files (/extra2/sybase/data) into the TJD.
+	8.  Create indexes, stored procedures, views, triggers in the TJD.
+	9.  Create a backup (/extra2/sybase/dev1mgd.backup)
+
+If we wish to re-migrate, we can start either with #1 or use the backup created
+in #8.  Edit MGI.csh accordingly (to execute either loadData.csh or to load
+the backup created in #8).
+
+To run this script, you will need:
+
+	1.  A 2.98 "mgddbschema" product configured for your source MGI 2.98 database.
+		(DEV_MGI..mgd_lec)
+
+	2.  A 2.98 "mgddbperms" product configured for your source MGI 2.98 database.
+		(DEV_MGI..mgd_lec)
+
+	3.  A 2.98 "mgddbschema" product configured for your JSAM-compatible MGI 2.98 
+	    database.  (DEV1_MGI..mgd_jsamlec)
+
+	4.  A 2.98 "mgddbschema" product configured for your JSAM-compatible MGI 2.98 
+	    database.  (DEV1_MGI..mgd_jsamlec)
+
+	Note that the CVS versions for the above installations is the SAME!
+
+	5.  A JSAM "mgddbschema" product configured for your JSAM database.
+	    (DEV1_MGI..mgd_jsamlec)
+
+	6.  A JSAM "mgddbschema" product configured for your JSAM- database.compatible MGI 2.98 
+	    (DEV1_MGI..mgd_jsamlec)
+
+	So you have 2 dbschema products and 2 dbperms products configured for the
+	same database (your target JSAM database) but one set is a 2.98 schema version
+	and one set is a 3.0 schema version.
+
+III.  Migrate the MGI 2.98 schema/data to the JSAM version.
+	    
+This task is handled by numerous shell scripts.  They are grouped according to
+the type of tables being migrated (e.g. all Sequence tables) or the type of
+migration being applied (migrating from "createdBy" to "_CreatedBy_key").
+
+Most of the time the migrations use in-line SQL.
+
+To migrate an existing table:
+	. table Foo is renamed to Foo_Old
+	. table Foo is created using the new schema definition
+	. table Foo is loaded (using "insert into...select...from Foo_Old...)
+	. table Foo_Old is dropped
+	. indexes and defaults are added to Foo
+
+Scripts:
+
+	. acc.csh		ACC_Accession, ACC_AccessionReference, ACC_AccessionMax
+	. accmgitype.csh	ACC_MGIType
+	. defaults.csh		new defaults
+	. loadSet.csh		load MGI_Set, MGI_SetMember (see setload dir)
+	. loadTrans.csh		load MGI_Translation (see translationload dir)
+	. loadVoc.csh		load VOC_Term *prior* to JSAM schema change
+				(see *.in, *.config)
+	. loadVoc2.csh		load VOC_Term *after* JSAM schema change
+	. mgimap.csh		create MAP_ tables
+	. mgimarker.csh		MRK_Marker
+	. mgimisc.csh		migrating "createdBy", "modifiedBy" to 
+				"_CreatedBy_key", "_ModifiedBy_key"
+	. mginew.csh		MGI_AttributeHistory
+	. mginote.csh		MGI_Note, MGI_NoteType
+	. mgiprbmarker.csh	PRB_Marker
+	. mgisequence.csh	create SEQ_ tables
+	. mgiset.csh		more MGI_Set stuff
+	. mgispecies.csh	MGI_Organism
+	. mgiuser.csh		MGI_User
+	. mgiuserdefault.csh	removing old user default from tables
+	. nomen.csh		NOM_Marker, MRK_Nomen_Reference, MRK_Nomen_Notes
+
+IV.  Re-create all primary/foreign keys, stored procedures, etc.;
+     grant permissions.
+	(mgidbutilities/bin/dev/reconfig_mgd.csh)
+
+V.   Remove work tables, obsolete objects
+	(in-line SQL in MGI.csh)
+
+VI.  Migrate RADAR
+	(radar.csh)
+
+	1.  Load the production RADAR backup (/extra2/sybase/radar.backup) into 
+	    the target RADAR database (TRD).
+	2.  Migrate..
+	3.  Set permissions, keys, etc.
+
+VII.  Verify the Migration
+	(manual)
+
+	1.  Check that the number of database objects (tables, stored procedures,
+	    triggers, views, etc.) is correct (see MGI.csh and schemabrowser).
+
+		. Defaults:       6
+		. Procedures:   111
+		. Rules:          5
+		. Triggers:     155
+		. User Tables:  190
+		. Views:        198
+
+	2.  Check the row count of the MGI 2.98 tables vs. JSAM tables:
+
+		. ACC_Accession
+		. NOM_Marker
+		. MRK_Marker
+		. PRB_Marker
+		. PRB_Source
+
+	3.  Using an EI (/home/lec/ei/ei) configured for TJD, check
+	    the Translations (did they load?).
+
+	4.  Using isql, check MGI_Set (9 rows) and MGI_SetMember
+		. _Set_key = 1000, 4 rows
+		. _Set_key = 1001, 7 rows
+		. _Set_key = 1002, 3 rows
+		. _Set_key = 1008, 12 rows
+		. _Set_key between 1003 and 1007, ~566
+

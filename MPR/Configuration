@@ -5,8 +5,8 @@ setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MPR
 
 setenv VOCLOAD		/usr/local/mgi/3.2/dataload/vocload
 
-#setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload-3-1-0-2/runSimpleFullLoadNoArchive.sh
-setenv VOCSIMPLELOAD    /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
+setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload-3-1-0-2/runSimpleFullLoadNoArchive.sh
+#setenv VOCSIMPLELOAD    /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
 
 #setenv ANNOTLOAD	/usr/local/mgi/3.2/dataload/annotload
 setenv ANNOTLOAD	/home/lec/loads/annotload-mpr

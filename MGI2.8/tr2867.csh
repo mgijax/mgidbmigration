@@ -99,6 +99,14 @@ insert into DAG_Label
 values (2, 'part-of', getdate(), getdate())
 go
 
+insert into VOC_AnnotType
+values(1000,,,,"GO/Marker", getdate(), getdate())
+go
+
+insert into VOC_AnnotType
+values(1001,,,,"PhenoSlim/Genotype", getdate(), getdate())
+go
+
 end
 
 EOSQL

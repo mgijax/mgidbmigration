@@ -49,7 +49,6 @@ ${oldmgddbschema}/default/MGI_Translation_unbind.object >>& $LOG
 ${oldmgddbschema}/default/MGI_TranslationType_unbind.object >>& $LOG
 ${oldmgddbschema}/default/MLC_Text_unbind.object >>& $LOG
 ${oldmgddbschema}/default/MRK_History_unbind.object >>& $LOG
-${oldmgddbschema}/default/NOM_GeneFamily_unbind.object >>& $LOG
 ${oldmgddbschema}/default/NOM_Marker_unbind.object >>& $LOG
 ${oldmgddbschema}/default/NOM_Synonym_unbind.object >>& $LOG
 ${oldmgddbschema}/default/VOC_Evidence_unbind.object >>& $LOG

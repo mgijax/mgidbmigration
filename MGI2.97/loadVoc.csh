@@ -16,5 +16,6 @@ ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/indexpriority.config
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/indexassay.config
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/indexstages.config
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/reportergene.config
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh `pwd`/segmenttype.config
 
 date >> $LOG

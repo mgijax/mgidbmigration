@@ -125,6 +125,9 @@ go
 drop table GO_Term
 go
 
+drop view GO_Marker_View
+go
+
 use ${NOMEN}
 go
 

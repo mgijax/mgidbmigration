@@ -1,0 +1,46 @@
+# RCD file for the GO vocabulary load
+
+# database access:
+
+DBSERVER = MGD_DEV
+DATABASE = mgd_lec
+DBUSER = mgd_dbo
+DBPASSWORD = raysen5
+
+# vocabulary attributes:
+
+VOCAB_NAME = GO
+JNUM = J:73041
+IS_SIMPLE = 0
+IS_PRIVATE = 0
+LOGICALDB_KEY = 31
+
+# _MGIType_key for vocabulary terms:
+
+MGITYPE = 13
+
+TERM_FILE = go.ecodes.out
+DATA_FILE = /usr/local/mgi/go_data/go.ecodes
+GO_DIR = /usr/local/mgi/go_data
+DEFS_FILE = ${GO_DIR}/GO.defs
+
+# DAGs which are part of the vocabulary (for complex vocabularies)
+
+[
+	NAME = molecular function
+	ABBREV = F
+	ONTOLOGY_FILE = ${GO_DIR}/function.ontology.txt
+	LOAD_FILE = dag.f
+]
+[
+	NAME = biological process
+	ABBREV = P
+	ONTOLOGY_FILE = ${GO_DIR}/process.ontology.txt
+	LOAD_FILE = dag.p
+]
+[
+	NAME = cellular component
+	ABBREV = C
+	ONTOLOGY_FILE = ${GO_DIR}/component.ontology.txt
+	LOAD_FILE = dag.c
+]

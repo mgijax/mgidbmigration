@@ -1,0 +1,22 @@
+DBSERVER = MGD_DEV
+DATABASE = mgd_lec
+DBUSER = mgd_dbo
+DBPASSWORD = raysen5
+
+VOCAB_NAME = PhenoSlim
+JNUM = J:72460
+IS_SIMPLE = 1
+IS_PRIVATE = 0
+LOGICALDB_KEY = 1
+
+MGITYPE = 12
+
+TERM_FILE = phenoslim.out.out
+DATA_FILE = /mgi/all/wts_projects/2200/2239/phenoslim.out
+
+# DAGs
+#[
+#	NAME = jsb.dag
+#	ABBREV = jd
+#	FILE = dag.jsb
+#]

@@ -1,0 +1,22 @@
+DBSERVER = MGD_DEV
+DATABASE = mgd_lec
+DBUSER = mgd_dbo
+DBPASSWORD = raysen5
+
+VOCAB_NAME = GO Evidence Codes
+JNUM = J:73041
+IS_SIMPLE = 1
+IS_PRIVATE = 0
+LOGICALDB_KEY = 1
+
+MGITYPE = 12
+
+TERM_FILE = go.ecodes.out
+DATA_FILE = /usr/local/mgi/go_data/go.ecodes
+
+# DAGs
+#[
+#	NAME = jsb.dag
+#	ABBREV = jd
+#	FILE = dag.jsb
+#]

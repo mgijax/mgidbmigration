@@ -93,7 +93,7 @@ for r in results:
 	isNot = ''
 
     if enote.has_key(evKey):
-	note = string.join(enote[evKey], '')
+	note = string.join(enote[evKey], ' ')
     else:
 	note = ''
 

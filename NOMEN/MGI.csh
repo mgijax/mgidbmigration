@@ -6,7 +6,7 @@
 # updated:  
 # Defaults:	  4
 # Tables:	181
-# Procedures:	 92
+# Procedures:	 90
 # Rules:	  7
 # Triggers:	147
 # Views:	160

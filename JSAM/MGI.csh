@@ -73,7 +73,6 @@ echo "Data Migration..." | tee -a  $LOG
 ./mgispecies.csh | tee -a $LOG
 ./mgimarker.csh | tee -a $LOG
 ./mgiprbmarker.csh | tee -a $LOG
-exit 0
 ./mgiref.csh | tee -a $LOG
 ./mgisequence.csh | tee -a $LOG
 ./mginew.csh | tee -a $LOG
@@ -154,12 +153,12 @@ updateStatisticsAll.csh ${newmgddbschema}
 
 # load some sequence data for testing
 
-tr4849.csh | tee -a $LOG
+#tr4849.csh | tee -a $LOG
 
 # load Sequence Cache tables
 
-${CACHELOAD}/seqmarker.csh | tee -a $LOG
-${CACHELOAD}/seqprobe.csh | tee -a $LOG
+#${CACHELOAD}/seqmarker.csh | tee -a $LOG
+#${CACHELOAD}/seqprobe.csh | tee -a $LOG
 ${MRKREFLOAD}/mrkref.csh | tee -a $LOG
 
 date | tee -a  $LOG

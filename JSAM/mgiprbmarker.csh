@@ -17,23 +17,25 @@ touch $LOG
 date >> $LOG
 echo "PRB_Marker Migration..." | tee -a $LOG
  
-cat - <<EOSQL | doisql.csh $0 >> $LOG
+#cat - <<EOSQL | doisql.csh $0 >> $LOG
 
-use $DBNAME
-go
+#use $DBNAME
+#go
 
-sp_rename PRB_Marker, PRB_Marker_Old
-go
+#sp_rename PRB_Marker, PRB_Marker_Old
+#go
 
-end
+#end
 
-EOSQL
+#EOSQL
 
 #
 # Use new schema product to create new table
 #
-${newmgddbschema}/table/PRB_Marker_create.object >> $LOG
-${newmgddbschema}/default/PRB_Marker_bind.object >> $LOG
+${newmgddbschema}/table/PRB_Marker_truncate.object >> $LOG
+${newmgddbschema}/index/PRB_Marker_drop.object >> $LOG
+#${newmgddbschema}/table/PRB_Marker_create.object >> $LOG
+#${newmgddbschema}/default/PRB_Marker_bind.object >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
@@ -95,17 +97,6 @@ group by _Probe_key having count(*) = 1
 go
 
 create nonclustered index idx_probe on #singleMarkers(_Probe_key)
-go
-
-/* set of all multiple references with multiple markers */
-
-select *
-into #multMark1
-from #markers
-group by _Probe_key having count(*) > 1
-go
-
-create nonclustered index idx_probe on #multMark1(_Probe_key)
 go
 
 /* create a marker/reference cache table */
@@ -184,20 +175,32 @@ go
 create nonclustered index idx_Marker_Refs_key on tempdb..MRK_RefNew(_Marker_key, _Refs_key)
 go
 
+/* set of all multiple references with multiple markers */
+
+select distinct _Marker_key, _Probe_key
+into #multMark1
+from #markers
+group by _Probe_key having count(*) > 1
+go
+
+create nonclustered index idx_probe on #multMark1(_Probe_key)
+go
+
 /* select all multiple markers/multiple references where the marker/reference is in the cache table */
 /* note that #multMark1 already contains the min reference key */
 
-select m.*
-into #multMarkers
-from #multMark1 m
-where exists (select 1 from tempdb..MRK_RefNew r
-where m._Marker_key = r._Marker_key
-and m._Refs_key = r._Refs_key)
+select m.*, r._Refs_key
+into #multMark2
+from #multMark1 m, PRB_Reference pr, tempdb..MRK_RefNew r
+where m._Probe_key = pr._Probe_key
+and m._Marker_key = r._Marker_key
+and pr._Refs_key = r._Refs_key
 go
 
-delete #multMarkers
-from #multMarkers m 
-where exists (select 1 from PRB_Marker p where p._Probe_key = m._Probe_key and p._Marker_key = m._Marker_key)
+select m._Marker_key, m._Probe_key, _Refs_key = min(m._Refs_key)
+into #multMark3
+from #multMark2 m
+group by _Probe_key, _Marker_key
 go
 
 /* insert all prb_markers into new table */
@@ -222,9 +225,22 @@ go
 insert into PRB_Marker
 select distinct pm._Probe_key, pm._Marker_key, s._Refs_key, pm.relationship,
 ${CREATEDBY}, ${CREATEDBY}, pm.creation_date, pm.modification_date
-from PRB_Marker_Old pm, #multMarkers s
+from PRB_Marker_Old pm, #multMark3 s
 where pm._Probe_key = s._Probe_key
 and pm._Marker_key = s._Marker_key
+go
+
+/* print all prb_marker records which still cannot be migrated */
+
+select distinct p.name, m.symbol, pm.relationship
+from PRB_Marker_Old pm, MRK_Marker m, PRB_Probe p, PRB_Reference r
+where not exists (select 1 from PRB_Marker pmnew
+where pm._Marker_key = pmnew._Marker_key
+and pm._Probe_key = pmnew._Probe_key)
+and pm._Marker_key = m._Marker_key
+and pm._Probe_key = p._Probe_key
+and p._Probe_key = r._Probe_key
+order by m.symbol
 go
 
 dump tran ${DBNAME} with truncate_only

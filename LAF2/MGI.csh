@@ -84,6 +84,10 @@ ${newmgddbschema}/default/default_unbind.csh >>& $LOG
 ${newmgddbschema}/default/default_bind.csh >>& $LOG
 ${newmgddbschema}/key/key_drop.csh >>& $LOG
 ${newmgddbschema}/key/key_create.csh >>& $LOG
+${newmgddbschema}/rule/GXD_Specimen_unbind.object >>& $LOG
+${newmgddbschema}/rule/check_Hybridization_drop.object >>& $LOG
+${newmgddbschema}/rule/check_Hybridization_create.object >>& $LOG
+${newmgddbschema}/rule/GXD_Specimen_bind.object >>& $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
 
 echo "Install Developer's Permissions..." >>$LOG
@@ -93,6 +97,11 @@ date >> $LOG
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
 use ${DBNAME}
+go
+
+update GXD_Specimen
+set hybridization = 'section'
+where hybridization = 'sections'
 go
 
 update ACC_MGIType

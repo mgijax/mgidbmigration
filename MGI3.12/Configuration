@@ -8,3 +8,4 @@ setenv newmgddbschema ${newmgddb}/mgddbschema
 
 source ${newmgddbschema}/Configuration
 
+setenv PUBLIC_VERSION   "MGI 3.12"

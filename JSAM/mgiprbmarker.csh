@@ -356,6 +356,15 @@ go
 drop table PRB_Marker_Old
 go
 
+use tempdb
+go
+
+drop table MRK_RefNoAuto
+go
+
+drop table MRK_RefNew
+go
+
 end
 
 EOSQL

@@ -1,0 +1,14 @@
+#!/bin/csh -f
+
+# new (JSAM) schema configured to talk to the JSAM database
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddb /home/lec/db
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
+
+setenv SCHEMA_TAG	mgddbschema-9-0-0
+setenv PUBLIC_VERSION	"MGI 3.01"
+setenv PRODUCT_NAME	MGD
+
+source ${newmgddbschema}/Configuration
+

@@ -36,6 +36,7 @@ set f=`basename $i .bcp`
 bcpin.csh ${newmgddbschema} $f
 end
 
+cd ..
 ${newmgddbschema}/index/MLP_create.logical
   
 date >> $LOG

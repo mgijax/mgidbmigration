@@ -1,0 +1,213 @@
+MGI:2150030	Actd1	2153871	Actd1<C57BL/6J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: motor capabilities/coordination/movement anomalies	65696	TAS	distance traveled		survival: perinatal lethality
+MGI:2151936	Actre1	2153873	Actre<DBA/2J>	2153874	Actre<C57BL/6J>	(DBA/2J x C57BL/6J)F2	neurological/behavioral: no defect detected	71081	TAS	locomotor activity		survival: postnatal lethality
+MGI:2151936	Actre1	2153873	Actre<DBA/2J>	2153874	Actre<C57BL/6J>	multiple	neurological/behavioral: no defect detected	71081	TAS	locomotor activity		survival: premature death
+MGI:2149041	Adip1	2153875	Adip1<LG/J>			(LG/J x SM/J)F2	growth/weight abnormality: postnatal	62610	TAS	adiposity		embryogenesis: developmental patterning abnormalities
+MGI:2150421	Alcp25	2153877	Alcp25<DBA/2Ibg>	2153877	Alcp25<DBA/2Ibg>	(DBA/2Ibg x C57BL/6Ibg)F1 x C57BL/6Ibg	neurological/behavioral: feeding/drinking preference anomalies	56967	TAS	alcohol preference		embryogenesis: embryonic tissue dysmorphology
+MGI:2150421	Alcp25	2153877	Alcp25<DBA/2Ibg>	2153878	Alcp25<C57BL/6Ibg>	(DBA/2Ibg x C57BL/6Ibg)F1 x C57BL/6Ibg	neurological/behavioral: feeding/drinking preference anomalies	56967	TAS	alcohol preference		embryogenesis: extraembryonic tissue dysmorphology
+MGI:2150421	Alcp25	2153878	Alcp25<C57BL/6Ibg>	2153878	Alcp25<C57BL/6Ibg>	(DBA/2Ibg x C57BL/6Ibg)F1 x C57BL/6Ibg	neurological/behavioral: feeding/drinking preference anomalies	56967	TAS	alcohol preference		embryogenesis: placental dysmorphology
+MGI:1330314	Alcp4	2153881	Alcp4<DBA/2J>	2153881	Alcp4<DBA/2J>	(C57BL/6J x DBA/2J)F1 x C57BL/6J 	neurological/behavioral: feeding/drinking preference anomalies	52086	TAS	alcohol preference		embryogenesis: no defect detected
+MGI:1330314	Alcp4	2153880	Alcp4<C57BL/6J>	2153881	Alcp4<DBA/2J>	(C57BL/6J x DBA/2J)F1 x C57BL/6J 	neurological/behavioral: feeding/drinking preference anomalies	52086	TAS	alcohol preference		growth/weight abnormality: embryonic
+MGI:1330314	Alcp4	2153880	Alcp4<C57BL/6J>	2153880	Alcp4<C57BL/6J>	(C57BL/6J x DBA/2J)F1 x C57BL/6J 	neurological/behavioral: feeding/drinking preference anomalies	52086	TAS	alcohol preference		growth/weight abnormality: postnatal
+MGI:1330314	Alcp4	2153881	Alcp4<DBA/2J>	2153881	Alcp4<DBA/2J>	C57BL/6J x (C57BL/6J x DBA/2J)F1	neurological/behavioral: feeding/drinking preference anomalies	52086	TAS	alcohol preference		eye: visual defects
+MGI:1330314	Alcp4	2153880	Alcp4<C57BL/6J>	2153881	Alcp4<DBA/2J>	C57BL/6J x (C57BL/6J x DBA/2J)F1	neurological/behavioral: feeding/drinking preference anomalies	52086	TAS	alcohol preference		eye: dysmorphology
+MGI:1330314	Alcp4	2153880	Alcp4<C57BL/6J>	2153880	Alcp4<C57BL/6J>	C57BL/6J x (C57BL/6J x DBA/2J)F1	neurological/behavioral: feeding/drinking preference anomalies	52086	TAS	alcohol preference		eye: corneal or lens defect
+MGI:1309452	Alcw1	2153882	Alcw1<DBA/2J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	56967	TAS	alcohol withdrawal		eye: no defect detected
+MGI:1309452	Alcw1	2153882	Alcw1<DBA/2J>			complex	neurological/behavioral: no defect detected	56967	TAS	alcohol withdrawal		coat: hair growth defects
+MGI:1309452	Alcw1	2153882	Alcw1<DBA/2J>			multiple	neurological/behavioral: no defect detected	56967	TAS	alcohol withdrawal		coat: hair texture defects
+MGI:2151073	Amp2	2153884	Amp2<BALB/cJ>	2153884	Amp2<BALB/cJ>	(C57BL/6J x BALB/cJ)F2	neurological/behavioral: sleep pattern/circadian rhythm anomalies	69972	TAS	circadian rhythm		coat: color anomalies
+MGI:2152428	Ap1q	2153885	Ap1q<C57BL/6J>	2153885	Ap1q<C57BL/6J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: feeding/drinking preference anomalies	49707	TAS	alcohol preference		coat: hair follicle structure/orientation anomalies
+MGI:2152428	Ap1q	2153885	Ap1q<C57BL/6J>	2153886	Ap1q<DBA/2J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: feeding/drinking preference anomalies	49707	TAS	alcohol preference		coat: no defect detected
+MGI:2152428	Ap1q	2153886	Ap1q<DBA/2J>	2153886	Ap1q<DBA/2J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: feeding/drinking preference anomalies	49707	TAS	alcohol preference		skin: pigmentation anomalies
+MGI:2148560	Axtex					(H1 x L1)F2	neurological/behavioral: fear/anxiety	69668	TAS	exploratory behavior		skin: texture/condition anomalies
+MGI:2148560	Axtex					(H2 x L2)F2	neurological/behavioral: fear/anxiety	69668	TAS	exploratory behavior		skin: no defect detected
+MGI:2148544	Axtofa1					(H1 x L1)F2	neurological/behavioral: fear/anxiety	70479	TAS	open field activity		vibrissae: shape/orientation defects
+MGI:2148544	Axtofa1					(H2 x L2)F2	neurological/behavioral: fear/anxiety	70479	TAS	open field activity		vibrissae: no defect detected
+MGI:2148555	Axtofd1					(H1 x L1)F2	neurological/behavioral: fear/anxiety	70479	TAS	open field defecation		extremities: limb dysmorphology
+MGI:2148555	Axtofd1					(H2 x L2)F2	neurological/behavioral: fear/anxiety	70479	TAS	open field defecation		extremities: digit dysmorphology
+MGI:1344398	Batq1	2153893	Batq1<MH>			(MH x C57BL/6J)F2	metabolism: no defect detected	55483	TAS	brown adipose tissue		extremities: tail dysmorphology
+MGI:108576	Bgeq1	2153896	Bgeq1<SM/J>			(LG/J x SM/J)F2	growth/weight abnormality: postnatal	32208	TAS	growth rate		extremities: no defect detected
+MGI:108576	Bgeq1	2153895	Bgeq1<LG/J>	2153895	Bgeq1<LG/J>	(LG/J x SM/J)F2	growth/weight abnormality: postnatal	60662	TAS	growth rate		teeth: tooth dysmorphology
+MGI:108576	Bgeq1	2153895	Bgeq1<LG/J>	2153896	Bgeq1<SM/J>	(LG/J x SM/J)F2	growth/weight abnormality: postnatal	60662	TAS	growth rate		teeth: no defect detected
+MGI:108576	Bgeq1	2153896	Bgeq1<SM/J>	2153896	Bgeq1<SM/J>	(LG/J x SM/J)F2	growth/weight abnormality: postnatal	60662	TAS	growth rate		ears: auditory defects/deafness
+MGI:108575	Bglq1					(LG/J x SM/J)F2	growth/weight abnormality: postnatal	32208	TAS	growth rate		ears: dysmorphology
+MGI:1349434	Bmd1	2153899	Bmd1<CAST/Ei>			(C57BL/6J x CAST/Ei)F2	skeletal: no defect detected	58152	TAS	bone density		ears: no defect detected
+MGI:1891313	Bpq1					(C57BL/6J x A/J)F1 x C57BL/6J	heart/cardiovascular system: no defect detected	66987	TAS	blood pressure		musculature: muscle dysmorphology
+MGI:1891314	Bpq2					(C57BL/6J x A/J)F1 x C57BL/6J	heart/cardiovascular system: no defect detected	66987	TAS	blood pressure		musculature: physiological defects
+MGI:2137480	Bslm3					(BALB/cJ x LP/J)F2	neurological/behavioral: motor capabilities/coordination/movement anomalies	68417	TAS	locomotor activity		musculature: no defect detected
+MGI:1932502	Bw17					multiple	growth/weight abnormality: postnatal	64138	TAS	body weight		skeletal: osteogenesis/developmental anomalies
+MGI:1316682	Bw5					(DUKs x DU6)F2	growth/weight abnormality: postnatal	49578	TAS	body weight		skeletal: axial defects
+MGI:1316682	Bw5	2153919	Bw5<DU6i>			(DU6i x DBA/2)F2	growth/weight abnormality: postnatal	66233	TAS	body weight		skeletal: extremities defects
+MGI:1891193	Bwtq1					(C57BL/6J x DBA/2J)F2	growth/weight abnormality: postnatal	53812	TAS	body weight		skeletal: craniofacial defects
+MGI:2150827	Cafq1					(ANP x C3H/HeJ)F2	metabolism: no defect detected	68139	TAS	caffeine metabolism		skeletal: no defect detected
+MGI:1891174	Cbm1					(C57BL/6J x DBA/2J)F2	central nervous system: other dysmorphology	70179	TAS	brain weight		neurological/behavioral: aggression
+MGI:1891174	Cbm1					multiple	central nervous system: other dysmorphology	70179	TAS	brain weight		neurological/behavioral: conditioning defect
+MGI:2148995	Ccrs1					(C57BL/6By x NZB/B1NJ)F2	central nervous system: other dysmorphology	51052	TAS	brain size		neurological/behavioral: learning/memory impairment
+MGI:2151890	Cgnz1	2153939	Cgnz1<C57L/J>	2153939	Cgnz1<C57L/J>	(NZM2328/J x C57L/J) x NZM2328/J	immune system: hypersensitivity	71397	TAS	glomerulonephritis		neurological/behavioral: seizures/epilepsy
+MGI:2151890	Cgnz1	2153936	Cgnz1<NZM2328/J>	2153939	Cgnz1<C57L/J>	(NZM2328/J x C57L/J) x NZM2328/J	immune system: hypersensitivity	71397	TAS	glomerulonephritis		neurological/behavioral: fear/anxiety
+MGI:2151890	Cgnz1	2153936	Cgnz1<NZM2328/J>	2153936	Cgnz1<NZM2328/J>	(NZM2328/J x C57L/J) x NZM2328/J	immune system: hypersensitivity	71397	TAS	glomerulonephritis		neurological/behavioral: motor capabilities/coordination/movement anomalies
+MGI:2151890	Cgnz1	2153939	Cgnz1<C57L/J>	2153939	Cgnz1<C57L/J>	(NZM2328/J x C57L/J) x NZM2328/J	immune system: hypersensitivity	71397	TAS	proteinuria		neurological/behavioral: sensory capabilities/reflexes/nociception abnormalities
+MGI:2151890	Cgnz1	2153936	Cgnz1<NZM2328/J>	2153939	Cgnz1<C57L/J>	(NZM2328/J x C57L/J) x NZM2328/J	immune system: hypersensitivity	71397	TAS	proteinuria		neurological/behavioral: maternal behavior anomalies
+MGI:2151890	Cgnz1	2153936	Cgnz1<NZM2328/J>	2153936	Cgnz1<NZM2328/J>	(NZM2328/J x C57L/J) x NZM2328/J	immune system: hypersensitivity	71397	TAS	proteinuria		neurological/behavioral: feeding/drinking preference anomalies
+MGI:2137601	Chol3	2153949	Chol3<KK-Ay>	2153949	Chol3<KK-Ay>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma total cholesterol level		neurological/behavioral: sleep pattern/circadian rhythm anomalies
+MGI:2137601	Chol3	2153949	Chol3<KK-Ay>	2153948	Chol3<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma total cholesterol level		neurological/behavioral: other anomalies
+MGI:2137601	Chol3	2153948	Chol3<C57BL/6J>	2153948	Chol3<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma total cholesterol level		neurological/behavioral: no defect detected
+MGI:2137601	Chol3	2153949	Chol3<KK-Ay>	2153949	Chol3<KK-Ay>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma HDL cholesterol level		metabolism: abnormal lipid homeostasis
+MGI:2137601	Chol3	2153949	Chol3<KK-Ay>	2153948	Chol3<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma HDL cholesterol level		metabolism: abnormal glucose homeostasis
+MGI:2137601	Chol3	2153948	Chol3<C57BL/6J>	2153948	Chol3<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma HDL cholesterol level		metabolism: other metabolic defect measured by clinical chemistry
+MGI:2137602	Chol4	2153951	Chol4<KK-Ay>	2153951	Chol4<KK-Ay>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma total cholesterol level		metabolism: other metabolic defect
+MGI:2137602	Chol4	2153951	Chol4<KK-Ay>	2153950	Chol4<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma total cholesterol level		metabolism: no defect detected
+MGI:2137602	Chol4	2153950	Chol4<C57BL/6J>	2153950	Chol4<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma total cholesterol level		hematology: hemaotpoetic anomalies
+MGI:2137602	Chol4	2153951	Chol4<KK-Ay>	2153951	Chol4<KK-Ay>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma HDL cholesterol level		hematology: abnormal red blood cell count/anemia
+MGI:2137602	Chol4	2153951	Chol4<KK-Ay>	2153950	Chol4<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma HDL cholesterol level		hematology: abnormal blood coagulation
+MGI:2137602	Chol4	2153950	Chol4<C57BL/6J>	2153950	Chol4<C57BL/6J>	(C57BL/6J x KK-Ay)F2	metabolism: abnormal lipid homeostasis	54322	TAS	plasma HDL cholesterol level		hematology: no defect detected
+MGI:1890622	Cia9	2153955	Cia9<NOD.C3H-H2<q>/Rhd>			(NOD.C3H-H2<q>/Rhd x B10.D1-H2<q>/SgJ)F2	immune system: hypersensitivity	69981	TAS	arthritis susceptibility		heart/cardiovascular system: dysmorphology
+MGI:2150984	Cocrb1					multiple	neurological/behavioral: no defect detected	68421	TAS	repeated movements		heart/cardiovascular system: blood circulatory defects
+MGI:2150985	Cocrb2					multiple	neurological/behavioral: no defect detected	68421	TAS	exploratory behavior		heart/cardiovascular system: blood pressure anomalies
+MGI:2151919	Cpfd1					(NZB/BlNJ x C57BL/6By)F2	central nervous system: other dysmorphology	71085	TAS	brain morphology		heart/cardiovascular system: other functional anomalies
+MGI:2151920	Cpfd2					(NZB/BlNJ x C57BL/6By)F2	central nervous system: other dysmorphology	71085	TAS	brain morphology		heart/cardiovascular system: no defect detected
+MGI:1277142	Cplaq3					multiple	neurological/behavioral: sleep pattern/circadian rhythm anomalies	36675	TAS	period of locomotor activity		respiratory system: dysmorphology
+MGI:1277130	Cplaq4					multiple	neurological/behavioral: sleep pattern/circadian rhythm anomalies	29803	TAS	period of locomotor activity		respiratory system: respiratory distress or failure/functional anomalies
+MGI:2150986	Dautb1					multiple	neurological/behavioral: no defect detected	68421	TAS	dopamine uptake transporter binding		respiratory system: no defect detected
+MGI:2149843	Dbsty1	2154035	Dbsty1<NZO/HlLt>	2154035	Dbsty1<NZO/HlLt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	growth/weight abnormality: postnatal	65256	TAS	body weight		kidney/renal system: dysmorphology
+MGI:2149843	Dbsty1	2154035	Dbsty1<NZO/HlLt>	2154038	Dbsty1<NON/Lt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	growth/weight abnormality: postnatal	65256	TAS	body weight		kidney/renal system: functional anomalies
+MGI:2149843	Dbsty1	2154038	Dbsty1<NON/Lt>	2154038	Dbsty1<NON/Lt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	growth/weight abnormality: postnatal	65256	TAS	body weight		kidney/renal system: no defect detected
+MGI:2149843	Dbsty1	2154035	Dbsty1<NZO/HlLt>	2154035	Dbsty1<NZO/HlLt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	metabolism: abnormal glucose homeostasis	65256	TAS	hyperinsulinemia		liver/hepatic system: dysmorphology
+MGI:2149843	Dbsty1	2154035	Dbsty1<NZO/HlLt>	2154038	Dbsty1<NON/Lt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	metabolism: abnormal glucose homeostasis	65256	TAS	hyperinsulinemia		liver/hepatic system: functional anomalies
+MGI:2149843	Dbsty1	2154038	Dbsty1<NON/Lt>	2154038	Dbsty1<NON/Lt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	metabolism: abnormal glucose homeostasis	65256	TAS	hyperinsulinemia		liver/hepatic system: no defect detected
+MGI:2149843	Dbsty1	2154035	Dbsty1<NZO/HlLt>	2154035	Dbsty1<NZO/HlLt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	metabolism: abnormal glucose homeostasis	65256	TAS	plasma glucose		digestive system: dysmorphology
+MGI:2149843	Dbsty1	2154035	Dbsty1<NZO/HlLt>	2154038	Dbsty1<NON/Lt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	metabolism: abnormal glucose homeostasis	65256	TAS	plasma glucose		digestive system: functional anomalies
+MGI:2149843	Dbsty1	2154038	Dbsty1<NON/Lt>	2154038	Dbsty1<NON/Lt>	NON/Lt x (NZO/HlLt x NON/Lt)F1	metabolism: abnormal glucose homeostasis	65256	TAS	plasma glucose		digestive system: no defect detected
+MGI:1350920	Emo1	2154050	Emo1<C57BL/6>	2154050	Emo1<C57BL/6>	complex	neurological/behavioral: fear/anxiety	58187	TAS	open field defecation		immune system: lymphoid development/ B lymphocyte defects
+MGI:1350920	Emo1	2154048	Emo1<BALB/cJ>	2154048	Emo1<BALB/cJ>	complex	neurological/behavioral: fear/anxiety	58187	TAS	open field defecation		immune system: lymphoid development/ T lymphocyte defects
+MGI:1350920	Emo1	2154050	Emo1<C57BL/6>	2154050	Emo1<C57BL/6>	complex	neurological/behavioral: fear/anxiety	58187	TAS	open field activity		immune system: other dysmorphology
+MGI:1350920	Emo1	2154048	Emo1<BALB/cJ>	2154048	Emo1<BALB/cJ>	complex	neurological/behavioral: fear/anxiety	58187	TAS	open field activity		immune system: immunodeficiency
+MGI:1334558	Emo3					complex	neurological/behavioral: fear/anxiety	53482	TAS	open field defecation		immune system: hypersensitivity
+MGI:1334558	Emo3					complex	neurological/behavioral: fear/anxiety	53482	TAS	open field activity		immune system: other functional anomaly
+MGI:2137481	Etlm1					(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	68417	TAS	locomotor activity		immune system: no defect detected
+MGI:2148643	Etohcta1					multiple	neurological/behavioral: conditioning defect	50271	TAS	conditioned taste aversion		central nervous system: neural tube defects
+MGI:1314874	Exq2					(A/J x C57BL/6J)F2	neurological/behavioral: fear/anxiety	44650	TAS	open field activity		central nervous system: other dysmorphology
+MGI:1314869	Exq3					(A/J x C57BL/6J)F2	neurological/behavioral: fear/anxiety	44650	TAS	open field activity		central nervous system: LTP anomalies
+MGI:1344342	Fatq1	2154089	Fatq1<MH>			(MH x C57BL/6J)F2	growth/weight abnormality: postnatal	55483	TAS	adiposity		central nervous system: other functional anomalies
+MGI:1346066	Gvhd1	2154093	Gvhd1<C57BL/10J>	2154093	Gvhd1<C57BL/10J>	(B10.D2-H2<d> x DBA/2J)F1 x B10.D2-H2<d>	immune system: hypersensitivity	52834	TAS	splenomegaly		central nervous system: no defect detected
+MGI:1346066	Gvhd1	2154093	Gvhd1<C57BL/10J>	2154093	Gvhd1<C57BL/10J>	(B10.D2-H2<d> x DBA/2J)F1 x DBA/2J	immune system: hypersensitivity	52834	TAS	splenomegaly		peripheral nervous system: dysmorphology
+MGI:106010	Hcs7	2154096	Hcs7<C3H/HeJ>			(C57BL/6J x C3H/HeJ)F1 x C57BL/6J	tumors: increased incidence	31507	TAS	liver tumor susceptibility		peripheral nervous system: functional anomalies
+MGI:106010	Hcs7					(C57BL/6J x C3H/HeJ)F1 x C57BL/6J	tumors: increased incidence	18565	TAS	liver tumor susceptibility		peripheral nervous system: no defect detected
+MGI:2151183	Hipp1	2154097	Hipp1<C57BL/6J>			(C57BL/6J x DBA/2J)F2	central nervous system: other dysmorphology	69621	TAS	brain weight		reproductive system: dysmorphology
+MGI:2151183	Hipp1	2154097	Hipp1<C57BL/6J>			multiple	central nervous system: other dysmorphology	69621	TAS	brain weight		reproductive system: fertility/fecundity anomalies
+MGI:1344355	Hlq1	2154099	Hlq1<MH>			(MH x C57BL/6J)F2	metabolism: no defect detected	55483	TAS	heat loss		reproductive system: no defect detected
+MGI:1344355	Hlq1	2154099	Hlq1<MH>			(MH x ML)F2	metabolism: no defect detected	55483	TAS	heat loss		endocrine glands: dysmorphology
+MGI:2137474	Hpic2					(C57BL/6J x DBA/2J)F2	neurological/behavioral: seizures/epilepsy	68417	TAS	catalepsy		endocrine glands: functional anomalies
+MGI:2137474	Hpic2					(C57BL/6J x DBA/2J)F2	neurological/behavioral: seizures/epilepsy	61419	TAS	catalepsy		endocrine glands: no defect detected
+MGI:1344386	Hrtq1	2154106	Hrtq1<MH>			(MH x C57BL/6J)F2	heart/cardiovascular system: dysmorphology	55483	TAS	heart weight		tumors: increased incidence
+MGI:1932506	Insq2	2154156	Insq2<SM/J>			multiple	metabolism: abnormal glucose homeostasis	64138	TAS	insulin level		tumors: no increased incidence
+MGI:2148493	Insq6	2154163	Insq6<C57BL/6>			(C57BL/6 x 129SvIR)F2	metabolism: abnormal glucose homeostasis	61489	TAS	insulin level		other aberrant phenotype
+MGI:1891848	Ity2					(C57BL/6J x MOLF/Ei)F2	immune system: no defect detected	45962	TAS	resistance to infection		no obvious phenotype: no defect detected
+MGI:1278337	Laq1					(MRL-Fas<lpr> x B6-Fas<lpr>)F2	immune system: hypersensitivity	45708	TAS	arthritis		
+MGI:105971	Lbw7					(NZB x NZW)F2	immune system: hypersensitivity	20991	TAS	lupus		
+MGI:1096557	Lore1					multiple	neurological/behavioral: no defect detected	40119	TAS	sleep time		
+MGI:1096557	Lore1					multiple	neurological/behavioral: no defect detected	52088	TAS	sleep time		
+MGI:1096557	Lore1					multiple	neurological/behavioral: no defect detected	38534	TAS	sleep time		
+MGI:2150637	Lore8	2154184	Lore8<C57BL/6IBG>			(C57BL/6IBG X DBA/2IBG)F2	neurological/behavioral: no defect detected	66631	TAS	sleep time		
+MGI:2148262	Lrncs1					multiple	neurological/behavioral: learning/memory impairment	40226	TAS	conditioned fear response		
+MGI:2148262	Lrncs1	2154212	Lrncs1<DBA/2J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: learning/memory impairment	43837	TAS	conditioned fear response
+MGI:2148263	Lrncs2					multiple	neurological/behavioral: learning/memory impairment	40226	TAS	conditioned fear response
+MGI:2148264	Lrncs3					multiple	neurological/behavioral: learning/memory impairment	40226	TAS	conditioned fear response
+MGI:2148261	Lrnx1					multiple	neurological/behavioral: learning/memory impairment	40226	TAS	contextual fear response
+MGI:2149001	Lrnx11					C57BL/6J x (C57BL/6J x C3H/HeJ)F1	neurological/behavioral: learning/memory impairment	43836	TAS	contextual fear response
+MGI:2149002	Lrnx12					C57BL/6J x (C57BL/6J x C3H/HeJ)F1	neurological/behavioral: learning/memory impairment	43836	TAS	contextual fear response
+MGI:2148807	Manh1					(SM/J x LG/J)F2	skeletal: craniofacial defects	67526	TAS	mandible morphology
+MGI:2148808	Manh2					(SM/J x LG/J)F2	skeletal: craniofacial defects	67526	TAS	mandible morphology
+MGI:1890553	Melm1	2154228	Melm1<C57BL/6J>	2154228	Melm1<C57BL/6J>	multiple	tumors: increased incidence	66211	TAS	melanoma early onset
+MGI:1890553	Melm1	2154229	Melm1<BALB/cJ>	2154228	Melm1<C57BL/6J>	multiple	tumors: no increased incidence	66211	TAS	melanoma early onset
+MGI:1890554	Melm2	2154231	Melm2<BALB/cJ>	2154231	Melm2<BALB/cJ>	multiple	tumors: no increased incidence	66211	TAS	melanoma early onset
+MGI:1890554	Melm2	2154231	Melm2<BALB/cJ>	2154230	Melm2<C57BL/6J>	multiple	tumors: no increased incidence	66211	TAS	melanoma early onset
+MGI:1890554	Melm2	2154230	Melm2<C57BL/6J>	2154230	Melm2<C57BL/6J>	multiple	tumors: increased incidence	66211	TAS	melanoma early onset
+MGI:1858512	Mnek1a	2154232	Mnek1a<CAST/Ei>			(C57BL/6J-kat2J/+ x CAST/Ei)F2	kidney/renal system: dysmorphology	55632	TAS	kidney weight
+MGI:1858512	Mnek1a	2154232	Mnek1a<CAST/Ei>			(C57BL/6J-kat2J/+ x CAST/Ei)F2	kidney/renal system: functional anomalies	55632	TAS	hematocrit
+MGI:1353476	Mol2					multiple	immune system: other functional anomaly	58921	TAS	LPS response
+MGI:1353476	Mol2					complex	immune system: other functional anomaly	58921	TAS	LPS response
+MGI:99509	Mop3					(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	17972	TAS	morphine preference
+MGI:2151858	Morph1	2154243	Morph1<DBA/2J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	70377	TAS	morphine antinociception
+MGI:2151858	Morph1	2154243	Morph1<DBA/2J>			multiple	neurological/behavioral: no defect detected	70377	TAS	morphine antinociception
+MGI:2149822	Mors1	2154246	Mors1<C57BL/6J-ob/ob>			(C57BL/6J-ob/ob x BALB/cJ)F2	reproductive system: fertility/fecundity anomalies	52903	TAS	sterility
+MGI:1891281	Nidd6	2154247	Nidd6<TSOD>	2154247	Nidd6<TSOD>	(BALB/cA x TSOD)F2	growth/weight abnormality: postnatal	55285	TAS	body weight
+MGI:1891281	Nidd6	2154247	Nidd6<TSOD>	2154248	Nidd6<BALB/cA>	(BALB/cA x TSOD)F2	growth/weight abnormality: postnatal	55285	TAS	body weight
+MGI:1891281	Nidd6	2154248	Nidd6<BALB/cA>	2154248	Nidd6<BALB/cA>	(BALB/cA x TSOD)F2	growth/weight abnormality: postnatal	55285	TAS	body weight
+MGI:1891281	Nidd6	2154247	Nidd6<TSOD>	2154247	Nidd6<TSOD>	(TSOD x BALB/cA)F2	growth/weight abnormality: postnatal	55285	TAS	body weight
+MGI:1891281	Nidd6	2154247	Nidd6<TSOD>	2154248	Nidd6<BALB/cA>	(TSOD x BALB/cA)F2	growth/weight abnormality: postnatal	55285	TAS	body weight
+MGI:1891281	Nidd6	2154248	Nidd6<BALB/cA>	2154248	Nidd6<BALB/cA>	(TSOD x BALB/cA)F2	growth/weight abnormality: postnatal	55285	TAS	body weight
+MGI:109231	Obq2	2154249	Obq2<EL/Suz>	2154249	Obq2<EL/Suz>	(129X1/SvJ x EL/Suz)F2	growth/weight abnormality: postnatal	33858	TAS	adiposity
+MGI:109231	Obq2	2154249	Obq2<EL/Suz>	2154250	Obq2<129X1/SvJ>	(129X1/SvJ x EL/Suz)F2	growth/weight abnormality: postnatal	33858	TAS	adiposity
+MGI:109231	Obq2	2154250	Obq2<129X1/SvJ>	2154250	Obq2<129X1/SvJ>	(129X1/SvJ x EL/Suz)F2	growth/weight abnormality: postnatal	33858	TAS	adiposity
+MGI:2150696	Obq7	2154252	Obq7<NZO/HlLt>			(SM/J x NZO/HILt)F2	growth/weight abnormality: postnatal	67838	TAS	adiposity
+MGI:2150697	Obq8	2154255	Obq8<NZO/HlLt>			(SM/J x NZO/HILt)F2	growth/weight abnormality: postnatal	67838	TAS	adiposity
+MGI:2150698	Obq9	2154257	Obq9<NZO/HlLt>			(SM/J x NZO/HILt)F2	growth/weight abnormality: postnatal	67838	TAS	adiposity
+MGI:108003	Orch4	2154295	Orch4<DBA/2J>			(BALB/cByJ x DBA/2)F1 x BALB/cByJ	immune system: hypersensitivity	35331	TAS	orchitis
+MGI:108002	Orch5	2154299	Orch5<DBA/2J>			(BALB/cByJ x DBA/2)F1 x BALB/cByJ	immune system: hypersensitivity	35331	TAS	orchitis
+MGI:1345291	Pas8					(A/JO1aHsd x BALB/cOlaHsd)F2	tumors: increased incidence	50533	TAS	lung tumor susceptibility
+MGI:1345291	Pas8					(A/JO1aHsd x BALB/cOlaHsd)F1 x BALB/cOlaHsd	tumors: increased incidence	50533	TAS	lung tumor susceptibility
+MGI:1345291	Pas8					(A/JO1aHsd x BALB/cOlaHsd)F1 x A/JO1aHsd	tumors: increased incidence	50533	TAS	lung tumor susceptibility
+MGI:1345638	Pbw1					multiple	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1					multiple	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1					multiple	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1	2154307	Pbw1<DBA/2J>	2154307	Pbw1<DBA/2J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1	2154307	Pbw1<DBA/2J>	2154308	Pbw1<C57BL/6J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1	2154308	Pbw1<C57BL/6J>	2154308	Pbw1<C57BL/6J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1					complex	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:1345638	Pbw1					complex	neurological/behavioral: no defect detected	54502	TAS	pentobarbital withdrawal
+MGI:2151854	Pbwm	2154311	Pbwm<DBA/2J>	2154311	Pbwm<DBA/2J>	(C57BL/6J x DBA/2J)F2	neurological/behavioral: no defect detected	71080	TAS	pentobarbital withdrawal
+MGI:2151854	Pbwm	2154311	Pbwm<DBA/2J>	2154311	Pbwm<DBA/2J>	multiple	neurological/behavioral: no defect detected	71080	TAS	pentobarbital withdrawal
+MGI:2151209	Pgia1	2154313	Pgia1<BALB/cCrl>	2154314	Pgia1<DBA/2Crl>	(BALB/cCrl x DBA/2Crl)F2	immune system: hypersensitivity	66460	TAS	autoantibody production
+MGI:105970	Sbw1					(NZB x NZW)F2	immune system: hypersensitivity	20991	TAS	glomerulonephritis
+MGI:105970	Sbw1					(NZB x NZW)F2	immune system: hypersensitivity	20991	TAS	autoantibody production
+MGI:105970	Sbw1					(NZB x NZW)F2	survival: premature death	20991	TAS	mortality
+MGI:108569	Scc3					(BALB/cHeA x CcS/Dem) F2	tumors: increased incidence	36996	TAS	colon tumor susceptibility
+MGI:2149050	Skl1	2154320	Skl1<LG/J>			(LG/J x SM/J)F2	skeletal: no defect detected	62610	TAS	tail length
+MGI:1351472	Skts8					(NIH/Ola x M. spretus)F1 x NIH/Ola 	tumors: increased incidence	59049	TAS	skin tumor susceptibility
+MGI:2149680	Skull1					(LG/J x SM/J)F2	skeletal: no defect detected	53484	TAS	skull morphology
+MGI:2149681	Skull2					(LG/J x SM/J)F2	skeletal: no defect detected	53484	TAS	skull morphology
+MGI:105969	Sle1					B6.NZMH2	immune system: hypersensitivity	33173	TAS	SLE
+MGI:105969	Sle1					(NZM2410 x C57BL/6)F2	immune system: hypersensitivity	52863	TAS	splenomegaly
+MGI:105969	Sle1					(NZM2410 x C57BL/6)F2	immune system: hypersensitivity	52863	TAS	anti-dsDNA antibody production
+MGI:2149096	Sle10	2154333	Sle10<BXSB/J>	2154333	Sle10<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	lymphoadenopathy
+MGI:1931842	Sle1a	2154449	Sle1a<NZM2410/J>			(B6.Sle1 x C57BL/6J)F1 x C57BL/6J	immune system: hypersensitivity	67544	TAS	anti-chromatin antibody production
+MGI:1931843	Sle1b	2154451	Sle1b<NZM2410/J>			(B6.Sle1 x C57BL/6J)F1 x C57BL/6J	immune system: hypersensitivity	67544	TAS	anti-chromatin antibody production
+MGI:1931844	Sle1c	2154453	Sle1c<NZM2410/J>			(B6.Sle1 x C57BL/6J)F1 x C57BL/6J	immune system: hypersensitivity	67544	TAS	anti-chromatin antibody production
+MGI:2149093	Sle7	2154335	Sle7<BXSB/J>	2154335	Sle7<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	glomerulonephritis
+MGI:2149093	Sle7	2154335	Sle7<BXSB/J>	2154335	Sle7<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	anti-nuclear antibody production
+MGI:2149093	Sle7	2154335	Sle7<BXSB/J>	2154335	Sle7<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	splenomegaly
+MGI:2149095	Sle8	2154337	Sle8<BXSB/J>	2154337	Sle8<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	glomerulonephritis
+MGI:2149095	Sle8	2154337	Sle8<BXSB/J>	2154337	Sle8<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	anti-nuclear antibody production
+MGI:2149095	Sle8	2154337	Sle8<BXSB/J>	2154337	Sle8<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	splenomegaly
+MGI:2149094	Sle9	2154339	Sle9<BXSB/J>	2154339	Sle9<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	anti-nuclear antibody production
+MGI:2149094	Sle9	2154339	Sle9<BXSB/J>	2154339	Sle9<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	splenomegaly
+MGI:2149094	Sle9	2154339	Sle9<BXSB/J>	2154339	Sle9<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	anti-dsDNA antibody production
+MGI:2149094	Sle9	2154339	Sle9<BXSB/J>	2154339	Sle9<BXSB/J>	C57BL/10Ola x C56BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	60445	TAS	anti-ssDNA antibody production
+MGI:1335083	Sluc5					(O20/A x OcB-6)F2	tumors: increased incidence	50525	TAS	lung tumor susceptibility
+MGI:1335083	Sluc5					(O20/A x OcB-4)F2	tumors: increased incidence	50525	TAS	lung tumor susceptibility
+MGI:1888685	Sst1	2154340	Sst1<C3HeB/FeJ>	2154340	Sst1<C3HeB/FeJ>	(C3HeB/FeJ x C57BL/6J)F2	immune system: no defect detected	63410	TAS	tuberculosis susceptibility
+MGI:2151739	Stia1	2154343	Stia1<NOD/LtDOI>			(C57BL/6J x NOD/LtDOI)F2	immune system: hypersensitivity	70882	TAS	arthritis severity
+MGI:1098770	Szs1	2154345	Szs1<DBA/2J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: seizures/epilepsy	70295	TAS	seizure susceptibility
+MGI:1098770	Szs1	2154345	Szs1<DBA/2J>	2154345	Szs1<DBA/2J>	B6.D2-Mtv7a/Ty(Mtv7)	neurological/behavioral: seizures/epilepsy	70295	TAS	seizure susceptibility
+MGI:1098770	Szs1	2154345	Szs1<DBA/2J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: seizures/epilepsy	56630	TAS	seizure susceptibility
+MGI:1098770	Szs1					(C57BL/6J x DBA/2J)F2	neurological/behavioral: seizures/epilepsy	38888	TAS	seizure susceptibility
+MGI:1345649	Szs5	2154347	Szs5<DBA/2J>			(C57BL/6J x DBA/2J)F2	neurological/behavioral: seizures/epilepsy	56630	TAS	seizure susceptibility
+MGI:2150671	Tbrs1	2154348	Tbrs1<C57BL/6J>	2154348	Tbrs1<C57BL/6J>	(C57BL/6J x DBA/2J)F2	immune system: other functional anomaly	67658	TAS	tuberculosis resistance
+MGI:2150671	Tbrs1	2154348	Tbrs1<C57BL/6J>	2154349	Tbrs1<DBA/2J>	(C57BL/6J x DBA/2J)F2	immune system: other functional anomaly	67658	TAS	tuberculosis resistance
+MGI:2150671	Tbrs1	2154349	Tbrs1<DBA/2J>	2154349	Tbrs1<DBA/2J>	(C57BL/6J x DBA/2J)F2	immune system: other functional anomaly	67658	TAS	tuberculosis resistance
+MGI:1891472	Tir3a					complex	immune system: other functional anomaly	63779	TAS	trypanosome resistance
+MGI:1891473	Tir3b					complex	immune system: other functional anomaly	63779	TAS	trypanosome resistance
+MGI:1891474	Tir3c					complex	immune system: other functional anomaly	63779	TAS	trypanosome resistance
+MGI:2150122	Tlln					(C57BL/6J x DBA/2J)F2	skeletal: no defect detected	53812	TAS	tail length
+MGI:2151921	Tne1					(NZB/BlNJ x C57BL/6By)F2	neurological/behavioral: motor capabilities/coordination/movement anomalies	71085	TAS	hindlimb coordination
+MGI:1858756	Vertcling					(C57BL6/By x NZB/BlNJ)F2	neurological/behavioral: motor capabilities/coordination/movement anomalies	53794	TAS	vertical clinging
+MGI:1344340	Wt10q1	2154366	Wt10Q1<MH>			(MH x C57BL/6J)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:1344340	Wt10q1	2154366	Wt10Q1<MH>			(MH x ML)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:1344329	Wt3q1	2154370	Wt3q1<MH>			(MH x C57BL/6J)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:1344428	Wt3q2	2154372	Wt3q2<MH>			(MH x C57BL/6J)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:1344348	Wt6q1	2154374	Wt6q1<MH>			(MH x C57BL/6J)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:1344348	Wt6q1	2154374	Wt6q1<MH>			(MH x ML)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:1344411	Wt6q2	2154378	Wt6q2<MH>			(MH x C57BL/6J)F2	growth/weight abnormality: postnatal	55483	TAS	body weight
+MGI:2148988	Yaa2					BXSB/J x (C57BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	49868	TAS	nephritis
+MGI:2148990	Yaa3					BXSB/J x (C57BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	49868	TAS	nephritis
+MGI:2148991	Yaa4					BXSB/J x (C57BL/10Ola x BXSB/J)F1	immune system: hypersensitivity	49868	TAS	anti-dsDNA antibody production

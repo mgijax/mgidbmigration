@@ -242,23 +242,18 @@ IMAGE	Source	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	dab
 IMAGE	Source	NIA Mouse Unfertilized Egg cDNA Library(Long)	dab
 NIA	Source	Mouse sixteen-cell stage embryo cDNA	dab
 NIA	Source	Mouse two-cell stage embryo cDNA	dab
+NIA	Source	Mouse 7.5 dpc embryo ectoplacental cone cDNA library	dab
 NIA	Source	Mouse 3.5-dpc blastocyst cDNA	dab
 NIA	Source	Mouse four-cell-embryo cDNA	dab
-NIA	Source	NIA Mouse E7.5 Extraembryonic Portion cDNA Library	dab
 NIA	Source	Mouse eight -cell stage embryo cDNA	dab
-NIA	Source	Mouse Fertilized one-cell-embryo cDNA	dab
-NIA	Source	Mouse Unfertilized Egg cDNA	dab
+NIA	Source	Mouse fertilized one-cell-embryo cDNA	dab
+NIA	Source	Mouse unfertilized Egg cDNA	dab
+NIA	Source	NIA Mouse E7.5 Extraembryonic Portion cDNA Library	dab
 NIA	Source	NIA Mouse E13.5 VMB Dopamine Cell cDNA Library	dab
-NIA	Source	Mouse sixteen-cell stage embryo cDNA	dab
-NIA	Source	Mouse two-cell stage embryo cDNA	dab
-NIA	Source	Mouse four-cell-embryo cDNA	dab
-NIA	Source	Mouse eight -cell stage embryo cDNA 	dab
-NIA	Source	Mouse 3.5-dpc blastocyst cDNA	dab
 NIA	Source	NIA Mouse E12.5 Female Mesonephros and Gonads cDNA Library	dab
 NIA	Source	NIA Mouse E7.5 Embryonic Portion cDNA Library	dab
 NIA	Source	NIA Mouse E7.5 Extraembryonic Portion cDNA Library	dab
 NIA	Source	NIA Mouse ES Cell (LIF-) cDNA Library Short	dab
-NIA	Source	Mouse Fertilized one-cell-embryo cDNA	dab
 NIA	Source	NIA Mouse Germinal Center B Cell cDNA Library	dab
 NIA	Source	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+) cDNA Library (Long)	dab
 NIA	Source	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-) cDNA Library (Long)	dab
@@ -269,7 +264,6 @@ NIA	Source	NIA Mouse Newborn Heart cDNA Library	dab
 NIA	Source	NIA Mouse newborn Ovary cDNA Library	dab
 NIA	Source	NIA Mouse Trophoblast Stem Cell cDNA Library (Short)	dab
 NIA	Source	NIA Mouse Undifferentiated ES Cell cDNA Library (Short)	dab
-NIA	Source	Mouse Unfertilized Egg cDNA	dab
 NIA	Source	NIA Mouse Newborn Kidney cDNA Library (Long)	dab
 NIA	Source	NIA Mouse Newborn Kidney cDNA Library2 (Short)	dab
 NIA	Source	NIA Mouse 12.5-dpc Male Genital Ridge/Mesonephros cDNA Library (Long)	dab
@@ -287,7 +281,6 @@ NIA	Source	NIA Mouse Osteoblast cDNA Library (Long)	dab
 NIA	Source	NIA Mouse Trophoblast Stem Cell cDNA Library (Long)	dab
 NIA	Source	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	dab
 NIA	Source	NIA Mouse Unfertilized Egg cDNA Library(Long)	dab
-NIA	Source	Mouse 7.5 dpc embryo ectoplacental cone cDNA library	dab
 NIA	Source	Unequalized cDNA library from Ltk- cultured cells	dab
 NIA	Source	Equalized cDNA library from Ltk- cultured cells	dab
 NIA	Source	NIA Mouse Neural Stem Cell (Undifferentiated) cDNA Library (Long)	dab

@@ -11,20 +11,18 @@
 
 cd `dirname $0`
 
-setenv NOMEN nomen_lec
-setenv STRAINS strains_lec
+setenv NOMEN nomen
+setenv STRAINS strains
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
-#setenv newmgddb /usr/local/mgi/dbutils/mgd_release
-setenv newmgddb /home/lec/db
+setenv newmgddb /usr/local/mgi/dbutils/mgd_release
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
-#setenv newnomendb /usr/local/mgi/dbutils/nomen_release
-setenv newnomendb /home/lec/db
+setenv newnomendb /usr/local/mgi/dbutils/nomen_release
 setenv newnomendbschema ${newnomendb}/nomendbschema
 setenv newnomendbperms ${newnomendb}/nomendbperms
 
@@ -42,8 +40,11 @@ date >> $LOG
 #
 
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+date >> $LOG
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+date >> $LOG
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
+date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
@@ -60,15 +61,6 @@ echo "Data Migration..." >> $LOG
 ./tr2541.csh >>& $LOG
 ./tr2239.csh >>& $LOG
 ./tr2867.csh >>& $LOG
-
-#
-# Re-create all triggers, sps, views....
-#
-
-$DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
-$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
-
-date >> $LOG
 
 #
 # drop old/obsolete objects
@@ -140,5 +132,14 @@ quit
  
 EOSQL
   
+date >> $LOG
+
+#
+# Re-create all triggers, sps, views....
+#
+
+$DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
+$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
+
 date >> $LOG
 

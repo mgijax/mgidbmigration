@@ -1,0 +1,250 @@
+MGI:101848      flailer
+MGI:107489	gyro
+MGI:1306776	modifier of tubby hearing 1	
+MGI:1933547	saccharin preference
+MGI:3038461	sooty foot
+MGI:98951	vestibulomotor degeneration
+MGI:1918115	ulnaless
+MGI:95621	cleft palate 1
+MGI:97487	splotch
+MGI:96990	hydropic fibers
+MGI:1861441	ashen
+MGI:96173	hypodactyly
+MGI:97631	trembler
+MGI:97769	b
+MGI:97769	c
+MGI:96020	d
+MGI:99499	balding
+MGI:96020	s
+MGI:105368	deaf waddler
+MGI:97490	small eye
+MGI:97370	tiptoe walking
+MGI:1341628	mahogany
+MGI:102949	nude
+MGI:2177742	light ear
+MGI:95484	lymphoproliferation
+MGI:109482	leaner
+MGI:2159400	spinner
+MGI:97623	myelin synthesis deficiency
+MGI:104698	total opacity 3
+MGI:104554	black eyed white
+MGI:88525	nuclear and zonular cataract
+MGI:1100526	fierce
+MGI:102720	piebald
+MGI:1101358	goku
+MGI:1919683	chocolate
+MGI:1927580	pallid
+MGI:109330	Ames dwarf
+MGI:96623	opisthotonus
+MGI:1095416	slalom
+MGI:1202064	twister
+MGI:97888	riccioli
+MGI:1920970	harlequin ichthyosis
+MGI:105368	wriggle
+MGI:99602	cartilage matrix deficiency
+MGI:102539	rib-vertebrae
+MGI:104781	weaver
+MGI:98956	vestigial tail
+MGI:103149	gracile axonal dystrophy
+MGI:103301	lethargic
+MGI:97448	sparse fur
+MGI:88569	tail hair depletion
+MGI:1096327	fused
+MGI:1349447	motor neuron degeneration
+MGI:1888519	dreher
+MGI:1316660	waggler
+MGI:103169	degenerating muscle
+MGI:1917680	progressive motor neuropathy
+MGI:96677	spotted sterile male
+MGI:107822	tattered
+MGI:88417	myotonia
+MGI:88401	ocular retardation
+MGI:1890219	bustling
+MGI:96974	dusty
+MGI:99255	generalized lymphoproliferative disease
+MGI:1342270	myodystrophy
+MGI:2153040	underwhite
+MGI:95688	brachypodism
+MGI:97571	patch
+MGI:1100864	situs inversus viscerum
+MGI:1096327	kinky
+MGI:1350931	osteosclerotic
+MGI:97373	strigosus
+MGI:2180307	haze
+MGI:88064	testicular feminization
+MGI:99456	tobacco darkening
+MGI:1353569	dysgenetic lens
+MGI:88039	multiple intestinal neoplasia
+MGI:99833	open brain 2
+MGI:99400	blotchy
+MGI:1298216	recessive nuclear cataract
+MGI:101894	sex linked fidget
+MGI:1345282	lethal milk
+MGI:96103	downeast anemia
+MGI:1349419	harlequin
+MGI:1330223	brachymorphic
+MGI:95751	spastic
+MGI:1891436	scurfy
+MGI:95729	extra toes
+MGI:1861630	jerker
+MGI:88452	disproportionate micromelia
+MGI:1354698	dactylaplasia
+MGI:98733	congenital goiter
+MGI:97932	susceptibility to xenotropic virus
+MGI:88564	furless
+MGI:109482	rocker
+MGI:98387	jaundiced
+MGI:105976	dilute
+MGI:1100498	aphakia
+MGI:98880	albino
+MGI:108075	bent body
+MGI:104554	vitiligo
+MGI:1096317	wasted
+MGI:1096327	knobbly
+MGI:98385	spherocytosis
+MGI:1095412	rostral cerebellar malformation
+MGI:96677	dominant spotting
+MGI:96990	dominant cataract
+MGI:2176380	leaden
+MGI:1353627	hypolipidemia
+MGI:1929813	torpid
+MGI:95285	lethal spotting
+MGI:1333879	pearl
+MGI:1890647	fidget
+MGI:104993	diabetes
+MGI:1339753	osteopetrosis
+MGI:88275	cerebellar deficient folia
+MGI:98872	polydactyly EMS
+MGI:107489	hypophosphatemia
+MGI:1934765	iris pigment dispersion
+MGI:98740	unbalanced
+MGI:95561	chylous ascites
+MGI:102563	slaty
+MGI:99912	dystrophia muscularis
+MGI:101761	pygmy
+MGI:95789	hypogonadal
+MGI:2151016	deafness
+MGI:1316660	stargazer
+MGI:104665	adrenocortical lipid depletion
+MGI:98297	short digits
+MGI:1890646	juvenile cystic kidney
+MGI:88519	Philly cataract
+MGI:104627	dystonia musculorum
+MGI:97623	jimpy
+MGI:109632	eyeless 1
+MGI:1931001	crinkled
+MGI:104661	staggerer
+MGI:1096877	pudgy
+MGI:2448730	hesitant
+MGI:98239	asebia
+MGI:2159324	neuronal ceroid lipofuscinosis
+MGI:1347466	congenital hydrocephalus
+MGI:95729	anterior digit pattern deformity
+MGI:2138281	ichthyosis
+MGI:95710	little
+MGI:102523	dreidel
+MGI:99833	open brain
+MGI:88525	eye lens obsolescence
+MGI:2447670	mahoganoid
+MGI:1195272	tabby
+MGI:88417	arrested development of righting response
+MGI:97888	denuded
+MGI:1890219	waltzer
+MGI:95636	twitcher
+MGI:1891340	fatty liver dystrophy
+MGI:96925	shiverer
+MGI:106676	bent tail
+MGI:1098260	lethal factor toxin susceptibility 1
+MGI:98715	flexo
+MGI:96974	cloud gray
+MGI:104663	obese
+MGI:1345279	microcytic anemia
+MGI:1306796	forebrain overgrowth
+MGI:104785	Snell's waltzer
+MGI:2450757	seal
+MGI:102462	slow-wave epilepsy
+MGI:96974	contrasted
+MGI:96010	histidinemia
+MGI:1097712	sphingomyelinosis
+MGI:96055	motheaten
+MGI:103222	luxoid
+MGI:2159437	Purkinje cell degeneration
+MGI:1274784	Frings
+MGI:99400	mottled
+MGI:97525	retinal degeneration 1
+MGI:102791	retinal degeneration 2
+MGI:2385957	retinal degeneration 6
+MGI:1346317	retinal degeneration 7
+MGI:95729	polydactyly Nagoya
+MGI:1860443	gunmetal
+MGI:1098270	syndactylism
+MGI:88564	nackt
+MGI:108554	yotari
+MGI:2153839	cocoa
+MGI:88024	normoblastic anemia
+MGI:108359	Strong's luxoid
+MGI:1261436	dancer
+MGI:95813	hotfoot
+MGI:99400	brindled
+MGI:1335082	inversion of embryonic turning
+MGI:98881	brown
+MGI:88524	lens opacity 12
+MGI:88515	lens opacity 18
+MGI:105373	mesenchymal dysplasia
+MGI:96925	myelin deficient
+MGI:1329012	juvenile visceral steatosis
+MGI:109490	gyro
+MGI:1890574	quivering
+MGI:2177763	pale ear
+MGI:97623	rump shaker
+MGI:97485	undulated
+MGI:95813	creeper
+MGI:1891428	Ames waltzer
+MGI:98385	hemolytic anemia
+MGI:98953	swaying
+MGI:98358	dominant megacolon
+MGI:99954	neuromuscular degeneration
+MGI:96078	alkaptonuria
+MGI:1201787	high growth
+MGI:103022	reeler
+MGI:109482	tottering
+MGI:1858204	alymphoplasia
+MGI:95813	lurcher
+MGI:98821	hypotransferrinemia with hemochromatosis
+MGI:98961	postaxial hemimelia
+MGI:99677	barrelless
+MGI:104510	shaker 1
+MGI:1261811	shaker 2
+MGI:2177632	congenital polycystic kidneys
+MGI:1929813	ducky
+MGI:96223	rhino
+MGI:98724	waved 1
+MGI:95294	waved 2
+MGI:1890574	lumbosacral neuroaxonal dystrophy
+MGI:108554	scrambler
+MGI:105976	flailer
+MGI:2137677	flexed tail
+MGI:98188	grey coat
+MGI:88522	nuclear opacity
+MGI:95519	angora
+MGI:88468	osteogenesis imperfecta
+MGI:2135272	loop tail
+MGI:101932	fat
+MGI:99887	vibrator
+MGI:88446	chondrodysplasia
+MGI:96020	s2
+MGI:95489	tight skin
+MGI:103559	ragged
+MGI:97588	dwarf
+MGI:88181	short ear
+MGI:88040	anisocoria
+MGI:2180307	maroon
+MGI:95747	spasmodic
+MGI:95691	compact
+MGI:1343498	downless
+MGI:103297	toxic milk
+MGI:104779	severe combined immunodeficiency
+MGI:96779	long hair
+MGI:1344337	limb deformity
+MGI:107734	mocha
+MGI:107448	beige

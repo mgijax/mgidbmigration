@@ -4,8 +4,8 @@
 # Migration for JSAm
 #
 # updated:  
-# Defaults:	  5
-# Tables:	192
+# Defaults:	  6
+# Tables:	191
 # Procedures:	100
 # Rules:	  5
 # Triggers:	150

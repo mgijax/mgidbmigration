@@ -4,7 +4,6 @@
 # Migration to add:
 #
 # Add:
-#	MGI_DeletedObject
 #	MGI_AttributeHistory
 #
 
@@ -20,12 +19,8 @@ echo "MGI new tables..." | tee -a $LOG
 #
 # Use new schema product to create new table
 #
-#${newmgddbschema}/table/MGI_DeletedObject_drop.object >>& $LOG
 #${newmgddbschema}/table/MGI_AttributeHistory_drop.object >>& $LOG
 
-${newmgddbschema}/table/MGI_DeletedObject_create.object >>& $LOG
-${newmgddbschema}/default/MGI_DeletedObject_bind.object >>& $LOG
-${newmgddbschema}/key/MGI_DeletedObject_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_AttributeHistory_create.object >>& $LOG
 ${newmgddbschema}/default/MGI_AttributeHistory_bind.object >>& $LOG
 ${newmgddbschema}/key/MGI_AttributeHistory_create.object >>& $LOG
@@ -105,7 +100,6 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/MGI_DeletedObject_create.object >>& $LOG
 ${newmgddbschema}/index/MGI_AttributeHistory_create.object >>& $LOG
 
 date >> $LOG

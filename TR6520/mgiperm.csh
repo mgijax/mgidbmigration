@@ -40,7 +40,7 @@ ${newmgddbschema}/view/VOC_Term_UserTask_View_create.object | tee -a ${LOG}
 
 ${newmgddbschema}/procedure/PRB_processAnonymousSource_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/PRB_processAnonymousSource_create.object | tee -a ${LOG}
-${newmgddbschema}/procedure/MGI_checkUserRole_create.object.object | tee -a ${LOG}
+${newmgddbschema}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/ACC_drop.logical | tee -a ${LOG}
 ${newmgddbschema}/procedure/ACC_create.logical | tee -a ${LOG}
 

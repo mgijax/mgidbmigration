@@ -8,13 +8,19 @@
 	Female	18-day pregnant females 2	jsam_load
 	Female	f	jsam_load
 	Female	F	jsam_load
+	Female	18-day pregnant females	jsam_load
 	Male	m	jsam_load
 	Male	M	jsam_load
 	Male	males	jsam_load
 	Male	male	jsam_load
+	Pooled	Hermaphrodite	jsam_load
+	Pooled	Both	jsam_load
+	Pooled	Both for embryonic & newborn, male for adult and	jsam_load
 	Pooled	both	jsam_load
+	Pooled	Male and Female	jsam_load
 	Pooled	male and female	jsam_load
 	Pooled	male & female	jsam_load
+	Pooled	Male/Female	jsam_load
 	Pooled	male/female	jsam_load
 	Pooled	male/female combined	jsam_load
 	Pooled	male; female	jsam_load
@@ -23,3 +29,6 @@
 	Pooled	pooled	jsam_load
 	Pooled	equal ratio of male	jsam_load
 	Pooled	equal ratio of male:female	jsam_load
+	Not Specified	not known	jsam_load
+	Not Specified	undetermined	jsam_load
+	Not Specified	unknown	jsam_load

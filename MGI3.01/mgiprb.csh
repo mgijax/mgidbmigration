@@ -69,6 +69,7 @@ quit
 
 EOSQL
 
+${newmgddbschema}/partition/PRB_Probe_create.object >> ${LOG}
 ${newmgddbschema}/index/PRB_Probe_create.object >> ${LOG}
 ${newmgddbschema}/index/PRB_Reference_create.object >> ${LOG}
 
@@ -92,8 +93,8 @@ ${newmgddbschema}/key/PRB_Reference_drop.object >> ${LOG}
 ${newmgddbschema}/key/PRB_Reference_create.object >> ${LOG}
 ${newmgddbschema}/key/PRB_Source_drop.object >> ${LOG}
 ${newmgddbschema}/key/PRB_Source_create.object >> ${LOG}
-${newmgddbschema}/key/SEQ_ProbeCache_drop.object >> ${LOG}
-${newmgddbschema}/key/SEQ_ProbeCache_create.object >> ${LOG}
+${newmgddbschema}/key/SEQ_Probe_Cache_drop.object >> ${LOG}
+${newmgddbschema}/key/SEQ_Probe_Cache_create.object >> ${LOG}
 ${newmgddbschema}/key/VOC_Term_drop.object >> ${LOG}
 ${newmgddbschema}/key/VOC_Term_create.object >> ${LOG}
 

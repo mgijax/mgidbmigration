@@ -4,7 +4,6 @@
 # Migration for 3.02 release (cDNA Load)
 #
 # updated:
-# MGD User Tables:	1
 # RADAR User Tables:	18
 #
 
@@ -156,45 +155,5 @@ ${RADARDBSCHEMA}/default/QC_CloneLoad_MultiClone_bind.object | tee -a ${LOG}
 ${RADARDBSCHEMA}/default/QC_CloneLoad_NonClone_bind.object | tee -a ${LOG}
 ${RADARDBSCHEMA}/default/QC_CloneLoad_SeqOnly_bind.object | tee -a ${LOG}
 ${RADARDBPERMS}/developers/table/WRK_cDNA_Clones_grant.object | tee -a ${LOG}
-
-############################################################
-# All GenBank non-cumulative update files dated before 10/14
-# do not need to be processed by the GenBank cDNA load
-# because those records will be included in the 144.0 release
-# files to be used by the initial load.
-#
-# Create a job stream key for the GenBank cDNA load and use
-# it to log all update files dated prior to 10/14 as
-# processed. This will keep these files from being picked up
-# when the GenBank cDNA load begins processing updates.
-#
-echo "Log pre-10/14 update files as processed" | tee -a ${LOG}
-echo "" | tee -a ${LOG}
-
-set JOBKEY=`${JOBSTART_CSH} ${RADARDBSCHEMA} GBcDNA_Load`
-if ( ${JOBKEY} == -1 ) then
-    echo "Could not get a jobstream key" | tee -a ${LOG}
-    exit 1
-endif
-
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
-  
-use ${DBNAME}
-go
-
-insert into APP_FilesProcessed
-select _File_key, ${JOBKEY}, 'GBcDNA_Load', getdate()
-from APP_FilesMirrored
-where fileType = 'GenBank' and
-      file_date < '10/14/2004'
-go
-
-checkpoint
-go
-
-quit
-EOSQL
-
-${JOBEND_CSH} ${RADARDBSCHEMA} ${JOBKEY} 0
 
 date | tee -a ${LOG}

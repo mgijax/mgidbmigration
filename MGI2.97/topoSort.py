@@ -14,7 +14,7 @@
 #
 # Outputs:
 #
-#	topoSort.csh; a c-shell script with SQL commands to execute
+#	topoSort.sql; a c-shell script with SQL commands to execute
 #
 # Modification History:
 #
@@ -516,7 +516,7 @@ def getStageDefs():
 
 def set_topoSort():
 
-	fd = open('topoSort.csh', 'w')
+	fd = open('topoSort.sql', 'w')
 
 	header = '''#!/bin/csh -f
 

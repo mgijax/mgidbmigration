@@ -2,30 +2,31 @@
 EI changes
 ----------
 
-csrc/stagetrees.c		TR 3432; GXD_Structure.topoSort
+csrc/stagetrees.c		TR 3432; GXD_Structure.topoSort (SAO)
+csrc/mgilib.c			TR 3432; GXD_Structure.topoSort (SAO)
 
-include/stagetrees.h		TR 3432; GXD_Structure.topoSort
+include/stagetrees.h		TR 3432; GXD_Structure.topoSort (SAO)
 
-dsrc/Assay.d			TR 3710; add Knock In Assay Type
-dsrc/Dictionary.d		TR 3432; GXD_Structure.topoSort
-dsrc/IndexStage.d		TR 2459, TR 3711
-dsrc/NoteLib.d			TR 4587; NoteInit; setting maxLength for Short Notes (line 527)
-dsrc/DynamicLib.d		TR 3710; set x.prepForm in InitOptionMenu
-dsrc/Verify.d			TR 3710; VerifyEdit; check for sensitivity (line 281)
+dsrc/Assay.d			TR 3710; add Knock In Assay Type (SAO)
+dsrc/Dictionary.d		TR 3432; GXD_Structure.topoSort (SAO)
+dsrc/IndexStage.d		TR 2459, TR 3711 (SAO)
+dsrc/NoteLib.d			TR 4587; NoteInit; setting maxLength for Short Notes (line 527) (SAO)
+dsrc/DynamicLib.d		TR 3710; set x.prepForm in InitOptionMenu (SAO)
+dsrc/Verify.d			TR 3710; VerifyEdit; check for sensitivity (line 281) (SAO)
 
-pcds/GXDReporterGeneMenu	TR 3710
-pcds/GXDKnockInMenu		TR 3710
-pcds/AssayModule		TR 3710
-pcds/ProbePrepForm		TR 3710
-pcds/AntibodyPrepForm		TR 3710
-pcds/ProbePrepVerifyForm	TR 3710
-pcds/AntibodyPrepVerifyForm	TR 3710
-pcds/IndexStageModule		TR 2459, TR 3711
-pcds/GXDIndexPriortyMenu	TR 2459, TR 3711
-pcds/GXDMenu			added SimpleVocab
-pcds/AlleleModule		TR 4587; modified Marker Detail Clip template
+pcds/GXDReporterGeneMenu	TR 3710	(SAO)
+pcds/GXDKnockInMenu		TR 3710	(SAO)
+pcds/AssayModule		TR 3710	(SAO)
+pcds/ProbePrepForm		TR 3710	(SAO)
+pcds/AntibodyPrepForm		TR 3710	(SAO)
+pcds/ProbePrepVerifyForm	TR 3710	(SAO)
+pcds/AntibodyPrepVerifyForm	TR 3710	(SAO)
+pcds/IndexStageModule		TR 2459, TR 3711	(SAO)
+pcds/GXDIndexPriortyMenu	TR 2459, TR 3711	(SAO)
+pcds/GXDMenu			added SimpleVocab	(SAO)
+pcds/AlleleModule		TR 4587; modified Marker Detail Clip template	(SAO)
 
-gxd/uxb.config			added SimpleVocab.d
+gxd/uxb.config			added SimpleVocab.d	(SAO)
 
 Schema
 ------

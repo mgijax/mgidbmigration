@@ -13,7 +13,6 @@ touch $LOG
 date >> $LOG
 echo "Vocabulary Migration..." | tee -a $LOG
  
-${VOCLOAD} `pwd`/genefamily.config >>& $LOG
 ${VOCLOAD} `pwd`/curationstate.config >>& $LOG
 ${VOCLOAD} `pwd`/nomenstatus.config >>& $LOG
 

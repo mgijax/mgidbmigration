@@ -72,20 +72,6 @@ go
 dump tran $DBNAME with truncate_only
 go
 
-/* Gene Family */
-
-insert into NOM_GeneFamily
-select n._Nomen_key, t._Term_key, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
-from ${NOMEN}..MRK_Nomen_GeneFamily n, ${NOMEN}..MRK_GeneFamily g, VOC_Term t, VOC_Vocab v
-where n._Marker_Family_key = g._Marker_Family_key
-and g.name = t.term
-and t._Vocab_key = v._Vocab_key
-and v.name = "Nomen Gene Family"
-go
-
-dump tran $DBNAME with truncate_only
-go
-
 /* Synonyms */
 
 insert into NOM_Synonym

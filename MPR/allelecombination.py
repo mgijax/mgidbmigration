@@ -20,9 +20,9 @@ newline = '\\n'
 # Main
 #
 
-fp1 = reportlib.init('combnotetype1', printHeading = 0)
-fp2 = reportlib.init('combnotetype2', printHeading = 0)
-fp3 = reportlib.init('combnotetype3', printHeading = 0)
+fp1 = reportlib.init('allelecombnotetype1', printHeading = 0)
+fp2 = reportlib.init('allelecombnotetype2', printHeading = 0)
+fp3 = reportlib.init('allelecombnotetype3', printHeading = 0)
 
 results = db.sql('select g._Genotype_key, alleleState = t1.term, compound = t2.term, allele1 = a1.symbol, allele2 = a2.symbol, ' +
 	'allele1WildType = a1.isWildType, allele2WildType = a2.isWildType, ' + \

@@ -3,7 +3,7 @@
 #
 # Wrapper script to create & load mginotes into MGI_Note
 #
-# Usage:  combination.csh
+# Usage:  allelecombination.csh
 #
 
 cd `dirname $0`
@@ -20,17 +20,17 @@ touch ${LOG}
  
 date >> ${LOG}
 
-./combinationload.py
+./allelecombination.py
 
-setenv DATAFILE 	combnotetype1.rpt
+setenv DATAFILE 	allelecombnotetype1.rpt
 setenv NOTETYPE		"Combination Type 1"
 ${NOTELOAD}/mginoteload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${DATAFILE} -M${NOTEMODE} -O${OBJECTTYPE} -T"${NOTETYPE}" >>& ${LOG}
 
-setenv DATAFILE 	combnotetype2.rpt
+setenv DATAFILE 	allelecombnotetype2.rpt
 setenv NOTETYPE		"Combination Type 2"
 ${NOTELOAD}/mginoteload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${DATAFILE} -M${NOTEMODE} -O${OBJECTTYPE} -T"${NOTETYPE}" >>& ${LOG}
 
-setenv DATAFILE 	combnotetype3.rpt
+setenv DATAFILE 	allelecombnotetype3.rpt
 setenv NOTETYPE		"Combination Type 3"
 ${NOTELOAD}/mginoteload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${DATAFILE} -M${NOTEMODE} -O${OBJECTTYPE} -T"${NOTETYPE}" >>& ${LOG}
 

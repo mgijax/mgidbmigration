@@ -159,7 +159,7 @@ go
 
 EOSQL
 
-./combination.csh
+./allelecombination.csh
 
 ${ALLLABELLOAD}/alllabel.sh
 

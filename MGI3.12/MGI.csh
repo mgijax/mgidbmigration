@@ -12,7 +12,7 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

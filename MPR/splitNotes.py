@@ -6,7 +6,7 @@ import string
 import regsub
 import db
 
-DEBUG = 0
+DEBUG = 1
 
 passwordFileName = os.environ['DBPASSWORDFILE']
 
@@ -109,8 +109,7 @@ for k in notes.keys():
 	   continue
        db.sql(createNewNote(k, string.strip(t)), None, execute = not DEBUG)
 
-
-db.sql('delete from MGI_NoteChunk where note = ""', None)
+db.sql('delete from MGI_NoteChunk where note = ""', None, execute = not DEBUG)
 
 db.useOneConnection(0)
 

@@ -27,6 +27,7 @@ EOSQL
 
 ${newmgddbschema}/table/GXD_AllelePair_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
+${newmgddbperms}/public/table/GXD_AllelePair_grant.object | tee -a ${LOG}
 
 # keys/permissions will be handled in reconfig phase 
 
@@ -48,9 +49,9 @@ select @compoundKey = t._Term_key from VOC_Term t, VOC_Vocab v
 	and t.term = 'Not Applicable'
 
 insert into GXD_AllelePair
-select o._AllelePair_key, o._Genotype_key, o.sequenceNum, 
+select o._AllelePair_key, o._Genotype_key,
 o._Allele_key_1, o._Allele_key_2, o._Marker_key,
-@stateKey, @compoundKey,
+@stateKey, @compoundKey, o.sequenceNum,
 ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
 from GXD_AllelePair_Old o
 go

@@ -50,7 +50,9 @@ EOSQL
 ./mgiheader.csh | tee -a ${LOG}
 ./splitNotes.py | tee -a ${LOG}
 
-${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
+${newmgddbschema}/reconfig.csh | tee -a ${LOG}
+${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
+${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

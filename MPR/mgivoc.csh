@@ -104,7 +104,7 @@ insert into MGI_NoteType values(@noteTypeKey + 1, 11, 'Molecular', 0, ${CREATEDB
 insert into MGI_NoteType values(@noteTypeKey + 2, 11, 'Nomenclature', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
-select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, seq = identity(5)
+select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, newNoteTypeKey = nt._NoteType_key, seq = identity(5)
 into #notes 
 from ALL_Note n, ALL_NoteType an, MGI_NoteType nt
 where n._NoteType_key = an._NoteType_key
@@ -117,7 +117,7 @@ declare @maxKey integer
 select @maxKey = max(_Note_key) from MGI_Note
 
 insert into MGI_Note 
-select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+select seq + @maxKey, _Allele_key, 11, newNoteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
 where noteType = 'General'
 
@@ -135,7 +135,7 @@ go
 drop table #notes
 go
 
-select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, seq = identity(5)
+select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, newNoteTypeKey = nt._NoteType_key, seq = identity(5)
 into #notes 
 from ALL_Note n, ALL_NoteType an, MGI_NoteType nt
 where n._NoteType_key = an._NoteType_key
@@ -148,7 +148,7 @@ declare @maxKey integer
 select @maxKey = max(_Note_key) from MGI_Note
 
 insert into MGI_Note 
-select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+select seq + @maxKey, _Allele_key, 11, newNoteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
 where noteType = 'Molecular'
 
@@ -166,7 +166,7 @@ go
 drop table #notes
 go
 
-select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, seq = identity(5)
+select distinct n._Allele_key, noteTypeKey = an._NoteType_key, an.noteType, newNoteTypeKey = nt._NoteType_key, seq = identity(5)
 into #notes 
 from ALL_Note n, ALL_NoteType an, MGI_NoteType nt
 where n._NoteType_key = an._NoteType_key
@@ -179,7 +179,7 @@ declare @maxKey integer
 select @maxKey = max(_Note_key) from MGI_Note
 
 insert into MGI_Note 
-select seq + @maxKey, _Allele_key, 11, noteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+select seq + @maxKey, _Allele_key, 11, newNoteTypeKey, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
 from #notes
 where noteType = 'Nomenclature'
 

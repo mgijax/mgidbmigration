@@ -535,6 +535,7 @@ ${newmgddbschema}/index/MLD_Marker_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Alias_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Allele_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Allele_Strain_create.object >> $LOG
+${newmgddbschema}/partition/PRB_Probe_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Probe_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Reference_create.object >> $LOG
 ${newmgddbschema}/index/PRB_RFLV_create.object >> $LOG

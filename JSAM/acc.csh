@@ -237,6 +237,7 @@ go
 
 EOSQL
 
+${newmgddbschema}/partition/ACC_Accession_create.object >> $LOG
 ${newmgddbschema}/index/ACC_Accession_create.object >> $LOG
 ${newmgddbschema}/index/ACC_AccessionReference_create.object >> $LOG
 ${newmgddbschema}/index/ACC_AccessionMax_create.object >> $LOG

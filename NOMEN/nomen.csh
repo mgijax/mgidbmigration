@@ -14,7 +14,20 @@ date >> $LOG
 echo "Nomen Migration..." | tee -a $LOG
  
 # for testing, drop the tables first
-#${newmgddbschema}/table/NOM_drop.logical
+${newmgddbschema}/table/NOM_drop.logical
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+
+use $DBNAME
+go
+
+delete from MGI_Note where _MGIType_key = 21
+go
+
+checkpoint
+go
+
+EOSQL
+
 
 #
 # Use new schema product to create new table
@@ -23,8 +36,8 @@ ${newmgddbschema}/table/NOM_create.logical >>& $LOG
 ${newmgddbschema}/default/NOM_bind.logical >>& $LOG
 
 # remove indexes; this will make inserts faster
-${newmgddbschema}/index/ACC_Accession_drop.object >>& $LOG
-${newmgddbschema}/index/ACC_AccessionReference_drop.object >>& $LOG
+#${newmgddbschema}/index/ACC_Accession_drop.object >>& $LOG
+#${newmgddbschema}/index/ACC_AccessionReference_drop.object >>& $LOG
 ${newmgddbschema}/index/MGI_Note_drop.object >>& $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_drop.object >>& $LOG
 
@@ -37,13 +50,13 @@ insert into ACC_MGIType
 values (21, 'Nomenclature', 'NOM_Marker', '_Nomen_key', 'symbol', null, getdate(), getdate(), getdate())
 go
 
-insert into MGI_NoteType values(1003, NULL, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(1003, NULL, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_NoteType values(1004, 21, 'Editor', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(1004, 21, 'Editor', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_NoteType values(1005, 21, 'Coordinator', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(1005, 21, 'Coordinator', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
 declare @curationKey integer
@@ -74,6 +87,7 @@ where n._Marker_Status_key = s._Marker_Status_key
 and s.status = t.term
 and t._Vocab_key = v._Vocab_key
 and v.name = "Nomen Status"
+and n.broadcastBy is not null
 go
 
 dump tran $DBNAME with truncate_only
@@ -82,7 +96,7 @@ go
 /* Gene Family */
 
 insert into NOM_GeneFamily
-select n._Nomen_key, t._Term_key, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
+select n._Nomen_key, t._Term_key, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
 from ${NOMEN}..MRK_Nomen_GeneFamily n, ${NOMEN}..MRK_GeneFamily g, VOC_Term t, VOC_Vocab v
 where n._Marker_Family_key = g._Marker_Family_key
 and g.name = t.term
@@ -96,7 +110,7 @@ go
 /* Synonyms */
 
 insert into NOM_Synonym
-select _Other_key, _Nomen_key, _Refs_key, name, isAuthor, ${CREATEDBY}, ${CREATEDBY}, creation_date, modification_date
+select _Other_key, _Nomen_key, _Refs_key, name, isAuthor, '${CREATEDBY}', '${CREATEDBY}', creation_date, modification_date
 from ${NOMEN}..MRK_Nomen_Other
 go
 
@@ -119,18 +133,18 @@ if @maxKey is null
         select @maxKey = 1000
 
 insert into MGI_Note 
-select seq + @maxKey, _Nomen_key, 21, type, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+select seq + @maxKey, _Nomen_key, 21, type, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
 from #notes
 
 insert into MGI_NoteChunk
-select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
+select seq + @maxKey, n.sequenceNum, n.note, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
 from #notes s, ${NOMEN}..MRK_Nomen_Notes n
 where s._Nomen_key = n._Nomen_key
 and s.type = 2
 and n.noteType = 'E'
 
 insert into MGI_NoteChunk
-select seq + @maxKey, n.sequenceNum, n.note, ${CREATEDBY}, ${CREATEDBY}, n.creation_date, n.modification_date
+select seq + @maxKey, n.sequenceNum, n.note, '${CREATEDBY}', '${CREATEDBY}', n.creation_date, n.modification_date
 from #notes s, ${NOMEN}..MRK_Nomen_Notes n
 where s._Nomen_key = n._Nomen_key
 and s.type = 3
@@ -163,7 +177,7 @@ if @maxKey is null
         select @maxKey = 1000
 
 insert into MGI_Reference_Assoc
-select seq + @maxKey, _Refs_key, _Nomen_key, 21, type, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate()
+select seq + @maxKey, _Refs_key, _Nomen_key, 21, type, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate()
 from #refs
 go
 
@@ -232,8 +246,8 @@ EOSQL
 ${newmgddbschema}/index/NOM_create.logical >>& $LOG
 ${newmgddbschema}/index/MGI_Note_create.object | tee -a $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_create.object | tee -a $LOG
-${newmgddbschema}/index/ACC_Accession_create.object | tee -a $LOG
-${newmgddbschema}/index/ACC_AccessionReference_create.object | tee -a $LOG
+#${newmgddbschema}/index/ACC_Accession_create.object | tee -a $LOG
+#${newmgddbschema}/index/ACC_AccessionReference_create.object | tee -a $LOG
 ${newmgddbschema}/index/MGI_Reference_Assoc_create.object | tee -a $LOG
 
 

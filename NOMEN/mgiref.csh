@@ -13,6 +13,10 @@ touch $LOG
 date >> $LOG
 echo "MGI References Migration..." | tee -a $LOG
  
+# for testing
+${newmgddbschema}/table/MGI_Reference_Assoc_drop.object >> $LOG
+${newmgddbschema}/table/MGI_RefAssocType_drop.object >> $LOG
+
 #
 # Use new schema product to create new table
 #
@@ -26,25 +30,25 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
-insert into MGI_RefAssocType values(1000, NULL, 'Original', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1000, NULL, 'Original', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1002, NULL, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1002, NULL, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1003, 21, 'Primary', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1003, 21, 'Primary', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1004, 21, 'Broadcast to MGD', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1004, 21, 'Broadcast to MGD', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1005, 21, 'Do Not Broadcast to MGD', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1005, 21, 'Do Not Broadcast to MGD', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1006, 19, 'Provider', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1006, 19, 'Provider', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1007, 19, 'Curator', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_RefAssocType values(1007, 19, 'Curator', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
 checkpoint

@@ -13,10 +13,6 @@ touch $LOG
 date >> $LOG
 echo "MGI References Migration..." | tee -a $LOG
  
-# for testing
-${newmgddbschema}/table/MGI_Reference_Assoc_drop.object >> $LOG
-${newmgddbschema}/table/MGI_RefAssocType_drop.object >> $LOG
-
 #
 # Use new schema product to create new table
 #

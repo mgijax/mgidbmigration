@@ -7,7 +7,7 @@ GenBank/EMBL/DDBJ:EST		GenBank/EMBL/DDBJ EST
 GenBank/EMBL/DDBJ:HTG		GenBank/EMBL/DDBJ High Throughput Genomic		
 GenBank/EMBL/DDBJ:STS		GenBank/EMBL/DDBJ STS		
 GenBank/EMBL/DDBJ:GSS		GenBank/EMBL/DDBJ GSS		
-GenBank/EMBL/DDBJ		GenBank/EMBL/DDBJ		
+GenBank:Other		GenBank:Other		
 TIGR Mouse Gene Index		TIGR Mouse Gene Index		
 DoTS		DoTS		
 NIA Mouse Gene Index		NIA Mouse Gene Index		

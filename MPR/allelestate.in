@@ -5,3 +5,5 @@ Hemizygous Deletion			For instances where one homologous chromosome contains one
 Heterozygous				
 Homozygous				
 Indeterminate			For instances where the allele condition is not known or not specified.	
+Hemizygous			old term.  remove after all remaining data has been migrated.	
+Unknown			old term.  remove after all remaining data has been migrated.	

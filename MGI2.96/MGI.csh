@@ -30,60 +30,109 @@ echo "Reconfigure Nomen..." >> $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
 date >> $LOG
 
-./tr4705.csh >> $LOG
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+
+use $DBNAME
+go
+
+sp_rename MRK_History, MRK_History_Old
+go
+
+end
+
+EOSQL
 
 ${newmgddbschema}/table/MGI_Note_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_NoteChunk_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_NoteType_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_Set_create.object >>& $LOG
 ${newmgddbschema}/table/MGI_SetMember_create.object >>& $LOG
+${newmgddbschema}/table/MRK_History_create.object >> $LOG
 
 ${newmgddbschema}/default/MGI_Note_bind.object >>& $LOG
 ${newmgddbschema}/default/MGI_NoteChunk_bind.object >>& $LOG
 ${newmgddbschema}/default/MGI_NoteType_bind.object >>& $LOG
 ${newmgddbschema}/default/MGI_Set_bind.object >>& $LOG
 ${newmgddbschema}/default/MGI_SetMember_bind.object >>& $LOG
+${newmgddbschema}/default/MRK_History_bind.object >> $LOG
 
 ${newmgddbschema}/index/MGI_Note_create.object >>& $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_create.object >>& $LOG
 ${newmgddbschema}/index/MGI_NoteType_create.object >>& $LOG
 ${newmgddbschema}/index/MGI_Set_create.object >>& $LOG
 ${newmgddbschema}/index/MGI_SetMember_create.object >>& $LOG
+${newmgddbschema}/index/MRK_History_create.object >> $LOG
 
 ${newmgddbschema}/key/MGI_Note_create.object >>& $LOG
 ${newmgddbschema}/key/MGI_NoteChunk_create.object >>& $LOG
 ${newmgddbschema}/key/MGI_NoteType_create.object >>& $LOG
 ${newmgddbschema}/key/MGI_Set_create.object >>& $LOG
 ${newmgddbschema}/key/MGI_SetMember_create.object >>& $LOG
+${newmgddbschema}/key/BIB_Refs_drop.object >> $LOG
+${newmgddbschema}/key/BIB_Refs_create.object >> $LOG
+${newmgddbschema}/key/MRK_Marker_drop.object >> $LOG
+${newmgddbschema}/key/MRK_Marker_create.object >> $LOG
+${newmgddbschema}/key/MRK_Event_drop.object >> $LOG
+${newmgddbschema}/key/MRK_Event_create.object >> $LOG
+${newmgddbschema}/key/MRK_EventReason_drop.object >> $LOG
+${newmgddbschema}/key/MRK_EventReason_create.object >> $LOG
+${newmgddbschema}/key/MRK_History_create.object >> $LOG
 
 ${newmgddbschema}/trigger/MGI_Note_create.object >>& $LOG
 ${newmgddbschema}/trigger/MGI_NoteType_create.object >>& $LOG
 ${newmgddbschema}/trigger/MGI_Set_create.object >>& $LOG
 ${newmgddbschema}/trigger/ACC_Accession_drop.object >>& $LOG
 ${newmgddbschema}/trigger/ACC_Accession_create.object >>& $LOG
+${newmgddbschema}/trigger/BIB_Refs_drop.object >> $LOG
+${newmgddbschema}/trigger/BIB_Refs_create.object >> $LOG
+${newmgddbschema}/trigger/MRK_Event_drop.object >> $LOG
+${newmgddbschema}/trigger/MRK_Event_create.object >> $LOG
+${newmgddbschema}/trigger/MRK_EventReason_drop.object >> $LOG
+${newmgddbschema}/trigger/MRK_EventReason_create.object >> $LOG
+${newmgddbschema}/trigger/MRK_Marker_drop.object >> $LOG
+${newmgddbschema}/trigger/MRK_Marker_create.object >> $LOG
+
+${newmgddbschema}/procedure/MRK_drop.logical >> $LOG
+${newmgddbschema}/procedure/MRK_create.logical >> $LOG
 
 ${newmgddbschema}/view/MGI_Note_MRKGO_View_create.object >>& $LOG
 ${newmgddbschema}/view/MGI_NoteType_MRKGO_View_create.object >>& $LOG
 ${newmgddbschema}/view/MGI_Set_CloneSet_View_create.object >>& $LOG
+${newmgddbschema}/view/MRK_History_Ref_View_drop.object >> $LOG
+${newmgddbschema}/view/MRK_History_Ref_View_create.object >> $LOG
+${newmgddbschema}/view/MRK_History_View_drop.object >> $LOG
+${newmgddbschema}/view/MRK_History_View_create.object >> $LOG
 
 ${newmgddbperms}/public/table/MGI_Note_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_NoteChunk_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_NoteType_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_Set_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_SetMember_grant.object >>& $LOG
+${newmgddbperms}/public/table/MRK_History_grant.object >> $LOG
+${newmgddbperms}/public/procedure/MRK_grant.logical >> $LOG
 ${newmgddbperms}/public/view/MGI_Note_MRKGO_View_grant.object >>& $LOG
 ${newmgddbperms}/public/view/MGI_NoteType_MRKGO_View_grant.object >>& $LOG
 ${newmgddbperms}/public/view/MGI_Set_CloneSet_View_grant.object >>& $LOG
+${newmgddbperms}/public/view/MRK_History_Ref_View_grant.object >> $LOG
+${newmgddbperms}/public/view/MRK_History_View_grant.object >> $LOG
 
 ${newmgddbperms}/curatorial/table/MGI_Note_grant.object >>& $LOG
 ${newmgddbperms}/curatorial/table/MGI_NoteChunk_grant.object >>& $LOG
 ${newmgddbperms}/curatorial/table/MGI_NoteType_grant.object >>& $LOG
 ${newmgddbperms}/curatorial/table/MGI_Set_grant.object >>& $LOG
 ${newmgddbperms}/curatorial/table/MGI_SetMember_grant.object >>& $LOG
+${newmgddbperms}/curatorial/procedure/MRK_grant.logical >> $LOG
+${newmgddbperms}/curatorial/table/MRK_History_grant.object >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME
+go
+
+insert into MRK_History
+select _Marker_key, _Marker_Event_key, _Marker_EventReason_key, _History_key, _Refs_key, sequenceNum,
+name, event_date, "dbo", "dbo", creation_date, modification_date
+from MRK_History_Old
 go
 
 insert into MGI_NoteType values (1000, 13, "Public Vocabulary Term Comment", 0, "dbo", "dbo", getdate(), getdate())
@@ -108,6 +157,9 @@ insert into MGI_SetMember values(1001, 1000, 26, 2, user_name(), user_name(), ge
 go
 
 update ACC_ActualDB set name = 'IMAGE home page' where _ActualDB_key = 25
+go
+
+dump tran $DBNAME with truncate_only
 go
 
 EOSQL

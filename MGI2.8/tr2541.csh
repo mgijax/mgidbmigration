@@ -34,6 +34,12 @@ ${newmgddbschema}/table/PRB_Strain_create.object
 ${newmgddbschema}/default/PRB_Strain_bind.object
 ${newmgddbschema}/key/PRB_Strain_create.object
 
+#
+# changes made to this procedure must be installed prior to data migration
+#
+${newmgddbschema}/procedure/ACC_assignMGI_drop.object
+${newmgddbschema}/procedure/ACC_assignMGI_create.object
+
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
 use ${DBNAME}

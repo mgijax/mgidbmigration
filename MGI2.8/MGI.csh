@@ -8,13 +8,16 @@ cd `dirname $0`
 
 setenv SYBASE	/opt/sybase
 setenv PYTHONPATH       /usr/local/mgi/lib/python
-set path = ($path $SYBASE/bin /usr/local/mgi/dbutils/mgidbutilities/current/bin /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev)
+setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities/current
+set path = ($DBUTILITIESDIR/bin $DBUTILITIESDIR/bin/dev $path $SYBASE/bin)
 
-setenv oldmgddbschema /mgd_lec/mgddbschema
+setenv oldmgddbschema //usr/local/mgi/dbutils/mgd/mgddbschema
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
 setenv newmgddbschema /home/lec/db/mgd_lec
 setenv newmgddbperms /home/lec/db/mgd_lec_perms
+setenv newnomendbschema /usr/local/mgi/dbutils/nomen/nomendbschema
+setenv newnomendbperms /usr/local/mgi/dbutils/nomen/nomendbperms
 
 source ${newmgddbschema}/Configuration
 
@@ -29,19 +32,21 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-#load_devdb.csh $MGD mgd.backup mgd_dbo >>& $LOG
-#load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
-#load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
+#load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+#load_devdb.csh strains_lec strains.backup mgd_dbo >>& $LOG
+#load_devdb.csh nomen_lec nomen.backup mgd_dbo >>& $LOG
 
 echo "Data Migration..." >> $LOG
-#./tr256.csh >>& $LOG
-#./tr2714.csh >>& $LOG
-#./tr2718.csh >>& $LOG
-#./tr2902.csh >>& $LOG
-#./tr2916.csh >>& $LOG
-#./tr2358.csh >>& $LOG
+./tr256.csh >>& $LOG
+./tr2714.csh >>& $LOG
+./tr2718.csh >>& $LOG
+./tr2902.csh >>& $LOG
+./tr2916.csh >>& $LOG
+./tr2358.csh >>& $LOG
 ./tr2541.csh >>& $LOG
-exit 1
+
+echo "Update MGI DB Info..." >> $LOG
+updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
 
 #
 # Re-run all triggers, sps, views....
@@ -55,13 +60,12 @@ ${newmgddbschema}/procedure/procedure_drop.csh
 ${newmgddbschema}/procedure/procedure_create.csh
 ${newmgddbperms}/all_grant.csh
 
-#$newnomendbschema/trigger/trigger_create.csh
-#$newnomendbschema/view/view_create.csh
-#$newnomendbschema/procedure/procedure_create.csh
+#${newnomendbschema}/trigger/trigger_create.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
+#${newnomendbschema}/view/view_create.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
+#${newnomendbschema}/procedure/procedure_create.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
+#${newnomendbperms}/all_grant.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
 
-echo "Update MGI DB Info..." >> $LOG
-#updateSchemaVersion.csh $DSQUERY $MGD "mgddbschema-2-0-0" >>& $LOG
-#updateSchemaVersion.csh $DSQUERY $NOMEN "nomendbschema-2-0-0" >>& $LOG
+date >> $LOG
 
 #
 # drop old/obsolete objects

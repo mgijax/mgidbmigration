@@ -29,7 +29,7 @@ select @termKey = max(_Term_key) + 1 from VOC_Term
 insert VOC_Term (_Term_key, _Vocab_key, term, abbreviation, sequenceNum, isObsolete)
 values(@termKey,@vocKey,"super standard",NULL,1,0)
 
-select @annotKey = max(_Term_key) + 1 from VOC_Term
+select @annotKey = max(_AnnotType_key) + 1 from VOC_AnnotType
 insert VOC_AnnotType (_AnnotType_key, _MGIType_key, _Vocab_key, _EvidenceVocab_key, name)
 values(@annotKey,10,@vocKey,@vocKey,"Strain/Super Standard")
 go

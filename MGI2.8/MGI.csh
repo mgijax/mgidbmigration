@@ -49,6 +49,7 @@ updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
 updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-3-0-3" >>& $LOG
 
 echo "Data Migration..." >> $LOG
+./MGItables.csh >>& LOG
 ./tr256.csh >>& $LOG
 ./tr2714.csh >>& $LOG
 ./tr2718.csh >>& $LOG
@@ -65,8 +66,6 @@ reconfig_mgd.csh ${newmgddb} >>& $LOG
 reconfig_nomen.csh ${newnomendb} >>& $LOG
 
 date >> $LOG
-
-exit 0
 
 #
 # drop old/obsolete objects
@@ -96,6 +95,15 @@ drop table RI_RISet_Old
 go
 
 drop table MLD_RI_Old
+go
+
+drop table MGI_Tables_Old
+go
+
+drop table MGI_Columns_Old
+go
+
+exec MGI_Table_Column_Cleanup
 go
 
 checkpoint

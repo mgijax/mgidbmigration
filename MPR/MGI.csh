@@ -22,7 +22,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
 #load_db.csh ${DBSERVER} mgd_wi2 /extra2/sybase/mgi3.2.backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
@@ -43,7 +43,7 @@ quit
 
 EOSQL
 
-#./loadVoc.csh | tee -a ${LOG}
+./loadVoc.csh | tee -a ${LOG}
 ./mgivoc.csh | tee -a ${LOG}
 ./mgiallele.csh | tee -a ${LOG}
 ./mgiallelepair.csh | tee -a ${LOG}

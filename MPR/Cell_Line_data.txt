@@ -1,0 +1,25 @@
+MGI:3529068	Not Specified	129	no	null	null
+MGI:3529068	OST396463	129	yes	Lexicon Genetics	OST396463
+MGI:3529449	Not Specified	129	no	null	null
+MGI:3529449	OST320770	129	yes	Lexicon Genetics	OST320770
+MGI:2156204	E14	129P2/OlaHsd	no	null	null
+MGI:2156204	PST112	129P2/OlaHsd	yes	BayGenomics	PST112
+MGI:3526859	AK7	129S4/SvJaeSor	no	null	null
+MGI:3526859	S17-5A1	129S4/SvJaeSor	yes	Fred Hutchinson Cancer Research Center	S17-5A1
+MGI:2678441	Other (see notes)	Not Specified	no	null	null
+MGI:2678441	W047A01	Not Specified	yes	The German Genetrap Consortium	W047A01
+MGI:2678436	Other (see notes)	Not Specified	no	null	null
+MGI:2678436	W036C08	Not Specified	yes	The German Genetrap Consortium	W036C08
+MGI:3512761	Other (see notes)	129	no	null	null
+MGI:3512761	RRG051	129	yes	BayGenomics	RRG051
+MGI:3514143	Not Specified	129	no	null	null
+MGI:3514143	RRT600 	129	yes	BayGenomics	RRT600 
+MGI:3510105	Other (see notes)	129	no	null	null
+MGI:3510105	XA026	129	yes	BayGenomics	XA026
+MGI:3521927	Other (see notes)	129	no	null	null
+MGI:3521927	XE134	129	yes	BayGenomics	XE134
+MGI:2678434	Other (see notes)	Not Specified	no	null	null
+MGI:2678434	W008G09	Not Specified	yes	The German Genetrap Consortium	W008G09
+MGI:2678386	Other (see notes)	Not Specified	no	null	null
+MGI:2678386	A20010	Not Specified	yes	The German Genetrap Consortium	A20010
+MGI:2156194	Ex136

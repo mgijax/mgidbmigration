@@ -55,7 +55,7 @@ select @synKey = max(_Synonym_Key) from MGI_Synonym
 insert into MGI_SynonymType 
 values(@synTypeKey, 21, 'Author', 'synonymn the author used', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 insert into MGI_SynonymType 
-values(@synTypeKey + 1, 21, 'Other', 'other', ${CREATEDBY}, 1, ${CREATEDBY}, getdate(), getdate())
+values(@synTypeKey + 1, 21, 'Other', 'other', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select _Nomen_key, _Refs_key, name, isAuthor, seq = identity(10) into #syns from NOM_Synonym
 

@@ -24,6 +24,8 @@ pheno:edit nomen data reserved if owner			edit nomen data of allele with Reserve
 pheno:edit nomen data approved			edit nomen data of allele with Approved status	
 pheno:edit nomen data deleted			edit nomen data of allele with Deleted status	
 pheno:edit marker clip			edit marker clip	
+pheno:edit nomen notes			edit nomen notes for any allele with Approved, In Progress or Reserved status	
+pheno:edit general notes			edit general notes for any allele with Approved, In Progress or Reserved status	
 nomen:merges, renames			nomenclature merges, renames, etc.	
 strain:merges			strain merges	
 user:roles			assign user to roles	

@@ -1,6 +1,8 @@
 Pheno:Tier 2 (support)	pheno:create/modify references
 Pheno:Tier 2 (support)	pheno:create/modify pending if owner
 Pheno:Tier 2 (support)	pheno:edit nomen data pending if owner
+Pheno:Tier 2 (support)	pheno:edit nomen notes
+Pheno:Tier 2 (support)	pheno:edit general notes
 Pheno:Tier 3 (jr curator)	pheno:create/modify references
 Pheno:Tier 3 (jr curator)	pheno:create/modify pending if owner
 Pheno:Tier 3 (jr curator)	pheno:create/modify approved if owner
@@ -8,6 +10,8 @@ Pheno:Tier 3 (jr curator)	pheno:change pending to approved if owner
 Pheno:Tier 3 (jr curator)	pheno:change pending to deleted if owner
 Pheno:Tier 3 (jr curator)	pheno:edit nomen data pending if owner
 Pheno:Tier 3 (jr curator)	pheno:edit marker clip
+Pheno:Tier 3 (jr curator)	pheno:edit nomen notes
+Pheno:Tier 3 (jr curator)	pheno:edit general notes
 Pheno:Tier 4 (curator)	pheno:create/modify references
 Pheno:Tier 4 (curator)	pheno:create/modify pending
 Pheno:Tier 4 (curator)	pheno:create/modify reserved
@@ -20,6 +24,8 @@ Pheno:Tier 4 (curator)	pheno:change deleted/reserved to pending/approved
 Pheno:Tier 4 (curator)	pheno:edit nomen data pending
 Pheno:Tier 4 (curator)	pheno:edit nomen data reserved if owner
 Pheno:Tier 4 (curator)	pheno:edit marker clip
+Pheno:Tier 4 (curator))	pheno:edit nomen notes
+Pheno:Tier 4 (curator))	pheno:edit general notes
 Pheno:Tier 5 (guru)	pheno:create/modify references
 Pheno:Tier 5 (guru)	pheno:create/modify references/deleted
 Pheno:Tier 5 (guru)	pheno:create/modify pending
@@ -38,6 +44,8 @@ Pheno:Tier 5 (guru)	pheno:edit nomen data reserved
 Pheno:Tier 5 (guru)	pheno:edit nomen data approved
 Pheno:Tier 5 (guru)	pheno:edit nomen data deleted
 Pheno:Tier 5 (guru)	pheno:edit marker clip
+Pheno:Tier 5 (guru))	pheno:edit nomen notes
+Pheno:Tier 5 (guru))	pheno:edit general notes
 Nomenclature Merges/Renames	nomen:merges, renames
 Strain Merges	strain:merges
 User Permissions	user:roles

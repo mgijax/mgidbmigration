@@ -31,8 +31,6 @@ date | tee -a  ${LOG}
 ########################################
 
 ./loadVoc.csh | tee -a ${LOG}
-./mgimlc.csh | tee -a ${LOG}
-./mgistrain.csh | tee -a ${LOG}
-./mgiperm.csh | tee -a ${LOG}
+./mgivoc.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}

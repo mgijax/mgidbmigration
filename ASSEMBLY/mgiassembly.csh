@@ -89,6 +89,11 @@ declare @actKey integer
 select @actKey = max(_ActualDB_key) + 1 from ACC_ActualDB
 insert into ACC_ActualDB values (@actKey, @logKey, 'NCBI Gene Model', 1, 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 insert into ACC_ActualDB values (@actKey + 1, @logKey + 1, 'Ensembl Gene Model', 1, 'http://www.ensembl.org/Mus_musculus/geneview?gene=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+
+declare @setKey integer
+select @setKey = max(_SetMember_key) + 1 from MGI_SetMember
+insert into MGI_SetMember values(@setKey, 1009, @logKey, 13, 1001, 1001, getdate(), getdate())
+insert into MGI_SetMember values(@setKey + 1, 1009, @logKey + 1, 13, 1001, 1001, getdate(), getdate())
 go
 
 end

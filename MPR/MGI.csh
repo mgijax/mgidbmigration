@@ -173,6 +173,8 @@ go
 
 EOSQL
 
+./loadtestcellline.py
+
 #./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}

@@ -1,5 +1,6 @@
 #!/bin/csh -f
 
+#setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/MGI3.12
 setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MGI3.12
 
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd

@@ -101,4 +101,70 @@ EOSQL
 ${newmgddbschema}/index/PRB_Strain_create.object
 ${newmgddbschema}/index/PRB_Strain_Synonym_create.object
 
+cat - <<EOSQL | doisql.csh $0
+
+use tempdb
+go
+   
+drop table JRSStrain
+go
+
+drop table JRSType
+go
+
+create table JRSStrain
+(
+registry   integer not null,
+strain     varchar(80) null,
+genes      varchar(255) null,
+privacy    varchar(10) not null,
+synonyms   varchar(25) null,
+types      varchar(255) null
+)
+go
+
+create table JRSType
+(
+jrstype    varchar(255) null,
+mgikey1    integer not null,
+mgikey2    integer null,
+mgikey3    integer null
+)
+
+checkpoint
+go
+
+quit
+ 
+EOSQL
+ 
+cat $DBPASSWORDFILE | bcp tempdb..JRSStrain in tr2541.txt -c -t\\t -U$DBUSER
+cat $DBPASSWORDFILE | bcp tempdb..JRSType in tr2541.type.tab -c -t\\t -U$DBUSER
+
+cat - <<EOSQL | doisql.csh $0
+ 
+use tempdb
+go
+
+create clustered index index_registry on JRSStrain(registry)
+go
+
+create nonclustered index index_strain on JRSStrain(strain)
+go
+
+grant select on JRSStrain to public
+go
+
+grant select on JRSType to public
+go
+
+checkpoint
+go
+
+quit
+ 
+EOSQL
+ 
+./tr2541.py $DBSERVER $DBNAME 1 >>& $LOG
+
 date >> $LOG

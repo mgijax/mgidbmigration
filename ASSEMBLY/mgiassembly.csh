@@ -65,9 +65,7 @@ go
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
 insert into VOC_Term values 
-(@termKey, 25, 'Ensembl Gene Model', 'Ensembl Gene Model', 10, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into VOC_Term values 
-(@termKey + 1, 25, 'NCBI Gene Model', 'NCBI Gene Model', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+(@termKey, 25, 'Ensembl Gene Model', 'Ensembl Gene Model', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 declare @setKey integer

@@ -50,6 +50,7 @@ echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-4-0-0" >>& $LOG
+$DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
 echo "Data Migration..." >> $LOG
 ./MGItables.csh >>& $LOG
@@ -146,6 +147,9 @@ date >> $LOG
 
 $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
+
+# Load VOC
+./loadVoc.csh $DBSERVER $DBNAME >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   

@@ -1,0 +1,40 @@
+#!/bin/csh -f
+
+setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MPR
+
+setenv VOCLOAD		/usr/local/mgi/3.2/dataload/vocload
+
+#setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload/runSimpleFullLoadNoArchive.sh
+setenv VOCSIMPLELOAD    /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
+
+#setenv ASSOCLOAD        /usr/local/mgi/live/dataload/vocassociationload
+setenv ASSOCLOAD        /home/lec/loads/vocassociationload
+
+#setenv MRKREFLOAD	/usr/local/mgi/live/dbutils/mrkrefload
+setenv MRKREFLOAD	/home/lec/loads/mrkrefload-mpr
+
+#setenv ALLLABELLOAD	/usr/local/mgi/live/dbutils/alllabelload
+setenv ALLLABELLOAD	/home/lec/loads/alllabelload
+
+#setenv NOTELOAD		/usr/local/mgi/live/dataload/noteload
+setenv NOTELOAD		/home/lec/loads/noteload
+
+#setenv ANNOTLOAD		/usr/local/mgi/live/dataload/annotload
+setenv ANNOTLOAD		/home/lec/loads/annotload-mpr
+
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddb /home/lec/db/mpr
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
+setenv newradardbschema ${newmgddb}/radardbschema
+setenv newradardbperms ${newmgddb}/radardbperms
+
+setenv SCHEMA_TAG       mgddbschema-3-2-0
+setenv RADARSCHEMA_TAG       radardbschema-3-2-0
+setenv CREATEDBY	1000
+
+source ${newradardbschema}/Configuration
+setenv RADARDB $DBNAME
+
+source ${newmgddbschema}/Configuration
+

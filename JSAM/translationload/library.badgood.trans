@@ -1,21 +1,48 @@
 	Barstead MPL-RB1	Barstead kidney MPL-RB1	dab
+	Barstead MPL-RB1	Barstead MPLRB1	dab
+	Barstead MPL-RB10	Barstead mouse spleen MPLRB10	dab
 	Barstead MPL-RB10	Barstead MPL-RB10 spleen	dab
+	Barstead MPL-RB11	Barstead mouse testis MPLRB11	dab
 	Barstead MPL-RB11	Barstead MPL-RB11 testis	dab
+	Barstead MPL-RB12	Barstead mouse brain MPRB12	dab
 	Barstead MPL-RB12	Barstead MPL-RB12 brain	dab
+	Barstead MPL-RB13	Barstead mouse muscle MPLRB13	dab
 	Barstead MPL-RB13	Barstead MPL-RB13 muscle	dab
 	Barstead MPL-RB14	Barstead MPL-RB14 muscle	dab
+	Barstead MPL-RB15	Barstead mouse pachytene MPLRB15	dab
 	Barstead MPL-RB15	Barstead MPL-RB15 pachytene	dab
 	Barstead MPL-RB2	Barstead lung MPL-RB2	dab
+	Barstead MPL-RB2	Barstead mouse lung MPLRB2	dab
 	Barstead MPL-RB3	Barstead heart MPL-RB3	dab
+	Barstead MPL-RB4	Barstead mouse pooled organs MPLRB, Life tech	dab
+	Barstead MPL-RB4	Barstead mouse pooled organs MPLRB4	dab
 	Barstead MPL-RB4	Barstead pooled organs MPL-RB4	dab
+	Barstead MPL-RB4	Barstead pooled organs MPLRB4	dab
+	Barstead MPL-RB5	Barstead mouse myotubes	dab
+	Barstead MPL-RB5	Barstead mouse myotubes MPL-RB5	dab
+	Barstead MPL-RB5	Barstead mouse myotubes MPLRB5	dab
+	Barstead MPL-RB5	Barstead myotubes MPLRB5	dab
 	Barstead MPL-RB5	Barstead stromal cell line MPL-RB5	dab
+	Barstead MPL-RB5	Barsted mouse myotubes MPLRB5	dab
 	Barstead MPL-RB6	Barstead colon MPL-RB6	dab
 	Barstead MPL-RB7	Barstead irradiated colon MPL-RB7	dab
+	Barstead MPL-RB7	Barstead mouse irradiated colon MPLRB7	dab
 	Barstead MPL-RB8	Barstead stromal cell line MPL-RB8	dab
+	Barstead MPL-RB8	Barstead stromal cell line MPLRB8	dab
 	Barstead MPL-RB9	Barstead bowel MPL_RB9	dab
+	Barstead MPL-RB9	Barstead bowel MPLRB9	dab
 	Knowles/Solter blastocyst	Knowles Solter mouse blastocyst B1	dab
 	Knowles/Solter blastocyst	Knowles Solter mouse blastocyst B3	dab
+	Life Tech 10.5 dpc embryo (10665-016)	Life Technologies Superscript Mouse 10.5 Day	dab
+	Life Tech 13.5 dpc embryo (10666-014)	Life Tech Catalog #10666014; Fahrner et al,	dab
+	Life Tech 13.5 dpc embryo (10666-014)	Life Technologies Cat. number 10666014	dab
+	Life Tech 8.5 dpc embryo (10664-019)	Life Tech mouse embryo 8.5dpc	dab
+	Life Tech 8.5 dpc embryo (10664-019)	Life Tech number 10664019	dab
+	McCarrey/Eddy 18-day leptotene and zygotene spermatocytes	McCarrey Eddy 18 day leptotene and zygotene	dab
 	McCarrey/Eddy 18-day leptotene and zygotene spermatocytes	McCarrey/Eddy 18d leptotene+zygotene spermatocyte	dab
+	McCarrey/Eddy 18-day preleptotene spermatocytes	McCarrey Eddy 18 day preleptotene	dab
+	McCarrey/Eddy 6-day primitive type A spermatogonia	McCarrey Eddy 6 day primitive type A	dab
+	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Amplified Mouse E16 5 Pancreas 3 M16S1	dab
 	Mouse 3.5-dpc blastocyst cDNA	Ko Mouse 3.5-dpc Blastocyst cDNA Library	dab
 	Mouse 3.5-dpc blastocyst cDNA	NIA Mouse Blastocyst Stage Embryo	dab
 	Mouse eight-cell stage embryo cDNA	Ko Mouse 8-cell Embryo cDNA Library	dab
@@ -84,6 +111,7 @@
 	NIA Mouse Neural Stem Cell (Differentiated) cDNA Library (Long)	NIA Mouse Neural Stem Cell (Differentiated)	dab
 	NIA Mouse Newborn Brain cDNA Library	NIA Mouse Newborn Brain	dab
 	NIA Mouse Newborn Heart cDNA Library	NIA Mouse Newborn Heart	dab
+	NIA Mouse Newborn Kidney cDNA Library (Long)	NIA Mouse Newborn Kidney (Long)	dab
 	NIA Mouse Newborn Kidney cDNA Library (Long)	NIA Newborn Kidney (Long)	dab
 	NIA Mouse Newborn Kidney cDNA Library2 (Short)	NIA Newborn Kidney (Short)	dab
 	NIA Mouse newborn Ovary cDNA Library	NIA Mouse newborn Ovary	dab
@@ -93,18 +121,21 @@
 	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	NIA Mouse Undifferentiated ES Cell (Long)	dab
 	NIA Mouse Undifferentiated ES Cell cDNA Library (Short)	NIA Mouse Undifferentiated ES Cell (Short)	dab
 	NIA Mouse Unfertilized Egg cDNA Library (Long)	NIA Mouse Unfertilized Egg (Long)	dab
-	NIA Mouse Newborn Kidney cDNA Library (Long)	NIA Mouse Newborn Kidney (Long)	dab
 	NIH_MGC_94	NIH_MGC_94 retina	dab
 	Rashbass MOC-11.5	Rashbass MOC-11.5 optic cup	dab
 	Rashbass MOV-9.5	Rashbass MOV-9.5 optic vesicle	dab
-	Soares NMLMG	Soares mammary gland NMLMG	dab
+	RPCI-21	Roswell Park Cancer Institute RPCI-21 mouse PAC library	dab
+	RPCI-21	RPCI 21 (K. Osoegawa and P.J. de Jong, Roswell Park Cancer Institute)	dab
+	RPCI-23	RPCI23 BAC clone (Roswell Park Cancer Institute, Buffalo, NY, USA)	dab
 	Soares 2NbMT	Soares thymus 2NbMT	dab
+	Soares 2NbMT	Soares_thymus_2NbMT	dab
 	Soares 3NbMS	Soares spleen 3NbMS	dab
 	Soares 3NME12.5	Soares 12.5dpc 3NME12.5	dab
 	Soares 4NbMP13.5-14.5	Soares placenta 4NbMP13.5-14.5	dab
 	Soares MPR0	Soares MPR0 prostate	dab
 	Soares NbME13.5-14.5	Soares 13.5-14.5dpc embryo NbME13.5-14.5	dab
 	Soares NbMH	Soares heart NbMH	dab
+	Soares NbMH	Soares mouse NbMh	dab
 	Soares NbMLN	Soares lymph node NbMLN	dab
 	Soares NbMMG	Soares mammary gland NbMMG	dab
 	Soares NKWMD	Soares NKWMD mandible	dab
@@ -121,6 +152,7 @@
 	Soares NMHy	Soares hypothalamus NMHy	dab
 	Soares NMKWNP	Soares nasal process NMKWNP	dab
 	Soares NML	Soares liver NML	dab
+	Soares NMLMG	Soares mammary gland NMLMG	dab
 	Soares NMMAX	Soares NMMAX maxillary process	dab
 	Soares NMO1	Soares NMO1 ovary	dab
 	Soares NMO2	Soares NMO2 ovary	dab
@@ -129,58 +161,26 @@
 	Soares NMTC	Soares NMTC trophoblast	dab
 	Soares NMUR	Soares 11.5-12.5 dpc urogenital ridge NMUR	dab
 	Soares p3NMF19.5	Soares 19.5dpc p3NMF19.5	dab
+	Stratagene #936309	Stratagene mouse brain cDNA library, Cat#936309	dab
+	Stratagene #946305	129sv genomic DNA in lambda fixII, Stratagene #946305	dab
+	Stratagene #946305	Stratagene 129/SvJ genomic library, cat. no. 946305	dab
+	Stratagene #946309	lambda-FixII mouse genomic library (Stratagene #946309)	dab
+	Stratagene #946309	Stratagene, catalog No. 946309, 129SVJ genomic library in lambda FIX II vector	dab
 	Stratagene embry. carcinoma/RA (937318)	Stratagene embryonic carcinoma/RA (#937318)	dab
 	Stratagene embryonic carcinoma (937317)	Stratagene embryonic carcinoma (#937317)	dab
+	Stratagene mouse 129/Sv genomic (#946306)	lambda FIX II genomic library, Stratagene no. 946306	dab
 	Stratagene mouse diaphragm (937303)	Stratagene diaphragm (#937303)	dab
 	Stratagene mouse heart (937316)	Stratagene 13dpc heart (#937316)	dab
 	Stratagene mouse kidney (937315)	Stratagene kidney (#937315)	dab
+	Stratagene mouse lung (937302)	lung cDNA library, Stratagene catalog number 937302	dab
+	Stratagene mouse lung (937302)	Stratagene catalog number 937302 (lung);	dab
 	Stratagene mouse lung (937302)	Stratagene lung (#937302)	dab
 	Stratagene mouse macrophage (937306)	Stratagene macrophage (#937306)	dab
+	Stratagene mouse macrophage (937306)	Stratagene mouse macrophage (#937306)	dab
 	Stratagene mouse melanoma (937312)	Stratagene melanoma (#937312)	dab
 	Stratagene mouse skin	Stratagene skin (#937313)	dab
 	Stratagene mouse T-cell (937311)	Stratagene T-cell (#937311)	dab
-	Stratagene mouse testes	Stratagene testis (#937308)	dab
-	Barstead MPL-RB9	Barstead bowel MPLRB9	dab
-	Barstead MPL-RB12	Barstead mouse brain MPRB12	dab
-	Barstead MPL-RB7	Barstead mouse irradiated colon MPLRB7	dab
-	Barstead MPL-RB2	Barstead mouse lung MPLRB2	dab
-	Barstead MPL-RB13	Barstead mouse muscle MPLRB13	dab
-	Barstead MPL-RB5	Barstead mouse myotubes	dab
-	Barstead MPL-RB5	Barstead mouse myotubes MPL-RB5	dab
-	Barstead MPL-RB5	Barstead mouse myotubes MPLRB5	dab
-	Barstead MPL-RB15	Barstead mouse pachytene MPLRB15	dab
-	Barstead MPL-RB4	Barstead mouse pooled organs MPLRB, Life tech	dab
-	Barstead MPL-RB4	Barstead mouse pooled organs MPLRB4	dab
-	Barstead MPL-RB10	Barstead mouse spleen MPLRB10	dab
-	Barstead MPL-RB11	Barstead mouse testis MPLRB11	dab
-	Barstead MPL-RB1	Barstead MPLRB1	dab
-	Barstead MPL-RB5	Barstead myotubes MPLRB5	dab
-	Barstead MPL-RB4	Barstead pooled organs MPLRB4	dab
-	Barstead MPL-RB8	Barstead stromal cell line MPLRB8	dab
-	Barstead MPL-RB5	Barsted mouse myotubes MPLRB5	dab
-	Life Tech 13.5 dpc embryo (10666-014)	Life Tech Catalog #10666014; Fahrner et al,	dab
-	Life Tech 8.5 dpc embryo (10664-019)	Life Tech mouse embryo 8.5dpc	dab
-	Life Tech 8.5 dpc embryo (10664-019)	Life Tech number 10664019	dab
-	Life Tech 13.5 dpc embryo (10666-014)	Life Technologies Cat. number 10666014	dab
-	Life Tech 10.5 dpc embryo (10665-016)	Life Technologies Superscript Mouse 10.5 Day	dab
-	McCarrey/Eddy 18-day leptotene and zygotene spermatocytes	McCarrey Eddy 18 day leptotene and zygotene	dab
-	McCarrey/Eddy 18-day preleptotene spermatocytes	McCarrey Eddy 18 day preleptotene	dab
-	McCarrey/Eddy 6-day primitive type A spermatogonia	McCarrey Eddy 6 day primitive type A	dab
-	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Amplified Mouse E16 5 Pancreas 3 M16S1	dab
-	Soares NbMH	Soares mouse NbMh	dab
-	Soares 2NbMT	Soares_thymus_2NbMT	dab
-	Stratagene mouse lung (937302)	Stratagene catalog number 937302 (lung);	dab
-	Stratagene mouse macrophage (937306)	Stratagene mouse macrophage (#937306)	dab
 	Stratagene mouse testes	Stratagene mouse testis	dab
 	Stratagene mouse testes	Stratagene mouse testis (#937308)	dab
 	Stratagene mouse testes	Stratagene mouse testis 937308	dab
-	Stratagene #946305	Stratagene 129/SvJ genomic library, cat. no. 946305	dab
-	Stratagene #936309	Stratagene mouse brain cDNA library, Cat#936309	dab
-	Stratagene mouse 129/Sv genomic (#946306)	lambda FIX II genomic library, Stratagene no. 946306	dab
-	Stratagene #946305	129sv genomic DNA in lambda fixII, Stratagene #946305	dab
-	Stratagene #946309	lambda-FixII mouse genomic library (Stratagene #946309)	dab
-	Stratagene mouse lung (937302)	lung cDNA library, Stratagene catalog number 937302	dab
-	Stratagene #946309	Stratagene, catalog No. 946309, 129SVJ genomic library in lambda FIX II vector	dab
-	RPCI-21	RPCI 21 (K. Osoegawa and P.J. de Jong, Roswell Park Cancer Institute)	dab
-	RPCI-21	Roswell Park Cancer Institute RPCI-21 mouse PAC library	dab
-	RPCI-23	RPCI23 BAC clone (Roswell Park Cancer Institute, Buffalo, NY, USA)	dab
+	Stratagene mouse testes	Stratagene testis (#937308)	dab

@@ -8,7 +8,7 @@
 # Tables:	181
 # Procedures:	 92
 # Rules:	  7
-# Triggers:	146
+# Triggers:	147
 # Views:	160
 #
 

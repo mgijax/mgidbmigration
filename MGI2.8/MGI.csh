@@ -16,6 +16,7 @@ setenv STRAINS strains_release
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
+setenv PYTHONPATH	/usr/local/mgi/lib/python
 
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
@@ -165,6 +166,9 @@ go
 quit
  
 EOSQL
+
+# Re-run MRK_Reference load
+/usr/local/mgi/dataload/mrkrefload/mrkref.sh
 
 date >> $LOG
 

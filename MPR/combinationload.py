@@ -14,28 +14,15 @@ TAB = reportlib.TAB
 PAGE = reportlib.PAGE
 
 mgiTypeKey = 12
+newline = '\\n'
 
 #
 # Main
 #
 
-# 'and g._Genotype_key in (19888, 11216) ' 
-
-noteTypes = []
-results = db.sql('select _NoteType_key from MGI_NoteType ' + \
-	'where _MGIType_key = %s ' % (mgiTypeKey) + \
-	'and noteType in ("Combination Type 1", "Combination Type 2", "Combination Type 3")', 'auto')
-for r in results:
-    noteTypes.append(str(r['_NoteType_key']))
-
 fp1 = reportlib.init('combnotetype1', printHeading = 0)
 fp2 = reportlib.init('combnotetype2', printHeading = 0)
 fp3 = reportlib.init('combnotetype3', printHeading = 0)
-
-allNoteTypes = string.join(noteTypes, ',')
-
-db.sql('delete from MGI_Note where _MGIType_key = %s ' % (mgiTypeKey) + \
-	'and _NoteType_key in (%s)' % (allNoteTypes), None, execute = not DEBUG)
 
 results = db.sql('select g._Genotype_key, alleleState = t1.term, compound = t2.term, allele1 = a1.symbol, allele2 = a2.symbol, ' +
 	'allele1WildType = a1.isWildType, allele2WildType = a2.isWildType, ' + \
@@ -155,16 +142,16 @@ for g in genotypes.keys():
                 bottomType2 = bottomType1
 
             if alleleState != 'Unknown':
-                displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + '\\n'
-                displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + '\\n'
+                displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
+                displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
 
         elif (compound == 'Top'):
 
             # new top, new group: process old group
 
             if foundBottom >= 1:
-                displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + '\\n'
-                displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + '\\n'
+                displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
+                displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
 	        topType1 = ''
 	        topType2 = ''
 	        bottomType1 = ''
@@ -201,8 +188,8 @@ for g in genotypes.keys():
             foundBottom = foundBottom + 1
 
         if foundTop >= 1 and foundBottom >= 1:
-            displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + '\\n'
-            displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + '\\n'
+            displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
+            displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
 
     fp1.write(genotypeID + TAB + displayNotes1 + CRT)
     fp2.write(genotypeID + TAB + displayNotes2 + CRT)

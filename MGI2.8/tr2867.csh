@@ -71,6 +71,10 @@ update ACC_MGIType
 set dbView = "MRK_Summary_View" where name = "Marker"
 go
 
+update ACC_MGIType
+set dbView = "GXD_Genotype_Summary_View" where name = "Genotype"
+go
+
 insert into ACC_MGIType 
 values (13, 'Vocabulary Term', 'VOC_Term', '_Term_key', NULL, getdate(), getdate(), getdate())
 go
@@ -81,6 +85,18 @@ go
 
 insert into ACC_LogicalDB
 values (-1, 'Not Specified', 'Not Specified', NULL, getdate(), getdate(), getdate())
+go
+
+insert into DAG_Label
+values (-1, 'Not Specified', getdate(), getdate())
+go
+
+insert into DAG_Label
+values (1, 'is-a', getdate(), getdate())
+go
+
+insert into DAG_Label
+values (2, 'part-of', getdate(), getdate())
 go
 
 end

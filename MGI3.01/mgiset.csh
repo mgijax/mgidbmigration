@@ -26,37 +26,7 @@ end
 EOSQL
 
 ${newmgddbschema}/table/MGI_Set_create.object | tee -a ${LOG}
-
-${newmgddbschema}/key/MGI_Set_create.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_SetMember_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_SetMember_create.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_User_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_User_create.object | tee -a ${LOG}
-
 ${newmgddbschema}/index/MGI_Set_create.object | tee -a ${LOG}
-
-${newmgddbschema}/trigger/MGI_Set_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/MGI_Set_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/PRB_Probe_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/PRB_Probe_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/PRB_Source_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/PRB_Source_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/SEQ_Sequence_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/SEQ_Sequence_create.object | tee -a ${LOG}
-
-${newmgddbschema}/view/MGI_Set_CloneLibrary_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_CloneLibrary_View_create.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_CloneSet_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_CloneSet_View_create.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_ResMolSeg_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_ResMolSeg_View_create.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_ResSequence_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_Set_ResSequence_View_create.object | tee -a ${LOG}
-
-${newmgddbschema}/procedure/MGI_createRestrictedMolSegSet_drop.object | tee -a ${LOG}
-${newmgddbschema}/procedure/MGI_createRestrictedMolSegSet_create.object | tee -a ${LOG}
-${newmgddbschema}/procedure/MGI_createRestrictedSeqSet_drop.object | tee -a ${LOG}
-${newmgddbschema}/procedure/MGI_createRestrictedSeqSet_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

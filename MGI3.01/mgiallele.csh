@@ -28,15 +28,10 @@ EOSQL
 ${newmgddbschema}/table/ALL_Type_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/ALL_Type_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/ALL_Type_create.object | tee -a ${LOG}
-${newmgddbschema}/view/ALL_Allele_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/ALL_Allele_View_create.object | tee -a ${LOG}
-${newmgddbschema}/view/ALL_Summary_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/ALL_Summary_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/ALL_Type_Summary_View_create.object | tee -a ${LOG}
+${newmgddbperms}/public/view/ALL_Type_Summary_View_grant.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Type_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Type_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

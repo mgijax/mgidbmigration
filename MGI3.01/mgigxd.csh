@@ -35,7 +35,6 @@ EOSQL
 # create new tables
 #
 ${newmgddbschema}/table/IMG_ImagePane_create.object >> ${LOG}
-${newmgddbschema}/default/IMG_ImagePane_bind.object >> ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
@@ -55,19 +54,6 @@ quit
 EOSQL
 
 ${newmgddbschema}/index/IMG_ImagePane_create.object >> ${LOG}
-
-${newmgddbschema}/key/IMG_ImagePane_drop.object >> ${LOG}
-${newmgddbschema}/key/IMG_ImagePane_create.object >> ${LOG}
-
-${newmgddbschema}/trigger/IMG_Image_drop.object >> ${LOG}
-${newmgddbschema}/trigger/IMG_Image_create.object >> ${LOG}
-${newmgddbschema}/trigger/IMG_ImagePane_drop.object >> ${LOG}
-${newmgddbschema}/trigger/IMG_ImagePane_create.object >> ${LOG}
-
-${newmgddbschema}/view/GXD_ISResultImage_View_drop.object >> ${LOG}
-${newmgddbschema}/view/GXD_ISResultImage_View_create.object >> ${LOG}
-${newmgddbschema}/view/IMG_ImagePaneRef_View_drop.object >> ${LOG}
-${newmgddbschema}/view/IMG_ImagePaneRef_View_create.object >> ${LOG}
 
 date >> ${LOG}
 

@@ -28,28 +28,9 @@ EOSQL
 ${newmgddbschema}/table/BIB_DataSet_Assoc_create.object | tee -a ${LOG}
 ${newmgddbschema}/table/BIB_DataSet_create.object | tee -a ${LOG}
 ${newmgddbschema}/table/BIB_Refs_create.object | tee -a ${LOG}
-${newmgddbschema}/default/BIB_DataSet_Assoc_bind.object | tee -a ${LOG}
-${newmgddbschema}/default/BIB_DataSet_bind.object | tee -a ${LOG}
-${newmgddbschema}/default/BIB_Refs_bind.object | tee -a ${LOG}
-${newmgddbschema}/key/BIB_DataSet_Assoc_create.object | tee -a ${LOG}
-${newmgddbschema}/key/BIB_DataSet_create.object | tee -a ${LOG}
-${newmgddbschema}/key/BIB_Refs_create.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_User_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_User_create.object | tee -a ${LOG}
-${newmgddbschema}/key/BIB_ReviewStatus_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/BIB_ReviewStatus_create.object | tee -a ${LOG}
-${newmgddbschema}/key/VOC_Term_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
-${newmgddbschema}/procedure/BIB_isNOGO_drop.object | tee -a ${LOG}
-${newmgddbschema}/procedure/BIB_isNOGO_create.object | tee -a ${LOG}
-${newmgddbschema}/procedure/BIB_removeNOGO_drop.object | tee -a ${LOG}
-${newmgddbschema}/procedure/BIB_removeNOGO_create.object | tee -a ${LOG}
-${newmgddbschema}/view/BIB_drop.logical | tee -a ${LOG}
-${newmgddbschema}/view/BIB_create.logical | tee -a ${LOG}
-${newmgddbschema}/view/IMG_Image_Summary_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/IMG_Image_Summary_View_create.object | tee -a ${LOG}
-${newmgddbschema}/view/MLD_Summary_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/MLD_Summary_View_create.object | tee -a ${LOG}
+${newmgddbperms}/public/table/BIB_DataSet_Assoc_create.object | tee -a ${LOG}
+${newmgddbperms}/public/table/BIB_DataSet_create.object | tee -a ${LOG}
+${newmgddbperms}/public/table/BIB_Refs_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -88,11 +69,6 @@ cat ${DBPASSWORDFILE} | bcp ${DBNAME}..BIB_DataSet_Assoc in BIB_DataSet_Assoc.bc
 ${newmgddbschema}/index/BIB_DataSet_Assoc_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/BIB_DataSet_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/BIB_Refs_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/BIB_DataSet_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/BIB_Refs_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/BIB_Refs_create.object | tee -a ${LOG}
-${newmgddbschema}/trigger/BIB_ReviewStatus_drop.object | tee -a ${LOG}
-${newmgddbschema}/trigger/BIB_ReviewStatus_create.object | tee -a ${LOG}
 
 date >> ${LOG}
 

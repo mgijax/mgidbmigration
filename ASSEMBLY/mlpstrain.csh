@@ -30,6 +30,8 @@ EOSQL
 
 ${newmgddbschema}/table/PRB_Strain_create.object >>& ${LOG}
 ${newmgddbschema}/table/PRB_Strain_Type_create.object >>& ${LOG}
+${newmgddbschema}/table/MGI_Synonym_create.object >>& ${LOG}
+${newmgddbschema}/table/MGI_SynonymType_create.object >>& ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
@@ -79,6 +81,20 @@ select @noteKey + seq, sequenceNum, note, 1086, 1086, getdate(), getdate()
 from #notes
 go
 
+/* migrate PRB_Strain_Synonym into MGI_Synonym, MGI_SynonymType */
+
+declare @synTypeKey integer
+declare @synKey integer
+select @synTypeKey = 1000
+select @synKey = 1000
+insert into MGI_SynonymType values(@synTypeKey, 10, 'synonym', 1086, 1086, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 1, 10, 'nomenclature history', 1086, 1086, getdate(), getdate())
+select _Strain_key, synonym, seq = identity(10) into #syns from PRB_Strain_Synonym
+insert into MGI_Synonym
+select @synKey + seq, _Strain_key, 10, @synTypeKey + 1, null, synonym, 1086, 1086, getdate(), getdate()
+from #syns
+go
+
 end
 
 EOSQL
@@ -89,6 +105,9 @@ use ${DBNAME}
 go
 
 drop table PRB_Strain_Old
+go
+
+drop table PRB_Strain_Synonym
 go
 
 drop table MLP_Extra
@@ -123,6 +142,10 @@ ${newmgddbschema}/index/PRB_Strain_create.object >>& ${LOG}
 ${newmgddbschema}/index/PRB_Strain_Type_create.object >>& ${LOG}
 ${newmgddbschema}/default/PRB_Strain_bind.object >>& ${LOG}
 ${newmgddbschema}/default/PRB_Strain_Type_bind.object >>& ${LOG}
+${newmgddbschema}/index/MGI_Synonym_create.object >>& ${LOG}
+${newmgddbschema}/index/MGI_SynonymType_create.object >>& ${LOG}
+${newmgddbschema}/default/MGI_Synonym_bind.object >>& ${LOG}
+${newmgddbschema}/default/MGI_SynonymType_bind.object >>& ${LOG}
 
 date | tee -a ${LOG}
 

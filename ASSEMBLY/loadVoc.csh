@@ -17,9 +17,9 @@ ${VOCLOAD} `pwd`/qualifier.config >>& ${LOG}
 ${VOCLOAD} `pwd`/maptype.config >>& ${LOG}
 ${VOCLOAD} `pwd`/mapunits.config >>& ${LOG}
 
-./mlpstrain.py >>& ${LOG}
-${VOCLOAD} `pwd`/species.config >>& ${LOG}
-${VOCLOAD} `pwd`/straintype.config >>& ${LOG}
+#./mlpstrain.py >>& ${LOG}
+#${VOCLOAD} `pwd`/species.config >>& ${LOG}
+#${VOCLOAD} `pwd`/straintype.config >>& ${LOG}
 ${VOCLOAD} `pwd`/allele.config >>& ${LOG}
 
 date >> ${LOG}

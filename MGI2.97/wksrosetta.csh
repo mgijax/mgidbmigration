@@ -21,5 +21,7 @@ ${newmgddbschema}/index/WKS_Rosetta_create.object | tee -a $LOG
 ${newmgddbschema}/key/WKS_Rosetta_create.object | tee -a $LOG
 ${newmgddbschema}/view/WKS_Rosetta_View_create.object | tee -a $LOG
 
+$WKSLOAD/wksload.csh
+
 date | tee -a $LOG
 

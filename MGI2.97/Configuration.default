@@ -5,6 +5,7 @@ setenv PYTHONPATH       /usr/local/mgi/lib/python
 
 setenv VOCLOAD /usr/local/mgi/dataload/vocload
 setenv LABELLOAD /usr/local/mgi/dbutils/mrklabelload
+setenv WKSLOAD /usr/local/mgi/dataload/wksload
 
 setenv newmgddb /usr/local/mgi/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema

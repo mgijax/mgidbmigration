@@ -18,17 +18,6 @@ date | tee -a $LOG
 
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo | tee -a $LOG
 date | tee -a $LOG
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo | tee -a $LOG
-date | tee -a $LOG
-
-echo "Update MGI DB Info..." | tee -a $LOG
-$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.97" | tee -a $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-6-0-0" | tee -a $LOG
-$DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME | tee -a $LOG
-
-echo "Reconfigure Nomen..." | tee -a $LOG
-$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} | tee -a $LOG
-date | tee -a $LOG
 
 loadVoc.csh | tee -a $LOG
 prbsource.csh | tee -a $LOG

@@ -7,17 +7,11 @@ setenv PYTHONPATH       /usr/local/mgi/lib/python
 setenv VOCLOAD /home/lec/loads/vocload-trunk
 
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
-setenv newmgddb /home/lec/db
+setenv newmgddb /home/lec/db/mgi2.96
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
-#setenv newnomendb /usr/local/mgi/dbutils/nomen
-setenv newnomendb /home/lec/db
-setenv newnomendbschema ${newnomendb}/nomendbschema
-setenv newnomendbperms ${newnomendb}/nomendbperms
-setenv NOMEN nomen_release
-
-setenv CREATEDBY gxd_release
+setenv CREATEDBY mgd_dbo
 
 source ${newmgddbschema}/Configuration
 

@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     155
 # User Tables:  183
-# Views:        221
+# Views:        223
 
 cd `dirname $0` && source ./Configuration
 
@@ -50,6 +50,7 @@ EOSQL
 ./mgiassociation.csh | tee -a ${LOG}
 ./mgiheader.csh | tee -a ${LOG}
 ./splitNotes.py | tee -a ${LOG}
+./mgiref | tee -a ${LOG}
 
 ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
@@ -124,6 +125,12 @@ drop view ALL_Type_Summary_View
 go
 
 drop procedure ALL_updateReference
+go
+
+drop procedure GXD_loadGenoCacheAll
+go
+
+drop procedure GXD_loadGenoCacheByGenotype
 go
 
 EOSQL

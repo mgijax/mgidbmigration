@@ -28,13 +28,13 @@ go
 declare @maxKey integer
 select @maxKey = max(_Assoc_key) from MGI_Reference_Assoc
 
-declare @reftypeKey integer
-select @reftypeKey = max(_RefAssocType_key) + 1 from MGI_RefAssocType
+declare @refTypeKey integer
+select @refTypeKey = max(_RefAssocType_key) + 1 from MGI_RefAssocType
 
-insert into MGI_RefAssocType values(@refTypeKey, 2, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey, 2, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 insert into MGI_Reference_Assoc
-select seq + @maxKey, _Refs_key, _Marker_key, 2, refsTypeKey, '${CREATEDBY}', '${CREATEDBY}', creation_date, modification_date
+select seq + @maxKey, _Refs_key, _Marker_key, 2, @refTypeKey, ${CREATEDBY}, ${CREATEDBY}, creation_date, modification_date
 from #refs
 go
 

@@ -38,6 +38,8 @@ ${newmgddbschema}/procedure/PRB_processAnonymousSource_create.object | tee -a ${
 ${newmgddbperms}/curatorial/table/MGI_UserRole_grant.object | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/PRB_processAnonymousSource_grant.object | tee -a ${LOG}
 
+./roletaskload.csh | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}

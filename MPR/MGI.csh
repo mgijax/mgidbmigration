@@ -21,7 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
@@ -120,8 +120,18 @@ go
 drop table GXD_AlleleGenotype_Old
 go
 
+select getdate()
+exec VOC_processAnnotHeaderAll
+select getdate()
+go
+
+select getdate()
+exec ALL_processAlleleCombAll
+select getdate()
+go
+
 EOSQL
 
-./mgiradar.csh | tee -a ${LOG}
+#./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}

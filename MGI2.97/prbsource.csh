@@ -42,6 +42,7 @@ select @segmentTypeKey = t._Term_key
 from VOC_Vocab v, VOC_Term t
 where v.name = 'Segment Type'
 and v._Vocab_key = t._Vocab_key
+and t.term = "Not Specified"
 
 insert into PRB_Source
 select _Source_key, @segmentTypeKey, @vectorKey, _ProbeSpecies_key,
@@ -52,9 +53,13 @@ go
 
 /* select all named sources */
 
-select _Source_key, name into #source 
+select _Source_key, name 
+into #source 
 from PRB_Source 
 where name is not null
+go
+
+create nonclustered index idx_source_key on #source (_Source_key)
 go
 
 /* select all unique source/vector pairs where the probe is not a child probe */
@@ -79,8 +84,8 @@ go
 /* update the source record with its default vector type */
 
 update PRB_Source
-from PRB_Source s, #ok1 o
 set _Vector_key = o._Vector_key
+from PRB_Source s, #ok1 o
 where s._Source_key = o._Source_key
 go
 
@@ -108,8 +113,8 @@ go
 /* update the source record with its default segment type */
 
 update PRB_Source
-from PRB_Source s, #ok2 o
 set _SegmentType_key = o._Term_key
+from PRB_Source s, #ok2 o
 where s._Source_key = o._Source_key
 go
 

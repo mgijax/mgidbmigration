@@ -3,10 +3,13 @@
 #
 # MGI 2.98
 #
-# procedures: 85
+# procedures: 87
 # triggers:  140
 # tables:    177
-# views:     147
+# views:     149
+#
+#
+# 11/05/2003	12:41PM - 13:10PM = 30 minutes
 #
 
 cd `dirname $0` && source ./Configuration
@@ -27,8 +30,8 @@ $DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo | tee -a $LOG
 date | tee -a $LOG
 
 echo "Update MGI DB Info..." | tee -a $LOG
-$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.97" | tee -a $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-6-0-0" | tee -a $LOG
+$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.98" | tee -a $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-7-0-0" | tee -a $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME | tee -a $LOG
 
 echo "Reconfigure Nomen..." | tee -a $LOG
@@ -44,7 +47,6 @@ $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." >>$LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a $LOG
-knockins.csh | tee -a $LOG
 
 cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 

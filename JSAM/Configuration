@@ -7,7 +7,7 @@ setenv SETLOAD		/home/lec/loads/setload
 #setenv CACHELOAD	/usr/local/mgi/3.0/dbutils/seqcacheload
 setenv CACHELOAD	/home/lec/loads/seqcacheload
 #setenv MRKREFLOAD	/usr/local/mgi/3.0/dbutils/mrkrefload
-setenv MRKREFLOAD	/home/lec/loads/mrkrefload-jsam
+setenv MRKREFLOAD	/home/lec/loads/mrkrefload
 
 # use current MGI 2.98 version of vocload because we load
 # the vocabularies BEFORE converting to the new schema
@@ -32,13 +32,13 @@ setenv newrdrdbschema ${newrdrdb}/radardbschema
 setenv newrdrdbperms ${newrdrdb}/radardbperms
 
 # the working directory
-setenv WORKDIR  /home/lec/db/mgidbmigration/JSAM/work
+setenv WORKDIR  /extra1/sybase
 
 # the path where the bcp files have been installed
 setenv DATADIR  ${WORKDIR}/data
 
-setenv CREATEDBY	1200
-setenv UNKNOWNEDITOR	1111
+setenv CREATEDBY	1300
+setenv UNKNOWNEDITOR	1211
 setenv SCHEMA_TAG	mgddbschema-8-0-0
 setenv PUBLIC_VERSION	"MGI 3.0"
 setenv PRODUCT_NAME	MGD

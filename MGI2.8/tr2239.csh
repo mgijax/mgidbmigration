@@ -115,7 +115,54 @@ deallocate cursor acc_cursor
 commit transaction
 go
 
+/* Reorder Allele Pairs Alphabetically */
 
+declare gen_cursor cursor for
+select _Genotype_key, _AllelePair_key, sequenceNum
+from GXD_AllelePair_View
+where _Allele_key_1 is not null
+order by _Genotype_key
+for read only
+go
+
+begin transaction
+
+declare @gkey int	/* primary key of records to update */
+declare @prevgkey int	/* primary key of records to update */
+declare @pkey int	/* primary key of records to update */
+declare @oldSeq int	/* current sequence number */
+declare @newSeq int	/* new sequence number */
+
+open gen_cursor
+fetch gen_cursor into @gkey, @pkey, @oldSeq
+ 
+while (@@sqlstatus = 0)
+begin
+	if @gkey != @prevgkey
+		select @newSeq = 1
+ 
+	select @prevgkey = @gkey
+	
+  	update GXD_AllelePair set sequenceNum = @newSeq
+    	where _AllelePair_key = @pkey
+
+  	select @newSeq = @newSeq + 1
+
+	fetch gen_cursor into @gkey, @pkey, @oldSeq
+end
+
+close gen_cursor
+deallocate cursor gen_cursor
+commit transaction
+
+go
+
+checkpoint
+go
+
+quit
+
+EOSQL
 EOSQL
 
 ${newmgddbschema}/key/GXD_AllelePair_create.object

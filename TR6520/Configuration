@@ -8,7 +8,7 @@ setenv VOCLOAD          /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
 # new schema configured to talk to the TR 6520 database
 
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd
-setenv newmgddb /home/lec/db/mpr
+setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 

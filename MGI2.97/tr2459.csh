@@ -221,6 +221,14 @@ EOSQL
 
 ${newmgddbschema}/index/GXD_Index_create.object >> $LOG
 ${newmgddbschema}/index/GXD_Index_Stages_create.object >> $LOG
+${newmgddbschema}/trigger/GXD_Index_drop.object >> $LOG
+${newmgddbschema}/trigger/GXD_Index_create.object >> $LOG
+${newmgddbschema}/view/GXD_Index_View_drop.object >> $LOG
+${newmgddbschema}/view/GXD_Index_View_create.object >> $LOG
+
+${newmgddbperms}/curatorial/table/GXD_grant.object >> $LOG
+${newmgddbperms}/public/table/GXD_grant.object >> $LOG
+${newmgddbperms}/public/view/GXD_grant.object >> $LOG
 
 #cat - <<EOSQL | doisql.csh $0 >> $LOG
 #

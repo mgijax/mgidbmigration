@@ -1,0 +1,201 @@
+		Amplified Melton mouse islets 1 MIS1-A	jsam_load
+		Baker mouse embryo e6.5	jsam_load
+		Baker mouse embryo e7.5	jsam_load
+	Barstead bowel MPLRB9 	Barstead bowel MPL_RB9	jsam_load
+	Barstead mouse proximal colon MPLRB6 	Barstead colon MPL-RB6	jsam_load
+	Barstead mouse heart MPLRB3 	Barstead heart MPL-RB3	jsam_load
+	Barstead mouse irradiated colon MPLRB7 	Barstead irradiated colon MPL-RB7	jsam_load
+	Barstead MPLRB1 	Barstead kidney MPL-RB1	jsam_load
+	Barstead mouse lung MPLRB2 	Barstead lung MPL-RB2	jsam_load
+	Barstead mouse spleen MPLRB10 	Barstead MPL-RB10 spleen	jsam_load
+	Barstead mouse testis MPLRB11 	Barstead MPL-RB11 testis	jsam_load
+	Barstead mouse brain MPRB12 	Barstead MPL-RB12 brain	jsam_load
+	Barstead mouse muscle MPLRB13 	Barstead MPL-RB13 muscle	jsam_load
+		Barstead MPL-RB14 muscle	jsam_load
+	Barstead mouse pachytene MPLRB15 	Barstead MPL-RB15 pachytene	jsam_load
+	Barstead mouse pooled organs MPLRB4 	Barstead pooled organs MPL-RB4	jsam_load
+	Barstead mouse myotubes MPLRB5 	Barstead stromal cell line MPL-RB5	jsam_load
+	Barstead stromal cell line MPLRB8 	Barstead stromal cell line MPL-RB8	jsam_load
+	Beddington mouse embryonic region 	Beddington embryonic region	jsam_load
+	GuayWoodford Beier mouse kidney day 0 	Beier day 0 kidney	jsam_load
+	GuayWoodford Beier mouse kidney day 7 	Beier day 7 kidney	jsam_load
+		Eppig/Hampl oocyte	jsam_load
+	Knowles Solter mouse 11.5day limb bud 	Knowles/Solter 11.5 dpc limb bud	jsam_load
+	Knowles Solter mouse 2 cell 	Knowles/Solter 2-cell	jsam_load
+	Knowles Solter mouse 7.5dpc primitive streak 	Knowles/Solter 7.5 dpc primitive streak	jsam_load
+	Knowles Solter mouse 8 cell 	Knowles/Solter 8-cell	jsam_load
+		Knowles/Solter blastocyst	jsam_load
+	Knowles Solter mouse E6.5d whole embryo 	Knowles/Solter E6.5dpc embryo	jsam_load
+	Knowles Solter mouse unfertilized egg 	Knowles/Solter egg	jsam_load
+	Knowles Solter mouse embryonic stem cell 	Knowles/Solter ES cell	jsam_load
+	Knowles Solter mouse inner cell mass 	Knowles/Solter inner cell mass	jsam_load
+	Ko mouse embryo 11.5dpc 	Ko embryo 11.5dpc	jsam_load
+	Life Tech mouse embryo 10.5dpc 10665016 	Life Tech. 10.5dpc embryo (10665-016)	jsam_load
+	Life Tech mouse embryo 13.5dpc 10666014 	Life Tech. 13.5dpc embryo (10666-014)	jsam_load
+	Life Tech mouse embryo 15.5dpc 10667012 	Life Tech. 15.5dpc embryo (10667-012)	jsam_load
+	Life Tech mouse embryo 8.5dpc 10664019 	Life Tech. 8.5dpc embryo (10664-019)	jsam_load
+	Life Tech adult brain 	Life Tech. adult brain	jsam_load
+		McCarrey/Eddy 18-20 day sertoli cell	jsam_load
+		McCarrey/Eddy 18d leptotene+zygotene spermatocyte	jsam_load
+		McCarrey/Eddy 18-day preleptotene spermatocytes	jsam_load
+		McCarrey/Eddy 6-day primitive type A spermatogonia	jsam_load
+		McCarrey/Eddy adult testis	jsam_load
+	McCarrey Eddy round spermatid 	McCarrey/Eddy round spermatid	jsam_load
+	McCarrey Eddy spermatocytes 	McCarrey/Eddy spermatocytes	jsam_load
+		McCarrey/Eddy type A spermatogonia	jsam_load
+	McCarrey Eddy type B spermatogonia 	McCarrey/Eddy type B spermatogonia	jsam_load
+		Melton amplified mouse E10.5/12.5 pancreas 1	jsam_load
+		Melton amplified mouse E16.5 pancreas 3 M16S1-A	jsam_load
+		Melton mouse adult pancreas 1 MAZ1	jsam_load
+		Melton mouse adult pancreas 2 MAZ2	jsam_load
+		Melton mouse E10.5/12.5 pancreas	jsam_load
+		Melton mouse E16.5 pancreas library 2 M16B2	jsam_load
+		Melton mouse E16.5 pancreas M16Z1	jsam_load
+		Melton mouse islets MIZ1	jsam_load
+		Melton mouse newborn pancreas MNZ1	jsam_load
+		Melton normalized mixed mouse pancreas 1 N1-MMS1	jsam_load
+	Mione mouse WTB 	Mione mouse WTB	jsam_load
+		NCI_CGAP_BC1 blood	jsam_load
+		NCI_CGAP_BC2 blood	jsam_load
+		NCI_CGAP_BC3 B-cell	jsam_load
+		NCI_CGAP_Brn63 brain	jsam_load
+		NCI_CGAP_Co24 colon	jsam_load
+		NCI_CGAP_Emb3 primitive streak	jsam_load
+		NCI_CGAP_Ht1 heart	jsam_load
+		NCI_CGAP_Ki15 kidney	jsam_load
+		NCI_CGAP_Kid14 kidney	jsam_load
+		NCI_CGAP_Li10 liver	jsam_load
+		NCI_CGAP_Li9 liver	jsam_load
+		NCI_CGAP_Lu29 lung tumor	jsam_load
+		NCI_CGAP_Lu30 lung tumor	jsam_load
+		NCI_CGAP_Lu33 lung tumor	jsam_load
+		NCI_CGAP_Lu35 lung	jsam_load
+		NCI_CGAP_Mam1 mammary tumor	jsam_load
+		NCI_CGAP_Mam10 mammary gland tumor	jsam_load
+		NCI_CGAP_Mam2 mammary tumor	jsam_load
+		NCI_CGAP_Mam3 mammary tumor	jsam_load
+		NCI_CGAP_Mam4 mammary tumor	jsam_load
+		NCI_CGAP_Mam5 mammary tumor	jsam_load
+		NCI_CGAP_Mam6 mammary tumor	jsam_load
+		NCI_CGAP_MBM2 blood	jsam_load
+		NCI_CGAP_Ov44 ovary	jsam_load
+		NCI_CGAP_SG1 salivary gland	jsam_load
+		NCI_CGAP_SG2 salivary gland	jsam_load
+		NCI_CGAP_SI1 small intestine	jsam_load
+		NCI_CGAP_Skn2 skin	jsam_load
+		NCI_CGAP_Sp2 spleen	jsam_load
+		NCI_CGAP_St1 stomach	jsam_load
+		NCI_CGAP_Te1 testis	jsam_load
+		NIA Mouse 12.5-dpc Male Genital Ridge/Mesonephros cDNA Library (Long)	jsam_load
+		NIA Mouse 7.5-dpc Whole Embryo cDNA Library (Long)	jsam_load
+		NIA Mouse 8.5-dpc Whole Embryo cDNA Library (Long)	jsam_load
+		NIA Mouse 9.5-dpc Whole Embryo	jsam_load
+		NIA Mouse Blastocyst cDNA Library (Long)	jsam_load
+		NIA Mouse Embryonic Germ Cell cDNA Library (Long)	jsam_load
+		NIA Mouse ES Cell (LIF-) cDNA Library (Long)	jsam_load
+		NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-) cDNA Library (Long)	jsam_load
+		NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+) cDNA Library (Long)	jsam_load
+		NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-) cDNA Library   (Long)	jsam_load
+		NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+) cDNA Library (Long)	jsam_load
+		NIA Mouse Mesenchymal Stem Cell cDNA Library (Long)	jsam_load
+		NIA Mouse Neural Stem Cell (Differentiated) cDNA Library (Long)	jsam_load
+		NIA Mouse Neural Stem Cell (Undifferentiated) cDNA Library (Long)	jsam_load
+		NIA Mouse Newborn Kidney cDNA Library1 (Long)	jsam_load
+		NIA Mouse Osteoblast cDNA Library (Long)	jsam_load
+		NIA Mouse Trophoblast Stem Cell cDNA Library (Long)	jsam_load
+		NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	jsam_load
+		NIA Mouse Unfertilized Egg cDNA Library (Long)	jsam_load
+		NIH_BMAP_EF0	jsam_load
+		NIH_BMAP_EG0	jsam_load
+		NIH_BMAP_EG0p	jsam_load
+		NIH_BMAP_EH0	jsam_load
+		NIH_BMAP_EH0p	jsam_load
+		NIH_BMAP_EM0	jsam_load
+		NIH_BMAP_EQ0	jsam_load
+		NIH_BMAP_ER0	jsam_load
+		NIH_BMAP_EV0	jsam_load
+		NIH_BMAP_EW0	jsam_load
+		NIH_BMAP_EX0	jsam_load
+		NIH_BMAP_EY0	jsam_load
+		NIH_BMAP_FAO	jsam_load
+		NIH_BMAP_FB0	jsam_load
+		NIH_BMAP_FC0	jsam_load
+		NIH_BMAP_FD0	jsam_load
+		NIH_BMAP_FI0	jsam_load
+		NIH_BMAP_FO0	jsam_load
+		NIH_BMAP_FP0	jsam_load
+		NIH_BMAP_FR0	jsam_load
+		NIH_MGC_129	jsam_load
+		NIH_MGC_130	jsam_load
+		NIH_MGC_134	jsam_load
+		NIH_MGC_135	jsam_load
+		NIH_MGC_136	jsam_load
+		NIH_MGC_137	jsam_load
+		NIH_MGC_138	jsam_load
+		NIH_MGC_139	jsam_load
+		NIH_MGC_140	jsam_load
+		NIH_MGC_143	jsam_load
+		NIH_MGC_144	jsam_load
+		NIH_MGC_164	jsam_load
+		NIH_MGC_165	jsam_load
+		NIH_MGC_166	jsam_load
+		NIH_MGC_169	jsam_load
+		NIH_MGC_176	jsam_load
+		NIH_MGC_177	jsam_load
+		NIH_MGC_178	jsam_load
+		NIH_MGC_94 retina	jsam_load
+	Perkins LRH 	Perkins LRH	jsam_load
+	Rashbass mouse MOC 11 5 optic cup 	Rashbass MOC-11.5 optic cup	jsam_load
+	Rashbass mouse MOV 9 5 optic vesicle 	Rashbass MOV-9.5 optic vesicle	jsam_load
+	Ren Stubbs mouse thymus 	Ren/Stubbs mouse thymus	jsam_load
+	Schiller mouse AtT20	Schiller AtT-20	jsam_load
+		"Schiller AtT-20, RESP18-induced"	jsam_load
+	Schiller mouse MAC13 	Schiller MAC13	jsam_load
+	Schiller mouse MAC16 	Schiller MAC16	jsam_load
+	Soares mouse urogenital ridge NMUR 	Soares 11.5-12.5 dpc urogenital ridge NMUR	jsam_load
+	Soares mouse 3NME12.5 	Soares 12.5dpc 3NME12.5	jsam_load
+	Soares mouse embryo NbME13.5 14.5 	Soares 13.5-14.5dpc embryo NbME13.5-14.5	jsam_load
+	Soares mouse p3NMF19.5 	Soares 19.5dpc p3NMF19.5	jsam_load
+	Soares mouse embryonic stem cell NMES 	Soares embryonic stem cell NMES	jsam_load
+	Soares mouse NbMH 	Soares heart NbMH	jsam_load
+	Soares mouse hypothalamus NMHy 	Soares hypothalamus NMHy	jsam_load
+	Soares mouse NML 	Soares liver NML	jsam_load
+	Soares mouse lymph node NbMLN 	Soares lymph node NbMLN	jsam_load
+	Soares mouse mammary gland NbMMG 	Soares mammary gland NbMMG	jsam_load
+	Soares mouse mammary gland NMLMG 	Soares mammary gland NMLMG	jsam_load
+		Soares MPR0 prostate	jsam_load
+		Soares nasal process NMKWNP	jsam_load
+		Soares NKWMD mandible	jsam_load
+		Soares NMAP pituitary	jsam_load
+		Soares NMBP bone	jsam_load
+		Soares NMBP1 pituitary	jsam_load
+		Soares NMBP13-15 pituitary	jsam_load
+		Soares NMBP2 pituitary	jsam_load
+		Soares NMBPA pituitary	jsam_load
+		Soares NMEBA branchial arch	jsam_load
+		Soares NMGB B-cell	jsam_load
+		Soares NMGBC B-cell	jsam_load
+		Soares NMIE	jsam_load
+		Soares NMMAX maxillary process	jsam_load
+		Soares NMO1 ovary	jsam_load
+		Soares NMO2 ovary	jsam_load
+		Soares NMPR0 prostate	jsam_load
+	Soares mouse uterus NMPu 	Soares NMPu pregnant uterus	jsam_load
+		Soares NMTC trophoblast	jsam_load
+	Soares mouse placenta 4NbMP13.5 14.5 	Soares placenta 4NbMP13.5-14.5	jsam_load
+	Soares mouse 3NbMS 	Soares spleen 3NbMS	jsam_load
+	Soares 2NbMT 	Soares thymus 2NbMT	jsam_load
+	Stratagene mouse heart (#937316) 	Stratagene 13dpc heart (#937316)	jsam_load
+	Stratagene mouse diaphragm (#937303) 	Stratagene diaphragm (#937303)	jsam_load
+	Stratagene mouse embryonic carcinoma (#937317) 	Stratagene embryonic carcinoma (#937317)	jsam_load
+	Stratagene mouse embryonic carcinomaRA (#937318) 	Stratagene embryonic carcinoma/RA (#937318)	jsam_load
+	Stratagene mouse kidney (#937315) 	Stratagene kidney (#937315)	jsam_load
+	Stratagene mouse lung 937302 	Stratagene lung (#937302)	jsam_load
+	Stratagene mouse macrophage (#937306) 	Stratagene macrophage (#937306)	jsam_load
+	Stratagene mouse melanoma (#937312) 	Stratagene melanoma (#937312)	jsam_load
+	Stratagene mouse skin (#937313) 	Stratagene skin (#937313)	jsam_load
+	Stratagene mouse Tcell 937311 	Stratagene T-cell (#937311)	jsam_load
+	Stratagene mouse testis (#937308) 	Stratagene testis (#937308)	jsam_load
+	Sugano mouse embryo mewa 	Sugano mouse embryo mewa	jsam_load
+	Sugano mouse kidney mkia 	Sugano mouse kidney mkia	jsam_load
+	Sugano mouse liver mlia 	Sugano mouse liver mlia	jsam_load

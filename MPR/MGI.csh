@@ -60,6 +60,7 @@ ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 ./genotypeorder.csh
 ./mutantescell.csh
 ./mpannotations.csh
+./vocheader.csh
 ./splitNotes.py | tee -a ${LOG}
 
 ${ALLLABELLOAD}/alllabel.sh

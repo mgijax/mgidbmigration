@@ -33,6 +33,12 @@ where _Species_key = 1
 and symbol like '%-pending'
 go
 
+update ALL_Allele
+set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1) +
+substring(symbol, charindex("-pending", symbol) + 8, char_length(symbol))
+where symbol like '%pending%'
+go
+
 use $NOMEN
 go
 

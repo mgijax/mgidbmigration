@@ -6,7 +6,7 @@ import string
 import regsub
 import db
 
-DEBUG = 1
+DEBUG = 0
 
 passwordFileName = os.environ['DBPASSWORDFILE']
 
@@ -55,6 +55,8 @@ print 'split Allele notes'
 results = db.sql('select max(_Note_key) + 1 from MGI_Note', 'auto')
 noteKey = results[0]['']
 
+# 'and a._Object_key = 17309 '
+
 db.sql('select distinct n.*, ' + \
 	'cdate = convert(char(10), n.creation_date, 101), ' + \
 	'mdate = convert(char(10), n.modification_date, 101) ' + \
@@ -91,7 +93,9 @@ for r in results:
 
 for k in notes.keys():
 
-    cmds = []
+    # delete the old note
+    db.sql('delete from MGI_Note where _Note_key = %s' % (k), None, execute = not DEBUG)
+
     n = notes[k]
     allNotes = string.rstrip(string.join(n, ''))
 
@@ -103,13 +107,7 @@ for k in notes.keys():
     for t in tokens:
        if len(t) == 0:
 	   continue
-       cmds.append(createNewNote(k, string.strip(t)))
-
-    # add the new notes
-    db.sql(cmds, None, execute = not DEBUG)
-
-    # delete the old note
-    db.sql('delete from MGI_Note where _Note_key = %s' % (k), None, execute = not DEBUG)
+       db.sql(createNewNote(k, string.strip(t)), None, execute = not DEBUG)
 
 db.useOneConnection(0)
 

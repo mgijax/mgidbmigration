@@ -41,7 +41,7 @@ go
 declare @sKey integer
 select @sKey = max(_ProbeSpecies_key) + 1 from PRB_Species
 
-insert into PRB_Species values(@sKey, 'E. coli', getdate(), getdate())
+insert into PRB_Species values(@sKey, 'bacteria', getdate(), getdate())
 insert into PRB_Species values(@sKey + 1, 'jellyfish', getdate(), getdate())
 go
 

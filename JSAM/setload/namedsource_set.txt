@@ -1,174 +1,48 @@
-Library Name	Clone Set	Image/NIA library Name	Issue	Note
 70Z/3	none	70Z/3		
-Amplified Melton mouse islets 1 MIS1-A	IMAGE	Amplified Melton mouse islets 1 MIS1-A		
-Baker mouse embryo e6.5	IMAGE	Baker mouse embryo e6.5		
-Baker mouse embryo e7.5	IMAGE	Baker mouse embryo e7.5		
-Barstead bowel MPL_RB9	IMAGE	Barstead MPL-RB9		
-Barstead colon MPL-RB6	IMAGE	Barstead MPL-RB6		
-Barstead heart MPL-RB3	IMAGE	Barstead MPL-RB3		
-Barstead irradiated colon MPL-RB7	IMAGE	Barstead MPL-RB7		
-Barstead kidney MPL-RB1	IMAGE	Barstead MPL-RB1		
-Barstead lung MPL-RB2	IMAGE	Barstead MPL-RB2		
-Barstead MPL-RB10 spleen	IMAGE	Barstead MPL-RB10		
-Barstead MPL-RB11 testis	IMAGE	Barstead MPL-RB11		
-Barstead MPL-RB12 brain	IMAGE	Barstead MPL-RB12		
-Barstead MPL-RB13 muscle	IMAGE	Barstead MPL-RB13		
-Barstead MPL-RB14 muscle	IMAGE	Barstead MPL-RB14		
-Barstead MPL-RB15 pachytene	IMAGE	Barstead MPL-RB15
-Barstead MPL_RB16	IMAGE	Barstead MPL_RB16
-Barstead pooled organs MPL-RB4	IMAGE	Barstead MPL-RB4
-Barstead stromal cell line MPL-RB5	IMAGE	Barstead MPL-RB5
-Barstead stromal cell line MPL-RB8	IMAGE	Barstead MPL-RB8
-Beddington embryonic region	IMAGE	Beddington embryonic region
-Beier day 0 kidney	IMAGE	Beier day 0 kidney
-Beier day 7 kidney	IMAGE	Beier day 7 kidney
 CITB	none	CITB
-CITB CJ7B	none	CITB CJ7B
 CITB-1	none	CITB-1
 CJ7	none	CJ7
-Clontech ML3000a	none	Clontech ML3000a
-Clontech ML3000b	none	Clontech ML3000b
-Clontech ML5002b	none	Clontech ML5002b
-Clontech ML5002b	none	Clontech ML5002b
-Clontech ML5004t	none	Clontech ML5004t		
-Eppig/Hampl oocyte	IMAGE	Eppig/Hampl oocyte		
-ES-129/SvJ I	none	ES-129/SvJ I		
-Genome Systems BAC library	none	Genome Systems BAC library		
+Library Name	Clone Set	Image/NIA library Name	Issue	Note
 ICRF	none	ICRF		
-Incyte	none	Incyte		
-Kaestner ngn3 wt	IMAGE	Kaestner ngn3 wt		
-Kaestner ngn3 -/-	IMAGE	Kaestner ngn3 -/-		
-Knowles Solter mouse blastocyst B1	IMAGE	Knowles/Solter blastocyst		Duplicate of Knowles/Soulter blastocyst, see below.
-Knowles Solter mouse blastocyst B3	IMAGE	Knowles/Solter blastocyst		Duplicate of Knowles/Soulter blastocyst, see below.
-Knowles/Solter 11.5 dpc limb bud	IMAGE	Knowles/Solter 11.5 dpc limb bud		
+Barstead MPL_RB16	IMAGE	Barstead MPL_RB16
+Eppig/Hampl oocyte	IMAGE	Eppig/Hampl oocyte		
 Knowles/Solter 2-cell	IMAGE	Knowles/Solter 2-cell		
-Knowles/Solter 7.5 dpc primitive streak	IMAGE	Knowles/Solter 7.5 dpc primitive streak		
 Knowles/Solter 8-cell	IMAGE	Knowles/Solter 8-cell		
 Knowles/Solter blastocyst	IMAGE	Knowles/Solter blastocyst		B1 and B3 (see above) libraries are different size selections combined to make a single library.  Image list only has the combined library and specifically sattes the two size selections are pooled implying there may not be separate B1 or B3 libraries.
-Knowles/Solter E6.5dpc embryo	IMAGE	Knowles/Solter E6.5dpc embryo		
 Knowles/Solter egg	IMAGE	Knowles/Solter egg		
-Knowles/Solter ES cell	IMAGE	Knowles/Solter ES cell		
-Knowles/Solter inner cell mass	IMAGE	Knowles/Solter inner cell mass		
-Ko embryo 11.5dpc	Image	Ko embryo 11.5dpc		
-Ko Mouse 16-cell Morula cDNA Library	NIA	Mouse 16-cell Stage Embryo cDNA Library		
-Ko Mouse 2-cell Embryo cDNA Library	NIA	Mouse 2-Cell Stage Embryo cDNA Library		
-Ko Mouse 3.5-dpc Blastocyst cDNA Library	NIA	Mouse Blastocyst Stage Embryo cDNA Library		
-Ko Mouse 4-cell Embryo cDNA Library	NIA	Mouse 4-Cell Stage Embryo cDNA Library		
-Ko Mouse 7.5 dpc extraembryonic cDNA	NIA	Mouse E7.5 Extraembryonic Part cDNA Library		
-Ko Mouse 8-cell Embryo cDNA Library	NIA	Mouse 8 -Cell Stage Embryo cDNA Library		
-Ko mouse embryo 11.5 dpc	NIA	Ko mouse embryo 11.5 dpc		 Can't find this library in NIA list.
-Ko Mouse Fertilized Egg cDNA Library	NIA	Mouse Fertilized Egg cDNA Library		
-Ko Mouse Unfertilized Egg cDNA Library	NIA	Mouse Unfertilized Egg cDNA Library		
-Life Tech. 10.5dpc embryo (10665-016)	Image	Life Tech 10.5 dpc embryo (10665-016)		
-Life Tech. 13.5dpc embryo (10666-014)	Image	Life Tech 13.5 dpc embryo (10666-014)		
-Life Tech. 15.5dpc embryo (10667-012)	Image	Life Tech 15.5 dpc embryo (10667-012)   		
-Life Tech. 8.5dpc embryo (10664-019)	Image	Life Tech 8.5 dpc embryo (10664-019)
-Life Tech. adult brain	none	Life Tech mouse brain (see comment)
-McCarrey/Eddy 18-20 day sertoli cell	IMAGE	McCarrey/Eddy 18-20 day sertoli cell
-McCarrey/Eddy 18-day preleptotene spermatocytes	IMAGE	McCarrey/Eddy 18-day preleptotene spermatocytes
-McCarrey/Eddy 18d leptotene+zygotene spermatocyte	IMAGE	McCarrey/Eddy 18-day leptotene and zygotene spermatocyte
-McCarrey/Eddy 6-day primitive type A spermatogonia	IMAGE	McCarrey/Eddy 6-day primitive type A spermatogonia
-McCarrey/Eddy adult testis	IMAGE	McCarrey/Eddy adult testis
-McCarrey/Eddy round spermatid	IMAGE	McCarrey/Eddy round spermatid
 McCarrey/Eddy spermatocytes	IMAGE	McCarrey/Eddy spermatocytes
-McCarrey/Eddy type A spermatogonia	IMAGE	McCarrey/Eddy type A spermatogonia
-McCarrey/Eddy type B spermatogonia	IMAGE	McCarrey/Eddy type B spermatogonia
-Melton amplified mouse E10.5/12.5 pancreas 1	IMAGE	Melton amplified mouse E10.5/12.5 pancreas 1
-Melton amplified mouse E16.5 pancreas 3 M16S1-A	IMAGE	Melton amplified mouse E16.5 pancreas 3 M16S1-A
-Melton mouse adult pancreas 1 MAZ1	IMAGE	Melton mouse adult pancreas 1 MAZ1
-Melton mouse adult pancreas 2 MAZ2	IMAGE	Melton mouse adult pancreas 2 MAZ2
-Melton mouse E10.5/12.5 pancreas	IMAGE	Melton mouse E10.5/12.5 pancreas
-Melton mouse E16.5 pancreas library 2 M16B2	IMAGE	Melton mouse E16.5 pancreas library 2 M16B2
-Melton mouse E16.5 pancreas M16Z1	IMAGE	Melton mouse E16.5 pancreas M16Z1
-Melton mouse islets MIZ1	IMAGE	Melton mouse islets MIZ1
-Melton mouse newborn pancreas MNZ1	IMAGE	Melton mouse newborn pancreas MNZ1
-Melton normalized mixed mouse pancreas 1 N1-MMS1	IMAGE	Melton normalized mixed mouse pancreas 1 N1-MMS1
-Mione mouse WTB	IMAGE	Mione mouse WTB
-MITII	none	MITII
-ML3001b	none	ML3001b
-Mouse midgestation cDNA library	none	Mouse midgestation cDNA library
-mouse Rip Tag insulinoma cDNA library	none	mouse Rip Tag insulinoma cDNA library
-MPMGc121	none	MPMGc121
 NCI_CGAP_BC1 blood	IMAGE	NCI_CGAP_BC1
 NCI_CGAP_BC2 blood	IMAGE	NCI_CGAP_BC2
 NCI_CGAP_BC3 B-cell	IMAGE	NCI_CGAP_BC3
 NCI_CGAP_Brn63 brain	IMAGE	NCI_CGAP_Brn63
 NCI_CGAP_Co24 colon	IMAGE	NCI_CGAP_Co24
-NCI_CGAP_Emb3 primitive streak	IMAGE	NCI_CGAP_Emb3		
 NCI_CGAP_Ht1 heart	IMAGE	NCI_CGAP_Ht1		
 NCI_CGAP_Ki15 kidney	IMAGE	NCI_CGAP_Ki15		
 NCI_CGAP_Kid14 kidney	IMAGE	NCI_CGAP_Kid14		
 NCI_CGAP_Li10 liver	IMAGE	NCI_CGAP_Li10		
-NCI_CGAP_Li9	IMAGE	NCI_CGAP_Li9		
 NCI_CGAP_Li9 liver	IMAGE	NCI_CGAP_Li9	Duplication	Duplication of NCI_CGAP_Li9
-NCI_CGAP_Lu29 lung tumor	IMAGE	NCI_CGAP_Lu29		
-NCI_CGAP_Lu30 lung tumor	IMAGE	NCI_CGAP_Lu30		
-NCI_CGAP_Lu33 lung tumor	IMAGE	NCI_CGAP_Lu33		
 NCI_CGAP_Lu35 lung	IMAGE	NCI_CGAP_Lu35		
-NCI_CGAP_Mam1	IMAGE	NCI_CGAP_Mam1		
-NCI_CGAP_Mam1 mammary tumor	IMAGE	NCI_CGAP_Mam1	Duplication	This is the same as IMAGE Library as: NCI_CGAP_Mam1, above.
-NCI_CGAP_Mam10 mammary gland tumor	IMAGE	NCI_CGAP_Mam10		
-NCI_CGAP_Mam2 mammary tumor	IMAGE	NCI_CGAP_Mam2		
-NCI_CGAP_Mam3 mammary tumor	IMAGE	NCI_CGAP_Mam3		
-NCI_CGAP_Mam4 mammary tumor	IMAGE	NCI_CGAP_Mam4		
-NCI_CGAP_Mam5 mammary tumor	IMAGE	NCI_CGAP_Mam5		
-NCI_CGAP_Mam6	IMAGE	NCI_CGAP_Mam6	Duplication	This is the same as IMAGE Library as: NCI_CGAP_Mam6 mammary tumor, see below
-NCI_CGAP_Mam6 mammary tumor	IMAGE	NCI_CGAP_Mam6	Duplication	This is the same as IMAGE Library as: NCI_CGAP_Mam6, above.
 NCI_CGAP_MBM2 blood	IMAGE	NCI_CGAP_MBM2		
 NCI_CGAP_Ov44 ovary	IMAGE	NCI_CGAP_Ov44		
-NCI_CGAP_SG1 salivary gland	IMAGE	NCI_CGAP_SG1		
-NCI_CGAP_SG2 salivary gland	IMAGE	NCI_CGAP_SG2		
-NCI_CGAP_SI1 small intestine	IMAGE	NCI_CGAP_SI1		
 NCI_CGAP_Skn2 skin	IMAGE	NCI_CGAP_Skn2		
 NCI_CGAP_Sp2 spleen	IMAGE	NCI_CGAP_Sp2		
 NCI_CGAP_St1 stomach	IMAGE	NCI_CGAP_St1		
 NCI_CGAP_Te1 testis	IMAGE	NCI_CGAP_Te1		
-NIA Mouse 12.5 dpc Male Genital Ridge/Mesonephros	IMAGE, NIA	Mouse 12.5-dpc Male Genital Ridge/Mesonephros cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse 13.5 dpc Ventral Midbrain Dopamine Neuron	NIA	Mouse 13.5-dpc Ventral Midbrain Dopamine Neuron cDNA Library (Long)	Issue (NIA)	
-NIA Mouse 16-cell Stage Embryo	NIA	Mouse 16-Cell Stage Embryo cDNA Library	Issue (NIA)	
-NIA Mouse 2-cell Stage Embryo	NIA	Mouse 2-Cell Stage Embryo cDNA Library	Issue (NIA)	
-NIA Mouse 4-cell Stage Embryo	NIA	Mouse 4-Cell Stage Embryo cDNA Library	Issue (NIA)	
-NIA Mouse 7.5 dpc Whole Embryo (Long)	IMAGE, NIA	Mouse 7.5-dpc Whole Embryo cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse 8-cell Stage Embryo	NIA	Mouse 8 -Cell Stage Embryo cDNA Library	Issue (NIA)	
-NIA Mouse 8.5 dpc Whole Embryo (Long)	IMAGE, NIA	Mouse 8.5-dpc Whole Embryo cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse 9.5-dpc Whole Embryo	IMAGE, NIA	NIA Mouse 9.5-dpc Whole Embryo	Issue (NIA, IMAGE)	Not on NIA or Image list
-NIA Mouse Blastocyst (Long)	IMAGE, NIA	Mouse Blastocyst cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse Blastocyst Stage Embryo	NIA	Mouse Blastocyst Stage Embryo cDNA Library	Duplication	
-NIA Mouse E12.5 Female Mesonephros	NIA	Mouse E12.5 Female Mesonephros cDNA Library	Issue (NIA)	
-NIA Mouse E7.5 Embryonic Part	NIA	Mouse E7.5 Embryonic Part cDNA Library	Issue (NIA)	
-NIA Mouse E7.5 Extraembryonic Part	NIA	Mouse E7.5 Extraembryonic Part cDNA Library	Issue (NIA)	
-NIA Mouse Embryonic Germ Cell	IMAGE, NIA	NIA Mouse Embryonic Germ Cell	Issue (NIA, IMAGE)	Not on NIA or Image list
-NIA Mouse ES Cell (LIF-) (Long)	IMAGE, NIA	Mouse ES Cell (LIF-) cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse ES Cell (LIF-) (Short)	NIA	Mouse ES Cell (LIF-) cDNA Library Short	Issue (NIA)	
-NIA Mouse Fertilized Egg	NIA	Mouse Fertilized Egg cDNA Library	Issue (NIA)	
-NIA Mouse Germinal Center B Cell	NIA	Mouse Germinal Center B Cell cDNA Library	Issue (NIA)	
-NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+) cDNA Library (Long)	Issue (NIA)	
-NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-) cDNA Library (Long)	Issue (NIA)	
-NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+) cDNA Library (Long)	Issue (NIA)	
-NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-) cDNA Library (Long)	Issue (NIA)	
-NIA Mouse Mesenchymal Stem Cell (Long)	IMAGE, NIA	Mouse Mesenchymal Stem Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse Neural Stem Cell (Differentiated)	IMAGE, NIA	NIA Mouse Neural Stem Cell (Differentiated)	Issue (NIA, IMAGE)	Not on NIA or Image list
-NIA Mouse Neural Stem Cell (Doublets)	IMAGE, NIA	NIA Mouse Neural Stem Cell (Doublets)	Issue (NIA, IMAGE)	Not on NIA or Image list
-NIA Mouse Newborn Brain	NIA	Mouse Newborn Brain cDNA Library	Issue (NIA)	
-NIA Mouse Newborn Heart	NIA	Mouse Newborn Heart cDNA Library	Issue (NIA)	
-NIA Mouse Newborn Kidney (Long)	IMAGE, NIA	Newborn Kidney cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse newborn Ovary	NIA	Mouse newborn Ovary cDNA Library	Issue (NIA)	
-NIA Mouse Osteoblast (Long)	IMAGE, NIA	Mouse Osteoblast cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse Trophoblast Stem Cell (Long)	IMAGE, NIA	Mouse Trophoblast Stem Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse Trophoblast Stem Cell (Short)	NIA	Mouse Trophoblast Stem Cell cDNA Library (Short)	Issue (NIA)	
-NIA Mouse Undifferentiated ES Cell (Long)	IMAGE, NIA	Mouse Undifferentiated ES Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse Undifferentiated ES Cell (Short)	NIA	Mouse Undifferentiated ES Cell cDNA Library (Short)	Issue (NIA)	
-NIA Mouse Unfertilized Egg	NIA	Mouse Unfertilized Egg cDNA Library	Duplication
-NIA Mouse Unfertilized Egg (Long)	IMAGE, NIA	Mouse Unfertilized Egg cDNA Library(Long)	Issue (NIA, IMAGE)
-NIA Newborn Kidney (Long)	NIA	Newborn Kidney cDNA Library (Long)	Duplication
-NIA Newborn Kidney (Short)	NIA	Newborn Kidney cDNA Library (Short)	Issue (NIA)
+NIH_MGC_94 retina	IMAGE	NIH_MGC_94
+Perkins LRH	IMAGE	Perkins LRH
+Rashbass MOC-10.5	IMAGE	Rashbass MOC-10.5
+Schiller AtT-20	IMAGE	Schiller AtT-20	
+Schiller MAC13	IMAGE	Schiller MAC13	
+Schiller MAC16	IMAGE	Schiller MAC16	
+Soares NMIE	IMAGE	Soares NMIE		
+Incyte	none	Incyte		
+MITII	none	MITII
+ML3001b	none	ML3001b
+MPMGc121	none	MPMGc121
+NCI_CGAP_Li9	IMAGE	NCI_CGAP_Li9		
+NCI_CGAP_Mam1	IMAGE	NCI_CGAP_Mam1		
+NCI_CGAP_Mam6	IMAGE	NCI_CGAP_Mam6	Duplication	This is the same as IMAGE Library as: NCI_CGAP_Mam6 mammary tumor, see below
 NICHD_MM_Hyp1	IMAGE	NICHD_MM_Hyp1	
-NIH-BMAP-M-S1	none	NIH_BMAP_M_S1	
-NIH-BMAP-M-S2	none	NIH_BMAP_M_S2	
-NIH-BMAP-M-S3.2	none	NIH_BMAP_M_S3.2	
-NIH-BMAP-M-S4	none	NIH_BMAP_M_S4	
-NIH-BMAP-MBG	none	NIH_BMAP_MBG	
-NIH-BMAP-MPG	none	NIH_BMAP_MPG	
 NIH_BMAP_EF0	IMAGE	NIH_BMAP_EF0	
 NIH_BMAP_EG0	IMAGE	NIH_BMAP_EG0	
 NIH_BMAP_EG0p	IMAGE	NIH_BMAP_EG0p	
@@ -210,8 +84,14 @@ NIH_BMAP_HE0	IMAGE	NIH_BMAP_HE0
 NIH_BMAP_HJ0	IMAGE	NIH_BMAP_HJ0	
 NIH_BMAP_HK0	IMAGE	NIH_BMAP_HK0	
 NIH_BMAP_HL0	IMAGE	NIH_BMAP_HL0	
+NIH-BMAP-M-S1	none	NIH_BMAP_M_S1	
+NIH-BMAP-M-S2	none	NIH_BMAP_M_S2	
 NIH_BMAP_M_S3.1	none	NIH_BMAP_M_S3.1	
+NIH-BMAP-M-S3.2	none	NIH_BMAP_M_S3.2	
+NIH-BMAP-M-S4	none	NIH_BMAP_M_S4	
+NIH-BMAP-MBG	none	NIH_BMAP_MBG	
 NIH_BMAP_MCE	none	NIH_BMAP_MCE	
+NIH-BMAP-MPG	none	NIH_BMAP_MPG	
 NIH_MGC_129	IMAGE	NIH_MGC_129	
 NIH_MGC_130	IMAGE	NIH_MGC_130	
 NIH_MGC_134	IMAGE	NIH_MGC_134	
@@ -238,26 +118,82 @@ NIH_MGC_203	IMAGE	NIH_MGC_203
 NIH_MGC_204	IMAGE	NIH_MGC_204
 NIH_MGC_222	IMAGE	NIH_MGC_222
 NIH_MGC_223	IMAGE	NIH_MGC_223
-NIH_MGC_94 retina	IMAGE	NIH_MGC_94
+CITB CJ7B	none	CITB CJ7B
+Clontech ML3000a	none	Clontech ML3000a
+Clontech ML3000b	none	Clontech ML3000b
+Clontech ML5002b	none	Clontech ML5002b
+Clontech ML5002b	none	Clontech ML5002b
+Clontech ML5004t	none	Clontech ML5004t		
+ES-129/SvJ I	none	ES-129/SvJ I		
 Not Applicable	none	Not Applicable
 Not Specified	none	Not Specified
-Organ of Corti	IMAGE	Organ of Corti
+Research Genetics	none	Research Genetics
+Research Genetics	none	Research Genetics
+Stratagene #936308	none	Stratagene #936308		Stratagenes gives this data, Mouse cDNA, Spleen LibraryC57 Black/6, female, 8 - 12 weeks, Primer: OR, Vector: Lambda ZAP½ II vector, Average Insert Size: 1.0 kb.  Doesn't match any Image or NIA libraries.
+Stratagene #936309	none	Stratagene #936309		
+Stratagene #946305	none	Stratagene #946305		
+Stratagene #946309	none	Stratagene #946309		
+Stratagene #961301	none	Stratagene #961301		
 pBeloBAC11	none	pBeloBAC11
-Perkins LRH	IMAGE	Perkins LRH
 pWE15	none	pWE15
-Rashbass MOC-10.5	IMAGE	Rashbass MOC-10.5
-Rashbass MOC-11.5 optic cup	IMAGE	Rashbass MOC-11.5
-Rashbass MOV-9.5 optic vesicle	IMAGE	Rashbass MOV-9.5
-Ren/Stubbs mouse thymus	IMAGE	Ren/Stubbs mouse thymus
-Research Genetics	none	Research Genetics
-Research Genetics	none	Research Genetics
-Research Genetics RII	none	Research Genetics RII
-Research Genetics RII	none	Research Genetics RII
-Research Genetics RII	none	Research Genetics RII
-Research Genetics RII	none	Research Genetics RII
-Research Genetics RII	none	Research Genetics RII
-Research Genetics RII	none	Research Genetics RII
-Research Genetics RII	none	Research Genetics RII
+RPCI-21	none	RPCI-21	
+RPCI-22	none	RPCI-22	
+RPCI-23	RPCI-23	RPCI-23	
+RPCI-24	RPCI-24	RPCI-24	
+Stratagene	none	Stratagene		
+WI/MIT-820m	none	WI/MIT-820m
+YmWIBR	none	YmWIBR
+Stratagene lung (#937302)	IMAGE	Stratagene mouse lung (937302)	(IMAGE issue)	
+Stratagene diaphragm (#937303)	IMAGE	Stratagene mouse diaphragm (937303)	(IMAGE issue)	
+Stratagene macrophage (#937306)	IMAGE	Stratagene mouse macrophage (937306)	(IMAGE issue)	
+Stratagene testis (#937308)	IMAGE	Stratagene mouse testes	(IMAGE issue)	
+Stratagene T-cell (#937311)	IMAGE	Stratagene mouse T-cell (937311)	(IMAGE issue)	
+Stratagene melanoma (#937312)	IMAGE	Stratagene mouse melanoma (937312)	(IMAGE issue)	
+Stratagene skin (#937313)	IMAGE	Stratagene mouse skin	(IMAGE issue)	
+Stratagene kidney (#937315)	IMAGE	Stratagene mouse kidney (937315)	(IMAGE issue)	
+Kaestner ngn3 -/-	IMAGE	Kaestner ngn3 -/-		
+Beier day 0 kidney	IMAGE	Beier day 0 kidney
+Life Tech. 10.5dpc embryo (10665-016)	Image	Life Tech 10.5 dpc embryo (10665-016)		
+Ko embryo 11.5dpc	Image	Ko embryo 11.5dpc		
+NIA Mouse 12.5 dpc Male Genital Ridge/Mesonephros	IMAGE, NIA	Mouse 12.5-dpc Male Genital Ridge/Mesonephros cDNA Library (Long)	Issue (NIA, IMAGE)	
+Stratagene mouse 129/Sv genomic (#946306)	none	Stratagene mouse 129/Sv genomic (#946306)		
+NIA Mouse 13.5 dpc Ventral Midbrain Dopamine Neuron	NIA	Mouse 13.5-dpc Ventral Midbrain Dopamine Neuron cDNA Library (Long)	Issue (NIA)	
+Life Tech. 13.5dpc embryo (10666-014)	Image	Life Tech 13.5 dpc embryo (10666-014)		
+Life Tech. 15.5dpc embryo (10667-012)	Image	Life Tech 15.5 dpc embryo (10667-012)   		
+Ko Mouse 16-cell Morula cDNA Library	NIA	Mouse 16-Cell Stage Embryo cDNA Library		
+Ko Mouse 2-cell Embryo cDNA Library	NIA	Mouse 2-Cell Stage Embryo cDNA Library		
+Soares thymus 2NbMT	IMAGE	Soares 2NbMT		
+Ko Mouse 3.5-dpc Blastocyst cDNA Library	NIA	Mouse Blastocyst Stage Embryo cDNA Library		
+Soares spleen 3NbMS	IMAGE	Soares 3NbMS		
+Soares 12.5dpc 3NME12.5	IMAGE	Soares 3NME12.5	(IMAGE issue)
+Ko Mouse 4-cell Embryo cDNA Library	NIA	Mouse 4-Cell Stage Embryo cDNA Library		
+NIA Mouse 4-cell Stage Embryo	NIA	Mouse 4-Cell Stage Embryo cDNA Library	Issue (NIA)	
+Soares placenta 4NbMP13.5-14.5	IMAGE	Soares 4NbMP13.5-14.5		
+Beier day 7 kidney	IMAGE	Beier day 7 kidney
+Ko Mouse 7.5 dpc extraembryonic cDNA	NIA	Mouse E7.5 Extraembryonic Part cDNA Library		
+NIA Mouse 7.5 dpc Whole Embryo (Long)	IMAGE, NIA	Mouse 7.5-dpc Whole Embryo cDNA Library (Long)	Issue (NIA, IMAGE)	
+Ko Mouse 8-cell Embryo cDNA Library	NIA	Mouse 8 -Cell Stage Embryo cDNA Library		
+NIA Mouse 8-cell Stage Embryo	NIA	Mouse 8 -Cell Stage Embryo cDNA Library	Issue (NIA)	
+NIA Mouse 8.5 dpc Whole Embryo (Long)	IMAGE, NIA	Mouse 8.5-dpc Whole Embryo cDNA Library (Long)	Issue (NIA, IMAGE)	
+Life Tech. 8.5dpc embryo (10664-019)	Image	Life Tech 8.5 dpc embryo (10664-019)
+NIA Mouse 9.5-dpc Whole Embryo	IMAGE, NIA	NIA Mouse 9.5-dpc Whole Embryo	Issue (NIA, IMAGE)	Not on NIA or Image list
+McCarrey/Eddy type A spermatogonia	IMAGE	McCarrey/Eddy type A spermatogonia
+Life Tech. adult brain	none	Life Tech mouse brain (see comment)
+Melton mouse adult pancreas 1 MAZ1	IMAGE	Melton mouse adult pancreas 1 MAZ1
+Melton mouse adult pancreas 2 MAZ2	IMAGE	Melton mouse adult pancreas 2 MAZ2
+McCarrey/Eddy type B spermatogonia	IMAGE	McCarrey/Eddy type B spermatogonia
+Soares NMGB B-cell	IMAGE	Soares NMGB		
+Soares NMGBC B-cell	IMAGE	Soares NMGBC		
+Genome Systems BAC library	none	Genome Systems BAC library		
+NIA Mouse Blastocyst (Long)	IMAGE, NIA	Mouse Blastocyst cDNA Library (Long)	Issue (NIA, IMAGE)	
+NIA Mouse Blastocyst Stage Embryo	NIA	Mouse Blastocyst Stage Embryo cDNA Library	Duplication	
+Soares NMBP bone	IMAGE	Soares NMBP
+Barstead MPL-RB12 brain	IMAGE	Barstead MPL-RB12		
+Sugano mouse brain mncb	none	Sugano mouse brain mncb		Not an IMAGE library.
+Soares NMEBA branchial arch	IMAGE	Soares NMEBA		
+Stratagene embryonic carcinoma (#937317)	IMAGE	Stratagene embryonic carcinoma (937317)	(IMAGE issue)	
+Stratagene embryonic carcinoma/RA (#937318)	IMAGE	Stratagene embry. carcinoma/RA (937318)	(IMAGE issue)	
+Mouse midgestation cDNA library	none	Mouse midgestation cDNA library
 Riken mouse cDNA library 06-100	RIKEN (FANTOM), RIKEN	Riken mouse cDNA library 06-100
 Riken mouse cDNA library 07-100	RIKEN (FANTOM), RIKEN	Riken mouse cDNA library 07-100
 Riken mouse cDNA library 09-100	RIKEN (FANTOM), RIKEN	Riken mouse cDNA library 09-100
@@ -546,74 +482,136 @@ Riken mouse cDNA library G6-300-BF	RIKEN (FANTOM), RIKEN	Riken mouse cDNA librar
 Riken mouse cDNA library G6-300-BG	RIKEN (FANTOM), RIKEN	Riken mouse cDNA library G6-300-BG	
 Riken mouse cDNA library G6-300-BH	RIKEN (FANTOM), RIKEN	Riken mouse cDNA library G6-300-BH	
 Riken mouse cDNA library G6-300-G6	RIKEN (FANTOM), RIKEN	Riken mouse cDNA library G6-300-G6	
-RPCI-21	none	RPCI-21	
-RPCI-22	none	RPCI-22	
-RPCI-23	RPCI-23	RPCI-23	
-RPCI-24	RPCI-24	RPCI-24	
-Schiller AtT-20	IMAGE	Schiller AtT-20	
-Schiller AtT-20, RESP18-induced	IMAGE	Schiller AtT-20, RESP18 induced	
-Schiller MAC13	IMAGE	Schiller MAC13	
-Schiller MAC16	IMAGE	Schiller MAC16	
+Knowles/Solter ES cell	IMAGE	Knowles/Solter ES cell		
+Barstead stromal cell line MPL-RB5	IMAGE	Barstead MPL-RB5
+Barstead stromal cell line MPL-RB8	IMAGE	Barstead MPL-RB8
+Knowles/Solter inner cell mass	IMAGE	Knowles/Solter inner cell mass		
+Barstead irradiated colon MPL-RB7	IMAGE	Barstead MPL-RB7		
+Organ of Corti	IMAGE	Organ of Corti
+McCarrey/Eddy 18-20 day sertoli cell	IMAGE	McCarrey/Eddy 18-20 day sertoli cell
+Knowles/Solter 11.5 dpc limb bud	IMAGE	Knowles/Solter 11.5 dpc limb bud		
+Knowles/Solter 7.5 dpc primitive streak	IMAGE	Knowles/Solter 7.5 dpc primitive streak		
 Soares 11.5-12.5 dpc urogenital ridge NMUR	IMAGE	Soares NMUR	
-Soares 12.5dpc 3NME12.5	IMAGE	Soares 3NME12.5	(IMAGE issue)
+Melton mouse E10.5/12.5 pancreas	IMAGE	Melton mouse E10.5/12.5 pancreas
+NIA Mouse E12.5 Female Mesonephros	NIA	Mouse E12.5 Female Mesonephros cDNA Library	Issue (NIA)	
+Melton mouse E16.5 pancreas library 2 M16B2	IMAGE	Melton mouse E16.5 pancreas library 2 M16B2
+Melton mouse E16.5 pancreas M16Z1	IMAGE	Melton mouse E16.5 pancreas M16Z1
+NIA Mouse E7.5 Embryonic Part	NIA	Mouse E7.5 Embryonic Part cDNA Library	Issue (NIA)	
+NIA Mouse E7.5 Extraembryonic Part	NIA	Mouse E7.5 Extraembryonic Part cDNA Library	Issue (NIA)	
+Knowles/Solter E6.5dpc embryo	IMAGE	Knowles/Solter E6.5dpc embryo		
+Ko mouse embryo 11.5 dpc	NIA	Ko mouse embryo 11.5 dpc		 Can't find this library in NIA list.
+Baker mouse embryo e6.5	IMAGE	Baker mouse embryo e6.5		
+Baker mouse embryo e7.5	IMAGE	Baker mouse embryo e7.5		
+Sugano mouse embryo mewa	IMAGE	Sugano mouse embryo mewa
 Soares 13.5-14.5dpc embryo NbME13.5-14.5	IMAGE	Soares NbME13.5-14.5	
-Soares 19.5dpc p3NMF19.5	IMAGE	Soares p3NMF19.5	(IMAGE issue)
-Soares embryonic stem cell NMES	IMAGE	Soares NMES
+NIA Mouse Embryonic Germ Cell	IMAGE, NIA	NIA Mouse Embryonic Germ Cell	Issue (NIA, IMAGE)	Not on NIA or Image list
+NIA Mouse ES Cell (LIF-) (Long)	IMAGE, NIA	Mouse ES Cell (LIF-) cDNA Library (Long)	Issue (NIA, IMAGE)	
+NIA Mouse ES Cell (LIF-) (Short)	NIA	Mouse ES Cell (LIF-) cDNA Library Short	Issue (NIA)	
+NIA Mouse Fertilized Egg	NIA	Mouse Fertilized Egg cDNA Library	Issue (NIA)	
+Ko Mouse Fertilized Egg cDNA Library	NIA	Mouse Fertilized Egg cDNA Library		
+Whitehead/MIT Mouse Genomic YAC Library	none	Whitehead/MIT Mouse Genomic YAC Library
+NIA Mouse Germinal Center B Cell	NIA	Mouse Germinal Center B Cell cDNA Library	Issue (NIA)	
+NCI_CGAP_SG1 salivary gland	IMAGE	NCI_CGAP_SG1		
+NCI_CGAP_SG2 salivary gland	IMAGE	NCI_CGAP_SG2		
+Soares mammary gland NbMMG	IMAGE	Soares NbMMG
+Soares mammary gland NMLMG	IMAGE	Soares  NMLMG
+NCI_CGAP_Mam10 mammary gland tumor	IMAGE	NCI_CGAP_Mam10		
+Stratagene 13dpc heart (#937316)	IMAGE	Stratagene mouse heart (937316)	(IMAGE issue)	
+NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+) cDNA Library (Long)	Issue (NIA)	
+NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-) cDNA Library (Long)	Issue (NIA)	
+NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+) cDNA Library (Long)	Issue (NIA)	
+NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-) cDNA Library (Long)	Issue (NIA)	
+NCI_CGAP_SI1 small intestine	IMAGE	NCI_CGAP_SI1		
+Melton mouse islets MIZ1	IMAGE	Melton mouse islets MIZ1
+NIA Newborn Kidney (Long)	NIA	Newborn Kidney cDNA Library (Long)	Duplication
+NIA Newborn Kidney (Short)	NIA	Newborn Kidney cDNA Library (Short)	Issue (NIA)
+Sugano mouse kidney mkia	IMAGE	Sugano mouse kidney mkia
+McCarrey/Eddy 18d leptotene+zygotene spermatocyte	IMAGE	McCarrey/Eddy 18-day leptotene and zygotene spermatocyte
+Yamada E13.5 limb bud	IMAGE	Yamada E13.5 limb bud
+Sugano mouse liver mlia	IMAGE	Sugano mouse liver mlia
+Soares NKWMD mandible	IMAGE	Soares NKWMD
+Soares NMMAX maxillary process	IMAGE	Soares NMMAX		
+NIA Mouse Mesenchymal Stem Cell (Long)	IMAGE, NIA	Mouse Mesenchymal Stem Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
+Melton normalized mixed mouse pancreas 1 N1-MMS1	IMAGE	Melton normalized mixed mouse pancreas 1 N1-MMS1
+Yamada E19.5 molar	IMAGE	Yamada E19.5 molar
+Knowles Solter mouse blastocyst B1	IMAGE	Knowles/Solter blastocyst		Duplicate of Knowles/Soulter blastocyst, see below.
+Knowles Solter mouse blastocyst B3	IMAGE	Knowles/Solter blastocyst		Duplicate of Knowles/Soulter blastocyst, see below.
+Melton amplified mouse E10.5/12.5 pancreas 1	IMAGE	Melton amplified mouse E10.5/12.5 pancreas 1
+Melton amplified mouse E16.5 pancreas 3 M16S1-A	IMAGE	Melton amplified mouse E16.5 pancreas 3 M16S1-A
+Amplified Melton mouse islets 1 MIS1-A	IMAGE	Amplified Melton mouse islets 1 MIS1-A		
+Barstead kidney MPL-RB1	IMAGE	Barstead MPL-RB1		
+Barstead lung MPL-RB2	IMAGE	Barstead MPL-RB2		
+Barstead heart MPL-RB3	IMAGE	Barstead MPL-RB3		
+Barstead colon MPL-RB6	IMAGE	Barstead MPL-RB6		
+Barstead bowel MPL_RB9	IMAGE	Barstead MPL-RB9		
+Barstead MPL-RB13 muscle	IMAGE	Barstead MPL-RB13		
+Barstead MPL-RB14 muscle	IMAGE	Barstead MPL-RB14		
 Soares heart NbMH	IMAGE	Soares NbMH
+NIA Mouse Neural Stem Cell (Differentiated)	IMAGE, NIA	NIA Mouse Neural Stem Cell (Differentiated)	Issue (NIA, IMAGE)	Not on NIA or Image list
+NIA Mouse Neural Stem Cell (Doublets)	IMAGE, NIA	NIA Mouse Neural Stem Cell (Doublets)	Issue (NIA, IMAGE)	Not on NIA or Image list
+NIA Mouse Newborn Brain	NIA	Mouse Newborn Brain cDNA Library	Issue (NIA)	
+NIA Mouse Newborn Heart	NIA	Mouse Newborn Heart cDNA Library	Issue (NIA)	
+NIA Mouse Newborn Kidney (Long)	IMAGE, NIA	Newborn Kidney cDNA Library (Long)	Issue (NIA, IMAGE)	
+NIA Mouse newborn Ovary	NIA	Mouse newborn Ovary cDNA Library	Issue (NIA)	
+Melton mouse newborn pancreas MNZ1	IMAGE	Melton mouse newborn pancreas MNZ1
 Soares hypothalamus NMHy	IMAGE	Soares NMHy
 Soares liver NML	IMAGE	Soares NML
 Soares lymph node NbMLN	IMAGE	Soares NbMLN
-Soares mammary gland NbMMG	IMAGE	Soares NbMMG
-Soares mammary gland NMLMG	IMAGE	Soares  NMLMG
-Soares MPR0 prostate	IMAGE	Soares MPR0
-Soares nasal process NMKWNP	IMAGE	Soares NMKWNP
-Soares NKWMD mandible	IMAGE	Soares NKWMD
+Rashbass MOC-11.5 optic cup	IMAGE	Rashbass MOC-11.5
+Rashbass MOV-9.5 optic vesicle	IMAGE	Rashbass MOV-9.5
+Barstead pooled organs MPL-RB4	IMAGE	Barstead MPL-RB4
+NIA Mouse Osteoblast (Long)	IMAGE, NIA	Mouse Osteoblast cDNA Library (Long)	Issue (NIA, IMAGE)	
+Soares NMO1 ovary	IMAGE	Soares NMO1		
+Soares NMO2 ovary	IMAGE	Soares NMO2		
+Soares 19.5dpc p3NMF19.5	IMAGE	Soares p3NMF19.5	(IMAGE issue)
+Barstead MPL-RB15 pachytene	IMAGE	Barstead MPL-RB15
 Soares NMAP pituitary	IMAGE	Soares NMAP
-Soares NMBP bone	IMAGE	Soares NMBP
 Soares NMBP1 pituitary	IMAGE	Soares NMBP1
 Soares NMBP13-15 pituitary	IMAGE	Soares NMBP13-15
 Soares NMBP2 pituitary	IMAGE	Soares NMBP2
 Soares NMBPA pituitary	IMAGE	Soares NMBPA
-Soares NMEBA branchial arch	IMAGE	Soares NMEBA		
-Soares NMGB B-cell	IMAGE	Soares NMGB		
-Soares NMGBC B-cell	IMAGE	Soares NMGBC		
-Soares NMIE	IMAGE	Soares NMIE		
-Soares NMMAX maxillary process	IMAGE	Soares NMMAX		
-Soares NMO1 ovary	IMAGE	Soares NMO1		
-Soares NMO2 ovary	IMAGE	Soares NMO2		
-Soares NMPR0 prostate	IMAGE	Soares NMPR0		
 Soares NMPu pregnant uterus	IMAGE	Soares NMPu	(IMAGE issue)	
-Soares NMTC trophoblast	IMAGE	Soares NMTC		
-Soares placenta 4NbMP13.5-14.5	IMAGE	Soares 4NbMP13.5-14.5		
-Soares spleen 3NbMS	IMAGE	Soares 3NbMS		
-Soares thymus 2NbMT	IMAGE	Soares 2NbMT		
-Stratagene	none	Stratagene		
-Stratagene #936308	none	Stratagene #936308		Stratagenes gives this data, Mouse cDNA, Spleen LibraryC57 Black/6, female, 8 - 12 weeks, Primer: OR, Vector: Lambda ZAP½ II vector, Average Insert Size: 1.0 kb.  Doesn't match any Image or NIA libraries.
-Stratagene #936309	none	Stratagene #936309		
-Stratagene #946305	none	Stratagene #946305		
-Stratagene #946309	none	Stratagene #946309		
-Stratagene #961301	none	Stratagene #961301		
-Stratagene 13dpc heart (#937316)	IMAGE	Stratagene mouse heart (937316)	(IMAGE issue)	
-Stratagene diaphragm (#937303)	IMAGE	Stratagene mouse diaphragm (937303)	(IMAGE issue)	
-Stratagene embryonic carcinoma (#937317)	IMAGE	Stratagene embryonic carcinoma (937317)	(IMAGE issue)	
-Stratagene embryonic carcinoma/RA (#937318)	IMAGE	Stratagene embry. carcinoma/RA (937318)	(IMAGE issue)	
-Stratagene kidney (#937315)	IMAGE	Stratagene mouse kidney (937315)	(IMAGE issue)	
-Stratagene lung (#937302)	IMAGE	Stratagene mouse lung (937302)	(IMAGE issue)	
-Stratagene macrophage (#937306)	IMAGE	Stratagene mouse macrophage (937306)	(IMAGE issue)	
-Stratagene melanoma (#937312)	IMAGE	Stratagene mouse melanoma (937312)	(IMAGE issue)	
-Stratagene mouse 129/Sv genomic (#946306)	none	Stratagene mouse 129/Sv genomic (#946306)		
-Stratagene skin (#937313)	IMAGE	Stratagene mouse skin	(IMAGE issue)	
-Stratagene T-cell (#937311)	IMAGE	Stratagene mouse T-cell (937311)	(IMAGE issue)	
-Stratagene testis (#937308)	IMAGE	Stratagene mouse testes	(IMAGE issue)	
-Sugano mouse brain mncb	none	Sugano mouse brain mncb		Not an IMAGE library.
-Sugano mouse embryo mewa	IMAGE	Sugano mouse embryo mewa
-Sugano mouse kidney mkia	IMAGE	Sugano mouse kidney mkia
-Sugano mouse liver mlia	IMAGE	Sugano mouse liver mlia
-Whitehead/MIT Mouse Genomic YAC Library	none	Whitehead/MIT Mouse Genomic YAC Library
-WI/MIT-820m	none	WI/MIT-820m
-Yamada E13.5 limb bud	IMAGE	Yamada E13.5 limb bud
-Yamada E13.5 tooth germ 	IMAGE	Yamada E13.5 tooth germ 
-Yamada E19.5 molar	IMAGE	Yamada E19.5 molar
-Yamada E8.5 uni-craniofacial	IMAGE	Yamada E8.5 uni-craniofacial
+McCarrey/Eddy 18-day preleptotene spermatocytes	IMAGE	McCarrey/Eddy 18-day preleptotene spermatocytes
+McCarrey/Eddy 6-day primitive type A spermatogonia	IMAGE	McCarrey/Eddy 6-day primitive type A spermatogonia
+Soares nasal process NMKWNP	IMAGE	Soares NMKWNP
+Soares MPR0 prostate	IMAGE	Soares MPR0
+Soares NMPR0 prostate	IMAGE	Soares NMPR0		
+Beddington embryonic region	IMAGE	Beddington embryonic region
+Schiller AtT-20, RESP18-induced	IMAGE	Schiller AtT-20, RESP18 induced	
 Yamada 3-W rib cartilage	IMAGE	Yamada 3-W rib cartilage
-YmWIBR	none	YmWIBR
+Research Genetics RII	none	Research Genetics RII
+Research Genetics RII	none	Research Genetics RII
+Research Genetics RII	none	Research Genetics RII
+Research Genetics RII	none	Research Genetics RII
+Research Genetics RII	none	Research Genetics RII
+Research Genetics RII	none	Research Genetics RII
+Research Genetics RII	none	Research Genetics RII
+McCarrey/Eddy round spermatid	IMAGE	McCarrey/Eddy round spermatid
+Barstead MPL-RB10 spleen	IMAGE	Barstead MPL-RB10		
+Soares embryonic stem cell NMES	IMAGE	Soares NMES
+NCI_CGAP_Emb3 primitive streak	IMAGE	NCI_CGAP_Emb3		
+mouse Rip Tag insulinoma cDNA library	none	mouse Rip Tag insulinoma cDNA library
+Barstead MPL-RB11 testis	IMAGE	Barstead MPL-RB11		
+McCarrey/Eddy adult testis	IMAGE	McCarrey/Eddy adult testis
+Ren/Stubbs mouse thymus	IMAGE	Ren/Stubbs mouse thymus
+Yamada E13.5 tooth germ 	IMAGE	Yamada E13.5 tooth germ 
+Soares NMTC trophoblast	IMAGE	Soares NMTC		
+NIA Mouse Trophoblast Stem Cell (Long)	IMAGE, NIA	Mouse Trophoblast Stem Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
+NIA Mouse Trophoblast Stem Cell (Short)	NIA	Mouse Trophoblast Stem Cell cDNA Library (Short)	Issue (NIA)	
+NCI_CGAP_Lu29 lung tumor	IMAGE	NCI_CGAP_Lu29		
+NCI_CGAP_Lu30 lung tumor	IMAGE	NCI_CGAP_Lu30		
+NCI_CGAP_Lu33 lung tumor	IMAGE	NCI_CGAP_Lu33		
+NCI_CGAP_Mam1 mammary tumor	IMAGE	NCI_CGAP_Mam1	Duplication	This is the same as IMAGE Library as: NCI_CGAP_Mam1, above.
+NCI_CGAP_Mam2 mammary tumor	IMAGE	NCI_CGAP_Mam2		
+NCI_CGAP_Mam3 mammary tumor	IMAGE	NCI_CGAP_Mam3		
+NCI_CGAP_Mam4 mammary tumor	IMAGE	NCI_CGAP_Mam4		
+NCI_CGAP_Mam5 mammary tumor	IMAGE	NCI_CGAP_Mam5		
+NCI_CGAP_Mam6 mammary tumor	IMAGE	NCI_CGAP_Mam6	Duplication	This is the same as IMAGE Library as: NCI_CGAP_Mam6, above.
+NIA Mouse Undifferentiated ES Cell (Long)	IMAGE, NIA	Mouse Undifferentiated ES Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
+NIA Mouse Undifferentiated ES Cell (Short)	NIA	Mouse Undifferentiated ES Cell cDNA Library (Short)	Issue (NIA)	
+NIA Mouse Unfertilized Egg	NIA	Mouse Unfertilized Egg cDNA Library	Duplication
+NIA Mouse Unfertilized Egg (Long)	IMAGE, NIA	Mouse Unfertilized Egg cDNA Library(Long)	Issue (NIA, IMAGE)
+Ko Mouse Unfertilized Egg cDNA Library	NIA	Mouse Unfertilized Egg cDNA Library		
+Yamada E8.5 uni-craniofacial	IMAGE	Yamada E8.5 uni-craniofacial
+Kaestner ngn3 wt	IMAGE	Kaestner ngn3 wt		
+Mione mouse WTB	IMAGE	Mione mouse WTB

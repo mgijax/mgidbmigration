@@ -92,6 +92,15 @@ ${MGIDBUTILS}/bin/load_db.csh ${DBSERVER} ${DBNAME} ${RADAR_BACKUP}
 date | tee -a ${LOG}
 
 ############################################################
+# Reload the RIKEN_FANTOM_Clones table.
+#
+echo "Reload the RIKEN_FANTOM_Clones table" | tee -a ${LOG}
+echo "" | tee -a ${LOG}
+${RADARDBUTILS}/bin/RIKENClones.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+
+############################################################
 # Reload the NIA_Parent_Daughter_Clones table.
 #
 echo "Reload the NIA_Parent_Daughter_Clones table" | tee -a ${LOG}

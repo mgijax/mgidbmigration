@@ -16,7 +16,7 @@ setenv VOCLOAD          /home/lec/loads/vocload-2.98/runSimpleFullLoadNoArchive.
 
 # existing (MGI 2.98) schema configured to talk to an MGI 2.98 database
 #setenv existingmgddbschema /usr/local/mgi/dbutils/mgd_release/mgddbschema
-setenv existingmgddbschema /home/lec/db/mgddbschema
+setenv existingmgddbschema /home/lec/db/mgi2.98/mgddbschema
 
 # existing (MGI 2.98) schema configured to talk to the JSAM database
 #setenv oldmgddb /usr/local/mgi/dbutils/mgd
@@ -25,7 +25,7 @@ setenv oldmgddbschema ${oldmgddb}/mgddbschema
 
 # new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
-setenv newmgddb /home/lec/db/jsam
+setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 

@@ -5,17 +5,17 @@
 #
 # updated:  
 # Defaults:	  6
-# Tables:	189
 # Procedures:	105
 # Rules:	  5
 # Triggers:	150
+# User Tables:	189
 # Views:	196
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
 #
-# Full Test: 01/26/2004 (using backup)
-# Time: 11:33-
+# Full Test: 01/28/2004 (using backup)
+# Time: 14:56-16:23 (1 hour, 27 minutes)
 #
 # Full Test: 12/29/2003 (using backup)
 # Time: 09:00-11:00 (2 hours)
@@ -61,7 +61,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 ########################################
 # need to start with a MGI 2.98-Nomen database
 #
-# load an empty database and fill it with current MGI 2.98-Nomen data
+# load an empty database and fill it with current MGI 2.98 data
 #./loadData.csh
 
 # OR

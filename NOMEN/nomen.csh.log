@@ -1,22 +1,5 @@
-Mon Jan  5 10:40:38 EST 2004
+Tue Jan 13 09:05:37 EST 2004
 Nomen Migration...
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> create table NOM_GeneFamily (
-3>  	_Nomen_key                     int             not null,
-4> 	_GeneFamily_key                int             not null,
-5> 	createdBy                      varchar(30)     not null,
-6> 	modifiedBy                     varchar(30)     not null,
-7> 	creation_date                  datetime        not null,
-8> 	modification_date              datetime        not null 
-9> )
-10> 
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
@@ -43,7 +26,6 @@ Password:
 21> 
 1> 
 2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
@@ -62,29 +44,6 @@ Password:
 13> 
 1> 
 2> checkpoint
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> exec sp_bindefault user_default, "NOM_GeneFamily.createdBy"
-Default bound to column.
-(return status = 0)
-1> 
-2> exec sp_bindefault user_default, "NOM_GeneFamily.modifiedBy"
-Default bound to column.
-(return status = 0)
-1> 
-2> exec sp_bindefault current_date_default, "NOM_GeneFamily.creation_date"
-Default bound to column.
-(return status = 0)
-1> 
-2> exec sp_bindefault current_date_default, "NOM_GeneFamily.modification_date"
-Default bound to column.
-(return status = 0)
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
@@ -106,7 +65,6 @@ Default bound to column.
 (return status = 0)
 1> 
 2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
@@ -128,7 +86,6 @@ Default bound to column.
 (return status = 0)
 1> 
 2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
@@ -146,7 +103,6 @@ Password:
 2> drop index MGI_Note.idx_modification_date
 1> 
 2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
@@ -204,21 +160,8 @@ Password:
 29> and v.name = "Nomen Status"
 30> and n.broadcastBy is not null
 (1 row affected)
-(3036 rows affected)
-(54425 rows affected)
-1> 
-2> dump tran mgd_lec with truncate_only
-1> 
-2> /* Gene Family */
-3> 
-4> insert into NOM_GeneFamily
-5> select n._Nomen_key, t._Term_key, 'dbo', 'dbo', n.creation_date, n.modification_date
-6> from nomen_lec..MRK_Nomen_GeneFamily n, nomen_lec..MRK_GeneFamily g, VOC_Term t, VOC_Vocab v
-7> where n._Marker_Family_key = g._Marker_Family_key
-8> and g.name = t.term
-9> and t._Vocab_key = v._Vocab_key
-10> and v.name = "Nomen Gene Family"
-(18 rows affected)
+(3043 rows affected)
+(54485 rows affected)
 1> 
 2> dump tran mgd_lec with truncate_only
 1> 
@@ -227,7 +170,7 @@ Password:
 4> insert into NOM_Synonym
 5> select _Other_key, _Nomen_key, _Refs_key, name, isAuthor, 'dbo', 'dbo', creation_date, modification_date
 6> from nomen_lec..MRK_Nomen_Other
-(17460 rows affected)
+(17486 rows affected)
 1> 
 2> dump tran mgd_lec with truncate_only
 1> 
@@ -239,7 +182,7 @@ Password:
 7> union
 8> select distinct _Nomen_key, type = 1005, seq = identity(5)
 9> from nomen_lec..MRK_Nomen_Notes where noteType = 'C'
-(5238 rows affected)
+(5261 rows affected)
 1> 
 2> declare @maxKey integer
 3> select @maxKey = max(_Note_key) from MGI_Note
@@ -265,9 +208,9 @@ Password:
 23> and n.noteType = 'C'
 24> 
 (1 row affected)
-(5238 rows affected)
-(27292 rows affected)
-(25403 rows affected)
+(5261 rows affected)
+(27305 rows affected)
+(25537 rows affected)
 1> 
 2> dump tran mgd_lec with truncate_only
 1> 
@@ -280,12 +223,8 @@ Password:
 8> union
 9> select _Nomen_key, _Refs_key, type = 1004, seq = identity(5)
 10> from nomen_lec..MRK_Nomen_Reference
-11> where isPrimary = 0 and broadcastToMGD = 1
-12> union
-13> select _Nomen_key, _Refs_key, type = 1005, seq = identity(5)
-14> from nomen_lec..MRK_Nomen_Reference
-15> where isPrimary = 0 and broadcastToMGD = 0
-(56835 rows affected)
+11> where isPrimary = 0
+(56898 rows affected)
 1> 
 2> declare @maxKey integer
 3> select @maxKey = max(_Assoc_key) from MGI_Reference_Assoc
@@ -297,7 +236,7 @@ Password:
 9> from #refs
 (1 row affected)
 (1 row affected)
-(56835 rows affected)
+(56898 rows affected)
 1> 
 2> dump tran mgd_lec with truncate_only
 1> 
@@ -307,7 +246,7 @@ Password:
 5> into #accs
 6> from nomen_lec..ACC_Accession
 7> where _LogicalDB_key = 1
-(57373 rows affected)
+(57440 rows affected)
 1> 
 2> declare @maxKey integer
 3> select @maxKey = max(_Accession_key) from ACC_Accession
@@ -317,7 +256,7 @@ Password:
 7> 21, preferred, 1, creation_date, modification_date, release_date
 8> from #accs
 (1 row affected)
-(57373 rows affected)
+(57440 rows affected)
 1> 
 2> drop table #accs
 1> 
@@ -327,14 +266,14 @@ Password:
 3> into #accs
 4> from nomen_lec..ACC_Accession
 5> where _LogicalDB_key != 1
-(44039 rows affected)
+(44120 rows affected)
 1> 
 2> select r.*, seq = identity(5)
 3> into #accrefs
 4> from nomen_lec..ACC_Accession a, nomen_lec..ACC_AccessionReference r
 5> where a._LogicalDB_key != 1
 6> and a._Accession_key = r._Accession_key
-(43987 rows affected)
+(44068 rows affected)
 1> 
 2> declare @maxKey integer
 3> select @maxKey = max(_Accession_key) from ACC_Accession
@@ -348,120 +287,14 @@ Password:
 11> select seq + @maxKey, _Refs_key, creation_date, modification_date, release_date
 12> from #accrefs
 (1 row affected)
-(44039 rows affected)
-(43987 rows affected)
+(44120 rows affected)
+(44068 rows affected)
 1> 
 2> dump tran mgd_lec with truncate_only
 1> 
 2> checkpoint
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> create unique clustered index idx_primary_key on NOM_GeneFamily (_Nomen_key, _GeneFamily_key) on mgd_seg_0
-1> 
-2> create nonclustered index idx_GeneFamily_key_Index on NOM_GeneFamily (_GeneFamily_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_Nomen_key on NOM_GeneFamily (_Nomen_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_modification_date on NOM_GeneFamily (modification_date)
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
 Password: 
 1> 
 2> use mgd_lec
 1> 
 2> create unique clustered index idx_Nomen_key on NOM_Marker (_Nomen_key) on mgd_seg_0
-1> 
-2> create nonclustered index idx_Marker_Type_key on NOM_Marker (_Marker_Type_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_NomenStatus_key on NOM_Marker (_NomenStatus_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_Marker_Event_key on NOM_Marker (_Marker_Event_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_Marker_EventReason_key on NOM_Marker (_Marker_EventReason_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_CurationState_key on NOM_Marker (_CurationState_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_symbol on NOM_Marker (symbol) on mgd_seg_1
-1> 
-2> create nonclustered index idx_broadcastBy on NOM_Marker (broadcastBy) on mgd_seg_1
-1> 
-2> create nonclustered index idx_broadcast_date on NOM_Marker (broadcast_date) on mgd_seg_1
-1> 
-2> create nonclustered index idx_modification_date on NOM_Marker (modification_date) on mgd_seg_1
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> create unique clustered index idx_Synonym_key on NOM_Synonym (_Synonym_key) on mgd_seg_0
-1> 
-2> create unique nonclustered index idx_Nomen_key_name on NOM_Synonym (_Nomen_key, name) on mgd_seg_1
-1> 
-2> create nonclustered index idx_Nomen_key on NOM_Synonym (_Nomen_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_Refs_key on NOM_Synonym (_Refs_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_name on NOM_Synonym (name) on mgd_seg_1
-1> 
-2> create nonclustered index idx_modification_date on NOM_Synonym (modification_date) on mgd_seg_1
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> create unique clustered index idx_Note_key on MGI_Note (_Note_key) on mgd_seg_0
-1> 
-2> create unique nonclustered index idx_Object_MGI_Note_key on MGI_Note (_Object_key, _MGIType_key, _NoteType_key) on mgd_seg_0
-1> 
-2> create nonclustered index idx_Object_key on MGI_Note (_Object_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_MGIType_key on MGI_Note (_MGIType_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_NoteType_key on MGI_Note (_NoteType_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_modification_date on MGI_Note (modification_date) on mgd_seg_1
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> create unique clustered index idx_primary_key on MGI_NoteChunk (_Note_key, sequenceNum) on mgd_seg_0
-1> 
-2> create nonclustered index idx_Note_key on MGI_NoteChunk (_Note_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_note on MGI_NoteChunk (note) on mgd_seg_1
-1> 
-2> create nonclustered index idx_modification_date on MGI_NoteChunk (modification_date) on mgd_seg_1
-1> 
-2> checkpoint
-Warning: ridiculously long PATH truncated
-Password: 
-1> 
-2> use mgd_lec
-1> 
-2> create unique clustered index idx_Assoc_key on MGI_Reference_Assoc (_Assoc_key) on mgd_seg_0
-1> 
-2> create unique nonclustered index idx_Refs_Object_MGI_Assoc_key on MGI_Reference_Assoc (_Refs_key, _Object_key, _MGIType_key, _RefAssocType_key) on mgd_seg_0
-1> 
-2> create nonclustered index idx_Refs_key on MGI_Reference_Assoc (_Refs_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_Object_key on MGI_Reference_Assoc (_Object_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_MGIType_key on MGI_Reference_Assoc (_MGIType_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_RefAssocType_key on MGI_Reference_Assoc (_RefAssocType_key) on mgd_seg_1
-1> 
-2> create nonclustered index idx_modification_date on MGI_Reference_Assoc (modification_date) on mgd_seg_1
-1> 
-2> checkpoint
-Mon Jan  5 10:49:57 EST 2004

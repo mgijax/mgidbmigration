@@ -32,7 +32,7 @@ date >> $LOG
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev/load_devdb.csh $NOMEN nomen.backup
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev/load_devdb.csh $STRAINS strains.backup
 
-/usr/local/mgi/dbutils/mgidbutilities/current/bin/updateSchemaVersion.csh $DSQUERY $MGD mgddbschema-1-0-8
+/usr/local/mgi/dbutils/mgidbutilities/current/bin/updateSchemaVersion.csh $DSQUERY $MGD mgddbschema-1-0-9
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/updateSchemaVersion.csh $DSQUERY $NOMEN nomendbschema-3-0-1
 /usr/local/mgi/dbutils/mgidbutilities/current/bin/updateSchemaVersion.csh $DSQUERY $STRAINS strainsdbschema-1-0-2
 

@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     156
 # User Tables:  183
-# Views:        225
+# Views:        226
 
 cd `dirname $0` && source ./Configuration
 
@@ -161,6 +161,9 @@ drop table GXD_AllelePair_Old
 go
 
 drop table GXD_AlleleGenotype_Old
+go
+
+exec MGI_Table_Column_Cleanup
 go
 
 EOSQL

@@ -4,6 +4,8 @@ Actual DB	Actual DB	EMBL	mgd_dbo
 Actual DB	Actual DB	DDBJ	mgd_dbo
 Actual DB	Actual DB	SWISS-PROT (EBI)	mgd_dbo
 Actual DB	Actual DB	SWISS-PROT (SBI)	mgd_dbo
+Actual DB	Actual DB	TrEMBL (EBI)	mgd_dbo
+Actual DB	Actual DB	TrEMBL (SBI)	mgd_dbo
 Actual DB	Actual DB	TIGR	mgd_dbo
 Actual DB	Actual DB	DoTS	mgd_dbo
 Actual DB	Actual DB	ENSEMBL	mgd_dbo

@@ -3,6 +3,12 @@
 #
 # Migration for PRB_Marker
 #
+# 12/02/2003
+#	- addressed migrating mult ref w/ mult markers
+#	- our strategy is to use other marker/reference relationships by
+#	- building a marker/reference cache
+#	- and by checking RFLP/GXD relationships as well
+#
 # 11/20/2003
 #	- sent Richard email
 #	- we need to address how to migrate multiple references w/ multiple markers

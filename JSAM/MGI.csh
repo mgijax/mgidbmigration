@@ -6,10 +6,10 @@
 # updated:  
 # Defaults:	  5
 # Tables:	192
-# Procedures:	 96
+# Procedures:	100
 # Rules:	  5
 # Triggers:	150
-# Views:	198
+# Views:	197
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
@@ -55,7 +55,7 @@ date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 3.0" | tee -a $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-6-0-0" | tee -a $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-8-0-0" | tee -a $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME | tee -a $LOG
 
 echo "Reconfigure Nomen..." | tee -a  $LOG

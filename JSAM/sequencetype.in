@@ -1,3 +1,4 @@
 DNA		D	The seuqence is a genomic or is a DNA construct.	
 RNA		R	The sequence is from an actual or predicted transcription product.	
 Polypeptide		P	The sequence is real or predicted (conceptual translation).	
+Not Loaded		NL	Not Loaded	

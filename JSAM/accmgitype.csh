@@ -34,18 +34,6 @@ insert into ACC_MGIType
 values (21, 'Nomenclature', 'NOM_Marker', '_Nomen_key', 'symbol', null, getdate(), getdate(), getdate())
 go
 
-insert into ACC_MGIType 
-values (22, 'Marker/Sequence Set Association', 'SEQ_MarkerSet_Assoc', '_Assoc_key', null, null, getdate(), getdate(), getdate())
-go
-
-insert into ACC_MGIType 
-values (23, 'Sequence Set', 'SEQ_SequenceSet', '_SequenceSet_key', null, null, getdate(), getdate(), getdate())
-go
-
-insert into ACC_MGIType 
-values (25, 'Annotation Evidence', 'VOC_Evidence', '_AnnotEvidence_key', null, null, getdate(), getdate(), getdate())
-go
-
 checkpoint
 go
 

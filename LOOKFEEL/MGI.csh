@@ -12,16 +12,16 @@
 
 cd `dirname $0`
 
-setenv SYBASE	/opt/sybase/12.5
+setenv SYBASE		/opt/sybase/12.5
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 setenv PYTHONPATH	/usr/local/mgi/lib/python
 
-#setenv newmgddb /usr/local/mgi/dbutils/mgd
-#setenv newnomendb /usr/local/mgi/dbutils/nomen
-setenv newmgddb /home/lec/db
+setenv newmgddb /usr/local/mgi/dbutils/mgd_release
+setenv newnomendb /usr/local/mgi/dbutils/nomen_release
+#setenv newmgddb /home/lec/db
+#setenv newnomendb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
-setenv newnomendb /home/lec/db
 
 source ${newmgddbschema}/Configuration
 setenv NOMEN	nomen_release

@@ -79,7 +79,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 
 # order is important!
 echo "Data Migration..." | tee -a  $LOG
-${newmgddbschema}/default/default_create.csh | tee -a ${LOG}
+./defaults.csh | tee -a $LOG
 ./accmgitype.csh | tee -a $LOG
 ./loadVoc.csh | tee -a $LOG
 ./mgiuserdefault.csh | tee -a $LOG

@@ -21,6 +21,9 @@ go
 sp_rename PRB_Strain, PRB_Strain_Old
 go
 
+sp_rename PRB_Strain_Marker, PRB_Strain_Marker_Old
+go
+
 sp_rename MLP_mergeStrain, PRB_mergeStrain
 go
 
@@ -30,6 +33,7 @@ EOSQL
 
 ${newmgddbschema}/table/PRB_Strain_create.object >>& ${LOG}
 ${newmgddbschema}/table/PRB_Strain_Type_create.object >>& ${LOG}
+${newmgddbschema}/table/PRB_Strain_Marker_create.object >>& ${LOG}
 ${newmgddbschema}/table/MGI_Synonym_create.object >>& ${LOG}
 ${newmgddbschema}/table/MGI_SynonymType_create.object >>& ${LOG}
 
@@ -47,6 +51,13 @@ and mlp._Species_key = p._Species_key
 and p.species = t.term
 and t._Vocab_key = v._Vocab_key
 and v.name = 'Strain Species'
+go
+
+declare @qKey integer
+select @qKey = _Term_key from VOC_Term_StrainAllele_View where term = 'nomenclature'
+insert into PRB_Strain_Marker
+select o._StrainMarker_key, o._Strain_key, o._Marker_key, o._Allele_key, @qKey, 1086, 1086, o.creation_date, o.modification_date
+from PRB_Strain_Marker_Old o
 go
 
 select newKey = identity(10), o._Strain_key, t._Term_key, o.creation_date, o.modification_date
@@ -69,16 +80,22 @@ declare @noteTypeKey integer
 declare @noteKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 select @noteKey = max(_Note_key) from MGI_Note
+
 insert into MGI_NoteType values(@noteTypeKey, 10, 'Strain Origin', 0, 1086, 1086, getdate(), getdate())
 insert into MGI_NoteType values(@noteTypeKey + 1, 10, 'General', 0, 1086, 1086, getdate(), getdate())
 insert into MGI_NoteType values(@noteTypeKey + 2, 10, 'Nomenclature', 0, 1086, 1086, getdate(), getdate())
+
 select _Strain_key, note, sequenceNum, seq = identity(10) into #notes from MLP_Notes
+
 insert into MGI_Note
 select @noteKey + seq, _Strain_key, 10, @noteTypeKey, 1086, 1086, getdate(), getdate()
 from #notes where sequenceNum = 1
+
 insert into MGI_NoteChunk
-select @noteKey + seq, sequenceNum, note, 1086, 1086, getdate(), getdate()
-from #notes
+select n._Note_key, s.sequenceNum, s.note, 1086, 1086, getdate(), getdate()
+from #notes s, MGI_Note n
+where s._Strain_key = n._Object_key
+and n._MGIType_key = 10
 go
 
 /* migrate PRB_Strain_Synonym into MGI_Synonym, MGI_SynonymType */
@@ -105,6 +122,9 @@ use ${DBNAME}
 go
 
 drop table PRB_Strain_Old
+go
+
+drop table PRB_Strain_Marker_Old
 go
 
 drop table PRB_Strain_Synonym
@@ -140,8 +160,10 @@ EOSQL
 
 ${newmgddbschema}/index/PRB_Strain_create.object >>& ${LOG}
 ${newmgddbschema}/index/PRB_Strain_Type_create.object >>& ${LOG}
+${newmgddbschema}/index/PRB_Strain_Marker_create.object >>& ${LOG}
 ${newmgddbschema}/default/PRB_Strain_bind.object >>& ${LOG}
 ${newmgddbschema}/default/PRB_Strain_Type_bind.object >>& ${LOG}
+${newmgddbschema}/default/PRB_Strain_Marker_bind.object >>& ${LOG}
 ${newmgddbschema}/index/MGI_Synonym_create.object >>& ${LOG}
 ${newmgddbschema}/index/MGI_SynonymType_create.object >>& ${LOG}
 ${newmgddbschema}/default/MGI_Synonym_bind.object >>& ${LOG}

@@ -4,7 +4,7 @@
 # MGI 2.97
 #
 # procedures: 84
-# triggers:  138
+# triggers:  140
 # tables:    176
 # views:     147
 #

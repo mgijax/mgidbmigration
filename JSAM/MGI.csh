@@ -6,10 +6,10 @@
 # updated:  
 # Defaults:	  6
 # Tables:	190
-# Procedures:	101
+# Procedures:	108
 # Rules:	  5
 # Triggers:	150
-# Views:	196
+# Views:	198
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
@@ -56,15 +56,15 @@ date | tee -a  $LOG
 ${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 
 ########################################
-# need to start with a MGI 2.98 database
+# need to start with a MGI 2.98-Nomen database
 #
-# load an empty database and fill it with current MGI 2.98 data
-#./loadData.csh
+# load an empty database and fill it with current MGI 2.98-Nomen data
+./loadData.csh
 
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-./load_dev2db.csh dev1mgd.backup
+#load_dev2db.csh ${DBNAME} dev1mgd.backup
 
 date | tee -a  $LOG
 
@@ -137,6 +137,12 @@ drop table PRB_Vector_Types
 go
 
 exec MGI_Table_Column_Cleanup
+go
+
+exec MGI_createRestrictedMolSegSet
+go
+
+exec MGI_createRestrictedSeqSet
 go
 
 checkpoint

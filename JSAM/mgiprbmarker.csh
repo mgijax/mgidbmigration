@@ -41,6 +41,8 @@ EOSQL
 #
 ${newmgddbschema}/table/PRB_Marker_create.object >> $LOG
 ${newmgddbschema}/default/PRB_Marker_bind.object >> $LOG
+${oldmgddbschema}/index/MRK_Reference_drop.objct >> $LOG
+${newmgddbschema}/index/MRK_Reference_create.objct >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
@@ -125,7 +127,7 @@ use $DBNAME
 go
 
 select distinct _Marker_key, _Refs_key into tempdb..MRK_RefNoAuto
-from MRK_Reference (index index_auto)
+from MRK_Reference (index idx_auto)
 where auto = 0 and _Refs_key is not null
 go
  

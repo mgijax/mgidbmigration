@@ -37,7 +37,7 @@ go
 EOSQL
 
 echo 'Load Empty Database...' | tee -a ${LOG}
-./load_dev2db.csh dev1mgdempty.backup | tee -a ${LOG}
+load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
 date | tee -a ${LOG}
 
 echo 'Create data files...' | tee -a ${LOG}
@@ -90,7 +90,7 @@ date | tee -a ${LOG}
 ${oldmgddbschema}/trigger/trigger_create.csh | tee -a ${LOG}
 
 echo 'Making a binary dump...' | tee -a ${LOG}
-./dump_dev2db.csh dev1mgd.backup
+dump_dev1db.csh ${DBNAME} dev1mgd.backup
 
 echo 'End Data Load.' | tee -a ${LOG}
 date | tee -a ${LOG}

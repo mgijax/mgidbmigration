@@ -3,6 +3,7 @@
 import sys
 import os
 import string
+import regsub
 import db
 
 passwordFileName = os.environ['DBPASSWORDFILE']
@@ -49,10 +50,10 @@ for k in notes.keys():
        print 'cannot find end tag for allele key ' + str(n)
        continue
 
-    # we want to copy up the i and from j to the end of the notes
+    # we want to copy up the i and from the end of j to the end of the notes
 
-    n1 = resgsub.gsub('"', '""', allNotes[:i])
-    n2 = resgsub.gsub('"', '""', allNotes[j+(len(endTag)):])
+    n1 = regsub.gsub('"', '""', allNotes[:i])
+    n2 = regsub.gsub('"', '""', allNotes[j+(len(endTag)):])
     newNote = n1 + string.lstrip(n2)
 #    print 'new note:' + newNote
 

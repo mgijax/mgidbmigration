@@ -30,7 +30,11 @@ date | tee -a  ${LOG}
 
 ########################################
 
+./loadVoc.csh | tee -a ${LOG}
 ./mgivoc.csh | tee -a ${LOG}
+./mgiallelepair.csh | tee -a ${LOG}
+./mgiassociation.csh | tee -a ${LOG}
+./mgiheader.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 

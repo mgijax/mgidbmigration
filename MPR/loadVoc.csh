@@ -17,5 +17,6 @@ ${VOCLOAD} `pwd`/inheritance.config >>& ${LOG}
 ${VOCLOAD} `pwd`/mutation.config >>& ${LOG}
 ${VOCLOAD} `pwd`/status.config >>& ${LOG}
 ${VOCLOAD} `pwd`/type.config >>& ${LOG}
+${VOCLOAD} `pwd`/allelestate.config >>& ${LOG}
 
 date >> ${LOG}

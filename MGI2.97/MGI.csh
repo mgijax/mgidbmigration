@@ -17,8 +17,8 @@ date >> $LOG
 #
 
 #$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-#$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd_release.backup mgd_dbo >>& $LOG
-#date >> $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd_release.backup mgd_dbo >>& $LOG
+date >> $LOG
 #$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
 #date >> $LOG
 
@@ -35,14 +35,15 @@ accmgitype.csh >>& $LOG
 loadVoc.csh >>& $LOG
 tr2459.csh >>& $LOG
 tr3710.csh >>& $LOG
+tr3432.csh >>& $LOG
 
 # reconfiguration
-${newmgddbschema}/key/key_drop.csh
-${newmgddbschema}/key/key_create.csh
+${newmgddbschema}/key/key_drop.csh >>& $LOG
+${newmgddbschema}/key/key_create.csh >>& $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
 
-echo "Install Developer's Permissions..." >>$LOG
-${newmgddbperms}/developers/perm_grant.csh >> $LOG
+#echo "Install Developer's Permissions..." >>$LOG
+#${newmgddbperms}/developers/perm_grant.csh >> $LOG
 
 date >> $LOG
 

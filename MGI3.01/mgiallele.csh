@@ -30,6 +30,7 @@ ${newmgddbschema}/key/ALL_Type_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/ALL_Type_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/ALL_Type_Summary_View_create.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/ALL_Type_Summary_View_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/table/ALL_Type_grant.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Type_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Type_create.object | tee -a ${LOG}
 
@@ -108,6 +109,8 @@ ${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load | tee -a ${LOG}
 
 ./mgiallele.py | tee -a ${LOG}
 cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql | tee -a ${LOG}
+
+exit 0
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

@@ -67,6 +67,11 @@ use ${DBNAME}
 go
 
 /* Homozygous 9036 */
+/* Heterozygous 2884 */
+/* Hemizygous X-linked 146 */
+/* Hemizygous Y-linked 12 */
+/* Hemizygous Insertion 671 */
+/* Indeterminate 784 */
 
 declare @stateKey integer
 select @stateKey = t._Term_key from VOC_Term t, VOC_Vocab v
@@ -79,8 +84,6 @@ set _PairState_key = @stateKey
 where _Allele_key_1 = _Allele_key_2
 go
 
-/* Heterozygous 2884 */
-
 declare @stateKey integer
 select @stateKey = t._Term_key from VOC_Term t, VOC_Vocab v
 	where t._Vocab_key = v._Vocab_key
@@ -91,8 +94,6 @@ update GXD_AllelePair
 set _PairState_key = @stateKey
 where _Allele_key_1 != _Allele_key_2 and _Allele_key_2 is not null
 go
-
-/* Hemizgyous X-linked 146 */
 
 declare @stateKey integer
 select @stateKey = t._Term_key from VOC_Term t, VOC_Vocab v
@@ -113,8 +114,6 @@ and aa._Allele_Type_key = t._Term_key
 and t.term not like 'transgen%'
 go
 
-/* Hemizgyous Y-linked 12 */
-
 declare @stateKey integer
 select @stateKey = t._Term_key from VOC_Term t, VOC_Vocab v
 	where t._Vocab_key = v._Vocab_key
@@ -130,8 +129,6 @@ and m.chromosome = "Y"
 and a._AllelePair_key = o._AllelePair_key
 and o.isUnknown = 0
 go
-
-/* Hemizgyous Insertion 671 */
 
 declare @stateKey integer
 select @stateKey = t._Term_key from VOC_Term t, VOC_Vocab v
@@ -151,8 +148,6 @@ and a._Allele_key_1 = aa._Allele_key
 and aa._Allele_Type_key = t._Term_key
 and t.term like 'transgen%'
 go
-
-/* Indeterminate 784 */
 
 declare @stateKey integer
 select @stateKey = t._Term_key from VOC_Term t, VOC_Vocab v

@@ -81,6 +81,9 @@ go
 exec MGI_Table_Column_Cleanup
 go
 
+exec MGI_createReferenceSet
+go
+
 end
 
 EOSQL

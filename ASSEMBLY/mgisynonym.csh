@@ -75,20 +75,20 @@ end
 
 EOSQL
 
-#cat - <<EOSQL | doisql.csh $0 >> ${LOG}
-#
-#use ${DBNAME}
-#go
-#
-#drop table NOM_Synonym
-#go
-#
-#drop table PRB_Strain_Synonym
-#go
-#
-#end
-#
-#EOSQL
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+
+use ${DBNAME}
+go
+
+drop table NOM_Synonym
+go
+
+drop table PRB_Strain_Synonym
+go
+
+end
+
+EOSQL
 
 ${newmgddbschema}/index/MGI_Synonym_create.object >>& ${LOG}
 ${newmgddbschema}/index/MGI_SynonymType_create.object >>& ${LOG}

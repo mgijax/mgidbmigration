@@ -33,7 +33,8 @@ ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 # order is important!
-./tr6351.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} | tee -a ${LOG}
+./tr6351.py | tee -a ${LOG}
+./deletesyns.py | tee -a ${LOG}
 ./markersynonym.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}

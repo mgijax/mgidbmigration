@@ -60,6 +60,8 @@ ${newmgddbschema}/trigger/ALL_Reference_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Reference_create.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Synonym_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ALL_Synonym_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/MRK_Notes_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/MRK_Notes_create.object | tee -a ${LOG}
 
 ./roletaskload.csh | tee -a ${LOG}
 ./userroleload.csh | tee -a ${LOG}

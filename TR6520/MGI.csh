@@ -6,7 +6,7 @@
 # Defaults:       6
 # Procedures:   114
 # Rules:          5
-# Triggers:     165
+# Triggers:     166
 # User Tables:  189
 # Views:        215
 

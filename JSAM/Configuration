@@ -38,7 +38,8 @@ setenv newmgddbperms ${newmgddb}/mgddbperms
 setenv newnomendb /home/lec/db/jsam
 setenv newnomendbschema ${newmgddb}/nomendbschema
 setenv newnomendbperms ${newmgddb}/nomendbperms
-setenv NOMEN nomen_lec
+#setenv NOMEN nomen_lec
+setenv NOMEN nomen
 
 # the working directory
 setenv WORKDIR  /home/lec/db/mgidbmigration/JSAM/work

@@ -92,8 +92,8 @@ insert into ACC_ActualDB values (@actKey + 1, @logKey + 1, 'Ensembl Gene Model',
 
 declare @setKey integer
 select @setKey = max(_SetMember_key) + 1 from MGI_SetMember
-insert into MGI_SetMember values(@setKey, 1009, @logKey, 13, 1001, 1001, getdate(), getdate())
-insert into MGI_SetMember values(@setKey + 1, 1009, @logKey + 1, 13, 1001, 1001, getdate(), getdate())
+insert into MGI_SetMember values(@setKey, 1009, @actKey, 13, 1001, 1001, getdate(), getdate())
+insert into MGI_SetMember values(@setKey + 1, 1009, @actKey + 1, 13, 1001, 1001, getdate(), getdate())
 go
 
 end

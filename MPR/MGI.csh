@@ -32,6 +32,8 @@ date | tee -a  ${LOG}
 
 ./mgivoc.csh | tee -a ${LOG}
 
+${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
@@ -71,6 +73,9 @@ drop view ALL_Note_View
 go
 
 drop view ALL_Synonym_View
+go
+
+drop table GXD_AllelePair_Old
 go
 
 EOSQL

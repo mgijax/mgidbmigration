@@ -81,6 +81,14 @@ go
 dump tran ${DBNAME} with truncate_only
 go
 
+/* background sensitivity note type */
+
+declare @noteTypeKey integer
+select @noteTypeKey = max(_NoteType_key) from MGI_NoteType
+
+insert into MGI_NoteType values(@noteTypeKey, 25, 'Background Sensitivity', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+go
+
 /* notes */
 
 declare @noteTypeKey integer

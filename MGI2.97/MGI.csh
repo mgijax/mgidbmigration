@@ -51,6 +51,7 @@ $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." >>$LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a $LOG
+knockins.csh | tee -a $LOG
 
 cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 

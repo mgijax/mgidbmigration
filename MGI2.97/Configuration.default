@@ -18,3 +18,5 @@ setenv CREATEDBY gxd_release
 
 source ${newmgddbschema}/Configuration
 
+setenv DSQUERY ${DBSERVER}
+setenv MGD ${DBNAME}

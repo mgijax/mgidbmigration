@@ -18,7 +18,7 @@ use $DBNAME
 go
 
 insert into ACC_MGIType 
-values (15, 'GXD Index', 'GXD_Index', '_Index_key', null, getdate(), getdate(), getdate())
+values (17, 'GXD Index', 'GXD_Index', '_Index_key', null, getdate(), getdate(), getdate())
 go
 
 checkpoint

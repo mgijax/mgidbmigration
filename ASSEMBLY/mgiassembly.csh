@@ -73,8 +73,8 @@ go
 
 declare @userKey integer
 select @userKey = max(_User_key) + 1 from MGI_User
-insert into MGI_User values (@userKey, 316353, 316350, 'ncbi_genomicseqload', 'NCBI Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into MGI_User values (@userKey + 1, 316353, 316350, 'ensembl_genomicseqload', 'Ensembl Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_User values (@userKey, 316353, 316350, 'ncbi_assemblyseqload', 'NCBI Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_User values (@userKey + 1, 316353, 316350, 'ensembl_assemblyseqload', 'Ensembl Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 declare @logKey integer

@@ -13,8 +13,6 @@ cd `dirname $0`
 
 setenv NOMEN nomen_release
 setenv STRAINS strains_release
-#setenv NOMEN nomen_lec
-#setenv STRAINS strains_lec
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities

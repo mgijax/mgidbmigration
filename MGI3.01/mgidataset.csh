@@ -101,6 +101,8 @@ ${newmgddbschema}/index/BIB_Refs_create.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/BIB_DataSet_create.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/BIB_Refs_drop.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/BIB_Refs_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/BIB_ReviewStatus_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/BIB_ReviewStatus_create.object | tee -a ${LOG}
 
 date >> ${LOG}
 

@@ -51,6 +51,18 @@ insert into VOC_Vocab
 values(4, 73993, 31, 0, 0, "GO", getdate(), getdate())
 go
 
+/* using for testing only */
+
+insert into DAG_DAG values(1, 73993, 13, 'Molecular Function', 'F', getdate(), getdate())
+insert into DAG_DAG values(2, 73993, 13, 'Cellular Component', 'C', getdate(), getdate())
+insert into DAG_DAG values(3, 73993, 13, 'Biological Process', 'P', getdate(), getdate())
+go
+
+insert into VOC_VocabDAG values (4,1,getdate(),getdate())
+insert into VOC_VocabDAG values (4,2,getdate(),getdate())
+insert into VOC_VocabDAG values (4,3,getdate(),getdate())
+go
+
 EOSQL
 
 ${VOCLOAD}/loadTerms.py -f -l output.terms $DBSERVER $DBNAME mgd_dbo `cat $DBPASSWORDFILE` 4 Termfile >>& $LOG

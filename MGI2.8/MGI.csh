@@ -50,7 +50,7 @@ date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-8" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-4-0-0" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 

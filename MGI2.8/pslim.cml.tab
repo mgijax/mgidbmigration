@@ -1,312 +1,505 @@
 MGI ID of Gene	Gene Symbol	MGI ID of Allele 1	Allele 1 Symbol	MGI ID of Allele 2	Allele 2 Symbol	Strain	PhenoSlim term	J: (without the J:)	Qualifying Evidence Code	Notes (optional)				survival: embryonic lethality
-MGI:109632	Rax	MGI:1856862	Rax<ey1>	MGI:1856862	Rax<ey1>	ZRDCT/Ch	eye: visual defects	229	SBA, IMP					survival: perinatal lethality
-MGI:109632	Rax	MGI:1856862	Rax<ey1>	MGI:2152536	Rax<+>	ZRDCT/Ch	no obvious phenotype: no defect detected	229	SBA, IMP					survival: perinatal lethality
-MGI:109632	Rax	MGI:2152531	Rax<tm1Mjam>	MGI:2152531	Rax<tm1Mjam>	Not Specified	eye: visual defects	40830	SBA, IMP					survival: postnatal lethality
-MGI:109632	Rax	MGI:2152531	Rax<tm1Mjam>	MGI:2152536	Rax<+>	Not Specified	no obvious phenotype: no defect detected	40830	SBA, IMP					survival: premature death
-MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	C3H/HeJ;Cast	kidney/renal system: dysmorphology	54408	IMP	strain note				embryogenesis: embryonic tissue dysmorphology
-MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	C3H/HeJ;Cast	ears: auditory defects/deafness	54408	IMP					embryogenesis: extraembryonic tissue dysmorphology
-MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	C3H/HeJ;Cast	ears: dysmorphology	54408	IMP					embryogenesis: developmental patterning abnormalities
-MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	C3H/HeJ;Cast	neurological/behavioral: motor capabilities/coordination/movement anomalies	54408	IMP					embryogenesis: placental dysmorphology
-MGI:109344	Eya1	MGI:1857803	Eya1<bor>		Eya1<+>	C3H/HeJ;Cast	no obvious phenotype: no defect detected	54408	IMP					embryogenesis: no defect detected
-MGI:98483	Abcb2	MGI:1858161	Abcb2<tm1Hpl>	MGI:1858161	Abcb2<tm1Hpl>	129	immune system: no defect detected	60782	SBA	strain note				growth/weight abnormality: embryonic
-MGI:87872	Acc	MGI:1856662	Acc	MGI:1856662	Acc	101;C3H	survival: embryonic lethality	6686	IMP					growth/weight abnormality: postnatal
-MGI:87872	Acc	MGI:1856662	Acc		Acc<+>	101;C3H	eye: corneal or lens defect	6686	IMP					eye: visual defects
-MGI:87996	Alm	MGI:1856649	Alm	MGI:1856649	Alm	101;C3H	survival: embryonic lethality	6686	IMP					eye: dysmorphology
-MGI:87996	Alm	MGI:1856649	Alm		Alm<+>	101;C3H	eye: no defect detected	6686	IMP					eye: corneal or lens defect
-MGI:87996	Alm	MGI:1856649	Alm		Alm<+>	101;C3H	coat: color anomalies	6686	IMP					eye: no defect detected
-MGI:87996	Alm	MGI:1856649	Alm		Alm<+>	101;C3H	growth/weight abnormality: postnatal	6686	IMP					coat: hair growth defects
-MGI:87998	Alox12	MGI:1932927	Alox12<tm1Fun>	MGI:1932927	Alox12<tm1Fun>	B6;129	skin: texture/condition anomalies	46896	IMP					coat: hair texture defects
-MGI:87998	Alox12	MGI:1932927	Alox12<tm1Fun>	MGI:1932927	Alox12<tm1Fun>	B6;129	metabolism: other metabolic defect	46896	IMP					coat: color anomalies
-MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	129;NMRI	skeletal: craniofacial defects	40076	IMP					coat: hair follicle structure/orientation anomalies
-MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	129;NMRI	survival: embryonic lethality	40076	IMP					coat: no defect detected
-MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	129;NMRI	skeletal: extremities defects	40076	IMP					skin: pigmentation anomalies
-MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	129;NMRI	eye: corneal or lens defect	40076	IMP					skin: texture/condition anomalies
-MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	129;NMRI	central nervous system: other dysmorphology	40076	IMP					skin: no defect detected
-MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	129;NMRI	other aberrant phenotype	40076	IMP					vibrissae: shape/orientation defects
-MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Not Specified	survival: perinatal lethality	60409	IMP					vibrissae: no defect detected
-MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Not Specified	central nervous system: neural tube defects	60409	IMP					extremities: limb dysmorphology
-MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Not Specified	skeletal: craniofacial defects	60409	IMP					extremities: digit dysmorphology
-MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	60409	IMP					extremities: tail dysmorphology
-MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Not Specified	reproductive system: fertility/fecundity anomalies	60409	IMP					extremities: no defect detected
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;129	survival: perinatal lethality	49841	IMP					teeth: tooth dysmorphology
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;129	central nervous system: neural tube defects	49841	IMP					teeth: no defect detected
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;129	central nervous system: other dysmorphology	49841	IMP					ears: auditory defects/deafness
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;129	skeletal: extremities defects	49841	IMP					ears: dysmorphology
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;CD1	survival: perinatal lethality	49841	IMP					ears: no defect detected
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;CD1	central nervous system: neural tube defects	49841	IMP					musculature: muscle dysmorphology
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;CD1	central nervous system: other dysmorphology	49841	IMP					musculature: physiological defects
-MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	B6;CD1	skeletal: extremities defects	49841	IMP					musculature: no defect detected
-MGI:88048	Apo	MGI:1856666	Apo	MGI:1856666	Apo	Not Specified	survival: embryonic lethality	65314						skeletal: osteogenesis/developmental anomalies
-MGI:88048	Apo	MGI:1856666	Apo			Not Specified	eye: corneal or lens defect	65314						skeletal: axial defects
-MGI:88048	Apo	MGI:1856666	Apo			Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	65314						skeletal: extremities defects
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	neurological/behavioral: motor capabilities/coordination/movement anomalies	34193		strain note				skeletal: craniofacial defects
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	growth/weight abnormality: postnatal	34193						skeletal: no defect detected
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	reproductive system: fertility/fecundity anomalies	34193						neurological/behavioral: aggression
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	reproductive system: dysmorphology	34193						neurological/behavioral: conditioning defect
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	tumors: increased incidence	34193						neurological/behavioral: learning/memory impairment
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	immune system: lymphoid development/ T lymphocyte defects	34193						neurological/behavioral: seizures/epilepsy
-MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	multiple	immune system: other dysmorphology	34193						neurological/behavioral: fear/anxiety
-MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	Not Specified	growth/weight abnormality: postnatal	42324						neurological/behavioral: motor capabilities/coordination/movement anomalies
-MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	Not Specified	reproductive system: fertility/fecundity anomalies	42324						neurological/behavioral: sensory capabilities/reflexes/nociception abnormalities
-MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	Not Specified	immune system: lymphoid development/ T lymphocyte defects	42324						neurological/behavioral: maternal behavior anomalies
-MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	Not Specified	tumors: increased incidence	42324						neurological/behavioral: feeding/drinking preference anomalies
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	survival: premature death	61201		strain note				neurological/behavioral: sleep pattern/circadian rhythm anomalies
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	growth/weight abnormality: postnatal	61201						neurological/behavioral: other anomalies
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	reproductive system: fertility/fecundity anomalies	61201						neurological/behavioral: no defect detected
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	central nervous system: other dysmorphology	61201						metabolism: abnormal lipid homeostasis
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	immune system: immunodeficiency	61201						metabolism: abnormal glucose homeostasis
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	immune system: lymphoid development/ T lymphocyte defects	61201						metabolism: other metabolic defect measured by clinical chemistry
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	tumors: increased incidence	61201						metabolism: other metabolic defect
-MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	129S4/SvJae x C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	61201						metabolism: no defect detected
-MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	growth/weight abnormality: postnatal	36561		strain Note				hematology: hemaotpoetic anomalies
-MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	immune system: other dysmorphology	36561						hematology: abnormal red blood cell count/anemia
-MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	immune system: lymphoid development/ T lymphocyte defects	36561						hematology: abnormal blood coagulation
-MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	tumors: increased incidence	36561						hematology: no defect detected
-MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	reproductive system: fertility/fecundity anomalies	36561						heart/cardiovascular system: dysmorphology
-MGI:107202	Atm	MGI:1933746	Atm<tm1Pmc>	MGI:1933746	Atm<tm1Pmc>	129/SvJ x C57BL/6	reproductive system: fertility/fecundity anomalies	47752						heart/cardiovascular system: blood circulatory defects
-MGI:107202	Atm	MGI:1933746	Atm<tm1Pmc>	MGI:1933746	Atm<tm1Pmc>	129/SvJ x C57BL/6	tumors: increased incidence	47752						heart/cardiovascular system: blood pressure anomalies
-MGI:99400	Atp7a	MGI:1856096	Atp7a	null	hemizygous	get ref	survival: embryonic lethality	13041						heart/cardiovascular system: other functional anomalies
-MGI:99400	Atp7a	MGI:1856096	Atp7a		Atp7a<+>	get ref 	coat: color anomalies	13041						heart/cardiovascular system: no defect detected
-MGI:99400	Atp7a	MGI:1856096	Atp7a		Atp7a<+>	get ref 	survival: perinatal lethality	13041						respiratory system: dysmorphology
-MGI:99400	Atp7a	MGI:1856096	Atp7a		Atp7a<+>	get ref 	reproductive system: no defect detected	13041						respiratory system: respiratory distress or failure/functional anomalies
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	survival: postnatal lethality	66094						respiratory system: no defect detected
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	growth/weight abnormality: postnatal	66094						kidney/renal system: dysmorphology
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	kidney/renal system: functional anomalies	66094						kidney/renal system: functional anomalies
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	metabolism: abnormal glucose homeostasis	66094						kidney/renal system: no defect detected
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	hematology: abnormal red blood cell count/anemia	66094						liver/hepatic system: dysmorphology
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	metabolism: other metabolic defect measured by clinical chemistry	66094						liver/hepatic system: functional anomalies
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>	null	hemizygous	129SvEv x CF-1	kidney/renal system: dysmorphology	66094						liver/hepatic system: no defect detected
-MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>		Avpr2<+>	129SvEv x CF-1	kidney/renal system: functional anomalies	66094						digestive system: dysmorphology
-MGI:88127	B2m	MGI:1927183	B2m<tm1Jae>	MGI:1927183	B2m<tm1Jae>	129S2/SvPas X C57BL/6J	no obvious phenotype: no defect detected	66094						digestive system: functional anomalies
-MGI:88127	B2m	MGI:1857133	B2m<tm1Unc>	MGI:1857133	B2m<tm1Unc>	129P2  x C57BL/6J	immune system: lymphoid development/ T lymphocyte defects	66094		double mutant				digestive system: no defect detected
-MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	(129P2/OlaHsd x C57BL/6)F2	survival: perinatal lethality	57112						immune system: lymphoid development/ B lymphocyte defects
-MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	(129P2/OlaHsd x C57BL/6)F2	skeletal: axial defects	57112						immune system: lymphoid development/ T lymphocyte defects
-MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	(129P2/OlaHsd x C57BL/6)F2	skeletal: craniofacial defects	57112						immune system: other dysmorphology
-MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	(129P2/OlaHsd x C57BL/6)F2	immune system: other dysmorphology	57112						immune system: immunodeficiency
-MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	multiple	skeletal: axial defects	55583		strain note				immune system: hypersensitivity
-MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	multiple	survival: perinatal lethality	55583						immune system: other functional anomaly
-MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	multiple	extremities: tail dysmorphology	55583						immune system: no defect detected
-MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	multiple	skeletal: craniofacial defects	55583						central nervous system: neural tube defects
-MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	multiple	immune system: other dysmorphology	55583						central nervous system: other dysmorphology
-MGI:88145	Bdnf	MGI:1930038	Bdnf<tm1Gdy>	MGI:1930038	Bdnf<tm1Gdy>	Not Specified	survival: postnatal lethality	25565						central nervous system: LTP anomalies
-MGI:88145	Bdnf	MGI:1930038	Bdnf<tm1Gdy>	MGI:1930038	Bdnf<tm1Gdy>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	25565						central nervous system: other functional anomalies
-MGI:88145	Bdnf	MGI:1930038	Bdnf<tm1Gdy>	MGI:1930038	Bdnf<tm1Gdy>	Not Specified	central nervous system: other dysmorphology	25565						central nervous system: no defect detected
-MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	Not Specified	survival: postnatal lethality	17123						peripheral nervous system: dysmorphology
-MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	17123						peripheral nervous system: functional anomalies
-MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	Not Specified	growth/weight abnormality: postnatal	17123						peripheral nervous system: no defect detected
-MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	Not Specified	central nervous system: other dysmorphology	17123						reproductive system: dysmorphology
-MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	129S2 x C57BL/6J	central nervous system: other dysmorphology	67231						reproductive system: fertility/fecundity anomalies
-MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	129S2 x C57BL/6J	growth/weight abnormality: postnatal	67231						reproductive system: no defect detected
-MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	129S2 x C57BL/6J	neurological/behavioral: motor capabilities/coordination/movement anomalies	67231						endocrine glands: dysmorphology
-MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	129S2 x C57BL/6J	survival: postnatal lethality	67231						endocrine glands: functional anomalies
-MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	129S2 x C57BL/6J	respiratory system: respiratory distress or failure/functional anomalies	67231						endocrine glands: no defect detected
-MGI:88145	Bdnf	MGI:1929986	Bdnf<tm1Par>	MGI:1929986	Bdnf<tm1Par>	Not Specified	survival: postnatal lethality	44286						tumors: increased incidence
-MGI:88145	Bdnf	MGI:1929986	Bdnf<tm1Par>	MGI:1929986	Bdnf<tm1Par>	Not Specified	central nervous system: other dysmorphology	44286						tumors: no increased incidence
-MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	129S4/SvJae x NMRI	survival: postnatal lethality	64962						other aberrant phenotype
-MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	129S4/SvJae x NMRI	growth/weight abnormality: postnatal	64962						no obvious phenotype: no defect detected
-MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	129S4/SvJae x NMRI	neurological/behavioral: motor capabilities/coordination/movement anomalies	64962						
-MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	129S4/SvJae x NMRI	central nervous system: other dysmorphology	64962						
-MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	129S4/SvJae x NMRI	central nervous system: LTP anomalies	64962						
-MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>		Bdnf<+>	129S4/SvJae x NMRI	central nervous system: LTP anomalies	64962						
-MGI:1929985	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	Complex	growth/weight abnormality: postnatal	61340		strain note				
-MGI:1929985	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	Complex	neurological/behavioral: motor capabilities/coordination/movement anomalies	61340						
-MGI:1929985	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	Complex	neurological/behavioral: other anomalies	61340		
-MGI:1929985	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	Complex	reproductive system: fertility/fecundity anomalies	61340		
-MGI:1861990	Bdr	MGI:1862014	Bdr		Bdr<+>	(C3H/HeN x BALB/c)F1		63816		
-MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	GET REF	survival: perinatal lethality	36830		pheno note
-MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	GET REF	digestive system: dysmorphology	36830		
-MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	GET REF	embryogenesis: extraembryonic tissue dysmorphology	36830		
-MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	GET REF	embryogenesis: embryonic tissue dysmorphology	36830		
-MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	GET REF	skeletal: craniofacial defects	36830		
-MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	GET REF	skeletal: craniofacial defects	36830		
-MGI:88181	Bmp5	MGI:1858106	Bmp5<se-2OZb>	MGI:1858106	Bmp5<se-2OZb>	Not Specified	ears: dysmorphology	3046		
-MGI:88181	Bmp5	MGI:1858106	Bmp5<se-2OZb>	MGI:1858106	Bmp5<se-2OZb>	Not Specified	skeletal: axial defects	3046		
-MGI:88269	Car2	MGI:2135646	Car2<n>	MGI:2135646	Car2<n>	C57BL/6J x DBA/2J	growth/weight abnormality: postnatal	19268		strain note
-MGI:88269	Car2	MGI:2135646	Car2<n>	MGI:2135646	Car2<n>	C57BL/6J x DBA/2J	kidney/renal system: functional anomalies	19268		
-MGI:88269	Car2	MGI:2135646	Car2<n>	MGI:2135646	Car2<n>	C57BL/6J x DBA/2J	skeletal: no defect detected	19268		
-MGI:88272	Cat2	MGI:1856492	Cat2<no2>		Cat2<+>	Not Specified	eye: corneal or lens defect	16569		
-MGI:88272	Cat2	MGI:1855994	Cat2<ns>	MGI:1855994	Cat2<ns>	Not Specified	eye: corneal or lens defect	1598		
-MGI:88272	Cat2	MGI:1855994	Cat2<ns>	MGI:1855994	Cat2<ns>	Not Specified	eye: dysmorphology	1598
-MGI:88272	Cat2	MGI:1855994	Cat2<ns>		Cat2<+>	Not Specified	eye: corneal or lens defect	1598
-MGI:88272	Cat2	MGI:1855996	Cat2<ro>	MGI:1855996	Cat2<ro>	Not Specified	eye: corneal or lens defect	24033
-MGI:88272	Cat2	MGI:1855996	Cat2<ro>		Cat2<+>	Not Specified	eye: corneal or lens defect	24033
-MGI:88272	Cat2	MGI:1856493	Cat2<tol>		Cat2<+>	Not specified	eye: corneal or lens defect	23988
-MGI:88272	Cat2	MGI:1856493	Cat2<tol>		Cat2<+>	Not specified	eye: dysmorphology	23988
-MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:1855998	Cat3<vl>	GET REF	eye: corneal or lens defect	6686
-MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:1855998	Cat3<vl>	GET REF	eye: dysmorphology	6686
-MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:1855998	Cat3<vl>	GET REF	survival: embryonic lethality	6686
-MGI:88273	Cat3	MGI:1855998	Cat3<vl>		Cat3<+>	GET REF	eye: corneal or lens defect	6686
-MGI:88273	Cat3	MGI:1855998	Cat3<vl>		Cat3<+>	GET REF	eye: dysmorphology	6686
-MGI:88273	Cat3	MGI:1855997	Cat3<vao>	MGI:1855997	Cat3<vao>	GET REF	eye: dysmorphology	9528
-MGI:88273	Cat3	MGI:1855997	Cat3<vao>	MGI:1855997	Cat3<vao>	GET REF	eye: corneal or lens defect	9528
-MGI:88273	Cat3	MGI:1855997	Cat3<vao>		Cat3<+>	GET REF	eye: dysmorphology	9528
-MGI:88273	Cat3	MGI:1855997	Cat3<vao>		Cat3<+>	GET REF	eye: corneal or lens defect	9528
-MGI:88040	Cat4	MGI:1856585	Cat4<Apcat1-1>	MGI:1856585	Cat4<Apcat1-1>	Not specified	eye: dysmorphology	6686
-MGI:88040	Cat4	MGI:1856585	Cat4<Apcat1-1>		Cat4<+>	Not specified	eye: dysmorphology	6686
-MGI:88040	Cat4	MGI:1856585	Cat4<Apcat1-1>		Cat4<+>	Not specified	eye: corneal or lens defect	6686
-MGI:88040	Cat4	MGI:1856586	Cat4<Apcat1-2>	MGI:1856586	Cat4<Apcat1-2>	Not specified	survival: embryonic lethality	6686
-MGI:88040	Cat4	MGI:1856586	Cat4<Apcat1-2>		Cat4<+>	Not specified	eye: corneal or lens defect	6686
-MGI:88040	Cat4	MGI:1856586	Cat4<Apcat1-2>		Cat4<+>	Not specified	eye: dysmorphology	6686
-MGI:88040	Cat4	MGI:1856587	Cat4<Apcat1-3>	MGI:1856587	Cat4<Apcat1-3>	101 x C3H	survival: embryonic lethality	1598
-MGI:88040	Cat4	MGI:1856587	Cat4<Apcat1-3>	MGI:1856587	Cat4<+>	101 x C3H	eye: corneal or lens defect	1598
-MGI:88040	Cat4	MGI:1856587	Cat4<Apcat1-3>	MGI:1856587	Cat4<+>	101 x C3H	eye: dysmorphology	1598
-MGI:88040	Cat4	MGI:1856588	Cat4<Apcat1-4>	MGI:1856588	Cat4<Apcat1-4>	101 x C3H	survival: embryonic lethality	1598
-MGI:88040	Cat4	MGI:1856588	Cat4<Apcat1-4>		Cat4<+>	101 x C3H	eye: corneal or lens defect	1598
-MGI:98786	Cat5	MGI:2137391	Cat5<To2>		Cat5<+>	(101/El x C3H/El)F1	eye: corneal or lens defect	21951
-MGI:107542	Ccw	MGI:1861669	Ccw	MGI:1861669	Ccw	Not specified	survival: embryonic lethality	34877
-MGI:107542	Ccw	MGI:1861669	Ccw		Ccw<+>	Not specified	eye: corneal or lens defect	34877
-MGI:107542	Ccw	MGI:1861669	Ccw		Ccw<+>	Not specified	vibrissae: shape/orientation defects	34877
-MGI:88319	Cd19	MGI:1931143	Cd19<tm1(Cre)Cgn>	MGI:1931143	Cd19<tm1(Cre)Cgn>	Not Specified	immune system: lymphoid development/ B lymphocyte defects	27463
-MGI:88319	Cd19	MGI:1931143	Cd19<tm1(Cre)Cgn>		Cd19<+>	Not Specified	no obvious phenotype: no defect detected	27463
-MGI:99217	Cdh11	MGI:1861184	Cdh11<tm1Mta>	MGI:1861184	Cdh11<tm1Mta>	129S1/Sv x C57BL/6	no obvious phenotype: no defect detected	58409		
-MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	Not Specified	survival: embryonic lethality	37888		
-MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	Not Specified	growth/weight abnormality: embryonic	37888		
-MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	Not Specified	heart/cardiovascular system: dysmorphology	37888		
-MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	Not Specified	embryogenesis: embryonic tissue dysmorphology	37888		
-MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	Not Specified	embryogenesis: developmental patterning abnormalities	37888		
-MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	129S4/SvJae x C57BL/6	survival: perinatal lethality	64289		
-MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	129S4/SvJae x C57BL/6	central nervous system: other dysmorphology	64289		pheno note
-MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	129S4/SvJae x C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	64289		
-MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	129S4/SvJae x C57BL/6	heart/cardiovascular system: blood circulatory defects	64289		
-MGI:101764	Cdk5r	MGI:1931885	Cdk5r<tm1Lht>	MGI:1931885	Cdk5r<tm1Lht>	Multiple	central nervous system: other dysmorphology	38857		strain & pheno note
-MGI:104556	Cdkn1a	MGI:1888950	Cdkn1a<tm1Led>	MGI:1888950	Cdkn1a<tm1Led>	129S6/SvEvTac x NIH Black Swiss	no obvious phenotype: no defect detected	28420		
-MGI:104556	Cdkn1a	MGI:1933751	Cdkn1a<tm1Tyj>	MGI:1933751	Cdkn1a<tm1Tyj>	Not Specified	no obvious phenotype: no defect detected	68068		
-MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	129S1 x C57BL/6	growth/weight abnormality: postnatal	33401		
-MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	129S1 x C57BL/6	immune system: other functional anomaly	33401		
-MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	129S1 x C57BL/6	endocrine glands: functional anomalies	33401		
-MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	129S1 x C57BL/6	reproductive system: fertility/fecundity anomalies	33401		
-MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	129P2/OlaHsd x C57BL/6	growth/weight abnormality: postnatal	33402		
-MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	129P2/OlaHsd x C57BL/6	reproductive system: fertility/fecundity anomalies	33402		
-MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	129P2/OlaHsd x C57BL/6	reproductive system: dysmorphology	33402		
-MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	129P2/OlaHsd x C57BL/6	immune system: other functional anomaly	33402		
-MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	129P2/OlaHsd x C57BL/6	endocrine glands: functional anomalies	33402		
-MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	129P2/OlaHsd x C57BL/6	tumors: increased incidence	33402		
-MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	129S4/SvJaeSor x C57BL/6J	growth/weight abnormality: postnatal	33400		
-MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	129S4/SvJaeSor x C57BL/6J	tumors: increased incidence	33400		
-MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	129S4/SvJaeSor x C57BL/6J	reproductive system: fertility/fecundity anomalies	33400		
-MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	129S4/SvJaeSor x C57BL/6J	immune system: other functional anomaly	33400		
-MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	129S4/SvJaeSor x C57BL/6J	endocrine glands: functional anomalies	33400		
-MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	129S4/SvJaeSor x C57BL/6J	eye: dysmorphology	33400		
-MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	Multiple	survival: perinatal lethality	40142		strain Note
-MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	Multiple	digestive system: dysmorphology	40142		
-MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	Multiple	skeletal: craniofacial defects	40142		
-MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	Multiple	skeletal: extremities defects	40142
-MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	Multiple	skeletal: osteogenesis/developmental anomalies	40142
-MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>		Cdkn1c<+>	Multiple	no obvious phenotype: no defect detected	40142
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	survival: perinatal lethality	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	survival: postnatal lethality	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	growth/weight abnormality: postnatal	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	respiratory system: respiratory distress or failure/functional anomalies	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	skeletal: craniofacial defects	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	digestive system: dysmorphology	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	skeletal: extremities defects	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	immune system: other dysmorphology	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	endocrine glands: dysmorphology	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	129P2/OlaHsd x C57BL/6	reproductive system: fertility/fecundity anomalies	61190
-MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>		Cdkn1c<+>	129P2/OlaHsd x C57BL/6	no obvious phenotype: no defect detected	61190
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	survival: perinatal lethality	40203
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	survival: embryonic lethality	40203
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	40203		pheno note
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	digestive system: dysmorphology	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	growth/weight abnormality: postnatal	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	skeletal: craniofacial defects	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	respiratory system: respiratory distress or failure/functional anomalies	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	skeletal: osteogenesis/developmental anomalies	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	kidney/renal system: dysmorphology	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	endocrine glands: dysmorphology	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	129S7/SvEvBrd x C57BL/6	eye: corneal or lens defect	40203		
-MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>		Cdkn1c<+>	129S7/SvEvBrd x C57BL/6	no obvious phenotype: no defect detected	40203		
-MGI:104738	Cdkn2a	MGI:1926877	Cdkn2a<tm1Cjs>	MGI:1926877	Cdkn2a<tm1Cjs>	(129X1/SvJ x C57BL/6)F2	tumors: increased incidence	44427		
-MGI:104738	Cdkn2a	MGI:1857942	Cdkn2a<tm1Rdp>	MGI:1857942	Cdkn2a<tm1Rdp>	Complex	tumors: increased incidence	53805		strain note
-MGI:104737	Cdkn2b	MGI:1933760	Cdkn2b<tm1Bbd>	MGI:1933760	Cdkn2b<tm1Bbd>	129S1/Sv x C57BL/6	tumors: increased incidence	63299		In conj with
-MGI:104737	Cdkn2b	MGI:1933760	Cdkn2b<tm1Bbd>	MGI:1933760	Cdkn2b<tm1Bbd>	129S1/Sv x C57BL/6	hematology: hemaotpoetic anomalies	63299		
-MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	129S1/Sv x C57BL/6	growth/weight abnormality: postnatal	63299		in conj with 
-MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	129S1/Sv x C57BL/6	immune system: other dysmorphology	63299		
-MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	129S1/Sv x C57BL/6	kidney/renal system: dysmorphology	63299		
-MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	129S1/Sv x C57BL/6	tumors: increased incidence	63299		
-MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	Complex	growth/weight abnormality: postnatal	50053		strain note
-MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	Complex	tumors: increased incidence	50053		in conj with
-MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	Complex	immune system: other dysmorphology	50053		
-MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	Complex	endocrine glands: dysmorphology	50053		
-MGI:105387	Cdkn2d	MGI:1927668	Cdkn2d<tm1Maro>	MGI:1927668	Cdkn2d<tm1Maro>	129P2/OlaHsd x C57Bl/6	tumors: no increased incidence	58959		
-MGI:105387	Cdkn2d	MGI:1927668	Cdkn2d<tm1Maro>	MGI:1927668	Cdkn2d<tm1Maro>	129P2/OlaHsd x C57Bl/6	reproductive system: dysmorphology	58959		
-MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>	MGI:1857928	Cdx2<tm1Fbe>	129S1/Sv x C57BL/6J	survival: embryonic lethality	38772		
-MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>		Cdx2<+>	129S1/Sv x C57BL/6J	skeletal: axial defects	38772		
-MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>		Cdx2<+>	129S1/Sv x C57BL/6J	growth/weight abnormality: postnatal	38772		
-MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>		Cdx2<+>	129S1/Sv x C57BL/6J	extremities: tail dysmorphology	38772		pheno note
-MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>		Cdx2<+>	129S1/Sv x C57BL/6J	tumors: increased incidence	38772		
-MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<tm1Mmt>	129X1/SvJ x C57BL/6	survival: embryonic lethality	47050		
-MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<+>	129X1/SvJ x C57BL/6	tumors: increased incidence	47050		
-MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<+>	129X1/SvJ x C57BL/6	skeletal: axial defects	47050		
-MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<+>	129X1/SvJ x C57BL/6	growth/weight abnormality: postnatal	47050		
-MGI:1202065	Chek1	MGI:1928818	Chek1<tm1Mkt>	MGI:1928818	Chek1<tm1Mkt>	129P2/OlaHsd x C57BL/6J	survival: embryonic lethality	62918		
-MGI:1202065	Chek1	MGI:1926528	Chek1<tm1Sje>	MGI:1926528	Chek1<tm1Sje>	Not Specified	survival: embryonic lethality	62919		
-MGI:1202065	Chek1	MGI:1926528	Chek1<tm1Sje>		Chek1<+>	Not Specified	no obvious phenotype: no defect detected	62919		
-MGI:107537	Cln3	MGI:1933976	Cln3<tm1Nbm>	MGI:1933976	Cln3<tm1Nbm>	NIH Black Swiss x129S6/SvEvTac	central nervous system: other dysmorphology	58230		pheno note
-MGI:88424	Cm	MGI:1861106	Cm	MGI:1861106	Cm	C3H/HeH x 101/H	survival: embryonic lethality	13451		
-MGI:88424	Cm	MGI:1861106	Cm		Cm<+>	C3H/HeH x 101/H	neurological/behavioral: motor capabilities/coordination/movement anomalies	13451		
-MGI:88424	Cm	MGI:1861106	Cm		Cm<+>	C3H/HeH x 101/H	eye: dysmorphology	13451		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	growth/weight abnormality: postnatal	49070		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	survival: perinatal lethality	49070		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	respiratory system: dysmorphology	49070		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	kidney/renal system: functional anomalies	49070		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	immune system: lymphoid development/ B lymphocyte defects	49070		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	hematology: hemaotpoetic anomalies	49070		
-MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	Not Specified	central nervous system: other functional anomalies	49070		pheno note
-MGI:2153839	Hps3	MGI:1861609	Hps3<coa-6J>	MGI:1861609	Hps3<coa-6J>	C3H/HeJ	coat: color anomalies	63693		
-MGI:2153839	Hps3	MGI:1861609	Hps3<coa-6J>	MGI:1861609	Hps3<coa-6J>	C3H/HeJ	hematology: abnormal blood coagulation	63693		
-MGI:88442	Coc	MGI:1856596	Coc	MGI:1856596	Coc	Complex	eye: corneal or lens defect	9528		strain note
-MGI:88442	Coc	MGI:1856596	Coc		Coc<+>	Complex	eye: corneal or lens defect	9528		
-MGI:88489	Cr2	MGI:1932568	Cr2<tm1Hmo>	MGI:1932568	Cr2<tm1Hmo>	Not Specified	immune system: immunodeficiency	35112		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	((C57BL/6 x CBA)F1 x C57BL/6)F3	survival: embryonic lethality	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	((C57BL/6 x CBA)F1 x C57BL/6)F3	central nervous system: neural tube defects	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	((C57BL/6 x CBA)F1 x C57BL/6)F3	hematology: abnormal red blood cell count/anemia	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	((C57BL/6 x CBA)F1 x C57BL/6)F3	skin: pigmentation anomalies	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	((C57BL/6 x CBA)F1 x C57BL/6)F3	embryogenesis: extraembryonic tissue dysmorphology	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	((C57BL/6 x CBA)F1 x C57BL/6)F3	heart/cardiovascular system: blood circulatory defects	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	growth/weight abnormality: postnatal	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	skeletal: craniofacial defects	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	extremities: digit dysmorphology	53370		pheno note
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	skeletal: axial defects	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	heart/cardiovascular system: dysmorphology	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	neurological/behavioral: seizures/epilepsy	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	neurological/behavioral: motor capabilities/coordination/movement anomalies	53370		
-MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>		Crebbp<+>	((C57BL/6 x CBA)F1 x C57BL/6)F1	neurological/behavioral: learning/memory impairment	53370		
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:1926888	Crebbp<tm1Dli>	129S6/SvEvTac x C57BL/6	survival: embryonic lethality	60630		
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:1926888	Crebbp<tm1Dli>	129S6/SvEvTac x C57BL/6	central nervous system: neural tube defects	60630		
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>		Crebbp<+>	129S6/SvEvTac x C57BL/6	growth/weight abnormality: postnatal	60630		
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>		Crebbp<+>	129S6/SvEvTac x C57BL/6	skeletal: craniofacial defects	60630		
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>		Crebbp<+>	129S6/SvEvTac x C57BL/6	immune system: other dysmorphology	60630		pheno note
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>		Crebbp<+>	129S6/SvEvTac x C57BL/6	hematology: abnormal red blood cell count/anemia	60630		
-MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>		Crebbp<+>	129S6/SvEvTac x C57BL/6	tumors: increased incidence	60630		
-MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>	MGI:1928768	Crebbp<tm1Rik>	Multiple	survival: embryonic lethality	42932		
-MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>		Crebbp<+>	Multiple	skeletal: craniofacial defects	42932		strain note
-MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>		Crebbp<+>	Multiple	skeletal: axial defects	42932		
-MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>		Crebbp<+>	Multiple	growth/weight abnormality: postnatal	42932		
-MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>		Crebbp<+>	Multiple	extremities: no defect detected	42932		
-MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	129S4/SvJaeSor x C57BL/6J	survival: perinatal lethality	67826		
-MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	129S4/SvJaeSor x C57BL/6J	heart/cardiovascular system: dysmorphology	67826		
-MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	129S4/SvJaeSor x C57BL/6J	immune system: other dysmorphology	67826
-MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	129S4/SvJaeSor x C57BL/6J	endocrine glands: dysmorphology	67826
-MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	129S4/SvJaeSor x C57BL/6J	skeletal: craniofacial defects	67826
-MGI:88515	Cryaa	MGI:1858023	Cryaa<lop18>	MGI:1858023	Cryaa<lop18>	B6.CBA-Cryaa<lop18>	eye: corneal or lens defect	59482
-MGI:88515	Cryaa	MGI:1858025	Cryaatm1<Wawr>	MGI:1858025	Cryaatm1<Wawr>	Multiple	eye: corneal or lens defect	38210
-MGI:88518	Cryba1	MGI:1857969	Cryba1<Po1>	MGI:1857969	Cryba1<Po1>	Get Ref	eye: corneal or lens defect	58912
-MGI:88518	Cryba1	MGI:1857969	Cryba1<Po1>		Cryba1<+>	GET ref	eye: corneal or lens defect	58912
-MGI:88519	Crybb2	MGI:2137511	Crybb2<Aey2>	?	?	GET ref	eye: corneal or lens defect	70508
-MGI:88519	Crybb2	MGI:2137511	Crybb2<Phil>	?	?	Not Specified	eye: corneal or lens defect	6293
-MGI:88521	Cryga	MGI:1857595	Cryga<1Neu>		Cryga<+>	Not Specified	eye: corneal or lens defect	21950
-MGI:88522	Crygb	MGI:1857597	Crygb<Cat2-nop>	MGI:1857597	Crygb<Cat2-nop>	Not Specified	eye: corneal or lens defect	7589
-MGI:88522	Crygb	MGI:1857597	Crygb<Cat2-nop>		Crygb<+>	Not Specified	eye: corneal or lens defect	7589
-MGI:88524	Crygd	MGI:1858026	Crygd<Lop12>		Crygd<+>	((BALB/cJ x SJL/J) x BALB/cJ)	eye: corneal or lens defect	60856
-MGI:88525	Cryge	MGI:1932397	Cryge<Aey1>	MGI:1932397	Cryge<Aey1>	GET ref	eye: dysmorphology	68708
-MGI:88525	Cryge	MGI:1932397	Cryge<Aey1>	MGI:1932397	Cryge<Aey1>	GET ref	eye: corneal or lens defect	68708
-MGI:88525	Cryge	MGI:1932397	Cryge<Aey1>		Cryge<+>	GET ref	eye: corneal or lens defect	68708
-MGI:88525	Cryge	MGI:1857599	Cryge<Cat2-Elo>		Cryge<+>	Not Specified	eye: dysmorphology	15383
-MGI:88525	Cryge	MGI:1857599	Cryge<Cat2-Elo>		Cryge<+>	Not Specified	eye: corneal or lens defect	15383
-MGI:88525	Cryge	MGI:1855995	Cryge<Cat2-nz>	MGI:1855995	Cryge<Cat2-nz>	Not Specified	eye: corneal or lens defect	6686
-MGI:88525	Cryge	MGI:1855995	Cryge<Cat2-nz>		Cryge<+>	Not Specified	eye: corneal or lens defect	6686
-MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>	MGI:1857598	Cryge<Cat2-t>	Not Specified	eye: dysmorphology	9528
-MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>	MGI:1857598	Cryge<Cat2-t>	Not Specified	eye: corneal or lens defect	9528
-MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>		Cryge<+>	Not Specified	eye: dysmorphology	9528
-MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>		Cryge<+>	Not Specified	eye: corneal or lens defect	9528
+MGI:109632	Rax	MGI:1856862	Rax<ey1>	MGI:1856862	Rax<ey1>	ZRDCT/Ch	eye: visual defects	229	IMP					survival: perinatal lethality
+MGI:109632	Rax	MGI:1856862	Rax<ey1>	MGI:2152536	Rax<+>	ZRDCT/Ch	no obvious phenotype: no defect detected	229	IMP					survival: perinatal lethality
+MGI:109632	Rax	MGI:2152531	Rax<tm1Mjam>	MGI:2152531	Rax<tm1Mjam>	Not Specified	eye: visual defects	40830	IMP	embryogenesis: extraembryonic tissue dysmorphology				survival: postnatal lethality
+MGI:109632	Rax	MGI:2152531	Rax<tm1Mjam>	MGI:2152536	Rax<+>	Not Specified	no obvious phenotype: no defect detected	40830	IMP					survival: premature death
+MGI:98483	Abcb2	MGI:1858161	Abcb2<tm1Hpl>	MGI:1858161	Abcb2<tm1Hpl>	either: (involves: 129S2/SvPas # 129/Ola) or (involves: 129S2/SvPas # FVB)	immune system: no defect detected	60782	IMP	strain note				growth/weight abnormality: embryonic
+MGI:87872	Acc	MGI:1856662	Acc	MGI:1856662	Acc	Involves: 101 # C3H	survival: embryonic lethality	6686	IMP					growth/weight abnormality: postnatal
+MGI:87872	Acc	MGI:1856662	Acc	MGI:2158232	Acc<+>	Involves: 101 # C3H	eye: corneal or lens defect	6686	IMP					eye: visual defects
+MGI:87996	Alm	MGI:1856649	Alm	MGI:1856649	Alm	Involves: 101 # C3H	survival: embryonic lethality	6686	IMP					eye: dysmorphology
+MGI:87996	Alm	MGI:1856649	Alm	MGI:2158233	Alm<+>	Involves: 101 # C3H	eye: no defect detected	6686	IMP					eye: corneal or lens defect
+MGI:87996	Alm	MGI:1856649	Alm	MGI:2158233	Alm<+>	Involves: 101 # C3H	coat: color anomalies	6686	IMP					eye: no defect detected
+MGI:87996	Alm	MGI:1856649	Alm	MGI:2158233	Alm<+>	Involves: 101 # C3H	growth/weight abnormality: postnatal	6686	IMP					coat: hair growth defects
+MGI:87998	Alox12	MGI:1932927	Alox12<tm1Fun>	MGI:1932927	Alox12<tm1Fun>	Involves: 129S2/SvPas # C57BL/6	skin: texture/condition anomalies	46896	IMP					coat: hair texture defects
+MGI:87998	Alox12	MGI:1932927	Alox12<tm1Fun>	MGI:1932927	Alox12<tm1Fun>	Involves: 129S2/SvPas # C57BL/6	metabolism: other metabolic defect	46896	IMP					coat: color anomalies
+MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	Involves: 129S1/Sv # 129X1/SvJ # NMRI	skeletal: craniofacial defects	40076	IMP					coat: hair follicle structure/orientation anomalies
+MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	Involves: 129S1/Sv # 129X1/SvJ # NMRI	survival: embryonic lethality	40076	IMP					coat: no defect detected
+MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	Involves: 129S1/Sv # 129X1/SvJ # NMRI	skeletal: extremities defects	40076	IMP					skin: pigmentation anomalies
+MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	Involves: 129S1/Sv # 129X1/SvJ # NMRI	eye: corneal or lens defect	40076	IMP					skin: texture/condition anomalies
+MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	Involves: 129S1/Sv # 129X1/SvJ # NMRI	central nervous system: brain dysmorphology	40076	IMP					skin: no defect detected
+MGI:1306796	Apaf1	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	MGI:1857868	Apaf1<Gt(IRESßgeo)XIX18Pgr>	Involves: 129S1/Sv # 129X1/SvJ # NMRI	other aberrant phenotype	40076	IMP					vibrissae: shape/orientation defects
+MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Involves: 129S6/SvEv	survival: perinatal lethality	60409	IMP					vibrissae: no defect detected
+MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Involves: 129S6/SvEv	central nervous system: neural tube defects	60409	IMP					extremities: limb dysmorphology
+MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Involves: 129S6/SvEv	skeletal: craniofacial defects	60409	IMP					extremities: digit dysmorphology
+MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Involves: 129S6/SvEv	neurological/behavioral: motor capabilities/coordination/movement anomalies	60409	IMP					extremities: tail dysmorphology
+MGI:1306796	Apaf1	MGI:1860245	Apaf1<tm1Her>	MGI:1860245	Apaf1<tm1Her>	Involves: 129S6/SvEv	reproductive system: fertility/fecundity anomalies	60409	IMP					extremities: no defect detected
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6 	survival: perinatal lethality	49841	IMP					teeth: tooth dysmorphology
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6 	central nervous system: neural tube defects	49841	IMP					teeth: no defect detected
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6 	central nervous system: brain dysmorphology	49841	IMP					ears: auditory defects/deafness
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6 	skeletal: extremities defects	49841	IMP					ears: dysmorphology
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # CD1	survival: perinatal lethality	49841	IMP					ears: no defect detected
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # CD1	central nervous system: neural tube defects	49841	IMP					musculature: muscle dysmorphology
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # CD1	central nervous system: brain dysmorphology	49841	IMP					musculature: physiological defects
+MGI:1306796	Apaf1	MGI:1928692	Apaf1<tm1Mak>	MGI:1928692	Apaf1<tm1Mak>	involves: 129P2/OlaHsd # CD1	skeletal: extremities defects	49841	IMP					musculature: no defect detected
+MGI:88048	Apo	MGI:1856666	Apo	MGI:1856666	Apo	Involves: 101 # C3H	survival: embryonic lethality	65314	IMP					skeletal: osteogenesis/developmental anomalies
+MGI:88048	Apo	MGI:1856666	Apo	MGI:2158236	Apo<+>	Involves: 101 # C3H	survival: embryonic lethality	65314	IMP					
+MGI:88048	Apo	MGI:1856666	Apo	MGI:2158236	Apo<+>	Involves: 101 # C3H	eye: corneal or lens defect	65314	IMP					skeletal: axial defects
+MGI:88048	Apo	MGI:1856666	Apo	MGI:2158236	Apo<+>	Involves: 101 # C3H	neurological/behavioral: motor capabilities/coordination/movement anomalies	65314	IMP					skeletal: extremities defects
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	either: 129S6/SvEvTac or (involves: NIH Black Swiss	neurological/behavioral: motor capabilities/coordination/movement anomalies	34193	IMP	strain note				skeletal: craniofacial defects
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	129S6/SvEvTac 	growth/weight abnormality: postnatal	34193	IMP					
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	129S6/SvEvTac 	reproductive system: fertility/fecundity anomalies	34193	IMP					
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	129S6/SvEvTac 	reproductive system: dysmorphology	34193	IMP					
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	129S6/SvEvTac 	tumors: increased incidence	34193	IMP					
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	129S6/SvEvTac 	immune system: lymphoid development/ T lymphocyte defects	34193	IMP					
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	129S6/SvEvTac 	immune system: other dysmorphology	34193	IMP					
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	involves: 129S6/SvEvTac # NIH Black Swiss	growth/weight abnormality: postnatal	34193	IMP					skeletal: no defect detected
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	involves: 129S6/SvEvTac # NIH Black Swiss	reproductive system: fertility/fecundity anomalies	34193	IMP					neurological/behavioral: aggression
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	involves: 129S6/SvEvTac # NIH Black Swiss	reproductive system: dysmorphology	34193	IMP					neurological/behavioral: conditioning defect
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	involves: 129S6/SvEvTac # NIH Black Swiss	tumors: increased incidence	34193	IMP					neurological/behavioral: learning/memory impairment
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	involves: 129S6/SvEvTac # NIH Black Swiss	immune system: lymphoid development/ T lymphocyte defects	34193	IMP					neurological/behavioral: seizures/epilepsy
+MGI:107202	Atm	MGI:1857132	Atm<tm1Awb>	MGI:1857132	Atm<tm1Awb>	involves: 129S6/SvEvTac # NIH Black Swiss	immune system: other dysmorphology	34193	IMP					neurological/behavioral: fear/anxiety
+MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	involves: 129S4/SvJae	growth/weight abnormality: postnatal	42324	IMP					neurological/behavioral: motor capabilities/coordination/movement anomalies
+MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	involves: 129S4/SvJae	reproductive system: fertility/fecundity anomalies	42324	IMP					neurological/behavioral: sensory capabilities/reflexes/nociception abnormalities
+MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	involves: 129S4/SvJae	immune system: lymphoid development/ T lymphocyte defects	42324	IMP					neurological/behavioral: maternal behavior anomalies
+MGI:107202	Atm	MGI:1926343	Atm<tm1Bal>	MGI:1926343	Atm<tm1Bal>	involves: 129S4/SvJae	tumors: increased incidence	42324	IMP					neurological/behavioral: feeding/drinking preference anomalies
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	survival: premature death	61201	IMP	strain note				neurological/behavioral: sleep pattern/circadian rhythm anomalies
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	growth/weight abnormality: postnatal	61201	IMP					neurological/behavioral: other anomalies
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	reproductive system: fertility/fecundity anomalies	61201	IMP					neurological/behavioral: no defect detected
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	central nervous system: brain dysmorphology	61201	IMP					metabolism: abnormal lipid homeostasis
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	immune system: immunodeficiency	61201	IMP					metabolism: abnormal glucose homeostasis
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	immune system: lymphoid development/ T lymphocyte defects	61201	IMP					metabolism: other metabolic defect measured by clinical chemistry
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	tumors: increased incidence	61201	IMP					metabolism: other metabolic defect
+MGI:107202	Atm	MGI:1933748	Atm<tm1Fwa>	MGI:1933748	Atm<tm1Fwa>	involves: 129S4/SvJae # C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	61201	IMP					metabolism: no defect detected
+MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	involves: 129S6/SvEvTac # Black Swiss	growth/weight abnormality: postnatal	36561	IMP	strain Note				hematology: hematotpoetic anomalies
+MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	immune system: other dysmorphology	36561	IMP					hematology: abnormal red blood cell count/anemia
+MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	immune system: lymphoid development/ T lymphocyte defects	36561	IMP					hematology: abnormal blood coagulation
+MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	tumors: increased incidence	36561	IMP					hematology: no defect detected
+MGI:107202	Atm	MGI:1926875	Atm<tm1Led>	MGI:1926875	Atm<tm1Led>	129S6/SvEvTac x Black Swiss	reproductive system: fertility/fecundity anomalies	36561	IMP					heart/cardiovascular system: dysmorphology
+MGI:107202	Atm	MGI:1933746	Atm<tm1Pmc>	MGI:1933746	Atm<tm1Pmc>	involves: 129/SvJ # C57BL/6	reproductive system: fertility/fecundity anomalies	47752	IMP					heart/cardiovascular system: blood circulatory defects
+MGI:107202	Atm	MGI:1933746	Atm<tm1Pmc>	MGI:1933746	Atm<tm1Pmc>	involves: 129/SvJ # C57BL/6	tumors: increased incidence	47752	IMP					heart/cardiovascular system: blood pressure anomalies
+MGI:99400	Atp7a	MGI:1856096	Atp7a<Mo>			Not Specified	survival: embryonic lethality	13041	IMP					heart/cardiovascular system: other functional anomalies
+MGI:99400	Atp7a	MGI:1856096	Atp7a<Mo>	MGI:2158238	Atp7a<+>	Not Specified	coat: color anomalies	13041	IMP					heart/cardiovascular system: no defect detected
+MGI:99400	Atp7a	MGI:1856096	Atp7a<Mo>	MGI:2158238	Atp7a<+>	Not Specified	survival: perinatal lethality	13041	IMP					respiratory system: dysmorphology
+MGI:99400	Atp7a	MGI:1856096	Atp7a<Mo>	MGI:2158238	Atp7a<+>	Not Specified	reproductive system: no defect detected	13041	IMP					respiratory system: respiratory distress or failure/functional anomalies
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	survival: postnatal lethality	66094	IMP					respiratory system: no defect detected
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	growth/weight abnormality: postnatal	66094	IMP					kidney/renal system: dysmorphology
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	kidney/renal system: functional anomalies	66094	IMP					kidney/renal system: functional anomalies
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	metabolism: abnormal glucose homeostasis	66094	IMP					kidney/renal system: no defect detected
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	hematology: abnormal red blood cell count/anemia	66094	IMP					liver/hepatic system: dysmorphology
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	metabolism: other metabolic defect measured by clinical chemistry	66094	IMP					liver/hepatic system: functional anomalies
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>			involves: 129S1/Sv # 129X1/SvJ # CF-1	kidney/renal system: dysmorphology	66094	IMP					liver/hepatic system: no defect detected
+MGI:88123	Avpr2	MGI:2150344	Avpr2<tm1Jwe>		Avpr2<+>	involves: 129S1/Sv # 129X1/SvJ # CF-1	kidney/renal system: functional anomalies	66094	IMP					digestive system: dysmorphology
+MGI:88127	B2m	MGI:1927183	B2m<tm1Jae>	MGI:1927183	B2m<tm1Jae>	involves: 129S2/SvPas # C57BL/6J	no obvious phenotype: no defect detected	66094	IMP					digestive system: functional anomalies
+MGI:88127	B2m	MGI:1857133	B2m<tm1Unc>	MGI:1857133	B2m<tm1Unc>	involves: 129S2/SvPas # C57BL/6J	immune system: lymphoid development/ T lymphocyte defects	66094	IMP	double mutant				digestive system: no defect detected
+MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	Involves: 129P2/OlaHsd # C57BL/6	survival: perinatal lethality	57112	IMP					immune system: lymphoid development/ B lymphocyte defects
+MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	Involves: 129P2/OlaHsd # C57BL/6	skeletal: axial defects	57112	IMP					immune system: lymphoid development/ T lymphocyte defects
+MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	Involves: 129P2/OlaHsd # C57BL/6	skeletal: craniofacial defects	57112	IMP					immune system: other dysmorphology
+MGI:108015	Bapx1	MGI:1931319	Bapx1<tm1Boph>	MGI:1931319	Bapx1<tm1Boph>	Involves: 129P2/OlaHsd # C57BL/6	immune system: other dysmorphology	57112	IMP					immune system: immunodeficiency
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ	skeletal: axial defects	55583	IMP	strain note				immune system: hypersensitivity
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ	survival: perinatal lethality	55583	IMP					immune system: other functional anomaly
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ	extremities: tail dysmorphology	55583	IMP					immune system: no defect detected
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ	skeletal: craniofacial defects	55583	IMP					central nervous system: neural tube defects
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ	immune system: other dysmorphology	55583	IMP					central nervous system: other dysmorphology
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ # C57BL/6	skeletal: axial defects	55583	IMP	strain note				immune system: hypersensitivity
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ # C57BL/6	survival: perinatal lethality	55583	IMP					immune system: other functional anomaly
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ # C57BL/6	extremities: tail dysmorphology	55583	IMP					immune system: no defect detected
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ # C57BL/6	skeletal: craniofacial defects	55583	IMP					central nervous system: neural tube defects
+MGI:108015	Bapx1	MGI:1857926	Bapx1<tm1Tlu>	MGI:1857926	Bapx1<tm1Tlu>	involves: 129S1/Sv # 129X1/SvJ # C57BL/6	immune system: other dysmorphology	55583	IMP					central nervous system: other dysmorphology
+MGI:88145	Bdnf	MGI:1930038	Bdnf<tm1Gdy>	MGI:1930038	Bdnf<tm1Gdy>	involves: 129P2/OlaHsd	survival: postnatal lethality	25565	IMP					central nervous system: LTP anomalies
+MGI:88145	Bdnf	MGI:1930038	Bdnf<tm1Gdy>	MGI:1930038	Bdnf<tm1Gdy>	involves: 129P2/OlaHsd	neurological/behavioral: motor capabilities/coordination/movement anomalies	25565	IMP					central nervous system: other functional anomalies
+MGI:88145	Bdnf	MGI:1930038	Bdnf<tm1Gdy>	MGI:1930038	Bdnf<tm1Gdy>	involves: 129P2/OlaHsd	central nervous system: other dysmorphology	25565	IMP					central nervous system: no defect detected
+MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	involves: 129P2/OlaHsd	survival: postnatal lethality	17123	IMP					peripheral nervous system: dysmorphology
+MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	involves: 129P2/OlaHsd	neurological/behavioral: motor capabilities/coordination/movement anomalies	17123	IMP					peripheral nervous system: functional anomalies
+MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	involves: 129P2/OlaHsd	growth/weight abnormality: postnatal	17123	IMP					peripheral nervous system: no defect detected
+MGI:88145	Bdnf	MGI:1857136	Bdnf<tm1Jae>	MGI:1857136	Bdnf<tm1Jae>	involves: 129P2/OlaHsd	central nervous system: other dysmorphology	17123	IMP					reproductive system: dysmorphology
+MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	Involves: 129S2 # C57BL/6J	central nervous system: other dysmorphology	67231	IMP					reproductive system: fertility/fecundity anomalies
+MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	Involves: 129S2 # C57BL/6J	growth/weight abnormality: postnatal	67231	IMP					reproductive system: no defect detected
+MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	Involves: 129S2 # C57BL/6J	neurological/behavioral: motor capabilities/coordination/movement anomalies	67231	IMP					endocrine glands: dysmorphology
+MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	Involves: 129S2 # C57BL/6J	survival: postnatal lethality	67231	IMP					endocrine glands: functional anomalies
+MGI:88145	Bdnf	MGI:1930110	Bdnf<tm1Lfr>	MGI:1930110	Bdnf<tm1Lfr>	Involves: 129S2 # C57BL/6J	respiratory system: respiratory distress or failure/functional anomalies	67231	IMP					endocrine glands: no defect detected
+MGI:88145	Bdnf	MGI:1929986	Bdnf<tm1Par>	MGI:1929986	Bdnf<tm1Par>	involves: 129S1/Sv	survival: postnatal lethality	44286	IMP					tumors: increased incidence
+MGI:88145	Bdnf	MGI:1929986	Bdnf<tm1Par>	MGI:1929986	Bdnf<tm1Par>	involves: 129S1/Sv	central nervous system: other dysmorphology	44286	IMP					tumors: no increased incidence
+MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	involves: 129S4/SvJae # NMRI	survival: postnatal lethality	64962	IMP					other aberrant phenotype
+MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	involves: 129S4/SvJae # NMRI	growth/weight abnormality: postnatal	64962	IMP					no obvious phenotype: no defect detected
+MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	involves: 129S4/SvJae # NMRI	neurological/behavioral: motor capabilities/coordination/movement anomalies	64962	IMP					central nervous system: brain dysmorphology
+MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	involves: 129S4/SvJae # NMRI	central nervous system: other dysmorphology	64962	IMP					
+MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:1891516	Bdnf<tm1Tbn>	involves: 129S4/SvJae # NMRI	central nervous system: LTP anomalies	64962	IMP					
+MGI:88145	Bdnf	MGI:1891516	Bdnf<tm1Tbn>	MGI:2158290	Bdnf<+>	involves: 129S4/SvJae # NMRI	central nervous system: LTP anomalies	64962	IMP					
+MGI:88145	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	involves: 129S4/SvJae	growth/weight abnormality: postnatal	61340	IMP	strain note				
+MGI:88145	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	involves: 129S4/SvJae	neurological/behavioral: motor capabilities/coordination/movement anomalies	61340	IMP					
+MGI:88145	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	involves: 129S4/SvJae	neurological/behavioral: other anomalies	61340	IMP					
+MGI:88145	Bdnf	MGI:1929985	Bdnf<tm2(Ntf5)Jae>	 MGI:1929985	Bdnf<tm2(Ntf5)Jae>	involves: 129S4/SvJae	reproductive system: fertility/fecundity anomalies	61340	IMP					
+MGI:1861990	Bdr	MGI:1862014	Bdr	MGI:2158291	Bdr<+>	involves: C3H/HeN # BALB/c	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	IMP					
+MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	involves:129X1/SvJ # 129S1/Sv # Black Swiss	survival: perinatal lethality	36830	IMP	pheno note				
+MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	involves:129X1/SvJ # 129S1/Sv # Black Swiss	digestive system: dysmorphology	36830	IMP					
+MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	involves:129X1/SvJ # 129S1/Sv # Black Swiss	embryogenesis: extraembryonic tissue dysmorphology	36830	IMP					
+MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	involves:129X1/SvJ # 129S1/Sv # Black Swiss	embryogenesis: embryonic tissue dysmorphology	36830	IMP					
+MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	involves:129X1/SvJ # 129S1/Sv # Black Swiss	skeletal: craniofacial defects	36830	IMP					
+MGI:88176	Bmp1	MGI:1857952	Bmp1<tm1Blh>	MGI:1857952	Bmp1<tm1Blh>	involves:129X1/SvJ # 129S1/Sv # Black Swiss	skeletal: craniofacial defects	36830	IMP					
+MGI:88181	Bmp5	MGI:1858106	Bmp5<se-2OZb>	MGI:1858106	Bmp5<se-2OZb>	involves: C3H/Rl x 101/Rl	ears: dysmorphology	3046	IMP	
+MGI:88181	Bmp5	MGI:1858106	Bmp5<se-2OZb>	MGI:1858106	Bmp5<se-2OZb>	involves: C3H/Rl x 101/Rl	skeletal: axial defects	3046	IMP	
+MGI:88269	Car2	MGI:2135646	Car2<n>	MGI:2135646	Car2<n>	involves: C57BL/6J # DBA/2J	growth/weight abnormality: postnatal	19268	IMP	strain note
+MGI:88269	Car2	MGI:2135646	Car2<n>	MGI:2135646	Car2<n>	involves: C57BL/6J # DBA/2J	kidney/renal system: functional anomalies	19268	IMP	
+MGI:88269	Car2	MGI:2135646	Car2<n>	MGI:2135646	Car2<n>	involves: C57BL/6J # DBA/2J	skeletal: no defect detected	19268	IMP	
+MGI:88272	Cat2	MGI:1856492	Cat2<no2>	MGI:2158241	Cat2<+>	DBA/2	eye: corneal or lens defect	16569	IMP	
+MGI:88272	Cat2	MGI:1855994	Cat2<ns>	MGI:1855994	Cat2<ns>	involves: 101 x C3H	eye: corneal or lens defect	1598	IMP	
+MGI:88272	Cat2	MGI:1855994	Cat2<ns>	MGI:1855994	Cat2<ns>	involves: 101 x C3H	eye: dysmorphology	1598	IMP	
+MGI:88272	Cat2	MGI:1855994	Cat2<ns>	MGI:2158241	Cat2<+>	involves: 101 x C3H	eye: corneal or lens defect	1598	IMP	
+MGI:88272	Cat2	MGI:1855996	Cat2<ro>	MGI:1855996	Cat2<ro>	involves: 101 x C3H	eye: corneal or lens defect	24033	IMP	
+MGI:88272	Cat2	MGI:1855996	Cat2<ro>	MGI:2158241	Cat2<+>	involves: 101 x C3H	eye: corneal or lens defect	24033	IMP	
+MGI:88272	Cat2	MGI:1856493	Cat2<tol>	MGI:2158241	Cat2<+>	involves: 101 x C3H	eye: corneal or lens defect	23988	IMP	
+MGI:88272	Cat2	MGI:1856493	Cat2<tol>	MGI:2158241	Cat2<+>	involves: 101 x C3H	eye: dysmorphology	23988	IMP	
+MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:1855998	Cat3<vl>	involves: 101 x C3H	eye: corneal or lens defect	6686	IMP	
+MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:1855998	Cat3<vl>	involves: 101 x C3H	eye: dysmorphology	6686	IMP	
+MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:1855998	Cat3<vl>	involves: 101 x C3H	survival: embryonic lethality	6686	IMP	
+MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:2158242	Cat3<+>	involves: 101 x C3H	eye: corneal or lens defect	6686	IMP
+MGI:88273	Cat3	MGI:1855998	Cat3<vl>	MGI:2158242	Cat3<+>	involves: 101 x C3H	eye: dysmorphology	6686	IMP
+MGI:88273	Cat3	MGI:1855997	Cat3<vao>	MGI:1855997	Cat3<vao>	involves: 101 x C3H	eye: dysmorphology	9528	IMP
+MGI:88273	Cat3	MGI:1855997	Cat3<vao>	MGI:1855997	Cat3<vao>	involves: 101 x C3H	eye: corneal or lens defect	9528	IMP
+MGI:88273	Cat3	MGI:1855997	Cat3<vao>	MGI:2158242	Cat3<+>	involves: 101 x C3H	eye: dysmorphology	9528	IMP
+MGI:88273	Cat3	MGI:1855997	Cat3<vao>	MGI:2158242	Cat3<+>	involves: 101 x C3H	eye: corneal or lens defect	9528	IMP
+MGI:88040	Cat4	MGI:1856585	Cat4<Apcat1-1>	MGI:1856585	Cat4<Apcat1-1>	involves: 101 x C3H	eye: dysmorphology	6686	IMP
+MGI:88040	Cat4	MGI:1856585	Cat4<Apcat1-1>	MGI:2158243	Cat4<+>	involves: 101 x C3H	eye: dysmorphology	6686	IMP
+MGI:88040	Cat4	MGI:1856585	Cat4<Apcat1-1>	MGI:2158243	Cat4<+>	involves: 101 x C3H	eye: corneal or lens defect	6686	IMP
+MGI:88040	Cat4	MGI:1856586	Cat4<Apcat1-2>	MGI:1856586	Cat4<Apcat1-2>	involves: 101 x C3H	survival: embryonic lethality	6686	IMP
+MGI:88040	Cat4	MGI:1856586	Cat4<Apcat1-2>	MGI:2158243	Cat4<+>	involves: 101 x C3H	eye: corneal or lens defect	6686	IMP
+MGI:88040	Cat4	MGI:1856586	Cat4<Apcat1-2>	MGI:2158243	Cat4<+>	involves: 101 x C3H	eye: dysmorphology	6686	IMP
+MGI:88040	Cat4	MGI:1856587	Cat4<Apcat1-3>	MGI:1856587	Cat4<Apcat1-3>	involves: 101 x C3H	survival: embryonic lethality	1598	IMP
+MGI:88040	Cat4	MGI:1856587	Cat4<Apcat1-3>	MGI:1856587	Cat4<+>	involves: 101 x C3H	eye: corneal or lens defect	1598	IMP
+MGI:88040	Cat4	MGI:1856587	Cat4<Apcat1-3>	MGI:1856587	Cat4<+>	involves: 101 x C3H	eye: dysmorphology	1598	IMP
+MGI:88040	Cat4	MGI:1856588	Cat4<Apcat1-4>	MGI:1856588	Cat4<Apcat1-4>	involves: 101 x C3H	survival: embryonic lethality	1598	IMP
+MGI:88040	Cat4	MGI:1856588	Cat4<Apcat1-4>	MGI:2158243	Cat4<+>	involves: 101 x C3H	eye: corneal or lens defect	1598	IMP	
+MGI:98786	Cat5	MGI:2137391	Cat5<To2>	MGI:2158244	Cat5<+>	involves: 101 x C3H	eye: corneal or lens defect	21951	IMP	
+MGI:107542	Ccw	MGI:1861669	Ccw	MGI:1861669	Ccw	involves: Unpedigreed stock	survival: embryonic lethality	34877	IMP	
+MGI:107542	Ccw	MGI:1861669	Ccw	MGI:2158245	Ccw<+>	involves: Unpedigreed stock	eye: corneal or lens defect	34877	IMP	
+MGI:107542	Ccw	MGI:1861669	Ccw	MGI:2158245	Ccw<+>	involves: Unpedigreed stock	vibrissae: shape/orientation defects	34877	IMP	
+MGI:88319	Cd19	MGI:1931143	Cd19<tm1(Cre)Cgn>	MGI:1931143	Cd19<tm1(Cre)Cgn>	involves: 129P2/OlaHsd	immune system: lymphoid development/ B lymphocyte defects	27463	IMP	
+MGI:88319	Cd19	MGI:1931143	Cd19<tm1(Cre)Cgn>	MGI:2158247	Cd19<+>	involves: 129P2/OlaHsd	no obvious phenotype: no defect detected	27463	IMP	
+MGI:99217	Cdh11	MGI:1861184	Cdh11<tm1Mta>	MGI:1861184	Cdh11<tm1Mta>	involves: 129S1/Sv # C57BL/6	no obvious phenotype: no defect detected	58409	IMP	
+MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	involves: 129P2/OlaHsd	survival: embryonic lethality	37888	IMP	
+MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	involves: 129P2/OlaHsd	growth/weight abnormality: embryonic	37888	IMP	
+MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	involves: 129P2/OlaHsd	heart/cardiovascular system: dysmorphology	37888	IMP	
+MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	involves: 129P2/OlaHsd	embryogenesis: embryonic tissue dysmorphology	37888	IMP	
+MGI:88355	Cdh2	MGI:1861181	Cdh2<tm1Hyn>	MGI:1861181	Cdh2<tm1Hyn>	involves: 129P2/OlaHsd	embryogenesis: developmental patterning abnormalities	37888	IMP	
+MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	involves: 129S4/SvJae # C57BL/6	survival: perinatal lethality	64289	IMP	
+MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	involves: 129S4/SvJae # C57BL/6	central nervous system: brain dysmorphology	64289	IMP	pheno note
+MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	involves: 129S4/SvJae # C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	64289	IMP	
+MGI:101765	Cdk5	MGI:1861809	Cdk5<tm1Kul>	MGI:1861809	Cdk5<tm1Kul>	involves: 129S4/SvJae # C57BL/6	heart/cardiovascular system: blood circulatory defects	64289	IMP	
+MGI:101764	Cdk5r	MGI:1931885	Cdk5r<tm1Lht>	MGI:1931885	Cdk5r<tm1Lht>	129S4/SvJae	central nervous system: brain dysmorphology	38857	IMP	strain & pheno note
+MGI:101764	Cdk5r	MGI:1931885	Cdk5r<tm1Lht>	MGI:1931885	Cdk5r<tm1Lht>	involves: 129S4/SvJae # C57BL/6	central nervous system: brain dysmorphology	38857	IMP	strain & pheno note
+MGI:104556	Cdkn1a	MGI:1888950	Cdkn1a<tm1Led>	MGI:1888950	Cdkn1a<tm1Led>	involves: 129S6/SvEvTac # NIH Black Swiss	no obvious phenotype: no defect detected	28420	IMP	
+MGI:104556	Cdkn1a	MGI:1933751	Cdkn1a<tm1Tyj>	MGI:1933751	Cdkn1a<tm1Tyj>	involves: 129S2/SvPas	no obvious phenotype: no defect detected	68068	IMP	
+MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	involves: 129S1/Sv # C57BL/6	growth/weight abnormality: postnatal	33401	IMP	
+MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	involves: 129S1/Sv # C57BL/6	immune system: other functional anomaly	33401	IMP	
+MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	involves: 129S1/Sv # C57BL/6	endocrine glands: functional anomalies	33401	IMP	
+MGI:104565	Cdkn1b	MGI:1888808	Cdkn1b<tm1Ako>	MGI:1888808	Cdkn1b<tm1Ako>	involves: 129S1/Sv # C57BL/6	reproductive system: fertility/fecundity anomalies	33401	IMP	
+MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	involves: 129P2/OlaHsd # C57BL/6	growth/weight abnormality: postnatal	33402	IMP	
+MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	involves: 129P2/OlaHsd # C57BL/6	reproductive system: fertility/fecundity anomalies	33402	IMP	
+MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	involves: 129P2/OlaHsd # C57BL/6	reproductive system: dysmorphology	33402	IMP	
+MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	involves: 129P2/OlaHsd # C57BL/6	immune system: other functional anomaly	33402	IMP	
+MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	involves: 129P2/OlaHsd # C57BL/6	endocrine glands: functional anomalies	33402	IMP	
+MGI:104565	Cdkn1b	MGI:1888790	Cdkn1b<tm1Kin>	MGI:1888790	Cdkn1b<tm1Kin>	involves: 129P2/OlaHsd # C57BL/6	tumors: increased incidence	33402	IMP	
+MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	Involves: 129S4/SvJaeSor # C57BL/6J	growth/weight abnormality: postnatal	33400	IMP	
+MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	Involves: 129S4/SvJaeSor # C57BL/6J	tumors: increased incidence	33400	IMP	
+MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	Involves: 129S4/SvJaeSor # C57BL/6J	reproductive system: fertility/fecundity anomalies	33400	IMP	
+MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	Involves: 129S4/SvJaeSor # C57BL/6J	immune system: other functional anomaly	33400	IMP	
+MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	Involves: 129S4/SvJaeSor # C57BL/6J	endocrine glands: functional anomalies	33400	IMP	
+MGI:104565	Cdkn1b	MGI:1857146	Cdkn1b<tm1Mlf>	MGI:1857146	Cdkn1b<tm1Mlf>	Involves: 129S4/SvJaeSor # C57BL/6J	eye: dysmorphology	33400	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # C57BL/6	survival: perinatal lethality	40142	IMP	strain Note
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # C57BL/6	digestive system: dysmorphology	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # C57BL/6	skeletal: craniofacial defects	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # C57BL/6	skeletal: extremities defects	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # C57BL/6	skeletal: osteogenesis/developmental anomalies	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:2158292	Cdkn1c<+>	129S1/Sv # 129X1/SvJ # C57BL/6	no obvious phenotype: no defect detected	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # ICR	survival: perinatal lethality	40142	IMP	strain Note
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # ICR	digestive system: dysmorphology	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # ICR	skeletal: craniofacial defects	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # ICR	skeletal: extremities defects	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:1933757	Cdkn1c<tm1Bbd>	129S1/Sv # 129X1/SvJ # ICR	skeletal: osteogenesis/developmental anomalies	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933757	Cdkn1c<tm1Bbd>	MGI:2158292	Cdkn1c<+>	129S1/Sv # 129X1/SvJ # ICR	no obvious phenotype: no defect detected	40142	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	survival: perinatal lethality	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	survival: postnatal lethality	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	growth/weight abnormality: postnatal	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	respiratory system: respiratory distress or failure/functional anomalies	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	skeletal: craniofacial defects	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	digestive system: dysmorphology	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	skeletal: extremities defects	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	immune system: other dysmorphology	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	endocrine glands: dysmorphology	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:1933758	Cdkn1c<tm1Kat>	involves: 129P2/OlaHsd # C57BL/6	reproductive system: fertility/fecundity anomalies	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1933758	Cdkn1c<tm1Kat>	MGI:2158292	Cdkn1c<+>	involves: 129P2/OlaHsd # C57BL/6	no obvious phenotype: no defect detected	61190	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	survival: perinatal lethality	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	survival: embryonic lethality	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	40203	IMP	pheno note
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	digestive system: dysmorphology	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	growth/weight abnormality: postnatal	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	skeletal: craniofacial defects	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	respiratory system: respiratory distress or failure/functional anomalies	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	skeletal: osteogenesis/developmental anomalies	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	kidney/renal system: dysmorphology	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	endocrine glands: dysmorphology	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:1861811	Cdkn1c<tm1Sje>	involves: 129S7/SvEvBrd # C57BL/6	eye: corneal or lens defect	40203	IMP	
+MGI:104564	Cdkn1c	MGI:1861811	Cdkn1c<tm1Sje>	MGI:2158292	Cdkn1c<+>	involves: 129S7/SvEvBrd # C57BL/6	no obvious phenotype: no defect detected	40203	IMP	
+MGI:104738	Cdkn2a	MGI:1926877	Cdkn2a<tm1Cjs>	MGI:1926877	Cdkn2a<tm1Cjs>	involves: 129X1/SvJ # C57BL/6	tumors: increased incidence	44427	IMP	
+MGI:104738	Cdkn2a	MGI:1857942	Cdkn2a<tm1Rdp>	MGI:1857942	Cdkn2a<tm1Rdp>	involves: 129X1/SvJ # C57BL/6	tumors: increased incidence	53805	IMP	strain note
+MGI:104737	Cdkn2b	MGI:1933760	Cdkn2b<tm1Bbd>	MGI:1933760	Cdkn2b<tm1Bbd>	involves: 129S1/Sv # C57BL/6	tumors: increased incidence	63299	IMP	In conj with
+MGI:104737	Cdkn2b	MGI:1933760	Cdkn2b<tm1Bbd>	MGI:1933760	Cdkn2b<tm1Bbd>	involves: 129S1/Sv # C57BL/6	hematology: abnormal red blood cell count/anemia	63299	IMP	
+MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	involves: 129S1/Sv # C57BL/6	growth/weight abnormality: postnatal	63299	IMP	in conj with 
+MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	involves: 129S1/Sv # C57BL/6	immune system: other dysmorphology	63299	IMP	
+MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	involves: 129S1/Sv # C57BL/6	kidney/renal system: dysmorphology	63299	IMP	
+MGI:105388	Cdkn2c	MGI:1933761	Cdkn2c<tm1Bbd>	MGI:1933761	Cdkn2c<tm1Bbd>	involves: 129S1/Sv # C57BL/6	tumors: increased incidence	63299	IMP	
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # C57BL/6	growth/weight abnormality: postnatal	50053	IMP	strain note
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # C57BL/6	tumors: increased incidence	50053	IMP	in conj with
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # C57BL/6	immune system: other dysmorphology	50053	IMP	
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # C57BL/6	endocrine glands: dysmorphology	50053	IMP	
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # ICR	growth/weight abnormality: postnatal	50053	IMP	strain note
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # ICR	tumors: increased incidence	50053	IMP	in conj with
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # ICR	immune system: other dysmorphology	50053	IMP	
+MGI:105388	Cdkn2c	MGI:1933762	Cdkn2c<tm1Yxi>	MGI:1933762	Cdkn2c<tm1Yx1>	involves: 129S1/Sv # ICR	endocrine glands: dysmorphology	50053	IMP	
+MGI:105387	Cdkn2d	MGI:1927668	Cdkn2d<tm1Maro>	MGI:1927668	Cdkn2d<tm1Maro>	involves: 129P2/OlaHsd # C57Bl/6	tumors: no increased incidence	58959	IMP	
+MGI:105387	Cdkn2d	MGI:1927668	Cdkn2d<tm1Maro>	MGI:1927668	Cdkn2d<tm1Maro>	involves: 129P2/OlaHsd # C57Bl/6	reproductive system: dysmorphology	58959	IMP	
+MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>	MGI:1857928	Cdx2<tm1Fbe>	involves: 129S1/Sv # C57BL/6J	survival: embryonic lethality	38772	IMP	
+MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>	MGI:2158250	Cdx2<+>	involves: 129S1/Sv # C57BL/6J	skeletal: axial defects	38772	IMP	
+MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>	MGI:2158250	Cdx2<+>	involves: 129S1/Sv # C57BL/6J	growth/weight abnormality: postnatal	38772	IMP	
+MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>	MGI:2158250	Cdx2<+>	involves: 129S1/Sv # C57BL/6J	extremities: tail dysmorphology	38772	IMP	pheno note
+MGI:88361	Cdx2	MGI:1857928	Cdx2<tm1Fbe>	MGI:2158250	Cdx2<+>	involves: 129S1/Sv # C57BL/6J	tumors: increased incidence	38772	IMP	
+MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<tm1Mmt>	involves: 129X1/SvJ # C57BL/6	survival: embryonic lethality	47050	IMP	
+MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<+>	involves: 129X1/SvJ # C57BL/6	tumors: increased incidence	47050	IMP	
+MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<+>	involves: 129X1/SvJ # C57BL/6	skeletal: axial defects	47050	IMP	
+MGI:88361	Cdx2	MGI:1926374	Cdx2<tm1Mmt>	MGI:1926374	Cdx2<+>	involves: 129X1/SvJ # C57BL/6	growth/weight abnormality: postnatal	47050	IMP	
+MGI:1202065	Chek1	MGI:1928818	Chek1<tm1Mkt>	MGI:1928818	Chek1<tm1Mkt>	involves: 129P2/OlaHsd # C57BL/6J	survival: embryonic lethality	62918	IMP	
+MGI:1202065	Chek1	MGI:1926528	Chek1<tm1Sje>	MGI:1926528	Chek1<tm1Sje>	Not Specified	survival: embryonic lethality	62919	IMP	
+MGI:1202065	Chek1	MGI:1926528	Chek1<tm1Sje>	MGI:2158251	Chek1<+>	Not Specified	no obvious phenotype: no defect detected	62919	IMP	
+MGI:107537	Cln3	MGI:1933976	Cln3<tm1Nbm>	MGI:1933976	Cln3<tm1Nbm>	involves: 129S6/SvEvTac # NIH Black Swiss 	central nervous system: brain dysmorphology	58230	IMP	pheno note
+MGI:88424	Cm	MGI:1861106	Cm	MGI:1861106	Cm	involves: 101/H # C3H/HeH  	survival: embryonic lethality	13451	IMP	
+MGI:88424	Cm	MGI:1861106	Cm	MGI:2158252	Cm<+>	involves: 101/H # C3H/HeH  	neurological/behavioral: motor capabilities/coordination/movement anomalies	13451	IMP	
+MGI:88424	Cm	MGI:1861106	Cm	MGI:2158252	Cm<+>	involves: 101/H # C3H/HeH  	eye: dysmorphology	13451	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	growth/weight abnormality: postnatal	49070	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	survival: perinatal lethality	49070	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	respiratory system: dysmorphology	49070	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	kidney/renal system: functional anomalies	49070	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	immune system: lymphoid development/ B lymphocyte defects	49070	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	hematology: hematopoietic anomalies	49070	IMP	
+MGI:109563	Cmkar4	MGI:1934166	Cmkar4<tm1Qma>	MGI:1934166	Cmkar4<tm1Qma>	involves: 129X1/SvJ	central nervous system: brain dysmorphology	49070	IMP	pheno note
+MGI:2153839	Hps3	MGI:1861609	Hps3<coa-6J>	MGI:1861609	Hps3<coa-6J>	C3H/HeJ	coat: color anomalies	63693	IMP	
+MGI:2153839	Hps3	MGI:1861609	Hps3<coa-6J>	MGI:1861609	Hps3<coa-6J>	C3H/HeJ	hematology: abnormal blood coagulation	63693	IMP	
+MGI:88442	Coc	MGI:1856596	Coc	MGI:1856596	Coc	Involves: 101 # C3H # C57BL/6	eye: corneal or lens defect	9528	IMP	strain note
+MGI:88442	Coc	MGI:1856596	Coc	MGI:2158254	Coc<+>	Involves: 101 # C3H # C57BL/6	eye: corneal or lens defect	9528	IMP	
+MGI:88489	Cr2	MGI:1932568	Cr2<tm1Hmo>	MGI:1932568	Cr2<tm1Hmo>	involves: 129S7/SvEvBrd	immune system: immunodeficiency	35112	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	Involves: C57BL/6 # CBA	survival: embryonic lethality	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	Involves: C57BL/6 # CBA	central nervous system: neural tube defects	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	Involves: C57BL/6 # CBA	hematology: abnormal red blood cell count/anemia	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	Involves: C57BL/6 # CBA	skin: pigmentation anomalies	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	Involves: C57BL/6 # CBA	embryogenesis: extraembryonic tissue dysmorphology	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	Involves: C57BL/6 # CBA	heart/cardiovascular system: blood circulatory defects	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	growth/weight abnormality: postnatal	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	skeletal: craniofacial defects	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	extremities: digit dysmorphology	53370	IMP	pheno note
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	skeletal: axial defects	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	heart/cardiovascular system: dysmorphology	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	neurological/behavioral: seizures/epilepsy	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	neurological/behavioral: motor capabilities/coordination/movement anomalies	53370	IMP	
+MGI:1098280	Crebbp	MGI:1928775	Crebbp<Gt(U-San)112Imeg>	MGI:2158255	Crebbp<+>	Involves: C57BL/6 # CBA	neurological/behavioral: learning/memory impairment	53370	IMP	
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:1926888	Crebbp<tm1Dli>	involves: 129S6/SvEvTac # C57BL/6	survival: embryonic lethality	60630	IMP	
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:1926888	Crebbp<tm1Dli>	involves: 129S6/SvEvTac # C57BL/6	central nervous system: neural tube defects	60630	IMP	
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:2158255	Crebbp<+>	involves: 129S6/SvEvTac # C57BL/6	growth/weight abnormality: postnatal	60630	IMP	
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:2158255	Crebbp<+>	involves: 129S6/SvEvTac # C57BL/6	skeletal: craniofacial defects	60630	IMP	
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:2158255	Crebbp<+>	involves: 129S6/SvEvTac # C57BL/6	immune system: other dysmorphology	60630	IMP	pheno note
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:2158255	Crebbp<+>	involves: 129S6/SvEvTac # C57BL/6	hematology: abnormal red blood cell count/anemia	60630	IMP	
+MGI:1098280	Crebbp	MGI:1926888	Crebbp<tm1Dli>	MGI:2158255	Crebbp<+>	involves: 129S6/SvEvTac # C57BL/6	tumors: increased incidence	60630	IMP	
+MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>	MGI:1928768	Crebbp<tm1Rik>	either: (involves: BALB/c # C57BL/6 # CBA) or (involves: C57BL/6 x CBA)	survival: embryonic lethality	42932	IMP	
+MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>	MGI:2158255	Crebbp<+>	either: (involves: BALB/c # C57BL/6 # CBA) or (involves: C57BL/6 x CBA)	skeletal: craniofacial defects	42932	IMP	strain note
+MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>	MGI:2158255	Crebbp<+>	either: (involves: BALB/c # C57BL/6 # CBA) or (involves: C57BL/6 x CBA)	skeletal: axial defects	42932	IMP	
+MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>	MGI:2158255	Crebbp<+>	either: (involves: BALB/c # C57BL/6 # CBA) or (involves: C57BL/6 x CBA)	growth/weight abnormality: postnatal	42932	IMP	
+MGI:1098280	Crebbp	MGI:1928768	Crebbp<tm1Rik>	MGI:2158255	Crebbp<+>	either: (involves: BALB/c # C57BL/6 # CBA) or (involves: C57BL/6 x CBA)	extremities: no defect detected	42932	IMP	
+MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	involves: 129S4/SvJaeSor # C57BL/6J	survival: perinatal lethality	67826	IMP
+MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	involves: 129S4/SvJaeSor # C57BL/6J	heart/cardiovascular system: dysmorphology	67826	IMP
+MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	involves: 129S4/SvJaeSor # C57BL/6J	immune system: other dysmorphology	67826	IMP
+MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	involves: 129S4/SvJaeSor # C57BL/6J	endocrine glands: dysmorphology	67826	IMP
+MGI:104686	Crkol	MGI:1931805	Crkol<tm1Imo>	MGI:1931805	Crkol<tm1Imo>	involves: 129S4/SvJaeSor # C57BL/6J	skeletal: craniofacial defects	67826	IMP
+MGI:88515	Cryaa	MGI:1858023	Cryaa<lop18>	MGI:1858023	Cryaa<lop18>	B6.CBA-Cryaa<lop18>	eye: corneal or lens defect	59482	IMP
+MGI:88515	Cryaa	MGI:1858025	Cryaa<tm1Wawr>	MGI:1858025	Cryaatm1<Wawr>	involves: 129/Sv # 129S4/SvJae	eye: corneal or lens defect	38210	IMP
+MGI:88515	Cryaa	MGI:1858025	Cryaa<tm1Wawr>	MGI:1858025	Cryaatm1<Wawr>	involves: 129S4/SvJae # C57BL/6 # DBA/2	eye: corneal or lens defect	38210	IMP
+MGI:88518	Cryba1	MGI:1857969	Cryba1<Po1>	MGI:1857969	Cryba1<Po1>	C3HeB/FeJ	eye: corneal or lens defect	58912	IMP
+MGI:88518	Cryba1	MGI:1857969	Cryba1<Po1>	MGI:2158259	Cryba1<+>	C3HeB/FeJ	eye: corneal or lens defect	58912	IMP
+MGI:88519	Crybb2	MGI:2137511	Crybb2<Aey2>	MGI:2158265	Crybb2<+>	C3HeB/FeJ	eye: corneal or lens defect	70508	IMP
+MGI:88519	Crybb2	MGI:2137511	Crybb2<Phil>		?	involves: Swiss-Webster	eye: corneal or lens defect	6293	IMP
+MGI:88521	Cryga	MGI:1857595	Cryga<1Neu>	MGI:2158269	Cryga<+>	involves: 101 x C3H	eye: corneal or lens defect	21950	IMP
+MGI:88522	Crygb	MGI:1857597	Crygb<Cat2-nop>	MGI:1857597	Crygb<Cat2-nop>	Not Specified	eye: corneal or lens defect	7589	IMP
+MGI:88522	Crygb	MGI:1857597	Crygb<Cat2-nop>	MGI:2158280	Crygb<+>	Not Specified	eye: corneal or lens defect	7589	IMP
+MGI:88524	Crygd	MGI:1858026	Crygd<Lop12>	MGI:2158282	Crygd<+>	((BALB/cJ x SJL/J) x BALB/cJ)	eye: corneal or lens defect	60856	IMP
+MGI:88525	Cryge	MGI:1932397	Cryge<Aey1>	MGI:1932397	Cryge<Aey1>	C3HeB/FeJ	eye: dysmorphology	68708	IMP
+MGI:88525	Cryge	MGI:1932397	Cryge<Aey1>	MGI:1932397	Cryge<Aey1>	C3HeB/FeJ	eye: corneal or lens defect	68708	IMP
+MGI:88525	Cryge	MGI:1932397	Cryge<Aey1>	MGI:2158286	Cryge<+>	C3HeB/FeJ	eye: corneal or lens defect	68708	IMP
+MGI:88525	Cryge	MGI:1857599	Cryge<Cat2-Elo>	MGI:2158286	Cryge<+>	involves: C57BL/6	eye: dysmorphology	15383	IMP
+MGI:88525	Cryge	MGI:1857599	Cryge<Cat2-Elo>	MGI:2158286	Cryge<+>	involves: C57BL/6	eye: corneal or lens defect	15383	IMP
+MGI:88525	Cryge	MGI:1855995	Cryge<Cat2-nz>	MGI:1855995	Cryge<Cat2-nz>	Involves: 101 # C3H # C57BL/6	eye: corneal or lens defect	6686	IMP
+MGI:88525	Cryge	MGI:1855995	Cryge<Cat2-nz>	MGI:2158286	Cryge<+>	Involves: 101 # C3H # C57BL/6	eye: corneal or lens defect	6686	IMP
+MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>	MGI:1857598	Cryge<Cat2-t>	Involves: 101 # C3H # C57BL/6	eye: dysmorphology	9528	IMP
+MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>	MGI:1857598	Cryge<Cat2-t>	Involves: 101 # C3H # C57BL/6	eye: corneal or lens defect	9528	IMP
+MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>	MGI:2158286	Cryge<+>	Involves: 101 # C3H # C57BL/6	eye: dysmorphology	9528	IMP
+MGI:88525	Cryge	MGI:1857598	Cryge<Cat2-t>	MGI:2158286	Cryge<+>	Involves: 101 # C3H # C57BL/6	eye: corneal or lens defect	9528	IMP
+MGI:1298216	Crygs	MGI:1861635	Crygs<Opj>	MGI:1861635	Crygs<Opj>	involves: C3H/HeH # 102/EIH	eye: corneal or lens defect	12623	IMP
+MGI:1298216	Crygs	MGI:1861635	Crygs<Opj>	MGI:2158287	Crygs<+>	involves: C3H/HeH # 102/EIH	eye: corneal or lens defect	12623	IMP
+MGI:88537	Csk	MGI:1929683	Csk<tm1Sia>	MGI:1929683	Csk<tm1Sia>	involves: C57BL/6 # CBA # BALB/c	survival: embryonic lethality	12623	IMP
+MGI:88537	Csk	MGI:1929683	Csk<tm1Sia>	MGI:1929683	Csk<tm1Sia>	involves: C57BL/6 # CBA # BALB/c	central nervous system: neural tube defects	12623	IMP
+MGI:88537	Csk	MGI:1929683	Csk<tm1Sia>	MGI:1929683	Csk<tm1Sia>	involves: C57BL/6 # CBA # BALB/c	embryogenesis: developmental patterning abnormalities	12623	IMP
+MGI:88537	Csk	MGI:1929683	Csk<tm1Sia>	MGI:1929683	Csk<tm1Sia>	involves: C57BL/6 # CBA # BALB/c	embryogenesis: extraembryonic tissue dysmorphology	12623	IMP	
+MGI:88537	Csk	MGI:1929683	Csk<tm1Sia>	MGI:1929683	Csk<tm1Sia>	involves: C57BL/6 # CBA # BALB/c	eye: corneal or lens defect	12623	IMP	
+MGI:88537	Csk	MGI:1929683	Csk<tm1Sia>	MGI:1929683	Csk<tm1Sia>	involves: C57BL/6 # CBA # BALB/c	skeletal: craniofacial defects	12623	IMP	
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	survival: embryonic lethality	12622	IMP	strain note
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	central nervous system: neural tube defects	12622	IMP	
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	embryogenesis: developmental patterning abnormalities	12622	IMP	
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	embryogenesis: extraembryonic tissue dysmorphology	12622	IMP	
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	skeletal: craniofacial defects	12622	IMP	
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	heart/cardiovascular system: blood circulatory defects	12622	IMP	
+MGI:88537	Csk	MGI:1861914	Csk<tm1Sor>	MGI:1861914	Csk<tm1Sor>	129S7/SvEvBrd # C57BL/6J	embryogenesis: extraembryonic tissue dysmorphology	12622	IMP	
+MGI:88537	Csk	MGI:1930554	Csk<tm2Sia>	MGI:1930554	Csk<tm2Sia>	involves: C57BL/6 # CBA # BALB/c	survival: embryonic lethality	12623	IMP	
+MGI:88537	Csk	MGI:1930554	Csk<tm2Sia>	MGI:1930554	Csk<tm2Sia>	involves: C57BL/6 # CBA # BALB/c	central nervous system: neural tube defects	12623	IMP	
+MGI:88537	Csk	MGI:1930554	Csk<tm2Sia>	MGI:1930554	Csk<tm2Sia>	involves: C57BL/6 # CBA # BALB/c	embryogenesis: developmental patterning abnormalities	12623	IMP	
+MGI:88537	Csk	MGI:1930554	Csk<tm2Sia>	MGI:1930554	Csk<tm2Sia>	involves: C57BL/6 # CBA # BALB/c	embryogenesis: extraembryonic tissue dysmorphology	12623	IMP	
+MGI:88537	Csk	MGI:1930554	Csk<tm2Sia>	MGI:1930554	Csk<tm2Sia>	involves: C57BL/6 # CBA # BALB/c	eye: corneal or lens defect	12623	IMP	
+MGI:88537	Csk	MGI:1930554	Csk<tm2Sia>	MGI:1930554	Csk<tm2Sia>	involves: C57BL/6 # CBA # BALB/c	skeletal: craniofacial defects	12623	IMP	
+MGI:102889	Cspg2	MGI:1857689	Cspg2<Tg(Hoxa1)1Chm>	MGI:1857689	Cspg2<Tg(Hoxa1)1Chm>	involves: C57BL/6J # CBA	survival: embryonic lethality	41016	IMP	
+MGI:102889	Cspg2	MGI:1857689	Cspg2<Tg(Hoxa1)1Chm>	MGI:1857689	Cspg2<Tg(Hoxa1)1Chm>	involves: C57BL/6J # CBA	heart/cardiovascular system: dysmorphology	41016	IMP	
+MGI:88564	Ctsl	MGI:1856878	Ctsl<fs>	MGI:1856878	Ctsl<fs>	involves: C57BL/6 # Unpedigreed stock	survival: postnatal lethality	15332	IMP	
+MGI:88564	Ctsl	MGI:1856878	Ctsl<fs>	MGI:1856878	Ctsl<fs>	involves: C57BL/6 # Unpedigreed stock	coat: hair growth defects	15332	IMP	
+MGI:88564	Ctsl	MGI:1856878	Ctsl<fs>	MGI:1856878	Ctsl<fs>	involves: C57BL/6 # Unpedigreed stock	vibrissae: shape/orientation defects	15332	IMP	pheno not
+MGI:88564	Ctsl	MGI:1889860	Ctsl<nkt>	MGI:1889860	Ctsl<nkt>	either: (Involves: 129S2/SvPas # BALB/c) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # DBA/2)	coat: hair growth defects	54856	IMP	
+MGI:88564	Ctsl	MGI:1889860	Ctsl<nkt>	MGI:1889860	Ctsl<nkt>	either: (Involves: 129S2/SvPas # BALB/c) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # DBA/2)	skin: texture/condition anomalies	54856	IMP	
+MGI:88564	Ctsl	MGI:1889860	Ctsl<nkt>	MGI:1889860	Ctsl<nkt>	either: (Involves: 129S2/SvPas # BALB/c) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # DBA/2)	survival: postnatal lethality	54856	IMP	
+MGI:88564	Ctsl	MGI:1889860	Ctsl<nkt>	MGI:1889860	Ctsl<nkt>	either: (Involves: 129S2/SvPas # BALB/c) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # DBA/2)	growth/weight abnormality: postnatal	54856	IMP	
+MGI:88564	Ctsl	MGI:1889860	Ctsl<nkt>	MGI:1889860	Ctsl<nkt>	either: (Involves: 129S2/SvPas # BALB/c) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # DBA/2)	immune system: immunodeficiency	54856	IMP	
+MGI:88564	Ctsl	MGI:2136432	Ctsl<tm1Cptr>	MGI:2136432	Ctsl<tm1Cptr>	involves: 129P2/OlaHsd # C57BL/6J	coat: hair growth defects	70118	IMP	
+MGI:88564	Ctsl	MGI:2136432	Ctsl<tm1Cptr>	MGI:2136432	Ctsl<tm1Cptr>	involves: 129P2/OlaHsd # C57BL/6J	skin: texture/condition anomalies	70118	IMP	
+MGI:88564	Ctsl	MGI:2136432	Ctsl<tm1Cptr>	MGI:2136432	Ctsl<tm1Cptr>	involves: 129P2/OlaHsd # C57BL/6J	survival: postnatal lethality	70118	IMP	
+MGI:88564	Ctsl	MGI:2136432	Ctsl<tm1Cptr>	MGI:2136432	Ctsl<tm1Cptr>	involves: 129P2/OlaHsd # C57BL/6J	vibrissae: shape/orientation defects	70118	IMP	
+MGI:1862038	Cyn	MGI:1862039	Cyn	MGI:2158288	Cyn<+>	involves: C3H/HeN # BALB/c	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	IMP	
+MGI:94864	Dbh	MGI:1857556	Dbh<tm1Rpa>	MGI:1857556	Dbh<tm1Rpa>	either: (129S7/SvEvBrd # C57BL/6J) or 129S7/SvEvBrd # 129/SvCpj	survival: embryonic lethality	24414	IMP	
+MGI:94864	Dbh	MGI:1857556	Dbh<tm1Rpa>	MGI:1857556	Dbh<tm1Rpa>	either: (129S7/SvEvBrd # C57BL/6J) or 129S7/SvEvBrd # 129/SvCpj	survival: perinatal lethality	24414	IMP
+MGI:94864	Dbh	MGI:1857556	Dbh<tm1Rpa>	MGI:1857556	Dbh<tm1Rpa>	either: (129S7/SvEvBrd # C57BL/6J) or 129S7/SvEvBrd # 129/SvCpj	growth/weight abnormality: postnatal	24414	IMP
+MGI:94864	Dbh	MGI:1857556	Dbh<tm1Rpa>	MGI:1857556	Dbh<tm1Rpa>	either: (129S7/SvEvBrd # C57BL/6J) or 129S7/SvEvBrd # 129/SvCpj	eye: dysmorphology	24414	IMP
+MGI:94864	Dbh	MGI:1857556	Dbh<tm1Rpa>	MGI:1857556	Dbh<tm1Rpa>	either: (129S7/SvEvBrd # C57BL/6J) or 129S7/SvEvBrd # 129/SvCpj	central nervous system: other dysmorphology	24414	IMP
+MGI:94864	Dbh	MGI:1928960	Dbh<tm2(Th)Rpa>	MGI:1928960	Dbh<tm2(Th)Rpa>	Not Specified	growth/weight abnormality: postnatal	30404	IMP
+MGI:94864	Dbh	MGI:1928960	Dbh<tm2(Th)Rpa>	MGI:1928960	Dbh<tm2(Th)Rpa>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	30404	IMP
+MGI:94864	Dbh	MGI:1928960	Dbh<tm2(Th)Rpa>	MGI:1928960	Dbh<tm2(Th)Rpa>	Not Specified	neurological/behavioral: other anomalies	30404	IMP
+MGI:94864	Dbh	MGI:1928960	Dbh<tm2(Th)Rpa>	MGI:1928960	Dbh<tm2(Th)Rpa>	Not Specified	survival: postnatal lethality	30404	IMP
+MGI:1861991	Dfp2	MGI:1862015	Dfp2	MGI:2158289	Dfp2<+>	involves: C3H/HeN # BALB/c	skin: pigmentation anomalies	63816	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>	MGI:1856328	Dmd<mdx>	C57BL/10ScSn	musculature: physiological defects	28684	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>	MGI:1856328	Dmd<mdx>	C57BL/10ScSn	musculature: muscle dysmorphology	28684	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>	MGI:1856328	Dmd<mdx>	C57BL/10ScSn	neurological/behavioral: motor capabilities/coordination/movement anomalies	28684	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>			C57BL/10ScSn	musculature: physiological defects	28684	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>			C57BL/10ScSn	musculature: muscle dysmorphology	28684	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>			C57BL/10ScSn	neurological/behavioral: motor capabilities/coordination/movement anomalies	28684	IMP
+MGI:94909	Dmd	MGI:1856328	Dmd<mdx>	MGI:2152586	Dmd<+>	C57BL/10ScSn	no obvious phenotype: no defect detected	28684	IMP
+MGI:99499	Dsg3	MGI:1857386	Dsg3<bal-Pas>	MGI:1857386	Dsg3<bal-Pas>	involves: 129/Sv # 129Sv/pas	coat: hair growth defects	46865	IMP
+MGI:99499	Dsg3	MGI:1857386	Dsg3<bal-Pas>	MGI:1857386	Dsg3<bal-Pas>	involves: 129/Sv # 129Sv/pas	skin: texture/condition anomalies	46865	IMP
+MGI:99499	Dsg3	MGI:1856692	Dsg3<bal>	MGI:1856692	Dsg3<bal>	C57BL/6J	skin: texture/condition anomalies	42792	IMP
+MGI:99499	Dsg3	MGI:1856692	Dsg3<bal>	MGI:1856692	Dsg3<bal>	C57BL/6J	coat: hair growth defects	42792	IMP
+MGI:99499	Dsg3	MGI:1856692	Dsg3<bal>	MGI:1856692	Dsg3<bal>	C57BL/6J	growth/weight abnormality: postnatal	42792	IMP
+MGI:99499	Dsg3	MGI:1856692	Dsg3<bal>	MGI:1856692	Dsg3<bal>	C57BL/6J	immune system: other functional anomaly	42792	IMP
+MGI:99499	Dsg3	MGI:1857388	Dsg3<tm1Stan>	MGI:1857388	Dsg3<tm1Stan>	involves: 129X1/SvJ # C57BL/6J	growth/weight abnormality: postnatal	40804	IMP
+MGI:99499	Dsg3	MGI:1857388	Dsg3<tm1Stan>	MGI:1857388	Dsg3<tm1Stan>	involves: 129X1/SvJ # C57BL/6J	skin: texture/condition anomalies	40804	IMP
+MGI:99499	Dsg3	MGI:1857388	Dsg3<tm1Stan>	MGI:1857388	Dsg3<tm1Stan>	involves: 129X1/SvJ # C57BL/6J	coat: hair growth defects	40804	IMP
+MGI:104627	Dst	MGI:1889074	Dst<dt-33J>	MGI:1889074	Dst<dt-33J>	129S1/Sv	survival: postnatal lethality	61053	IMP
+MGI:104627	Dst	MGI:1889074	Dst<dt-33J>	MGI:1889074	Dst<dt-33J>	129S1/Sv	neurological/behavioral: motor capabilities/coordination/movement anomalies	61053	IMP
+MGI:104627	Dst	MGI:1889074	Dst<dt-33J>	MGI:1889074	Dst<dt-33J>	129S1/Sv	neurological/behavioral: seizures/epilepsy	61053	IMP
+MGI:1349385	Dysf	MGI:1857883	Dysf<im>	MGI:1857883	Dysf<im>	SJL	musculature: physiological defects	67994	IMP
+MGI:1861987	Dz	MGI:1862009	Dz	MGI:2158293	Dz<+>	involves: C3H # BALB/c	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	IMP
+MGI:95275	Ebf	MGI:1928729	Ebf<tm1Rug>	MGI:1928729	Ebf<tm1Rug>	involves: 129S2/SvPas	immune system: lymphoid development/ B lymphocyte defects	52607	IMP
+MGI:95275	Ebf	MGI:1928729	Ebf<tm1Rug>	MGI:1928729	Ebf<tm1Rug>	involves: 129S2/SvPas	growth/weight abnormality: postnatal	52607	IMP
+MGI:1195272	Eda	MGI:1862031	Eda<Ta-40H>	MGI:2158294	Eda<+>	involves: C3H/HeN # BALB/c	coat: color anomalies	63816	IMP
+MGI:108429	Edg2	MGI:1931154	Edg2<tm1Jch>	MGI:1931154	Edg2<tm1Jch>	involves:129X1/SvJ # 129S1/Sv	growth/weight abnormality: postnatal	65882	IMP
+MGI:108429	Edg2	MGI:1931154	Edg2<tm1Jch>	MGI:1931154	Edg2<tm1Jch>	involves:129X1/SvJ # 129S1/Sv	survival: perinatal lethality	65882	IMP
+MGI:108429	Edg2	MGI:1931154	Edg2<tm1Jch>	MGI:1931154	Edg2<tm1Jch>	involves:129X1/SvJ # 129S1/Sv	central nervous system: neural tube defects	65882	IMP
+MGI:108429	Edg2	MGI:1931154	Edg2<tm1Jch>	MGI:1931154	Edg2<tm1Jch>	involves:129X1/SvJ # 129S1/Sv	skeletal: craniofacial defects	65882	IMP
+MGI:108429	Edg2	MGI:1931154	Edg2<tm1Jch>	MGI:1931154	Edg2<tm1Jch>	involves:129X1/SvJ # 129S1/Sv	neurological/behavioral: sensory capabilities/reflexes/nociception abnormalities	65882	IMP
+MGI:1861988	Edy	MGI:1862012	Edy	MGI:2158295	Edy<+>	involves: C3H/HeN x BALB/c	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CF-1	survival: embryonic lethality	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # 129/Sv	survival: embryonic lethality	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	survival: perinatal lethality	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	growth/weight abnormality: postnatal	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	eye: dysmorphology	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	coat: hair texture defects	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	vibrissae: shape/orientation defects	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	digestive system: dysmorphology	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	liver/hepatic system: dysmorphology	26833	IMP
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	kidney/renal system: dysmorphology	26833	IMP	
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	central nervous system: brain dysmorphology	26833	IMP	
+MGI:95294	Egfr	MGI:1856402	Egfr<tm1Mag>	MGI:1856402	Egfr<tm1Mag>	involves: 129S2/SvPas # CD-1	respiratory system: dysmorphology	26833	IMP	reduced brain size
+MGI:95387	Emx1	MGI:1928281	Emx1<tm1(Cre)Rik>	MGI:1928281	Emx1<tm1(Cre)Rik>	involves:129P2/OlaHsd # C57BL/6	no obvious phenotype: no defect detected	64064	IMP	
+MGI:95389	En1	MGI:1889804	En1<tm1(Otx2)Wrst>	MGI:1889804	En1<tm1(Otx2)Wrst>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	neurological/behavioral: motor capabilities/coordination/movement anomalies	57538	IMP	
+MGI:95389	En1	MGI:1889804	En1<tm1(Otx2)Wrst>	MGI:1889804	En1<tm1(Otx2)Wrst>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	central nervous system: brain dysmorphology	57538	IMP	abnormal brain morphology
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	survival: perinatal lethality	19212	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	skin: texture/condition anomalies	19212	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	extremities: digit dysmorphology	19212	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	other aberrant phenotype	19212	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	central nervous system: brain dysmorphology	19212	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	skeletal: axial defects	19212	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1857163	En1<tm1Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	peripheral nervous system: dysmorphology	19212	IMP	
+MGI:95389	En1	MGI:1857749	En1<tm2Alj>	MGI:1857748	En1<+>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	no obvious phenotype: no defect detected	27767	IMP	
+MGI:95389	En1	MGI:1930621	En1<tm3(En2)Alj>	MGI:1930621	En1<tm3(En2)Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	no obvious phenotype: no defect detected	27767	IMP	
+MGI:95389	En1	MGI:1857163	En1<tm1Alj>	MGI:1930621	En1<tm3(En2)Alj>	either: (involves: 129X1/SvJ # 129S1/Sv) or (involves: 129X1/SvJ # 129S1/Sv # C57BL/6)	no obvious phenotype: no defect detected	27767	IMP	
+MGI:95389	En1	MGI:1930647	En1<tm4(en)Alj>	MGI:1930647	En1<tm4(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	survival: premature death	50311	IMP
+MGI:95389	En1	MGI:1930647	En1<tm4(en)Alj>	MGI:1930647	En1<tm4(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	reproductive system: fertility/fecundity anomalies	50311	IMP
+MGI:95389	En1	MGI:1930647	En1<tm4(en)Alj>	MGI:1930647	En1<tm4(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	central nervous system: brain dysmorphology	50311	IMP
+MGI:95389	En1	MGI:1930647	En1<tm4(en)Alj>	MGI:1930647	En1<tm4(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	extremities: digit dysmorphology	50311	IMP
+MGI:95389	En1	MGI:1930647	En1<tm4(en)Alj>	MGI:1930647	En1<tm4(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	skeletal: axial defects	50311	IMP
+MGI:95389	En1	MGI:1930664	En1<tm5(en)Alj>	MGI:1930664	En1<tm5(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	extremities: digit dysmorphology	50311	IMP
+MGI:95389	En1	MGI:1930664	En1<tm5(en)Alj>	MGI:1930664	En1<tm5(en)Alj>	involves: 129X1/SvJ # 129S1/Sv	central nervous system: brain dysmorphology	50311	IMP
+MGI:95390	En2	MGI:1857164	En2<tm1Alj>	MGI:1857164	En2<tm1Alj>	either: (involves: 129S2/SvPas # 129/Sv) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # CD-1)	central nervous system: brain dysmorphology	67524	IMP
+MGI:95390	En2	MGI:1857164	En2<tm1Alj>	MGI:1857164	En2<tm1Alj>	either: (involves: 129S2/SvPas # 129/Sv) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # CD-1)	neurological/behavioral: motor capabilities/coordination/movement anomalies	67524	IMP
+MGI:95390	En2	MGI:1857164	En2<tm1Alj>	MGI:2158296	En2<+>	either: (involves: 129S2/SvPas # 129/Sv) or (involves: 129S2/SvPas # C57BL/6) or (involves: 129S2/SvPas # CD-1)	neurological/behavioral: motor capabilities/coordination/movement anomalies	67524	IMP
+MGI:95390	En2	MGI:1930810	En2<tm2Alj>	MGI:1930810	En2<tm2Alj>	involves: 129S2/SvPas # C57BL/6	central nervous system: brain dysmorphology	17203	IMP
+MGI:95390	En2	MGI:1930811	En2<tm3Alj>	MGI:1930811	En2<tm3Alj>	involves: 129S6/SvEvTac # 129/SvEv	no obvious phenotype: no defect detected	60433	IMP
+MGI:95390	En2	MGI:1930810	En2<tm2Alj>	MGI:1930811	En2<tm3Alj>	involves: 129S2/SvPas # 129S6/SvEv # C57BL/6	no obvious phenotype: no defect detected	60433	IMP
+MGI:95390	En2	MGI:1930812	En2<tm3.1Alj>	MGI:1930812	En2<tm3.1Alj>	Involves: 129S6/SvEvTac # 129/SvEv	no obvious phenotype: no defect detected	60433	IMP
+MGI:95390	En2	MGI:1930810	En2<tm2Alj>	MGI:1930812	En2<tm3.1Alj>	Involves: 129S6/SvEvTac # 129/SvEv # C57BL/6J	no obvious phenotype: no defect detected	60433	IMP
+MGI:95405	Ephx1	MGI:2137236	Ephx1<tm1Gonz>	MGI:2137236	Ephx1<tm1Gonz>	involves: C57BL/6 	tumors: no increased incidence	56886	IMP
+MGI:95410	Erbb2	MGI:1929071	Erbb2<tm1Cbr>	MGI:1929071	Erbb2<tm1Cbr>	involves: 129P2/OlaHsd # C57BL/6	survival: embryonic lethality	48515	IMP
+MGI:95410	Erbb2	MGI:1929071	Erbb2<tm1Cbr>	MGI:1929071	Erbb2<tm1Cbr>	involves: 129P2/OlaHsd # C57BL/6	heart/cardiovascular system: dysmorphology	48515	IMP
+MGI:95410	Erbb2	MGI:1929071	Erbb2<tm1Cbr>	MGI:1929071	Erbb2<tm1Cbr>	involves: 129P2/OlaHsd # C57BL/6	central nervous system: brain dysmorphology	48515	IMP
+MGI:95410	Erbb2	MGI:1928827	Erbb2<tm1Gne>	MGI:1928827	Erbb2<tm1Gne>	either: (involves: 129S2/SvPas # C57BL/6J) or (involves: 129S2/SvPas # Balb/c)	survival: embryonic lethality	45302	IMP
+MGI:95410	Erbb2	MGI:1928827	Erbb2<tm1Gne>	MGI:1928827	Erbb2<tm1Gne>	either: (involves: 129S2/SvPas # C57BL/6J) or (involves: 129S2/SvPas # Balb/c)	heart/cardiovascular system: dysmorphology	45302	IMP
+MGI:95410	Erbb2	MGI:1928827	Erbb2<tm1Gne>	MGI:1928827	Erbb2<tm1Gne>	either: (involves: 129S2/SvPas # C57BL/6J) or (involves: 129S2/SvPas # Balb/c)	central nervous system: brain dysmorphology	45302	IMP
+MGI:95410	Erbb2	MGI:1929070	Erbb2<tm1Haus>	MGI:1929070	Erbb2<tm1Haus>	involves:129S4/SvJae # C57BL/6	survival: embryonic lethality	29973	IMP
+MGI:95410	Erbb2	MGI:1929070	Erbb2<tm1Haus>	MGI:1929070	Erbb2<tm1Haus>	involves:129S4/SvJae # C57BL/6	heart/cardiovascular system: dysmorphology	29973	IMP
+MGI:95410	Erbb2	MGI:1929070	Erbb2<tm1Haus>	MGI:1929070	Erbb2<tm1Haus>	involves:129S4/SvJae # C57BL/6	central nervous system: brain dysmorphology	29973	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	survival: embryonic lethality	43515	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	survival: postnatal lethality	43515	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	growth/weight abnormality: postnatal	43515	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	neurological/behavioral: sensory capabilities/reflexes/nociception abnormalities	43515	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	respiratory system: respiratory distress or failure/functional anomalies	43515	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	peripheral nervous system: functional anomalies	43515	IMP
+MGI:95411	Errb3	MGI:1929072	Erbb3<tm1Cbr>	MGI:1929072	Erbb3<tm1Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	central nervous system: brain dysmorphology	43515	IMP
+MGI:95411	Errb3	MGI:1928828	Erbb3<tm1Gne>	MGI:1928828	Erbb3<tm1Gne>	involves:129S2/OlaHsd # C57BL/6	survival: embryonic lethality	45302	IMP
+MGI:95411	Errb3	MGI:1928828	Erbb3<tm1Gne>	MGI:1928828	Erbb3<tm1Gne>	involves:129S2/OlaHsd # C57BL/6	heart/cardiovascular system: dysmorphology	45302	IMP
+MGI:95411	Errb3	MGI:1928828	Erbb3<tm1Gne>	MGI:1928828	Erbb3<tm1Gne>	involves:129S2/OlaHsd # C57BL/6	heart/cardiovascular system: blood circulatory defects	45302	IMP
+MGI:95411	Errb3	MGI:1928828	Erbb3<tm1Gne>	MGI:1928828	Erbb3<tm1Gne>	involves:129S2/OlaHsd # C57BL/6	central nervous system: brain dysmorphology	45302	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	survival: embryonic lethality	43515	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	survival: postnatal lethality	43515	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	growth/weight abnormality: postnatal	43515	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	neurological/behavioral: sensory capabilities/reflexes/nociception abnormalities	43515	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	respiratory system: respiratory distress or failure/functional anomalies	43515	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	peripheral nervous system: functional anomalies	43515	IMP
+MGI:95411	Errb3	MGI:1929598	Erbb3<tm2Cbr>	MGI:1929598	Erbb3<tm2Cbr>	either: (involves:129P2/OlaHsd # C57BL/6) or 129P2/OlaHsd	central nervous system: brain dysmorphology	43515	IMP
+MGI:104771	Erbb4	MGI:1929607	Erbb4<tm1Grl>	MGI:1929607	Erbb4<tm1Grl>	involves: 129X1/SvJ # 129S1/Sv # C57BL/6J	survival: embryonic lethality	29972	IMP
+MGI:104771	Erbb4	MGI:1929607	Erbb4<tm1Grl>	MGI:1929607	Erbb4<tm1Grl>	involves: 129X1/SvJ # 129S1/Sv # C57BL/6J	central nervous system: other dysmorphology	29972	IMP
+MGI:104771	Erbb4	MGI:1929607	Erbb4<tm1Grl>	MGI:1929607	Erbb4<tm1Grl>	involves: 129X1/SvJ # 129S1/Sv # C57BL/6J	heart/cardiovascular system: dysmorphology	29972	IMP
+MGI:1861630	Espn	MGI:1856573	Espn<je>	MGI:1856573	Espn<je>	involves: fancier's dancing mouse	ears: auditory defects/deafness	13121	IMP
+MGI:1861630	Espn	MGI:1856573	Espn<je>	MGI:1856573	Espn<je>	involves: fancier's dancing mouse	neurological/behavioral: motor capabilities/coordination/movement anomalies	13121	IMP
+MGI:95456	Ets2	MGI:1891557	Ets2<tm1Rgo>	MGI:1891557	Ets2<tm1Rgo>	either: (involves: 129S2/SvPas # 129/Sv) or (involves: 129S2/SvPas # Swiss Black)	survival: embryonic lethality	43739	IMP
+MGI:95456	Ets2	MGI:1891557	Ets2<tm1Rgo>	MGI:1891557	Ets2<tm1Rgo>	either: (involves: 129S2/SvPas # 129/Sv) or (involves: 129S2/SvPas # Swiss Black)	embryogenesis: extraembryonic tissue dysmorphology	43739	IMP
+MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	involves: C3H/HeJ # Cast/EI	ears: auditory defects/deafness	54408	IMP
+MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	involves: C3H/HeJ # Cast/EI	neurological/behavioral: motor capabilities/coordination/movement anomalies	54408	IMP
+MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	involves: C3H/HeJ # Cast/EI	kidney/renal system: dysmorphology	54408	IMP
+MGI:109344	Eya1	MGI:1857803	Eya1<bor>	MGI:1857803	Eya1<bor>	involves: C3H/HeJ # Cast/EI	ears: dysmorphology	54408	IMP
+MGI:88384	F9	MGI:1932297	F9<tm1Dws>	MGI:1932297	F9<tm1Dws>	involves: 129P2/OlaHsd # C57BL/6	hematology: abnormal blood coagulation	44497	IMP
+MGI:88384	F9	MGI:1932244	F9<tm1Emg>	MGI:1932244	F9<tm1Emg>	involves: 129S6/SvEv # C57BL/6	hematology: abnormal blood coagulation	48501	IMP
+MGI:88384	F9	MGI:1932265	F9<tm1Ver>	MGI:1932265	F9<tm1Ver>	involves: 129/Sv # C57BL/6	hematology: abnormal blood coagulation	43590	IMP
+MGI:95490	Fbn2	MGI:1935122	Fbn2<fp-2J>	MGI:1935122	Fbn2<fp-2J>	involves: C.B10-H2b/LeMcdJ	extremities: digit dysmorphology	51131	IMP
+MGI:98457	sy	MGI:1857498	Fbn2<fp-2J>	MGI:1857498	Fbn2<fp-2J>	involves: C.B10-H2b/LeMcdJ	extremities: digit dysmorphology	51131	IMP
+MGI:95490	Fbn2	MGI:1935123	Fbn2<fp>	MGI:1935123	Fbn2<fp>	involves: C3HeB/FeHu	extremities: digit dysmorphology	13514	IMP
+MGI:98457	sy	MGI:1856183	Fbn2<fp>	MGI:1856183	Fbn2<fp>	involves: C3HeB/FeHu	extremities: digit dysmorphology	13514	IMP
+MGI:1354698	Fbxw4	MGI:1857834	Fbxw4<Dac-2J>	MGI:1857834	Fbxw4<Dac-2J>	involves: MRL/MpJ	survival: embryonic lethality	57316	IMP
+MGI:1354698	Fbxw4	MGI:1857834	Fbxw4<Dac-2J>	MGI:2158308	Fbxw4<+>	involves: MRL/MpJ	extremities: digit dysmorphology	57316	IMP
+MGI:1354698	Fbxw4	MGI:1857833	Fbxw4<Dac>	MGI:1857833	Fbxw4<Dac>	involves: SM/Ckc	survival: embryonic lethality	6607	IMP
+MGI:1354698	Fbxw4	MGI:1857833	Fbxw4<Dac>	MGI:2158308	Fbxw4<+>	involves: SM/Ckc	extremities: digit dysmorphology	6607	IMP
+MGI:95513	Fech	MGI:1858114	Fech<m1Pas>	MGI:1858114	Fech<m1Pas>	involves: 129/Sv # BALB/c	hematology: abnormal red blood cell count/anemia	2021	IMP
+MGI:95513	Fech	MGI:1858114	Fech<m1Pas>	MGI:1858114	Fech<m1Pas>	involves: 129/Sv # BALB/c	hematology: hematopoietic anomalies	2021	IMP
+MGI:95513	Fech	MGI:1858114	Fech<m1Pas>	MGI:1858114	Fech<m1Pas>	involves: 129/Sv # BALB/c	liver/hepatic system: functional anomalies	2021	IMP
+MGI:1861994	Fer	MGI:1862018	Fer	MGI:2158309	Fer<+>	involves: BALB/c # C3H/HeN 	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	IMP
+MGI:1099809	Fgf10	MGI:1859647	Fgf10<tm1Ska>	MGI:1859647	Fgf10<tm1Ska>	involves: C57BL/6 # CBA	survival: perinatal lethality	51966	IMP
+MGI:1099809	Fgf10	MGI:1859647	Fgf10<tm1Ska>	MGI:1859647	Fgf10<tm1Ska>	involves: C57BL/6 # CBA	extremities: limb dysmorphology	51966	IMP
+MGI:1099809	Fgf10	MGI:1859647	Fgf10<tm1Ska>	MGI:1859647	Fgf10<tm1Ska>	involves: C57BL/6 # CBA	eye: dysmorphology	51966	IMP
+MGI:1099809	Fgf10	MGI:1859647	Fgf10<tm1Ska>	MGI:1859647	Fgf10<tm1Ska>	involves: C57BL/6 # CBA	respiratory system: dysmorphology	51966	IMP

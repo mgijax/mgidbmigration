@@ -1,157 +1,173 @@
-MGI:101922	Tnc	MGI:2148541	Tnc<tm1Fas>	MGI:2148541	Tnc<tm1Fas>	involves: 129/Sv	no obvious phenotype: no defect detected	33828	TAS	
-MGI:101922	Tnc	MGI:2148540	Tnc<tm1Sia>	MGI:2148540	Tnc<tm1Sia>	(C57BL/6 x CBA) x BALB/c	no obvious phenotype: no defect detected	36890	TAS	
-MGI:99828	Slc7a2	MGI:2150359	Slc7a2<tm1Clm>	MGI:2150359	Slc7a2<tm1Clm>	B6 x 129S7	immune system: other functional anomaly	69414	TAS	
-MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:1930613	Brca1<tm1Arge>	129S6 x B6	survival: embryonic lethality	40594	TAS	
-MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:1930613	Brca1<tm1Arge>	129S6 x B6	growth/weight abnormality: embryonic	40594	TAS	
-MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:1930613	Brca1<tm1Arge>	129S6 x B6	embryogenesis: extraembryonic tissue dysmorphology	40594	TAS	
-MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:2152435	Brca1<+>	129S6 x B6	no obvious phenotype: no defect detected	40594	TAS	
-MGI:104537	Brca1	MGI:1857931	Brca1<tm1Bhk>	MGI:1857931	Brca1<tm1Bhk>	129P2 x B6D2	survival: embryonic lethality	31571	TAS	
-MGI:104537	Brca1	MGI:1857931	Brca1<tm1Bhk>	MGI:1857931	Brca1<tm1Bhk>	129P2 x B6D2	central nervous system: neural tube defects	31571	TAS	
-MGI:104537	Brca1	MGI:1857931	Brca1<tm1Bhk>	MGI:2152435	Brca1<+>	129P2 x B6D2	no obvious phenotype: no defect detected	31571	TAS	
-MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	multiple	survival: embryonic lethality	51834	TAS	
-MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	multiple	growth/weight abnormality: embryonic	51834	TAS	
-MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	multiple	embryogenesis: embryonic tissue dysmorphology	51834	TAS	
-MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	multiple	survival: embryonic lethality	33880	TAS	
-MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	multiple	growth/weight abnormality: embryonic	33880	TAS
-MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	multiple	embryogenesis: developmental patterning abnormalities	33880	TAS
-MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	multiple	embryogenesis: extraembryonic tissue dysmorphology	33880	TAS
-MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:2152435	Brca1<+>	multiple	no obvious phenotype: no defect detected	33880	TAS
-MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	129P2 x B6	survival: embryonic lethality	34458	TAS
-MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	129P2 x B6	growth/weight abnormality: embryonic	34458	TAS
-MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	129P2 x B6	embryogenesis: embryonic tissue dysmorphology	34458	TAS
-MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	129P2 x B6	embryogenesis: developmental patterning abnormalities	34458	TAS
-MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:2152435	Brca1<+>	129P2 x B6	no obvious phenotype: no defect detected	34458	TAS
-MGI:104537	Brca1	MGI:1931238	Brca1<tm2Cxd>	MGI:1931238	Brca1<tm2Cxd>	129S6 x Black Swiss	no obvious phenotype: no defect detected	54533	TAS
-MGI:109638	Clns1a	MGI:1934011	Clns1a<tm1Kwn>	MGI:1934011	Clns1a<tm1Kwn>	B6 x 129	survival: embryonic lethality	61831	TAS
-MGI:109638	Clns1a	MGI:1934011	Clns1a<tm1Kwn>	MGI:2152563	Clns1a<+>	B6 x 129	no obvious phenotype: no defect detected	61831	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	survival: embryonic lethality	41814	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	embryogenesis: developmental patterning abnormalities	41814	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	growth/weight abnormality: embryonic	41814	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	skeletal: axial defects	41814	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	skin: texture/condition anomalies	41814	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	hematology: abnormal blood coagulation	41814	TAS
-MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	multiple	central nervous system: neural tube defects	41814	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	survival: embryonic lethality	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	growth/weight abnormality: embryonic	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	heart/cardiovascular system: dysmorphology	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	skin: texture/condition anomalies	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	central nervous system: neural tube defects	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	embryogenesis: extraembryonic tissue dysmorphology	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C57BL/6J	embryogenesis: developmental patterning abnormalities	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857742	Ph<+>	C57BL/6J	coat: color anomalies	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	BALB/C	survival: embryonic lethality	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	BALB/C	skeletal: craniofacial defects	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	BALB/C	central nervous system: neural tube defects	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857742	Ph<+>	BALB/C	coat: color anomalies	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C3H	survival: embryonic lethality	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C3H	skeletal: craniofacial defects	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C3H	central nervous system: neural tube defects	10920	TAS
-MGI:97571	Ph	MGI:1857106	Ph	MGI:1857742	Ph<+>	C3H	coat: color anomalies	10920	TAS
+MGI:101922	Tnc	MGI:2148541	Tnc<tm1Fas>	MGI:2148541	Tnc<tm1Fas>	involves: 129/Sv # 129S2/SvPas 	no obvious phenotype: no defect detected	33828	TAS		
+MGI:101922	Tnc	MGI:2148540	Tnc<tm1Sia>	MGI:2148540	Tnc<tm1Sia>	Involves: BALB/c # C57BL/6 # CBA	no obvious phenotype: no defect detected	36890	TAS		
+MGI:99828	Slc7a2	MGI:2150359	Slc7a2<tm1Clm>	MGI:2150359	Slc7a2<tm1Clm>	involves: 129S7/SvEvBrd-Hprt<b-m2> # C57BL/6	immune system: other functional anomaly	69414	TAS		
+MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:1930613	Brca1<tm1Arge>	Involves: 129S/SvEv # C57BL/6	survival: embryonic lethality	40594	TAS		
+MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:1930613	Brca1<tm1Arge>	Involves: 129S/SvEv # C57BL/6	growth/weight abnormality: embryonic	40594	TAS		
+MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:1930613	Brca1<tm1Arge>	Involves: 129S/SvEv # C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	40594	TAS		
+MGI:104537	Brca1	MGI:1930613	Brca1<tm1Arge>	MGI:2152435	Brca1<+>	Involves: 129S/SvEv # C57BL/6	no obvious phenotype: no defect detected	40594	TAS		
+MGI:104537	Brca1	MGI:1857931	Brca1<tm1Bhk>	MGI:1857931	Brca1<tm1Bhk>	involves: 129P2/OlaHsd # C57BL/6 # DBA/2	survival: embryonic lethality	31571	TAS		
+MGI:104537	Brca1	MGI:1857931	Brca1<tm1Bhk>	MGI:1857931	Brca1<tm1Bhk>	involves: 129P2/OlaHsd # C57BL/6 # DBA/2	central nervous system: neural tube defects	31571	TAS		
+MGI:104537	Brca1	MGI:1857931	Brca1<tm1Bhk>	MGI:2152435	Brca1<+>	involves: 129P2/OlaHsd # C57BL/6 # DBA/2	no obvious phenotype: no defect detected	31571	TAS		
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	129S6/SvEvTac-Brca1<tm1Cxd>	survival: embryonic lethality	51834	TAS		
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	129S6/SvEvTac-Brca1<tm1Cxd>	growth/weight abnormality: embryonic	51834	TAS		
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	129S6/SvEvTac-Brca1<tm1Cxd>	embryogenesis: embryonic tissue dysmorphology	51834	TAS		
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	involves: 129S6/SvEvTac # Black Swiss	survival: embryonic lethality	51834	TAS		
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	involves: 129S6/SvEvTac # Black Swiss	growth/weight abnormality: embryonic	51834	TAS
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	involves: 129S6/SvEvTac # Black Swiss	embryogenesis: embryonic tissue dysmorphology	51834	TAS
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	involves: 129S6/SvEvTac # C57BL/6	survival: embryonic lethality	51834	TAS
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	involves: 129S6/SvEvTac # C57BL/6	growth/weight abnormality: embryonic	51834	TAS
+MGI:104537	Brca1	MGI:1930612	Brca1<tm1Cxd>	MGI:1930612	Brca1<tm1Cxd>	involves: 129S6/SvEvTac # C57BL/6	embryogenesis: embryonic tissue dysmorphology	51834	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6	survival: embryonic lethality	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6	growth/weight abnormality: embryonic	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6	embryogenesis: developmental patterning abnormalities	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:2152435	Brca1<+>	involves: 129P2/OlaHsd # C57BL/6	no obvious phenotype: no defect detected	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # CD1	survival: embryonic lethality	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # CD1	growth/weight abnormality: embryonic	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # CD1	embryogenesis: developmental patterning abnormalities	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # CD1	embryogenesis: extraembryonic tissue dysmorphology	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:2152435	Brca1<+>	involves: 129P2/OlaHsd # CD1	no obvious phenotype: no defect detected	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C3H	survival: embryonic lethality	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C3H	growth/weight abnormality: embryonic	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C3H	embryogenesis: developmental patterning abnormalities	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:1858108	Brca1<tm1Mak>	involves: 129P2/OlaHsd # C3H	embryogenesis: extraembryonic tissue dysmorphology	33880	TAS
+MGI:104537	Brca1	MGI:1858108	Brca1<tm1Mak>	MGI:2152435	Brca1<+>	involves: 129P2/OlaHsd # C3H	no obvious phenotype: no defect detected	33880	TAS
+MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	involves: 129P2/OlaHsd # C57BL/6J	survival: embryonic lethality	34458	TAS
+MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	involves: 129P2/OlaHsd # C57BL/6J	growth/weight abnormality: embryonic	34458	TAS
+MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	involves: 129P2/OlaHsd # C57BL/6J	embryogenesis: embryonic tissue dysmorphology	34458	TAS
+MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:1858107	Brca1<tm1Whl>	involves: 129P2/OlaHsd # C57BL/6J	embryogenesis: developmental patterning abnormalities	34458	TAS
+MGI:104537	Brca1	MGI:1858107	Brca1<tm1Whl>	MGI:2152435	Brca1<+>	involves: 129P2/OlaHsd # C57BL/6J	no obvious phenotype: no defect detected	34458	TAS
+MGI:104537	Brca1	MGI:1931238	Brca1<tm2Cxd>	MGI:1931238	Brca1<tm2Cxd>	involves: 129S6/SvEvTac # NIH Black Swiss	no obvious phenotype: no defect detected	54533	TAS
+MGI:109638	Clns1a	MGI:1934011	Clns1a<tm1Kwn>	MGI:1934011	Clns1a<tm1Kwn>	involves: 129/Sv # C57BL/6J	survival: embryonic lethality	61831	TAS
+MGI:109638	Clns1a	MGI:1934011	Clns1a<tm1Kwn>	MGI:2152563	Clns1a<+>	involves: 129/Sv # C57BL/6J	no obvious phenotype: no defect detected	61831	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	survival: embryonic lethality	41814	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	embryogenesis: developmental patterning abnormalities	41814	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	growth/weight abnormality: embryonic	41814	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	skeletal: axial defects	41814	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	skin: texture/condition anomalies	41814	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	hematology: abnormal blood coagulation	41814	TAS
+MGI:97530	Pdgfra	MGI:1926728	Pdgfra<tm2Sor>	MGI:1926728	Pdgfra<tm2Sor>	either: (129S4/SvJaeSor-Pdgfra<tm2Sor>) # (involves: 129S4/SvJaeSor # C57BL/6J)	central nervous system: neural tube defects	41814	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	survival: embryonic lethality	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	growth/weight abnormality: embryonic	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	heart/cardiovascular system: dysmorphology	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	skin: texture/condition anomalies	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	central nervous system: neural tube defects	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	embryogenesis: extraembryonic tissue dysmorphology	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	B6.Cg-Ph	embryogenesis: developmental patterning abnormalities	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857742	Ph<+>	B6.Cg-Ph	coat: color anomalies	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C.B6-Ph	survival: embryonic lethality	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C.B6-Ph	skeletal: craniofacial defects	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C.B6-Ph	central nervous system: neural tube defects	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857742	Ph<+>	C.B6-Ph	coat: color anomalies	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C3.B6-Ph	survival: embryonic lethality	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C3.B6-Ph	skeletal: craniofacial defects	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857106	Ph	C3.B6-Ph	central nervous system: neural tube defects	10920	TAS
+MGI:97571	Ph	MGI:1857106	Ph	MGI:1857742	Ph<+>	C3.B6-Ph	coat: color anomalies	10920	TAS
 MGI:97571	Ph	MGI:1889550	Ph<3H>	MGI:1889550	Ph<3H>	102/H	survival: perinatal lethality	27502	TAS
 MGI:97571	Ph	MGI:1889550	Ph<3H>	MGI:1889550	Ph<3H>	102/H	skeletal: craniofacial defects	27502	TAS
 MGI:97571	Ph	MGI:1889550	Ph<3H>	MGI:1857742	Ph<+>	102/H	coat: color anomalies	27502	TAS
 MGI:97571	Ph	MGI:1889551	Ph<e>	MGI:1889551	Ph<e>	STOCK Ph	survival: perinatal lethality	5811	TAS
 MGI:97571	Ph	MGI:1889551	Ph<e>	MGI:1889551	Ph<e>	STOCK Ph	skeletal: craniofacial defects	5811	TAS
 MGI:97571	Ph	MGI:1889551	Ph<e>	MGI:1857742	Ph<+>	STOCK Ph	coat: color anomalies	5811	TAS
-MGI:1099818	Pkd2	MGI:1860840	Pkd2<tm1Sol>	MGI:1860840	Pkd2<tm1Sol>	Not Specified	kidney/renal system: dysmorphology	47035	TAS
-MGI:1099818	Pkd2	MGI:1860840	Pkd2<tm1Sol>	MGI:1860840	Pkd2<tm1Sol>	Not Specified	liver/hepatic system: dysmorphology	47035	TAS
-MGI:1099818	Pkd2	MGI:1860840	Pkd2<tm1Sol>	MGI:2153456	Pkd2<+>	Not Specified	kidney/renal system: dysmorphology	47035	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	Not Specified	survival: embryonic lethality	59314	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	Not Specified	heart/cardiovascular system: dysmorphology	59314	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	Not Specified	kidney/renal system: dysmorphology	59314	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	Not Specified	endocrine glands: dysmorphology	59314	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:2153456	Pkd2<+>	Not Specified	kidney/renal system: dysmorphology	59314	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:2153456	Pkd2<+>	Not Specified	liver/hepatic system: dysmorphology	59314	TAS
-MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:2153456	Pkd2<+>	Not Specified	survival: premature death	59314	TAS
-MGI:97631	Pmp22	MGI:1862010	Pmp22<Tr-1H>	MGI:2153457	Pmp22<+>	(C3H x BALB/c)F1	peripheral nervous system: dysmorphology	63816	TAS
-MGI:97631	Pmp22	MGI:1862011	Pmp22<Tr-2H>	MGI:2153457	Pmp22<+>	(C3H x BALB/c)F1	peripheral nervous system: dysmorphology	63816	TAS
+MGI:1099818	Pkd2	MGI:1860840	Pkd2<tm1Sol>	MGI:1860840	Pkd2<tm1Sol>	involves: 129/Sv # C57BL/6J # SJL	kidney/renal system: dysmorphology	47035	TAS
+MGI:1099818	Pkd2	MGI:1860840	Pkd2<tm1Sol>	MGI:1860840	Pkd2<tm1Sol>	involves: 129/Sv # C57BL/6J # SJL	liver/hepatic system: dysmorphology	47035	TAS
+MGI:1099818	Pkd2	MGI:1860840	Pkd2<tm1Sol>	MGI:2153456	Pkd2<+>	involves: 129/Sv # C57BL/6J # SJL	kidney/renal system: dysmorphology	47035	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	involves: 129/Sv # C57BL/6J # SJL	survival: embryonic lethality	59314	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	involves: 129/Sv # C57BL/6J # SJL	heart/cardiovascular system: dysmorphology	59314	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	involves: 129/Sv # C57BL/6J # SJL	kidney/renal system: dysmorphology	59314	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:1860866	Pkd2<tm2Sol>	involves: 129/Sv # C57BL/6J # SJL	endocrine glands: dysmorphology	59314	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:2153456	Pkd2<+>	involves: 129/Sv # C57BL/6J # SJL	kidney/renal system: dysmorphology	59314	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:2153456	Pkd2<+>	involves: 129/Sv # C57BL/6J # SJL	liver/hepatic system: dysmorphology	59314	TAS
+MGI:1099818	Pkd2	MGI:1860866	Pkd2<tm2Sol>	MGI:2153456	Pkd2<+>	involves: 129/Sv # C57BL/6J # SJL	survival: premature death	59314	TAS
+MGI:97631	Pmp22	MGI:1862010	Pmp22<Tr-1H>	MGI:2153457	Pmp22<+>	involves: BALB/c # C3H  	peripheral nervous system: dysmorphology	63816	TAS
+MGI:97631	Pmp22	MGI:1862011	Pmp22<Tr-2H>	MGI:2153457	Pmp22<+>	involves: BALB/c # C3H  	peripheral nervous system: dysmorphology	63816	TAS
 MGI:1100882	Pmx2b	MGI:1926861	Pmx2b<tm1Jbr>	MGI:1926861	Pmx2b<tm1Jbr>	Not Specified	survival: embryonic lethality	55391	TAS
 MGI:1100882	Pmx2b	MGI:1926861	Pmx2b<tm1Jbr>	MGI:1926861	Pmx2b<tm1Jbr>	Not Specified	central nervous system: other dysmorphology	55391	TAS
-MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	129S7 x B6	no obvious phenotype: no defect detected	472	TAS
-MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	129S7 x B6	neurological/behavioral: no defect detected	472	TAS
-MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	129S7 x B6	immune system: no defect detected	472	TAS
-MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	129S7 x B6	central nervous system: LTP anomalies	19948	TAS
-MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	129S7 x B6	central nervous system: other functional anomalies	19948	TAS
-MGI:97769	Prnp	MGI:1934274	Prnp<tm1Edin>	MGI:1934274	Prnp<tm1Edin>	129P2	other aberrant phenotype	58820	TAS
-MGI:97769	Prnp	MGI:1934272	Prnp<tm1Miy>	MGI:1934272	Prnp<tm1Miy>	129S4 x B6	other aberrant phenotype	69186	TAS
-MGI:97769	Prnp	MGI:1934272	Prnp<tm1Miy>	MGI:1934272	Prnp<tm1Miy>	129S4 x B6	neurological/behavioral: motor capabilities/coordination/movement anomalies	32240	TAS
-MGI:97769	Prnp	MGI:1934272	Prnp<tm1Miy>	MGI:1934272	Prnp<tm1Miy>	129S4 x B6	central nervous system: other dysmorphology	32240	TAS
-MGI:97769	Prnp	MGI:1934273	Prnp<tm1Rcm>	MGI:1934273	Prnp<tm1Rcm>	129P2	other aberrant phenotype	45908	TAS
-MGI:1860488	Proz	MGI:1931524	Proz<tm1Gjb>	MGI:1931524	Proz<tm1Gjb>	129X1 x B6	no obvious phenotype: no defect detected	62716	TAS
-MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	Not Specified	survival: perinatal lethality	28777	TAS
-MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	Not Specified	respiratory system: respiratory distress or failure/functional anomalies	28777	TAS
-MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	28777	TAS
-MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	Not Specified	musculature: no defect detected	28777	TAS
-MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	Not Specified	heart/cardiovascular system: no defect detected	28777	TAS
-MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	Not Specified	kidney/renal system: no defect detected	28777	TAS
-MGI:107974	rlc	MGI:1861664	rlc	MGI:1861664	rlc	STOCK rlc	eye: corneal or lens defect	38732	TAS
-MGI:1861996	Rob	MGI:1862020	Rob	MGI:2153467	Rob<+>	(C3H x BALB/c)F1	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	TAS
-MGI:104661	Rora	MGI:1857035	Rora<sg>	MGI:1857035	Rora<sg>	obese stock	neurological/behavioral: motor capabilities/coordination/movement anomalies	13140	TAS
-MGI:104661	Rora	MGI:1857035	Rora<sg>	MGI:1857035	Rora<sg>	obese stock	survival: postnatal lethality	13140	TAS
-MGI:104661	Rora	MGI:1857035	Rora<sg>	MGI:1857035	Rora<sg>	obese stock	central nervous system: other dysmorphology	13140	TAS
-MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	129P2 x B6	neurological/behavioral: motor capabilities/coordination/movement anomalies	46854	TAS
-MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	129P2 x B6	survival: postnatal lethality	46854	TAS
-MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	129P2 x B6	central nervous system: other dysmorphology	46854	TAS
-MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	129P2 x B6	coat: hair growth defects	46854	TAS
-MGI:104661	Rora	MGI:1933211	Rora<tm1Vgi>	MGI:1933211	Rora<tm1Vgi>	complex	neurological/behavioral: motor capabilities/coordination/movement anomalies	46140	TAS
-MGI:104661	Rora	MGI:1933211	Rora<tm1Vgi>	MGI:1933211	Rora<tm1Vgi>	complex	survival: postnatal lethality	46140	TAS
-MGI:104661	Rora	MGI:1933211	Rora<tm1Vgi>	MGI:1933211	Rora<tm1Vgi>	complex	central nervous system: other dysmorphology	46140	TAS
-MGI:98188	rs	MGI:1857022	rs	MGI:1857022	rs	C3H	coat: color anomalies	13456	TAS
+MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	involves: 129S7/SvEvBrd-Hprt+ # C57BL/6	no obvious phenotype: no defect detected	472	TAS
+MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	involves: 129S7/SvEvBrd-Hprt+ # C57BL/6	neurological/behavioral: no defect detected	472	TAS
+MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	involves: 129S7/SvEvBrd-Hprt+ # C57BL/6	immune system: no defect detected	472	TAS
+MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	involves: 129S7/SvEvBrd-Hprt+ # C57BL/6	central nervous system: LTP anomalies	19948	TAS
+MGI:97769	Prnp	MGI:1888773	Prnp<tm1Cwe>	MGI:1888773	Prnp<tm1Cwe>	involves: 129S7/SvEvBrd-Hprt+ # C57BL/6	central nervous system: other functional anomalies	19948	TAS
+MGI:97769	Prnp	MGI:1934274	Prnp<tm1Edin>	MGI:1934274	Prnp<tm1Edin>	129P2/OlaHsd-Prnp<tm1Edin>	other aberrant phenotype	58820	TAS
+MGI:97769	Prnp	MGI:1934272	Prnp<tm1Miy>	MGI:1934272	Prnp<tm1Miy>	involves: 129S4/SvJae # C57BL/6	other aberrant phenotype	69186	TAS
+MGI:97769	Prnp	MGI:1934272	Prnp<tm1Miy>	MGI:1934272	Prnp<tm1Miy>	involves: 129S4/SvJae # C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	32240	TAS
+MGI:97769	Prnp	MGI:1934272	Prnp<tm1Miy>	MGI:1934272	Prnp<tm1Miy>	involves: 129S4/SvJae # C57BL/6	central nervous system: brain dysmorphology	32240	TAS
+MGI:97769	Prnp	MGI:1934273	Prnp<tm1Rcm>	MGI:1934273	Prnp<tm1Rcm>	129P2/OlaHsd-Prnp<tm1Rcm>	other aberrant phenotype	45908	TAS
+MGI:1860488	Proz	MGI:1931524	Proz<tm1Gjb>	MGI:1931524	Proz<tm1Gjb>	involves: 129X1/SvJ # C57BL/6	no obvious phenotype: no defect detected	62716	TAS
+MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	involves: 129X1/SvJ # 129S1/Sv	survival: perinatal lethality	28777	TAS
+MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	involves: 129X1/SvJ # 129S1/Sv	respiratory system: respiratory distress or failure/functional anomalies	28777	TAS
+MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	involves: 129X1/SvJ # 129S1/Sv	neurological/behavioral: motor capabilities/coordination/movement anomalies	28777	TAS
+MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	involves: 129X1/SvJ # 129S1/Sv	musculature: no defect detected	28777	TAS
+MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	involves: 129X1/SvJ # 129S1/Sv	heart/cardiovascular system: no defect detected	28777	TAS
+MGI:99422	Rapsn	MGI:2148091	Rapsn<tm1Jrs>	MGI:2148091	Rapsn<tm1Jrs>	involves: 129X1/SvJ # 129S1/Sv	kidney/renal system: no defect detected	28777	TAS
+MGI:107974	rlc	MGI:1861664	rlc	MGI:1861664	rlc	C.Cg-rlc	eye: corneal or lens defect	38732	TAS
+MGI:1861996	Rob	MGI:1862020	Rob	MGI:2153467	Rob<+>	involves: BALB/c # C3H/HeN	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	TAS
+MGI:104661	Rora	MGI:1857035	Rora<sg>	MGI:1857035	Rora<sg>	involves: obese stock	neurological/behavioral: motor capabilities/coordination/movement anomalies	13140	TAS
+MGI:104661	Rora	MGI:1857035	Rora<sg>	MGI:1857035	Rora<sg>	involves: obese stock	survival: postnatal lethality	13140	TAS
+MGI:104661	Rora	MGI:1857035	Rora<sg>	MGI:1857035	Rora<sg>	involves: obese stock	central nervous system: brain dysmorphology	13140	TAS
+MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	involves: 129P2/OlaHsd # C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	46854	TAS
+MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	involves: 129P2/OlaHsd # C57BL/6	survival: postnatal lethality	46854	TAS
+MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	involves: 129P2/OlaHsd # C57BL/6	central nervous system: brain dysmorphology	46854	TAS
+MGI:104661	Rora	MGI:1926597	Rora<tm1Mba>	MGI:1926597	Rora<tm1Mba>	involves: 129P2/OlaHsd # C57BL/6	coat: hair growth defects	46854	TAS
+MGI:104661	Rora	MGI:1933211	Rora<tm1Vgi>	MGI:1933211	Rora<tm1Vgi>	involves: 129X1/SvJ # 129S1/Sv # ICR	neurological/behavioral: motor capabilities/coordination/movement anomalies	46140	TAS
+MGI:104661	Rora	MGI:1933211	Rora<tm1Vgi>	MGI:1933211	Rora<tm1Vgi>	involves: 129X1/SvJ # 129S1/Sv # ICR	survival: postnatal lethality	46140	TAS
+MGI:104661	Rora	MGI:1933211	Rora<tm1Vgi>	MGI:1933211	Rora<tm1Vgi>	involves: 129X1/SvJ # 129S1/Sv # ICR	central nervous system: brain dysmorphology	46140	TAS
+MGI:98188	rs	MGI:1857022	rs	MGI:1857022	rs	C3H/HeJ	coat: color anomalies	13456	TAS
 MGI:98188	rs	MGI:1857886	rs<2J>	MGI:1857886	rs<2J>	B6.129P2-B2m<tm1Unc>	coat: color anomalies	52521	TAS
 MGI:98188	rs	MGI:1856889	rs<grc>	MGI:1856889	rs<grc>	wild Peruvian mice	coat: color anomalies	13977	TAS
-MGI:98205	ru2	MGI:1856144	ru2	MGI:1856144	ru2	B6	coat: color anomalies	20282	TAS
-MGI:98205	ru2	MGI:1856144	ru2	MGI:1856144	ru2	B6	eye: dysmorphology	20282	TAS
-MGI:98205	ru2	MGI:1856547	ru2<8J>	MGI:1856547	ru2<8J>	C3H	coat: color anomalies	29156	TAS
-MGI:98205	ru2	MGI:1856547	ru2<8J>	MGI:1856547	ru2<8J>	C3H	eye: dysmorphology	29156	TAS
+MGI:98205	ru2	MGI:1856144	ru2	MGI:1856144	ru2	C57BL	coat: color anomalies	20282	TAS
+MGI:98205	ru2	MGI:1856144	ru2	MGI:1856144	ru2	C57BL	eye: dysmorphology	20282	TAS
+MGI:98205	ru2	MGI:1856547	ru2<8J>	MGI:1856547	ru2<8J>	C3H/HeJ	coat: color anomalies	29156	TAS
+MGI:98205	ru2	MGI:1856547	ru2<8J>	MGI:1856547	ru2<8J>	C3H/HeJ	eye: dysmorphology	29156	TAS
 MGI:98205	ru2	MGI:1856145	ru2<hz>	MGI:1856145	ru2<hz>	DBA/2J	coat: color anomalies	15055	TAS
 MGI:98205	ru2	MGI:1856145	ru2<hz>	MGI:1856145	ru2<hz>	DBA/2J	eye: dysmorphology	15055	TAS
-MGI:98205	ru2	MGI:1856147	ru2<J>	MGI:1856147	ru2<J>	B6	coat: color anomalies	6422	TAS
-MGI:98205	ru2	MGI:1856147	ru2<J>	MGI:1856147	ru2<J>	B6	eye: dysmorphology	6422	TAS
+MGI:98205	ru2	MGI:1856147	ru2<J>	MGI:1856147	ru2<J>	C57BL/6J	coat: color anomalies	6422	TAS
+MGI:98205	ru2	MGI:1856147	ru2<J>	MGI:1856147	ru2<J>	C57BL/6J	eye: dysmorphology	6422	TAS
 MGI:98205	ru2	MGI:1856146	ru2<mr>	MGI:1856146	ru2<mr>	Not Specified	coat: color anomalies	15003	TAS
 MGI:98205	ru2	MGI:1856146	ru2<mr>	MGI:1856146	ru2<mr>	Not Specified	eye: dysmorphology	15003	TAS
 MGI:98205	ru2	MGI:1856146	ru2<mr>	MGI:1856146	ru2<mr>	Not Specified	heart/cardiovascular system: other functional anomalies	15003	TAS
 MGI:98205	ru2	MGI:1856146	ru2<mr>	MGI:1856146	ru2<mr>	Not Specified	kidney/renal system: functional anomalies	15003	TAS
 MGI:98205	ru2	MGI:1856146	ru2<mr>	MGI:1856146	ru2<mr>	Not Specified	heart/cardiovascular system: blood circulatory defects	15003	TAS
-MGI:98205	ru2	MGI:1889780	ru2<r>	MGI:1889780	ru2<r>	B10	coat: color anomalies	64446	TAS
-MGI:98205	ru2	MGI:1889780	ru2<r>	MGI:1889780	ru2<r>	B10	eye: dysmorphology	64446	TAS
-MGI:1861992	Sagg	MGI:1862016	Sagg	MGI:2153472	Sagg<+>	(C3H x BALB/c)F1	skin: texture/condition anomalies	63816	TAS
-MGI:98229	Sap	MGI:2138028	Sap<tm1Mpe>	MGI:2138028	Sap<tm1Mpe>	(129 x B6)F2	reproductive system: no defect detected	42137	TAS
-MGI:98229	Sap	MGI:2138028	Sap<tm1Mpe>	MGI:2138028	Sap<tm1Mpe>	(129 x B6)F2	no obvious phenotype: no defect detected	42137	TAS
+MGI:98205	ru2	MGI:1889780	ru2<r>	MGI:1889780	ru2<r>	C57BL/10	coat: color anomalies	64446	TAS
+MGI:98205	ru2	MGI:1889780	ru2<r>	MGI:1889780	ru2<r>	C57BL/10	eye: dysmorphology	64446	TAS
+MGI:1861992	Sagg	MGI:1862016	Sagg	MGI:2153472	Sagg<+>	involves: BALB/c # C3H  	skin: texture/condition anomalies	63816	TAS
+MGI:98229	Sap	MGI:2138028	Sap<tm1Mpe>	MGI:2138028	Sap<tm1Mpe>	involves: 129/Sv #C57BL/6	reproductive system: no defect detected	42137	TAS
+MGI:98229	Sap	MGI:2138028	Sap<tm1Mpe>	MGI:2138028	Sap<tm1Mpe>	involves: 129/Sv #C57BL/6	no obvious phenotype: no defect detected	42137	TAS
 MGI:103169	Scn8a	MGI:1856078	Scn8a<med>	MGI:1856078	Scn8a<med>	PCT	neurological/behavioral: motor capabilities/coordination/movement anomalies	27739	TAS
 MGI:103169	Scn8a	MGI:1856078	Scn8a<med>	MGI:1856078	Scn8a<med>	PCT	musculature: muscle dysmorphology	27739	TAS
 MGI:103169	Scn8a	MGI:1856078	Scn8a<med>	MGI:1856078	Scn8a<med>	PCT	musculature: physiological defects	27739	TAS
 MGI:103169	Scn8a	MGI:1856078	Scn8a<med>	MGI:1856078	Scn8a<med>	PCT	central nervous system: other dysmorphology	27739	TAS
 MGI:103169	Scn8a	MGI:1856078	Scn8a<med>	MGI:1856078	Scn8a<med>	PCT	peripheral nervous system: dysmorphology	27739	TAS
 MGI:103169	Scn8a	MGI:1856078	Scn8a<med>	MGI:1856078	Scn8a<med>	PCT	survival: postnatal lethality	27739	TAS
-MGI:1861995	Scy	MGI:1862019	Scy	MGI:2153471	Scy<+>	(C3H x BALB/c)F1	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	TAS
+MGI:1861995	Scy	MGI:1862019	Scy	MGI:2153471	Scy<+>	involves: BALB/c # C3H  	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	TAS
 MGI:2137677	Sfxn1	MGI:1856864	Sfxn1<f>	MGI:1856864	Sfxn1<f>	Not Specified	growth/weight abnormality: postnatal	13090	TAS
 MGI:2137677	Sfxn1	MGI:1856864	Sfxn1<f>	MGI:1856864	Sfxn1<f>	Not Specified	hematology: abnormal red blood cell count/anemia	27511	TAS
 MGI:2137677	Sfxn1	MGI:1856864	Sfxn1<f>	MGI:1856864	Sfxn1<f>	Not Specified	extremities: tail dysmorphology	13090	TAS
 MGI:2137677	Sfxn1	MGI:1856864	Sfxn1<f>	MGI:1856864	Sfxn1<f>	Not Specified	coat: color anomalies	13090	TAS
 MGI:2137677	Sfxn1	MGI:1856864	Sfxn1<f>	MGI:1856864	Sfxn1<f>	Not Specified	survival: postnatal lethality	13090	TAS
 MGI:2137677	Sfxn1	MGI:1856864	Sfxn1<f>	MGI:1856864	Sfxn1<f>	Not Specified	skeletal: axial defects	13090	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	survival: embryonic lethality	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	central nervous system: other dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	eye: dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	growth/weight abnormality: embryonic	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	embryogenesis: embryonic tissue dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	extremities: limb dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	skeletal: craniofacial defects	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	heart/cardiovascular system: dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	respiratory system: dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	kidney/renal system: dysmorphology	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	other aberrant phenotype	35802	TAS
-MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	Not Specified	skeletal: axial defects	35802	TAS
-MGI:1861984	Sic	MGI:1862005	Sic	MGI:2153476	Sic<+>	(C3H x BALB/c)F1	growth/weight abnormality: postnatal	63816	TAS
-MGI:101924	Slc12a2	MGI:1857838	Slc12a2<sy-ns>	MGI:1857838	Slc12a2<sy-ns>	Not Specified	ears: dysmorphology	56631	TAS
-MGI:101924	Slc12a2	MGI:1857838	Slc12a2<sy-ns>	MGI:1857838	Slc12a2<sy-ns>	Not Specified	ears: auditory defects/deafness	56631	TAS
-MGI:101924	Slc12a2	MGI:1858129	Slc12a2<sy-ns>	MGI:1858129	Slc12a2<sy-ns>	Not Specified	ears: dysmorphology	56631	TAS
-MGI:101924	Slc12a2	MGI:1858129	Slc12a2<sy-ns>	MGI:1858129	Slc12a2<sy-ns>	Not Specified	ears: auditory defects/deafness	56631	TAS
-MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	129S x C57BL/6	growth/weight abnormality: postnatal	55514	TAS
-MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	129S x C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	55514	TAS
-MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	129S x C57BL/6	musculature: physiological defects	55514	TAS
-MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	129S x C57BL/6	ears: auditory defects/deafness	55514	TAS
-MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	129S x C57BL/6	ears: dysmorphology	55514	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	survival: embryonic lethality	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	central nervous system: brain dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	eye: dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	growth/weight abnormality: embryonic	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	embryogenesis: embryonic tissue dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	extremities: limb dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	skeletal: craniofacial defects	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	heart/cardiovascular system: dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	respiratory system: dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	kidney/renal system: dysmorphology	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	other aberrant phenotype	35802	TAS
+MGI:98297	Shh	MGI:1857796	Shh<tm1Chg>	MGI:1857796	Shh<tm1Chg>	involves: 129X1/SvJ # 129S1/Sv	skeletal: axial defects	35802	TAS
+MGI:1861984	Sic	MGI:1862005	Sic	MGI:2153476	Sic<+>	involves: BALB/c # C3H  	growth/weight abnormality: postnatal	63816	TAS
+MGI:101924	Slc12a2	MGI:1857838	Slc12a2<sy-ns>	MGI:1857838	Slc12a2<sy-ns>	involves: C57BL/6 # MK/ReJ	ears: dysmorphology	56631	TAS
+MGI:101924	Slc12a2	MGI:1857838	Slc12a2<sy-ns>	MGI:1857838	Slc12a2<sy-ns>	involves: C57BL/6 # MK/ReJ	ears: auditory defects/deafness	56631	TAS
+MGI:101924	Slc12a2	MGI:1858129	Slc12a2<sy-ns>	MGI:1858129	Slc12a2<sy-ns>	involves: C57BL/6 # MK/ReJ	ears: dysmorphology	56631	TAS
+MGI:101924	Slc12a2	MGI:1858129	Slc12a2<sy-ns>	MGI:1858129	Slc12a2<sy-ns>	involves: C57BL/6 # MK/ReJ	ears: auditory defects/deafness	56631	TAS
+MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	involves: 129S/SvEv # C57BL/6	growth/weight abnormality: postnatal	55514	TAS
+MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	involves: 129S/SvEv # C57BL/6	neurological/behavioral: motor capabilities/coordination/movement anomalies	55514	TAS
+MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	involves: 129S/SvEv # C57BL/6	musculature: physiological defects	55514	TAS
+MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	involves: 129S/SvEv # C57BL/6	ears: auditory defects/deafness	55514	TAS
+MGI:101924	Slc12a2	MGI:1935225	Slc12a2<tm1Dlp>	MGI:1935225	Slc12a2<tm1Dlp>	involves: 129S/SvEv # C57BL/6	ears: dysmorphology	55514	TAS
 MGI:101924	Slc12a2	MGI:1935144	Slc12a2<tm1Ges>	MGI:1935144	Slc12a2<tm1Ges>	Not Specified	survival: postnatal lethality	57651	TAS
 MGI:101924	Slc12a2	MGI:1935144	Slc12a2<tm1Ges>	MGI:1935144	Slc12a2<tm1Ges>	Not Specified	growth/weight abnormality: postnatal	57651	TAS
 MGI:101924	Slc12a2	MGI:1935144	Slc12a2<tm1Ges>	MGI:1935144	Slc12a2<tm1Ges>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	57651	TAS
@@ -161,24 +177,24 @@ MGI:101924	Slc12a2	MGI:1935144	Slc12a2<tm1Ges>	MGI:1935144	Slc12a2<tm1Ges>	Not S
 MGI:101924	Slc12a2	MGI:1935144	Slc12a2<tm1Ges>	MGI:1935144	Slc12a2<tm1Ges>	Not Specified	ears: auditory defects/deafness	57651	TAS
 MGI:101924	Slc12a2	MGI:1935144	Slc12a2<tm1Ges>	MGI:1935144	Slc12a2<tm1Ges>	Not Specified	digestive system: functional anomalies	64324	TAS
 MGI:104665	Soat1	MGI:1856648	Soat1<ald>	MGI:1856648	Soat1<ald>	AKR/O	metabolism: abnormal lipid homeostasis	12157	TAS
-MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	129S4 x C57BL/6	endocrine glands: dysmorphology	37049	TAS
-MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	129S4 x C57BL/6	metabolism: abnormal lipid homeostasis	37049	TAS
-MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	129S4 x C57BL/6	skin: texture/condition anomalies	61147	TAS
-MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	129S4 x C57BL/6	heart/cardiovascular system: dysmorphology	61147	TAS
-MGI:104665	Soat1	MGI:1934032	Soat1<tm1Ishi>	MGI:1934032	Soat1<tm1Ishi>	129S6 x C57BL/6	eye: dysmorphology	63468	TAS
-MGI:104665	Soat1	MGI:1934032	Soat1<tm1Ishi>	MGI:1934032	Soat1<tm1Ishi>	129S6 x C57BL/6	metabolism: abnormal lipid homeostasis	63468	TAS
-MGI:893578	Srb1	MGI:1928989	Srb1<tm1Dhu>	MGI:1928989	Srb1<tm1Dhu>	129S4/SvJae x BALB/cByJ	metabolism: abnormal lipid homeostasis	47349	TAS
-MGI:893578	Srb1	MGI:1888384	Srb1<tm1Kri>	MGI:1888384	Srb1<tm1Kri>	(129S2/SvPas x C57BL/6)F2	metabolism: abnormal lipid homeostasis	44187	TAS
-MGI:893578	Srb1	MGI:1888384	Srb1<tm1Kri>	MGI:2154177	Srb1<+>	(129S2/SvPas x C57BL/6)F2	metabolism: abnormal lipid homeostasis	44187	TAS
-MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	multiple	survival: postnatal lethality	67040	TAS
-MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	multiple	growth/weight abnormality: postnatal	67040	TAS
-MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	multiple	teeth: tooth dysmorphology	67040	TAS
-MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	multiple	skeletal: osteogenesis/developmental anomalies	67040	TAS
-MGI:103038	Stat3	MGI:1926814	Stat3<tm1Aki>	MGI:1926814	Stat3<tm1Aki>	Not Specified	survival: embryonic lethality	65302	TAS
-MGI:103038	Stat3	MGI:1926814	Stat3<tm1Aki>	MGI:1926814	Stat3<tm1Aki>	Not Specified	embryogenesis: developmental patterning abnormalities	65302	TAS
-MGI:103038	Stat3	MGI:1926816	Stat3<tm2Aki>	MGI:1926816	Stat3<tm2Aki>	Not Specified	no obvious phenotype: no defect detected	50443	TAS
-MGI:1861997	Strg	MGI:1862024	Strg	MGI:2154207	Strg<+>	(C3H/HeN x BALB/c)F1	coat: hair texture defects	63816	TAS
-MGI:1861997	Strg	MGI:1862024	Strg	MGI:2154207	Strg<+>	(C3H/HeN x BALB/c)F1	coat: color anomalies	63816	TAS
+MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	involves: 129S4/SvJae # C57BL/6	endocrine glands: dysmorphology	37049	TAS
+MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	involves: 129S4/SvJae # C57BL/6	metabolism: abnormal lipid homeostasis	37049	TAS
+MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	involves: 129S4/SvJae # C57BL/6	skin: texture/condition anomalies	61147	TAS
+MGI:104665	Soat1	MGI:1857978	Soat1<tm1Far>	MGI:1857978	Soat1<tm1Far>	involves: 129S4/SvJae # C57BL/6	heart/cardiovascular system: dysmorphology	61147	TAS
+MGI:104665	Soat1	MGI:1934032	Soat1<tm1Ishi>	MGI:1934032	Soat1<tm1Ishi>	involves: 129S7/SvEvBrd # C57BL/6	eye: dysmorphology	63468	TAS
+MGI:104665	Soat1	MGI:1934032	Soat1<tm1Ishi>	MGI:1934032	Soat1<tm1Ishi>	involves: 129S7/SvEvBrd # C57BL/6	metabolism: abnormal lipid homeostasis	63468	TAS
+MGI:893578	Srb1	MGI:1928989	Srb1<tm1Dhu>	MGI:1928989	Srb1<tm1Dhu>	involves: 129S4/SvJae # BALB/cByJ	metabolism: abnormal lipid homeostasis	47349	TAS
+MGI:893578	Srb1	MGI:1888384	Srb1<tm1Kri>	MGI:1888384	Srb1<tm1Kri>	Involves: 129S2/SvPas # C57BL/6	metabolism: abnormal lipid homeostasis	44187	TAS
+MGI:893578	Srb1	MGI:1888384	Srb1<tm1Kri>	MGI:2154177	Srb1<+>	Involves: 129S2/SvPas # C57BL/6	metabolism: abnormal lipid homeostasis	44187	TAS
+MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	either: (129S7/SvEvBrd-Src<tm1Sor>) # (involves: 129S7/SvEvBrd # C57BL/6J)	survival: postnatal lethality	67040	TAS
+MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	either: (129S7/SvEvBrd-Src<tm1Sor>) # (involves: 129S7/SvEvBrd # C57BL/6J)	growth/weight abnormality: postnatal	67040	TAS
+MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	either: (129S7/SvEvBrd-Src<tm1Sor>) # (involves: 129S7/SvEvBrd # C57BL/6J)	teeth: tooth dysmorphology	67040	TAS
+MGI:98397	Src	MGI:1857247	Src<tm1Sor>	MGI:1857247	Src<tm1Sor>	either: (129S7/SvEvBrd-Src<tm1Sor>) # (involves: 129S7/SvEvBrd # C57BL/6J)	skeletal: osteogenesis/developmental anomalies	67040	TAS
+MGI:103038	Stat3	MGI:1926814	Stat3<tm1Aki>	MGI:1926814	Stat3<tm1Aki>	involves: 129P2/OlaHsd	survival: embryonic lethality	65302	TAS
+MGI:103038	Stat3	MGI:1926814	Stat3<tm1Aki>	MGI:1926814	Stat3<tm1Aki>	involves: 129P2/OlaHsd	embryogenesis: developmental patterning abnormalities	65302	TAS
+MGI:103038	Stat3	MGI:1926816	Stat3<tm2Aki>	MGI:1926816	Stat3<tm2Aki>	involves: 129P2/OlaHsd	no obvious phenotype: no defect detected	50443	TAS
+MGI:1861997	Strg	MGI:1862024	Strg	MGI:2154207	Strg<+>	involves: BALB/c # C3HeN 	coat: hair texture defects	63816	TAS
+MGI:1861997	Strg	MGI:1862024	Strg	MGI:2154207	Strg<+>	involves: BALB/c # C3HeN 	coat: color anomalies	63816	TAS
 MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	survival: postnatal lethality	208	TAS
 MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	extremities: digit dysmorphology	208	TAS
 MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	skeletal: osteogenesis/developmental anomalies	12945	TAS
@@ -186,295 +202,295 @@ MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	skeletal: axial defects
 MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	208	TAS
 MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	ears: auditory defects/deafness	13002	TAS
 MGI:98457	sy	MGI:1856182	sy	MGI:1856182	sy	Not Specified	ears: dysmorphology	13002	TAS
-MGI:98472	T	MGI:1862032	T<39H>	MGI:1857758	T<+>	(C3H/HeN x BALB/c)F1	extremities: tail dysmorphology	63816	TAS
-MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	Not Specified	survival: embryonic lethality	23061	TAS
-MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	Not Specified	growth/weight abnormality: embryonic	23061	TAS
-MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	Not Specified	other aberrant phenotype	23061	TAS
-MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	Not Specified	heart/cardiovascular system: dysmorphology	23061	TAS
-MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	Not Specified	skin: pigmentation anomalies	23061	TAS
-MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	Not Specified	heart/cardiovascular system: other functional anomalies	23061	TAS
-MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	129S1/Sv x C57BL/6	survival: embryonic lethality	27458	TAS
-MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	129S1/Sv x C57BL/6	growth/weight abnormality: embryonic	27458	TAS
-MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	129S1/Sv x C57BL/6	skin: pigmentation anomalies	27458	TAS
-MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	129S1/Sv x C57BL/6	skin: texture/condition anomalies	27458	TAS
-MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	129S1/Sv x C57BL/6	heart/cardiovascular system: dysmorphology	35103	TAS
-MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	129S1/Sv x C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	27458	TAS
-MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	129S1/Sv x C57BL/6	survival: embryonic lethality	58825	TAS
-MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	129S1/Sv x C57BL/6	growth/weight abnormality: embryonic	58825	TAS
-MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	129S1/Sv x C57BL/6	skin: pigmentation anomalies	58825	TAS
-MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	129S1/Sv x C57BL/6	skin: texture/condition anomalies	58825	TAS
-MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	129S1/Sv x C57BL/6	heart/cardiovascular system: dysmorphology	58825	TAS
-MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	129S1/Sv x C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	58825	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	survival: perinatal lethality	37117	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	extremities: tail dysmorphology	37117	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	skeletal: axial defects	37117	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	neurological/behavioral: motor capabilities/coordination/movement anomalies	37117	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	skin: texture/condition anomalies	37117	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	skeletal: craniofacial defects	37117	TAS
-MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	Not Specified	musculature: muscle dysmorphology	37117	TAS
-MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	Not Specified	survival: perinatal lethality	64068	TAS
-MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	Not Specified	respiratory system: respiratory distress or failure/functional anomalies	64068	TAS
-MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	Not Specified	heart/cardiovascular system: other functional anomalies	64068	TAS
-MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	Not Specified	respiratory system: dysmorphology	64068	TAS
-MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	Not Specified	kidney/renal system: dysmorphology	64068	TAS
-MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	Not Specified	immune system: other dysmorphology	64068	TAS
-MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	Not Specified	survival: perinatal lethality	55785	TAS
-MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	Not Specified	respiratory system: respiratory distress or failure/functional anomalies	55785	TAS
-MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	Not Specified	kidney/renal system: dysmorphology	55785	TAS
-MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	Not Specified	respiratory system: dysmorphology	55785	TAS
-MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	Not Specified	survival: perinatal lethality	64068	TAS
-MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	Not Specified	respiratory system: respiratory distress or failure/functional anomalies	64068	TAS
-MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	Not Specified	heart/cardiovascular system: other functional anomalies	64068	TAS
-MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	Not Specified	respiratory system: dysmorphology	64068	TAS
-MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	Not Specified	kidney/renal system: dysmorphology	64068	TAS
-MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	Not Specified	immune system: other dysmorphology	64068	TAS
-MGI:98507	Tcf7	MGI:1926298	Tcf7<tm1Cle>	MGI:1926298	Tcf7<tm1Cle>	Not Specified	immune system: other dysmorphology	23255	TAS
-MGI:98507	Tcf7	MGI:1926299	Tcf7<tm2Cle>	MGI:1926299	Tcf7<tm2Cle>	Not Specified	immune system: other dysmorphology	23255	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	survival: postnatal lethality	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	growth/weight abnormality: postnatal	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	neurological/behavioral: motor capabilities/coordination/movement anomalies	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	extremities: limb dysmorphology	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	extremities: tail dysmorphology	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	teeth: tooth dysmorphology	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	C57BL/6JLe x C3HeB/FeJLe-a/a	skeletal: osteogenesis/developmental anomalies	61295	TAS
-MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:2154317	Tcirg1<+>	C57BL/6JLe x C3HeB/FeJLe-a/a	no obvious phenotype: no defect detected	61295	TAS
-MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	129S4/SvJae x C57BL/6J	survival: postnatal lethality	58795	TAS
-MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	129S4/SvJae x C57BL/6J	growth/weight abnormality: postnatal	58795	TAS
-MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	129S4/SvJae x C57BL/6J	extremities: limb dysmorphology	58795	TAS
-MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	129S4/SvJae x C57BL/6J	teeth: tooth dysmorphology	58795	TAS
-MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	129S4/SvJae x C57BL/6J	skeletal: osteogenesis/developmental anomalies	58795	TAS
-MGI:98533	Tcm	MGI:1861626	Tcm	MGI:1861626	Tcm	Not Specified	eye: dysmorphology	52633	TAS
-MGI:98533	Tcm	MGI:1861626	Tcm	MGI:1861626	Tcm	Not Specified	eye: corneal or lens defect	52633	TAS
-MGI:98533	Tcm	MGI:1861626	Tcm	MGI:2154328	Tcm<+>	Not Specified	eye: dysmorphology	52633	TAS
-MGI:98533	Tcm	MGI:1861626	Tcm	MGI:2154328	Tcm<+>	Not Specified	eye: corneal or lens defect	52633	TAS
-MGI:109558	Terc	MGI:1857930	Terc<tm1Rdp>	MGI:1857930	Terc<tm1Rdp>	Complex	no obvious phenotype: no defect detected	43517	TAS
-MGI:1202709	Tert	MGI:1859741	Tert<tm1Fish>	MGI:1859741	Tert<tm1Fish>	(129S7/SvEvBrd x C57BL/6)F2	no obvious phenotype: no defect detected	59898	TAS
-MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	129P2/OlaHsd x C57BL/6	coat: hair texture defects	4606	TAS
-MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	129P2/OlaHsd x C57BL/6	vibrissae: shape/orientation defects	4606	TAS
-MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	129P2/OlaHsd x C57BL/6	coat: hair follicle structure/orientation anomalies	4606	TAS
-MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	129P2/OlaHsd x C57BL/6	eye: dysmorphology	4606	TAS
-MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	129P2/OlaHsd x C57BL/6	other aberrant phenotype	4606	TAS
-MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	129P2/OlaHsd x C57BL/6J	coat: hair texture defects	4605	TAS
-MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	129P2/OlaHsd x C57BL/6J	vibrissae: shape/orientation defects	4605	TAS
-MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	129P2/OlaHsd x C57BL/6J	coat: hair follicle structure/orientation anomalies	4605	TAS
-MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	129P2/OlaHsd x C57BL/6J	eye: dysmorphology	4605	TAS
-MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	129P2/OlaHsd x C57BL/6J	eye: corneal or lens defect	4605	TAS
-MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	129P2/OlaHsd x C57BL/6J	other aberrant phenotype	4605	TAS
-MGI:98724	Tgfa	MGI:1856268	Tgfa<wa1-5J>	MGI:1856268	Tgfa<wa1-5J>	BXD-32/Ty	coat: hair growth defects	64099	TAS
-MGI:98724	Tgfa	MGI:1856268	Tgfa<wa1-5J>	MGI:1856268	Tgfa<wa1-5J>	BXD-32/Ty	eye: dysmorphology	64099	TAS
-MGI:98724	Tgfa	MGI:1856268	Tgfa<wa1-5J>	MGI:1856268	Tgfa<wa1-5J>	BXD-32/Ty	growth/weight abnormality: postnatal	64099	TAS
+MGI:98472	T	MGI:1862032	T<39H>	MGI:1857758	T<+>	involves: BALB/c # C3HeN 	extremities: tail dysmorphology	63816	TAS
+MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	includes: 129S4/SvJae	survival: embryonic lethality	23061	TAS
+MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	includes: 129S4/SvJae	growth/weight abnormality: embryonic	23061	TAS
+MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	includes: 129S4/SvJae	other aberrant phenotype	23061	TAS
+MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	includes: 129S4/SvJae	heart/cardiovascular system: dysmorphology	23061	TAS
+MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	includes: 129S4/SvJae	skin: pigmentation anomalies	23061	TAS
+MGI:98480	Tal1	MGI:1857254	Tal1<tm1Sho>	MGI:1857254	Tal1<tm1Sho>	includes: 129S4/SvJae	heart/cardiovascular system: other functional anomalies	23061	TAS
+MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	survival: embryonic lethality	27458	TAS
+MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	growth/weight abnormality: embryonic	27458	TAS
+MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	skin: pigmentation anomalies	27458	TAS
+MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	skin: texture/condition anomalies	27458	TAS
+MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	heart/cardiovascular system: dysmorphology	35103	TAS
+MGI:98480	Tal1	MGI:1857566	Tal1<tm1Wehi>	MGI:1857566	Tal1<tm1Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	27458	TAS
+MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	survival: embryonic lethality	58825	TAS
+MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	growth/weight abnormality: embryonic	58825	TAS
+MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	skin: pigmentation anomalies	58825	TAS
+MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	skin: texture/condition anomalies	58825	TAS
+MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	heart/cardiovascular system: dysmorphology	58825	TAS
+MGI:98480	Tal1	MGI:1858004	Tal1<tm2Wehi>	MGI:1858004	Tal1<tm2Wehi>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	embryogenesis: extraembryonic tissue dysmorphology	58825	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	survival: perinatal lethality	37117	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	extremities: tail dysmorphology	37117	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	skeletal: axial defects	37117	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	neurological/behavioral: motor capabilities/coordination/movement anomalies	37117	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	skin: texture/condition anomalies	37117	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	skeletal: craniofacial defects	37117	TAS
+MGI:104664	Tcf15	MGI:1929775	Tcf15<tm1Eno>	MGI:1929775	Tcf15<tm1Eno>	includes: 129S7/SvEvBrd-Hprt<+>	musculature: muscle dysmorphology	37117	TAS
+MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	includes: Black Swiss	survival: perinatal lethality	64068	TAS
+MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	includes: Black Swiss	respiratory system: respiratory distress or failure/functional anomalies	64068	TAS
+MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	includes: Black Swiss	heart/cardiovascular system: other functional anomalies	64068	TAS
+MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	includes: Black Swiss	respiratory system: dysmorphology	64068	TAS
+MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	includes: Black Swiss	kidney/renal system: dysmorphology	64068	TAS
+MGI:1202715	Tcf21	MGI:1888738	Tcf21<tm1Eno>	MGI:1888738	Tcf21<tm1Eno>	includes: Black Swiss	immune system: other dysmorphology	64068	TAS
+MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	includes: 129S1/Sv # 129X1/SvJ 	survival: perinatal lethality	55785	TAS
+MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	includes: 129S1/Sv # 129X1/SvJ 	respiratory system: respiratory distress or failure/functional anomalies	55785	TAS
+MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	includes: 129S1/Sv # 129X1/SvJ 	kidney/renal system: dysmorphology	55785	TAS
+MGI:1202715	Tcf21	MGI:2148207	Tcf21<tm1Jrt>	MGI:2148207	Tcf21<tm1Jrt>	includes: 129S1/Sv # 129X1/SvJ 	respiratory system: dysmorphology	55785	TAS
+MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	includes: Black Swiss	survival: perinatal lethality	64068	TAS
+MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	includes: Black Swiss	respiratory system: respiratory distress or failure/functional anomalies	64068	TAS
+MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	includes: Black Swiss	heart/cardiovascular system: other functional anomalies	64068	TAS
+MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	includes: Black Swiss	respiratory system: dysmorphology	64068	TAS
+MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	includes: Black Swiss	kidney/renal system: dysmorphology	64068	TAS
+MGI:1202715	Tcf21	MGI:2148205	Tcf21<tm2Eno>	MGI:2148205	Tcf21<tm2Eno>	includes: Black Swiss	immune system: other dysmorphology	64068	TAS
+MGI:98507	Tcf7	MGI:1926298	Tcf7<tm1Cle>	MGI:1926298	Tcf7<tm1Cle>	involves: 129P2/OlaHsd	immune system: other dysmorphology	23255	TAS
+MGI:98507	Tcf7	MGI:1926299	Tcf7<tm2Cle>	MGI:1926299	Tcf7<tm2Cle>	involves: 129P2/OlaHsd	immune system: other dysmorphology	23255	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	survival: postnatal lethality	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	growth/weight abnormality: postnatal	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	neurological/behavioral: motor capabilities/coordination/movement anomalies	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	extremities: limb dysmorphology	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	extremities: tail dysmorphology	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	teeth: tooth dysmorphology	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:1856973	Tcirg1<oc>	B6C3Fe-a/a-Tcirg1<oc/+>	skeletal: osteogenesis/developmental anomalies	61295	TAS
+MGI:1350931	Tcirg1	MGI:1856973	Tcirg1<oc>	MGI:2154317	Tcirg1<+>	B6C3Fe-a/a-Tcirg1<oc/+>	no obvious phenotype: no defect detected	61295	TAS
+MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	includes: 129S4/SvJae # C57BL/6J	survival: postnatal lethality	58795	TAS
+MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	includes: 129S4/SvJae # C57BL/6J	growth/weight abnormality: postnatal	58795	TAS
+MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	includes: 129S4/SvJae # C57BL/6J	extremities: limb dysmorphology	58795	TAS
+MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	includes: 129S4/SvJae # C57BL/6J	teeth: tooth dysmorphology	58795	TAS
+MGI:1350931	Tcirg1	MGI:1857950	Tcirg1<tm1Ypl>	MGI:1857950	Tcirg1<tm1Ypl>	includes: 129S4/SvJae # C57BL/6J	skeletal: osteogenesis/developmental anomalies	58795	TAS
+MGI:98533	Tcm	MGI:1861626	Tcm	MGI:1861626	Tcm	includes: 101 # C3H	eye: dysmorphology	52633	TAS
+MGI:98533	Tcm	MGI:1861626	Tcm	MGI:1861626	Tcm	includes: 101 # C3H	eye: corneal or lens defect	52633	TAS
+MGI:98533	Tcm	MGI:1861626	Tcm	MGI:2154328	Tcm<+>	includes: 101 # C3H	eye: dysmorphology	52633	TAS
+MGI:98533	Tcm	MGI:1861626	Tcm	MGI:2154328	Tcm<+>	includes: 101 # C3H	eye: corneal or lens defect	52633	TAS
+MGI:109558	Terc	MGI:1857930	Terc<tm1Rdp>	MGI:1857930	Terc<tm1Rdp>	involves: 129/Sv # C57BL/6J # SJL	no obvious phenotype: no defect detected	43517	TAS
+MGI:1202709	Tert	MGI:1859741	Tert<tm1Fish>	MGI:1859741	Tert<tm1Fish>	includes: 129S7/SvEvBrd # C57BL/6	no obvious phenotype: no defect detected	59898	TAS
+MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	includes: 129P2/OlaHsd # C57BL/6	coat: hair texture defects	4606	TAS
+MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	includes: 129P2/OlaHsd # C57BL/6	vibrissae: shape/orientation defects	4606	TAS
+MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	includes: 129P2/OlaHsd # C57BL/6	coat: hair follicle structure/orientation anomalies	4606	TAS
+MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	includes: 129P2/OlaHsd # C57BL/6	eye: dysmorphology	4606	TAS
+MGI:98724	Tgfa	MGI:1856577	Tgfa<tm1Ard>	MGI:1856577	Tgfa<tm1Ard>	includes: 129P2/OlaHsd # C57BL/6	other aberrant phenotype	4606	TAS
+MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	includes: 129P2/OlaHsd # C57BL/6J	coat: hair texture defects	4605	TAS
+MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	includes: 129P2/OlaHsd # C57BL/6J	vibrissae: shape/orientation defects	4605	TAS
+MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	includes: 129P2/OlaHsd # C57BL/6J	coat: hair follicle structure/orientation anomalies	4605	TAS
+MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	includes: 129P2/OlaHsd # C57BL/6J	eye: dysmorphology	4605	TAS
+MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	includes: 129P2/OlaHsd # C57BL/6J	eye: corneal or lens defect	4605	TAS
+MGI:98724	Tgfa	MGI:1933208	Tgfa<tm1Unc>	MGI:1933208	Tgfa<tm1Unc>	includes: 129P2/OlaHsd # C57BL/6J	other aberrant phenotype	4605	TAS
+MGI:98724	Tgfa	MGI:1856268	Tgfa<wa1-5J>	MGI:1856268	Tgfa<wa1-5J>	BXD-32/Ty-Tgfa<wa1-5J>	coat: hair growth defects	64099	TAS
+MGI:98724	Tgfa	MGI:1856268	Tgfa<wa1-5J>	MGI:1856268	Tgfa<wa1-5J>	BXD-32/Ty-Tgfa<wa1-5J>	eye: dysmorphology	64099	TAS
+MGI:98724	Tgfa	MGI:1856268	Tgfa<wa1-5J>	MGI:1856268	Tgfa<wa1-5J>	BXD-32/Ty-Tgfa<wa1-5J>	growth/weight abnormality: postnatal	64099	TAS
 MGI:98724	Tgfa	MGI:1856388	Tgfa<wa1>	MGI:1856388	Tgfa<wa1>	Not Specified	coat: hair texture defects	13034	TAS
 MGI:98724	Tgfa	MGI:1856388	Tgfa<wa1>	MGI:1856388	Tgfa<wa1>	Not Specified	vibrissae: shape/orientation defects	13034	TAS
-MGI:98725	Tgfb1	MGI:1857671	Tgfb1<tm1N>	MGI:1857671	Tgfb1<tm1N>	Not Specified	heart/cardiovascular system: other functional anomalies	50848	TAS
-MGI:98725	Tgfb1	MGI:1857671	Tgfb1<tm1N>	MGI:1857671	Tgfb1<tm1N>	Not Specified	digestive system: dysmorphology	50848	TAS
+MGI:98725	Tgfb1	MGI:1857671	Tgfb1<tm1N>	MGI:1857671	Tgfb1<tm1N>	includes: 129S/SvEv	heart/cardiovascular system: other functional anomalies	50848	TAS
+MGI:98725	Tgfb1	MGI:1857671	Tgfb1<tm1N>	MGI:1857671	Tgfb1<tm1N>	includes: 129S/SvEv	digestive system: dysmorphology	50848	TAS
 MGI:1927233	Tl	MGI:1932330	Tl	MGI:1932330	Tl	AKR/J	survival: embryonic lethality	68218	TAS
 MGI:1927233	Tl	MGI:1932330	Tl	MGI:2154410	Tl<+>	AKR/J	skeletal: axial defects	68218	TAS
 MGI:1927233	Tl	MGI:1932330	Tl	MGI:2154410	Tl<+>	AKR/J	skeletal: extremities defects	68218	TAS
 MGI:1927233	Tl	MGI:1932330	Tl	MGI:2154410	Tl<+>	AKR/J	extremities: tail dysmorphology	68218	TAS
 MGI:1891332	Tlc	MGI:1913078	Tlc	MGI:2154414	Tlc<+>	C3HeB/FeJ	ears: dysmorphology	64900	TAS
 MGI:1891332	Tlc	MGI:1913078	Tlc	MGI:2154414	Tlc<+>	C3HeB/FeJ	neurological/behavioral: motor capabilities/coordination/movement anomalies	64900	TAS
-MGI:1861982	Todo	MGI:1862003	Todo	MGI:2154420	Todo<+>	(C3H/HeN x BALB/c)F1	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	TAS
-MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:2154425	Trfr<+>	multiple	heart/cardiovascular system: dysmorphology	54107	TAS
-MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:2154425	Trfr<+>	multiple	metabolism: other metabolic defect	54107	TAS
-MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	multiple	survival: embryonic lethality	54107	TAS
-MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	multiple	hematology: abnormal red blood cell count/anemia	54107	TAS
-MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	multiple	hematology: hemaotpoetic anomalies	54107	TAS
-MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	multiple	central nervous system: neural tube defects	54107	TAS
-MGI:98834	Trp53	MGI:1857590	Trp53<tm1Brd>	MGI:1857590	Trp53<tm1Brd>	129S7/SvEvBrd-Hprt<+> x C57BL/6	tumors: increased incidence	1999	TAS
-MGI:98834	Trp53	MGI:1857590	Trp53<tm1Brd>	MGI:1857589	Trp53<+>	129S7/SvEvBrd-Hprt<+> x C57BL/6	tumors: increased incidence	1999	TAS
-MGI:98834	Trp53	MGI:1926340	Trp53<tm1Sia>	MGI:1926340	Trp53<tm1Sia>	multiple	tumors: increased incidence	36762	TAS
-MGI:98834	Trp53	MGI:1857263	Trp53<tm1Tyj>	MGI:1857263	Trp53<tm1Tyj>	129S2/SvPas x C57BL/6	tumors: increased incidence	17728	TAS
-MGI:98834	Trp53	MGI:1857263	Trp53<tm1Tyj>	MGI:1857589	Trp53<+>	129S2/SvPas x C57BL/6	tumors: increased incidence	17728	TAS
+MGI:1861982	Todo	MGI:1862003	Todo	MGI:2154420	Todo<+>	involves: BALB/c # C3HeN 	neurological/behavioral: motor capabilities/coordination/movement anomalies	63816	TAS
+MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:2154425	Trfr<+>	either: (129S4/SvJae # C57BL/6) # (129S4/SvJae # 129S6/SvEvTac)	heart/cardiovascular system: dysmorphology	54107	TAS
+MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:2154425	Trfr<+>	either: (129S4/SvJae # C57BL/6) # (129S4/SvJae # 129S6/SvEvTac)	metabolism: other metabolic defect	54107	TAS
+MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	either: (129S4/SvJae # C57BL/6) # (129S4/SvJae # 129S6/SvEvTac)	survival: embryonic lethality	54107	TAS
+MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	either: (129S4/SvJae # C57BL/6) # (129S4/SvJae # 129S6/SvEvTac)	hematology: abnormal red blood cell count/anemia	54107	TAS
+MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	either: (129S4/SvJae # C57BL/6) # (129S4/SvJae # 129S6/SvEvTac)	hematology: hematopoietic anomalies	54107	TAS
+MGI:98822	Trfr	MGI:1859944	Trfr<tm1Nca>	MGI:1859944	Trfr<tm1Nca>	either: (129S4/SvJae # C57BL/6) # (129S4/SvJae # 129S6/SvEvTac)	central nervous system: neural tube defects	54107	TAS
+MGI:98834	Trp53	MGI:1857590	Trp53<tm1Brd>	MGI:1857590	Trp53<tm1Brd>	includes: 129S7/SvEvBrd-Hprt<+> # C57BL/6	tumors: increased incidence	1999	TAS
+MGI:98834	Trp53	MGI:1857590	Trp53<tm1Brd>	MGI:1857589	Trp53<+>	includes: 129S7/SvEvBrd-Hprt<+> # C57BL/6	tumors: increased incidence	1999	TAS
+MGI:98834	Trp53	MGI:1926340	Trp53<tm1Sia>	MGI:1926340	Trp53<tm1Sia>	involves: C57BL/6 # CBA	tumors: increased incidence	36762	TAS
+MGI:98834	Trp53	MGI:1857263	Trp53<tm1Tyj>	MGI:1857263	Trp53<tm1Tyj>	includes: 129S2/SvPas # C57BL/6	tumors: increased incidence	17728	TAS
+MGI:98834	Trp53	MGI:1857263	Trp53<tm1Tyj>	MGI:1857589	Trp53<+>	includes: 129S2/SvPas # C57BL/6	tumors: increased incidence	17728	TAS
 MGI:98834	Trp53	MGI:1927802	Trp53<tm1Wahl>	MGI:1927802	Trp53<tm1Wahl>	Not Specified	tumors: increased incidence	64367	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	survival: perinatal lethality	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	skeletal: extremities defects	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	skeletal: craniofacial defects	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	extremities: limb dysmorphology	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	eye: dysmorphology	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	vibrissae: shape/orientation defects	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	coat: hair follicle structure/orientation anomalies	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	teeth: tooth dysmorphology	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	skin: texture/condition anomalies	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	endocrine glands: dysmorphology	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	digestive system: dysmorphology	54637	TAS
-MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	Not Specified	reproductive system: dysmorphology	54637	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	growth/weight abnormality: postnatal	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	survival: postnatal lethality	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	digestive system: dysmorphology	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	respiratory system: respiratory distress or failure/functional anomalies	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	eye: dysmorphology	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	central nervous system: other dysmorphology	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	reproductive system: fertility/fecundity anomalies	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	neurological/behavioral: aggression	60896	TAS
-MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	Not Specified	tumors: no increased incidence	60896	TAS
-MGI:102548	Tsc2	MGI:1857938	Tsc2<tm1Djk>	MGI:1857938	Tsc2<tm1Djk>	multiple	survival: embryonic lethality	57631	TAS
-MGI:102548	Tsc2	MGI:1857938	Tsc2<tm1Djk>	MGI:1857938	Tsc2<tm1Djk>	multiple	liver/hepatic system: dysmorphology	57631	TAS
-MGI:102548	Tsc2	MGI:1857938	Tsc2<tm1Djk>	MGI:2154476	Tsc2<+>	multiple	tumors: increased incidence	57631	TAS
-MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	129S4/SvJae x C57BL/6J	survival: embryonic lethality	52464	TAS
-MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	129S4/SvJae x C57BL/6J	central nervous system: neural tube defects	52464	TAS
-MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	129S4/SvJae x C57BL/6J	growth/weight abnormality: embryonic	52464	TAS
-MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	129S4/SvJae x C57BL/6J	heart/cardiovascular system: dysmorphology	52464	TAS
-MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:2154476	Tsc2<+>	129S4/SvJae x C57BL/6J	tumors: increased incidence	52464	TAS
-MGI:1354168	Ttpa	MGI:1932559	Ttpa<tm1Far>	MGI:1932559	Ttpa<tm1Far>	129S4/SvJae x C57BL/6	metabolism: other metabolic defect measured by clinical chemistry	66419	TAS
-MGI:1354168	Ttpa	MGI:1932559	Ttpa<tm1Far>	MGI:1932559	Ttpa<tm1Far>	129S4/SvJae x C57BL/6	reproductive system: fertility/fecundity anomalies	66419	TAS
-MGI:1354168	Ttpa	MGI:1932559	Ttpa<tm1Far>	MGI:2154478	Ttpa<+>	129S4/SvJae x C57BL/6	metabolism: other metabolic defect measured by clinical chemistry	66419	TAS
-MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J	growth/weight abnormality: postnatal	32415	TAS
-MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J	eye: dysmorphology	32415	TAS
-MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J	metabolism: other metabolic defect	32415	TAS
-MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J	metabolism: abnormal lipid homeostasis	32415	TAS
-MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J	ears: auditory defects/deafness	32415	TAS
-MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J	ears: dysmorphology	32415	TAS
-MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	C57BL/6J-Hprt<b-m3>	growth/weight abnormality: postnatal	59994	TAS
-MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	C57BL/6J-Hprt<b-m3>	eye: dysmorphology	59994	TAS
-MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	C57BL/6J-Hprt<b-m3>	metabolism: other metabolic defect	59994	TAS
-MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	C57BL/6J-Hprt<b-m3>	metabolism: abnormal lipid homeostasis	59994	TAS
-MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	C57BL/6J-Hprt<b-m3>	ears: auditory defects/deafness	59994	TAS
-MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	C57BL/6J-Hprt<b-m3>	ears: dysmorphology	59994	TAS
-MGI:1355274	Uchl3	MGI:1930988	Uchl3<tm1Tilg>	MGI:1930988	Uchl3<tm1Tilg>	129S1/Sv x C57BL/6	no obvious phenotype: no defect detected	61093	TAS
-MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	(129P2/OlaHsd x NMRI)F3	survival: perinatal lethality	62022	TAS
-MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	(129P2/OlaHsd x NMRI)F3	respiratory system: respiratory distress or failure/functional anomalies	62022	TAS
-MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	(129P2/OlaHsd x NMRI)F3	kidney/renal system: no defect detected	62022	TAS
-MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	(129P2/OlaHsd x NMRI)F3	central nervous system: other dysmorphology	62022	TAS
-MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	(129P2/OlaHsd x NMRI)F3	skeletal: axial defects	62022	TAS
-MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	Not Specified	survival: perinatal lethality	62023	TAS
-MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	Not Specified	central nervous system: no defect detected	62023	TAS
-MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	Not Specified	kidney/renal system: no defect detected	62023	TAS
-MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	Not Specified	central nervous system: other dysmorphology	62023	TAS
-MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	Not Specified	skeletal: axial defects	62023	TAS
-MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	(129X1/SvJ x 129S1/Sv)F1-Kitl<+> x Black Swiss	survival: embryonic lethality	45781	TAS
-MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	(129X1/SvJ x 129S1/Sv)F1-Kitl<+> x Black Swiss	growth/weight abnormality: embryonic	45781	TAS
-MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	(129X1/SvJ x 129S1/Sv)F1-Kitl<+> x Black Swiss	central nervous system: neural tube defects	45781	TAS
-MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	(129X1/SvJ x 129S1/Sv)F1-Kitl<+> x Black Swiss	extremities: limb dysmorphology	45781	TAS
-MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	(129X1/SvJ x 129S1/Sv)F1-Kitl<+> x Black Swiss	heart/cardiovascular system: dysmorphology	45781	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	survival: postnatal lethality	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	reproductive system: fertility/fecundity anomalies	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	coat: hair growth defects	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	growth/weight abnormality: postnatal	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	vibrissae: shape/orientation defects	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	skeletal: craniofacial defects	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	skeletal: osteogenesis/developmental anomalies	42054	TAS
-MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	(C57BL/6 x CBA)F1 x C57BL/6	reproductive system: dysmorphology	42054	TAS
-MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	129S2/SvPas x C57BL/6J	survival: embryonic lethality	32218	TAS
-MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	129S2/SvPas x C57BL/6J	skeletal: craniofacial defects	32218	TAS
-MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	129S2/SvPas x C57BL/6J	extremities: limb dysmorphology	32218	TAS
-MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	129S2/SvPas x C57BL/6J	central nervous system: other dysmorphology	32218	TAS
-MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	129S2/SvPas x C57BL/6J	heart/cardiovascular system: dysmorphology	32218	TAS
-MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	129S2/SvPas x C57BL/6J	embryogenesis: extraembryonic tissue dysmorphology	32218	TAS
-MGI:103223	Vhlh	MGI:2136646	Vhlh<tm1.1Jae>	MGI:2136646	Vhlh<tm1.1Jae>	129S4/SvJae x BALB/c	survival: embryonic lethality	67505	TAS
-MGI:103223	Vhlh	MGI:2136646	Vhlh<tm1.1Jae>	MGI:2154489	Vhlh<+>	129S4/SvJae x BALB/c	liver/hepatic system: dysmorphology	67505	TAS
-MGI:103223	Vhlh	MGI:2136646	Vhlh<tm1.1Jae>	MGI:2154489	Vhlh<+>	129S4/SvJae x BALB/c	heart/cardiovascular system: dysmorphology	67505	TAS
-MGI:98934	vl	MGI:1857087	vl	MGI:1857087	vl	C3HeB/FeJ	eye: corneal or lens defect	13464	TAS
-MGI:98934	vl	MGI:1857087	vl	MGI:1857087	vl	C3HeB/FeJ	central nervous system: neural tube defects	13464	TAS
-MGI:1861989	Vng	MGI:1862013	Vng	MGI:2154497	Vng<+>	(C3H/HeN x BALB/c)F1	ears: dysmorphology	63816	TAS
-MGI:98940	Vtn	MGI:1931522	Vtn<tm1Dgi>	MGI:1931522	Vtn<tm1Dgi>	129S2/SvPas x B6D2F1/J	no obvious phenotype: no defect detected	30296	TAS
-MGI:1861986	Whto	MGI:1862008	Whto	MGI:2154498	Whto<+>	(C3H/HeN x BALB/c)F1	coat: color anomalies	63816	TAS
-MGI:1861986	Whto	MGI:1862008	Whto	MGI:2154498	Whto<+>	(C3H/HeN x BALB/c)F1	extremities: digit dysmorphology	63816	TAS
-MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	C57BR	extremities: tail dysmorphology	64271	TAS
-MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	C57BR	skeletal: axial defects	64271	TAS
-MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	C57BR	embryogenesis: developmental patterning abnormalities	64271	TAS
-MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	C57BR	embryogenesis: embryonic tissue dysmorphology	64271	TAS
-MGI:98961	Wnt7a	MGI:1857009	Wnt7a<px>	MGI:1857009	Wnt7a<px>	Not Specified	reproductive system: fertility/fecundity anomalies	112	TAS
-MGI:98961	Wnt7a	MGI:1857009	Wnt7a<px>	MGI:1857009	Wnt7a<px>	Not Specified	extremities: limb dysmorphology	112	TAS
-MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	Not Specified	reproductive system: fertility/fecundity anomalies	23922	TAS
-MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	Not Specified	reproductive system: dysmorphology	23922	TAS
-MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	Not Specified	extremities: limb dysmorphology	23922	TAS
-MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	Not Specified	extremities: digit dysmorphology	23922	TAS
-MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	129P2/OlaHsd x C57BL/6	survival: embryonic lethality	65218	TAS
-MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	129P2/OlaHsd x C57BL/6	growth/weight abnormality: embryonic	65218	TAS
-MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	129P2/OlaHsd x C57BL/6	immune system: other dysmorphology	65218	TAS
-MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	129P2/OlaHsd x C57BL/6	central nervous system: other dysmorphology	65218	TAS
-MGI:99147	Yes	MGI:1857269	Yes<tm1Sor>	MGI:1857269	Yes<tm1Sor>	multiple	no obvious phenotype: no defect detected	20346	TAS
-MGI:99147	Yes	MGI:1929675	Yes<tm2Sor>	MGI:1929675	Yes<tm2Sor>	multiple	no obvious phenotype: no defect detected	20346	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	survival: perinatal lethality	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	skeletal: extremities defects	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	skeletal: craniofacial defects	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	extremities: limb dysmorphology	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	eye: dysmorphology	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	vibrissae: shape/orientation defects	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	coat: hair follicle structure/orientation anomalies	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	teeth: tooth dysmorphology	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	skin: texture/condition anomalies	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	endocrine glands: dysmorphology	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	digestive system: dysmorphology	54637	TAS
+MGI:1330810	Trp63	MGI:1934269	Trp63<tm1Fmc>	MGI:1934269	Trp63<tm1Fmc>	includes: 129S4/SvJae	reproductive system: dysmorphology	54637	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	growth/weight abnormality: postnatal	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	survival: postnatal lethality	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	digestive system: dysmorphology	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	respiratory system: respiratory distress or failure/functional anomalies	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	eye: dysmorphology	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	central nervous system: brain dysmorphology	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	reproductive system: fertility/fecundity anomalies	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	neurological/behavioral: aggression	60896	TAS
+MGI:1336991	Trp73	MGI:1859911	Trp73<tm1Fmc>	MGI:1859911	Trp73<tm1Fmc>	includes: 129S4/SvJae	tumors: no increased incidence	60896	TAS
+MGI:102548	Tsc2	MGI:1857938	Tsc2<tm1Djk>	MGI:1857938	Tsc2<tm1Djk>	either: (involves: 129S4/SvJae # BALB/cJ) or (involves: 129S4/SvJae # C57BL/6J) or (involves: 129S4/SvJae # Black Swiss)	survival: embryonic lethality	57631	TAS
+MGI:102548	Tsc2	MGI:1857938	Tsc2<tm1Djk>	MGI:1857938	Tsc2<tm1Djk>	either: (involves: 129S4/SvJae # BALB/cJ) or (involves: 129S4/SvJae # C57BL/6J) or (involves: 129S4/SvJae # Black Swiss)	liver/hepatic system: dysmorphology	57631	TAS
+MGI:102548	Tsc2	MGI:1857938	Tsc2<tm1Djk>	MGI:2154476	Tsc2<+>	either: (involves: 129S4/SvJae # BALB/cJ) or (involves: 129S4/SvJae # C57BL/6J) or (involves: 129S4/SvJae # Black Swiss)	tumors: increased incidence	57631	TAS
+MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	includes: 129S4/SvJae # C57BL/6J	survival: embryonic lethality	52464	TAS
+MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	includes: 129S4/SvJae # C57BL/6J	central nervous system: neural tube defects	52464	TAS
+MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	includes: 129S4/SvJae # C57BL/6J	growth/weight abnormality: embryonic	52464	TAS
+MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:1926345	Tsc2<tm1Tno>	includes: 129S4/SvJae # C57BL/6J	heart/cardiovascular system: dysmorphology	52464	TAS
+MGI:102548	Tsc2	MGI:1926345	Tsc2<tm1Tno>	MGI:2154476	Tsc2<+>	includes: 129S4/SvJae # C57BL/6J	tumors: increased incidence	52464	TAS
+MGI:1354168	Ttpa	MGI:1932559	Ttpa<tm1Far>	MGI:1932559	Ttpa<tm1Far>	includes: 129S4/SvJae # C57BL/6J	metabolism: other metabolic defect measured by clinical chemistry	66419	TAS
+MGI:1354168	Ttpa	MGI:1932559	Ttpa<tm1Far>	MGI:1932559	Ttpa<tm1Far>	includes: 129S4/SvJae # C57BL/6J	reproductive system: fertility/fecundity anomalies	66419	TAS
+MGI:1354168	Ttpa	MGI:1932559	Ttpa<tm1Far>	MGI:2154478	Ttpa<+>	includes: 129S4/SvJae # C57BL/6J	metabolism: other metabolic defect measured by clinical chemistry	66419	TAS
+MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J-tub/+	growth/weight abnormality: postnatal	32415	TAS
+MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J-tub/+	eye: dysmorphology	32415	TAS
+MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J-tub/+	metabolism: other metabolic defect	32415	TAS
+MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J-tub/+	metabolism: abnormal lipid homeostasis	32415	TAS
+MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J-tub/+	ears: auditory defects/deafness	32415	TAS
+MGI:98868	tub	MGI:1861349	tub	MGI:1861349	tub	C57BL/6J-tub/+	ears: dysmorphology	32415	TAS
+MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	includes: C57BL/6J-Hprt<b-m3>	growth/weight abnormality: postnatal	59994	TAS
+MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	includes: C57BL/6J-Hprt<b-m3>	eye: dysmorphology	59994	TAS
+MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	includes: C57BL/6J-Hprt<b-m3>	metabolism: other metabolic defect	59994	TAS
+MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	includes: C57BL/6J-Hprt<b-m3>	metabolism: abnormal lipid homeostasis	59994	TAS
+MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	includes: C57BL/6J-Hprt<b-m3>	ears: auditory defects/deafness	59994	TAS
+MGI:98868	tub	MGI:1857081	tub<tm1Rok>	MGI:1857081	tub<tm1Rok>	includes: C57BL/6J-Hprt<b-m3>	ears: dysmorphology	59994	TAS
+MGI:1355274	Uchl3	MGI:1930988	Uchl3<tm1Tilg>	MGI:1930988	Uchl3<tm1Tilg>	includes: 129S1/Sv-p<+> Tyr-c<+> Kitl<+> # C57BL/6	no obvious phenotype: no defect detected	61093	TAS
+MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	includes: 129P2/OlaHsd # NMRI	survival: perinatal lethality	62022	TAS
+MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	includes: 129P2/OlaHsd # NMRI	respiratory system: respiratory distress or failure/functional anomalies	62022	TAS
+MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	includes: 129P2/OlaHsd # NMRI	kidney/renal system: no defect detected	62022	TAS
+MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	includes: 129P2/OlaHsd # NMRI	central nervous system: other dysmorphology	62022	TAS
+MGI:108013	Uncx4.1	MGI:1859373	Uncx4.1<tm1Akis>	MGI:1859373	Uncx4.1<tm1Akis>	includes: 129P2/OlaHsd # NMRI	skeletal: axial defects	62022	TAS
+MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	includes: NMRI	survival: perinatal lethality	62023	TAS
+MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	includes: NMRI	central nervous system: no defect detected	62023	TAS
+MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	includes: NMRI	kidney/renal system: no defect detected	62023	TAS
+MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	includes: NMRI	central nervous system: other dysmorphology	62023	TAS
+MGI:108013	Uncx4.1	MGI:1928812	Uncx4.1<tm1Pgr>	MGI:1928812	Uncx4.1<tm1Pgr>	includes: NMRI	skeletal: axial defects	62023	TAS
+MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	includes: 129S1/Sv # 129X1/SvJ # Black Swiss	survival: embryonic lethality	45781	TAS
+MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	includes: 129S1/Sv # 129X1/SvJ # Black Swiss	growth/weight abnormality: embryonic	45781	TAS
+MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	includes: 129S1/Sv # 129X1/SvJ # Black Swiss	central nervous system: neural tube defects	45781	TAS
+MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	includes: 129S1/Sv # 129X1/SvJ # Black Swiss	extremities: limb dysmorphology	45781	TAS
+MGI:98927	Vcl	MGI:1857730	Vcl<tm1Eda>	MGI:1857730	Vcl<tm1Eda>	includes: 129S1/Sv # 129X1/SvJ # Black Swiss	heart/cardiovascular system: dysmorphology	45781	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	survival: postnatal lethality	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	reproductive system: fertility/fecundity anomalies	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	coat: hair growth defects	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	growth/weight abnormality: postnatal	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	vibrissae: shape/orientation defects	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	skeletal: craniofacial defects	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	skeletal: osteogenesis/developmental anomalies	42054	TAS
+MGI:103076	Vdr	MGI:1859929	Vdr<tm1Ska>	MGI:1859929	Vdr<tm1Ska>	includes: C57BL/6 # CBA	reproductive system: dysmorphology	42054	TAS
+MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	involves: 129S2/SvPas # C57BL/6J	survival: embryonic lethality	32218	TAS
+MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	involves: 129S2/SvPas # C57BL/6J	skeletal: craniofacial defects	32218	TAS
+MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	involves: 129S2/SvPas # C57BL/6J	extremities: limb dysmorphology	32218	TAS
+MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	involves: 129S2/SvPas # C57BL/6J	central nervous system: brain dysmorphology	32218	TAS
+MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	involves: 129S2/SvPas # C57BL/6J	heart/cardiovascular system: dysmorphology	32218	TAS
+MGI:103178	Vegf	MGI:1931041	Vegf<tm1Gne>	MGI:1931041	Vegf<tm1Gne>	involves: 129S2/SvPas # C57BL/6J	embryogenesis: extraembryonic tissue dysmorphology	32218	TAS
+MGI:103223	Vhlh	MGI:2136646	Vhlh<tm1.1Jae>	MGI:2136646	Vhlh<tm1.1Jae>	involves: 129S4/SvJae # BALB/c	survival: embryonic lethality	67505	TAS
+MGI:103223	Vhlh	MGI:2136646	Vhlh<tm1.1Jae>	MGI:2154489	Vhlh<+>	involves: 129S4/SvJae # BALB/c	liver/hepatic system: dysmorphology	67505	TAS
+MGI:103223	Vhlh	MGI:2136646	Vhlh<tm1.1Jae>	MGI:2154489	Vhlh<+>	involves: 129S4/SvJae # BALB/c	heart/cardiovascular system: dysmorphology	67505	TAS
+MGI:98934	vl	MGI:1857087	vl	MGI:1857087	vl	C3HeB/FeJ-vl	eye: corneal or lens defect	13464	TAS
+MGI:98934	vl	MGI:1857087	vl	MGI:1857087	vl	C3HeB/FeJ-vl	central nervous system: neural tube defects	13464	TAS
+MGI:1861989	Vng	MGI:1862013	Vng	MGI:2154497	Vng<+>	involves: BALB/c # C3HeN 	ears: dysmorphology	63816	TAS
+MGI:98940	Vtn	MGI:1931522	Vtn<tm1Dgi>	MGI:1931522	Vtn<tm1Dgi>	involves: 129S2/SvPas # C57BL/6 # DBA2/J	no obvious phenotype: no defect detected	30296	TAS
+MGI:1861986	Whto	MGI:1862008	Whto	MGI:2154498	Whto<+>	involves: BALB/c # C3HeN 	coat: color anomalies	63816	TAS
+MGI:1861986	Whto	MGI:1862008	Whto	MGI:2154498	Whto<+>	involves: BALB/c # C3HeN 	extremities: digit dysmorphology	63816	TAS
+MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	STOCK Wnt3a<vt>	extremities: tail dysmorphology	64271	TAS
+MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	STOCK Wnt3a<vt>	skeletal: axial defects	64271	TAS
+MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	STOCK Wnt3a<vt>	embryogenesis: developmental patterning abnormalities	64271	TAS
+MGI:98956	Wnt3a	MGI:1857088	Wnt3a<vt>	MGI:1857088	Wnt3a<vt>	STOCK Wnt3a<vt>	embryogenesis: embryonic tissue dysmorphology	64271	TAS
+MGI:98961	Wnt7a	MGI:1857009	Wnt7a<px>	MGI:1857009	Wnt7a<px>	involves: STOCK Sox18<Ra>	reproductive system: fertility/fecundity anomalies	112	TAS
+MGI:98961	Wnt7a	MGI:1857009	Wnt7a<px>	MGI:1857009	Wnt7a<px>	involves: STOCK Sox18<Ra>	extremities: limb dysmorphology	112	TAS
+MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	involves: 129S1/Sv-p<+> Tyr-c<+> Kitl<+>	reproductive system: fertility/fecundity anomalies	23922	TAS
+MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	involves: 129S1/Sv-p<+> Tyr-c<+> Kitl<+>	reproductive system: dysmorphology	23922	TAS
+MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	involves: 129S1/Sv-p<+> Tyr-c<+> Kitl<+>	extremities: limb dysmorphology	23922	TAS
+MGI:98961	Wnt7a	MGI:1857704	Wnt7a<tm1Amc>	MGI:1857704	Wnt7a<tm1Amc>	involves: 129S1/Sv-p<+> Tyr-c<+> Kitl<+>	extremities: digit dysmorphology	23922	TAS
+MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	involves: 129P2/OlaHsd # C57BL/6	survival: embryonic lethality	65218	TAS
+MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	involves: 129P2/OlaHsd # C57BL/6	growth/weight abnormality: embryonic	65218	TAS
+MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	involves: 129P2/OlaHsd # C57BL/6	immune system: other dysmorphology	65218	TAS
+MGI:1333799	Xrcc4	MGI:1926771	Xrcc4<tm1Fwa>	MGI:1926771	Xrcc4<tm1Fwa>	involves: 129P2/OlaHsd # C57BL/6	central nervous system: brain dysmorphology	65218	TAS
+MGI:99147	Yes	MGI:1857269	Yes<tm1Sor>	MGI:1857269	Yes<tm1Sor>	either: 129S7/SvEvBrd-Yes<tm1Sor> or (involves: 129S7/SvEvBrd # C57BL/6)	no obvious phenotype: no defect detected	20346	TAS
+MGI:99147	Yes	MGI:1929675	Yes<tm2Sor>	MGI:1929675	Yes<tm2Sor>	either: 129S7/SvEvBrd-Yes<tm1Sor> or (involves: 129S7/SvEvBrd # C57BL/6)	no obvious phenotype: no defect detected	20346	TAS
 MGI:99182	Zipro1	MGI:1926800	Zipro1<tm1Htz>	MGI:1926800	Zipro1<tm1Htz>	Not Specified	no obvious phenotype: no defect detected	56546	TAS
-MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm	C57BL/6J x C3H	survival: embryonic lethality	16317	TAS
-MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm			C57BL/6J x C3H	neurological/behavioral: motor capabilities/coordination/movement anomalies	16317	TAS
-MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm			C57BL/6J x C3H	skeletal: craniofacial defects	16317	TAS
-MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm			C57BL/6J x C3H	ears: dysmorphology	16317	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	metabolism: abnormal lipid homeostasis	65036	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	skin: texture/condition anomalies	65036	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	coat: hair growth defects	65036	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	other aberrant phenotype	65036	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	liver/hepatic system: dysmorphology	65036	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	heart/cardiovascular system: dysmorphology	65036	TAS
-MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6	immune system: other dysmorphology	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	metabolism: abnormal lipid homeostasis	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	skin: texture/condition anomalies	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	coat: hair growth defects	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	other aberrant phenotype	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	liver/hepatic system: dysmorphology	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	heart/cardiovascular system: dysmorphology	65036	TAS
-MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6	immune system: other dysmorphology	65036	TAS
-MGI:2152038	Tg(APP)109Ili	MGI:2151935	Tg(APP)109Ili			Not Specified	central nervous system: other dysmorphology	23080	TAS
-MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			complex	coat: hair growth defects	65047	TAS
-MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			complex	coat: hair follicle structure/orientation anomalies	65047	TAS
-MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			complex	skin: texture/condition anomalies	65047	TAS
-MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			complex	tumors: no increased incidence	65047	TAS
-MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			complex	coat: hair growth defects	65047	TAS
-MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			complex	coat: hair follicle structure/orientation anomalies	65047	TAS
-MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			complex	skin: texture/condition anomalies	65047	TAS
-MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			complex	tumors: no increased incidence	65047	TAS
-MGI:1891500	Tg(BCL2)1Tsk	MGI:1891501	Tg(BCL2)1Tsk			FVB/N	coat: hair growth defects	64948	TAS
-MGI:1891500	Tg(BCL2)1Tsk	MGI:1891501	Tg(BCL2)1Tsk			FVB/N	skin: texture/condition anomalies	64948	TAS
+MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm	involves: C3H # C57BL/6J 	survival: embryonic lethality	16317	TAS
+MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm			involves: C3H # C57BL/6J 	neurological/behavioral: motor capabilities/coordination/movement anomalies	16317	TAS
+MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm			involves: C3H # C57BL/6J 	skeletal: craniofacial defects	16317	TAS
+MGI:102634	Tg(AMY1C)1Mm	MGI:1889519	Tg(AMY1C)1Mm			involves: C3H # C57BL/6J 	ears: dysmorphology	16317	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	metabolism: abnormal lipid homeostasis	65036	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	skin: texture/condition anomalies	65036	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	coat: hair growth defects	65036	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	other aberrant phenotype	65036	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	liver/hepatic system: dysmorphology	65036	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	heart/cardiovascular system: dysmorphology	65036	TAS
+MGI:1926370	Tg(APOC1)1Lmh	MGI:1926379	Tg(APOC1)1Lmh			C57BL/6-Tg(APOC1)1Lmh	immune system: other dysmorphology	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	metabolism: abnormal lipid homeostasis	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	skin: texture/condition anomalies	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	coat: hair growth defects	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	other aberrant phenotype	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	liver/hepatic system: dysmorphology	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	heart/cardiovascular system: dysmorphology	65036	TAS
+MGI:1926371	Tg(APOC1)3Lmh	MGI:1926380	Tg(APOC1)3Lmh			C57BL/6-Tg(APOC1)3Lmh	immune system: other dysmorphology	65036	TAS
+MGI:2152038	Tg(APP)109Ili	MGI:2151935	Tg(APP)109Ili			Not Specified	central nervous system: brain dysmorphology	23080	TAS
+MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			involves: C57BL/6 # SENCAR # SJL	coat: hair growth defects	65047	TAS
+MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			involves: C57BL/6 # SENCAR # SJL	coat: hair follicle structure/orientation anomalies	65047	TAS
+MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			involves: C57BL/6 # SENCAR # SJL	skin: texture/condition anomalies	65047	TAS
+MGI:1926785	Tg(Av-E1A)901Gpd	MGI:1926807	Tg(Av-E1A)901Gpd			involves: C57BL/6 # SENCAR # SJL	tumors: no increased incidence	65047	TAS
+MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			involves: C57BL/6 # SENCAR # SJL	coat: hair growth defects	65047	TAS
+MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			involves: C57BL/6 # SENCAR # SJL	coat: hair follicle structure/orientation anomalies	65047	TAS
+MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			involves: C57BL/6 # SENCAR # SJL	skin: texture/condition anomalies	65047	TAS
+MGI:1926787	Tg(Av-E1A)906Gpd	MGI:1926809	Tg(Av-E1A)906Gpd			involves: C57BL/6 # SENCAR # SJL	tumors: no increased incidence	65047	TAS
+MGI:1891500	Tg(BCL2)1Tsk	MGI:1891501	Tg(BCL2)1Tsk			involves: FVB/N	coat: hair growth defects	64948	TAS
+MGI:1891500	Tg(BCL2)1Tsk	MGI:1891501	Tg(BCL2)1Tsk			involves: FVB/N	skin: texture/condition anomalies	64948	TAS
 MGI:1926288	Tg(BCL2L1)1Cbt	MGI:1926365	Tg(BCL2L1)1Cbt			Not Specified	skin: no defect detected	65152	TAS
 MGI:1926296	Tg(BCL2L1)2Cbt	MGI:1926366	Tg(BCL2L1)2Cbt			Not Specified	skin: no defect detected	65152	TAS
-MGI:1926613	Tg(Bdnf)1Kma	MGI:1926642	Tg(Bdnf)1Kma			C57BL/6 x C3H	skin: texture/condition anomalies	65153	TAS
-MGI:1926613	Tg(Bdnf)1Kma	MGI:1926642	Tg(Bdnf)1Kma			C57BL/6 x C3H	peripheral nervous system: dysmorphology	65153	TAS
-MGI:1891517	Tg(Bdnf)1Paus	MGI:1891518	Tg(Bdnf)1Paus			FVB	peripheral nervous system: dysmorphology	53271	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	survival: embryonic lethality	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	survival: perinatal lethality	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	growth/weight abnormality: postnatal	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	skeletal: craniofacial defects	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	coat: hair growth defects	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	vibrissae: shape/orientation defects	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	coat: hair follicle structure/orientation anomalies	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	coat: color anomalies	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	skin: texture/condition anomalies	65030	TAS
-MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			C57BL/6 x DBA/2	reproductive system: fertility/fecundity anomalies	65030	TAS
-MGI:1096562	Tg(Cat)370Rpw	MGI:1927810	Tg(Cat)370Rpw			FVB/N	extremities: tail dysmorphology	26246	TAS
-MGI:1096562	Tg(Cat)370Rpw	MGI:1927810	Tg(Cat)370Rpw			FVB/N	skeletal: axial defects	26246	TAS
-MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			CD1	coat: hair follicle structure/orientation anomalies	51296	TAS
-MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			CD1	skin: texture/condition anomalies	51296	TAS
-MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			CD1	extremities: limb dysmorphology	51296	TAS
-MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			CD1	tumors: increased incidence	51296	TAS
-MGI:1891522	Tg(Dvl2)7Gsb	MGI:1891523	Tg(Dvl2)7Gsb			multiple	coat: hair growth defects	53379	TAS
-MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			(C57BL/6 x DBA/2)	vibrissae: shape/orientation defects	65031	TAS
-MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			(C57BL/6 x DBA/2)	coat: hair texture defects	65031	TAS
-MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			(C57BL/6 x DBA/2)	coat: hair growth defects	65031	TAS
-MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			(C57BL/6 x DBA/2)	coat: hair follicle structure/orientation anomalies	65031	TAS
-MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			(C57BL/6 x DBA/2)	growth/weight abnormality: postnatal	65031	TAS
-MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			(C57BL/6 x DBA/2)	vibrissae: shape/orientation defects	65031	TAS
-MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			(C57BL/6 x DBA/2)	coat: hair texture defects	65031	TAS
-MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			(C57BL/6 x DBA/2)	coat: hair growth defects	65031	TAS
-MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			(C57BL/6 x DBA/2)	coat: hair follicle structure/orientation anomalies	65031	TAS
-MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			(C57BL/6 x DBA/2)	growth/weight abnormality: postnatal	65031	TAS
-MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			(C57BL/6 x DBA/2)	eye: corneal or lens defect	65031	TAS
-MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			(C57BL/6 x DBA/2)	vibrissae: shape/orientation defects	65031	TAS
-MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			(C57BL/6 x DBA/2)	coat: hair texture defects	65031	TAS
-MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			(C57BL/6 x DBA/2)	coat: hair growth defects	65031	TAS
-MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			(C57BL/6 x DBA/2)	growth/weight abnormality: postnatal	65031	TAS
-MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			(C57BL/6 x DBA/2)	vibrissae: shape/orientation defects	65031	TAS
-MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			(C57BL/6 x DBA/2)	coat: hair texture defects	65031	TAS
-MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			(C57BL/6 x DBA/2)	coat: hair growth defects	65031	TAS
-MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			(C57BL/6 x DBA/2)	coat: hair follicle structure/orientation anomalies	65031	TAS
-MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			(C57BL/6 x DBA/2)	growth/weight abnormality: postnatal	65031	TAS
-MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			(C57BL/6 x DBA/2)	vibrissae: shape/orientation defects	65031	TAS
-MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			(C57BL/6 x DBA/2)	coat: hair texture defects	65031	TAS
-MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			(C57BL/6 x DBA/2)	coat: hair growth defects	65031	TAS
-MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			(C57BL/6 x DBA/2)	coat: hair follicle structure/orientation anomalies	65031	TAS
-MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			(C57BL/6 x DBA/2)	growth/weight abnormality: postnatal	65031	TAS
-MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			(C57BL/6 x DBA/2)	vibrissae: shape/orientation defects	65031	TAS
-MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			(C57BL/6 x DBA/2)	coat: hair texture defects	65031	TAS
-MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			(C57BL/6 x DBA/2)	coat: hair growth defects	65031	TAS
-MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			(C57BL/6 x DBA/2)	coat: hair follicle structure/orientation anomalies	65031	TAS
-MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			(C57BL/6 x DBA/2)	growth/weight abnormality: postnatal	65031	TAS
-MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			(C57BL/6 x DBA/2)	eye: corneal or lens defect	65031	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	skin: texture/condition anomalies	47225	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	coat: hair follicle structure/orientation anomalies	47225	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	coat: hair growth defects	47225	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	growth/weight abnormality: postnatal	47225	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	digestive system: dysmorphology	47225	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	tumors: increased incidence	47225	TAS
-MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			(C57BL/6 x SJL)F1	reproductive system: fertility/fecundity anomalies	47225	TAS
+MGI:1926613	Tg(Bdnf)1Kma	MGI:1926642	Tg(Bdnf)1Kma			involves: C3H # C57BL/6J 	skin: texture/condition anomalies	65153	TAS
+MGI:1926613	Tg(Bdnf)1Kma	MGI:1926642	Tg(Bdnf)1Kma			involves: C3H # C57BL/6J 	peripheral nervous system: dysmorphology	65153	TAS
+MGI:1891517	Tg(Bdnf)1Paus	MGI:1891518	Tg(Bdnf)1Paus			involves: FVB	peripheral nervous system: dysmorphology	53271	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	survival: embryonic lethality	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	survival: perinatal lethality	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	skeletal: craniofacial defects	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	coat: hair growth defects	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	coat: hair follicle structure/orientation anomalies	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	coat: color anomalies	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	skin: texture/condition anomalies	65030	TAS
+MGI:1926306	Tg(BMP4)6Blh	MGI:1926357	Tg(BMP4)6Blh			involves: C57BL/6 # DBA/2	reproductive system: fertility/fecundity anomalies	65030	TAS
+MGI:1096562	Tg(Cat)370Rpw	MGI:1927810	Tg(Cat)370Rpw			involves: FVB/N	extremities: tail dysmorphology	26246	TAS
+MGI:1096562	Tg(Cat)370Rpw	MGI:1927810	Tg(Cat)370Rpw			involves: FVB/N	skeletal: axial defects	26246	TAS
+MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			involves: CD1	coat: hair follicle structure/orientation anomalies	51296	TAS
+MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			involves: CD1	skin: texture/condition anomalies	51296	TAS
+MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			involves: CD1	extremities: limb dysmorphology	51296	TAS
+MGI:1891519	Tg(CTNNB1)1Efu	MGI:1891520	Tg(CTNNB1)1Efu			involves: CD1	tumors: increased incidence	51296	TAS
+MGI:1891522	Tg(Dvl2)7Gsb	MGI:1891523	Tg(Dvl2)7Gsb			either: FVB/N # (C57BL/6 # FVB/N)	coat: hair growth defects	53379	TAS
+MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65031	TAS
+MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			involves: C57BL/6 # DBA/2	coat: hair texture defects	65031	TAS
+MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			involves: C57BL/6 # DBA/2	coat: hair growth defects	65031	TAS
+MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			involves: C57BL/6 # DBA/2	coat: hair follicle structure/orientation anomalies	65031	TAS
+MGI:1926314	Tg(EGFR)0Jlj	MGI:1926833	Tg(EGFR)0Jlj			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65031	TAS
+MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65031	TAS
+MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			involves: C57BL/6 # DBA/2	coat: hair texture defects	65031	TAS
+MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			involves: C57BL/6 # DBA/2	coat: hair growth defects	65031	TAS
+MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			involves: C57BL/6 # DBA/2	coat: hair follicle structure/orientation anomalies	65031	TAS
+MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65031	TAS
+MGI:1926315	Tg(EGFR)1Jlj	MGI:1926351	Tg(EGFR)1Jlj			involves: C57BL/6 # DBA/2	eye: corneal or lens defect	65031	TAS
+MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65031	TAS
+MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			involves: C57BL/6 # DBA/2	coat: hair texture defects	65031	TAS
+MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			involves: C57BL/6 # DBA/2	coat: hair growth defects	65031	TAS
+MGI:1926324	Tg(EGFR)2Jlj	MGI:1926352	Tg(EGFR)2Jlj			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65031	TAS
+MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65031	TAS
+MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			involves: C57BL/6 # DBA/2	coat: hair texture defects	65031	TAS
+MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			involves: C57BL/6 # DBA/2	coat: hair growth defects	65031	TAS
+MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			involves: C57BL/6 # DBA/2	coat: hair follicle structure/orientation anomalies	65031	TAS
+MGI:1926325	Tg(EGFR)3Jlj	MGI:1926353	Tg(EGFR)3Jlj			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65031	TAS
+MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65031	TAS
+MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			involves: C57BL/6 # DBA/2	coat: hair texture defects	65031	TAS
+MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			involves: C57BL/6 # DBA/2	coat: hair growth defects	65031	TAS
+MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			involves: C57BL/6 # DBA/2	coat: hair follicle structure/orientation anomalies	65031	TAS
+MGI:1926328	Tg(EGFR)4Jlj	MGI:1926355	Tg(EGFR)4Jlj			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65031	TAS
+MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			involves: C57BL/6 # DBA/2	vibrissae: shape/orientation defects	65031	TAS
+MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			involves: C57BL/6 # DBA/2	coat: hair texture defects	65031	TAS
+MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			involves: C57BL/6 # DBA/2	coat: hair growth defects	65031	TAS
+MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			involves: C57BL/6 # DBA/2	coat: hair follicle structure/orientation anomalies	65031	TAS
+MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			involves: C57BL/6 # DBA/2	growth/weight abnormality: postnatal	65031	TAS
+MGI:1926330	Tg(EGFR)5Jlj	MGI:1926356	Tg(EGFR)5Jlj			involves: C57BL/6 # DBA/2	eye: corneal or lens defect	65031	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	skin: texture/condition anomalies	47225	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	coat: hair follicle structure/orientation anomalies	47225	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	coat: hair growth defects	47225	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	growth/weight abnormality: postnatal	47225	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	digestive system: dysmorphology	47225	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	tumors: increased incidence	47225	TAS
+MGI:1891489	Tg(Erbb2)1Jek	MGI:1891491	Tg(Erbb2)1Jek			involves: C57BL/6 # SJL	reproductive system: fertility/fecundity anomalies	47225	TAS
 MGI:1926347	Tg(FGF7)11Efu	MGI:1926458	Tg(FGF7)11Efu			Not Specified	growth/weight abnormality: postnatal	65032	TAS
 MGI:1926347	Tg(FGF7)11Efu	MGI:1926458	Tg(FGF7)11Efu			Not Specified	coat: hair growth defects	65032	TAS
 MGI:1926347	Tg(FGF7)11Efu	MGI:1926458	Tg(FGF7)11Efu			Not Specified	digestive system: functional anomalies	65032	TAS
@@ -491,47 +507,47 @@ MGI:1926346	Tg(FGF7)2Efu	MGI:1926467	Tg(FGF7)2Efu			Not Specified	vibrissae: sha
 MGI:1926350	Tg(FGFR2)1Saw	MGI:1926364	Tg(FGFR2)1Saw			Not Specified	skin: texture/condition anomalies	65033	TAS
 MGI:1926350	Tg(FGFR2)1Saw	MGI:1926364	Tg(FGFR2)1Saw			Not Specified	coat: hair follicle structure/orientation anomalies	65033	TAS
 MGI:1926350	Tg(FGFR2)1Saw	MGI:1926364	Tg(FGFR2)1Saw			Not Specified	coat: hair growth defects	65033	TAS
-MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			(DBA x C57BL/6)F1	survival: perinatal lethality	56641	TAS
-MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			(DBA x C57BL/6)F1	growth/weight abnormality: postnatal	56641	TAS
-MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			(DBA x C57BL/6)F1	eye: dysmorphology	56641	TAS
-MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			(DBA x C57BL/6)F1	skin: texture/condition anomalies	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	survival: premature death	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	growth/weight abnormality: postnatal	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	coat: hair growth defects	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	coat: hair texture defects	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	vibrissae: shape/orientation defects	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	skin: texture/condition anomalies	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	coat: hair follicle structure/orientation anomalies	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	kidney/renal system: functional anomalies	56641	TAS
-MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			(DBA x C57BL/6)F1	other aberrant phenotype	56641	TAS
-MGI:1926362	Tg(Foxn1)E1Hon	MGI:1926448	Tg(Foxn1)E1Hon			Not Specified	immune system: other dysmorphology	33866	TAS
-MGI:1926362	Tg(Foxn1)E1Hon	MGI:1926448	Tg(Foxn1)E1Hon			Not Specified	coat: hair growth defects	33866	TAS
-MGI:1926363	Tg(Foxn1)G2Hon	MGI:1926452	Tg(Foxn1)G2Hon			Not Specified	immune system: other dysmorphology	33866	TAS
-MGI:1926363	Tg(Foxn1)G2Hon	MGI:1926452	Tg(Foxn1)G2Hon			Not Specified	coat: hair growth defects	33866	TAS
-MGI:1926363	Tg(Foxn1)G2Hon	MGI:1926452	Tg(Foxn1)G2Hon			Not Specified	reproductive system: fertility/fecundity anomalies	33866	TAS
-MGI:1891598	Tg(Fst)10Zuk	MGI:1891599	Tg(Fst)10Zuk			complex	reproductive system: dysmorphology	45065	TAS
-MGI:1891594	Tg(Fst)4Zuk	MGI:1891600	Tg(Fst)4Zuk			complex	coat: hair texture defects	45065	TAS
-MGI:1891594	Tg(Fst)4Zuk	MGI:1891600	Tg(Fst)4Zuk			complex	reproductive system: dysmorphology	45065	TAS
-MGI:1891594	Tg(Fst)4Zuk	MGI:1891600	Tg(Fst)4Zuk			complex	reproductive system: fertility/fecundity anomalies	45065	TAS
-MGI:1891595	Tg(Fst)5Zuk	MGI:1891601	Tg(Fst)5Zuk			complex	coat: hair texture defects	45065	TAS
-MGI:1891595	Tg(Fst)5Zuk	MGI:1891601	Tg(Fst)5Zuk			complex	reproductive system: dysmorphology	45065	TAS
-MGI:1891595	Tg(Fst)5Zuk	MGI:1891601	Tg(Fst)5Zuk			complex	reproductive system: fertility/fecundity anomalies	45065	TAS
-MGI:1891597	Tg(Fst)7Zuk	MGI:1891602	Tg(Fst)7Zuk			complex	reproductive system: dysmorphology	45065	TAS
-MGI:1891596	Tg(Fst)9Zuk	MGI:1891603	Tg(Fst)9Zuk			complex	coat: hair texture defects	45065	TAS
-MGI:1891596	Tg(Fst)9Zuk	MGI:1891603	Tg(Fst)9Zuk			complex	reproductive system: dysmorphology	45065	TAS
-MGI:1891596	Tg(Fst)9Zuk	MGI:1891603	Tg(Fst)9Zuk			complex	reproductive system: fertility/fecundity anomalies	45065	TAS
+MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			involves: C57BL/6 # DBA	survival: perinatal lethality	56641	TAS
+MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			involves: C57BL/6 # DBA	growth/weight abnormality: postnatal	56641	TAS
+MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			involves: C57BL/6 # DBA	eye: dysmorphology	56641	TAS
+MGI:1926360	Tg(Foxn1)1Jlb	MGI:1926454	Tg(Foxn1)1Jlb			involves: C57BL/6 # DBA	skin: texture/condition anomalies	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	survival: premature death	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	growth/weight abnormality: postnatal	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	coat: hair growth defects	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	coat: hair texture defects	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	vibrissae: shape/orientation defects	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	skin: texture/condition anomalies	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	coat: hair follicle structure/orientation anomalies	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	kidney/renal system: functional anomalies	56641	TAS
+MGI:1926359	Tg(Foxn1)6Jlb	MGI:1926457	Tg(Foxn1)6Jlb			involves: C57BL/6 # DBA	other aberrant phenotype	56641	TAS
+MGI:1926362	Tg(Foxn1)E1Hon	MGI:1926448	Tg(Foxn1)E1Hon			CD1-Foxn1<nu>/Foxn1<nu>	immune system: other dysmorphology	33866	TAS
+MGI:1926362	Tg(Foxn1)E1Hon	MGI:1926448	Tg(Foxn1)E1Hon			CD1-Foxn1<nu>/Foxn1<nu>	coat: hair growth defects	33866	TAS
+MGI:1926363	Tg(Foxn1)G2Hon	MGI:1926452	Tg(Foxn1)G2Hon			CD1-Foxn1<nu>/Foxn1<nu>	immune system: other dysmorphology	33866	TAS
+MGI:1926363	Tg(Foxn1)G2Hon	MGI:1926452	Tg(Foxn1)G2Hon			CD1-Foxn1<nu>/Foxn1<nu>	coat: hair growth defects	33866	TAS
+MGI:1926363	Tg(Foxn1)G2Hon	MGI:1926452	Tg(Foxn1)G2Hon			CD1-Foxn1<nu>/Foxn1<nu>	reproductive system: fertility/fecundity anomalies	33866	TAS
+MGI:1891598	Tg(Fst)10Zuk	MGI:1891599	Tg(Fst)10Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: dysmorphology	45065	TAS
+MGI:1891594	Tg(Fst)4Zuk	MGI:1891600	Tg(Fst)4Zuk			involves: C3H # C57BL/6 # ICR	coat: hair texture defects	45065	TAS
+MGI:1891594	Tg(Fst)4Zuk	MGI:1891600	Tg(Fst)4Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: dysmorphology	45065	TAS
+MGI:1891594	Tg(Fst)4Zuk	MGI:1891600	Tg(Fst)4Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: fertility/fecundity anomalies	45065	TAS
+MGI:1891595	Tg(Fst)5Zuk	MGI:1891601	Tg(Fst)5Zuk			involves: C3H # C57BL/6 # ICR	coat: hair texture defects	45065	TAS
+MGI:1891595	Tg(Fst)5Zuk	MGI:1891601	Tg(Fst)5Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: dysmorphology	45065	TAS
+MGI:1891595	Tg(Fst)5Zuk	MGI:1891601	Tg(Fst)5Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: fertility/fecundity anomalies	45065	TAS
+MGI:1891597	Tg(Fst)7Zuk	MGI:1891602	Tg(Fst)7Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: dysmorphology	45065	TAS
+MGI:1891596	Tg(Fst)9Zuk	MGI:1891603	Tg(Fst)9Zuk			involves: C3H # C57BL/6 # ICR	coat: hair texture defects	45065	TAS
+MGI:1891596	Tg(Fst)9Zuk	MGI:1891603	Tg(Fst)9Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: dysmorphology	45065	TAS
+MGI:1891596	Tg(Fst)9Zuk	MGI:1891603	Tg(Fst)9Zuk			involves: C3H # C57BL/6 # ICR	reproductive system: fertility/fecundity anomalies	45065	TAS
 MGI:1926367	Tg(Hgf)1Paus	MGI:1926433	Tg(Hgf)1Paus			Not Specified	coat: hair follicle structure/orientation anomalies	65035	TAS
 MGI:1926367	Tg(Hgf)1Paus	MGI:1926433	Tg(Hgf)1Paus			Not Specified	skin: texture/condition anomalies	65035	TAS
 MGI:1926367	Tg(Hgf)1Paus	MGI:1926433	Tg(Hgf)1Paus			Not Specified	coat: hair growth defects	65035	TAS
 MGI:1926376	Tg(Igf1)1Hys	MGI:1926377	Tg(Igf1)1Hys			random-bred Swiss Webster	vibrissae: shape/orientation defects	65037	TAS
-MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			FVB x ICR	skin: texture/condition anomalies	39752	TAS
-MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			FVB x ICR	coat: hair follicle structure/orientation anomalies	39752	TAS
-MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			FVB x ICR	ears: dysmorphology	39752	TAS
-MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			FVB x ICR	tumors: increased incidence	39752	TAS
-MGI:1926455	Tg(Il1a)1.1Tsk	MGI:1926481	Tg(Il1a)1.1Tsk			FVB/N	coat: hair growth defects	30162	TAS
-MGI:1926455	Tg(Il1a)1.1Tsk	MGI:1926481	Tg(Il1a)1.1Tsk			FVB/N	skin: texture/condition anomalies	30162	TAS
-MGI:1926456	Tg(Il1a)1.2Tsk	MGI:1926482	Tg(Il1a)1.2Tsk			FVB/N	coat: hair growth defects	30162	TAS
-MGI:1926456	Tg(Il1a)1.2Tsk	MGI:1926482	Tg(Il1a)1.2Tsk			FVB/N	skin: texture/condition anomalies	30162	TAS
+MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			involves: FVB # ICR	skin: texture/condition anomalies	39752	TAS
+MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			involves: FVB # ICR	coat: hair follicle structure/orientation anomalies	39752	TAS
+MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			involves: FVB # ICR	ears: dysmorphology	39752	TAS
+MGI:1926372	Tg(IGF1)1Jdg	MGI:1926378	Tg(IGF1)1Jdg			involves: FVB # ICR	tumors: increased incidence	39752	TAS
+MGI:1926455	Tg(Il1a)1.1Tsk	MGI:1926481	Tg(Il1a)1.1Tsk			involves: FVB/N	coat: hair growth defects	30162	TAS
+MGI:1926455	Tg(Il1a)1.1Tsk	MGI:1926481	Tg(Il1a)1.1Tsk			involves: FVB/N	skin: texture/condition anomalies	30162	TAS
+MGI:1926456	Tg(Il1a)1.2Tsk	MGI:1926482	Tg(Il1a)1.2Tsk			involves: FVB/N	coat: hair growth defects	30162	TAS
+MGI:1926456	Tg(Il1a)1.2Tsk	MGI:1926482	Tg(Il1a)1.2Tsk			involves: FVB/N	skin: texture/condition anomalies	30162	TAS
 MGI:1926460	Tg(Il6)1Efu	MGI:1926480	Tg(Il6)1Efu			Not Specified	growth/weight abnormality: postnatal	1133	TAS
 MGI:1926460	Tg(Il6)1Efu	MGI:1926480	Tg(Il6)1Efu			Not Specified	skin: texture/condition anomalies	1133	TAS
 MGI:1926460	Tg(Il6)1Efu	MGI:1926480	Tg(Il6)1Efu			Not Specified	coat: hair growth defects	1133	TAS
@@ -551,63 +567,63 @@ MGI:1926463	Tg(JUP)9Pac	MGI:1926473	Tg(JUP)9Pac			Swiss Webster	coat: color anom
 MGI:1926463	Tg(JUP)9Pac	MGI:1926473	Tg(JUP)9Pac			Swiss Webster	coat: hair growth defects	61768	TAS
 MGI:1926463	Tg(JUP)9Pac	MGI:1926473	Tg(JUP)9Pac			Swiss Webster	ears: dysmorphology	61768	TAS
 MGI:1926463	Tg(JUP)9Pac	MGI:1926473	Tg(JUP)9Pac			Swiss Webster	skin: texture/condition anomalies	61768	TAS
-MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou			C57BL/6 x C3H	no obvious phenotype: no defect detected	49421	TAS
-MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	C57BL/6 x C3H	skin: texture/condition anomalies	49421	TAS
-MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	C57BL/6 x C3H	coat: hair growth defects	49421	TAS
-MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	C57BL/6 x C3H	ears: dysmorphology	49421	TAS
-MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	C57BL/6 x C3H	growth/weight abnormality: postnatal	49421	TAS
-MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	C57BL/6 x C3H	coat: hair follicle structure/orientation anomalies	49421	TAS
-MGI:1926476	Tg(KRT16)13Cou	MGI:1926502	Tg(KRT16)13Cou			C57BL/6 x C3H	no obvious phenotype: no defect detected	49421	TAS
-MGI:1926470	Tg(KRT16/KRT14)A2Cou	MGI:1926506	Tg(KRT16/KRT14)A2Cou			C57BL/6 x C3H	no obvious phenotype: no defect detected	49421	TAS
-MGI:1926916	Tg(Krt2-6a)1Der	MGI:1926921	Tg(Krt2-6a)1Der			FVB x ICR	skin: texture/condition anomalies	58389	TAS
-MGI:1926916	Tg(Krt2-6a)1Der	MGI:1926921	Tg(Krt2-6a)1Der			FVB x ICR	coat: hair growth defects	58389	TAS
-MGI:1926917	Tg(Krt2-6a)2Der	MGI:1926922	Tg(Krt2-6a)2Der			FVB x ICR	no obvious phenotype: no defect detected	58389	TAS
-MGI:1926918	Tg(Krt2-6a)3Der	MGI:1926924	Tg(Krt2-6a)3Der			FVB x ICR	skin: texture/condition anomalies	58389	TAS
-MGI:1926918	Tg(Krt2-6a)3Der	MGI:1926924	Tg(Krt2-6a)3Der			FVB x ICR	coat: hair growth defects	58389	TAS
-MGI:1926918	Tg(Krt2-6a)3Der	MGI:1926924	Tg(Krt2-6a)3Der			FVB x ICR	survival: postnatal lethality	58389	TAS
-MGI:1926919	Tg(Krt2-6a)4Der	MGI:1926925	Tg(Krt2-6a)4Der			FVB x ICR	skin: texture/condition anomalies	58389	TAS
-MGI:1926919	Tg(Krt2-6a)4Der	MGI:1926925	Tg(Krt2-6a)4Der			FVB x ICR	coat: hair growth defects	58389	TAS
-MGI:1926779	Tg(Krt2-9)1Grog	MGI:1926813	Tg(Krt2-9)1Grog			multiple	coat: hair texture defects	65044	TAS
-MGI:1926779	Tg(Krt2-9)1Grog	MGI:1926813	Tg(Krt2-9)1Grog			multiple	coat: hair growth defects	65044	TAS
-MGI:1926779	Tg(Krt2-9)1Grog	MGI:1926813	Tg(Krt2-9)1Grog			multiple	vibrissae: shape/orientation defects	65044	TAS
+MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou			involves: C3H # C57BL/6 	no obvious phenotype: no defect detected	49421	TAS
+MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	involves: C3H # C57BL/6 	skin: texture/condition anomalies	49421	TAS
+MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	involves: C3H # C57BL/6 	coat: hair growth defects	49421	TAS
+MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	involves: C3H # C57BL/6 	ears: dysmorphology	49421	TAS
+MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	involves: C3H # C57BL/6 	growth/weight abnormality: postnatal	49421	TAS
+MGI:1926475	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	MGI:1926503	Tg(KRT16)10Cou	involves: C3H # C57BL/6 	coat: hair follicle structure/orientation anomalies	49421	TAS
+MGI:1926476	Tg(KRT16)13Cou	MGI:1926502	Tg(KRT16)13Cou			involves: C3H # C57BL/6 	no obvious phenotype: no defect detected	49421	TAS
+MGI:1926470	Tg(KRT16/KRT14)A2Cou	MGI:1926506	Tg(KRT16/KRT14)A2Cou			involves: C3H # C57BL/6 	no obvious phenotype: no defect detected	49421	TAS
+MGI:1926916	Tg(Krt2-6a)1Der	MGI:1926921	Tg(Krt2-6a)1Der			involves: FVB # ICR	skin: texture/condition anomalies	58389	TAS
+MGI:1926916	Tg(Krt2-6a)1Der	MGI:1926921	Tg(Krt2-6a)1Der			involves: FVB # ICR	coat: hair growth defects	58389	TAS
+MGI:1926917	Tg(Krt2-6a)2Der	MGI:1926922	Tg(Krt2-6a)2Der			involves: FVB # ICR	no obvious phenotype: no defect detected	58389	TAS
+MGI:1926918	Tg(Krt2-6a)3Der	MGI:1926924	Tg(Krt2-6a)3Der			involves: FVB # ICR	skin: texture/condition anomalies	58389	TAS
+MGI:1926918	Tg(Krt2-6a)3Der	MGI:1926924	Tg(Krt2-6a)3Der			involves: FVB # ICR	coat: hair growth defects	58389	TAS
+MGI:1926918	Tg(Krt2-6a)3Der	MGI:1926924	Tg(Krt2-6a)3Der			involves: FVB # ICR	survival: postnatal lethality	58389	TAS
+MGI:1926919	Tg(Krt2-6a)4Der	MGI:1926925	Tg(Krt2-6a)4Der			involves: FVB # ICR	skin: texture/condition anomalies	58389	TAS
+MGI:1926919	Tg(Krt2-6a)4Der	MGI:1926925	Tg(Krt2-6a)4Der			involves: FVB # ICR	coat: hair growth defects	58389	TAS
+MGI:1926779	Tg(Krt2-9)1Grog	MGI:1926813	Tg(Krt2-9)1Grog			either: (involves: BALB/c # CBA) or (involves: C57BL/6 # CBA) or (involves: CBA # Swiss Webster)	coat: hair texture defects	65044	TAS
+MGI:1926779	Tg(Krt2-9)1Grog	MGI:1926813	Tg(Krt2-9)1Grog			either: (involves: BALB/c # CBA) or (involves: C57BL/6 # CBA) or (involves: CBA # Swiss Webster)	coat: hair growth defects	65044	TAS
+MGI:1926779	Tg(Krt2-9)1Grog	MGI:1926813	Tg(Krt2-9)1Grog			either: (involves: BALB/c # CBA) or (involves: C57BL/6 # CBA) or (involves: CBA # Swiss Webster)	vibrissae: shape/orientation defects	65044	TAS
 MGI:1926501	Tg(LEF1)1Efu	MGI:1926596	Tg(LEF1)1Efu			Not Specified	coat: hair texture defects	24350	TAS
 MGI:1926501	Tg(LEF1)1Efu	MGI:1926596	Tg(LEF1)1Efu			Not Specified	coat: hair growth defects	24350	TAS
 MGI:1926501	Tg(LEF1)1Efu	MGI:1926596	Tg(LEF1)1Efu			Not Specified	vibrissae: shape/orientation defects	24350	TAS
 MGI:1926501	Tg(LEF1)1Efu	MGI:1926596	Tg(LEF1)1Efu			Not Specified	coat: hair follicle structure/orientation anomalies	24350	TAS
-MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			C57BL/6 x CBA/J	skeletal: craniofacial defects	26513	TAS
-MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			C57BL/6 x CBA/J	coat: hair follicle structure/orientation anomalies	26513	TAS
-MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			C57BL/6 x CBA/J	skin: texture/condition anomalies	26513	TAS
-MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			C57BL/6 x CBA/J	coat: hair growth defects	26513	TAS
-MGI:1926611	Tg(Ngf)47Kma	MGI:1926645	Tg(Ngf)47Kma			C57BL/6 x CBA/J	peripheral nervous system: dysmorphology	17131	TAS
-MGI:1926611	Tg(Ngf)47Kma	MGI:1926645	Tg(Ngf)47Kma			C57BL/6 x CBA/J	central nervous system: other dysmorphology	17131	TAS
-MGI:1926612	Tg(Ngf)56Kma	MGI:1926649	Tg(Ngf)56Kma			C57BL/6 x CBA/J	peripheral nervous system: dysmorphology	17131	TAS
-MGI:1926612	Tg(Ngf)56Kma	MGI:1926649	Tg(Ngf)56Kma			C57BL/6 x CBA/J	central nervous system: other dysmorphology	17131	TAS
-MGI:1926612	Tg(Ngf)56Kma	MGI:1926649	Tg(Ngf)56Kma			C57BL/6 x CBA/J	growth/weight abnormality: postnatal	17131	TAS
+MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			involves: C57BL/6 # CBA/J	skeletal: craniofacial defects	26513	TAS
+MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			involves: C57BL/6 # CBA/J	coat: hair follicle structure/orientation anomalies	26513	TAS
+MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			involves: C57BL/6 # CBA/J	skin: texture/condition anomalies	26513	TAS
+MGI:1926369	Tg(Msx2)1Rem	MGI:1926388	Tg(Msx2)1Rem			involves: C57BL/6 # CBA/J	coat: hair growth defects	26513	TAS
+MGI:1926611	Tg(Ngf)47Kma	MGI:1926645	Tg(Ngf)47Kma			involves: C57BL/6 # CBA/J	peripheral nervous system: dysmorphology	17131	TAS
+MGI:1926611	Tg(Ngf)47Kma	MGI:1926645	Tg(Ngf)47Kma			involves: C57BL/6 # CBA/J	central nervous system: other dysmorphology	17131	TAS
+MGI:1926612	Tg(Ngf)56Kma	MGI:1926649	Tg(Ngf)56Kma			involves: C57BL/6 # CBA/J	peripheral nervous system: dysmorphology	17131	TAS
+MGI:1926612	Tg(Ngf)56Kma	MGI:1926649	Tg(Ngf)56Kma			involves: C57BL/6 # CBA/J	central nervous system: other dysmorphology	17131	TAS
+MGI:1926612	Tg(Ngf)56Kma	MGI:1926649	Tg(Ngf)56Kma			involves: C57BL/6 # CBA/J	growth/weight abnormality: postnatal	17131	TAS
 MGI:1926615	Tg(Notch1)1Anc	MGI:1926638	Tg(Notch1)1Anc			Not Specified	coat: hair growth defects	65042	TAS
 MGI:1926615	Tg(Notch1)1Anc	MGI:1926638	Tg(Notch1)1Anc			Not Specified	coat: hair texture defects	65042	TAS
 MGI:1926615	Tg(Notch1)1Anc	MGI:1926638	Tg(Notch1)1Anc			Not Specified	vibrissae: shape/orientation defects	65042	TAS
-MGI:1926618	Tg(Notch1)A3Rko	MGI:1926625	Tg(Notch1)A3Rko			FVB/N	no obvious phenotype: no defect detected	62217	TAS
-MGI:1926619	Tg(Notch1)A4Rko	MGI:1926629	Tg(Notch1)A4Rko			FVB/N	no obvious phenotype: no defect detected	62217	TAS
-MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			FVB/N	vibrissae: shape/orientation defects	62217	TAS
-MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			FVB/N	coat: hair growth defects	62217	TAS
-MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			FVB/N	coat: hair texture defects	62217	TAS
-MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			FVB/N	extremities: digit dysmorphology	62217	TAS
-MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			FVB/N	vibrissae: shape/orientation defects	62217	TAS
-MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			FVB/N	coat: hair growth defects	62217	TAS
-MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			FVB/N	coat: hair texture defects	62217	TAS
-MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			FVB/N	extremities: digit dysmorphology	62217	TAS
-MGI:1926614	Tg(Ntf3)1Kma	MGI:1926654	Tg(Ntf3)1Kma			C3H x C57BL/6	central nervous system: other dysmorphology	34172	TAS
-MGI:1926614	Tg(Ntf3)1Kma	MGI:1926654	Tg(Ntf3)1Kma			C3H x C57BL/6	peripheral nervous system: dysmorphology	34172	TAS
-MGI:1926796	Tg(Otc)94Mori	MGI:1926799	Tg(Otc)94Mori			C57BL/6	no obvious phenotype: no defect detected	65591	TAS
+MGI:1926618	Tg(Notch1)A3Rko	MGI:1926625	Tg(Notch1)A3Rko			involves: FVB/N	no obvious phenotype: no defect detected	62217	TAS
+MGI:1926619	Tg(Notch1)A4Rko	MGI:1926629	Tg(Notch1)A4Rko			involves: FVB/N	no obvious phenotype: no defect detected	62217	TAS
+MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			involves: FVB/N	vibrissae: shape/orientation defects	62217	TAS
+MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			involves: FVB/N	coat: hair growth defects	62217	TAS
+MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			involves: FVB/N	coat: hair texture defects	62217	TAS
+MGI:1926620	Tg(Notch1)A5Rko	MGI:1926630	Tg(Notch1)A5Rko			involves: FVB/N	extremities: digit dysmorphology	62217	TAS
+MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			involves: FVB/N	vibrissae: shape/orientation defects	62217	TAS
+MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			involves: FVB/N	coat: hair growth defects	62217	TAS
+MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			involves: FVB/N	coat: hair texture defects	62217	TAS
+MGI:1926621	Tg(Notch1)A7Rko	MGI:1926633	Tg(Notch1)A7Rko			involves: FVB/N	extremities: digit dysmorphology	62217	TAS
+MGI:1926614	Tg(Ntf3)1Kma	MGI:1926654	Tg(Ntf3)1Kma			involves: C3H # C57BL/6	central nervous system: other dysmorphology	34172	TAS
+MGI:1926614	Tg(Ntf3)1Kma	MGI:1926654	Tg(Ntf3)1Kma			involves: C3H # C57BL/6	peripheral nervous system: dysmorphology	34172	TAS
+MGI:1926796	Tg(Otc)94Mori	MGI:1926799	Tg(Otc)94Mori			involves: C57BL/6	no obvious phenotype: no defect detected	65591	TAS
 MGI:1926624	Tg(PTHLH)7Wmp	MGI:1926698	Tg(PTHLH)7Wmp			Not Specified	coat: hair growth defects	65043	TAS
 MGI:1926624	Tg(PTHLH)7Wmp	MGI:1926698	Tg(PTHLH)7Wmp			Not Specified	coat: hair follicle structure/orientation anomalies	65043	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	growth/weight abnormality: postnatal	62478	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	coat: hair growth defects	62478	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	other aberrant phenotype	62478	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	skin: texture/condition anomalies	62478	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	extremities: digit dysmorphology	62478	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	reproductive system: dysmorphology	62478	TAS
-MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			C57BL/6 x SJL	immune system: other dysmorphology	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	growth/weight abnormality: postnatal	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	coat: hair growth defects	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	other aberrant phenotype	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	skin: texture/condition anomalies	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	extremities: digit dysmorphology	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	reproductive system: dysmorphology	62478	TAS
+MGI:1926797	Tg(rv-CYCLIN)29Dlh	MGI:1926798	Tg(rv-CYCLIN)29Dlh			involves: C57BL/6 # SJL	immune system: other dysmorphology	62478	TAS
 MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	growth/weight abnormality: postnatal	65045	TAS
 MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	teeth: tooth dysmorphology	65045	TAS
 MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	skin: texture/condition anomalies	65045	TAS
@@ -617,39 +633,50 @@ MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	ears: dysmorph
 MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	extremities: digit dysmorphology	65045	TAS
 MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	endocrine glands: dysmorphology	65045	TAS
 MGI:1926781	Tg(Tgfa)1Efu	MGI:1926812	Tg(Tgfa)1Efu			Not Specified	tumors: increased incidence	65045	TAS
-MGI:1889852	Tg(TCF3/HLF)1Mlc	MGI:1889853	Tg(TCF3/HLF)1Mlc			FVB/N	immune system: other dysmorphology	55022	TAS
-MGI:1889852	Tg(TCF3/HLF)1Mlc	MGI:1889853	Tg(TCF3/HLF)1Mlc			FVB/N	immune system: lymphoid development/ T lymphocyte defects	55022	TAS
-MGI:1889852	Tg(TCF3/HLF)1Mlc	MGI:1889853	Tg(TCF3/HLF)1Mlc			FVB/N	survival: premature death	55022	TAS
-MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			(ICR x FVB)F1	survival: perinatal lethality	65046	TAS
-MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			(ICR x FVB)F1	skin: texture/condition anomalies	65046	TAS
-MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			(ICR x FVB)F1	coat: hair follicle structure/orientation anomalies	65046	TAS
-MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			(ICR x FVB)F1	respiratory system: respiratory distress or failure/functional anomalies	65046	TAS
-MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			(ICR x FVB)F1	neurological/behavioral: motor capabilities/coordination/movement anomalies	65046	TAS
-MGI:1890060	Tg(Wnt1)1Hev	MGI:1890080	Tg(Wnt1)1Hev			C57BL/6 x SJL	other aberrant phenotype	28473	TAS
-MGI:1890060	Tg(Wnt1)1Hev	MGI:1890080	Tg(Wnt1)1Hev			C57BL/6 x SJL	tumors: increased incidence	28473	TAS
-MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb			multiple	coat: hair growth defects	53379	TAS
-MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	multiple	coat: hair growth defects	53379	TAS
-MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	multiple	coat: hair texture defects	53379	TAS
-MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	multiple	coat: hair follicle structure/orientation anomalies	53379	TAS
-MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	multiple	tumors: increased incidence	53379	TAS
-MGI:1926794	Tg(Zfp38)A4Htz	MGI:1926802	Tg(Zfp38)A4Htz			C57BL/6 x CBA	no obvious phenotype: no defect detected	56546	TAS
-MGI:1926795	Tg(Zfp38)B8Htz	MGI:1926801	Tg(Zfp38)B8Htz			C57BL/6 x CBA	no obvious phenotype: no defect detected	56546	TAS
-MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			C57BL/6 x CBA	central nervous system: other dysmorphology	56546	TAS
-MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			C57BL/6 x CBA	coat: hair growth defects	56546	TAS
-MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			C57BL/6 x CBA	coat: hair follicle structure/orientation anomalies	56546	TAS
-MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			C57BL/6 x CBA	skin: texture/condition anomalies	56546	TAS
-MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			C57BL/6 x CBA	tumors: increased incidence	56546	TAS
-MGI:1926793	Tg(Zfp38)Y7Htz	MGI:1926804	Tg(Zfp38)Y7Htz			C57BL/6 x CBA	no obvious phenotype: no defect detected	56546	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	multiple	eye: corneal or lens defect	46636	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	multiple	eye: dysmorphology	46636	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	multiple	neurological/behavioral: seizures/epilepsy	46636	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	multiple	survival: premature death	46636	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	multiple	reproductive system: fertility/fecundity anomalies	46636	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	multiple	neurological/behavioral: maternal behavior anomalies	46636	TAS
-MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2155615	Sox1<+>	multiple	no obvious phenotype: no defect detected	46636	TAS
-MGI:106220	Six5	MGI:2148692	Six5<tm1Tap>	MGI:2148692	Six5<tm1Tap>	129/Sv x C57BL/6	eye: corneal or lens defect	61882	TAS
-MGI:106220	Six5	MGI:2148692	Six5<tm1Tap>	MGI:2148692	Six5<tm1Tap>	129/Sv x C57BL/6	musculature: no defect detected	61882	TAS
-MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2148689	Six5<tm1Rdd>	129S4/SvJae	eye: corneal or lens defect	61881	TAS
-MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2148689	Six5<tm1Rdd>	129S4/SvJae x C57BL/6	eye: corneal or lens defect	61881	TAS
-MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2155616	Six5<+>	129S4/SvJae	eye: corneal or lens defect	61881	TAS
-MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2155616	Six5<+>	129S4/SvJae x C57BL/6	eye: corneal or lens defect	61881	TAS
+MGI:1889852	Tg(TCF3/HLF)1Mlc	MGI:1889853	Tg(TCF3/HLF)1Mlc			involves: FVB/N	immune system: other dysmorphology	55022	TAS
+MGI:1889852	Tg(TCF3/HLF)1Mlc	MGI:1889853	Tg(TCF3/HLF)1Mlc			involves: FVB/N	immune system: lymphoid development/ T lymphocyte defects	55022	TAS
+MGI:1889852	Tg(TCF3/HLF)1Mlc	MGI:1889853	Tg(TCF3/HLF)1Mlc			involves: FVB/N	survival: premature death	55022	TAS
+MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			involves: FVB # ICR	survival: perinatal lethality	65046	TAS
+MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			involves: FVB # ICR	skin: texture/condition anomalies	65046	TAS
+MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			involves: FVB # ICR	coat: hair follicle structure/orientation anomalies	65046	TAS
+MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			involves: FVB # ICR	respiratory system: respiratory distress or failure/functional anomalies	65046	TAS
+MGI:1926782	Tg(Tgfb1)1Der	MGI:1926811	Tg(Tgfb1)1Der			involves: FVB # ICR	neurological/behavioral: motor capabilities/coordination/movement anomalies	65046	TAS
+MGI:1890060	Tg(Wnt1)1Hev	MGI:1890080	Tg(Wnt1)1Hev			involves: C57BL/6 # SJL	other aberrant phenotype	28473	TAS
+MGI:1890060	Tg(Wnt1)1Hev	MGI:1890080	Tg(Wnt1)1Hev			involves: C57BL/6 # SJL	tumors: increased incidence	28473	TAS
+MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb			either: (involves: C57BL/6 # FVB/N) or FVB/N	coat: hair growth defects	53379	TAS
+MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	either: (involves: C57BL/6 # FVB/N) or FVB/N	coat: hair growth defects	53379	TAS
+MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	either: (involves: C57BL/6 # FVB/N) or FVB/N	coat: hair texture defects	53379	TAS
+MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	either: (involves: C57BL/6 # FVB/N) or FVB/N	coat: hair follicle structure/orientation anomalies	53379	TAS
+MGI:1891521	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	MGI:1891524	Tg(Wnt3)7Gsb	either: (involves: C57BL/6 # FVB/N) or FVB/N	tumors: increased incidence	53379	TAS
+MGI:1926794	Tg(Zfp38)A4Htz	MGI:1926802	Tg(Zfp38)A4Htz			involves: C57BL/6 # CBA	no obvious phenotype: no defect detected	56546	TAS
+MGI:1926795	Tg(Zfp38)B8Htz	MGI:1926801	Tg(Zfp38)B8Htz			involves: C57BL/6 # CBA	no obvious phenotype: no defect detected	56546	TAS
+MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			involves: C57BL/6 # CBA	central nervous system: brain dysmorphology	56546	TAS
+MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			involves: C57BL/6 # CBA	coat: hair growth defects	56546	TAS
+MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			involves: C57BL/6 # CBA	coat: hair follicle structure/orientation anomalies	56546	TAS
+MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			involves: C57BL/6 # CBA	skin: texture/condition anomalies	56546	TAS
+MGI:1926792	Tg(Zfp38)D1Htz	MGI:1926806	Tg(Zfp38)D1Htz			involves: C57BL/6 # CBA	tumors: increased incidence	56546	TAS
+MGI:1926793	Tg(Zfp38)Y7Htz	MGI:1926804	Tg(Zfp38)Y7Htz			involves: C57BL/6 # CBA	no obvious phenotype: no defect detected	56546	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	eye: corneal or lens defect	46636	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	eye: dysmorphology	46636	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	neurological/behavioral: seizures/epilepsy	46636	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	survival: premature death	46636	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	reproductive system: fertility/fecundity anomalies	46636	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2137412	Sox1<tm1Vep>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	neurological/behavioral: maternal behavior anomalies	46636	TAS
+MGI:98357	Sox1	MGI:2137412	Sox1<tm1Vep>	MGI:2155615	Sox1<+>	either: (involves: 129/Sv #129S6/SvEvTac) or (involves: 129S6/SvEvTac x MF1)	no obvious phenotype: no defect detected	46636	TAS
+MGI:106220	Six5	MGI:2148692	Six5<tm1Tap>	MGI:2148692	Six5<tm1Tap>	involves: 129/Sv # C57BL/6	eye: corneal or lens defect	61882	TAS
+MGI:106220	Six5	MGI:2148692	Six5<tm1Tap>	MGI:2148692	Six5<tm1Tap>	involves: 129/Sv # C57BL/6	musculature: no defect detected	61882	TAS
+MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2148689	Six5<tm1Rdd>	129S4/SvJae-Six5<tm1Rdd>	eye: corneal or lens defect	61881	TAS
+MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2148689	Six5<tm1Rdd>	involves: 129S4/SvJae # C57BL/6	eye: corneal or lens defect	61881	TAS
+MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2155616	Six5<+>	129S4/SvJae-Six5<tm1Rdd>	eye: corneal or lens defect	61881	TAS
+MGI:106220	Six5	MGI:2148689	Six5<tm1Rdd>	MGI:2155616	Six5<+>	involves: 129S4/SvJae # C57BL/6	eye: corneal or lens defect	61881	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	neurological/behavioral: motor capabilities/coordination/movement anomalies	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	growth/weight abnormality: postnatal	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	coat: hair texture defects	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	immune system: other dysmorphology	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	central nervous system: brain dysmorphology	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	kidney/renal system: dysmorphology	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	heart/cardiovascular system: no defect detected	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	liver/hepatic system: no defect detected	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	reproductive system: no defect detected	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	skeletal: osteogenesis/developmental anomalies	66648	TAS
+MGI:1890379	sfx	MGI:2157331	sfx	MGI:2157331	sfx	BALB/cBy-sfx	metabolism: other metabolic defect measured by clinical chemistry	66648	TAS

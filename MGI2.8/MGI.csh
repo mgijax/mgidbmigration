@@ -3,6 +3,7 @@
 #
 # Migration for MGI 2.8
 #
+# updated:  01/31/2002
 # Tables:	168
 # Procedures:	 75
 # Triggers:	135

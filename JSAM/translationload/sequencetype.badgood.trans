@@ -5,3 +5,4 @@
 	RNA	snRNA	jsam_load
 	RNA	scRNA	jsam_load
 	RNA	snoRNA	jsam_load
+	Polypeptide	aa	jsam_load

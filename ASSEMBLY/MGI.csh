@@ -7,7 +7,7 @@
 # Procedures:   113
 # Rules:          5
 # Triggers:     156
-# User Tables:  191
+# User Tables:  192
 # Views:        198
 
 cd `dirname $0` && source ./Configuration
@@ -36,5 +36,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 ./mgiassembly.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
+
+${SEQMARKER} | tee -a ${LOG}
 
 date | tee -a  ${LOG}

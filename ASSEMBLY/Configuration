@@ -2,6 +2,8 @@
 
 #setenv VOCLOAD       /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv VOCLOAD       /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
+#setenv SEQMARKER	/usr/local/mgi/live/dbutils/seqcacheload/seqmarker.csh
+setenv SEQMARKER	/home/lec/loads/seqcacheload/seqmarker.csh
 
 # new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd

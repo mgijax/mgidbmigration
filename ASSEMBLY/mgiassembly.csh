@@ -45,12 +45,47 @@ ${newmgddbschema}/procedure/SEQ_deriveRepAll_create.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MRK_reloadSequence_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MRK_reloadSequence_create.object | tee -a ${LOG}
 
+${newmgddbschema}/index/ACC_ActualDB_drop.object | tee -a ${LOG}
+${newmgddbschema}/index/ACC_ActualDB_create.object | tee -a ${LOG}
+${newmgddbschema}/index/ACC_LogicalDB_drop.object | tee -a ${LOG}
+${newmgddbschema}/index/ACC_LogicalDB_create.object | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
 use ${DBNAME}
 go
 
-insert into MGI_RefAssocType values(1008, 19, 'Load', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(1008, 19, 'Load', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
+update VOC_Term set sequenceNum = 12 where _Term_key = 316381
+update VOC_Term set sequenceNum = 13 where _Term_key = 316382
+update VOC_Term set sequenceNum = 14 where _Term_key = 316383
+update VOC_Term set sequenceNum = 15 where _Term_key = 316384
+update VOC_Term set sequenceNum = 16 where _Term_key = 316385
+go
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term
+insert into VOC_Term values (@termKey, 25, 'Ensembl', 'Ensembl', 10, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey + 1, 25, 'NCBI Gene', 'NCBI Gene', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
+declare @userKey integer
+select @userKey = max(_User_key) + 1 from MGI_User
+insert into MGI_User values (@userKey, 316353, 316350, 'ncbi_genomicseqload', 'NCBI Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_User values (@userKey + 1, 316353, 316350, 'ensembl_genomicseqload', 'Ensembl Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
+declare @logKey integer
+select @logKey = max(_LogicalDB_key) + 1 from ACC_LogicalDB
+insert into ACC_LogicalDB values (@logKey, 'NCBI Gene', 'NCBI Gene for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into ACC_LogicalDB values (@logKey + 1, 'Ensembl', 'Ensembl for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+
+declare @actKey integer
+select @actKey = max(_ActualDB_key) + 1 from ACC_ActualDB
+insert into ACC_ActualDB values (@actKey, @logKey, 'NCBI Gene', 1, 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into ACC_ActualDB values (@actKey + 1, @logKey + 1, 'Ensembl', 1, 'http://www.ensembl.org/Mus_musculus/geneview?gene=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 end

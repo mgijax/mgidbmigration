@@ -32,6 +32,7 @@ ${newmgddbschema}/index/MGI_RoleTask_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MGI_UserRole_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MGI_UserRole_create.object | tee -a ${LOG}
 
+${newmgddbschema}/view/MGI_RoleTask_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_UserRole_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_UserTask_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/VOC_Term_UserRole_View_create.object | tee -a ${LOG}

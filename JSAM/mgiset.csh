@@ -20,7 +20,7 @@ go
 
 /* Restricted Sequences */
 
-insert into MGI_Set values(1002, 13, 'Restricted Sequences', 1200, 1200, getdate(), getdate())
+insert into MGI_Set values(1002, 13, 'Restricted Sequences', 1300, 1300, getdate(), getdate())
 go
 
 select seq = identity(5), setKey = 1002, t._Term_key
@@ -35,7 +35,7 @@ declare @memberKey integer
 select @memberKey = max(_SetMember_key) + 1 from MGI_SetMember
 
 insert into MGI_SetMember
-select @memberKey + seq, setKey, _Term_key, seq, 1200, 1200, getdate(), getdate()
+select @memberKey + seq, setKey, _Term_key, seq, 1300, 1300, getdate(), getdate()
 from #members
 go
 

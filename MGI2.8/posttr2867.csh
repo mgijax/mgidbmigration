@@ -56,7 +56,7 @@ where n.jnum = a.accID
 go
 
 update BIB_Refs
-set dbs = dbs + "/GO*"
+set dbs = dbs + "GO*"
 from #annot3 n, BIB_Refs r
 where n._Object_key = r._Refs_key
 go

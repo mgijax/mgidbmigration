@@ -187,7 +187,7 @@ insert into MGI_User values (1307, @loaderKey, @activeKey, "MGI_2.98", "MGI 2.98
 insert into MGI_User values (1308, @loaderKey, @activeKey, "genbank_load", "GenBank Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1309, @loaderKey, @activeKey, "refseq_load", "RefSeq Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1310, @loaderKey, @activeKey, "swissprot_seqload", "SwissPROT Sequence Load", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1311, @loaderKey, @activeKey, "trembl_load", "TrEMBL Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1311, @loaderKey, @activeKey, "trembl_seqload", "TrEMBL Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1312, @loaderKey, @activeKey, "dots_seqload", "DoTS Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1313, @loaderKey, @activeKey, "tigr_seqload", "TIGR Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1314, @loaderKey, @activeKey, "nia_seqload", "NIA Sequence Load", 1000, 1000, getdate(), getdate())

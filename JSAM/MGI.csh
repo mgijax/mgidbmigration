@@ -149,9 +149,6 @@ go
 exec MGI_createRestrictedSeqSet
 go
 
-exec PRB_autoE
-go
-
 checkpoint
 go
 

@@ -25,24 +25,51 @@
 	Barstead MPL-RB5	Barstead stromal cell line MPL-RB5	dab
 	Barstead MPL-RB5	Barsted mouse myotubes MPLRB5	dab
 	Barstead MPL-RB6	Barstead colon MPL-RB6	dab
+	Barstead MPL-RB6	Barstead mouse proximal colon MPLRB	dab
 	Barstead MPL-RB7	Barstead irradiated colon MPL-RB7	dab
 	Barstead MPL-RB7	Barstead mouse irradiated colon MPLRB7	dab
 	Barstead MPL-RB8	Barstead stromal cell line MPL-RB8	dab
 	Barstead MPL-RB8	Barstead stromal cell line MPLRB8	dab
 	Barstead MPL-RB9	Barstead bowel MPL_RB9	dab
 	Barstead MPL-RB9	Barstead bowel MPLRB9	dab
+	Beddington embryonic region	Beddington mouse embryonic region	dab
+	Beddington Endoderm Library	Beddington mouse dissected endoderm	dab
+	Kaestner ngn3 -/-	Kaestner ngn3 - -	dab
+	Knowles/Solter 2-cell	Knowles Solter mouse 2 cell	dab
 	Knowles/Solter blastocyst	Knowles Solter mouse blastocyst B1	dab
 	Knowles/Solter blastocyst	Knowles Solter mouse blastocyst B3	dab
+	Knowles/Solter E6.5dpc embryo	Knowles Solter mouse E6 5d whole embryo	dab
+	Knowles/Solter ES cell	Knowles Solter mouse embryonic stem cell	dab
+	Ko embryo 11.5dpc	Ko mouse embryo 11.5 dpc	dab
+	Ko embryo 11.5dpc	Ko mouse embryo 11 5dpc	dab
 	Life Tech 10.5 dpc embryo (10665-016)	Life Technologies Superscript Mouse 10.5 Day	dab
+	Life Tech 10.5 dpc embryo (10665-016)	Life Tech mouse embryo 10 5dpc 10665016	dab
 	Life Tech 13.5 dpc embryo (10666-014)	Life Tech Catalog #10666014; Fahrner et al,	dab
 	Life Tech 13.5 dpc embryo (10666-014)	Life Technologies Cat. number 10666014	dab
+	Life Tech 13.5 dpc embryo (10666-014)	Life Tech mouse embryo 13 5dpc 10666014	dab
+	Life Tech 15.5 dpc embryo (10667-012)   	Life Tech mouse embryo 15 5dpc 10667012	dab
 	Life Tech 8.5 dpc embryo (10664-019)	Life Tech mouse embryo 8.5dpc	dab
 	Life Tech 8.5 dpc embryo (10664-019)	Life Tech number 10664019	dab
+	Life Tech 8.5 dpc embryo (10664-019)	Life Tech mouse embryo 8 5dpc 10664019	dab
+	McCarrey/Eddy 18-20 day sertoli cell	McCarrey Eddy 18 20 day sertoli cell	dab
 	McCarrey/Eddy 18-day leptotene and zygotene spermatocytes	McCarrey Eddy 18 day leptotene and zygotene	dab
 	McCarrey/Eddy 18-day leptotene and zygotene spermatocytes	McCarrey/Eddy 18d leptotene+zygotene spermatocyte	dab
+	McCarrey/Eddy 18-day leptotene and zygotene spermatocytes	McCarrey Eddy 18 day leptotene and zygotene spermatocytes	dab
 	McCarrey/Eddy 18-day preleptotene spermatocytes	McCarrey Eddy 18 day preleptotene	dab
+	McCarrey/Eddy 18-day preleptotene spermatocytes	McCarrey Eddy 18 day preleptotene spermatocytes	dab
 	McCarrey/Eddy 6-day primitive type A spermatogonia	McCarrey Eddy 6 day primitive type A	dab
+	McCarrey/Eddy 6-day primitive type A spermatogonia	McCarrey Eddy 6 day primitive type A spermatogonia	dab
+	McCarrey/Eddy round spermatid	McCarrey Eddy round spermatid	dab
+	McCarrey/Eddy spermatocytes	McCarrey Eddy spermatocytes	dab
+	McCarrey/Eddy type A spermatogonia	McCarrey Eddy type A spermatogonia	dab
+	McCarrey/Eddy type B spermatogonia	McCarrey Eddy type B spermatogonia	dab
 	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Amplified Mouse E16 5 Pancreas 3 M16S1	dab
+	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Amplified Mouse E16 5 Pancreas 3 M16S1 A 	dab
+	Melton mouse E16.5 pancreas library 2 M16B2	Melton Mouse E16 5 Pancreas Library 2 M16B2 	dab
+	Melton mouse E16.5 pancreas M16Z1	Melton Mouse E16 5 Pancreas Library M16Z1	dab
+	Melton mouse adult pancreas 1 MAZ1	Melton Mouse Adult Pancreas 1	dab
+	Melton mouse adult pancreas 2 MAZ2	Melton Mouse Adult Pancreas 2	dab
+	Melton mouse newborn pancreas MNZ1	Melton Mouse Newborn Pancreas	dab
 	Mouse 3.5-dpc blastocyst cDNA	Ko Mouse 3.5-dpc Blastocyst cDNA Library	dab
 	Mouse 3.5-dpc blastocyst cDNA	NIA Mouse Blastocyst Stage Embryo	dab
 	Mouse eight-cell stage embryo cDNA	Ko Mouse 8-cell Embryo cDNA Library	dab
@@ -57,6 +84,7 @@
 	Mouse two-cell stage embryo cDNA	NIA Mouse 2-cell Stage Embryo	dab
 	Mouse Unfertilized Egg cDNA	Ko Mouse Unfertilized Egg cDNA Library	dab
 	Mouse Unfertilized Egg cDNA	NIA Mouse Unfertilized Egg	dab
+	Mouse Unfertilized Egg cDNA	NIA Mouse Unfertilized Egg cDNA Library	dab
 	NCI_CGAP_BC1	NCI_CGAP_BC1 blood	dab
 	NCI_CGAP_BC2	NCI_CGAP_BC2 blood	dab
 	NCI_CGAP_BC3	NCI_CGAP_BC3 B-cell	dab
@@ -119,67 +147,165 @@
 	NIA Mouse Trophoblast Stem Cell cDNA Library (Long)	NIA Mouse Trophoblast Stem Cell (Long)	dab
 	NIA Mouse Trophoblast Stem Cell cDNA Library (Short)	NIA Mouse Trophoblast Stem Cell (Short)	dab
 	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	NIA Mouse Undifferentiated ES Cell (Long)	dab
+	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	NIA Mouse Undifferentiated ES Cell cDNA Library (Long 1)	dab
 	NIA Mouse Undifferentiated ES Cell cDNA Library (Short)	NIA Mouse Undifferentiated ES Cell (Short)	dab
 	NIA Mouse Unfertilized Egg cDNA Library (Long)	NIA Mouse Unfertilized Egg (Long)	dab
 	NIH_MGC_94	NIH_MGC_94 retina	dab
 	Rashbass MOC-11.5	Rashbass MOC-11.5 optic cup	dab
+	Rashbass MOC-11.5	Rashbass mouse MOC 11 5 optic cup	dab
 	Rashbass MOV-9.5	Rashbass MOV-9.5 optic vesicle	dab
+	Rashbass MOV-9.5	Rashbass mouse MOV 9 5 optic vesicle	dab
+	Ren/Stubbs mouse thymus	Ren Stubbs mouse thymu	dab
 	RPCI-21	Roswell Park Cancer Institute RPCI-21 mouse PAC library	dab
 	RPCI-21	RPCI 21 (K. Osoegawa and P.J. de Jong, Roswell Park Cancer Institute)	dab
+	RPCI-21	RPCI-21 Mouse (129S6/SvEvTac) genomic library	dab
+	RPCI-21	RPCI 21 Library PAC clone	dab
+	RPCI-21	RPCI-21 mouse PAC library	dab
+	RPCI-21	RPCI mouse PAC library 21	dab
+	RPCI-21	RPCI-21 Female Mouse PAC	dab
+	RPCI-21	RPCI21 PAC	dab
+	RPCI-21	RPC121	dab
+	RPCI-21	RPCI-22 Female Mouse BAC	dab
+	RPCI-22	RPCI - 22 (129S6/SvEvTac) Mouse BAC Library	dab
+	RPCI-22	RPCI22	dab
+	RPCI-22	RPCI-22 genomic mouse BAC libr	dab
 	RPCI-23	RPCI23 BAC clone (Roswell Park Cancer Institute, Buffalo, NY, USA)	dab
+	RPCI-23	RPCI-23 Mouse (C57BL/6J) genomic library	dab
+	RPCI-23	RPCI-23 mouse BAC clone 118E21	dab
+	RPCI-23	RPCI-23 BAC	dab
+	RPCI-23	RPCI-23 mouse BAC library	dab
+	RPCI-23	RPCI-23 genomic mouse BAC library	dab
+	RPCI-23	RPCI-23 Genomic clone library	dab
+	RPCI-23	RPCI-23 Female (C57BL/6J) Mouse BAC	dab
+	RPCI-23	RPCI mouse BAC library 23	dab
+	RPCI-23	RPCI23 mouse genomic BAC library	dab
+	RPCI-23	RPCI23	dab
+	RPCI-23	RPCI - 23 Female (C57BL/6J) Mouse BAC Library	dab
+	RPCI-24	RPCI-24 Male Mouse BAC	dab
 	Soares 2NbMT	Soares thymus 2NbMT	dab
 	Soares 2NbMT	Soares_thymus_2NbMT	dab
 	Soares 3NbMS	Soares spleen 3NbMS	dab
+	Soares 3NbMS	Soares mouse 3NbMS 	dab
 	Soares 3NME12.5	Soares 12.5dpc 3NME12.5	dab
+	Soares 3NME12.5	Soares mouse 3NME12 5	dab
+	Soares 3NME12.5	Soares 3NME12 5	dab
+	Soares 3NME12.5	Soares mouse 3NM12.5	dab
+	Soares 3NME12.5	EQUE: SOARES MOUSE 3NME12 5	dab
 	Soares 4NbMP13.5-14.5	Soares placenta 4NbMP13.5-14.5	dab
+	Soares 4NbMP13.5-14.5	Soares mouse placenta 4NbMP13.5 14.5	dab
 	Soares MPR0	Soares MPR0 prostate	dab
 	Soares NbME13.5-14.5	Soares 13.5-14.5dpc embryo NbME13.5-14.5	dab
+	Soares NbME13.5-14.5	Soares embryo NbME13.5-14.5	dab
+	Soares NbME13.5-14.5	Soares mouse embryo NbME13.5-14.5	dab
+	Soares NbME13.5-14.5	Soares mouse embryo NbME	dab
+	Soares NbME13.5-14.5	Soares NbME13.5 14.5	dab
+	Soares NbME13.5-14.5	Soares mouse embryo NbME13.5 14.5	dab
 	Soares NbMH	Soares heart NbMH	dab
 	Soares NbMH	Soares mouse NbMh	dab
 	Soares NbMLN	Soares lymph node NbMLN	dab
+	Soares NbMLN	Soares mouse lymph node NbMLN	dab
 	Soares NbMMG	Soares mammary gland NbMMG	dab
+	Soares NbMMG	Soares_mammary_gland_NbMMG	dab
+	Soares NbMMG	Soares mouse mammary gland NbMMG	dab
 	Soares NKWMD	Soares NKWMD mandible	dab
+	Soares NKWMD	Soares_NKWMD_mandible	dab
 	Soares NMAP	Soares NMAP pituitary	dab
 	Soares NMBP	Soares NMBP bone	dab
+	Soares NMBP	Soares_mouse_NMBP	dab
 	Soares NMBP1	Soares NMBP1 pituitary	dab
 	Soares NMBP13-15	Soares NMBP13-15 pituitary	dab
 	Soares NMBP2	Soares NMBP2 pituitary	dab
 	Soares NMBPA	Soares NMBPA pituitary	dab
 	Soares NMEBA	Soares NMEBA branchial arch	dab
+	Soares NMEBA	Soares_NMEBA_branchial_arch 	dab
 	Soares NMES	Soares embryonic stem cell NMES	dab
+	Soares NMES	Soares_embryonic_stem_cell_NMES	dab
 	Soares NMGB	Soares NMGB B-cell	dab
+	Soares NMGB	Soares_mouse_NMGB_bcell	dab
 	Soares NMGBC	Soares NMGBC B-cell	dab
+	Soares NMGBC	Soares_NKWMD_mandible	dab
 	Soares NMHy	Soares hypothalamus NMHy	dab
+	Soares NMHy	Soares mouse hypothalamus NMHy	dab
+	Soares NMIE	Soares_mouse_NMIE	dab
 	Soares NMKWNP	Soares nasal process NMKWNP	dab
 	Soares NML	Soares liver NML	dab
+	Soares NML	Soares mouse NML	dab
+	Soares NML	Soares mouse NML	dab
 	Soares NMLMG	Soares mammary gland NMLMG	dab
+	Soares NMLMG	Soares_mammary_gland_NMLMG 	dab
 	Soares NMMAX	Soares NMMAX maxillary process	dab
 	Soares NMO1	Soares NMO1 ovary	dab
 	Soares NMO2	Soares NMO2 ovary	dab
 	Soares NMPR0	Soares NMPR0 prostate	dab
 	Soares NMPu	Soares NMPu pregnant uterus	dab
+	Soares NMPu	Soares_NMPu	dab
 	Soares NMTC	Soares NMTC trophoblast	dab
 	Soares NMUR	Soares 11.5-12.5 dpc urogenital ridge NMUR	dab
+	Soares NMUR	Soares mouse urogenital ridge NMUR	dab
 	Soares p3NMF19.5	Soares 19.5dpc p3NMF19.5	dab
+	Soares p3NMF19.5	Soares murine p3NMF19.5 cDNA	dab
+	Soares p3NMF19.5	Soares mouse pNMF19.5	dab
+	Soares p3NMF19.5	Soares mouse p3NMF19.5	dab
+	Stratagene #936308	Lambda Zap, Stratagene cDNA library, catalog No. 936308	dab
+	Stratagene #936308	teratocarcinoma (PCC4) library (Stratagene No. 936301) and C57 BL/6 spleen library (Stratagene No. 936308)1	dab
+	Stratagene #936308	Stratagene Cat.No.936308	dab
+	Stratagene #936308	Mouse Spleen Lambda cDNA Library (Stratagene#936308)	dab
+	Stratagene #936308	library from S. J. Elledge; Stratagene library cat. number 936308	dab
 	Stratagene #936309	Stratagene mouse brain cDNA library, Cat#936309	dab
+	Stratagene #936309	Stratagene lambda ZAP II Cat. number 936309	dab
+	Stratagene #936309	Stratagene Cat. 936309	dab
+	Stratagene #936309	Stratagene library, Cat number 936309	dab
+	Stratagene #936309	lambda Zap II, Stratagene, # 936309	dab
+	Stratagene #936309	Stratagene lambda ZAP II libraries, Cat number 936309	dab
 	Stratagene #946305	129sv genomic DNA in lambda fixII, Stratagene #946305	dab
 	Stratagene #946305	Stratagene 129/SvJ genomic library, cat. no. 946305	dab
+	Stratagene #946305	Stratagene ref.946305	dab
+	Stratagene #946305	Stratagene 129SV mouse genomic library (Cat. Number 946305)	dab
+	Stratagene #946305	Stratagene (No. 946305)	dab
+	Stratagene #946305	Lambda-Fix II Stratagene (946305)	dab
+	Stratagene #946305	lambda fix II Stratagene #946305	dab
+	Stratagene #946305	lambda FIX II genomic library Stratagene catalogue #946305	dab
+	Stratagene #946305	lambda FIX II genomic library Stratagene catalogue # 946305	dab
+	Stratagene #946305	genomic library Stratagene catalog number 946305	dab
+	Stratagene #946305	clone lambda LMH8 from Stratagene library catalog no. 946305	dab
+	Stratagene #946305	129SV mouse genomic library (Stratagene, catalog number 946305)	dab
+	Stratagene #946305	Stratagene Premade Library #946305	dab
+	Stratagene #946305	STRATAGENE mouse genomic library 946305	dab
+	Stratagene #946305	genomic in lambda fix II Stratgene #946305	dab
+	Stratagene #946305	lambda FIXII (Stratagene #946305)	dab
+	Stratagene #946305	Stratagene 946305	dab
 	Stratagene #946309	lambda-FixII mouse genomic library (Stratagene #946309)	dab
 	Stratagene #946309	Stratagene, catalog No. 946309, 129SVJ genomic library in lambda FIX II vector	dab
+	Stratagene #946309	Stratagene Cat.No.946309	dab
+	Stratagene #946309	Stratagene Cat.946309	dab
+	Stratagene #946309	lambda FixII (Stratagene #946309)	dab
+	Stratagene #946309	Stratagene catalog number 946309	dab
+	Stratagene #946309	Stratagene # 946309	dab
+	Stratagene #961301	mouse 129SVJ Cosmid library (Stratagene ref 961301)	dab
 	Stratagene embry. carcinoma/RA (937318)	Stratagene embryonic carcinoma/RA (#937318)	dab
 	Stratagene embryonic carcinoma (937317)	Stratagene embryonic carcinoma (#937317)	dab
+	Stratagene embryonic carcinoma (937317)	Stratagene mouse embryonic carcinoma (#937317)	dab
+	Stratagene embryonic carcinoma (937317)	Stratagene #937317	dab
 	Stratagene mouse 129/Sv genomic (#946306)	lambda FIX II genomic library, Stratagene no. 946306	dab
+	Stratagene mouse 129/Sv genomic (#946306)	Stratagene 946306	dab
+	Stratagene mouse 129/Sv genomic (#946306)	Stratagene ref.946306	dab
+	Stratagene mouse 129/Sv genomic (#946306)	Stratgene Lambda FixII Liver female 4-8 weeks Catalog # 946306	dab
 	Stratagene mouse diaphragm (937303)	Stratagene diaphragm (#937303)	dab
+	Stratagene mouse diaphragm (937303)	Stratagene mouse diaphragm (#937303)	dab
 	Stratagene mouse heart (937316)	Stratagene 13dpc heart (#937316)	dab
 	Stratagene mouse kidney (937315)	Stratagene kidney (#937315)	dab
+	Stratagene mouse kidney (937315)	Stratagene catalog #937315	dab
+	Stratagene mouse kidney (937315)	Stratagene mouse kidney (#937315)	dab
 	Stratagene mouse lung (937302)	lung cDNA library, Stratagene catalog number 937302	dab
 	Stratagene mouse lung (937302)	Stratagene catalog number 937302 (lung);	dab
 	Stratagene mouse lung (937302)	Stratagene lung (#937302)	dab
+	Stratagene mouse lung (937302)	Stratagene mouse lung 937302	dab
 	Stratagene mouse macrophage (937306)	Stratagene macrophage (#937306)	dab
 	Stratagene mouse macrophage (937306)	Stratagene mouse macrophage (#937306)	dab
 	Stratagene mouse melanoma (937312)	Stratagene melanoma (#937312)	dab
 	Stratagene mouse skin	Stratagene skin (#937313)	dab
 	Stratagene mouse T-cell (937311)	Stratagene T-cell (#937311)	dab
+	Stratagene mouse T-cell (937311)	Stratagene Catalog #937311	dab
 	Stratagene mouse testes	Stratagene mouse testis	dab
 	Stratagene mouse testes	Stratagene mouse testis (#937308)	dab
 	Stratagene mouse testes	Stratagene mouse testis 937308	dab

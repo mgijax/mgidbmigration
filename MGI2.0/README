@@ -1,8 +1,0 @@
-April 16, 1998
-
-Run MGI.sh as part of migration to MGI2.0:
-
-inserts GXD controlled vocabularies data
-rebuilds view, triggers, and procedures
-
-

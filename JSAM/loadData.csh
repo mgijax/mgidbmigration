@@ -37,13 +37,13 @@ go
 EOSQL
 
 echo 'Load Empty Database...' | tee -a ${LOG}
-./load_dev2db.csh dev2mgdempty.backup | tee -a ${LOG}
+./load_dev2db.csh dev1mgdempty.backup | tee -a ${LOG}
 date | tee -a ${LOG}
 
 echo 'Create data files...' | tee -a ${LOG}
-#rm -rf ${DATADIR}/*
-#bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
-#date | tee -a ${LOG}
+rm -rf ${DATADIR}/*
+bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
+date | tee -a ${LOG}
 
 echo 'Creating tables...' | tee -a ${LOG}
 date | tee -a ${LOG}
@@ -57,9 +57,17 @@ cat ${DBPASSWORDFILE} | bcp ${DBNAME}..$table in $i -e errors -S${DBSERVER} -U${
 cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -U${DBUSER} -i ${WORKDIR}/truncateLog.sql | tee -a ${LOG}
 end
 
+echo 'Creating rules...' | tee -a ${LOG}
+date | tee -a ${LOG}
+${oldmgddbschema}/rule/rule_create.csh | tee -a ${LOG}
+
 echo 'Binding rules...' | tee -a ${LOG}
 date | tee -a ${LOG}
 ${oldmgddbschema}/rule/rule_bind.csh | tee -a ${LOG}
+
+echo 'Creating defaults...' | tee -a ${LOG}
+date | tee -a ${LOG}
+${oldmgddbschema}/default/default_create.csh | tee -a ${LOG}
 
 echo 'Binding defaults...' | tee -a ${LOG}
 date | tee -a ${LOG}
@@ -82,7 +90,7 @@ date | tee -a ${LOG}
 ${oldmgddbschema}/trigger/trigger_create.csh | tee -a ${LOG}
 
 echo 'Making a binary dump...' | tee -a ${LOG}
-./dump_dev2db.csh dev2mgd.backup
+./dump_dev2db.csh dev1mgd.backup
 
 echo 'End Data Load.' | tee -a ${LOG}
 date | tee -a ${LOG}

@@ -27,9 +27,9 @@ date >> $LOG
  
 # Load VOC tables; this order is important!
 
-${VOCLOAD}/phenoslim.load -f  -l output.phenoslim ${VOCLOAD}/ps.rcd ${PSDATA}/phenoslim.out >>& $LOG
-${VOCLOAD}/phenoslim.ec.load -f -l output.phenoslim.ec ${VOCLOAD}/ps.ec.rcd ${PSDATA}/ps.ecodes >>& $LOG
-${VOCLOAD}/go.ec.load -f -l output.go.ec ${VOCLOAD}/go.ec.rcd ${GODATA}/go.ecodes >>& $LOG
+${VOCLOAD}/phenoslim.load -f  -l output.phenoslim ps.rcd ${PSDATA}/phenoslim.out >>& $LOG
+${VOCLOAD}/phenoslim.ec.load -f -l output.phenoslim.ec ps.ec.rcd ${PSDATA}/ps.ecodes >>& $LOG
+${VOCLOAD}/go.ec.load -f -l output.go.ec go.ec.rcd ${GODATA}/go.ecodes >>& $LOG
 
 # Create Annotation Type records
 

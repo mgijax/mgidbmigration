@@ -166,6 +166,11 @@ go
 exec MGI_Table_Column_Cleanup
 go
 
+declare @esKey integer
+select @esKey = _CellLine_key from ALL_CellLine where cellLine = 'Ex136'
+update ALL_Allele set _MutantESCellLine_key = @esKey where _Allele_key = 4921
+go
+
 EOSQL
 
 #./mgiradar.csh | tee -a ${LOG}

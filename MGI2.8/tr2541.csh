@@ -54,32 +54,6 @@ select _Strain_key, strain, standard, needsReview, 0, creation_date, modificatio
 from PRB_Strain_Old
 go
 
-declare strain_cursor cursor for
-select _Strain_key
-from PRB_Strain
-where standard = 1
-for read only
-go
-
-begin transaction
-
-declare @strainKey int
-
-open strain_cursor
-fetch strain_cursor into @strainKey
-
-while (@@sqlstatus = 0)
-begin
-	/* Assign MGI Acc ID */
-	exec ACC_assignMGI @strainKey, "Strain", @private = 1
-	fetch strain_cursor into @strainKey
-end
-
-close strain_cursor
-deallocate cursor strain_cursor
-commit transaction
-go
-
 select _Strain_key, synonym = substring(note1, 6, 255), seq = identity(5)
 into #synonyms
 from MLP_Extra
@@ -166,6 +140,45 @@ quit
  
 EOSQL
  
+# Process JRS Strains
+
 ./tr2541.py $DBSERVER $DBNAME 1 >>& $LOG
+
+# Assign MGI Accession IDS to Standard Strains
+
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+  
+use ${DBNAME}
+go
+
+declare strain_cursor cursor for
+select _Strain_key
+from PRB_Strain
+where standard = 1
+for read only
+go
+
+begin transaction
+
+declare @strainKey int
+
+open strain_cursor
+fetch strain_cursor into @strainKey
+
+while (@@sqlstatus = 0)
+begin
+	/* Assign MGI Acc ID */
+	exec ACC_assignMGI @strainKey, "Strain", @private = 1
+	fetch strain_cursor into @strainKey
+end
+
+close strain_cursor
+deallocate cursor strain_cursor
+commit transaction
+go
+
+quit
+
+EOSQL
 
 date >> $LOG

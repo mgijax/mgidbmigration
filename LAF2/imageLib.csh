@@ -4,6 +4,8 @@
 # Load IMAGE libraries
 #
 
+cd `dirname $0` && source Configuration
+
 setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
@@ -32,18 +34,15 @@ EOSQL
 
 cat $DBPASSWORDFILE | bcp tempdb..MGI_Translation in imagelib.badgood.trans -c -t"\t" -S$DBSERVER -U$DBUSER >>& $LOG
 
-exit 0
-
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME
 go
 
 update PRB_Source
-set name = t.badName, modification_date = getdate()
+set name = t.goodName, modification_date = getdate()
 from PRB_Source s, tempdb..MGI_Translation t
-where s.name = t.goodName
-and t.badName is not null
+where s.name = t.badName
 go
 
 checkpoint
@@ -53,6 +52,6 @@ quit
 
 EOSQL
 
-libraryload.py -SDEV_MGI -Dmgd_release -Umgd_dbo -P/usr/local/mgi/dbutils/mgidbutilities/.mgd_dbo_password -Mfull -IIMAGE.in.lib
+${LIBLOAD}/libraryload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -Mfull -IIMAGE.in.lib
 
 date >> $LOG

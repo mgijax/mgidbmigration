@@ -16,7 +16,6 @@ setenv STRAINS strains_release
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
-set path = ($DBUTILITIESDIR/bin $DBUTILITIESDIR/bin/dev $path $SYBASE/bin)
 
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
@@ -54,8 +53,8 @@ echo "Data Migration..." >> $LOG
 ./tr2714.csh >>& $LOG
 ./tr2718.csh >>& $LOG
 ./tr2916.csh >>& $LOG
-./tr2358.csh >>& $LOG
 ./tr2541.csh >>& $LOG
+./tr2358.csh >>& $LOG
 ./tr2239.csh >>& $LOG
 
 #

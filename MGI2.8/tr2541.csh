@@ -31,11 +31,11 @@ EOSQL
 # Use new schema product to create new tables
 #
 ${newmgddbschema}/table/PRB_Strain_create.object
-${newmgddbschema}/default/PRB_Strain_bind.object
-${newmgddbschema}/key/PRB_Strain_create.object
 ${newmgddbschema}/table/PRB_Strain_Synonym_create.object
+${newmgddbschema}/default/PRB_Strain_bind.object
 ${newmgddbschema}/default/PRB_Strain_Synonym_bind.object
 ${newmgddbschema}/key/PRB_Strain_Synonym_create.object
+${newmgddbschema}/key/PRB_Strain_create.object
 
 #
 # changes made to this procedure must be installed prior to data migration

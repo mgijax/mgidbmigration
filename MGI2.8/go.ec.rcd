@@ -1,0 +1,24 @@
+DBSERVER = MGD_DEV
+DATABASE = mgd_release
+DBUSER = mgd_dbo
+DBPASSWORD_FILE = /usr/local/mgi/dbutils/mgidbutilities/.mgd_dbo_password
+
+VOCAB_NAME = GO Evidence Codes
+JNUM = J:73041
+IS_SIMPLE = 1
+IS_PRIVATE = 0
+LOGICALDB_KEY = 1
+
+MGITYPE = 12
+
+RUNTIME_DIR = /usr/local/mgi/dbutils/mgidbmigration/MGI2.8
+TERM_FILE = ${RUNTIME_DIR}/go.ecodes.out
+DATA_FILE = /mgi/all/wts_projects/2800/2867/go.ecodes
+DISCREP_FILE = ${RUNTIME_DIR}/discrepancy.html
+
+# DAGs
+#[
+#	NAME = jsb.dag
+#	ABBREV = jd
+#	FILE = dag.jsb
+#]

@@ -1,13 +1,12 @@
 RefSeq		RefSeq		
 GenBank/EMBL/DDBJ:Rodent		GenBank/EMBL/DDBJ Rodent		
-GenBank/EMBL/DDBJ:PRI		GenBank/EMBL/DDBJ Primate		
 GenBank/EMBL/DDBJ:Patent		GenBank/EMBL/DDBJ Patent		
 GenBank/EMBL/DDBJ:HTC		GenBank/EMBL/DDBJ High Throughput cDNA		
 GenBank/EMBL/DDBJ:EST		GenBank/EMBL/DDBJ EST		
 GenBank/EMBL/DDBJ:HTG		GenBank/EMBL/DDBJ High Throughput Genomic		
 GenBank/EMBL/DDBJ:STS		GenBank/EMBL/DDBJ STS		
 GenBank/EMBL/DDBJ:GSS		GenBank/EMBL/DDBJ GSS		
-GenBank:Other		GenBank:Other		
+GenBank/EMBL/DDBJ		GenBank/EMBL/DDBJ		
 TIGR Mouse Gene Index		TIGR Mouse Gene Index		
 DoTS		DoTS		
 NIA Mouse Gene Index		NIA Mouse Gene Index		

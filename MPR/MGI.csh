@@ -160,6 +160,7 @@ go
 EOSQL
 
 ./allelecombination.csh
+./genotypeorder.csh
 
 ${ALLLABELLOAD}/alllabel.sh
 

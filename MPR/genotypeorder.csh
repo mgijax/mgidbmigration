@@ -22,7 +22,7 @@ date >> ${LOG}
 ${newmgddbschema}/table/GXD_AlleleGenotype_truncate.object >>& ${LOG}
 ${newmgddbschema}/index/GXD_AlleleGenotype_drop.object >>& ${LOG}
 
-cat ${DBPASSWORDFILE} | bcp ${DBNAME}..GXD_AlleleGenotype in genotypeorder.rpt -c -t\| -S${DBSERVER} -U${DBUSER} >>& $LOG
+cat ${DBPASSWORDFILE} | bcp ${DBNAME}..GXD_AlleleGenotype in genotypeorder.rpt -c -t"\t" -S${DBSERVER} -U${DBUSER} >>& $LOG
 
 ${newmgddbschema}/index/GXD_AlleleGenotype_create.object >>& ${LOG}
 

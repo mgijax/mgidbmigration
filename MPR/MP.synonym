@@ -1,0 +1,64 @@
+MP:0005375	Type 1	adipose tissue
+MP:0005386	Type 1	behavior/neurological
+MP:0005385	Type 1	cardiovascular system
+MP:0005384	Type 1	cellular
+MP:0005383	Type 1	central nervous system
+MP:0005382	Type 1	craniofacial
+MP:0005381	Type 1	digestive/alimentary
+MP:0005380	Type 1	embryogenesis
+MP:0005379	Type 1	endocrine/exocrine glands
+MP:0005378	Type 1	growth/size
+MP:0005377	Type 1	hearing/ear
+MP:0005397	Type 1	hematopoietic system
+MP:0005376	Type 1	homeostatsis/metabolism
+MP:0005387	Type 1	immune system
+MP:0005374	Type 1	lethality/embryonic/perinatal
+MP:0005373	Type 1	lethality/postnatal
+MP:0005372	Type 1	life span/aging
+MP:0005371	Type 1	limbs/digits/tail
+MP:0005370	Type 1	liver/biliary system
+MP:0005369	Type 1	muscle
+MP:0002873	Type 1	normal phenotype
+MP:0005395	Type 1	other phenotype
+MP:0005368	Type 1	peripheral nervous system
+MP:0005367	Type 1	renal/urinary system
+MP:0005389	Type 1	reproductive system
+MP:0005388	Type 1	respiratory system
+MP:0005390	Type 1	skeleton
+MP:0005393	Type 1	skin/coat/nails
+MP:0005394	Type 1	taste/olfaction
+MP:0005392	Type 1	touch/vibrissae
+MP:0002006	Type 1	tumorigenesis
+MP:0005391	Type 1	vision/eye
+MP:0005375	Type 2
+MP:0005386	Type 2
+MP:0005385	Type 2
+MP:0005384	Type 2
+MP:0005383	Type 2
+MP:0005382	Type 2
+MP:0005381	Type 2
+MP:0005380	Type 2
+MP:0005379	Type 2
+MP:0005378	Type 2
+MP:0005377	Type 2
+MP:0005397	Type 2
+MP:0005376	Type 2
+MP:0005387	Type 2
+MP:0005374	Type 2
+MP:0005373	Type 2
+MP:0005372	Type 2
+MP:0005371	Type 2
+MP:0005370	Type 2
+MP:0005369	Type 2
+MP:0002873	Type 2
+MP:0005395	Type 2
+MP:0005368	Type 2
+MP:0005367	Type 2
+MP:0005389	Type 2
+MP:0005388	Type 2
+MP:0005390	Type 2
+MP:0005393	Type 2
+MP:0005394	Type 2
+MP:0005392	Type 2
+MP:0002006	Type 2
+MP:0005391	Type 2

@@ -34,6 +34,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 # order is important!
 ./loadVoc.csh | tee -a ${LOG}
 ./mgiassembly.csh | tee -a ${LOG}
+./mlpstrain.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 

@@ -49,17 +49,21 @@ and v.name = 'Strain Species'
 go
 
 insert into PRB_Strain_Extra
-select o._Strain_key, o.reference, o.dataset, o.note1, o.note2, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
-from MLP_Extra o
+select _Strain_key, reference, dataset, note1, note2, 
+${CREATEDBY}, ${CREATEDBY}, creation_date, modification_date
+from MLP_Extra
 go
 
-insert into PRB_Strain_Type
-select o._Strain_key, t._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select newKey = identity(10), o._Strain_key, t._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+into #stype
 from MLP_StrainTypes o, MLP_StrainType s, VOC_Term t, VOC_Vocab v
 where o._StrainType_key = s._StrainType_key
 and s.strainType = t.term
 and t._Vocab_key = v._Vocab_key
 and v.name = 'Strain Type'
+go
+
+insert into PRB_Strain_Type select * from #stype
 go
 
 /* migrate MLP_Notes into MGI_Note, MGI_NoteType */
@@ -84,41 +88,41 @@ end
 
 EOSQL
 
-#cat - <<EOSQL | doisql.csh $0 >> ${LOG}
-#
-#use ${DBNAME}
-#go
-#
-#drop table PRB_Strain_Old
-#go
-#
-#drop table MLP_Extra
-#go
-#
-#drop table MLP_Notes
-#go
-#
-#drop table MLP_Species
-#go
-#
-#drop table MLP_Strain
-#go
-#
-#drop table MLP_StrainType
-#go
-#
-#drop table MLP_StrainTypes
-#go
-#
-#drop view MLP_Strain_View
-#go
-#
-#drop view MLP_StrainTypes_View
-#go
-#
-#end
-#
-#EOSQL
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+
+use ${DBNAME}
+go
+
+drop table PRB_Strain_Old
+go
+
+drop table MLP_Extra
+go
+
+drop table MLP_Notes
+go
+
+drop table MLP_Species
+go
+
+drop table MLP_Strain
+go
+
+drop table MLP_StrainType
+go
+
+drop table MLP_StrainTypes
+go
+
+drop view MLP_Strain_View
+go
+
+drop view MLP_StrainTypes_View
+go
+
+end
+
+EOSQL
 
 ${newmgddbschema}/index/PRB_Strain_create.object >>& ${LOG}
 ${newmgddbschema}/index/PRB_Strain_Extra_create.object >>& ${LOG}

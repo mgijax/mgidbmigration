@@ -67,9 +67,6 @@ ${newmgddbschema}/key/PRB_Strain_drop.object
 ${newmgddbschema}/key/PRB_Strain_create.object
 ${newmgddbschema}/view/PRB_Strain_Marker_View_drop.object
 ${newmgddbschema}/view/PRB_Strain_Marker_View_create.object
-${newmgddbperms}/public/view/view_grant.csh
-${newmgddbperms}/public/table/table_grant.csh
-${newmgddbperms}/curatorial/table/table_grant.csh
 
 date >> $LOG
 

@@ -53,10 +53,10 @@ echo "Data Migration..." >> $LOG
 ./tr256.csh >>& $LOG
 ./tr2714.csh >>& $LOG
 ./tr2718.csh >>& $LOG
-./tr2902.csh >>& $LOG
 ./tr2916.csh >>& $LOG
 ./tr2358.csh >>& $LOG
 ./tr2541.csh >>& $LOG
+./tr2239.csh >>& $LOG
 
 #
 # Re-create all triggers, sps, views....
@@ -74,9 +74,6 @@ date >> $LOG
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
 use ${DBNAME}
-go
-
-drop table GXD_AllelePair_Old
 go
 
 drop table GXD_Antibody_Old

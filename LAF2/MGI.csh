@@ -80,9 +80,6 @@ date >> $LOG
 # Re-create all triggers, sps, views....
 #
 
-${newmgddbschema}/view/VOC_Term_View_drop.object >>& $LOG
-${newmgddbschema}/view/VOC_Term_View_create.object >>& $LOG
-
 ${newmgddbschema}/default/default_unbind.csh >>& $LOG
 ${newmgddbschema}/default/default_bind.csh >>& $LOG
 ${newmgddbschema}/key/key_drop.csh >>& $LOG

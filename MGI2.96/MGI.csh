@@ -57,6 +57,8 @@ ${newmgddbschema}/key/MGI_SetMember_create.object >>& $LOG
 ${newmgddbschema}/trigger/MGI_Note_create.object >>& $LOG
 ${newmgddbschema}/trigger/MGI_NoteType_create.object >>& $LOG
 ${newmgddbschema}/trigger/MGI_Set_create.object >>& $LOG
+${newmgddbschema}/trigger/ACC_Accession_drop.object >>& $LOG
+${newmgddbschema}/trigger/ACC_Accession_create.object >>& $LOG
 
 ${newmgddbschema}/view/MGI_Set_CloneSet_View_create.object >>& $LOG
 

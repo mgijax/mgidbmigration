@@ -49,13 +49,6 @@ quit
 
 EOSQL
 
-${newmgddbschema}/key/GXD_AlleleGenotype_create.object
-${newmgddbschema}/key/GXD_Genotype_drop.object
-${newmgddbschema}/key/GXD_Genotype_create.object
-${newmgddbschema}/key/ALL_Allele_drop.object
-${newmgddbschema}/key/ALL_Allele_create.object
-${newmgddbschema}/key/MRK_Marker_drop.object
-${newmgddbschema}/key/MRK_Marker_create.object
 ${newmgddbschema}/index/GXD_AlleleGenotype_create.object
 
 date >> $LOG

@@ -21,10 +21,14 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
  
-date >> ${LOG}
+date | tee -a ${LOG}
+
 echo "Allele Vocabulary Migration..." | tee -a ${LOG}
  
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+./loadVoc.csh | tee -a ${LOG}
+./deleteNotes.py | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
 go
@@ -174,5 +178,5 @@ quit
 
 EOSQL
 
-date >> $LOG
+date | tee -a $LOG
 

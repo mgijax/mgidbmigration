@@ -31,6 +31,7 @@ ${newmgddbschema}/key/MLP_create.logical
 #
 
 cd straindata
+mv MLP_Notes.bcp MLP_Extra.bcp
 foreach i (MLP*)
 set f=`basename $i .bcp`
 bcpin.csh ${newmgddbschema} $f

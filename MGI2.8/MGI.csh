@@ -3,21 +3,29 @@
 #
 # Migration for MGI 2.8
 #
+# Tables:	159
+# Procedures:	 68
+# Triggers:	119
+# Views:	113
+#
 
 cd `dirname $0`
 
+setenv NOMEN nomen_release
+setenv STRAINS strains_release
+
 setenv SYBASE	/opt/sybase
-setenv PYTHONPATH       /usr/local/mgi/lib/python
-setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities/current
+setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 set path = ($DBUTILITIESDIR/bin $DBUTILITIESDIR/bin/dev $path $SYBASE/bin)
 
-setenv oldmgddbschema //usr/local/mgi/dbutils/mgd/mgddbschema
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
-setenv newmgddbschema /home/lec/db/mgd_lec
-setenv newmgddbperms /home/lec/db/mgd_lec_perms
-setenv newnomendbschema /usr/local/mgi/dbutils/nomen/nomendbschema
-setenv newnomendbperms /usr/local/mgi/dbutils/nomen/nomendbperms
+setenv newmgddb /usr/local/mgi/dbutils/mgd_release
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
+setenv newnomendb /usr/local/mgi/dbutils/nomen_release
+setenv newnomendbschema ${newnomendb}/nomendbschema
+setenv newnomendbperms ${newnomendb}/nomendbperms
 
 source ${newmgddbschema}/Configuration
 
@@ -32,9 +40,13 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-#load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-#load_devdb.csh strains_lec strains.backup mgd_dbo >>& $LOG
-#load_devdb.csh nomen_lec nomen.backup mgd_dbo >>& $LOG
+load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
+
+echo "Update MGI DB Info..." >> $LOG
+updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
+updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-3-0-3" >>& $LOG
 
 echo "Data Migration..." >> $LOG
 ./tr256.csh >>& $LOG
@@ -45,27 +57,16 @@ echo "Data Migration..." >> $LOG
 ./tr2358.csh >>& $LOG
 ./tr2541.csh >>& $LOG
 
-echo "Update MGI DB Info..." >> $LOG
-updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
-
 #
-# Re-run all triggers, sps, views....
+# Re-create all triggers, sps, views....
 #
 
-${newmgddbschema}/trigger/trigger_drop.csh
-${newmgddbschema}/trigger/trigger_create.csh
-${newmgddbschema}/view/view_drop.csh
-${newmgddbschema}/view/view_create.csh
-${newmgddbschema}/procedure/procedure_drop.csh
-${newmgddbschema}/procedure/procedure_create.csh
-${newmgddbperms}/all_grant.csh
-
-#${newnomendbschema}/trigger/trigger_create.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
-#${newnomendbschema}/view/view_create.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
-#${newnomendbschema}/procedure/procedure_create.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
-#${newnomendbperms}/all_grant.csh $DBSERVER $NOMEN $DBUSER $DBPASSWORDFILE
+reconfig_mgd.csh ${newmgddb} >>& $LOG
+reconfig_nomen.csh ${newnomendb} >>& $LOG
 
 date >> $LOG
+
+exit 0
 
 #
 # drop old/obsolete objects
@@ -86,9 +87,6 @@ drop table GXD_GelLane_Old
 go
 
 drop table PRB_Strain_Old
-go
-
-drop table RI_RISet_Old
 go
 
 drop table PRB_Source_Old

@@ -10,21 +10,40 @@ setenv CACHELOAD	/home/lec/loads/seqcacheload
 #setenv MRKREFLOAD	/usr/local/mgi/3.0/dbutils/mrkrefload
 setenv MRKREFLOAD	/home/lec/loads/mrkrefload-jsam
 
+# use current MGI 2.98 version of vocload because we load
+# the vocabularies BEFORE converting to the new schema
+#setenv VOCLOAD          /usr/local/mgi/dataload/vocload/runSimpleFullLoadNoArchive.sh
+setenv VOCLOAD          /home/lec/loads/vocload-trunk/runSimpleFullLoadNoArchive.sh
+setenv PYTHONPATH       ${PYTHONPATH}:${VOCLOAD}
+
+# existing (MGI 2.98) schema configured to talk to an MGI 2.98 database
+setenv existingmgddbschema /usr/local/mgi/dbutils/mgd_release/mgddbschema
+
+# existing (MGI 2.98) schema configured to talk to the JSAM database
 #setenv oldmgddb /usr/local/mgi/dbutils/mgd
-setenv oldmgddb /home/lec/db/jsam2.98
+#setenv oldmgddb /home/lec/db/jsam2.98
+setenv oldmgddb /home/lec/db/jsam2/jsam2.98
 setenv oldmgddbschema ${oldmgddb}/mgddbschema
 
+# new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
-setenv newmgddb /home/lec/db/jsam
+#setenv newmgddb /home/lec/db/jsam
+setenv newmgddb /home/lec/db/jsam2
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
+# existing (MGI 2.98) nomen schema configured to talk to a JSAM nomen database (see NOMEN)
 #setenv newnomendb //usr/local/mgi/dbutils/nomen
 setenv newnomendb /home/lec/db/jsam
 setenv newnomendbschema ${newmgddb}/nomendbschema
 setenv newnomendbperms ${newmgddb}/nomendbperms
-
 setenv NOMEN nomen_lec
+
+# the working directory
+setenv WORKDIR  /home/lec/db/mgidbmigration/JSAM/work
+
+# the path where the bcp files have been installed
+setenv DATADIR  ${WORKDIR}/data
 
 setenv CREATEDBY	1200
 setenv UNKNOWNEDITOR	1111
@@ -34,8 +53,3 @@ setenv PRODUCT_NAME	MGD
 
 source ${newmgddbschema}/Configuration
 
-# use current MGI 2.97 version of vocload because we load
-# the vocabularies BEFORE converting to the new schema
-#setenv VOCLOAD          /usr/local/mgi/dataload/vocload/runSimpleFullLoadNoArchive.sh
-setenv VOCLOAD          /home/lec/loads/vocload-trunk/runSimpleFullLoadNoArchive.sh
-setenv PYTHONPATH       ${PYTHONPATH}:${VOCLOAD}

@@ -48,6 +48,7 @@ ${newmgddbperms}/curatorial/table/ALL_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/GXD_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/HMD_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/MGI_revoke.logical | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/MLC_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/MRK_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/NOM_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/PRB_revoke.logical | tee -a ${LOG}
@@ -56,6 +57,7 @@ ${newmgddbperms}/public/table/ALL_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/GXD_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/HMD_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/MGI_revoke.logical | tee -a ${LOG}
+${newmgddbperms}/public/table/MLC_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/MRK_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/NOM_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/PRB_revoke.logical | tee -a ${LOG}
@@ -65,6 +67,7 @@ ${newmgddbperms}/curatorial/table/ALL_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/GXD_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/HMD_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/MGI_grant.logical | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/MLC_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/MRK_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/NOM_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/table/PRB_grant.logical | tee -a ${LOG}
@@ -73,6 +76,7 @@ ${newmgddbperms}/public/table/ALL_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/GXD_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/HMD_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/MGI_grant.logical | tee -a ${LOG}
+${newmgddbperms}/public/table/MLC_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/MRK_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/NOM_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/PRB_grant.logical | tee -a ${LOG}

@@ -23,8 +23,7 @@ ${newmgddbschema}/table/NOM_create.logical >>& $LOG
 ${newmgddbschema}/default/NOM_bind.logical >>& $LOG
 
 # remove indexes; this will make inserts faster
-${newmgddbschema}/index/ACC_Accession_drop.object.old >>& $LOG
-#${newmgddbschema}/index/ACC_Accession_drop.object
+${oldmgddbschema}/index/ACC_Accession_drop.object >>& $LOG
 ${newmgddbschema}/index/MGI_Note_drop.object >>& $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_drop.object >>& $LOG
 

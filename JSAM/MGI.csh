@@ -104,10 +104,6 @@ date | tee -a  $LOG
 # Re-create all triggers, sps, views....
 #
 
-${newmgddbschema}/default/default_unbind.csh | tee -a $LOG
-${newmgddbschema}/default/default_bind.csh | tee -a $LOG
-${newmgddbschema}/key/key_drop.csh | tee -a $LOG
-${newmgddbschema}/key/key_create.csh | tee -a $LOG
 ${DBUTILITIESDIR}/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." | tee -a $LOG

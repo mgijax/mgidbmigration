@@ -24,10 +24,10 @@ touch $LOG
  
 date | tee -a  $LOG
  
-${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${DBNAME} /extra2/sybase/mgd.backup mgd_dbo | tee -a $LOG
+load_devdb.csh ${DBNAME} mgd.backup | tee -a $LOG
 date | tee -a  $LOG
 
-${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen.backup mgd_dbo | tee -a $LOG
+load_devdb.csh ${NOMEN} nomen.backup | tee -a $LOG
 date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG

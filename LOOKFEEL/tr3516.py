@@ -35,26 +35,30 @@ outFile = open('MRK_Notes.bcp', 'w')
 
 for line in inFile.readlines():
 
-	tokens = string.split(line[:-1], '\t')
-	accID = tokens[0]
-	notes = tokens[2]
+	try:
+		tokens = string.split(line[:-1], '\t')
+		accID = tokens[0]
+		notes = tokens[2]
 
-	markerKey = 0
-	results = db.sql('select _Object_key from MRK_Acc_View where accID = "%s"' % (accID), 'auto')
-	for r in results:
-		markerKey = r['_Object_key']
+		markerKey = 0
+		results = db.sql('select _Object_key from MRK_Acc_View where accID = "%s"' % (accID), 'auto')
+		for r in results:
+			markerKey = r['_Object_key']
 
-	if markerKey > 0:
+		if markerKey > 0:
 
-		# Write notes in chunks of 255
-		seqNum = 1
-		while len(notes) > 255:
-			outFile.write('%d|%d|%s|%s|%s\n' % (markerKey, seqNum, notes[:255], cdate, cdate))
-			notes = notes[255:]
-			seqNum = seqNum + 1
-		if len(notes) > 0:
-			outFile.write('%d|%d|%s|%s|%s\n' % (markerKey, seqNum, notes, cdate, cdate))
+			# Write notes in chunks of 255
+			seqNum = 1
+			while len(notes) > 255:
+				outFile.write('%d|%d|%s|%s|%s\n' % (markerKey, seqNum, notes[:255], cdate, cdate))
+				notes = notes[255:]
+				seqNum = seqNum + 1
+			if len(notes) > 0:
+				outFile.write('%d|%d|%s|%s|%s\n' % (markerKey, seqNum, notes, cdate, cdate))
       
+	except:
+		pass
+
 inFile.close()
 outFile.close()
 

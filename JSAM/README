@@ -133,7 +133,9 @@ IV.  Re-create all primary/foreign keys, stored procedures, etc.;
 V.   Remove work tables, obsolete objects
 	(in-line SQL in MGI.csh)
 
-VI.  Migrate RADAR
+VI.  Update statistics
+
+VII.  Migrate RADAR
 	(radar.csh)
 
 	1.  Load the production RADAR backup (/extra2/sybase/radar.backup) into 
@@ -141,7 +143,7 @@ VI.  Migrate RADAR
 	2.  Migrate..
 	3.  Set permissions, keys, etc.
 
-VII.  Verify the Migration
+VIII.  Verify the Migration
 	(manual)
 
 	1.  Check that the number of database objects (tables, stored procedures,

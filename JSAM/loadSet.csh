@@ -15,6 +15,6 @@ date >> $LOG
 echo "Set Migration..." | tee -a $LOG
  
 ${SETLOAD}/runnamedsource.csh ${newmgddbschema} namedsource_set.txt load >>& $LOG
-${SETLOAD}/setload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -Mload -IactualDBset.txt >>& $LOG
+${SETLOAD}/setload.csh ${newmgddbschema} actualDBset.txt load >>& $LOG
 
 date >> $LOG

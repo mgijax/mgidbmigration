@@ -44,7 +44,7 @@ results = db.sql('select distinct a._Object_key, h._Term_key, h.sequenceNum ' + 
 	'and dc._Descendent_key = dh._Node_key ' + \
 	'and dh._Label_key = 3 ' + \
 	'and dh._Object_key = h._Term_key ' + \
-	'order by h.sequenceNum', 'auto')
+	'order by a._Object_key, h.sequenceNum', 'auto')
 
 headers = {}
 for r in results:
@@ -55,9 +55,16 @@ for r in results:
     else:
 	headers[key] = 1
 
+s = 1
+prevKey = ''
+
 for r in results:
 
     key = r['_Object_key']
+
+    if prevKey != key:
+	s = 1
+	prevKey = key
 
     if headers[key] == 1:
 	approvedBy = '1000'
@@ -67,7 +74,7 @@ for r in results:
 	approvedDate = ''
 
     if r['sequenceNum'] == None:
-	sequenceNum = 1
+	sequenceNum = s
     else:
 	sequenceNum = r['sequenceNum']
 
@@ -82,6 +89,7 @@ for r in results:
 	loaddate + TAB + loaddate + CRT)
 
     annotHeaderKey = annotHeaderKey + 1
+    s = s + 1
 
 reportlib.finish_nonps(fp)	# non-postscript file
 

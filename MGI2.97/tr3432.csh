@@ -50,6 +50,8 @@ EOSQL
 
 ${newmgddbschema}/index/GXD_Structure_create.object >> $LOG
 
+# generate SQL updates for topological sorting
+
 topoSort.py
 chmod +x topoSort.csh
 topoSort.csh

@@ -15,7 +15,7 @@ setenv DBUSER		mgd_dbo
 setenv DBPASSWORDFILE	/usr/local/mgi/dbutils/mgidbutilities/.mgd_dbo_password
 setenv PYTHONPATH 	/usr/local/mgi/lib/python
 setenv VOCLOAD		/usr/local/mgi/dataload/vocload
-setenv ANNOTLOAD	/home/lec/loads/annotload
+setenv ANNOTLOAD	/usr/local/mgi/dataload/annotload
 setenv GODATA		/usr/local/mgi/go_data
 setenv PSDATA		/mgi/all/wts_projects/2200/2239
 
@@ -65,16 +65,23 @@ go
 
 EOSQL
 
+echo "GO Vocabulary Load" >> $LOG
 ${VOCLOAD}/loadTerms.py -f -l output.terms $DBSERVER $DBNAME mgd_dbo `cat $DBPASSWORDFILE` 4 Termfile >>& $LOG
 
 # Load PhenoSlim Annotations
 
+echo "PhenoSlim Annotation Load" >> $LOG
+date >> $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME pslim.csmith.tab csmith new >>& $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME pslim.cwg.tab cwg append >>& $LOG
 ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME pslim.il.tab il append >>& $LOG
+date >> $LOG
 
 # Load GO Annotations
+echo "GO Annotation Load" >> $LOG
+date >> $LOG
 ${ANNOTLOAD}/gomarker.csh $DBSERVER $DBNAME ${GODATA}/ontology.txt new >>& $LOG
+date >> $LOG
 
 ./posttr2867.csh $DBSERVER $DBNAME >>& $LOG
 

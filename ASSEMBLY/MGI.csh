@@ -4,9 +4,9 @@
 # Migration for Assembly Coordinates
 #
 # Defaults:       6
-# Procedures:   114
+# Procedures:   115
 # Rules:          5
-# Triggers:     156
+# Triggers:     158
 # User Tables:  192
 # Views:        198
 

@@ -18,6 +18,12 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
+alter table ALL_Allele modify symbol varchar(60) not null
+go
+
+alter table ALL_Allele modify nomenSymbol varchar(50) null
+go
+
 alter table MRK_Marker modify symbol varchar(50) not null
 go
 

@@ -9,7 +9,7 @@
 # Rules:	  5
 # Triggers:	154
 # User Tables:	189
-# Views:	197
+# Views:	198
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.

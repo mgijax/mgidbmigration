@@ -30,6 +30,10 @@ insert into ACC_MGIType
 values (20, 'Organism', 'MGI_Organism', '_Organism_key', 'commonName', 'MGI_Organism_Summary_View', getdate(), getdate(), getdate())
 go
 
+update ACC_MGIType
+set dbView = "ACC_ActualDB_Summary_View" where name = 'Actual DB'
+go
+
 checkpoint
 go
 

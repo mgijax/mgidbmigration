@@ -67,8 +67,8 @@ go
 
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, 25, 'Ensembl', 'Ensembl', 10, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into VOC_Term values (@termKey + 1, 25, 'NCBI Gene', 'NCBI Gene', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, 25, 'Ensembl Gene Model', 'Ensembl Gene Model', 10, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey + 1, 25, 'NCBI Gene Model', 'NCBI Gene Model', 11, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 declare @userKey integer
@@ -79,13 +79,13 @@ go
 
 declare @logKey integer
 select @logKey = max(_LogicalDB_key) + 1 from ACC_LogicalDB
-insert into ACC_LogicalDB values (@logKey, 'NCBI Gene', 'NCBI Gene for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into ACC_LogicalDB values (@logKey + 1, 'Ensembl', 'Ensembl for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into ACC_LogicalDB values (@logKey, 'NCBI Gene Model', 'NCBI Gene for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into ACC_LogicalDB values (@logKey + 1, 'Ensembl Gene Model', 'Ensembl for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 declare @actKey integer
 select @actKey = max(_ActualDB_key) + 1 from ACC_ActualDB
-insert into ACC_ActualDB values (@actKey, @logKey, 'NCBI Gene', 1, 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into ACC_ActualDB values (@actKey + 1, @logKey + 1, 'Ensembl', 1, 'http://www.ensembl.org/Mus_musculus/geneview?gene=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into ACC_ActualDB values (@actKey, @logKey, 'NCBI Gene Model', 1, 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into ACC_ActualDB values (@actKey + 1, @logKey + 1, 'Ensembl Gene Model', 1, 'http://www.ensembl.org/Mus_musculus/geneview?gene=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 end

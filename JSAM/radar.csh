@@ -138,5 +138,10 @@ quit
  
 EOSQL
 
+${RADARDBUTILS}/imageMGI.csh
+${RADARDBUTILS}/CloneLibrary.csh
+${RADARDBUTILS}/NIAParentDaughter.csh
+${RADARDBUTILS}/RIKENClones.csh
+
 date | tee -a ${LOG}
 

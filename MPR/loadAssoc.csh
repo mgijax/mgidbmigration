@@ -14,5 +14,6 @@ date > ${LOG}
 echo "Vocabulary Association Migration..." | tee -a ${LOG}
  
 ./allele1.csh ${newmgddbschema} allele1.in full >>& ${LOG}
+./allele2.csh ${newmgddbschema} allele2.in full >>& ${LOG}
 
 date >> ${LOG}

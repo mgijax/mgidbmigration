@@ -24,16 +24,7 @@ ${newmgddbschema}/index/MGI_VocAssociationType_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/MGI_VocAssociationType_bind.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/MGI_VocAssociationType_create.object | tee -a ${LOG}
 
-# keys/permissions will be handled in reconfig phase 
-
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
-
-use ${DBNAME}
-go
-
-end
-
-EOSQL
+./loadAssoc.csh | tee -a ${LOG}
 
 date >> ${LOG}
 

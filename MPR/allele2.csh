@@ -15,7 +15,7 @@ setenv INPUTFILE	$2
 setenv MODE		$3
 
 # definition of the voc association type
-setenv ASSOCTYPE	"Marker Detail"
+setenv ASSOCTYPE	"Marker Detail Allele Category"
 setenv ASSOCDEF		"Marker Detail Allele Category to Allele Type"
 setenv VOCAB1		"Allele Category 2"
 setenv VOCAB2		"Allele Type"

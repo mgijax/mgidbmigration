@@ -30,7 +30,7 @@ setenv newnomendbperms ${newnomendb}/nomendbperms
 
 source ${newmgddbschema}/Configuration
 
-setenv LOG MGI.log
+setenv LOG $0.log
 
 rm -rf $LOG
 touch $LOG

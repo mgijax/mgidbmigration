@@ -61,11 +61,20 @@ ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 ./mutantescell.csh | tee -a ${LOG}
 ./mpannotations.csh | tee -a ${LOG}
 ./splitNotes.py | tee -a ${LOG}
+./convertNotes.py | tee -a ${LOG}
 
 ${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
 ${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}
 ${VOCLOAD}/runDAGIncLoad.sh MP.config | tee -a ${LOG}
-./vocheader.csh | tee -a ${LOG}
+
+#
+# for testing purposes only
+./loadtestcellline.py
+
+#
+# not needed anymore; headers are loaded via VOCLOAD
+#./vocheader.csh | tee -a ${LOG}
+#
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -167,8 +176,6 @@ exec MGI_Table_Column_Cleanup
 go
 
 EOSQL
-
-./loadtestcellline.py
 
 #./mgiradar.csh | tee -a ${LOG}
 

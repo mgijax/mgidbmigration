@@ -42,6 +42,7 @@ ${newrdrdbschema}/key/QC_cDNALoad_MGI_IMAGE_Discrep_create.object | tee -a ${LOG
 #
 # Use new schema product to create new table
 #
+${newrdrdbschema}/table/APP_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/table/DP_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/table/WRK_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/table/GB_EST_Reload_create.object | tee -a ${LOG}
@@ -64,6 +65,7 @@ ${newrdrdbschema}/table/QC_SEQ_Merged_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_SEQ_OldRef_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
 
+${newrdrdbschema}/index/APP_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/index/DP_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/index/WRK_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/index/GB_EST_Reload_create.object | tee -a ${LOG}
@@ -105,6 +107,8 @@ ${newrdrdbschema}/key/QC_MS_NameConflict_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_SEQ_Merged_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_SEQ_OldRef_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
+
+${newrdrdbschema}/procedure/APP_create.logical | tee -a ${LOG}
 
 #
 # update APP_JobStream keys

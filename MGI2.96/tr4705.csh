@@ -43,6 +43,14 @@ ${newmgddbschema}/view/MRK_History_Ref_View_drop.object >> $LOG
 ${newmgddbschema}/view/MRK_History_Ref_View_create.object >> $LOG
 ${newmgddbschema}/view/MRK_History_View_drop.object >> $LOG
 ${newmgddbschema}/view/MRK_History_View_create.object >> $LOG
+${newmgddbschema}/trigger/BIB_Refs_drop.object >> $LOG
+${newmgddbschema}/trigger/BIB_Refs_create.object >> $LOG
+${newmgddbschema}/trigger/MRK_Event_drop.object >> $LOG
+${newmgddbschema}/trigger/MRK_Event_create.object >> $LOG
+${newmgddbschema}/trigger/MRK_EventReason_drop.object >> $LOG
+${newmgddbschema}/trigger/MRK_EventReason_create.object >> $LOG
+${newmgddbschema}/trigger/MRK_Marker_drop.object >> $LOG
+${newmgddbschema}/trigger/MRK_Marker_create.object >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 

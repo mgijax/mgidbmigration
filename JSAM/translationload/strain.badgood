@@ -813,7 +813,7 @@
 	Hej	C3H/HeJ
 	ssp. domesticus, C3H/HeJ	C3H/HeJ
 	C3H-mh2J	C3H/HeJ-Ap3d<mh-2J>/J
-	C3H/HeJ-lpr/lpr	C3H/HeJ-Tnfrsf6<lpr >
+	C3H/HeJ-lpr/lpr	C3H/HeJ-Tnfrsf6<lpr>
 	C3H/HeJ-gld/gld	C3H/HeJ-Tnfsf6<gld>/J
 	C3H HeN	C3H/HeN
 	C3H/Hen	C3H/HeN
@@ -1066,7 +1066,7 @@
 	c57Black6 x CBA	C57BL/6 x CBA
 	domesticus, C57BL/6 x Cba	C57BL/6 x CBA
 	C57BL/6 x CBA; C57BL/6J	C57BL/6 x CBA and C57BL/6J
-	B6 /CBA [C57Blk6xCBA]	C57BL/6 x CBA/]
+	B6 /CBA [C57Blk6xCBA]	C57BL/6 x CBA/J
 	C57BL/6 x CBA/J	C57BL/6 x CBA/J
 	C57BL/6xCBA/J	C57BL/6 x CBA/J
 	C57BL/6 x CBA/N	C57BL/6 x CBA/N
@@ -1742,7 +1742,7 @@
 	PANSEV08	PANCEVO
 	PANCEVO/Ei	PANCEVO/EiJ
 	Parkes (outbred)	Parkes
-	PERA/Ei	PERA/Ei J
+	PERA/Ei	PERA/EiJ
 	PERA/Rk	PERA/Rk
 	PERC /Ei	PERC/EiJ
 	PERC/Ei	PERC/EiJ
@@ -1869,7 +1869,7 @@
 	c-ch /c-ch	STOCK Tyr<c-h>
 	c-ch/c-ch	STOCK Tyr<c-h>
 	chinchilla	STOCK Tyr<c-h>
-	SCID	STOCK-Prkdc<scid>
+	SCID	STOCK Prkdc<scid>
 	STS	STS
 	STU	STU
 	STU, B10.D2, B10.MOL/K	STU and B10.D2 and B10.MOL/K

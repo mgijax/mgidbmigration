@@ -76,9 +76,9 @@ for r in results:
 	str(key) + TAB + \
 	str(r['_Term_key']) + TAB + \
 	str(sequenceNum) + TAB + \
+	"1000" + TAB + "1000" + TAB + \
 	approvedBy + TAB + \
 	approvedDate + TAB + \
-	"1000" + TAB + "1000" + TAB + \
 	loaddate + TAB + loaddate + CRT)
 
     annotHeaderKey = annotHeaderKey + 1

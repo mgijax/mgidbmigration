@@ -109,7 +109,7 @@ go
 declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
-insert into MGI_NoteType values(@noteTypeKey, 13, 'Boolean Type 1', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey, 13, 'Note Type 1', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 /* notes */
@@ -286,8 +286,8 @@ insert into MGI_SynonymType values(@synTypeKey, 13, null, 'exact', null, 0, ${CR
 insert into MGI_SynonymType values(@synTypeKey + 1, 13, null, 'related', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 insert into MGI_SynonymType values(@synTypeKey + 2, 13, null, 'broad', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 insert into MGI_SynonymType values(@synTypeKey + 3, 13, null, 'narrow', null, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into MGI_SynonymType values(@synTypeKey + 4, 13, null, 'Type 1', 'to be displayed on Allele Detail page, EI', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into MGI_SynonymType values(@synTypeKey + 5, 13, null, 'Type 2', 'to be displayed on', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 4, 13, null, 'Synonym Type 1', 'to be displayed on Allele Detail page, EI', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_SynonymType values(@synTypeKey + 5, 13, null, 'Synonym Type 2', 'to be displayed on', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select s._Term_key, s.synonym, synTypeKey = @synTypeKey, seq = identity(5)
 into #syns

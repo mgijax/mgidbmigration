@@ -80,7 +80,5 @@ ${newmgddbschema}/index/ALL_Allele_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/ALL_Label_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/ALL_CellLine_create.object | tee -a ${LOG}
 
-${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
-
 date >> ${LOG}
 

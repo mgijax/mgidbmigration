@@ -154,6 +154,8 @@ EOSQL
 
 ./combination.csh
 
+${ALLLABELLOAD}/alllabel.sh
+
 #./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}

@@ -22,5 +22,6 @@ ${TRANSLOAD}/tissue.csh $DBSERVER $DBNAME tissue.badgood full >>& $LOG
 ${TRANSLOAD}/cellline.csh $DBSERVER $DBNAME cellline.badgood full >>& $LOG
 ${TRANSLOAD}/library.csh $DBSERVER $DBNAME library.badgood full >>& $LOG
 ${TRANSLOAD}/strain.csh $DBSERVER $DBNAME strain.badgood full >>& $LOG
+${TRANSLOAD}/orgtostrain.csh $DBSERVER $DBNAME orgtostrain.badgood full >>& $LOG
 
 date >> $LOG

@@ -48,7 +48,7 @@ $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-0
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
 echo "Install Developer's Permissions..." >>$LOG
-${newmgddbperms}/developers/perm_grant.csh
+${newmgddbperms}/developers/perm_grant.csh >> $LOG
 date >> $LOG
 
 echo "Reconfigure Nomen..." >> $LOG

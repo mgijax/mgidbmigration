@@ -1,0 +1,16 @@
+pheno:create/modify pending			create/modify allele with Pending status	
+pheno:create/modify pending if owner			create/modify allele with Pending status if owner	
+pheno:create/modify reserved			create/modify allele with Reserved status	
+pheno:create/modify approved			create/modify allele with Approved status	
+pheno:create/modify approved if owner			create/modify allele with Approved status if owner	
+pheno:change pending to approved			change Pending status to Approved	
+pheno:change pending to approved if owner			change Pending status to Approved if owner	
+pheno:change pending/deleted to reserved			change Pending or Deleted status to Reserved	
+pheno:change pending/deleted to reserved if owner			change Pending or Deleted status to Reserved if owner	
+pheno:change pending to deleted			change Pending status to Deleted	
+pheno:change pending to deleted if owner			change Pending status to Deleted if owner	
+pheno:change reserved to deleted			change Reserved status to Deleted	
+pheno:change reserved to deleted if owner			change Reserved status to Deleted if owner	
+pheno:change deleted/reserved to pending/approved			change Deleted or Reserved status to Pending or Approved	
+pheno:change approved to deleted/reserved/pending			change Approved status to Deleted, Reserved or Pending	
+pheno:use Delete button			use Delete button to remove an Allele record	

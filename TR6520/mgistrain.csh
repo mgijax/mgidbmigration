@@ -24,6 +24,7 @@ EOSQL
 
 ${newmgddbschema}/table/PRB_Strain_Genotype_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/PRB_Strain_Genotype_create.object | tee -a ${LOG}
+${newmgddbschema}/default/PRB_Strain_Genotype_bind.object | tee -a ${LOG}
 
 ${newmgddbschema}/key/PRB_Strain_Genotype_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/GXD_Genotype_drop.object | tee -a ${LOG}
@@ -39,6 +40,7 @@ ${newmgddbschema}/view/MGI_Reference_Strain_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_RefType_Strain_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/PRB_Strain_Genotype_View_create.object | tee -a ${LOG}
 
+${newmgddbperms}/curatorial/table/PRB_Strain_Genotype_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/PRB_Strain_Genotype_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_Reference_Strain_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_RefType_Strain_View_grant.object | tee -a ${LOG}

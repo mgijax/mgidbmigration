@@ -12,5 +12,7 @@ setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema-tr6520
 setenv newmgddbperms ${newmgddb}/mgddbperms-tr6520
 
+setenv SCHEMA_TAG       mgddbschema-3-1-1
+
 source ${newmgddbschema}/Configuration
 

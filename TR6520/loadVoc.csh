@@ -14,5 +14,7 @@ date >> ${LOG}
 echo "Vocabulary Migration..." | tee -a ${LOG}
  
 ${VOCLOAD} `pwd`/qualifier.config >>& ${LOG}
+${VOCLOAD} `pwd`/role.config >>& ${LOG}
+${VOCLOAD} `pwd`/task.config >>& ${LOG}
 
 date >> ${LOG}

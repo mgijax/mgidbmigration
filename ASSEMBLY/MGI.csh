@@ -4,7 +4,7 @@
 # Migration for Assembly Coordinates
 #
 # Defaults:       6
-# Procedures:   115
+# Procedures:   113
 # Rules:          5
 # Triggers:     158
 # User Tables:  192
@@ -21,7 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_dev1db.csh ${DBNAME} mgd_3.01.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 date | tee -a  ${LOG}
 
@@ -45,6 +45,18 @@ use ${DBNAME}
 go
 
 exec SEQ_deriveRepAll
+go
+
+drop procedure MRK_breakpointSplit
+go
+
+drop procedure PRB_mergeStandardTissue
+go
+
+drop procedure PRB_mergeTissue
+go
+
+exec MGI_Table_Column_Cleanup
 go
 
 end

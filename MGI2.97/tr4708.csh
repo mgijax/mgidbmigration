@@ -46,6 +46,7 @@ update MRK_Nomen
 set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1),
     _Marker_Status_key = 7
 where symbol like '%-pending'
+and _Marker_Status_key = 5
 go
 
 checkpoint

@@ -112,14 +112,14 @@ for g in genotypes.keys():
                 if allele1WildType == 1:
 	            topType2 = allele1
                 else:
-	            topType2 = '\Allele(' + mgiID1 + ',' + allele1 + ')'
+	            topType2 = '\Allele(' + mgiID1 + ',' + allele1 + ',)'
 
             if alleleState in ['Homozygous', 'Heterozygous']:
                 bottomType1 = allele2
                 if allele2WildType == 1:
 	            bottomType2 = allele2
                 else:
-	            bottomType2 = '\Allele(' + mgiID2 + ',' + allele2 + ')'
+	            bottomType2 = '\Allele(' + mgiID2 + ',' + allele2 + ',)'
 
             if alleleState == 'Hemizygous X-linked':
                 bottomType1 = 'Y'
@@ -166,7 +166,7 @@ for g in genotypes.keys():
 	        topType2 = topType2 + ' '
 
             topType1 = topType1 + allele1
-            topType2 = topType2 + '\Allele(' + mgiID1 + ',' + allele1 + ')'
+            topType2 = topType2 + '\Allele(' + mgiID1 + ',' + allele1 + ',)'
 
             foundTop = foundTop + 1
 
@@ -183,7 +183,7 @@ for g in genotypes.keys():
             if allele2WildType == 1:
 	        bottomType2 = bottomType2 + allele1
             else:
-	        bottomType2 = bottomType2 + '\Allele(' + mgiID1 + ',' + allele1 + ')'
+	        bottomType2 = bottomType2 + '\Allele(' + mgiID1 + ',' + allele1 + ',)'
 
             foundBottom = foundBottom + 1
 

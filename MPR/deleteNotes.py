@@ -51,8 +51,8 @@ for k in notes.keys():
 
     # we want to copy up the i and from j to the end of the notes
 
-    n1 = allNotes[:i]
-    n2 = allNotes[j+(len(endTag)):]
+    n1 = resgsub.gsub('"', '""', allNotes[:i])
+    n2 = resgsub.gsub('"', '""', allNotes[j+(len(endTag)):])
     newNote = n1 + string.lstrip(n2)
 #    print 'new note:' + newNote
 
@@ -61,12 +61,12 @@ for k in notes.keys():
     cmds = []
     s = 1
     while len(newNote) > 255:
-	cmds.append("insert into ALL_Note values(%s,%s,%s,0,'%s',getdate(),getdate())" % (k, noteTypeKey, s, newNote[:255]))
+	cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, newNote[:255]))
         newNote = newNote[255:]
         s = s + 1
 
     if len(newNote) > 0:
-        cmds.append("insert into ALL_Note values(%s,%s,%s,0,'%s',getdate(),getdate())" % (k, noteTypeKey, s, newNote))
+        cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, newNote))
 
     db.sql('delete from ALL_Note where _Allele_key = %s' % (k), None)
     if len(cmds) > 0:

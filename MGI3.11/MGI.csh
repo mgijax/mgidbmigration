@@ -47,6 +47,12 @@ go
 drop table MRK_Other
 go
 
+drop procedure MRK_insertOther
+go
+
+drop view MRK_Other_View
+go
+
 end
 
 EOSQL

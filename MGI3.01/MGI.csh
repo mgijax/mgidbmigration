@@ -84,4 +84,9 @@ end
 
 EOSQL
 
+${newmgddbperms}/curatorial/procedure/perm_grant.csh | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/perm_grant.csh | tee -a ${LOG}
+${newmgddbperms}/public/table/perm_grant.csh | tee -a ${LOG}
+${newmgddbperms}/public/view/perm_grant.csh | tee -a ${LOG}
+
 date | tee -a  ${LOG}

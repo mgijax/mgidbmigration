@@ -18,10 +18,10 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
-alter table MRK_Marker modify symbol varchar(50) null
+alter table MRK_Marker modify symbol varchar(50) not null
 go
 
-alter table NOM_Marker modify symbol varchar(50) null
+alter table NOM_Marker modify symbol varchar(50) not null
 go
 
 alter table NOM_Marker modify humanSymbol varchar(50) null

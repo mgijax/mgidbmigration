@@ -41,6 +41,9 @@ from #syns
 
 go
 
+drop table #syns
+go
+
 /* migrate NOM_Synonym into MGI_Synonym, MGI_SynonymType */
 
 declare @synTypeKey integer

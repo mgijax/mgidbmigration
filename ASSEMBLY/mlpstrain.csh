@@ -52,7 +52,7 @@ and v.name = 'Strain Species'
 go
 
 declare @qKey integer
-select @qKey = _Term_key from VOC_Term_StrainAllele_View where term = 'nomenclature'
+select @qKey = _Term_key from VOC_Term where term = 'nomenclature'
 insert into PRB_Strain_Marker
 select o._StrainMarker_key, o._Strain_key, o._Marker_key, o._Allele_key, @qKey, 1086, 1086, o.creation_date, o.modification_date
 from PRB_Strain_Marker_Old o

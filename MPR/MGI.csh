@@ -162,6 +162,9 @@ go
 drop table GXD_AlleleGenotype_Old
 go
 
+delete from MGI_NoteChunk where note = ''
+go
+
 select getdate()
 exec VOC_processAnnotHeaderAll 5
 select getdate()

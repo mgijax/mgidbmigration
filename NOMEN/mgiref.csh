@@ -35,10 +35,7 @@ go
 insert into MGI_RefAssocType values(1003, 21, 'Primary', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
-insert into MGI_RefAssocType values(1004, 21, 'Broadcast to MGD', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-go
-
-insert into MGI_RefAssocType values(1005, 21, 'Do Not Broadcast to MGD', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(1004, 21, 'Related', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
 insert into MGI_RefAssocType values(1006, 19, 'Provider', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())

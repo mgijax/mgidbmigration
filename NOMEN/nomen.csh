@@ -129,11 +129,7 @@ where isPrimary = 1
 union
 select _Nomen_key, _Refs_key, type = 1004, seq = identity(5)
 from ${NOMEN}..MRK_Nomen_Reference
-where isPrimary = 0 and broadcastToMGD = 1
-union
-select _Nomen_key, _Refs_key, type = 1005, seq = identity(5)
-from ${NOMEN}..MRK_Nomen_Reference
-where isPrimary = 0 and broadcastToMGD = 0
+where isPrimary = 0
 go
 
 declare @maxKey integer

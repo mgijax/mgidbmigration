@@ -172,10 +172,10 @@ EOSQL
 ./loadVoc.csh $DBSERVER $DBNAME >>& $LOG
 
 # Re-run RI Summary load
-/usr/local/mgi/dbutils/risummaryload/risummary.sh >>& LOG
+/usr/local/mgi/dbutils/risummaryload/risummary.sh >>& $LOG
 
 # Re-run MRK_Reference load
-/usr/local/mgi/dbutils/mrkrefload/mrkref.sh >>& LOG
+/usr/local/mgi/dbutils/mrkrefload/mrkref.sh >>& $LOG
 
 date >> $LOG
 

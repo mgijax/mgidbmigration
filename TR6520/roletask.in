@@ -38,27 +38,7 @@ Pheno:Tier 5 (guru)	pheno:edit nomen data approved
 Pheno:Tier 5 (guru)	pheno:edit nomen data deleted
 Pheno:Tier 5 (guru)	pheno:edit marker clip
 Nomenclature Merges/Renames	nomen:merges, renames
-Nomenclature Merges/Renames	pheno:create/modify references
-Nomenclature Merges/Renames	pheno:create/modify references/deleted
-Nomenclature Merges/Renames	pheno:create/modify pending
-Nomenclature Merges/Renames	pheno:create/modify reserved
-Nomenclature Merges/Renames	pheno:create/modify approved
-Nomenclature Merges/Renames	pheno:edit nomen data pending
-Nomenclature Merges/Renames	pheno:edit nomen data reserved
-Nomenclature Merges/Renames	pheno:edit nomen data approved
-Nomenclature Merges/Renames	pheno:edit nomen data deleted
-Nomenclature Merges/Renames	pheno:edit marker clip
 Strain Merges	strain:merges
-Strain Merges	pheno:create/modify references
-Strain Merges	pheno:create/modify references/deleted
-Strain Merges	pheno:create/modify pending
-Strain Merges	pheno:create/modify reserved
-Strain Merges	pheno:create/modify approved
-Strain Merges	pheno:edit nomen data pending
-Strain Merges	pheno:edit nomen data reserved
-Strain Merges	pheno:edit nomen data approved
-Strain Merges	pheno:edit nomen data deleted
-Strain Merges	pheno:edit marker clip
 User Permissions	user:roles
 Vocabulary Annotations	vocab:annotations
 Genotype	genotypes (all)

@@ -5,7 +5,7 @@
 #
 # updated:  
 # Defaults:	  6
-# Procedures:	110
+# Procedures:	111
 # Rules:	  5
 # Triggers:	155
 # User Tables:	190
@@ -62,12 +62,12 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 # need to start with a MGI 2.98-Nomen database
 #
 # load an empty database and fill it with current MGI 2.98 data
-./loadData.csh
+#./loadData.csh
 
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-#load_dev1db.csh ${DBNAME} dev1mgd.backup
+load_dev1db.csh ${DBNAME} dev1mgd.backup
 
 date | tee -a  ${LOG}
 
@@ -113,6 +113,9 @@ cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 use ${DBNAME}
 go
 
+drop procedure GEN_rowcount
+go
+
 drop table ACC_Accession_Old
 go
 
@@ -155,8 +158,6 @@ go
 quit
  
 EOSQL
-
-${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a ${LOG}
 
 ./loadTrans.csh | tee -a ${LOG}
 ./loadSet.csh | tee -a ${LOG}

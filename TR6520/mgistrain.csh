@@ -39,12 +39,14 @@ ${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_Reference_Strain_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_RefType_Strain_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/PRB_Strain_Genotype_View_create.object | tee -a ${LOG}
+${newmgddbschema}/view/VOC_Term_StrainGenoQual_View_create.object | tee -a ${LOG}
 
 ${newmgddbperms}/curatorial/table/PRB_Strain_Genotype_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/PRB_Strain_Genotype_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_Reference_Strain_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_RefType_Strain_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/PRB_Strain_Genotype_View_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/VOC_Term_StrainGenoQual_View_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

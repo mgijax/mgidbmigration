@@ -9,5 +9,10 @@ setenv newmgddb /usr/local/mgi/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
+setenv newnomendb /usr/local/mgi/dbutils/nomen
+setenv newnomendbschema ${newnomendb}/nomendbschema
+setenv newnomendbperms ${newnomendb}/nomendbperms
+setenv NOMEN nomen_release
+
 source ${newmgddbschema}/Configuration
 

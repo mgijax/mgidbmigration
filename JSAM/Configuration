@@ -1,7 +1,5 @@
 #!/bin/csh -f
 
-#setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
-setenv DBUTILITIESDIR	/home/lec/db/mgidbutilities
 #setenv TRANSLOAD        /usr/local/mgi/3.0/dataload/translationload
 setenv TRANSLOAD        /home/lec/loads/translationload
 #setenv SETLOAD		/usr/local/mgi/3.0/dataload/setload
@@ -15,21 +13,19 @@ setenv MRKREFLOAD	/home/lec/loads/mrkrefload-jsam
 # the vocabularies BEFORE converting to the new schema
 #setenv VOCLOAD          /usr/local/mgi/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv VOCLOAD          /home/lec/loads/vocload-trunk/runSimpleFullLoadNoArchive.sh
-setenv PYTHONPATH       ${PYTHONPATH}:${VOCLOAD}
 
 # existing (MGI 2.98) schema configured to talk to an MGI 2.98 database
-setenv existingmgddbschema /usr/local/mgi/dbutils/mgd_release/mgddbschema
+#setenv existingmgddbschema /usr/local/mgi/dbutils/mgd_release/mgddbschema
+setenv existingmgddbschema /home/lec/db/mgddbschema
 
 # existing (MGI 2.98) schema configured to talk to the JSAM database
 #setenv oldmgddb /usr/local/mgi/dbutils/mgd
-#setenv oldmgddb /home/lec/db/jsam2.98
-setenv oldmgddb /home/lec/db/jsam2/jsam2.98
+setenv oldmgddb /home/lec/db/jsam2.98
 setenv oldmgddbschema ${oldmgddb}/mgddbschema
 
 # new (JSAM) schema configured to talk to the JSAM database
 #setenv newmgddb /usr/local/mgi/dbutils/mgd
-#setenv newmgddb /home/lec/db/jsam
-setenv newmgddb /home/lec/db/jsam2
+setenv newmgddb /home/lec/db/jsam
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 

@@ -27,19 +27,19 @@ DEFS_FILE = ${GO_DIR}/GO.defs
 # DAGs which are part of the vocabulary (for complex vocabularies)
 
 [
-	NAME = molecular function
+	NAME = Molecular Function
 	ABBREV = F
 	ONTOLOGY_FILE = ${GO_DIR}/function.ontology.txt
 	LOAD_FILE = dag.f
 ]
 [
-	NAME = biological process
+	NAME = Biological Process
 	ABBREV = P
 	ONTOLOGY_FILE = ${GO_DIR}/process.ontology.txt
 	LOAD_FILE = dag.p
 ]
 [
-	NAME = cellular component
+	NAME = Cellular Component
 	ABBREV = C
 	ONTOLOGY_FILE = ${GO_DIR}/component.ontology.txt
 	LOAD_FILE = dag.c

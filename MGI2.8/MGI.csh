@@ -149,9 +149,6 @@ date >> $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
 
-# Load VOC
-./loadVoc.csh $DBSERVER $DBNAME >>& $LOG
-
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
 use ${DBNAME}
@@ -167,8 +164,11 @@ quit
  
 EOSQL
 
+# Load Vocabularies and Annotations
+./loadVoc.csh $DBSERVER $DBNAME >>& $LOG
+
 # Re-run MRK_Reference load
-/usr/local/mgi/dataload/mrkrefload/mrkref.sh
+/usr/local/mgi/dataload/mrkrefload/mrkref.sh >>& LOG
 
 date >> $LOG
 

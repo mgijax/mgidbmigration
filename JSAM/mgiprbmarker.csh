@@ -8,6 +8,7 @@
 #	- our strategy is to use other marker/reference relationships by
 #	- building a marker/reference cache
 #	- and by checking RFLP/GXD relationships as well
+#	- 11 records remain where the probe has no reference
 #
 # 11/20/2003
 #	- sent Richard email
@@ -321,13 +322,12 @@ go
 /* print all prb_marker records which still cannot be migrated */
 
 select distinct p.name, m.symbol, pm.relationship
-from PRB_Marker_Old pm, MRK_Marker m, PRB_Probe p, PRB_Reference r
+from PRB_Marker_Old pm, MRK_Marker m, PRB_Probe p
 where not exists (select 1 from PRB_Marker pmnew
 where pm._Marker_key = pmnew._Marker_key
 and pm._Probe_key = pmnew._Probe_key)
 and pm._Marker_key = m._Marker_key
 and pm._Probe_key = p._Probe_key
-and p._Probe_key = r._Probe_key
 order by m.symbol
 go
 

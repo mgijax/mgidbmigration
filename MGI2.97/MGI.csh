@@ -58,6 +58,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 use $DBNAME
 go
 
+drop table ACC_MGIType_Old
+go
+
 drop table GXD_Index_Old
 go
 
@@ -68,6 +71,11 @@ drop table GXD_Structure_Old
 go
 
 drop table GXD_Assay_Old
+go
+
+/* for testing only! */
+
+delete from GXD_Structure where _Structure_key = 14325
 go
 
 end

@@ -47,23 +47,24 @@ touch $LOG
  
 date | tee -a  $LOG
  
-#
-# For integration testing purposes...comment out before production load
-#
+# old way
+#${DBUTILITIESDIR}/bin/dev/load_devdb.csh ${DBNAME} mgd_release.backup mgd_dbo | tee -a $LOG
+#date | tee -a  $LOG
 
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd_release.backup mgd_dbo | tee -a $LOG
-date | tee -a  $LOG
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen_release.backup mgd_dbo | tee -a $LOG
+# new way
+#./loadData.csh
+${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
 date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG
-$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME ${PUBLIC_VERSION} | tee -a $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME ${SCHEMA_TAG} | tee -a $LOG
-$DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME | tee -a $LOG
+${DBUTILITIESDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a $LOG
+${DBUTILITIESDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a $LOG
+${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 
 echo "Reconfigure Nomen..." | tee -a  $LOG
-#$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} | tee -a $LOG
+#${DBUTILITIESDIR}/bin/dev/reconfig_nomen.csh ${newnomendb} | tee -a $LOG
 date | tee -a  $LOG
+exit 0
 
 # order is important!
 echo "Data Migration..." | tee -a  $LOG
@@ -94,7 +95,7 @@ ${newmgddbschema}/default/default_unbind.csh | tee -a $LOG
 ${newmgddbschema}/default/default_bind.csh | tee -a $LOG
 ${newmgddbschema}/key/key_drop.csh | tee -a $LOG
 ${newmgddbschema}/key/key_create.csh | tee -a $LOG
-$DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
+${DBUTILITIESDIR}/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." | tee -a $LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a  $LOG

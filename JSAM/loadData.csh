@@ -73,6 +73,10 @@ echo 'Indexing tables...' | tee -a ${LOG}
 date | tee -a ${LOG}
 ${oldmgddbschema}/index/index_create.csh | tee -a ${LOG}
 
+echo 'Creating Views...' | tee -a ${LOG}
+date | tee -a ${LOG}
+${oldmgddbschema}/view/view_create.csh | tee -a ${LOG}
+
 echo 'Making a binary dump...' | tee -a ${LOG}
 ./dump_dev2db.csh dev2mgd.backup
 

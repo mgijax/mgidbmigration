@@ -100,6 +100,20 @@ update ALL_Type set sequenceNum = 16 where alleleType = 'Not Applicable'
 update ALL_Type set sequenceNum = 17 where alleleType = 'Not Specified'
 go
 
+end
+
+EOSQL
+
+${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load | tee -a ${LOG}
+
+./mgiallele.py | tee -a ${LOG}
+cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
+
+use ${DBNAME}
+go
+
 /* report any stragglers */
 
 select symbol from ALL_Allele where _Allele_Type_key in (2,3)
@@ -115,11 +129,6 @@ go
 end
 
 EOSQL
-
-${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load | tee -a ${LOG}
-
-./mgiallele.py | tee -a ${LOG}
-cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql | tee -a ${LOG}
 
 date >> ${LOG}
 

@@ -1,3 +1,11 @@
+TAG: mgidbmigration-8-0-14
+DATE: 03/05/2004
+STAFF: lec
+RELEASE: A
+CHANGES: 
+1) JSAM/translationload/library.badgood
+2) setload/named_source.txt (removed one duplicate)
+
 TAG: mgidbmigration-8-0-13
 DATE: 02/26/2004
 STAFF: lec

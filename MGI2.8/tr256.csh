@@ -67,30 +67,6 @@ and substring(r.origin, 1, charindex(" x", r.origin) - 1) = s1.strain
 and substring(r.origin, charindex("x ", r.origin) + 2, char_length(r.origin)) = s2.strain
 go
 
-insert into #strains
-select r._RISet_key,
-strain1 = "129S1/Sv-Kitl<Sl-J> p<+> Tyr<+>",
-strain2 = "A/HeJ",
-_Strain_key_1 = s1._Strain_key,
-_Strain_key_2 = s2._Strain_key
-from RI_RISet_Old r, PRB_Strain s1, PRB_Strain s2
-where r.designation = "9XA"
-and "129S1/Sv-Kitl<Sl-J> p<+> Tyr<+>" = s1.strain
-and "A/HeJ" = s2.strain
-go
-
-insert into #strains
-select r._RISet_key,
-strain1 = "129S2/SvPas-Kitl<Sl-J> p<+> Tyr<+>",
-strain2 = "C57BL/6JPas",
-_Strain_key_1 = s1._Strain_key,
-_Strain_key_2 = s2._Strain_key
-from RI_RISet_Old r, PRB_Strain s1, PRB_Strain s2
-where r.designation = "129XB"
-and "129S2/SvPas-Kitl<Sl-J> p<+> Tyr<+>" = s1.strain
-and "C57BL/6JPas" = s2.strain
-go
-
 insert into RI_RISet
 (_RISet_key, _Strain_key_1, _Strain_key_2, designation, abbrev1, abbrev2, RI_IdList, creation_date, modification_date)
 select r._RISet_key, s._Strain_key_1, s._Strain_key_2, r.designation, r.abbrev1, r.abbrev2,

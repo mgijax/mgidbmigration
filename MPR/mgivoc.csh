@@ -94,6 +94,16 @@ select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 insert into MGI_NoteType values(@noteTypeKey, 25, 'Background Sensitivity', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
+/* genotype note types */
+
+declare @noteTypeKey integer
+select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
+
+insert into MGI_NoteType values(@noteTypeKey, 12, 'Combination Type 1', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey + 1, 12, 'Combination Type 2', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey + 2, 12, 'Combination Type 3', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
 /* notes */
 
 declare @noteTypeKey integer

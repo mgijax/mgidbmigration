@@ -23,6 +23,7 @@
 	mouse, laboratory	Mus musculus molossinus	jsam_load
 	mouse, laboratory	Mus musculus musculus	jsam_load
 	mouse, laboratory	Mus musculus praetextus	jsam_load
+	mouse, laboratory	Mus musculus praetextus.	jsam_load
 	mouse, laboratory	Mus musculus wagneri	jsam_load
 	mouse, laboratory	Mus pahari	jsam_load
 	mouse, laboratory	Mus platythrix	jsam_load

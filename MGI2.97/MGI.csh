@@ -6,7 +6,7 @@
 # procedures: 84
 # triggers:  140
 # tables:    176
-# views:     147
+# views:     146
 #
 
 cd `dirname $0` && source ./Configuration
@@ -40,6 +40,8 @@ loadVoc.csh | tee -a $LOG
 tr2459.csh | tee -a $LOG
 tr3710.csh | tee -a $LOG
 tr3432.csh | tee -a $LOG
+tr4708.csh | tee -a $LOG
+wksrosetta.csh | tee -a $LOG
 
 # reconfiguration
 ${newmgddbschema}/key/key_drop.csh | tee -a $LOG

@@ -72,6 +72,13 @@ select o._CellLine_key, o.cellLine, o._Strain_key, null, 0, ${CREATEDBY}, ${CREA
 from ALL_CellLine_Old o
 go
 
+declare @mgiKey integer
+select @mgiKey = max(_MGIType_key + 1) from ACC_MGIType
+
+insert into ACC_MGIType values(@mgiKey, 'ES Cell Line', 'ALL_CellLine', '_CellLine_key', null, null, 
+	${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
 end
 
 EOSQL

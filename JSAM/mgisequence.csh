@@ -30,6 +30,7 @@ quit
 
 EOSQL
 
+${newmgddbschema}/default/SEQ_bind.logical >> $LOG
 ${newmgddbschema}/index/SEQ_create.logical >> $LOG
 
 date >> $LOG

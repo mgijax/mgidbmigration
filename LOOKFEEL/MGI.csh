@@ -38,6 +38,7 @@ date >> $LOG
 #
 
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+${newmgddbperms}/developers/perm_grant.csh
 date >> $LOG
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
 date >> $LOG

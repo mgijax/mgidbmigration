@@ -20,6 +20,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 use $DBNAME
 go
 
+insert into MRK_Types values (11, 'microRNA', getdate(), getdate())
+go
+
 insert into MRK_Status values (3, 'interim', getdate(), getdate())
 go
 
@@ -31,6 +34,24 @@ set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1), _Marker_St
 where _Species_key = 1
 and _Marker_Status_key = 1
 and symbol like '%-pending'
+go
+
+update MRK_Marker
+set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1)
+where _Species_key = 1
+and _Marker_Status_key = 2
+and symbol like '%-pending'
+go
+
+update MRK_Marker
+set name = substring(name, 1, charindex("-pending", name) - 1)
+where _Species_key = 1
+and name like '%-pending'
+go
+
+update MRK_Other
+set name = substring(name, 1, charindex("-pending", name) - 1)
+where name like '%-pending'
 go
 
 update ALL_Allele
@@ -53,6 +74,11 @@ set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1),
     _Marker_Status_key = 7
 where symbol like '%-pending'
 and _Marker_Status_key = 5
+go
+
+update MRK_Nomen
+set name = substring(name, 1, charindex("-pending", name) - 1)
+where name like '%-pending'
 go
 
 checkpoint

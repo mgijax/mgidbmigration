@@ -14,8 +14,10 @@ date >> $LOG
  
 ./tr3516.py $DBSERVER $DBNAME tr3516.data/PhenoSentences1.tab >>& $LOG
 cat $DBPASSWORDFILE | bcp $DBNAME..MRK_Notes in MRK_Notes.bcp -c -t"|" -S$DBSERVER -U$DBUSER >>& $LOG
+mv MRK_Notes.bcp MRK_Notes1.bcp
 
 ./tr3516.py $DBSERVER $DBNAME tr3516.data/PhenoSentences2.tab >>& $LOG
 cat $DBPASSWORDFILE | bcp $DBNAME..MRK_Notes in MRK_Notes.bcp -c -t"|" -S$DBSERVER -U$DBUSER >>& $LOG
+mv MRK_Notes.bcp MRK_Notes2.bcp
 
 date >> $LOG

@@ -13,6 +13,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

@@ -86,7 +86,7 @@ go
 /* background sensitivity note type */
 
 declare @noteTypeKey integer
-select @noteTypeKey = max(_NoteType_key) from MGI_NoteType
+select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
 insert into MGI_NoteType values(@noteTypeKey, 25, 'Background Sensitivity', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
@@ -94,7 +94,7 @@ go
 /* notes */
 
 declare @noteTypeKey integer
-select @noteTypeKey = max(_NoteType_key) from MGI_NoteType
+select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
 insert into MGI_NoteType values(@noteTypeKey, 11, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 insert into MGI_NoteType values(@noteTypeKey + 1, 11, 'Molecular', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
@@ -128,15 +128,15 @@ go
 /* references */
 
 declare @reftypeKey integer
-select @reftypeKey = max(_RefAssocType_key) from MGI_RefAssocType
+select @reftypeKey = max(_RefAssocType_key) + 1 from MGI_RefAssocType
 
 insert into MGI_RefAssocType values(@refTypeKey, 11, 'Original', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Molecular', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Indexed', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Not Used', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Used-PS', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Used-CUR', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-insert into MGI_RefAssocType values(@refTypeKey, 11, 'Used-FC', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 1, 11, 'Molecular', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 2, 11, 'Indexed', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 3, 11, 'Not Used', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 4, 11, 'Used-PS', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 5, 11, 'Used-CUR', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
+insert into MGI_RefAssocType values(@refTypeKey + 6, 11, 'Used-FC', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 
 select distinct r._Allele_key, r._Refs_key, refTypeKey = r._RefsType_key, seq = identity(5)
@@ -161,7 +161,7 @@ go
 /* synonyms */
 
 declare @syntypeKey integer
-select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
 insert into MGI_SynonymType values(@synTypeKey, 11, 'General', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 
@@ -187,7 +187,7 @@ go
 /* voc synonyms */
 
 declare @syntypeKey integer
-select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
 insert into MGI_SynonymType values(@synTypeKey, 13, 'General (GO)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 
@@ -211,7 +211,7 @@ dump tran $DBNAME with truncate_only
 go
 
 declare @syntypeKey integer
-select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
 insert into MGI_SynonymType values(@synTypeKey, 13, 'General (MP)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 
@@ -235,7 +235,7 @@ dump tran $DBNAME with truncate_only
 go
 
 declare @syntypeKey integer
-select @syntypeKey = max(_SynonymType_key) from MGI_SynonymType
+select @syntypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 
 insert into MGI_SynonymType values(@synTypeKey, 13, 'General (AD)', null, 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 

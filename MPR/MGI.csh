@@ -6,8 +6,8 @@
 # Defaults:       6
 # Procedures:   114
 # Rules:          5
-# Triggers:     163
-# User Tables:  181
+# Triggers:     164
+# User Tables:  183
 # Views:        219
 
 cd `dirname $0` && source ./Configuration
@@ -115,6 +115,9 @@ drop table ALL_CellLine_Old
 go
 
 drop table GXD_AllelePair_Old
+go
+
+drop table GXD_AlleleGenotype_Old
 go
 
 EOSQL

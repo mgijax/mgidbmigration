@@ -17,7 +17,6 @@ ${newmgddbschema}/table/MGI_VocAssociation_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MGI_VocAssociation_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MGI_VocAssociation_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/MGI_VocAssociation_bind.object | tee -a ${LOG}
-${newmgddbschema}/trigger/MGI_VocAssociation_create.object | tee -a ${LOG}
 
 ${newmgddbschema}/table/MGI_VocAssociationType_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MGI_VocAssociationType_create.object | tee -a ${LOG}

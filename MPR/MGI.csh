@@ -161,6 +161,7 @@ EOSQL
 
 ./allelecombination.csh
 ./genotypeorder.csh
+./mutantescell.csh
 
 ${ALLLABELLOAD}/alllabel.sh
 

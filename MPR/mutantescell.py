@@ -6,6 +6,7 @@ import db
 import accessionlib
 import reportlib
 import loadlib
+import mgi_utils
 
 CRT = reportlib.CRT
 SPACE = reportlib.SPACE
@@ -47,7 +48,7 @@ for line in inFile.readlines():
     accFile.write(str(aKey) + TAB + \
 		  cellLine + TAB + \
 		  prefixPart + TAB + \
-		  str(numericPart) + TAB + \
+		  mgi_utils.prvalue(numericPart) + TAB + \
 		  "66" + TAB + \
 		  str(cKey) + TAB + \
 		  "28" + TAB + \

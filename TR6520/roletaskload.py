@@ -286,6 +286,9 @@ def verifyMode():
 	elif mode not in ['incremental', 'full']:
 		exit(1, 'Invalid Processing Mode:  %s\n' % (mode))
 
+	if mode == 'full':
+	    db.sql('truncate table %s' % roletaskTable, None)
+
 def processFile():
 	'''
 	# requires:

@@ -7,8 +7,8 @@
 # Procedures:   113
 # Rules:          5
 # Triggers:     156
-# User Tables:  187
-# Views:        211
+# User Tables:  189
+# Views:        215
 
 cd `dirname $0` && source ./Configuration
 

@@ -26,3 +26,4 @@ pheno:edit non-nomen data approved			edit non-nomen data of allele with Approved
 pheno:edit nomen data deleted			edit nomen data of allele with Deleted status	
 pheno:edit non-nomen data deleted			edit non-nomen data of allele with Deleted status	
 nomen:merges, renames			nomenclature merges, renames, etc.	
+strain:merges			strain merges	

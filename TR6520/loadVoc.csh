@@ -10,7 +10,7 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
  
-date >> ${LOG}
+date > ${LOG}
 echo "Vocabulary Migration..." | tee -a ${LOG}
  
 ${VOCLOAD} `pwd`/qualifier.config >>& ${LOG}

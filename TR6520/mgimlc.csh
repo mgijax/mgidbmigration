@@ -53,8 +53,8 @@ select o._Marker_key, o.mode, o.description, o.userID, 0, o.creation_date, o.mod
 from MLC_Text_Old o
 go
 
-/* drop table MLC_Text_Old */
-/* go */
+drop table MLC_Text_Old
+go
 
 end
 

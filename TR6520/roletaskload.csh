@@ -16,6 +16,7 @@ setenv ROLETASKLOAD		.
 
 cd `dirname $0`
 setenv LOG	$0.log
+rm -rf ${LOG}
 
 date >>& $LOG
 

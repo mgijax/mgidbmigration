@@ -13,21 +13,15 @@ touch ${LOG}
 date >> ${LOG}
 echo "PRB_Probe Migration..." | tee -a ${LOG}
 
-#sp_rename PRB_Probe, PRB_Probe_Old
-#go
-
-#sp_rename PRB_ProbeReference, PRB_ProbeReference_Old
-#go
-
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
 use ${DBNAME}
 go
 
-drop table PRB_Probe
+sp_rename PRB_Probe, PRB_Probe_Old
 go
 
-drop table PRB_Reference
+sp_rename PRB_ProbeReference, PRB_ProbeReference_Old
 go
 
 end

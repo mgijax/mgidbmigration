@@ -5,11 +5,11 @@
 #
 # updated:  
 # Defaults:	  6
-# Procedures:	110
+# Procedures:	111
 # Rules:	  5
-# Triggers:	156
-# User Tables:	190
-# Views:	198
+# Triggers:	155
+# User Tables:	189
+# Views:	196
 #
 
 cd `dirname $0` && source ./Configuration
@@ -31,10 +31,11 @@ date | tee -a  ${LOG}
 
 echo "Update MGI DB Info..." | tee -a  ${LOG}
 ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
-#${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
+${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 # order is important!
 ./mgiprb.csh | tee -a ${LOG}
+./mgigxd.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
@@ -59,6 +60,9 @@ drop table PRB_Probe_Old
 go
 
 drop table PRB_Reference_Old
+go
+
+drop table IMG_ImagePane_Old
 go
 
 exec MGI_Table_Column_Cleanup

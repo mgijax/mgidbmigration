@@ -31,6 +31,9 @@ EOSQL
 ${newmgddbschema}/table/ALL_Allele_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/ALL_Allele_bind.object | tee -a ${LOG}
 
+${newmgddbschema}/table/ALL_Label_create.object | tee -a ${LOG}
+${newmgddbschema}/default/ALL_Label_bind.object | tee -a ${LOG}
+
 ${newmgddbschema}/table/ALL_CellLine_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/ALL_CellLine_bind.object | tee -a ${LOG}
 
@@ -74,6 +77,7 @@ end
 EOSQL
 
 ${newmgddbschema}/index/ALL_Allele_create.object | tee -a ${LOG}
+${newmgddbschema}/index/ALL_Label_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/ALL_CellLine_create.object | tee -a ${LOG}
 
 date >> ${LOG}

@@ -55,6 +55,9 @@ cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 use ${DBNAME}
 go
 
+insert into ACC_MGIType values (27, 'Chromosome', 'MRK_Chromosome', '_Chromosome_key', null, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
 insert into MGI_RefAssocType values(1008, 19, 'Load', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 

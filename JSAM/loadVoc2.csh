@@ -15,6 +15,9 @@ echo "Vocabulary Migration..." | tee -a ${LOG}
  
 ${NEWVOCLOAD} `pwd`/provider.config >>& ${LOG}
 
+date >> ${LOG}
+exit 0
+
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 
 use ${DBNAME}

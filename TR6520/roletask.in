@@ -1,0 +1,45 @@
+Pheno:Tier 2 (support)	pheno:create/modify references
+Pheno:Tier 2 (support)	pheno:create/modify pending if owner
+Pheno:Tier 2 (support)	pheno:edit nomen data pending if owner
+Pheno:Tier 3 (jr curator)	pheno:create/modify references
+Pheno:Tier 3 (jr curator)	pheno:create/modify pending if owner
+Pheno:Tier 3 (jr curator)	pheno:create/modify approved if owner
+Pheno:Tier 3 (jr curator)	pheno:change pending to approved if owner
+Pheno:Tier 3 (jr curator)	pheno:change pending to deleted if owner
+Pheno:Tier 3 (jr curator)	pheno:edit nomen data pending if owner
+Pheno:Tier 3 (jr curator)	pheno:edit marker clip
+Pheno:Tier 4 (curator)	pheno:create/modify references
+Pheno:Tier 4 (curator)	pheno:create/modify pending
+Pheno:Tier 4 (curator)	pheno:create/modify reserved
+Pheno:Tier 4 (curator)	pheno:create/modify approved
+Pheno:Tier 4 (curator)	pheno:change pending to approved
+Pheno:Tier 4 (curator)	pheno:change pending/deleted to reserved if owner
+Pheno:Tier 4 (curator)	pheno:change pending to deleted
+Pheno:Tier 4 (curator)	pheno:change reserved to deleted if owner
+Pheno:Tier 4 (curator)	pheno:change deleted/reserved to pending/approved
+Pheno:Tier 4 (curator)	pheno:edit nomen data pending
+Pheno:Tier 4 (curator)	pheno:edit nomen data reserved if owner
+Pheno:Tier 4 (curator)	pheno:edit marker clip
+Pheno:Tier 5 (guru)	pheno:create/modify references
+Pheno:Tier 5 (guru)	pheno:create/modify references/deleted
+Pheno:Tier 5 (guru)	pheno:create/modify pending
+Pheno:Tier 5 (guru)	pheno:create/modify reserved
+Pheno:Tier 5 (guru)	pheno:create/modify deleted
+Pheno:Tier 5 (guru)	pheno:create/modify approved
+Pheno:Tier 5 (guru)	pheno:change pending to approved
+Pheno:Tier 5 (guru)	pheno:change pending/deleted to reserved
+Pheno:Tier 5 (guru)	pheno:change pending to deleted
+Pheno:Tier 5 (guru)	pheno:change reserved to deleted
+Pheno:Tier 5 (guru)	pheno:change deleted/reserved to pending/approved
+Pheno:Tier 5 (guru)	pheno:change approved to deleted/reserved/pending
+Pheno:Tier 5 (guru)	pheno:use Delete button
+Pheno:Tier 5 (guru)	pheno:edit nomen data pending
+Pheno:Tier 5 (guru)	pheno:edit nomen data reserved
+Pheno:Tier 5 (guru)	pheno:edit nomen data approved
+Pheno:Tier 5 (guru)	pheno:edit nomen data deleted
+Pheno:Tier 5 (guru)	pheno:edit marker clip
+Nomenclature Merges/Renames	nomen:merges, renames
+Strain Merges	strain:merges
+User Permissions	user:roles
+Vocabulary Annotations	vocab:annotations
+Genotype	genotypes (all)

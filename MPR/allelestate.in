@@ -1,0 +1,7 @@
+Hemizygous X-linked			For X-linked alleles in males.	
+Hemizygous Y-linked			For Y-linked alleles (males only).	
+Hemizygous Insertion			For alleles contained in genomic insertions (e.g. transgenes).  In most cases, the insertion defines the allele (and Marker).	
+Hemizygous Deletion			For instances where one homologous chromosome contains one or more linked mutant alleles, and the other homologous chromosome contains a large deletion that removes the region containing the gene(s) for the mutant allele(s).	
+Heterozygous				
+Homozygous				
+Indeterminate			For instances where the allele condition is not known or not specified.	

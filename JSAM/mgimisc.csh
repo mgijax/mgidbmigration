@@ -611,6 +611,8 @@ ${newmgddbschema}/index/MGI_NoteChunk_create.object >> $LOG
 ${newmgddbschema}/index/MGI_NoteType_create.object >> $LOG
 ${newmgddbschema}/index/MGI_RefAssocType_create.object >> $LOG
 ${newmgddbschema}/index/MGI_Reference_Assoc_create.object >> $LOG
+${newmgddbschema}/index/MGI_Translation_create.object >> $LOG
+${newmgddbschema}/index/MGI_TranslationType_Assoc_create.object >> $LOG
 ${newmgddbschema}/index/MGI_Set_create.object >> $LOG
 ${newmgddbschema}/index/MGI_SetMember_create.object >> $LOG
 ${newmgddbschema}/index/MLD_Marker_create.object >> $LOG

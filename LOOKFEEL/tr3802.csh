@@ -16,13 +16,23 @@ date >> $LOG
 ${newmgddbschema}/table/GXD_AlleleGenotype_drop.object
 ${newmgddbschema}/procedure/GXD_loadGenoCacheAll_drop.object
 ${newmgddbschema}/procedure/GXD_loadGenoCacheByGenotype_drop.object
+${newmgddbschema}/view/GXD_AlleleGenotype_View_drop.object
 
 #
-# Use new schema product to create new table
+# Use new schema product to create new objects
 #
 ${newmgddbschema}/default/user_default_create.object
 ${newmgddbschema}/table/GXD_AlleleGenotype_create.object
 ${newmgddbschema}/default/GXD_AlleleGenotype_bind.object
+${newmgddbschema}/procedure/GXD_loadGenoCacheByGenotype_create.object
+${newmgddbschema}/procedure/GXD_loadGenoCacheAll_create.object
+${newmgddbschema}/trigger/GXD_Genotype_drop.object
+${newmgddbschema}/trigger/GXD_Genotype_create.object
+${newmgddbschema}/view/GXD_AlleleGenotype_View_create.object
+${newmgddbperms}/public/table/GXD_AlleleGenotype_grant.object
+${newmgddbperms}/curatorial/table/GXD_AlleleGenotype_grant.object
+${newmgddbperms}/curatorial/procedure/GXD_loadGenoCacheAll_grant.object
+${newmgddbperms}/curatorial/procedure/GXD_loadGenoCacheByGenotype_grant.object
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
@@ -45,12 +55,6 @@ ${newmgddbschema}/key/GXD_Genotype_create.object
 ${newmgddbschema}/key/ALL_Allele_drop.object
 ${newmgddbschema}/key/ALL_Allele_create.object
 ${newmgddbschema}/index/GXD_AlleleGenotype_create.object
-${newmgddbschema}/procedure/GXD_loadGenoCacheByGenotype_create.object
-${newmgddbschema}/procedure/GXD_loadGenoCacheAll_create.object
-${newmgddbperms}/public/table/GXD_AlleleGenotype_grant.object
-${newmgddbperms}/curatorial/table/GXD_AlleleGenotype_grant.object
-${newmgddbperms}/curatorial/procedure/GXD_loadGenoCacheAll_grant.object
-${newmgddbperms}/curatorial/procedure/GXD_loadGenoCacheByGenotype_grant.object
 
 date >> $LOG
 

@@ -13,7 +13,16 @@ dataset = {}
 cmd = 'select _DataSet_key, abbreviation from BIB_DataSets'
 results = db.sql(cmd, 'auto')
 for r in results:
-	dataset[r['abbreviation']] = r['_DataSet_key']
+
+	key = r['abbreviation']
+
+	if r['abbreviation'] == 'Probes/Seq':
+		key = 'Probes'
+
+	if r['abbreviation'] == 'MLC/Allele':
+		key = 'MLC'
+
+	dataset[value] = r['_DataSet_key']
 
 assocKey = 1000
 

@@ -51,9 +51,9 @@ insert into BIB_DataSets values(1001,'Expression','Expression', 'BIB_GXD_Exists'
 insert into BIB_DataSets values(1002,'Gene Ontology','GO', 'BIB_GO_Exists', 1000, 1000, getdate(), getdate())
 insert into BIB_DataSets values(1003,'Homology','Homology', 'BIB_HMD_Exists', 1000, 1000, getdate(), getdate())
 insert into BIB_DataSets values(1004,'Mapping','Mapping', 'BIB_MLD_Exists', 1000, 1000, getdate(), getdate())
-insert into BIB_DataSets values(1005,'Mouse Locus Catalog','MLC', 'BIB_MLC_Exists', 1000, 1000, getdate(), getdate())
+insert into BIB_DataSets values(1005,'Mouse Locus Catalog','MLC/Allele', 'BIB_MLC_Exists', 1000, 1000, getdate(), getdate())
 insert into BIB_DataSets values(1006,'Nomenclature','Nomen', 'BIB_NOM_Exists', 1000, 1000, getdate(), getdate())
-insert into BIB_DataSets values(1007,'Molecular Segments', 'Probes', 'BIB_PRB_Exists', 1000, 1000, getdate(), getdate())
+insert into BIB_DataSets values(1007,'Molecular Segments', 'Probes/Seq', 'BIB_PRB_Exists', 1000, 1000, getdate(), getdate())
 insert into BIB_DataSets values(1008,'Strain Characteristics Catalogue', 'SCC', null, 1000, 1000, getdate(), getdate())
 insert into BIB_DataSets values(1009,'Tumor', 'Tumor', null, 1000, 1000, getdate(), getdate())
 go

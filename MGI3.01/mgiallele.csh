@@ -13,7 +13,7 @@ touch ${LOG}
 date >> ${LOG}
 echo 'Allele Migration...' | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
 go
@@ -41,7 +41,7 @@ ${newmgddbperms}/public/view/ALL_Allele_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/ALL_Summary_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/ALL_Type_Summary_View_grant.object | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
 go
@@ -53,15 +53,6 @@ go
 
 insert into ACC_MGIType 
 values (26, 'Allele Type', 'ALL_Type', '_Allele_Type_key', null, 'ALL_Type_Summary_View', 1000, 1000, getdate(), getdate())
-go
-
-end
-
-EOSQL
-
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
-
-use ${DBNAME}
 go
 
 /* Chemically induced changes */
@@ -125,10 +116,10 @@ end
 
 EOSQL
 
-${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load >>& ${LOG}
+${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load | tee -a ${LOG}
 
-./mgiallele.py >>& ${LOG}
-cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql
+./mgiallele.py | tee -a ${LOG}
+cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql | tee -a ${LOG}
 
 date >> ${LOG}
 

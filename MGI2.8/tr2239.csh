@@ -163,7 +163,6 @@ go
 quit
 
 EOSQL
-EOSQL
 
 ${newmgddbschema}/key/GXD_AllelePair_create.object
 ${newmgddbschema}/index/GXD_AllelePair_create.object

@@ -47,12 +47,14 @@ ${newmgddbschema}/index/VOC_create.logical
 ${newmgddbschema}/default/DAG_bind.logical
 ${newmgddbschema}/default/VOC_bind.logical
 
+# BCP in BIB_Refs
+bcpin.csh ${newmgddbschema} BIB_Refs
+
+# keys and indexes
 ${newmgddbschema}/key/BIB_Refs_create.object
 ${newmgddbschema}/index/BIB_Refs_create.object
 ${newmgddbschema}/key/ACC_MGIType_create.object
 ${newmgddbschema}/index/ACC_MGIType_create.object
-
-bcpin.csh ${newmgddbschema} BIB_Refs
 
 date >> $LOG
 
@@ -99,25 +101,7 @@ insert into DAG_Label
 values (2, 'part-of', getdate(), getdate())
 go
 
-insert into VOC_AnnotType
-values(1000,,,,"GO/Marker", getdate(), getdate())
-go
-
-insert into VOC_AnnotType
-values(1001,,,,"PhenoSlim/Genotype", getdate(), getdate())
-go
-
-end
-
 EOSQL
-
-# Load VOC tables
-
-set SIMPLELOAD /home/lec/loads/simplevocload
-cd ${SIMPLELOAD}
-${SIMPLELOAD}/simplevocload.csh ${DBSERVER} ${DBNAME} phenoslim.out PhenoSlim 72460 P
-${SIMPLELOAD}/simplevocload.csh ${DBSERVER} ${DBNAME} go.ecodes "GO Evidence Codes" 73041 N
-${SIMPLELOAD}/simplevocload.csh ${DBSERVER} ${DBNAME} ps.ecodes "PhenoSlim Evidence Codes" 72460 N
 
 date >> $LOG
 

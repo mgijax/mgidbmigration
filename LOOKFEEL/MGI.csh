@@ -56,6 +56,10 @@ echo "Data Migration..." >> $LOG
 ./tr3588.csh >>& $LOG
 ./tr3516.csh >>& $LOG
 
+echo "Drop and re-create Triggers..." >> $LOG
+${newdbschema}/trigger/trigger_drop.csh >> $LOG
+${newdbschema}/trigger/trigger_create.csh >> $LOG
+
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
 use ${DBNAME}

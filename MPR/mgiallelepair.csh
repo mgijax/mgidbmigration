@@ -182,7 +182,7 @@ end
 
 EOSQL
 
-./unmigratedAlleleState.py 
+./unmigratedAlleleState.py
 
 date >> ${LOG}
 

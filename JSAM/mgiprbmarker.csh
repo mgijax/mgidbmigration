@@ -3,6 +3,10 @@
 #
 # Migration for PRB_Marker
 #
+# 11/20/2003
+#	- sent Richard email
+#	- we need to address how to migrate multiple references w/ multiple markers
+#
 
 cd `dirname $0` && source ./Configuration
 

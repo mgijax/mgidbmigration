@@ -1,18 +1,21 @@
 #!/bin/csh -f
 
 #
-# Migration for JSAm
+# Migration for JSAM
 #
 # updated:  
 # Defaults:	  6
 # Tables:	190
-# Procedures:	101
+# Procedures:	100
 # Rules:	  5
 # Triggers:	150
 # Views:	197
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
+#
+# Full Test: 12/03/2003
+# Time: 9:11-12:43 (3.5 hours)
 #
 # Full Test: 10/21/2003
 # Time: 9:04-12:04 (3 hours)
@@ -54,8 +57,8 @@ $DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen_release.backup mgd_dbo | tee
 date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG
-$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 3.0" | tee -a $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-8-0-0" | tee -a $LOG
+$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME ${PUBLIC_VERSION} | tee -a $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME ${SCHEMA_TAG} | tee -a $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME | tee -a $LOG
 
 echo "Reconfigure Nomen..." | tee -a  $LOG

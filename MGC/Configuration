@@ -1,0 +1,11 @@
+#!/bin/csh -f
+
+# Production settings
+#
+#setenv RADARDBSCHEMA	/usr/local/mgi/live/dbutils/radar/radardbschema
+#setenv RADARDBPERMS	/usr/local/mgi/live/dbutils/radar/radardbperms
+
+# Development settings
+#
+setenv RADARDBSCHEMA	/home/dbm/mgi/dbutils/radar/radardbschema
+setenv RADARDBPERMS	/home/dbm/mgi/dbutils/radar/radardbperms

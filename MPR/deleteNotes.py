@@ -25,8 +25,7 @@ noteTypeKey = results[0]['_NoteType_key']
 
 results = db.sql('select a._Allele_key, a.note, a.sequenceNum ' + \
 	'from ALL_Note a, ALL_NoteType nt ' +
-	'where a._NoteType_key = nt._NoteType_key ' + \
-	'and nt.noteType = "General" ' + \
+	'where a._NoteType_key = %s ' % (noteTypeKey) + \
 	'order by a._Allele_key, a.sequenceNum', 'auto')
 notes = {}
 for r in results:
@@ -69,7 +68,7 @@ for k in notes.keys():
     if len(newNote) > 0:
         cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, newNote))
 
-    db.sql('delete from ALL_Note where _Allele_key = %s' % (k), None)
+    db.sql('delete from ALL_Note where _Allele_key = %s and _NoteType_key = %s' % (k, noteTypeKey), None)
     if len(cmds) > 0:
         db.sql(cmds, None)
 

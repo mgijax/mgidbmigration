@@ -32,9 +32,6 @@ insert into ACC_MGIType
 values (21, 'Nomenclature', 'NOM_Marker', '_Nomen_key', 'symbol', null, getdate(), getdate(), getdate())
 go
 
-insert into MGI_NoteType values(1003, 21, 'General', 0, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
-go
-
 insert into MGI_NoteType values(1004, 21, 'Editor', 1, '${CREATEDBY}', '${CREATEDBY}', getdate(), getdate())
 go
 

@@ -298,8 +298,6 @@ ${newmgddbschema}/index/MRK_Chromosome_create.object >> $LOG
 ${newmgddbschema}/index/MRK_Label_create.object >> $LOG
 ${newmgddbschema}/index/PRB_Source_create.object >> $LOG
 
-exit 0
-
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME

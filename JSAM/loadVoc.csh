@@ -18,8 +18,6 @@ cellLine.py
 ${VOCLOAD} `pwd`/gender.config >>& $LOG
 ${VOCLOAD} `pwd`/genefamily.config >>& $LOG
 ${VOCLOAD} `pwd`/cellLine.config >>& $LOG
-${VOCLOAD} `pwd`/curationstate.config >>& $LOG
-${VOCLOAD} `pwd`/nomenstatus.config >>& $LOG
 ${VOCLOAD} `pwd`/sequencequal.config >>& $LOG
 ${VOCLOAD} `pwd`/sequencestatus.config >>& $LOG
 ${VOCLOAD} `pwd`/sequencetype.config >>& $LOG

@@ -32,6 +32,7 @@ date | tee -a  ${LOG}
 
 ./loadVoc.csh | tee -a ${LOG}
 ./mgivoc.csh | tee -a ${LOG}
+./mgiallele.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

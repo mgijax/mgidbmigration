@@ -82,6 +82,9 @@ delete from ALL_Type where alleleType in ('Chemical induced (chlorambucil)', 'Ch
 
 go
 
+update ALL_Type set alleleType = 'Gene trapped' where alleleType = 'Transgene induced (gene trapped)'
+go
+
 declare @alleleKey integer
 select @alleleKey = max(_Allele_Type_key) from ALL_Type
 
@@ -90,10 +93,9 @@ insert into ALL_Type values(@alleleKey + 2, 'Targeted (knock-in)', 1, getdate(),
 insert into ALL_Type values(@alleleKey + 3, 'Targeted (Floxed/Frt)' , 1, getdate(), getdate())
 insert into ALL_Type values(@alleleKey + 4, 'Targeted (Reporter)', 1, getdate(), getdate())
 insert into ALL_Type values(@alleleKey + 5, 'Targeted (other)', 1, getdate(), getdate())
-insert into ALL_Type values(@alleleKey + 6, 'Gene trapped', 1, getdate(), getdate())
-insert into ALL_Type values(@alleleKey + 7, 'Transgenic (random, gene disruption)', 1, getdate(), getdate())
-insert into ALL_Type values(@alleleKey + 8, 'Transgenic (random, expressed)', 1, getdate(), getdate())
-insert into ALL_Type values(@alleleKey + 9, 'Transgenic (Cre/Flp)', 1, getdate(), getdate())
+insert into ALL_Type values(@alleleKey + 6, 'Transgenic (random, gene disruption)', 1, getdate(), getdate())
+insert into ALL_Type values(@alleleKey + 7, 'Transgenic (random, expressed)', 1, getdate(), getdate())
+insert into ALL_Type values(@alleleKey + 8, 'Transgenic (Cre/Flp)', 1, getdate(), getdate())
 go
 
 update ALL_Type set sequenceNum = 1 where alleleType = 'Spontaneous'
@@ -113,6 +115,10 @@ update ALL_Type set sequenceNum = 14 where alleleType = 'Transgenic (Cre/Flp)'
 update ALL_Type set sequenceNum = 15 where alleleType = 'QTL'
 update ALL_Type set sequenceNum = 16 where alleleType = 'Not Applicable'
 update ALL_Type set sequenceNum = 17 where alleleType = 'Not Specified'
+go
+
+delete from ALL_Type where alleleType = 'Transgene induced (gene targeted)'
+delete from ALL_Type where alleleType = 'Transgene induced'
 go
 
 end

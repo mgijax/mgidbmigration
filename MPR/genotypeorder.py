@@ -79,12 +79,12 @@ results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'and s.strain not like "either:%" ' + \
 	'and s._Strain_key = a._Strain_key ', 'auto')
 
-isNine = {}
+isNoPrefix = {}
 for r in results:
     key = r['_Genotype_key']
-    if not isNine.has_key(key):
-	isNine[key] = []
-    isNine[key].append(r['_Allele_key_1'])
+    if not isNoPrefix.has_key(key):
+	isNoPrefix[key] = []
+    isNoPrefix[key].append(r['_Allele_key_1'])
 
 results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'from #orderbystrain s, #allelepairs a ' + \
@@ -100,12 +100,12 @@ results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'and s.strain like "involves:%" ' + \
 	'and s._Strain_key = a._Strain_key ', 'auto')
 
-isTen = {}
+isInvolves = {}
 for r in results:
     key = r['_Genotype_key']
-    if not isTen.has_key(key):
-	isTen[key] = []
-    isTen[key].append(r['_Allele_key_1'])
+    if not isInvolves.has_key(key):
+	isInvolves[key] = []
+    isInvolves[key].append(r['_Allele_key_1'])
 
 results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'from #orderbystrain s, #allelepairs a ' + \
@@ -121,12 +121,12 @@ results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'and s.strain like "either:%" ' + \
 	'and s._Strain_key = a._Strain_key ', 'auto')
 
-isEleven = {}
+isEither = {}
 for r in results:
     key = r['_Genotype_key']
-    if not isEleven.has_key(key):
-	isEleven[key] = []
-    isEleven[key].append(r['_Allele_key_1'])
+    if not isEither.has_key(key):
+	isEither[key] = []
+    isEither[key].append(r['_Allele_key_1'])
 
 results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'from #orderbystrain s, #allelepairs a ' + \
@@ -142,12 +142,12 @@ results = db.sql('select distinct a._Genotype_key, a._Allele_key_1 ' + \
 	'and s.strain = "Not Specified" ' + \
 	'and s._Strain_key = a._Strain_key ', 'auto')
 
-isTwelve = {}
+isNotSpec = {}
 for r in results:
     key = r['_Genotype_key']
-    if not isTwelve.has_key(key):
-	isTwelve[key] = []
-    isTwelve[key].append(r['_Allele_key_1'])
+    if not isNotSpec.has_key(key):
+	isNotSpec[key] = []
+    isNotSpec[key].append(r['_Allele_key_1'])
 
 results = db.sql('select * from #alleles order by _Allele_key_1, _Genotype_key', 'auto')
 alleles = {}
@@ -167,7 +167,7 @@ for a in alleles.keys():
         marker = r['_Marker_key']
         alleleState = r['term']
         alleleWildType = r['isWildType']
-	sequenceNum = 8
+	sequenceNum = 12
 
 	if genotype in isSimple:
 	    if alleleState == 'Homozygous':
@@ -185,21 +185,21 @@ for a in alleles.keys():
 	    elif alleleState == 'Indeterminate':
 	        sequenceNum = 7
 
-	if isNine.has_key(genotype):
-	    if a in isNine[genotype]:
-	        sequenceNum = 9
+	if isNoPrefix.has_key(genotype):
+	    if a in isNoPrefix[genotype]:
+	        sequenceNum = sequenceNum + 1
 
-	if isTen.has_key(genotype):
-	    if a in isTen[genotype]:
-	        sequenceNum = 10
+	if isInvolves.has_key(genotype):
+	    if a in isInvolves[genotype]:
+	        sequenceNum = sequenceNum + 2
 
-	if isEleven.has_key(genotype):
-	    if a in isEleven[genotype]:
-	        sequenceNum = 11
+	if isEither.has_key(genotype):
+	    if a in isEither[genotype]:
+	        sequenceNum = sequenceNum + 3
 
-	if isTwelve.has_key(genotype):
-	    if a in isTwelve[genotype]:
-	        sequenceNum = 12
+	if isNotSpec.has_key(genotype):
+	    if a in isNotSpec[genotype]:
+	        sequenceNum = sequenceNum + 4
 
 	fp.write(str(genotype) + TAB)
 	fp.write(str(marker) + TAB)

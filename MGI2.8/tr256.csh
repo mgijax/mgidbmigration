@@ -74,7 +74,7 @@ strain2 = "A/HeJ",
 _Strain_key_1 = s1._Strain_key,
 _Strain_key_2 = s2._Strain_key
 from RI_RISet_Old r, PRB_Strain s1, PRB_Strain s2
-where r.designation = "9XB"
+where r.designation = "9XA"
 and "129S1/Sv-Kitl<Sl-J> p<+> Tyr<+>" = s1.strain
 and "A/HeJ" = s2.strain
 go

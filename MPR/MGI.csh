@@ -66,6 +66,7 @@ ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 ./mpannotations.csh | tee -a ${LOG}
 ./splitNotes.py | tee -a ${LOG}
 ./convertNotes.py | tee -a ${LOG}
+./convertStrain.py | tee -a ${LOG}
 
 ${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
 ${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}

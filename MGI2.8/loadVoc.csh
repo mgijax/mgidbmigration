@@ -53,7 +53,7 @@ go
 
 EOSQL
 
-${VOCLOAD}/loadTerms.py -f -l output.terms $DBSERVER $DBNAME mgd_dbo `cat $DBPASSWORDFILE` 4 TermFile >>& $LOG
+${VOCLOAD}/loadTerms.py -f -l output.terms $DBSERVER $DBNAME mgd_dbo `cat $DBPASSWORDFILE` 4 Termfile >>& $LOG
 
 # Load PhenoSlim Annotations
 

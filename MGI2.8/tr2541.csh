@@ -155,6 +155,13 @@ declare strain_cursor cursor for
 select _Strain_key
 from PRB_Strain
 where standard = 1
+union
+select s._Strain_key
+from PRB_Strain s
+where s.standard = 0
+and exists (select * from PRB_Strain_Acc_View a
+where s._Strain_key = a._Object_key
+and a._LogicalDB_key = 22)
 for read only
 go
 

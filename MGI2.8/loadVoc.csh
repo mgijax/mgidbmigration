@@ -14,7 +14,7 @@ setenv DBNAME $2
 setenv DBUSER		mgd_dbo
 setenv DBPASSWORDFILE	/usr/local/mgi/dbutils/mgidbutilities/.mgd_dbo_password
 setenv PYTHONPATH 	/usr/local/mgi/lib/python
-setenv VOCLOAD		/usr/local/mgi/dataload/vocload
+setenv VOCLOAD		/usr/local/mgi/dataload/vocload_bcp
 setenv ANNOTLOAD	/usr/local/mgi/dataload/annotload
 setenv GODATA		/usr/local/mgi/go_data
 setenv PSDATA		/mgi/all/wts_projects/2200/2239
@@ -46,27 +46,10 @@ insert into VOC_AnnotType
 values(1001,12,1,2,"PhenoSlim/Genotype", getdate(), getdate())
 go
 
-/* not needed if we run go.load */
-insert into VOC_Vocab
-values(4, 73993, 31, 0, 0, "GO", getdate(), getdate())
-go
-
-/* using for testing only */
-
-insert into DAG_DAG values(1, 73993, 13, 'Molecular Function', 'F', getdate(), getdate())
-insert into DAG_DAG values(2, 73993, 13, 'Cellular Component', 'C', getdate(), getdate())
-insert into DAG_DAG values(3, 73993, 13, 'Biological Process', 'P', getdate(), getdate())
-go
-
-insert into VOC_VocabDAG values (4,1,getdate(),getdate())
-insert into VOC_VocabDAG values (4,2,getdate(),getdate())
-insert into VOC_VocabDAG values (4,3,getdate(),getdate())
-go
-
 EOSQL
 
 echo "GO Vocabulary Load" >> $LOG
-${VOCLOAD}/loadTerms.py -f -l output.terms $DBSERVER $DBNAME mgd_dbo `cat $DBPASSWORDFILE` 4 Termfile >>& $LOG
+${VOCLOAD}/runGOLoad.sh
 
 # Load PhenoSlim Annotations
 

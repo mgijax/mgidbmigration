@@ -6,8 +6,6 @@
 
 cd `dirname $0` && source ./Configuration
 
-which Configuration
-
 setenv LOG $0.log
 rm -rf $LOG
 touch $LOG

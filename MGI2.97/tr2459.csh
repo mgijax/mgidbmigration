@@ -42,28 +42,30 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
+/* initialize all to low priority */
+
 declare @lowpriorityKey integer
 select @lowpriorityKey = _Term_key 
 from VOC_Term_View where vocabName = 'GXD Index Priority' and term = 'Low'
+
+insert into GXD_Index
+select g.index_id, g._Refs_key, g._Marker_key, @lowpriorityKey, g.comments, 
+"${CREATEDBY}", "${CREATEDBY}", g.creation_date, g.modification_date
+from GXD_Index_Old g, BIB_Refs r
+where g._Refs_key = r._Refs_key
+go
+
+/* update to medium priority */
 
 declare @medpriorityKey integer
 select @medpriorityKey = _Term_key 
 from VOC_Term_View where vocabName = 'GXD Index Priority' and term = 'Medium'
 
-insert into GXD_Index
-select g.index_id, g._Refs_key, g._Marker_key, @lowpriorityKey, g.comments, 
-${CREATEDBY}, ${CREATEDBY}, g.creation_date, g.modification_date
-from GXD_Index_Old g, BIB_Refs r
-where g._Refs_key = r._Refs_key
-and r.journal not in ("Development", "Dev Biol", "Mech Dev")
-
-insert into GXD_Index
-select g.index_id, g._Refs_key, g._Marker_key, @medpriorityKey, g.comments, 
-${CREATEDBY}, ${CREATEDBY}, g.creation_date, g.modification_date
-from GXD_Index_Old g, BIB_Refs r
+update GXD_Index
+set _Priority_key = @medpriorityKey
+from GXD_Index g, BIB_Refs r
 where g._Refs_key = r._Refs_key
 and r.journal in ("Development", "Dev Biol", "Mech Dev")
-
 go
 
 /* upgrade to high priority */
@@ -114,7 +116,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'Prot-sxn'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.insitu_protein_section = 1
 and o.stage_id = s.stage_id - 1
@@ -123,7 +125,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'RNA-sxn'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.insitu_rna_section = 1
 and o.stage_id = s.stage_id - 1
@@ -132,7 +134,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'Prot-WM'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.insitu_protein_mount = 1
 and o.stage_id = s.stage_id - 1
@@ -141,7 +143,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'RNA-WM'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.insitu_rna_mount = 1
 and o.stage_id = s.stage_id - 1
@@ -150,7 +152,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'Northern'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.northern = 1
 and o.stage_id = s.stage_id - 1
@@ -159,7 +161,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'Western'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.western = 1
 and o.stage_id = s.stage_id - 1
@@ -168,7 +170,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'RT-PCR'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.rt_pcr = 1
 and o.stage_id = s.stage_id - 1
@@ -177,7 +179,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'cDNA'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.clones = 1
 and o.stage_id = s.stage_id - 1
@@ -186,7 +188,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'RNAse prot'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.rnase = 1
 and o.stage_id = s.stage_id - 1
@@ -195,7 +197,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'S1 nuc'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.nuclease = 1
 and o.stage_id = s.stage_id - 1
@@ -204,7 +206,7 @@ go
 declare @assayKey integer
 select @assayKey = _Term_key from VOC_Term where term = 'Primer ex'
 insert into GXD_Index_Stages
-select o.index_id, @assayKey, s._Term_key, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+select o.index_id, @assayKey, s._Term_key, "${CREATEDBY}", "${CREATEDBY}", o.creation_date, o.modification_date
 from GXD_Index_Stages_Old o, #stages s
 where o.primer_extension = 1
 and o.stage_id = s.stage_id - 1

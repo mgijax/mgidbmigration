@@ -17,8 +17,8 @@ date >> $LOG
 #
 
 #$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd_release.backup mgd_dbo >>& $LOG
-date >> $LOG
+#$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd_release.backup mgd_dbo >>& $LOG
+#date >> $LOG
 #$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
 #date >> $LOG
 
@@ -31,9 +31,10 @@ $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 #$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
 #date >> $LOG
 
-accmgitype.csh >>& $LOG
-loadVoc.csh >>& $LOG
+#accmgitype.csh >>& $LOG
+#loadVoc.csh >>& $LOG
 tr2459.csh >>& $LOG
+exit 0
 
 # reconfiguration
 ${newmgddbschema}/key/key_drop.csh

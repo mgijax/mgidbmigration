@@ -24,6 +24,7 @@ setenv newmgddbperms ${newmgddb}/mgddbperms
 setenv newnomendb /home/lec/db
 
 source ${newmgddbschema}/Configuration
+setenv NOMEN	nomen_release
 
 setenv LOG $0.log
 
@@ -44,8 +45,8 @@ $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $nomendb >>& $LOG
 date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
-$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
-$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-12" >>& $LOG
+$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.9" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-0" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
 echo "Data Migration..." >> $LOG

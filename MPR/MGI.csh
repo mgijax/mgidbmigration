@@ -33,4 +33,47 @@ date | tee -a  ${LOG}
 ./loadVoc.csh | tee -a ${LOG}
 ./mgivoc.csh | tee -a ${LOG}
 
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+
+use ${DBNAME}
+go
+
+drop table ALL_Inheritance_Mode
+go
+
+drop table ALL_Molecular_Mutation
+go
+
+drop table ALL_Status
+go
+
+drop table ALL_Type
+go
+
+drop table ALL_Note
+go
+
+drop table ALL_NoteType
+go
+
+drop table ALL_Reference
+go
+
+drop table ALL_ReferenceType
+go
+
+drop table ALL_Synonym
+go
+
+drop view ALL_Reference_View
+go
+
+drop view ALL_Note_View
+go
+
+drop view ALL_Synonym_View
+go
+
+EOSQL
+
 date | tee -a  ${LOG}

@@ -81,24 +81,5 @@ quit
 
 EOSQL
 
-cat - <<EOSQL | doisql.csh $0 >> ${LOG}
-
-use ${DBNAME}
-go
-
-drop table ALL_Inheritance_Mode
-go
-
-drop table ALL_Molecular_Mutation
-go
-
-drop table ALL_Status
-go
-
-drop table ALL_Type
-go
-
-EOSQL
-
 date >> ${LOG}
 

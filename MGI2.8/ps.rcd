@@ -1,7 +1,7 @@
 DBSERVER = MGD_DEV
-DATABASE = mgd_lec
+DATABASE = mgd_release
 DBUSER = mgd_dbo
-DBPASSWORD = raysen5
+DBPASSWORD_FILE = /usr/local/mgi/dbutils/mgidbutilities/.mgd_dbo_password
 
 VOCAB_NAME = PhenoSlim
 JNUM = J:72460
@@ -11,8 +11,10 @@ LOGICALDB_KEY = 1
 
 MGITYPE = 12
 
-TERM_FILE = phenoslim.out.out
+RUNTIME_DIR = /usr/local/mgi/dbutils/mgidbmigration/MGI2.8
+TERM_FILE =  ${RUNTIME_DIR}/phenoslim.out.out
 DATA_FILE = /mgi/all/wts_projects/2200/2239/phenoslim.out
+DISCREP_FILE = ${RUNTIME_DIR}/discrepancy.html
 
 # DAGs
 #[

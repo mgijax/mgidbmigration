@@ -11,8 +11,10 @@
 
 cd `dirname $0`
 
-setenv NOMEN nomen_release
-setenv STRAINS strains_release
+#setenv NOMEN nomen_release
+#setenv STRAINS strains_release
+setenv NOMEN nomen_lec
+setenv STRAINS strains_lec
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
@@ -100,6 +102,15 @@ drop table MGI_Columns_Old
 go
 
 exec MGI_Table_Column_Cleanup
+go
+
+use ${NOMEN}
+go
+
+drop table MGI_Tables_Old
+go
+
+drop table MGI_Columns_Old
 go
 
 checkpoint

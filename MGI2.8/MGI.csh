@@ -169,7 +169,7 @@ EOSQL
 ./loadVoc.csh $DBSERVER $DBNAME >>& $LOG
 
 # Re-run MRK_Reference load
-/usr/local/mgi/dataload/mrkrefload/mrkref.sh >>& LOG
+/usr/local/mgi/dbutils/mrkrefload/mrkref.sh >>& LOG
 
 date >> $LOG
 

@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# Migration for PRB_Source (add _Vector_key)
+# Migration for PRB_Source
 #
 
 cd `dirname $0` && source ./Configuration

@@ -142,7 +142,7 @@ Total sequences parsed: 5448499
 16	NZW x BXSB/F1	(NZW x BXSB)F1
 27	(SWR x NZB)F1	(SWR x NZB)F1
 2	102xC3H	102 x C3H
-1	102/E1xC3H/E1)F1	102/El x C3H/El)F1
+1	102/E1xC3H/E1)F1	(102/El x C3H/El)F1
 1	129/B6	129 and C57BL/6
 1	129; C57BL/6J	129 and C57BL/6J
 24864	129,C57BL/6J,FVB/N	129 and C57BL/6J and FVB/N
@@ -420,7 +420,7 @@ Total sequences parsed: 5448499
 2	B10.A B10.A(5R)	B10.A and B10.A(5R)
 2	B10.A(1R)	B10.A(R1)
 2	B10.A(2R)	B10.A(R2)
-1	B10.A(2R)/SgSnJ	B10.A(R2)/SgSnJ
+1	B10.A(2R)/SgSnJ	B10.A(R2)
 1	B10.A(3R)	B10.A(R3)
 5	B10.A(5R)	B10.A(R5)
 1	B10.A[5R]	B10.A(R5)
@@ -442,7 +442,7 @@ Total sequences parsed: 5448499
 1	B10. BR	B10.BR H2<k> H2-T18<a>
 3	B10.BR-H2<k>	B10.BR-H2<k>
 2	C57BL/10-BR	B10.BR-H2<k>
-71	B10.BR	B10.BR-H2<k> H2-T18<a>
+71	B10.BR	B10.BR-H2<k> H2-T18<a>/SgSnJ	
 1	B10.BR/nSnJ	B10.BR-H2<k> H2-T18<a>/nSnJ
 3	B10.BR/SgSnJ	B10.BR-H2<k> H2-T18<a>/SgSnJ
 44	B10.BR-Mtv1	B10.BR-Mtv1
@@ -488,7 +488,7 @@ Total sequences parsed: 5448499
 1	B10.RIII, B10.cas4, NOD	B10.RIII and B10.CAS4 and NOD
 2	B10.S	B10.S
 4	B10.S/DvTe	B10.S/DvTe
-22	B10.S/J	B10.S/J
+22	B10.S/J	B10.S-H2<s>
 1	B10.S/gDV	B10.S/SgDv
 4	B10.SAA48	B10.SAA48
 1	BIO.S	B10.S-H2<s>
@@ -1694,7 +1694,7 @@ Total sequences parsed: 5448499
 1	PANSEV08	PANCEVO
 3	PANCEVO/Ei	PANCEVO/EiJ
 4	Parkes (outbred)	Parkes
-11	PERA/Ei	PERA/Ei
+11	PERA/Ei	PERA/Ei J
 4	PERA/Rk	PERA/Rk
 2	PERC /Ei	PERC/EiJ
 1	PERC/Ei	PERC/EiJ
@@ -1758,7 +1758,7 @@ Total sequences parsed: 5448499
 2	SKIVE/Ei	SKIVE/EiJ
 4	SL	SL
 1	SL/Am	SL/Am
-249	B6.Sle1	Sle1<C57BL/6J>
+249	B6.Sle1	STOCK Sle1<C57BL/6J>
 1	SM/Ckc-Dac/+	SM/Ckc-Fbxw4<Dac>/+
 1	SM/Ckc-Dac/+-	SM/Ckc-Fbxw4<Dac>/+
 29	SM/J	SM/J
@@ -1806,7 +1806,6 @@ Total sequences parsed: 5448499
 1	jimpy mice	STOCK Plp<jp>
 1	quaking mouse	STOCK Qk<qk>
 1	Orleans reeler	STOCK Reln<rl-Orl>
-2	t(w8)	STOCK t<38>
 1	t-haplotype t6	STOCK t<6>
 4	t6/tw1	STOCK t<6>/t<w1>
 1	t-PA027	STOCK t<PA027>

@@ -9,6 +9,7 @@
 # views:     149
 #
 #
+# 11/19/2003	10:15AM - 10:51AM = 36 minutes
 # 11/11/2003	09:49AM - 10:20AM = 30 minutes
 # 11/05/2003	12:41PM - 13:10PM = 30 minutes
 #
@@ -41,6 +42,7 @@ date | tee -a $LOG
 
 tr4579.csh | tee -a $LOG
 tr5260.csh | tee -a $LOG
+wksrosetta.csh | tee -a $LOG
 
 # reconfiguration
 ${newmgddbschema}/key/key_drop.csh | tee -a $LOG

@@ -1,0 +1,11 @@
+#!/bin/csh -f
+
+# Production settings
+#
+#setenv MGDDBSCHEMA	/usr/local/mgi/live/dbutils/mgd/mgddbschema
+
+# Development settings
+#
+setenv MGDDBSCHEMA	/usr/local/mgi/3.01/dbutils/mgd/mgddbschema
+
+source ${MGDDBSCHEMA}/Configuration

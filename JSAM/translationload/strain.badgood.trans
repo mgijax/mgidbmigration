@@ -173,16 +173,6 @@
 	129/Sv-p Tyr<c>	129 sv-cp	dbo
 	129/Sv-p Tyr<c>	129/SvCp	dbo
 	129/SvW	129SVW	dbo
-	129P/0la	129 / Ola	dbo
-	129P/0la	129 OLA	dbo
-	129P/0la	129/01a	dbo
-	129P/0la	129/0la	dbo
-	129P/0la	129/OLA	dbo
-	129P/0la	129/ola	dbo
-	129P/0la	129/Ola	dbo
-	129P/0la	12901a	dbo
-	129P/0la	129ola	dbo
-	129P/0la	129-Ola	dbo
 	129P/Ola	129Ola	dbo
 	129P/Ola	Ol129	dbo
 	129P/Ola	Ola 129	dbo
@@ -472,7 +462,6 @@
 	B6D2F1/J	B6D2/J	dbo
 	B6SJLF1	B6SJL	dbo
 	B6SJLF1	B6SJL/F1	dbo
-	B6SJLF1/J	B6 SJLF1/J	dbo
 	BAB-14	BAB/14	dbo
 	BALB	Balb	dbo
 	BALB.A2G-Mx1	BALB.A2g	dbo

@@ -72,7 +72,9 @@ date >> $LOG
 # Re-create all triggers, sps, views....
 #
 
-#$DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
+${newmgddbschema}/key/key_drop.csh
+${newmgddbschema}/key/key_create.csh
+$DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   

@@ -2,9 +2,9 @@
 EI changes
 ----------
 
-csrc/stagetrees.c		TR 3432;GXD_Structure.topoSort
+csrc/stagetrees.c		TR 3432; GXD_Structure.topoSort
 
-include/stagetrees.h		TR 3432;GXD_Structure.topoSort
+include/stagetrees.h		TR 3432; GXD_Structure.topoSort
 
 dsrc/Assay.d			TR 3710; add Knock In Assay Type
 dsrc/Dictionary.d		TR 3432; GXD_Structure.topoSort

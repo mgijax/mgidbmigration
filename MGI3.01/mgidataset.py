@@ -3,8 +3,11 @@
 import os
 import string
 import db
+import mgi_utils
 
-outFile = open('mgidataset.sql', 'w')
+todayDate = mgi_utils.date('%m/%d/%Y')
+
+outFile = open('BIB_DataSets_Assoc.bcp', 'w')
 
 dataset = {}
 cmd = 'select _DataSet_key, abbreviation from BIB_DataSets'
@@ -34,12 +37,11 @@ for r in results:
 				neverUsed = 0
 
 			if dataset.has_key(d1):
-				outFile.write('insert into BIB_DataSets_Assoc values' + \
-					'(%s,' % (assocKey) + \
-					'%s,' % (refsKey) + \
-					'%s,' % (dataset[d1]) + \
-					'%s,' % (neverUsed) + \
-					'1000,1000,getdate(),getdate())\ngo\n')
+				outFile.write('%s\t' % (assocKey) + \
+					'%s\t' % (refsKey) + \
+					'%s\t' % (dataset[d1]) + \
+					'%s\t' % (neverUsed) + \
+					'1000\t1000\t%s\t%s\n' % (todayDate, todayDate))
 
 				assocKey = assocKey + 1
 			else:

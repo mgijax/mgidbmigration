@@ -65,7 +65,7 @@ EOSQL
 # load new BIB_DataSets table
 
 ./mgidataset.py >>& ${LOG}
-cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgidataset.sql
+cat ${DBPASSWORDFILE} | bcp ${DBNAME}..BIB_DataSets_Assoc in BIB_DataSets_Assoc.bcp -S${DBSERVER} -U${DBUSER} -c -t"\t" | tee -a ${LOG}
 
 date >> ${LOG}
 

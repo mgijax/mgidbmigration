@@ -161,6 +161,7 @@ EOSQL
 
 ${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
 
+deleteStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
 updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
 
 # load translations and sets

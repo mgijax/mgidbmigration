@@ -73,11 +73,6 @@ where symbol like '%-pending'
 and _Marker_Status_key = 5
 go
 
-update MRK_Nomen
-set name = substring(name, 1, charindex("-pending", name) - 1)
-where name like '%-pending'
-go
-
 checkpoint
 go
 

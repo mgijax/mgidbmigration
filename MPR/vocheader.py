@@ -59,7 +59,7 @@ for r in results:
 
     key = r['_Object_key']
 
-    if headers[key] > 1:
+    if headers[key] == 1:
 	approvedBy = '1000'
 	approvedDate = loaddate
     else:

@@ -21,8 +21,8 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
-load_db.csh ${DBSERVER} ${RADARDB} /shire/sybase/radar.backup
+#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${DBSERVER} ${RADARDB} /shire/sybase/radar.backup
 
 date | tee -a  ${LOG}
 
@@ -33,11 +33,32 @@ ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 # order is important!
-./tr6351.py | tee -a ${LOG}
-./deletesyns.py | tee -a ${LOG}
+./tr6351.py >>& ${LOG}
+./deletesyns.py >>& ${LOG}
 ./markersynonym.csh | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
+
+${radardbschema}/table/DP_EntrezGene_Synonym_drop.object | tee -a ${LOG}
+${radardbschema}/table/DP_EntrezGene_DBXRef_drop.object | tee -a ${LOG}
+
+${radardbschema}/table/DP_EntrezGene_Synonym_create.object | tee -a ${LOG}
+${radardbschema}/table/DP_EntrezGene_DBXRef_create.object | tee -a ${LOG}
+${radardbschema}/table/WRK_EntrezGene_Synonym_create.object | tee -a ${LOG}
+
+${radardbschema}/index/DP_EntrezGene_Synonym_create.object | tee -a ${LOG}
+${radardbschema}/index/DP_EntrezGene_DBXRef_create.object | tee -a ${LOG}
+${radardbschema}/index/WRK_EntrezGene_Synonym_create.object | tee -a ${LOG}
+
+${radardbschema}/key/DP_EntrezGene_Info_drop.object | tee -a ${LOG}
+${radardbschema}/key/DP_EntrezGene_Info_create.object | tee -a ${LOG}
+
+${radardbperms}/public/table/DP_EntrezGene_Synonym_grant.object | tee -a ${LOG}
+${radardbperms}/public/table/DP_EntrezGene_DBXRef_grant.object | tee -a ${LOG}
+${radardbperms}/public/table/WRK_EntrezGene_Synonym_grant.object | tee -a ${LOG}
+
+${EGLOADFILES} | tee -a ${LOG}
+${EGLOADHUMAN} | tee -a ${LOG}
 
 ${MRKREFLOAD} | tee -a ${LOG}
 ${MRKLABELLOAD} | tee -a ${LOG}

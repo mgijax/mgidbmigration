@@ -8,13 +8,20 @@ setenv MRKREFLOAD	/home/lec/loads/mrkrefload-maint6300/mrkref.sh
 #setenv MRKLABELLOAD	/usr/local/mgi/live/dbutils/mrklabelload/mrklabel.sh
 setenv MRKLABELLOAD	/home/lec/loads/mrklabelload-tr5686/mrklabel.sh
 
+#setenv EGLOAD	/usr/local/mgi/live/dbutils/entrezgeneload
+setenv EGLOAD	/home/lec/loads/entrezgeneload
+
+setenv EGLOADFILES ${EGLOAD}/loadFiles.csh
+setenv EGLOADHUMAN ${EGLOAD}/human/load.csh
+
 # new schema configured to talk to the MGI 3.11 database
 
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddb /home/lec/db/mgi3.11
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
-setenv radardbschema /home/lec/db/mgi3.11/radardbschema
+setenv radardbschema /home/lec/db/radardbschema
+setenv radardbperms /home/lec/db/radardbperms
 
 setenv CREATEDBY        1001
 setenv SCHEMA_TAG	mgddbschema-3-1-1

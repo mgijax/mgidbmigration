@@ -17,28 +17,6 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
-/* delete synonyms we don't want anymore */
-
-/* synonyms associated with J:66660 or J:66661 that exactly match an EntrezGene human synonym */
-
-delete MRK_Other 
-from MRK_Other m, $RADARDB..DP_EntrezGene_Info e, $RADARDB..DP_EntrezGene_Synonym s
-where m._Refs_key in (67607, 67608)
-and e.taxID = 9606
-and e.geneID = s.geneID
-and m.name = s.synonym
-go
-
-/* synonyms with no J: that exactly match an EntrezGene human synonym */
-
-delete MRK_Other 
-from MRK_Other m, $RADARDB..DP_EntrezGene_Info e, $RADARDB..DP_EntrezGene_Synonym s
-where m._Refs_key is null
-and e.taxID = 9606
-and e.geneID = s.geneID
-and m.name = s.synonym
-go
-
 /* set _Refs_key to J:94790 for all Synonyms that don't have a reference */
 
 declare @refsKey integer
@@ -77,6 +55,12 @@ insert into MGI_SynonymType values(@synTypeKey + 7, 21, 1, 'narrow', 'a synonym 
 insert into MGI_SynonymType values(@synTypeKey + 8, 2, 2, 'entrezgene', 'a synonym that is loaded from EntrezGene.', 0, 1000, 1000, getdate(), getdate())
 
 insert into MGI_SynonymType values(@synTypeKey + 9, 2, 2, 'mgi-curated', 'a synonym that is found in a publication and is not found in EntrezGene.', 0, 1000, 1000, getdate(), getdate())
+
+/* marker rat */
+
+insert into MGI_SynonymType values(@synTypeKey + 10, 2, 40, 'entrezgene', 'a synonym that is loaded from EntrezGene.', 0, 1000, 1000, getdate(), getdate())
+
+insert into MGI_SynonymType values(@synTypeKey + 11, 2, 40, 'mgi-curated', 'a synonym that is found in a publication and is not found in EntrezGene.', 0, 1000, 1000, getdate(), getdate())
 
 go
 

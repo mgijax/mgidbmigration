@@ -38,8 +38,6 @@ ${newmgddbschema}/key/MRK_Status_drop.object >> $LOG
 ${newmgddbschema}/key/MRK_Status_create.object >> $LOG
 ${newmgddbschema}/key/MRK_Label_create.object >> $LOG
 
-exit 0
-
 ${labelload}/mrklabel.sh >> $LOG
 
 ${newmgddbschema}/procedure/MRK_reloadLabel_drop.object >> $LOG

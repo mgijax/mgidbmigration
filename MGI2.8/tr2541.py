@@ -238,9 +238,77 @@ def process_updates(results):
 					upd.append('insert into MLP_StrainTypes (_Strain_key, _StrainType_key) ' + \
 						'values (%s, %s)\n' % (r['_Strain_key'], st))
 
-		if len(upd) > 0:
-			upd.append('update PRB_Strain set modification_date = getdate() ' + \
+		# Set public/private based on JRS privacy value
+		if r['privacy'] == 'public':
+			isPrivate = 0
+		else:
+			isPrivate = 1
+
+		cannotUpdate = 0
+
+		if isPrivate:
+			exists = db.sql('select _Strain_key from PRB_Source ' + \
+				'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key from PRB_Allele_Strain ' + \
+         			'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key from MLD_FISH ' + \
+         			'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key from MLD_InSitu ' + \
+         			'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _femaleStrain_key from CRS_Cross ' + \
+         			'where _femaleStrain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _maleStrain_key from CRS_Cross ' + \
+         			'where _maleStrain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _StrainHO_key from CRS_Cross ' + \
+         			'where _StrainHO_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _StrainHT_key from CRS_Cross ' + \
+         			'where _StrainHT_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key from GXD_Genotype ' + \
+         			'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key from ALL_Allele ' + \
+         			'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key from ALL_CellLine ' + \
+         			'where _Strain_key = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key_1 from RI_RISet ' + \
+         			'where _Strain_key_1 = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+			exists = db.sql('select _Strain_key_2 from RI_RISet ' + \
+         			'where _Strain_key_2 = %s' % (r['_Strain_key']), 'auto')
+			if len(exists) > 0:
+				cannotUpdate = 1
+
+		if cannotUpdate:
+			diagFile.write('Strain cannot be made private: %s' % (r['strain']) + '\n\n')
+			
+		else:
+			upd.append('update PRB_Strain set ' + \
+				'private = %d, ' % (isPrivate) + \
+				'modification_date = getdate() ' + \
 				'where _Strain_key = %d' % (r['_Strain_key']))
+
 			db.sql(upd, None, execute = DOIT)
 			diagFile.write(str(upd) + '\n\n')
 			updateFile.write(str(r) + '\n\n')
@@ -248,7 +316,7 @@ def process_updates(results):
 	updateFile.close()
 	updmarkerFile.close()
 
-def processJRSFile():
+def processJRSfile():
 
 	cmds = []
 

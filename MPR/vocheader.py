@@ -73,16 +73,11 @@ for r in results:
 	approvedBy = ''
 	approvedDate = ''
 
-    if r['sequenceNum'] == None:
-	sequenceNum = s
-    else:
-	sequenceNum = r['sequenceNum']
-
     fp.write(str(annotHeaderKey) + TAB + \
 	"1002" + TAB + \
 	str(key) + TAB + \
 	str(r['_Term_key']) + TAB + \
-	str(sequenceNum) + TAB + \
+	str(s) + TAB + \
 	"1000" + TAB + "1000" + TAB + \
 	approvedBy + TAB + \
 	approvedDate + TAB + \

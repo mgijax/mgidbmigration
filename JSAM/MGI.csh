@@ -73,6 +73,7 @@ echo "Data Migration..." | tee -a  $LOG
 ./mgispecies.csh | tee -a $LOG
 ./mgimarker.csh | tee -a $LOG
 ./mgiprbmarker.csh | tee -a $LOG
+exit 0
 ./mgiref.csh | tee -a $LOG
 ./mgisequence.csh | tee -a $LOG
 ./mginew.csh | tee -a $LOG

@@ -8,7 +8,7 @@
 # Tables:	189
 # Procedures:	105
 # Rules:	  5
-# Triggers:	149
+# Triggers:	150
 # Views:	196
 #
 # For this release, we need a copy of the schema for both
@@ -98,7 +98,7 @@ date | tee -a  $LOG
 # Re-create all triggers, sps, views....
 #
 
-${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
+#${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." | tee -a $LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a  $LOG

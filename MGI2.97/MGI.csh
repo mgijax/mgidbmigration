@@ -73,11 +73,6 @@ go
 drop table GXD_Assay_Old
 go
 
-/* for testing only! */
-
-delete from GXD_Structure where _Structure_key = 14325
-go
-
 end
 
 EOSQL

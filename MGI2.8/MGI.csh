@@ -12,8 +12,8 @@
 
 cd `dirname $0`
 
-setenv NOMEN nomen_release
-setenv STRAINS strains_release
+setenv NOMEN nomen
+setenv STRAINS strains
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
@@ -21,10 +21,10 @@ setenv PYTHONPATH	/usr/local/mgi/lib/python
 
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
 
-setenv newmgddb /usr/local/mgi/dbutils/mgd_release
+setenv newmgddb /usr/local/mgi/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
-setenv newnomendb /usr/local/mgi/dbutils/nomen_release
+setenv newnomendb /usr/local/mgi/dbutils/nomen
 setenv newnomendbschema ${newnomendb}/nomendbschema
 setenv newnomendbperms ${newnomendb}/nomendbperms
 
@@ -41,12 +41,12 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-date >> $LOG
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
-date >> $LOG
-$DBUTILITIESDIR/bin/dev/load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
-date >> $LOG
+#$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+#date >> $LOG
+#$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+#date >> $LOG
+#$DBUTILITIESDIR/bin/dev/load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
+#date >> $LOG
 
 echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG

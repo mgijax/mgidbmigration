@@ -13,7 +13,6 @@ transgenic (Cre/Flp)	Transgenic (Cre/Flp)
 transgenic (all)	Transgenic (random, expressed)
 transgenic (all)	Transgenic (random, gene disruption)
 transgenic (all)	Transgenic (Cre/Flp)
-transgenic (all)	Gene trapped
 targeted (Floxed/Frt)	Targeted (Floxed/Frt)
 targeted (Reporter)	Targeted (Reporter)
 targeted (knock-out)	Targeted (knock-out)

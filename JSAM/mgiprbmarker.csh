@@ -42,6 +42,9 @@ cat - <<EOSQL | doisql.csh $0 >> $LOG
 use $DBNAME
 go
 
+update statistics PRB_Marker_Old
+go
+
 select distinct r._Probe_key, r._Refs_key
 into #probe
 from PRB_Reference r, PRB_Marker_Old pm
@@ -197,10 +200,45 @@ and m._Marker_key = r._Marker_key
 and pr._Refs_key = r._Refs_key
 go
 
+create nonclustered index idx_probe on #multMark2(_Probe_key)
+go
+
+create nonclustered index idx_marker on #multMark2(_Marker_key)
+go
+
 select m._Marker_key, m._Probe_key, _Refs_key = min(m._Refs_key)
 into #multMark3
 from #multMark2 m
 group by _Probe_key, _Marker_key
+go
+
+/* select all multiple markers/multiple references where the marker/reference is not in multMark2 */
+
+select distinct m.*
+into #multMark4
+from #multMark1 m, PRB_Reference pr
+where m._Probe_key = pr._Probe_key
+and not exists (select 1 from #multMark2 m2
+where m._Probe_key = m2._Probe_key
+and m._Marker_key = m2._Marker_key)
+go
+
+/* for those that have RFLP or GXD information, choose the earliest reference */
+
+select distinct m.*, _Refs_key = min(pr._Refs_key)
+into #multMark5
+from #multMark4 m, PRB_Reference pr, PRB_RFLV v
+where m._Probe_key = pr._Probe_key
+and pr._Reference_key = v._Reference_key
+and m._Marker_key = v._Marker_key
+group by m._Probe_key, m._Marker_key
+union
+select distinct m.*, _Refs_key = min(a._Refs_key)
+from #multMark4 m, GXD_ProbePrep p, GXD_Assay a
+where m._Probe_key = p._Probe_key
+and p._ProbePrep_key = a._ProbePrep_key
+and m._Marker_key = a._Marker_key
+group by m._Probe_key, m._Marker_key
 go
 
 /* insert all prb_markers into new table */
@@ -226,6 +264,51 @@ insert into PRB_Marker
 select distinct pm._Probe_key, pm._Marker_key, s._Refs_key, pm.relationship,
 ${CREATEDBY}, ${CREATEDBY}, pm.creation_date, pm.modification_date
 from PRB_Marker_Old pm, #multMark3 s
+where pm._Probe_key = s._Probe_key
+and pm._Marker_key = s._Marker_key
+go
+
+/* those with multiple references and multiple markers */
+/* where the probe/marker has RFLP information or GXD information */
+
+insert into PRB_Marker
+select distinct pm._Probe_key, pm._Marker_key, s._Refs_key, pm.relationship,
+${CREATEDBY}, ${CREATEDBY}, pm.creation_date, pm.modification_date
+from PRB_Marker_Old pm, #multMark5 s
+where pm._Probe_key = s._Probe_key
+and pm._Marker_key = s._Marker_key
+go
+
+/* those which still could not be migrated */
+
+select distinct pm._Probe_key, pm._Marker_key, _Refs_key = max(r._Refs_key)
+into #leftovers
+from PRB_Marker_Old pm, MRK_Marker m, PRB_Probe p, PRB_Reference r
+where p.name like 'RIKEN%'
+and not exists (select 1 from PRB_Marker pmnew
+where pm._Marker_key = pmnew._Marker_key
+and pm._Probe_key = pmnew._Probe_key)
+and pm._Marker_key = m._Marker_key
+and pm._Probe_key = p._Probe_key
+and p._Probe_key = r._Probe_key
+group by pm._Probe_key, pm._Marker_key
+union
+select distinct pm._Probe_key, pm._Marker_key, _Refs_key = min(r._Refs_key)
+from PRB_Marker_Old pm, MRK_Marker m, PRB_Probe p, PRB_Reference r
+where p.name not like 'RIKEN%'
+and not exists (select 1 from PRB_Marker pmnew
+where pm._Marker_key = pmnew._Marker_key
+and pm._Probe_key = pmnew._Probe_key)
+and pm._Marker_key = m._Marker_key
+and pm._Probe_key = p._Probe_key
+and p._Probe_key = r._Probe_key
+group by pm._Probe_key, pm._Marker_key
+go
+
+insert into PRB_Marker
+select distinct pm._Probe_key, pm._Marker_key, s._Refs_key, pm.relationship,
+${CREATEDBY}, ${CREATEDBY}, pm.creation_date, pm.modification_date
+from PRB_Marker_Old pm, #leftovers s
 where pm._Probe_key = s._Probe_key
 and pm._Marker_key = s._Marker_key
 go

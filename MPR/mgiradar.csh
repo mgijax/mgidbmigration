@@ -25,5 +25,10 @@ ${newradardbschema}/procedure/TXT_create.logical | tee -a ${LOG}
 ${newradardbperms}/public/table/TXT_grant.logical | tee -a ${LOG}
 ${newradardbperms}/public/procedure/TXT_grant.logical | tee -a ${LOG}
 
+${newradardbschema}/table/VOC_create.logical | tee -a ${LOG}
+${newradardbschema}/index/VOC_create.logical | tee -a ${LOG}
+${newradardbschema}/key/VOC_create.logical | tee -a ${LOG}
+${newradardbperms}/public/table/VOC_grant.logical | tee -a ${LOG}
+
 date >> ${LOG}
 

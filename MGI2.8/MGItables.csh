@@ -33,10 +33,10 @@ EOSQL
 #
 # Use new schema product to create new tables
 #
-${newmgddbschema}/table/MGI_Tables_create.object
-${newmgddbschema}/table/MGI_Columns_create.object
-${newmgddbschema}/default/MGI_Tables_bind.object
-${newmgddbschema}/default/MGI_Columns_bind.object
+${newmgddbschema}/table/MGI_Tables_create.object >>& $LOG
+${newmgddbschema}/table/MGI_Columns_create.object >>& $LOG
+${newmgddbschema}/default/MGI_Tables_bind.object >>& $LOG
+${newmgddbschema}/default/MGI_Columns_bind.object >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
@@ -67,10 +67,10 @@ quit
  
 EOSQL
   
-${newmgddbschema}/key/MGI_Tables_create.object
-${newmgddbschema}/key/MGI_Columns_create.object
-${newmgddbschema}/index/MGI_Tables_create.object
-${newmgddbschema}/index/MGI_Columns_create.object
+${newmgddbschema}/key/MGI_Tables_create.object >>& $LOG
+${newmgddbschema}/key/MGI_Columns_create.object >>& $LOG
+${newmgddbschema}/index/MGI_Tables_create.object >>& $LOG
+${newmgddbschema}/index/MGI_Columns_create.object >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
@@ -93,10 +93,10 @@ EOSQL
 #
 # Use new schema product to create new tables
 #
-${newnomendbschema}/table/MGI_Tables_create.object
-${newnomendbschema}/table/MGI_Columns_create.object
-${newnomendbschema}/default/MGI_Tables_bind.object
-${newnomendbschema}/default/MGI_Columns_bind.object
+${newnomendbschema}/table/MGI_Tables_create.object >>& $LOG
+${newnomendbschema}/table/MGI_Columns_create.object >>& $LOG
+${newnomendbschema}/default/MGI_Tables_bind.object >>& $LOG
+${newnomendbschema}/default/MGI_Columns_bind.object >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   
@@ -127,10 +127,10 @@ quit
  
 EOSQL
   
-${newnomendbschema}/key/MGI_Tables_create.object
-${newnomendbschema}/key/MGI_Columns_create.object
-${newnomendbschema}/index/MGI_Tables_create.object
-${newnomendbschema}/index/MGI_Columns_create.object
+${newnomendbschema}/key/MGI_Tables_create.object >>& $LOG
+${newnomendbschema}/key/MGI_Columns_create.object >>& $LOG
+${newnomendbschema}/index/MGI_Tables_create.object >>& $LOG
+${newnomendbschema}/index/MGI_Columns_create.object >>& $LOG
 
 date >> $LOG
 

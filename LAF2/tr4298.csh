@@ -4,7 +4,7 @@
 # Migration for PRB_Strain_Marker
 #
 
-cd `dirname $0`
+cd `dirname $0` && source Configuration
 
 setenv LOG $0.log
 rm -rf $LOG

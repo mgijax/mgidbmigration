@@ -3,9 +3,7 @@
 #
 # Migration for MRK_Label
 
-#
-
-cd `dirname $0`
+cd `dirname $0` && source Configuration
 
 setenv LOG $0.log
 rm -rf $LOG
@@ -38,7 +36,7 @@ ${newmgddbschema}/key/MRK_Status_drop.object >> $LOG
 ${newmgddbschema}/key/MRK_Status_create.object >> $LOG
 ${newmgddbschema}/key/MRK_Label_create.object >> $LOG
 
-${labelload}/mrklabel.sh >> $LOG
+${LABELLOAD}/mrklabel.sh >> $LOG
 
 ${newmgddbschema}/procedure/MRK_reloadLabel_drop.object >> $LOG
 ${newmgddbschema}/procedure/MRK_reloadLabel_create.object >> $LOG

@@ -4,31 +4,9 @@
 # LAF 2
 #
 
-cd `dirname $0`
-
-setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
-setenv PYTHONPATH	/usr/local/mgi/lib/python
-
-#setenv newmgddb /usr/local/mgi/dbutils/mgd
-setenv newmgddb /home/lec/db
-#setenv newmgddb /home/lec/db/sao
-setenv newmgddbschema ${newmgddb}/mgddbschema
-setenv newmgddbperms ${newmgddb}/mgddbperms
-
-setenv newnomendb /home/lec/db
-setenv newnomendbschema ${newmgddb}/nomendbschema
-setenv newnomendbperms ${newmgddb}/nomendbperms
-
-# sets database stuff (DBSERVER, DBNAME)
-source ${newmgddbschema}/Configuration
+cd `dirname $0` && source Configuration
 
 setenv LOG $0.log
-
-setenv labelload /usr/local/mgi/dbutils/mrklabelload
-#setenv labelload /home/lec/loads/mrklabelload
-
-setenv NOMEN nomen_release
-
 rm -rf $LOG
 touch $LOG
  

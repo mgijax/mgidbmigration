@@ -3,14 +3,12 @@
 #
 # Migration for Assembly Coordinates
 #
-# updated:  
-# Defaults:	  6
-# Procedures:	110
-# Rules:	  5
-# Triggers:	156
-# User Tables:	190
-# Views:	198
-#
+# Defaults:       6
+# Procedures:   113
+# Rules:          5
+# Triggers:     156
+# User Tables:  191
+# Views:        198
 
 cd `dirname $0` && source ./Configuration
 
@@ -23,7 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_db.csh ${DBSERVER} ${DBNAME} mgd_3.01.backup
+load_dev1db.csh ${DBNAME} mgd_3.01.backup
 
 date | tee -a  ${LOG}
 

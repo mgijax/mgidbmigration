@@ -9,7 +9,7 @@ setenv newmgddb /home/lec/db/assembly
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
-setenv CREATEDBY        1300
+setenv CREATEDBY        1001
 setenv SCHEMA_TAG	mgddbschema-10-0-0
 setenv PUBLIC_VERSION	"MGI 3.1"
 setenv PRODUCT_NAME	MGD

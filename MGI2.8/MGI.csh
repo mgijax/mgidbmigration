@@ -3,10 +3,10 @@
 #
 # Migration for MGI 2.8
 #
-# Tables:	162
-# Procedures:	 70
-# Triggers:	119
-# Views:	116
+# Tables:	168
+# Procedures:	 75
+# Triggers:	135
+# Views:	130
 #
 
 cd `dirname $0`

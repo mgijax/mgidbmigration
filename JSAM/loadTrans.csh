@@ -16,6 +16,7 @@ echo "Translation Migration..." | tee -a $LOG
  
 ${TRANSLOAD}/gender.csh $DBSERVER $DBNAME gender.badgood full >>& $LOG
 ${TRANSLOAD}/organism.csh $DBSERVER $DBNAME organism.badgood full >>& $LOG
+${TRANSLOAD}/provider.csh $DBSERVER $DBNAME provider.badgood full >>& $LOG
 ${TRANSLOAD}/sequencetype.csh $DBSERVER $DBNAME sequencetype.badgood full >>& $LOG
 ${TRANSLOAD}/tissue.csh $DBSERVER $DBNAME tissue.badgood full >>& $LOG
 ${TRANSLOAD}/cellline.csh $DBSERVER $DBNAME cellline.badgood full >>& $LOG

@@ -55,7 +55,7 @@ go
 
 insert into ALL_Allele
 select o._Allele_key, o._Marker_key, o._Strain_key, o._Mode_key, o._Allele_Type_key,
-o._Allele_Status_key, o._CellLine_key, -1, o.symbol, o.name, o.nomenSymbol, 0,
+o._Allele_Status_key, o._CellLine_key, -1, o.symbol, o.name, o.nomenSymbol, 1,
 o._CreatedBy_key, o._ModifiedBy_key, o._ApprovedBy_key, o.approval_date,
 o.creation_date, o.modification_date
 from ALL_Allele_Old o
@@ -64,7 +64,7 @@ go
 
 update ALL_Allele
 set _MutantESCellLine_key = -2
-where _HostESCellLine_key = -2
+where _ESCellLine_key = -2
 go
 
 insert into ALL_CellLine

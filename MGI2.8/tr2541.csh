@@ -139,8 +139,8 @@ quit
  
 EOSQL
  
-cat $DBPASSWORDFILE | bcp tempdb..JRSStrain in tr2541.txt -c -t\\t -U$DBUSER >>& $LOG
-cat $DBPASSWORDFILE | bcp tempdb..JRSType in tr2541.type.tab -c -t\\t -U$DBUSER >>& $LOG
+cat $DBPASSWORDFILE | bcp tempdb..JRSStrain in tr2541.txt -c -t\\t -S$DBSERVER -U$DBUSER >>& $LOG
+cat $DBPASSWORDFILE | bcp tempdb..JRSType in tr2541.type.tab -c -t\\t -S$DBSERVER -U$DBUSER >>& $LOG
 
 cat - <<EOSQL | doisql.csh $0 >>& $LOG
  

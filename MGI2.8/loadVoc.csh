@@ -14,7 +14,7 @@ setenv DBNAME $2
 setenv DBUSER		mgd_dbo
 setenv DBPASSWORDFILE	/usr/local/mgi/dbutils/mgidbutilities/.mgd_dbo_password
 setenv PYTHONPATH 	/usr/local/mgi/lib/python
-setenv VOCLOAD		/usr/local/mgi/dataload/vocload_bcp
+setenv VOCLOAD		/usr/local/mgi/dataload/vocload
 setenv ANNOTLOAD	/usr/local/mgi/dataload/annotload
 setenv GODATA		/usr/local/mgi/go_data
 setenv PSDATA		/mgi/all/wts_projects/2200/2239
@@ -49,7 +49,7 @@ go
 EOSQL
 
 echo "GO Vocabulary Load" >> $LOG
-${VOCLOAD}/runGOLoad.sh
+${VOCLOAD}/runGOLoad.sh load full
 
 # Load PhenoSlim Annotations
 

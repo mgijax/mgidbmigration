@@ -52,7 +52,7 @@ ${newmgddbschema}/key/MRK_Reference_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MRK_Reference_create.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/MRK_Reference_grant.object | tee -a ${LOG}
 
-${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}
+${MRKREFLOAD}/mrkref.sh
 
 date | tee -a $LOG
 

@@ -182,6 +182,7 @@ end
 
 EOSQL
 
+echo 'Running report...' | tee -a ${LOG}
 ./unmigratedAlleleState.py
 
 date >> ${LOG}

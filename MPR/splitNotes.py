@@ -62,7 +62,7 @@ db.sql('select distinct n.*, ' + \
 	'mdate = convert(char(10), n.modification_date, 101) ' + \
 	'into #notes ' + \
 	'from VOC_Annot a, VOC_Evidence e, MGI_Note n, MGI_NoteChunk nc ' + \
-	'where a._AnnotType_key = 1002 ' + \
+	'where a._AnnotType_key in (1001, 1002) ' + \
 	'and a._Annot_key = e._Annot_key ' + \
 	'and e._AnnotEvidence_key = n._Object_key ' + \
 	'and n._MGIType_key = 25 ' + \

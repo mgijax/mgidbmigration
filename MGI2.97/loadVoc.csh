@@ -4,7 +4,7 @@
 # Load VOC vocabularies
 #
 
-cd `dirname $0` && source Configuration
+cd `dirname $0` && source ./Configuration
 
 which Configuration
 

@@ -4,7 +4,7 @@
 # Migration for TR 2459, 3711 (GXD Index Tables)
 #
 
-cd `dirname $0` && source Configuration
+cd `dirname $0` && source ./Configuration
 
 setenv LOG $0.log
 rm -rf $LOG

@@ -39,4 +39,16 @@ ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 
 ${SEQMARKER} | tee -a ${LOG}
 
+cat - <<EOSQL | doisql.csh $0 >> ${LOG}
+
+use ${DBNAME}
+go
+
+exec SEQ_deriveRepAll
+go
+
+end
+
+EOSQL
+
 date | tee -a  ${LOG}

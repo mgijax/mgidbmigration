@@ -27,9 +27,9 @@ EOSQL
 #
 # drop indexes, create new table
 #
-${newmgddbschema}/index/MGI_Fantom2_Notes_drop.object
-${newmgddbschema}/table/MGI_Fantom2_create.object
-${newmgddbschema}/default/MGI_Fantom2_bind.object
+${newmgddbschema}/index/MGI_Fantom2Notes_drop.object >>& ${LOG}
+${newmgddbschema}/table/MGI_Fantom2_create.object >>& ${LOG}
+${newmgddbschema}/default/MGI_Fantom2_bind.object >>& ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
@@ -95,6 +95,8 @@ go
 quit
 
 EOSQL
+
+${newmgddbschema}/index/MGI_Fantom2Notes_create.object >>& ${LOG}
 
 date >> $LOG
 

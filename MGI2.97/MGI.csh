@@ -42,6 +42,7 @@ tr3710.csh | tee -a $LOG
 tr3432.csh | tee -a $LOG
 tr4708.csh | tee -a $LOG
 wksrosetta.csh | tee -a $LOG
+${LABELLOAD}/mrklabel.sh | tee -a $LOG
 
 # reconfiguration
 ${newmgddbschema}/key/key_drop.csh | tee -a $LOG

@@ -4,6 +4,7 @@ setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 setenv PYTHONPATH       /usr/local/mgi/lib/python
 
 setenv VOCLOAD /usr/local/mgi/dataload/vocload
+setenv LABELLOAD /usr/local/mgi/dbutils/mrklabelload
 
 setenv newmgddb /usr/local/mgi/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema

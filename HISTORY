@@ -1,3 +1,10 @@
+TAG: mgidbmigration-10-0-19
+DATE: 02/09/2005
+STAFF: dbm
+RELEASE: A
+CHANGES: 
+1) Add MGC logical DB for MGC release
+
 TAG: mgidbmigration-3-1-1-6
 DATE: 02/02/2005
 STAFF: lec

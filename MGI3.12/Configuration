@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MGI3.12
+
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddb /home/lec/db
+setenv newmgddbschema ${newmgddb}/mgddbschema
+
+source ${newmgddbschema}/Configuration
+

@@ -1,91 +1,142 @@
-	70Z/3	70z/3	jsam_load
-	Amplified Melton mouse islets 1 MIS1-A	Amplified Melton Mouse Islets 1 MIS1-A	jsam_load
-	Barstead MPL-RB3	Barstead mouse heart MPLRB3	jsam_load
-	Barstead MPL-RB6	Barstead mouse proximal colon MPLRB6	jsam_load
-	Barstead MPL-RB5	Barstead stromal cell line MPL-RB5	jsam_load
-	Beddington embryonic region	Beddington mouse embryonic region	jsam_load
-	Soares 3NME12.5	EQUE: SOARES MOUSE 3NME12 5'	jsam_load
-	Beier day 0 kidney 	GuayWoodford Beier mouse kidney day 0	jsam_load
-	Beier day 7 kidney	GuayWoodford Beier mouse kidney day 7	jsam_load
-	Kaestner ngn3 -/- 	Kaestner ngn3 - -	jsam_load
-	Knowles/Solter 11.5 dpc limb bud 	Knowles Solter mouse 11 5day limb bud	jsam_load
-	Knowles/Solter 2-cell 	Knowles Solter mouse 2 cell	jsam_load
-	Knowles/Solter 7.5 dpc primitive streak	Knowles Solter mouse 7 5dpc primitive streak	jsam_load
-	Knowles/Solter 8-cell 	Knowles Solter mouse 8 cell	jsam_load
-	Knowles/Solter E6.5dpc embryo	Knowles Solter mouse E6 5d whole embryo	jsam_load
-	Knowles/Solter ES cell	Knowles Solter mouse embryonic stem cell	jsam_load
-	Knowles/Solter inner cell mass	Knowles Solter mouse inner cell mass	jsam_load
-	Knowles/Solter egg	Knowles Solter mouse unfertilized egg	jsam_load
-	Ko embryo 11.5dpc 	Ko mouse embryo 11 5dpc	jsam_load
-	Ko embryo 11.5dpc 	Ko mouse embryo 11 5dpc (libNo. 998)	jsam_load
-	Ko embryo 11.5dpc 	Ko mouse embryo 11.5dpc	jsam_load
-	Life Tech 10.5 dpc embryo (10665-016)	Life Tech mouse embryo 10 5dpc 10665016	jsam_load
-	Life Tech 13.5 dpc embryo (10666-014)	Life Tech mouse embryo 13 5dpc 10666014	jsam_load
-	Life Tech 15.5 dpc embryo (10667-012) 	Life Tech mouse embryo 15 5dpc 10667012	jsam_load
-	Life Tech 8.5 dpc embryo (10664-019)	Life Tech mouse embryo 8 5dpc 10664019	jsam_load
-	McCarrey/Eddy 18-20 day sertoli cell	McCarrey Eddy 18 20 day sertoli cell	jsam_load
-	McCarrey/Eddy round spermatid 	McCarrey Eddy round spermatid	jsam_load
-	McCarrey/Eddy spermatocytes	McCarrey Eddy spermatocytes	jsam_load
-	McCarrey/Eddy type A spermatogonia	McCarrey Eddy type A spermatogonia	jsam_load
-	McCarrey/Eddy type B spermatogonia	McCarrey Eddy type B spermatogonia	jsam_load
-	Melton mouse adult pancreas 1 MAZ1	Melton Mouse Adult Pancreas 1	jsam_load
-	Melton mouse adult pancreas 2 MAZ2 	Melton Mouse Adult Pancreas 2	jsam_load
-	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Mouse E16 5 Pancreas Library 2 M16B2	jsam_load
-	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Mouse E16 5 Pancreas Library M16Z1	jsam_load
-	Melton mouse islets MIZ1	Melton Mouse Islets MIZ1	jsam_load
-	Melton mouse newborn pancreas MNZ1	Melton Mouse Newborn Pancreas	jsam_load
-	Not Applicable	Not applicable	jsam_load
-	Rashbass MOC-11.5 	Rashbass mouse MOC 11 5 optic cup	jsam_load
-	Rashbass MOV-9.5	Rashbass mouse MOV 9 5 optic vesicle	jsam_load
-	Stratagene	STRATAGENE	jsam_load
-	Schiller AtT-20	Schiller mouse AtT20	jsam_load
-	Schiller MAC13	Schiller mouse MAC13	jsam_load
-	Schiller MAC16 	Schiller mouse MAC16	jsam_load
-	Soares 3NME12.5	Soares 3NME12 5	jsam_load
-	Soares NbME13.5-14.5	Soares NbME13.5 14.5	jsam_load
-	Soares NbME13.5-14.5	Soares embryo NbME13.5-14.5	jsam_load
-	Soares 4NbMP13.5-14.5 	Soares library 4NbMP	jsam_load
-	Soares 3NME12.5	Soares mouse 3NM12.5	jsam_load
-	Soares 3NME12.5	Soares mouse 3NME12 5	jsam_load
-	Soares 3NbMS 	Soares mouse 3NbMS	jsam_load
-	Soares NML 	Soares mouse NML	jsam_load
-	Soares NbMH 	Soares mouse NbMH	jsam_load
-	Soares NbMH 	Soares mouse NbMh	jsam_load
-	Soares NbME13.5-14.5	Soares mouse embryo NbME	jsam_load
-	Soares NbME13.5-14.5	Soares mouse embryo NbME13.5 14.5	jsam_load
-	Soares NbME13.5-14.5	Soares mouse embryo NbME13.5-14.5	jsam_load
-	Soares NMHy	Soares mouse hypothalamus NMHy	jsam_load
-	Soares NbMLN	Soares mouse lymph node NbMLN	jsam_load
-	Soares NbMMG 	Soares mouse mammary gland NbMMG	jsam_load
-	Soares p3NMF19.5	Soares mouse p3NMF19.5	jsam_load
-	Soares p3NMF19.5	Soares mouse pNMF19.5	jsam_load
-	Soares 4NbMP13.5-14.5	Soares mouse placenta 4NbMP13.5 14.5	jsam_load
-	Soares NMUR	Soares mouse urogenital ridge NMUR	jsam_load
-	Soares p3NMF19.5	Soares murine p3NMF19.5 cDNA	jsam_load
-	Soares NKWMD	Soares_NKWMD_mandible	jsam_load
-	Soares NMEBA	Soares_NMEBA_branchial_arch	jsam_load
-	Soares NMGBC	Soares_NMGBC_B-cell	jsam_load
-	Soares NMMAX	Soares_NMMAX_maxillary_process	jsam_load
-	Soares NMPu 	Soares_NMPu	jsam_load
-	Soares NMES	Soares_embryonic_stem_cell_NMES	jsam_load
-	Soares NMLMG	Soares_mammary_gland_NMLMG	jsam_load
-	Soares NbMMG	Soares_mammary_gland_NbMMG	jsam_load
-	Soares NMBP	Soares_mouse_NMBP	jsam_load
-	Soares NMGB	Soares_mouse_NMGB_bcell	jsam_load
-	Soares NMIE	Soares_mouse_NMIE	jsam_load
-	Stratagene embryonic carcinoma (937317)	Stratagene #937317	jsam_load
-	Stratagene embryonic carcinoma (937317)	Stratagene 937317	jsam_load
-	Stratagene mouse T-cell (937311)	Stratagene Catalog #937311	jsam_load
-	Stratagene mouse skin	Stratagene catalog #937313	jsam_load
-	Stratagene mouse kidney (937315)	Stratagene catalog #937315	jsam_load
-	Stratagene mouse T-cell (937311)	Stratagene mouse Tcell 937311	jsam_load
-	Stratagene mouse diaphragm (937303)	Stratagene mouse diaphragm (#937303)	jsam_load
-	Stratagene mouse heart (937316)	Stratagene mouse heart (#937316)	jsam_load
-	Stratagene mouse kidney (937315)	Stratagene mouse kidney (#937315)	jsam_load
-	Stratagene mouse lung (937302)	Stratagene mouse lung 937302	jsam_load
-	Stratagene mouse melanoma (937312) 	Stratagene mouse melanoma (#937312)	jsam_load
-	Stratagene mouse skin	Stratagene mouse skin (#937313)	jsam_load
-	Stratagene embryonic carcinoma (937317)	Stratgene Cat. number 937317	jsam_load
-	Sugano mouse brain mncb	Sugano mouse brain MNCb	jsam_load
-	Stratagene mouse kidney (937315)	cDNA, lambda UniZAP XR; Stratagene 937315	jsam_load
-	Sugano mouse brain mncb	sugano mouse brain mncb	jsam_load
+	Barstead MPL-RB1	Barstead kidney MPL-RB1	dab
+	Barstead MPL-RB10	Barstead MPL-RB10 spleen	dab
+	Barstead MPL-RB11	Barstead MPL-RB11 testis	dab
+	Barstead MPL-RB12	Barstead MPL-RB12 brain	dab
+	Barstead MPL-RB13	Barstead MPL-RB13 muscle	dab
+	Barstead MPL-RB14	Barstead MPL-RB14 muscle	dab
+	Barstead MPL-RB15	Barstead MPL-RB15 pachytene	dab
+	Barstead MPL-RB2	Barstead lung MPL-RB2	dab
+	Barstead MPL-RB3	Barstead heart MPL-RB3	dab
+	Barstead MPL-RB4	Barstead pooled organs MPL-RB4	dab
+	Barstead MPL-RB5	Barstead stromal cell line MPL-RB5	dab
+	Barstead MPL-RB6	Barstead colon MPL-RB6	dab
+	Barstead MPL-RB7	Barstead irradiated colon MPL-RB7	dab
+	Barstead MPL-RB8	Barstead stromal cell line MPL-RB8	dab
+	Barstead MPL-RB9	Barstead bowel MPL_RB9	dab
+	Knowles/Solter blastocyst	Knowles Solter mouse blastocyst B1	dab
+	Knowles/Solter blastocyst	Knowles Solter mouse blastocyst B3	dab
+	McCarrey/Eddy 18-day leptotene and zygotene spermatocyte	McCarrey/Eddy 18d leptotene+zygotene spermatocyte	dab
+	Mouse 3.5-dpc blastocyst cDNA	Ko Mouse 3.5-dpc Blastocyst cDNA Library	dab
+	Mouse 3.5-dpc blastocyst cDNA	NIA Mouse Blastocyst Stage Embryo	dab
+	Mouse eight -cell stage embryo cDNA	Ko Mouse 8-cell Embryo cDNA Library	dab
+	Mouse eight -cell stage embryo cDNA 	NIA Mouse 8-cell Stage Embryo	dab
+	Mouse Fertilized one-cell-embryo cDNA	Ko Mouse Fertilized Egg cDNA Library	dab
+	Mouse Fertilized one-cell-embryo cDNA	NIA Mouse Fertilized Egg	dab
+	Mouse four-cell-embryo cDNA	Ko Mouse 4-cell Embryo cDNA Library	dab
+	Mouse four-cell-embryo cDNA	NIA Mouse 4-cell Stage Embryo	dab
+	Mouse sixteen-cell stage embryo cDNA	Ko Mouse 16-cell Morula cDNA Library	dab
+	Mouse sixteen-cell stage embryo cDNA	NIA Mouse 16-cell Stage Embryo	dab
+	Mouse two-cell stage embryo cDNA	Ko Mouse 2-cell Embryo cDNA Library	dab
+	Mouse two-cell stage embryo cDNA	NIA Mouse 2-cell Stage Embryo	dab
+	Mouse Unfertilized Egg cDNA	Ko Mouse Unfertilized Egg cDNA Library	dab
+	Mouse Unfertilized Egg cDNA	NIA Mouse Unfertilized Egg	dab
+	NCI_CGAP_BC1	NCI_CGAP_BC1 blood	dab
+	NCI_CGAP_BC2	NCI_CGAP_BC2 blood	dab
+	NCI_CGAP_BC3	NCI_CGAP_BC3 B-cell	dab
+	NCI_CGAP_Brn63	NCI_CGAP_Brn63 brain	dab
+	NCI_CGAP_Co24	NCI_CGAP_Co24 colon	dab
+	NCI_CGAP_Emb3	NCI_CGAP_Emb3 primitive streak	dab
+	NCI_CGAP_Ht1	NCI_CGAP_Ht1 heart	dab
+	NCI_CGAP_Ki15	NCI_CGAP_Ki15 kidney	dab
+	NCI_CGAP_Kid14	NCI_CGAP_Kid14 kidney	dab
+	NCI_CGAP_Li10	NCI_CGAP_Li10 liver	dab
+	NCI_CGAP_Li9	NCI_CGAP_Li9 liver	dab
+	NCI_CGAP_Lu29	NCI_CGAP_Lu29 lung tumor	dab
+	NCI_CGAP_Lu30	NCI_CGAP_Lu30 lung tumor	dab
+	NCI_CGAP_Lu33	NCI_CGAP_Lu33 lung tumor	dab
+	NCI_CGAP_Lu35	NCI_CGAP_Lu35 lung	dab
+	NCI_CGAP_Mam1	NCI_CGAP_Mam1 mammary tumor	dab
+	NCI_CGAP_Mam10	NCI_CGAP_Mam10 mammary gland tumor	dab
+	NCI_CGAP_Mam2	NCI_CGAP_Mam2 mammary tumor	dab
+	NCI_CGAP_Mam3	NCI_CGAP_Mam3 mammary tumor	dab
+	NCI_CGAP_Mam4	NCI_CGAP_Mam4 mammary tumor	dab
+	NCI_CGAP_Mam5	NCI_CGAP_Mam5 mammary tumor	dab
+	NCI_CGAP_Mam6	NCI_CGAP_Mam6 mammary tumor	dab
+	NCI_CGAP_MBM2	NCI_CGAP_MBM2 blood	dab
+	NCI_CGAP_Ov44	NCI_CGAP_Ov44 ovary	dab
+	NCI_CGAP_SG1	NCI_CGAP_SG1 salivary gland	dab
+	NCI_CGAP_SG2	NCI_CGAP_SG2 salivary gland	dab
+	NCI_CGAP_SI1	NCI_CGAP_SI1 small intestine	dab
+	NCI_CGAP_Skn2	NCI_CGAP_Skn2 skin	dab
+	NCI_CGAP_Sp2	NCI_CGAP_Sp2 spleen	dab
+	NCI_CGAP_St1	NCI_CGAP_St1 stomach	dab
+	NCI_CGAP_Te1	NCI_CGAP_Te1 testis	dab
+	NIA Mouse 12.5-dpc Male Genital Ridge/Mesonephros cDNA Library (Long)	NIA Mouse 12.5 dpc Male Genital Ridge/Mesonephros	dab
+	NIA Mouse 7.5-dpc Whole Embryo cDNA Library (Long)	NIA Mouse 7.5 dpc Whole Embryo (Long)	dab
+	NIA Mouse 8.5-dpc Whole Embryo cDNA Library (Long)	NIA Mouse 8.5 dpc Whole Embryo (Long)	dab
+	NIA Mouse Blastocyst cDNA Library (Long)	NIA Mouse Blastocyst (Long)	dab
+	NIA Mouse E12.5 Female Mesonephros and Gonads cDNA Library	NIA Mouse E12.5 Female Mesonephros	dab
+	NIA Mouse E13.5 VMB Dopamine Cell cDNA Library	NIA Mouse 13.5 dpc Ventral Midbrain Dopamine Neuron	dab
+	NIA Mouse E13.5 VMB Dopamine cell cDNA Library	NIA Mouse Neural Stem Cell (Doublets)	dab
+	NIA Mouse E7.5 Embryonic Portion cDNA Library	NIA Mouse E7.5 Embryonic Part	dab
+	NIA Mouse E7.5 Extraembryonic Portion cDNA Library	Ko Mouse 7.5 dpc extraembryonic cDNA	dab
+	NIA Mouse E7.5 Extraembryonic Portion cDNA Library	NIA Mouse E7.5 Extraembryonic Part	dab
+	NIA Mouse E9.5 Whole Embryo cDNA Library (Long)	NIA Mouse 9.5-dpc Whole Embryo	dab
+	NIA Mouse Embryonic Germ Cell cDNA Library (Long)	NIA Mouse Embryonic Germ Cell	dab
+	NIA Mouse ES Cell (LIF-) cDNA Library (Long)	NIA Mouse ES Cell (LIF-) (Long)	dab
+	NIA Mouse ES Cell (LIF-) cDNA Library Short	NIA Mouse ES Cell (LIF-) (Short)	dab
+	NIA Mouse Germinal Center B Cell cDNA Library	NIA Mouse Germinal Center B Cell	dab
+	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+) cDNA Library (Long)	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1+)	dab
+	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-) cDNA Library (Long)	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-)	dab
+	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+) cDNA Library (Long)	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+)	dab
+	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-) cDNA Library (Long)	NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-)	dab
+	NIA Mouse Mesenchymal Stem Cell cDNA Library (Long)	NIA Mouse Mesenchymal Stem Cell (Long)	dab
+	NIA Mouse Neural Stem Cell (Differentiated) cDNA Library (Long)	NIA Mouse Neural Stem Cell (Differentiated)	dab
+	NIA Mouse Newborn Brain cDNA Library	NIA Mouse Newborn Brain	dab
+	NIA Mouse Newborn Heart cDNA Library	NIA Mouse Newborn Heart	dab
+	NIA Mouse Newborn Kidney cDNA Library (Long)	NIA Newborn Kidney (Long)	dab
+	NIA Mouse Newborn Kidney cDNA Library2 (Short)	NIA Newborn Kidney (Short)	dab
+	NIA Mouse newborn Ovary cDNA Library	NIA Mouse newborn Ovary	dab
+	NIA Mouse Osteoblast cDNA Library (Long)	NIA Mouse Osteoblast (Long)	dab
+	NIA Mouse Trophoblast Stem Cell cDNA Library (Long)	NIA Mouse Trophoblast Stem Cell (Long)	dab
+	NIA Mouse Trophoblast Stem Cell cDNA Library (Short)	NIA Mouse Trophoblast Stem Cell (Short)	dab
+	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	NIA Mouse Undifferentiated ES Cell (Long)	dab
+	NIA Mouse Undifferentiated ES Cell cDNA Library (Short)	NIA Mouse Undifferentiated ES Cell (Short)	dab
+	NIA Mouse Unfertilized Egg cDNA Library(Long)	NIA Mouse Unfertilized Egg (Long)	dab
+	NIA Newborn Kidney cDNA Library (Long)	NIA Mouse Newborn Kidney (Long)	dab
+	NIH_MGC_94	NIH_MGC_94 retina	dab
+	Rashbass MOC-11.5	Rashbass MOC-11.5 optic cup	dab
+	Rashbass MOV-9.5	Rashbass MOV-9.5 optic vesicle	dab
+	Soares  NMLMG	Soares mammary gland NMLMG	dab
+	Soares 2NbMT	Soares thymus 2NbMT	dab
+	Soares 3NbMS	Soares spleen 3NbMS	dab
+	Soares 3NME12.5	Soares 12.5dpc 3NME12.5	dab
+	Soares 4NbMP13.5-14.5	Soares placenta 4NbMP13.5-14.5	dab
+	Soares MPR0	Soares MPR0 prostate	dab
+	Soares NbME13.5-14.5	Soares 13.5-14.5dpc embryo NbME13.5-14.5	dab
+	Soares NbMH	Soares heart NbMH	dab
+	Soares NbMLN	Soares lymph node NbMLN	dab
+	Soares NbMMG	Soares mammary gland NbMMG	dab
+	Soares NKWMD	Soares NKWMD mandible	dab
+	Soares NMAP	Soares NMAP pituitary	dab
+	Soares NMBP	Soares NMBP bone	dab
+	Soares NMBP1	Soares NMBP1 pituitary	dab
+	Soares NMBP13-15	Soares NMBP13-15 pituitary	dab
+	Soares NMBP2	Soares NMBP2 pituitary	dab
+	Soares NMBPA	Soares NMBPA pituitary	dab
+	Soares NMEBA	Soares NMEBA branchial arch	dab
+	Soares NMES	Soares embryonic stem cell NMES	dab
+	Soares NMGB	Soares NMGB B-cell	dab
+	Soares NMGBC	Soares NMGBC B-cell	dab
+	Soares NMHy	Soares hypothalamus NMHy	dab
+	Soares NMKWNP	Soares nasal process NMKWNP	dab
+	Soares NML	Soares liver NML	dab
+	Soares NMMAX	Soares NMMAX maxillary process	dab
+	Soares NMO1	Soares NMO1 ovary	dab
+	Soares NMO2	Soares NMO2 ovary	dab
+	Soares NMPR0	Soares NMPR0 prostate	dab
+	Soares NMPu	Soares NMPu pregnant uterus	dab
+	Soares NMTC	Soares NMTC trophoblast	dab
+	Soares NMUR	Soares 11.5-12.5 dpc urogenital ridge NMUR	dab
+	Soares p3NMF19.5	Soares 19.5dpc p3NMF19.5	dab
+	Stratagene embry. carcinoma/RA (937318)	Stratagene embryonic carcinoma/RA (#937318)	dab
+	Stratagene embryonic carcinoma (937317)	Stratagene embryonic carcinoma (#937317)	dab
+	Stratagene mouse diaphragm (937303)	Stratagene diaphragm (#937303)	dab
+	Stratagene mouse heart (937316)	Stratagene 13dpc heart (#937316)	dab
+	Stratagene mouse kidney (937315)	Stratagene kidney (#937315)	dab
+	Stratagene mouse lung (937302)	Stratagene lung (#937302)	dab
+	Stratagene mouse macrophage (937306)	Stratagene macrophage (#937306)	dab
+	Stratagene mouse melanoma (937312)	Stratagene melanoma (#937312)	dab
+	Stratagene mouse skin	Stratagene skin (#937313)	dab
+	Stratagene mouse T-cell (937311)	Stratagene T-cell (#937311)	dab
+	Stratagene mouse testes	Stratagene testis (#937308)	dab

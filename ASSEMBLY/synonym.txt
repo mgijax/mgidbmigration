@@ -1,0 +1,148 @@
+AB	Albino Bluhm
+ABJ	Asebia
+ABJ/LeJ	Asebia
+A/He	A Heston
+A/HeJ	A Heston
+A/J	A
+A/WySnJ	A Woolley Snell
+AKR	AK
+AKR/J	AK
+ALR	Alloxan Resistance
+ALR/LtJ	Alloxan Resistance
+ALS	Alloxan Susceptibility
+ALS/LtJ	Alloxan Susceptibility
+ALY	Alymphoplasia
+AM/Wf	Mottled Agouti
+AMMS/1	Kunming
+ATEB	Atrichosis Eye Blebs
+ATEB/LeJ	Atrichosis Eye Blebs
+BALB/c	Bagg Albino
+BALB/cBy	BALB Bailey
+BALB/cBy	BALB/c Bailey
+BALB/cBy	Cby
+BALB/cByJ	BALB/c Bailey J
+BBT	Black Belted
+BEH	Berlin High (body weight)
+BEL	Berlin Low (body weight)
+BL	Bagg L
+BJR	BJR = B6 x JK (p/p) BJ. At F7 crossed to B6-ru2 and named BJR.
+BNT	Bent Tail
+BNT/J	Bent Tail J
+BPH	Blood Pressure High
+BPL	Blood Pressure Low
+BPN	Blood Pressure Normal
+BRSUNT	BRS + UNTreated with methylcholanthrene 
+BRVR	Bacteria Resistant Virus Resistant
+BRVS	Bacteria Resistant Virus Susceptible
+BSVR	Bacteria Susceptible Virus Resistant
+BSVS	Bacteria Susceptible Virus Susceptible
+BT	Bent Tail
+BUA	Brown University Albino
+BUB	Brown University B
+BUC	Brown University C
+BUD	Brown University D
+BUE	Brown University E
+C3H/HeJ	C3
+C3H/HeJ	C3H Heston
+C3H/HeSn	C3H Heston Snell
+C57BL/10	B10
+C57BL/10J	Black 10
+C57BL/10J	Black 10 J
+C57BL/10SnJ	Black 10 Snell J
+C57BL/10SnJ	B10 Snell J
+C57BL/6	B6
+C57BL/6	Black 6
+C57BL/6ByJ	Black 6 Bailey
+C57BL/6J	B6
+C57BL/6J	B6J
+C57BL/6J	Black 6
+C57BLKS	Black Kaliss
+C57BLKS/J	Black Kaliss J
+C57BR	C57 brown
+C57L/J	C57 Leaden
+C57L	Leaden
+C57P	P/A
+CAST	castaneus
+CAT	Dominant Cataract
+CBA	C, CB, XXXIX
+CBA/Ca	CBA Ca
+CBA/Ca	CBA Carter
+CBA/CaJ	CBA Carter J
+CBA/J	CBA Jackson
+CE	Extreme Dilution, c<e>
+CHMU	ch (congenital hydrocephalus) mu (muted)
+CLA	Centerville Light A
+CRM	Cream
+CTS	Cataract Shionogi
+DBA/1	D1
+DBA/1LacJ	D1Lac
+DBA/2	D2
+DBA/2J	D2J
+DBA/2BiJ	D2 Bittner
+DC/LeJ	Dancer
+DL	Dilute Lethal
+DLS/LeJ	Dilute Lethal Short ear
+DW	Dwarf
+DW/J	Dwarf Jackson
+FVB	Friend Virus B
+FVB	Fv1<b>
+FVB/N	Friend Virus B NIH
+FVB/NJ	Friend Virus B NIH Jackson
+CAST/Ei	Castaneus Eicher
+CE	Extreme Dilution
+EL	Epilepsy
+FL	Flexed Tail
+FL/1	Flexed Tail 1
+FL/2	Flexed Tail 2
+FL/4	Flexed Tail 4
+FSB	Furless x B10
+HIGA	High IgA
+HPG	Hypogonadal
+HPT	Hair Patches
+HTH	H2H
+HTG	H2G
+HTI	H2I
+LDH2/EIJ	Lactate Dehydrogenase 2, beta chain
+LG/J	Large
+LGG	Lidgap-Gates
+LLC	Low Leukocyte Count
+LLC/Ckc	Low Leukocyte Count
+HLC/Ckc	High Leukocyte Count
+JF1	Japanese Fancy Mouse 1
+LPT/LeJ	Loop-Tail
+LS/Ibg	Long Sleep
+LS/LeJ	Lethal Spotting
+LST	Lid Gap Stein
+LT	Light
+MA/J	Marsh
+MK/ReJ	Microcytic Anemia
+MOLC	molossinus
+MOLD	molossinus
+MOLE	molossinus
+MOLF	molossinus
+MOLG	molossinus
+MOR/RkJ	Malate Dehydrogenase, Mitochondrial
+MSM	M.MOL-MSM
+HRS	Hairless
+NOD	Non-obese Diabetic
+NON	Non-obese Non-diabetic
+I/LnJ	I Lyon
+I/St	I Strong
+JE	Jerker
+JGBF	Jagged Tail and Buff
+JIGR	Jittery and Grizzled
+SS	Short Sleep
+SWR	SW
+SWR	Swiss
+SWR	Swiss-R
+SWR	Swiss-8
+SWV	Swiss Vancouver
+TS	Tennessee Swiss
+TM	Tropical Medicine
+TKDU	Tail Kinks Ducky
+TD	Tanoid
+TF	Tufted
+WSA	Watkin Star Line A
+WSB	Watkin Star Line B
+WLO	White Label Oslo
+WLL	White Label Leeds

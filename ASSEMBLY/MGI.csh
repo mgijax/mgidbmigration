@@ -36,6 +36,7 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 ./mgiassembly.csh | tee -a ${LOG}
 ./mlpstrain.csh | tee -a ${LOG}
 ./mgisynonym.csh | tee -a ${LOG}
+./mlpsynonym.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} | tee -a ${LOG}
 
 ${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a ${LOG}
 

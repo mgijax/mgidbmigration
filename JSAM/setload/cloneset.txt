@@ -240,10 +240,6 @@ IMAGE	Source	NIA Mouse Osteoblast cDNA Library (Long)	dab
 IMAGE	Source	NIA Mouse Trophoblast Stem Cell cDNA Library (Long)	dab
 IMAGE	Source	NIA Mouse Undifferentiated ES Cell cDNA Library (Long)	dab
 IMAGE	Source	NIA Mouse Unfertilized Egg cDNA Library(Long)	dab
-NIA 15K	Source	NIA Mouse 15K cDNA Clone Set	dab
-NIA 7.4K	Source	NIA Mouse 7.4K cDNA Clone Set	dab
-NIA	Source	NIA Mouse 15K cDNA Clone Set	dab
-NIA	Source	NIA Mouse 7.4K cDNA Clone Set	dab
 NIA	Source	Mouse sixteen-cell stage embryo cDNA	dab
 NIA	Source	Mouse two-cell stage embryo cDNA	dab
 NIA	Source	Mouse four-cell-embryo cDNA	dab

@@ -45,6 +45,7 @@ date >> $LOG
 echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.9" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-0" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-4-0-10" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
 echo "Reconfigure Nomen..." >> $LOG
@@ -66,7 +67,11 @@ echo "Drop and re-create Triggers..." >> $LOG
 ${newmgddbschema}/trigger/trigger_drop.csh >> $LOG
 ${newmgddbschema}/trigger/trigger_create.csh >> $LOG
 
-echo "Install Developer's Permissions..." >>$LOG
+echo "Install Permissions..." >>$LOG
+${newmgddbperms}/public/perm_revoke.csh >> $LOG
+${newmgddbperms}/public/perm_grant.csh >> $LOG
+${newmgddbperms}/curatorial/perm_revoke.csh >> $LOG
+${newmgddbperms}/curatorial/perm_grant.csh >> $LOG
 ${newmgddbperms}/developers/perm_grant.csh >> $LOG
 date >> $LOG
 

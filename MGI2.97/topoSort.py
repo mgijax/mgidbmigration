@@ -1,41 +1,25 @@
 #!/usr/local/bin/python
 
-# $Header$
-# $Name$
-
 #
-# Program: topoSort.py
-#
-# Original Author: Geoff Davis, Lori Corbani
+# Program:  topoSort.py
 #
 # Purpose:
 #
-# 	Classes to read/write GXD Anatomical Dictionary
-#
-# Requirements Satisfied by This Program:
-#
-# Usage:
-#
-# Envvars:
+# 	Read GXD Anatomical Dictionary and generate a file
+#	of SQL commands to update GXD_Structure.topoSort field.
 #
 # Inputs:
 #
+#	none
+#
 # Outputs:
 #
-# Exit Codes:
-#
-# Assumes:
-#
-# Bugs:
-#
-# Implementation:
-#
-#    Modules:
+#	topoSort.csh; a c-shell script with SQL commands to execute
 #
 # Modification History:
 #
 # 05/07/2003	lec
-#	- TR 3432; originally mgihome/admin/gen_anatdictionary
+#	- TR 3432; taken from mgihome/admin/gen_anatdictionary
 #
 
 import sys		# standard Python libraries
@@ -441,25 +425,6 @@ def doOneStage(stagenum):
 
 	return(build_tree())
 
-def doOneWIStage(stagenum, fd, indent):
-	'''
-	# requires:
-	#	stagenum (string) the stage to load/print
-	#	fd (file descriptor) the output file
-	#	indent (string) characters used to indent nodes at greater depth
-	# effects: 
-	#	Loads the hierarchy for the specified stage and writes it to the global output file
-	# modifies:
-	#	structures
-	#	Structure.extent
-	# returns: nothing
-	# exceptions:
-	#	Dies with an error message if the output file cannot 
-	#	be opened for writing
-	'''
-
-	print_WIstructure_tree(doOneStage(stagenum), fd, indent)
-
 def doOneGOStage(stagenum, fd, indent):
 	'''
 	# requires:
@@ -480,6 +445,19 @@ def doOneGOStage(stagenum, fd, indent):
 	print_GOstructure_tree(doOneStage(stagenum), fd, indent)
 
 def doOneTopoStage(stagenum, fd):
+	'''
+	# requires:
+	#	stagenum (string) the stage to load/print
+	#	fd (file descriptor) the output file
+	# effects: 
+	#	Loads the hierarchy for the specified stage and writes sql updates to output file
+	# modifies:
+	#	structures
+	#	Structure.extent
+	# returns: nothing
+	# exceptions:
+	#	Dies with an error message if the output file cannot be opened for writing
+	'''
 
 	set_topoSort_byNode(doOneStage(stagenum), fd)
 
@@ -487,7 +465,9 @@ def set_topoSort_byNode(snode, fd):
 	'''
 	# requires: 
 	#   snode: Structure node
-	# effects: recursively updates the topoSort value or each snode and its descendents
+	#   fd (file descriptor) the output file
+	# effects: recursively prints an SQL update of GXD_Structure.topoSort for
+	#	node snode and its descendants.
 	# modifies: nothing
 	# returns: nothing
 	# exceptions: none
@@ -495,10 +475,14 @@ def set_topoSort_byNode(snode, fd):
 
 	global topoSort
 
+	# write the Theiler Stage and Print Name for debugging
 	fd.write('/* TS:%d:%s */\n' % (snode.getStageNum(), snode.getPrintName()))
+
+	# write the update statement to execute
 	fd.write('update GXD_Structure set topoSort = %d ' % (topoSort) + \
 	    'where _Structure_key = %d ' % (snode.getMgiKey()) + '\ngo\n\n')
 
+	# increment the topoSort counter
 	topoSort = topoSort + 1
 
 	children = {}
@@ -535,6 +519,8 @@ def set_topoSort():
 	fd = open('topoSort.csh', 'w')
 
 	header = '''#!/bin/csh -f
+
+# generated automatically from topoSort.py
 
 cd `dirname $0` && source ./Configuration
 

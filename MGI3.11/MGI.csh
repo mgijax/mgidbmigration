@@ -59,6 +59,7 @@ ${radardbperms}/public/table/WRK_EntrezGene_Synonym_grant.object | tee -a ${LOG}
 
 ${EGLOADFILES} | tee -a ${LOG}
 ${EGLOADHUMAN} | tee -a ${LOG}
+${EGLOADRAT} | tee -a ${LOG}
 
 ${MRKREFLOAD} | tee -a ${LOG}
 ${MRKLABELLOAD} | tee -a ${LOG}

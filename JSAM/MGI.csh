@@ -5,10 +5,10 @@
 #
 # updated:  
 # Defaults:	  5
-# Tables:	197
+# Tables:	192
 # Procedures:	 96
 # Rules:	  5
-# Triggers:	151
+# Triggers:	150
 # Views:	198
 #
 # For this release, we need a copy of the schema for both

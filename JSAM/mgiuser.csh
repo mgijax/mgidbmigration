@@ -196,7 +196,7 @@ insert into MGI_User values (1203, @loaderKey, @activeKey, "swissload", "SWISS-P
 insert into MGI_User values (1204, @loaderKey, @activeKey, "riken_autoload", "Fantom1 (RIKEN) Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1205, @loaderKey, @activeKey, "rh_mapped_est_autoload", "RH Mapped EST Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1206, @loaderKey, @activeKey, "MGI_2.97", "GXD Release (MGI 2.97)", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1206, @loaderKey, @activeKey, "MGI_2.98", "MGI 2.98", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1207, @loaderKey, @activeKey, "MGI_2.98", "MGI 2.98", 1000, 1000, getdate(), getdate())
 
 /* Mergers */
 insert into MGI_User values (1300, @mergerKey, @activeKey, "strainmerge", "Strain Merge", 1000, 1000, getdate(), getdate())

@@ -121,5 +121,8 @@ EOSQL
 
 ${SETLOAD}/setload.csh ${newmgddbschema} alleletype.txt load >>& ${LOG}
 
+./mgiallele.py >>& ${LOG}
+cat ${DBPASSWORDFILE} | isql -S${DBSERVER} -D${DBNAME} -U${DBUSER} -imgiallele.sql
+
 date >> ${LOG}
 

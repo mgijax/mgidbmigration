@@ -248,6 +248,107 @@ def process_updates(results):
 	updateFile.close()
 	updmarkerFile.close()
 
+def processJRSFile():
+
+	cmds = []
+
+	cmds.append('select jrs.*, t.mgikey1, t.mgikey2, t.mgikey3 ' + \
+	'into #adds ' + \
+	'from tempdb..JRSStrain jrs, tempdb..jrstype t ' + \
+	'where jrs.strain is not null ' + \
+	'and not exists (select 1 from PRB_Strain_Acc_View a ' + \
+	'where convert(varchar(30), jrs.registry) = a.accID) ' + \
+	'and not exists (select 1 from PRB_Strain s ' + \
+	'where jrs.strain = s.strain) ' + \
+	'and jrs.types = t.jrstype ' + \
+	'union ' + \
+	'select jrs.*, null, null, null ' + \
+	'from tempdb..JRSStrain jrs ' + \
+	'where jrs.strain is not null ' + \
+	'and not exists (select 1 from PRB_Strain_Acc_View a ' + \
+	'where convert(varchar(30), jrs.registry) = a.accID) ' + \
+	'and not exists (select 1 from PRB_Strain s ' + \
+	'where jrs.strain = s.strain) ' + \
+	'and jrs.types is null')
+
+	# Delete weird strains, duplicates
+
+	cmds.append('delete from #adds where strain like "(Same as %"')
+	cmds.append('select * into #dups from #adds group by strain having count(*) > 1')
+	cmds.append('delete #adds from #adds a, #dups d where a.registry = d.registry')
+
+	# Match on Registry ID but Strains don't match
+
+	cmds.append('select jrs.*, jaxstrain = m.strain ' + \
+	'into #conflicts ' + \
+	'from tempdb..JRSStrain jrs, PRB_Strain m, PRB_Strain_Acc_View a ' + \
+	'where convert(varchar(30), jrs.registry) = a.accID ' + \
+	'and a._Object_key = m._Strain_key ' + \
+	'and jrs.strain != m.strain ' + \
+	'order by jrs.strain')
+
+	# Match on Strain
+
+	cmds.append('select jrs.*, t.mgikey1, t.mgikey2, t.mgikey3, m._Strain_key ' + \
+	'into #updates ' + \
+	'from tempdb..JRSStrain jrs, PRB_Strain m, tempdb..jrstype t ' + \
+	'where jrs.strain = m.strain ' + \
+	'and jrs.types = t.jrstype ' + \
+	'union ' + \
+	'select jrs.*, null, null, null, m._Strain_key ' + \
+	'from tempdb..JRSStrain jrs, PRB_Strain m ' + \
+	'where jrs.strain = m.strain ' + \
+	'and jrs.types is null')
+
+	# Records which require updates and exist in the conflicts table
+	# This means that we have the wrong Registry ID assigned to the wrong strain
+ 
+	cmds.append('select c.registry, c.strain, c.jaxstrain ' + \
+	'from #conflicts c, #updates u ' + \
+	'where c.registry = u.registry')
+
+	cmds.append('select * from #adds')
+
+	cmds.append('select u.* from #updates u ' + \
+	'where not exists (select 1 from #conflicts c where u.registry = c.registry)')
+
+	results = db.sql(cmds, 'auto')
+
+	process_adds(results[-2])
+	process_updates(results[-1])
+
+def processStrainClasses():
+
+	stypes = {}
+	results = db.sql('select _StrainType_key, strainType from MLP_StrainType', 'auto')
+	for r in results:
+		stypes[r['strainType']] = r['_StrainType_key']
+
+	classFile = open('tr2541.strainclasses', 'r')
+
+	for line in classFile.readlines():
+		tokens = string.split(string.strip(line), '\t')
+		jrs = tokens[0]
+		result = db.sql('select _Object_key from ACC_Accession where ' + \
+				'accID = "%s" and _LogicalDB_key = 22' % (jrs), 'auto')
+		if len(result) > 0:
+			strainKey = result[0]['_Object_key']
+
+		straintypes = []
+		for i in range(len(tokens)):
+			if i > 0 and tokens[i] != '':
+				straintypes.append(tokens[i])
+
+		cmds = []
+		cmds.append('delete from MLP_StrainTypes where _Strain_key = %d' % (strainKey))
+		for s in straintypes:
+			if stypes.has_key(s):
+				typeKey = stypes[s]
+				cmds.append('insert into MLP_StrainTypes ' + \
+					'values(%d,%d,getdate(),getdate())' % (strainKey, typeKey))
+			db.sql(cmds, None, execute = DOIT)
+		diagFile.write(str(cmds) + '\n\n')
+
 #
 # Main
 #
@@ -262,73 +363,7 @@ db.set_sqlPassword(string.strip(open('/usr/local/mgi/dbutils/mgidbutilities/.mgd
 DOIT = string.atoi(sys.argv[3])
 
 diagFile = open('tr2541.txt.out', 'w')
-
-cmds = []
-
-cmds.append('select jrs.*, t.mgikey1, t.mgikey2, t.mgikey3 ' + \
-'into #adds ' + \
-'from tempdb..JRSStrain jrs, tempdb..jrstype t ' + \
-'where jrs.strain is not null ' + \
-'and not exists (select 1 from PRB_Strain_Acc_View a ' + \
-'where convert(varchar(30), jrs.registry) = a.accID) ' + \
-'and not exists (select 1 from PRB_Strain s ' + \
-'where jrs.strain = s.strain) ' + \
-'and jrs.types = t.jrstype ' + \
-'union ' + \
-'select jrs.*, null, null, null ' + \
-'from tempdb..JRSStrain jrs ' + \
-'where jrs.strain is not null ' + \
-'and not exists (select 1 from PRB_Strain_Acc_View a ' + \
-'where convert(varchar(30), jrs.registry) = a.accID) ' + \
-'and not exists (select 1 from PRB_Strain s ' + \
-'where jrs.strain = s.strain) ' + \
-'and jrs.types is null')
-
-# Delete weird strains, duplicates
-
-cmds.append('delete from #adds where strain like "(Same as %"')
-cmds.append('select * into #dups from #adds group by strain having count(*) > 1')
-cmds.append('delete #adds from #adds a, #dups d where a.registry = d.registry')
-
-# Match on Registry ID but Strains don't match
-
-cmds.append('select jrs.*, jaxstrain = m.strain ' + \
-'into #conflicts ' + \
-'from tempdb..JRSStrain jrs, PRB_Strain m, PRB_Strain_Acc_View a ' + \
-'where convert(varchar(30), jrs.registry) = a.accID ' + \
-'and a._Object_key = m._Strain_key ' + \
-'and jrs.strain != m.strain ' + \
-'order by jrs.strain')
-
-# Match on Strain
-
-cmds.append('select jrs.*, t.mgikey1, t.mgikey2, t.mgikey3, m._Strain_key ' + \
-'into #updates ' + \
-'from tempdb..JRSStrain jrs, PRB_Strain m, tempdb..jrstype t ' + \
-'where jrs.strain = m.strain ' + \
-'and jrs.types = t.jrstype ' + \
-'union ' + \
-'select jrs.*, null, null, null, m._Strain_key ' + \
-'from tempdb..JRSStrain jrs, PRB_Strain m ' + \
-'where jrs.strain = m.strain ' + \
-'and jrs.types is null')
-
-# Records which require updates and exist in the conflicts table
-# This means that we have the wrong Registry ID assigned to the wrong strain
- 
-cmds.append('select c.registry, c.strain, c.jaxstrain ' + \
-'from #conflicts c, #updates u ' + \
-'where c.registry = u.registry')
-
-cmds.append('select * from #adds')
-
-cmds.append('select u.* from #updates u ' + \
-'where not exists (select 1 from #conflicts c where u.registry = c.registry)')
-
-results = db.sql(cmds, 'auto')
-
-process_adds(results[-2])
-process_updates(results[-1])
-
+processJRSfile()
+processStrainClasses()
 diagFile.close()
 

@@ -97,6 +97,11 @@ for r in results:
     else:
 	note = ''
 
+    if r['ecode'] in ('TAS', 'IMP'):
+	ecode = 'CUR'
+    else:
+	ecode = r['ecode']
+
     fp.write(termID[termKey] + TAB + \
              objectID[key] + TAB + \
              r['jnumID'] + TAB + \

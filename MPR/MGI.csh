@@ -55,6 +55,17 @@ ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
+./unmigratedAlleleState.py
+./allelecombination.csh
+./genotypeorder.csh
+./mutantescell.csh
+./mpannotations.csh
+./splitNotes.py | tee -a ${LOG}
+
+${ALLLABELLOAD}/alllabel.sh
+${MRKREFLOAD}/mrkref.sh
+
+
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
@@ -157,14 +168,6 @@ select getdate()
 go
 
 EOSQL
-
-./allelecombination.csh
-./genotypeorder.csh
-./mutantescell.csh
-./mpannotations.csh
-./splitNotes.py | tee -a ${LOG}
-
-${ALLLABELLOAD}/alllabel.sh
 
 #./mgiradar.csh | tee -a ${LOG}
 

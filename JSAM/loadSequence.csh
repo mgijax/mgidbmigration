@@ -1,6 +1,13 @@
 #!/bin/csh -f
 
+# Sharon, comment this line out
 cd `dirname $0` && source ./Configuration
+
+# Sharon, un-comment and set appropriately
+#setenv CACHELOAD        /home/sc/jsam/seqcacheload
+#setenv MRKREFLOAD       /home/sc/jsam/mrkrefload
+#setenv newmgddbschema	 /home/sc/jsam/mgddbschema
+#source ${newmgddbschema}/Configuration
 
 setenv LOG $0.log
 rm -rf $LOG
@@ -8,11 +15,16 @@ touch $LOG
  
 date | tee -a  $LOG
  
+# drop and re-create SP (Sharon)
+
+#${newmgddbschema}/procedure/SEQ_createDummyTest_drop.object
+#${newmgddbschema}/procedure/SEQ_createDummyTest_create.object
+
 # drop indexes
 
-${newmgddbschema}/index/ACC_Accessione_drop.object
-${newmgddbschema}/index/SEQ_Sequence_drop.object
-${newmgddbschema}/index/SEQ_Source_Assoc_drop.object
+#${newmgddbschema}/index/ACC_Accession_drop.object
+#${newmgddbschema}/index/SEQ_Sequence_drop.object
+#${newmgddbschema}/index/SEQ_Source_Assoc_drop.object
 
 # un-partition tables
 
@@ -42,9 +54,9 @@ EOSQL
 
 # re-build indexes
 
-${newmgddbschema}/index/ACC_Accessione_create.object
-${newmgddbschema}/index/SEQ_Sequence_create.object
-${newmgddbschema}/index/SEQ_Source_Assoc_create.object
+#${newmgddbschema}/index/ACC_Accessione_create.object
+#${newmgddbschema}/index/SEQ_Sequence_create.object
+#${newmgddbschema}/index/SEQ_Source_Assoc_create.object
 
 # re-partition tables
 
@@ -52,7 +64,7 @@ ${newmgddbschema}/index/SEQ_Source_Assoc_create.object
 
 ${CACHELOAD}/seqmarker.csh | tee -a $LOG
 ${CACHELOAD}/seqprobe.csh | tee -a $LOG
-${MRKREFLOAD}/mrkrefjsam.sh | tee -a $LOG
+${MRKREFLOAD}/mrkref.sh | tee -a $LOG
 
 date | tee -a  $LOG
 

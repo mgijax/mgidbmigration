@@ -343,17 +343,17 @@ EOSQL
 
 ${newmgddbschema}/index/PRB_Marker_create.object >> $LOG
 
-#cat - <<EOSQL | doisql.csh $0 >> $LOG
-#
-#use $DBNAME
-#go
-#
-#drop table PRB_Marker_Old
-#go
-#
-#end
-#
-#EOSQL
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+
+use $DBNAME
+go
+
+drop table PRB_Marker_Old
+go
+
+end
+
+EOSQL
 
 date >> $LOG
 

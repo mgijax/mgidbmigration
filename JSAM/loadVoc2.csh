@@ -20,15 +20,12 @@ cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 use ${DBNAME}
 go
 
-declare @synKey integer
-select @synKey = max(_Synonym_key) from VOC_Synonym
-
 select seqNum = identity(10), t._Term_key, synonym = "RefSeq (RNA, polypeptide)"
 into #toadd
 from VOC_Vocab v, VOC_Term t
 where v.name = 'Sequence Provider'
 and v._Vocab_key = t._Vocab_key
-and t.term "RefSeq"
+and t.term = "RefSeq"
 
 union
 select seqNum = identity(10), t._Term_key, synonym = "GenBank/EMBL/DDBJ:Rodent (DNA, RNA)"
@@ -121,6 +118,9 @@ where v.name = 'Sequence Provider'
 and v._Vocab_key = t._Vocab_key
 and t.term = "TrEMBL"
 go
+
+declare @synKey integer
+select @synKey = max(_Synonym_key) from VOC_Synonym
 
 insert into VOC_Synonym
 select @synKey + seqNum, _Term_key, synonym, getdate(), getdate()

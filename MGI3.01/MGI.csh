@@ -23,7 +23,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-#load_dev1db.csh ${DBNAME} mgd.backup
+load_devdb.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 date | tee -a  ${LOG}
 

@@ -284,6 +284,7 @@ and pm._Marker_key = s._Marker_key
 go
 
 /* those which still could not be migrated */
+/* if RIKEN, use max(_Refs_key), else use min(_Refs_key) */
 
 select distinct pm._Probe_key, pm._Marker_key, _Refs_key = max(r._Refs_key)
 into #leftovers

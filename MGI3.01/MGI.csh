@@ -34,6 +34,8 @@ ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 # order is important!
+./mgiset.csh | tee -a ${LOG}
+./mgiallele.csh | tee -a ${LOG}
 ./mgiprb.csh | tee -a ${LOG}
 ./mgigxd.csh | tee -a ${LOG}
 

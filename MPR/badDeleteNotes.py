@@ -52,5 +52,8 @@ for k in notes.keys():
     if j < 0 and i > 0:
         print 'cannot find end tag for allele ' + str(alleles[k])
 
+    if i > j:
+        print 'tags are in incorrect order for allele ' + str(alleles[k])
+	
 db.useOneConnection(0)
 

@@ -60,7 +60,7 @@ from PRB_Source_Old where species not in ("Not Applicable", "Not Specified", "mo
 go
 
 insert into PRB_Species (_ProbeSpecies_key, species)
-select seq, species
+select seq + 1, species
 from #newspecies
 go
 

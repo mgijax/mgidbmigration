@@ -8,7 +8,7 @@ cd `dirname $0`
 
 setenv SYBASE	/opt/sybase
 setenv PYTHONPATH       /usr/local/mgi/lib/python
-set path = ($path $SYBASE/bin /usr/local/mgi/dbutils/mgidbutilities/bin /usr/local/mgi/dbutils/mgidbutilities/bin/dev)
+set path = ($path $SYBASE/bin /usr/local/mgi/dbutils/mgidbutilities/current/bin /usr/local/mgi/dbutils/mgidbutilities/current/bin/dev)
 
 setenv oldmgddbschema /mgd_lec/mgddbschema
 setenv oldstrainsdbschema /usr/local/mgi/dbutils/strains/strainsdbschema
@@ -34,17 +34,20 @@ date >> $LOG
 #load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
 
 echo "Data Migration..." >> $LOG
-./tr256.csh >>& $LOG
-./tr2714.csh >>& $LOG
-./tr2718.csh >>& $LOG
-./tr2902.csh >>& $LOG
-./tr2916.csh >>& $LOG
-./tr2358.csh >>& $LOG
+#./tr256.csh >>& $LOG
+#./tr2714.csh >>& $LOG
+#./tr2718.csh >>& $LOG
+#./tr2902.csh >>& $LOG
+#./tr2916.csh >>& $LOG
+#./tr2358.csh >>& $LOG
+./tr2541.csh >>& $LOG
+exit 1
 
 #
 # Re-run all triggers, sps, views....
 #
 
+${newmgddbschema}/trigger/trigger_drop.csh
 ${newmgddbschema}/trigger/trigger_create.csh
 ${newmgddbschema}/view/view_drop.csh
 ${newmgddbschema}/view/view_create.csh

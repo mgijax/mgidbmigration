@@ -55,7 +55,7 @@ go
 
 /* Resolve Strain keys */
 
-select r._RISet_key, r.origin,
+select r._RISet_key,
 strain1 = substring(r.origin, 1, charindex(" x", r.origin) - 1),
 strain2 = substring(r.origin, charindex("x ", r.origin) + 2, char_length(r.origin)),
 _Strain_key_1 = s1._Strain_key,
@@ -68,25 +68,25 @@ and substring(r.origin, charindex("x ", r.origin) + 2, char_length(r.origin)) = 
 go
 
 insert into #strains
-select r._RISet_key, r.origin,
+select r._RISet_key,
 strain1 = "129S1/Sv-Kitl<Sl-J> p<+> Tyr<+>",
 strain2 = "A/HeJ",
 _Strain_key_1 = s1._Strain_key,
 _Strain_key_2 = s2._Strain_key
 from RI_RISet_Old r, PRB_Strain s1, PRB_Strain s2
-where r._RISet_key > 0
+where r.designation = "9XB"
 and "129S1/Sv-Kitl<Sl-J> p<+> Tyr<+>" = s1.strain
 and "A/HeJ" = s2.strain
 go
 
 insert into #strains
-select r._RISet_key, r.origin,
+select r._RISet_key,
 strain1 = "129S2/SvPas-Kitl<Sl-J> p<+> Tyr<+>",
 strain2 = "C57BL/6JPas",
 _Strain_key_1 = s1._Strain_key,
 _Strain_key_2 = s2._Strain_key
 from RI_RISet_Old r, PRB_Strain s1, PRB_Strain s2
-where r._RISet_key > 0
+where r.designation = "129XB"
 and "129S2/SvPas-Kitl<Sl-J> p<+> Tyr<+>" = s1.strain
 and "C57BL/6JPas" = s2.strain
 go

@@ -158,6 +158,11 @@ set cellLine = 'Not Specified'
 where cellLine is null
 go
 
+update PRB_Source_Old
+set ageMin = -1.0, ageMax = -1.0
+where ageMin is null
+go
+
 declare @notSpecifiedCuratorKey integer
 select @notSpecifiedCuratorKey = _User_key
 from MGI_User u, VOC_Term t

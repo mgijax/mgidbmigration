@@ -27,6 +27,30 @@ cKey = db.sql('select max(_CellLine_key) + 1 from ALL_CellLine', 'auto')[0]['']
 sKey = db.sql('select _Strain_key from PRB_Strain where strain = "Not Specified"', 'auto')[0]['_Strain_key']
 aKey = db.sql('select max(_Accession_key) + 1 from ACC_Accession', 'auto')[0]['']
 
+# create a "Not Specified" Mutant Cell Line record
+
+cellFile.write("-3" + TAB + \
+	"Not Specified" + TAB + \
+	str(sKey) + TAB + \
+	"" + TAB + \
+	"1" + TAB + \
+	"1000" + TAB + \
+	"1000" + TAB + \
+	loaddate + TAB + \
+	loaddate + CRT)
+
+# create a "Not Applicable" Mutant Cell Line record
+
+cellFile.write("-4" + TAB + \
+	"Not Applicable" + TAB + \
+	"-2" + TAB + \
+	"" + TAB + \
+	"1" + TAB + \
+	"1000" + TAB + \
+	"1000" + TAB + \
+	loaddate + TAB + \
+	loaddate + CRT)
+
 for line in inFile.readlines():
 
     tokens = string.split(line[:-1], '\t')
@@ -62,12 +86,3 @@ for line in inFile.readlines():
     cKey = cKey + 1
     aKey = aKey + 1
 
-cellFile.write("-3" + TAB + \
-	"Not Specified" + TAB + \
-	str(sKey) + TAB + \
-	"" + TAB + \
-	"1" + TAB + \
-	"1000" + TAB + \
-	"1000" + TAB + \
-	loaddate + TAB + \
-	loaddate + CRT)

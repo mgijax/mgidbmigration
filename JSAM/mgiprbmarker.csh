@@ -126,6 +126,7 @@ go
 
 print ""
 print "Molecular Segments with Multiple Markers and Multiple References"
+print "(several types of relationship)"
 print ""
 
 select distinct a.accID
@@ -139,6 +140,7 @@ go
 
 print ""
 print "Molecular Segments with Multiple Markers and Multiple References"
+print "(one type of relationship)"
 print ""
 
 select distinct a.accID

@@ -79,6 +79,9 @@ ${newmgddbperms}/public/table/PRB_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/table/VOC_grant.logical | tee -a ${LOG}
 
 ${newmgddbperms}/public/procedure/ACC_revoke.logical | tee -a ${LOG}
+${newmgddbperms}/public/procedure/MRK_revoke.logical | tee -a ${LOG}
+${newmgddbperms}/public/procedure/NOM_revoke.logical | tee -a ${LOG}
+${newmgddbperms}/public/procedure/PRB_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/ACC_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/ALL_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/MRK_revoke.logical | tee -a ${LOG}
@@ -87,6 +90,9 @@ ${newmgddbperms}/curatorial/procedure/PRB_revoke.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/VOC_revoke.logical | tee -a ${LOG}
 
 ${newmgddbperms}/public/procedure/ACC_grant.logical | tee -a ${LOG}
+${newmgddbperms}/public/procedure/MRK_grant.logical | tee -a ${LOG}
+${newmgddbperms}/public/procedure/NOM_grant.logical | tee -a ${LOG}
+${newmgddbperms}/public/procedure/PRB_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/ACC_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/ALL_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/MRK_grant.logical | tee -a ${LOG}

@@ -9,8 +9,8 @@ setenv VOCLOAD          /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
 
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddb /home/lec/db
-setenv newmgddbschema ${newmgddb}/mgddbschema-tr6520
-setenv newmgddbperms ${newmgddb}/mgddbperms-tr6520
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
 
 setenv SCHEMA_TAG       mgddbschema-3-1-1
 

@@ -5,7 +5,7 @@
 #
 # updated:  
 # Defaults:	  6
-# Procedures:	106
+# Procedures:	107
 # Rules:	  5
 # Triggers:	155
 # User Tables:	189
@@ -62,7 +62,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 # need to start with a MGI 2.98-Nomen database
 #
 # load an empty database and fill it with current MGI 2.98 data
-#./loadData.csh
+./loadData.csh
 
 # OR
 
@@ -92,6 +92,7 @@ echo "Data Migration..." | tee -a  $LOG
 ./mgisequence.csh | tee -a $LOG
 ./mginew.csh | tee -a $LOG
 ./acc.csh | tee -a $LOG
+./loadVoc2.csh | tee -a $LOG
 ./mgiset.csh | tee -a $LOG
 ./mgimap.csh | tee -a $LOG
 
@@ -160,7 +161,6 @@ EOSQL
 
 ${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
 
-./loadVoc2.csh | tee -a $LOG
 ./loadTrans.csh | tee -a $LOG
 ./loadSet.csh | tee -a $LOG
 

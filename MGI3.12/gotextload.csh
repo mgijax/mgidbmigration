@@ -14,7 +14,7 @@ setenv SCHEMADIR /home/lec/db/mgddbschema
 source ${SCHEMADIR}/Configuration
 
 # Nomen load specific
-#setenv NOTELOAD	/usr/local/mgi/dataload/noteload/mginoteload.py
+#setenv NOTELOAD	/usr/local/mgi/live/dataload/noteload/mginoteload.py
 setenv NOTELOAD	/home/lec/loads/noteload/mginoteload.py
 setenv NOTEMODE	load
 

@@ -5,7 +5,7 @@
 #
 # updated:  
 # Defaults:	  6
-# Procedures:	113
+# Procedures:	111
 # Rules:	  5
 # Triggers:	156
 # User Tables:	191
@@ -23,7 +23,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_devdb.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 date | tee -a  ${LOG}
 

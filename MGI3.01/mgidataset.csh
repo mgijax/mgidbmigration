@@ -28,9 +28,9 @@ EOSQL
 ${newmgddbschema}/table/BIB_DataSet_Assoc_create.object | tee -a ${LOG}
 ${newmgddbschema}/table/BIB_DataSet_create.object | tee -a ${LOG}
 ${newmgddbschema}/table/BIB_Refs_create.object | tee -a ${LOG}
-${newmgddbperms}/public/table/BIB_DataSet_Assoc_create.object | tee -a ${LOG}
-${newmgddbperms}/public/table/BIB_DataSet_create.object | tee -a ${LOG}
-${newmgddbperms}/public/table/BIB_Refs_create.object | tee -a ${LOG}
+${newmgddbperms}/public/table/BIB_DataSet_Assoc_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/table/BIB_DataSet_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/table/BIB_Refs_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

@@ -100,6 +100,14 @@ update ALL_Type set sequenceNum = 16 where alleleType = 'Not Applicable'
 update ALL_Type set sequenceNum = 17 where alleleType = 'Not Specified'
 go
 
+/* report any stragglers */
+
+select a.symbol from ALL_Allele where _Allele_Type_key in (2,3)
+go
+
+update ALL_Allele set _Allele_Type_key = -2 where _Allele_Type_key in (2,3)
+go
+
 delete from ALL_Type where alleleType = 'Transgene induced (gene targeted)'
 delete from ALL_Type where alleleType = 'Transgene induced'
 go

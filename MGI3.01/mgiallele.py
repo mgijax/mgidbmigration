@@ -16,7 +16,7 @@ for line in inFile.readlines():
 	typeKey = loadlib.verifyObject("", 26, alleleType, None, None)
 
 	cmd = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_key = %s\n' % (typeKey, alleleKey)
-	cmd = 'go\n'
+	cmd = cmd + 'go\n'
 	outFile.write(cmd)
 
 inFile.close()

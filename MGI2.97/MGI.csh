@@ -44,26 +44,26 @@ $DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 echo "Install Developer's Permissions..." >>$LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a $LOG
 
-#cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
+cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 
-#use $DBNAME
-#go
+use $DBNAME
+go
 
-#drop table GXD_Index_Old
-#go
+drop table GXD_Index_Old
+go
 
-#drop table GXD_Index_Stages_Old
-#go
+drop table GXD_Index_Stages_Old
+go
 
-#drop table GXD_Structure_Old
-#go
+drop table GXD_Structure_Old
+go
 
-#drop table GXD_Assay_Old
-#go
+drop table GXD_Assay_Old
+go
 
-#end
+end
 
-#EOSQL
+EOSQL
 
 date | tee -a $LOG
 

@@ -62,12 +62,12 @@ echo "Data Migration..." >> $LOG
 ./tr3516.csh >>& $LOG
 
 echo "Drop and re-create Keys..." >> $LOG
-${newdbschema}/key/key_drop.csh >> $LOG
-${newdbschema}/key/key_create.csh >> $LOG
+${newmgddbschema}/key/key_drop.csh >> $LOG
+${newmgddbschema}/key/key_create.csh >> $LOG
 
 echo "Drop and re-create Triggers..." >> $LOG
-${newdbschema}/trigger/trigger_drop.csh >> $LOG
-${newdbschema}/trigger/trigger_create.csh >> $LOG
+${newmgddbschema}/trigger/trigger_drop.csh >> $LOG
+${newmgddbschema}/trigger/trigger_create.csh >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   

@@ -1,4 +1,4 @@
-MGI:101848      flailer
+MGI:101848	flailer
 MGI:107489	gyro
 MGI:1306776	modifier of tubby hearing 1	
 MGI:1933547	saccharin preference

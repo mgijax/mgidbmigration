@@ -6,7 +6,7 @@ import string
 import db
 
 radar = os.environ['RADARDB']
-taxid = 10090
+taxid = 9606
 
 passwordFileName = os.environ['DBPASSWORDFILE']
 
@@ -37,7 +37,7 @@ for r in results:
 	if deleteIt:
             key = r['_Other_key']
 	    print r['name']
-#            db.sql('delete MRK_Other where _Other_key = %s' % (key), None)
+            db.sql('delete MRK_Other where _Other_key = %s' % (key), None)
 
 print 'synonyms with no J: that exactly match an EntrezGene human synonym'
 
@@ -60,7 +60,7 @@ for r in results:
 	if deleteIt:
             key = r['_Other_key']
 	    print r['name']
-#            db.sql('delete MRK_Other where _Other_key = %s' % (key), None)
+            db.sql('delete MRK_Other where _Other_key = %s' % (key), None)
 
 print 'allele name file'
 
@@ -80,6 +80,7 @@ fp = open('Allelenames_to_delete_with_mgiids_011905.txt', 'r')
 
 for line in fp.readlines():
      tokens = string.split(line[:-1], '\t')
+     print str(tokens)
      accID = tokens[0]
      synonym = tokens[1]
 

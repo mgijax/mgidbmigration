@@ -298,3 +298,90 @@ Password:
 2> use mgd_lec
 1> 
 2> create unique clustered index idx_Nomen_key on NOM_Marker (_Nomen_key) on mgd_seg_0
+1> 
+2> create nonclustered index idx_Marker_Type_key on NOM_Marker (_Marker_Type_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_NomenStatus_key on NOM_Marker (_NomenStatus_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_Marker_Event_key on NOM_Marker (_Marker_Event_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_Marker_EventReason_key on NOM_Marker (_Marker_EventReason_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_CurationState_key on NOM_Marker (_CurationState_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_symbol on NOM_Marker (symbol) on mgd_seg_1
+1> 
+2> create nonclustered index idx_broadcastBy on NOM_Marker (broadcastBy) on mgd_seg_1
+1> 
+2> create nonclustered index idx_broadcast_date on NOM_Marker (broadcast_date) on mgd_seg_1
+1> 
+2> create nonclustered index idx_modification_date on NOM_Marker (modification_date) on mgd_seg_1
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_lec
+1> 
+2> create unique clustered index idx_Synonym_key on NOM_Synonym (_Synonym_key) on mgd_seg_0
+1> 
+2> create unique nonclustered index idx_Nomen_key_name on NOM_Synonym (_Nomen_key, name) on mgd_seg_1
+1> 
+2> create nonclustered index idx_Nomen_key on NOM_Synonym (_Nomen_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_Refs_key on NOM_Synonym (_Refs_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_name on NOM_Synonym (name) on mgd_seg_1
+1> 
+2> create nonclustered index idx_modification_date on NOM_Synonym (modification_date) on mgd_seg_1
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_lec
+1> 
+2> create unique clustered index idx_Note_key on MGI_Note (_Note_key) on mgd_seg_0
+1> 
+2> create unique nonclustered index idx_Object_MGI_Note_key on MGI_Note (_Object_key, _MGIType_key, _NoteType_key) on mgd_seg_0
+1> 
+2> create nonclustered index idx_Object_key on MGI_Note (_Object_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_MGIType_key on MGI_Note (_MGIType_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_NoteType_key on MGI_Note (_NoteType_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_modification_date on MGI_Note (modification_date) on mgd_seg_1
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_lec
+1> 
+2> create unique clustered index idx_primary_key on MGI_NoteChunk (_Note_key, sequenceNum) on mgd_seg_0
+1> 
+2> create nonclustered index idx_Note_key on MGI_NoteChunk (_Note_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_note on MGI_NoteChunk (note) on mgd_seg_1
+1> 
+2> create nonclustered index idx_modification_date on MGI_NoteChunk (modification_date) on mgd_seg_1
+1> 
+2> checkpoint
+Password: 
+1> 
+2> use mgd_lec
+1> 
+2> create unique clustered index idx_Assoc_key on MGI_Reference_Assoc (_Assoc_key) on mgd_seg_0
+1> 
+2> create unique nonclustered index idx_Refs_Object_MGI_Assoc_key on MGI_Reference_Assoc (_Refs_key, _Object_key, _MGIType_key, _RefAssocType_key) on mgd_seg_0
+1> 
+2> create nonclustered index idx_Refs_key on MGI_Reference_Assoc (_Refs_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_Object_key on MGI_Reference_Assoc (_Object_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_MGIType_key on MGI_Reference_Assoc (_MGIType_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_RefAssocType_key on MGI_Reference_Assoc (_RefAssocType_key) on mgd_seg_1
+1> 
+2> create nonclustered index idx_modification_date on MGI_Reference_Assoc (modification_date) on mgd_seg_1
+1> 
+2> checkpoint
+Tue Jan 13 09:14:17 EST 2004

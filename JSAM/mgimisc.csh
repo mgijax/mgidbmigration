@@ -107,6 +107,15 @@ go
 sp_rename MRK_History, MRK_History_Old
 go
 
+sp_rename NOM_GeneFamily, NOM_GeneFamily_Old
+go
+
+sp_rename NOM_Marker, NOM_Marker_Old
+go
+
+sp_rename NOM_Synonym, NOM_Synonym_Old
+go
+
 sp_rename PRB_Alias, PRB_Alias_Old
 go
 
@@ -179,6 +188,13 @@ ${newmgddbschema}/table/MRK_Chromosome_create.object >> $LOG
 ${newmgddbschema}/default/MRK_Chromosome_bind.object >> $LOG
 ${newmgddbschema}/table/MRK_History_create.object >> $LOG
 ${newmgddbschema}/default/MRK_History_bind.object >> $LOG
+
+${newmgddbschema}/table/NOM_GeneFamily_create.object >> $LOG
+${newmgddbschema}/default/NOM_GeneFamily_bind.object >> $LOG
+${newmgddbschema}/table/NOM_Marker_create.object >> $LOG
+${newmgddbschema}/default/NOM_Marker_bind.object >> $LOG
+${newmgddbschema}/table/NOM_Synonym_create.object >> $LOG
+${newmgddbschema}/default/NOM_Synonym_bind.object >> $LOG
 
 ${newmgddbschema}/table/PRB_Probe_create.object >> $LOG
 ${newmgddbschema}/default/PRB_Probe_bind.object >> $LOG
@@ -421,6 +437,53 @@ go
 dump tran ${DBNAME} with truncate_only
 go
 
+insert into NOM_GeneFamily
+select o._Nomen_key, o._GeneFamily_key,
+u1._User_key, u2._User_key, o.creation_date, o.modification_date
+from NOM_GeneFamily_Old o, MGI_User u1, MGI_User u2
+where o.createdBy = u1.login
+and o.modifiedBy = u2.login
+go
+
+dump tran ${DBNAME} with truncate_only
+go
+
+insert into NOM_Marker
+select o._Nomen_key, o._Marker_Type_key, o._NomenStatus_key, o._Marker_Event_key, o._Marker_EventReason_key, o._CurationState_key,
+o.symbol, o.name, o.chromosome, o.humanSymbol, o.statusNote, 
+o.broadcast_date, u3._User_key,
+u1._User_key, u2._User_key, o.creation_date, o.modification_date
+from NOM_Marker_Old o, MGI_User u1, MGI_User u2, MGI_User u3
+where o.broadcastBy = u3.login,
+and o.createdBy = u1.login
+and o.modifiedBy = u2.login
+go
+
+insert into NOM_Marker
+select o._Nomen_key, o._Marker_Type_key, o._NomenStatus_key, o._Marker_Event_key, o._Marker_EventReason_key, o._CurationState_key,
+o.symbol, o.name, o.chromosome, o.humanSymbol, o.statusNote, 
+o.broadcast_date, NULL,
+u1._User_key, u2._User_key, o.creation_date, o.modification_date
+from NOM_Marker_Old o, MGI_User u1, MGI_User u2
+where o.broadcastBy is null
+and o.createdBy = u1.login
+and o.modifiedBy = u2.login
+go
+
+dump tran ${DBNAME} with truncate_only
+go
+
+insert into NOM_Synonym
+select o._Synonym_key, o._Nomen_key, o._Refs_key, o.name, o.isAuthor,
+u1._User_key, u2._User_key, o.creation_date, o.modification_date
+from NOM_Synonym_Old o, MGI_User u1, MGI_User u2
+where o.createdBy = u1.login
+and o.modifiedBy = u2.login
+go
+
+dump tran ${DBNAME} with truncate_only
+go
+
 insert into PRB_Alias
 select _Alias_key, _Reference_key, alias,
 ${CREATEDBY}, ${CREATEDBY}, creation_date, modification_date
@@ -608,6 +671,15 @@ drop table MRK_Chromosome_Old
 go
 
 drop table MRK_History_Old
+go
+
+drop table NOM_GeneFamily_Old
+go
+
+drop table NOM_Marker_Old
+go
+
+drop table NOM_Synonym_Old
 go
 
 drop table PRB_Alias_Old

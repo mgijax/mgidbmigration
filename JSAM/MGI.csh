@@ -9,7 +9,7 @@
 # Procedures:	100
 # Rules:	  5
 # Triggers:	150
-# Views:	197
+# Views:	196
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
@@ -47,6 +47,8 @@ touch $LOG
  
 date | tee -a  $LOG
  
+${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
+
 # old way
 #${DBUTILITIESDIR}/bin/dev/load_devdb.csh ${DBNAME} mgd_release.backup mgd_dbo | tee -a $LOG
 #date | tee -a  $LOG
@@ -67,17 +69,9 @@ date | tee -a  $LOG
 
 ########################################
 
-#${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
-#date | tee -a  $LOG
-
 echo "Update MGI DB Info..." | tee -a  $LOG
 ${DBUTILITIESDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VERSION} | tee -a $LOG
 ${DBUTILITIESDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a $LOG
-${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
-
-#echo "Reconfigure Nomen..." | tee -a  $LOG
-#${DBUTILITIESDIR}/bin/dev/reconfig_nomen.csh ${newnomendb} | tee -a $LOG
-#date | tee -a  $LOG
 
 # order is important!
 echo "Data Migration..." | tee -a  $LOG
@@ -94,7 +88,6 @@ ${newmgddbschema}/default/default_create.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a $LOG
 ./mgisequence.csh | tee -a $LOG
 ./mginew.csh | tee -a $LOG
-./nomen.csh | tee -a $LOG
 ./acc.csh | tee -a $LOG
 ./mgiset.csh | tee -a $LOG
 ./mgimap.csh | tee -a $LOG

@@ -36,6 +36,7 @@ setenv newradardbperms ${newradardb}/radardbperms
 setenv SCHEMA_TAG       mgddbschema-3-2-0
 setenv RADARSCHEMA_TAG  radardbschema-3-2-0
 setenv CREATEDBY	1000
+setenv PUBLIC_VERSION   "MGI 3.2"
 
 source ${newradardbschema}/Configuration
 setenv RADARDB $DBNAME

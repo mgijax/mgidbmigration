@@ -1,4 +1,4 @@
-Library Name	Clone Set	Image/NIA library Name	Issue	Note
+Library Name	Clone Set	IMAGE/NIA library Name	Issue	Note
 70Z/3	none			
 Amplified Melton mouse islets 1 MIS1-A	IMAGE			
 Baker mouse embryo e6.5	IMAGE			
@@ -44,12 +44,12 @@ Knowles/Solter 11.5 dpc limb bud	IMAGE
 Knowles/Solter 2-cell	IMAGE			
 Knowles/Solter 7.5 dpc primitive streak	IMAGE			
 Knowles/Solter 8-cell	IMAGE			
-Knowles/Solter blastocyst	IMAGE	Knowles/Solter blastocyst		B1 and B3 (see above) libraries are different size selections combined to make a single library.  Image list only has the combined library and specifically sattes the two size selections are pooled implying there may not be separate B1 or B3 libraries.
+Knowles/Solter blastocyst	IMAGE	Knowles/Solter blastocyst		B1 and B3 (see above) libraries are different size selections combined to make a single library.  IMAGE list only has the combined library and specifically sattes the two size selections are pooled implying there may not be separate B1 or B3 libraries.
 Knowles/Solter E6.5dpc embryo	IMAGE			
 Knowles/Solter egg	IMAGE			
 Knowles/Solter ES cell	IMAGE			
 Knowles/Solter inner cell mass	IMAGE			
-Ko embryo 11.5dpc	Image			
+Ko embryo 11.5dpc	IMAGE			
 Ko Mouse 16-cell Morula cDNA Library	NIA	Mouse 16-cell Stage Embryo cDNA Library		
 Ko Mouse 2-cell Embryo cDNA Library	NIA	Mouse 2-Cell Stage Embryo cDNA Library		
 Ko Mouse 3.5-dpc Blastocyst cDNA Library	NIA	Mouse Blastocyst Stage Embryo cDNA Library		
@@ -59,10 +59,10 @@ Ko Mouse 8-cell Embryo cDNA Library	NIA	Mouse 8 -Cell Stage Embryo cDNA Library
 Ko mouse embryo 11.5 dpc	NIA	?		 Can't find this library in NIA list.
 Ko Mouse Fertilized Egg cDNA Library	NIA	Mouse Fertilized Egg cDNA Library		
 Ko Mouse Unfertilized Egg cDNA Library	NIA	Mouse Unfertilized Egg cDNA Library		
-Life Tech. 10.5dpc embryo (10665-016)	Image	Life Tech 10.5 dpc embryo (10665-016)		
-Life Tech. 13.5dpc embryo (10666-014)	Image	Life Tech 13.5 dpc embryo (10666-014)		
-Life Tech. 15.5dpc embryo (10667-012)	Image	Life Tech 15.5 dpc embryo (10667-012)   		
-Life Tech. 8.5dpc embryo (10664-019)	Image	Life Tech 8.5 dpc embryo (10664-019)
+Life Tech. 10.5dpc embryo (10665-016)	IMAGE	Life Tech 10.5 dpc embryo (10665-016)		
+Life Tech. 13.5dpc embryo (10666-014)	IMAGE	Life Tech 13.5 dpc embryo (10666-014)		
+Life Tech. 15.5dpc embryo (10667-012)	IMAGE	Life Tech 15.5 dpc embryo (10667-012)   		
+Life Tech. 8.5dpc embryo (10664-019)	IMAGE	Life Tech 8.5 dpc embryo (10664-019)
 Life Tech. adult brain	none	Life Tech mouse brain (see comment)
 McCarrey/Eddy 18-20 day sertoli cell	IMAGE	
 McCarrey/Eddy 18-day preleptotene spermatocytes	IMAGE	
@@ -132,13 +132,13 @@ NIA Mouse 4-cell Stage Embryo	NIA	Mouse 4-Cell Stage Embryo cDNA Library	Issue (
 NIA Mouse 7.5 dpc Whole Embryo (Long)	IMAGE, NIA	Mouse 7.5-dpc Whole Embryo cDNA Library (Long)	Issue (NIA, IMAGE)	
 NIA Mouse 8-cell Stage Embryo	NIA	Mouse 8 -Cell Stage Embryo cDNA Library	Issue (NIA)	
 NIA Mouse 8.5 dpc Whole Embryo (Long)	IMAGE, NIA	Mouse 8.5-dpc Whole Embryo cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse 9.5-dpc Whole Embryo	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or Image list
+NIA Mouse 9.5-dpc Whole Embryo	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or IMAGE list
 NIA Mouse Blastocyst (Long)	IMAGE, NIA	Mouse Blastocyst cDNA Library (Long)	Issue (NIA, IMAGE)	
 NIA Mouse Blastocyst Stage Embryo	NIA	Mouse Blastocyst Stage Embryo cDNA Library	Duplication	
 NIA Mouse E12.5 Female Mesonephros	NIA	Mouse E12.5 Female Mesonephros cDNA Library	Issue (NIA)	
 NIA Mouse E7.5 Embryonic Part	NIA	Mouse E7.5 Embryonic Part cDNA Library	Issue (NIA)	
 NIA Mouse E7.5 Extraembryonic Part	NIA	Mouse E7.5 Extraembryonic Part cDNA Library	Issue (NIA)	
-NIA Mouse Embryonic Germ Cell	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or Image list
+NIA Mouse Embryonic Germ Cell	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or IMAGE list
 NIA Mouse ES Cell (LIF-) (Long)	IMAGE, NIA	Mouse ES Cell (LIF-) cDNA Library (Long)	Issue (NIA, IMAGE)	
 NIA Mouse ES Cell (LIF-) (Short)	NIA	Mouse ES Cell (LIF-) cDNA Library Short	Issue (NIA)	
 NIA Mouse Fertilized Egg	NIA	Mouse Fertilized Egg cDNA Library	Issue (NIA)	
@@ -148,8 +148,8 @@ NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit+/Sca-1-)	NIA	Mouse Hematopoietic S
 NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1+) cDNA Library (Long)	Issue (NIA)	
 NIA Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-)	NIA	Mouse Hematopoietic Stem Cell (Lin-/c-Kit-/Sca-1-) cDNA Library (Long)	Issue (NIA)	
 NIA Mouse Mesenchymal Stem Cell (Long)	IMAGE, NIA	Mouse Mesenchymal Stem Cell cDNA Library (Long)	Issue (NIA, IMAGE)	
-NIA Mouse Neural Stem Cell (Differentiated)	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or Image list
-NIA Mouse Neural Stem Cell (Doublets)	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or Image list
+NIA Mouse Neural Stem Cell (Differentiated)	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or IMAGE list
+NIA Mouse Neural Stem Cell (Doublets)	IMAGE, NIA		Issue (NIA, IMAGE)	Not on NIA or IMAGE list
 NIA Mouse Newborn Brain	NIA	Mouse Newborn Brain cDNA Library	Issue (NIA)	
 NIA Mouse Newborn Heart	NIA	Mouse Newborn Heart cDNA Library	Issue (NIA)	
 NIA Mouse Newborn Kidney (Long)	IMAGE, NIA	Newborn Kidney cDNA Library (Long)	Issue (NIA, IMAGE)	
@@ -224,8 +224,8 @@ NIH_MGC_139	IMAGE		(IMAGE issue)
 NIH_MGC_140	IMAGE		(IMAGE issue)
 NIH_MGC_143	IMAGE
 NIH_MGC_144	IMAGE
-NIH_MGC_149	Image
-NIH_MGC_150	image
+NIH_MGC_149	IMAGE
+NIH_MGC_150	IMAGE
 NIH_MGC_164	IMAGE
 NIH_MGC_165	IMAGE
 NIH_MGC_166	IMAGE
@@ -589,7 +589,7 @@ Soares placenta 4NbMP13.5-14.5	IMAGE	Soares 4NbMP13.5-14.5
 Soares spleen 3NbMS	IMAGE	Soares 3NbMS		
 Soares thymus 2NbMT	IMAGE	Soares 2NbMT		
 Stratagene	none			
-Stratagene #936308	none			Stratagenes gives this data, Mouse cDNA, Spleen LibraryC57 Black/6, female, 8 - 12 weeks, Primer: OR, Vector: Lambda ZAP« II vector, Average Insert Size: 1.0 kb.  Doesn't match any Image or NIA libraries.
+Stratagene #936308	none			Stratagenes gives this data, Mouse cDNA, Spleen LibraryC57 Black/6, female, 8 - 12 weeks, Primer: OR, Vector: Lambda ZAP« II vector, Average Insert Size: 1.0 kb.  Doesn't match any IMAGE or NIA libraries.
 Stratagene #936309	none		
 Stratagene #946305	none		
 Stratagene #946309	none		

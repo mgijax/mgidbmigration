@@ -11,20 +11,16 @@ setenv MRKREFLOAD	/home/lec/loads/mrkrefload-jsam
 
 # use current MGI 2.98 version of vocload because we load
 # the vocabularies BEFORE converting to the new schema
-#setenv VOCLOAD          /usr/local/mgi/dataload/vocload-2.98/runSimpleFullLoadNoArchive.sh
 setenv VOCLOAD          /home/lec/loads/vocload-2.98/runSimpleFullLoadNoArchive.sh
 
 # existing (MGI 2.98) schema configured to talk to an MGI 2.98 database
-#setenv existingmgddbschema /usr/local/mgi/dbutils/mgd_release/mgddbschema
 setenv existingmgddbschema /home/lec/db/mgi2.98/mgddbschema
 
 # existing (MGI 2.98) schema configured to talk to the JSAM database
-#setenv oldmgddb /usr/local/mgi/dbutils/mgd
 setenv oldmgddb /home/lec/db/jsam2.98
 setenv oldmgddbschema ${oldmgddb}/mgddbschema
 
 # new (JSAM) schema configured to talk to the JSAM database
-#setenv newmgddb /usr/local/mgi/dbutils/mgd
 setenv newmgddb /home/lec/db
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms

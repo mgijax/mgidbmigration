@@ -1,3 +1,91 @@
-	Stratagene #936308	Stratagene Cat.No.936308	jsam_load
-	Barstead kidney MPL-RB1	Barstead MPLRB1		jsam_load
-	NIA Mouse Newborn Brain	NIA Mouse Newborn Brain cDNA Library	jsam_load
+	70Z/3	70z/3	jsam_load
+	Amplified Melton mouse islets 1 MIS1-A	Amplified Melton Mouse Islets 1 MIS1-A	jsam_load
+	Barstead MPL-RB3	Barstead mouse heart MPLRB3	jsam_load
+	Barstead MPL-RB6	Barstead mouse proximal colon MPLRB6	jsam_load
+	Barstead MPL-RB5	Barstead stromal cell line MPL-RB5	jsam_load
+	Beddington embryonic region	Beddington mouse embryonic region	jsam_load
+	Soares 3NME12.5	EQUE: SOARES MOUSE 3NME12 5'	jsam_load
+	Beier day 0 kidney 	GuayWoodford Beier mouse kidney day 0	jsam_load
+	Beier day 7 kidney	GuayWoodford Beier mouse kidney day 7	jsam_load
+	Kaestner ngn3 -/- 	Kaestner ngn3 - -	jsam_load
+	Knowles/Solter 11.5 dpc limb bud 	Knowles Solter mouse 11 5day limb bud	jsam_load
+	Knowles/Solter 2-cell 	Knowles Solter mouse 2 cell	jsam_load
+	Knowles/Solter 7.5 dpc primitive streak	Knowles Solter mouse 7 5dpc primitive streak	jsam_load
+	Knowles/Solter 8-cell 	Knowles Solter mouse 8 cell	jsam_load
+	Knowles/Solter E6.5dpc embryo	Knowles Solter mouse E6 5d whole embryo	jsam_load
+	Knowles/Solter ES cell	Knowles Solter mouse embryonic stem cell	jsam_load
+	Knowles/Solter inner cell mass	Knowles Solter mouse inner cell mass	jsam_load
+	Knowles/Solter egg	Knowles Solter mouse unfertilized egg	jsam_load
+	Ko embryo 11.5dpc 	Ko mouse embryo 11 5dpc	jsam_load
+	Ko embryo 11.5dpc 	Ko mouse embryo 11 5dpc (libNo. 998)	jsam_load
+	Ko embryo 11.5dpc 	Ko mouse embryo 11.5dpc	jsam_load
+	Life Tech 10.5 dpc embryo (10665-016)	Life Tech mouse embryo 10 5dpc 10665016	jsam_load
+	Life Tech 13.5 dpc embryo (10666-014)	Life Tech mouse embryo 13 5dpc 10666014	jsam_load
+	Life Tech 15.5 dpc embryo (10667-012) 	Life Tech mouse embryo 15 5dpc 10667012	jsam_load
+	Life Tech 8.5 dpc embryo (10664-019)	Life Tech mouse embryo 8 5dpc 10664019	jsam_load
+	McCarrey/Eddy 18-20 day sertoli cell	McCarrey Eddy 18 20 day sertoli cell	jsam_load
+	McCarrey/Eddy round spermatid 	McCarrey Eddy round spermatid	jsam_load
+	McCarrey/Eddy spermatocytes	McCarrey Eddy spermatocytes	jsam_load
+	McCarrey/Eddy type A spermatogonia	McCarrey Eddy type A spermatogonia	jsam_load
+	McCarrey/Eddy type B spermatogonia	McCarrey Eddy type B spermatogonia	jsam_load
+	Melton mouse adult pancreas 1 MAZ1	Melton Mouse Adult Pancreas 1	jsam_load
+	Melton mouse adult pancreas 2 MAZ2 	Melton Mouse Adult Pancreas 2	jsam_load
+	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Mouse E16 5 Pancreas Library 2 M16B2	jsam_load
+	Melton amplified mouse E16.5 pancreas3 M16S1-A	Melton Mouse E16 5 Pancreas Library M16Z1	jsam_load
+	Melton mouse islets MIZ1	Melton Mouse Islets MIZ1	jsam_load
+	Melton mouse newborn pancreas MNZ1	Melton Mouse Newborn Pancreas	jsam_load
+	Not Applicable	Not applicable	jsam_load
+	Rashbass MOC-11.5 	Rashbass mouse MOC 11 5 optic cup	jsam_load
+	Rashbass MOV-9.5	Rashbass mouse MOV 9 5 optic vesicle	jsam_load
+	Stratagene	STRATAGENE	jsam_load
+	Schiller AtT-20	Schiller mouse AtT20	jsam_load
+	Schiller MAC13	Schiller mouse MAC13	jsam_load
+	Schiller MAC16 	Schiller mouse MAC16	jsam_load
+	Soares 3NME12.5	Soares 3NME12 5	jsam_load
+	Soares NbME13.5-14.5	Soares NbME13.5 14.5	jsam_load
+	Soares NbME13.5-14.5	Soares embryo NbME13.5-14.5	jsam_load
+	Soares 4NbMP13.5-14.5 	Soares library 4NbMP	jsam_load
+	Soares 3NME12.5	Soares mouse 3NM12.5	jsam_load
+	Soares 3NME12.5	Soares mouse 3NME12 5	jsam_load
+	Soares 3NbMS 	Soares mouse 3NbMS	jsam_load
+	Soares NML 	Soares mouse NML	jsam_load
+	Soares NbMH 	Soares mouse NbMH	jsam_load
+	Soares NbMH 	Soares mouse NbMh	jsam_load
+	Soares NbME13.5-14.5	Soares mouse embryo NbME	jsam_load
+	Soares NbME13.5-14.5	Soares mouse embryo NbME13.5 14.5	jsam_load
+	Soares NbME13.5-14.5	Soares mouse embryo NbME13.5-14.5	jsam_load
+	Soares NMHy	Soares mouse hypothalamus NMHy	jsam_load
+	Soares NbMLN	Soares mouse lymph node NbMLN	jsam_load
+	Soares NbMMG 	Soares mouse mammary gland NbMMG	jsam_load
+	Soares p3NMF19.5	Soares mouse p3NMF19.5	jsam_load
+	Soares p3NMF19.5	Soares mouse pNMF19.5	jsam_load
+	Soares 4NbMP13.5-14.5	Soares mouse placenta 4NbMP13.5 14.5	jsam_load
+	Soares NMUR	Soares mouse urogenital ridge NMUR	jsam_load
+	Soares p3NMF19.5	Soares murine p3NMF19.5 cDNA	jsam_load
+	Soares NKWMD	Soares_NKWMD_mandible	jsam_load
+	Soares NMEBA	Soares_NMEBA_branchial_arch	jsam_load
+	Soares NMGBC	Soares_NMGBC_B-cell	jsam_load
+	Soares NMMAX	Soares_NMMAX_maxillary_process	jsam_load
+	Soares NMPu 	Soares_NMPu	jsam_load
+	Soares NMES	Soares_embryonic_stem_cell_NMES	jsam_load
+	Soares NMLMG	Soares_mammary_gland_NMLMG	jsam_load
+	Soares NbMMG	Soares_mammary_gland_NbMMG	jsam_load
+	Soares NMBP	Soares_mouse_NMBP	jsam_load
+	Soares NMGB	Soares_mouse_NMGB_bcell	jsam_load
+	Soares NMIE	Soares_mouse_NMIE	jsam_load
+	Stratagene embryonic carcinoma (937317)	Stratagene #937317	jsam_load
+	Stratagene embryonic carcinoma (937317)	Stratagene 937317	jsam_load
+	Stratagene mouse T-cell (937311)	Stratagene Catalog #937311	jsam_load
+	Stratagene mouse skin	Stratagene catalog #937313	jsam_load
+	Stratagene mouse kidney (937315)	Stratagene catalog #937315	jsam_load
+	Stratagene mouse T-cell (937311)	Stratagene mouse Tcell 937311	jsam_load
+	Stratagene mouse diaphragm (937303)	Stratagene mouse diaphragm (#937303)	jsam_load
+	Stratagene mouse heart (937316)	Stratagene mouse heart (#937316)	jsam_load
+	Stratagene mouse kidney (937315)	Stratagene mouse kidney (#937315)	jsam_load
+	Stratagene mouse lung (937302)	Stratagene mouse lung 937302	jsam_load
+	Stratagene mouse melanoma (937312) 	Stratagene mouse melanoma (#937312)	jsam_load
+	Stratagene mouse skin	Stratagene mouse skin (#937313)	jsam_load
+	Stratagene embryonic carcinoma (937317)	Stratgene Cat. number 937317	jsam_load
+	Sugano mouse brain mncb	Sugano mouse brain MNCb	jsam_load
+	Stratagene mouse kidney (937315)	cDNA, lambda UniZAP XR; Stratagene 937315	jsam_load
+	Sugano mouse brain mncb	sugano mouse brain mncb	jsam_load

@@ -3,18 +3,18 @@
 #
 # Migration for MGI 2.8
 #
-# Tables:	159
-# Procedures:	 68
+# Tables:	162
+# Procedures:	 70
 # Triggers:	119
-# Views:	113
+# Views:	116
 #
 
 cd `dirname $0`
 
-#setenv NOMEN nomen_release
-#setenv STRAINS strains_release
-setenv NOMEN nomen_lec
-setenv STRAINS strains_lec
+setenv NOMEN nomen_release
+setenv STRAINS strains_release
+#setenv NOMEN nomen_lec
+#setenv STRAINS strains_lec
 
 setenv SYBASE	/opt/sybase
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
@@ -41,14 +41,14 @@ date >> $LOG
 # For integration testing purposes...comment out before production load
 #
 
-load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
-load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
+$DBUTILITIESDIR/bin/dev/load_devdb.csh $STRAINS strains.backup mgd_dbo >>& $LOG
 
 echo "Update MGI DB Info..." >> $LOG
-updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
-updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
-updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-3-0-3" >>& $LOG
+$DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.8" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-2-0-0" >>& $LOG
+$DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $NOMEN "nomendbschema-3-0-3" >>& $LOG
 
 echo "Data Migration..." >> $LOG
 ./MGItables.csh >>& LOG
@@ -64,8 +64,8 @@ echo "Data Migration..." >> $LOG
 # Re-create all triggers, sps, views....
 #
 
-reconfig_mgd.csh ${newmgddb} >>& $LOG
-reconfig_nomen.csh ${newnomendb} >>& $LOG
+$DBUTILITIESDIR/bin/dev/reconfig_mgd.csh ${newmgddb} >>& $LOG
+$DBUTILITIESDIR/bin/dev/reconfig_nomen.csh ${newnomendb} >>& $LOG
 
 date >> $LOG
 

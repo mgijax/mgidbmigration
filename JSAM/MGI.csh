@@ -151,15 +151,5 @@ updateStatisticsAll.csh ${newmgddbschema}
 
 ./loadTrans.csh | tee -a $LOG
 
-# load some sequence data for testing
-
-#tr4849.csh | tee -a $LOG
-
-# load Sequence Cache tables
-
-#${CACHELOAD}/seqmarker.csh | tee -a $LOG
-#${CACHELOAD}/seqprobe.csh | tee -a $LOG
-${MRKREFLOAD}/mrkref.csh | tee -a $LOG
-
 date | tee -a  $LOG
 

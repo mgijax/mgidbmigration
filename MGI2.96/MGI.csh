@@ -62,6 +62,8 @@ ${newmgddbschema}/trigger/MGI_Set_create.object >>& $LOG
 ${newmgddbschema}/trigger/ACC_Accession_drop.object >>& $LOG
 ${newmgddbschema}/trigger/ACC_Accession_create.object >>& $LOG
 
+${newmgddbschema}/view/MGI_Note_MRKGO_View_create.object >>& $LOG
+${newmgddbschema}/view/MGI_NoteType_MRKGO_View_create.object >>& $LOG
 ${newmgddbschema}/view/MGI_Set_CloneSet_View_create.object >>& $LOG
 
 ${newmgddbperms}/public/table/MGI_Note_grant.object >>& $LOG
@@ -69,6 +71,8 @@ ${newmgddbperms}/public/table/MGI_NoteChunk_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_NoteType_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_Set_grant.object >>& $LOG
 ${newmgddbperms}/public/table/MGI_SetMember_grant.object >>& $LOG
+${newmgddbperms}/public/view/MGI_Note_MRKGO_View_grant.object >>& $LOG
+${newmgddbperms}/public/view/MGI_NoteType_MRKGO_View_grant.object >>& $LOG
 ${newmgddbperms}/public/view/MGI_Set_CloneSet_View_grant.object >>& $LOG
 
 ${newmgddbperms}/curatorial/table/MGI_Note_grant.object >>& $LOG

@@ -188,8 +188,9 @@ insert into MGI_User values (1308, @loaderKey, @activeKey, "genbank_load", "GenB
 insert into MGI_User values (1309, @loaderKey, @activeKey, "refseq_load", "RefSeq Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1310, @loaderKey, @activeKey, "swissprot_seqload", "SwissPROT Sequence Load", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1311, @loaderKey, @activeKey, "trembl_load", "TrEMBL Sequence Load", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1312, @loaderKey, @activeKey, "dots_load", "DoTS Sequence Load", 1000, 1000, getdate(), getdate())
-insert into MGI_User values (1313, @loaderKey, @activeKey, "tigr_load", "TIGR Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1312, @loaderKey, @activeKey, "dots_seqload", "DoTS Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1313, @loaderKey, @activeKey, "tigr_seqload", "TIGR Sequence Load", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1314, @loaderKey, @activeKey, "nia_seqload", "NIA Sequence Load", 1000, 1000, getdate(), getdate())
 
 /* Mergers */
 insert into MGI_User values (1400, @mergerKey, @activeKey, "strainmerge", "Strain Merge", 1000, 1000, getdate(), getdate())

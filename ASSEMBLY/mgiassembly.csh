@@ -80,20 +80,14 @@ insert into MGI_User values (@userKey, 316353, 316350, 'ncbi_assemblyseqload', '
 insert into MGI_User values (@userKey + 1, 316353, 316350, 'ensembl_assemblyseqload', 'Ensembl Genomic Sequence Load', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
-declare @logKey integer
-select @logKey = max(_LogicalDB_key) + 1 from ACC_LogicalDB
-insert into ACC_LogicalDB values (@logKey, 'NCBI Gene Model', 'NCBI Gene for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into ACC_LogicalDB values (@logKey + 1, 'Ensembl Gene Model', 'Ensembl for assembly coordinates', null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-
-declare @actKey integer
-select @actKey = max(_ActualDB_key) + 1 from ACC_ActualDB
-insert into ACC_ActualDB values (@actKey, @logKey, 'NCBI Gene Model', 1, 'http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=Graphics&list_uids=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into ACC_ActualDB values (@actKey + 1, @logKey + 1, 'Ensembl Gene Model', 1, 'http://www.ensembl.org/Mus_musculus/geneview?gene=@@@@', 0, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-
 declare @setKey integer
+declare @act1Key integer
+declare @act2Key integer
 select @setKey = max(_SetMember_key) + 1 from MGI_SetMember
-insert into MGI_SetMember values(@setKey, 1009, @actKey, 13, 1001, 1001, getdate(), getdate())
-insert into MGI_SetMember values(@setKey + 1, 1009, @actKey + 1, 13, 1001, 1001, getdate(), getdate())
+select @act1Key = _ActualDB_key from ACC_ActualDB where name = 'NCBI Gene Model'
+select @act2Key = _ActualDB_key from ACC_ActualDB where name = 'Ensembl Gene Model'
+insert into MGI_SetMember values(@setKey, 1009, @act1Key, 13, 1001, 1001, getdate(), getdate())
+insert into MGI_SetMember values(@setKey + 1, 1009, @act2Key, 14, 1001, 1001, getdate(), getdate())
 go
 
 end

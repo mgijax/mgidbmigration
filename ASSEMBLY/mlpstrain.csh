@@ -92,7 +92,6 @@ EOSQL
 #drop table PRB_Strain_Old
 #go
 #
-#
 #drop table MLP_Extra
 #go
 #

@@ -29,9 +29,9 @@ select @synTypeKey = 1000
 select @synKey = 1000
 
 insert into MGI_SynonymType values
-(@synTypeKey, 10, 'synonym', 'synonym used in community', 1086, 1086, getdate(), getdate())
+(@synTypeKey, 10, 'synonym', 'synonym used in community', 0, 1086, 1086, getdate(), getdate())
 insert into MGI_SynonymType 
-values(@synTypeKey + 1, 10, 'nomenclature history', 'synonym due to nomenclature changes', 1086, 1086, getdate(), getdate())
+values(@synTypeKey + 1, 10, 'nomenclature history', 'synonym due to nomenclature changes', 0, 1086, 1086, getdate(), getdate())
 
 select _Strain_key, synonym, seq = identity(10) into #syns from PRB_Strain_Synonym
 
@@ -53,9 +53,9 @@ select @synTypeKey = max(_SynonymType_key) + 1 from MGI_SynonymType
 select @synKey = max(_Synonym_Key) from MGI_Synonym
 
 insert into MGI_SynonymType 
-values(@synTypeKey, 21, 'Author', 'synonymn the author used', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+values(@synTypeKey, 21, 'Author', 'synonymn the author used', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 insert into MGI_SynonymType 
-values(@synTypeKey + 1, 21, 'Other', 'other', ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+values(@synTypeKey + 1, 21, 'Other', 'other', ${CREATEDBY}, 1, ${CREATEDBY}, getdate(), getdate())
 
 select _Nomen_key, _Refs_key, name, isAuthor, seq = identity(10) into #syns from NOM_Synonym
 

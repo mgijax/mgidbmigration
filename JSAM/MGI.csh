@@ -61,13 +61,13 @@ date | tee -a  $LOG
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-./load_dev2db.csh dev2mgd.backup
+#./load_dev2db.csh dev2mgd.backup
 
 date | tee -a  $LOG
 
 ########################################
 
-#${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
+${DBUTILITIESDIR}/bin/load_db.csh ${DBSERVER} ${NOMEN} /extra2/sybase/nomen_release.backup mgd_dbo | tee -a $LOG
 date | tee -a  $LOG
 
 echo "Update MGI DB Info..." | tee -a  $LOG
@@ -75,10 +75,9 @@ ${DBUTILITIESDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} ${PUBLIC_VER
 ${DBUTILITIESDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a $LOG
 ${DBUTILITIESDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 
-echo "Reconfigure Nomen..." | tee -a  $LOG
+#echo "Reconfigure Nomen..." | tee -a  $LOG
 #${DBUTILITIESDIR}/bin/dev/reconfig_nomen.csh ${newnomendb} | tee -a $LOG
-date | tee -a  $LOG
-exit 0
+#date | tee -a  $LOG
 
 # order is important!
 echo "Data Migration..." | tee -a  $LOG

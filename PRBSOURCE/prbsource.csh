@@ -121,7 +121,7 @@ having count(*) = 1
 union
 select * 
 from #b
-where name = 'Stratagene #946309' and p.DNAType = 'genomic'
+where name = 'Stratagene #946309' and DNAType = 'genomic'
 go
 
 /* update the source record with its default segment type */

@@ -36,9 +36,6 @@ go
 drop index MLC_Lock.index_Marker_key
 go
 
-drop procedure MLC_transfer
-go
-
 checkpoint
 go
 

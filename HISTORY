@@ -1,3 +1,4 @@
+TAG: mgidbmigration-8-0-26
 TAG: mgidbmigration-8-0-25
 DATE: 05/18/2004
 STAFF: lec
@@ -5,6 +6,7 @@ RELEASE: A
 CHANGES: 
 1) JSAM
 2) translationload/strain.badgood
+3) mgiuser.csh
 
 TAG: mgidbmigration-8-0-24
 DATE: 05/17/2004

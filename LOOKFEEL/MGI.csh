@@ -38,7 +38,6 @@ date >> $LOG
 #
 
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $DBNAME mgd.backup mgd_dbo >>& $LOG
-${newmgddbperms}/developers/perm_grant.csh
 date >> $LOG
 $DBUTILITIESDIR/bin/dev/load_devdb.csh $NOMEN nomen.backup mgd_dbo >>& $LOG
 date >> $LOG
@@ -47,6 +46,10 @@ echo "Update MGI DB Info..." >> $LOG
 $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.9" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-0" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
+
+echo "Install Developer's Permissions..." >>$LOG
+${newmgddbperms}/developers/perm_grant.csh
+date >> $LOG
 
 echo "Reconfigure Nomen..." >> $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $newnomendb >>& $LOG

@@ -99,4 +99,6 @@ end
 
 EOSQL
 
+${newmgddbschema}/default/default_bind.csh | teee -a ${LOG}
+
 date | tee -a  ${LOG}

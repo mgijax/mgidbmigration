@@ -84,11 +84,6 @@ select _Source_key, 5, "age", ${UNKNOWNEDITOR}, ${UNKNOWNEDITOR}, creation_date,
 from PRB_Source
 go
 
-insert into MGI_AttributeHistory
-select _SequenceType_key, 19, "_SequenceType_key", ${UNKNOWNEDITOR}, ${UNKNOWNEDITOR}, creation_date, modification_date
-from SEQ_Sequence
-go
-
 dump tran ${DBNAME} with truncate_only
 go
 

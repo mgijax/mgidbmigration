@@ -27,9 +27,9 @@ update MRK_Status set status = 'official' where _Marker_Status_key = 1
 go
 
 update MRK_Marker
-set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1),
-    _Marker_Status_key = 3
+set symbol = substring(symbol, 1, charindex("-pending", symbol) - 1), _Marker_Status_key = 3
 where _Species_key = 1
+and _Marker_Status_key = 1
 and symbol like '%-pending'
 go
 

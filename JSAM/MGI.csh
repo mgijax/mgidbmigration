@@ -14,6 +14,9 @@
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
 #
+# Full Test: 04/02/2004 (using 2.98 backup)
+# Time: 11:20-
+#
 # Full Test: 01/28/2004 (using backup)
 # Time: 14:56-16:23 (1 hour, 27 minutes)
 #
@@ -67,7 +70,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-load_dev1db.csh ${DBNAME} dev1mgd.backup
+#load_dev1db.csh ${DBNAME} dev1mgd.backup
 
 date | tee -a  ${LOG}
 

@@ -8,6 +8,7 @@ setenv SETLOAD		/home/lec/loads/setload
 setenv CACHELOAD	/home/lec/loads/seqcacheload
 #setenv MRKREFLOAD	/usr/local/mgi/3.0/dbutils/mrkrefload
 setenv MRKREFLOAD	/home/lec/loads/mrkrefload
+setenv RADARDBUTILS	/usr/local/mgi/3.0/dbutils/radardbutilities
 
 # use current MGI 2.98 version of vocload because we load
 # the vocabularies BEFORE converting to the new schema

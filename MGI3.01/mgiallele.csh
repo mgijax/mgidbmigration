@@ -102,7 +102,7 @@ go
 
 /* report any stragglers */
 
-select a.symbol from ALL_Allele where _Allele_Type_key in (2,3)
+select symbol from ALL_Allele where _Allele_Type_key in (2,3)
 go
 
 update ALL_Allele set _Allele_Type_key = -2 where _Allele_Type_key in (2,3)

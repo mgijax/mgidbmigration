@@ -59,6 +59,9 @@ and v.term = "primer"
 and p.moreProduct = 1
 go
 
+drop table BIB_Refs_Old
+go
+
 drop table PRB_Probe_Old
 go
 
@@ -66,6 +69,12 @@ drop table PRB_Reference_Old
 go
 
 drop table IMG_ImagePane_Old
+go
+
+drop table ALL_Type_Old
+go
+
+drop table MGI_Set_Old
 go
 
 exec MGI_Table_Column_Cleanup

@@ -27,7 +27,7 @@ for r in results:
 
 assocKey = 1000
 
-cmd = 'select _Refs_key, dbs from BIB_Refs where dbs is not null'
+cmd = 'select _Refs_key, dbs from BIB_Refs_Old where dbs is not null'
 results = db.sql(cmd, 'auto')
 
 for r in results:

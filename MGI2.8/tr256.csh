@@ -121,9 +121,10 @@ quit
  
 EOSQL
   
-date >> $LOG
-
 ${newmgddbschema}/key/RI_RISet_create.object
 ${newmgddbschema}/key/MLD_RI_create.object
 ${newmgddbschema}/index/RI_RISet_create.object
 ${newmgddbschema}/index/MLD_RI_create.object
+
+date >> $LOG
+

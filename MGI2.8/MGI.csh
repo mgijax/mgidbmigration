@@ -63,5 +63,45 @@ echo "Update MGI DB Info..." >> $LOG
 #updateSchemaVersion.csh $DSQUERY $MGD "mgddbschema-2-0-0" >>& $LOG
 #updateSchemaVersion.csh $DSQUERY $NOMEN "nomendbschema-2-0-0" >>& $LOG
 
+#
+# drop old/obsolete objects
+#
+
+cat - <<EOSQL | doisql.csh $0 >> $LOG
+  
+use ${DBNAME}
+go
+
+drop table GXD_AllelePair_Old
+go
+
+drop table GXD_Antibody_Old
+go
+
+drop table GXD_GelLane_Old
+go
+
+drop table PRB_Strain_Old
+go
+
+drop table RI_RISet_Old
+go
+
+drop table PRB_Source_Old
+go
+
+drop table RI_RISet_Old
+go
+
+drop table MLD_RI_Old
+go
+
+checkpoint
+go
+
+quit
+ 
+EOSQL
+  
 date >> $LOG
 

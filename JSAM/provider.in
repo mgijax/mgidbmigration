@@ -10,4 +10,6 @@ SWISS-PROT		SWISS-PROT
 TrEMBL		TrEMBL		
 TIGR Mouse Gene Index		TIGR		
 DoTS		DoTS		
-GenBank/EMBL/DDBJ		GenBank	GenBank/EMBL/DDBJ	
+GenBank/EMBL/DDBJ		GenBank/EMBL/DDBJ		
+Ensembl		Ensembl		
+RefSeq		RefSeq		

@@ -46,7 +46,5 @@ quit
 
 EOSQL
 
-loadSet.csh >>& $LOG
-
 date >> $LOG
 

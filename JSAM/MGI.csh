@@ -163,9 +163,11 @@ ${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
 
 updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
 
-# load translations
+# load translations and sets
 
 ./loadTrans.csh | tee -a $LOG
+./loadSet.csh | tee -a $LOG
+
 
 date | tee -a  $LOG
 

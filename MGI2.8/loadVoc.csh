@@ -60,6 +60,8 @@ ${ANNOTLOAD}/phenoslimgenotype.csh $DBSERVER $DBNAME `pwd`/pslim.il.tab il appen
 
 # Load GO Annotations
 echo "GO Annotation Load" >> $LOG
+# get the latest spreadsheet from titan 
+rcp titan:/usr/local/mgi/go_data/ontology.txt ${GODATA}
 ${ANNOTLOAD}/gomarker.csh $DBSERVER $DBNAME ${GODATA}/ontology.txt new >>& $LOG
 
 ./posttr2867.csh $DBSERVER $DBNAME >>& $LOG

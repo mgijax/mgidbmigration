@@ -20,9 +20,6 @@ cat - <<EOSQL | doisql.csh $0 | tee -a $LOG
 use $DBNAME
 go
 
-insert into MRK_Types values (11, 'microRNA', getdate(), getdate())
-go
-
 insert into MRK_Status values (3, 'interim', getdate(), getdate())
 go
 

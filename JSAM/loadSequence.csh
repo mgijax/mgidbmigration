@@ -5,7 +5,6 @@ cd `dirname $0` && source ./Configuration
 
 # Sharon, un-comment and set appropriately
 #setenv CACHELOAD        /home/sc/jsam/seqcacheload
-#setenv MRKREFLOAD       /home/sc/jsam/mrkrefload
 #setenv newmgddbschema	 /home/sc/jsam/mgddbschema
 #source ${newmgddbschema}/Configuration
 
@@ -64,7 +63,6 @@ EOSQL
 
 ${CACHELOAD}/seqmarker.csh | tee -a $LOG
 ${CACHELOAD}/seqprobe.csh | tee -a $LOG
-${MRKREFLOAD}/mrkref.sh | tee -a $LOG
 
 date | tee -a  $LOG
 

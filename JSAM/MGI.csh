@@ -65,7 +65,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 # need to start with a MGI 2.98-Nomen database
 #
 # load an empty database and fill it with current MGI 2.98 data
-#./loadData.csh
+./loadData.csh
 
 # OR
 

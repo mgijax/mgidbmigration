@@ -60,7 +60,6 @@ ${newmgddbschema}/default/MRK_Chromosome_bind.object >> $LOG
 ${newmgddbschema}/table/MRK_Label_create.object >> $LOG
 ${newmgddbschema}/default/MRK_Label_bind.object >> $LOG
 ${newmgddbschema}/table/PRB_Source_create.object >> $LOG
-${newmgddbschema}/default/ageminmax_default_create.object >> $LOG
 ${newmgddbschema}/default/PRB_Source_bind.object >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG

@@ -220,8 +220,6 @@ ${newmgddbschema}/default/VOC_Evidence_bind.object >> $LOG
 ${newmgddbschema}/table/VOC_Term_create.object >> $LOG
 ${newmgddbschema}/default/VOC_Term_bind.object >> $LOG
 
-${newmgddbschema}/default/userID_default_create.object >> $LOG
-
 cat - <<EOSQL | doisql.csh $0 >> $LOG
 
 use $DBNAME

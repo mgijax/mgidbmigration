@@ -42,6 +42,7 @@ ${newrdrdbschema}/key/QC_cDNALoad_MGI_IMAGE_Discrep_create.object | tee -a ${LOG
 #
 # Use new schema product to create new table
 #
+${newrdrdbschema}/table/DP_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/table/GB_EST_Reload_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_cDNALoad_CloneID_Discrep_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_cDNALoad_CloneID_Missing_create.object | tee -a ${LOG}
@@ -62,6 +63,7 @@ ${newrdrdbschema}/table/QC_SEQ_Merged_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_SEQ_OldRef_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
 
+${newrdrdbschema}/index/DP_create.logical | tee -a ${LOG}
 ${newrdrdbschema}/index/GB_EST_Reload_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_cDNALoad_CloneID_Discrep_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_cDNALoad_CloneID_Missing_create.object | tee -a ${LOG}

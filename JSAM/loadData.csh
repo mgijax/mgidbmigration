@@ -43,9 +43,9 @@ rm -rf ${BACKUPDIR}/mgd298.backup*
 cp ${BACKUPDIR}/mgd.backup1 ${BACKUPDIR}/mgd298.backup1
 cp ${BACKUPDIR}/mgd.backup2 ${BACKUPDIR}/mgd298.backup2
 
-#echo 'Load Empty Database...' | tee -a ${LOG}
-#load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
-#date | tee -a ${LOG}
+echo 'Load Empty Database...' | tee -a ${LOG}
+load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
+date | tee -a ${LOG}
 
 echo 'Create data files...' | tee -a ${LOG}
 rm -rf ${DATADIR}/*

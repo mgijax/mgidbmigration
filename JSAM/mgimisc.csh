@@ -604,7 +604,7 @@ ${newmgddbschema}/index/GXD_AlleleGenotype_create.object >> $LOG
 ${newmgddbschema}/index/GXD_Assay_create.object >> $LOG
 ${newmgddbschema}/index/GXD_Genotype_create.object >> $LOG
 ${newmgddbschema}/index/GXD_Index_create.object >> $LOG
-${newmgddbschema}/INDEX/gxD_Index_Stages_create.object >> $LOG
+${newmgddbschema}/index/GXD_Index_Stages_create.object >> $LOG
 
 ${newmgddbschema}/index/MGI_Note_create.object >> $LOG
 ${newmgddbschema}/index/MGI_NoteChunk_create.object >> $LOG

@@ -5,7 +5,7 @@
 #
 # updated:  
 # Defaults:	  6
-# Procedures:	105
+# Procedures:	106
 # Rules:	  5
 # Triggers:	155
 # User Tables:	189
@@ -160,11 +160,12 @@ EOSQL
 
 ${oldmgddbschema}/procedure/GEN_rowcount_drop.object | tee -a $LOG
 
-${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
-
 ./loadVoc2.csh | tee -a $LOG
 ./loadTrans.csh | tee -a $LOG
 ./loadSet.csh | tee -a $LOG
+
+${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
+
 ./radar.csh | tee -a $LOG
 
 date | tee -a  $LOG

@@ -136,6 +136,9 @@ foreach i (${TABLELIST})
     ${RADARDBSCHEMA}/table/${i}_create.object | tee -a ${LOG}
     ${RADARDBSCHEMA}/index/${i}_create.object | tee -a ${LOG}
     ${RADARDBSCHEMA}/key/${i}_create.object | tee -a ${LOG}
+    if (${i} != "GB_EST_Reload") then
+        ${RADARDBSCHEMA}/default/${i}_bind.object | tee -a ${LOG}
+    endif
     ${RADARDBPERMS}/developers/table/${i}_grant.object | tee -a ${LOG}
     ${RADARDBPERMS}/public/table/${i}_grant.object | tee -a ${LOG}
 end

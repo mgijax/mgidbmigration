@@ -13,10 +13,10 @@ touch $LOG
 date >> $LOG
  
 # for testing, drop objects first
-${newmgddbschema}/table/GXD_AlleleGenotype_drop.object
-${newmgddbschema}/procedure/GXD_loadGenoCacheAll_drop.object
-${newmgddbschema}/procedure/GXD_loadGenoCacheByGenotype_drop.object
-${newmgddbschema}/view/GXD_AlleleGenotype_View_drop.object
+#${newmgddbschema}/table/GXD_AlleleGenotype_drop.object
+#${newmgddbschema}/procedure/GXD_loadGenoCacheAll_drop.object
+#${newmgddbschema}/procedure/GXD_loadGenoCacheByGenotype_drop.object
+#${newmgddbschema}/view/GXD_AlleleGenotype_View_drop.object
 
 #
 # Use new schema product to create new objects

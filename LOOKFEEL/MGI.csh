@@ -47,10 +47,6 @@ $DBUTILITIESDIR/bin/updatePublicVersion.csh $DBSERVER $DBNAME "MGI 2.9" >>& $LOG
 $DBUTILITIESDIR/bin/updateSchemaVersion.csh $DBSERVER $DBNAME "mgddbschema-3-0-0" >>& $LOG
 $DBUTILITIESDIR/bin/turnonbulkcopy.csh $DBSERVER $DBNAME >>& $LOG
 
-echo "Install Developer's Permissions..." >>$LOG
-${newmgddbperms}/developers/perm_grant.csh >> $LOG
-date >> $LOG
-
 echo "Reconfigure Nomen..." >> $LOG
 $DBUTILITIESDIR/bin/dev/reconfig_nomen.csh $newnomendb >>& $LOG
 date >> $LOG
@@ -60,6 +56,7 @@ echo "Data Migration..." >> $LOG
 ./tr3802.csh >>& $LOG
 ./tr3588.csh >>& $LOG
 ./tr3516.csh >>& $LOG
+/mgi/all/wts_projects/4200/4222/tr4222.csh $DBSERVER $DBNAME
 
 echo "Drop and re-create Keys..." >> $LOG
 ${newmgddbschema}/key/key_drop.csh >> $LOG
@@ -68,6 +65,10 @@ ${newmgddbschema}/key/key_create.csh >> $LOG
 echo "Drop and re-create Triggers..." >> $LOG
 ${newmgddbschema}/trigger/trigger_drop.csh >> $LOG
 ${newmgddbschema}/trigger/trigger_create.csh >> $LOG
+
+echo "Install Developer's Permissions..." >>$LOG
+${newmgddbperms}/developers/perm_grant.csh >> $LOG
+date >> $LOG
 
 cat - <<EOSQL | doisql.csh $0 >> $LOG
   

@@ -14,6 +14,9 @@
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
 #
+# Full Test: 01/26/2004 (using backup)
+# Time: 11:33-
+#
 # Full Test: 12/29/2003 (using backup)
 # Time: 09:00-11:00 (2 hours)
 #

@@ -5,11 +5,11 @@
 #
 # updated:  
 # Defaults:	  6
-# Tables:	190
-# Procedures:	108
+# Tables:	189
+# Procedures:	105
 # Rules:	  5
-# Triggers:	150
-# Views:	198
+# Triggers:	149
+# Views:	196
 #
 # For this release, we need a copy of the schema for both
 # the current release and the new release.
@@ -64,7 +64,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-#load_dev2db.csh ${DBNAME} dev1mgd.backup
+load_dev1db.csh ${DBNAME} dev1mgd.backup
 
 date | tee -a  $LOG
 

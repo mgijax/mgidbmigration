@@ -95,15 +95,19 @@ EOSQL
 #${newradardbschema}/table/DP_EntrezGene_Info_create.object | tee -a ${LOG}
 #${newradardbschema}/index/DP_EntrezGene_Info_create.object | tee -a ${LOG}
 #${newradardbperms}/public/table/DP_EntrezGene_Info_grant.object | tee -a ${LOG}
+
 #${newradardbschema}/table/DP_EntrezGene_Synonym_create.object | tee -a ${LOG}
 #${newradardbschema}/index/DP_EntrezGene_Synonym_create.object | tee -a ${LOG}
 #${newradardbperms}/public/table/DP_EntrezGene_Synonym_grant.object | tee -a ${LOG}
+
 #${newradardbschema}/table/DP_EntrezGene_DBXRef_create.object | tee -a ${LOG}
 #${newradardbschema}/index/DP_EntrezGene_DBXRef_create.object | tee -a ${LOG}
 #${newradardbperms}/public/table/DP_EntrezGene_DBXRef_grant.object | tee -a ${LOG}
+
 #${newradardbschema}/table/DP_EntrezGene_PubMed_create.object | tee -a ${LOG}
 #${newradardbschema}/index/DP_EntrezGene_PubMed_create.object | tee -a ${LOG}
 #${newradardbperms}/public/table/DP_EntrezGene_PubMed_grant.object | tee -a ${LOG}
+
 #${newradardbschema}/table/DP_EntrezGene_RefSeq_create.object | tee -a ${LOG}
 #${newradardbschema}/index/DP_EntrezGene_RefSeq_create.object | tee -a ${LOG}
 #${newradardbperms}/public/table/DP_EntrezGene_RefSeq_grant.object | tee -a ${LOG}
@@ -115,24 +119,31 @@ ${newradardbperms}/public/table/DP_HomoloGene_grant.object | tee -a ${LOG}
 ${newradardbschema}/table/WRK_EntrezGene_Bucket0_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_Bucket0_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_Bucket0_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_EGSet_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_EGSet_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_EGSet_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_ExcludeA_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_ExcludeA_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_ExcludeA_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_ExcludeB_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_ExcludeB_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_ExcludeB_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_ExcludeC_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_ExcludeC_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_ExcludeC_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_Mapping_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_Mapping_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_Mapping_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_MGISet_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_MGISet_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_MGISet_grant.object | tee -a ${LOG}
+
 ${newradardbschema}/table/WRK_EntrezGene_Nomen_create.object | tee -a ${LOG}
 ${newradardbschema}/index/WRK_EntrezGene_Nomen_create.object | tee -a ${LOG}
 ${newradardbperms}/public/table/WRK_EntrezGene_Nomen_grant.object | tee -a ${LOG}

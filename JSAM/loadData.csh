@@ -89,6 +89,10 @@ echo 'Creating Triggers...' | tee -a ${LOG}
 date | tee -a ${LOG}
 ${oldmgddbschema}/trigger/trigger_create.csh | tee -a ${LOG}
 
+echo 'Permissions...' | tee -a ${LOG}
+date | tee -a ${LOG}
+${oldmgddbperms}/public/table/perm_grant.csh | tee -a ${LOG}
+
 echo 'Making a binary dump...' | tee -a ${LOG}
 dump_dev1db.csh ${DBNAME} dev1mgd.backup
 

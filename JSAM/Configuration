@@ -19,6 +19,7 @@ setenv existingmgddbschema /home/lec/db/mgi2.98/mgddbschema
 # existing (MGI 2.98) schema configured to talk to the JSAM database
 setenv oldmgddb /home/lec/db/jsam2.98
 setenv oldmgddbschema ${oldmgddb}/mgddbschema
+setenv oldmgddbperms ${oldmgddb}/mgddbperms
 
 # new (JSAM) schema configured to talk to the JSAM database
 setenv newmgddb /home/lec/db

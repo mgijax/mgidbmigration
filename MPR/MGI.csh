@@ -21,8 +21,8 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_db.csh ${DBSERVER} mgd_wi2 /extra2/sybase/mgi3.2.backup
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${DBSERVER} mgd_wi2 /extra2/sybase/mgi3.2.backup
+#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
@@ -50,7 +50,7 @@ EOSQL
 ./mgiassociation.csh | tee -a ${LOG}
 ./mgiheader.csh | tee -a ${LOG}
 ./splitNotes.py | tee -a ${LOG}
-./mgiref | tee -a ${LOG}
+./mgiref.csh | tee -a ${LOG}
 
 ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}

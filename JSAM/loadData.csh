@@ -36,14 +36,14 @@ dump transaction ${DBNAME} with truncate_only
 go
 EOSQL
 
-#echo 'Load Empty Database...' | tee -a ${LOG}
-#load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
-#date | tee -a ${LOG}
+echo 'Load Empty Database...' | tee -a ${LOG}
+load_dev1db.csh ${DBNAME} dev1mgdempty.backup | tee -a ${LOG}
+date | tee -a ${LOG}
 
-#echo 'Create data files...' | tee -a ${LOG}
-#rm -rf ${DATADIR}/*
-#bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
-#date | tee -a ${LOG}
+echo 'Create data files...' | tee -a ${LOG}
+rm -rf ${DATADIR}/*
+bcpout.csh ${existingmgddbschema} all ${DATADIR} | tee -a ${LOG}
+date | tee -a ${LOG}
 
 echo 'Creating tables...' | tee -a ${LOG}
 date | tee -a ${LOG}

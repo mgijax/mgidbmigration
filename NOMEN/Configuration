@@ -2,8 +2,7 @@
 
 setenv DBUTILITIESDIR	/usr/local/mgi/dbutils/mgidbutilities
 
-#setenv VOCLOAD          /usr/local/mgi/dataload/vocload/runSimpleFullLoadNoArchive.sh
-setenv VOCLOAD          /home/lec/loads/vocload-trunk/runSimpleFullLoadNoArchive.sh
+setenv VOCLOAD          /usr/local/mgi/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv PYTHONPATH       ${PYTHONPATH}:${VOCLOAD}
 
 #setenv newmgddb /usr/local/mgi/dbutils/mgd

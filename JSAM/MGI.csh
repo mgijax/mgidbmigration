@@ -64,7 +64,7 @@ ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a $LOG
 # OR
 
 # load a backup of pre-loaded MGI 2.98 database
-load_dev1db.csh ${DBNAME} dev1mgd.backup
+#load_dev1db.csh ${DBNAME} dev1mgd.backup
 
 date | tee -a  $LOG
 
@@ -98,7 +98,7 @@ date | tee -a  $LOG
 # Re-create all triggers, sps, views....
 #
 
-#${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
+${DBUTILSBINDIR}/dev/reconfig_mgd.csh ${newmgddb} | tee -a $LOG
 
 echo "Install Developer's Permissions..." | tee -a $LOG
 ${newmgddbperms}/developers/perm_grant.csh | tee -a  $LOG

@@ -166,7 +166,7 @@ updateStatisticsAll.csh ${newmgddbschema} | tee -a $LOG
 
 ./loadTrans.csh | tee -a $LOG
 ./loadSet.csh | tee -a $LOG
-#./radar.csh | tee -a $LOG
+./radar.csh | tee -a $LOG
 
 date | tee -a  $LOG
 

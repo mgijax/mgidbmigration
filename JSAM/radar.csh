@@ -58,6 +58,7 @@ ${newrdrdbschema}/table/QC_MS_InvalidTissue_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_MS_InvalidCellLine_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_MS_InvalidGender_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_MS_NameConflict_create.object | tee -a ${LOG}
+${newrdrdbschema}/table/QC_SEQ_Merged_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_SEQ_OldRef_create.object | tee -a ${LOG}
 ${newrdrdbschema}/table/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
 
@@ -77,6 +78,7 @@ ${newrdrdbschema}/index/QC_MS_InvalidTissue_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_MS_InvalidCellLine_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_MS_InvalidGender_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_MS_NameConflict_create.object | tee -a ${LOG}
+${newrdrdbschema}/index/QC_SEQ_Merged_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_SEQ_OldRef_create.object | tee -a ${LOG}
 ${newrdrdbschema}/index/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
 
@@ -96,6 +98,7 @@ ${newrdrdbschema}/key/QC_MS_InvalidTissue_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_MS_InvalidCellLine_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_MS_InvalidGender_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_MS_NameConflict_create.object | tee -a ${LOG}
+${newrdrdbschema}/key/QC_SEQ_Merged_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_SEQ_OldRef_create.object | tee -a ${LOG}
 ${newrdrdbschema}/key/QC_SEQ_RawSourceConflict_create.object | tee -a ${LOG}
 

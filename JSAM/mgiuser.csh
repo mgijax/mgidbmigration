@@ -158,6 +158,7 @@ insert into MGI_User values (1097, @curKey, @activeKey, "furuno", "Masaaki Furun
 insert into MGI_User values (1098, @curKey, @activeKey, "smb", "Sue Bello", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1099, @curKey, @activeKey, "anna", "Anna Anagnostopoulos", 1000, 1000, getdate(), getdate())
 insert into MGI_User values (1100, @curKey, @activeKey, "brs", "Beverly Richards-Smith", 1000, 1000, getdate(), getdate())
+insert into MGI_User values (1101, @curKey, @activeKey, "mac", "Megan Cassell", 1000, 1000, getdate(), getdate())
 
 /* Inactive */
 

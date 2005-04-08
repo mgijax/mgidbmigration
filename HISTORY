@@ -1,3 +1,11 @@
+TAG: mgidbmigration-3-2-0-19
+DATE: 04/08/2005
+STAFF: lec
+RELEASE: A
+CHANGES: 
+1) MPR
+2) remove MGI_Fantom2 tables
+
 TAG: mgidbmigration-3-2-0-18
 TAG: mgidbmigration-3-2-0-17
 TAG: mgidbmigration-3-2-0-16

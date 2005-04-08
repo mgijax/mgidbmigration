@@ -7,7 +7,7 @@
 # Procedures:   121
 # Rules:          5
 # Triggers:     156
-# User Tables:  182
+# User Tables:  179
 # Views:        226
 
 cd `dirname $0` && source ./Configuration
@@ -117,6 +117,15 @@ drop table VOC_Synonym
 go
 
 drop table MLC_Lock
+go
+
+drop table MGI_Fantom2
+go
+
+drop table MGI_Fantom2Cache
+go
+
+drop table MGI_Fantom2Notes
 go
 
 drop view ALL_Reference_View

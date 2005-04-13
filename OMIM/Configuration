@@ -1,0 +1,14 @@
+#!/bin/csh -f
+
+#setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/OMIM
+setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/OMIM
+
+setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload-3-1-0-2/runSimpleFullLoadNoArchive.sh
+
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddb /home/lec/db/mpr
+setenv newmgddbschema ${newmgddb}/mgddbschema-merged
+
+source ${newmgddbschema}/Configuration
+
+#setenv PUBLIC_VERSION   "MGI 3.12"

@@ -6,10 +6,9 @@ setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MPR
 setenv VOCLOAD		/usr/local/mgi/3.2/dataload/vocload
 
 setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload-3-1-0-2/runSimpleFullLoadNoArchive.sh
-#setenv VOCSIMPLELOAD    /home/lec/loads/vocload/runSimpleFullLoadNoArchive.sh
 
 #setenv ANNOTLOAD	/usr/local/mgi/3.2/dataload/annotload
-setenv ANNOTLOAD	/home/lec/loads/annotload-mpr
+setenv ANNOTLOAD	/home/lec/loads/annotload
 
 #setenv ASSOCLOAD        /usr/local/mgi/3.2/dataload/vocassociationload
 setenv ASSOCLOAD        /home/lec/loads/vocassociationload
@@ -21,17 +20,17 @@ setenv NOTELOAD		/home/lec/loads/noteload
 setenv ALLLABELLOAD	/home/lec/loads/alllabelload
 
 #setenv MRKREFLOAD	/usr/local/mgi/3.2/dbutils/mrkrefload
-setenv MRKREFLOAD	/home/lec/loads/mrkrefload-mpr
+setenv MRKREFLOAD	/home/lec/loads/mrkrefload
 
 #setenv newmgddb /usr/local/mgi/3.2/dbutils/mgd
 setenv newmgddb /home/lec/db/mpr
-setenv newmgddbschema ${newmgddb}/mgddbschema
-setenv newmgddbperms ${newmgddb}/mgddbperms
+setenv newmgddbschema ${newmgddb}/mgddbschema-merged
+setenv newmgddbperms ${newmgddb}/mgddbperms-merged
 
 #setenv newradardb /usr/local/mgi/3.2/dbutils/radar
 setenv newradardb /home/lec/db/mpr
-setenv newradardbschema ${newradardb}/radardbschema
-setenv newradardbperms ${newradardb}/radardbperms
+setenv newradardbschema ${newradardb}/radardbschema-merged
+setenv newradardbperms ${newradardb}/radardbperms-merged
 
 setenv SCHEMA_TAG       mgddbschema-3-2-0
 setenv RADARSCHEMA_TAG  radardbschema-3-2-0

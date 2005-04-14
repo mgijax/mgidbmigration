@@ -21,5 +21,6 @@ ${VOCSIMPLELOAD} `pwd`/allelestate.config >>& ${LOG}
 ${VOCSIMPLELOAD} `pwd`/categories.config >>& ${LOG}
 ${VOCSIMPLELOAD} `pwd`/categories2.config >>& ${LOG}
 ${VOCSIMPLELOAD} `pwd`/compound.config >>& ${LOG}
+${VOCSIMPLELOAD} `pwd`/evidence.config >>& ${LOG}
 
 date >> ${LOG}

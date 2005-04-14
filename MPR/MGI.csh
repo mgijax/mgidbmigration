@@ -54,6 +54,7 @@ EOSQL
 ./mgiassociation.csh | tee -a ${LOG}
 ./mgiheader.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
+./omim.csh | tee -a ${LOG}
 
 ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}

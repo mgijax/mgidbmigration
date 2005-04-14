@@ -24,13 +24,13 @@ setenv MRKREFLOAD	/home/lec/loads/mrkrefload
 
 #setenv newmgddb /usr/local/mgi/3.2/dbutils/mgd
 setenv newmgddb /home/lec/db/mpr
-setenv newmgddbschema ${newmgddb}/mgddbschema-merged
-setenv newmgddbperms ${newmgddb}/mgddbperms-merged
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
 
 #setenv newradardb /usr/local/mgi/3.2/dbutils/radar
 setenv newradardb /home/lec/db/mpr
-setenv newradardbschema ${newradardb}/radardbschema-merged
-setenv newradardbperms ${newradardb}/radardbperms-merged
+setenv newradardbschema ${newradardb}/radardbschema
+setenv newradardbperms ${newradardb}/radardbperms
 
 setenv SCHEMA_TAG       mgddbschema-3-2-0
 setenv RADARSCHEMA_TAG  radardbschema-3-2-0

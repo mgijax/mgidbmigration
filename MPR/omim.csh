@@ -12,7 +12,6 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-loadVOC.csh | tee -a ${LOG}
 ${OMIMLOAD}/runDAGIncLoad.sh OMIM.config | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}

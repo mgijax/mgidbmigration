@@ -12,7 +12,7 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-${OMIMLOAD}/runDAGIncLoadNoArchive.sh OMIM.config | tee -a ${LOG}
+${OMIMLOAD}/runSimpleFullLoadNoArchive.sh OMIM.config | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

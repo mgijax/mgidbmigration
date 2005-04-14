@@ -16,6 +16,7 @@ date | tee -a  ${LOG}
 #${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 
 loadVOC.csh | tee -a ${LOG}
+${OMIMLOAD}/runDAGIncLoad.sh OMIM.config | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 >> ${LOG}
 

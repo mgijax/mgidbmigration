@@ -3,7 +3,9 @@
 #setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/OMIM
 setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/OMIM
 
-setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload-3-1-0-2/runSimpleFullLoadNoArchive.sh
+setenv VOCSIMPLELOAD    /usr/local/mgi/3.2/dataload/vocload-3-2-0-1/runSimpleFullLoadNoArchive.sh
+
+setenv OMIMLOAD		/home/lec/loads/vocload
 
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddb /home/lec/db/mpr

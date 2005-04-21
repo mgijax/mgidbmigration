@@ -21,17 +21,21 @@ fp = reportlib.init('genotypeorder', printHeading = 0)
 
 # select all unique Genotype, Marker, Allele triplets
 
-db.sql('select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_1, t.term, a.isWildType ' + \
+db.sql('select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_1, t.term, a.isWildType, s.strain ' + \
 	'into #alleles ' + \
-	'from GXD_AllelePair ap, VOC_Term t, ALL_Allele a ' + \
+	'from GXD_AllelePair ap, VOC_Term t, ALL_Allele a, GXD_Genotype g, PRB_Strain s ' + \
 	'where ap._PairState_key = t._Term_key ' + \
 	'and ap._Allele_key_1 = a._Allele_key ' + \
+	'and ap._Genotype_key = g._Genotype_key ' + \
+	'and g._Strain_key = s._Strain_key ' + \
 	'union ' + \
-	'select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_2, t.term, a.isWildType ' + \
-	'from GXD_AllelePair ap, VOC_Term t, ALL_Allele a ' + \
+	'select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_2, t.term, a.isWildType, s.strain ' + \
+	'from GXD_AllelePair ap, VOC_Term t, ALL_Allele a, GXD_Genotype g, PRB_Strain s ' + \
 	'where ap._Allele_key_2 is not null ' + \
 	'and ap._PairState_key = t._Term_key ' + \
-	'and ap._Allele_key_2 = a._Allele_key ', None)
+	'and ap._Allele_key_2 = a._Allele_key ' + \
+	'and ap._Genotype_key = g._Genotype_key ' + \
+	'and g._Strain_key = s._Strain_key ', None)
 db.sql('create index idx1 on #alleles(_Genotype_key)', None)
 db.sql('create index idx2 on #alleles(_Allele_key_1)', None)
 
@@ -55,10 +59,9 @@ db.sql('select ap._Genotype_key, ap._Allele_key_1, ap._Allele_key_2, p._Strain_k
 	'into #allelepairs ' + \
 	'from GXD_AllelePair ap, GXD_Genotype p, PRB_Strain s ' + \
 	'where ap._Genotype_key = p._Genotype_key ' + \
-	'and p._Strain_key = s._Strain_key ' + \
-	'order by s.strain', None)
+	'and p._Strain_key = s._Strain_key ', None)
 
-db.sql('select distinct _Allele_key_1, _Allele_key_2, _Strain_key, strain into #uniqap from #allelepairs order by strain', None)
+db.sql('select distinct _Allele_key_1, _Allele_key_2, _Strain_key, strain into #uniqap from #allelepairs', None)
 
 db.sql('select * into #orderbystrain from #uniqap group by _Allele_key_1, _Allele_key_2 having count(*) > 1', None)
 
@@ -150,7 +153,7 @@ for r in results:
 	isNotSpec[key] = []
     isNotSpec[key].append(r['_Allele_key_1'])
 
-results = db.sql('select * from #alleles order by _Allele_key_1, _Genotype_key', 'auto')
+results = db.sql('select * from #alleles order by _Allele_key_1, strain', 'auto')
 alleles = {}
 for r in results:
     key = r['_Allele_key_1']
@@ -162,45 +165,72 @@ for r in results:
 
 for a in alleles.keys():
 
+    homoSeq = 0
+    hetero1Seq = 10
+    hetero2Seq = 20
+    hemiXSeq = 30
+    hemiYSeq = 40
+    hemiISeq = 50
+    indetSeq = 60
+    elseSeq = 70
+    noPrefixSeq = 80
+    involvesSeq = 90
+    eitherSeq = 100
+    notSpecSeq = 110
+
     for r in alleles[a]:
 
         genotype = r['_Genotype_key']
         marker = r['_Marker_key']
         alleleState = r['term']
         alleleWildType = r['isWildType']
-	sequenceNum = 12
 
 	if genotype in isSimple:
 	    if alleleState == 'Homozygous':
-	        sequenceNum = 1
+	        sequenceNum = homoSeq
+		homoSeq = homoSeq + 1
 	    elif alleleState == 'Heterozygous' and alleleWildType == 1:
-	        sequenceNum = 2
+	        sequenceNum = hetero1Seq
+		hetero1Seq = hetero1Seq + 1
 	    elif alleleState == 'Heterozygous' and alleleWildType == 0:
-	        sequenceNum = 3
+	        sequenceNum = hetero2Seq
+		hetero2Seq = hetero2Seq + 1
 	    elif alleleState == 'Hemizygous X-linked':
-	        sequenceNum = 4
+	        sequenceNum = hemiXSeq
+		hemiXSeq = hemiXSeq + 1
 	    elif alleleState == 'Hemizygous Y-linked':
-	        sequenceNum = 5
+	        sequenceNum = hemiYSeq
+		hemiYSeq = hemiYSeq + 1
 	    elif alleleState == 'Hemizygous Insertion':
-	        sequenceNum = 6
+	        sequenceNum = hemiISeq
+		hemiISeq = hemiISeq + 1
 	    elif alleleState == 'Indeterminate':
-	        sequenceNum = 7
+	        sequenceNum = indetSeq
+		indetSeq = indetSeq + 1
+	    else:
+	        sequenceNum = elseSeq
+		elseSeq = elseSeq + 1
 
-	if isNoPrefix.has_key(genotype):
-	    if a in isNoPrefix[genotype]:
-	        sequenceNum = sequenceNum + 1
+	else:
+            if isNoPrefix.has_key(genotype):
+	        if a in isNoPrefix[genotype]:
+	            sequenceNum = noPrefixSeq
+		    noPrefixSeq = noPrefixSeq + 1
 
-	if isInvolves.has_key(genotype):
-	    if a in isInvolves[genotype]:
-	        sequenceNum = sequenceNum + 2
+	    if isInvolves.has_key(genotype):
+	        if a in isInvolves[genotype]:
+	            sequenceNum = involvesSeq
+		    involvesSeq = involvesSeq + 1
 
-	if isEither.has_key(genotype):
-	    if a in isEither[genotype]:
-	        sequenceNum = sequenceNum + 3
+	    if isEither.has_key(genotype):
+	        if a in isEither[genotype]:
+	            sequenceNum = eitherSeq
+		    eitherSeq = eitherSeq + 1
 
-	if isNotSpec.has_key(genotype):
-	    if a in isNotSpec[genotype]:
-	        sequenceNum = sequenceNum + 4
+	    if isNotSpec.has_key(genotype):
+	        if a in isNotSpec[genotype]:
+	            sequenceNum = notSpecSeq
+		    notSpecSeq = notSpecSeq + 1
 
 	fp.write(str(genotype) + TAB)
 	fp.write(str(marker) + TAB)

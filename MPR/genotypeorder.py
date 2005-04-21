@@ -21,23 +21,33 @@ fp = reportlib.init('genotypeorder', printHeading = 0)
 
 # select all unique Genotype, Marker, Allele triplets
 
-db.sql('select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_1, t.term, a.isWildType, s.strain ' + \
+db.sql('select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_1, t.term, ap._AllelePair_key, s.strain ' + \
 	'into #alleles ' + \
-	'from GXD_AllelePair ap, VOC_Term t, ALL_Allele a, GXD_Genotype g, PRB_Strain s ' + \
+	'from GXD_AllelePair ap, VOC_Term t, GXD_Genotype g, PRB_Strain s ' + \
 	'where ap._PairState_key = t._Term_key ' + \
-	'and ap._Allele_key_1 = a._Allele_key ' + \
 	'and ap._Genotype_key = g._Genotype_key ' + \
 	'and g._Strain_key = s._Strain_key ' + \
 	'union ' + \
-	'select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_2, t.term, a.isWildType, s.strain ' + \
-	'from GXD_AllelePair ap, VOC_Term t, ALL_Allele a, GXD_Genotype g, PRB_Strain s ' + \
+	'select distinct ap._Genotype_key, ap._Marker_key, ap._Allele_key_2, t.term, ap._AllelePair_key, s.strain ' + \
+	'from GXD_AllelePair ap, VOC_Term t, GXD_Genotype g, PRB_Strain s ' + \
 	'where ap._Allele_key_2 is not null ' + \
 	'and ap._PairState_key = t._Term_key ' + \
-	'and ap._Allele_key_2 = a._Allele_key ' + \
 	'and ap._Genotype_key = g._Genotype_key ' + \
 	'and g._Strain_key = s._Strain_key ', None)
 db.sql('create index idx1 on #alleles(_Genotype_key)', None)
 db.sql('create index idx2 on #alleles(_Allele_key_1)', None)
+
+# select all allele pairs that contain a wild type allele
+results = db.sql('select distinct a._AllelePair_key from #alleles a, GXD_AllelePair ap, ALL_Allele l ' + \
+	'where a._AllelePair_key = ap._AllelePair_key ' + \
+	'and ap._Allele_key_1 = l._Allele_key and l.isWildType = 1 ' + \
+	'union ' + \
+	'select distinct a._AllelePair_key from #alleles a, GXD_AllelePair ap, ALL_Allele l ' + \
+	'where a._AllelePair_key = ap._AllelePair_key ' + \
+	'and ap._Allele_key_2 = l._Allele_key and l.isWildType = 1 ', 'auto')
+isWildType = []
+for r in results:
+    isWildType.append(r['_AllelePair_key'])
 
 # select the simple genotypes, those that have only one allele pair
 
@@ -183,16 +193,16 @@ for a in alleles.keys():
         genotype = r['_Genotype_key']
         marker = r['_Marker_key']
         alleleState = r['term']
-        alleleWildType = r['isWildType']
+	allelePair = r['_AllelePair_key']
 
 	if genotype in isSimple:
 	    if alleleState == 'Homozygous':
 	        sequenceNum = homoSeq
 		homoSeq = homoSeq + 1
-	    elif alleleState == 'Heterozygous' and alleleWildType == 1:
+	    elif alleleState == 'Heterozygous' and allelePair in isWildType:
 	        sequenceNum = hetero1Seq
 		hetero1Seq = hetero1Seq + 1
-	    elif alleleState == 'Heterozygous' and alleleWildType == 0:
+	    elif alleleState == 'Heterozygous' and allelePair not in isWildType:
 	        sequenceNum = hetero2Seq
 		hetero2Seq = hetero2Seq + 1
 	    elif alleleState == 'Hemizygous X-linked':

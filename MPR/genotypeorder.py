@@ -55,9 +55,10 @@ db.sql('select ap._Genotype_key, ap._Allele_key_1, ap._Allele_key_2, p._Strain_k
 	'into #allelepairs ' + \
 	'from GXD_AllelePair ap, GXD_Genotype p, PRB_Strain s ' + \
 	'where ap._Genotype_key = p._Genotype_key ' + \
-	'and p._Strain_key = s._Strain_key ', None)
+	'and p._Strain_key = s._Strain_key ' + \
+	'order by s.strain', None)
 
-db.sql('select distinct _Allele_key_1, _Allele_key_2, _Strain_key, strain into #uniqap from #allelepairs', None)
+db.sql('select distinct _Allele_key_1, _Allele_key_2, _Strain_key, strain into #uniqap from #allelepairs order by strain', None)
 
 db.sql('select * into #orderbystrain from #uniqap group by _Allele_key_1, _Allele_key_2 having count(*) > 1', None)
 

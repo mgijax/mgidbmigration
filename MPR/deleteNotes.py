@@ -59,21 +59,26 @@ for k in notes.keys():
 
     # we want to copy up the i and from the end of j to the end of the notes
 
-    n1 = regsub.gsub('"', '""', allNotes[:i])
-    n2 = regsub.gsub('"', '""', allNotes[j+(len(endTag)):])
+    n1 = allNotes[:i]
+    n2 = allNotes[j+(len(endTag)):]
     newNote = n1 + string.lstrip(n2)
 
     # Write notes in chunks of 255
 
     cmds = []
     s = 1
+
     while len(newNote) > 255:
-	cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, newNote[:255]))
+
+        n1 = regsub.gsub('"', '""', newNote[:255])
+	cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, n1))
         newNote = newNote[255:]
         s = s + 1
 
     if len(newNote) > 0:
-        cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, newNote))
+
+        n1 = regsub.gsub('"', '""', newNote)
+        cmds.append('insert into ALL_Note values(%s,%s,%s,0,"%s",getdate(),getdate())' % (k, noteTypeKey, s, n1))
 
     db.sql('delete from ALL_Note where _Allele_key = %s and _NoteType_key = %s' % (k, noteTypeKey), None, execute = not DEBUG)
     if len(cmds) > 0:

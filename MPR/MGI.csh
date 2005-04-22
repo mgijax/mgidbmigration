@@ -4,7 +4,7 @@
 # Migration for TR 6520
 #
 # Defaults:       6
-# Procedures:   122
+# Procedures:   121
 # Rules:          5
 # Triggers:     156
 # User Tables:  179
@@ -72,6 +72,7 @@ ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 ${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
 ${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}
 ${VOCLOAD}/runDAGIncLoad.sh MP.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh OMIM.config | tee -a ${LOG}
 
 #
 # for testing purposes only

@@ -145,7 +145,7 @@ for g in genotypes.keys():
             if alleleState != 'Unknown':
                 displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
                 displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
-                displayNotes3 = displayNotes3 + topType2 + '/' + newline + bottomType2 + newline
+                displayNotes3 = displayNotes3 + topType2 + '/' + bottomType2 + newline
 
         elif (compound == 'Top'):
 
@@ -154,7 +154,7 @@ for g in genotypes.keys():
             if foundBottom >= 1:
                 displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
                 displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
-                displayNotes3 = displayNotes3 + topType2 + '/' + newline + bottomType2 + newline
+                displayNotes3 = displayNotes3 + topType2 + '/' + bottomType2 + newline
 	        topType1 = ''
 	        topType2 = ''
 	        bottomType1 = ''
@@ -193,7 +193,7 @@ for g in genotypes.keys():
         if foundTop >= 1 and foundBottom >= 1:
             displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
             displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
-            displayNotes3 = displayNotes3 + topType2 + '/' + newline + bottomType2 + newline
+            displayNotes3 = displayNotes3 + topType2 + '/' + bottomType2 + newline
 
     fp1.write(genotypeID + TAB + displayNotes1 + CRT)
     fp2.write(genotypeID + TAB + displayNotes2 + CRT)

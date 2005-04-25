@@ -88,9 +88,11 @@ for g in genotypes.keys():
 
     topType1 = ''
     topType2 = ''
+    topType3 = ''
 
     bottomType1 = ''
     bottomType2 = ''
+    bottomType3 = ''
 
     for r in genotypes[g]:
 
@@ -106,14 +108,44 @@ for g in genotypes.keys():
         allele2WildType = r['allele2WildType']
         mgiID2 = r['mgiID2']
 
+	# for display 3
+
+        if allele1WildType == 1:
+	    topType3 = allele1
+        else:
+	    topType3 = '\Allele(' + mgiID1 + '|' + allele1 + '|)'
+
+        if alleleState in ['Homozygous', 'Heterozygous']:
+            if allele2WildType == 1:
+	        bottomType3 = allele2
+            else:
+	        bottomType3 = '\Allele(' + mgiID2 + '|' + allele2 + '|)'
+
+        if alleleState == 'Hemizygous X-linked':
+            bottomType3 = 'Y'
+
+        if alleleState == 'Hemizygous Y-linked':
+            bottomType3 = 'X'
+
+        if alleleState == 'Hemizygous Insertion':
+            bottomType3 = '0'
+
+        if alleleState == 'Hemizygous Deletion':
+            bottomType3 = '-'
+    
+        if alleleState == 'Indeterminate':
+            bottomType3 = '?'
+
+        if alleleState != 'Unknown':
+            displayNotes3 = displayNotes3 + topType3 + '/' + bottomType3 + newline
+    
         if compound == 'Not Applicable':
 
-            if alleleState in ['Homozygous', 'Heterozygous', 'Hemizygous X-linked', 'Hemizygous Y-linked', 'Hemizygous Insertion', 'Indeterminate']:
-                topType1 = allele1
-                if allele1WildType == 1:
-	            topType2 = allele1
-                else:
-	            topType2 = '\Allele(' + mgiID1 + '|' + allele1 + '|)'
+            topType1 = allele1
+            if allele1WildType == 1:
+	        topType2 = allele1
+            else:
+	        topType2 = '\Allele(' + mgiID1 + '|' + allele1 + '|)'
 
             if alleleState in ['Homozygous', 'Heterozygous']:
                 bottomType1 = allele2
@@ -122,30 +154,13 @@ for g in genotypes.keys():
                 else:
 	            bottomType2 = '\Allele(' + mgiID2 + '|' + allele2 + '|)'
 
-            if alleleState == 'Hemizygous X-linked':
-                bottomType1 = 'Y'
-
-            if alleleState == 'Hemizygous Y-linked':
-                bottomType1 = 'X'
-
-            if alleleState == 'Hemizygous Insertion':
-                bottomType1 = '0'
-
-            if alleleState == 'Hemizygous Deletion':
-                topType1 = 'Mutant Allele'
-                topType2 = topType1
-                bottomType1 = '-'
-    
-            if alleleState == 'Indeterminate':
-                bottomType1 = '?'
-
             if alleleState in ['Hemizygous X-linked', 'Hemizygous Y-linked', 'Hemizygous Insertion', 'Hemizygous Deletion', 'Indeterminate']:
-                bottomType2 = bottomType1
+                bottomType1 = bottomType3
+                bottomType2 = bottomType3
 
             if alleleState != 'Unknown':
                 displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
                 displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
-                displayNotes3 = displayNotes3 + topType2 + '/' + bottomType2 + newline
 
         elif (compound == 'Top'):
 
@@ -154,7 +169,6 @@ for g in genotypes.keys():
             if foundBottom >= 1:
                 displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
                 displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
-                displayNotes3 = displayNotes3 + topType2 + '/' + bottomType2 + newline
 	        topType1 = ''
 	        topType2 = ''
 	        bottomType1 = ''
@@ -193,7 +207,6 @@ for g in genotypes.keys():
         if foundTop >= 1 and foundBottom >= 1:
             displayNotes1 = displayNotes1 + topType1 + '/' + bottomType1 + newline
             displayNotes2 = displayNotes2 + topType2 + '/' + bottomType2 + newline
-            displayNotes3 = displayNotes3 + topType2 + '/' + bottomType2 + newline
 
     fp1.write(genotypeID + TAB + displayNotes1 + CRT)
     fp2.write(genotypeID + TAB + displayNotes2 + CRT)

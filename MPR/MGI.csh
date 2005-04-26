@@ -54,7 +54,6 @@ EOSQL
 ./mgiassociation.csh | tee -a ${LOG}
 ./mgiheader.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
-./omim.csh | tee -a ${LOG}
 
 ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
@@ -73,6 +72,7 @@ ${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
 ${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}
 ${VOCLOAD}/runDAGIncLoad.sh MP.config | tee -a ${LOG}
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh OMIM.config | tee -a ${LOG}
+./omim.csh | tee -a ${LOG}
 
 #
 # for testing purposes only

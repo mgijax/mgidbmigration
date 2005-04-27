@@ -69,7 +69,7 @@ ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 ./convertStrain.py | tee -a ${LOG}
 
 ${ALLLABELLOAD}/alllabel.sh | tee -a ${LOG}
-${MRKREFLOAD}/mrkref.sh | tee -a ${LOG}
+${MRKREFLOAD}/mrkref.csh | tee -a ${LOG}
 ${VOCLOAD}/runDAGIncLoad.sh MP.config | tee -a ${LOG}
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh OMIM.config | tee -a ${LOG}
 ./omim.csh | tee -a ${LOG}

@@ -19,8 +19,8 @@ setenv NOTELOAD		/home/lec/loads/noteload
 #setenv ALLLABELLOAD	/usr/local/mgi/3.2/dbutils/alllabelload
 setenv ALLLABELLOAD	/home/lec/loads/alllabelload
 
-#setenv MRKREFLOAD	/usr/local/mgi/3.2/dbutils/mrkrefload
-setenv MRKREFLOAD	/home/lec/loads/mrkrefload
+#setenv MRKREFLOAD	/usr/local/mgi/3.2/dbutils/mrkcacheload
+setenv MRKREFLOAD	/home/lec/loads/mrkcacheload
 
 #setenv newmgddb /usr/local/mgi/3.2/dbutils/mgd
 setenv newmgddb /home/lec/db/mpr

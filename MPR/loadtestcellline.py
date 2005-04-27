@@ -48,5 +48,9 @@ for line in inFile.readlines():
 
     db.sql('update ALL_Allele set _MutantESCellLine_key = %s where _Allele_key = %s' % (es[esID], alleleKey), None)
 
+# create an annotation that has a missing header
+
+db.sql('delete from VOC_AnnotHeader where _Object_key = 18432 and sequenceNum = 2', None)
+
 db.useOneConnection(0)
 

@@ -29,6 +29,7 @@ declare @evidenceKey integer
 select @evidenceKey = _Vocab_key from VOC_Vocab where name = 'OMIM Evidence Codes'
 
 insert into VOC_AnnotType values(@annotTypeKey, 12, @vocabKey, @evidenceKey, 'OMIM/Genotype', getdate(), getdate())
+insert into VOC_AnnotType values(@annotTypeKey + 1, 2, @vocabKey, @evidenceKey, 'OMIM/Human Marker', getdate(), getdate())
 go
 
 end

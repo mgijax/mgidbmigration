@@ -30,5 +30,16 @@ ${newradardbschema}/index/VOC_create.logical | tee -a ${LOG}
 ${newradardbschema}/key/VOC_create.logical | tee -a ${LOG}
 ${newradardbperms}/public/table/VOC_grant.logical | tee -a ${LOG}
 
+${newradardbschema}/table/DP_EntrezGene_MIM_create.object | tee -a ${LOG}
+${newradardbschema}/index/DP_EntrezGene_MIM_create.object | tee -a ${LOG}
+${newradardbschema}/key/DP_EntrezGene_Info_drop.object | tee -a ${LOG}
+${newradardbschema}/key/DP_EntrezGene_Info_create.object | tee -a ${LOG}
+${newradardbperms}/public/table/DP_EntrezGene_MIM_grant.object | tee -a ${LOG}
+
+${newradardbschema}/table/WRK_EntrezGene_Bucket0_drop.object | tee -a ${LOG}
+${newradardbschema}/table/WRK_EntrezGene_Bucket0_create.object | tee -a ${LOG}
+${newradardbschema}/index/WRK_EntrezGene_Bucket0_create.object | tee -a ${LOG}
+${newradardbperms}/public/table/WRK_EntrezGene_Bucket0_grant.object | tee -a ${LOG}
+
 date >> ${LOG}
 

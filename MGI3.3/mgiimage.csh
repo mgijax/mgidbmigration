@@ -28,7 +28,7 @@ declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
 insert into MGI_NoteType values(@noteTypeKey, 9, 'Caption', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into MGI_NoteType values(@noteTypeKey + 1, 9, 'Private Curatorial Note', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey + 1, 9, 'Private Curatorial', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 select distinct _Image_key, seq = identity(5)

@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     156
 # User Tables:  181
-# Views:        226
+# Views:        228
 
 cd `dirname $0` && source ./Configuration
 
@@ -53,5 +53,10 @@ ${newmgddbperms}/public/table/MRK_OMIM_Cache_grant.object | tee -a ${LOG}
 
 ${CACHELOAD}/mrkomim.csh | tee -a ${LOG}
 ./mgiimage.csh | tee -a ${LOG}
+
+${newmgddbschema}/view/MGI_Note_Image_View_create.object | tee -a ${LOG}
+${newmgddbschema}/view/MGI_NoteType_Image_View_create.object | tee -a ${LOG}
+${newmgddbperms}/public/view/MGI_Note_Image_View_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/MGI_NoteType_Image_View_grant.object | tee -a ${LOG}
 
 date | tee -a  ${LOG}

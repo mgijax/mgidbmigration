@@ -65,5 +65,14 @@ quit
 
 EOSQL
 
+# add images to PixelDB
+#./pixload.csh ${MLCIMAGES} pixmlc.txt >>& ${LOG}
+
+# generate input files for MGI image structures
+#./mgiimage.py
+
+# load input files into MGI
+#./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -p${DBPASSWORDFILE} -Mload
+
 date | tee -a $LOG
 

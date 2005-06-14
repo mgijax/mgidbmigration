@@ -6,6 +6,8 @@ setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MGI3.3
 #setenv CACHELOAD	/usr/local/mgi/3.2/dataload/mrkcacheload
 setenv CACHELOAD	/home/lec/loads/mrkcacheload
 
+setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
+
 setenv MLCIMAGES	/usr/local/mgi/live/wi/www/images/mlc
 setenv PIXELDBDATA	/usr/local/mgi/pixeldb_data
 setenv IMGLOADDATADIR   ${MIGRATIONDIR}

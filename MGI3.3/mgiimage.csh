@@ -4,7 +4,8 @@
 # Migration for Images
 #
 # IMG_Image
-# IMG_ImageNote
+# IMG_ImagePane_Assoc (new)
+# IMG_ImageNote (deleting)
 #
 
 cd `dirname $0` && source ./Configuration
@@ -30,16 +31,50 @@ quit
 EOSQL
 
 ${newmgddbschema}/table/IMG_Image_create.object | tee -a ${LOG}
-${newmgddbschema}/index/IMG_Image_create.object | tee -a ${LOG}
+${newmgddbschema}/table/IMG_ImagePane_Assoc_create.object | tee -a ${LOG}
+
+${newmgddbschema}/index/IMG_ImagePane_Assoc_create.object | tee -a ${LOG}
+
 ${newmgddbschema}/default/IMG_Image_bind.object | tee -a ${LOG}
+${newmgddbschema}/default/IMG_ImagePane_Assoc_bind.object | tee -a ${LOG}
+
+${newmgddbschema}/trigger/IMG_drop.logical | tee -a ${LOG}
+${newmgddbschema}/trigger/IMG_create.logical | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${newmgddbschema}/trigger/GXD_Genotype_drop.object | tee -a ${LOG}
+${newmgddbschema}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
+
+${newmgddbschema}/procedure/IMG_drop.logical | tee -a ${LOG}
+${newmgddbschema}/procedure/IMG_create.logical | tee -a ${LOG}
+
 ${newmgddbschema}/view/MGI_Note_Image_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_NoteType_Image_View_create.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_Note_Image_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_NoteType_Image_View_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
+go
+
+/* IMG_Image */
+
+declare @typeKey integer
+select @typeKey = t._Term_key from VOC_Term t, VOC_Vocab v
+        where t._Vocab_key = v._Vocab_key
+        and v.name = 'Image Type'
+        and t.term = 'Full Size'
+
+insert into IMG_Image
+select o._Image_key, @typeKey, o._Refs_key, null, o.xDim, o.yDim, o.figureLabel, ${CREATEDBY}, ${CREATEDBY}, o.creation_date, o.modification_date
+from IMG_Image_Old o
+go
+
+/* ACC_MGIType */
+
+declare @mgiTypeKey integer
+select @mgiTypeKey = max(_MGIType_key) + 1 from ACC_MGIType
+
+insert into ACC_MGIType values(@mgiTypeKey, 'Image Pane Association', 'IMG_ImagePane_Assoc', '_Assoc_key', null, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 /* images note type */
@@ -122,6 +157,8 @@ EOSQL
 
 # load input files into MGI
 #./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -p${DBPASSWORDFILE} -Mload
+
+${newmgddbschema}/index/IMG_Image_create.object | tee -a ${LOG}
 
 date | tee -a $LOG
 

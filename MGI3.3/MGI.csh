@@ -7,7 +7,7 @@
 # Procedures:   122
 # Rules:          5
 # Triggers:     156
-# User Tables:  180
+# User Tables:  182
 # Views:        228
 
 cd `dirname $0` && source ./Configuration
@@ -46,13 +46,22 @@ ${newmgddbperms}/curatorial/procedure/ALL_processAlleleCombination_grant.object 
 ./mgiomim.csh | tee -a ${LOG}
 ./mgiimage.csh | tee -a ${LOG}
 
-exit 0
+${newmgddbschema}/key/IMG_drop.logical | tee -a ${LOG}
+${newmgddbschema}/key/IMG_create.logical | tee -a ${LOG}
+${newmgddbschema}/key/ACC_MGIType_drop.object | tee -a ${LOG}
+${newmgddbschema}/key/ACC_MGIType_create.object | tee -a ${LOG}
+${newmgddbschema}/key/MGI_User_drop.object | tee -a ${LOG}
+${newmgddbschema}/key/MGI_User_create.object | tee -a ${LOG}
+${newmgddbschema}/key/VOC_Term_drop.object | tee -a ${LOG}
+${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
 
-${newmgddbschema}/key/key_drop.csh | tee -a ${LOG}
-${newmgddbschema}/key/key_create.csh | tee -a ${LOG}
-${newmgddbperms}/public/table/perm_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/perm_grant.object | tee -a ${LOG}
-${newmgddbperms}/curatorial/table/perm_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/table/IMG_grant.logical.object | tee -a ${LOG}
+${newmgddbperms}/public/table/MRK_grant.logical.object | tee -a ${LOG}
+
+${newmgddbperms}/curatorial/table/IMG_grant.logical.object | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/MRK_grant.logical.object | tee -a ${LOG}
+${newmgddbperms}/curatorial/procedure/IMG_grant.logical | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

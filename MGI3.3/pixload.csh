@@ -7,8 +7,7 @@
 #
 # Purpose:
 #
-#	Take a directory of gif files and "load" them into
-#	PixelDB.
+#	Take a directory of gif files and "load" them into PixelDB.
 #
 # Requirements Satisfied by This Program:
 #
@@ -16,7 +15,7 @@
 #
 #	pixload.csh [IMG File Directory] [output file]
 #
-#	example: pixload.csh data/tr4800/images/10.5dpc pix10.5dpc
+#	example: pixload.csh /usr/local/mgi/live/wi/www/images/mlc pixmlc.txt
 #
 # Envvars:
 #

@@ -7,7 +7,7 @@
 # Procedures:   122
 # Rules:          5
 # Triggers:     156
-# User Tables:  181
+# User Tables:  180
 # Views:        228
 
 cd `dirname $0` && source ./Configuration
@@ -21,7 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 #load_db.csh ${DBSERVER} ${DBNAME} /extra2/sybase/mgd322.backup
 
 # update schema tag
@@ -42,21 +42,31 @@ ${newmgddbperms}/curatorial/procedure/ALL_processAlleleCombination_grant.object 
 
 # 3.3 stuff
 
-${newmgddbschema}/table/MRK_OMIM_Cache_create.object | tee -a ${LOG}
-${newmgddbschema}/index/MRK_OMIM_Cache_create.object | tee -a ${LOG}
+./loadVoc.csh | tee -a ${LOG}
+./mgiomim.csh | tee -a ${LOG}
+./mgiimage.csh | tee -a ${LOG}
+
+exit 0
 
 ${newmgddbschema}/key/key_drop.csh | tee -a ${LOG}
 ${newmgddbschema}/key/key_create.csh | tee -a ${LOG}
+${newmgddbperms}/public/table/perm_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/perm_grant.object | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/perm_grant.object | tee -a ${LOG}
 
-#${newmgddbperms}/curatorial/table/MRK_OMIM_Cache_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/MRK_OMIM_Cache_grant.object | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-${CACHELOAD}/mrkomim.csh | tee -a ${LOG}
-./mgiimage.csh | tee -a ${LOG}
+use ${DBNAME}
+go
 
-${newmgddbschema}/view/MGI_Note_Image_View_create.object | tee -a ${LOG}
-${newmgddbschema}/view/MGI_NoteType_Image_View_create.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_Note_Image_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/MGI_NoteType_Image_View_grant.object | tee -a ${LOG}
+drop table IMG_Image_Old
+go
+
+drop table IMG_ImageNote
+go
+
+quit
+
+EOSQL
 
 date | tee -a  ${LOG}

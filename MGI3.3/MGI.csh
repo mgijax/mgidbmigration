@@ -7,7 +7,7 @@
 # Procedures:   122
 # Rules:          5
 # Triggers:     156
-# User Tables:  182
+# User Tables:  181
 # Views:        228
 
 cd `dirname $0` && source ./Configuration
@@ -55,12 +55,12 @@ ${newmgddbschema}/key/MGI_User_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
 
-${newmgddbperms}/public/view/perm_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/table/IMG_grant.logical.object | tee -a ${LOG}
-${newmgddbperms}/public/table/MRK_grant.logical.object | tee -a ${LOG}
+${newmgddbperms}/public/view/perm_grant.csh | tee -a ${LOG}
+${newmgddbperms}/public/table/IMG_grant.logical | tee -a ${LOG}
+${newmgddbperms}/public/table/MRK_grant.logical | tee -a ${LOG}
 
-${newmgddbperms}/curatorial/table/IMG_grant.logical.object | tee -a ${LOG}
-${newmgddbperms}/curatorial/table/MRK_grant.logical.object | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/IMG_grant.logical | tee -a ${LOG}
+${newmgddbperms}/curatorial/table/MRK_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/curatorial/procedure/IMG_grant.logical | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}

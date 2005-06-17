@@ -1,5 +1,32 @@
 #!/usr/local/bin/python
 
+#
+#
+# Translate the MLC image migration file to an input files for 
+# the Image load.
+#
+# output file 1, Images:
+#
+# 1: PIX ID
+# 2: Image Type
+# 3: Thumbnail PIX ID
+# 4: xDim
+# 5: yDim
+# 6: J:
+# 7: Figure Label
+# 8: Caption
+# 9: Copyright
+# 10: Created By
+#
+# output file 2, Image Pane Associations:
+#
+# 1: PIX ID
+# 2: MGI:#### of object to associate
+# 3: list of J: (pipe delimited)
+# 4: Y if primary, N if secondary
+# 5: Created By
+#
+
 import sys 
 import os
 import string
@@ -23,11 +50,11 @@ pixeldatadir = os.environ['PIXELDBDATA']
 inFileName = 'tr5154/9.5_dpc_in_situ_results.txt'
 inPixFileName = 'pixmlc.txt'
 imageFileName = '/image.txt'
-paneFileName = '/imagepane.txt'
+assocFileName = '/imagepaneassoc.txt'
 inFile = ''
 inPixFile = ''
 imageFile = ''
-paneFile = ''
+assocFile = ''
 
 # constants
 jpegSuffix = '.jpg'
@@ -52,7 +79,7 @@ for line in inPixFile.readlines():
 inPixFile.close()
 
 imageFile = reportlib.init(imageFileName, fileSuffix = '.txt', printHeading = 0)
-paneFile = reportlib.init(paneFileName, fileSuffix = '.txt', printHeading = 0)
+assocFile = reportlib.init(assocFileName, fileSuffix = '.txt', printHeading = 0)
 
 inFile = open(inFileName, 'r')
 
@@ -84,10 +111,10 @@ for line in inFile.readlines():
         copyright + TAB + \
         fscaption + CRT)
 
-    paneFile.write(imgToPix[fsImage] + TAB + \
+    assocFile.write(imgToPix[fsImage] + TAB + \
         paneLabel + CRT)
 inFile.close()
 
 reportlib.finish_nonps(imageFile)	# non-postscript file
-reportlib.finish_nonps(paneFile)	# non-postscript file
+reportlib.finish_nonps(assocFile)	# non-postscript file
 

@@ -9,11 +9,14 @@
 #
 #	To load new Images into IMG Structures
 #	Assumes that each Image record has a non-null PIX ID
+#	Assumes that each Image has at most one Image Pane which is null
 #
 #	IMG_Image
 #	IMG_ImagePane
+#       IMG_ImagePane_Assoc
 #	MGI_Note
 #	MGI_NoteChunk
+#       MGI_Reference_Assoc
 #	ACC_Accession
 #
 # Requirements Satisfied by This Program:
@@ -30,20 +33,24 @@
 #
 # Inputs:
 #
-#	Fields 1-5 are required
-#
 #       Image file, a tab-delimited file in the format:
-#		field 1: Image Type (full size or thumbnail)
-#		field 2: Reference (J:####)
-#		field 3: X Dimension
-#		field 4: Y Dimension
-#		field 5: PIX ID (PIX:#####)
-#		field 6: Related Image PIX ID (PIX:####)
-#               field 7: Figure Label
-#               field 8: Copyright Note
-#               field 9: Caption
-#		field 10: |-delimited list of Panes (full size only)
-#		field 11: |-delimited list of MGI objects to associate to first Image Pane
+#		field 1: PIX ID (PIX:#####)			required
+#		field 2: Image Type (Full Size or Thumbnail)	required
+#		field 3: Thumbnail Image PIX ID (PIX:####)	optional
+#		field 4: X Dimension				required
+#		field 5: Y Dimension				required
+#		field 6: Reference (J:####)			required
+#               field 7: Figure Label				required
+#               field 8: Caption				required
+#               field 9: Copyright Note				optional
+#		field 10: Created by				required
+#
+#	Association file, a tab-delimited file in the format:
+#		field 1: PIX ID (PIX:#####)			required
+#		field 2: MGI ID (MGI:#####)			required
+#		field 3: References (J:, pipe delimited)	required
+#		field 4: Is Primary (Y or N)			required
+#		field 5: Created by				required
 #
 # Outputs:
 #
@@ -51,6 +58,7 @@
 #
 #       IMG_Image.bcp			master Image records
 #	IMG_ImagePane.bcp		Image Pane records
+#	IMG_ImagePane_Assoc.bcp		Image Pane records
 #	MGI_Note.bcp			Caption records
 #	MGI_NoteChunk.bcp		Caption records
 #       ACC_Accession.bcp               Accession records
@@ -97,7 +105,8 @@ errorFile = ''		# error file descriptor
 inImageFile1 = ''         # file descriptor
 inImageFile2 = ''         # file descriptor
 
-inImageFileName = datadir + '/image.txt'
+inImageFileName1 = datadir + '/image.txt'
+inImageFileName2 = datadir + '/imagepaneassoc.txt'
 
 # output files
 
@@ -106,6 +115,7 @@ outNoteFile = ''	# file descriptor
 outPaneFile = ''	# file descriptor
 outAccFile = ''         # file descriptor
 outAssocFile = ''       # file descriptor
+outRefAssocFile = ''    # file descriptor
 
 imageTable = 'IMG_Image'
 noteTable = 'MGI_Note'
@@ -113,6 +123,7 @@ noteChunkTable = 'MGI_NoteChunk'
 paneTable = 'IMG_ImagePane'
 accTable = 'ACC_Accession'
 assocTable = 'IMG_ImagePane_Assoc'
+refassocTable = 'MGI_Reference_Assoc'
 
 outImageFileName = datadir + '/' + imageTable + '.bcp'
 outNoteFileName = datadir + '/' + noteTable + '.bcp'
@@ -120,14 +131,13 @@ outNoteChunkFileName = datadir + '/' + noteChunkTable + '.bcp'
 outPaneFileName = datadir + '/' + paneTable + '.bcp'
 outAccFileName = datadir + '/' + accTable + '.bcp'
 outAssocFileName = datadir + '/' + assocTable + '.bcp'
+outRefAssocFileName = datadir + '/' + refassocTable + '.bcp'
 
 diagFileName = ''	# diagnostic file name
 errorFileName = ''	# error file name
 passwordFileName = ''	# password file name
 
 mode = ''		# processing mode (load, preview)
-
-createdBy = os.environ['CREATEDBY']
 
 # primary keys
 
@@ -137,27 +147,34 @@ noteKey = 0		# MGI_Note._Note_key
 accKey = 0              # ACC_Accession._Accession_key
 mgiKey = 0              # ACC_AccessionMax.maxNumericPart
 assocKey = 0		# IMG_ImagePane_Assoc._Assoc_key
-createdByKey = ''
+refassocKey = 0		# MGI_Reference_Assoc._Assoc_key
 
 # accession constants
 
-imageMgiTypeKey = '9'	  # Image
-alleleMgiTypeKey = '11'	  # Allele
-genotypeMgiTypeKey = '12' # Genotype
-imageNoteTypeKey = '1023' # Image Note Type for Caption
-mgiPrefix = "MGI:"	  # Prefix for MGI accession ID
-accLogicalDBKey = '1'	  # Logical DB Key for MGI accession ID
-accPrivate = '0'	  # Private status for MGI accession ID (false)
-accPreferred = '1'	  # Preferred status MGI accession ID (true)
-pixPrefix = 'PIX:'	  # Prefix for PIX
-pixLogicalDBKey = '19'	  # Logical DB Key for PIX ID
-pixPrivate = '1'	  # Private status for PIX ID (true)
+imageMGITypeKey = '9'	  	# Image
+alleleMGITypeKey = '11'	 	# Allele
+genotypeMGITypeKey = '12'	# Genotype
+imagePaneAssocMGITypeKey = '29' # Image Pane Association
+captionNoteTypeKey = '1024' 	# Image Note Type for Caption
+copyrightNoteTypeKey = '1023' 	# Image Note Type for Caption
+mgiPrefix = "MGI:"	  	# Prefix for MGI accession ID
+accLogicalDBKey = '1'	  	# Logical DB Key for MGI accession ID
+accPrivate = '0'	  	# Private status for MGI accession ID (false)
+accPreferred = '1'	  	# Preferred status MGI accession ID (true)
+pixPrefix = 'PIX:'	  	# Prefix for PIX
+pixLogicalDBKey = '19'	  	# Logical DB Key for PIX ID
+pixPrivate = '1'	  	# Private status for PIX ID (true)
+figureLabelDefault = '1'	# Default value for Figure Label
+paneLabelDefault = ''		# Default value for Image Pane
+refAssocTypeKey = '1020'        # Ref Assoc Type for Image Pane Associations
 
 # dictionaries to cache data for quicker lookup
 
-imgTypeDict = {}
-alleleDict = {}
-genotypeDict = {}
+imgTypeDict = {}		# Image Type: Term key
+alleleDict = {}			# MGI ID: Object key
+genotypeDict = {}		# MGI ID: Object key
+pixImageKey = {}		# PIX ID: Image key
+pixImagePaneKey = {}		# PIX ID: Image Pane key
 
 loaddate = loadlib.loaddate
 
@@ -212,7 +229,7 @@ def exit(
 def init():
     global diagFile, errorFile, inputFile, errorFileName, diagFileName, passwordFileName
     global mode, createdByKey
-    global outImageFile, outNoteFile, outNoteChunkFile, outPaneFile, outAccFile, outAssocFile
+    global outImageFile, outNoteFile, outNoteChunkFile, outPaneFile, outAccFile, outAssocFile, outRefAssocFile
     global inImageFile1, inImageFile2
     global alleleDict, genotypeDict
  
@@ -271,10 +288,14 @@ def init():
     # Input Files
 
     try:
-        inImageFile1 = open(inImageFileName, 'r')
-        inImageFile2 = open(inImageFileName, 'r')
+        inImageFile1 = open(inImageFileName1, 'r')
     except:
-        exit(1, 'Could not open file %s\n' % inImageFileName)
+        exit(1, 'Could not open file %s\n' % inImageFileName1)
+
+    try:
+        inImageFile2 = open(inImageFileName2, 'r')
+    except:
+        exit(1, 'Could not open file %s\n' % inImageFileName2)
 
     # Output Files
 
@@ -308,6 +329,11 @@ def init():
     except:
         exit(1, 'Could not open file %s\n' % outAssocFileName)
 
+    try:
+        outRefAssocFile = open(outRefAssocFileName, 'w')
+    except:
+        exit(1, 'Could not open file %s\n' % outRefAssocFileName)
+
     # Log all SQL
     db.set_sqlLogFunction(db.sqlLogAll)
 
@@ -321,14 +347,12 @@ def init():
 
     errorFile.write('Start Date/Time: %s\n\n' % (mgi_utils.date()))
 
-    createdByKey = loadlib.verifyUser(createdBy, 0, errorFile)
-
-    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (alleleMgiTypeKey) + \
+    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (alleleMGITypeKey) + \
 	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
     for r in results:
 	alleleDict[r['accID']] = r['_Object_key']
 
-    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (genotypeMgiTypeKey) + \
+    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (genotypeMGITypeKey) + \
 	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
     for r in results:
 	genotypeDict[r['accID']] = r['_Object_key']
@@ -359,7 +383,7 @@ def verifyMode():
 #	writes to the error file if the Image Type is invalid
 # Throws:  nothing
 
-def verifyImgType(
+def verifyImageType(
     imgType, 	# Image Type value (string)
     lineNum,	# line number (integer)
     errorFile	   # error file (file descriptor)
@@ -390,7 +414,7 @@ def verifyImgType(
 
 def setPrimaryKeys():
 
-    global imageKey, paneKey, accKey, mgiKey, noteKey, assocKey
+    global imageKey, paneKey, accKey, mgiKey, noteKey, assocKey, refassockey
 
     results = db.sql('select maxKey = max(_Image_key) + 1 from IMG_Image', 'auto')
     imageKey = results[0]['maxKey']
@@ -411,6 +435,9 @@ def setPrimaryKeys():
         'where prefixPart = "%s"' % (mgiPrefix), 'auto')
     mgiKey = results[0]['maxKey']
 
+    results = db.sql('select maxKey = max(_Assoc_key) + 1 from MGI_Reference_Assoc', 'auto')
+    refassocKey = results[0]['maxKey']
+
 # Purpose:  BCPs the data into the database
 # Returns:  nothing
 # Assumes:  nothing
@@ -430,6 +457,7 @@ def bcpFiles(
     outPaneFile.close()
     outAccFile.close()
     outAssocFile.close()
+    outRefAssocFile.close()
 
     bcpI = 'cat %s | bcp %s..' % (passwordFileName, db.get_sqlDatabase())
     bcpII = '-c -t\"%s' % (bcpdelim) + '" -S%s -U%s' % (db.get_sqlServer(), db.get_sqlUser())
@@ -439,9 +467,10 @@ def bcpFiles(
     bcp3 = '%s%s in %s %s' % (bcpI, noteChunkTable, outNoteChunkFileName, bcpII)
     bcp4 = '%s%s in %s %s' % (bcpI, paneTable, outPaneFileName, bcpII)
     bcp5 = '%s%s in %s %s' % (bcpI, accTable, outAccFileName, bcpII)
-    bcp6 = '%s%s in %s %s' % (bcpI, accTable, outAssocFileName, bcpII)
+    bcp6 = '%s%s in %s %s' % (bcpI, assocTable, outAssocFileName, bcpII)
+    bcp7 = '%s%s in %s %s' % (bcpI, refassocTable, outRefAssocFileName, bcpII)
 
-    for bcpCmd in [bcp1, bcp2, bcp3, bcp4, bcp5, bcp6]:
+    for bcpCmd in [bcp1, bcp2, bcp3, bcp4, bcp5, bcp6, bcp7]:
 	diagFile.write('%s\n' % bcpCmd)
 	os.system(bcpCmd)
 
@@ -454,61 +483,108 @@ def bcpFiles(
     db.sql('update statistics %s' % (noteChunkTable), None)
     db.sql('update statistics %s' % (paneTable), None)
     db.sql('update statistics %s' % (assocTable), None)
+    db.sql('update statistics %s' % (refassocTable), None)
 
     return
 
-# Purpose:  processes image data
+# Purpose:  processes note data
+# Returns:  nothing
+# Assumes:  nothing
+# Effects:  writes records to MGI_Note bcp files
+# Throws:   nothing
+
+def processNote(note, noteTypeKey):
+
+    global noteKey
+
+    outNoteFile.write(str(noteKey) + TAB +  \
+		      str(imageKey) + TAB +  \
+		      imageMGITypeKey + TAB + \
+		      noteTypeKey + TAB + \
+	              str(createdByKey) + TAB + \
+	              str(createdByKey) + TAB + \
+		      loaddate + TAB + loaddate + CRT)
+
+    noteSeq = 1
+		
+    while len(note) > 255:
+        outNoteChunkFile.write(str(noteKey) + TAB + \
+			       str(noteSeq) + TAB + \
+			       note[:255] + TAB + \
+	                       str(createdByKey) + TAB + \
+	                       str(createdByKey) + TAB + \
+			       loaddate + TAB + loaddate + CRT)
+        newnote = note[255:]
+        note = newnote
+        noteSeq = noteSeq + 1
+
+    if len(note) > 0:
+        outNoteChunkFile.write(str(noteKey) + TAB + \
+			       str(noteSeq) + TAB + \
+			       note + TAB + \
+	                       str(createdByKey) + TAB + \
+	                       str(createdByKey) + TAB + \
+			       loaddate + TAB + loaddate + CRT)
+
+# Purpose:  processes image data 1, image records
 # Returns:  nothing
 # Assumes:  nothing
 # Effects:  verifies and processes each line in the input file
 # Throws:   nothing
 
-def processImageFile():
+def processImageFile1():
 
-    global imageKey, accKey, mgiKey, paneKey, noteKey
+    global imageKey, paneKey, accKey, mgiKey
+    global pixImageKey, pixImagePaneKey
 
     #
     # assign Image keys for each Pix ID
+    # assign Image Pane keys for each Pix ID
     #
 
-    pixImageKey = {}
     for line in inImageFile1.readlines():
-        tokens = string.split(line[:-1], '\t')
-	pixID = tokens[4]
+
+        tokens = string.split(line[:-1], TAB)
+	pixID = tokens[0]
+
 	pixImageKey[pixID] = imageKey
 	imageKey = imageKey + 1
+
+	pixImagePaneKey[pixID] = paneKey
+        paneKey = paneKey + 1
+
     inImageFile1.close()
 
     # For each line in the input file
 
     lineNum = 0
-    for line in inImageFile2.readlines():
+    for line in inImageFile1.readlines():
 
         error = 0
         lineNum = lineNum + 1
 
         # Split the line into tokens
-        tokens = string.split(line[:-1], '\t')
+        tokens = string.split(line[:-1], TAB)
 
         try:
-	    imageType = tokens[0]
-	    jnum = tokens[1]
-	    xdim = tokens[2]
-	    ydim = tokens[3]
-	    pixID = tokens[4]
-	    relatedpixID = tokens[5]
+	    pixID = tokens[0]
+	    imageType = tokens[1]
+	    tnpixID = tokens[2]
+	    xdim = tokens[3]
+	    ydim = tokens[4]
+	    jnum = tokens[5]
 	    figureLabel = tokens[6]
-	    copyrightNote = tokens[7]
-	    caption = tokens[8]
-	    panes = string.split(tokens[9], '|')
-	    assocations = string.split(tokens[10], '|')
+	    caption = tokens[7]
+	    copyrightNote = tokens[8]
+            createdBy = tokens[9]
         except:
             exit(1, 'Invalid Line (%d): %s\n' % (lineNum, line))
 
         referenceKey = loadlib.verifyReference(jnum, lineNum, errorFile)
         imageTypeKey = verifyImageType(imageType, lineNum, errorFile)
+        createdByKey = loadlib.verifyUser(createdBy, 0, errorFile)
 
-        if referenceKey == 0 or imageTypeKey == 0:
+        if referenceKey == 0 or imageTypeKey == 0 or createdByKey == 0:
             # set error flag to true
             error = 1
 
@@ -520,19 +596,21 @@ def processImageFile():
 
 	imageKey = pixImageKey[pixID]
 
-	if len(relatedpixID) > 0:
-	    relatedimageKey = pixImageKey[relatedpixID]
+	if len(tnpixID) > 0:
+	    tnimageKey = pixImageKey[tnpixID]
 	else:
-	    relatedimageKey = ''
+	    tnimageKey = ''
+
+	if len(figureLabel) == 0:
+	    figureLabel = figureLabelDefault
 
         outImageFile.write(str(imageKey) + TAB + \
-	    str(referenceKey) + TAB + \
 	    str(imageTypeKey) + TAB + \
-	    str(relatedimageKey) + TAB + \
+	    str(referenceKey) + TAB + \
+	    str(tnimageKey) + TAB + \
 	    xdim + TAB + \
 	    ydim + TAB + \
 	    figureLabel + TAB + \
-	    copyrightNote + TAB + \
 	    str(createdByKey) + TAB + \
 	    str(createdByKey) + TAB + \
 	    loaddate + TAB + loaddate + CRT)
@@ -545,7 +623,7 @@ def processImageFile():
 	    str(mgiKey) + TAB + \
 	    accLogicalDBKey + TAB + \
 	    str(imageKey) + TAB + \
-	    imageMgiTypeKey + TAB + \
+	    imageMGITypeKey + TAB + \
 	    accPrivate + TAB + \
 	    accPreferred + TAB + \
 	    str(createdByKey) + TAB + \
@@ -563,7 +641,7 @@ def processImageFile():
 	    str(pixID) + TAB + \
 	    pixLogicalDBKey + TAB + \
 	    str(imageKey) + TAB + \
-	    imageMgiTypeKey + TAB + \
+	    imageMGITypeKey + TAB + \
 	    pixPrivate + TAB + \
 	    accPreferred + TAB + \
 	    str(createdByKey) + TAB + \
@@ -572,90 +650,106 @@ def processImageFile():
 
         accKey = accKey + 1
 
-	# Image Panes (must have at least one)
+	# Image Pane
 
-	if len(panes) > 0:
-	    assocPaneKey = paneKey
-	    for p in panes:
-                outPaneFile.write(str(paneKey) + TAB + \
+	paneKey = pixImagePaneKey[pixID]
+        outPaneFile.write(str(paneKey) + TAB + \
 		    str(imageKey) + TAB + \
-	            p + TAB + \
-	            mgi_utils.prvalue(paneLabel) + TAB + \
-	            str(createdByKey) + TAB + \
-	            str(createdByKey) + TAB + \
+	            mgi_utils.prvalue(paneLabelDefault) + TAB + \
 	            loaddate + TAB + loaddate + CRT)
 
-                paneKey = paneKey + 1
-	else:
-	    assocPaneKey = paneKey
-            outPaneFile.write(str(paneKey) + TAB + \
-		str(imageKey) + TAB + \
-	        TAB + \
-	        mgi_utils.prvalue(paneLabel) + TAB + \
-	        str(createdByKey) + TAB + \
-	        str(createdByKey) + TAB + \
-	        loaddate + TAB + loaddate + CRT)
-
-	    # create assocations to Image Pane
-	    # if len(assocations) > 0:
-
-            paneKey = paneKey + 1
-
-	# Notes
+	# Caption and Copyright
 
 	if len(caption) > 0:
+            processNote(caption, captionNoteTypeKey)
 
-            outNoteFile.write(str(noteKey) + TAB +  \
-			      str(imageKey) + TAB +  \
-			      imageMgiTypeKey + TAB + \
-			      imageNoteTypeKey + TAB + \
-	                      str(createdByKey) + TAB + \
-	                      str(createdByKey) + TAB + \
-			      loaddate + TAB + loaddate + CRT)
+	if len(copyright) > 0:
+            processNote(copyright, copyrightNoteTypeKey)
 
-            noteSeq = 1
-		
-            while len(caption) > 255:
-                outNoteChunkFile.write(str(noteKey) + TAB + \
-				       str(noteSeq) + TAB + \
-				       caption[:255] + TAB + \
-	                               str(createdByKey) + TAB + \
-	                               str(createdByKey) + TAB + \
-				       loaddate + TAB + loaddate + CRT)
-                newnote = caption[255:]
-                caption = newnote
-                noteSeq = noteSeq + 1
+    #	end of "for line in inImageFile1.readlines():"
 
-            if len(caption) > 0:
-                outNoteChunkFile.write(str(noteKey) + TAB + \
-				       str(noteSeq) + TAB + \
-				       caption + TAB + \
-	                               str(createdByKey) + TAB + \
-	                               str(createdByKey) + TAB + \
-				       loaddate + TAB + loaddate + CRT)
+    inImageFile1.close()
+    return lineNum
 
-	# Assocations
+# Purpose:  processes image data file 2, associations
+# Returns:  nothing
+# Assumes:  nothing
+# Effects:  verifies and processes each line in the input file
+# Throws:   nothing
 
-	if len(assocations) > 0:
-	    for a in assocations:
-		outAssocFile.write(str(assocKey) + TAB + \
-				   str(assocPaneKey) + TAB + \
-#				   allele or genotype + \
-#				   objectKey + TAB + \
-#				   isprimary + TAB + \
-	                           str(createdByKey) + TAB + \
-	                           str(createdByKey) + TAB + \
-				   loaddate + TAB + loaddate + CRT)
-		assocKey = assocKey + 1
+def processImageFile2():
+
+    global assocKey
+
+    # For each line in the input file
+
+    lineNum = 0
+    for line in inImageFile2.readlines():
+
+        error = 0
+        lineNum = lineNum + 1
+
+        # Split the line into tokens
+        tokens = string.split(line[:-1], TAB)
+
+        try:
+	    pixID = tokens[0]
+	    mgiID = tokens[1]
+	    jnums = string.split(tokens[2], '|')
+	    isPrimary = tokens[3]
+            createdBy = tokens[4]
+        except:
+            exit(1, 'Invalid Line (%d): %s\n' % (lineNum, line))
+
+        createdByKey = loadlib.verifyUser(createdBy, 0, errorFile)
+
+	if isPrimary == 'Y':
+	    isPrimaryKey = 1
+	else:
+	    isPrimaryKey = 0
+
+	# Associations
+
+	paneKey = pixImagePaneKey[pixID]
+
+	if alleleDict.has_key(mgiID):
+	    mgiTypeKey = alleleMGITypeKey
+	    objectKey = alleleDict[mgiID]
+        else:
+	    mgiTypeKey = genotypeMGITypeKey
+	    objectKey = genotypeDict[mgiID]
+
+        outAssocFile.write(str(assocKey) + TAB + \
+			   str(paneKey) + TAB + \
+			   str(mgiTypeKey) + TAB + \
+			   str(objectKey) + TAB + \
+			   str(isPrimaryKey) + TAB + \
+			   createdBykey + TAB + createdByKey + TAB + \
+	                   loaddate + TAB + loaddate + CRT)
+
+	# Association References
+
+	for j in jnums:
+            referenceKey = loadlib.verifyReference(j, 0, errorFile)
+	    outRefAssocFile.write(str(refassocKey) + TAB + \
+				  str(referenceKey) + TAB + \
+				  str(assocKey) + TAB + \
+				  str(imagePaneAssocMGITypeKey) + TAB + \
+				  str(refAssocTypeKey) + TAB + \
+			          createdBykey + TAB + createdByKey + TAB + \
+	                          loaddate + TAB + loaddate + CRT)
+	    refassocKey = refassocKey + 1
+
+	assocKey = assocKey + 1
 
     #	end of "for line in inImageFile1.readlines():"
 
     inImageFile2.close()
-    return lineNum
 
 def process():
 
-    recordsProcessed = processImageFile()
+    recordsProcessed = processImageFile1()
+    processImageFile2()
     bcpFiles(recordsProcessed)
 
 #
@@ -668,21 +762,3 @@ setPrimaryKeys()
 process()
 exit(0)
 
-#
-# $Log$
-# Revision 1.1  2005/06/10 12:17:36  lec
-# MGI 3.3
-#
-# Revision 1.4  2004/09/16 16:12:15  lec
-# TR 6118
-#
-# Revision 1.3  2004/09/08 19:41:40  lec
-# TR 6118
-#
-# Revision 1.2  2003/09/24 12:30:44  lec
-# TR 5154
-#
-# Revision 1.1  2003/07/16 19:41:09  lec
-# TR 4800
-#
-#

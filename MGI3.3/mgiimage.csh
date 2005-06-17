@@ -139,7 +139,12 @@ go
 drop table #notes
 go
 
-dump tran $DBNAME with truncate_only
+/* reference type */
+
+declare @refTypeKey integer
+select @refTypeKey = max(_RefAssocType_key) + 1 from MGI_RefAssocType
+
+insert into MGI_RefAssocType values(@refTypeKey, 29, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 checkpoint

@@ -73,17 +73,14 @@ for line in inFile.readlines():
 
     # get x and y image dimensions
 
-#    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
-#    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
-#        str(xdim) + TAB + \
-#        str(ydim) + TAB + \
-#	imgToPix[fsImage] + TAB + \
+    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
+    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
 
     imageFile.write(imageRef + TAB + \
         TAB + \
-        TAB + \
-	TAB + \
-        TAB + \
+        str(xdim) + TAB + \
+        str(ydim) + TAB + \
+	imgToPix[fsImage] + TAB + \
         copyright + TAB + \
         fscaption + CRT)
 

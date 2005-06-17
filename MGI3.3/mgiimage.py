@@ -2,8 +2,9 @@
 
 #
 #
-# Translate the MLC image migration file to an input files for 
-# the Image load.
+# Translate the MLC image migration file to input files for imageload.py.
+#
+# input file:
 #
 # output file 1, Images:
 #
@@ -43,11 +44,9 @@ SPACE = reportlib.SPACE
 TAB = reportlib.TAB
 PAGE = reportlib.PAGE
 
-pixPrefix = "PIX:"
-pixLogicalDB = 19
 pixeldatadir = os.environ['PIXELDBDATA']
 
-inFileName = 'tr5154/9.5_dpc_in_situ_results.txt'
+inFileName = 'cindy smith'
 inPixFileName = 'pixmlc.txt'
 imageFileName = '/image.txt'
 assocFileName = '/imagepaneassoc.txt'
@@ -58,15 +57,18 @@ assocFile = ''
 
 # constants
 jpegSuffix = '.jpg'
-createdBy = os.environ['CREATEDBY']
+createdBy = 'csmith'
+figureLabel = '1'
 paneLabel = ''
-imageNote = ''
+fullSize = 'Full Size'
+thumbnail = 'Thumbnail'
 
 #
 # Main
 #
 
 # pixFileName:pixID mapping
+
 imgToPix = {}
 inPixFile = open(inPixFileName, 'r')
 for line in inPixFile.readlines():
@@ -78,8 +80,8 @@ for line in inPixFile.readlines():
     imgToPix[key] = value
 inPixFile.close()
 
-imageFile = reportlib.init(imageFileName, fileSuffix = '.txt', printHeading = 0)
-assocFile = reportlib.init(assocFileName, fileSuffix = '.txt', printHeading = 0)
+imageFile = reportlib.init(imageFileName, fileExt = '.txt', printHeading = 0)
+assocFile = reportlib.init(assocFileName, fileExt = '.txt', printHeading = 0)
 
 inFile = open(inFileName, 'r')
 
@@ -88,31 +90,52 @@ for line in inFile.readlines():
     tokens = string.split(line[:-1], TAB)
     fsImage = tokens[0]
     tnImage = tokens[1]
-    objectID = tokens[2]
-    imageRef = tokens[3]
-    assocRef = tokens[4]
-    fscaption = tokens[5]
-    tncaption = tokens[6]
-    copyright = tokens[7]
+    fscaption = tokens[2]
+    tncaption = tokens[3]
+    copyright = tokens[4]
+    imageRef = tokens[5]
+
+    objectID = tokens[6]
+    assocRef = tokens[7]
+    isPrimary = tokens[8]
 
     fspix = imgToPix[fsImage]
     tnpix = imgToPix[tnImage]
 
-    # get x and y image dimensions
-
     (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
     (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
 
-    imageFile.write(imageRef + TAB + \
-        TAB + \
-        str(xdim) + TAB + \
-        str(ydim) + TAB + \
-	imgToPix[fsImage] + TAB + \
-        copyright + TAB + \
-        fscaption + CRT)
+    imageFile.write(fspix + TAB + \
+                    fullSize + TAB + \
+                    tnpix + TAB + \
+                    str(xdim) + TAB + \
+                    str(ydim) + TAB + \
+		    imageRef + TAB + \
+		    figureLabel + TAB + \
+		    fscaption + TAB + \
+                    copyright + TAB + \
+                    createdBy + CRT)
 
-    assocFile.write(imgToPix[fsImage] + TAB + \
-        paneLabel + CRT)
+    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[tnImage] + jpegSuffix)
+    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[tnImage] + jpegSuffix)
+
+    imageFile.write(tnpix + TAB + \
+                    thumbnail + TAB + \
+                    TAB + \
+                    str(xdim) + TAB + \
+                    str(ydim) + TAB + \
+		    imageRef + TAB + \
+		    figureLabel + TAB + \
+		    tncaption + TAB + \
+                    TAB + \
+                    createdBy + CRT)
+
+    assocFile.write(fspix + TAB + \
+		    objectID + TAB + \
+		    assocRef + TAB + \
+		    isPrimary + TAB + \
+		    createdBy + CRT)
+
 inFile.close()
 
 reportlib.finish_nonps(imageFile)	# non-postscript file

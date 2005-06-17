@@ -161,7 +161,7 @@ EOSQL
 #./mgiimage.py
 
 # load input files into MGI
-#./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -p${DBPASSWORDFILE} -Mload
+#./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -Mload
 
 ${newmgddbschema}/index/IMG_Image_create.object | tee -a ${LOG}
 

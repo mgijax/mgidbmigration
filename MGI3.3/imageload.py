@@ -42,7 +42,7 @@
 #		field 6: Reference (J:####)			required
 #               field 7: Figure Label				required
 #               field 8: Caption				required
-#               field 9: Copyright Note				optional
+#               field 9: Copyright				optional
 #		field 10: Created by				required
 #
 #	Association file, a tab-delimited file in the format:
@@ -228,7 +228,7 @@ def exit(
 
 def init():
     global diagFile, errorFile, inputFile, errorFileName, diagFileName, passwordFileName
-    global mode, createdByKey
+    global mode
     global outImageFile, outNoteFile, outNoteChunkFile, outPaneFile, outAccFile, outAssocFile, outRefAssocFile
     global inImageFile1, inImageFile2
     global alleleDict, genotypeDict
@@ -347,13 +347,16 @@ def init():
 
     errorFile.write('Start Date/Time: %s\n\n' % (mgi_utils.date()))
 
-    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (alleleMGITypeKey) + \
-	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
-    for r in results:
-	alleleDict[r['accID']] = r['_Object_key']
+#    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (alleleMGITypeKey) + \
+#	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
+#    for r in results:
+#	alleleDict[r['accID']] = r['_Object_key']
+
+#    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (genotypeMGITypeKey) + \
+#	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
 
     results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (genotypeMGITypeKey) + \
-	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
+	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1 and accID in ("MGI:2663174", "MGI:3037657")', 'auto')
     for r in results:
 	genotypeDict[r['accID']] = r['_Object_key']
 
@@ -404,7 +407,7 @@ def verifyImageType(
 	if errorFile != None:
             errorFile.write('Invalid Image Type (%d): %s\n' % (lineNum, imgType))
 
-    return imgeTypeKey
+    return imgTypeKey
 
 # Purpose:  sets global primary key variables
 # Returns:  nothing
@@ -414,7 +417,7 @@ def verifyImageType(
 
 def setPrimaryKeys():
 
-    global imageKey, paneKey, accKey, mgiKey, noteKey, assocKey, refassockey
+    global imageKey, paneKey, accKey, mgiKey, noteKey, assocKey, refassocKey
 
     results = db.sql('select maxKey = max(_Image_key) + 1 from IMG_Image', 'auto')
     imageKey = results[0]['maxKey']
@@ -424,6 +427,8 @@ def setPrimaryKeys():
 
     results = db.sql('select maxKey = max(_Assoc_key) + 1 from IMG_ImagePane_Assoc', 'auto')
     assocKey = results[0]['maxKey']
+    if assocKey is None:
+	assocKey = 1000
 
     results = db.sql('select maxKey = max(_Note_key) + 1 from MGI_Note', 'auto')
     noteKey = results[0]['maxKey']
@@ -493,7 +498,7 @@ def bcpFiles(
 # Effects:  writes records to MGI_Note bcp files
 # Throws:   nothing
 
-def processNote(note, noteTypeKey):
+def processNote(note, noteTypeKey, createdByKey):
 
     global noteKey
 
@@ -526,6 +531,8 @@ def processNote(note, noteTypeKey):
 	                       str(createdByKey) + TAB + \
 			       loaddate + TAB + loaddate + CRT)
 
+    noteKey = noteKey + 1
+
 # Purpose:  processes image data 1, image records
 # Returns:  nothing
 # Assumes:  nothing
@@ -534,6 +541,7 @@ def processNote(note, noteTypeKey):
 
 def processImageFile1():
 
+    global inImageFile1
     global imageKey, paneKey, accKey, mgiKey
     global pixImageKey, pixImagePaneKey
 
@@ -557,6 +565,7 @@ def processImageFile1():
 
     # For each line in the input file
 
+    inImageFile1 = open(inImageFileName1, 'r')
     lineNum = 0
     for line in inImageFile1.readlines():
 
@@ -575,7 +584,7 @@ def processImageFile1():
 	    jnum = tokens[5]
 	    figureLabel = tokens[6]
 	    caption = tokens[7]
-	    copyrightNote = tokens[8]
+	    copyright = tokens[8]
             createdBy = tokens[9]
         except:
             exit(1, 'Invalid Line (%d): %s\n' % (lineNum, line))
@@ -661,10 +670,10 @@ def processImageFile1():
 	# Caption and Copyright
 
 	if len(caption) > 0:
-            processNote(caption, captionNoteTypeKey)
+            processNote(caption, captionNoteTypeKey, createdByKey)
 
 	if len(copyright) > 0:
-            processNote(copyright, copyrightNoteTypeKey)
+            processNote(copyright, copyrightNoteTypeKey, createdByKey)
 
     #	end of "for line in inImageFile1.readlines():"
 
@@ -679,7 +688,7 @@ def processImageFile1():
 
 def processImageFile2():
 
-    global assocKey
+    global assocKey, refassocKey
 
     # For each line in the input file
 
@@ -724,7 +733,7 @@ def processImageFile2():
 			   str(mgiTypeKey) + TAB + \
 			   str(objectKey) + TAB + \
 			   str(isPrimaryKey) + TAB + \
-			   createdBykey + TAB + createdByKey + TAB + \
+			   str(createdByKey) + TAB + str(createdByKey) + TAB + \
 	                   loaddate + TAB + loaddate + CRT)
 
 	# Association References
@@ -736,7 +745,7 @@ def processImageFile2():
 				  str(assocKey) + TAB + \
 				  str(imagePaneAssocMGITypeKey) + TAB + \
 				  str(refAssocTypeKey) + TAB + \
-			          createdBykey + TAB + createdByKey + TAB + \
+			          str(createdByKey) + TAB + str(createdByKey) + TAB + \
 	                          loaddate + TAB + loaddate + CRT)
 	    refassocKey = refassocKey + 1
 

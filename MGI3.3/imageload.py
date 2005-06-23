@@ -161,7 +161,6 @@ mgiPrefix = "MGI:"	  	# Prefix for MGI accession ID
 accLogicalDBKey = '1'	  	# Logical DB Key for MGI accession ID
 accPrivate = '0'	  	# Private status for MGI accession ID (false)
 accPreferred = '1'	  	# Preferred status MGI accession ID (true)
-pixPrefix = 'PIX:'	  	# Prefix for PIX
 pixLogicalDBKey = '19'	  	# Logical DB Key for PIX ID
 pixPrivate = '1'	  	# Private status for PIX ID (true)
 figureLabelDefault = '1'	# Default value for Figure Label
@@ -171,8 +170,6 @@ refAssocTypeKey = '1020'        # Ref Assoc Type for Image Pane Associations
 # dictionaries to cache data for quicker lookup
 
 imgTypeDict = {}		# Image Type: Term key
-alleleDict = {}			# MGI ID: Object key
-genotypeDict = {}		# MGI ID: Object key
 pixImageKey = {}		# PIX ID: Image key
 pixImagePaneKey = {}		# PIX ID: Image Pane key
 
@@ -231,7 +228,6 @@ def init():
     global mode
     global outImageFile, outNoteFile, outNoteChunkFile, outPaneFile, outAccFile, outAssocFile, outRefAssocFile
     global inImageFile1, inImageFile2
-    global alleleDict, genotypeDict
  
     try:
         optlist, args = getopt.getopt(sys.argv[1:], 'S:D:U:P:M:')
@@ -346,19 +342,6 @@ def init():
     diagFile.write('User: %s\n' % (user))
 
     errorFile.write('Start Date/Time: %s\n\n' % (mgi_utils.date()))
-
-#    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (alleleMGITypeKey) + \
-#	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
-#    for r in results:
-#	alleleDict[r['accID']] = r['_Object_key']
-
-#    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (genotypeMGITypeKey) + \
-#	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1', 'auto')
-
-    results = db.sql('select _Object_key, accID from ACC_Accession where _MGIType_key = %s ' % (genotypeMGITypeKey) + \
-	'and _LogicalDB_key = 1 and prefixPart = "MGI:" and preferred = 1 and accID in ("MGI:2663174", "MGI:3037657")', 'auto')
-    for r in results:
-	genotypeDict[r['accID']] = r['_Object_key']
 
     return
 
@@ -484,8 +467,6 @@ def bcpFiles(
 
     # update statistics
     db.sql('update statistics %s' % (imageTable), None)
-    db.sql('update statistics %s' % (noteTable), None)
-    db.sql('update statistics %s' % (noteChunkTable), None)
     db.sql('update statistics %s' % (paneTable), None)
     db.sql('update statistics %s' % (assocTable), None)
     db.sql('update statistics %s' % (refassocTable), None)
@@ -644,10 +625,12 @@ def processImageFile1():
 
 	# PIX ID for the image
 
+	pixPrefix, pixNumeric = accessionlib.split_accnum(pixID)
+
 	outAccFile.write(str(accKey) + TAB + \
-	    pixPrefix + str(pixID) + TAB + \
-	    pixPrefix + TAB + \
 	    str(pixID) + TAB + \
+	    pixPrefix + TAB + \
+	    str(pixNumeric) + TAB + \
 	    pixLogicalDBKey + TAB + \
 	    str(imageKey) + TAB + \
 	    imageMGITypeKey + TAB + \
@@ -712,21 +695,29 @@ def processImageFile2():
 
         createdByKey = loadlib.verifyUser(createdBy, 0, errorFile)
 
-	if isPrimary == 'Y':
+	objectKey = loadlib.verifyObject(mgiID, alleleMGITypeKey, None, 0, errorFile)
+	mgiTypeKey = alleleMGITypeKey
+
+	if objectKey == 0:
+	    objectKey = loadlib.verifyObject(mgiID, genotypeMGITypeKey, None, 0, errorFile)
+	    mgiTypeKey = genotypeMGITypeKey
+
+	if isPrimary == 'yes':
 	    isPrimaryKey = 1
 	else:
 	    isPrimaryKey = 0
 
+        if objectKey == 0 or createdByKey == 0:
+            # set error flag to true
+            error = 1
+
+        # if errors, continue to next record
+        if error:
+            continue
+
 	# Associations
 
 	paneKey = pixImagePaneKey[pixID]
-
-	if alleleDict.has_key(mgiID):
-	    mgiTypeKey = alleleMGITypeKey
-	    objectKey = alleleDict[mgiID]
-        else:
-	    mgiTypeKey = genotypeMGITypeKey
-	    objectKey = genotypeDict[mgiID]
 
         outAssocFile.write(str(assocKey) + TAB + \
 			   str(paneKey) + TAB + \

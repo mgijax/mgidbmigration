@@ -74,6 +74,8 @@ fullSize = 'Full Size'
 thumbnail = 'Thumbnail'
 pixPrefix = 'PIX:'
 
+imagesProcessed = []
+
 #
 # Main
 #
@@ -129,30 +131,34 @@ for line in inFile.readlines():
     (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
     (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
 
-    imageFile.write(fspix + TAB + \
-                    fullSize + TAB + \
-                    tnpix + TAB + \
-                    str(xdim) + TAB + \
-                    str(ydim) + TAB + \
-		    imageRef + TAB + \
-		    figureLabel + TAB + \
-		    fscaption + TAB + \
-                    copyright + TAB + \
-                    createdBy + CRT)
+    if fspix not in imagesProcessed:
 
-    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[tnImage] + jpegSuffix)
-    (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[tnImage] + jpegSuffix)
+        imageFile.write(fspix + TAB + \
+                        fullSize + TAB + \
+                        tnpix + TAB + \
+                        str(xdim) + TAB + \
+                        str(ydim) + TAB + \
+		        imageRef + TAB + \
+		        figureLabel + TAB + \
+		        fscaption + TAB + \
+                        copyright + TAB + \
+                        createdBy + CRT)
 
-    imageFile.write(tnpix + TAB + \
-                    thumbnail + TAB + \
-                    TAB + \
-                    str(xdim) + TAB + \
-                    str(ydim) + TAB + \
-		    imageRef + TAB + \
-		    figureLabel + TAB + \
-		    tncaption + TAB + \
-                    TAB + \
-                    createdBy + CRT)
+        (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[tnImage] + jpegSuffix)
+        (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[tnImage] + jpegSuffix)
+
+        imageFile.write(tnpix + TAB + \
+                        thumbnail + TAB + \
+                        TAB + \
+                        str(xdim) + TAB + \
+                        str(ydim) + TAB + \
+		        imageRef + TAB + \
+		        figureLabel + TAB + \
+		        tncaption + TAB + \
+                        TAB + \
+                        createdBy + CRT)
+
+        imagesProcessed.append(fspix)
 
     assocFile.write(fspix + TAB + \
 		    objectID + TAB + \

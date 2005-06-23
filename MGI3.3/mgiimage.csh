@@ -50,6 +50,7 @@ ${newmgddbschema}/procedure/IMG_create.logical | tee -a ${LOG}
 
 ${newmgddbschema}/view/MGI_Note_Image_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_NoteType_Image_View_create.object | tee -a ${LOG}
+${newmgddbschema}/view/VOC_Term_IMGType_View_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

@@ -45,23 +45,10 @@ ${newmgddbperms}/curatorial/procedure/ALL_processAlleleCombination_grant.object 
 ./loadVoc.csh | tee -a ${LOG}
 ./mgiomim.csh | tee -a ${LOG}
 ./mgiimage.csh | tee -a ${LOG}
+./mgidag.csh | tee -a ${LOG}
 
-${newmgddbschema}/key/IMG_drop.logical | tee -a ${LOG}
-${newmgddbschema}/key/IMG_create.logical | tee -a ${LOG}
-${newmgddbschema}/key/ACC_MGIType_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/ACC_MGIType_create.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_User_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/MGI_User_create.object | tee -a ${LOG}
-${newmgddbschema}/key/VOC_Term_drop.object | tee -a ${LOG}
-${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
-
-${newmgddbperms}/public/view/perm_grant.csh | tee -a ${LOG}
-${newmgddbperms}/public/table/IMG_grant.logical | tee -a ${LOG}
-${newmgddbperms}/public/table/MRK_grant.logical | tee -a ${LOG}
-
-${newmgddbperms}/curatorial/table/IMG_grant.logical | tee -a ${LOG}
-${newmgddbperms}/curatorial/table/MRK_grant.logical | tee -a ${LOG}
-${newmgddbperms}/curatorial/procedure/IMG_grant.logical | tee -a ${LOG}
+${newmgddbschema}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
+${newmgddbschema}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -78,4 +65,13 @@ quit
 
 EOSQL
 
+${newmgddbschema}/reconfig.csh | tee -a ${LOG}
+${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
+${newmgddbperms}/all_grant.csh | tee -a ${LOG}
+
+${VOCDAGLOAD} GO.config | tee -a ${LOG}
+${VOCDAGLOAD} MA.config | tee -a ${LOG}
+${VOCDAGLOAD} MP.config | tee -a ${LOG}
+
 date | tee -a  ${LOG}
+

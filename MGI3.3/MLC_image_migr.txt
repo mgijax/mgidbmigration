@@ -1,0 +1,128 @@
+A-1.jpg	A-1-small.jpg	MGI:1855937 	yes	J:98862	J:98863	A/\AlleleSymbol (MGI:1855937, 0) and \AlleleSymbol (MGI:1856798, 0)/- and \AlleleSymbol (MGI:1855939, 0)/\AlleleSymbol (MGI:1855939, 0)		This image was contributed for the use of the Mouse Genome Database.
+A-1.jpg	A-1-small.jpg	MGI:1856798 	yes	J:98862	J:98863	A/\AlleleSymbol (MGI:1855937, 0) and \AlleleSymbol (MGI:1856798, 0)/- and \AlleleSymbol (MGI:1855939, 0)/\AlleleSymbol (MGI:1855939, 0)		This image was contributed for the use of the Mouse Genome Database.
+A-1.jpg	A-1-small.jpg	MGI:1855939 	no	J:98862	J:98863	A/\AlleleSymbol (MGI:1855937, 0) and \AlleleSymbol (MGI:1856798, 0)/- and \AlleleSymbol (MGI:1855939, 0)/\AlleleSymbol (MGI:1855939, 0)		This image was contributed for the use of the Mouse Genome Database.
+a-16H.jpg	a-16H-small.jpg	MGI:1855950 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855950, 0)/\AlleleSymbol (MGI:1855940, 0)		This image was contributed for the use of the Mouse Genome Database.
+a-16H.jpg	a-16H-small.jpg	MGI:1855940 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855950, 0)/\AlleleSymbol (MGI:1855940, 0)		This image was contributed for the use of the Mouse Genome Database.
+A-3.jpg	A-3-small.jpg	MGI:1855941 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855941, 0)/\AlleleSymbol (MGI:1855941, 0), A/A and A/\AlleleSymbol (MGI:1855941, 0)		This image was contributed for the use of the Mouse Genome Database.
+A-4.jpg	A-4-small.jpg	MGI:1856798 	no	J:98862	J:98863	\AlleleSymbol (MGI:1856798, 0)/\AlleleSymbol (MGI:1855937, 0) and \AlleleSymbol (MGI:1856798, 0)/\AlleleSymbol (MGI:1855939, 0) and \AlleleSymbol (MGI:1856798, 0)/A		This image was contributed for the use of the Mouse Genome Database.
+A-4.jpg	A-4-small.jpg	MGI:1855939 	no	J:98862	J:98863	\AlleleSymbol (MGI:1856798, 0)/\AlleleSymbol (MGI:1855937, 0) and \AlleleSymbol (MGI:1856798, 0)/\AlleleSymbol (MGI:1855939, 0) and \AlleleSymbol (MGI:1856798, 0)/A		This image was contributed for the use of the Mouse Genome Database.
+ABP_LeJ.jpg	ABP_LeJ-small.jpg	MGI:1856473 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856473, 0)/\AlleleSymbol (MGI:1856473, 0)		This image was contributed for the use of the Mouse Genome Database.
+ABP_LeJ.jpg	ABP_LeJ-small.jpg	MGI:2673349	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856473, 0)/\AlleleSymbol (MGI:1856473, 0)		This image was contributed for the use of the Mouse Genome Database.
+ABP_LeJ.jpg	ABP_LeJ-small.jpg	MGI:1856473 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855937, 0)/\AlleleSymbol (MGI:1855937, 0) \AlleleSymbol (MGI:1855960, 0)/\AlleleSymbol (MGI:1855960, 0) \AlleleSymbol (MGI:1856473, 0)/\AlleleSymbol (MGI:1856473, 0) \AlleleSymbol (MGI:1856114, 0)/\AlleleSymbol (MGI:1856114, 0)		This image was contributed for the use of the Mouse Genome Database.
+Achondroplasia.jpg	Achondroplasia-small.jpg	MGI:1856702 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856702, 0)/\AlleleSymbol (MGI:1856702, 0)		This image was contributed for the use of the Mouse Genome Database.
+Achondroplasia.jpg	Achondroplasia-small.jpg	mgi;2182597	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856702, 0)/\AlleleSymbol (MGI:1856702, 0)		This image was contributed for the use of the Mouse Genome Database.
+a-e.jpg	a-e-small.jpg	MGI:1855939 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855939, 0)/\AlleleSymbol (MGI:1855939, 0) and \AlleleSymbol (MGI:1855939, 0)/\AlleleSymbol (MGI:1855937, 0)		This image was contributed for the use of the Mouse Genome Database.
+ank.jpg	ank-small.jpg	MGI:1856651 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856651, 0)/\AlleleSymbol (MGI:1856651, 0)		This image was contributed for the use of the Mouse Genome Database.
+ash+dsu_ash.jpg	ash+dsu_ash-small.jpg	MGI:1856656 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) and \AlleleSymbol (MGI:1856847, 0) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856847, 0) \AlleleSymbol (MGI:1856656, 0)		This image was contributed for the use of the Mouse Genome Database.
+ash+dsu_ash.jpg	ash+dsu_ash-small.jpg	MGI:1856847 	no	J:98862	J:98863	\AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) and \AlleleSymbol (MGI:1856847, 0) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856847, 0) \AlleleSymbol (MGI:1856656, 0)		This image was contributed for the use of the Mouse Genome Database.
+a-t.jpg	a-t-small.jpg	MGI:1855941 	no	J:98862	J:98863	\AlleleSymbol (MGI:1855941, 0)/\AlleleSymbol (MGI:1855941, 0)		This image was contributed for the use of the Mouse Genome Database.
+bp-J.jpg	bp-J-small.jpg	MGI:1855972 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855974, 0)/\AlleleSymbol (MGI:1855974, 0)		This image was contributed for the use of the Mouse Genome Database.
+bs.jpg	bs-small.jpg	MGI:1856684 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856684, 0)/\AlleleSymbol (MGI:1856684, 0)		This image was contributed for the use of the Mouse Genome Database.
+bs.jpg	bs-small.jpg	MGI:2658839	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856684, 0)/\AlleleSymbol (MGI:1856684, 0)		This image was contributed for the use of the Mouse Genome Database.
+Bst.jpg	Bst-small.jpg	MGI:1856685 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856685, 0)/+		This image was contributed for the use of the Mouse Genome Database.
+Bst.jpg	Bst-small.jpg	MGI:2658856	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856685, 0)/+		This image was contributed for the use of the Mouse Genome Database.
+c+c-ch.jpg	c+c-ch-small.jpg	MGI:1855977 	no	J:98862	J:98863	\AlleleSymbol (MGI:1855976, 0)/\AlleleSymbol (MGI:1855976, 0) and \AlleleSymbol (MGI:1855976, 0)/\AlleleSymbol (MGI:1855977, 0) \AlleleSymbol (MGI:1856114, 0)/ \AlleleSymbol (MGI:1856114, 0)		This image was contributed for the use of the Mouse Genome Database.
+c+c-ch.jpg	c+c-ch-small.jpg	MGI:1855976 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855976, 0)/\AlleleSymbol (MGI:1855976, 0) and \AlleleSymbol (MGI:1855976, 0)/\AlleleSymbol (MGI:1855977, 0) \AlleleSymbol (MGI:1856114, 0)/ \AlleleSymbol (MGI:1856114, 0)		This image was contributed for the use of the Mouse Genome Database.
+C57BR_cd-J.jpg	C57BR_cd-J-small.jpg	MGI:1855960 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855937, 0)/\AlleleSymbol (MGI:1855937, 0) \AlleleSymbol (MGI:1855960, 0)/\AlleleSymbol (MGI:1855960, 0)		This image was contributed for the use of the Mouse Genome Database.
+C57L_J.jpg	C57L_J-small.jpg	MGI:1856674 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855937, 0)/\AlleleSymbol (MGI:1855937, 0) \AlleleSymbol (MGI:1855960, 0)/\AlleleSymbol (MGI:1855960, 0) \AlleleSymbol (MGI:1856674, 0)/ \AlleleSymbol (MGI:1856674, 0)		This image was contributed for the use of the Mouse Genome Database.
+ch.jpg	ch-small.jpg	MGI:1856705 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856705, 0)/\AlleleSymbol (MGI:1856705, 0)		This image was contributed for the use of the Mouse Genome Database.
+c-h.jpg	c-h-small.jpg	MGI:1855977 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1855977, 0)/ \AlleleSymbol (MGI:1855977, 0)		This image was contributed for the use of the Mouse Genome Database.
+coa_ru.jpg	coa_ru-small.jpg	MGI:1856707 	yes	J:98862	J:98863	ru<2J>/ru<2J> and \AlleleSymbol (MGI:1856707, 0)/ \AlleleSymbol (MGI:1856707, 0)		This image was contributed for the use of the Mouse Genome Database.
+Crm.jpg	Crm-small.jpg	MGI:1856000 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856000, 0)/Y and control		This image was contributed for the use of the Mouse Genome Database.
+ct.jpg	ct-small.jpg	MGI:1856837 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856837, 0)/ \AlleleSymbol (MGI:1856837, 0)		This image was contributed for the use of the Mouse Genome Database.
+CXB-11_HiAJ.jpg	CXB-11_HiAJ-small.jpg	MGI:1855960 	yes	J:98862	J:98863	A/A \AlleleSymbol (MGI:1855960, 0)/ \AlleleSymbol (MGI:1855960, 0)		This image was contributed for the use of the Mouse Genome Database.
+d_dsu.jpg	d_dsu-small.jpg	MGI:1856004 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) and \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0)		This image was contributed for the use of the Mouse Genome Database.
+d_dsu.jpg	d_dsu-small.jpg	MGI:1856847 	yes	J:98862	J:98863	\AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) and \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0)		This image was contributed for the use of the Mouse Genome Database.
+d_dsu_ash.jpg	d_dsu_ash-small.jpg	MGI:1856656 	no	J:98862	J:98863	Mice with various combinations of \AlleleSymbol (MGI:1856656, 0), \AlleleSymbol (MGI:1856004, 0) and \AlleleSymbol (MGI:1856847, 0)alleles	Genotypes of mice pictured left to right: 1) \AlleleSymbol (MGI:1856656, 0) 2) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) 3) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) 4) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0) and 5) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0)	This image was contributed for the use of the Mouse Genome Database.
+d_dsu_ash.jpg	d_dsu_ash-small.jpg	MGI:1856004 	no	J:98862	J:98863	Mice with various combinations of \AlleleSymbol (MGI:1856656, 0), \AlleleSymbol (MGI:1856004, 0) and \AlleleSymbol (MGI:1856847, 0)alleles	Genotypes of mice pictured left to right: 1) \AlleleSymbol (MGI:1856656, 0) 2) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) 3) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) 4) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0) and 5) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0)	This image was contributed for the use of the Mouse Genome Database.
+d_dsu_ash.jpg	d_dsu_ash-small.jpg	MGI:1856847 	no	J:98862	J:98863	Mice with various combinations of \AlleleSymbol (MGI:1856656, 0), \AlleleSymbol (MGI:1856004, 0) and \AlleleSymbol (MGI:1856847, 0)alleles	Genotypes of mice pictured left to right: 1) \AlleleSymbol (MGI:1856656, 0) 2) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) 3) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) 4) \AlleleSymbol (MGI:1856656, 0)/ \AlleleSymbol (MGI:1856656, 0) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0) and 5) \AlleleSymbol (MGI:1856004, 0)/ \AlleleSymbol (MGI:1856004, 0) \AlleleSymbol (MGI:1856847, 0)/ \AlleleSymbol (MGI:1856847, 0)	This image was contributed for the use of the Mouse Genome Database.
+Dac.jpg	Dac-small.jpg	MGI:1857833 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+db.jpg	db-small.jpg	MGI:1856012 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Dh.jpg	Dh-small.jpg	MGI:1857878 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Ds.jpg	Ds-small.jpg	MGI:1861455 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+dt.jpg	dt-small.jpg	MGI:1856019 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+dw.jpg	dw-small.jpg	MGI:1856024 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+dy+control.jpg	dy+control-small.jpg	MGI:1856026 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+eb_eye.jpg	eb_eye-small.jpg	MGI:1856852 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+eb_feet.jpg	eb_feet-small.jpg	MGI:1856852 	no	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+fld2.jpg	fld2-small.jpg	MGI:1856603 	no	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+fld4.jpg	fld4-small.jpg	MGI:1856603 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+gl.jpg	gl-small.jpg	MGI:1856885 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+gld+control.jpg	gld+control-small.jpg	MGI:1856384 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+gld+control.jpg	gld+control-small.jpg	MGI:3037431	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+gr.jpg	gr-small.jpg	MGI:1856888 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+gr.jpg	gr-small.jpg	MGI:2676345	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Hd.jpg	Hd-small.jpg	MGI:1857336 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Hm.jpg	Hm-small.jpg	MGI:1861096 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Hpt.jpg	Hpt-small.jpg	MGI:1859843 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+hr.jpg	hr-small.jpg	MGI:1856057 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+hr.jpg	hr-small.jpg	MGI:2669529	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+hr-rh.jpg	hr-rh-small.jpg	MGI:1856059 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+hy3.jpg	hy3-small.jpg	MGI:1856913 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Hyp.jpg	Hyp-small.jpg	MGI:1857312 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+I_LnJ.jpg	I_LnJ-small.jpg	MGI:1856148 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+jg+bf.jpg	jg+bf-small.jpg	MGI:1856687 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+jg+bf.jpg	jg+bf-small.jpg	MGI:1856922 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+jp.jpg	jp-small.jpg	MGI:1856065 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Lp.jpg	Lp-small.jpg	MGI:1857642 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+LP_J.jpg	LP_J-small.jpg	MGI:1856148 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+lpr+control.jpg	lpr+control-small.jpg	MGI:1856334 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+lpr+control.jpg	lpr+control-small.jpg	MGI:2450135	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+ls.jpg	ls-small.jpg	MGI:1856392 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+md.jpg	md-small.jpg	MGI:1856070 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+md.jpg	md-small.jpg	MGI:2450935	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mdm.jpg	mdm-small.jpg	MGI:1856953 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mi.jpg	mi-small.jpg	MGI:1856085 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mi.jpg	mi-small.jpg	MGI:3513118	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mi-2.jpg	mi-2-small.jpg	MGI:1856088 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mi-2.jpg	mi-2-small.jpg	MGI:1856085 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mi-sp.jpg	mi-sp-small.jpg	MGI:1856088 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mi-sp.jpg	mi-sp-small.jpg	MGI:1856092 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mi-wh.jpg	Mi-wh-small.jpg	MGI:1856088 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mi-wh.jpg	Mi-wh-small.jpg	MGI:3044414	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mi-wh-2.jpg	Mi-wh-2-small.jpg	MGI:1856088 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mi-wh-2.jpg	Mi-wh-2-small.jpg	MGI:3044414	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mi-wh-2.jpg	Mi-wh-2-small.jpg	MGI:3044413	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mo-br.jpg	Mo-br-small.jpg	MGI:1856098 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mo-pew.jpg	Mo-pew-small.jpg	MGI:1856104 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Mo-to.jpg	Mo-to-small.jpg	MGI:1856101 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+mu.jpg	mu-small.jpg	MGI:1856106 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+nu.jpg	nu-small.jpg	MGI:1856108 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+oc.jpg	oc-small.jpg	MGI:1856973 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+oc.jpg	oc-small.jpg	MGI:2174761	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+op.jpg	op-small.jpg	MGI:1856333 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+or-J_+_control.jpg	or-J_+_control-small.jpg	MGI:1856112 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Os.jpg	Os-small.jpg	MGI:1857646 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+pa.jpg	pa-small.jpg	MGI:1856982 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+p-J.jpg	p-J-small.jpg	MGI:1856127 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Pt.jpg	Pt-small.jpg	MGI:1861192 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+pu.jpg	pu-small.jpg	MGI:1857008 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Re.jpg	Re-small.jpg	MGI:1856137 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Re.jpg	Re-small.jpg	MGI:1856230 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+rh.jpg	rh-small.jpg	MGI:1857017 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+rv.jpg	rv-small.jpg	MGI:1857025 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+s-3.jpg	s-3-small.jpg	MGI:1856148 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Sd.jpg	Sd-small.jpg	MGI:1857746 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+se.jpg	se-small.jpg	MGI:1856150 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Sey-Dey.jpg	Sey-Dey-small.jpg	MGI:1856157 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Sey-Dey.jpg	Sey-Dey-small.jpg	MGI:2175204	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Si-pan.jpg	Si-pan-small.jpg	MGI:1856167 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Sp_Sl.jpg	Sp_Sl-small.jpg	MGI:1856161 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Sp_Sl.jpg	Sp_Sl-small.jpg	MGI:1856173 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+spf.jpg	spf-small.jpg	MGI:1856178 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+spf.jpg	spf-small.jpg	MGI:2175225	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+stg.jpg	stg-small.jpg	MGI:1856548 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+T.jpg	T-small.jpg	MGI:1856184 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Ta.jpg	Ta-small.jpg	MGI:1856197 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+tf.jpg	tf-small.jpg	MGI:1857070 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+tip.jpg	tip-small.jpg	MGI:1856637 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+tk.jpg	tk-small.jpg	MGI:1857073 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Ul-1.jpg	Ul-1-small.jpg	MGI:1857660 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Ul-2.jpg	Ul-2-small.jpg	MGI:1857660 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Uw-dbr.jpg	Uw-dbr-small.jpg	MGI:1856227 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Uw-dbr.jpg	Uw-dbr-small.jpg	MGI:2668609	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+vl.jpg	vl-small.jpg	MGI:1857087 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+vt.jpg	vt-small.jpg	MGI:1857088 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+wv.jpg	wv-small.jpg	MGI:1856525 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+W-v.jpg	W-v-small.jpg	MGI:1856266 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.
+Xt-J.jpg	Xt-J-small.jpg	MGI:1856276 	yes	J:98862	J:98863			This image was contributed for the use of the Mouse Genome Database.

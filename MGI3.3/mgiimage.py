@@ -6,6 +6,16 @@
 #
 # input file:
 #
+# 1: Full Size Image File
+# 2: Thumbnail Image File
+# 3. Allele MGI ID
+# 4: Is Primary (yes or no)
+# 5: J: for Image
+# 6: J: for Annotation
+# 7: TN caption
+# 8: FS caption
+# 9: FS copyright
+#
 # output file 1, Images:
 #
 # 1: PIX ID
@@ -46,7 +56,7 @@ PAGE = reportlib.PAGE
 
 pixeldatadir = os.environ['PIXELDBDATA']
 
-inFileName = 'cindy smith'
+inFileName = 'MLC_image_migr.txt'
 inPixFileName = 'pixmlc.txt'
 imageFileName = '/image.txt'
 assocFileName = '/imagepaneassoc.txt'
@@ -88,16 +98,29 @@ inFile = open(inFileName, 'r')
 for line in inFile.readlines():
 
     tokens = string.split(line[:-1], TAB)
+
+# 1: Full Size Image File
+# 2: Thumbnail Image File
+# 3. Allele MGI ID
+# 4: Is Primary (yes or no)
+# 5: J: for Image
+# 6: J: for Annotation
+# 7: TN caption
+# 8: FS caption
+# 9: FS copyright
+
     fsImage = tokens[0]
     tnImage = tokens[1]
-    fscaption = tokens[2]
-    tncaption = tokens[3]
-    copyright = tokens[4]
-    imageRef = tokens[5]
 
-    objectID = tokens[6]
-    assocRef = tokens[7]
-    isPrimary = tokens[8]
+    tncaption = tokens[6]
+    fscaption = tokens[7]
+    copyright = tokens[8]
+
+    imageRef = tokens[4]
+
+    objectID = tokens[2]
+    isPrimary = tokens[3]
+    assocRef = tokens[5]
 
     fspix = imgToPix[fsImage]
     tnpix = imgToPix[tnImage]

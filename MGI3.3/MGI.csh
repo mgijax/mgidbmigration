@@ -73,8 +73,8 @@ ${newmgddbschema}/table/DAG_Edge_truncate.object | tee -a ${LOG}
 ${newmgddbschema}/table/DAG_Node_truncate.object | tee -a ${LOG}
 
 ${VOCDAGLOAD} GO.config | tee -a ${LOG}
-${VOCDAGLOAD} MA.config | tee -a ${LOG}
 ${VOCDAGLOAD} MP.config | tee -a ${LOG}
+${VOCDAGLOAD} MA.config | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

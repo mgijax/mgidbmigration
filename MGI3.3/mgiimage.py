@@ -72,6 +72,7 @@ figureLabel = '1'
 paneLabel = ''
 fullSize = 'Full Size'
 thumbnail = 'Thumbnail'
+pixPrefix = 'PIX:'
 
 #
 # Main
@@ -122,8 +123,8 @@ for line in inFile.readlines():
     isPrimary = tokens[3]
     assocRef = tokens[5]
 
-    fspix = imgToPix[fsImage]
-    tnpix = imgToPix[tnImage]
+    fspix = pixPrefix + imgToPix[fsImage]
+    tnpix = pixPrefix + imgToPix[tnImage]
 
     (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)
     (xdim, ydim) = jpeginfo.getDimensions(pixeldatadir + '/' + imgToPix[fsImage] + jpegSuffix)

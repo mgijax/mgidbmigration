@@ -118,17 +118,17 @@ outAssocFile = ''       # file descriptor
 outRefAssocFile = ''    # file descriptor
 
 imageTable = 'IMG_Image'
+paneTable = 'IMG_ImagePane'
 noteTable = 'MGI_Note'
 noteChunkTable = 'MGI_NoteChunk'
-paneTable = 'IMG_ImagePane'
 accTable = 'ACC_Accession'
 assocTable = 'IMG_ImagePane_Assoc'
 refassocTable = 'MGI_Reference_Assoc'
 
 outImageFileName = datadir + '/' + imageTable + '.bcp'
+outPaneFileName = datadir + '/' + paneTable + '.bcp'
 outNoteFileName = datadir + '/' + noteTable + '.bcp'
 outNoteChunkFileName = datadir + '/' + noteChunkTable + '.bcp'
-outPaneFileName = datadir + '/' + paneTable + '.bcp'
 outAccFileName = datadir + '/' + accTable + '.bcp'
 outAssocFileName = datadir + '/' + assocTable + '.bcp'
 outRefAssocFileName = datadir + '/' + refassocTable + '.bcp'

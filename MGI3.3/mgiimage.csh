@@ -155,16 +155,16 @@ quit
 
 EOSQL
 
+${newmgddbschema}/index/IMG_Image_create.object | tee -a ${LOG}
+
 # add images to PixelDB
 #./pixload.csh ${MLCIMAGES} pixmlc.txt >>& ${LOG}
 
 # generate input files for MGI image structures
-#./mgiimage.py
+./mgiimage.py
 
 # load input files into MGI
 #./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -Mload
-
-${newmgddbschema}/index/IMG_Image_create.object | tee -a ${LOG}
 
 date | tee -a $LOG
 

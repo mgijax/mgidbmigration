@@ -68,7 +68,7 @@ assocFile = ''
 # constants
 jpegSuffix = '.jpg'
 createdBy = 'csmith'
-figureLabel = '1'
+figureLabel = 1
 paneLabel = ''
 fullSize = 'Full Size'
 thumbnail = 'Thumbnail'
@@ -139,7 +139,7 @@ for line in inFile.readlines():
                         str(xdim) + TAB + \
                         str(ydim) + TAB + \
 		        imageRef + TAB + \
-		        figureLabel + TAB + \
+		        str(figureLabel) + TAB + \
 		        fscaption + TAB + \
                         copyright + TAB + \
                         createdBy + CRT)
@@ -153,11 +153,12 @@ for line in inFile.readlines():
                         str(xdim) + TAB + \
                         str(ydim) + TAB + \
 		        imageRef + TAB + \
-		        figureLabel + TAB + \
+		        str(figureLabel) + TAB + \
 		        tncaption + TAB + \
                         TAB + \
                         createdBy + CRT)
 
+	figureLabel = figureLabel + 1
         imagesProcessed.append(fspix)
 
     assocFile.write(fspix + TAB + \

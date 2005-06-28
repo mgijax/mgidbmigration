@@ -469,7 +469,6 @@ def bcpFiles(
     db.sql('update statistics %s' % (imageTable), None)
     db.sql('update statistics %s' % (paneTable), None)
     db.sql('update statistics %s' % (assocTable), None)
-    db.sql('update statistics %s' % (refassocTable), None)
 
     return
 

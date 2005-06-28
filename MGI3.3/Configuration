@@ -1,10 +1,13 @@
 #!/bin/csh -f
 
-#setenv MIGRATIONDIR	/usr/local/mgi/3.2/dbutils/mgidbmigration/MPR
+#setenv MIGRATIONDIR	/usr/local/mgi/3.3/dbutils/mgidbmigration/MPR
 setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MGI3.3
 
-#setenv CACHELOAD	/usr/local/mgi/3.2/dataload/mrkcacheload
-setenv CACHELOAD	/home/lec/loads/mrkcacheload
+#setenv MRKCACHELOAD	/usr/local/mgi/3.3/dataload/mrkcacheload
+setenv MRKCACHELOAD	/home/lec/loads/mrkcacheload
+
+#setenv SEQCACHELOAD	/usr/local/mgi/3.3/dataload/seqcacheload
+setenv SEQCACHELOAD	/home/lec/loads/seqcacheload-omim
 
 setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
 #setenv VOCDAGLOAD    	/usr/local/mgi/live/dataload/vocload/runDAGIncLoad.sh
@@ -15,7 +18,7 @@ setenv PIXELDBDATA	/usr/local/mgi/pixeldb_data
 setenv PIXELDBCOUNTER   ${PIXELDBDATA}/accession/counter
 setenv IMGLOADDATADIR   ${MIGRATIONDIR}
 
-#setenv newmgddb /usr/local/mgi/3.2/dbutils/mgd
+#setenv newmgddb /usr/local/mgi/3.3/dbutils/mgd
 setenv newmgddb /home/lec/db/omim
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms

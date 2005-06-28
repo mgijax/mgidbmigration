@@ -46,6 +46,7 @@ ${newmgddbperms}/curatorial/procedure/ALL_processAlleleCombination_grant.object 
 ./mgiomim.csh | tee -a ${LOG}
 ./mgiimage.csh | tee -a ${LOG}
 ./mgidag.csh | tee -a ${LOG}
+./mgicache.csh | tee -a ${LOG}
 
 ${newmgddbschema}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
@@ -69,12 +70,10 @@ ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
-${newmgddbschema}/table/DAG_Edge_truncate.object | tee -a ${LOG}
-${newmgddbschema}/table/DAG_Node_truncate.object | tee -a ${LOG}
-
 ${VOCDAGLOAD} GO.config | tee -a ${LOG}
 ${VOCDAGLOAD} MP.config | tee -a ${LOG}
 ${VOCDAGLOAD} MA.config | tee -a ${LOG}
+${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

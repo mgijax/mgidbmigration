@@ -164,7 +164,7 @@ ${newmgddbschema}/index/IMG_Image_create.object | tee -a ${LOG}
 ./mgiimage.py
 
 # load input files into MGI
-#./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -Mload
+./imageload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -Mload
 
 date | tee -a $LOG
 

@@ -7,7 +7,7 @@
 # Procedures:   122
 # Rules:          5
 # Triggers:     156
-# User Tables:  181
+# User Tables:  180
 # Views:        226
 
 cd `dirname $0` && source ./Configuration
@@ -21,7 +21,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
 ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}

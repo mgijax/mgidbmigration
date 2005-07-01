@@ -11,5 +11,11 @@ setenv SEQCACHELOAD	${MGIDIR}/dataload/seqcacheload
 setenv mgddb ${MGIDIR}/dbutils/mgd
 setenv mgddbschema ${mgddb}/mgddbschema
 
+setenv radardb ${MGIDIR}/dbutils/radar
+setenv radardbschema ${radardb}/radardbschema
+
+source ${radardbschema}/Configuration
+setenv RADARDB $DBNAME
+
 source ${mgddbschema}/Configuration
 

@@ -20,9 +20,22 @@ load_db.csh ${DBSERVER} ${RADARDB} /shire/sybase/radar.backup
 
 ########################################
 
+#
+# Coordinate loads
+#
+#coordload
+
+#
+# Marker Association loads
+#
 ${ENTREZGENELOAD}/mouse/load.csh | tee -a ${LOG}
 
-# after mapping load...
+# mapping load...
+
+#
+# Marker Cache loads
+#
+
 ${MRKCACHELOAD}/mrklocation.csh | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
 

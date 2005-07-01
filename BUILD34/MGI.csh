@@ -19,5 +19,11 @@ load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 ########################################
 
+${ENTREZGENELOAD}/mouse/load.csh | tee -a ${LOG}
+
+# after mapping load...
+${MRKCACHELOAD}/mrklocation.csh | tee -a ${LOG}
+${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
+
 date | tee -a  ${LOG}
 

@@ -1,0 +1,13 @@
+#!/bin/csh -f
+
+setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/BUILD34
+
+setenv MRKCACHELOAD	/usr/local/mgi/build34/dataload/mrkcacheload
+
+setenv SEQCACHELOAD	usr/local/mgi/build34/dataload/seqcacheload
+
+setenv mgddb /usr/local/mgi/build34/dbutils/mgd
+setenv mgddbschema ${newmgddb}/mgddbschema
+
+source ${mgddbschema}/Configuration
+

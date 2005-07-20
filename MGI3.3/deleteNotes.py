@@ -6,7 +6,7 @@ import string
 import regsub
 import db
 
-DEBUG = 1
+DEBUG = 0
 
 passwordFileName = os.environ['DBPASSWORDFILE']
 
@@ -32,12 +32,14 @@ def createNewNote(k, notes):
     # Write notes in chunks of 255
     s = 1
     while len(newNote) > 255:
+	escapedNote = regsub.gsub('"', '""', newNote[:255])
 	insertCmd.append('insert into MGI_NoteChunk values(%s,%s,"%s",%s,%s,"%s","%s")' \
-		% (noteKey, s, newNote[:255], obj['_CreatedBy_key'], obj['_ModifiedBy_key'], obj['cdate'], obj['mdate']))
+		% (noteKey, s, escapedNote, obj['_CreatedBy_key'], obj['_ModifiedBy_key'], obj['cdate'], obj['mdate']))
         newNote = newNote[255:]
         s = s + 1
 
     if len(newNote) > 0:
+	escapedNote = regsub.gsub('"', '""', newNote)
 	insertCmd.append('insert into MGI_NoteChunk values(%s,%s,"%s",%s,%s,"%s","%s")' \
 		% (noteKey, s, newNote, obj['_CreatedBy_key'], obj['_ModifiedBy_key'], obj['cdate'], obj['mdate']))
 
@@ -101,11 +103,11 @@ for k in notes.keys():
     
     j = string.find(allNotes, endTag)
     if j < 0:
-       print 'cannot find end tag for allele key ' + str(n)
+       print 'cannot find end tag for note key ' + str(k)
        continue
 
     if i > j:
-       print 'delete tags are in incorrect order ' + str(n)
+       print 'delete tags are in incorrect order ' + str(k)
        continue
 
     # we want to copy up the i and from the end of j to the end of the notes

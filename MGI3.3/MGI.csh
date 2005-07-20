@@ -4,7 +4,7 @@
 # Migration for 3.3 (OMIM, Images)
 #
 # Defaults:       6
-# Procedures:   122
+# Procedures:   123
 # Rules:          5
 # Triggers:     158
 # User Tables:  181
@@ -31,6 +31,7 @@ date | tee -a  ${LOG}
 
 ########################################
 
+./deleteNotes.py | tee -a ${LOG}
 ./loadVoc.csh | tee -a ${LOG}
 ./mgiomim.csh | tee -a ${LOG}
 ./mgiimage.csh | tee -a ${LOG}

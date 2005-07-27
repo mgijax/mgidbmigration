@@ -20,5 +20,10 @@ ${newmgddbschema}/table/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/SEQ_Marker_Cache_bind.object | tee -a ${LOG}
 
+${newmgddbschema}/table/MRK_Label_drop.object | tee -a ${LOG}
+${newmgddbschema}/table/MRK_Label_create.object | tee -a ${LOG}
+${newmgddbschema}/index/MRK_Label_create.object | tee -a ${LOG}
+${newmgddbschema}/default/MRK_Label_bind.object | tee -a ${LOG}
+
 date | tee -a $LOG
 

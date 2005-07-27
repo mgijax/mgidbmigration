@@ -31,6 +31,7 @@ date | tee -a  ${LOG}
 
 ########################################
 
+./mgiindex.csh | tee -a ${LOG}
 ./deleteNotes.py | tee -a ${LOG}
 ./loadVoc.csh | tee -a ${LOG}
 ./mgiomim.csh | tee -a ${LOG}
@@ -64,6 +65,7 @@ ${VOCDAGLOAD} GO.config | tee -a ${LOG}
 ${VOCDAGLOAD} MP.config | tee -a ${LOG}
 ${VOCDAGLOAD} MA.config | tee -a ${LOG}
 ${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
+${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

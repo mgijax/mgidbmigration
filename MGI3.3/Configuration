@@ -19,7 +19,9 @@ setenv PIXELDBCOUNTER   ${PIXELDBDATA}/accession/counter
 setenv IMGLOADDATADIR   ${MIGRATIONDIR}
 
 #setenv newmgddb /usr/local/mgi/3.3/dbutils/mgd
+setenv oldmgddb /home/lec/db/live
 setenv newmgddb /home/lec/db/omim
+setenv oldmgddbschema ${oldmgddb}/mgddbschema
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 

@@ -1,9 +1,12 @@
 #!/bin/csh -f
 
+#setenv MGIDIR		/usr/local/mgi/live
 setenv MGIDIR		/usr/local/mgi/build34
 
-setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/BUILD34
+setenv BUILD34		/mgi/all/wts_projects/6800/6832/data
 
+setenv ASSEMBLYSEQLOAD	${MGIDIR}/dataload/assemblyseqload
+setenv EGLOAD		${MGIDIR}/dataload/egload
 setenv ENTREZGENELOAD	${MGIDIR}/dataload/entrezgeneload
 setenv MRKCACHELOAD	${MGIDIR}/dataload/mrkcacheload
 setenv SEQCACHELOAD	${MGIDIR}/dataload/seqcacheload

@@ -41,19 +41,19 @@ ${EGLOAD}/bin/egload.sh | tee -a ${LOG}
 #${ENTREZGENELOAD}/mouse/load.csh | tee -a ${LOG}
 
 #
-# Marker Cache loads
-#
-
-${MRKCACHELOAD}/mrklocation.csh | tee -a ${LOG}
-${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
-
-#
 # Sequence Cache loads
 #
 
 ${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
 ${SEQCACHELOAD}/seqdescription.csh | tee -a ${LOG}
 ${SEQCACHELOAD}/seqcoord.csh | tee -a ${LOG}
+
+#
+# Marker Cache loads
+#
+
+${MRKCACHELOAD}/mrklocation.csh | tee -a ${LOG}
+${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

@@ -64,6 +64,7 @@ ${VOCDAGLOAD} GO.config | tee -a ${LOG}
 ${VOCDAGLOAD} MP.config | tee -a ${LOG}
 ${VOCDAGLOAD} MA.config | tee -a ${LOG}
 ${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
+${MRKCACHELOAD}/mrklabel.csh | tee -a ${LOG}
 
 ./mgiindex.csh | tee -a ${LOG}
 

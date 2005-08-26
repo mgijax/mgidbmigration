@@ -14,8 +14,8 @@ setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNo
 setenv VOCDAGLOAD    	/home/lec/loads/vocload/runDAGIncLoad.sh
 
 setenv IMGDIRECTORY	${MIGRATIONDIR}/mlcjpegs
-#setenv PIXELDBDATA	/usr/local/mgi/pixeldb_data
-setenv PIXELDBDATA	/usr/local/mgi/live/pixeldb_data
+setenv PIXELDBDATA	/usr/local/mgi/pixeldb_data
+#setenv PIXELDBDATA	/usr/local/mgi/live/pixeldb_data
 setenv PIXELDBCOUNTER   ${PIXELDBDATA}/accession/counter
 setenv IMGLOADDATADIR   ${MIGRATIONDIR}
 

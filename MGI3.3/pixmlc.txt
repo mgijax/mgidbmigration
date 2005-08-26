@@ -18,7 +18,7 @@ ank-small.jpg	9375
 ank.jpg	9376
 ash+dsu_ash-small.jpg	9377
 ash+dsu_ash.jpg	9378
-bp-J-.jpg	9379
+bp-J.jpg	9379
 bp-J-small.jpg	9380
 bs-small.jpg	9381
 bs.jpg	9382
@@ -89,7 +89,7 @@ hy3.jpg	9446
 Hyp-small.jpg	9447
 Hyp.jpg	9448
 I_LnJ-small.jpg	9449
-I_Lnj.jpg	9450
+I_LnJ.jpg	9450
 jg+bf-small.jpg	9451
 jg+bf.jpg	9452
 jp-small.jpg	9453
@@ -158,8 +158,8 @@ se-small.jpg	9515
 se.jpg	9516
 Sey-Dey-small.jpg	9517
 Sey-Dey.jpg	9518
-Si-pan-small.jpg	9519
-Si-pan.jpg	9520
+Sl-pan-small.jpg	9519
+Sl-pan.jpg	9520
 Sp_Sl-small.jpg	9521
 Sp_Sl.jpg	9522
 spf-small.jpg	9523

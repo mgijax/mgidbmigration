@@ -1,0 +1,25 @@
+#!/bin/csh -f
+
+#setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/SNP
+setenv MIGRATIONDIR	/home/sc/snp/mgidbmigration/SNP
+
+setenv SNPCACHELOAD	/home/sc/snp/snpcacheload
+
+#setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
+setenv VOCSIMPLELOAD	/home/sc/snp/vocload/runSimpleFullLoadNoArchive.sh
+
+#setenv newmgddb /usr/local/mgi/3.3/dbutils/mgd
+setenv newmgddb /home/sc/snp
+setenv newmgddbschema ${newmgddb}/mgddbschema-snp
+setenv newmgddbperms ${newmgddb}/mgddbperms-snp
+
+setenv newradardb /home/sc/snp
+setenv newradardbschema ${newradardb}/radardbschema-snp
+setenv newradardbperms ${newradardb}/radardbperms-snp
+
+setenv SCHEMA_TAG       mgddbschema-3-3-1
+setenv CREATEDBY	1000
+setenv PUBLIC_VERSION   "MGI 3.3.1"
+
+source ${newmgddbschema}/Configuration
+

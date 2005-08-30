@@ -14,10 +14,10 @@ date | tee -a  ${LOG}
 
 source ${newradardbschema}/Configuration
 
-echo "loading radar backup"
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/radar.backup
+echo "loading radar backup" | tee -a  ${LOG}
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/radar.backup | tee -a  ${LOG}
 
-echo "updating public version and schema version"
+echo "updating public version and schema version" | tee -a  ${LOG}
 cat - <<EOSQL | doisql.csh $0
 
 use ${DBNAME}
@@ -36,11 +36,13 @@ quit
 
 EOSQL
 
-echo " creating radar table, key, index, default, view"
-${newradardbschema}/table/MGI_SNP_create.logical
-${newradardbschema}/key/MGI_SNP_create.logical
-${newradardbschema}/index/MGI_SNP_create.logical
-${newradardbschema}/default/MGI_SNP_bind.logical
+echo " creating radar table, key, index, default, view" | tee -a  ${LOG}
+${newradardbschema}/table/MGI_SNP_create.logical | tee -a  ${LOG}
+${newradardbschema}/key/MGI_SNP_create.logical | tee -a  ${LOG}
+${newradardbschema}/index/MGI_SNP_create.logical | tee -a  ${LOG}
+${newradardbschema}/default/MGI_SNP_bind.logical | tee -a  ${LOG}
 
-echo "creating radar perms"
-${newradardbperms}/MGI_SNP_perm_grant.csh
+echo "creating radar perms" | tee -a  ${LOG}
+${newradardbperms}/MGI_SNP_perm_grant.csh | tee -a  ${LOG}
+
+date | tee -a  ${LOG}

@@ -37,7 +37,7 @@ date | tee -a  ${LOG}
 ./mgiimage.csh | tee -a ${LOG}
 ./mgidag.csh | tee -a ${LOG}
 ./mgicache.csh | tee -a ${LOG}
-./allelecombination.csh | tee -a ${LOG}
+${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
 ${newmgddbschema}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}

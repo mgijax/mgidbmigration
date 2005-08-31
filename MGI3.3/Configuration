@@ -3,6 +3,11 @@
 #setenv MIGRATIONDIR	/usr/local/mgi/3.3/dbutils/mgidbmigration/MPR
 setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MGI3.3
 
+#setenv ALLCACHELOAD	/usr/local/mgi/3.3/dataload/allcacheload
+setenv ALLCACHELOAD	/home/lec/loads/allcacheload
+
+setenv NOTELOAD	/usr/local/mgi/live/dataload/noteload
+
 #setenv MRKCACHELOAD	/usr/local/mgi/3.3/dataload/mrkcacheload
 setenv MRKCACHELOAD	/home/lec/loads/mrkcacheload
 

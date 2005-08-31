@@ -20,7 +20,7 @@ touch ${LOG}
  
 date >> ${LOG}
 
-./allelecombination.py
+${ALLCACHELOAD}/allelecombination.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -K0
 
 setenv DATAFILE 	allelecombnotetype1.rpt
 setenv NOTETYPE		"Combination Type 1"

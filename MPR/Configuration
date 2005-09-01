@@ -23,12 +23,12 @@ setenv ALLLABELLOAD	/home/lec/loads/alllabelload
 setenv MRKREFLOAD	/home/lec/loads/mrkcacheload
 
 #setenv newmgddb /usr/local/mgi/3.2/dbutils/mgd
-setenv newmgddb /home/lec/db/mpr
+setenv newmgddb /home/lec/db/live
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
 #setenv newradardb /usr/local/mgi/3.2/dbutils/radar
-setenv newradardb /home/lec/db/mpr
+setenv newradardb /home/lec/db/live
 setenv newradardbschema ${newradardb}/radardbschema
 setenv newradardbperms ${newradardb}/radardbperms
 

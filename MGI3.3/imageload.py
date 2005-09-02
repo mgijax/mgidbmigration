@@ -694,12 +694,24 @@ def processImageFile2():
 
         createdByKey = loadlib.verifyUser(createdBy, 0, errorFile)
 
-	objectKey = loadlib.verifyObject(mgiID, alleleMGITypeKey, None, 0, errorFile)
-	mgiTypeKey = alleleMGITypeKey
+	objectKey = 0
 
-	if objectKey == 0:
-	    objectKey = loadlib.verifyObject(mgiID, genotypeMGITypeKey, None, 0, errorFile)
-	    mgiTypeKey = genotypeMGITypeKey
+	results = db.sql('select a._Object_key from ACC_Accession a ' + \
+	                 'where a.accID = "%s" ' % (mgiID) + \
+	                 'and a._MGIType_key = %s ' % (alleleMGITypeKey), 'auto')
+        if len(results) > 0:
+	    objectKey = results[0]['_Object_key']
+	    mgiTypeKey = alleleMGITypeKey
+
+	else:
+	    results = db.sql('select a._Object_key from ACC_Accession a ' + \
+	                 'where a.accID = "%s" ' % (mgiID) + \
+	                 'and a._MGIType_key = %s ' % (genotypeMGITypeKey), 'auto')
+            if len(results) > 0:
+	        objectKey = results[0]['_Object_key']
+	        mgiTypeKey = genotypeMGITypeKey
+            else:
+		error = 1
 
 	if isPrimary == 'yes':
 	    isPrimaryKey = 1

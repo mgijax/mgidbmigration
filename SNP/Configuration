@@ -17,9 +17,9 @@ setenv newradardb /home/sc/snp
 setenv newradardbschema ${newradardb}/radardbschema-snp
 setenv newradardbperms ${newradardb}/radardbperms-snp
 
-setenv SCHEMA_TAG       mgddbschema-3-3-1
+setenv SCHEMA_TAG       mgddbschema-3-4
 setenv CREATEDBY	1000
-setenv PUBLIC_VERSION   "MGI 3.3.1"
+setenv PUBLIC_VERSION   "MGI 3.4"
 
 source ${newmgddbschema}/Configuration
 

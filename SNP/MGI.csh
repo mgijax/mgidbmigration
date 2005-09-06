@@ -1,14 +1,13 @@
 #!/bin/csh -f
 
 #
-# Migration for 3.? (SNP)
-# as compared to 3.22
-# Defaults:       6
-# Procedures:   122
-# Rules:          5
-# Triggers:     154
-# User Tables:  196
-# Views:        227
+# Migration for 3.4 (SNP)
+# Defaults:       
+# Procedures:   
+# Rules:         
+# Triggers:     
+# User Tables: 
+# Views:        
 
 cd `dirname $0` && source ./Configuration
 
@@ -52,11 +51,8 @@ ${newmgddbschema}/view/SNP_Summary_View_create.object
 echo " create mgd perms"
 ${newmgddbperms}/public/SNP_perm_grant.csh
 
-echo "load vocabularies"
-./loadVoc.csh | tee -a ${LOG}
-
-echo "load snp populations"
-${SNPCACHELOAD}/snpPopulation.csh | tee -a ${LOG}
+#echo "load vocabularies"
+#./loadVoc.csh | tee -a ${LOG}
 
 echo "load MGITypes, MGI_User"
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}

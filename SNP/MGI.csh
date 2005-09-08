@@ -109,7 +109,10 @@ go
 declare @termkey integer
 select @termkey = max(_term_key) + 1 from VOC_Term
 
-insert into voc_term values (@termkey, 45, 'TAS', 'TAS', 1, 0, 1001, 1001, getdate(), getdate())
+declare @vocabkey integer
+select @vocabkey = _vocab_key from voc_vocab where name = 'PIR Superfamily Evidence Codes'
+
+insert into voc_term values (@termkey, @vocabkey, 'TAS', 'TAS', 1, 0, 1001, 1001, getdate(), getdate())
 
 
 quit

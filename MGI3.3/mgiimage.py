@@ -102,6 +102,11 @@ for line in inFile.readlines():
 
     tokens = string.split(line[:-1], TAB)
 
+    print "*" * 30
+    print tokens 
+    print str(len(tokens))
+    print "*" * 30
+
 # 1: Full Size Image File
 # 2: Thumbnail Image File
 # 3. Allele MGI ID

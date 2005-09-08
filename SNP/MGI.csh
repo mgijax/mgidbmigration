@@ -98,6 +98,20 @@ select @userKey = max(_User_key) + 1 from MGI_User
 insert into MGI_User values(@userKey, 316353, 316350, 'snp_load', 'MGI SNP Load', 1000, 1000, getdate(), getdate())
 go
 
+declare @userKey integer
+select @userKey = max(_User_key) + 1 from MGI_User
+
+insert into MGI_User values(@userKey, 316353, 316350, 'PIRSF_Load', 'PIRSF Load', 1000, 1000, getdate(), getdate())
+go
+
+/* PIRSF vocabulary envidence codes */
+
+declare @termkey integer
+select @termkey = max(_term_key) + 1 from VOC_Term
+
+insert into voc_term values (@termkey, 45, 'TAS', 'TAS', 1, 0, 1001, 1001, getdate(), getdate())
+
+
 quit
 
 EOSQL

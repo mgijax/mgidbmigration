@@ -51,9 +51,6 @@ ${newmgddbschema}/view/SNP_Summary_View_create.object
 echo " create mgd perms"
 ${newmgddbperms}/public/SNP_perm_grant.csh
 
-#echo "load vocabularies"
-#./loadVoc.csh | tee -a ${LOG}
-
 echo "load MGITypes, MGI_User"
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -83,6 +80,13 @@ declare @mgiTypeKey integer
 select @mgiTypeKey = max(_MGIType_key) + 1 from ACC_MGIType
 
 insert into ACC_MGIType values(@mgiTypeKey, 'SNP Population', 'SNP_Population', '_Population_key', null, null, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+
+/* MGI_Set */
+declare @setKey integer
+select @setKey = max(_Set_key) + 1 from MGI_Set
+
+insert into MGI_Set values(@setKey, 10, 'SNP Strains', 1, 1000, 1000, getdate(), getdate())
 go
 
 /* MGI_User */
@@ -119,11 +123,11 @@ quit
 
 EOSQL
 
-#echo "Running dbsnpload"
-#${DBSNPLOAD}
+echo "Running dbsnpload"
+${DBSNPLOAD}
 
-#echo "Running pirsfload"
-#${PIRSFLOAD}
+echo "Running pirsfload"
+${PIRSFLOAD}
 
 #echo "PIRSF: human/rat"
 #./mgicache.csh | tee -a ${LOG}

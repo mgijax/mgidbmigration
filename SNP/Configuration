@@ -3,18 +3,16 @@
 #setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/SNP
 setenv MIGRATIONDIR	/home/sc/snp/mgidbmigration/SNP
 
-setenv SNPCACHELOAD	/home/sc/snp/snpcacheload
-
-#setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
-setenv VOCSIMPLELOAD	/home/sc/snp/vocload/runSimpleFullLoadNoArchive.sh
-
 setenv EGLOAD   /home/lec/loads/entrezgeneload-pirsf
 #setenv EGLOAD  /usr/local/mgi/live/dataload/entrezgeneload
 
 setenv SEQCACHELOAD	/home/lec/loads/seqcacheload-pirsf
 #setenv SEQCACHELOAD	/usr/local/mgi/live/dbutils/seqcacheload
 
-#setenv newmgddb /usr/local/mgi/3.3/dbutils/mgd
+setenv DBSNPLOAD	/home/sc/snp/dbsnpload
+#setenv DBSNPLOAD	/usr/local/mgi/live/dataload/dbsnpload
+
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddb /home/sc/snp
 setenv newmgddbschema ${newmgddb}/mgddbschema-snp
 setenv newmgddbperms ${newmgddb}/mgddbperms-snp

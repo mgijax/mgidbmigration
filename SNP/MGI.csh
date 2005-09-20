@@ -122,6 +122,9 @@ EOSQL
 #echo "Running dbsnpload"
 #${DBSNPLOAD}
 
+#echo "Running pirsfload"
+#${PIRSFLOAD}
+
 #echo "PIRSF: human/rat"
 #./mgicache.csh | tee -a ${LOG}
 

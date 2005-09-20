@@ -120,7 +120,8 @@ quit
 EOSQL
 
 #echo "Running dbsnpload"
-#$DBSNPLOAD
+#${DBSNPLOAD}
+
 #echo "PIRSF: human/rat"
 #./mgicache.csh | tee -a ${LOG}
 

@@ -119,6 +119,9 @@ quit
 
 EOSQL
 
+#echo "PIRSF: human/rat"
+#./mgicache.csh | tee -a ${LOG}
+
 #echo "schema reconfig; revoke/grant all"
 #${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 #${newmgddbperms}/all_revoke.csh | tee -a ${LOG}

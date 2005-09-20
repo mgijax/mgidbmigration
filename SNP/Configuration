@@ -20,6 +20,7 @@ setenv newmgddb /home/sc/snp
 setenv newmgddbschema ${newmgddb}/mgddbschema-snp
 setenv newmgddbperms ${newmgddb}/mgddbperms-snp
 
+#setenv newradardb /usr/local/mgi/live/dbutils/radar
 setenv newradardb /home/sc/snp
 setenv newradardbschema ${newradardb}/radardbschema-snp
 setenv newradardbperms ${newradardb}/radardbperms-snp

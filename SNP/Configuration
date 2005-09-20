@@ -8,6 +8,9 @@ setenv SNPCACHELOAD	/home/sc/snp/snpcacheload
 #setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv VOCSIMPLELOAD	/home/sc/snp/vocload/runSimpleFullLoadNoArchive.sh
 
+setenv EGLOAD   /home/lec/loads/entrezgeneload-pirsf
+#setenv EGLOAD  /usr/local/mgi/live/dataload/entrezgeneload
+
 setenv SEQCACHELOAD	/home/lec/loads/seqcacheload-pirsf
 #setenv SEQCACHELOAD	/usr/local/mgi/live/dbutils/seqcacheload
 
@@ -20,7 +23,7 @@ setenv newradardb /home/sc/snp
 setenv newradardbschema ${newradardb}/radardbschema-snp
 setenv newradardbperms ${newradardb}/radardbperms-snp
 
-setenv SCHEMA_TAG       mgddbschema-3-4
+setenv SCHEMA_TAG       mgddbschema-3-4-0
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION   "MGI 3.4"
 

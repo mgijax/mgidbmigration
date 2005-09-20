@@ -28,7 +28,9 @@ ${newmgddbschema}/procedure/SEQ_loadMarkerCache_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/SEQ_Marker_Cache_View_drop.object | tee -a ${LOG}
 ${newmgddbschema}/view/SEQ_Marker_Cache_View_create.object | tee -a ${LOG}
 
-${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
+${EGLOAD}/human/load.csh | tee -a ${LOG}
+${EGLOAD}/rat/load.csh | tee -a ${LOG}
+#${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
 
 date | tee -a $LOG
 

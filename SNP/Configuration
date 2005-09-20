@@ -8,6 +8,9 @@ setenv SNPCACHELOAD	/home/sc/snp/snpcacheload
 #setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv VOCSIMPLELOAD	/home/sc/snp/vocload/runSimpleFullLoadNoArchive.sh
 
+setenv SEQCACHELOAD	/home/lec/loads/seqcacheload-snp
+#setenv SEQCACHELOAD	/usr/local/mgi/live/dbutils/seqcacheload
+
 #setenv newmgddb /usr/local/mgi/3.3/dbutils/mgd
 setenv newmgddb /home/sc/snp
 setenv newmgddbschema ${newmgddb}/mgddbschema-snp

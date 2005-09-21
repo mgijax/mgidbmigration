@@ -32,5 +32,8 @@ setenv SCHEMA_TAG       mgddbschema-3-4-0
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION   "MGI 3.4"
 
+source ${newradardbschema}/Configuration
+setenv RADARDB	${DBNAME}
+
 source ${newmgddbschema}/Configuration
 

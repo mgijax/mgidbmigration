@@ -42,5 +42,8 @@ setenv DATAFILE	/mgi/all/wts_projects/7100/7110/MouseHuman2Load.txt
 setenv	HOMKEYS		n
 ${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS}
 
+#setenv DATAFILE	/mgi/all/wts_projects/7100/7110/MouseRat2Load.txt
+#setenv	HOMKEYS		y
+#${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS}
 date | tee -a $LOG
 

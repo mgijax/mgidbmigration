@@ -12,6 +12,9 @@ setenv SEQCACHELOAD	/home/lec/loads/seqcacheload-pirsf
 setenv DBSNPLOAD	/home/sc/snp/dbsnpload/bin/dbsnpload.sh
 #setenv DBSNPLOAD	/usr/local/mgi/live/dataload/dbsnpload/bin/dbsnpload.sh
 
+setenv ORTHOLOAD	/home/lec/loads/orthologyload
+#setenv ORTHOLOAD	/usr/local/mgi/live/dataload/orthologyload
+
 setenv PIRSFLOAD       /home/mbw/sandbox/pirsfload/bin/pirsfload.sh
 #setenve PIRSFLOAD     /usr/local/mgi/live/dataload/pirsfload/bin/pirsfload.sh
 

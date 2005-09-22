@@ -5,7 +5,8 @@
 #
 #
 
-cd `dirname $0` && source ./Configuration
+#cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ./Configuration.lec
 
 setenv LOG $0.log
 rm -rf ${LOG}
@@ -45,7 +46,7 @@ ${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWO
 
 #setenv DATAFILE	/mgi/all/wts_projects/7100/7110/MouseRat2Load.txt
 #setenv	HOMKEYS		y
-cd ../homoloGeneRat
+#cd ../homoloGeneRat
 #${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS}
 
 cd ..

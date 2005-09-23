@@ -49,7 +49,8 @@ ${newmgddbschema}/default/SNP_bind.logical
 ${newmgddbschema}/view/SNP_Summary_View_create.object
 
 echo " create mgd perms"
-${newmgddbperms}/public/SNP_perm_grant.csh
+${newmgddbperms}/public/table/SNP_grant.logical
+${newmgddbperms}/public/view/SNP_Summary_View_grant.object
 
 echo "load MGITypes, MGI_User"
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}

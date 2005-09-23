@@ -43,6 +43,7 @@ ${newradardbschema}/index/MGI_SNP_create.logical | tee -a  ${LOG}
 ${newradardbschema}/default/MGI_SNP_bind.logical | tee -a  ${LOG}
 
 echo "creating radar perms" | tee -a  ${LOG}
-${newradardbperms}/MGI_SNP_perm_grant.csh | tee -a  ${LOG}
+${newradardbperms}/developers/table/MGI_SNP_grant.logical | tee -a  ${LOG}
+${newradardbperms}/public/table/MGI_SNP_grant.logical | tee -a  ${LOG}
 
 date | tee -a  ${LOG}

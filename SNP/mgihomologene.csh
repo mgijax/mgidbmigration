@@ -42,13 +42,15 @@ setenv	CREATEDBY	tbreddy
 setenv DATAFILE	/mgi/all/wts_projects/7100/7110/MouseHuman2Load.txt
 setenv	HOMKEYS		n
 cd homoloGeneHuman
-${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS}
+${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS} | tee -a ${LOG}
 
 setenv MODE		load
 setenv DATAFILE	/mgi/all/wts_projects/7100/7110/MouseRat2Load.txt
 setenv	HOMKEYS		y
 cd ../homoloGeneRat
-${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS}
+${ORTHOLOAD}/orthologyload.py -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -R${RADARDB} -M${MODE} -I${DATAFILE} -C${CREATEDBY} -K${HOMKEYS} | tee -a ${LOG}
+
+${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
 
 cd ..
 

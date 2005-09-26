@@ -130,8 +130,11 @@ ${DBSNPLOAD}
 echo "Running pirsfload"
 ${PIRSFLOAD}
 
-#echo "PIRSF: human/rat"
-#./mgicache.csh | tee -a ${LOG}
+echo "PIRSF: human/rat"
+./mgicache.csh | tee -a ${LOG}
+
+echo "HomoloGene"
+./mgihomologene.csh | tee -a ${LOG}
 
 #echo "schema reconfig; revoke/grant all"
 #${newmgddbschema}/reconfig.csh | tee -a ${LOG}

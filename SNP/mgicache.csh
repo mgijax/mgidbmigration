@@ -32,5 +32,17 @@ ${EGLOAD}/human/load.csh | tee -a ${LOG}
 ${EGLOAD}/rat/load.csh | tee -a ${LOG}
 ${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
 
+cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
+
+use ${DBNAME}
+go
+
+drop procedure PRB_autoE
+go
+
+quit
+
+EOSQL
+
 date | tee -a $LOG
 

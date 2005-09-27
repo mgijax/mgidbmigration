@@ -5,8 +5,8 @@
 #
 #
 
-#cd `dirname $0` && source ./Configuration
-cd `dirname $0` && source ./Configuration.lec
+cd `dirname $0` && source ./Configuration
+#cd `dirname $0` && source ./Configuration.lec
 
 setenv LOG $0.log
 rm -rf ${LOG}

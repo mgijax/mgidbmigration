@@ -124,6 +124,9 @@ quit
 
 EOSQL
 
+echo "Running mgitranslation.csh"
+./mgitranslation.csh
+
 echo "Running dbsnpload"
 ${DBSNPLOAD}
 

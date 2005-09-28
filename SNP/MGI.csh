@@ -2,12 +2,12 @@
 
 #
 # Migration for 3.4 (SNP)
-# Defaults:       
-# Procedures:   
-# Rules:         
-# Triggers:     
-# User Tables: 
-# Views:        
+# Defaults: 6
+# Procedures: 123   
+# Rules: 5
+# Triggers: 158
+# User Tables: 190
+# Views: 230
 
 cd `dirname $0` && source ./Configuration
 
@@ -31,7 +31,7 @@ echo "turnonbulkcopy"
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 echo "loading backup"
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 # update schema tag
 echo "updatePublicVersion"
@@ -42,15 +42,15 @@ ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | t
 date | tee -a  ${LOG}
 
 echo " create mgd table, key, index, default, view"
-${newmgddbschema}/table/SNP_create.logical
-${newmgddbschema}/key/SNP_create.logical
-${newmgddbschema}/index/SNP_create.logical
-${newmgddbschema}/default/SNP_bind.logical
-${newmgddbschema}/view/SNP_Summary_View_create.object
+${newmgddbschema}/table/SNP_create.logical | tee -a ${LOG}
+${newmgddbschema}/key/SNP_create.logical | tee -a ${LOG}
+${newmgddbschema}/index/SNP_create.logical | tee -a ${LOG}
+${newmgddbschema}/default/SNP_bind.logical | tee -a ${LOG}
+${newmgddbschema}/view/SNP_Summary_View_create.object | tee -a ${LOG}
 
 echo " create mgd perms"
-${newmgddbperms}/public/table/SNP_grant.logical
-${newmgddbperms}/public/view/SNP_Summary_View_grant.object
+${newmgddbperms}/public/table/SNP_grant.logical | tee -a ${LOG}
+${newmgddbperms}/public/view/SNP_Summary_View_grant.object | tee -a ${LOG}
 
 echo "load MGITypes, MGI_User"
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
@@ -124,19 +124,10 @@ quit
 
 EOSQL
 
-echo "Running mgitranslation.csh"
-./mgitranslation.csh
+echo "PIRSF: human/rat" | tee -a ${LOG}
+./mgicache.csh | tee -a ${LOG} | tee -a ${LOG}
 
-echo "Running dbsnpload"
-${DBSNPLOAD}
-
-echo "Running pirsfload"
-${PIRSFLOAD}
-
-echo "PIRSF: human/rat"
-./mgicache.csh | tee -a ${LOG}
-
-echo "HomoloGene"
+echo "HomoloGene" | tee -a ${LOG}
 ./mgihomologene.csh | tee -a ${LOG}
 
 #echo "schema reconfig; revoke/grant all"

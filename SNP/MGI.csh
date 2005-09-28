@@ -118,7 +118,7 @@ declare @vocabkey integer
 select @vocabkey = _vocab_key from voc_vocab where name = 'PIR Superfamily Evidence Codes'
 
 insert into voc_term values (@termkey, @vocabkey, 'TAS', 'TAS', 1, 0, 1001, 1001, getdate(), getdate())
-
+go
 
 quit
 

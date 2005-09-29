@@ -68,6 +68,9 @@ echo "HomoloGene" | tee -a ${LOG}
 echo "Journal Vocabulary" | tee -a ${LOG}
 ./journal.csh | tee -a ${LOG}
 
+echo "Genotype Note" | tee -a ${LOG}
+./mginote.csh | tee -a ${LOG}
+
 #echo "schema reconfig; revoke/grant all"
 #${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 #${newmgddbperms}/all_revoke.csh | tee -a ${LOG}

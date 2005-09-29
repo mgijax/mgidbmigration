@@ -20,7 +20,6 @@ setenv NOTELOAD         /usr/local/mgi/live/dataload/noteload/mginoteload.py
 setenv PIRSFLOAD       /home/mbw/sandbox/pirsfload/bin/pirsfload.sh
 #setenve PIRSFLOAD     /usr/local/mgi/live/dataload/pirsfload/bin/pirsfload.sh
 
-=======
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddb /home/sc/snp
 setenv newmgddbschema ${newmgddb}/mgddbschema-snp

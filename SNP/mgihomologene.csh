@@ -6,7 +6,6 @@
 #
 
 cd `dirname $0` && source ./Configuration
-#cd `dirname $0` && source ./Configuration.lec
 
 setenv LOG $0.log
 rm -rf ${LOG}
@@ -35,7 +34,6 @@ quit
 
 EOSQL
 
-#setenv MODE		preview
 setenv MODE		load
 setenv	CREATEDBY	tbreddy
 

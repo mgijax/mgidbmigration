@@ -1,0 +1,22 @@
+MGI 3.5 Schema Changes:
+
+TR 5188:
+	To support GO qualifiers for Annotations
+
+	VOC_AnnotType:
+		. added "_QualifierVocab_key" (foreign key to VOC_Vocab)
+
+	VOC_Annot:
+		. added "_Qualifier_key" (foreign key to VOC_Term)
+		. removed "isNot"
+
+TR 7094:
+ 	To improve performance, we have split SEQ_Sequence into 2 tables.
+
+	SEQ_Sequence:
+		. added "_Organism_key" (foreign key to MGI_Organism)
+		. all "raw" fields moved to SEQ_Sequence_Raw
+
+	SEQ_Sequence_Raw:
+		. new table
+

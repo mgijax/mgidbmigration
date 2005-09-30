@@ -32,10 +32,14 @@ date | tee -a  ${LOG}
 ########################################
 
 ./mgigo.csh | tee -a ${LOG}
+./mgiseqraw.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
+go
+
+drop table SEQ_Sequence_Old
 go
 
 quit

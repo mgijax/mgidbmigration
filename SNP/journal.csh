@@ -6,6 +6,11 @@
 
 cd `dirname $0` && source ./Configuration
 
+setenv NOTEMODE load
+setenv NOTEDATAFILE journal.rpt
+setenv NOTEOBJECTYPE "Vocabulary Term"
+setenv NOTETYPE "Journal Copyright"
+
 setenv LOG `basename $0`.log
 
 rm -rf ${LOG}
@@ -250,7 +255,7 @@ quit
 EOSQL
 
 ./journal.py | tee -a ${LOG}
-${NOTELOAD} -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${DATAFILE} -M${NOTEMODE} -O"${OBJECTTYPE}" -T"${NOTETYPE}" | tee -a ${LOG}
+${NOTELOAD} -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${NOTEDATAFILE} -M${NOTEMODE} -O"${NOTEOBJECTYPE}" -T"${NOTETYPE}" | tee -a ${LOG}
 
 date >> ${LOG}
 

@@ -48,8 +48,6 @@ ${newmgddbschema}/index/SNP_create.logical | tee -a ${LOG}
 ${newmgddbschema}/default/SNP_bind.logical | tee -a ${LOG}
 ${newmgddbschema}/view/SNP_Summary_View_create.object | tee -a ${LOG}
 
-${newmgddbschema}/view/BIB_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/BIB_View_create.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_NoteType_Genotype_View_drop.object | tee -a ${LOG}
 ${newmgddbschema}/view/MGI_NoteType_Genotype_View_create.object | tee -a ${LOG}
 

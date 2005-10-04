@@ -3,6 +3,9 @@
 #setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/MGI3.5
 setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/MGI3.5
 
+#setenv OMIMCACHELOAD	/usr/local/mgi/live/dbutils/mrkcacheload/mrkomim.csh
+setenv OMIMCACHELOAD	/home/lec/loads/mrkcacheload-mgi3.5/mrkomim.csh
+
 #setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddb /home/lec/db/mgi3.5
 setenv newmgddbschema ${newmgddb}/mgddbschema

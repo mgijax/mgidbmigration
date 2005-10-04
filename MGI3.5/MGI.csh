@@ -42,6 +42,12 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
+drop table VOC_Annot_Old
+go
+
+drop table VOC_AnnotType_Old
+go
+
 drop table SEQ_Sequence_Old
 go
 

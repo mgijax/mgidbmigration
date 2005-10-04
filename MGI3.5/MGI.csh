@@ -59,5 +59,7 @@ ${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
+${OMIMCACHELOAD} | tee -a ${LOG}
+
 date | tee -a  ${LOG}
 

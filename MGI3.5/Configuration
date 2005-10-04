@@ -16,3 +16,4 @@ setenv CREATEDBY	1000
 
 source ${newmgddbschema}/Configuration
 
+setenv PYTHONPATH	/home/lec/libdev:${PYTHONPATH}

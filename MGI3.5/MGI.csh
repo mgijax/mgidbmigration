@@ -9,6 +9,7 @@
 # Triggers:     158
 # User Tables:  190
 # Views:        230
+#
 
 cd `dirname $0` && source ./Configuration
 

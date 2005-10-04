@@ -42,6 +42,7 @@ EOSQL
 # create new Sequence table
 
 ${newmgddbschema}/table/SEQ_Sequence_create.object | tee -a ${LOG}
+${newmgddbschema}/partition/SEQ_Sequence_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/SEQ_Sequence_bind.object | tee -a ${LOG}
 ${newmgddbschema}/key/SEQ_Sequence_create.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/SEQ_Sequence_grant.object | tee -a ${LOG}

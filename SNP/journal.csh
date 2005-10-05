@@ -244,6 +244,18 @@ declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
 insert into VOC_Term values (@termKey, @vocabKey, 'Biotechnology', null, 36, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
+declare @vocabKey integer
+select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Journal'
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term
+insert into VOC_Term values (@termKey, @vocabKey, 'PLoS Genet', null, 37, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
+declare @vocabKey integer
+select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Journal'
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term
+insert into VOC_Term values (@termKey, @vocabKey, 'PLoS Med;', null, 38, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+go
 
 declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType

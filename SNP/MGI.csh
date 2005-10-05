@@ -54,7 +54,6 @@ ${newmgddbschema}/view/MGI_NoteType_Genotype_View_create.object | tee -a ${LOG}
 echo " create mgd perms"
 ${newmgddbperms}/public/table/SNP_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/view/SNP_Summary_View_grant.object | tee -a ${LOG}
-${newmgddbperms}/public/view/BIB_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_NoteType_Genotype_View_grant.object | tee -a ${LOG}
 
 echo "PIRSF: human/rat" | tee -a ${LOG}
@@ -71,8 +70,8 @@ echo "Genotype Note" | tee -a ${LOG}
 
 #echo "schema reconfig; revoke/grant all"
 #${newmgddbschema}/reconfig.csh | tee -a ${LOG}
-#${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
-#${newmgddbperms}/all_grant.csh | tee -a ${LOG}
+${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
+${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 #${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a ${LOG}
 

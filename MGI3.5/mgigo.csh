@@ -73,7 +73,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'NOT', null, 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'NOT', 'NOT', 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -85,7 +85,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'colocalizes with', null, 2, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'colocalizes with', 'col', 2, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -97,7 +97,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'NOT colocalizes with', null, 3, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'NOT colocalizes with', 'ncol', 3, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -109,7 +109,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'contributes to', null, 4, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'contributes to', 'con', 4, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -121,7 +121,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'NOT contributes to', null, 5, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'NOT contributes to', 'ncon', 5, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -133,7 +133,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'None', null, 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, '', '', 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -160,7 +160,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'None', null, 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, '', '', 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 /* migrate VOC_AnnotType, VOC_Annot: GO */
@@ -170,7 +170,7 @@ select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @NOTtermKey integer
 select @NOTtermKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = 'NOT'
 declare @termKey integer
-select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = 'None'
+select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = ''
 
 insert into VOC_AnnotType
 select o._AnnotType_key, o._MGIType_key, o._Vocab_key, o._EvidenceVocab_key, @vocabKey,
@@ -197,7 +197,7 @@ select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qu
 declare @NOTtermKey integer
 select @NOTtermKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = 'NOT'
 declare @termKey integer
-select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = 'None'
+select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = ''
 
 insert into VOC_AnnotType
 select o._AnnotType_key, o._MGIType_key, o._Vocab_key, o._EvidenceVocab_key, @vocabKey,

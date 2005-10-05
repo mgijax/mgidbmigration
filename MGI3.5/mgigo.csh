@@ -73,7 +73,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'NOT', 'NOT', 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'NOT', 'not', 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -153,7 +153,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'NOT', null, 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'NOT', 'not', 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 declare @vocabKey integer

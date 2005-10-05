@@ -19,7 +19,7 @@ journals = {'Dev Biol' : 'Reprinted with permission from Elsevier from \\DXDOI(|
 	    'Dev Dyn' : 'This image is from * and is displayed with the permission of Wiley-Liss, Inc. who owns the Copyright.',
 	    'Gene Expr Patterns' : 'Reprinted with permission from Elsevier from \\DXDOI(||) \\Elsevier(||)',
 	    'Mech Dev' : 'Reprinted with permission from Elsevier from \\DXDOI(||) \\Elsevier(||)',
-	    'PLoS Biol': 'This image is from * , an open-access article distributed under the terms of the Creative Commons Attribution License.',
+	    'PLoS Biol': 'This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution License.',
 	    'BMC Biochem': 'This image is from *, an open-access article, licensee BioMed Central Ltd.',
 	    'BMC Biol': 'This image is from *, an open-access article, licensee BioMed Central Ltd.',
 	    'BMC Biotechnol': 'This image is from *, an open-access article, licensee BioMed Central Ltd.',

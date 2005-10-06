@@ -20,6 +20,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
+sp_rename VOC_Term, VOC_Term_Old
+go
+
 sp_rename VOC_AnnotType, VOC_AnnotType_Old
 go
 
@@ -45,7 +48,6 @@ ${newmgddbschema}/key/VOC_AnnotType_create.object | tee -a ${LOG}
 
 ${newmgddbschema}/table/VOC_Annot_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/VOC_Annot_bind.object | tee -a ${LOG}
-${newmgddbschema}/index/VOC_Annot_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/VOC_Annot_create.object | tee -a ${LOG}
 
 ${newmgddbschema}/table/MRK_OMIM_Cache.drop | tee -a ${LOG}
@@ -53,6 +55,14 @@ ${newmgddbschema}/table/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/MRK_OMIM_Cache_bind.object | tee -a ${LOG}
 ${newmgddbschema}/index/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_OMIM_Cache_create.object | tee -a ${LOG}
+
+#
+# allow term to be null
+#
+
+${newmgddbschema}/table/VOC_Term_create.object | tee -a ${LOG}
+${newmgddbschema}/default/VOC_Term_bind.object | tee -a ${LOG}
+${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -133,7 +143,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, '', '', 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, null, null, 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 declare @synTypeKey integer
 select @synTypeKey = _SynonymType_key from MGI_SynonymType where _MGIType_key = 13 and synonymType = 'GO'
 declare @synKey integer
@@ -153,14 +163,14 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'NOT', 'not', 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'NOT', 'NOT', 1, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, '', '', 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, null, 'None', 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 /* migrate VOC_AnnotType, VOC_Annot: GO */
@@ -170,7 +180,7 @@ select @vocabKey = _Vocab_key from VOC_Vocab where name = 'GO Qualifier'
 declare @NOTtermKey integer
 select @NOTtermKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = 'NOT'
 declare @termKey integer
-select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = ''
+select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = null
 
 insert into VOC_AnnotType
 select o._AnnotType_key, o._MGIType_key, o._Vocab_key, o._EvidenceVocab_key, @vocabKey,
@@ -197,7 +207,7 @@ select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qu
 declare @NOTtermKey integer
 select @NOTtermKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = 'NOT'
 declare @termKey integer
-select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = ''
+select @termKey = _Term_key from VOC_Term where _Vocab_key = @vocabKey and term = null
 
 insert into VOC_AnnotType
 select o._AnnotType_key, o._MGIType_key, o._Vocab_key, o._EvidenceVocab_key, @vocabKey,
@@ -214,12 +224,22 @@ insert into VOC_Annot
 select o._Annot_key, o._AnnotType_key, o._Object_key, o._Term_key, @termKey, o.creation_date, o.modification_date
 from VOC_Annot_Old o
 where o._AnnotType_key != 1000 and o.isNot = 0
+go
 
+insert into VOC_Term
+select * from VOC_Term_Old
 go
 
 quit
 
 EOSQL
+
+#
+# add indexes
+#
+
+${newmgddbschema}/index/VOC_Annot_create.object | tee -a ${LOG}
+${newmgddbschema}/index/VOC_Term_create.object | tee -a ${LOG}
 
 date >> ${LOG}
 

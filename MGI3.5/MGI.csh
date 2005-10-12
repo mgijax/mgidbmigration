@@ -37,6 +37,9 @@ date | tee -a  ${LOG}
 # 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}
 
+# 
+./mgiseqmarker.csh | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}

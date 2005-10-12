@@ -20,3 +20,10 @@ TR 7094:
 	SEQ_Sequence_Raw:
 		. new table
 
+TR :
+
+	To improve performance:
+
+	SEQ_Marker_Cache:
+		. added primary accession id (accID)
+

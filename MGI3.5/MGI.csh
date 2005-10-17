@@ -32,6 +32,7 @@ date | tee -a  ${LOG}
 
 ########################################
 
+./mgiacc.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
 
 # 1.5 hours

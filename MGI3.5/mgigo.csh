@@ -20,6 +20,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
+sp_rename VOC_Term, VOC_Term_Old
+go
+
 sp_rename VOC_AnnotType, VOC_AnnotType_Old
 go
 
@@ -53,12 +56,17 @@ ${newmgddbschema}/default/MRK_OMIM_Cache_bind.object | tee -a ${LOG}
 ${newmgddbschema}/index/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 
+#
+# allow term to be null
+#
+
+${newmgddbschema}/table/VOC_Term_create.object | tee -a ${LOG}
+${newmgddbschema}/default/VOC_Term_bind.object | tee -a ${LOG}
+${newmgddbschema}/key/VOC_Term_create.object | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${DBNAME}
-go
-
-alter table VOC_Term modify term null
 go
 
 declare @vocabKey integer
@@ -216,6 +224,10 @@ insert into VOC_Annot
 select o._Annot_key, o._AnnotType_key, o._Object_key, o._Term_key, @termKey, o.creation_date, o.modification_date
 from VOC_Annot_Old o
 where o._AnnotType_key != 1000 and o.isNot = 0
+go
+
+insert into VOC_Term
+select * from VOC_Term_Old
 go
 
 quit

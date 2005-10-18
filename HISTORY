@@ -1,3 +1,11 @@
+TAG: mgidbmigration-3-4-0-6
+DATE: 10/18/2005
+STAFF: sc
+RELEASE: 3.4 alpha
+CHANGES:
+1) reconfig.csh - added logging, dropping and creating of keys and 
+   SEQ_createDummy SP'
+
 TAG: mgidbmigration-3-4-0-5
 DATE: 10/18/2005
 STAFF: sc

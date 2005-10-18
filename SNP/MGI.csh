@@ -36,6 +36,7 @@ load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 # update schema tag
 echo "updatePublicVersion"
 ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
+
 echo "updateSchemaVersion"
 ${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
@@ -57,7 +58,7 @@ ${newmgddbperms}/public/view/SNP_Summary_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_NoteType_Genotype_View_grant.object | tee -a ${LOG}
 
 echo "PIRSF: human/rat" | tee -a ${LOG}
-./mgicache.csh | tee -a ${LOG} | tee -a ${LOG}
+./mgicache.csh | tee -a ${LOG}
 
 echo "HomoloGene" | tee -a ${LOG}
 ./mgihomologene.csh | tee -a ${LOG}
@@ -68,8 +69,8 @@ echo "Journal Vocabulary" | tee -a ${LOG}
 echo "Genotype Note" | tee -a ${LOG}
 ./mginote.csh | tee -a ${LOG}
 
-#echo "schema reconfig; revoke/grant all"
-#${newmgddbschema}/reconfig.csh | tee -a ${LOG}
+echo "schema reconfig; revoke/grant all" | tee -a ${LOG}
+./reconfig.csh | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 

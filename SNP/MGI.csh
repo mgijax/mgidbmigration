@@ -30,7 +30,7 @@ date | tee -a  ${LOG}
 echo "turnonbulkcopy" 
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
-echo "loading backup"
+echo "loading mgd backup"
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 # update schema tag
@@ -57,6 +57,9 @@ ${newmgddbperms}/public/table/SNP_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/view/SNP_Summary_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_NoteType_Genotype_View_grant.object | tee -a ${LOG}
 
+echo "drop/recreate all keys and SEQ_createDummy SP"
+./reconfig.csh | tee -a ${LOG}
+
 echo "PIRSF: human/rat" | tee -a ${LOG}
 ./mgicache.csh | tee -a ${LOG}
 
@@ -69,8 +72,7 @@ echo "Journal Vocabulary" | tee -a ${LOG}
 echo "Genotype Note" | tee -a ${LOG}
 ./mginote.csh | tee -a ${LOG}
 
-echo "schema reconfig; revoke/grant all" | tee -a ${LOG}
-./reconfig.csh | tee -a ${LOG}
+echo " revoke/grant all" | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 

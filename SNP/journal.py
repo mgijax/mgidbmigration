@@ -50,7 +50,7 @@ journals = {'Dev Biol' : 'Reprinted with permission from Elsevier from \\DXDOI(|
 	    'Nat Rev Cancer': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.',
 	    'Nat Rev Genet': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.',
 	    'Nat Rev Immunol': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.',
-	    'Nat Rev Mol Cell Bio': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.',
+	    'Nat Rev Mol Cell Biol': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.',
 	    'Nat Rev Neurosci': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.',
 	    'Biotechnology': 'This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.'
 	}

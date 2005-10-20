@@ -230,7 +230,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Journal'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, 'Nat Rev Mol Cell Bio', null, 34, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, 'Nat Rev Mol Cell Biol', null, 34, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Journal'

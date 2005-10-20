@@ -12,8 +12,6 @@ setenv ORTHOLOAD	/usr/local/mgi/live/dataload/orthologyload
 
 setenv NOTELOAD         /usr/local/mgi/live/dataload/noteload/mginoteload.py
 
-setenve PIRSFLOAD     /usr/local/mgi/live/dataload/pirsfload/bin/pirsfload.sh
-
 setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms

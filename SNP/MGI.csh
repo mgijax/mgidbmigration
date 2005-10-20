@@ -57,8 +57,9 @@ ${newmgddbperms}/public/table/SNP_grant.logical | tee -a ${LOG}
 ${newmgddbperms}/public/view/SNP_Summary_View_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/MGI_NoteType_Genotype_View_grant.object | tee -a ${LOG}
 
-echo "drop/recreate all keys and SEQ_createDummy SP"
-./reconfig.csh | tee -a ${LOG}
+echo "drop/recreate procedure/SEQ_createDummy" | tee -a  ${LOG}
+${newmgddbschema}/procedure/SEQ_createDummy_drop.object | tee -a  ${LOG}
+${newmgddbschema}/procedure/SEQ_createDummy_create.object | tee -a  ${LOG}
 
 echo "PIRSF: human/rat" | tee -a ${LOG}
 ./mgicache.csh | tee -a ${LOG}
@@ -71,6 +72,9 @@ echo "Journal Vocabulary" | tee -a ${LOG}
 
 echo "Genotype Note" | tee -a ${LOG}
 ./mginote.csh | tee -a ${LOG}
+
+echo "reconfig" | tee -a ${LOG}
+${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 
 echo " revoke/grant all" | tee -a ${LOG}
 ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}

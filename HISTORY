@@ -1,3 +1,13 @@
+TAG: mgidbmigration-3-4-0-8
+DATE: 10/20/2005
+STAFF: sc
+RELEASE: 3.4 alpha
+CHANGES:
+1) Configuration - removed PIRSFLOAD
+2) SNP/MGI.csh - added mgddbschema/reconfig.csh back in at the end; really
+   needed for QC of views,procedures, etc that they are dropped
+   and created correctly 
+
 TAG: mgidbmigration-3-4-0-7
 TAG: mgidbmigration-3-4-0-6
 DATE: 10/18/2005

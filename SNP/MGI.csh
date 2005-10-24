@@ -3,7 +3,7 @@
 #
 # Migration for 3.4 (SNP)
 # Defaults: 6
-# Procedures: 123   
+# Procedures: 122   
 # Rules: 5
 # Triggers: 158
 # User Tables: 190

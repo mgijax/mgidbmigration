@@ -26,13 +26,13 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
-sp_rename SEQ_Sequence, SEQ_Sequence_Old
-go
-
 insert into SEQ_Sequence_Raw 
 select _Sequence_key, rawType,rawLibrary,rawOrganism,rawStrain,rawTissue,rawAge,rawSex,rawCellLine,
 _CreatedBy_key,_ModifiedBy_key,creation_date,modification_date 
-from SEQ_Sequence_Old
+from SEQ_Sequence
+go
+
+sp_rename SEQ_Sequence, SEQ_Sequence_Old
 go
 
 quit

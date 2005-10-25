@@ -23,6 +23,9 @@ go
 alter table ACC_Accession modify prefixPart varchar(30) null
 go
 
+alter table ACC_AccessionMax modify prefixPart varchar(30) not null
+go
+
 quit
 
 EOSQL

@@ -47,9 +47,8 @@ ${newmgddbschema}/table/VOC_Annot_create.object | tee -a ${LOG}
 ${newmgddbschema}/default/VOC_Annot_bind.object | tee -a ${LOG}
 ${newmgddbschema}/key/VOC_Annot_create.object | tee -a ${LOG}
 
-${newmgddbschema}/table/MRK_OMIM_Cache.drop | tee -a ${LOG}
+${newmgddbschema}/table/MRK_OMIM_Cache_drop.object | tee -a ${LOG}
 ${newmgddbschema}/table/MRK_OMIM_Cache_create.object | tee -a ${LOG}
-${newmgddbschema}/default/MRK_OMIM_Cache_bind.object | tee -a ${LOG}
 ${newmgddbschema}/index/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 
@@ -227,7 +226,6 @@ EOSQL
 #
 
 ${newmgddbschema}/index/VOC_Annot_create.object | tee -a ${LOG}
-${newmgddbschema}/index/VOC_Term_create.object | tee -a ${LOG}
 
 date >> ${LOG}
 

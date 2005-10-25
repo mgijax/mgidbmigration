@@ -4,10 +4,10 @@
 # Migration for 3.5 (TR 7062)
 #
 # Defaults:       6
-# Procedures:   123
+# Procedures:   122
 # Rules:          5
 # Triggers:     158
-# User Tables:  190
+# User Tables:  191
 # Views:        230
 #
 
@@ -22,7 +22,7 @@ date | tee -a  ${LOG}
 ${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
 ${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}

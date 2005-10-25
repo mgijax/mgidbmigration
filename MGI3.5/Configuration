@@ -16,6 +16,7 @@ setenv newmgddbperms ${newmgddb}/mgddbperms
 
 setenv SCHEMA_TAG       mgddbschema-3-5-0
 setenv CREATEDBY	1000
+setenv PUBLIC_VERSION	"MGI 3.5"
 
 source ${newmgddbschema}/Configuration
 

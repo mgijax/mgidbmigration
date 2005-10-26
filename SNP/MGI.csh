@@ -61,7 +61,7 @@ echo "drop/recreate procedure/SEQ_createDummy" | tee -a  ${LOG}
 ${newmgddbschema}/procedure/SEQ_createDummy_drop.object | tee -a  ${LOG}
 ${newmgddbschema}/procedure/SEQ_createDummy_create.object | tee -a  ${LOG}
 
-echo "PIRSF: human/rat" | tee -a ${LOG}
+echo "EntrezGene: human/rat" | tee -a ${LOG}
 ./mgicache.csh | tee -a ${LOG}
 
 echo "HomoloGene" | tee -a ${LOG}

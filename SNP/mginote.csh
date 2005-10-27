@@ -23,7 +23,7 @@ declare @noteTypeKey integer
 select @noteTypeKey = max(_NoteType_key) + 1 from MGI_NoteType
 
 insert into MGI_NoteType values(@noteTypeKey, 12, 'General', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-insert into MGI_NoteType values(@noteTypeKey + 1, 12, 'Curator (private)', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into MGI_NoteType values(@noteTypeKey + 1, 12, 'Private Curatorial', 1, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 
 select g._Genotype_key, g.note, noteTypeKey = @noteTypeKey, seq = identity(5)
 into #notes 

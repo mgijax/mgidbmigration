@@ -4,9 +4,7 @@
 # Usage:  journal.csh
 #
 
-cd `dirname $0`
-
-source ./Configuration
+cd `dirname $0` && source ./Configuration
 
 setenv LOG `basename $0`.log
 
@@ -252,7 +250,7 @@ quit
 EOSQL
 
 ./journalcopyright.py
-${NOTELOAD} -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${DATAFILE} -M${NOTEMODE} -O${OBJECTTYPE} -T"${NOTETYPE}"
+${NOTELOAD} -S${DBSERVER} -D${DBNAME} -U${DBUSER} -P${DBPASSWORDFILE} -I${DATAFILE} -M${NOTEMODE} -O"${OBJECTTYPE}" -T"${NOTETYPE}"
 
 date >> ${LOG}
 

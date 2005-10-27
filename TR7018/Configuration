@@ -5,7 +5,7 @@ setenv MIGRATIONDIR	/home/lec/db/mgidbmigration/TR7018
 
 setenv VOCSIMPLELOAD    /usr/local/mgi/live/dataload/vocload/runSimpleFullLoadNoArchive.sh
 setenv NOTELOAD		/usr/local/mgi/live/dataload/noteload/mginoteload.py
-setenv NOTEMODE		preview
+setenv NOTEMODE		load
 setenv DATAFILE         journal.rpt
 setenv NOTETYPE         "Journal Copyright"
 setenv OBJECTTYPE       "Vocabulary Term"

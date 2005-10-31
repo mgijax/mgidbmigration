@@ -34,6 +34,7 @@ date | tee -a  ${LOG}
 
 ./mgiacc.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
+./mgistrain.csh | tee -a ${LOG}
 
 # 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}
@@ -53,6 +54,9 @@ drop table VOC_AnnotType_Old
 go
 
 drop table SEQ_Sequence_Old
+go
+
+drop table PRB_Strain_Old
 go
 
 drop procedure SEQ_createDummy

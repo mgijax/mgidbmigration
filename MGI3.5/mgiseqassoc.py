@@ -77,3 +77,4 @@ for r in results:
 outFile.close()
 dropTables()
 db.useOneConnection(0)
+

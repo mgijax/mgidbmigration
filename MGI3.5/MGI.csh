@@ -4,7 +4,7 @@
 # Migration for 3.5 (TR 7062)
 #
 # Defaults:       6
-# Procedures:   121
+# Procedures:   122
 # Rules:          5
 # Triggers:     159
 # User Tables:  191

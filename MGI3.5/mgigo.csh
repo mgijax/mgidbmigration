@@ -161,7 +161,7 @@ declare @vocabKey integer
 select @vocabKey = _Vocab_key from VOC_Vocab where name = 'Generic Annotation Qualifier'
 declare @termKey integer
 select @termKey = max(_Term_key) + 1 from VOC_Term
-insert into VOC_Term values (@termKey, @vocabKey, null, 'None', 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
+insert into VOC_Term values (@termKey, @vocabKey, null, null, 6, 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
 go
 
 /* migrate VOC_AnnotType, VOC_Annot: GO */

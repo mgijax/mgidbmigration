@@ -14,16 +14,16 @@ date | tee -a ${LOG}
 
 # create new Assoc table
 
-${newmgddbschema}/table/SEQ_Marker_Assoc_create.object | tee -a ${LOG}
-${newmgddbschema}/default/SEQ_Marker_Assoc_bind.object | tee -a ${LOG}
-${newmgddbschema}/key/SEQ_Marker_Assoc_create.object | tee -a ${LOG}
-${newmgddbperms}/public/table/SEQ_Marker_Assoc_grant.object | tee -a ${LOG}
+${newmgddbschema}/table/MGI_Sequence_Assoc_create.object | tee -a ${LOG}
+${newmgddbschema}/default/MGI_Sequence_Assoc_bind.object | tee -a ${LOG}
+${newmgddbschema}/key/MGI_Sequence_Assoc_create.object | tee -a ${LOG}
+${newmgddbperms}/public/table/MGI_Sequence_Assoc_grant.object | tee -a ${LOG}
 
 ${newmgddbschema}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
 
 # load marker associations into new table
 ./mgiseqassoc.py | tee -a ${LOG}
-cat ${DBPASSWORDFILE} | bcp ${DBNAME}..SEQ_Marker_Assoc in SEQ_Marker_Assoc.bcp -c -t\| -S${DBSERVER} -U${DBUSER} | tee -a ${LOG}
+cat ${DBPASSWORDFILE} | bcp ${DBNAME}..MGI_Sequence_Assoc in MGI_Sequence_Assoc.bcp -c -t\| -S${DBSERVER} -U${DBUSER} | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
@@ -44,7 +44,7 @@ quit
 
 EOSQL
 
-${newmgddbschema}/index/SEQ_Marker_Assoc_create.object | tee -a ${LOG}
+${newmgddbschema}/index/MGI_Sequence_Assoc_create.object | tee -a ${LOG}
 ${newmgddbschema}/trigger/ACC_Accession_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}

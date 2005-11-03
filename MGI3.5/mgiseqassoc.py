@@ -9,7 +9,8 @@ def buildTemp():
 
     # select allassoc marker/sequence associations: ~ 555,000
 
-    db.sql('select a._Accession_key, markerKey = a._Object_key, a._LogicalDB_key, a.accID, a.prefixPart, a.numericPart, ' + \
+    db.sql('select a._Accession_key, markerKey = a._Object_key, a._LogicalDB_key, ' + \
+	'a.accID, a.prefixPart, a.numericPart, a.private, ' + \
 	'r._Refs_key, a._CreatedBy_key, a._ModifiedBy_key, ' + \
 	'cdate = convert(char(10), a.creation_date, 101), mdate = convert(char(10), a.modification_date, 101) ' + \
 	'into tempdb..allassoc ' + \
@@ -23,7 +24,8 @@ def buildTemp():
 
     # annotations to non-deleted sequences
 
-    db.sql('select a._Accession_key, a.markerKey, a._LogicalDB_key, a.accID, a.prefixPart, a.numericPart, ' + \
+    db.sql('select a._Accession_key, a.markerKey, a._LogicalDB_key, ' + \
+	'a.accID, a.prefixPart, a.numericPart, a.private, ' + \
 	'a._Refs_key, a._CreatedBy_key, a._ModifiedBy_key, a.cdate, a.mdate, sequenceKey = s._Object_key ' + \
 	'into tempdb..markers1 ' + \
 	'from tempdb..allassoc a, ACC_Accession s, SEQ_Sequence ss ' + \
@@ -62,17 +64,17 @@ results = db.sql('select m.*, sequenceKey = s._Object_key ' + \
 	'where m.accID = s.accID ' + \
 	'and s._MGIType_key = 19', 'auto')
 for r in results:
-    outFile.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n' \
+    outFile.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n' \
 	% (r['sequenceKey'], r['markerKey'], r['_Refs_key'], r['_LogicalDB_key'], r['accID'], \
 	mgi_utils.prvalue(r['prefixPart']), mgi_utils.prvalue(r['numericPart']),  \
-	r['_CreatedBy_key'], r['_ModifiedBy_key'], r['cdate'], r['mdate']))
+	r['private'], r['_CreatedBy_key'], r['_ModifiedBy_key'], r['cdate'], r['mdate']))
 
 results = db.sql('select * from tempdb..markers1', 'auto')
 for r in results:
-    outFile.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n' \
+    outFile.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n' \
 	% (r['sequenceKey'], r['markerKey'], r['_Refs_key'], r['_LogicalDB_key'], r['accID'], \
 	mgi_utils.prvalue(r['prefixPart']), mgi_utils.prvalue(r['numericPart']),  \
-	r['_CreatedBy_key'], r['_ModifiedBy_key'], r['cdate'], r['mdate']))
+	r['private'], r['_CreatedBy_key'], r['_ModifiedBy_key'], r['cdate'], r['mdate']))
 
 outFile.close()
 dropTables()

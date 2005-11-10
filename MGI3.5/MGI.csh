@@ -19,19 +19,20 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-${DBUTILSBINDIR}/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 
 # load a backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
-${DBUTILSBINDIR}/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
-${DBUTILSBINDIR}/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 
 ########################################
 
+./mgi341.csh | tee -a ${LOG}
 ./mgiacc.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
 ./mgistrain.csh | tee -a ${LOG}
@@ -57,9 +58,6 @@ drop table SEQ_Sequence_Old
 go
 
 drop table PRB_Strain_Old
-go
-
-drop procedure SEQ_createDummy
 go
 
 quit

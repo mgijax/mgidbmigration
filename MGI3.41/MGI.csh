@@ -48,5 +48,11 @@ ${newmgddbschema}/index/MRK_Reference_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_Reference_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/BIB_Refs_create.object | tee -a ${LOG}
 
+# new radar TXT procedures
+
+${newrdrdbschema}/procedure/TXT_drop.logical | tee -a ${LOG}
+${newrdrdbschema}/procedure/TXT_create.logical | tee -a ${LOG}
+${newrdrdbperms}/public/procedure/TXT_grant.logical | tee -a ${LOG}
+
 date | tee -a  ${LOG}
 

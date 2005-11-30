@@ -1,9 +1,0 @@
-#!/bin/csh -f
-
-#setenv newradardb /usr/local/mgi/live/dbutils/radar
-setenv newradardb /home/lec/db/entrezgene
-setenv newradardbschema ${newradardb}/radardbschema
-setenv newradardbperms ${newradardb}/radardbperms
-
-source ${newradardbschema}/Configuration
-

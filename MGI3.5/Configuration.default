@@ -14,6 +14,10 @@ setenv newmgddb /home/lec/db/mgi3.5
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 
+setenv newrdrdb /home/lec/db/mgi3.5
+setenv newrdrdbschema ${newrdrdb}/radardbschema
+setenv newrdrdbperms ${newrdrdb}/radardbperms
+
 setenv SCHEMA_TAG       mgddbschema-3-5-0
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION	"MGI 3.5"

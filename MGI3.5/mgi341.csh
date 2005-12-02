@@ -12,11 +12,7 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-# TR 6915
-
-${newmgddbschema}/view/HMD_Summary_View_drop.object | tee -a ${LOG}
-${newmgddbschema}/view/HMD_Summary_View_create.object | tee -a ${LOG}
-${newmgddbperms}/public/view/HMD_Summary_View_grant.object | tee -a ${LOG}
+########################################
 
 ${newmgddbschema}/index/MRK_Reference_drop.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_Reference_drop.object | tee -a ${LOG}
@@ -38,6 +34,12 @@ EOSQL
 ${newmgddbschema}/index/MRK_Reference_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_Reference_create.object | tee -a ${LOG}
 ${newmgddbschema}/key/BIB_Refs_create.object | tee -a ${LOG}
+
+# new radar TXT procedures
+
+${newrdrdbschema}/procedure/TXT_drop.logical | tee -a ${LOG}
+${newrdrdbschema}/procedure/TXT_create.logical | tee -a ${LOG}
+${newrdrdbperms}/public/procedure/TXT_grant.logical | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

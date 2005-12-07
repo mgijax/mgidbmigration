@@ -60,6 +60,9 @@ go
 drop table PRB_Strain_Old
 go
 
+exec MGI_Table_Column_Cleanup
+go
+
 quit
 
 EOSQL

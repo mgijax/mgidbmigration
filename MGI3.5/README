@@ -1,29 +1,67 @@
 MGI 3.5 Schema Changes:
 
-TR 5188:
-	To support GO qualifiers for Annotations
+To support GO qualifiers for Annotations (TR 5188):
 
-	VOC_AnnotType:
-		. added "_QualifierVocab_key" (foreign key to VOC_Vocab)
+	Affects:  EI, WI, Annotation loader, GO Text generator
 
-	VOC_Annot:
-		. added "_Qualifier_key" (foreign key to VOC_Term)
-		. removed "isNot"
+	A new "Qualifier" vocabulary and terms replaces the "isNot"
+	bit in the VOC_Annot table.  This supports the GO consortium
+	requirements for annotation qualifiers.
 
-TR 7094:
- 	To improve performance, we have split SEQ_Sequence into 2 tables.
+        VOC_AnnotType:
+                . added "_QualifierVocab_key" (foreign key to VOC_Vocab)
 
-	SEQ_Sequence:
-		. added "_Organism_key" (foreign key to MGI_Organism)
-		. all "raw" fields moved to SEQ_Sequence_Raw
+		This field defines the Qualifier Vocabulary (in VOC_Vocab)
+		that is used for this Annotation Type.
 
-	SEQ_Sequence_Raw:
-		. new table
+		Example:
 
-TR :
+		For the Marker/GO Annotation Type (_AnnotType_key = 1000), 
+		the GO Qualifier Vocabulary (_Vocab_key = 52) terms are:
 
-	To improve performance:
+		. colocalzies with
+		. contributes to
+		. NOT colocalizes with
+		. NOT contributes to
+		. NOT
+		. none (null)
 
-	SEQ_Marker_Cache:
-		. added primary accession id (accID)
+        VOC_Annot:
+                . added "_Qualifier_key" (foreign key to VOC_Term)
+                . removed "isNot"
+
+	MRK_OMIM_Cache:
+		. added "qualifier" varchar
+		. removed "isNot" bit
+
+To improve performance, we split SEQ_Sequence into 2 tables (TR 7094):
+
+	Affects:  EI, WI, Sequence loader
+
+        SEQ_Sequence:
+                . added "_Organism_key" (foreign key to MGI_Organism)
+
+		This field defines the primary Organism of the Sequence.
+		For a protein sequence (that may have multiple organisms),
+		this field is set by precedence (mouse, human, rat).
+
+                . all "raw" fields moved to SEQ_Sequence_Raw
+
+        SEQ_Sequence_Raw:
+                . new table
+
+To improve performance, add the primary accession id to the cache table:
+
+	Affects: nothing; backward compatible
+
+        SEQ_Marker_Cache:
+                . added primary accession id (accID)
+
+Increase size of ACC_Accession.prefixPart (TR 7182):
+
+	Affects:  nothing; backward compatible
+	SNP load can be modified, however, to set the prefixPart
+
+	ACC_Accession, ACC_AccessionMax:
+		. increase size of prefixPart to 30
 

@@ -56,8 +56,8 @@ def dropTables():
 db.useOneConnection(1)
 db.set_sqlLogFunction(db.sqlLogAll)
 outFile = open('MGI_Sequence_Assoc.bcp', 'w')
-dropTables()
-buildTemp(2)
+#dropTables()
+#buildTemp(2)
 
 assocKey = 1
 
@@ -81,6 +81,6 @@ for r in results:
     assocKey = assocKey + 1
 
 outFile.close()
-dropTables()
+#dropTables()
 db.useOneConnection(0)
 

@@ -4,6 +4,8 @@ setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/MGI3.5
 
 setenv OMIMCACHELOAD	/usr/local/mgi/live/dbutils/mrkcacheload/mrkomim.csh
 
+setenv REFCACHELOAD     /usr/local/mgi/live/dbutils/mrkcacheload/mrkref.csh
+
 setenv SEQCACHELOAD	/usr/local/mgi/live/dbutils/seqcacheload/seqmarker.csh
 
 setenv newmgddb /usr/local/mgi/live/dbutils/mgd

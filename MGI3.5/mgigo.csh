@@ -143,7 +143,7 @@ insert into MGI_Synonym values (@synKey, @termKey, 13, @synTypeKey, 73993, '', $
 go
 
 /* generic qualifier vocabulary for */
-/* PhenoSlim (1001), MP (1002), InterPro (1003), Strain/Super (1004), OMIM/Marker (1005), OMIM/Human (1006), PIRSF (1007) */
+/* MP (1002), InterPro (1003), Strain/Super (1004), OMIM/Marker (1005), OMIM/Human (1006), PIRSF (1007) */
 
 declare @vocabKey integer
 select @vocabKey = max(_Vocab_key) + 1 from VOC_Vocab

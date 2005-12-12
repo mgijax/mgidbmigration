@@ -34,7 +34,7 @@ To support GO qualifiers for Annotations (TR 5188):
 		. added "qualifier" varchar
 		. removed "isNot" bit
 
-To improve performance, we split SEQ_Sequence into 2 tables (TR 7094):
+To improve performance, split SEQ_Sequence into 2 tables (TR 7094):
 
 	Affects:  EI, WI, Sequence loader
 
@@ -48,6 +48,11 @@ To improve performance, we split SEQ_Sequence into 2 tables (TR 7094):
                 . all "raw" fields moved to SEQ_Sequence_Raw
 
         SEQ_Sequence_Raw:
+		A record in this table represents the Sequence Provider
+		(for example, GenBank) values of the Sequence attributes 
+		that MGI attempts to resolve to MGI vocabulary values.
+		For example, strain, tissue, gender, etc.
+
                 . new table
 
 To improve performance, add the primary accession id to the cache table:
@@ -64,4 +69,17 @@ Increase size of ACC_Accession.prefixPart (TR 7182):
 
 	ACC_Accession, ACC_AccessionMax:
 		. increase size of prefixPart to 30
+
+To improve performance, add accession ids to the cache table:
+
+	Affects:  nothing, backward-compatible
+
+	MRK_Reference (cache table):
+		. added mgi ID (MGI:####, varchar)
+		. added jnum ID (J:####, varchar)
+		. added jnum (integer)
+		. added pub med ID (varchar)
+
+	MRK_reloadReference (stored procedure)
+		. removed loading of records from PRB_Reference (fix)
 

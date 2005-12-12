@@ -226,6 +226,7 @@ EOSQL
 #
 
 ${newmgddbschema}/index/VOC_Annot_create.object | tee -a ${LOG}
+${newmgddbperms}/public/table/VOC_Annot_grant.object | tee -a ${LOG}
 
 date >> ${LOG}
 

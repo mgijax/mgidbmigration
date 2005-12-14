@@ -50,6 +50,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
+update ACC_ActualDB set name = "UniProt" where _ActualDB_key in (19, 45)
+go
+
 drop table VOC_Annot_Old
 go
 

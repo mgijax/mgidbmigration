@@ -32,7 +32,6 @@ date | tee -a  ${LOG}
 
 ########################################
 
-./mgi341.csh | tee -a ${LOG}
 ./mgips.csh | tee -a ${LOG}
 ./mgiacc.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}

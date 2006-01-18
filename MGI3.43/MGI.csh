@@ -90,9 +90,6 @@ EOSQL
 echo "alter ACC_Accession.prefixPart"
 ./mgiacc.csh | tee -a ${LOG}
 
-echo "drop PhenoSlim annotations"
-./mgips.csh | tee -a ${LOG}
-
 #echo "reconfig" | tee -a ${LOG}
 #${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 

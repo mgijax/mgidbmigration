@@ -1,0 +1,24 @@
+#!/bin/csh -f
+
+#setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/MGI3.43
+setenv MIGRATIONDIR	/home/sc/snp/mgidbmigration/MGI3.43
+
+#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddb /home/sc/snp
+setenv newmgddbschema ${newmgddb}/mgddbschema-tr7392
+setenv newmgddbperms ${newmgddb}/mgddbperms-tr7392
+
+#setenv newradardb /usr/local/mgi/live/dbutils/radar
+setenv newradardb	/home/sc/snp
+setenv newradardbschema ${newradardb}/radardbschema-tr7203
+setenv newradardbperms ${newradardb}/radardbperms
+
+setenv SCHEMA_TAG       mgddbschema-3-4-3
+setenv CREATEDBY	1000
+setenv PUBLIC_VERSION   "MGI 3.4"
+
+source ${newradardbschema}/Configuration
+setenv RADARDB	${DBNAME}
+
+source ${newmgddbschema}/Configuration
+

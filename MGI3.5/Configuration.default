@@ -22,4 +22,3 @@ setenv PUBLIC_VERSION	"MGI 3.5"
 
 source ${newmgddbschema}/Configuration
 
-setenv PYTHONPATH	/home/lec/libdev:${PYTHONPATH}

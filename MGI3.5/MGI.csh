@@ -32,10 +32,7 @@ date | tee -a  ${LOG}
 
 ########################################
 
-./mgips.csh | tee -a ${LOG}
-./mgiacc.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
-./mgistrain.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
 
 # 1.5 hours

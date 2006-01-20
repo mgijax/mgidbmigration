@@ -56,6 +56,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
+drop table SNP_Strain_Cache
+go
+
 select a._Accession_key 
 	into tempdb..todelete 
 	from ACC_Accession a 

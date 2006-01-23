@@ -20,8 +20,7 @@ date | tee -a  ${LOG}
 #
 # RADAR database stuff
 #
-# as of 1/18 we aren't changing radar
-#./radar.csh
+./radar.csh
 
 #
 # MGD database stuff

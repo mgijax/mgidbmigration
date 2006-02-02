@@ -40,7 +40,13 @@ insert into PRB_Strain
 select o._Strain_key, o._Species_key, o.strain, o.standard, o.needsReview, o.private, 0,
 o._CreatedBy_key, o._ModifiedBy_key, o.creation_date, o.modification_date
 from PRB_Strain_Old o
+go
 
+update PRB_Strain
+set imsrOK = 1
+from PRB_Strain s, MGI_Note_Strain_View n
+where n.note = "okay for imsr"
+and n._Object_key = s._Strain_key
 go
 
 quit

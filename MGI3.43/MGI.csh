@@ -92,12 +92,12 @@ EOSQL
 echo "alter ACC_Accession.prefixPart"
 ./mgiacc.csh | tee -a ${LOG}
 
-#echo "reconfig" | tee -a ${LOG}
-#${newmgddbschema}/reconfig.csh | tee -a ${LOG}
+echo "reconfig" | tee -a ${LOG}
+${newmgddbschema}/reconfig.csh | tee -a ${LOG}
 
-#echo " revoke/grant all" | tee -a ${LOG}
-#${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
-#${newmgddbperms}/all_grant.csh | tee -a ${LOG}
+echo " revoke/grant all" | tee -a ${LOG}
+${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
+${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 #${DBUTILSBINDIR}/updateStatisticsAll.csh ${newmgddbschema} | tee -a ${LOG}
 

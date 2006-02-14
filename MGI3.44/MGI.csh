@@ -24,9 +24,15 @@ ${MGIDBUTILSDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
 # load a backup
 load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
-# update schema tag
-${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
-${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
+# MGI_Tables...save data
+
+./mgisnp.csh | tee -a ${LOG}
+./mgimgd.csh | tee -a ${LOG}
+
+# bcp the snp data out of mgd
+${MGIDBUTILSDIR}/bin/bcpout.csh ${newmgddbschema} SNP_Consensus_Snp
+
+# bcp the snp data into the new snp database
 
 date | tee -a  ${LOG}
 
@@ -34,7 +40,15 @@ date | tee -a  ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${DBNAME}
+use ${MGD_DBNAME}
+go
+
+/* copy MGI_Columns and MGI_Tables information from mgd to snp */
+
+exec MGI_Table_Column_Cleanup
+go
+
+use ${SNP_DBNAME}
 go
 
 exec MGI_Table_Column_Cleanup
@@ -43,10 +57,6 @@ go
 quit
 
 EOSQL
-
-${newmgddbschema}/reconfig.csh | tee -a ${LOG}
-${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
-${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

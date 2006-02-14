@@ -1,0 +1,18 @@
+#!/bin/csh -f
+
+setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/MGI3.44
+
+setenv newmgddb /usr/local/mgi/live/dbutils/mgd
+setenv newmgddbschema ${newmgddb}/mgddbschema
+setenv newmgddbperms ${newmgddb}/mgddbperms
+
+setenv newrdrdb /usr/local/mgi/live/dbutils/radar
+setenv newrdrdbschema ${newrdrdb}/radardbschema
+setenv newrdrdbperms ${newrdrdb}/radardbperms
+
+setenv SCHEMA_TAG       mgddbschema-3-4-4
+setenv CREATEDBY	1000
+setenv PUBLIC_VERSION	"MGI 3.44"
+
+source ${newmgddbschema}/Configuration
+

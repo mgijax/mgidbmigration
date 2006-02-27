@@ -22,5 +22,3 @@ setenv MGD_PRODUCTNAME  "MGD"
 setenv SNP_PRODUCTNAME	"SNP"
 setenv SNP_DATAVERSION	"build 125"
 
-source ${newmgddbschema}/Configuration
-

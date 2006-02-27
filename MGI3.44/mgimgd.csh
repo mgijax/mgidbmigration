@@ -4,13 +4,18 @@
 
 cd `dirname $0` && source ./Configuration
 
+source ${newmgddbschema}/Configuration
+
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
  
 date | tee -a  ${LOG}
  
-# create mgd..MGI_dbinfo table...
+echo "updateSchemaVersion"
+${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
+
+# create new mgd..MGI_dbinfo table...
 
 ${newmgddbschema}/table/MGI_dbinfo_drop.object | tee -a ${LOG}
 ${newmgddbschema}/table/MGI_dbinfo_create.object | tee -a ${LOG}
@@ -29,9 +34,15 @@ quit
 
 EOSQL
 
+exit 0
+
 # revised tables in mgd
 ${newmgddbschema}/table/SNP_ConsensusSnp_Marker_drop.csh | tee -a ${LOG}
 ${newmgddbschema}/table/SNP_ConsensusSnp_Marker_create.csh | tee -a ${LOG}
+
+./mgitable.csh | tee -a ${LOG}
+
+exit 0
 
 date | tee -a  ${LOG}
 

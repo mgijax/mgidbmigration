@@ -11,7 +11,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 echo "updateSchemaVersion"
-${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${RDR_DBSERVER} ${RDR_DBNAME} ${RDR_SCHEMA_TAG} | tee -a ${LOG}
+${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} ${RADAR_SCHEMA_TAG} | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

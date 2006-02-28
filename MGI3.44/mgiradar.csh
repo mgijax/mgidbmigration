@@ -39,6 +39,21 @@ go
 drop table MGI_SNP_SubSNP
 go
 
+drop table SNP_Location
+go
+
+drop table SNP_SNP
+go
+
+drop table SNP_Strain
+go
+
+drop table SNP_Location_Marker_Assoc
+go
+
+drop table SNP_Strain_SNP_Assoc
+go
+
 quit
 
 EOSQL

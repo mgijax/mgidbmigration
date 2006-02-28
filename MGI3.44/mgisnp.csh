@@ -36,8 +36,11 @@ EOSQL
 ${newsnpdbschema}/all_create.csh | tee -a ${LOG}
 ${newsnpdbperms}/all_grant.csh | tee -a ${LOG}
 
+# SNP_Coord_Cache cannot be copied over...
+
 # dump out MGD SNP data
-foreach i (SNP_ConsensusSnp SNP_SubSnp SNP_Flank SNP_Population SNP_Coord_Cache SNP_ConsensusSnp_StrainAllele SNP_SubSnp_StrainAllele MGI_Tables MGI_Columns)
+
+foreach i (SNP_ConsensusSnp SNP_SubSnp SNP_Flank SNP_Population SNP_ConsensusSnp_StrainAllele SNP_SubSnp_StrainAllele MGI_Tables MGI_Columns)
 ${MGIDBUTILSBINDIR}/bcpout.csh ${newmgddbschema} ${i} | tee -a ${LOG}
 ${newsnpdbschema}/index/${i}_drop.object | tee -a ${LOG}
 ${MGIDBUTILSBINDIR}/bcpin.csh ${newsnpdbschema} ${i} | tee -a ${LOG}

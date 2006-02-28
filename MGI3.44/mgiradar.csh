@@ -13,28 +13,9 @@ date | tee -a  ${LOG}
 echo "updateSchemaVersion"
 ${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${RDR_DBSERVER} ${RDR_DBNAME} ${RDR_SCHEMA_TAG} | tee -a ${LOG}
 
-# create new MGI_dbinfo table...
-
-${newrdrdbschema}/table/MGI_dbinfo_drop.object | tee -a ${LOG}
-${newrdrdbschema}/table/MGI_dbinfo_create.object | tee -a ${LOG}
-${newrdrdbperms}/public/table/MGI_dbinfo_grant.object | tee -a ${LOG}
-
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${RDR_DBNAME}
-go
-
-insert MGI_dbinfo values ("$PUBLIC_VERSION", "$MGD_PRODUCTNAME", "$RDR_SCHEMA_TAG",
-"$SNP_SCHEMA_TAG", "$SNP_DATAVERSION", getdate(), getdate(), getdate())
-go
-
-quit
-
-EOSQL
-
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
+use ${RADAR_DBNAME}
 go
 
 drop table MGI_SNP_Accession

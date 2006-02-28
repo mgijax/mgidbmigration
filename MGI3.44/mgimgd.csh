@@ -1,6 +1,13 @@
 #!/bin/csh -fx
 
 #
+# Default:	6
+# Procedure:	124
+# Rule:		5
+# Trigger:	158
+# User Table:	183
+# View:		230
+#
 
 cd `dirname $0` && source ./Configuration
 
@@ -12,6 +19,9 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
+# load a backup
+#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
+
 echo "updateSchemaVersion"
 ${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
 
@@ -34,15 +44,11 @@ quit
 
 EOSQL
 
-exit 0
-
 # revised tables in mgd
 ${newmgddbschema}/table/SNP_ConsensusSnp_Marker_drop.csh | tee -a ${LOG}
 ${newmgddbschema}/table/SNP_ConsensusSnp_Marker_create.csh | tee -a ${LOG}
 
 ./mgitable.csh | tee -a ${LOG}
-
-exit 0
 
 date | tee -a  ${LOG}
 
@@ -53,7 +59,7 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-drop table SNP_Consensus_Snp
+drop table SNP_ConsensusSnp
 go
 
 drop table SNP_SubSnp

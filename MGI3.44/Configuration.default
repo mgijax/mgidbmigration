@@ -15,6 +15,7 @@ setenv newsnpdbschema ${newsnpdb}/snpdbschema
 setenv newsnpdbperms ${newsnpdb}/snpdbperms
 
 setenv MGD_SCHEMA_TAG       mgddbschema-3-4-4
+setenv RADAR_SCHEMA_TAG     radardbschema-3-4-4
 setenv SNP_SCHEMA_TAG       snpdbschema-3-4-4
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION	"MGI 3.44"

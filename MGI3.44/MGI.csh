@@ -19,42 +19,9 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-# load a backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
-
-# MGI_Tables...save data
-
 ./mgisnp.csh | tee -a ${LOG}
 ./mgimgd.csh | tee -a ${LOG}
-
-# bcp the snp data out of mgd
-${MGIDBUTILSDIR}/bin/bcpout.csh ${newmgddbschema} SNP_Consensus_Snp
-
-# bcp the snp data into the new snp database
-
-date | tee -a  ${LOG}
-
-########################################
-
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-/* copy MGI_Columns and MGI_Tables information from mgd to snp */
-
-exec MGI_Table_Column_Cleanup
-go
-
-use ${SNP_DBNAME}
-go
-
-exec MGI_Table_Column_Cleanup
-go
-
-quit
-
-EOSQL
+./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

@@ -20,7 +20,7 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
-alter table MGI_Coord_Feature modify strand char(1) null
+alter table MAP_Coord_Feature modify strand char(1) null
 go
 
 quit

@@ -5,8 +5,8 @@
 # Procedure:	124
 # Rule:		5
 # Trigger:	158
-# User Table:	183
-# View:		230
+# User Table:	182
+# View:		229
 #
 
 cd `dirname $0` && source ./Configuration
@@ -44,10 +44,6 @@ quit
 
 EOSQL
 
-# revised tables in mgd
-${newmgddbschema}/table/SNP_ConsensusSnp_Marker_drop.csh | tee -a ${LOG}
-${newmgddbschema}/table/SNP_ConsensusSnp_Marker_create.csh | tee -a ${LOG}
-
 ./mgitable.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
@@ -60,6 +56,9 @@ use ${MGD_DBNAME}
 go
 
 drop table SNP_ConsensusSnp
+go
+
+drop table SNP_ConsensusSnp_Marker
 go
 
 drop table SNP_SubSnp
@@ -78,6 +77,9 @@ drop table SNP_Population
 go
 
 drop table SNP_Coord_Cache
+go
+
+drop view SNP_Summary_View
 go
 
 exec MGI_Table_Column_Cleanup

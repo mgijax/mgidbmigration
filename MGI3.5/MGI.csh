@@ -45,9 +45,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${DBNAME}
 go
 
-update ACC_ActualDB i
+update ACC_ActualDB
 set name = "UniProt",
-url = 'http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@'
+url = "http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@"
 where _ActualDB_key in (19, 45)
 go
 
@@ -58,9 +58,6 @@ drop table VOC_AnnotType_Old
 go
 
 drop table SEQ_Sequence_Old
-go
-
-drop table PRB_Strain_Old
 go
 
 exec MGI_Table_Column_Cleanup

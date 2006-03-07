@@ -4,11 +4,11 @@
 # Migration for 3.5 (TR 7062)
 #
 # Defaults:       6
-# Procedures:   122
+# Procedures:   124
 # Rules:          5
 # Triggers:     159
-# User Tables:  192
-# Views:        230
+# User Tables:  183
+# Views:        229
 #
 
 cd `dirname $0` && source ./Configuration
@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-#load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${DBSERVER} ${DBNAME} /extra2/sybase/mgd344.backup
 
 # update schema tag
 ${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
@@ -38,6 +38,7 @@ date | tee -a  ${LOG}
 
 # 
 ./mgiseqmarker.csh | tee -a ${LOG}
+./mgiunists.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

@@ -10,6 +10,9 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
+# load a backup
+#load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /shire/sybase/radar.backup
+
 echo "updateSchemaVersion"
 ${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} ${RADAR_SCHEMA_TAG} | tee -a ${LOG}
 

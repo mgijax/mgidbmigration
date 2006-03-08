@@ -2,7 +2,7 @@
 
 #
 # Default:	6
-# Procedure:	124
+# Procedure:	122
 # Rule:		5
 # Trigger:	158
 # User Table:	182

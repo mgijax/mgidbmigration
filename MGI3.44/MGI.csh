@@ -14,7 +14,7 @@ date | tee -a  ${LOG}
  
 ./mgisnp.csh | tee -a ${LOG}
 ./mgimgd.csh | tee -a ${LOG}
-#./mgiradar.csh | tee -a ${LOG}
+./mgiradar.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

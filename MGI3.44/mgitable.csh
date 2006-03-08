@@ -22,7 +22,6 @@ quit
 
 EOSQL
 
-${newmgddbschema}/table/MGI_Tables_drop.object | tee -a ${LOG}
 ${newmgddbschema}/table/MGI_Tables_create.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MGI_Table_Column_Cleanup_drop.object | tee -a ${LOG}
 ${newmgddbschema}/procedure/MGI_Table_Column_Cleanup_create.object | tee -a ${LOG}

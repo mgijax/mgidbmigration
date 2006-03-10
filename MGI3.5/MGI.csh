@@ -4,11 +4,11 @@
 # Migration for 3.5 (TR 7062)
 #
 # Defaults:       6
-# Procedures:   124
+# Procedures:   122
 # Rules:          5
-# Triggers:     159
+# Triggers:     158
 # User Tables:  183
-# Views:        229
+# Views:        228
 #
 
 cd `dirname $0` && source ./Configuration

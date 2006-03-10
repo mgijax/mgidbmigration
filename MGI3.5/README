@@ -62,14 +62,6 @@ To improve performance, add the primary accession id to the cache table:
         SEQ_Marker_Cache:
                 . added primary accession id (accID)
 
-Increase size of ACC_Accession.prefixPart (TR 7182):
-
-	Affects:  nothing; backward compatible
-	SNP load can be modified, however, to set the prefixPart
-
-	ACC_Accession, ACC_AccessionMax:
-		. increase size of prefixPart to 30
-
 To improve performance, add accession ids to the cache table:
 
 	Affects:  nothing, backward-compatible

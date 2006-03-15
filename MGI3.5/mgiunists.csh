@@ -27,5 +27,12 @@ quit
 
 EOSQL
 
+# load coordinates
+${UNISTSLOAD} | tee -a ${LOG}
+
+# cache tables
+${SEQCACHELOAD} | tee -a ${LOG}
+${LOCCACHELOAD} | tee -a ${LOG}
+
 date >> ${LOG}
 

@@ -32,13 +32,17 @@ date | tee -a  ${LOG}
 
 ./mgigo.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
-./mgiunists.csh | tee -a ${LOG}
 
 # 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}
 
+./mgiunists.csh | tee -a ${LOG}
+
 # SEQ_Marker_Cache 
 ./mgiseqmarker.csh | tee -a ${LOG}
+
+# cache tables
+${LOCCACHELOAD} | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 

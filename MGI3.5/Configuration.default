@@ -6,7 +6,11 @@ setenv OMIMCACHELOAD	/usr/local/mgi/live/dbutils/mrkcacheload/mrkomim.csh
 
 setenv REFCACHELOAD     /usr/local/mgi/live/dbutils/mrkcacheload/mrkref.csh
 
+setenv LOCCACHELOAD     /usr/local/mgi/live/dbutils/mrkcacheload/mrklocation.csh
+
 setenv SEQCACHELOAD	/usr/local/mgi/live/dbutils/seqcacheload/seqmarker.csh
+
+setenv UNISTSLOAD       /usr/local/mgi/live/dataload/unistsload/unistsload.sh
 
 setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema

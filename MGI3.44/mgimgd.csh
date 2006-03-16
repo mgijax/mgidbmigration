@@ -6,7 +6,7 @@
 # Rule:		5
 # Trigger:	158
 # User Table:	182
-# View:		229
+# View:		228
 #
 
 cd `dirname $0` && source ./Configuration
@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
 
 echo "updateSchemaVersion"
 ${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}

@@ -114,6 +114,24 @@ go
 drop table #todelete
 go
 
+select a._Accession_key into #todelete from ACC_Accession a where a.MGIType_key = 32  and a. _LogicalDB_key = 27
+go
+create index idx1 on #todelete(_Accession_key)
+go
+delete ACC_Accession from #todelete d, ACC_Accession a where d._Accession_key = a._Accession_key
+go
+drop table #todelete
+go
+
+select a._Accession_key into #todelete from ACC_Accession a where a. _LogicalDB_key = 76
+go
+create index idx1 on #todelete(_Accession_key)
+go
+delete ACC_Accession from #todelete d, ACC_Accession a where d._Accession_key = a._Accession_key
+go
+drop table #todelete
+go
+
 exec MGI_Table_Column_Cleanup
 go
 

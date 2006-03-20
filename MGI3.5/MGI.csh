@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     157
 # User Tables:  182
-# Views:        227
+# Views:        220
 #
 
 cd `dirname $0` && source ./Configuration
@@ -68,6 +68,27 @@ drop table MLD_Marker
 go
 
 drop view MLD_Marker_View
+go
+
+drop view ACC_ActualDB_Summary_View
+go
+
+drop view ACC_Reference_View
+go
+
+drop view GXD_AlleleGenotype_View
+go
+
+drop view PRB_Primer_View
+go
+
+drop view PRB_View
+go
+
+drop view VOC_AnnotType_View
+go
+
+drop view VOC_PSGenotype_AnnotType
 go
 
 exec MGI_Table_Column_Cleanup

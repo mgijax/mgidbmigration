@@ -82,6 +82,38 @@ go
 drop view SNP_Summary_View
 go
 
+/* delete obsolete SNP accession ids */
+
+drop trigger ACC_Accession_Delete
+go
+
+select a._Accession_key into #todelete from ACC_Accession a where a._LogicalDB_key = 73
+go
+create index idx1 on #todelete(_Accession_key)
+go
+delete ACC_Accession from #todelete d, ACC_Accession a where d._Accession_key = a._Accession_key
+go
+drop table #todelete
+go
+
+select a._Accession_key into #todelete from ACC_Accession a where a._LogicalDB_key = 74
+go
+create index idx1 on #todelete(_Accession_key)
+go
+delete ACC_Accession from #todelete d, ACC_Accession a where d._Accession_key = a._Accession_key
+go
+drop table #todelete
+go
+
+select a._Accession_key into #todelete from ACC_Accession a where a._LogicalDB_key = 75
+go
+create index idx1 on #todelete(_Accession_key)
+go
+delete ACC_Accession from #todelete d, ACC_Accession a where d._Accession_key = a._Accession_key
+go
+drop table #todelete
+go
+
 exec MGI_Table_Column_Cleanup
 go
 

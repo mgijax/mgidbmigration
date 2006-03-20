@@ -75,3 +75,10 @@ To improve performance, add accession ids to the cache table:
 	MRK_reloadReference (stored procedure)
 		. removed loading of records from PRB_Reference (fix)
 
+To eliminate an unnecessary table, remove MLD_Marker table (TR 7530):
+
+	Affects:  EI, Mapping load
+
+	MLD_Marker:
+		. remove
+

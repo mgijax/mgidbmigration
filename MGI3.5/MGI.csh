@@ -6,9 +6,9 @@
 # Defaults:       6
 # Procedures:   122
 # Rules:          5
-# Triggers:     158
-# User Tables:  183
-# Views:        228
+# Triggers:     157
+# User Tables:  182
+# Views:        227
 #
 
 cd `dirname $0` && source ./Configuration
@@ -62,6 +62,12 @@ drop table VOC_AnnotType_Old
 go
 
 drop table SEQ_Sequence_Old
+go
+
+drop table MLD_Marker
+go
+
+drop view MLD_Marker_View
 go
 
 exec MGI_Table_Column_Cleanup

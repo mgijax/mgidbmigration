@@ -88,7 +88,7 @@ go
 drop view VOC_AnnotType_View
 go
 
-drop view VOC_PSGenotype_AnnotType
+drop view VOC_PSGenotype_AnnotType_View
 go
 
 exec MGI_Table_Column_Cleanup

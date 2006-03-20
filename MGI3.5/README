@@ -82,3 +82,14 @@ To eliminate an unnecessary table, remove MLD_Marker table (TR 7530):
 	MLD_Marker:
 		. remove
 
+Dropped obsolete views:
+
+	. ACC_ActualDB_Summary_View
+	. ACC_Reference_View
+	. GXD_AlleleGenotype_View
+	. MLD_Marker_View
+	. PRB_Primer_View
+	. PRB_View
+	. VOC_AnnotType_View
+	. VOC_PSGenotype_AnnotType_View
+

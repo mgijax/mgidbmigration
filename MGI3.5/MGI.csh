@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     157
 # User Tables:  182
-# Views:        220
+# Views:        219
 #
 
 cd `dirname $0` && source ./Configuration
@@ -86,6 +86,9 @@ drop view PRB_View
 go
 
 drop view VOC_AnnotType_View
+go
+
+drop view VOC_GOMarker_AnnotType_View
 go
 
 drop view VOC_PSGenotype_AnnotType_View

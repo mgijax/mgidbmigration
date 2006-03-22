@@ -99,3 +99,21 @@ Dropped obsolete views:
 	. VOC_PSGenotype_AnnotType_View
 	. WKS_Rosetta_View
 
+Dropped obsolete procedures:
+
+	. ACC_delete_byObject
+	. ACC_fetch_byLogical
+	. ACC_insert_byOrganism
+	. ACC_resetMax
+	. ALL_processAlleleCombAll
+	. ALL_processAlleleCombByAllele
+	. ALL_processAlleleCombByMarker
+	. ALL_processAlleleCombination
+	. BIB_byJnum
+	. HMD_getOxfordGrid
+	. MGI_insertNote
+	. MRK_addChromosome
+	. SEQ_deleteAllDummy
+	. SEQ_deriveRepAll
+	. VOC_setAccIDsPrivateFlag
+

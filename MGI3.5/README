@@ -92,6 +92,7 @@ Dropped obsolete views:
 	. MGI_VocAssociation_View
 	. MLD_Hit_View
 	. MLD_Marker_View
+	. NOM_Acc_View
 	. PRB_Primer_View
 	. PRB_View
 	. VOC_AnnotType_View

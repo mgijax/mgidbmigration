@@ -87,9 +87,15 @@ Dropped obsolete views:
 	. ACC_ActualDB_Summary_View
 	. ACC_Reference_View
 	. GXD_AlleleGenotype_View
+	. MGI_AttributeHistory_View
+	. MGI_Set_CloneSet_View
+	. MGI_VocAssociation_View
+	. MLD_Hit_View
 	. MLD_Marker_View
 	. PRB_Primer_View
 	. PRB_View
 	. VOC_AnnotType_View
+	. VOC_GOMarker_AnnotType_View
 	. VOC_PSGenotype_AnnotType_View
+	. WKS_Rosetta_View
 

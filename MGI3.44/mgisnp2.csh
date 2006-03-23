@@ -41,7 +41,7 @@ ${new2snpdbschema}/all_create.csh | tee -a ${LOG}
 ${new2snpdbperms}/all_grant.csh | tee -a ${LOG}
 
 foreach i (MGI_Columns)
-${MGIDBUTILSBINDIR}/bcpout.csh ${new2mgddbschema} ${i} | tee -a ${LOG}
+${MGIDBUTILSBINDIR}/bcpout.csh ${newmgddbschema} ${i} | tee -a ${LOG}
 ${new2snpdbschema}/index/${i}_drop.object | tee -a ${LOG}
 ${MGIDBUTILSBINDIR}/bcpin.csh ${new2snpdbschema} ${i} | tee -a ${LOG}
 ${new2snpdbschema}/index/${i}_create.object | tee -a ${LOG}

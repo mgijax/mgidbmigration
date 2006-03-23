@@ -8,7 +8,7 @@
 # Rules:          5
 # Triggers:     157
 # User Tables:  182
-# Views:        213
+# Views:        212
 #
 
 cd `dirname $0` && source ./Configuration
@@ -89,6 +89,9 @@ drop view MLD_Hit_View
 go
 
 drop view MLD_Marker_View
+go
+
+drop view MRK_History_Ref_View
 go
 
 drop view NOM_Acc_View

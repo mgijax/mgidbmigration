@@ -25,5 +25,5 @@ setenv CREATEDBY	1000
 setenv PUBLIC_VERSION	"MGI 3.44"
 setenv MGD_PRODUCTNAME  "MGD"
 setenv SNP_PRODUCTNAME	"SNP"
-setenv SNP_DATAVERSION	"build 125"
+setenv SNP_DATAVERSION	"not yet loaded"
 

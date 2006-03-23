@@ -21,6 +21,9 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${RADAR_DBNAME}
 go
 
+alter table DP_HomoloGene modify symbol varchar(50) not null
+go
+
 drop table MGI_SNP_Accession
 go
 

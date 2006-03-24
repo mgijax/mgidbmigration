@@ -1,6 +1,7 @@
 #!/bin/csh -fx
 
 #
+# clean up old-style "_fkey" index names
 #
 
 cd `dirname $0` && source ./Configuration

@@ -30,6 +30,7 @@ date | tee -a  ${LOG}
 
 ########################################
 
+./mgiindex.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
 

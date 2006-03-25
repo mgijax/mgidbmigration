@@ -114,7 +114,7 @@ go
 drop table #todelete
 go
 
-select a._Accession_key into #todelete from ACC_Accession a where a.MGIType_key = 32  and a. _LogicalDB_key = 27
+select a._Accession_key into #todelete from ACC_Accession a where a._MGIType_key = 32  and a. _LogicalDB_key = 27
 go
 create index idx1 on #todelete(_Accession_key)
 go

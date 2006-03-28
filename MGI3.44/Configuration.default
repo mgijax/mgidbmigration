@@ -15,8 +15,8 @@ setenv newsnpdbschema ${newsnpdb}/snpdbschema
 setenv newsnpdbperms ${newsnpdb}/snpdbperms
 
 setenv new2snpdb /usr/local/mgi/live/dbutils/snp_migration
-setenv new2snpdbschema ${newsnpdb}/snpdbschema
-setenv new2snpdbperms ${newsnpdb}/snpdbperms
+setenv new2snpdbschema ${new2snpdb}/snpdbschema
+setenv new2snpdbperms ${new2snpdb}/snpdbperms
 
 setenv MGD_SCHEMA_TAG       mgddbschema-3-4-4
 setenv RADAR_SCHEMA_TAG     radardbschema-3-4-4

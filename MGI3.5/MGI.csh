@@ -33,6 +33,7 @@ date | tee -a  ${LOG}
 ./mgiindex.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
+./mgigxd.csh | tee -a ${LOG}
 
 # 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}
@@ -54,6 +55,12 @@ update ACC_ActualDB
 set name = "UniProt",
 url = "http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@"
 where _ActualDB_key in (19, 45)
+go
+
+drop table GXD_Antibody_Old
+go
+
+drop table GXD_Antigen_Old
 go
 
 drop table VOC_Annot_Old

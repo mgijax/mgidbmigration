@@ -34,6 +34,7 @@ date | tee -a  ${LOG}
 ./mgigo.csh | tee -a ${LOG}
 ./mgiref.csh | tee -a ${LOG}
 ./mgigxd.csh | tee -a ${LOG}
+./mgihmd.csh | tee -a ${LOG}
 
 # 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}

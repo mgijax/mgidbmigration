@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
+#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
 
 echo "updateSchemaVersion"
 ${MGIDBUTILSBINDIR}/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
@@ -130,6 +130,11 @@ go
 delete ACC_Accession from #todelete d, ACC_Accession a where d._Accession_key = a._Accession_key
 go
 drop table #todelete
+go
+
+/* remove SNP Strains set */
+
+delete from MGI_Set where _Set_key = 1023
 go
 
 exec MGI_Table_Column_Cleanup

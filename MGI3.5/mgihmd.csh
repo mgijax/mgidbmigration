@@ -13,7 +13,6 @@ touch $LOG
 date | tee -a ${LOG}
 
 ${newmgddbschema}/table/MRK_Homology_Cache_create.object | tee -a ${LOG}
-${newmgddbschema}/default/MRK_Homology_Cache_bind.object | tee -a ${LOG}
 ${newmgddbschema}/key/MRK_Homology_Cache_create.object | tee -a ${LOG}
 ${newmgddbschema}/index/MRK_Homology_Cache_create.object | tee -a ${LOG}
 

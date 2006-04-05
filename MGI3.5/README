@@ -75,6 +75,13 @@ To improve performance, add accession ids to the cache table:
 	MRK_reloadReference (stored procedure)
 		. removed loading of records from PRB_Reference (fix)
 
+To improve performance, add MRK_Homology_Cache table:
+
+	Affects:  EI, WI
+
+	MRK_Homology_Cache (cache table):
+		. add
+
 To eliminate an unnecessary table, remove MLD_Marker table (TR 7530):
 
 	Affects:  EI, Mapping load

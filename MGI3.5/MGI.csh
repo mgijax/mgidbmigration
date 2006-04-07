@@ -35,6 +35,7 @@ date | tee -a  ${LOG}
 ./mgiref.csh | tee -a ${LOG}
 ./mgigxd.csh | tee -a ${LOG}
 ./mgihmd.csh | tee -a ${LOG}
+./updateSuperscripts.py | tee -a ${LOG}
 
 # 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}

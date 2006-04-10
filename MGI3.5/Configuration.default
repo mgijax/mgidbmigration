@@ -22,7 +22,12 @@ setenv newrdrdb /usr/local/mgi/live/dbutils/radar
 setenv newrdrdbschema ${newrdrdb}/radardbschema
 setenv newrdrdbperms ${newrdrdb}/radardbperms
 
+setenv newsnpdb /usr/local/mgi/live/dbutils/snp
+setenv newsnpdbschema ${newsnpdb}/snpdbschema
+setenv newsnpdbperms ${newsnpdb}/snpdbperms
+
 setenv SCHEMA_TAG       mgddbschema-3-5-0
+setenv SNP_SCHEMA_TAG   snpdbschema-3-5-0
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION	"MGI 3.5"
 

@@ -89,6 +89,18 @@ To eliminate an unnecessary table, remove MLD_Marker table (TR 7530):
 	MLD_Marker:
 		. remove
 
+Modify SNP view:
+
+	Affects:  WI
+	
+	SNP_Summary_View:
+		for a refsnp: 
+		    subType = SNP_ConsensusSnp._VarClass_key in this format "\Term(#####)"
+		    description = short_description = SNP_ConsensusSnp.alleleSummary
+		for a subSNP:
+		    subType = SNP_SubSnp._VarClass_key in this format "\Term(#####)"
+		    description = short_description: rs ID of the subSNP in this format "submitted SNP for ####"
+
 Dropped obsolete views:
 
 	. ACC_ActualDB_Summary_View

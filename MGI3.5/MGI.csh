@@ -20,12 +20,12 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra2/sybase/mgd344.backup
-load_db.csh ${SNP_DBSERVER} ${SNP_DBNAME} /extra1/sybase/snp_load.backup
+#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra2/sybase/mgd344.backup
+#load_db.csh ${SNP_DBSERVER} ${SNP_DBNAME} /extra1/sybase/snp_load.backup
 
 # update schema tag
 ${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
-${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
 ${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
 
 date | tee -a  ${LOG}

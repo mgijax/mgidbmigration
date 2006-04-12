@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra2/sybase/mgd344.backup
+load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra2/sybase/mgd344.backup
 #load_db.csh ${SNP_DBSERVER} ${SNP_DBNAME} /extra1/sybase/snp_load.backup
 
 # update schema tag

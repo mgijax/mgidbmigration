@@ -14,7 +14,7 @@ date | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${DBNAME}
+use ${MGD_DBNAME}
 go
 
 sp_rename GXD_Antigen, GXD_Antigen_Old
@@ -36,7 +36,7 @@ ${newmgddbschema}/key/GXD_Antibody_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${DBNAME}
+use ${MGD_DBNAME}
 go
 
 insert into GXD_Antigen

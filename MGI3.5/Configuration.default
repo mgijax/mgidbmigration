@@ -31,5 +31,6 @@ setenv SNP_SCHEMA_TAG   snpdbschema-3-5-0
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION	"MGI 3.5"
 
+source ${newsnpdbschema}/Configuration
 source ${newmgddbschema}/Configuration
 

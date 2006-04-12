@@ -17,7 +17,7 @@ date >> ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${DBNAME}
+use ${MGD_DBNAME}
 go
 
 quit

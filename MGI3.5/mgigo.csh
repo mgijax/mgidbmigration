@@ -54,7 +54,7 @@ ${newmgddbschema}/key/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${DBNAME}
+use ${MGD_DBNAME}
 go
 
 alter table VOC_Term modify term null

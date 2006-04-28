@@ -28,7 +28,8 @@ quit
 EOSQL
 
 # load coordinates
-${UNISTSLOAD} | tee -a ${LOG}
+# must be done *after* the java libraries are re-built
+#${UNISTSLOAD} | tee -a ${LOG}
 
 date >> ${LOG}
 

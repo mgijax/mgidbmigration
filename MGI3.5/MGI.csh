@@ -63,6 +63,13 @@ url = "http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@"
 where _ActualDB_key in (19, 45)
 go
 
+/* set RATMAP ids private */
+
+update ACC_Accession
+set private = 1
+where _LogicalDB_key = 4
+go
+
 drop table GXD_Antibody_Old
 go
 
@@ -186,6 +193,8 @@ ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 ${OMIMCACHELOAD} | tee -a ${LOG}
+
+# run eg load after java libraries are rebuilt
 
 date | tee -a  ${LOG}
 

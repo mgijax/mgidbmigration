@@ -21,8 +21,6 @@ date | tee -a  ${LOG}
  
 # load a backup
 load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
-#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra2/sybase/mgd344.backup
-#load_db.csh ${SNP_DBSERVER} ${SNP_DBNAME} /extra1/sybase/snp_load.backup
 
 # update schema tag
 ${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
@@ -57,13 +55,15 @@ cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+/* change URL for uniprot */
+
 update ACC_ActualDB
 set name = "UniProt",
 url = "http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@"
 where _ActualDB_key in (19, 45)
 go
 
-/* set RATMAP ids private */
+/* set RATMAP ids to private */
 
 update ACC_Accession
 set private = 1

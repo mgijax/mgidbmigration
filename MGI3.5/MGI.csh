@@ -36,7 +36,7 @@ date | tee -a  ${LOG}
 ./mgiref.csh | tee -a ${LOG}
 ./mgigxd.csh | tee -a ${LOG}
 ./mgihmd.csh | tee -a ${LOG}
-#./mgisnp.csh | tee -a ${LOG}
+./mgisnp.csh | tee -a ${LOG}
 ./updateSuperscripts.py | tee -a ${LOG}
 
 # 1.5 hours
@@ -193,8 +193,6 @@ ${newmgddbperms}/all_revoke.csh | tee -a ${LOG}
 ${newmgddbperms}/all_grant.csh | tee -a ${LOG}
 
 ${OMIMCACHELOAD} | tee -a ${LOG}
-
-# run eg load after java libraries are rebuilt
 
 date | tee -a  ${LOG}
 

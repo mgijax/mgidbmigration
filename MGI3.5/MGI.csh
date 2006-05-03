@@ -4,11 +4,11 @@
 # Migration for 3.5 (TR 7062)
 #
 # Defaults:       6
-# Procedures:   107
+# Procedures:   122
 # Rules:          5
-# Triggers:     157
-# User Tables:  183
-# Views:        212
+# Triggers:     159
+# User Tables:  192
+# Views:        230
 #
 
 cd `dirname $0` && source ./Configuration
@@ -19,59 +19,33 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
+${MGIDBUTILSDIR}/bin/turnonbulkcopy.csh ${DBSERVER} ${DBNAME} | tee -a ${LOG}
+
 # load a backup
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+load_db.csh ${DBSERVER} ${DBNAME} /shire/sybase/mgd.backup
 
 # update schema tag
-${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
-${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
-#${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${DBSERVER} ${DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${DBSERVER} ${DBNAME} ${SCHEMA_TAG} | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 
 ########################################
 
-./mgiindex.csh | tee -a ${LOG}
+./mgi341.csh | tee -a ${LOG}
+./mgiacc.csh | tee -a ${LOG}
 ./mgigo.csh | tee -a ${LOG}
-./mgiref.csh | tee -a ${LOG}
-./mgigxd.csh | tee -a ${LOG}
-./mgihmd.csh | tee -a ${LOG}
-./mgisnp.csh | tee -a ${LOG}
-./updateSuperscripts.py | tee -a ${LOG}
+./mgistrain.csh | tee -a ${LOG}
 
-# splitting sequence table
+# 1.5 hours
 ./mgiseqraw.csh | tee -a ${LOG}
 
-# alter coordinate feature table
-./mgiunists.csh | tee -a ${LOG}
-
-# rebuilding sequence/marker cache
+# 
 ./mgiseqmarker.csh | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
-go
-
-/* change URL for uniprot */
-
-update ACC_ActualDB
-set name = "UniProt",
-url = "http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@"
-where _ActualDB_key in (19, 45)
-go
-
-/* set RATMAP ids to private */
-
-update ACC_Accession
-set private = 1
-where _LogicalDB_key = 4
-go
-
-drop table GXD_Antibody_Old
-go
-
-drop table GXD_Antigen_Old
+use ${DBNAME}
 go
 
 drop table VOC_Annot_Old
@@ -83,100 +57,7 @@ go
 drop table SEQ_Sequence_Old
 go
 
-drop table MLD_Marker
-go
-
-drop view ACC_ActualDB_Summary_View
-go
-
-drop view ACC_Reference_View
-go
-
-drop view GXD_AlleleGenotype_View
-go
-
-drop view MGI_AttributeHistory_View
-go
-
-drop view MGI_Set_CloneSet_View
-go
-
-drop view MGI_VocAssociation_View
-go
-
-drop view MLD_Hit_View
-go
-
-drop view MLD_Marker_View
-go
-
-drop view MRK_History_Ref_View
-go
-
-drop view NOM_Acc_View
-go
-
-drop view PRB_Primer_View
-go
-
-drop view PRB_View
-go
-
-drop view VOC_AnnotType_View
-go
-
-drop view VOC_GOMarker_AnnotType_View
-go
-
-drop view VOC_PSGenotype_AnnotType_View
-go
-
-drop view WKS_Rosetta_View
-go
-
-drop procedure ACC_delete_byObject
-go
-
-drop procedure ACC_fetch_byLogical
-go
-
-drop procedure ACC_insert_byOrganism
-go
-
-drop procedure ACC_resetMax
-go
-
-drop procedure ALL_processAlleleCombAll
-go
-
-drop procedure ALL_processAlleleCombByAllele
-go
-
-drop procedure ALL_processAlleleCombByMarker
-go
-
-drop procedure ALL_processAlleleCombination
-go
-
-drop procedure BIB_byJnum
-go
-
-drop procedure HMD_getOxfordGrid
-go
-
-drop procedure MGI_insertNote
-go
-
-drop procedure MRK_addChromosome
-go
-
-drop procedure SEQ_deleteAllDummy
-go
-
-drop procedure SEQ_deriveRepAll
-go
-
-drop procedure VOC_setAccIDsPrivateFlag
+drop table PRB_Strain_Old
 go
 
 exec MGI_Table_Column_Cleanup

@@ -17,7 +17,7 @@ date >> ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
+use ${DBNAME}
 go
 
 sp_rename VOC_AnnotType, VOC_AnnotType_Old
@@ -54,7 +54,7 @@ ${newmgddbschema}/key/MRK_OMIM_Cache_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
+use ${DBNAME}
 go
 
 alter table VOC_Term modify term null
@@ -143,7 +143,7 @@ insert into MGI_Synonym values (@synKey, @termKey, 13, @synTypeKey, 73993, '', $
 go
 
 /* generic qualifier vocabulary for */
-/* MP (1002), InterPro (1003), Strain/Super (1004), OMIM/Marker (1005), OMIM/Human (1006), PIRSF (1007) */
+/* PhenoSlim (1001), MP (1002), InterPro (1003), Strain/Super (1004), OMIM/Marker (1005), OMIM/Human (1006), PIRSF (1007) */
 
 declare @vocabKey integer
 select @vocabKey = max(_Vocab_key) + 1 from VOC_Vocab
@@ -226,7 +226,6 @@ EOSQL
 #
 
 ${newmgddbschema}/index/VOC_Annot_create.object | tee -a ${LOG}
-${newmgddbperms}/public/table/VOC_Annot_grant.object | tee -a ${LOG}
 
 date >> ${LOG}
 

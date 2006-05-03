@@ -23,7 +23,7 @@ ${newmgddbperms}/public/table/SEQ_Sequence_Raw_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
+use ${DBNAME}
 go
 
 insert into SEQ_Sequence_Raw 
@@ -51,7 +51,7 @@ ${newmgddbperms}/public/table/SEQ_Sequence_grant.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
+use ${DBNAME}
 go
 
 /* mouse */

@@ -34,7 +34,7 @@ To support GO qualifiers for Annotations (TR 5188):
 		. added "qualifier" varchar
 		. removed "isNot" bit
 
-To improve performance, split SEQ_Sequence into 2 tables (TR 7094):
+To improve performance, we split SEQ_Sequence into 2 tables (TR 7094):
 
 	Affects:  EI, WI, Sequence loader
 
@@ -48,11 +48,6 @@ To improve performance, split SEQ_Sequence into 2 tables (TR 7094):
                 . all "raw" fields moved to SEQ_Sequence_Raw
 
         SEQ_Sequence_Raw:
-		A record in this table represents the Sequence Provider
-		(for example, GenBank) values of the Sequence attributes 
-		that MGI attempts to resolve to MGI vocabulary values.
-		For example, strain, tissue, gender, etc.
-
                 . new table
 
 To improve performance, add the primary accession id to the cache table:
@@ -62,79 +57,11 @@ To improve performance, add the primary accession id to the cache table:
         SEQ_Marker_Cache:
                 . added primary accession id (accID)
 
-To improve performance, add accession ids to the cache table:
+Increase size of ACC_Accession.prefixPart (TR 7182):
 
-	Affects:  nothing, backward-compatible
+	Affects:  nothing; backward compatible
+	SNP load can be modified, however, to set the prefixPart
 
-	MRK_Reference (cache table):
-		. added mgi ID (MGI:####, varchar)
-		. added jnum ID (J:####, varchar)
-		. added jnum (integer)
-		. added pub med ID (varchar)
-
-	MRK_reloadReference (stored procedure)
-		. removed loading of records from PRB_Reference (fix)
-
-To improve performance, add MRK_Homology_Cache table:
-
-	Affects:  EI, WI
-
-	MRK_Homology_Cache (cache table):
-		. add
-
-To eliminate an unnecessary table, remove MLD_Marker table (TR 7530):
-
-	Affects:  EI, Mapping load
-
-	MLD_Marker:
-		. remove
-
-Modify SNP view:
-
-	Affects:  WI
-	
-	SNP_Summary_View:
-		for a refsnp: 
-		    subType = SNP_ConsensusSnp._VarClass_key in this format "\Term(#####)"
-		    description = short_description = SNP_ConsensusSnp.alleleSummary
-		for a subSNP:
-		    subType = SNP_SubSnp._VarClass_key in this format "\Term(#####)"
-		    description = short_description: rs ID of the subSNP in this format "submitted SNP for ####"
-
-Dropped obsolete views:
-
-	. ACC_ActualDB_Summary_View
-	. ACC_Reference_View
-	. GXD_AlleleGenotype_View
-	. MGI_AttributeHistory_View
-	. MGI_Set_CloneSet_View
-	. MGI_VocAssociation_View
-	. MLD_Hit_View
-	. MLD_Marker_View
-	. MRK_History_Ref_View
-	. NOM_Acc_View
-	. PRB_Primer_View
-	. PRB_View
-	. VOC_AnnotType_View
-	. VOC_GOMarker_AnnotType_View
-	. VOC_PSGenotype_AnnotType_View
-	. WKS_Rosetta_View
-
-Dropped obsolete procedures:
-
-	. ACC_delete_byObject
-	. ACC_fetch_byLogical
-	. ACC_insert_byOrganism
-	. ACC_resetMax
-	. ALL_processAlleleCombAll
-	. ALL_processAlleleCombByAllele
-	. ALL_processAlleleCombByMarker
-	. ALL_processAlleleCombination
-	. BIB_byJnum
-	. HMD_getOxfordGrid
-	. MGI_insertNote
-	. MRK_addChromosome
-	. SEQ_deleteAllDummy
-	. SEQ_deriveRepAll
-	. VOC_setAccIDsPrivateFlag
+	ACC_Accession, ACC_AccessionMax:
+		. increase size of prefixPart to 30
 

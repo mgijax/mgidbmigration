@@ -15,23 +15,8 @@ touch ${LOG}
  
 date >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-quit
-
-EOSQL
-
-declare @noteTypeKey integer
-select @noteTypeKey = max(_MGIType_key + 1) from MGI_NoteType
-insert into MGI_NoteType values(@noteTypeKey, 2, 'Multiple Location', 0, ${CREATEDBY}, ${CREATEDBY}, getdate(), getdate())
-go
-
-quit
-
-EOSQL
+${newmgddbschema}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
+${newmgddbschema}/table/MRK_Location_Cache_create.object | tee -a ${LOG}
 
 date >> ${LOG}
 

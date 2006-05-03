@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
+load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 # update schema tag
 ${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
@@ -39,15 +39,16 @@ date | tee -a  ${LOG}
 ./mgisnp.csh | tee -a ${LOG}
 ./updateSuperscripts.py | tee -a ${LOG}
 
-# 1.5 hours
+# splitting sequence table
 ./mgiseqraw.csh | tee -a ${LOG}
 
+# alter coordinate feature table
 ./mgiunists.csh | tee -a ${LOG}
 
-# SEQ_Marker_Cache 
+# rebuilding sequence/marker cache
 ./mgiseqmarker.csh | tee -a ${LOG}
 
-# cache tables
+# rebuilding marker location cache
 ${LOCCACHELOAD} | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}

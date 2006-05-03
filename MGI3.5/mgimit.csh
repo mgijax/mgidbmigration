@@ -17,6 +17,7 @@ date >> ${LOG}
 
 ${newmgddbschema}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
 ${newmgddbschema}/table/MRK_Location_Cache_create.object | tee -a ${LOG}
+${LOCCACHELOAD} | tee -a ${LOG}
 
 date >> ${LOG}
 

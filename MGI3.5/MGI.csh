@@ -48,9 +48,6 @@ date | tee -a  ${LOG}
 # rebuilding sequence/marker cache
 ./mgiseqmarker.csh | tee -a ${LOG}
 
-# rebuilding marker location cache
-${LOCCACHELOAD} | tee -a ${LOG}
-
 cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}

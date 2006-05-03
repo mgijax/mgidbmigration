@@ -18,11 +18,10 @@ ${DATALOADDIR}/swissload/swissload.csh
 date
 echo 'Load Sequence Cache tables'
 ${MGIDBUTILSDIR}/seqcacheload/seqmarker.csh
-${MGIDBUTILSDIR}/seqcacheload/seqprobe.csh
-${MGIDBUTILSDIR}/seqcacheload/seqdescription.csh
 
 date
 echo 'Load Marker Cache tables'
 ${MGIDBUTILSDIR}/mrkcacheload/mrkref.csh
+${MGIDBUTILSDIR}/mrkcacheload/mrklocation.csh
 date
 

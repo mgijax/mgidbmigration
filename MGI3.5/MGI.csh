@@ -57,7 +57,7 @@ go
 
 update ACC_ActualDB
 set name = "UniProt",
-url = "http://www.pir.uniprot.org/cgi-bin/upEntry?id=@@@@"
+url = "http://www.uniprot.org/entry/@@@@"
 where _ActualDB_key in (19, 45)
 go
 

@@ -22,7 +22,7 @@ setenv newrdrdb /usr/local/mgi/live/dbutils/radar
 setenv newrdrdbschema ${newrdrdb}/radardbschema
 setenv newrdrdbperms ${newrdrdb}/radardbperms
 
-setenv newsnpdb /usr/local/mgi/live/dbutils/snp
+setenv newsnpdb /usr/local/mgi/live/dbutils/snp_migration
 setenv newsnpdbschema ${newsnpdb}/snpdbschema
 setenv newsnpdbperms ${newsnpdb}/snpdbperms
 

@@ -25,7 +25,8 @@ load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LO
 # update schema tag
 ${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 ${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
-#${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
+${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

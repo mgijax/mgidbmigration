@@ -1,0 +1,8 @@
+#!/bin/csh -f
+
+if ( ${?MGICONFIG} == 0 ) then
+	setenv MGICONFIG /home/lec/build36/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+

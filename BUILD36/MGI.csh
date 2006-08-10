@@ -46,7 +46,7 @@ go
 EOSQL
 
 # snp stuff
-./snp.csh 
+#./snp.csh 
 
 date | tee -a  ${LOG}
 

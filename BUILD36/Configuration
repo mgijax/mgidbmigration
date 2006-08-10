@@ -1,8 +1,13 @@
 #!/bin/csh -f
 
 if ( ${?MGICONFIG} == 0 ) then
-	setenv MGICONFIG /home/lec/build36/mgiconfig
+	setenv MGICONFIG /home/sc/snp2/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
+
+#setenv oldsnpdb /usr/local/mgi/live/dbutils/snp_migration
+setenv oldsnpdb /home/sc/snp2/dbutils/snp_migration
+setenv oldsnpdbschema ${oldsnpdb}/snpdbschema
+
 

@@ -5,9 +5,3 @@ if ( ${?MGICONFIG} == 0 ) then
 endif
 
 source ${MGICONFIG}/master.config.csh
-
-#setenv oldsnpdb /usr/local/mgi/live/dbutils/snp_migration
-setenv oldsnpdb /home/sc/snp2/dbutils/snp_migration
-setenv oldsnpdbschema ${oldsnpdb}/snpdbschema
-
-

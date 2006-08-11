@@ -10,9 +10,9 @@ date | tee -a  ${LOG}
 
 
 #
-# drop old SNP_ConsensusSnp_Marker table
+# drop SNP_ConsensusSnp_Marker table
 # 
-${oldsnpdbschema}/table/SNP_ConsensusSnp_Marker_drop.object | tee -a  ${LOG}
+${SNPBE_DBSCHEMADIR}/table/SNP_ConsensusSnp_Marker_drop.object | tee -a  ${LOG}
 
 #
 # create new SNP_ConsensusSnp_Marker table, key, index

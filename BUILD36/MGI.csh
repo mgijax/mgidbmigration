@@ -52,7 +52,6 @@ EOSQL
 
 ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/default/MRK_Location_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Location_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
@@ -61,7 +60,6 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/table/MRK_Location_Cache_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/MRK_Location_Cache_grant.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/public/procedure/MRK_reloadLocation_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/procedure/MRK_reloadLocation_grant.object | tee -a ${LOG}
 ${DBUTILS}/mrkcacheload/mrklocation.csh | tee -a ${LOG}
 

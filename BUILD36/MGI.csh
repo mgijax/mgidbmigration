@@ -43,6 +43,11 @@ select @memberKey = max(_SetMember_key) + 1 from MGI_SetMember
 insert into MGI_SetMember values (@memberKey, 1009, 82, 15, 1001, 1001, getdate(), getdate())
 go
 
+/* delete coordinates for NCBI Build 34 */
+
+delete from MAP_Coordinate where version = 'NCBI Build 34'
+go
+
 EOSQL
 
 # snp stuff

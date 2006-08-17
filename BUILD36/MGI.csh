@@ -14,7 +14,7 @@ date | tee -a  ${LOG}
  
 # load a backup
 #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
-#load_db.csh ${RADAR_DBSERVER} ${RADARDB_DBNAME} /shire/sybase/radar.backup
+#load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /shire/sybase/radar.backup
 
 ########################################
 

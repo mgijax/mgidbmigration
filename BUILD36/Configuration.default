@@ -5,3 +5,9 @@ if ( ${?MGICONFIG} == 0 ) then
 endif
 
 source ${MGICONFIG}/master.config.csh
+
+setenv BE_SERVER_PATH  /net/mtdoom-g/vol/nardol/usrlocalmgi/live
+setenv BE_SERVER_SCHEMADIR      ${BE_SERVER_PATH}/dbutils/snp_be/snpdbschema
+
+setenv BE_SERVER_PERMSDIR ${BE_SERVER_PATH}/dbutils/snp_be/snpdbperms
+

@@ -57,7 +57,7 @@ where g._Marker_key = n._Object_key
 and n.note like "%<rg>%"
 go
 
-/* remove the notes? */
+/* don't remove the notes because there are other things in them */
 
 quit
 

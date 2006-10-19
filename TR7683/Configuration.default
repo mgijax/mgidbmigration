@@ -9,7 +9,6 @@ endif
 source ${MGICONFIG}/master.config.csh
 
 setenv MIGRATIONDIR	${DBUTILS}/mgidbmigration/MGI3.5
-setenv MGICACHELOAD	${DBUTILS}/mgicacheload
 
 setenv CREATEDBY	1000
 setenv PUBLIC_VERSION	"MGI 3.52"

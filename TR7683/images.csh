@@ -15,7 +15,7 @@ touch ${LOG}
  
 date >> ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -33,7 +33,7 @@ ${MGD_DBSCHEMADIR}/key/IMG_Image_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -66,15 +66,15 @@ EOSQL
 
 ${MGD_DBSCHEMADIR}/index/IMG_Image_create.object | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-drop table IMG_Image_Old
-go
-
-EOSQL
+#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+#
+#use ${MGD_DBNAME}
+#go
+#
+#drop table IMG_Image_Old
+#go
+#
+#EOSQL
 
 date >> ${LOG}
 

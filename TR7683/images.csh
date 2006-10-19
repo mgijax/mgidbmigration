@@ -30,8 +30,6 @@ EOSQL
 ${MGD_DBSCHEMADIR}/table/IMG_Image_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/default/IMG_Image_bind.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/IMG_Image_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 

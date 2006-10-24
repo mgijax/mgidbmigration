@@ -7,8 +7,8 @@
 # Procedures:   108
 # Rules:          5
 # Triggers:     158
-# User Tables:  185
-# Views:        212
+# User Tables:  186
+# Views:        213
 #
 
 cd `dirname $0` && source ./Configuration
@@ -27,6 +27,12 @@ ${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBL
 ${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
 
 date | tee -a  ${LOG}
+
+########################################
+
+./go.csh | tee -a ${LOG}
+./images.csh | tee -a ${LOG}
+./cache.csh | tee -a ${LOG}
 
 ########################################
 

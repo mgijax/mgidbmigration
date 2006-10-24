@@ -1,3 +1,8 @@
+TAG: mgidbmigration-3-5-1-5
+DATE: 10/24/2006
+STAFF: lec
+1) TR7533/7920; GO Tracking
+
 TAG: mgidbmigration-3-5-1-4
 DATE: 08/29/2006
 STAFF: sc
@@ -116,28 +121,24 @@ TAG: mgidbmigration-3-4-1-4
 TAG: mgidbmigration-3-4-1-3
 DATE: 11/30/2005
 STAFF: lec
-RELEASE: 3.41 and 3.5
 CHANGES:
 1) MGI3.41 and MGI3.5
 
 TAG: mgidbmigration-3-4-1-2
 DATE: 11/22/2005
 STAFF: lec
-RELEASE: 3.41 and 3.5
 CHANGES:
 1) MGI3.41 and MGI3.5
 
 TAG: mgidbmigration-3-4-1-1
 DATE: 11/08/2005
 STAFF: lec
-RELEASE: 3.41
 CHANGES:
 1) MGI3.41
 
 TAG: mgidbmigration-3-4-0-10
 DATE: 10/27/2005
 STAFF: lec
-RELEASE: 3.4 post-beta
 CHANGES:
 1) SNP/mginote.csh - changed curator note label
 
@@ -145,7 +146,6 @@ TAG: mgidbmigration-3-4-0-9
 TAG: mgidbmigration-3-4-0-8
 DATE: 10/20/2005
 STAFF: sc
-RELEASE: 3.4 alpha
 CHANGES:
 1) Configuration - removed PIRSFLOAD
 2) SNP/MGI.csh - added mgddbschema/reconfig.csh back in at the end; really
@@ -156,7 +156,6 @@ TAG: mgidbmigration-3-4-0-7
 TAG: mgidbmigration-3-4-0-6
 DATE: 10/18/2005
 STAFF: sc
-RELEASE: 3.4 alpha
 CHANGES:
 1) reconfig.csh - added logging, dropping and creating of keys and 
    SEQ_createDummy SP'
@@ -164,7 +163,6 @@ CHANGES:
 TAG: mgidbmigration-3-4-0-5
 DATE: 10/18/2005
 STAFF: sc
-RELEASE: 3.4 alpha
 CHANGES:
 1) added reconfig.csh - to drop recreate keys
 2) Configuration - removed dev paths
@@ -172,13 +170,11 @@ CHANGES:
 TAG: mgidbmigration-3-4-0-4
 DATE: 10/13/2005
 STAFF: sc
-RELEASE: 3.4 alpha
 CHANGES:
 
 TAG: mgidbmigration-3-4-0-3
 DATE: 10/06/2005
 STAFF: sc
-RELEASE: A
 CHANGES:
 1) MGI 3.4
 
@@ -186,7 +182,6 @@ TAG: mgidbmigration-3-4-0-2
 TAG: mgidbmigration-3-4-0-1
 DATE: 09/29/2005
 STAFF: sc
-RELEASE: A
 CHANGES:
 1) MGI 3.4
 
@@ -194,28 +189,24 @@ TAG: mgidbmigration-3-3-0-7
 TAG: mgidbmigration-3-3-0-6
 DATE: 09/12/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.3
 
 TAG: mgidbmigration-3-3-0-5
 DATE: 09/06/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.3
 
 TAG: mgidbmigration-3-3-0-4
 DATE: 09/01/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.3
 
 TAG: mgidbmigration-3-3-0-3
 DATE: 08/23/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.3
 
@@ -223,42 +214,36 @@ TAG: mgidbmigration-3-3-0-1
 TAG: mgidbmigration-3-2-2-2
 DATE: 08/09/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) Build 34
 
 TAG: mgidbmigration-3-2-2-1
 DATE: 06/28/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.22
 
 TAG: mgidbmigration-3-2-0-23
 DATE: 05/04/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-22
 DATE: 04/26/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-21
 DATE: 04/22/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-20
 DATE: 04/14/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 2) OMIM
@@ -266,7 +251,6 @@ CHANGES:
 TAG: mgidbmigration-3-2-0-19
 DATE: 04/08/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 2) remove MGI_Fantom2 tables
@@ -276,14 +260,12 @@ TAG: mgidbmigration-3-2-0-17
 TAG: mgidbmigration-3-2-0-16
 DATE: 04/06/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-15
 DATE: 04/05/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) 3.12
 
@@ -291,14 +273,12 @@ TAG: mgidbmigration-3-2-0-14
 TAG: mgidbmigration-3-2-0-13
 DATE: 04/04/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-12
 DATE: 04/01/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
@@ -306,14 +286,12 @@ TAG: mgidbmigration-3-2-0-11
 TAG: mgidbmigration-3-2-0-10
 DATE: 03/31/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-9
 DATE: 03/28/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
@@ -321,14 +299,12 @@ TAG: mgidbmigration-3-2-0-8
 TAG: mgidbmigration-3-2-0-7
 DATE: 03/25/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-6
 DATE: 03/23/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
@@ -337,28 +313,24 @@ TAG: mgidbmigration-3-2-0-4
 TAG: mgidbmigration-3-2-0-3
 DATE: 03/22/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-2
 DATE: 03/21/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-2-0-1
 DATE: 03/18/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MPR
 
 TAG: mgidbmigration-3-1-1-14
 DATE: 02/23/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR 6520
 
@@ -366,14 +338,12 @@ TAG: mgidbmigration-3-1-1-13
 TAG: mgidbmigration-3-1-1-12
 DATE: 02/18/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR 6520
 
 TAG: mgidbmigration-3-1-1-11
 DATE: 02/17/2005
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGC release
 
@@ -383,21 +353,18 @@ TAG: mgidbmigration-3-1-1-8
 TAG: mgidbmigration-3-1-1-7
 DATE: 02/17/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR 6520
 
 TAG: mgidbmigration-10-0-19
 DATE: 02/09/2005
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) Add MGC logical DB for MGC release
 
 TAG: mgidbmigration-3-1-1-6
 DATE: 02/02/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) Synonym migration fix
 
@@ -408,42 +375,36 @@ TAG: mgidbmigration-3-1-1-2
 TAG: mgidbmigration-3-1-1-1
 DATE: 01/25/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) EntrezGene
 
 TAG: mgidbmigration-10-0-18
 DATE: 01/25/2005
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGC Load
 
 TAG: mgidbmigration-3-1-0-1
 DATE: 01/14/2005
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) EntrezGene
 
 TAG: mgidbmigration-10-0-17
 DATE: 12/02/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 
 TAG: mgidbmigration-10-0-16
 DATE: 11/23/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 
 TAG: mgidbmigration-10-0-15
 DATE: 11/17/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 
@@ -451,7 +412,6 @@ TAG: mgidbmigration-10-0-14
 TAG: mgidbmigration-10-0-13
 DATE: 11/10/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 2) MKIAA
@@ -459,21 +419,18 @@ CHANGES:
 TAG: mgidbmigration-10-0-12
 DATE: 11/10/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
 TAG: mgidbmigration-10-0-11
 DATE: 11/04/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
 TAG: mgidbmigration-10-0-10
 DATE: 11/02/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 2) MKIAA
@@ -482,14 +439,12 @@ TAG: mgidbmigration-10-0-9
 TAG: mgidbmigration-10-0-8
 DATE: 10/29/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
 TAG: mgidbmigration-10-0-7
 DATE: 10/19/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
@@ -498,77 +453,66 @@ TAG: mgidbmigration-10-0-5
 TAG: mgidbmigration-10-0-4
 DATE: 10/15/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 
 TAG: mgidbmigration-10-0-3
 DATE: 10/14/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
 TAG: mgidbmigration-10-0-2
 DATE: 10/13/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
 TAG: mgidbmigration-10-0-1
 DATE: 10/12/2004
 STAFF: dbm
-RELEASE: A
 CHANGES: 
 1) MGI 3.02
 
 TAG: mgidbmigration-10-0-0
 DATE: 10/11/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.1
 
 TAG: mgidbmigration-9-0-4
 DATE: 08/18/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.01
 
 TAG: mgidbmigration-9-0-3
 DATE: 08/06/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.01
 
 TAG: mgidbmigration-9-0-2
 DATE: 08/04/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.01
 
 TAG: mgidbmigration-9-0-1
 DATE: 07/29/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.01
 
 TAG: mgidbmigration-9-0-0
 DATE: 07/01/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 3.01
 
 TAG: mgidbmigration-8-0-27
 DATE: 05/19/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
@@ -576,7 +520,6 @@ TAG: mgidbmigration-8-0-26
 TAG: mgidbmigration-8-0-25
 DATE: 05/18/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 2) translationload/strain.badgood
@@ -585,77 +528,66 @@ CHANGES:
 TAG: mgidbmigration-8-0-24
 DATE: 05/17/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-23
 DATE: 05/07/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-22
 DATE: 04/27/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-21
 DATE: 04/15/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-20
 DATE: 04/05/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-19
 DATE: 03/30/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-18
 DATE: 03/25/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-17
 DATE: 03/22/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-16
 DATE: 03/18/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-15
 DATE: 03/10/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) added users to mgiuser.csh
 
 TAG: mgidbmigration-8-0-14
 DATE: 03/05/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM/translationload/library.badgood
 2) setload/named_source.txt (removed one duplicate)
@@ -663,35 +595,30 @@ CHANGES:
 TAG: mgidbmigration-8-0-13
 DATE: 02/26/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-12
 DATE: 02/19/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-11
 DATE: 02/18/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-10
 DATE: 02/13/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-9
 DATE: 02/12/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
@@ -702,49 +629,42 @@ TAG: mgidbmigration-8-0-5
 TAG: mgidbmigration-8-0-4
 DATE: 02/11/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-3
 DATE: 02/06/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-2
 DATE: 02/04/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-1
 DATE: 02/03/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-8-0-0
 DATE: 01/28/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) JSAM
 
 TAG: mgidbmigration-7-0-0
 DATE: 01/26/2004
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.98-Nomen
 
 TAG: mgidbmigration-6-0-2
 DATE: 11/03/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.97
 
@@ -752,21 +672,18 @@ TAG: mgidbmigration-6-0-1
 TAG: mgidbmigration-6-0-0
 DATE: 09/26/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.97
 
 TAG: mgidbmigration-5-0-12
 DATE: 04/28/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.96
 
 TAG: mgidbmigration-5-0-11
 DATE: 04/23/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.96
 
@@ -774,84 +691,72 @@ TAG: mgidbmigration-5-0-10
 TAG: mgidbmigration-5-0-9
 DATE: 04/22/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.96
 
 TAG: mgidbmigration-5-0-8
 DATE: 04/18/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.96
 
 TAG: mgidbmigration-5-0-7
 DATE: 03/28/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-6
 DATE: 03/24/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-5
 DATE: 03/24/2003
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-4
 DATE: 12/02/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-3
 DATE: 10/21/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-2
 DATE: 10/21/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-1
 DATE: 10/18/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-5-0-0
 DATE: 10/17/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) LOOK & FEEL
 
 TAG: mgidbmigration-4-1-0
 DATE: 08/29/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) FANTOM
 
 TAG: mgidbmigration-4-0-0
 DATE: 05/17/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) SAO
 2) JSAM
@@ -859,28 +764,24 @@ CHANGES:
 TAG: mgidbmigration-3-0-10
 DATE: 03/19/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.8
 
 TAG: mgidbmigration-3-0-9
 DATE: 03/14/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.8
 
 TAG: mgidbmigration-3-0-8
 DATE: 03/01/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.8
 
 TAG: mgidbmigration-3-0-7
 DATE: 02/28/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.8
 
@@ -889,35 +790,30 @@ TAG: mgidbmigration-3-0-5
 TAG: mgidbmigration-3-0-1, mgidbmigration-3-0-2, mgidbmigration-3-0-3, mgidbmigration-3-0-4, 
 DATE: 02/25/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.8
 
 TAG: mgidbmigration-3-0-0
 DATE: 02/05/2002
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) MGI 2.8
 
 TAG: mgidbmigration-2-0-4
 DATE: 11/09/2001
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR2770
 
 TAG: mgidbmigration-2-0-3
 DATE: 10/09/2001
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR2770
 
 TAG: mgidbmigration-2-0-2
 DATE: 10/04/2001
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR2770
 2) MGI2.8
@@ -925,7 +821,6 @@ CHANGES:
 TAG: mgidbmigration-2-0-1
 DATE: 10/02/2001
 STAFF: lec
-RELEASE: A
 CHANGES: 
 1) TR2770
 2) MGI2.8
@@ -933,6 +828,5 @@ CHANGES:
 TAG: mgidbmigration-1-0-0
 DATE: 09/05/2001
 STAFF: lec
-RELEASE: A
 CHANGES: first tag
 

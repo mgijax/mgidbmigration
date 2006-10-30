@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 # update schema tag
 ${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
@@ -30,7 +30,6 @@ date | tee -a  ${LOG}
 
 ########################################
 
-./go.csh | tee -a ${LOG}
 ./images.csh | tee -a ${LOG}
 ./cache.csh | tee -a ${LOG}
 

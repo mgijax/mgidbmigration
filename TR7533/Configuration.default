@@ -1,7 +1,5 @@
 #!/bin/csh -f
 
-cd `dirname $0`
-
 unsetenv MGICONFIG
 
 if ( ${?MGICONFIG} == 0 ) then

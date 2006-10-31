@@ -6,7 +6,7 @@
 # Usage:  mgips.csh
 #
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ../Configuration
 
 setenv LOG `basename $0`.log
 

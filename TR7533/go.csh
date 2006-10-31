@@ -6,7 +6,7 @@
 # Usage:  go.csh
 #
 
-cd `dirname $0` && source ./Configuration
+source ../Configuration
 
 setenv LOG `basename $0`.log
 

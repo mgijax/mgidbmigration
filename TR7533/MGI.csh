@@ -4,7 +4,7 @@
 # Migration for TR533
 #
 
-cd `dirname $0` && source ./Configuration
+source ../Configuration
 
 setenv LOG $0.log
 rm -rf ${LOG}

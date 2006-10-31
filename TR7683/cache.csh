@@ -6,7 +6,7 @@
 # Usage:  cache.csh
 #
 
-cd `dirname $0` && source ./Configuration
+source ./tr7683.config
 
 setenv LOG `basename $0`.log
 

@@ -11,7 +11,7 @@
 # Views:        213
 #
 
-cd `dirname $0` && source ./Configuration
+source ./tr7683.config
 
 setenv LOG $0.log
 rm -rf ${LOG}

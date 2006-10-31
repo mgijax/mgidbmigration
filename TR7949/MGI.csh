@@ -4,7 +4,7 @@
 # Migration for imsr bug TR7949
 #
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ../Configuration
 
 setenv LOG $0.log
 rm -rf ${LOG}

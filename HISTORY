@@ -1,3 +1,9 @@
+TAG: mgidbmigration-3-5-1-7
+DATE: 10/31/2006
+STAFF: lec
+1) converted to mgiconfig
+2) removed some older directories
+
 TAG: mgidbmigration-3-5-1-6
 DATE: 10/31/2006
 STAFF: sc

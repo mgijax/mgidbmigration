@@ -20,19 +20,19 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 # update schema tag
 ${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 ${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_SCHEMA_TAG} | tee -a ${LOG}
 
-source ${newsnp2dbschema}/Configuration
-${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
-${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
+#source ${newsnp2dbschema}/Configuration
+#${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
+#${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 
-source ${newsnpdbschema}/Configuration
-${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
-${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
+#source ${newsnpdbschema}/Configuration
+#${MGIDBUTILSDIR}/bin/updateSchemaVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} ${SNP_SCHEMA_TAG} | tee -a ${LOG}
+#${MGIDBUTILSDIR}/bin/updatePublicVersion.csh ${SNP_DBSERVER} ${SNP_DBNAME} "${PUBLIC_VERSION}" | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 
@@ -43,7 +43,7 @@ date | tee -a  ${LOG}
 ./mgiref.csh | tee -a ${LOG}
 ./mgigxd.csh | tee -a ${LOG}
 ./mgihmd.csh | tee -a ${LOG}
-./mgisnp.csh | tee -a ${LOG}
+#./mgisnp.csh | tee -a ${LOG}
 ./updateSuperscripts.py | tee -a ${LOG}
 
 # splitting sequence table

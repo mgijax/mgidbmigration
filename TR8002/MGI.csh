@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

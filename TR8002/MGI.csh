@@ -20,7 +20,7 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 
@@ -30,9 +30,11 @@ date | tee -a  ${LOG}
 
 ########################################
 
-${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
-${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_MGIType_create.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/IMG_Image_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/IMG_Image_grant.object | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

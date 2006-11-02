@@ -14,7 +14,11 @@ date | tee -a  ${LOG}
  
 ########################################
 
+# load a backup
+load_db.csh ${IMSR_DBSERVER} ${IMSR_DBNAME} /shire/sybase/imsr.backup | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh ${IMSR_DBSERVER} ${IMSR_DBNAME} $0 | tee -a ${LOG}
+
 
 use ${IMSR_DBNAME}
 go
@@ -36,7 +40,7 @@ go
 /* insert from old to new */
 insert into Allele
 select _Allele_key, creation_date, modification_date, release_date
-from Allele
+from Allele_Old
 go
 
 /* create Allele keys */

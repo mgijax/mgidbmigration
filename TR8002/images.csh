@@ -64,12 +64,41 @@ EOSQL
 
 ${MGD_DBSCHEMADIR}/index/IMG_Image_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_MGIType_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/IMG_Image_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/view/GXD_ISResultImage_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_ISResultImage_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_Image_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_Image_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_Image_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_Image_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_ImagePaneGXD_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_ImagePaneGXD_View_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/IMG_setPDO_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/IMG_setPDO_create.object | tee -a ${LOG}
+
+${MGD_DBPERMSDIR}/public/table/IMG_Image_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/IMG_grant.logical | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/procedure/IMG_setPDO_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/IMG_Image_grant.object | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
 
 drop table IMG_Image_Old
+go
+
+drop view IMG_ImagePaneRef_View
 go
 
 EOSQL

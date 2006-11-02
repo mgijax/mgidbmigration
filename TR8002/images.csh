@@ -67,10 +67,15 @@ ${MGD_DBSCHEMADIR}/index/IMG_Image_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_MGIType_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ACC_MGIType_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/BIB_Refs_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/IMG_Image_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/IMG_Image_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/GXD_ISResultImage_View_drop.object | tee -a ${LOG}

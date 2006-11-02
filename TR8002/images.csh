@@ -45,13 +45,22 @@ from IMG_Image_Old o
 where o._ThumbnailImage_key is not null
 go
 
+insert into IMG_Image
+select o._Image_key, 11, o._ImageType_key, o._Refs_key, o._ThumbnailImage_key, o.xDim, o.yDim,
+o.figureLabel, o._CreatedBy_key, o._ModifiedBy_key, o.creation_date, o.modification_date
+from IMG_Image_Old o
+where o._ImageType_key = 1072159
+go
+
 /* gxd images do not (currently) have thumbnails */
+/* full size, no thumbnail */
 
 insert into IMG_Image
 select o._Image_key, 8, o._ImageType_key, o._Refs_key, o._ThumbnailImage_key, o.xDim, o.yDim,
 o.figureLabel, o._CreatedBy_key, o._ModifiedBy_key, o.creation_date, o.modification_date
 from IMG_Image_Old o
-where o._ThumbnailImage_key is null
+where o._ImageType_key = 1072158
+and o._ThumbnailImage_key is null
 go
 
 quit

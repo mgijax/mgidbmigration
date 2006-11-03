@@ -99,7 +99,8 @@ ${MGD_DBSCHEMADIR}/view/IMG_ImagePaneGXD_View_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/IMG_setPDO_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/IMG_setPDO_create.object | tee -a ${LOG}
 
-${MGD_DBPERMSDIR}/public/table/IMG_Image_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/GXD_grant.logical | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/IMG_grant.logical | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/IMG_grant.logical | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/procedure/IMG_setPDO_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/IMG_Image_grant.object | tee -a ${LOG}

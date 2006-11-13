@@ -11,7 +11,7 @@
 # Views:        213
 #
 
-source ./tr7683.config
+cd `dirname $0` && source ../Configuration
 
 setenv LOG $0.log
 rm -rf ${LOG}
@@ -30,7 +30,6 @@ date | tee -a  ${LOG}
 
 ########################################
 
-./images.csh | tee -a ${LOG}
 ./cache.csh | tee -a ${LOG}
 
 ########################################

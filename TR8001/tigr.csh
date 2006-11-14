@@ -50,7 +50,7 @@ EOSQL
 # load the data;update caches
 #
 ${DFCISEQLOAD}/bin/dfciseqload.sh
-${MGD_DBUTILS}/generateDFCI.csh
+${MGD_DBUTILS}/bin/generateDFCI.csh
 ${ASSOCLOAD}/bin/AssocLoadDP.sh ${ASSOCLOAD}/DP.config.dfci
 ${SEQCACHELOAD}/seqmarker.csh
 ${SEQCACHELOAD}/seqdescription.csh

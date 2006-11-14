@@ -27,7 +27,7 @@ where _LogicalDB_key = 35
 go
 
 update ACC_ActualDB
-set name = 'TIGR/DFCI',
+set name = 'DFCI/TIGR',
 url = 'http://compbio.dfci.harvard.edu/tgi/cgi-bin/tgi/tc_report.pl?tc=@@@@&species=mouse'
 where _ActualDB_key = 43
 go

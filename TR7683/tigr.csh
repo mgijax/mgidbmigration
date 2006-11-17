@@ -5,6 +5,8 @@
 #
 # Usage:  tigr.csh
 #
+# This finishes up the back-end changes for the TIGR to DFCI switch
+#
 
 source ../Configuration
 

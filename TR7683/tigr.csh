@@ -23,14 +23,12 @@ use ${MGD_DBNAME}
 go
 
 update ACC_LogicalDB
-set name = 'DFCI',
-description = 'Dana Farber Cancer Institute'
+set name = 'DFCI'
 where _LogicalDB_key = 35
 go
 
 update ACC_ActualDB
-set name = 'DFCI',
-url = 'http://compbio.dfci.harvard.edu/tgi/cgi-bin/tgi/tc_report.pl?tc=@@@@&species=mouse'
+set name = 'DFCI'
 where _ActualDB_key = 43
 go
 

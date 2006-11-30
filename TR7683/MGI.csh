@@ -32,6 +32,7 @@ date | tee -a  ${LOG}
 
 ./cache.csh | tee -a ${LOG}
 ./tigr.csh | tee -a ${LOG}
+./treefam.csh | tee -a ${LOG}
 
 ########################################
 

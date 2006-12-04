@@ -27,5 +27,11 @@ ${MGD_DBSCHEMADIR}/key/VOC_GO_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/VOC_GO_Cache_create.object | tee -a ${LOG}
 ${MGICACHELOAD}/vocgo.csh | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/table/IMG_Cache_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/IMG_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/IMG_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/IMG_Cache_create.object | tee -a ${LOG}
+${MGICACHELOAD}/imgcache.csh | tee -a ${LOG}
+
 date >> ${LOG}
 

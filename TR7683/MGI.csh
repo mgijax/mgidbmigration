@@ -32,7 +32,11 @@ date | tee -a  ${LOG}
 
 ./cache.csh | tee -a ${LOG}
 ./tigr.csh | tee -a ${LOG}
-./treefam.csh | tee -a ${LOG}
+
+# these need to be done after the java libraries are installed
+
+${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
+${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
 
 ########################################
 

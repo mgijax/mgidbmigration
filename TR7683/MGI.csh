@@ -32,6 +32,7 @@ date | tee -a  ${LOG}
 
 ./cache.csh | tee -a ${LOG}
 ./tigr.csh | tee -a ${LOG}
+./alleletype.csh | tee -a ${LOG}
 
 # these need to be done after the java libraries are installed
 

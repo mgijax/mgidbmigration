@@ -22,20 +22,15 @@ go
 
 declare @termKey int
 select @termKey = max(_Term_key) + 1 from VOC_Term
-declare @memberKey int
-select @memberKey = max(_SetMember_key) + 1 from MGI_SetMember
+declare @assocKey int
+select @assocKey = max(_Association_key) + 1 from MGI_VocAssociation
 
 insert into VOC_Term values(@termKey, 38, 'transposon induced', null, 19, 0, 1000, 1000, getdate(), getdate())
 insert into VOC_Term values(@termKey + 1, 38, 'transgenic (transposase)', null, 20, 0, 1000, 1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 2, 41, 'Transposon induced', null, 10, 0, 1000, 1000, getdate(), getdate())
 
-/* 1010 Targeted */
-/* 1011 Spontaneous */
-/* 1012 Chemcially induced  */
-/* 1013 Radiation induced */
-/* 1014 Other */
-
-insert into MGI_SetMember values(, @memberKey, @termKey, , 1000, 1000, getdate(), getdate())
-insert into MGI_SetMember values(, @memberKey + 1, @termKey + 1, , 1000, 1000, getdate(), getdate())
+insert into MGI_VocAssociation values(@assocKey, 1001, @termKey + 2, @termKey, 20, 1000, 1000, getdate(), getdate())
+insert into MGI_VocAssociation values(@assocKey + 1, 1001, 847159, @termKey + 1, 21, 1000, 1000, getdate(), getdate())
 go
 
 EOSQL

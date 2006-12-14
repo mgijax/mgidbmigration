@@ -20,17 +20,22 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+update VOC_Term set sequenceNum = 20 where _Term_key = 847132
+update VOC_Term set sequenceNum = 19 where _Term_key = 847131
+update VOC_Term set sequenceNum = 18 where _Term_key = 847130
+
 declare @termKey int
 select @termKey = max(_Term_key) + 1 from VOC_Term
 declare @assocKey int
 select @assocKey = max(_Association_key) + 1 from MGI_VocAssociation
 
-insert into VOC_Term values(@termKey, 38, 'transposon induced', null, 19, 0, 1000, 1000, getdate(), getdate())
-insert into VOC_Term values(@termKey + 1, 38, 'transgenic (transposase)', null, 20, 0, 1000, 1000, getdate(), getdate())
+insert into VOC_Term values(@termKey, 38, 'Transgenic (transposase)', null, 16, 0, 1000, 1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 38, 'Transposon induced', null, 17, 0, 1000, 1000, getdate(), getdate())
 insert into VOC_Term values(@termKey + 2, 41, 'Transposon induced', null, 10, 0, 1000, 1000, getdate(), getdate())
 
-insert into MGI_VocAssociation values(@assocKey, 1001, @termKey + 2, @termKey, 20, 1000, 1000, getdate(), getdate())
-insert into MGI_VocAssociation values(@assocKey + 1, 1001, 847159, @termKey + 1, 21, 1000, 1000, getdate(), getdate())
+insert into MGI_VocAssociation values(@assocKey, 1001, 847159, @termKey, 20, 1000, 1000, getdate(), getdate())
+insert into MGI_VocAssociation values(@assocKey + 1, 1001, @termKey + 2, @termKey + 1, 21, 1000, 1000, getdate(), getdate())
+
 go
 
 EOSQL

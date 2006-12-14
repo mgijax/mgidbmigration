@@ -29,7 +29,7 @@ select @termKey = max(_Term_key) + 1 from VOC_Term
 declare @assocKey int
 select @assocKey = max(_Association_key) + 1 from MGI_VocAssociation
 
-insert into VOC_Term values(@termKey, 38, 'Transgenic (transposase)', null, 16, 0, 1000, 1000, getdate(), getdate())
+insert into VOC_Term values(@termKey, 38, 'Transgenic (Transposase)', null, 16, 0, 1000, 1000, getdate(), getdate())
 insert into VOC_Term values(@termKey + 1, 38, 'Transposon induced', null, 17, 0, 1000, 1000, getdate(), getdate())
 insert into VOC_Term values(@termKey + 2, 41, 'Transposon induced', null, 10, 0, 1000, 1000, getdate(), getdate())
 

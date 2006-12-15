@@ -7,7 +7,7 @@
 # Procedures:   108
 # Rules:          5
 # Triggers:     158
-# User Tables:  186
+# User Tables:  187
 # Views:        213
 #
 
@@ -38,6 +38,7 @@ date | tee -a  ${LOG}
 
 ${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
 ${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
+${MRKCACHELOAD}/mrkreference.csh | tee -a ${LOG}
 
 ########################################
 

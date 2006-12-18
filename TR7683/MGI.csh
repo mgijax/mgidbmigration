@@ -34,17 +34,19 @@ date | tee -a  ${LOG}
 ./tigr.csh | tee -a ${LOG}
 ./alleletype.csh | tee -a ${LOG}
 
-# these need to be done after the java libraries are installed
-
-${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
-${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
-${MRKCACHELOAD}/mrkreference.csh | tee -a ${LOG}
-
 ########################################
 
 ${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
+
+${VOCLOAD}/runOBOIncLoad.sh ${VOCLOAD}/GO.config
+
+# these need to be done after the java libraries are installed
+
+${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
+${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
+${MRKCACHELOAD}/mrkreference.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

@@ -33,6 +33,7 @@ date | tee -a  ${LOG}
 ./cache.csh | tee -a ${LOG}
 ./tigr.csh | tee -a ${LOG}
 ./alleletype.csh | tee -a ${LOG}
+./dag.csh | tee -a ${LOG}
 
 ########################################
 

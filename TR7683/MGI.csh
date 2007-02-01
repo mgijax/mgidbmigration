@@ -4,7 +4,7 @@
 # Migration for TR7683
 #
 # Defaults:       6
-# Procedures:   108
+# Procedures:   109
 # Rules:          5
 # Triggers:     158
 # User Tables:  187
@@ -33,6 +33,7 @@ date | tee -a  ${LOG}
 ./cache.csh | tee -a ${LOG}
 ./tigr.csh | tee -a ${LOG}
 ./alleletype.csh | tee -a ${LOG}
+./allelenotes.csh | tee -a ${LOG}
 ./dag.csh | tee -a ${LOG}
 
 ########################################
@@ -46,7 +47,7 @@ ${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
 ${VOCLOAD}/runOBOIncLoad.sh ${VOCLOAD}/GO.config
 ${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
 ${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
-${MRKCACHELOAD}/mrkreference.csh | tee -a ${LOG}
+${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

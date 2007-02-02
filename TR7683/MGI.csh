@@ -4,7 +4,7 @@
 # Migration for TR7683
 #
 # Defaults:       6
-# Procedures:   109
+# Procedures:   111
 # Rules:          5
 # Triggers:     158
 # User Tables:  187

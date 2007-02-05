@@ -39,8 +39,15 @@ insert into VOC_Term values(@termKey + 4, 40, 'Transposon induced', null, 16, 0,
 
 insert into MGI_VocAssociation values(@assocKey, 1001, 847159, @termKey, 20, 1000, 1000, getdate(), getdate())
 insert into MGI_VocAssociation values(@assocKey + 1, 1001, @termKey + 2, @termKey + 1, 21, 1000, 1000, getdate(), getdate())
-insert into MGI_VocAssociation values(@assocKey + 2, 1000, 847159, @termKey, 25, 1000, 1000, getdate(), getdate())
-insert into MGI_VocAssociation values(@assocKey + 3, 1000, @termKey + 2, @termKey + 1, 26, 1000, 1000, getdate(), getdate())
+
+/* transposase (40, 38) */
+insert into MGI_VocAssociation values(@assocKey + 2, 1000, @termKey + 3, @termKey, 25, 1000, 1000, getdate(), getdate())
+
+/* induced (40, 38) */
+insert into MGI_VocAssociation values(@assocKey + 3, 1000, @termKey + 4, @termKey + 1, 26, 1000, 1000, getdate(), getdate())
+
+/* all (40), transposase (38) */
+insert into MGI_VocAssociation values(@assocKey + 4, 1000, 847145, @termKey, 27, 1000, 1000, getdate(), getdate())
 
 go
 

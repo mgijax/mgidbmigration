@@ -35,6 +35,7 @@ date | tee -a  ${LOG}
 ./alleletype.csh | tee -a ${LOG}
 ./allelenotes.csh | tee -a ${LOG}
 ./dag.csh | tee -a ${LOG}
+./vocheader.csh | tee -a ${LOG}
 
 ########################################
 

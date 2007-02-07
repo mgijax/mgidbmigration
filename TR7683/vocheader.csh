@@ -61,17 +61,20 @@ ${MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeader_create.object | tee -a ${LOG
 ${MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeaderAll_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeaderMissing_create.object | tee -a ${LOG}
 
-#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-#
-#use ${MGD_DBNAME}
-#go
-#
-#drop table VOC_AnnotHeader_Old
-#go
-#
-#quit
-#
-#EOSQL
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+exec VOC_processAnnotHeaderAll 1002
+go
+
+/*drop table VOC_AnnotHeader_Old */
+/*go*/
+
+quit
+
+EOSQL
 
 date >> ${LOG}
 

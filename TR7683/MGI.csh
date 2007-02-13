@@ -49,6 +49,7 @@ ${VOCLOAD}/runOBOIncLoad.sh ${VOCLOAD}/GO.config
 ${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
 ${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
+${MGINOTELOAD}/mginoteload.csh ${MGINOTELOAD}/gotext.config
 
 date | tee -a  ${LOG}
 

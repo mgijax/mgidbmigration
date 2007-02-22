@@ -13,7 +13,7 @@
 
 cd `dirname $0` && source ../Configuration
 
-setenv LOG $0.log
+setenv LOG `pwd`/$0.log
 rm -rf ${LOG}
 touch ${LOG}
  
@@ -49,7 +49,8 @@ ${VOCLOAD}/runOBOIncLoad.sh ${VOCLOAD}/GO.config
 ${TREEFAMLOAD}/treefam.sh | tee -a ${LOG}
 ${PIRSFLOAD}/bin/pirsfload.sh | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkref.csh | tee -a ${LOG}
-${NOTELOAD}/mginoteload.csh ${NOTELOAD}/gotext.config
+cd ${NOTELOAD}
+${NOTELOAD}/mginoteload.csh ${NOTELOAD}/gotext.config | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

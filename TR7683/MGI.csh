@@ -54,3 +54,17 @@ ${NOTELOAD}/mginoteload.csh ${NOTELOAD}/gotext.config | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 
+# run QC reports
+
+${QCRPTS}/qcnightly_reports.sh
+${QCRPTS}/qcweekly_reports.sh
+${QCRPTS}/qcmonthly_reports.sh
+
+# run public reports
+
+${PUBRPTS}/nightly_reports.sh
+${PUBRPTS}/weekly_reports.sh
+${PUBRPTS}/monthly_reports.sh
+
+date | tee -a  ${LOG}
+

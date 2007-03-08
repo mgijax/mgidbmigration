@@ -34,6 +34,7 @@ date | tee -a  ${LOG}
 ./tigr.csh | tee -a ${LOG}
 ./alleletype.csh | tee -a ${LOG}
 ./allelenotes.csh | tee -a ${LOG}
+./clonelib.csh | tee -a ${LOG}
 ./dag.csh | tee -a ${LOG}
 ./vocheader.csh | tee -a ${LOG}
 

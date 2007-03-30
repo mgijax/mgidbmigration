@@ -47,4 +47,7 @@ ${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
 
+# Clear out the text searching tables for the WI
+${RADAR_DBSCHEMADIR}/table/TXT_truncate.logical | tee -a ${LOG}
+
 date | tee -a  ${LOG}

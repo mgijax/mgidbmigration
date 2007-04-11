@@ -24,7 +24,7 @@ date | tee -a  ${LOG}
 
 # We are just running this as a test, the pipeline is not running
 # therefore not using this file
-echo "Running ${GBGTASSOCIATOR} | tee -a  ${LOG}
+echo "Running ${GBGTASSOCIATOR}" | tee -a  ${LOG}
 ${GBGTASSOCIATOR}/bin/gbgtassociator.sh
 
 echo "Creating gene trap cell line id to marker associations" | tee -a  ${LOG}

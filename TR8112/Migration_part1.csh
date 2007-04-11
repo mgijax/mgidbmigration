@@ -25,14 +25,12 @@ touch ${LOG}
 date | tee -a  ${LOG}
  
 # load a backup
-if [ ${HOST} != "shire" ]
-then
+if ( ${HOST} != "shire" ) then
     load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
-fi
+endif
 
 # update schema tag
 ${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 3.53" | tee -a ${LOG}
-${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "mgddbschema-3-5-3" | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

@@ -27,6 +27,7 @@ date | tee -a  ${LOG}
 # load a backup
 if ( ${HOST} != "shire" ) then
     load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+    load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /shire/sybase/radar.backup | tee -a ${LOG}
 endif
 
 # update schema tag

@@ -1,7 +1,11 @@
+TAG: mgidbmigration-3-5-3-2
 TAG: mgidbmigration-3-5-3-1
 DATE: 04/11/2007
 STAFF: sc
-1) TR8112 -MGI3.53
+1) TR8112 - MGI3.53
+2) ./TR8112/Migration_part1.csh - added testing for $HOST to determine 
+   whether to load a backup
+3) Configuration.default - removed unsetenv MGICONFIG
 
 TAG: mgidbmigration-3-5-2-19
 DATE: 03/30/2007

@@ -1,7 +1,7 @@
 #!/bin/csh -fx
 
 #
-# Migration for TR8112
+# Migration for TR8112 - MGI3.53
 #
 #
 # Defaults:       6
@@ -19,13 +19,16 @@ rm -rf ${LOG}
 touch ${LOG}
  
 date | tee -a  ${LOG}
+
 # run QC reports
+echo "running ${QCRPTS}" | tee -a  ${LOG}
 
 ${QCRPTS}/qcnightly_reports.sh
 ${QCRPTS}/qcweekly_reports.sh
 ${QCRPTS}/qcmonthly_reports.sh
 
 # run public reports
+echo "running ${PUBRPTS}" | tee -a  ${LOG}
 
 ${PUBRPTS}/nightly_reports.sh
 ${PUBRPTS}/weekly_reports.sh

@@ -1,0 +1,20 @@
+#!/bin/csh -f
+
+if ( ${?MGICONFIG} == 0 ) then
+	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
+# path to 'live' on lindon from shire
+#setenv BE_SERVER_PATH	/net/mtdoom-g/vol/lindon/usrlocalmgi/live
+
+# path to 'live' on nardol from lindon
+setenv BE_SERVER_PATH  /net/mtdoom-g/vol/nardol/usrlocalmgi/live
+
+# path to the back-end server back-end snpdbschema product
+setenv BE_SERVER_SCHEMADIR      ${BE_SERVER_PATH}/dbutils/snp_be/snpdbschema
+
+# path to the back-end server back-end snpdbperms product
+setenv BE_SERVER_PERMSDIR ${BE_SERVER_PATH}/dbutils/snp_be/snpdbperms
+

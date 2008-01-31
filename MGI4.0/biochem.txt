@@ -1,0 +1,7 @@
+187	Pathways
+1,832	Enzymatic reactions
+5	Transport reactions
+15,257	Polypeptides
+8	Protein complexes
+42	Transporters
+1,256	Compounds

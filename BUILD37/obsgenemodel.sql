@@ -21,7 +21,7 @@ isql -S$DSQUERY -Umgd_public -Pmgdpub -w200 <<END >> $0.rpt
 
 use $MGD
 go
-/* # of VEGA gene models owned by assemblyseqload */
+/* # of VEGA gene models owned by vega assemblyseqload */
 select count(*)
 from SEQ_Sequence s, ACC_Accession a
 where a._LogicalDB_key = 85
@@ -40,7 +40,7 @@ and a._Object_key = s._Sequence_key
 and a._createdBy_key = s._CreatedBy_key
 go
 
-/* # of VEGA gene models NOT owned by assemblyseqload i.e. the obsoletes*/
+/* # of VEGA gene models NOT owned by vega ASSEmblyseqload i.e. the obsoletes*/
 select a._CreatedBy_key, count(a._CreatedBy_key)
 from SEQ_Sequence s, ACC_Accession a
 where a._LogicalDB_key = 85
@@ -78,7 +78,8 @@ and a._createdBy_key = 1445
 and a._Accession_key = r._Accession_key
 go
 
-/* # of VEGA associations NOT owned by vega assocload  i.e. obsoletes */
+/* # of VEGA associations NOT owned by vega assocload  these won't */
+/* be removed by assocload, need to do via migration */
 select a._CreatedBy_key, count(a._CreatedBy_key)
 from ACC_Accession a
 where a._LogicalDB_key = 85
@@ -97,7 +98,7 @@ and a._Accession_key = r._Accession_key
 group by r._CreatedBy_key
 go
 
-/*  # of ENSEMBL gene models owned by assemblyseqload */
+/*  # of ENSEMBL gene models owned by ensembl assemblyseqload */
 select count(*)
 from SEQ_Sequence s, ACC_Accession a
 where a._LogicalDB_key = 60
@@ -116,7 +117,8 @@ and a._Object_key = s._Sequence_key
 and a._createdBy_key = s._CreatedBy_key
 go
 
-/* # of ENSEMBL gene models NOT owned by assemblyseqload i.e. obsoletes */
+/* # of ENSEMBL gene models NOT owned by ensembl assemblyseqload  */
+/* i.e. the obsoletes */
 select a._CreatedBy_key, count(a._CreatedBy_key)
 from SEQ_Sequence s, ACC_Accession a
 where a._LogicalDB_key = 60
@@ -154,7 +156,8 @@ and a._createdBy_key = 1443
 and a._Accession_key = r._Accession_key
 go
 
-/* # of ENSEMBL associations NOT owned by ensembl assocload i.e. obsoletes */
+/* # of ENSEMBL associations NOT owned by ensembl assocload these won't */
+/* be removed by assocload, need to do via migration */
 select a._CreatedBy_key, count(a._CreatedBy_key)
 from ACC_Accession a
 where a._LogicalDB_key = 60

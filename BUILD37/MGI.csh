@@ -34,7 +34,7 @@ exec SEQ_deleteByCreatedBy 'tbreddy'
 go
 
 /* delete obsolete gene model associations */
-/*ENSEMBL */
+/*ENSEMBL delete all that were NOT created by the "Ensembl Association Load"*/
 select _Accession_key
 into #toDeleteEnsembl
 from ACC_Accession a
@@ -53,7 +53,7 @@ from ACC_Accession a, #toDeleteEnsembl d
 where a._Accession_key = d._Accession_key
 go
 
-/* VEGA */
+/* VEGA delete all that were NOT created by the "Ensembl Association Load"*/
 select _Accession_key
 into #toDeleteVega
 from SEQ_Sequence s, ACC_Accession a

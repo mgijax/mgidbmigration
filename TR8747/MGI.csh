@@ -114,9 +114,43 @@ deallocate cursor termCursor
 go
 EOSQL
 
+###-----------------------------------------------------###
+###--- Restructure MGI_Set and MGI_SetMember indexes ---###
+###-----------------------------------------------------###
+
+date | tee -a ${LOG}
+echo "Restructuring MGI_Set and MGI_SetMember indexes" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+/* drop old indexes */
+
+drop index MGI_SetMember.index_SetMember_key
+go
+
+drop index MGI_SetMember.index_Set_key
+go
+
+drop index MGI_SetMember.index_Object_key
+go
+
+drop index MGI_Set.index_Set_key
+go
+
+drop index MGI_Set.index_MGIType_key
+go
+EOSQL
+
+# create new indexes
+${SCHEMA}/index/MGI_Set_create.object | tee -a ${LOG}
+${SCHEMA}/index/MGI_SetMember_create.object | tee -a ${LOG}
+
 ###-----------------------------------###
 ###--- update GXD_Expression table ---###
 ###-----------------------------------###
+
+date | tee -a ${LOG}
+echo "Renaming old GXD_Expression" | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -505,11 +539,20 @@ go
 EOSQL
 
 date | tee -a ${LOG}
-echo "Creating new procedures and views" | tee -a ${LOG}
+echo "Adding indexes to PRB_Strain" | tee -a ${LOG}
 
+${SCHEMA}/index/PRB_Strain_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "(Re)Creating procedures and views" | tee -a ${LOG}
+
+${SCHEMA}/view/PRB_Strain_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/PRB_Strain_View_create.object | tee -a ${LOG}
 ${SCHEMA}/procedure/PRB_setStrainReview_create.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_NeedsReview_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_Attribute_View_create.object | tee -a ${LOG}
+${SCHEMA}/view/VOC_Term_NeedsReview_View_create.object | tee -a ${LOG}
+${SCHEMA}/view/VOC_Term_StrainAttribute_View_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "Recreating strains-related triggers" | tee -a ${LOG}
@@ -547,6 +590,9 @@ ${PERMS}/curatorial/procedure/PRB_mergeStrain_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/PRB_setStrainReview_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_NeedsReview_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_Attribute_View_grant.object | tee -a ${LOG}
+${PERMS}/public/view/PRB_Strain_View_grant.object | tee -a ${LOG}
+${PERMS}/public/view/VOC_Term_NeedsReview_View_grant.object | tee -a ${LOG}
+${PERMS}/public/view/VOC_Term_StrainAttribute_View_grant.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "Removing old tables and views" | tee -a ${LOG}
@@ -584,10 +630,32 @@ echo "Reloading image cache (IMG_Cache)" | tee -a ${LOG}
 
 ${MGICACHELOAD}/imgcache.csh | tee -a ${LOG}
 
+###--------------------------------------###
+###--- updating GXD stats definitions ---###
+###--------------------------------------###
+
+date | tee -a ${LOG}
+echo "Updating GXD stats definitions" | tee -a ${LOG}
+
+./updateStats.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} | tee -a ${LOG}
+
+###----------------------------------###
+###--- load Allen Brain Atlas IDs ---###
+###----------------------------------###
+
+date | tee -a ${LOG}
+echo "Loading Allen Brain Atlas IDs" | tee -a ${LOG}
+
+${ABALOAD}/abaload.sh /data/downloads/www.brain-map.org/pdf/allGenes.csv | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
 date | tee -a ${LOG}
-echo "Finished" | tee -a ${LOG}
+echo "Finished migration" | tee -a ${LOG}
+
+dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/jsb/tr8747. | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "Finished database dump" | tee -a ${LOG}
 

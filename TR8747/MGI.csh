@@ -40,6 +40,8 @@ ${UTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-0-2-0" | t
 ###--- load new vocab terms ---###
 ###----------------------------###
 
+# Msg: need actual J# for vocabs
+
 setenv JNUM "J:1"
 setenv DB_PARMS "${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME}"
 
@@ -48,16 +50,41 @@ echo "Loading vocabularies..." | tee -a ${LOG}
 
 cd ${CWD}
 
-./loadSimpleVocab.py assayTypes.txt "GXD Assay Types" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
 ./loadSimpleVocab.py strainTypes.txt "New Strain Type" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
 ./loadSimpleVocab.py needsReview.txt "Needs Review" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "Adding new assay type to GXD_AssayType" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+declare @maxAssayTypeKey integer
+select @maxAssayTypeKey = max(_AssayType_key) from GXD_AssayType
+
+/* Msg: check names of assay types */
+/* Msg: check names of types below in migration as well */
+/* Msg: also synchronize with procedure GXD_loadCacheByAssay */
+
+insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
+values (@maxAssayTypeKey + 1, "in situ reporter (transgenic)", 1, 0)
+
+insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
+values (@maxAssayTypeKey + 2, "indirect transgenic", 1, 0)
+
+insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
+values (@maxAssayTypeKey + 3, "indirect knock-in", 1, 0)
+go
+EOSQL
 
 ###---------------------------------###
 ###--- Build Set of recombinases ---###
 ###---------------------------------###
 
 date | tee -a ${LOG}
-echo "Building set of recombinases" | tee -a ${LOG}
+echo "Building sets of recombinases and IMSR providers" | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -74,7 +101,13 @@ select @setKey = max(_Set_key) + 1 from MGI_Set
 
 insert MGI_Set (_Set_key, _MGIType_key, name, sequenceNum)
 values (@setKey, @termType, "Recombinases", 1)
+
+/* mgi type 15 = logical database */
+insert MGI_Set (_Set_key, _MGIType_key, name, sequenceNum)
+values (@setKey + 1, 15, "IMSR Providers", 1)
 go
+
+/* populate recombinase set */
 
 declare termCursor cursor for
 select vt._Term_key
@@ -110,7 +143,75 @@ end
 
 close termCursor
 deallocate cursor termCursor
+go
 
+/* populate IMSR provider set */
+
+declare @maxSetMemberKey integer
+select @maxSetMemberKey = max(_SetMember_key) from MGI_SetMember
+
+declare @imsrSet integer
+select @imsrSet = _Set_key from MGI_Set where name = "IMSR Providers"
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 1, @imsrSet, 1, 1)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 2, @imsrSet, 22, 2)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 3, @imsrSet, 39, 3)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 4, @imsrSet, 38, 4)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 5, @imsrSet, 57, 5)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 6, @imsrSet, 40, 6)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 7, @imsrSet, 37, 7)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 8, @imsrSet, 56, 8)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 9, @imsrSet, 58, 9)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 10, @imsrSet, 70, 10)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 11, @imsrSet, 54, 11)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 12, @imsrSet, 71, 12)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 13, @imsrSet, 90, 13)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 14, @imsrSet, 91, 14)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 15, @imsrSet, 84, 15)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 16, @imsrSet, 93, 16)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 17, @imsrSet, 92, 17)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 18, @imsrSet, 94, 18)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 19, @imsrSet, 87, 19)
+
+insert MGI_SetMember (_SetMember_key, _Set_key, _Object_key, sequenceNum)
+values (@maxSetMemberKey + 20, @imsrSet, 97, 20)
 go
 EOSQL
 
@@ -208,14 +309,18 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+/* should be none of these yet, but we'll check to make sure */
+
 update GXD_Expression
 set isForGXD = 0
 where _Expression_key in (select ge._Expression_key
 	from GXD_Expression ge, GXD_AssayType t
 	where ge._AssayType_key = t._AssayType_key
-		and t.assayType in ("in situ transgenic",
+		and t.assayType in ("in situ reporter (transgenic)",
 			"indirect transgenic", "indirect knock-in") )
 go
+
+/* should be none of these yet, but we'll check to make sure */
 
 update GXD_Expression
 set isRecombinase = 1
@@ -330,6 +435,9 @@ ${PERMS}/public/procedure/PRB_getStrainReferences_grant.object | tee -a ${LOG}
 # 	2. allowing assayType to be null
 # Note that paneLabel already allows null values, which is good for this.
 
+date | tee -a ${LOG}
+echo "Allowing nulls in IMG_Cache" | tee -a ${LOG}
+
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
@@ -345,6 +453,9 @@ EOSQL
 ###-------------------------------###
 ###--- update PRB_Strain table ---###
 ###-------------------------------###
+
+date | tee -a ${LOG}
+echo "Renaming PRB_Strain table" | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -638,6 +749,15 @@ date | tee -a ${LOG}
 echo "Updating GXD stats definitions" | tee -a ${LOG}
 
 ./updateStats.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} | tee -a ${LOG}
+
+###------------------------------------###
+###--- process Janan's strains file ---###
+###------------------------------------###
+
+date | tee -a ${LOG}
+echo "Processing Janan's strains file" | tee -a ${LOG}
+
+./processJananFile.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} /mgi/all/wts_projects/8500/8511/StrainsFINAL2a.txt | tee -a ${LOG}
 
 ###----------------------------------###
 ###--- load Allen Brain Atlas IDs ---###

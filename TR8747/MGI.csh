@@ -660,6 +660,7 @@ echo "(Re)Creating procedures and views" | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_View_drop.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_View_create.object | tee -a ${LOG}
 ${SCHEMA}/procedure/PRB_setStrainReview_create.object | tee -a ${LOG}
+${SCHEMA}/procedure/VOC_getGOInferredFrom_create.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_NeedsReview_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_Attribute_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/VOC_Term_NeedsReview_View_create.object | tee -a ${LOG}
@@ -699,6 +700,7 @@ ${PERMS}/curatorial/procedure/MRK_updateKeys_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/MRK_simpleWithdrawal_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/PRB_mergeStrain_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/PRB_setStrainReview_grant.object | tee -a ${LOG}
+${PERMS}/public/procedure/VOC_getGOInferredFrom_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_NeedsReview_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_Attribute_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_View_grant.object | tee -a ${LOG}

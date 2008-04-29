@@ -64,18 +64,31 @@ go
 declare @maxAssayTypeKey integer
 select @maxAssayTypeKey = max(_AssayType_key) from GXD_AssayType
 
-/* Msg: check names of assay types */
-/* Msg: check names of types below in migration as well */
-/* Msg: also synchronize with procedure GXD_loadCacheByAssay */
+insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
+values (@maxAssayTypeKey + 1, "In situ reporter (transgenic)", 1, 0)
 
 insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
-values (@maxAssayTypeKey + 1, "in situ reporter (transgenic)", 1, 0)
+values (@maxAssayTypeKey + 2, "Recombinase reporter", 1, 0)
+go
+EOSQL
 
-insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
-values (@maxAssayTypeKey + 2, "indirect transgenic", 1, 0)
+###----------------------------###
+###--- Adding new note type ---###
+###----------------------------###
 
-insert GXD_AssayType (_AssayType_key, assayType, isRNAAssay, isGelAssay)
-values (@maxAssayTypeKey + 3, "indirect knock-in", 1, 0)
+date | tee -a ${LOG}
+echo "Adding new Inducible note type for alleles" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+declare @maxNoteType integer
+select @maxNoteType = max(_NoteType_key) from MGI_NoteType
+
+insert MGI_NoteType (_NoteType_key, noteType, _MGIType_key, private)
+values (@maxNoteType + 1, "Inducible", 11, 0)
 go
 EOSQL
 
@@ -246,6 +259,35 @@ EOSQL
 ${SCHEMA}/index/MGI_Set_create.object | tee -a ${LOG}
 ${SCHEMA}/index/MGI_SetMember_create.object | tee -a ${LOG}
 
+###------------------------------------###
+###--- assorted other index changes ---###
+###------------------------------------###
+
+date | tee -a ${LOG}
+echo "Making other index changes" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+drop index MRK_Label.idx_Marker_key
+go
+
+create nonclustered index idx_label on MRK_Label (label, _Organism_key, _Marker_key) on seg1
+go
+
+drop index VOC_Annot._Object_key
+go
+
+drop index VOC_Annot._Term_key
+go
+
+create nonclustered index idx_Term_key on VOC_Annot (_Term_key, _AnnotType_key,
+_Qualifier_key, _Object_key) on seg1
+go
+EOSQL
+
 ###-----------------------------------###
 ###--- update GXD_Expression table ---###
 ###-----------------------------------###
@@ -316,8 +358,8 @@ set isForGXD = 0
 where _Expression_key in (select ge._Expression_key
 	from GXD_Expression ge, GXD_AssayType t
 	where ge._AssayType_key = t._AssayType_key
-		and t.assayType in ("in situ reporter (transgenic)",
-			"indirect transgenic", "indirect knock-in") )
+		and t.assayType in ("In situ reporter (transgenic)",
+			"Recombinase reporter") )
 go
 
 /* should be none of these yet, but we'll check to make sure */
@@ -659,12 +701,19 @@ echo "(Re)Creating procedures and views" | tee -a ${LOG}
 
 ${SCHEMA}/view/PRB_Strain_View_drop.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_View_create.object | tee -a ${LOG}
+${SCHEMA}/view/PRB_Strain_Super_View_create.object | tee -a ${LOG}
 ${SCHEMA}/procedure/PRB_setStrainReview_create.object | tee -a ${LOG}
 ${SCHEMA}/procedure/VOC_getGOInferredFrom_create.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_NeedsReview_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_Attribute_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/VOC_Term_NeedsReview_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/VOC_Term_StrainAttribute_View_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "Recreating BIB_Refs triggers" | tee -a ${LOG}
+
+${SCHEMA}/trigger/BIB_Refs_drop.object | tee -a ${LOG}
+${SCHEMA}/trigger/BIB_Refs_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "Recreating strains-related triggers" | tee -a ${LOG}
@@ -704,6 +753,7 @@ ${PERMS}/public/procedure/VOC_getGOInferredFrom_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_NeedsReview_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_Attribute_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_View_grant.object | tee -a ${LOG}
+${PERMS}/public/view/PRB_Strain_Super_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/VOC_Term_NeedsReview_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/VOC_Term_StrainAttribute_View_grant.object | tee -a ${LOG}
 

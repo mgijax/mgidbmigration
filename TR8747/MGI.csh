@@ -277,10 +277,10 @@ go
 create nonclustered index idx_label on MRK_Label (label, _Organism_key, _Marker_key) on seg1
 go
 
-drop index VOC_Annot._Object_key
+drop index VOC_Annot.idx_Object_key
 go
 
-drop index VOC_Annot._Term_key
+drop index VOC_Annot.idx_Term_key
 go
 
 create nonclustered index idx_Term_key on VOC_Annot (_Term_key, _AnnotType_key,

@@ -72,6 +72,34 @@ values (@maxAssayTypeKey + 2, "Recombinase reporter", 1, 0)
 go
 EOSQL
 
+###--------------------------------------###
+###--- Adding new logical & actual db ---###
+###--------------------------------------###
+
+date | tee -a ${LOG}
+echo "Adding new logical & actual database for SP-KW" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+declare @nextLDB integer
+declare @nextADB integer
+
+select @nextLDB = max(_LogicalDB_key) + 1 from ACC_LogicalDB
+select @nextADB = max(_ActualDB_key) + 1 from ACC_ActualDB
+
+insert ACC_LogicalDB (_LogicalDB_key, name, description, _Organism_key)
+values (@nextLDB, "SP-KW", "Swiss-Prot Keywords", null)
+
+insert ACC_ActualDB (_ActualDB_key, _LogicalDB_key, name, active,
+	url, allowsMultiple, delimiter)
+values (@nextADB, @nextLDB, "SP-KW", 1,
+	"http://www.expasy.org/cgi-bin/get-entries?KW=@@@@", 0, null)
+go
+EOSQL
+
 ###----------------------------###
 ###--- Adding new note type ---###
 ###----------------------------###

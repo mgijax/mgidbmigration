@@ -1,4 +1,4 @@
-#!/bin/csh -x -f
+#!/bin/csh -f
 
 #
 # Build 37 Tasks
@@ -11,136 +11,136 @@
 cd `dirname $0` && source ./Configuration
 
 date
-echo '$0'
+echo "$0"
 
 #
-# load databases for development builds only
+# Load databases (development builds only).
 #
-
 #date
-#${DBUTILS}/mgidbutilities/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
-#${DBUTILS}/mgidbutilities/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /shire/sybase/radar.backup
+#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
+#${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /shire/sybase/radar.backup
 
 #
-# run the migration to remove obsolete gene models and curator made associations
+# Backup databases before proceeding (production only).
 #
+#date
+#echo 'Backup mgd/radar databases'
+#${MGI_DBUTILS}/bin/dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra1/sybase/mgd.preBuild37.backup
+#${MGI_DBUTILS}/bin/dump_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /extra1/sybase/radar.preBuild37.backup
 
+#
+# Run the migration to remove obsolete gene models and curator associations.
+#
+#date
 #${DBUTILS}/mgidbmigration/BUILD37/MGI.csh
 
 #
-# Broadcast the build 37 novel genes
+# Broadcast the build 37 novel genes.  The broadcast script also runs the
+# mapping load using the input file that was created by the initial nomen load.
 #
-
 #date
 #echo 'Nomen Broadcast'
-#${DATALOAD}/nomenload/broadcast.csh ensembl.config
-#${DATALOAD}/nomenload/broadcast.csh ncbi.config
-#${DATALOAD}/nomenload/broadcast.csh vega.config
+#${NOMENLOAD}/broadcast.csh ${NOMENLOAD}/ensembl.config
+#${NOMENLOAD}/broadcast.csh ${NOMENLOAD}/ncbi.config
+#${NOMENLOAD}/broadcast.csh ${NOMENLOAD}/vega.config
 
 #
-# Run mapping loads for each set of broadcast genes; input having been 
-# created when initial nomenload
+# Run all gene model associations loads.
 #
-
-#date
-#echo "Mapping Loads'
-
-#
-# Run all gene model associations loads
-#
-
-#date
-#echo 'NCBI Gene Model/Association load'
-#${DATALOAD}/assemblyseqload/bin/assemblyseqload.sh ncbi_assemblyseqload.config
-
 #date
 #echo 'ENSEMBL Gene Model/Association load'
-#${DATALOAD}/assemblyseqload/bin/assemblyseqload.sh ensembl_assemblyseqload.config
-
+#${ASSEMBLYSEQLOAD}/bin/assemblyseqload.sh ensembl_assemblyseqload.config
+#date
+#echo 'NCBI Gene Model/Association load'
+#${ASSEMBLYSEQLOAD}/bin/assemblyseqload.sh ncbi_assemblyseqload.config
 #date
 #echo 'VEGA Gene Model/Association load'
-#${DATALOAD}/assemblyseqload/bin/assemblyseqload.sh vega_assemblyseqload.config
-
+#${ASSEMBLYSEQLOAD}/bin/assemblyseqload.sh vega_assemblyseqload.config
 
 #
-# run egload then swissload (egload deletes swissload created associations)
+# Run egload then swissload (egload deletes swissload created associations).
 #
 #date
 #echo 'EG load (to make additional NCBI Gene Model/Marker associations)'
-#${DATALOAD}/egload/bin/egload.sh
+#${EGLOAD}/bin/egload.sh
 
 #date
 #echo 'SWISS-PROT Load'
-#${DATALOAD}/swissload/preswissload.csh
-#${DATALOAD}/swissload/swissload.csh
+#${SWISSLOAD}/preswissload.csh
+#${SWISSLOAD}/swissload.csh
 
 #
-# Run the marker coordinate loads
+# Run the marker coordinate loads.
 #
-
-#$date
-#$echo 'miRBASE Association/Coordinate/Mapping load'
-#$${DATALOAD}/mirbaseload/mirbaseload.sh
+#date
+#echo 'miRBASE Association/Coordinate/Mapping load'
+#${MIRBASELOAD}/mirbaseload.sh
 
 #date
 #echo 'QTL Coordinate/Nomen load'
-#${DATALOAD}/coordload/bin/qtlcoordload.sh qtl_coordload.config
+#${COORDLOAD}/bin/qtlcoordload.sh qtl_coordload.config
 
 #date
 #echo 'Roopenian STS Load'
-# ...
+#${COORDLOAD}/bin/coordload.sh roopenian_sts_coordload.config
 
 #date
 #echo 'UniSTS load'
-#${DATALOAD}/unistsload/unistsload.sh
+#${UNISTSLOAD}/unistsload.sh
 
 #
-# Load gene trap lite associations - delete/reload mode
-# depends on gtlitepipeline having been run on hobbiton
+# Load gene trap lite associations (delete/reload mode).  Depends on
+# gtlitepipeline having been run on hobbiton.
 #
-
-#echo "Creating gene trap cell line id to marker associations" | tee -a  ${LOG}
+#echo 'Creating gene trap cell line id to marker associations'
 #${ASSOCLOAD}/bin/AssocLoadDP.sh ${ASSOCLOAD}/DP.config.genetrap
 
 #
-# load all cache tables
+# Load all cache tables.
 #
-
 #date
 #echo 'Load Sequence Cache tables'
-#${DBUTILS}/seqcacheload/seqcoord.csh
-#${DBUTILS}/seqcacheload/seqmarker.csh
-#${DBUTILS}/seqcacheload/seqdescription.csh
+#${SEQCACHELOAD}/seqcoord.csh
+#${SEQCACHELOAD}/seqmarker.csh
+#${SEQCACHELOAD}/seqdescription.csh
 
-#$date
-#$echo 'Load Marker Cache tables'
-#$${DBUTILS}/mrkcacheload/mrkref.csh
-#$${DBUTILS}/mrkcacheload/mrklocation.csh
+#date
+#echo 'Load Marker Cache tables'
+#${MRKCACHELOAD}/mrklabel.csh
+#${MRKCACHELOAD}/mrkref.csh
+#${MRKCACHELOAD}/mrklocation.csh
 
-# note dbsnpload, via snpcacheload, runs snpmarker.csh now
+# NOTE dbsnpload, via snpcacheload, runs snpmarker.csh now.
 
 #
-# run qc and public reports, some needed to generate gbrowse files
+# Run QC and public reports.
 #
+# NOTE: mgd/SEQ_RepTransGenomic.py is needed for building GBrowse.
+#date
+#echo 'QC Reports'
+#${QCRPTS}/qcnightly_reports.sh
+#${QCRPTS}/qcweekly_reports.sh
+#${QCRPTS}/qcmonthly_reports.sh
 
 #date
 #echo 'Public Reports'
-
-#date
-# note: mgd/SEQ_RepTransGenomic.py is needed for building gbrowse
-#echo 'QC Reports'
+#${PUBRPTS}/nightly_reports.sh
+#${PUBRPTS}/weekly_reports.sh
+#${PUBRPTS}/monthly_reports.sh
 
 #
-# run gbrowse utilities
+# Run GBrowse utilities.
 #
-
 #date
 #echo 'GBrowse Utilities'
 #${GBROWSEUTILS}/bin/generateReports.sh
 
+#
+# Backup databases.
+#
 #date
-#echo 'Backup'
-#${MGI_DBUTILS}/bin/mgi_backup_to_disk.csh ${MGD_DBSERVER} "${MGD_DBNAME}" mgdbuild37
+#echo 'Backup mgd/radar databases'
+#${MGI_DBUTILS}/bin/mgi_backup_to_disk.csh ${MGD_DBSERVER} "${MGD_DBNAME} ${RADAR_DBNAME}" Build37
 
 echo 'Completed'
 date

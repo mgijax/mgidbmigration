@@ -5,7 +5,10 @@
 #	1. updates strain type field in database
 #	2. produces association load file for Festing links
 #	3. produces association load file for MPD links
-#	4. reports strain nomenclature mismatches
+#	4. for strains not in the input file:
+#		a. sets "standard" strains to be non-standard
+#		b. flags them with "Needs Review - load"
+
 
 import sys
 import db
@@ -217,7 +220,23 @@ def validate (strains, names, ids, vocab):
 
 	return validStrains
 
+def getStandardStrains ():
+	# returns dictionary of strain keys, including all those which were
+	# currently flagged as "standard" in the database
+
+	strainKeys = {}
+
+	results = db.sql ('''select _Strain_key
+		from PRB_Strain
+		where standard = 1''', 'auto')
+
+	for row in results:
+		strainKeys[row['_Strain_key']] = 1
+
+	return strainKeys
+
 def process (validStrains, strainKeys, vocab):
+	oldStandard = getStandardStrains()
 	festing = [ 'MGI\tFesting\n' ]	# lines for Festing output file
 	mpd = [ 'MGI\tMPD\n' ]		# lines for MPD output file
 	cmds = []			# SQL statements to update strain type
@@ -232,12 +251,54 @@ def process (validStrains, strainKeys, vocab):
 		mpdID = strain['mpd']
 		strainKey = strainKeys[id]
 
+		# remove this strain (which was in Janan's file) from the
+		# old set of standard strains
+		if oldStandard.has_key(strainKey):
+			del oldStandard[strainKey]
+
 		if festingID:
 			festing.append ('%s\t%s\n' % (id, festingID))
 		if mpdID:
 			mpd.append ('%s\t%s\n' % (id, mpdID))
 
 		cmds.append (update % (strainTypeKey, strainKey))
+
+	# any strains still in 'oldStandard' were not in Janan's file, so we
+	# must remove their "standard" status and must flag them as needing
+	# review because of the load
+
+	results1 = db.sql ('select max(_Annot_key) from VOC_Annot', 'auto')
+	results2 = db.sql ('''select vt._Term_key
+		from VOC_Term vt, VOC_Vocab vv
+		where vv.name = "Generic Annotation Qualifier"
+			and vv._Vocab_key = vt._Vocab_key
+			and vt.term = null''', 'auto')
+	results3 = db.sql ('''select vt._Term_key
+		from VOC_Term vt, VOC_Vocab vv
+		where vv.name = "Needs Review"
+			and vv._Vocab_key = vt._Vocab_key
+			and vt.term = "Needs Review - load"''', 'auto')
+	results4 = db.sql ('''select _AnnotType_key
+		from VOC_AnnotType
+		where name = "Strain/Needs Review"''', 'auto')
+
+	maxAnnotKey = results1[0]['']
+	qualifierKey = results2[0]['_Term_key']
+	needsReviewKey = results3[0]['_Term_key']
+	annotTypeKey = results4[0]['_AnnotType_key']
+
+	notStandard = '''update PRB_Strain set standard = 0 
+		where _Strain_key = %d'''
+	i = 0
+	insert = '''insert VOC_Annot (_Annot_key, _AnnotType_key, _Object_key,
+			_Term_key, _Qualifier_key)
+		values (%d + %d, %d, %d, %d, %d)'''
+
+	for strainKey in oldStandard.keys():
+		i = i + 1
+		cmds.append (notStandard % strainKey)
+		cmds.append (insert % (maxAnnotKey, i, annotTypeKey,
+			strainKey, needsReviewKey, qualifierKey) )
 
 	return cmds, festing, mpd
 

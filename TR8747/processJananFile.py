@@ -241,7 +241,7 @@ def process (validStrains, strainKeys, vocab):
 	mpd = [ 'MGI\tMPD\n' ]		# lines for MPD output file
 	cmds = []			# SQL statements to update strain type
 
-	update = '''UPDATE PRB_Strain SET _StrainType_key = %d 
+	update = '''UPDATE PRB_Strain SET _StrainType_key = %d, standard = 1 
 		WHERE _Strain_key = %d'''
 
 	for strain in validStrains:

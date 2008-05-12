@@ -21,8 +21,8 @@ echo "Starting in ${CWD}..." | tee -a ${LOG}
 
 # load a backup
 
-load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
-date | tee -a ${LOG}
+#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 setenv SCHEMA ${MGD_DBSCHEMADIR}
 setenv PERMS ${MGD_DBPERMSDIR}
@@ -855,7 +855,7 @@ ${ABALOAD}/abaload.sh /data/downloads/www.brain-map.org/pdf/allGenes.csv | tee -
 date | tee -a ${LOG}
 echo "Finished migration" | tee -a ${LOG}
 
-dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/jsb/tr8747. | tee -a ${LOG}
-date | tee -a ${LOG}
-echo "Finished database dump" | tee -a ${LOG}
+#dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/jsb/tr8747. | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "Finished database dump" | tee -a ${LOG}
 

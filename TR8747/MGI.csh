@@ -155,7 +155,7 @@ select vt._Term_key
 from VOC_Term vt, VOC_Vocab vv
 where vv.name = "GXD Reporter Genes"
 	and vv._Vocab_key = vt._Vocab_key
-	and vt.term in ("Cre")			-- add others here
+	and vt.term in ("Cre","FLP")			-- add others here
 for read only
 go
 

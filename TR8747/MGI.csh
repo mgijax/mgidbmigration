@@ -402,15 +402,17 @@ where (isForGXD = 0)
 			and ms.name = "Recombinases")
 go
 
-/* gels */
+/* gels - if we have a dimension, it is not a stub */
 update GXD_Expression
 set hasImage = 1
-where _Assay_key in (select _Assay_key
-		from GXD_Assay
-		where _ImagePane_key != null)
+where _Assay_key in (select a._Assay_key
+		from GXD_Assay a, IMG_ImagePane p, IMG_Image i
+		where a._ImagePane_key = p._ImagePane_key
+		and p._Image_key = i._Image_key
+		and i.xDim != null)
 go
 
-/* in situ */
+/* in situ - if we have a dimension, it is not a stub */
 update GXD_Expression
 set hasImage = 1
 where _Expression_key in (select ge._Expression_key
@@ -418,13 +420,18 @@ where _Expression_key in (select ge._Expression_key
 			GXD_Specimen gs, 
 			GXD_InSituResult ir,
 			GXD_ISResultStructure irs,
-			GXD_InSituResultImage iri
+			GXD_InSituResultImage iri,
+			IMG_ImagePane p,
+			IMG_Image i
 		where ge._Assay_key = gs._Assay_key
 			and ge._Genotype_key = gs._Genotype_key
 			and gs._Specimen_key = ir._Specimen_key
 			and ge._Structure_key = irs._Structure_key
 			and ir._Result_key = irs._Result_key
-			and ir._Result_key = iri._Result_key)
+			and ir._Result_key = iri._Result_key
+			and iri._ImagePane_key = p._ImagePane_key
+			and p._Image_key = i._Image_key
+			and i.xDim != null)
 go
 EOSQL
 

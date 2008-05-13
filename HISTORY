@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-0-2-4
+DATE: 5/13/2008
+STAFF: dbm
+1) Split the build 37 script into 3 separate scripts for the next build
+
 TAG: mgidbmigration-4-0-2-3
 DATE: 5/12/2008
 STAFF: jsb
@@ -12,7 +17,7 @@ TAG: mgidbmigration-4-0-2-1
 DATE: 5/8/2008
 STAFF: dbm
 1) Merged tr8528 branch to the trunk.  The branch was not needed because
-   the build 37 stuff is in it's own directory.
+   the build 37 stuff is in its own directory.
 
 TAG: mgidbmigration-tr8528-BP
 DATE: 4/7/2008

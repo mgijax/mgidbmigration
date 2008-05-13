@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-0-2-5
+DATE: 5/13/2008
+STAFF: jsb
+1) fixed hasImage bit for image stubs
+
 TAG: mgidbmigration-4-0-2-4
 DATE: 5/13/2008
 STAFF: dbm

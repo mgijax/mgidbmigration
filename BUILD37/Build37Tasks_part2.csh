@@ -13,7 +13,7 @@
 #  4) Run SWISS-Prot load
 #  5) Run coordinate loads
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ../Configuration
 
 date
 echo "$0"

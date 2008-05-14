@@ -12,7 +12,7 @@
 #  4) Generate GBrowse reports
 #  5) Backup the mgd/radar databases
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ../Configuration
 
 date
 echo "$0"

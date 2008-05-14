@@ -10,7 +10,7 @@
 #  2) Backup the mgd/radar databases (production only)
 #  3) Run the database migration script
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ../Configuration
 
 date
 echo "$0"

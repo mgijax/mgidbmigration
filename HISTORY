@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-0-2-6
+DATE: 5/14/2008
+STAFF: dbm
+1) Removed Configuration file from BUILD37 directory and fixed scripts
+   to use the product level Configuration file instead.
+
 TAG: mgidbmigration-4-0-2-5
 DATE: 5/13/2008
 STAFF: jsb

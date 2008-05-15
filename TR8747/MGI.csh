@@ -855,6 +855,20 @@ echo "Loading Allen Brain Atlas IDs" | tee -a ${LOG}
 
 ${ABALOAD}/abaload.sh /data/downloads/www.brain-map.org/pdf/allGenes.csv | tee -a ${LOG}
 
+# Since we added a couple hundred thousand rows for a new MGI type (evidence)
+# and a new logical database (Allen), we need to regenerate the statistics for
+# the accession table.  Otherwise, the optimizer makes really bad choices when
+# searching for these IDs.
+
+date | tee -a ${LOG}
+echo "Regenerating database statistics for ACC_Accession" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+update statistics ACC_Accession
+go
+EOSQL
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

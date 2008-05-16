@@ -80,6 +80,13 @@ go
 exec MAP_deleteByCollection "VEGA 22 Gene Model"
 go
 
+/* delete mirBase/marker associations */
+/* mirbaseload will NOT delete the curated associations */
+delete from ACC_Accession
+where _LogicalDB_key = 83 and
+      _MGIType_key = 2
+go
+
 EOSQL
 
 date | tee -a  ${LOG}

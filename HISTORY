@@ -1,3 +1,24 @@
+TAG: mgidbmigration-4-0-2-7
+DATE: 5/16/2008
+STAFF: jsb
+1) updates statistics on ACC_Accession after adding lots of IDs
+
+TAG: mgidbmigration-4-0-2-6
+DATE: 5/14/2008
+STAFF: dbm
+1) Removed Configuration file from BUILD37 directory and fixed scripts
+   to use the product level Configuration file instead.
+
+TAG: mgidbmigration-4-0-2-5
+DATE: 5/13/2008
+STAFF: jsb
+1) fixed hasImage bit for image stubs
+
+TAG: mgidbmigration-4-0-2-4
+DATE: 5/13/2008
+STAFF: dbm
+1) Split the build 37 script into 3 separate scripts for the next build
+
 TAG: mgidbmigration-4-0-2-3
 DATE: 5/12/2008
 STAFF: jsb
@@ -12,7 +33,7 @@ TAG: mgidbmigration-4-0-2-1
 DATE: 5/8/2008
 STAFF: dbm
 1) Merged tr8528 branch to the trunk.  The branch was not needed because
-   the build 37 stuff is in it's own directory.
+   the build 37 stuff is in its own directory.
 
 TAG: mgidbmigration-tr8528-BP
 DATE: 4/7/2008

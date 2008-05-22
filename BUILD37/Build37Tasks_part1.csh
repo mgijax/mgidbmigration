@@ -41,5 +41,12 @@ endif
 date
 ${DBUTILS}/mgidbmigration/BUILD37/MGI.csh
 
+#
+# Run extra tasks that are unrelated to Build 37, but are being bundled with
+# the Build 37 release.
+#
+date
+${DBUTILS}/mgidbmigration/BUILD37/ExtraTasks.csh
+
 echo 'Completed'
 date

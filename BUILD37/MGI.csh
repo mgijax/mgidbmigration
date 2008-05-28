@@ -89,5 +89,11 @@ go
 
 EOSQL
 
+# TR8962
+#
+${MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_drop.object
+${MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object
+${MGD_DBPERMSDIR}/public/procedure/BIB_getCopyright_grant.object
+
 date | tee -a  ${LOG}
 

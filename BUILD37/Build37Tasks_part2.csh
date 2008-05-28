@@ -49,7 +49,7 @@ echo 'EG load (to make additional NCBI Gene Model/Marker associations)'
 ${EGLOAD}/bin/egload.sh
 
 date
-echo 'SWISS-PROT Load'
+echo 'SWISS-PROT load'
 ${SWISSLOAD}/preswissload.csh
 ${SWISSLOAD}/swissload.csh
 
@@ -65,7 +65,7 @@ echo 'QTL Coordinate/Nomen load'
 ${COORDLOAD}/bin/qtlcoordload.sh qtl_coordload.config
 
 date
-echo 'Roopenian STS Load'
+echo 'Roopenian STS load'
 ${COORDLOAD}/bin/coordload.sh roopenian_sts_coordload.config
 
 date
@@ -73,11 +73,13 @@ echo 'UniSTS load'
 ${UNISTSLOAD}/unistsload.sh
 
 date
-echo 'Marker Location Cache Load'
+echo 'Load Cache tables needed by MGI_GTGUP.gff report'
+${SEQCACHELOAD}/seqcoord.csh
+${SEQCACHELOAD}/seqmarker.csh
 ${MRKCACHELOAD}/mrklocation.csh
 
 date
-echo 'Create MGI_GTGUP.gff Report'
+echo 'Create MGI_GTGUP.gff report'
 cd ${PUBRPTS}
 source ./Configuration
 cd daily

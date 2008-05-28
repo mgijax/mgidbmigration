@@ -72,5 +72,17 @@ date
 echo 'UniSTS load'
 ${UNISTSLOAD}/unistsload.sh
 
+date
+echo 'Marker Location Cache Load'
+${MRKCACHELOAD}/mrklocation.csh
+
+date
+echo 'Create MGI_GTGUP.gff Report'
+cd ${PUBRPTS}
+source ./Configuration
+cd daily
+MGI_GTGUP.py
+cp ${REPORTOUTPUTDIR}/MGI_GTGUP.gff ${FTPREPORTDIR}
+
 echo 'Completed'
 date

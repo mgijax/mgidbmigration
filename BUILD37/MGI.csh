@@ -12,9 +12,10 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
  
-# load a backup
-#load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup
-#load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /shire/sybase/radar.backup
+date
+echo 'Updating version numbers in the database'
+${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.1"
+${MGI_DBUTILS}/bin/updateSnpDataVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "dbSNP Build 128"
 
 ########################################
 

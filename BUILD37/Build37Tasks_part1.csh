@@ -28,7 +28,7 @@ endif
 #
 # Backup databases before proceeding (production only).
 #
-if ( ${HOST} = "shire" ) then
+if ( ${HOST} == "shire" ) then
     date
     echo 'Backup mgd/radar databases'
     ${MGI_DBUTILS}/bin/dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /extra1/sybase/mgd.preBuild37.backup

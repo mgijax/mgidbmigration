@@ -8,7 +8,6 @@
 # This script accomplishes the following tasks:
 #  1) Run all QC and public reports
 #  2) Generate GBrowse reports
-#  3) Backup the mgd/radar databases
 
 cd `dirname $0` && source ../Configuration
 
@@ -37,13 +36,6 @@ ${PUBRPTS}/monthly_reports.sh
 date
 echo 'GBrowse Utilities'
 ${GBROWSEUTILS}/bin/generateReports.sh
-
-#
-# Backup databases.
-#
-date
-echo 'Backup mgd/radar databases'
-${MGI_DBUTILS}/bin/mgi_backup_to_disk.csh ${MGD_DBSERVER} "${MGD_DBNAME} ${RADAR_DBNAME}" Build37
 
 echo 'Completed'
 date

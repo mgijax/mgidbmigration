@@ -347,8 +347,8 @@ def addTerms (
 
 	# success reporting
 
-	sys.stderr.write ('%d terms were successfully added for vocab %d\n' \
-		% (succeeded, vocabKey))
+	print '%d terms were successfully added for vocab %d\n' \
+		% (succeeded, vocabKey)
 	return
 
 ###------------------------------------------------------------------------###

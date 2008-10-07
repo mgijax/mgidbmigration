@@ -395,10 +395,19 @@ echo "--- Adding tables" | tee -a ${LOG}
 
 ${SCHEMA}/table/VOC_Marker_Cache_create.object | tee -a ${LOG}
 ${SCHEMA}/table/VOC_Annot_Count_Cache_create.object | tee -a ${LOG}
+${SCHEMA}/table/SEQ_GeneModel_create.object | tee -a ${LOG}
 ${SCHEMA}/index/VOC_Marker_Cache_create.object | tee -a ${LOG}
 ${SCHEMA}/index/VOC_Annot_Count_Cache_create.object | tee -a ${LOG}
+${SCHEMA}/index/SEQ_GeneModel_create.object | tee -a ${LOG}
 ${PERMS}/public/table/VOC_Marker_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/VOC_Annot_Count_Cache_grant.object | tee -a ${LOG}
+${PERMS}/public/table/SEQ_GeneModel_grant.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Updating triggers" | tee -a ${LOG}
+
+${SCHEMA}/trigger/SEQ_Sequence_drop.object | tee -a ${LOG}
+${SCHEMA}/trigger/SEQ_Sequence_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Adding procedures" | tee -a ${LOG}
@@ -430,6 +439,10 @@ go
 sp_foreignkey VOC_Marker_Cache, MRK_Marker, _Marker_key
 go
 sp_foreignkey VOC_Marker_Cache, VOC_Term, _Term_key
+go
+sp_foreignkey SEQ_GeneModel, SEQ_Sequence, _Sequence_key
+go
+sp_foreignkey SEQ_GeneModel, MRK_Types, _Marker_Type_key
 go
 EOSQL
 

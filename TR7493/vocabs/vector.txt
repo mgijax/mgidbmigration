@@ -1,0 +1,7 @@
+enhancer trap	enhancer trap
+promoter trap	promoter trap
+gene trap	gene trap
+poly-A trap	poly-A trap
+secretory trap	secretory trap
+signal peptide trap	sig peptide trap
+undefined	undefined

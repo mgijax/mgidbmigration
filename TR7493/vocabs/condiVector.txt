@@ -1,0 +1,3 @@
+yes	Y
+no	N
+undefined	Un

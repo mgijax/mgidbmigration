@@ -1,0 +1,2 @@
+Strain of Specimen	specimen strain
+Strain of Origin	origin strain

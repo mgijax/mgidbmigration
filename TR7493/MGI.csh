@@ -366,6 +366,16 @@ ${SCHEMA}/trigger/ALL_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
+
+${PERMS}/public/table/ALL_Allele_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/ALL_Allele_grant.object | tee -a ${LOG}
+${PERMS}/public/table/ALL_CellLine_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/ALL_CellLine_grant.object | tee -a ${LOG}
+${PERMS}/public/table/GXD_Genotype_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/GXD_Genotype_grant.object | tee -a ${LOG}
+
 ###--------------------###
 ###--- add new view ---###
 ###--------------------###

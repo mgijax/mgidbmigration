@@ -5,7 +5,7 @@ CHANGES:
 1) added new SEQ_GeneModel table
 
 TAG: mgidbmigration-4-1-3-0
-DATE: 9/26/2000
+DATE: 9/26/2008
 STAFF: jsb
 CHANGES:
 1) same as 4-1-2-0, just updated version number
@@ -77,6 +77,13 @@ DATE: 5/8/2008
 STAFF: dbm
 1) Merged tr8528 branch to the trunk.  The branch was not needed because
    the build 37 stuff is in its own directory.
+
+TAG:
+DATE: 
+STAFF: sc, jsb
+1) TR8528 added BUILD37 directory
+2) added MGI4.0 directory (TR8087) - handling statistics & measurements
+3) added TR7493 directory - Gene Trap less filling
 
 TAG: mgidbmigration-tr8528-BP
 DATE: 4/7/2008

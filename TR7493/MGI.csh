@@ -383,12 +383,9 @@ ${PERMS}/curatorial/table/GXD_Genotype_grant.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Adding new view(s)" | tee -a ${LOG}
 
-# add new view - 4.19
+# add new view - 4.19 - and its permissions
 
 ${SCHEMA}/view/ALL_CellLine_Allele_View_create.object | tee -a ${LOG}
-
-# add permissions for new view
-
 ${PERMS}/public/view/ALL_CellLine_Allele_View_grant.object | tee -a ${LOG}
 
 # add other new views and their permissions
@@ -401,6 +398,51 @@ ${PERMS}/public/view/ALL_CellLine_Strain_View_grant.object | tee -a ${LOG}
 
 ${SCHEMA}/view/MAP_Feature_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/MAP_Feature_View_grant.object | tee -a ${LOG}
+
+# update old views and recreate their permissions
+
+date | tee -a ${LOG}
+echo "--- Updating old view(s)" | tee -a ${LOG}
+
+${PERMS}/public/view/GXD_AllelePair_View_revoke.object | tee -a ${LOG}
+${SCHEMA}/view/GXD_AllelePair_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/GXD_AllelePair_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/GXD_AllelePair_View_grant.object | tee -a ${LOG}
+
+${PERMS}/public/view/MLD_Expt_Marker_View_revoke.object | tee -a ${LOG}
+${SCHEMA}/view/MLD_Expt_Marker_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/MLD_Expt_Marker_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/MLD_Expt_Marker_View_grant.object | tee -a ${LOG}
+
+${PERMS}/public/view/PRB_RFLV_View_revoke.object | tee -a ${LOG}
+${SCHEMA}/view/PRB_RFLV_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/PRB_RFLV_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/PRB_RFLV_View_grant.object | tee -a ${LOG}
+
+${PERMS}/public/view/PRB_Strain_Marker_View_revoke.object | tee -a ${LOG}
+${SCHEMA}/view/PRB_Strain_Marker_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/PRB_Strain_Marker_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/PRB_Strain_Marker_View_grant.object | tee -a ${LOG}
+
+# updating old stored procedures
+
+date | tee -a ${LOG}
+echo "--- Updating old procedure(s)" | tee -a ${LOG}
+
+${PERMS}/curatorial/procedure/ALL_mergeWildTypes_revoke.object | tee -a ${LOG}
+${SCHEMA}/procedure/ALL_mergeWildTypes_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/ALL_mergeWildTypes_create.object | tee -a ${LOG}
+${PERMS}/curatorial/procedure/ALL_mergeWildTypes_grant.object | tee -a ${LOG}
+
+${PERMS}/curatorial/procedure/ALL_insertAllele_revoke.object | tee -a ${LOG}
+${SCHEMA}/procedure/ALL_insertAllele_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/ALL_insertAllele_create.object | tee -a ${LOG}
+${PERMS}/curatorial/procedure/ALL_insertAllele_grant.object | tee -a ${LOG}
+
+${PERMS}/curatorial/procedure/ALL_convertAllele_revoke.object | tee -a ${LOG}
+${SCHEMA}/procedure/ALL_convertAllele_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/ALL_convertAllele_create.object | tee -a ${LOG}
+${PERMS}/curatorial/procedure/ALL_convertAllele_grant.object | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

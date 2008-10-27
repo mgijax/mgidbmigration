@@ -269,9 +269,6 @@ def buildNewRows():
 	qtlTypeKey = getTermKey ("Allele Type", "QTL")
 	cellLineKey = getTermKey ("Allele State", "Cell Line")
 	mouseLineKey = getTermKey ("Allele State", "Mouse Line")
-	originKey = getTermKey ("Strain Association Type", "Strain of Origin")
-	specimenKey = getTermKey ("Strain Association Type",
-		"Strain of Specimen")
 
 	message ('retrieved five vocab terms')
 
@@ -289,11 +286,6 @@ def buildNewRows():
 	alleles = {}	# maps allele key to [state, refs, strain assoc type]
 
 	for row in results:
-		if row['_Allele_Type_key'] == qtlTypeKey:
-			strainAssocType = specimenKey
-		else:
-			strainAssocType = originKey
-
 		# Assume that a given allele only exists as a cell line; we
 		# will come back later and update those which have been in
 		# mice (which are the alleles cited as part of genotypes).
@@ -302,7 +294,6 @@ def buildNewRows():
 		alleles[row['_Allele_key']] = [
 				cellLineKey,		# state key
 				None,			# state refs key
-				strainAssocType,	# assoc type key
 				]
 
 	message ('retrieved basic allele info')
@@ -430,8 +421,8 @@ def addNewRows (
 
 	if len(ar) < BCP_THRESHOLD:
 		cmd = '''insert ALL_Cache (_Allele_key, _State_key,
-				_StateRefs_key, _StrainAssocType_key)
-			values (%d, %d, %s, %d)'''
+				_StateRefs_key)
+			values (%d, %d, %s)'''
 
 		failed = []	# list of rows for which insert failed
 
@@ -464,7 +455,7 @@ def addNewRows (
 		try:
 			fp = open (myFile, 'w')
 			for allele in ar:
-				fp.write ('%d\t%d\t%s\t%d\n' % allele)
+				fp.write ('%d\t%d\t%s\n' % allele)
 			fp.close()
 		except:
 			bailout ('Cannot write file %s for bcp' % myFile)

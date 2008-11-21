@@ -10,7 +10,8 @@
 
 source ../Configuration
 setenv CWD `pwd`	# current working directory
-
+echo ${MGD_DBSERVER}
+echo ${MGD_DBNAME}
 # start a new log file for this migration, and add a datestamp
 
 setenv LOG $0.log.$$
@@ -45,25 +46,9 @@ ${UTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-2-0-0" | t
 ###--- load new vocabularies ---###
 ###-----------------------------###
 
-setenv JNUM "J:1"
 setenv DB_PARMS "${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME}"
 
-date | tee -a ${LOG}
-echo "--- Loading vocabularies..." | tee -a ${LOG}
-
 cd ${CWD}
-
-./loadSimpleVocab.py vocabs/alleleState.txt "Allele State" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/cellLine.txt "Cell Line Type" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/condiVector.txt "Conditional Vector" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/creator.txt "Creator" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/derivationType.txt "Derivation Type" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/revVector.txt "Reversed Vector" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/seqAlleleAssoc.txt "Sequence Allele Association Type" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/seqTagMethod.txt "Sequence Tag Method" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/vector.txt "Vector Type" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/vectorEnd.txt "Vector End" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
-./loadSimpleVocab.py vocabs/reverseComp.txt "Reverse Complement" ${JNUM} 1 ${DB_PARMS} | tee -a ${LOG}
 
 ###----------------------###
 ###--- add new tables ---###
@@ -136,28 +121,6 @@ echo "--- Table revisions" | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
-go
-
-/* update null vocab terms for new vocabularies */
-
-update VOC_Term
-set term = null, abbreviation = null
-where term = "null"
-    and _Vocab_key in (select _Vocab_key
-	from VOC_Vocab
-	where name in ("Sequence Tag Method", "Vector End",
-		"Reverse Complement") )
-go
-
-/* add new synonym type for cell lines */
-
-declare @maxSynonymTypeKey integer
-select @maxSynonymTypeKey = max(_SynonymType_key) from MGI_SynonymType
-
-insert MGI_SynonymType (_SynonymType_key, _MGIType_key, _Organism_key,
-    synonymType, definition, allowOnlyOne)
-values (@maxSynonymTypeKey + 1, 28, null,
-    "synonym", "synonym for cell line", 0)
 go
 
 /* make changes to GXD_AlleleGenotype and GXD_AllelePair tables (4.16) */

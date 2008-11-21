@@ -1,2 +1,0 @@
-Mouse Line	mouseLine
-Cell Line	cellLine

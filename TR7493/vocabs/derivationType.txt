@@ -1,18 +1,20 @@
-Chemically and radiation induced	Chemically and radiation induced    
-Chemically induced (ENU)	Chemically induced (ENU)            
-Chemically induced (other)	Chemically induced (other)          
-Gene trapped	Gene trapped                        
-Not Specified	Not Specified                       
-Radiation induced	Radiation induced                   
-Spontaneous	Spontaneous                         
-Targeted (Floxed/Frt)	Targeted (Floxed/Frt)               
-Targeted (knock-in)	Targeted (knock-in)                 
-Targeted (knock-out)	Targeted (knock-out)                
-Targeted (other)	Targeted (other)                    
-Targeted (Reporter)	Targeted (Reporter)                 
-Transgenic (Cre/Flp)	Transgenic (Cre/Flp)                
-Transgenic (random, expressed)	Transgenic (random, expressed)      
+Chemically and radiation induced	Chemically and radiation induced
+Chemically induced (ENU)	Chemically induced (ENU)
+Chemically induced (other)	Chemically induced (other)
+Gene trapped	Gene trapped
+Not Specified	Not Specified
+Radiation induced	Radiation induced
+Spontaneous	Spontaneous
+Targeted (Floxed/Frt)	Targeted (Floxed/Frt)
+Targeted (knock-in)	Targeted (knock-in)
+Targeted (knock-out)	Targeted (knock-out)
+Targeted (other)	Targeted (other)
+Targeted (Reporter)	Targeted (Reporter)
+Transgenic (Cre/Flp)	Transgenic (Cre/Flp)
+Transgenic (random, expressed)	Transgenic (random, expressed)
 Transgenic (random, gene disruption)	Transgenic (random, gene disruption)
-Transgenic (Reporter)	Transgenic (Reporter)               
-Transgenic (Transposase)	Transgenic (Transposase)            
-Transposon induced	Transposon induced               
+Transgenic (Reporter)	Transgenic (Reporter)
+Transgenic (Transposase)	Transgenic (Transposase)
+Transposon induced	Transposon induced
+Not Specified	NS
+Not Applicable	NA

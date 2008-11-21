@@ -1,2 +1,4 @@
 Strain of Specimen	specimen strain
 Strain of Origin	origin strain
+Not Applicable	NA
+Not Specified	NS

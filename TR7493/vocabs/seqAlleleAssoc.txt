@@ -1,1 +1,3 @@
 Representative	rep
+Not Specified	NS
+Not Applicable	NA

@@ -6,5 +6,5 @@ inverse PCR	i PCR
 plasmid rescue	p rescue
 5'Splinkerette PCR	5'S PCR
 3'Splinkerette PCR	3'S PCR
-undefined	undefined
-null	null
+Not Specified	NS
+Not Applicable	NA

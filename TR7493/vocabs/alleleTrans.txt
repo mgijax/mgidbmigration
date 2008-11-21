@@ -1,0 +1,5 @@
+Earliest citation of germline transmission:	1stGermLine
+Earliest citation of chimera generation:	1stChimera
+Unknown	UN
+Not Specified	NS
+Not Applicable	NA

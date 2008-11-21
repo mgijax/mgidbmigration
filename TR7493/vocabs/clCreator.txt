@@ -8,3 +8,5 @@ Lexicon Genetics	Lexicon
 TIGEM	TIGEM
 TIGM	TIGM
 SIGTR	SIGTR
+Not Specified	NS
+Not Applicable	NA

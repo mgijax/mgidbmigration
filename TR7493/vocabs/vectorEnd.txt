@@ -1,3 +1,4 @@
 upstream	upstream
 downstream	downstream
-null	null
+Not Specified	NS
+Not Applicable	NA

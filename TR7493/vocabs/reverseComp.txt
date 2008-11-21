@@ -1,3 +1,4 @@
 yes	yes
 no	no
-null	null
+Not Specified	NS
+Not Applicable	NA

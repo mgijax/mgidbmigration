@@ -86,14 +86,14 @@ declare @maxVKey integer
 select @maxVKey = max(_Vocab_key) from VOC_Vocab
 
 insert VOC_Vocab
-values(@maxVKey + 1, 1, -1, 1, 0, "Marker-Allele Association Qualifier", getdate(), getdate() )
+values(@maxVKey + 1, 142303, -1, 1, 0, "Marker-Allele Association Qualifier", getdate(), getdate() )
 go
 
 declare @maxVKey integer
 select @maxVKey = max(_Vocab_key) from VOC_Vocab
 
 insert VOC_Vocab
-values(@maxVKey + 1, 1, -1, 1, 0, "Cell Line Lab Code", getdate(), getdate() )
+values(@maxVKey + 1, 142303, -1, 1, 0, "Cell Line Lab Code", getdate(), getdate() )
 go
 
 /* add new term to Allele Status vocab */

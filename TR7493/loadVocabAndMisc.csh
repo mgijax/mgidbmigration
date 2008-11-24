@@ -8,7 +8,9 @@
 ###--- initialization ---###
 ###----------------------###
 
-source ../Configuration
+setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+source ${MGICONFIG}/master.config.csh
+
 setenv CWD `pwd`	# current working directory
 
 # start a new log file for this migration, and add a datestamp

@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-1-3-3
+DATE: 11/24/2008
+STAFF: sc
+CHANGES:
+1) tagged so we could run vocab script in TR7493
+
 TAG: mgidbmigration-4-1-3-2
 DATE: 11/07/2000
 STAFF: jsb

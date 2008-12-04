@@ -8,7 +8,8 @@
 ###--- initialization ---###
 ###----------------------###
 
-setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+setenv MGICONFIG /home/sc/genetraps/mgiconfig
 source ${MGICONFIG}/master.config.csh
 
 setenv CWD `pwd`	# current working directory
@@ -103,7 +104,7 @@ declare @maxTKey integer
 select @maxTKey = max(_Term_key) from VOC_Term
 
 insert VOC_Term
-values(@maxTKey + 1, 37, "Autoload", "Autoload", 1, 0, 1001, 1001, getdate(), getdate())
+values(@maxTKey + 1, 37, "Autoload", "Autoload", 5, 0, 1001, 1001, getdate(), getdate())
 go
 
 /* add new term to Allele Molecular Mutation vocab */
@@ -111,7 +112,7 @@ declare @maxTKey integer
 select @maxTKey = max(_Term_key) from VOC_Term
 
 insert VOC_Term
-values(@maxTKey + 1, 36, "Insertion of gene trap vector", null, 1, 0, 1001, 1001, getdate(), getdate())
+values(@maxTKey + 1, 36, "Insertion of gene trap vector", null, 19, 0, 1001, 1001, getdate(), getdate())
 go
 
 /* new translation types (no translations yet) */ 

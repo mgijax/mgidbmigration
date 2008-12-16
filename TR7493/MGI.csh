@@ -102,17 +102,6 @@ ${PERMS}/curatorial/table/ALL_Marker_Assoc_grant.object | tee -a ${LOG}
 ###--- populate & index new tables ---###
 ###-----------------------------------###
 
-date | tee -a ${LOG}
-echo "--- Populating ALL_Cache" | tee -a ${LOG}
-
-# populate new ALL_Cache cache table
-
-cd ${CWD}
-./update_ALL_Cache.csh | tee -a ${LOG}
-
-# population of SEQ_Allele_Assoc is done by the GT data load (sc)
-# population of SEQ_GeneTrap is done by the GT data load (sc)
-
 # add indexes for new tables (do this after loading tables so the indexes
 # and statistics are up-to-date after we load the data, plus we get better
 # performance during the load)
@@ -233,6 +222,26 @@ select _Genotype_key, _Strain_key, isConditional, note, @existsAsDefault,
 	_CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 from GXD_Genotype_Old
 go
+
+/* two updates for GXD_Genotype, per Cindy:
+ * 	1. if a genotype has MP annotations, then it exists as a mouse line
+ * 	2. if a genotype has GXD annotations, then it exists as a mouse line
+ */
+
+declare @mouseLine integer
+select @mouseLine = 3982946			-- mouseLine
+
+update GXD_Genotype
+set _ExistsAs_key = @mouseLine
+from GXD_Genotype g, VOC_Annot a
+where g._Genotype_key = a._Object_key
+	and a._AnnotType_key = 1002		-- MP/Genotype
+
+update GXD_Genotype
+set _ExistsAs_key = @mouseLine
+from GXD_Genotype g, GXD_Expression e
+where g._Genotype_key = e._Genotype_key
+	and e.isForGXD = 1			-- not recombinase "assays"
 
 /* populate new ALL_Allele with non-extinct as a default - 3.8, 3.15 */
 
@@ -383,7 +392,7 @@ set t._Creator_key = vt._Term_key
 from #tmp_derivation t, VOC_Term vt, VOC_Vocab vv
 where vv.name = "Cell Line Creator"
 	and vv._Vocab_key = vt._Vocab_key
-	and vt.term = t.provider
+	and (vt.term = t.provider or vt.abbreviation = t.provider)
 go
 
 /* report how many providers matched to creators, and how many did not */
@@ -459,6 +468,23 @@ go
 drop table GXD_Genotype_Old
 go
 
+/* add two new reference association types, to be used in flagging certain
+ * references for alleles
+ */
+
+declare @nextType integer
+select @nextType = max(_RefAssocType_key) + 1
+from MGI_RefAssocType
+
+insert MGI_RefAssocType (_RefAssocType_key, _MGIType_key, assocType,
+    allowOnlyOne)
+values (@nextType, 11, "Chimera Generation", 1)
+
+insert MGI_RefAssocType (_RefAssocType_key, _MGIType_key, assocType,
+    allowOnlyOne)
+values (@nextType + 1, 11, "Germ Line Transmission", 1)
+go
+
 /* updates to logical dbs and actual dbs, per item 3 of "Handling Gene Trap
  * Identifiers" document by rmb
  */
@@ -473,7 +499,7 @@ where _ActualDB_key = 67
 
 update ACC_LogicalDB
 set description = "Lexicon Genetics Cell Line"
-where _ActualDB_key = 96
+where _LogicalDB_key = 96
 go
 
 /* migrate existing mutant cell line IDs to new logical databases, based on
@@ -690,6 +716,18 @@ ${PERMS}/public/table/ALL_CellLine_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/ALL_CellLine_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/GXD_Genotype_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/GXD_Genotype_grant.object | tee -a ${LOG}
+
+# populate new ALL_Cache cache table
+
+date | tee -a ${LOG}
+echo "--- Populating ALL_Cache" | tee -a ${LOG}
+
+cd ${MGICACHELOAD}
+./allcache.csh | tee -a ${LOG}
+cd ${CWD}
+
+# population of SEQ_Allele_Assoc is done by the GT data load (sc)
+# population of SEQ_GeneTrap is done by the GT data load (sc)
 
 ###--------------------###
 ###--- add new view ---###

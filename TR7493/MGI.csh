@@ -43,10 +43,6 @@ echo "--- Updating version numbers in db..." | tee -a ${LOG}
 ${UTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.3" | tee -a ${LOG}
 ${UTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-3-0-0" | tee -a ${LOG}
 
-###-----------------------------###
-###--- load new vocabularies ---###
-###-----------------------------###
-
 setenv DB_PARMS "${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME}"
 
 cd ${CWD}
@@ -66,8 +62,6 @@ ${SCHEMA}/table/SEQ_GeneTrap_create.object | tee -a ${LOG}
 ${SCHEMA}/table/ALL_CellLine_Derivation_create.object | tee -a ${LOG}
 ${SCHEMA}/table/ALL_Marker_Assoc_create.object | tee -a ${LOG}
 ${SCHEMA}/table/ALL_Allele_CellLine_create.object | tee -a ${LOG}
-${SCHEMA}/table/ACC_CountType_create.object | tee -a ${LOG}
-${SCHEMA}/table/ACC_Counts_create.object | tee -a ${LOG}
 
 # add defaults for new tables
 
@@ -76,7 +70,6 @@ ${SCHEMA}/default/SEQ_Allele_Assoc_bind.object | tee -a ${LOG}
 ${SCHEMA}/default/SEQ_GeneTrap_bind.object | tee -a ${LOG}
 ${SCHEMA}/default/ALL_Marker_Assoc_bind.object | tee -a ${LOG}
 ${SCHEMA}/default/ALL_Allele_CellLine_bind.object | tee -a ${LOG}
-${SCHEMA}/default/ACC_Counts_bind.object | tee -a ${LOG}
 
 # add permissions for new tables
 
@@ -89,8 +82,6 @@ ${PERMS}/public/table/SEQ_GeneTrap_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/ALL_CellLine_Derivation_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/ALL_Allele_CellLine_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/ALL_Marker_Assoc_grant.object | tee -a ${LOG}
-${PERMS}/public/table/ACC_CountType_grant.object | tee -a ${LOG}
-${PERMS}/public/table/ACC_Counts_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/ALL_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/SEQ_Allele_Assoc_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/SEQ_GeneTrap_grant.object | tee -a ${LOG}
@@ -112,8 +103,6 @@ echo "--- Adding keys" | tee -a ${LOG}
 ${SCHEMA}/key/ALL_Cache_create.object | tee -a ${LOG}
 ${SCHEMA}/key/ALL_Allele_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/key/ALL_Marker_Assoc_create.object | tee -a ${LOG}
-${SCHEMA}/key/ACC_CountType_create.object | tee -a ${LOG}
-${SCHEMA}/key/ACC_Counts_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Adding indexes" | tee -a ${LOG}
@@ -124,8 +113,6 @@ ${SCHEMA}/index/SEQ_GeneTrap_create.object | tee -a ${LOG}
 ${SCHEMA}/index/ALL_CellLine_Derivation_create.object | tee -a ${LOG}
 ${SCHEMA}/index/ALL_Allele_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/index/ALL_Marker_Assoc_create.object | tee -a ${LOG}
-${SCHEMA}/index/ACC_CountType_create.object | tee -a ${LOG}
-${SCHEMA}/index/ACC_Counts_create.object | tee -a ${LOG}
 
 ###-------------------------------------------------###
 ###--- revisions to existing database components ---###
@@ -275,7 +262,7 @@ from ALL_Allele_Old
 where _Marker_key != null
 go
 
-declare @qualifierKey integer
+declare @qualifierKey integer			-- should be from vocab 70
 select @qualifierKey = 3983019			-- "Not Specified"
 
 insert into ALL_Marker_Assoc (_Assoc_key, _Allele_key, _Marker_key, _Qualifier_key)
@@ -397,14 +384,14 @@ go
 
 /* report how many providers matched to creators, and how many did not */
 
-select provider, count(1) as "matched records"
+select provider, count(1) as "matched creators"
 from #tmp_derivation
 where provider != null
 	and _Creator_key != null
 group by provider
 go
 
-select provider, count(1) as "unmatched records"
+select provider, count(1) as "unmatched creators"
 from #tmp_derivation
 where provider != null
 	and _Creator_key = null
@@ -416,9 +403,13 @@ go
 declare @vecTypeDefault integer		-- "Not Specified"
 select @vecTypeDefault = 3982979
 
+declare @vecNameDefault integer		-- "Not Specified"
+select @vecNameDefault = 3982979	-- should be from vocab 72
+
 insert ALL_CellLine_Derivation (_Derivation_key, _ParentCellLine_key,
-	_DerivationType_key, _Creator_key, _VectorType_key)
-select i, _ESCellLine_key, _DerivationType_key, _Creator_key, @vecTypeDefault
+	_DerivationType_key, _Creator_key, _Vector_key, _VectorType_key)
+select i, _ESCellLine_key, _DerivationType_key, _Creator_key,
+	@vecNameDefault, @vecTypeDefault
 from #tmp_derivation
 go
 
@@ -649,7 +640,6 @@ date | tee -a ${LOG}
 echo "--- Adding triggers to new tables" | tee -a ${LOG}
 
 ${SCHEMA}/trigger/SEQ_Allele_Assoc_create.object | tee -a ${LOG}
-${SCHEMA}/trigger/ACC_CountType_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_Marker_Assoc_create.object | tee -a ${LOG}
 
 # recreate revised keys
@@ -706,6 +696,25 @@ ${SCHEMA}/index/GXD_Genotype_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
+
+# update statistics for the new tables, so the indexes will be optimal
+
+date | tee -a ${LOG}
+echo "--- Updating statistics on new tables (to optimize indexes)" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+update statistics ALL_Cache
+update statistics SEQ_Allele_Assoc
+update statistics SEQ_GeneTrap
+update statistics ALL_CellLine_Derivation
+update statistics ALL_Allele_CellLine
+update statistics ALL_Marker_Assoc
+go
+EOSQL
 
 date | tee -a ${LOG}
 echo "--- Adding permissions on re-created tables" | tee -a ${LOG}

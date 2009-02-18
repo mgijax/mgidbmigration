@@ -56,7 +56,6 @@ echo "--- Creating new tables" | tee -a ${LOG}
 
 # add new tables - 3.1, 3.2, 3.3, 3.5, 3.6, 3.7, 3.10, 3.11
 
-${SCHEMA}/table/ALL_Cache_create.object | tee -a ${LOG}
 ${SCHEMA}/table/SEQ_Allele_Assoc_create.object | tee -a ${LOG}
 ${SCHEMA}/table/SEQ_GeneTrap_create.object | tee -a ${LOG}
 ${SCHEMA}/table/ALL_CellLine_Derivation_create.object | tee -a ${LOG}
@@ -76,13 +75,11 @@ ${SCHEMA}/default/ALL_Allele_CellLine_bind.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Adding new perms" | tee -a ${LOG}
 
-${PERMS}/public/table/ALL_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/SEQ_Allele_Assoc_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/SEQ_GeneTrap_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/ALL_CellLine_Derivation_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/ALL_Allele_CellLine_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/ALL_Marker_Assoc_grant.object | tee -a ${LOG}
-${PERMS}/curatorial/table/ALL_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/SEQ_Allele_Assoc_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/SEQ_GeneTrap_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/ALL_CellLine_Derivation_grant.object | tee -a ${LOG}
@@ -100,14 +97,12 @@ ${PERMS}/curatorial/table/ALL_Marker_Assoc_grant.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Adding keys" | tee -a ${LOG}
 
-${SCHEMA}/key/ALL_Cache_create.object | tee -a ${LOG}
 ${SCHEMA}/key/ALL_Allele_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/key/ALL_Marker_Assoc_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Adding indexes" | tee -a ${LOG}
 
-${SCHEMA}/index/ALL_Cache_create.object | tee -a ${LOG}
 ${SCHEMA}/index/SEQ_Allele_Assoc_create.object | tee -a ${LOG}
 ${SCHEMA}/index/SEQ_GeneTrap_create.object | tee -a ${LOG}
 ${SCHEMA}/index/ALL_CellLine_Derivation_create.object | tee -a ${LOG}
@@ -230,12 +225,22 @@ from GXD_Genotype g, GXD_Expression e
 where g._Genotype_key = e._Genotype_key
 	and e.isForGXD = 1			-- not recombinase "assays"
 
-/* populate new ALL_Allele with non-extinct as a default - 3.8, 3.15 */
+/* populate new ALL_Allele with non-extinct and non-mixed as defaults -
+ * 3.8, 3.15 */
+
+/* default transmission is 'Unknown'; we will later override with other
+ * values
+ */
+declare @transKey integer
+select @transKey = t._Term_key from VOC_Term t, VOC_Vocab v
+where t._Vocab_key = v._Vocab_key
+	and v.name = 'Allele Transmission'
+	and t.term = 'Unknown'
 
 insert ALL_Allele
 select _Allele_key, _Marker_key, _Strain_key, _Mode_key,
-	_Allele_Type_key, _Allele_Status_key,
-	symbol, name, nomenSymbol, isWildType, 0,
+	_Allele_Type_key, _Allele_Status_key, @transKey,
+	symbol, name, nomenSymbol, isWildType, 0, 0,
 	_CreatedBy_key, _ModifiedBy_key, _ApprovedBy_key,
 	approval_date, creation_date, modification_date
 from ALL_Allele_Old
@@ -281,7 +286,7 @@ select @esCellLine = vt._Term_key
 
 insert into ALL_CellLine
 select _CellLine_key, cellLine, _CellLineType_key = @esCellLine, _Strain_key,
-	null, isMutant, 0,
+	null, isMutant,
 	_CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 from ALL_CellLine_Old
 go
@@ -398,6 +403,12 @@ where provider != null
 group by provider
 go
 
+select distinct j = identity(8), _ESCellLine_key, _DerivationType_key,
+	_Creator_key
+into #tmp_unique_derivation
+from #tmp_derivation
+go
+
 /* fill new derivation table */
 
 declare @vecTypeDefault integer		-- "Not Specified"
@@ -408,18 +419,36 @@ select @vecNameDefault = 3982979	-- should be from vocab 72
 
 insert ALL_CellLine_Derivation (_Derivation_key, _ParentCellLine_key,
 	_DerivationType_key, _Creator_key, _Vector_key, _VectorType_key)
-select i, _ESCellLine_key, _DerivationType_key, _Creator_key,
+select distinct j, _ESCellLine_key, _DerivationType_key, _Creator_key,
 	@vecNameDefault, @vecTypeDefault
-from #tmp_derivation
+from #tmp_unique_derivation
 go
+
+/* insert ALL_CellLine_Derivation (_Derivation_key, _ParentCellLine_key,
+**	_DerivationType_key, _Creator_key, _Vector_key, _VectorType_key)
+** select distinct i, _ESCellLine_key, _DerivationType_key, _Creator_key,
+**	@vecNameDefault, @vecTypeDefault
+** from #tmp_derivation
+** go
+*/
 
 /* update derivation keys in ALL_CellLine to point to new derivations */
 
 update ALL_CellLine
-set _Derivation_key = t.i
-from ALL_CellLine c, #tmp_derivation t
+set _Derivation_key = u.j
+from ALL_CellLine c, #tmp_derivation t, #tmp_unique_derivation u
 where c._CellLine_key = t._MutantESCellLine_key
+and t._ESCellLine_key = u._ESCellLine_key
+and t._DerivationType_key = u._DerivationType_key
+and t._Creator_key = u._Creator_key
 go
+
+/* update ALL_CellLine
+** set _Derivation_key = t.i
+** from ALL_CellLine c, #tmp_derivation t
+** where c._CellLine_key = t._MutantESCellLine_key
+** go
+*/
 
 /* for unnamed cell lines, copy primary ID into name field - 3.17 */
 
@@ -459,8 +488,8 @@ go
 drop table GXD_Genotype_Old
 go
 
-/* add two new reference association types, to be used in flagging certain
- * references for alleles
+/* add a new reference association type, to be used in flagging a transmission
+ * reference for alleles
  */
 
 declare @nextType integer
@@ -469,12 +498,11 @@ from MGI_RefAssocType
 
 insert MGI_RefAssocType (_RefAssocType_key, _MGIType_key, assocType,
     allowOnlyOne)
-values (@nextType, 11, "Chimera Generation", 1)
+values (@nextType, 11, "Transmission", 1)
 
 insert MGI_RefAssocType (_RefAssocType_key, _MGIType_key, assocType,
     allowOnlyOne)
-values (@nextType + 1, 11, "Germ Line Transmission", 1)
-go
+values (@nextType + 1, 11, "Mixed", 1)
 
 /* updates to logical dbs and actual dbs, per item 3 of "Handling Gene Trap
  * Identifiers" document by rmb
@@ -632,7 +660,55 @@ where a._MGIType_key = 28			-- cell line
 	and d._Creator_key = t._Term_key
 	and t.term = "TIGM"
 go
+
+/* set transmission = "germline" for alleles which have MP annotations */
+
+declare @germlineKey int
+select @germlineKey = vt._Term_key
+    from VOC_Term vt, VOC_Vocab vv
+    where vv.name = "Allele Transmission"
+	and vv._Vocab_key = vt._Vocab_key
+	and vt.abbreviation = "1stGermLine"
+
+update ALL_Allele
+set _Transmission_key = @germlineKey
+where _Allele_key in (select distinct g._Allele_key
+	from GXD_AlleleGenotype g,
+		VOC_Annot a
+	where a._Object_key = g._Genotype_key
+		and a._AnnotType_key = 1002)
+go
+
+/* set transmission = "not applicable" for alleles which have no cell lines */
+
+declare @notappKey int
+select @notappKey = vt._Term_key
+    from VOC_Term vt, VOC_Vocab vv
+    where vv.name = "Allele Transmission"
+	and vv._Vocab_key = vt._Vocab_key
+	and vt.abbreviation = "NA"
+
+update ALL_Allele
+set _Transmission_key = @notappKey
+where _Allele_key not in (select distinct _Allele_key
+	from ALL_Allele_CellLine)
+go
+
+/* delete mutant cell lines which have no associated alleles */
+
+delete ALL_CellLine
+from ALL_CellLine c
+where c.isMutant = 1
+and not exists (select 1 from ALL_Allele_CellLine a
+	where c._CellLine_key = a._MutantCellLine_key)
+go
 EOSQL
+
+# add the transmission references
+
+date | tee -a ${LOG}
+echo "--- Adding transmission references" | tee -a ${LOG}
+./updateTransmissionRefs.py ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} > transmissionRefs.txt
 
 # create triggers for new tables
 
@@ -677,8 +753,6 @@ echo "--- Adding new procedure(s)" | tee -a ${LOG}
 
 ${SCHEMA}/procedure/ALL_associateCellLine_create.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/ALL_associateCellLine_grant.object | tee -a ${LOG}
-${SCHEMA}/procedure/ALL_updateCache_create.object | tee -a ${LOG}
-${PERMS}/curatorial/procedure/ALL_updateCache_grant.object | tee -a ${LOG}
 ${SCHEMA}/procedure/ALL_cacheMarker_create.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/ALL_cacheMarker_grant.object | tee -a ${LOG}
 
@@ -707,7 +781,6 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-update statistics ALL_Cache
 update statistics SEQ_Allele_Assoc
 update statistics SEQ_GeneTrap
 update statistics ALL_CellLine_Derivation
@@ -725,15 +798,6 @@ ${PERMS}/public/table/ALL_CellLine_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/ALL_CellLine_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/GXD_Genotype_grant.object | tee -a ${LOG}
 ${PERMS}/curatorial/table/GXD_Genotype_grant.object | tee -a ${LOG}
-
-# populate new ALL_Cache cache table
-
-date | tee -a ${LOG}
-echo "--- Populating ALL_Cache" | tee -a ${LOG}
-
-cd ${MGICACHELOAD}
-./allcache.csh | tee -a ${LOG}
-cd ${CWD}
 
 # population of SEQ_Allele_Assoc is done by the GT data load (sc)
 # population of SEQ_GeneTrap is done by the GT data load (sc)
@@ -765,6 +829,11 @@ ${PERMS}/public/view/ALL_Allele_View_revoke.object | tee -a ${LOG}
 ${SCHEMA}/view/ALL_Allele_View_drop.object | tee -a ${LOG}
 ${SCHEMA}/view/ALL_Allele_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/ALL_Allele_View_grant.object | tee -a ${LOG}
+
+${PERMS}/public/view/ALL_CellLine_View_revoke.object | tee -a ${LOG}
+${SCHEMA}/view/ALL_CellLine_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/ALL_CellLine_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/ALL_CellLine_View_grant.object | tee -a ${LOG}
 
 ${PERMS}/public/view/GXD_AllelePair_View_revoke.object | tee -a ${LOG}
 ${SCHEMA}/view/GXD_AllelePair_View_drop.object | tee -a ${LOG}

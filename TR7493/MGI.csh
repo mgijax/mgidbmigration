@@ -232,10 +232,7 @@ where g._Genotype_key = e._Genotype_key
  * values
  */
 declare @transKey integer
-select @transKey = t._Term_key from VOC_Term t, VOC_Vocab v
-where t._Vocab_key = v._Vocab_key
-	and v.name = 'Allele Transmission'
-	and t.term = 'Unknown'
+select @transKey = 3982953
 
 insert ALL_Allele
 select _Allele_key, _Marker_key, _Strain_key, _Mode_key,
@@ -267,11 +264,16 @@ from ALL_Allele_Old
 where _Marker_key != null
 go
 
-declare @qualifierKey integer			-- should be from vocab 70
-select @qualifierKey = 3983019			-- "Not Specified"
+declare @qualifierKey integer
+select @qualifierKey = 4268547			-- "Not Specified"
 
-insert into ALL_Marker_Assoc (_Assoc_key, _Allele_key, _Marker_key, _Qualifier_key)
-select i, _Allele_key, _Marker_key, @qualifierKey
+declare @statusKey integer
+select @statusKey = t._Term_key
+from VOC_Term t
+where t.term = "Curated" and t._Vocab_key = 73
+
+insert into ALL_Marker_Assoc (_Assoc_key, _Allele_key, _Marker_key, _Qualifier_key, _Status_key)
+select i, _Allele_key, _Marker_key, @qualifierKey, @statusKey
 from #tmp_mrk_assoc
 go
 
@@ -415,7 +417,7 @@ declare @vecTypeDefault integer		-- "Not Specified"
 select @vecTypeDefault = 3982979
 
 declare @vecNameDefault integer		-- "Not Specified"
-select @vecNameDefault = 3982979	-- should be from vocab 72
+select @vecNameDefault = 4268548
 
 insert ALL_CellLine_Derivation (_Derivation_key, _ParentCellLine_key,
 	_DerivationType_key, _Creator_key, _Vector_key, _VectorType_key)
@@ -529,6 +531,35 @@ update ACC_Accession
 set _LogicalDB_key = 96			-- Lexicon Genetics Cell Line
 where _MGIType_key = 28			-- cell line
 	and _LogicalDB_key = 67		-- Lexicon Genetics
+go
+EOSQL
+
+# create indexes and keys on re-created tables
+
+date | tee -a ${LOG}
+echo "--- Adding indexes and keys on re-created tables" | tee -a ${LOG}
+
+${SCHEMA}/key/ALL_Allele_create.object | tee -a ${LOG}
+${SCHEMA}/key/ALL_CellLine_create.object | tee -a ${LOG}
+${SCHEMA}/key/GXD_Genotype_create.object | tee -a ${LOG}
+${SCHEMA}/index/ALL_Allele_create.object | tee -a ${LOG}
+${SCHEMA}/index/ALL_CellLine_create.object | tee -a ${LOG}
+${SCHEMA}/index/GXD_Genotype_create.object | tee -a ${LOG}
+
+# do cleanup of logical databases for certain cell lines
+
+date | tee -a ${LOG}
+echo "--- Cleaning up logical dbs for certain cell lines" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+-- create an index just for the purposes of this migration, which will be
+-- deleted later on
+
+create nonclustered index idx_derivation_temp on ALL_CellLine (_Derivation_key, _CellLine_key)
 go
 
 update ACC_Accession
@@ -661,37 +692,48 @@ where a._MGIType_key = 28			-- cell line
 	and t.term = "TIGM"
 go
 
-/* set transmission = "germline" for alleles which have MP annotations */
+/* set transmission = "germline" for alleles which have a mutant cell line
+ * with an ID, and which either have MP annotations or have a "gene trapped"
+ * type
+ */
 
 declare @germlineKey int
-select @germlineKey = vt._Term_key
+select @germlineKey = 3982951
+
+declare @geneTrapped int
+select @geneTrapped = vt._Term_key
     from VOC_Term vt, VOC_Vocab vv
-    where vv.name = "Allele Transmission"
+    where vv.name = "Allele Type"
 	and vv._Vocab_key = vt._Vocab_key
-	and vt.abbreviation = "1stGermLine"
+	and vt.term = "Gene trapped"
 
 update ALL_Allele
 set _Transmission_key = @germlineKey
-where _Allele_key in (select distinct g._Allele_key
-	from GXD_AlleleGenotype g,
-		VOC_Annot a
-	where a._Object_key = g._Genotype_key
-		and a._AnnotType_key = 1002)
+from ALL_Allele a
+where exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
+	where a._Allele_key = c._Allele_key
+		and c._MutantCellLine_key = aa._Object_key
+		and aa._MGIType_key = 28)
+and ( (a._Allele_Type_key = @geneTrapped) or
+	exists (select 1 from GXD_AlleleGenotype g, VOC_Annot va
+		where a._Allele_key = g._Allele_key
+			and g._Genotype_key = va._Object_key
+			and va._AnnotType_key = 1002) )
 go
 
-/* set transmission = "not applicable" for alleles which have no cell lines */
-
+/* set transmission = "not applicable" for alleles which have no cell lines
+ * or which have no cell lines with IDs
+ */
 declare @notappKey int
-select @notappKey = vt._Term_key
-    from VOC_Term vt, VOC_Vocab vv
-    where vv.name = "Allele Transmission"
-	and vv._Vocab_key = vt._Vocab_key
-	and vt.abbreviation = "NA"
+select @notappKey = 3982955
 
 update ALL_Allele
 set _Transmission_key = @notappKey
-where _Allele_key not in (select distinct _Allele_key
-	from ALL_Allele_CellLine)
+from ALL_Allele a
+where not exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
+	where a._Allele_key = c._Allele_key
+		and c._MutantCellLine_key = aa._Object_key
+		and aa._MGIType_key = 28)
 go
 
 /* delete mutant cell lines which have no associated alleles */
@@ -701,6 +743,9 @@ from ALL_CellLine c
 where c.isMutant = 1
 and not exists (select 1 from ALL_Allele_CellLine a
 	where c._CellLine_key = a._MutantCellLine_key)
+go
+
+drop index ALL_CellLine.idx_derivation_temp
 go
 EOSQL
 
@@ -756,20 +801,19 @@ ${PERMS}/curatorial/procedure/ALL_associateCellLine_grant.object | tee -a ${LOG}
 ${SCHEMA}/procedure/ALL_cacheMarker_create.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/ALL_cacheMarker_grant.object | tee -a ${LOG}
 
-# create indexes, keys, and triggers on re-created tables
+# create triggers on re-created tables
 
 date | tee -a ${LOG}
-echo "--- Adding indexes, keys, triggers on re-created tables" | tee -a ${LOG}
+echo "--- Adding triggers on re-created tables" | tee -a ${LOG}
 
-${SCHEMA}/key/ALL_Allele_create.object | tee -a ${LOG}
-${SCHEMA}/key/ALL_CellLine_create.object | tee -a ${LOG}
-${SCHEMA}/key/GXD_Genotype_create.object | tee -a ${LOG}
-${SCHEMA}/index/ALL_Allele_create.object | tee -a ${LOG}
-${SCHEMA}/index/ALL_CellLine_create.object | tee -a ${LOG}
-${SCHEMA}/index/GXD_Genotype_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
+
+# since some ALL_* triggers seem to be missing, recreate them all
+
+${SCHEMA}/trigger/ALL_drop.logical | tee -a ${LOG}
+${SCHEMA}/trigger/ALL_create.logical | tee -a ${LOG}
 
 # update statistics for the new tables, so the indexes will be optimal
 
@@ -786,6 +830,9 @@ update statistics SEQ_GeneTrap
 update statistics ALL_CellLine_Derivation
 update statistics ALL_Allele_CellLine
 update statistics ALL_Marker_Assoc
+update statistics ALL_Allele
+update statistics ALL_CellLine
+update statistics GXD_Genotype
 go
 EOSQL
 
@@ -811,14 +858,29 @@ echo "--- Adding new view(s)" | tee -a ${LOG}
 
 # add other new views and their permissions
 
+${SCHEMA}/view/ALL_Allele_CellLine_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/ALL_Allele_CellLine_View_grant.object | tee -a ${LOG}
+
 ${SCHEMA}/view/ALL_Allele_Strain_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/ALL_Allele_Strain_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/ALL_Marker_Assoc_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/ALL_Marker_Assoc_View_grant.object | tee -a ${LOG}
 
 ${SCHEMA}/view/ALL_CellLine_Strain_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/ALL_CellLine_Strain_View_grant.object | tee -a ${LOG}
 
 ${SCHEMA}/view/MAP_Feature_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/MAP_Feature_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/SEQ_Allele_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/SEQ_Allele_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/SEQ_Allele_Assoc_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/SEQ_Allele_Assoc_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/VOC_Term_ALLTransmission_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/VOC_Term_ALLTransmission_View_grant.object | tee -a ${LOG}
 
 # update old views and recreate their permissions
 
@@ -884,6 +946,11 @@ ${PERMS}/public/procedure/GXD_checkDuplicateGenotype_revoke.object | tee -a ${LO
 ${SCHEMA}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${SCHEMA}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
 ${PERMS}/public/procedure/GXD_checkDuplicateGenotype_grant.object | tee -a ${LOG}
+
+${PERMS}/curatorial/procedure/MGI_deletePrivateData_revoke.object | tee -a ${LOG}
+${SCHEMA}/procedure/MGI_deletePrivateData_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/MGI_deletePrivateData_create.object | tee -a ${LOG}
+${PERMS}/curatorial/procedure/MGI_deletePrivateData_grant.object | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

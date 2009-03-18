@@ -952,6 +952,16 @@ ${SCHEMA}/procedure/MGI_deletePrivateData_drop.object | tee -a ${LOG}
 ${SCHEMA}/procedure/MGI_deletePrivateData_create.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/MGI_deletePrivateData_grant.object | tee -a ${LOG}
 
+${PERMS}/curatorial/procedure/MRK_updateKeys_revoke.object | tee -a ${LOG}
+${SCHEMA}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
+${PERMS}/curatorial/procedure/MRK_updateKeys_grant.object | tee -a ${LOG}
+
+${PERMS}/curatorial/procedure/NOM_transferToMGD_revoke.object | tee -a ${LOG}
+${SCHEMA}/procedure/NOM_transferToMGD_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/NOM_transferToMGD_create.object | tee -a ${LOG}
+${PERMS}/curatorial/procedure/NOM_transferToMGD_grant.object | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

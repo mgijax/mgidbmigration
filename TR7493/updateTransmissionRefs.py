@@ -53,9 +53,9 @@ results = db.sql ('''select vt._Term_key
     from VOC_Term vt, VOC_Vocab vv
     where vv.name = "Allele Transmission"
 	and vv._Vocab_key = vt._Vocab_key
-	and vt.abbreviation = "1stGermLine"''', 'auto')
+	and vt.term = "Germline"''', 'auto')
 if not results:
-	bailout ('Cannot find 1stGermLine _Term_key')
+	bailout ('Cannot find Germline _Term_key')
 
 germLineKey = results[0]['_Term_key']
 debug ('got germline transmission key')

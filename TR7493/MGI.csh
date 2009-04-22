@@ -121,6 +121,30 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+/* remove Derivation Type vocabulary which had been previously added
+ * to production, if it still exists
+ */
+delete from VOC_Vocab where name = "Derivation Type"
+go
+
+/* add a derivationload user if there isn't already one
+ */
+
+if not exists (select 1 from MGI_User where login = "derivationload")
+begin
+  declare @maxUser integer
+  select @maxUser = max(_User_key) from MGI_User
+
+  insert MGI_User (_User_key, login, name, _UserStatus_key, _UserType_key)
+  values (@maxUser + 1, "derivationload", "Derivation Load", 316350, 316353)
+end
+go
+
+select derivationload_user_key = _User_key
+from MGI_User
+where login = "derivationload"
+go
+
 /* make changes to GXD_AlleleGenotype and GXD_AllelePair tables (4.16) */
 
 alter table GXD_AlleleGenotype modify _Marker_key null
@@ -160,6 +184,16 @@ echo "--- Adding new versions of old tables" | tee -a ${LOG}
 ${SCHEMA}/table/ALL_Allele_create.object | tee -a ${LOG}
 ${SCHEMA}/table/ALL_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/table/GXD_Genotype_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
+
+${PERMS}/public/table/ALL_Allele_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/ALL_Allele_grant.object | tee -a ${LOG}
+${PERMS}/public/table/ALL_CellLine_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/ALL_CellLine_grant.object | tee -a ${LOG}
+${PERMS}/public/table/GXD_Genotype_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/GXD_Genotype_grant.object | tee -a ${LOG}
 
 # add defaults related to new versions of old tables
 
@@ -293,164 +327,45 @@ select _CellLine_key, cellLine, _CellLineType_key = @esCellLine, _Strain_key,
 from ALL_CellLine_Old
 go
 
-/* populate ALL_CellLine_Derivation - 3.10, 3.11 */
-
-/* get temp table of derivation-related data:
- * note that we do not need derivations for cases where the mutant cell line
- * and the parental cell line are both unknown
- */
-
-select distinct i = identity(8), a._ESCellLine_key, a._MutantESCellLine_key,
-	a._Allele_Type_key, a._Allele_Type_key as _DerivationType_key,
-	c.provider, a._ESCellLine_key as _Creator_key
-into #tmp_derivation
-from ALL_Allele_Old a, ALL_CellLine_Old c
-where a._ESCellLine_key >= 0
-	and a._MutantESCellLine_key >= 0
-	and a._MutantESCellLine_key = c._CellLine_key
-go
-
-alter table #tmp_derivation modify _Creator_key null
-go
-
-/* need to update derivation type key using mapping from allele type to the
- * similarly named derivation type
- */
-
-update #tmp_derivation
-set t._DerivationType_key = vt2._Term_key
-from #tmp_derivation t, VOC_Term vt, VOC_Term vt2, VOC_Vocab vv
-where t._Allele_Type_key = vt._Term_key
-	and vt.term = vt2.term
-	and vt2._Vocab_key = vv._Vocab_key
-	and vv.name = "Derivation Type"
-go
-
-/* reset the creator key field to be null; we simply picked an int to fill it
- * with initially so it would be the right size
- */
-
-update #tmp_derivation
-set _Creator_key = null
-go
-
 /* cleanup of provider field, per email from Richard to Sharon... */
 
-create index #tmp_indexProvider on #tmp_derivation (provider)
-go
-
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "GGTC"
 where _ESCellLine_key = 1098 and provider = "IGTC"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "FHCRC"
 where provider = "Fred Hutchinson Cancer Research Center"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "EGTC"
 where provider = "Institute of Molecular Embryology and Genetics"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "Lexicon"
 where provider = "Lexicon Genetics"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "ESDB"
 where provider = "Mammalian Functional Genomics Centre"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "SIGTR"
 where provider = "Sanger Institute"
 	or provider = "Sanger Institute Gene Trap Resource"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "CMHD"
 where provider = "The Centre for Modeling Human Disease"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "GGTC"
 where provider = "The German Genetrap Consortium"
 
-update #tmp_derivation
+update ALL_CellLine_Old
 set provider = "BayGenomics"
 where provider = "William C Skarnes"
 go
-
-/* now populate the creator key with an appropriate value where we can match
- * the provider to a creator
- */
-
-update #tmp_derivation
-set t._Creator_key = vt._Term_key
-from #tmp_derivation t, VOC_Term vt, VOC_Vocab vv
-where vv.name = "Cell Line Creator"
-	and vv._Vocab_key = vt._Vocab_key
-	and (vt.term = t.provider or vt.abbreviation = t.provider)
-go
-
-/* report how many providers matched to creators, and how many did not */
-
-select provider, count(1) as "matched creators"
-from #tmp_derivation
-where provider != null
-	and _Creator_key != null
-group by provider
-go
-
-select provider, count(1) as "unmatched creators"
-from #tmp_derivation
-where provider != null
-	and _Creator_key = null
-group by provider
-go
-
-select distinct j = identity(8), _ESCellLine_key, _DerivationType_key,
-	_Creator_key
-into #tmp_unique_derivation
-from #tmp_derivation
-go
-
-/* fill new derivation table */
-
-declare @vecTypeDefault integer		-- "Not Specified"
-select @vecTypeDefault = 3982979
-
-declare @vecNameDefault integer		-- "Not Specified"
-select @vecNameDefault = 4268548
-
-insert ALL_CellLine_Derivation (_Derivation_key, _ParentCellLine_key,
-	_DerivationType_key, _Creator_key, _Vector_key, _VectorType_key)
-select distinct j, _ESCellLine_key, _DerivationType_key, _Creator_key,
-	@vecNameDefault, @vecTypeDefault
-from #tmp_unique_derivation
-go
-
-/* insert ALL_CellLine_Derivation (_Derivation_key, _ParentCellLine_key,
-**	_DerivationType_key, _Creator_key, _Vector_key, _VectorType_key)
-** select distinct i, _ESCellLine_key, _DerivationType_key, _Creator_key,
-**	@vecNameDefault, @vecTypeDefault
-** from #tmp_derivation
-** go
-*/
-
-/* update derivation keys in ALL_CellLine to point to new derivations */
-
-update ALL_CellLine
-set _Derivation_key = u.j
-from ALL_CellLine c, #tmp_derivation t, #tmp_unique_derivation u
-where c._CellLine_key = t._MutantESCellLine_key
-and t._ESCellLine_key = u._ESCellLine_key
-and t._DerivationType_key = u._DerivationType_key
-and t._Creator_key = u._Creator_key
-go
-
-/* update ALL_CellLine
-** set _Derivation_key = t.i
-** from ALL_CellLine c, #tmp_derivation t
-** where c._CellLine_key = t._MutantESCellLine_key
-** go
-*/
 
 /* for unnamed cell lines, copy primary ID into name field - 3.17 */
 
@@ -479,6 +394,36 @@ go
 select count(1) as "null CL after"
 from ALL_CellLine
 where cellLine = null
+go
+EOSQL
+
+# run Sharon's derivation load
+
+date | tee -a ${LOG}
+echo "--- Loading derivations" | tee -a ${LOG}
+
+${DERIVATIONLOAD}/bin/derivationload.sh ${DERIVATIONLOAD}/file1.out | tee -a ${LOG}
+${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/DER_load_Creators.txt | tee -a ${LOG}
+${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/GB_DER_load.txt | tee -a ${LOG}
+
+# create new mutant cell lines, map mutant cell lines to derivations
+# (must be done before deleting old tables)
+
+date | tee -a ${LOG}
+echo "--- Reconciling mutant cell lines / derivations" | tee -a ${LOG}
+
+./mclDerivations.py ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG} 
+
+date | tee -a ${LOG}
+echo "--- Splitting MCL with multiple IDs" | tee -a ${LOG}
+
+./mclSplit.py ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG} 
+
+# continue onward...
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
 go
 
 /* drop old versions of tables */
@@ -692,9 +637,9 @@ where a._MGIType_key = 28			-- cell line
 	and t.term = "TIGM"
 go
 
-/* set transmission = "germline" for alleles which have a mutant cell line
- * with an ID, and which either have MP annotations or have a "gene trapped"
- * type
+/* set transmission = "germline" for alleles which either:
+ * 1. have a "gene trapped" type, or
+ * 2. have a mutant cell line with an ID and have MP annotations
  */
 
 declare @germlineKey int
@@ -710,12 +655,12 @@ select @geneTrapped = vt._Term_key
 update ALL_Allele
 set _Transmission_key = @germlineKey
 from ALL_Allele a
-where exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
+where (a._Allele_Type_key = @geneTrapped) or
+(exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
 	where a._Allele_key = c._Allele_key
 		and c._MutantCellLine_key = aa._Object_key
 		and aa._MGIType_key = 28)
-and ( (a._Allele_Type_key = @geneTrapped) or
-	exists (select 1 from GXD_AlleleGenotype g, VOC_Annot va
+and exists (select 1 from GXD_AlleleGenotype g, VOC_Annot va
 		where a._Allele_key = g._Allele_key
 			and g._Genotype_key = va._Object_key
 			and va._AnnotType_key = 1002) )
@@ -746,6 +691,27 @@ and not exists (select 1 from ALL_Allele_CellLine a
 go
 
 drop index ALL_CellLine.idx_derivation_temp
+go
+EOSQL
+
+# delete old, now-defunct gene trap lite IDs associated with markers
+
+date | tee -a ${LOG}
+echo "--- Removing old gene trap lite IDs for markers" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+delete ACC_Accession
+from ACC_Accession a,
+	MGI_Set s,
+	MGI_SetMember m
+where a._MGIType_key = 2		-- marker
+	and a._LogicalDB_key = m._Object_key
+	and m._Set_key = s._Set_key
+	and s.name = "Gene Traps"
 go
 EOSQL
 
@@ -835,16 +801,6 @@ update statistics ALL_CellLine
 update statistics GXD_Genotype
 go
 EOSQL
-
-date | tee -a ${LOG}
-echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
-
-${PERMS}/public/table/ALL_Allele_grant.object | tee -a ${LOG}
-${PERMS}/curatorial/table/ALL_Allele_grant.object | tee -a ${LOG}
-${PERMS}/public/table/ALL_CellLine_grant.object | tee -a ${LOG}
-${PERMS}/curatorial/table/ALL_CellLine_grant.object | tee -a ${LOG}
-${PERMS}/public/table/GXD_Genotype_grant.object | tee -a ${LOG}
-${PERMS}/curatorial/table/GXD_Genotype_grant.object | tee -a ${LOG}
 
 # population of SEQ_Allele_Assoc is done by the GT data load (sc)
 # population of SEQ_GeneTrap is done by the GT data load (sc)
@@ -961,6 +917,17 @@ ${PERMS}/curatorial/procedure/NOM_transferToMGD_revoke.object | tee -a ${LOG}
 ${SCHEMA}/procedure/NOM_transferToMGD_drop.object | tee -a ${LOG}
 ${SCHEMA}/procedure/NOM_transferToMGD_create.object | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/NOM_transferToMGD_grant.object | tee -a ${LOG}
+
+###------------------------------------------------------------------------###
+###--- give up and re-do everything, since Sybase randomly loses pieces ---###
+###------------------------------------------------------------------------###
+
+date | tee -a ${LOG}
+echo "--- Re-do all procedures, views, triggers, perms, etc" | tee -a ${LOG}
+
+${SCHEMA}/reconfig.csh
+${PERMS}/all_revoke.csh
+${PERMS}/all_grant.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

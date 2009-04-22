@@ -400,11 +400,10 @@ EOSQL
 # run Sharon's derivation load
 
 date | tee -a ${LOG}
-echo "--- Loading derivations" | tee -a ${LOG}
+echo "--- Loading generic derivations" | tee -a ${LOG}
 
 ${DERIVATIONLOAD}/bin/derivationload.sh ${DERIVATIONLOAD}/file1.out | tee -a ${LOG}
 ${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/DER_load_Creators.txt | tee -a ${LOG}
-${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/GB_DER_load.txt | tee -a ${LOG}
 
 # create new mutant cell lines, map mutant cell lines to derivations
 # (must be done before deleting old tables)
@@ -413,6 +412,14 @@ date | tee -a ${LOG}
 echo "--- Reconciling mutant cell lines / derivations" | tee -a ${LOG}
 
 ./mclDerivations.py ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG} 
+
+# must load this third file of derivations AFTER reconciling with the generics
+
+date | tee -a ${LOG}
+echo "--- Loading dbGSS derivations" | tee -a ${LOG}
+
+${DERIVATIONLOAD}/bin/derivationload.sh /home/jsb/tr7493/dbutils/mgidbmigration/TR7493/GB_abbrev.txt | tee -a ${LOG}
+#${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/GB_DER_load.txt | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Splitting MCL with multiple IDs" | tee -a ${LOG}

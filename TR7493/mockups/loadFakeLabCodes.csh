@@ -33,7 +33,7 @@ echo "--- Loading lab code vocabulary..." | tee -a ${LOG}
 
 cd ${CWD}
 
-../loadSimpleVocab.py ../vocabs/clLabCodeTest.txt "Cell Line Lab Code" ${JNUM} -1 ${DB_PARMS} | tee -a ${LOG}
+../loadSimpleVocab.py ../vocabs/fakeLabCodes.txt "Cell Line Lab Code" ${JNUM} -1 ${DB_PARMS} | tee -a ${LOG}
 
 ###-----------------------------------------------------###
 ###--- load translation from raw creator to lab code ---###

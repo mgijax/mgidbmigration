@@ -174,6 +174,8 @@ sp_rename ALL_CellLine, ALL_CellLine_Old
 go
 sp_rename GXD_Genotype, GXD_Genotype_Old
 go
+drop trigger ALL_CellLine_Update
+go
 EOSQL
 
 # create new versions of old tables
@@ -331,7 +333,7 @@ go
 
 update ALL_CellLine_Old
 set provider = "GGTC"
-where _ESCellLine_key = 1098 and provider = "IGTC"
+where _CellLine_key = 1098 and provider = "IGTC"
 
 update ALL_CellLine_Old
 set provider = "FHCRC"
@@ -341,9 +343,14 @@ update ALL_CellLine_Old
 set provider = "EGTC"
 where provider = "Institute of Molecular Embryology and Genetics"
 
+/* update ALL_CellLine_Old
+ * set provider = "Lexicon"
+ * where provider = "Lexicon Genetics"
+ */
+
 update ALL_CellLine_Old
-set provider = "Lexicon"
-where provider = "Lexicon Genetics"
+set provider = "Lexicon Genetics"
+where provider = "Lexicon Genetic"
 
 update ALL_CellLine_Old
 set provider = "ESDB"
@@ -402,6 +409,7 @@ EOSQL
 date | tee -a ${LOG}
 echo "--- Loading generic derivations" | tee -a ${LOG}
 
+${DERIVATIONLOAD}/bin/createDerivationInputFile.sh ${DERIVATIONLOAD}/file1.out | tee -a ${LOG}
 ${DERIVATIONLOAD}/bin/derivationload.sh ${DERIVATIONLOAD}/file1.out | tee -a ${LOG}
 ${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/DER_load_Creators.txt | tee -a ${LOG}
 
@@ -418,8 +426,8 @@ echo "--- Reconciling mutant cell lines / derivations" | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Loading dbGSS derivations" | tee -a ${LOG}
 
-${DERIVATIONLOAD}/bin/derivationload.sh /home/jsb/tr7493/dbutils/mgidbmigration/TR7493/GB_abbrev.txt | tee -a ${LOG}
-#${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/GB_DER_load.txt | tee -a ${LOG}
+#${DERIVATIONLOAD}/bin/derivationload.sh /home/jsb/tr7493/dbutils/mgidbmigration/TR7493/GB_abbrev.txt | tee -a ${LOG}
+${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/GB_DER_load.txt | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Splitting MCL with multiple IDs" | tee -a ${LOG}
@@ -824,6 +832,15 @@ echo "--- Adding new view(s)" | tee -a ${LOG}
 ${SCHEMA}/view/ALL_Allele_CellLine_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/ALL_Allele_CellLine_View_grant.object | tee -a ${LOG}
 
+${SCHEMA}/view/ALL_CellLine_Derivation_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/ALL_CellLine_Derivation_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/ALL_CellLine_Summary_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/ALL_CellLine_Summary_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/ALL_Derivation_Summary_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/ALL_Derivation_Summary_View_grant.object | tee -a ${LOG}
+
 ${SCHEMA}/view/ALL_Allele_Strain_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/ALL_Allele_Strain_View_grant.object | tee -a ${LOG}
 
@@ -844,6 +861,34 @@ ${PERMS}/public/view/SEQ_Allele_Assoc_View_grant.object | tee -a ${LOG}
 
 ${SCHEMA}/view/VOC_Term_ALLTransmission_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/VOC_Term_ALLTransmission_View_grant.object | tee -a ${LOG}
+
+# hook up the new summary views to their respective objects
+
+date | tee -a ${LOG}
+echo "--- Link MGI Type to new summary views for derivations and cell lines" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+update ACC_MGIType
+set dbView = "ALL_Derivation_Summary_View"
+where name = "Cell Line Derivation"
+
+update ACC_MGIType
+set dbView = "ALL_CellLine_Summary_View"
+where name = "ES Cell Line"
+go
+EOSQL
+
+# run the translation loads, now that we have the new views hooked up
+
+date | tee -a ${LOG}
+echo "--- Running translation load (twice)" | tee -a ${LOG}
+
+${TRANSLATIONLOAD}/translationload.csh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/deriv_translationload/input/derivation.config | tee -a ${LOG}
+${TRANSLATIONLOAD}/translationload.csh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/parent_translationload/input/parent.config | tee -a ${LOG}
 
 # update old views and recreate their permissions
 
@@ -929,16 +974,25 @@ ${PERMS}/curatorial/procedure/NOM_transferToMGD_grant.object | tee -a ${LOG}
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###
 
-date | tee -a ${LOG}
-echo "--- Re-do all procedures, views, triggers, perms, etc" | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Re-do all procedures, views, triggers, perms, etc" | tee -a ${LOG}
 
-${SCHEMA}/reconfig.csh
-${PERMS}/all_revoke.csh
-${PERMS}/all_grant.csh
+#${SCHEMA}/reconfig.csh | tee -a ${LOG}
+#${PERMS}/all_revoke.csh | tee -a ${LOG}
+#${PERMS}/all_grant.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
+
+# load the lab codes (fake for now)
+
+date | tee -a ${LOG}
+echo "--- Loading lab codes" | tee -a ${LOG}
+cd mockups
+./loadFakeLabCodes.csh | tee -a ${LOG}
+cd ..
+echo "--- Returned from loading lab codes" | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

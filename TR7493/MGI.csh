@@ -955,10 +955,8 @@ ${SCHEMA}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${SCHEMA}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
 ${PERMS}/public/procedure/GXD_checkDuplicateGenotype_grant.object | tee -a ${LOG}
 
-${PERMS}/curatorial/procedure/MGI_deletePrivateData_revoke.object | tee -a ${LOG}
 ${SCHEMA}/procedure/MGI_deletePrivateData_drop.object | tee -a ${LOG}
 ${SCHEMA}/procedure/MGI_deletePrivateData_create.object | tee -a ${LOG}
-${PERMS}/curatorial/procedure/MGI_deletePrivateData_grant.object | tee -a ${LOG}
 
 ${PERMS}/curatorial/procedure/MRK_updateKeys_revoke.object | tee -a ${LOG}
 ${SCHEMA}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}

@@ -930,6 +930,11 @@ ${SCHEMA}/view/PRB_Strain_Marker_View_drop.object | tee -a ${LOG}
 ${SCHEMA}/view/PRB_Strain_Marker_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/PRB_Strain_Marker_View_grant.object | tee -a ${LOG}
 
+${PERMS}/public/view/IMG_ImagePane_Assoc_View_revoke.object | tee -a ${LOG}
+${SCHEMA}/view/IMG_ImagePane_Assoc_View_drop.object | tee -a ${LOG}
+${SCHEMA}/view/IMG_ImagePane_Assoc_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/IMG_ImagePane_Assoc_View_grant.object | tee -a ${LOG}
+
 # updating old stored procedures
 
 date | tee -a ${LOG}
@@ -972,12 +977,21 @@ ${PERMS}/curatorial/procedure/NOM_transferToMGD_grant.object | tee -a ${LOG}
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###
 
-#date | tee -a ${LOG}
-#echo "--- Re-do all procedures, views, triggers, perms, etc" | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Remove mgddbschema logs" | tee -a ${LOG}
+${SCHEMA}/removelogs.csh | tee -a ${LOG}
 
-#${SCHEMA}/reconfig.csh | tee -a ${LOG}
-#${PERMS}/all_revoke.csh | tee -a ${LOG}
-#${PERMS}/all_grant.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Run reconfig.csh" | tee -a ${LOG}
+${SCHEMA}/reconfig.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Revoke perms" | tee -a ${LOG}
+${PERMS}/all_revoke.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Grant perms" | tee -a ${LOG}
+${PERMS}/all_grant.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

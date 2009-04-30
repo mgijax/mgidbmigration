@@ -139,9 +139,11 @@ results = db.sql ('''select distinct a._Allele_key, ve._Refs_key, a.symbol,
 	    VOC_Evidence ve,
 	    BIB_Refs br,
 	    BIB_Citation_Cache cc,
+	    GXD_AlleleGenotype gg,
 	    ACC_Accession aa
 	where a._Transmission_key = %d
-	    and a._Allele_key = va._Object_key
+	    and a._Allele_key = gg._Allele_key
+	    and gg._Genotype_key = va._Object_key
 	    and va._AnnotType_key = 1002	-- Genotype/MP
 	    and va._Annot_key = ve._Annot_key
 	    and ve._Refs_key = br._Refs_key

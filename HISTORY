@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-0-4
+DATE: 04/30/2009
+STAFF: jsb
+CHANGES: 
+1) fixed bug in TR7493/updateTransmissionRefs.py re: refs for MP annotations
+
 TAG: mgidbmigration-4-3-0-3
 DATE: 04/29/2009
 STAFF: jsb

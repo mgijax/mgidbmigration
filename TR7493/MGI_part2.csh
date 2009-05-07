@@ -32,7 +32,6 @@ ${SEQCACHELOAD}/seqdummy.csh
 
 date | tee -a ${LOG}
 echo 'Load Sequence Cache tables' | tee -a ${LOG}
-${SEQCACHELOAD}/seqcoord.csh
 ${SEQCACHELOAD}/seqmarker.csh
 ${SEQCACHELOAD}/seqprobe.csh
 ${SEQCACHELOAD}/seqdescription.csh

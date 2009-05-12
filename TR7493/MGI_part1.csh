@@ -2,7 +2,7 @@
 
 #
 # Migration for TR7493 -- gene trap LF
-#
+# (part 1 - migration of existing data into new structures)
 
 ###----------------------###
 ###--- initialization ---###
@@ -143,6 +143,20 @@ go
 select derivationload_user_key = _User_key
 from MGI_User
 where login = "derivationload"
+go
+
+/* add a new MGI Note Type for derivation notes */
+
+declare @nextNoteType integer
+select @nextNoteType = max(_NoteType_key) + 1 from MGI_NoteType
+
+declare @mgiTypeDer integer
+select @mgiTypeDer = _MGIType_key
+from ACC_MGIType
+where name = "Cell Line Derivation"
+
+insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
+values (@nextNoteType, @mgiTypeDer, "General", 0)
 go
 
 /* make changes to GXD_AlleleGenotype and GXD_AllelePair tables (4.16) */
@@ -703,6 +717,29 @@ from ALL_CellLine c
 where c.isMutant = 1
 and not exists (select 1 from ALL_Allele_CellLine a
 	where c._CellLine_key = a._MutantCellLine_key)
+go
+
+/* ensure that all mutant cell lines have the same strain as their parent
+ * cell lines
+ */
+
+select d._Derivation_key, p._Strain_key	
+into #tmp_derivStrain
+from ALL_CellLine_Derivation d, ALL_CellLine p
+where d._ParentCellLine_key = p._CellLine_key
+go
+
+create nonclustered index idx_derStrain on #tmp_derivStrain (_Derivation_key, _Strain_key)
+go
+
+update ALL_CellLine
+set _Strain_key = d._Strain_key
+from ALL_CellLine c, #tmp_derivStrain d
+where c._Derivation_key = d._Derivation_key
+  and c._Strain_key != d._Strain_key
+go
+
+drop table #tmp_derivStrain
 go
 
 drop index ALL_CellLine.idx_derivation_temp

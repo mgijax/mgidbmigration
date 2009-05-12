@@ -96,6 +96,7 @@ def initialize():
 def getCellLines():
 	# get a list of mutant cell lines which have multiple IDs
 
+	# put mutant cell lines with multiple IDs into temp table
 	cmd = '''SELECT c._CellLine_key, a._Accession_key, a.accID, c.cellLine
 		INTO #tmp_cellLines
 		FROM ACC_Accession a,
@@ -113,6 +114,7 @@ def getCellLines():
 	select('CREATE INDEX #cellLineKey ON #tmp_cellLines (_CellLine_key)')
 	debug ('built temp table of multi-ID MCL')
 
+	# get allele associations for those cell lines
 	cmd = '''SELECT t._CellLine_key, t._Accession_key, t.accID,
 			c._Assoc_key, c._Allele_key, t.cellLine
 		FROM #tmp_cellLines t, ALL_Allele_CellLine c
@@ -132,8 +134,10 @@ def getCellLines():
 				'cellLine' : row['cellLine'],
 				}
 		else:
-			dict[c]['ids'].append (id)
-			dict[c]['alleles'].append (allele)
+			if id not in dict[c]['ids']:
+				dict[c]['ids'].append (id)
+			if allele not in dict[c]['alleles']:
+				dict[c]['alleles'].append (allele)
 
 	debug ('got info for %d multi-ID MCL' % len(dict))
 	return dict
@@ -142,6 +146,8 @@ def updateDatabase (cellLines):
 	# make all necessary database updates for the given 'cellLines'
 	global MAXCELLLINE, MAXASSOCKEY
 
+	# creates a new cell line with the attributes of an existing cell line
+	# as a starting point (but with a different key and name)
 	newMCL = '''INSERT ALL_CellLine (_CellLine_key, cellLine,
 			_CellLine_Type_key, _Strain_key, _Derivation_key,
 			isMutant, _CreatedBy_key, _ModifiedBy_key,
@@ -152,6 +158,8 @@ def updateDatabase (cellLines):
 		FROM ALL_CellLine
 		WHERE _CellLine_key = %d'''
 
+	# creates a new allele/MCL association with the attributes of an
+	# existing association as a starting point (to get the dates & users)
 	newAssoc = '''INSERT ALL_Allele_CellLine (_Assoc_key, _Allele_key,
 			_MutantCellLine_key, _CreatedBy_key, _ModifiedBy_key,
 			creation_date, modification_date)
@@ -160,15 +168,19 @@ def updateDatabase (cellLines):
 		FROM ALL_Allele_CellLine
 		WHERE _Assoc_key = %d'''
 
+	# update an accession ID to point to a different object
 	updateAcc = '''UPDATE ACC_Accession
 		SET _Object_key = %d
 		WHERE _Accession_key = %d'''
 
+	# get the modification user and date for a cell line
 	getMods = '''SELECT _ModifiedBy_key,
 			mod_date = convert(char(10), modification_date, 101)
 		FROM ALL_CellLine
 		WHERE _CellLine_key = %d'''
 
+	# update a cell line's name while specifically setting its modified-by
+	# user and date
 	updateName = '''UPDATE ALL_CellLine
 		SET cellLine = "%s",
 			_ModifiedBy_key = %d,
@@ -201,7 +213,7 @@ def updateDatabase (cellLines):
 			for (alleleKey, assocKey) in alleles:
 				MAXASSOCKEY = MAXASSOCKEY + 1
 				update (newAssoc % (MAXASSOCKEY, alleleKey,
-					cellLineKey, assocKey))
+					MAXCELLLINE, assocKey))
 				assocCt = assocCt + 1
 
 		# update name of cell line #1

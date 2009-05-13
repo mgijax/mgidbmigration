@@ -430,6 +430,20 @@ def reconcile (alleles, derivations):
 				else:
 					missingDerivations[key] = 1
 
+				# any ones where we can't find the right
+				# derivation, just hook them to a bogus one
+				# and the ALO load will figure it out
+
+				key = (NS, NS, NS, NS)
+				derivKey = derivations[key]['_Derivation_key']
+
+				if needNewMCL:
+					mclKey = addMCL (row['alleleKey'],
+						key[0], strainKey, derivKey)
+				else:
+					hookDerivation (row['mclKey'],
+						derivKey)
+
 	md = missingDerivations.items()
 	# sort by descending count of occurrences
 	md.sort(lambda a, b : cmp(b[1], a[1]))

@@ -923,6 +923,12 @@ ${PERMS}/public/view/ALL_CellLine_Strain_View_grant.object | tee -a ${LOG}
 ${SCHEMA}/view/MAP_Feature_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/MAP_Feature_View_grant.object | tee -a ${LOG}
 
+${SCHEMA}/view/MGI_Note_Derivation_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/MGI_Note_Derivation_View_grant.object | tee -a ${LOG}
+
+${SCHEMA}/view/MGI_NoteType_Derivation_View_create.object | tee -a ${LOG}
+${PERMS}/public/view/MGI_NoteType_Derivation_View_grant.object | tee -a ${LOG}
+
 ${SCHEMA}/view/SEQ_Allele_View_create.object | tee -a ${LOG}
 ${PERMS}/public/view/SEQ_Allele_View_grant.object | tee -a ${LOG}
 
@@ -1047,9 +1053,9 @@ ${PERMS}/curatorial/procedure/NOM_transferToMGD_grant.object | tee -a ${LOG}
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###
 
-date | tee -a ${LOG}
-echo "--- Remove mgddbschema logs" | tee -a ${LOG}
-${SCHEMA}/removelogs.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Remove mgddbschema logs" | tee -a ${LOG}
+#${SCHEMA}/removelogs.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Run reconfig.csh" | tee -a ${LOG}
@@ -1075,6 +1081,12 @@ cd mockups
 ./loadFakeLabCodes.csh | tee -a ${LOG}
 cd ..
 echo "--- Returned from loading lab codes" | tee -a ${LOG}
+
+# load derivation notes
+
+date | tee -a ${LOG}
+echo "--- Loading derivation notes" | tee -a ${LOG}
+/mgi/all/wts_projects/7400/7493/loads/derivationNotes/derivnoteload.sh
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -309,14 +309,13 @@ def reconcile (alleles, derivations):
 				needNewMCL = True
 
 			# case 6 : mutant N/A, parent is "Other: see notes"
-			#	a. if parent cell line is 1100 (NA),
-			#		use 1069 (NS)
+			#	a. if parent cell line is 1100 (strain NA),
+			#		use 1069 (strain NS)
 			#	b. hook up to right derivation
 			else:
 				case6 = case6 + 1
 				if pclKey == 1100:
 					pclKey = 1069
-					pcl = "Not Specified"
 				key = (NS, pcl, alleleType, strain)
 
 		# mutant cell line is "Not Specified"

@@ -263,6 +263,7 @@ def reconcile (alleles, derivations):
 	case13 = 0
 	notImplemented = 0
 	missingDerivations = {}
+	mappedDerivations = {}
 
 	for row in alleles:
 		alleleKey = row['alleleKey']
@@ -409,6 +410,16 @@ def reconcile (alleles, derivations):
 		# then use it
 
 		if key != None:
+			# if we cannot find a particular key because of a 
+			# provider/creator mismatch, just use a derivation
+			# with a Not Specified creator
+
+			if not derivations.has_key (key):
+				newKey = (NS, key[1], key[2], key[3])
+				if derivations.has_key (newKey):
+					mappedDerivations[key] = newKey
+					key = newKey
+
 			if derivations.has_key (key):
 				matches = matches + 1
 				derivKey = derivations[key]['_Derivation_key']
@@ -465,8 +476,12 @@ def reconcile (alleles, derivations):
 	debug ('  %d wild-type alleles with no MCL' % case3)
 	debug ('Left %d alleles with non-implemented MCL/deriv' % \
 		notImplemented)
-	debug ('Missing %d necessary derivations:' % len(missingDerivations))
 
+	debug ('Mapped %d derivations to NS creator:' % len(mappedDerivations))
+	for (key, item) in mappedDerivations.items():
+		debug ('  %s to %s' % (key, item))
+
+	debug ('Missing %d necessary derivations:' % len(missingDerivations))
 	for (key, count) in md:
 		debug ('  %d : %s' % (count, key))
 	return

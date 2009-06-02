@@ -282,7 +282,7 @@ where g._Genotype_key = e._Genotype_key
  * values
  */
 declare @transKey integer
-select @transKey = 3982953
+select @transKey = 3982953		-- Unknown
 
 insert ALL_Allele
 select _Allele_key, _Marker_key, _Strain_key, _Mode_key,
@@ -304,6 +304,16 @@ go
 insert into ALL_Allele_CellLine (_Assoc_key, _Allele_key, _MutantCellLine_key)
 select i, _Allele_key, _MutantESCellLine_key
 from #tmp_all_cellline
+go
+
+update statistics ALL_Allele_CellLine
+go
+
+select count(1)
+from ALL_Allele_CellLine a
+where exists (select 1 from ALL_CellLine c
+	where a._MutantCellLine_key = c._CellLine_key
+	and c.cellLine = "Not Applicable")
 go
 
 /* populate new ALL_Marker_Assoc join table - 3.4 */
@@ -681,33 +691,32 @@ select @geneTrapped = vt._Term_key
 	and vv._Vocab_key = vt._Vocab_key
 	and vt.term = "Gene trapped"
 
+declare @notApplicable int
+select @notApplicable = 3982955
+
+-- rule 1 : if allele type is "gene trapped", set transmission to germline
 update ALL_Allele
 set _Transmission_key = @germlineKey
 from ALL_Allele a
-where (a._Allele_Type_key = @geneTrapped) or
-(exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
-	where a._Allele_key = c._Allele_key
-		and c._MutantCellLine_key = aa._Object_key
-		and aa._MGIType_key = 28)
-and exists (select 1 from GXD_AlleleGenotype g, VOC_Annot va
-		where a._Allele_key = g._Allele_key
-			and g._Genotype_key = va._Object_key
-			and va._AnnotType_key = 1002) )
-go
+where a._Allele_Type_key = @geneTrapped
 
-/* set transmission = "not applicable" for alleles which have no cell lines
- * or which have no cell lines with IDs
- */
-declare @notappKey int
-select @notappKey = 3982955
-
+-- rule 2 : if no MCL or there is an MCL but it has no ID, set transmission
+-- to "Not Applicable"
 update ALL_Allele
-set _Transmission_key = @notappKey
+set _Transmission_key = @notApplicable
 from ALL_Allele a
 where not exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
 	where a._Allele_key = c._Allele_key
 		and c._MutantCellLine_key = aa._Object_key
 		and aa._MGIType_key = 28)
+
+-- rule 3 : otherwise, leave the default "Unknown" transmission value
+go
+
+select t.term, count(1)
+from ALL_Allele a, VOC_Term t
+where a._Transmission_key = t._Term_key
+group by t.term
 go
 
 /* delete mutant cell lines which have no associated alleles */

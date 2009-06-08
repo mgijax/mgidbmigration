@@ -59,6 +59,34 @@ echo 'Load Voc Cache tables' | tee -a ${LOG}
 ${MGICACHELOAD}/voccounts.csh
 ${MGICACHELOAD}/vocmarker.csh
 
+date | | tee -a ${LOG}
+echo 'MGI Marker feed report' | tee -a ${LOG}
+${MGI_LIVE}/reports_db/mgimarkerfeed_reports.sh
+
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcnightly_reports.sh
+
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcweekly_reports.sh
+
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcmonthly_reports.sh
+
+date | tee -a ${LOG}
+echo 'Public Reports' | tee -a ${LOG}
+${PUBRPTS}/nightly_reports.sh
+
+date | tee -a ${LOG}
+echo 'Public Reports' | tee -a ${LOG}
+${PUBRPTS}/weekly_reports.sh
+
+date | tee -a ${LOG}
+echo 'Public Reports' | tee -a ${LOG}
+${PUBRPTS}/monthly_reports.sh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

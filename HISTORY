@@ -1,3 +1,10 @@
+TAG: mgidbmigration-4-3-0-7
+DATE: 06/08/2009
+STAFF: sc
+CHANGES:
+1) TR7493/MGI_part2.csh - added all reports, public and qc
+   daily, weekly, monthly
+
 TAG: mgidbmigration-4-3-0-6
 DATE: 06/02/2009
 STAFF: jsb

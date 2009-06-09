@@ -1,3 +1,10 @@
+TAG: mgidbmigration-4-3-0-8
+DATE: 06/09/2009
+STAFF: dbm
+CHANGES:
+1) TR7493/MGI_part3.csh - added all reports
+2) TR7493/MGI_part2.csh - replaced reports with call to part3 script
+
 TAG: mgidbmigration-4-3-0-7
 DATE: 06/08/2009
 STAFF: sc

@@ -1082,15 +1082,6 @@ ${PERMS}/all_grant.csh | tee -a ${LOG}
 ###--- final datestamp ---###
 ###-----------------------###
 
-# load the lab codes (fake for now)
-
-date | tee -a ${LOG}
-echo "--- Loading lab codes" | tee -a ${LOG}
-cd mockups
-./loadFakeLabCodes.csh | tee -a ${LOG}
-cd ..
-echo "--- Returned from loading lab codes" | tee -a ${LOG}
-
 # load derivation notes
 
 date | tee -a ${LOG}

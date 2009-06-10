@@ -1,10 +1,10 @@
-BayGenomics	BG
-CMHD	CMHD
-EGTC	EGTC
-ESDB	ESDB
-FHCRC	FHCRC
+BayGenomics	Byg
+Centre for Modeling Human Disease	Cmhd
+Institute of Molecular Embryology and Genetics	Imeg
+Mammalian Functional Genomics Centre	Mfgc
+Philippe Soriano	Sor
 GGTC	GGTC
 Lexicon Genetics	Lex
 TIGEM	TIGEM
-TIGM	TIGM
-SIGTR	SIGTR
+Texas A&M Institute for Genomic Medicine	Tigm
+Wellcome Trust Sanger Institute	Wtsi

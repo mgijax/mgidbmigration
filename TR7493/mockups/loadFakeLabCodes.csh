@@ -74,7 +74,7 @@ select @maxTKey = max(_Translation_key) from MGI_Translation
 declare @termKey integer
 select @termKey = _Term_key from VOC_Term
 where _Vocab_key = 71
-and term = "SIGTR"
+and term = "Wellcome Trust Sanger Institute"
 
 insert into MGI_Translation
 values (@maxTKey + 1, 1018, @termKey, "Sanger Institute Gene Trap Resource - SIGTR", 3, 1001, 1001, getdate(), getdate())
@@ -86,7 +86,7 @@ select @maxTKey = max(_Translation_key) from MGI_Translation
 declare @termKey integer
 select @termKey = _Term_key from VOC_Term
 where _Vocab_key = 71
-and term = "ESDB"
+and term = "Mammalian Functional Genomics Centre"
 
 insert into MGI_Translation
 values (@maxTKey + 1, 1018,  @termKey, "Hicks GG", 4, 1001, 1001, getdate(), getdate())
@@ -98,7 +98,7 @@ select @maxTKey = max(_Translation_key) from MGI_Translation
 declare @termKey integer
 select @termKey = _Term_key from VOC_Term
 where _Vocab_key = 71
-and term = "CMHD"
+and term = "Centre for Modeling Human Disease"
 
 insert into MGI_Translation
 values (@maxTKey + 1, 1018, @termKey, "Stanford WL", 5, 1001, 1001, getdate(), getdate())
@@ -110,7 +110,7 @@ select @maxTKey = max(_Translation_key) from MGI_Translation
 declare @termKey integer
 select @termKey = _Term_key from VOC_Term
 where _Vocab_key = 71
-and term = "FHCRC"
+and term = "Philippe Soriano"
 
 insert into MGI_Translation
 values (@maxTKey + 1, 1018, @termKey, "Soriano P", 6, 1001, 1001, getdate(), getdate()
@@ -135,7 +135,7 @@ select @maxTKey = max(_Translation_key) from MGI_Translation
 declare @termKey integer
 select @termKey = _Term_key from VOC_Term
 where _Vocab_key = 71
-and term = "EGTC"
+and term = "Institute of Molecular Embryology and Genetics"
 
 insert into MGI_Translation
 values (@maxTKey + 1, 1018, @termKey, "Exchangeable Gene Trap Clones", 8, 1001, 1001, getdate(), getdate())
@@ -159,7 +159,7 @@ select @maxTKey = max(_Translation_key) from MGI_Translation
 declare @termKey integer
 select @termKey = _Term_key from VOC_Term
 where _Vocab_key = 71
-and term = "TIGM"
+and term = "Texas A&M Institute for Genomic Medicine"
 
 insert into MGI_Translation
 values (@maxTKey + 1, 1018, @termKey, "Richard H. Finnell at Texas Institute for Genomic Medicine", 10, 1001, 1001, getdate(), getdate())

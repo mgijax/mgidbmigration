@@ -832,6 +832,7 @@ echo "--- Adding triggers to new tables" | tee -a ${LOG}
 
 ${SCHEMA}/trigger/SEQ_Allele_Assoc_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/ALL_Marker_Assoc_create.object | tee -a ${LOG}
+${SCHEMA}/trigger/ALL_CellLine_Derivation_create.object | tee -a ${LOG}
 
 # recreate revised keys
 

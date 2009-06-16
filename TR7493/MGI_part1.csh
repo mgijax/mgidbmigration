@@ -35,6 +35,13 @@ setenv SCHEMA ${MGD_DBSCHEMADIR}
 setenv PERMS ${MGD_DBPERMSDIR}
 setenv UTILS ${MGI_DBUTILS}
 
+# taking snapshot of certain cell line info (from TR9681)
+date | tee -a ${LOG}
+echo "--- Taking cell line snapshot" | tee -a ${LOG}
+cd /mgi/all/wts_projects/7400/7493/loads/LexPreMigrSnapshot
+python ./tr9681.py
+cd ${CWD}
+
 date | tee -a ${LOG}
 echo "--- Updating version numbers in db..." | tee -a ${LOG}
 
@@ -145,6 +152,13 @@ from MGI_User
 where login = "derivationload"
 go
 
+/* rename the Unknown transmission term to be Cell Line */
+
+update VOC_Term
+set term = "Cell Line"
+where _Term_key = 3982953
+go
+
 /* add a new MGI Note Type for derivation notes */
 
 declare @nextNoteType integer
@@ -244,8 +258,8 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-declare @existsAsDefault integer	-- use "Not Specified" as a default
-select @existsAsDefault = 3982949
+declare @existsAsDefault integer	-- use "Mouse Line" as a default
+select @existsAsDefault = 3982946
 
 /* populate new GXD_Genotype with default value for existsAs - 3.15a */
 
@@ -254,26 +268,6 @@ select _Genotype_key, _Strain_key, isConditional, note, @existsAsDefault,
 	_CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 from GXD_Genotype_Old
 go
-
-/* two updates for GXD_Genotype, per Cindy:
- * 	1. if a genotype has MP annotations, then it exists as a mouse line
- * 	2. if a genotype has GXD annotations, then it exists as a mouse line
- */
-
-declare @mouseLine integer
-select @mouseLine = 3982946			-- mouseLine
-
-update GXD_Genotype
-set _ExistsAs_key = @mouseLine
-from GXD_Genotype g, VOC_Annot a
-where g._Genotype_key = a._Object_key
-	and a._AnnotType_key = 1002		-- MP/Genotype
-
-update GXD_Genotype
-set _ExistsAs_key = @mouseLine
-from GXD_Genotype g, GXD_Expression e
-where g._Genotype_key = e._Genotype_key
-	and e.isForGXD = 1			-- not recombinase "assays"
 
 /* populate new ALL_Allele with non-extinct and non-mixed as defaults -
  * 3.8, 3.15 */
@@ -773,6 +767,22 @@ where a._MGIType_key = 2		-- marker
 	and a._LogicalDB_key = m._Object_key
 	and m._Set_key = s._Set_key
 	and s.name = "Gene Traps"
+go
+EOSQL
+
+# delete actual database records for gene trap cell line providers (to prevent
+# links to them), per Handling_Gene_TrapIDs.pdf doc by Richard
+
+date | tee -a ${LOG}
+echo "--- Removing actual databases" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+delete ACC_ActualDB
+where _LogicalDB_key in (95,96,98,99,100,101,102,103,104)
 go
 EOSQL
 

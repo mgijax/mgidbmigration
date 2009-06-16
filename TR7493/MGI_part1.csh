@@ -35,7 +35,7 @@ setenv SCHEMA ${MGD_DBSCHEMADIR}
 setenv PERMS ${MGD_DBPERMSDIR}
 setenv UTILS ${MGI_DBUTILS}
 
-# taking snapshot of certain cell line info (from TR9681)
+# taking snapshot of certain cell line info -- from TR9681
 date | tee -a ${LOG}
 echo "--- Taking cell line snapshot" | tee -a ${LOG}
 cd /mgi/all/wts_projects/7400/7493/loads/LexPreMigrSnapshot
@@ -720,6 +720,15 @@ from ALL_CellLine c
 where c.isMutant = 1
 and not exists (select 1 from ALL_Allele_CellLine a
 	where c._CellLine_key = a._MutantCellLine_key)
+go
+
+/* delete cell line IDs for cell lines which no longer exist */
+
+delete ACC_Accession
+from ACC_Accession a
+where a._MGITYpe_key = 28
+and not exists (select 1 from ALL_CellLine c
+  where a._Object_key = c._CellLine_key)
 go
 
 /* ensure that all mutant cell lines have the same strain as their parent

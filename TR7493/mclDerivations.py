@@ -318,6 +318,7 @@ def reconcile (alleles, derivations):
 				if pclKey == 1100:
 					pclKey = 1069
 				key = (NS, pcl, alleleType, strain)
+				needNewMCL = True
 
 		# mutant cell line is "Not Specified"
 		elif mcl == NS:
@@ -347,6 +348,7 @@ def reconcile (alleles, derivations):
 					pclKey = 1069
 					pcl = "Not Specified"
 				key = (NS, pcl, alleleType, strain)
+				needNewMCL = True
 
 			# case 8 : mutant N/S, parent specified and is not
 			#		"Other (see notes)"

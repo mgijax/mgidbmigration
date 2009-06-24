@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-0-11
+DATE: 06/24/2009
+STAFF: sc
+CHANGES:
+1) Added MGI_part4.csh - to run gbrowseutils 
+
 TAG: mgidbmigration-4-3-0-10
 DATE: 06/16/2009
 STAFF: jsb

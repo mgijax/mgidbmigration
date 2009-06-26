@@ -22,7 +22,7 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 echo 'Generate Gbrowse GeneTrap gff files' | tee -a ${LOG}
-${GBROWSEUTILS}/generateGTReports.sh
+${GBROWSEUTILS}/bin/generateGTReports.sh
 echo ${GBROWSEUTILS}
 
 ###-----------------------###

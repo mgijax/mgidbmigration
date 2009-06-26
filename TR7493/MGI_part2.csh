@@ -23,6 +23,13 @@ date | tee -a ${LOG}
 echo 'Running Gene Trap Load' | tee -a ${LOG}
 ${GENETRAPLOAD}/bin/genetrapload.sh
 
+###-------------------------------------------###
+###--- update Lexicon MCLs to Lex1 or Lex2 ---###
+###-------------------------------------------###
+#date | tee -a ${LOG}
+#echo 'Running Lexicon Derivation Update' | tee -a ${LOG}
+#./updateLexDerivations.sh
+
 ###--------------------------------------------------------------###
 ###--- run all the cacheloads			              ---###
 ###--------------------------------------------------------------###

@@ -378,10 +378,15 @@ update ALL_CellLine_Old
 set provider = "SIGTR"
 where provider = "Sanger Institute"
 	or provider = "Sanger Institute Gene Trap Resource"
+	or provider = "Wellcome Trust Sanger Institute"
 
 update ALL_CellLine_Old
 set provider = "CMHD"
 where provider = "The Centre for Modeling Human Disease"
+
+update ALL_CellLine_Old
+set provider = "CMHD"
+where provider = "Center for Modeling Human Disease"
 
 update ALL_CellLine_Old
 set provider = "GGTC"
@@ -422,6 +427,148 @@ where cellLine = null
 go
 EOSQL
 
+# tweak actual and logical databases, per Handling_Gene_Trap_IDs.pdf
+
+date | tee -a ${LOG}
+echo "--- Creating new keys" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+/* updates to logical dbs and actual dbs, per item 3 of "Handling Gene Trap
+ * Identifiers" document by rmb
+ */
+
+update ACC_ActualDB
+set url = "http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Search&db=nucgss&doptcmdl=GenBank&term=@@@@"
+where _ActualDB_key in (96, 67)		-- TIGM, Lexicon Genetics
+
+update ACC_ActualDB
+set name = "Lexicon Genetics"
+where _ActualDB_key = 67
+
+update ACC_LogicalDB
+set description = "Lexicon Genetics Cell Line"
+where _LogicalDB_key = 96
+go
+
+/* migrate existing mutant cell line IDs to new logical databases, based on
+ * their cell line creators
+ */
+
+update ACC_Accession
+set _LogicalDB_key = 96			-- Lexicon Genetics Cell Line
+where _MGIType_key = 28			-- cell line
+	and _LogicalDB_key = 67		-- Lexicon Genetics
+go
+
+-- create an index just for the purposes of this migration, which will be
+-- deleted later on
+
+create nonclustered index idx_provider_temp on ALL_CellLine_Old (provider, _CellLine_key)
+go
+
+update ACC_Accession
+set _LogicalDB_key = 95
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "BayGenomics"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 98
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "TIGEM"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 99
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "CMHD"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 100
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "ESDB"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 101
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "EGTC"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 102
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "GGTC"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 103
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "SIGTR"
+go
+
+update ACC_Accession
+set _LogicalDB_key = 104
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "FHCRC"
+go
+
+declare @tigm integer
+select @tigm = _LogicalDB_key
+from ACC_LogicalDB
+where name = "TIGM"
+
+update ACC_Accession
+set _LogicalDB_key = @tigm
+from ACC_Accession a,
+	ALL_CellLine_Old c
+where a._MGIType_key = 28			-- cell line
+	and a._LogicalDB_key = 66		-- IGTC
+	and a._Object_key = c._CellLine_key
+	and c.provider = "TIGM"
+go
+
+drop index ALL_CellLine.idx_provider_temp
+go
+EOSQL
+
 # run Sharon's derivation load
 
 date | tee -a ${LOG}
@@ -444,7 +591,6 @@ echo "--- Reconciling mutant cell lines / derivations" | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Loading dbGSS derivations" | tee -a ${LOG}
 
-#${DERIVATIONLOAD}/bin/derivationload.sh /home/jsb/tr7493/dbutils/mgidbmigration/TR7493/GB_abbrev.txt | tee -a ${LOG}
 ${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts_projects/7400/7493/CleanUp_Migration/GB_DER_load.txt | tee -a ${LOG}
 
 date | tee -a ${LOG}
@@ -483,32 +629,6 @@ values (@nextType, 11, "Transmission", 1)
 insert MGI_RefAssocType (_RefAssocType_key, _MGIType_key, assocType,
     allowOnlyOne)
 values (@nextType + 1, 11, "Mixed", 1)
-
-/* updates to logical dbs and actual dbs, per item 3 of "Handling Gene Trap
- * Identifiers" document by rmb
- */
-
-update ACC_ActualDB
-set url = "http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Search&db=nucgss&doptcmdl=GenBank&term=@@@@"
-where _ActualDB_key in (96, 67)		-- TIGM, Lexicon Genetics
-
-update ACC_ActualDB
-set name = "Lexicon Genetics"
-where _ActualDB_key = 67
-
-update ACC_LogicalDB
-set description = "Lexicon Genetics Cell Line"
-where _LogicalDB_key = 96
-go
-
-/* migrate existing mutant cell line IDs to new logical databases, based on
- * their cell line creators
- */
-
-update ACC_Accession
-set _LogicalDB_key = 96			-- Lexicon Genetics Cell Line
-where _MGIType_key = 28			-- cell line
-	and _LogicalDB_key = 67		-- Lexicon Genetics
 go
 EOSQL
 
@@ -524,150 +644,14 @@ ${SCHEMA}/index/ALL_Allele_create.object | tee -a ${LOG}
 ${SCHEMA}/index/ALL_CellLine_create.object | tee -a ${LOG}
 ${SCHEMA}/index/GXD_Genotype_create.object | tee -a ${LOG}
 
-# do cleanup of logical databases for certain cell lines
+# set transmission values for alleles
 
 date | tee -a ${LOG}
-echo "--- Cleaning up logical dbs for certain cell lines" | tee -a ${LOG}
+echo "--- Settings transmission values for alleles" | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
-go
-
--- create an index just for the purposes of this migration, which will be
--- deleted later on
-
-create nonclustered index idx_derivation_temp on ALL_CellLine (_Derivation_key, _CellLine_key)
-go
-
-update ACC_Accession
-set _LogicalDB_key = 95
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "BayGenomics"
-go
-
-update ACC_Accession
-set _LogicalDB_key = 95
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "TIGEM"
-go
-
-update ACC_Accession
-set _LogicalDB_key = 99
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "CMHD"
-go
-
-update ACC_Accession
-set _LogicalDB_key = 100
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "ESDB"
-go
-
-update ACC_Accession
-set _LogicalDB_key = 101
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "EGTC"
-go
-
-update ACC_Accession
-set _LogicalDB_key = 102
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "GGTC"
-go
-
-update ACC_Accession
-set _LogicalDB_key = 103
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "SIGTR"
-go
-update ACC_Accession
-set _LogicalDB_key = 104
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "FHCRC"
-go
-
-declare @tigm integer
-select @tigm = _LogicalDB_key
-from ACC_LogicalDB
-where name = "TIGM"
-
-update ACC_Accession
-set _LogicalDB_key = @tigm
-from ACC_Accession a,
-	ALL_CellLine c, 
-	ALL_CellLine_Derivation d,
-	VOC_Term t
-where a._MGIType_key = 28			-- cell line
-	and a._LogicalDB_key = 66		-- IGTC
-	and a._Object_key = c._CellLine_key
-	and c._Derivation_key = d._Derivation_key
-	and d._Creator_key = t._Term_key
-	and t.term = "TIGM"
 go
 
 /* set transmission = "germline" for alleles which either:
@@ -728,8 +712,7 @@ delete ACC_Accession
 from ACC_Accession a
 where a._MGITYpe_key = 28
 and not exists (select 1 from ALL_CellLine c
-  where a._Object_key = c._CellLine_key)
-go
+   where a._Object_key = c._CellLine_key)
 
 /* ensure that all mutant cell lines have the same strain as their parent
  * cell lines
@@ -752,9 +735,6 @@ where c._Derivation_key = d._Derivation_key
 go
 
 drop table #tmp_derivStrain
-go
-
-drop index ALL_CellLine.idx_derivation_temp
 go
 EOSQL
 
@@ -1106,7 +1086,12 @@ ${PERMS}/all_grant.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Loading derivation notes" | tee -a ${LOG}
-/mgi/all/wts_projects/7400/7493/loads/derivationNotes/derivnoteload.sh
+/mgi/all/wts_projects/7400/7493/loads/derivationNotes/derivnoteload.sh | tee -a ${LOG}
+
+# updating permissions stuff
+echo "--- Updating permissions" | tee -a ${LOG}
+cd ${CWD}
+./loadPermissions.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

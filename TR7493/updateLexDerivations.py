@@ -193,5 +193,5 @@ cmds = process ()
 
 print "Updating database"
 print "Total updates: %s " % len(cmds)
-#updateDatabase (cmds)
+updateDatabase (cmds)
 

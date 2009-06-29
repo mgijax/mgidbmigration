@@ -1,3 +1,15 @@
+TAG: mgidbmigration-4-3-0-13
+DATE: 06/29/2009
+STAFF: sc
+CHANGES: removed everything in 4-3-0-12
+
+TAG: mgidbmigration-4-3-0-12
+DATE: 06/26/2009
+STAFF: sc
+CHANGES:
+1) added updateLexDerivations.sh and .py 
+2) added above to MGI_part2.csh after genetrapload, before cache loads
+
 TAG: mgidbmigration-4-3-0-11
 DATE: 06/24/2009
 STAFF: sc

@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-3-0-14
+DATE: 07/06/2009
+STAFF: sc
+CHANGES: Added gtlfStats.* and call in MGI_part3.csh
+
 TAG: mgidbmigration-4-3-0-13
 DATE: 06/29/2009
 STAFF: sc

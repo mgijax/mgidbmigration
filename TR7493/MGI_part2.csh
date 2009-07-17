@@ -49,6 +49,7 @@ date | tee -a ${LOG}
 echo 'Load Allele Cache tables' | tee -a ${LOG}
 ${ALLCACHELOAD}/alllabel.csh
 ${ALLCACHELOAD}/allelecombination.csh
+${ALLCACHELOAD}/allstrain.csh
 
 date | tee -a ${LOG}
 echo 'Load Image Cache table' | tee -a ${LOG}

@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-3-0-15
+DATE: 07/17/2009
+STAFF: sc
+CHANGES: TR7493 - added allstrain.csh to MGI_part2.csh
+
 TAG: mgidbmigration-4-3-0-14
 DATE: 07/06/2009
 STAFF: sc

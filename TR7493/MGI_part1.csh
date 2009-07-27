@@ -688,7 +688,17 @@ where not exists (select 1 from ALL_Allele_CellLine c, ACC_Accession aa
 		and c._MutantCellLine_key = aa._Object_key
 		and aa._MGIType_key = 28)
 
--- rule 3 : otherwise, leave the default "Unknown" transmission value
+-- rule 3 : if allele type is like "targeted%" and the cell line is "NS", set
+-- transmission to germline
+update ALL_Allele
+set _Transmission_key = @germlineKey
+from ALL_Allele a, ALL_Allele_CellLine aac, ALL_CellLine c
+where a._Allele_Type_key in (847116, 847117, 847118, 847119, 847120)
+  and a._Allele_key = aac._Allele_key
+  and aac._MutantCellLine_key = c._CellLine_key
+  and c.cellLine = "Not Specified"
+
+-- rule 4 : otherwise, leave the default "Unknown" transmission value
 go
 
 select t.term, count(1)
@@ -732,6 +742,11 @@ set _Strain_key = d._Strain_key
 from ALL_CellLine c, #tmp_derivStrain d
 where c._Derivation_key = d._Derivation_key
   and c._Strain_key != d._Strain_key
+go
+
+/* delete "Not Applicable" cell lines; no longer needed */
+delete ALL_CellLine
+where _CellLine_key in (-2, -4)
 go
 
 drop table #tmp_derivStrain

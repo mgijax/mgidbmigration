@@ -130,7 +130,8 @@ for row in results:
 debug ('got %d original references' % len(originalRefs))
 
 # extract reference info from database for each germline allele's MP
-# annotations
+# annotations.  (Do not gather MP references for targeted alleles, though,
+# as we do not want them for Transmission references in that case.)
 
 results = db.sql ('''select distinct a._Allele_key, ve._Refs_key, a.symbol,
 		cc.jnumID, cc.short_citation, br.authors, br.title
@@ -149,6 +150,8 @@ results = db.sql ('''select distinct a._Allele_key, ve._Refs_key, a.symbol,
 	    and ve._Refs_key = br._Refs_key
 	    and br._Refs_key = cc._Refs_key
 	    and cc.jnumID = aa.accID
+	    and a._Allele_Type_key not in (847116, 847117, 847118, 847119,
+	    	847120)
 	order by a._Allele_key,
 	    br.year, 
 	    aa.numericPart''' % germLineKey, 'auto')

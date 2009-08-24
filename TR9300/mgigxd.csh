@@ -71,6 +71,7 @@ ${newmgddbperms}/curatorial/procedure/MRK_updateKeys_grant.object | tee -a ${LOG
 ${newmgddbperms}/curatorial/table/GXD_Index_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/table/GXD_Index_grant.object | tee -a ${LOG}
 ${newmgddbperms}/public/view/GXD_Index_View_grant.object | tee -a ${LOG}
+${newmgddbperms}/public/view/VOC_Term_GXDIndexCondMut_View_grant.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

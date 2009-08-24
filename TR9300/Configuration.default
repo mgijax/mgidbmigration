@@ -2,8 +2,7 @@
 
 setenv MIGRATIONDIR	/usr/local/mgi/live/dbutils/mgidbmigration/TR9300
 
-#setenv newmgddb /usr/local/mgi/live/dbutils/mgd
-setenv newmgddb /home/lec/mgi4.0/dbutils/mgd
+setenv newmgddb /usr/local/mgi/live/dbutils/mgd
 setenv newmgddbschema ${newmgddb}/mgddbschema
 setenv newmgddbperms ${newmgddb}/mgddbperms
 

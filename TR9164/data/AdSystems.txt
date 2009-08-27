@@ -1,0 +1,469 @@
+1	first polar body	early embryo
+1	one-cell stage	early embryo
+1	polar body#	early embryo
+1	second polar body	early embryo
+1	zona pellucida	early embryo
+2	second polar body	early embryo
+2	two-cell stage	early embryo
+2	zona pellucida	early embryo
+3	4-8 cell stage	early embryo
+3	compacted morula	early embryo
+3	compacted morula	early embryo
+3	second polar body	early embryo
+3	zona pellucida	early embryo
+4	compacted morula	early embryo
+4	compacted morula	early embryo
+4	embryo	early embryo
+4	extraembryonic component	extraembryonic component
+4	inner cell mass	early embryo
+4	zona pellucida	early embryo
+5	embryo	early embryo
+5	extraembryonic component	extraembryonic component
+5	inner cell mass	early embryo
+6	embryo	early embryo
+6	epiblast	early embryo
+6	extraembryonic component	extraembryonic component
+6	primitive endoderm	early embryo
+7	embryo	early embryo
+7	epiblast	early embryo
+7	extraembryonic component	extraembryonic component
+7	primitive endoderm	early embryo
+8	cavities and their linings	cavities and their linings
+8	embryo	early embryo
+8	endoderm	early embryo
+8	epiblast	early embryo
+8	extraembryonic component	extraembryonic component
+9	cavities and their linings	cavities and their linings
+9	ectoderm	early embryo
+9	embryo	early embryo
+9	endoderm	early embryo
+9	extraembryonic component	extraembryonic component
+9	mesoderm	early embryo
+9	primitive streak	early embryo
+10	cavities and their linings	cavities and their linings
+10	ectoderm	early embryo
+10	embryo	early embryo
+10	endoderm	early embryo
+10	extraembryonic component	extraembryonic component
+10	mesendoderm	early embryo
+10	mesoderm	early embryo
+10	neural ectoderm	nervous system
+10	primitive streak	early embryo
+11	cardiovascular system	cardiovascular system
+11	cavities and their linings	cavities and their linings
+11	ectoderm	embryo - other
+11	embryo	embryo - other
+11	endoderm	embryo - other
+11	extraembryonic component	extraembryonic component
+11	mesenchyme	mesenchyme
+11	mesoderm	embryo - other
+11	neural ectoderm	nervous system
+11	notochordal plate	embryo - other
+11	notochordal process	embryo - other
+11	organ system	embryo - other
+11	primitive streak	embryo - other
+11	surface ectoderm	integumental system
+12	alimentary system	alimentary system
+12	body#	embryo - other
+12	branchial arch	branchial arches
+12	cardiovascular system	cardiovascular system
+12	cavities and their linings	cavities and their linings
+12	ear	sensory organs
+12	ectoderm	embryo - other
+12	embryo	embryo - other
+12	endoderm	embryo - other
+12	extraembryonic component	extraembryonic component
+12	eye	sensory organs
+12	head#	head
+12	mesenchyme	mesenchyme
+12	neural ectoderm	nervous system
+12	notochord	embryo - other
+12	notochordal plate	embryo - other
+12	organ system	embryo - other
+12	primitive streak	embryo - other
+12	surface ectoderm	integumental system
+12	visceral organ	embryo - other
+13	alimentary system	alimentary system
+13	body#	embryo - other
+13	branchial arch	branchial arches
+13	cardiovascular system	cardiovascular system
+13	cavities and their linings	cavities and their linings
+13	ear	sensory organs
+13	ectoderm	embryo - other
+13	embryo	embryo - other
+13	extraembryonic component	extraembryonic component
+13	eye	sensory organs
+13	head#	head
+13	mesenchyme	mesenchyme
+13	neural ectoderm	nervous system
+13	notochord	embryo - other
+13	notochordal plate	embryo - other
+13	organ system	embryo - other
+13	primitive streak	embryo - other
+13	surface ectoderm	integumental system
+13	visceral organ	embryo - other
+14	alimentary system	alimentary system
+14	body#	embryo - other
+14	branchial arch	branchial arches
+14	cardiovascular system	cardiovascular system
+14	cavities and their linings	cavities and their linings
+14	ear	sensory organs
+14	ectoderm	embryo - other
+14	embryo	embryo - other
+14	extraembryonic component	extraembryonic component
+14	eye	sensory organs
+14	head#	head
+14	limb	limbs
+14	mesenchyme	mesenchyme
+14	nervous system	nervous system
+14	nose	sensory organs
+14	notochord	embryo - other
+14	organ system	embryo - other
+14	primitive streak	embryo - other
+14	surface ectoderm	integumental system
+14	tail bud	tail
+14	visceral organ	embryo - other
+15	alimentary system	alimentary system
+15	body#	embryo - other
+15	branchial arch	branchial arches
+15	cardiovascular system	cardiovascular system
+15	cavities and their linings	cavities and their linings
+15	ear	sensory organs
+15	ectoderm	embryo - other
+15	embryo	embryo - other
+15	extraembryonic component	extraembryonic component
+15	eye	sensory organs
+15	head#	head
+15	limb	limbs
+15	mesenchyme	mesenchyme
+15	nervous system	nervous system
+15	nose	sensory organs
+15	notochord	embryo - other
+15	organ system	embryo - other
+15	respiratory system	respiratory system
+15	skeleton	skeletal system
+15	surface ectoderm	integumental system
+15	tail	tail
+15	visceral organ	embryo - other
+16	alimentary system	alimentary system
+16	body#	embryo - other
+16	branchial arch	branchial arches
+16	cardiovascular system	cardiovascular system
+16	cavities and their linings	cavities and their linings
+16	ear	sensory organs
+16	ectoderm	embryo - other
+16	embryo	embryo - other
+16	extraembryonic component	extraembryonic component
+16	eye	sensory organs
+16	head#	head
+16	limb	limbs
+16	liver and biliary system	liver-biliary system
+16	mesenchyme	mesenchyme
+16	nervous system	nervous system
+16	nose	sensory organs
+16	notochord	embryo - other
+16	organ system	embryo - other
+16	respiratory system	respiratory system
+16	skeleton	skeletal system
+16	surface ectoderm	integumental system
+16	tail	tail
+16	visceral organ	embryo - other
+17	alimentary system	alimentary system
+17	body#	embryo - other
+17	branchial arch	branchial arches
+17	cardiovascular system	cardiovascular system
+17	cartilage condensation#	embryo - other
+17	cavities and their linings	cavities and their linings
+17	ear	sensory organs
+17	ectoderm	embryo - other
+17	embryo	embryo - other
+17	extraembryonic component	extraembryonic component
+17	eye	sensory organs
+17	head#	head
+17	limb	limbs
+17	liver and biliary system	liver-biliary system
+17	mesenchyme	mesenchyme
+17	nervous system	nervous system
+17	nose	sensory organs
+17	notochord	embryo - other
+17	organ system	embryo - other
+17	physiological umbilical hernia	integumental system
+17	respiratory system	respiratory system
+17	skeleton	skeletal system
+17	surface ectoderm	integumental system
+17	tail	tail
+17	visceral organ	embryo - other
+18	alimentary system	alimentary system
+18	body#	embryo - other
+18	branchial arch	branchial arches
+18	cardiovascular system	cardiovascular system
+18	cavities and their linings	cavities and their linings
+18	ear	sensory organs
+18	ectoderm	embryo - other
+18	embryo	embryo - other
+18	extraembryonic component	extraembryonic component
+18	eye	sensory organs
+18	head#	head
+18	limb	limbs
+18	liver and biliary system	liver-biliary system
+18	mesenchyme	mesenchyme
+18	nervous system	nervous system
+18	nose	sensory organs
+18	notochord	embryo - other
+18	organ system	embryo - other
+18	physiological umbilical hernia	integumental system
+18	respiratory system	respiratory system
+18	skeleton	skeletal system
+18	surface ectoderm	integumental system
+18	tail	tail
+18	visceral organ	embryo - other
+19	alimentary system	alimentary system
+19	body#	embryo - other
+19	branchial arch	branchial arches
+19	cardiovascular system	cardiovascular system
+19	cavities and their linings	cavities and their linings
+19	ear	sensory organs
+19	ectoderm	embryo - other
+19	embryo	embryo - other
+19	extraembryonic component	extraembryonic component
+19	eye	sensory organs
+19	head#	head
+19	limb	limbs
+19	liver and biliary system	liver-biliary system
+19	mesenchyme	mesenchyme
+19	nephric duct	renal-urinary system
+19	nervous system	nervous system
+19	nose	sensory organs
+19	notochord	embryo - other
+19	organ system	embryo - other
+19	physiological umbilical hernia	integumental system
+19	renal/urinary system	renal-urinary system
+19	reproductive system	reproductive system
+19	respiratory system	respiratory system
+19	skeleton	skeletal system
+19	surface ectoderm	integumental system
+19	tail	tail
+19	visceral organ	embryo - other
+20	alimentary system	alimentary system
+20	body#	embryo - other
+20	cardiovascular system	cardiovascular system
+20	cartilage#	embryo - other
+20	cavities and their linings	cavities and their linings
+20	ear	sensory organs
+20	embryo	embryo - other
+20	extraembryonic component	extraembryonic component
+20	eye	sensory organs
+20	head#	head
+20	integumental system	integumental system
+20	limb	limbs
+20	liver and biliary system	liver-biliary system
+20	mesenchyme	mesenchyme
+20	nervous system	nervous system
+20	nose	sensory organs
+20	notochord	embryo - other
+20	organ system	embryo - other
+20	renal/urinary system	renal-urinary system
+20	reproductive system	reproductive system
+20	respiratory system	respiratory system
+20	skeletal muscle	muscle
+20	skeleton	skeletal system
+20	tail	tail
+20	visceral organ	embryo - other
+21	alimentary system	alimentary system
+21	body#	embryo - other
+21	cardiovascular system	cardiovascular system
+21	cartilage#	embryo - other
+21	cavities and their linings	cavities and their linings
+21	ear	sensory organs
+21	embryo	embryo - other
+21	extraembryonic component	extraembryonic component
+21	eye	sensory organs
+21	head#	head
+21	integumental system	integumental system
+21	limb	limbs
+21	liver and biliary system	liver-biliary system
+21	mesenchyme	mesenchyme
+21	nervous system	nervous system
+21	nose	sensory organs
+21	organ system	embryo - other
+21	renal/urinary system	renal-urinary system
+21	reproductive system	reproductive system
+21	respiratory system	respiratory system
+21	skeletal muscle	muscle
+21	skeleton	skeletal system
+21	tail	tail
+21	vertebral axis muscle system	muscle
+21	visceral organ	embryo - other
+22	adrenal gland	endocrine system
+22	alimentary system	alimentary system
+22	body#	embryo - other
+22	cardiovascular system	cardiovascular system
+22	cartilage#	embryo - other
+22	cavities and their linings	cavities and their linings
+22	ear	sensory organs
+22	embryo	embryo - other
+22	extraembryonic component	extraembryonic component
+22	eye	sensory organs
+22	gland	endocrine system
+22	head#	head
+22	integumental system	integumental system
+22	limb	limbs
+22	liver and biliary system	liver-biliary system
+22	mesenchyme	mesenchyme
+22	nervous system	nervous system
+22	nose	sensory organs
+22	organ system	embryo - other
+22	renal/urinary system	renal-urinary system
+22	reproductive system	reproductive system
+22	respiratory system	respiratory system
+22	skeletal muscle	muscle
+22	skeleton	skeletal system
+22	smooth muscle#	muscle
+22	tail	tail
+22	vertebral axis muscle system	muscle
+22	visceral organ	embryo - other
+23	adrenal gland	endocrine system
+23	alimentary system	alimentary system
+23	body#	embryo - other
+23	cardiovascular system	cardiovascular system
+23	cartilage#	embryo - other
+23	cavities and their linings	cavities and their linings
+23	ear	sensory organs
+23	embryo	embryo - other
+23	extraembryonic component	extraembryonic component
+23	eye	sensory organs
+23	gland	endocrine system
+23	haemolymphoid system	hemolymphoid system
+23	head#	head
+23	integumental system	integumental system
+23	limb	limbs
+23	liver and biliary system	liver-biliary system
+23	mesenchyme	mesenchyme
+23	nervous system	nervous system
+23	nose	sensory organs
+23	organ system	embryo - other
+23	renal/urinary system	renal-urinary system
+23	reproductive system	reproductive system
+23	respiratory system	respiratory system
+23	skeletal muscle	muscle
+23	skeleton	skeletal system
+23	smooth muscle#	muscle
+23	tail	tail
+23	vertebral axis muscle system	muscle
+23	visceral organ	embryo - other
+24	adrenal gland	endocrine system
+24	alimentary system	alimentary system
+24	body#	embryo - other
+24	cardiovascular system	cardiovascular system
+24	cartilage#	embryo - other
+24	cavities and their linings	cavities and their linings
+24	ear	sensory organs
+24	embryo	embryo - other
+24	extraembryonic component	extraembryonic component
+24	eye	sensory organs
+24	gland	endocrine system
+24	haemolymphoid system	hemolymphoid system
+24	head#	head
+24	integumental system	integumental system
+24	limb	limbs
+24	liver and biliary system	liver-biliary system
+24	mesenchyme	mesenchyme
+24	nervous system	nervous system
+24	nose	sensory organs
+24	organ system	embryo - other
+24	renal/urinary system	renal-urinary system
+24	reproductive system	reproductive system
+24	respiratory system	respiratory system
+24	skeletal muscle	muscle
+24	skeleton	skeletal system
+24	smooth muscle#	muscle
+24	tail	tail
+24	vertebral axis muscle system	muscle
+24	visceral organ	embryo - other
+25	adrenal gland	endocrine system
+25	alimentary system	alimentary system
+25	body#	embryo - other
+25	cardiovascular system	cardiovascular system
+25	cartilage	embryo - other
+25	cavities and their linings	cavities and their linings
+25	ear	sensory organs
+25	embryo	embryo - other
+25	extraembryonic component	extraembryonic component
+25	eye	sensory organs
+25	gland	endocrine system
+25	haemolymphoid system	hemolymphoid system
+25	head#	head
+25	integumental system	integumental system
+25	limb	limbs
+25	liver and biliary system	liver-biliary system
+25	mesenchyme	mesenchyme
+25	nervous system	nervous system
+25	nose	sensory organs
+25	organ system	embryo - other
+25	renal/urinary system	renal-urinary system
+25	reproductive system	reproductive system
+25	respiratory system	respiratory system
+25	skeletal muscle	muscle
+25	skeleton	skeletal system
+25	smooth muscle#	muscle
+25	tail	tail
+25	vertebral axis muscle system	muscle
+25	visceral organ	embryo - other
+26	adrenal gland	endocrine system
+26	alimentary system	alimentary system
+26	body#	embryo - other
+26	bone marrow	hemolymphoid system
+26	cardiovascular system	cardiovascular system
+26	cartilage	embryo - other
+26	cavities and their linings	cavities and their linings
+26	ear	sensory organs
+26	embryo	embryo - other
+26	extraembryonic component	extraembryonic component
+26	eye	sensory organs
+26	gland	endocrine system
+26	haemolymphoid system	hemolymphoid system
+26	head#	head
+26	integumental system	integumental system
+26	limb	limbs
+26	liver and biliary system	liver-biliary system
+26	mesenchyme	mesenchyme
+26	nervous system	nervous system
+26	nose	sensory organs
+26	organ system	embryo - other
+26	renal/urinary system	renal-urinary system
+26	reproductive system	reproductive system
+26	respiratory system	respiratory system
+26	skeletal muscle	muscle
+26	skeleton	skeletal system
+26	smooth muscle	muscle
+26	tail	tail
+26	vertebral axis muscle system	muscle
+26	visceral organ	embryo - other
+28	adipose tissue	adipose tissue
+28	adrenal gland	endocrine system
+28	alimentary system	alimentary system
+28	body	postnatal - other
+28	body cavity/lining	cavities and their linings
+28	body fluid/substance	postnatal - other
+28	bone marrow	hemolymphoid system
+28	cardiovascular system	cardiovascular system
+28	connective tissue	postnatal - other
+28	ear	sensory organs
+28	endocrine system	endocrine system
+28	exocrine system	endocrine system
+28	eye	sensory organs
+28	haemolymphoid system	hemolymphoid system
+28	head	head
+28	integumental system	integumental system
+28	limb	limbs
+28	liver and biliary system	liver-biliary system
+28	muscle	muscle
+28	neck	postnatal - other
+28	nervous system	nervous system
+28	nose	sensory organs
+28	organ system	postnatal - other
+28	renal/urinary system	renal-urinary system
+28	reproductive system	reproductive system
+28	respiratory system	respiratory system
+28	sensory organ	postnatal - other
+28	visceral organ	postnatal - other

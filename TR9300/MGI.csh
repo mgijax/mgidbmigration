@@ -31,8 +31,8 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
---drop table GXD_Index_Old
---go
+drop table GXD_Index_Old
+go
 
 exec MGI_Table_Column_Cleanup
 go

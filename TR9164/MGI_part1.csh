@@ -22,11 +22,6 @@ setenv PERMS ${MGD_DBPERMSDIR}
 setenv UTILS ${MGI_DBUTILS}
 
 
-
-##############################################################################
-###               --- Promoter Notes for CRE Alleles ---                   ###
-##############################################################################
-
 ###----
 ###--- load knock-in allele notes; derived buy substring matching nomenclature
 ###--- to identify the allele, and using it's marker's symbol as the promoter
@@ -37,6 +32,12 @@ setenv UTILS ${MGI_DBUTILS}
 ###--- load transgenic allele notes from file
 ###----
 ./insertCreTransgenicNotes.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/TransgenicPromoters.txt | tee -a ${LOG}
+
+
+###----
+###--- Insert new Anatomical System vocab 
+###----
+./insertAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
 
 
 ###-----------------------###

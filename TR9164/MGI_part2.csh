@@ -22,16 +22,6 @@ setenv PERMS ${MGD_DBPERMSDIR}
 setenv UTILS ${MGI_DBUTILS}
 
 
-##############################################################################
-###               --- Anatomical System vocab ---                          ###
-##############################################################################
-
-###----
-###--- Insert new Anatomical System vocab ---###
-###----
-./insertAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
-
-
 ###----
 ###--- Add new _System_key column to GXD_Structure ---###
 ###----
@@ -42,19 +32,10 @@ setenv UTILS ${MGI_DBUTILS}
 ###----
 ./assocAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
 
-
-
-##############################################################################
-###             --- New Cre Cache table to bind them all ---               ###
-##############################################################################
-
 ###----
-###--- Make Allele->System CRE Cache Table ---###
+###--- New Cre Cache table to bind them all
 ###----
 ./createCreCache.csh
-
-
-
 
 
 ###-----------------------###

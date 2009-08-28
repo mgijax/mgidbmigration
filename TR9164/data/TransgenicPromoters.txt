@@ -262,7 +262,7 @@
 8631	Tg(Grik4-cre)G32-4Stl	Grik4
 21630	Tg(Grin2c-cre/PGR)25Mim	Grin2c
 55748	Tg(Gsx2-cre)1Wdr	Gsx2
-54559	Tg(Gt(ROSA)26Sor-cre)15Eps	26Sor
+54559	Tg(Gt(ROSA)26Sor-cre)15Eps	ROSA
 6213	Tg(GZMB-cre)1Jcb	GZMB
 66000	Tg(Gzmb-cre/ERT2)1Dtf	Gzmb
 33586	Tg(Hand2-cre)#Clou	Hand2

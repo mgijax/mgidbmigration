@@ -2,6 +2,7 @@
 
 #
 # tr9164 - new column in GXD_Structure for roll-up AD System of the term
+# tr9797 - backend
 #
 
 source ../Configuration
@@ -48,6 +49,7 @@ echo "Creating New Table"
 
 ${MGD_DBSCHEMADIR}/table/GXD_Structure_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/GXD_TheilerStage_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object | tee -a ${LOG}
 
 ###################################
 ###### 3) Populate New Table ###### 
@@ -78,26 +80,41 @@ select
 from GXD_Structure_Old o
 go
 
-insert into GXD_TheilerState
+insert into GXD_TheilerStage
 select
   _Stage_key, 
   -1,
   stage, 
   description, 
-  dpcNin, 
+  dpcMin, 
   dpcMax, 
   creation_date, 
   modification_date
 from GXD_TheilerStage_Old
 go
 
-/*
-drop table GXD_Structure_Old
+--drop table GXD_Structure_Old
+--go
+
+--drop table GXD_TheilerStage_Old
+--go
+
+--   set roll-up defaults
+--   early embryo = 4856294
+--   embryo - other = 4856295
+--   postnatal - other = 4856306
+
+update GXD_TheilerStage set _defaultSystem_key = 4856294
+where _Stage_key in (1,2,3,4,5,6,7,8,9,10)
 go
 
-drop table GXD_TheilerStage_Old
+update GXD_TheilerStage set _defaultSystem_key = 4856295
+where _Stage_key in (11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27)
 go
-*/
+
+update GXD_TheilerStage set _defaultSystem_key = 4856306
+where _Stage_key in (28)
+go
 
 quit
 EOSQL
@@ -109,14 +126,27 @@ echo "Adding defaults, keys, and perms to New Table"
 
 ${MGD_DBSCHEMADIR}/index/GXD_Structure_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/default/GXD_Structure_bind.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/default/GXD_TheilerStage_bind.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/default/ALL_Cre_Cache_bind.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Structure_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
 
 ${MGD_DBPERMSDIR}/public/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/table/GXD_TheilerStage_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_TheilerStage_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/ALL_Cre_Cache_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/ALL_Cre_Cache_grant.object | tee -a ${LOG}
 
 

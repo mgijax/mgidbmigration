@@ -30,13 +30,7 @@ setenv UTILS ${MGI_DBUTILS}
 ###----
 ###--- Make Structure->System associations ---###
 ###----
-./assocAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
-
-###----
-###--- New Cre Cache table to bind them all
-###----
-./createCreCache.csh
-
+#./assocAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

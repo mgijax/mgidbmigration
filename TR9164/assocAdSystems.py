@@ -66,7 +66,7 @@ def associateSystems ():
     results = db.sql ('update GXD_Structure set _System_key = -1', 'auto')
 
     # get the vocab key for Anatomical Systems
-    results = db.sql ('select _Vocab_key from voc_vocab where name = "Anatomical Systems"', 'auto')
+    results = db.sql ('select _Vocab_key from VOC_Vocab where name = "Anatomical Systems"', 'auto')
     anatomicalSystemVocabKey = results[0]['_Vocab_key']
 
 
@@ -90,7 +90,7 @@ def associateSystems ():
 
     # gather the roll-up terms, and their keys
     rollUpSystems = {} 
-    cmd = 'select term, _Term_key from voc_term where _Vocab_key = %s' % (anatomicalSystemVocabKey)
+    cmd = 'select term, _Term_key from VOC_Term where _Vocab_key = %s' % (anatomicalSystemVocabKey)
     results = db.sql (cmd, 'auto')
     for r in results:
         rollUpSystems[r['term']] = r['_Term_key']

@@ -23,7 +23,7 @@ setenv UTILS ${MGI_DBUTILS}
 
 
 ###----
-###--- Add new _System_key column to GXD_Structure ---###
+###--- Add GXD schema changes
 ###----
 ./modifyGxdStructure.csh
 

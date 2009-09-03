@@ -34,6 +34,10 @@ go
 
 sp_rename GXD_Structure, GXD_Structure_Old 
 go
+
+sp_rename GXD_TheilerStage, GXD_TheilerStage_Old 
+go
+
 quit
 EOSQL
 
@@ -43,7 +47,7 @@ EOSQL
 echo "Creating New Table"
 
 ${MGD_DBSCHEMADIR}/table/GXD_Structure_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/GXD_Structure_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/GXD_TheilerStage_create.object | tee -a ${LOG}
 
 ###################################
 ###### 3) Populate New Table ###### 
@@ -67,14 +71,33 @@ select
   o.treeDepth,
   o.printStop,
   o.topoSort,
+  1,
   o.structureNote,
   o.creation_date,
   o.modification_date
 from GXD_Structure_Old o
 go
 
+insert into GXD_TheilerState
+select
+  _Stage_key, 
+  -1,
+  stage, 
+  description, 
+  dpcNin, 
+  dpcMax, 
+  creation_date, 
+  modification_date
+from GXD_TheilerStage_Old
+go
+
+/*
 drop table GXD_Structure_Old
 go
+
+drop table GXD_TheilerStage_Old
+go
+*/
 
 quit
 EOSQL
@@ -84,9 +107,16 @@ EOSQL
 ############################################
 echo "Adding defaults, keys, and perms to New Table"
 
+${MGD_DBSCHEMADIR}/index/GXD_Structure_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/default/GXD_Structure_bind.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/default/GXD_TheilerStage_bind.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a ${LOG}
+
 ${MGD_DBPERMSDIR}/public/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_Structure_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/GXD_TheilerStage_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/GXD_TheilerStage_grant.object | tee -a ${LOG}
 
 

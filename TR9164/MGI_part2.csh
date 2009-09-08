@@ -16,12 +16,6 @@ rm -rf ${LOG}
 touch ${LOG}
 date | tee -a ${LOG}
 
-# environment variables for related back-end products
-setenv SCHEMA ${MGD_DBSCHEMADIR}
-setenv PERMS ${MGD_DBPERMSDIR}
-setenv UTILS ${MGI_DBUTILS}
-
-
 ###----
 ###--- Add GXD schema changes
 ###----
@@ -30,7 +24,8 @@ setenv UTILS ${MGI_DBUTILS}
 ###----
 ###--- Make Structure->System associations ---###
 ###----
-#./assocAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
+###fit into backend; use GXD_TheilerStage._defaultSystem_key
+./assocAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

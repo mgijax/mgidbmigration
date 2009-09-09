@@ -79,7 +79,7 @@ where
     and e._Marker_key = ag._Marker_key
     and ag._Allele_key = aa._Allele_key
     and e._Structure_key = s._Structure_key
-    and e._Structure_key = sn._Structure_key
+    and s._StructureName_key = sn._StructureName_key
     and s._System_key = vt._Term_key
     and ag._Allele_key = n._Object_key
     and n._Note_key = nc._Note_key

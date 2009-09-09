@@ -79,7 +79,7 @@ def associateSystems ():
          order by sn.mgiAdded'''
 
     updateSystemKey = '''update GXD_Structure
-        set _System_key = %d
+        set _System_key = %d, inheritSystem = 0
         where _Structure_key = %d'''
 
     # gather distinct structure names

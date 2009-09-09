@@ -73,7 +73,7 @@ select
   o.treeDepth,
   o.printStop,
   o.topoSort,
-  1,
+  0,
   o.structureNote,
   o.creation_date,
   o.modification_date

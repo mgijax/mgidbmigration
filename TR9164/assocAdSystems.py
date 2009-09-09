@@ -79,7 +79,7 @@ def associateSystems ():
          order by sn.mgiAdded'''
 
     updateSystemKey = '''update GXD_Structure
-        set _System_key = %d, inheritSystem = 1
+        set _System_key = %d, inheritSystem = %d
         where _Structure_key = %d'''
 
     # gather distinct structure names
@@ -126,7 +126,7 @@ def associateSystems ():
         
         systemKey = rollUpSystems[inputSystem]
 
-        cmd = updateSystemKey % (systemKey, structurKey)
+        cmd = updateSystemKey % (systemKey, 0, structurKey)
         results = db.sql (cmd, 'auto')
 
     ##########################################################################
@@ -166,7 +166,7 @@ def associateSystems ():
               #print "Found System " + str(lookupKey) + "->" + str(systemKey)
               systemKey = systems[lookupKey]
               needsSystemKey = -1
-              cmd = updateSystemKey % (systemKey, structureKey)
+              cmd = updateSystemKey % (systemKey, 1, structureKey)
               results = db.sql (cmd, 'auto')
 
 

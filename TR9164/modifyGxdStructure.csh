@@ -73,7 +73,7 @@ select
   o.treeDepth,
   o.printStop,
   o.topoSort,
-  0,
+  1,
   o.structureNote,
   o.creation_date,
   o.modification_date
@@ -93,11 +93,11 @@ select
 from GXD_TheilerStage_Old
 go
 
---drop table GXD_Structure_Old
---go
+drop table GXD_Structure_Old
+go
 
---drop table GXD_TheilerStage_Old
---go
+drop table GXD_TheilerStage_Old
+go
 
 --   set roll-up defaults
 --   early embryo = 4856294

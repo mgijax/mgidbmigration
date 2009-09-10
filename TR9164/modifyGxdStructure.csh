@@ -142,6 +142,17 @@ ${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/trigger/GXD_Assay_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Structure_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_TheilerStage_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_TheilerStage_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a ${LOG}
+
 ${MGD_DBPERMSDIR}/public/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/table/GXD_TheilerStage_grant.object | tee -a ${LOG}

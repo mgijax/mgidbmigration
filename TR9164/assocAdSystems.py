@@ -83,10 +83,10 @@ def associateSystems ():
         where _Structure_key = %d'''
 
     # gather distinct structure names
-    distinctStructures = {} 
-    results = db.sql ('select distinct(structure) from GXD_StructureName', 'auto')
-    for r in results:
-        distinctStructures[r['structure']] = 0
+    #distinctStructures = {} 
+    #results = db.sql ('select distinct(structure) from GXD_StructureName', 'auto')
+    #for r in results:
+    #    distinctStructures[r['structure']] = 0
 
     # gather the roll-up terms, and their keys
     rollUpSystems = {} 

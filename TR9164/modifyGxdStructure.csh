@@ -100,19 +100,19 @@ drop table GXD_TheilerStage_Old
 go
 
 --   set roll-up defaults
---   early embryo = 4856294
---   embryo - other = 4856295
---   postnatal - other = 4856306
+--   early embryo = 4856345
+--   embryo - other = 4856346
+--   postnatal - other = 4856357
 
-update GXD_TheilerStage set _defaultSystem_key = 4856294
+update GXD_TheilerStage set _defaultSystem_key = 4856345
 where _Stage_key in (1,2,3,4,5,6,7,8,9,10)
 go
 
-update GXD_TheilerStage set _defaultSystem_key = 4856295
+update GXD_TheilerStage set _defaultSystem_key = 4856346
 where _Stage_key in (11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27)
 go
 
-update GXD_TheilerStage set _defaultSystem_key = 4856306
+update GXD_TheilerStage set _defaultSystem_key = 4856357
 where _Stage_key in (28)
 go
 

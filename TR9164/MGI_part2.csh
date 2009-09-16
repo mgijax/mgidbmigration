@@ -27,6 +27,11 @@ date | tee -a ${LOG}
 ###fit into backend; use GXD_TheilerStage._defaultSystem_key
 ./assocAdSystems.py ${MGD_DBSERVER} ${MGD_DBNAME} ${MGI_DBUSER} ${MGI_DBPASSWORDFILE} ./data/AdSystems.txt | tee -a ${LOG}
 
+###----
+###--- load the Cre cache
+###----
+${ALLCACHELOAD}/allelecrecache.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

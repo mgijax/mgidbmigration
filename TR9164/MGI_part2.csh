@@ -32,6 +32,13 @@ date | tee -a ${LOG}
 ###----
 ${ALLCACHELOAD}/allelecrecache.csh
 
+###---------------------------###
+###--- database statistics ---###
+###---------------------------###
+date | tee -a ${LOG}
+echo 'Database statistics update' | tee -a ${LOG}
+./creStats.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

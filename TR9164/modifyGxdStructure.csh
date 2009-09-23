@@ -153,11 +153,17 @@ ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Allele_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Allele_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_AllDriver_View_create.object | tee -a ${LOG}
+
 ${MGD_DBPERMSDIR}/public/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_Structure_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/table/GXD_TheilerStage_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_TheilerStage_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/table/ALL_Cre_Cache_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/ALL_Cre_Cache_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/MGI_NoteType_Allele_View_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/MGI_NoteType_AllDriver_View_grant.object | tee -a ${LOG}
 
 

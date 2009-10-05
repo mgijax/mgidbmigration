@@ -184,9 +184,9 @@ def associateSystems ():
     earlyEmbryoStages = '(1,2,3,4,5,6,7,8,9,10)'
     earlyEmbryoSystemKey = str(rollUpSystems['early embryo'])
     embryoOtherStages = '(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27)'
-    embryoOtherSystemKey = str(rollUpSystems['embryo - other'])
+    embryoOtherSystemKey = str(rollUpSystems['embryo-other'])
     postnatalOtherStages = '(28)'
-    postnatalOtherSystemKey = str(rollUpSystems['postnatal - other'])
+    postnatalOtherSystemKey = str(rollUpSystems['postnatal-other'])
 
     updateSystemKeyStageDefaults = '''
       update GXD_Structure

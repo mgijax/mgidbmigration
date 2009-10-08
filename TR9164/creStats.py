@@ -50,6 +50,28 @@ except:
 
 stats.setSqlFunction (db.sql)
 
+# Update statistics
+
+updatedStatistics = [
+	{
+		'abbrev' : 'ortho',
+		'name' : 'Genes with orthology annotations',
+	},
+	]
+
+for s in updatedStatistics :
+	stat = stats.getStatistic (s['abbrev'])
+	if s.has_key('sql'):
+		stat.setSql (s['sql'])
+	if s.has_key('name'):
+		stat.setName(s['name'])
+	if s.has_key('def'):
+		stat.setDefinition(s['def'])
+
+sys.stderr.write ('Updated %d statistics\n' % len(updatedStatistics))
+
+
+
 # Create two new statistic groups
 
 stats.createStatisticGroup("Cre Mini Home")
@@ -132,7 +154,7 @@ creGroup.setStatistics(creGroupOrder)
 
 sys.stderr.write ('Created the order for the Cre Minihome\n')
 
-# Change the Order of the stats for the All Stats page
+# Change the Order of the stats for the All Stats cre page
 
 allStatsCreGroup = stats.StatisticGroup('Stats Page Cre')
 
@@ -141,7 +163,29 @@ allStatsCreGroupOrder = ['creInKnockInAlleles','creInTransgenes','creTotal','cre
 
 allStatsCreGroup.setStatistics(allStatsCreGroupOrder)
 
-sys.stderr.write ('Changed the order for the all stats page.\n')
+sys.stderr.write ('Created the order for the Cre All Stats Page\n')
+
+# Change the Order of the stats for the All Stats Ortho page
+
+allStatsOrthoGroup = stats.StatisticGroup('Stats Page Orthology')
+
+allStatsOrthoGroupOrder = ['ortho','orthoMusHum','orthoMusRat','orthoMusChi', 
+				'orthoMusDog', 'genes']
+
+allStatsOrthoGroup.setStatistics(allStatsOrthoGroupOrder)
+
+sys.stderr.write ('Created the order for the Cre Orthology All Stats Page\n')
+
+# Change the Order of the stats/included statistics for the All Stats Gene page
+
+allStatsGeneGroup = stats.StatisticGroup('Stats Page Markers')
+
+allStatsGeneGroupOrder = ['genesUncMut','genesNucl','genesProt','goGenesFun', 
+				'genesGT', 'gxdGenesRes', 'markersMap']
+
+allStatsGeneGroup.setStatistics(allStatsGeneGroupOrder)
+
+sys.stderr.write ('Created the order for the Cre Gene All Stats Pages\n')
 
 stats.measureAllHavingSql()
 

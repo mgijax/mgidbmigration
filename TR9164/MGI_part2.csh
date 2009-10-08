@@ -39,6 +39,16 @@ date | tee -a ${LOG}
 echo 'Database statistics update' | tee -a ${LOG}
 ./creStats.csh
 
+##
+##--- run the new report
+##
+date | tee -a ${LOG}
+echo 'Run the new report' | tee -a ${LOG}
+source ${PUBRPTS}/Configuration
+cd ${PUBRPTS}/daily
+./MGI_Recombinase_Full.py
+cp ${REPORTOUTPUTDIR}/MGI_Recombinase_Full.* ${FTPREPORTDIR}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

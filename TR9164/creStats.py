@@ -104,8 +104,7 @@ newStatistics = [
 		'def' : 'Total recombinase transgenes and alleles',
 		'private' : 0,
 		'int' : 1,
-		'sql' : '''select count(distinct _Allele_key) from ALL_Cre_Cache
-				where _Allele_Type_key in (847117, 847128)''',
+		'sql' : '''select count(distinct _Allele_key) from ALL_Cre_Cache''',
 	},		
 	{
 		'abbrev' : 'creDriversInKnockIn',

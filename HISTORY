@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-1-14
+DATE: 11/05/2009
+STAFF: sc
+CHANGES: TR9788 MGI.csh commented out
+  call to seqcoord cacheload and alomrkload
+
 TAG: mgidbmigration-4-3-1-13
 DATE: 10/20/2009
 STAFF: mhall

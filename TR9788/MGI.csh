@@ -3,7 +3,10 @@
 #
 # Migration for TR7493 -- gene trap LF
 # (part 1 - migration of existing data into new structures)
-
+#
+# 11/05/2009 sc - commented out seqcoord cacheload and alomrkload
+#  because were going to turn off public load and 
+#  let these run as part of the genetrapload
 ###----------------------###
 ###--- initialization ---###
 ###----------------------###
@@ -152,10 +155,10 @@ EOSQL
 
 # run seq coord cacheload and alomrkload to pick up new point coord
 # algorithm 
-echo "Running seqcoord cacheload" | tee -a ${LOG}
-${SEQCACHELOAD}/seqcoord.csh
+#echo "Running seqcoord cacheload" | tee -a ${LOG}
+#${SEQCACHELOAD}/seqcoord.csh
 
-echo "Running alomrkload" | tee -a ${LOG}
-${ALOMRKLOAD}/bin/alomrkload.sh
+#echo "Running alomrkload" | tee -a ${LOG}
+#${ALOMRKLOAD}/bin/alomrkload.sh
 
 date | tee -a ${LOG}

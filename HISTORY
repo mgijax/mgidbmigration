@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-3-2-2
+DATE: 12/2/2009
+STAFF: dbm
+CHANGES: TR9924/MGI_part1.csh: update logical DB description to FuncBase
+
 TAG: mgidbmigration-4-3-2-1
 DATE: 11/20/2009
 STAFF: jsb

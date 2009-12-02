@@ -58,7 +58,8 @@ go
 
 /* changes to MouseFunc names */
 
-update ACC_LogicalDB set name = "FuncBase" where _LogicalDB_key = 124
+update ACC_LogicalDB set name = "FuncBase", description = "FuncBase"
+where _LogicalDB_key = 124
 update ACC_ActualDB set name = "FuncBase" where _ActualDB_key = 110
 go
 

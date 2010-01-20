@@ -33,11 +33,14 @@ quit
 
 EOSQL
 
-${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_drop.object
-${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object 
+${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object  | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_drop.object
-${MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_create.object
+${MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_create.object | tee -a ${LOG}
+
+${MGD_DBPERMSDIR}/curatorial/procedure/GXD_duplicateAssay_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/GXD_ProbePrep_View_grant.object | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

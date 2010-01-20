@@ -23,6 +23,9 @@ go
 alter table GXD_ProbePrep drop _Coverage_key
 go
 
+drop index GXD_ProbePrep.idx_Coverage_key
+go
+
 drop table GXD_LabelCoverage
 go
 

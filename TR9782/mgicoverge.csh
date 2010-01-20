@@ -20,10 +20,10 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-alter table GXD_ProbePrep drop _Coverage_key
+drop index GXD_ProbePrep.idx_Coverage_key
 go
 
-drop index GXD_ProbePrep.idx_Coverage_key
+alter table GXD_ProbePrep drop _Coverage_key
 go
 
 drop table GXD_LabelCoverage
@@ -32,6 +32,8 @@ go
 quit
 
 EOSQL
+
+${MGD_DBSCHEMADIR}/trigger/GXD_ProbePrep_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object  | tee -a ${LOG}

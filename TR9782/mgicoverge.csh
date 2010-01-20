@@ -41,6 +41,8 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object  | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_create.object | tee -a ${LOG}
 
+${MGD_DBPERMSDIR}/public/table/GXD_ProbePrep_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/GXD_ProbePrep_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/procedure/GXD_duplicateAssay_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/GXD_ProbePrep_View_grant.object | tee -a ${LOG}
 

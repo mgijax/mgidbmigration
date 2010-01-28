@@ -11,6 +11,7 @@
 # new MGI_Reference_Antibody_View
 # new MGI_RefType_Antibody_View
 # modify MGI_insertReferenceAssoc
+# modify MGI_Reference_Assoc trigger
 #
 
 cd `dirname $0` && source ../Configuration
@@ -75,6 +76,8 @@ quit
 EOSQL
 
 ${MGD_DBSCHEMADIR}/trigger/GXD_Antibody_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/GXD_Antibody_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_Antibody_View_create.object | tee -a ${LOG}

@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-3-2
+DATE: 01/28/2010
+STAFF: lec
+CHANGES: added mgiantibody.csh, mgicoverge.csh
+         these need to be called from MGI_part1.csh
+
 TAG: mgidbmigration-4-3-3-1
 DATE: 01/19/2010
 STAFF: jsb

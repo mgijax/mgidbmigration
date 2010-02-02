@@ -109,6 +109,13 @@ echo "--- Running antibody modification" | tee -a ${LOG}
 ./mgiantibody.csh | tee -a ${LOG}
 
 ###-----------------------------------###
+###--- add TR9784 ---###
+###-----------------------------------###
+date | tee -a ${LOG}
+echo "--- Running notes " | tee -a ${LOG}
+./mginote.csh | tee -a ${LOG}
+
+###-----------------------------------###
 ###--- add new biotype translation ---###
 ###-----------------------------------###
 date | tee -a ${LOG}

@@ -95,6 +95,20 @@ ${SCHEMA}/trigger/VOC_Term_drop.object | tee -a ${LOG}
 ${SCHEMA}/trigger/VOC_Term_create.object | tee -a ${LOG}
 
 ###-----------------------------------###
+###--- add TR8156 ---###
+###-----------------------------------###
+date | tee -a ${LOG}
+echo "--- Running coverage modification" | tee -a ${LOG}
+./mgicoverge.csh | tee -a ${LOG}
+
+###-----------------------------------###
+###--- add TR9560 ---###
+###-----------------------------------###
+date | tee -a ${LOG}
+echo "--- Running antibody modification" | tee -a ${LOG}
+./mgiantibody.csh | tee -a ${LOG}
+
+###-----------------------------------###
 ###--- add new biotype translation ---###
 ###-----------------------------------###
 date | tee -a ${LOG}

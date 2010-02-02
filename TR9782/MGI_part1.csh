@@ -94,6 +94,14 @@ ${SCHEMA}/trigger/SEQ_Sequence_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/VOC_Term_drop.object | tee -a ${LOG}
 ${SCHEMA}/trigger/VOC_Term_create.object | tee -a ${LOG}
 
+###-----------------------------------###
+###--- add new biotype translation ---###
+###-----------------------------------###
+date | tee -a ${LOG}
+echo "--- Running biotype translation load" | tee -a ${LOG}
+
+${TRANSLATIONLOAD}/translationload.csh /mgi/all/wts_projects/9300/9305/biotype_translationload/input/biotypes.config | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

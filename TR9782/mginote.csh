@@ -34,8 +34,9 @@ quit
 
 EOSQL
 
-${MGD_DBSCHEMADIR}/view/MGI_NoteType_StrainMarker_View_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/public/view/MGI_NoteType_StrainMarker_Vieww_grant.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Marker_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Marker_View_create.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/MGI_NoteType_Marker_Vieww_grant.object | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

@@ -84,6 +84,7 @@ ${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/GXD_Antibody_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_Antibody_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_Reference_Antibody_View_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/MGI_RefType_Antibody_View_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/MGI_insertReferenceAssoc_drop.object | tee -a ${LOG}
@@ -93,8 +94,8 @@ ${MGD_DBPERMSDIR}/public/table/GXD_Antibody_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/table/GXD_Antibody_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/curatorial/procedure/MGI_insertReferenceAssoc_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/GXD_Antibody_View_grant.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/public/view/MGI_Reference_Antibody_Vieww_grant.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/public/view/MGI_RefType_Antibody_Vieww_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/MGI_Reference_Antibody_View_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/MGI_RefType_Antibody_View_grant.object | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

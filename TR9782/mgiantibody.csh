@@ -62,6 +62,9 @@ select @nextAssoc + seq, _Refs_key, _Antibody_key, 6, @mgiType, 1000, 1000, getd
 from #toAdd
 go
 
+sp_dropkey foreign, GXD_Antibody, BIB_Refs
+go
+
 drop index GXD_Antibody.idx_Refs_key
 go
 

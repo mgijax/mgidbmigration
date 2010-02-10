@@ -4,6 +4,7 @@
 # TR9784
 #
 #  add new MGI_NoteType:  Strain-Specific Marker
+#  add new MGI_RefAssocType: Strain-Specific Marker
 #
 #
 
@@ -27,6 +28,15 @@ select @nextType = max(_NoteType_key) + 1 from MGI_NoteType
 
 insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
 values (@nextType, 2, "Strain-Specific Marker", 1)
+
+go
+
+/* create new reference type */
+declare @nextType integer
+select @nextType = max(_RefAssocType_key) + 1 from MGI_RefAssocType
+
+insert MGI_RefAssocType (_RefAssocType_key, _MGIType_key, assocType, allowOnlyOne)
+values (@nextType, 2, "Strain-Specific Marker", 0)
 
 go
 

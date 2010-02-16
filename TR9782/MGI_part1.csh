@@ -94,6 +94,16 @@ ${SCHEMA}/trigger/SEQ_Sequence_create.object | tee -a ${LOG}
 ${SCHEMA}/trigger/VOC_Term_drop.object | tee -a ${LOG}
 ${SCHEMA}/trigger/VOC_Term_create.object | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo "--- Radar table revisions" | tee -a ${LOG}
+${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_Accession_drop.object | tee -a ${LOG}
+${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_Accession_create.object | tee -a ${LOG}
+${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_Accession_create.object | tee -a ${LOG}
+${RADAR_DBSCHEMADIR}/key/DP_EntrezGene_Accession_create.object | tee -a ${LOG}
+
+# grant permissions
+${RADAR_DBPERMSDIR}/public/table/DP_EntrezGene_Accession_grant.object | tee -a ${LOG}
+
 ###-----------------------------------###
 ###--- add TR8156 ---###
 ###-----------------------------------###

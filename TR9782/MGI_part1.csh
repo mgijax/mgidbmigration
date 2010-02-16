@@ -131,6 +131,13 @@ echo "--- Running biotype schema changes " | tee -a ${LOG}
 ./mgibiotype.csh | tee -a ${LOG}
 
 ###-----------------------###
+###--- permissions -------###
+###-----------------------###
+date | tee -a ${LOG}
+echo "--- permissions" | tee -a ${LOG}
+${PERMS}/all_grant.csh | tee -a ${LOG}
+
+###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 

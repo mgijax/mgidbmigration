@@ -123,6 +123,13 @@ echo "--- Running biotype translation load" | tee -a ${LOG}
 
 ${TRANSLATIONLOAD}/translationload.csh /mgi/all/wts_projects/9300/9305/biotype_translationload/input/biotypes.config | tee -a ${LOG}
 
+###-----------------------------------###
+###--- add TR9239 ---###
+###-----------------------------------###
+date | tee -a ${LOG}
+echo "--- Running biotype schema changes " | tee -a ${LOG}
+./mgibiotype.csh | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

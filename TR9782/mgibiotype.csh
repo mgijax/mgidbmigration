@@ -3,6 +3,7 @@
 #
 #
 #  TR9239 - biotype mismatch
+#  TR9239 - changing SEQ_GeneModel._MarkerType_key to _GMMarker_Type_key
 #
 #  add rawbiotype column
 #  add biotype key column
@@ -20,9 +21,14 @@ ${MGD_DBSCHEMADIR}/table/SEQ_Marker_Cache_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/table/SEQ_GeneModel_Cache_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/SEQ_GeneModel_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/SEQ_GeneModel_Cache_create.object | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MRK_Types_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/SEQ_Marker_Cache_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/SEQ_Sequence_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
@@ -30,6 +36,7 @@ ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MRK_Types_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/SEQ_Sequence_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}

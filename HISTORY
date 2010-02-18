@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-3-3-8
+DATE: 02/18/2010
+STAFF: lec
+CHANGES: modified SEQ_GeneModel/mgibiotype.csh
+
 TAG: mgidbmigration-4-3-3-7
 TAG: mgidbmigration-4-3-3-6
 DATE: 02/16/2010,02/17/2010

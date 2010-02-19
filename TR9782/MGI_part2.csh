@@ -31,6 +31,9 @@ ${PROLOAD}/bin/proload.sh
 ###--- Run Gene Model Loads      ---###
 ###---------------------------------###
 date | tee -a ${LOG}
+# remove all lastrun files
+rm /data/loads/mgi/genemodelload/input/*.lastrun
+
 echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/genemodelload.sh ensembl
 

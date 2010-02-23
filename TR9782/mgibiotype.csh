@@ -21,9 +21,9 @@ ${MGD_DBSCHEMADIR}/table/SEQ_Marker_Cache_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/SEQ_Marker_Cache_create.object | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/table/SEQ_GeneModel_Cache_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/table/SEQ_GeneModel_Cache_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/SEQ_GeneModel_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/SEQ_GeneModel_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/SEQ_GeneModel_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/SEQ_GeneModel_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}

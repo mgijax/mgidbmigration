@@ -56,13 +56,6 @@ date | tee -a ${LOG}
 echo 'Public Reports' | tee -a ${LOG}
 ${PUBRPTS}/monthly_reports.sh
 
-###---------------------------###
-###--- database statistics ---###
-###---------------------------###
-date | tee -a ${LOG}
-echo 'Database statistics update' | tee -a ${LOG}
-./gtlfStats.csh
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

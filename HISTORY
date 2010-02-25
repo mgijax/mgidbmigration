@@ -1,3 +1,9 @@
+mgidbmigration-4-3-3-13
+DATE: 02/25/2010
+STAFF: sc	
+CHANGES: TR9239/MGI_part3.csh
+  removed gtlf statistics script (cut/paste error)
+
 TAG: mgidbmigration-4-3-3-12
 DATE: 02/24/2010
 STAFF: lec

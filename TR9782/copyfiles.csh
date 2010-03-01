@@ -45,12 +45,12 @@ cd /data/seqdbs/blast/uniprot.build
 rcp hobbiton:/data/seqdbs/blast/uniprot.build/uniprotmus.dat .
 
 cd /data/loads/mgi/genemodelload/input
-rcp hobbiton:/data/genemodels/current/associations/ensembl/ensembl_assoc.txt . 
-rcp hobbiton:/data/genemodels/current/models/ensembl_genemodels.txt .
-rcp hobbiton:/data/genemodels/current/associations/ncbi/ncbi_assoc.txt .
-rcp hobbiton:/data/genemodels/current/models/ncbi_genemodels.txt .
-rcp hobbiton:/data/genemodels/current/associations/vega/vega_assoc.txt .
-rcp hobbiton:/data/genemodels/current/models/vega_genemodels.txt .
+rcp shire:/data/loads/mgi/genemodelload/input/ensembl_assoc.txt .
+rcp shire:/data/loads/mgi/genemodelload/input/ensembl_genemodels.txt .
+rcp shire:/data/loads/mgi/genemodelload/input/ncbi_assoc.txt .
+rcp shire:/data/loads/mgi/genemodelload/input/ncbi_genemodels.txt .
+rcp shire:/data/loads/mgi/genemodelload/input/vega_assoc.txt .
+rcp shire:/data/loads/mgi/genemodelload/input/vega_genemodels.txt . 
 
 ###-----------------------###
 ###--- final datestamp ---###

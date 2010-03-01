@@ -1,9 +1,12 @@
+mgidbmigration-4-3-3-16
 mgidbmigration-4-3-3-15
 mgidbmigration-4-3-3-14
-DATE: 02/01/2010
+DATE: 03/01/2010
 STAFF: sc
-CHANGES: added copyfiles.csh - this script to be called
+CHANGES: MGI4.33 TR9239
+1) added copyfiles.csh - this script to be called
 directly during dev builds only.
+2) added seqprovider.csh - update order of Sequence Provider vocab
 
 mgidbmigration-4-3-3-13
 DATE: 02/25/2010

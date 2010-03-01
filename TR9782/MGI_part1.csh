@@ -126,6 +126,13 @@ echo "--- Running notes " | tee -a ${LOG}
 ./mginote.csh | tee -a ${LOG}
 
 ###-----------------------------------###
+###--- add TR9774 ---###
+###-----------------------------------###
+date | tee -a ${LOG}
+echo "--- Updating Sequence Provider Vocabulary order " | tee -a ${LOG}
+./seqprovider.csh | tee -a ${LOG}
+
+###-----------------------------------###
 ###--- add new biotype translation ---###
 ###-----------------------------------###
 date | tee -a ${LOG}

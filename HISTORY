@@ -1,3 +1,9 @@
+mgidbmigration-4-3-3-14
+DATE: 02/01/2010
+STAFF: sc
+CHANGES: added copyfiles.csh - this script to be called
+directly during dev builds only.
+
 mgidbmigration-4-3-3-13
 DATE: 02/25/2010
 STAFF: sc	

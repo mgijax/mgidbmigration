@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-3-18
+DATE: 03/02/2010
+STAFF: sc
+CHANGES: MGI4.33 TR9239
+1) copyfiles.csh - changed logfile to full path
+
 TAG: mgidbmigration-4-3-3-17
 DATE: 03/02/2010
 STAFF: lec
@@ -12,6 +18,7 @@ CHANGES: MGI4.33 TR9239
 1) added copyfiles.csh - this script to be called
 directly during dev builds only.
 2) added seqprovider.csh - update order of Sequence Provider vocab
+3) copyfiles.csh - changed logfile to full path 
 
 TAG: mgidbmigration-4-3-3-13
 DATE: 02/25/2010

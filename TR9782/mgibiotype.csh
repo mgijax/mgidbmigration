@@ -65,7 +65,8 @@ ${MGD_DBSCHEMADIR}/procedure/SEQ_split_create.object | tee -a ${LOG}
 #we don't need to add biotype to this view
 #${MGD_DBSCHEMADIR}/view/SEQ_Marker_Cache_View_create.object | tee -a ${LOG}
 
-${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
+#this is run in part2
+#${SEQCACHELOAD}/seqmarker.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

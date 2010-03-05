@@ -1,3 +1,11 @@
+TAG: mgidbmigration-4-3-3-21
+DATE: 03/05/2010
+STAFF: sc
+CHANGES: MGI4.33 TR9239
+1) Updated copyfiles.csh to copy biotype, transcript, and protein
+   files to dev directory
+2) Added copyfiles_prod.csh to copy above to production directories
+
 TAG: mgidbmigration-4-3-3-20
 TAG: mgidbmigration-4-3-3-19
 DATE: 03/03/2010

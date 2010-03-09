@@ -6,7 +6,6 @@
 ###----------------------###
 ###--- initialization ---###
 ###----------------------###
-
 source ../Configuration
 setenv CWD `pwd`	# current working directory
 echo "Server: ${MGD_DBSERVER}"
@@ -99,7 +98,6 @@ echo "--- Radar table revisions" | tee -a ${LOG}
 ${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_Accession_drop.object | tee -a ${LOG}
 ${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_Accession_create.object | tee -a ${LOG}
 ${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_Accession_create.object | tee -a ${LOG}
-${RADAR_DBSCHEMADIR}/key/DP_EntrezGene_Accession_create.object | tee -a ${LOG}
 
 # grant permissions
 ${RADAR_DBPERMSDIR}/public/table/DP_EntrezGene_Accession_grant.object | tee -a ${LOG}

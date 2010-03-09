@@ -6,7 +6,9 @@
 ###----------------------###
 ###--- initialization ---###
 ###----------------------###
+
 source ../Configuration
+
 setenv CWD `pwd`	# current working directory
 echo "Server: ${MGD_DBSERVER}"
 echo "Database: ${MGD_DBNAME}"

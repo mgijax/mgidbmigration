@@ -8,8 +8,7 @@
 ###--- initialization ---###
 ###----------------------###
 
-cd `dirname $0` && source ../Configuration
-#source ../Configuration
+source ../Configuration
 
 # start a new log file for this migration, and add a datestamp
 

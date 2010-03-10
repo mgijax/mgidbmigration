@@ -1,8 +1,10 @@
+TAG: mgidbmigration-4-3-3-24
 TAG: mgidbmigration-4-3-3-23
 DATE: 03/10/2010
 STAFF: sc
 CHANGES: MGI4.33 TR9239
 1) Added MGI_part4.csh to run gbrowseutils
+2) copyfiles.csh - added file needed by gbrowseutils
 
 TAG: mgidbmigration-4-3-3-22
 TAG: mgidbmigration-4-3-3-21

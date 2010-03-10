@@ -61,6 +61,10 @@ rcp shire:/data/downloads/vega_mus_cdna/Mus_musculus.VEGA37.37.cdna.all.fa.gz ./
 rcp shire:/data/downloads/vega_mus_protein/Mus_musculus.VEGA37.37.pep.all.fa.gz ./vega_proteins.gz 
 rcp shire:/data/downloads/entrezgene/gene_info.gz ./ncbi_biotypes.gz
 
+# file for GeneTrap RNA gbrowseutils report
+cd /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline/output
+rcp shire:/data/downloads/ftp.ncbi.nih.gov/gtblatpipeline/output/best_blat_hits_single_Gbrowse.master.gff .
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

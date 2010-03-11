@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-3-25
+DATE: 03/11/2010
+STAFF: sc
+CHANGES: MGI4.33 TR9239
+1) seqprovider.csh - updated order per Mark
+
 TAG: mgidbmigration-4-3-3-24
 TAG: mgidbmigration-4-3-3-23
 DATE: 03/10/2010

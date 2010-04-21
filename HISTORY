@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-4-0
+DATE: 04/21/2010
+STAFF: jsb
+CHANGES:
+1) added TR9983/MGI_part1.csh (alleles in quick search)
+
 TAG: mgidbmigration-4-3-3-29
 TAG: mgidbmigration-4-3-3-28
 TAG: mgidbmigration-4-3-3-27

@@ -18,6 +18,15 @@ touch ${LOG}
 
 ###---------------------------------###
 ###--- Run EntrezGene Loads      ---###
+###--- Comment-out for Production run ---###
+###---------------------------------###
+date | tee -a ${LOG}
+echo 'Uniprot vs. SwissProt comparison' | tee -a ${LOG}
+${UNIPROTLOAD}/bin/makeSwissDiffFile.sh
+
+###---------------------------------###
+###--- Run EntrezGene Loads      ---###
+###--- Comment-out for Production run ---###
 ###---------------------------------###
 date | tee -a ${LOG}
 echo 'EntrezGene Data Provider load' | tee -a ${LOG}

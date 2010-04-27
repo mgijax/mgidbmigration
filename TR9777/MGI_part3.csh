@@ -2,6 +2,7 @@
 
 #
 # Migration part 3 for TR9777 -- MGI 4.33
+# Do NOT run this for the production run...
 #
 
 ###----------------------###

@@ -1,8 +1,0 @@
-congenic	congenic
-inbred strain	inbred strain
-coisogenic	coisogenic
-consomic	consomic
-conplastic	conplastic
-recombinant congenic (RC)	recombinant congenic (RC)
-recombinant inbred (RI)	recombinant inbred (RI)
-Not Specified	Not Specified

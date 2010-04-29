@@ -1,6 +1,0 @@
-Run obsgenemodel.sql before and after running MGI.csh during development - 
-it produces a snapshot of the VEGA and ENSEMBL gene model data in MGI
-1) active (current)
-2) obsolete 
-3) curator made associations to active gene models
-and confirms that the obsolete and curator made data has been deleted

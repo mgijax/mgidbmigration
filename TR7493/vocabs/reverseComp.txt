@@ -1,4 +1,0 @@
-yes	yes
-no	no
-Not Specified	NS
-Not Applicable	NA

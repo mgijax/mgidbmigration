@@ -66,6 +66,10 @@ ${MRKCACHELOAD}/mrkomim.csh
 ${MRKCACHELOAD}/mrkprobe.csh
 
 date | tee -a ${LOG}
+echo 'Load GOA annotations' | tee -a ${LOG}
+${GOALOAD}/goa.csh
+
+date | tee -a ${LOG}
 echo 'Load Allele Cache tables' | tee -a ${LOG}
 ${ALLCACHELOAD}/alllabel.csh
 ${ALLCACHELOAD}/allelecombination.csh

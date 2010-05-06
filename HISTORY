@@ -1,3 +1,9 @@
+TAG: mgidbmigration-4-3-4-4
+DATE: 05/06/2010
+STAFF: lec
+CHANGES: MGI4.33 TR9777/uniprotload
+         added call to GOALOAD to MGI_part2
+
 TAG: mgidbmigration-4-3-4-3
 TAG: mgidbmigration-4-3-4-2
 DATE: 04/29/2010

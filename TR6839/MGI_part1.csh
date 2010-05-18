@@ -7,8 +7,6 @@ cd `dirname $0` && source ../Configuration
 echo "Server: ${MGD_DBSERVER}"
 echo "Database: ${MGD_DBNAME}"
 
-setenv CWD `pwd`        # current working directory
-
 setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
@@ -31,6 +29,42 @@ setenv SCHEMA ${MGD_DBSCHEMADIR}
 setenv PERMS ${MGD_DBPERMSDIR}
 setenv UTILS ${MGI_DBUTILS}
 
+###----------------------###
+###--- add new tables ---###
+###----------------------###
+
+date | tee -a ${LOG}
+echo "--- Creating new tables" | tee -a ${LOG}
+
+${SCHEMA}/table/MRK_MTO_Cache_create.object | tee -a ${LOG}
+${SCHEMA}/table/MRK_MTO_Count_Cache_create.object | tee -a ${LOG}
+
+# add defaults for new tables
+# not created yet
+
+
+# add keys and indexes for new tables
+
+date | tee -a ${LOG}
+echo "--- Adding keys" | tee -a ${LOG}
+
+${SCHEMA}/key/MRK_MTO_Cache_create.object | tee -a ${LOG}
+${SCHEMA}/key/MRK_MTO_Count_Cache_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Adding indexes" | tee -a ${LOG}
+
+${SCHEMA}/index/MRK_MTO_Cache_create.object | tee -a ${LOG}
+${SCHEMA}/index/MRK_MTO_Count_Cache_create.object | tee -a ${LOG}
+
+# add permissions for new tables
+
+date | tee -a ${LOG}
+echo "--- Adding new perms" | tee -a ${LOG}
+
+${PERMS}/public/table/MRK_MTO_Cache_grant.object | tee -a ${LOG}
+${PERMS}/public/table/MRK_MTO_Count_Cache_grant.object | tee -a ${LOG}
+
 date | tee -a ${LOG}
 echo "--- Updating version numbers in db..." | tee -a ${LOG}
 
@@ -44,14 +78,11 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-print 'Adding Sequence Ontology Logical DB'
+print '###################################'
+print '###  SO VOCAB AND ANNOT LOAD ######'
+print '###################################'
 
-declare @nextKey integer
-select @nextKey = max(_LogicalDB_key) + 1 from ACC_LogicalDB
-
-insert into ACC_LogicalDB
-values(@nextKey, 'Sequence Ontology', 'Sequence Ontology', 1, 1001, 1001, getdate(), getdate())
-go
+/* Done in production 5/5/10 'Adding Sequence Ontology Logical DB' */
 
 print 'Adding Sequence Ontology Vocab type'
 
@@ -115,13 +146,27 @@ insert into VOC_VocabDAG
 values(@vocabKey, @dagKey, getdate(), getdate())
 go
 
-print 'Adding Sequence ontology edge labels'
+print 'Adding Sequence Ontology edge labels'
 
 declare @nextKey integer
 select @nextKey = max(_Label_key) + 1 from DAG_Label
 
 insert into DAG_Label
 values(@nextKey, 'adjacent_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'associated_with', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'complete_evidence_for_feature', getdate(), getdate())
 go
 
 declare @nextKey integer
@@ -135,7 +180,63 @@ declare @nextKey integer
 select @nextKey = max(_Label_key) + 1 from DAG_Label
 
 insert into DAG_Label
+values(@nextKey, 'edited_from', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'edited_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'evidence_for_feature', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'exemplar_of', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'genome_of', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
 values(@nextKey, 'guided_by', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'guides', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'has_genome_location', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'has_integral_part', getdate(), getdate())
 go
 
 declare @nextKey integer
@@ -163,6 +264,20 @@ declare @nextKey integer
 select @nextKey = max(_Label_key) + 1 from DAG_Label
 
 insert into DAG_Label
+values(@nextKey, 'homologous_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'integral_part_of', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
 values(@nextKey, 'member_of', getdate(), getdate())
 go
 
@@ -177,7 +292,126 @@ declare @nextKey integer
 select @nextKey = max(_Label_key) + 1 from DAG_Label
 
 insert into DAG_Label
+values(@nextKey, 'orthologous_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
 values(@nextKey, 'transcribed_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'paralogous_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'part_of', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'partial_evidence_for_feature', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'position_of', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'processed_from', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'processed_into', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'recombined_from', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'recombined_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'regulated_by', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'sequence_of', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'similar_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'trans_spliced_from', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'trans_spliced_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'transcribed_from', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'translates_to', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'translation_of', getdate(), getdate())
 go
 
 declare @nextKey integer
@@ -238,6 +472,80 @@ insert into VOC_AnnotType
 values(@nextKey, 2, @vocabKey, @EvidenceVocabKey, 53, 'SO/Marker', getdate(), getdate())
 go
 
+print '##########################'
+print '###  MTO VOCAB LOAD ######'
+print '##########################'
+print 'Need to update reference to  MTO reference'
+
+/* Done in production 5/5/10 'Adding Marker Type Ontology Logical DB' */
+
+print 'Adding Marker Type Ontology Ontology Vocab type'
+
+declare @nextKey integer
+select @nextKey = max(_Vocab_key) + 1 from VOC_Vocab
+
+declare @ldbKey integer
+select @ldbKey = _LogicalDB_key
+from ACC_LogicalDB
+where name = 'Marker Type Ontology'
+
+insert into VOC_Vocab
+values(@nextKey, 160374, @ldbKey, 0, 0, 'Marker Type Ontology', getdate(), getdate())
+go
+
+print 'Adding Marker Type Ontology DAG'
+
+declare @nextKey integer
+select @nextKey = max(_DAG_key) + 1 from DAG_DAG
+
+insert into DAG_DAG
+values(@nextKey, 160374, 13, 'Marker Type Ontology', 'MTO', getdate(), getdate())
+go
+
+print 'Adding new VOC_VocabDAG for Marker Type DAG'
+
+declare @vocabKey integer
+select @vocabKey = _Vocab_key
+from VOC_Vocab
+where name = 'Marker Type Ontology'
+
+declare @dagKey integer
+select @dagKey = _DAG_key
+from DAG_DAG
+where name = 'Marker Type Ontology'
+
+insert into VOC_VocabDAG
+values(@vocabKey, @dagKey, getdate(), getdate())
+go
+
+print 'Creating mtoload MGI_User'
+
+declare @nextKey integer
+select @nextKey = max(_User_key) + 1 from MGI_User
+
+insert into MGI_User
+values(@nextKey, 316353, 316350, 'mtoload', 'Marker Type Ontology Load', 1001, 1001, getdate(), getdate())
+go
+
+print 'Adding MTO node labels'
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'show', getdate(), getdate())
+go
+
+declare @nextKey integer
+select @nextKey = max(_Label_key) + 1 from DAG_Label
+
+insert into DAG_Label
+values(@nextKey, 'hide', getdate(), getdate())
+go
+
 quit
 
 EOSQL
+
+echo 'Update Marker Types'
+./updateMarkerType.csh

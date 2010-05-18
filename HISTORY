@@ -1,3 +1,10 @@
+TAG: mgidbmigration-4-3-4-6
+DATE: 05/18/2010
+STAFF: sc
+CHANGES: TR6839 Marker Types
+1) tag prior to removing Sequence Ontology migration
+   which we are no longer loading
+
 TAG: mgidbmigration-4-3-4-5
 TAG: mgidbmigration-4-3-4-4
 DATE: 05/06/2010, 05/11/2010

@@ -1,3 +1,10 @@
+TAG: mgidbmigration-4-3-4-8
+DATE: 05/19/2010
+STAFF: mhall
+CHANGES: TR9983 Search tool for Alleles
+1) Added some updates to stored procedures that the
+search tool uses.
+
 TAG: mgidbmigration-4-3-4-7
 DATE: 05/19/2010
 STAFF: sc

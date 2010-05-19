@@ -77,6 +77,24 @@ ${SCHEMA}/procedure/VOC_Cache_Alleles_create.object | tee -a ${LOG}
 
 # no procedure permissions needed, since these will only be executed by dbo
 
+###--------------------------###
+###--- update procedures ---###
+###--------------------------###
+
+# add new stored procedures
+
+date | tee -a ${LOG}
+echo "--- Updating stored procedures" | tee -a ${LOG}
+
+${SCHEMA}/procedure/VOC_Cache_MP_Markers_drop.object | tee -a ${LOG}
+${SCHEMA}/procedure/VOC_Cache_OMIM_Markers_drop.object | tee -a ${LOG}
+
+${SCHEMA}/procedure/VOC_Cache_MP_Markers_create.object | tee -a ${LOG}
+${SCHEMA}/procedure/VOC_Cache_OMIM_Markers_create.object | tee -a ${LOG}
+
+
+# no procedure permissions needed, since these will only be executed by dbo
+
 ###-----------------------------------###
 ###--- populate & index new tables ---###
 ###-----------------------------------###
@@ -89,6 +107,8 @@ use ${MGD_DBNAME}
 go
 
 exec VOC_Cache_Alleles
+go
+exec VOC_Cache_Markers
 go
 EOSQL
 

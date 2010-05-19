@@ -1,3 +1,10 @@
+TAG: mgidbmigration-4-3-4-7
+DATE: 05/19/2010
+STAFF: sc
+CHANGES: TR6839 Marker Types
+1) Removed SO from  migration
+2) Added some more MTO migration
+
 TAG: mgidbmigration-4-3-4-6
 DATE: 05/18/2010
 STAFF: sc

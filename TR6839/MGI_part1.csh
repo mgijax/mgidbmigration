@@ -15,14 +15,11 @@ date | tee -a ${LOG}
 # load a backup
 
 if ("${1}" == "dev") then
-    echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a
- ${LOG}
-    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a
-${LOG}
+    echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
+    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
     date | tee -a ${LOG}
 else
-    echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | te
-e -a ${LOG}
+    echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
 endif
 
 setenv SCHEMA ${MGD_DBSCHEMADIR}

@@ -54,13 +54,17 @@ echo "--- fix offsets" | tee -a ${LOG}
 ./fixoffsets.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo '---- Load Marker Cache tables' | tee -a ${LOG}
-${MRKCACHELOAD}/mrklocation.csh
+echo '---- Run Marker Location Cache load' | tee -a ${LOG}
+${MRKCACHELOAD}/mrklocation.csh | tee -a ${LOG}
 
 # move offsets
 date | tee -a ${LOG}
 echo "--- move offsets" | tee -a ${LOG}
 ./moveoffsets.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo '---- Run genetic map load' | tee -a ${LOG}
+${GENMAPLOAD}/bin/genmapload.sh | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'Re-setting permissions/schema'

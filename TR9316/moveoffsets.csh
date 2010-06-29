@@ -1,14 +1,10 @@
 #!/bin/csh -f
 
 #
-# Template
+# move offset source = 0 to source = 3 (old)
 #
 
-#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
-#setenv MGICONFIG /usr/local/mgi/test/mgiconfig
-#source ${MGICONFIG}/master.config.csh
-
-cd `dirname $0`
+cd `dirname $0` && source ../Configuration
 
 setenv LOG $0.log
 rm -rf $LOG

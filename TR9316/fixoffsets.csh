@@ -1,14 +1,10 @@
 #!/bin/csh -f
 
 #
-# Template
+# Fix some offsets
 #
 
-#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
-#setenv MGICONFIG /usr/local/mgi/test/mgiconfig
-#source ${MGICONFIG}/master.config.csh
-
-cd `dirname $0`
+source ../Configuration
 
 setenv LOG $0.log
 rm -rf $LOG
@@ -20,6 +16,8 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 
 use $MGD_DBNAME
 go
+
+/* offset for UN was set to -1; should be -999 */
 
 select m.symbol
 from MRK_Marker m, MRK_Offset o
@@ -39,6 +37,8 @@ and o.offset >= -1
 and m._Marker_Status_key in (1,3)
 and m.chromosome = 'UN'
 go
+
+/* offset for non-UN was set to -999; should be -1 */
 
 select m.symbol
 from MRK_Marker m, MRK_Offset o

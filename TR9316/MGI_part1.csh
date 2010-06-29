@@ -48,15 +48,19 @@ date | tee -a ${LOG}
 echo "--- Adding perms" | tee -a ${LOG}
 ${PERMS}/curatorial/procedure/NOM_transferToMGD_grant.object | tee -a ${LOG}
 
-# run marker location cache load
-date | tee -a ${LOG}
-echo "--- MRK_Location_Cache load" | tee -a ${LOG}
-${MRKCACHELOAD}/mrklocation.csh | tee -a ${LOG}
-
 # fix offsets
 date | tee -a ${LOG}
 echo "--- fix offsets" | tee -a ${LOG}
-./fixoffets.csh | tee -a ${LOG}
+./fixoffsets.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo '---- Load Marker Cache tables' | tee -a ${LOG}
+${MRKCACHELOAD}/mrklocation.csh
+
+# move offsets
+date | tee -a ${LOG}
+echo "--- move offsets" | tee -a ${LOG}
+./moveoffsets.csh | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'Re-setting permissions/schema'

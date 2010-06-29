@@ -21,11 +21,6 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
-/* move MIT markers to new source number */
-
-update MRK_OFfset set source = 3 where source = 2
-go
-
 update MRK_Offset 
 set offset = -999
 from MRK_Marker m, MRK_Offset o
@@ -37,7 +32,7 @@ and m.chromosome = 'UN'
 go
 
 update MRK_Offset
-set source = 2
+set source = 3
 from MRK_Marker m, MRK_Offset o
 where m._Marker_key = o._Marker_key
 and o.source = 0

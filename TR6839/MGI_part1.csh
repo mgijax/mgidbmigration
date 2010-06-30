@@ -82,6 +82,7 @@ ${SCHEMA}/view/VOC_Annot_View_create.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Adding perms" | tee -a ${LOG}
 
+${PERMS}/curatorial/table/MRK_MCV_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/MRK_MCV_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/MRK_MCV_Count_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/VOC_Term_View_grant.object | tee -a ${LOG}

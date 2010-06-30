@@ -72,8 +72,6 @@ ${SCHEMA}/index/MRK_MCV_Count_Cache_create.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- View changes " | tee -a ${LOG}
 
-${SCHEMA}/view/GXD_Antibody_View_drop.object | tee -a ${LOG}
-${SCHEMA}/view/GXD_Antibody_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/VOC_Term_View_drop.object | tee -a ${LOG}
 ${SCHEMA}/view/VOC_Term_View_create.object | tee -a ${LOG}
 ${SCHEMA}/view/VOC_Annot_View_drop.object | tee -a ${LOG}
@@ -86,7 +84,6 @@ echo "--- Adding perms" | tee -a ${LOG}
 
 ${PERMS}/public/table/MRK_MCV_Cache_grant.object | tee -a ${LOG}
 ${PERMS}/public/table/MRK_MCV_Count_Cache_grant.object | tee -a ${LOG}
-${PERMS}/public/view/GXD_Antibody_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/VOC_Term_View_grant.object | tee -a ${LOG}
 ${PERMS}/public/view/VOC_Annot_View_grant.object | tee -a ${LOG}
 

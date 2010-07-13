@@ -16,8 +16,16 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+date | tee -a ${LOG}
+echo 'Load MCV vocabulary'
+${MCVLOAD}/bin/run_mcv_vocload.sh
+
+date | tee -a ${LOG}
+echo 'Load MCV Annotations'
+${MCVLOAD}/bin/mcvload.sh
+
 ###---------------------------------###
-###--- run all Sunday cacheloads ---###
+###--- run pertinent cacheloads ---###
 ###---------------------------------###
 date | tee -a ${LOG}
 echo 'Load Marker Cache tables' | tee -a ${LOG}
@@ -27,6 +35,7 @@ ${MRKCACHELOAD}/mrkhomology.csh
 ${MRKCACHELOAD}/mrklocation.csh
 ${MRKCACHELOAD}/mrkomim.csh
 ${MRKCACHELOAD}/mrkprobe.csh
+${MRKCACHELOAD}/mrkmcv.csh
 
 date | tee -a ${LOG}
 echo 'Load Voc Cache tables' | tee -a ${LOG}

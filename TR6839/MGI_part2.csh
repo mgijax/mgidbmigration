@@ -20,16 +20,6 @@ touch ${LOG}
 ###--- run all Sunday cacheloads ---###
 ###---------------------------------###
 date | tee -a ${LOG}
-echo 'Create Dummy Sequences' | tee -a ${LOG}
-${SEQCACHELOAD}/seqdummy.csh
-
-date | tee -a ${LOG}
-echo 'Load Sequence Cache tables' | tee -a ${LOG}
-${SEQCACHELOAD}/seqmarker.csh
-${SEQCACHELOAD}/seqprobe.csh
-${SEQCACHELOAD}/seqdescription.csh
-
-date | tee -a ${LOG}
 echo 'Load Marker Cache tables' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklabel.csh
 ${MRKCACHELOAD}/mrkref.csh
@@ -39,23 +29,13 @@ ${MRKCACHELOAD}/mrkomim.csh
 ${MRKCACHELOAD}/mrkprobe.csh
 
 date | tee -a ${LOG}
-echo 'Load GOA annotations' | tee -a ${LOG}
-${GOALOAD}/goa.csh
-
-date | tee -a ${LOG}
-echo 'Load Allele Cache tables' | tee -a ${LOG}
-${ALLCACHELOAD}/alllabel.csh
-${ALLCACHELOAD}/allelecombination.csh
-${ALLCACHELOAD}/allstrain.csh
-
-date | tee -a ${LOG}
-echo 'Load Image Cache table' | tee -a ${LOG}
-${MGICACHELOAD}/imgcache.csh
-
-date | tee -a ${LOG}
 echo 'Load Voc Cache tables' | tee -a ${LOG}
 ${MGICACHELOAD}/voccounts.csh
 ${MGICACHELOAD}/vocmarker.csh
+
+date | tee -a ${LOG}
+echo 'Run ALO load' | tee -a ${LOG}
+${ALOMRKLOAD}/bin/alomrkload.sh
 
 ###-----------------------###
 ###--- final datestamp ---###

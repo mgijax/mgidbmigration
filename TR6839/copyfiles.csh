@@ -23,7 +23,7 @@ echo 'rcp MCV annotation file from hobbiton' | tee -a ${LOG}
 cd /data/loads/mgi/mcvload/input
 rcp -p hobbiton:/data/mcv/current/MGI_MCV_7.07.10_djr.txt ./mcvload.txt
 
-echo 'copy MVC vocabulary file to MCV vocload input directory'
+echo 'copy MVC vocabulary file to MCV vocload input directory' | tee -a ${LOG}
 # This file is owned by Richard as group mgi with group write permissions
 cd /data/loads/mgi/vocload/runTimeMCV
 cp -p /mgi/all/wts_projects/6800/6839/data/MCV_Vocab.obo .

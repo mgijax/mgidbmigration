@@ -66,6 +66,17 @@ date | tee -a ${LOG}
 echo '---- Run genetic map load' | tee -a ${LOG}
 ${GENMAPLOAD}/bin/genmapload.sh | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo '---- Clearing out the Image Cache' | tee -a ${LOG}
+rm -rf ${MGI_LIVE}/wi/www/images/cached/*
+echo '---- Clearing out the Image Cache' | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo '---- Refreshing MIT Map' | tee -a ${LOG}
+cd ${MGI_LIVE}/wi/admin
+./gen_mitmaps
+cd `dirname $0`
+
 #date | tee -a ${LOG}
 #echo 'Re-setting permissions/schema'
 #${SCHEMA}/reconfig.csh | tee -a ${LOG}

@@ -1,3 +1,8 @@
+TAG: mgidbmigration-4-4-0-1
+DATE: 08/12/2010
+STAFF: sc
+CHANGES: TR6839 - removed copyfiles.csh
+
 TAG: mgidbmigration-4-3-4-13
 DATE: 07/15/2010
 STAFF: lec

@@ -46,6 +46,10 @@ date | tee -a ${LOG}
 echo 'Run ALO load' | tee -a ${LOG}
 ${ALOMRKLOAD}/bin/alomrkload.sh
 
+date | tee -a ${LOG}
+echo 'Load Allele Cache tables' | tee -a ${LOG}
+${ALLCACHELOAD}/alllabel.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

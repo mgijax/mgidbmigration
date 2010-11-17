@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# Template
+# save note data before migration in case we have a problem
 #
 
 source ../Configuration
@@ -40,6 +40,11 @@ create table MGI_NoteChunk_save (
 	creation_date                  datetime        not null,
 	modification_date              datetime        not null 
 )
+go
+
+truncate table MGI_Note_save
+go
+truncate table MGI_NoteChunk_save
 go
 
 insert into MGI_Note_save

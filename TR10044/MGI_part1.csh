@@ -68,21 +68,32 @@ ${MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo "--- View changes " | tee -a ${LOG}
+echo "--- Adding trigger" | tee -a ${LOG}
 
-#${MGD_DBSCHEMADIR}/view/ | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Adding views" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/view/VOC_EvidenceProperty_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/VOC_EvidenceProperty_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/VOC_Term_GOProperty_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/VOC_Term_GOProperty_View_create.object | tee -a ${LOG}
 
 # add permissions
 
 date | tee -a ${LOG}
 echo "--- Adding perms" | tee -a ${LOG}
 
-${{MGD_DBPERMSDIR}/curatorial/table/VOC_Evidence_Property_grant.object | tee -a ${LOG}
-${{MGD_DBPERMSDIR}/public/table/VOC_Evidence_Property_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/VOC_Evidence_Property_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/VOC_Evidence_Property_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/VOC_EvidenceProperty_View_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/view/VOC_Term_GOProperty_View_grant.object | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- loading property vocabulary ---"
-#${VOCLOAD}/loadSimpleVocab.py property.txt "Annotation/Evidence/Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- loading property vocabulary ---"
+${VOCLOAD}/loadSimpleVocab.py property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo "--- Re-setting permissions/schema ---"

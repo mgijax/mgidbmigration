@@ -6,3 +6,4 @@ modifiation	modification
 target	target
 external ref	external ref
 text	text
+dual-taxon ID	dual-taxon ID

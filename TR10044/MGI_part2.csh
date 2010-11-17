@@ -46,7 +46,7 @@ echo 'Save MGI_Note/MGI_NoteChunk before we migrate' | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Migrate Notes' | tee -a ${LOG}
-./migratenotes.csh
+./migratenotes.py > migratenotes.log.$$
 
 date | tee -a ${LOG}
 echo 'Generate report of what-is-left after migration' | tee -a ${LOG}

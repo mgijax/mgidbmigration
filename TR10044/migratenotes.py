@@ -47,7 +47,7 @@ for r in results:
 
 # read existing note data
 results = db.sql('''
-	select a.accID, m.symbol, n._Object_key, n._Note_key, note = rtrim(nc.note) ,
+	select distinct a.accID, m.symbol, n._Object_key, n._Note_key, note = rtrim(nc.note) ,
                n._CreatedBy_key, n._ModifiedBy_key, 
 	       cdate = convert(char(20), n.creation_date, 100),
 	       mdate = convert(char(20), n.modification_date, 100)
@@ -119,7 +119,7 @@ for k in notekeys:
 		      if not propertyMap.has_key(pTerm):
 	     	          print 'ERROR:', accID, symbol, pTerm, pValue
 			  print '###########\n'
-		      elif len(pValue) > 255:
+		      elif len(pValue) > 500:
 	     	          print 'VALUE TOO LONG:', accID, symbol, pTerm, pValue
 			  print '###########\n'
 	     	      else:

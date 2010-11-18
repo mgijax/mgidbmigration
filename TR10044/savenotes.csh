@@ -48,7 +48,7 @@ truncate table MGI_NoteChunk_save
 go
 
 insert into MGI_Note_save
-select n.*
+select distinct n.*
 from VOC_Annot a, VOC_Evidence e, MGI_Note n
 where a._AnnotType_key = 1000 
 and a._Annot_key = e._Annot_key 
@@ -56,7 +56,7 @@ and e._AnnotEvidence_key = n._Object_key
 go
 
 insert into MGI_NoteChunk_save
-select c.*
+select distinct c.*
 from VOC_Annot a, VOC_Evidence e, MGI_Note n, MGI_NoteChunk c
 where a._AnnotType_key = 1000 
 and a._Annot_key = e._Annot_key 

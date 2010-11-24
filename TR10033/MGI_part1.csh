@@ -2,6 +2,13 @@
 
 # Migration for TR10033 - Part 1
 #
+# default: 6
+# procedure: 137
+# rule: 5
+# trigger: 236
+# user table: 201 -> 202 (*save, *Old = 205)
+# view: 241 -> 243
+#
 
 cd `dirname $0` && source ../Configuration
 

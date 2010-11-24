@@ -73,7 +73,7 @@ and v._Vocab_key = t._Vocab_key
 and t.term = 'Expression'
 
 insert into IMG_Image
-select o._Image_key, o._MGIType_key, o._ImageType_key, @classKey, o._Refs_key,
+select o._Image_key, o._MGIType_key, @classKey, o._ImageType_key, o._Refs_key,
 o._ThumbnailImage_key, o.xDim, o.yDim, o.figureLabel,
 o._CreatedBy_key, o._ModifiedBy_key, o.creation_date, o.modification_date
 from IMG_IMage_Old o
@@ -87,7 +87,7 @@ and v._Vocab_key = t._Vocab_key
 and t.term = 'Phenotypes'
 
 insert into IMG_Image
-select o._Image_key, o._MGIType_key, o._ImageType_key, @classKey, o._Refs_key,
+select o._Image_key, o._MGIType_key, @classKey, o._ImageType_key, o._Refs_key,
 o._ThumbnailImage_key, o.xDim, o.yDim, o.figureLabel,
 o._CreatedBy_key, o._ModifiedBy_key, o.creation_date, o.modification_date
 from IMG_IMage_Old o
@@ -106,6 +106,7 @@ ${MGD_DBSCHEMADIR}/index/IMG_Image_create.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Adding trigger" | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/trigger/IMG_Image_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/IMG_Image_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}

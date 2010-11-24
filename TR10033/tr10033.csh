@@ -42,6 +42,9 @@ echo "--- Creating new tables" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/IMG_Image_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/IMG_Image_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/table/IMG_Cache_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/IMG_Cache_create.object | tee -a ${LOG}
+
 # add defaults for new tables
 
 date | tee -a ${LOG}
@@ -55,11 +58,9 @@ date | tee -a ${LOG}
 echo "--- Dropping/Adding keys" | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/key/IMG_Image_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/IMG_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo "--- Adding indexes" | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Migrate data" | tee -a ${LOG}
@@ -101,7 +102,11 @@ end
 
 EOSQL
 
+date | tee -a ${LOG}
+echo "--- Adding indexes" | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/index/IMG_Image_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/IMG_Cache_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Adding trigger" | tee -a ${LOG}
@@ -129,12 +134,16 @@ date | tee -a ${LOG}
 echo "--- Adding perms" | tee -a ${LOG}
 
 ${MGD_DBPERMSDIR}/curatorial/table/IMG_Image_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/curatorial/table/IMG_Cache_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/table/IMG_Image_grant.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/table/IMG_Cache_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/IMG_Image_Acc_View_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/IMG_Image_Summary_View_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/IMG_Image_View_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/VOC_Term_IMGClass_View_grant.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/view/IMG_ImagePane_Assoc_View_grant.object | tee -a ${LOG}
+
+${MGICACHELOAD}/imgcache.csh | tee -a ${LOG}
 
 date |tee -a $LOG
 

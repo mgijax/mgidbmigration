@@ -38,7 +38,7 @@ ${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-4-1-
 
 date | tee -a ${LOG}
 echo "--- loading vocabulary ---"
-#${VOCLOAD}/loadSimpleVocab.py ../TR10044/property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
+${VOCLOAD}/loadSimpleVocab.py ../TR10044/property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 ${VOCLOAD}/loadSimpleVocab.py class.txt "Image Class" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
 #date | tee -a ${LOG}

@@ -29,7 +29,7 @@ where a._AnnotType_key = 1000
 and a._Annot_key = e._Annot_key 
 and n._Object_key = e._AnnotEvidence_key 
 and a._Object_key = m._Marker_key
-order by m.symbol
+order by n.note
 go
 
 checkpoint

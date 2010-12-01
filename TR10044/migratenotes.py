@@ -119,19 +119,18 @@ for k in notekeys:
 		      if not propertyMap.has_key(pTerm):
 	     	          print 'ERROR:', accID, symbol, pTerm, pValue
 			  print '###########\n'
-		      elif len(pValue) > 500:
+		      elif pTerm == "text" and len(pValue) > 255:
 	     	          print 'VALUE TOO LONG:', accID, symbol, pTerm, pValue
 			  print '###########\n'
 	     	      else:
-			  #print accID, symbol, pTerm, pValue
-			  #print '###########\n'
+			  print accID + '\t' + symbol + '\t' + pTerm + '\t' + pValue + '\n'
                           propertyFile.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
                             % (propertyKey, objectKey, propertyMap[pTerm], stanza, seqnum, pValue, \
                                cby, mby, cdate, mdate))
                           seqnum = seqnum + 1
                           propertyKey = propertyKey + 1
 
-			  deleteCMD = deleteCMD + deleteSQL % (k)
+			  #deleteCMD = deleteCMD + deleteSQL % (k)
 
         #if foundMap == 0:
 	#    print accID, symbol, t

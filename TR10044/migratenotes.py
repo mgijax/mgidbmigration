@@ -39,7 +39,7 @@ else:
     propertyKey = results[0]['maxKey']
 
 # cache property vocabulary
-results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 81', 'auto')
+results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 82', 'auto')
 for r in results:
     key = r['_Term_key']
     value = r['term']
@@ -96,6 +96,8 @@ for k in notekeys:
     stanza = 1
 
     allnotestr = string.join(notes[k], '')
+    print '\n' + allnotestr
+
     #t1 = string.split(allnotestr, 'text:')
     tokens = string.split(allnotestr, '\n')
 
@@ -117,24 +119,23 @@ for k in notekeys:
 		  if pValue != '':
 		      # ok, good to add to property file
 		      if not propertyMap.has_key(pTerm):
-	     	          print 'ERROR:', accID, symbol, pTerm, pValue
-			  print '###########\n'
+	     	          print 'ERROR: property'
+			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
 		      elif pTerm == "text" and len(pValue) > 255:
-	     	          print 'VALUE TOO LONG:', accID, symbol, pTerm, pValue
-			  print '###########\n'
+	     	          print 'VALUE TOO LONG'
+			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
 	     	      else:
-			  print accID + '\t' + symbol + '\t' + pTerm + '\t' + pValue + '\n'
+			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
                           propertyFile.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
                             % (propertyKey, objectKey, propertyMap[pTerm], stanza, seqnum, pValue, \
                                cby, mby, cdate, mdate))
                           seqnum = seqnum + 1
                           propertyKey = propertyKey + 1
 
-			  #deleteCMD = deleteCMD + deleteSQL % (k)
+			  deleteCMD = deleteCMD + deleteSQL % (k)
 
-        #if foundMap == 0:
-	#    print accID, symbol, t
-	#    print '###########\n'
+        if foundMap == 0:
+	    print '\t' + accID + '\t' + symbol + '\tNot Migrated'
 
 propertyFile.close()
 

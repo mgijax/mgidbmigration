@@ -58,7 +58,7 @@ results = db.sql('''
         and n._Object_key = e._AnnotEvidence_key 
 	and n._Note_key = nc._Note_key 
 	and a._Object_key = m._Marker_key
-	order by n._Note_key, nc.sequenceNum
+	order by m.symbol, n._Note_key, nc.sequenceNum
 	''', 'auto')
 
 info = {}
@@ -102,6 +102,7 @@ for k in notekeys:
     tokens = string.split(allnotestr, '\n')
 
     foundMap = 0
+    foundEvidence = 0
 
     for t in tokens:
         for n in propertyMap:
@@ -113,7 +114,7 @@ for k in notekeys:
 	      if splitT[0] == '' and splitT[1] != '':
 		  pValues = string.split(t, ':')
 		  pTerm = pValues[0]
-		  pValue = string.join(pValues[1:], ':')
+		  pValue = string.join(pValues[1:], '&=&')
 		  pValue = string.lstrip(pValue)
 		  pValue = string.rstrip(pValue)
 		  if pValue != '':
@@ -121,21 +122,29 @@ for k in notekeys:
 		      if not propertyMap.has_key(pTerm):
 	     	          print 'ERROR: property'
 			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
-		      elif pTerm == "text" and len(pValue) > 255:
+		      elif len(pValue) > 255:
 	     	          print 'VALUE TOO LONG'
 			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
 	     	      else:
 			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
+
+		          if pValue == 'evidence':
+			      foundEvidence = foundEvidence + 1
+
+			      if foundEvidence > 1:
+			          stanza = stanza + 1
+			          seqnum = 1
+
                           propertyFile.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
                             % (propertyKey, objectKey, propertyMap[pTerm], stanza, seqnum, pValue, \
                                cby, mby, cdate, mdate))
-                          seqnum = seqnum + 1
-                          propertyKey = propertyKey + 1
 
+			  seqnum = seqnum + 1
+                          propertyKey = propertyKey + 1
 			  deleteCMD = deleteCMD + deleteSQL % (k)
 
         if foundMap == 0:
-	    print '\t' + accID + '\t' + symbol + '\tNot Migrated'
+	    print '\t' + symbol + '\t' + accID + '\tNot Migrated'
 
 propertyFile.close()
 
@@ -144,8 +153,8 @@ bcpProperty = 'cat %s | bcp %s..%s in %s -c -t\"\t" -e %s -S%s -U%s' \
                 'VOC_Evidence_Property', propertyFileName, errorFileName, \
 		db.get_sqlServer(), db.get_sqlUser())
 
-os.system(bcpProperty)
-db.sql(deleteCMD, None)
+#os.system(bcpProperty)
+#db.sql(deleteCMD, None)
 
 db.useOneConnection(0)
  

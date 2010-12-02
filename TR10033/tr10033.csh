@@ -14,13 +14,9 @@ touch $LOG
  
 date | tee -a $LOG
  
+bcpout.csh ${MGD_DBSERVER} ${MGD_DBNAME} IMG_Image
+
 cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
-
-drop table IMG_Image
-go
-
-sp_rename IMG_Image_Old, IMG_Image
-go
 
 sp_rename IMG_Image, IMG_Image_Old
 go

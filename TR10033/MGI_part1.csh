@@ -51,6 +51,7 @@ echo "--- TR10033/schema changes ---"
 
 date | tee -a ${LOG}
 echo "--- GO text ---"
+cd ${NOTELOAD}
 ${NOTELOAD}/mginoteload.csh ${NOTELOAD}/gotext.config
 
 #date | tee -a ${LOG}

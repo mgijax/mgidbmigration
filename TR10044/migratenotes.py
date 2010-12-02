@@ -114,7 +114,7 @@ for k in notekeys:
 	      if splitT[0] == '' and splitT[1] != '':
 		  pValues = string.split(t, ':')
 		  pTerm = pValues[0]
-		  pValue = string.join(pValues[1:], '&=&')
+		  pValue = string.join(pValues[1:], ':')
 		  pValue = string.lstrip(pValue)
 		  pValue = string.rstrip(pValue)
 		  if pValue != '':
@@ -128,12 +128,13 @@ for k in notekeys:
 	     	      else:
 			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
 
-		          if pValue == 'evidence':
+		          if pTerm == 'evidence':
 			      foundEvidence = foundEvidence + 1
 
 			      if foundEvidence > 1:
 			          stanza = stanza + 1
 			          seqnum = 1
+				  print 'NEW STANZA'
 
                           propertyFile.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
                             % (propertyKey, objectKey, propertyMap[pTerm], stanza, seqnum, pValue, \
@@ -153,8 +154,8 @@ bcpProperty = 'cat %s | bcp %s..%s in %s -c -t\"\t" -e %s -S%s -U%s' \
                 'VOC_Evidence_Property', propertyFileName, errorFileName, \
 		db.get_sqlServer(), db.get_sqlUser())
 
-#os.system(bcpProperty)
-#db.sql(deleteCMD, None)
+os.system(bcpProperty)
+db.sql(deleteCMD, None)
 
 db.useOneConnection(0)
  

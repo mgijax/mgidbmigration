@@ -49,6 +49,10 @@ date | tee -a ${LOG}
 echo "--- TR10033/schema changes ---"
 ./tr10033.csh | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo "--- GO text ---"
+${NOTELOAD}/mginoteload.csh ${NOTELOAD}/gotext.config
+
 #date | tee -a ${LOG}
 #echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}

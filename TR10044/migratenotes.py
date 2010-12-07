@@ -19,8 +19,9 @@ user = os.environ['MGD_DBUSER']
 passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 errorFileName = 'migratenotes.error'
 
+insertSQL1 = 'insert into MGI_Note_save select * from MGI_Note where _Note_key = %s\n'
+insertSQL2 = 'insert into MGI_NoteChunk_save select * from MGI_NoteChunk where _Note_key = %s\n'
 deleteSQL = 'delete from MGI_Note where _Note_key = %s\n'
-deleteCMD = ''
 
 propertyMap = {}
 propertyFileName = 'VOC_Evidence_Property.bcp'
@@ -30,6 +31,10 @@ errorFile = open(errorFileName, 'w')
 db.useOneConnection(1)
 db.set_sqlUser(user)
 db.set_sqlPasswordFromFile(passwordFileName)
+
+# truncate the save tables
+db.sql('truncate table MGI_Note_save', None)
+db.sql('truncate table MGI_NoteChunk_save', None)
 
 # next property key
 results = db.sql('select maxKey = max(_EvidenceProperty_key) + 1 from VOC_Evidence_Property', 'auto')
@@ -142,7 +147,10 @@ for k in notekeys:
 
 			  seqnum = seqnum + 1
                           propertyKey = propertyKey + 1
-			  deleteCMD = deleteCMD + deleteSQL % (k)
+
+                          db.sql(insertSQL1 % (k), None)
+                          db.sql(insertSQL2, None)
+                          db.sql(deleteSQL % (k), None)
 
         if foundMap == 0:
 	    print '\t' + symbol + '\t' + accID + '\tNot Migrated'
@@ -155,7 +163,6 @@ bcpProperty = 'cat %s | bcp %s..%s in %s -c -t\"\t" -e %s -S%s -U%s' \
 		db.get_sqlServer(), db.get_sqlUser())
 
 os.system(bcpProperty)
-db.sql(deleteCMD, None)
 
 db.useOneConnection(0)
  

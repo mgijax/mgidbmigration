@@ -47,32 +47,12 @@ go
 truncate table MGI_NoteChunk_save
 go
 
-insert into MGI_Note_save
-select distinct n.*
-from VOC_Annot a, VOC_Evidence e, MGI_Note n
-where a._AnnotType_key = 1000 
-and a._Annot_key = e._Annot_key 
-and e._AnnotEvidence_key = n._Object_key
-go
-
-insert into MGI_NoteChunk_save
-select distinct c.*
-from VOC_Annot a, VOC_Evidence e, MGI_Note n, MGI_NoteChunk c
-where a._AnnotType_key = 1000 
-and a._Annot_key = e._Annot_key 
-and e._AnnotEvidence_key = n._Object_key
-and n._Note_key = c._Note_key
-go
-
 checkpoint
 go
 
 end
 
 EOSQL
-
-bcpout.csh ${MGD_DBSERVER} ${MGD_DBNAME} MGI_Note_save
-bcpout.csh ${MGD_DBSERVER} ${MGD_DBNAME} MGI_NoteChunk_save
 
 date |tee -a $LOG
 

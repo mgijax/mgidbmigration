@@ -149,7 +149,7 @@ for k in notekeys:
                           propertyKey = propertyKey + 1
 
                           db.sql(insertSQL1 % (k), None)
-                          db.sql(insertSQL2, None)
+                          db.sql(insertSQL2 % (k), None)
                           db.sql(deleteSQL % (k), None)
 
         if foundMap == 0:

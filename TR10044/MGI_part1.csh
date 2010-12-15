@@ -36,10 +36,6 @@ echo "--- Updating version numbers in db..." | tee -a ${LOG}
 #${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.35" | tee -a ${LOG}
 #${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-3-5-0" | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- schema changes---"
-#./tr10044.csh | tee -a ${LOG}
-
 date | tee -a ${LOG}
 echo "--- loading property vocabulary ---"
 ${VOCLOAD}/loadSimpleVocab.py property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}

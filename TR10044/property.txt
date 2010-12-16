@@ -2,7 +2,7 @@ evidence	evidence
 anatomy	anatomy
 cell type	cell type
 gene product	gene product
-modifiation	modification
+modification	modification
 target	target
 external ref	external ref
 text	text

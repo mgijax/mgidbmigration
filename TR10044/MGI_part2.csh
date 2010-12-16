@@ -48,9 +48,9 @@ date | tee -a ${LOG}
 echo 'Migrate Notes' | tee -a ${LOG}
 ./migratenotes.py > migratenotes.log.$$
 
-#date | tee -a ${LOG}
-#echo 'Generate report of what-is-left after migration' | tee -a ${LOG}
-#./cleanup-whatisleft.csh
+date | tee -a ${LOG}
+echo 'Generate report of what-is-left after migration' | tee -a ${LOG}
+./cleanup-whatisleft.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

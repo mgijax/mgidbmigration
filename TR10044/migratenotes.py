@@ -30,8 +30,8 @@ db.set_sqlUser(user)
 db.set_sqlPasswordFromFile(passwordFileName)
 
 # truncate the save tables
-db.sql('truncate table MGI_Note_save', None)
-db.sql('truncate table MGI_NoteChunk_save', None)
+#db.sql('truncate table MGI_Note_save', None)
+#db.sql('truncate table MGI_NoteChunk_save', None)
 
 # next property key
 results = db.sql('select maxKey = max(_EvidenceProperty_key) + 1 from VOC_Evidence_Property', 'auto')
@@ -119,6 +119,15 @@ for k in notekeys:
 		  pValue = string.join(pValues[1:], ':')
 		  pValue = string.lstrip(pValue)
 		  pValue = string.rstrip(pValue)
+
+		  if pTerm == 'evidence':
+		      foundEvidence = foundEvidence + 1
+
+		      if foundEvidence > 1:
+		          stanza = stanza + 1
+		          seqnum = 1
+			  print 'NEW STANZA'
+
 		  if pValue != '':
 		      # ok, good to add to property file
 		      if not propertyMap.has_key(pTerm):
@@ -129,14 +138,6 @@ for k in notekeys:
 			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
 	     	      else:
 			  print '\t' + symbol + '\t' + accID + '\t' + pTerm + '\t' + pValue
-
-		          if pTerm == 'evidence':
-			      foundEvidence = foundEvidence + 1
-
-			      if foundEvidence > 1:
-			          stanza = stanza + 1
-			          seqnum = 1
-				  print 'NEW STANZA'
 
                           propertyFile.write('%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
                             % (propertyKey, objectKey, propertyMap[pTerm], stanza, seqnum, pValue, \

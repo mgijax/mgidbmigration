@@ -2,12 +2,19 @@
 
 # Migration for TR10044 - Part 1
 #
-# Tables	202
-# Triggers	125 (236)
-# Procedures	137
-# Views		241
-# Defaults	7
-# Rules		5
+# Object Type     Count
+# ==============  ============
+# Tables          201 scripts
+# Indexes         200 scripts  (     718 indexes)
+# Keys            195 scripts  (     195 primary keys,      546 foreign keys)
+# Triggers        125 scripts  (     236 triggers)
+# Procedures      137 scripts
+# Views           245 scripts
+# Partitions      4 scripts
+# Defaults        6 scripts
+# Default binds   186 scripts  (     553 binds)
+# Rules           5 scripts
+# Rule binds      5 scripts  (       6 binds)
 #
 
 cd `dirname $0` && source ../Configuration

@@ -130,7 +130,40 @@ where a._Allele_key_1 = c._Allele_key
 /* 35575 rows affected */
 go
 
+/* update GXD_AllelePair._MutantCellLine_key_2 */
+update GXD_AllelePair
+set _MutantCellLine_key_2 = c._MutantCellLine_key
+from GXD_AllelePair a, #oneCL c
+where a._Allele_key_2 = c._Allele_key
+/* 26509 rows affected */
+go
+
 update statistics GXD_AllelePair
+go
+
+print 'Allele1 of Allele Pair where allele has > 1 mutant cell line'
+select _Allele_key, _MutantCellLine_key
+into #multiCL
+from ALL_Allele_CellLine
+group by _Allele_key
+having count(*) > 1
+go
+
+create index idx1 on #multiCL(_Allele_key)
+go
+
+select distinct aa.symbol as allele1symbolWithMultiMCL
+from #multiCL o, GXD_AllelePair a, ALL_Allele aa
+where o._Allele_key = a._Allele_key_1
+and o._Allele_key = aa._Allele_key
+go
+
+print 'Allele2 of Allele Pair where allele has > 1 mutant cell line'
+select distinct aa.symbol as allele2symbolWithMultiMCL
+from #multiCL m, GXD_AllelePair a, ALL_Allele aa
+where a._Allele_key_2 != null
+and m._Allele_key = a._Allele_key_2
+and m._Allele_key = aa._Allele_key
 go
 
 /* drop old versions of tables */

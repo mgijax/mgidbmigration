@@ -51,7 +51,6 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-
 /* for tables with columns added or removed (GXD_AllelePair), we must:
  * 	1. rename the existing versions
  * 	2. create new versions
@@ -67,38 +66,14 @@ go
 EOSQL
 
 # create new versions of old tables
-
 date | tee -a ${LOG}
 echo "--- Adding new versions of old tables" | tee -a ${LOG}
-
 ${SCHEMA}/table/GXD_AllelePair_create.object | tee -a ${LOG}
 
+# create indexes and keys on re-created tables
 date | tee -a ${LOG}
-echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
-
-${PERMS}/public/table/GXD_AllelePair_grant.object | tee -a ${LOG}
-${PERMS}/curatorial/table/GXD_AllelePair_grant.object | tee -a ${LOG}
-
-# add defaults related to new versions of old tables
-
-date | tee -a ${LOG}
-echo "--- Adding defaults to new versions of old tables" | tee -a ${LOG}
-
-${SCHEMA}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
-
-# drop and re-create triggers on tables which we altered 
-
-date | tee -a ${LOG}
-echo "--- Re-creating triggers on existing tables" | tee -a ${LOG}
-
-${SCHEMA}/trigger/GXD_AllelePair_drop.object | tee -a ${LOG}
-${SCHEMA}/trigger/GXD_AllelePair_create.object | tee -a ${LOG}
-
-# add keys for new tables (done after existing tables have been modified)
-
-date | tee -a ${LOG}
-echo "--- Creating new keys" | tee -a ${LOG}
-
+echo "--- indexes" | tee -a ${LOG}
+${SCHEMA}/index/GXD_AllelePair_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -108,7 +83,9 @@ go
 /* populate new GXD_Allele_Pair set new mutant cell line keys null */
 
 insert into GXD_AllelePair
-select _AllelePair_key, _Genotype_key, _Allele_key_1, _Allele_key_2, null, null, _Marker_key, _PairState_key, _Compound_key, sequenceNum, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
+select _AllelePair_key, _Genotype_key, _Allele_key_1, _Allele_key_2, null, null, 
+_Marker_key, _PairState_key, _Compound_key, sequenceNum, 
+_CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 from GXD_AllelePair_Old 
 go
 /* 55968 */
@@ -173,16 +150,29 @@ go
 
 EOSQL
 
-# create indexes and keys on re-created tables
+# add defaults related to new versions of old tables
+date | tee -a ${LOG}
+echo "--- Adding defaults to new versions of old tables" | tee -a ${LOG}
+${SCHEMA}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
+
+# keys
+date | tee -a ${LOG}
+echo "--- keys" | tee -a ${LOG}
+${SCHEMA}/key/GXD_AllelePair_create.object | tee -a ${LOG}
+${SCHEMA}/key/ALL_CellLine_drop.object | tee -a ${LOG}
+${SCHEMA}/key/ALL_CellLine_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo "--- Adding indexes and keys on re-created tables" | tee -a ${LOG}
-
-${SCHEMA}/key/GXD_AllelePair_create.object | tee -a ${LOG}
-${SCHEMA}/index/GXD_AllelePair_create.object | tee -a ${LOG}
-
+echo "--- triggers" | tee -a ${LOG}
 # create triggers on re-created tables
 ${SCHEMA}/trigger/GXD_AllelePair_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
+${PERMS}/public/table/GXD_AllelePair_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/GXD_AllelePair_grant.object | tee -a ${LOG}
+
+exit 0
 
 ###------------------------------------------------------------------------###
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
@@ -211,6 +201,6 @@ ${PERMS}/all_grant.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 
-dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/sc/mgd.tr10273.backup | tee -a ${LOG}
-date | tee -a ${LOG}
-echo "--- Finished database dump" | tee -a ${LOG}
+#dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/lec/mgd.tr10273.backup | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Finished database dump" | tee -a ${LOG}

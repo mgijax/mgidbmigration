@@ -155,32 +155,6 @@ date | tee -a ${LOG}
 echo "--- Adding defaults to new versions of old tables" | tee -a ${LOG}
 ${SCHEMA}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
 
-# add keys
-date | tee -a ${LOG}
-echo "--- keys" | tee -a ${LOG}
-${SCHEMA}/key/GXD_AllelePair_create.object | tee -a ${LOG}
-${SCHEMA}/key/ALL_CellLine_drop.object | tee -a ${LOG}
-${SCHEMA}/key/ALL_CellLine_create.object | tee -a ${LOG}
-
-# create triggers on re-created tables
-date | tee -a ${LOG}
-echo "--- triggers" | tee -a ${LOG}
-${SCHEMA}/trigger/GXD_AllelePair_create.object | tee -a ${LOG}
-
-# create views on re-created tables
-date | tee -a ${LOG}
-echo "--- views" | tee -a ${LOG}
-${SCHEMA}/view/GXD_AllelePair_View_drop.object | tee -a ${LOG}
-${SCHEMA}/view/GXD_AllelePair_View_create.object | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
-${PERMS}/public/table/GXD_AllelePair_grant.object | tee -a ${LOG}
-${PERMS}/curatorial/table/GXD_AllelePair_grant.object | tee -a ${LOG}
-${PERMS}/public/view/GXD_AllelePair_View_grant.object | tee -a ${LOG}
-
-exit 0
-
 ###------------------------------------------------------------------------###
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###

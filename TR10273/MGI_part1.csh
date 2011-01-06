@@ -177,6 +177,6 @@ ${PERMS}/all_grant.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 
-#dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/lec/mgd.tr10273.backup | tee -a ${LOG}
-#date | tee -a ${LOG}
-#echo "--- Finished database dump" | tee -a ${LOG}
+dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/sc/mgd.tr10273.backup | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Finished database dump" | tee -a ${LOG}

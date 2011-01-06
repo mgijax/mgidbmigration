@@ -150,11 +150,6 @@ go
 
 EOSQL
 
-# add defaults related to new versions of old tables
-date | tee -a ${LOG}
-echo "--- Adding defaults to new versions of old tables" | tee -a ${LOG}
-${SCHEMA}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
-
 ###------------------------------------------------------------------------###
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###

@@ -25,7 +25,7 @@ echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
 if ("${1}" == "dev") then
     echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
-    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /shire/sybase/mgd.backup | tee -a ${LOG}
+    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
     date | tee -a ${LOG}
 else
     echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
@@ -74,6 +74,11 @@ date | tee -a ${LOG}
 echo "--- Adding new versions of old tables" | tee -a ${LOG}
 ${SCHEMA}/table/GXD_AllelePair_create.object | tee -a ${LOG}
 ${SCHEMA}/table/GXD_AlleleGenotype_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- Adding permissions on re-created tables" | tee -a ${LOG}
+${PERMS}/public/table/GXD_AllelePair_grant.object | tee -a ${LOG}
+${PERMS}/curatorial/table/GXD_AllelePair_grant.object | tee -a ${LOG}
 
 # create indexes and keys on re-created tables
 date | tee -a ${LOG}
@@ -186,21 +191,21 @@ EOSQL
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###
 
-date | tee -a ${LOG}
-echo "--- Remove mgddbschema logs" | tee -a ${LOG}
-${SCHEMA}/removelogs.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Remove mgddbschema logs" | tee -a ${LOG}
+#${SCHEMA}/removelogs.csh | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- Run reconfig.csh" | tee -a ${LOG}
-${SCHEMA}/reconfig.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Run reconfig.csh" | tee -a ${LOG}
+#${SCHEMA}/reconfig.csh | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- Revoke perms" | tee -a ${LOG}
-${PERMS}/all_revoke.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Revoke perms" | tee -a ${LOG}
+#${PERMS}/all_revoke.csh | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- Grant perms" | tee -a ${LOG}
-${PERMS}/all_grant.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Grant perms" | tee -a ${LOG}
+#${PERMS}/all_grant.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

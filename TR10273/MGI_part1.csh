@@ -63,13 +63,16 @@ go
 
 sp_rename GXD_AllelePair, GXD_AllelePair_Old
 go
+
+sp_rename GXD_AlleleGenotype, GXD_AlleleGenotype_Old
+go
+
 EOSQL
 
 # create new versions of old tables
 date | tee -a ${LOG}
 echo "--- Adding new versions of old tables" | tee -a ${LOG}
 ${SCHEMA}/table/GXD_AllelePair_create.object | tee -a ${LOG}
-${SCHEMA}/table/GXD_AlleleGenotype_drop.object | tee -a ${LOG}
 ${SCHEMA}/table/GXD_AlleleGenotype_create.object | tee -a ${LOG}
 
 # create indexes and keys on re-created tables
@@ -87,7 +90,7 @@ go
 
 insert into GXD_AllelePair
 select _AllelePair_key, _Genotype_key, _Allele_key_1, _Allele_key_2, null, null, 
-_Marker_key, _PairState_key, _Compound_key, sequenceNum, 
+_Marker_key, _PairState_key, _Compound_key, 0, 0, sequenceNum,
 _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 from GXD_AllelePair_Old 
 go
@@ -146,10 +149,36 @@ and m._Allele_key = a._Allele_key_2
 and m._Allele_key = aa._Allele_key
 go
 
+/* GXD_AlleleGenotype */
+insert into GXD_AlleleGenotype
+select _Genotype_key, _Marker_key, _Allele_key, null, 0,
+       sequenceNum, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
+from GXD_AlleleGenotype_Old
+go
+
+update GXD_AlleleGenotype
+set _MutantCellLine_key = a._MutantCellLine_key_1
+from GXD_AllelePair a, GXD_AlleleGenotype g
+where a._Genotype_key = g._Genotype_key
+and a._Marker_key =  g._Marker_key
+and a._Allele_key_1 = g._Allele_key
+go
+
+update GXD_AlleleGenotype
+set _MutantCellLine_key = a._MutantCellLine_key_2
+from GXD_AllelePair a, GXD_AlleleGenotype g
+where a._Genotype_key = g._Genotype_key
+and a._Marker_key =  g._Marker_key
+and a._Allele_key_2 = g._Allele_key
+go
+
 /* drop old versions of tables */
 
-drop table GXD_AllelePair_Old
-go
+/*drop table GXD_AllelePair_Old */
+/*go
+
+/*drop table GXD_AlleleGenotype_Old */
+/*go */
 
 EOSQL
 

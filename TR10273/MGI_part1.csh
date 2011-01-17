@@ -69,11 +69,14 @@ EOSQL
 date | tee -a ${LOG}
 echo "--- Adding new versions of old tables" | tee -a ${LOG}
 ${SCHEMA}/table/GXD_AllelePair_create.object | tee -a ${LOG}
+${SCHEMA}/table/GXD_AlleleGenotype_drop.object | tee -a ${LOG}
+${SCHEMA}/table/GXD_AlleleGenotype_create.object | tee -a ${LOG}
 
 # create indexes and keys on re-created tables
 date | tee -a ${LOG}
 echo "--- indexes" | tee -a ${LOG}
 ${SCHEMA}/index/GXD_AllelePair_create.object | tee -a ${LOG}
+${SCHEMA}/index/GXD_AlleleGenotype_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -177,6 +180,6 @@ ${PERMS}/all_grant.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 
-dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/sc/mgd.tr10273.backup | tee -a ${LOG}
-date | tee -a ${LOG}
-echo "--- Finished database dump" | tee -a ${LOG}
+#dump_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/sc/mgd.tr10273.backup | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Finished database dump" | tee -a ${LOG}

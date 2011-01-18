@@ -191,21 +191,21 @@ EOSQL
 ###--- give up and re-do everything, since Sybase randomly loses pieces ---###
 ###------------------------------------------------------------------------###
 
-#date | tee -a ${LOG}
-#echo "--- Remove mgddbschema logs" | tee -a ${LOG}
-#${SCHEMA}/removelogs.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Remove mgddbschema logs" | tee -a ${LOG}
+${SCHEMA}/removelogs.csh | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- Run reconfig.csh" | tee -a ${LOG}
-#${SCHEMA}/reconfig.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Run reconfig.csh" | tee -a ${LOG}
+${SCHEMA}/reconfig.csh | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- Revoke perms" | tee -a ${LOG}
-#${PERMS}/all_revoke.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Revoke perms" | tee -a ${LOG}
+${PERMS}/all_revoke.csh | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- Grant perms" | tee -a ${LOG}
-#${PERMS}/all_grant.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Grant perms" | tee -a ${LOG}
+${PERMS}/all_grant.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

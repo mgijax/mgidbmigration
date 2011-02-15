@@ -24,6 +24,8 @@ date | tee -a ${LOG}
 echo 'Europhenome Genotype Annotation Load' | tee -a ${LOG}
 ${GENOTYPEANNOTLOAD}/bin/genotypeannotload.sh euro_genotypeannotload.config
 
+exit 0
+
 ###--------------------------------------------------------------###
 ###--- run cacheloads		      	                      ---###
 ###--------------------------------------------------------------###

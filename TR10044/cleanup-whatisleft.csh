@@ -29,6 +29,7 @@ where a._AnnotType_key = 1000
 and a._Annot_key = e._Annot_key 
 and n._Object_key = e._AnnotEvidence_key 
 and a._Object_key = m._Marker_key
+and e._EvidenceTerm_key not in (115)
 order by n.note
 go
 

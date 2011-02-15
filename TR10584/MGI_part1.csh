@@ -54,7 +54,7 @@ ${MGD_DBPERMSDIR}/public/table/PRB_Strain_grant.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- adding new permission ---"
-#./tr10584.csh | tee -a ${LOG}
+./tr10584.csh | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo "--- Re-setting permissions/schema ---"

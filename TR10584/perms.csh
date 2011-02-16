@@ -31,6 +31,8 @@ drop trigger MLD_InSitu_Delete
 drop trigger MLD_ISRegion_InsUpdDel
 drop trigger MLD_Matrix_InsUpd
 drop trigger MLD_MCDataList_InsUpdDel
+drop trigger MLD_MC2point_InsDel
+drop trigger MLD_MC2point_Update
 drop trigger MLD_PhysMap_InsUpdDel
 drop trigger MLD_RI2Point_InsDel
 drop trigger MLD_RI2Point_Update
@@ -73,11 +75,14 @@ drop trigger GXD_TheilerStage_InsUpd
 drop trigger GXD_VisualizationMethod_InsUpd
 drop trigger GXD_Antibody_Delete
 drop trigger GXD_Antigen_Delete
+drop trigger GXD_Index_Stages_InsDel
+drop trigger GXD_Index_Stages_UpdateInsDel
 go
 
 drop trigger HMD_Homology_Assay_InsUpdDel
 drop trigger HMD_Homology_InsUpd
 drop trigger HMD_Homology_Marker_InsUpdDel
+drop trigger HMD_Assay_InsUpd
 drop trigger HMD_Assay_InsUpd
 drop trigger HMD_Class_InsUpd
 drop trigger MLC_Marker_InsUpdDel

@@ -5,7 +5,7 @@
 # Object Type     Count
 # ==============  ============
 # procedures:	  137
-# triggers:	  236
+# triggers:	  238
 #
 
 cd `dirname $0` && source ../Configuration
@@ -42,6 +42,7 @@ ${MGD_DBPERMSDIR}/public/procedure/MGI_checkTask_grant.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- triggers ---"
+./perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 

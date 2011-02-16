@@ -49,7 +49,7 @@ declare @taskKey integer
 select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
 
 insert into VOC_Term values(@termKey, 33, 'strain: full permissions', null, 27, 0, 1000,1000, getdate(), getdate())
-insert into VOC_Term values(@termKey + 1, 34, 'strain: update any fields', null, 54, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'strain: update any field', null, 54, 0, 1000,1000, getdate(), getdate())
 
 insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
 insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())

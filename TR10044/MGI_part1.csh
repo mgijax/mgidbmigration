@@ -47,9 +47,9 @@ date | tee -a ${LOG}
 echo "--- loading property vocabulary ---"
 ${VOCLOAD}/loadSimpleVocab.py property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- Re-setting permissions/schema ---"
-${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
-${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo "--- Re-setting permissions/schema ---"
+#${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
+#${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
+#${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
 

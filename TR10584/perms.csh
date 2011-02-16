@@ -79,6 +79,8 @@ drop trigger MLC_Reference_InsUpdDel
 drop trigger PRB_Strain_Genotype_InsUpdDel
 drop trigger SEQ_Sequence_Assoc_InsUpdDel
 drop trigger SEQ_Sequence_Raw_InsUpdDel
+drop trigger BIB_ReviewStatus_InsUpd
+
 go
 
 checkpoint

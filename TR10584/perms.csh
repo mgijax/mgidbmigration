@@ -76,6 +76,7 @@ drop trigger HMD_Homology_InsUpd
 drop trigger HMD_Homology_Marker_InsUpdDel
 drop trigger MLC_Marker_InsUpdDel
 drop trigger MLC_Reference_InsUpdDel
+drop trigger MLC_Text_InsUpd
 drop trigger PRB_Strain_Genotype_InsUpdDel
 drop trigger SEQ_Sequence_Assoc_InsUpdDel
 drop trigger SEQ_Sequence_Raw_InsUpdDel

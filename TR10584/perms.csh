@@ -39,6 +39,8 @@ drop trigger MLD_RIData_InsDel
 drop trigger MLD_RIData_Update
 drop trigger MLD_Statistics_InsDel
 drop trigger MLD_Statistics_Update
+drop trigger MLD_Expt_Marker_Delete
+drop trigger RI_RISet_InsUpd
 go
 
 drop trigger GXD_AntibodyAlias_InsUpdDel
@@ -69,18 +71,25 @@ drop trigger GXD_Specimen_InsUpd
 drop trigger GXD_Strength_InsUpd
 drop trigger GXD_TheilerStage_InsUpd
 drop trigger GXD_VisualizationMethod_InsUpd
+drop trigger GXD_Antibody_Delete
+drop trigger GXD_Antigen_Delete
 go
 
 drop trigger HMD_Homology_Assay_InsUpdDel
 drop trigger HMD_Homology_InsUpd
 drop trigger HMD_Homology_Marker_InsUpdDel
+drop trigger HMD_Assay_InsUpd
+drop trigger HMD_Class_InsUpd
 drop trigger MLC_Marker_InsUpdDel
 drop trigger MLC_Reference_InsUpdDel
 drop trigger MLC_Text_InsUpd
-drop trigger PRB_Strain_Genotype_InsUpdDel
 drop trigger SEQ_Sequence_Assoc_InsUpdDel
 drop trigger SEQ_Sequence_Raw_InsUpdDel
 drop trigger BIB_ReviewStatus_InsUpd
+drop trigger CRS_Cross_InsUpd
+drop trigger MGI_Translation_Delete
+drop trigger MGI_TranslationType_InsUpd
+
 
 go
 

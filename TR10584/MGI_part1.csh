@@ -39,6 +39,9 @@ echo "--- stored procedures ---"
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_create.object | tee -a ${LOG}
 ${MGD_DBPERMSDIR}/public/procedure/MGI_checkTask_grant.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
+${MGD_DBPERMSDIR}/public/procedure/MGI_checkUserRole_grant.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- triggers ---"

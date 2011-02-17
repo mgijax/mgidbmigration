@@ -124,6 +124,14 @@ delete from MGI_RoleTask where _Role_key in (2721231,2721230)
 delete from VOC_Term where _Term_key in (2721231,2721230)
 go
 
+/* change vocabulary name */
+update VOC_Term set term = 'MP Annotations' where _Term_key = 706926
+update VOC_Term set term = 'vocab:MP annnotations' where _Term_key = 753722
+update MGI_UserRole set _User_key = 1000 where _Role_key = 706926 and _User_key = 1094
+update MGI_UserRole set _User_key = 1001 where _Role_key = 706926 and _User_key = 1101
+delete MGI_UserRole where _Role_key = 706926 and _User_key in (1455)
+go
+
 checkpoint
 go
 

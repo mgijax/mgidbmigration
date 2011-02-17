@@ -90,7 +90,6 @@ drop trigger MLC_Text_InsUpd
 drop trigger SEQ_Sequence_Assoc_InsUpdDel
 drop trigger SEQ_Sequence_Raw_InsUpdDel
 drop trigger BIB_ReviewStatus_InsUpd
-drop trigger CRS_Cross_Delete
 drop trigger CRS_Cross_InsUpd
 drop trigger MGI_Translation_Delete
 drop trigger MGI_TranslationType_InsUpd

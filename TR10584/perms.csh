@@ -76,13 +76,12 @@ drop trigger GXD_VisualizationMethod_InsUpd
 drop trigger GXD_Antibody_Delete
 drop trigger GXD_Antigen_Delete
 drop trigger GXD_Index_Stages_InsDel
-drop trigger GXD_Index_Stages_UpdateInsDel
+drop trigger GXD_Index_Stages_Update
 go
 
 drop trigger HMD_Homology_Assay_InsUpdDel
 drop trigger HMD_Homology_InsUpd
 drop trigger HMD_Homology_Marker_InsUpdDel
-drop trigger HMD_Assay_InsUpd
 drop trigger HMD_Assay_InsUpd
 drop trigger HMD_Class_InsUpd
 drop trigger MLC_Marker_InsUpdDel
@@ -91,6 +90,7 @@ drop trigger MLC_Text_InsUpd
 drop trigger SEQ_Sequence_Assoc_InsUpdDel
 drop trigger SEQ_Sequence_Raw_InsUpdDel
 drop trigger BIB_ReviewStatus_InsUpd
+drop trigger CRS_Cross_Delete
 drop trigger CRS_Cross_InsUpd
 drop trigger MGI_Translation_Delete
 drop trigger MGI_TranslationType_InsUpd

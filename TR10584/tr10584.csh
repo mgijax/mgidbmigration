@@ -71,6 +71,59 @@ insert into MGI_UserRole values(@roleKey + 7, @termKey + 2, 1084, 1000, 1000, ge
 insert into MGI_UserRole values(@roleKey + 8, @termKey + 2, 1406, 1000, 1000, getdate(), getdate())
 insert into MGI_UserRole values(@roleKey + 9, @termKey + 2, 1421, 1000, 1000, getdate(), getdate())
 
+/* add to gxd/images */
+insert into MGI_UserRole values(@roleKey + 10, 901209, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 11, 901209, 1001, 1000, 1000, getdate(), getdate())
+
+go
+
+/* remove mlc */
+delete from MGI_UserRole where _Role_key in (2721217,2721218)
+delete from MGI_RoleTask where _Role_key in (2721217,2721218)
+delete from VOC_Term where _Term_key in (2721217,2721218)
+
+/* remove mapping */
+delete from MGI_UserRole where _Role_key in (2792983,2721216,2721214,2721213,2721215)
+delete from MGI_RoleTask where _Role_key in (2792983,2721216,2721214,2721213,2721215)
+delete from VOC_Term where _Term_key in (2792983,2721216,2721214,2721213,2721215)
+go
+
+/* remove orthology */
+delete from MGI_UserRole where _Role_key in (2721219,2721221,2721220,2721222)
+delete from MGI_RoleTask where _Role_key in (2721219,2721221,2721220,2721222)
+delete from VOC_Term where _Term_key in (2721219,2721221,2721220,2721222)
+go
+
+/* remove gxd */
+delete from MGI_UserRole where _Role_key in (2792982,2721205,2721206,2721208,2721207,2721209,2721210)
+delete from MGI_RoleTask where _Role_key in (2792982,2721205,2721206,2721208,2721207,2721209,2721210)
+delete from VOC_Term where _Term_key in (2792982,2721205,2721206,2721208,2721207,2721209,2721210)
+go
+
+/* remove nomen */
+delete from MGI_UserRole where _Role_key in (2792981,753719)
+delete from MGI_RoleTask where _Role_key in (2792981,753719)
+delete from VOC_Term where _Term_key in (2792981,753719)
+go
+
+/* remove references */
+delete from MGI_UserRole where _Role_key in (2721224,2721223)
+delete from MGI_RoleTask where _Role_key in (2721224,2721223)
+delete from VOC_Term where _Term_key in (2721224,2721223)
+go
+
+/* remove sequences */
+delete from MGI_UserRole where _Role_key in (2721227,2721229,2721225,2721226,2721228)
+delete from MGI_RoleTask where _Role_key in (2721227,2721229,2721225,2721226,2721228)
+delete from VOC_Term where _Term_key in (2721227,2721229,2721225,2721226,2721228)
+go
+
+/* remove translations */
+delete from MGI_UserRole where _Role_key in (2721231,2721230)
+delete from MGI_RoleTask where _Role_key in (2721231,2721230)
+delete from VOC_Term where _Term_key in (2721231,2721230)
+go
+
 checkpoint
 go
 

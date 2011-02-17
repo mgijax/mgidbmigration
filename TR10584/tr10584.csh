@@ -124,12 +124,105 @@ delete from MGI_RoleTask where _Role_key in (2721231,2721230)
 delete from VOC_Term where _Term_key in (2721231,2721230)
 go
 
-/* change vocabulary name */
-update VOC_Term set term = 'MP Annotations' where _Term_key = 706926
-update VOC_Term set term = 'vocab:MP annnotations' where _Term_key = 753722
-update MGI_UserRole set _User_key = 1000 where _Role_key = 706926 and _User_key = 1094
-update MGI_UserRole set _User_key = 1001 where _Role_key = 706926 and _User_key = 1101
-delete MGI_UserRole where _Role_key = 706926 and _User_key in (1455)
+/* remove old vocabulary name */
+delete from MGI_UserRole where _Role_key in (706926,753722)
+delete from MGI_RoleTask where _Role_key in (706926,753722)
+delete from VOC_Term where _Term_key in (706926,753722)
+go
+
+/* create new MP */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'MP Annotations', null, 29, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'vocab: MP annotations', null, 56, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 2, @termKey, 1065, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 3, @termKey, 1070, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 4, @termKey, 1075, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 5, @termKey, 1079, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 6, @termKey, 1084, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 7, @termKey, 1098, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 8, @termKey, 1099, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 9, @termKey, 1100, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 10, @termKey, 1406, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 11, @termKey, 1408, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 12, @termKey, 1413, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 13, @termKey, 1421, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 14, @termKey, 1431, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 15, @termKey, 1454, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 16, @termKey, 1483, 1000, 1000, getdate(), getdate())
+go
+
+/* create new OMIM */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'OMIM Annotations', null, 30, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'vocab: OMIM annotations', null, 57, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 2, @termKey, 1065, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 3, @termKey, 1070, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 4, @termKey, 1075, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 5, @termKey, 1079, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 6, @termKey, 1084, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 7, @termKey, 1098, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 8, @termKey, 1099, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 9, @termKey, 1100, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 10, @termKey, 1406, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 11, @termKey, 1408, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 12, @termKey, 1413, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 13, @termKey, 1421, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 14, @termKey, 1431, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 15, @termKey, 1454, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 16, @termKey, 1483, 1000, 1000, getdate(), getdate())
+go
+
+/* create new GO */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'GO Annotations', null, 31, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'vocab: GO annotations', null, 38, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 2, @termKey, 1072, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 3, @termKey, 1076, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 4, @termKey, 1085, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 5, @termKey, 1452, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 6, @termKey, 1455, 1000, 1000, getdate(), getdate())
 go
 
 checkpoint

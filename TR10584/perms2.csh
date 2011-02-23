@@ -17,6 +17,7 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
+update VOC_Term set term = 'UserRoleModule' where _Term_key = 706925
 update VOC_Term set term = 'GXD ImageModule' where _Term_key = 901208
 update VOC_Term set term = 'MPVocAnnot' where _Term_key = 6738024
 update VOC_Term set term = 'OMIMVocAnnot' where _Term_key = 6738026

@@ -52,16 +52,8 @@ ${MGD_DBPERMSDIR}/curatorial/procedure/PRB_processAnonymousSource_grant.object |
 date | tee -a ${LOG}
 echo "--- triggers ---"
 ./perms2.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/PRB_Strain_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/PRB_Strain_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Note_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Note_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Synonym_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Synonym_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/VOC_Annot_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/VOC_Annot_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- permissions ---"

@@ -25,7 +25,7 @@ update VOC_Term set term = 'GOVocAnnot' where _Term_key = 6738028
 update VOC_Term set term = 'TDCVocAnnot' where _Term_key = 6738030
 update VOC_Term set term = 'GenotypeModule' where _Term_key = 706927
 update VOC_Term set term = 'StrainModule' where _Term_key = 6738020
-update VOC_Term set term = 'StrainsJaxModule' where _Term_key = 6738022
+update VOC_Term set term = 'StrainJaxModule' where _Term_key = 6738022
 update VOC_Term set term = 'strains jax:update any field' where _Term_key = 6738023
 update VOC_Term set term = 'strains:update any field' where _Term_key = 6738021
 
@@ -398,33 +398,76 @@ insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(),
 insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
 insert into MGI_UserRole values(@roleKey + 2, @termKey, 1031, 1000, 1000, getdate(), getdate())
 insert into MGI_UserRole values(@roleKey + 3, @termKey, 1040, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 4, @termKey, 1062, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 5, @termKey, 1064, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 6, @termKey, 1065, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 7, @termKey, 1068, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 8, @termKey, 1069, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 9, @termKey, 1070, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 10, @termKey, 1072, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 11, @termKey, 1075, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 12, @termKey, 1076, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 13, @termKey, 1079, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 14, @termKey, 1083, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 15, @termKey, 1084, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 16, @termKey, 1085, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 17, @termKey, 1087, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 18, @termKey, 1093, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 19, @termKey, 1098, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 20, @termKey, 1100, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 21, @termKey, 1401, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 22, @termKey, 1408, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 23, @termKey, 1413, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 24, @termKey, 1421, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 25, @termKey, 1431, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 26, @termKey, 1452, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 27, @termKey, 1454, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 28, @termKey, 1455, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 29, @termKey, 1464, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 30, @termKey, 1483, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 4, @termKey, 1064, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 5, @termKey, 1065, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 6, @termKey, 1068, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 7, @termKey, 1069, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 8, @termKey, 1070, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 9, @termKey, 1072, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 10, @termKey, 1075, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 11, @termKey, 1076, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 12, @termKey, 1079, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 13, @termKey, 1083, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 14, @termKey, 1084, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 15, @termKey, 1085, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 16, @termKey, 1087, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 17, @termKey, 1093, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 18, @termKey, 1098, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 19, @termKey, 1100, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 20, @termKey, 1401, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 21, @termKey, 1408, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 22, @termKey, 1413, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 23, @termKey, 1421, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 24, @termKey, 1431, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 25, @termKey, 1452, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 26, @termKey, 1454, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 27, @termKey, 1455, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 28, @termKey, 1464, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 29, @termKey, 1483, 1000, 1000, getdate(), getdate())
+go
+
+/* create new molecular source organism */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'Molecular Source', null, 47, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'molecular source:organism', null, 72, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 2, @termKey, 1031, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 3, @termKey, 1091, 1000, 1000, getdate(), getdate())
+go
+
+/* create new references: washu */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'References:restrictions by J:', null, 48, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'references:WashU/J:57656', null, 73, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 2, 34, 'references:UniGene/J:57747', null, 74, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+insert into MGI_RoleTask values(@taskKey + 1, @termKey, @termKey + 2, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
 go
 
 checkpoint

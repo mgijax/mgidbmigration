@@ -18,7 +18,7 @@ use $MGD_DBNAME
 go
 
 update VOC_Term set term = 'UserRoleModule' where _Term_key = 706925
-update VOC_Term set term = 'ImageModule' where _Term_key = 901208
+update VOC_Term set term = 'GXD ImageModule' where _Term_key = 901208
 update VOC_Term set term = 'MPVocAnnot' where _Term_key = 6738024
 update VOC_Term set term = 'OMIMVocAnnot' where _Term_key = 6738026
 update VOC_Term set term = 'GOVocAnnot' where _Term_key = 6738028
@@ -31,28 +31,6 @@ update VOC_Term set term = 'strains:update any field' where _Term_key = 6738021
 
 delete from MGI_UserRole where _UserRole_key in (1324,1325,1326,1327,1328,1329,1330,1331,1332,1333,1334,1335)
 delete from MGI_UserRole where _UserRole_key in (1255,1256)
-delete from MGI_UserRole where _Role_key in (901208)
-go
-
-/* images */
-
-declare @roleKey integer
-select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
-
-insert into MGI_UserRole values(@roleKey, 901209, 1070, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 1, 901208, 1071, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 2, 901208, 1084, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 3, 901208, 1099, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 4, 901208, 1100, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 5, 901208, 1406, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 6, 901208, 1408, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 7, 901208, 1413, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 8, 901208, 1421, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 9, 901208, 1431, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 10, 901208, 1438, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 11, 901208, 1454, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 12, 901208, 1455, 1000, 1000, getdate(), getdate())
-insert into MGI_UserRole values(@roleKey + 13, 901208, 1483, 1000, 1000, getdate(), getdate())
 go
 
 /* create new Orthology */

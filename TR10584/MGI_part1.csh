@@ -71,6 +71,6 @@ echo "--- permissions ---"
 #date | tee -a ${LOG}
 #echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
+${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
+${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
 

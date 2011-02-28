@@ -276,6 +276,31 @@ insert into MGI_UserRole values(@roleKey + 5, @termKey, 1091, 1000, 1000, getdat
 insert into MGI_UserRole values(@roleKey + 6, @termKey, 1431, 1000, 1000, getdate(), getdate())
 go
 
+/* create new Mapping */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'MappingModule', null, 43, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'mapping:update any field', null, 68, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 2, @termKey, 1031, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 3, @termKey, 1041, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 4, @termKey, 1068, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 5, @termKey, 1069, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 6, @termKey, 1075, 1000, 1000, getdate(), getdate())
+go
+
 checkpoint
 go
 

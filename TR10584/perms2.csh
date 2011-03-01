@@ -25,9 +25,9 @@ update VOC_Term set term = 'GOVocAnnot' where _Term_key = 6738028
 update VOC_Term set term = 'TDCVocAnnot' where _Term_key = 6738030
 update VOC_Term set term = 'GenotypeModule' where _Term_key = 706927
 update VOC_Term set term = 'StrainModule' where _Term_key = 6738020
-update VOC_Term set term = 'StrainJaxModule' where _Term_key = 6738022
 update VOC_Term set term = 'strains jax:update any field' where _Term_key = 6738023
-update VOC_Term set term = 'strains:update any field' where _Term_key = 6738021
+update VOC_Term set term = 'StrainJAXModule' where _Term_key = 6738022
+update VOC_Term set term = 'strains jax:update any field' where _Term_key = 6738021
 
 delete from MGI_UserRole where _UserRole_key in (1324,1325,1326,1327,1328,1329,1330,1331,1332,1333,1334,1335)
 delete from MGI_UserRole where _UserRole_key in (1255,1256)

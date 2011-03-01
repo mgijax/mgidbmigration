@@ -448,6 +448,28 @@ insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(),
 insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
 go
 
+/* create new Reference */
+
+declare @termKey integer
+select @termKey = max(_Term_key) + 1 from VOC_Term 
+
+declare @roleKey integer
+select @roleKey = max(_UserRole_key) + 1 from MGI_UserRole
+
+declare @taskKey integer
+select @taskKey = max(_RoleTask_key) + 1 from MGI_RoleTask
+
+insert into VOC_Term values(@termKey, 33, 'ReferenceModule', null, 49, 0, 1000,1000, getdate(), getdate())
+insert into VOC_Term values(@termKey + 1, 34, 'references:update any field', null, 74, 0, 1000,1000, getdate(), getdate())
+
+insert into MGI_RoleTask values(@taskKey, @termKey, @termKey + 1, 1000, 1000, getdate(), getdate())
+
+insert into MGI_UserRole values(@roleKey, @termKey, 1000, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 1, @termKey, 1001, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 2, @termKey, 1079, 1000, 1000, getdate(), getdate())
+insert into MGI_UserRole values(@roleKey + 3, @termKey, 1087, 1000, 1000, getdate(), getdate())
+go
+
 checkpoint
 go
 

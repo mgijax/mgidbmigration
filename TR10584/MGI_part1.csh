@@ -36,45 +36,29 @@ echo "--- Updating version numbers in db..." | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- stored procedures ---"
-#${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_drop.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_create.object | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/public/procedure/MGI_checkTask_grant.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/public/procedure/MGI_checkUserRole_grant.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/ACCRef_process_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACCRef_process_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/curatorial/procedure/ACCRef_process_grant.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/PRB_processAnonymousSource_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/PRB_processAnonymousSource_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/curatorial/procedure/PRB_processAnonymousSource_grant.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/curatorial/procedure/VOC_deleteGOGAFRe_grant.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/MGI_Reference_Strain_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/MGI_Reference_Strain_View_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/mgddbperms/public/view/MGI_Reference_Strain_View_grant.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/PRB_Strain_Genotype_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/PRB_Strain_Genotype_View_create.object | tee -a ${LOG}
-${MGD_DBPERMSDIR}/mgddbperms/public/view/PRB_Strain_Genotype_View_grant.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- triggers ---"
 ./perms2.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo "--- permissions ---"
-#${MGD_DBPERMSDIR}/curatorial/table/PRB_Strain_revoke.object | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/public/table/PRB_Strain_revoke.object | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/curatorial/table/PRB_Strain_grant.object | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/public/table/PRB_Strain_grant.object | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo "--- adding new permission ---"
@@ -83,6 +67,6 @@ echo "--- permissions ---"
 #date | tee -a ${LOG}
 #echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
-${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_revoke.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_grant.csh | tee -a ${LOG}
 

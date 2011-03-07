@@ -38,27 +38,14 @@ date | tee -a ${LOG}
 echo "--- stored procedures ---"
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/procedure/ACCRef_process_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/ACCRef_process_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/procedure/PRB_processAnonymousSource_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_processAnonymousSource_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/view/MGI_Reference_Strain_View_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/view/MGI_Reference_Strain_View_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/view/PRB_Strain_Genotype_View_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/view/PRB_Strain_Genotype_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- triggers ---"
-./perms2.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
+./perms3.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo "--- adding new permission ---"
@@ -67,6 +54,5 @@ ${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 #date | tee -a ${LOG}
 #echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/all_revoke.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/all_grant.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.sh | tee -a ${LOG}
 

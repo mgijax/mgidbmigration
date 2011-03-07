@@ -27,15 +27,6 @@ drop procedure HMD_getChromosomes
 drop procedure HMD_nomenUpdate
 go
 
-drop procedure BIB_GO_Exists
-drop procedure BIB_GXD_Exists
-drop procedure BIB_HMD_Exists
-drop procedure BIB_MLC_Exists
-drop procedure BIB_MLD_Exists
-drop procedure BIB_NOM_Exists
-drop procedure BIB_PRB_Exists
-go
-
 /* create new MolecularSourceModule */
 
 declare @termKey integer

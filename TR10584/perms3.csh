@@ -17,11 +17,6 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
-drop trigger SEQ_Source_Assoc_Delete
-drop trigger SEQ_Source_Assoc_Insert
-drop trigger SEQ_Source_Assoc_Update
-go
-
 drop procedure HMD_Cleanup
 drop procedure HMD_getChromosomes
 drop procedure HMD_nomenUpdate

@@ -17,6 +17,12 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
+drop procedure MGI_checkRole
+drop procedure MGI_checkTask
+drop procedure MGI_userCanDoTask
+drop procedure MGI_userHasRole
+go
+
 drop procedure HMD_Cleanup
 drop procedure HMD_getChromosomes
 drop procedure HMD_nomenUpdate

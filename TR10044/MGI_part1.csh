@@ -4,17 +4,17 @@
 #
 # Object Type     Count
 # ==============  ============
-# Tables          201 scripts
-# Indexes         200 scripts  (     718 indexes)
-# Keys            195 scripts  (     195 primary keys,      546 foreign keys)
-# Triggers        125 scripts  (     236 triggers)
-# Procedures      137 scripts
-# Views           245 scripts
-# Partitions      4 scripts
-# Defaults        6 scripts
-# Default binds   186 scripts  (     553 binds)
-# Rules           5 scripts
-# Rule binds      5 scripts  (       6 binds)
+# Tables               201 scripts
+# Indexes              200 scripts  (     719 indexes)
+# Keys                 201 scripts  (     201 primary keys,      541 foreign keys)
+# Triggers              98 scripts  (     162 triggers)
+# Procedures           131 scripts
+# Views                245 scripts
+# Partitions             4 scripts
+# Defaults               6 scripts
+# Default binds        186 scripts  (     553 binds)
+# Rules                  5 scripts
+# Rule binds             5 scripts  (       6 binds)
 #
 
 cd `dirname $0` && source ../Configuration
@@ -47,9 +47,8 @@ date | tee -a ${LOG}
 echo "--- loading property vocabulary ---"
 ${VOCLOAD}/loadSimpleVocab.py property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- Re-setting permissions/schema ---"
+date | tee -a ${LOG}
+echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/all_revoke.csh | tee -a ${LOG}
-#${MGD_DBPERMSDIR}/all_grant.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

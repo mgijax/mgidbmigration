@@ -18,6 +18,9 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 echo 'UniProt Load/GO part only' | tee -a ${LOG}
+# for testing...use this
+#${UNIPROTLOAD}/bin/uniprotload.sh
+# for production, we only need this piece
 ${UNIPROTLOAD}/bin/makeGOAnnot.sh
 
 date | tee -a ${LOG}

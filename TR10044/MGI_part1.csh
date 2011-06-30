@@ -43,12 +43,17 @@ echo "--- Updating version numbers in db..." | tee -a ${LOG}
 #${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.35" | tee -a ${LOG}
 #${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-3-5-0" | tee -a ${LOG}
 
+#date | tee -a ${LOG}
+#echo "--- loading property vocabulary ---"
+#${VOCLOAD}/loadSimpleVocab.py property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
+
 date | tee -a ${LOG}
-echo "--- loading property vocabulary ---"
-${VOCLOAD}/loadSimpleVocab.py property.txt "GO Property" J:23000 1 ${MGD_DBUSER} ${MGI_DBPASSWORDFILE} ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
+echo "--- triggers ---"
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

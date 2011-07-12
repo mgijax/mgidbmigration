@@ -1,0 +1,64 @@
+
+currently NOT installed as 64 bit
+
+######################
+
+. tinyint		smallint
+
+. change "varchar" to "text"
+
+. "offset" variable is restricted
+	MRK_Offset, MRK_Location_Cache
+	must be changed to "mgdOffset" (or some other variable)
+
+.  table names are created as lower-case even if the create statement 
+   contains upper/lower case:
+
+    create table ACC_Accession
+
+   is created as "acc_accession".
+
+   if I created the table using:
+
+    create table "ACC_Accession"
+
+   the table is greated with proper case, but
+   I am unable to perform a query:
+
+    select * from ACC_Accession
+    ERROR:  relation "acc_accession" does not exist
+
+.  migration from sybase (bcp) to postgres (copy)
+
+   ) bcp: does not support a binary file dump
+
+   ) bcp: has a "-t" option to set the column delimiter
+	  has a "-r" option to set the line delimiter
+	  our delims are "&=&" an "#=#" (mgidbutilities/bin/bcpout.csh)
+
+     copy: has a column delimiter option, but it only allows
+	   a single character...this is not very useful!
+	   does not have a line delimiter option
+	   the default for column delim is "\t"
+	   the default for line delim is "\n"
+
+   ) MGD "Note" tables (11) contain "\n" in the notes.
+     Other MGD tables may also contain "\n" in their fields.
+     We'll have to figure out a way to replace the "\n" in our fields
+     with another value ("\r"?) in order to load this data into postgres
+
+   ) sybase "datetime" vs. postgres "timestamp"
+
+      Feb  4 1998  5:00:54:313PM
+
+      vs.
+
+      Feb  4 1998  5:00:54.313PM
+
+      The millisecond field in sybase is ":" and in posgres is ".".
+
+      Am using a perl script that Jeremy has to "sed" the 
+      "datetime" fields to compatible format for "copy".
+
+   ) copy: invokes triggers and contraints
+

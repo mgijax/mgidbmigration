@@ -3,15 +3,15 @@
 # clean up indexes
 #
 
-cd `dirname $0` && source ../Configuration
+setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+#setenv MGICONFIG /usr/local/mgi/test/mgiconfig
+#source ${MGICONFIG}/master.config.csh
 
-echo "Server: ${MGD_DBSERVER}"
-echo "Database: ${MGD_DBNAME}"
+cd `dirname $0`
 
-setenv LOG $0.log.$$
-rm -rf ${LOG}
-touch ${LOG}
-date | tee -a ${LOG}
+setenv LOG $0.log
+rm -rf $LOG
+touch $LOG
 
 cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0
 

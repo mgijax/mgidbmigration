@@ -18,6 +18,9 @@ cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0
 use ${MGD_DBNAME}
 go
 
+drop index ALL_CellLine.idx_derivation
+go
+
 drop index MGI_Columns.index_table_column
 go
 
@@ -53,6 +56,7 @@ quit
 EOSQL
 
 echo "--- index ---"
+${MGD_DBSCHEMADIR}/index/ALL_CellLine_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/MGI_Columns_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/MGI_Set_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/MGI_SetMember_create.object | tee -a ${LOG}

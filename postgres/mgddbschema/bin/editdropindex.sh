@@ -29,7 +29,7 @@ g/^go/s//\\\g/g
 d
 .
 a
-psql -d \${MGD_DBNAME} <<EOSQL
+psql -d \${MGD_DBNAME} <<EOSQL 2> \${LOGFILE_PG}/index/$i.log
 
 .
 /^use

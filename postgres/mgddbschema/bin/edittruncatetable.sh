@@ -25,7 +25,7 @@ g/source/s//./g
 /cat
 d
 a
-psql -d \${MGD_DBNAME} -c "
+psql -d \${MGD_DBNAME} <<EOSQL 2> \${LOGFILE_PG}/table/$i.log
 
 .
 /^use
@@ -39,7 +39,7 @@ a
 /checkpoint
 ;d
 a
-"
+EOSQL
 .
 w
 q

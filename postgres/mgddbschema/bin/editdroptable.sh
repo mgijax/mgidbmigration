@@ -32,7 +32,7 @@ g/source/s//./g
 /cat
 d
 a
- psql -d \${MGD_DBNAME} -a <<EOSQL > \${LOGFILE_PG}/table/$i.log
+ psql -d \${MGD_DBNAME} <<EOSQL 2> \${LOGFILE_PG}/table/$i.log
 
 .
 /^use

@@ -24,6 +24,7 @@ ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/${t}.idx/s//$t/g
+g/offset/s//mgdoffset/g
 g/^go/s//\\\g/g
 /cat
 d

@@ -58,10 +58,6 @@ d
 a
 EOSQL
 .
-/create unique
-d
-d
-.
 w
 q
 END

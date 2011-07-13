@@ -17,6 +17,7 @@ fi
 
 #
 # copy mgddbschema/key/*_create.object to postgres directory
+# copy mgddbschema/key/*_drop.object to postgres directory
 #
 cd ${POSTGRESKEY}
 cp ${MGD_DBSCHEMADIR}/key/${findObject1} .
@@ -111,6 +112,7 @@ g/^$/d
 /^checkpoint
 ;d
 a
+
 EOSQL
 .
 w
@@ -139,7 +141,7 @@ t2=`echo ${f} | cut -f1 -d"+"`
 f2=`echo ${f} | sed "s/+/_/g`
 
 ed ${dropScript} <<END
-/psql
+/cat
 a
 
 ALTER TABLE ${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;

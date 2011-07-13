@@ -25,7 +25,7 @@ g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/${t}.idx/s//$t/g
 g/offset/s//mgdoffset/g
-g/^go/s//\\\g/g
+g/^go/s//\\;/g
 /cat
 d
 .
@@ -43,6 +43,10 @@ d
 .
 a
 EOSQL
+.
+/create unique
+d
+d
 .
 w
 q

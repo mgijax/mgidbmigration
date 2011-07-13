@@ -32,7 +32,7 @@ g/source/s//./g
 /cat
 d
 a
-psql -d \${MGD_DBNAME} -c "
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
 
 .
 /^use
@@ -46,7 +46,7 @@ a
 /checkpoint
 ;d
 a
-"
+EOSQL
 .
 w
 q

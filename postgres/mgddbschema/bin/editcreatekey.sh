@@ -66,7 +66,7 @@ g/FOREIGN KEY/s/$/) REFERENCES ${t};/
 /cat
 d
 a
-psql -d \${MGD_DBNAME} -c "
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
 
 .
 /^use
@@ -78,7 +78,7 @@ g/^go/s///g
 /^checkpoint
 ;d
 a
-"
+EOSQL
 .
 w
 q
@@ -98,7 +98,7 @@ g/ALTER TABLE ${t}/s//ALTER TABLE ${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
 /cat
 d
 a
-psql -d \${MGD_DBNAME} -c "
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
 
 .
 /^use
@@ -111,7 +111,7 @@ g/^$/d
 /^checkpoint
 ;d
 a
-"
+EOSQL
 .
 w
 q

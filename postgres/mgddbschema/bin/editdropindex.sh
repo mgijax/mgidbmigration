@@ -30,7 +30,7 @@ g/^go/s//\\\g/g
 d
 .
 a
-psql -d \${MGD_DBNAME} <<EOSQL 2> \${LOGFILE_PG}/index/$i.log
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
 
 .
 /^use

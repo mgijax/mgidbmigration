@@ -11,8 +11,8 @@ ${MGDPOSTGRES}/bin/editdroptable.sh
 ${MGDPOSTGRES}/bin/edittruncatetable.sh
 ${MGDPOSTGRES}/bin/editcreateindex.sh
 ${MGDPOSTGRES}/bin/editdropindex.sh
-${MGDPOSTGRES}/bin/editcreatekey.sh
-${MGDPOSTGRES}/bin/editdropkey.sh
+#${MGDPOSTGRES}/bin/editcreatekey.sh
+#${MGDPOSTGRES}/bin/editdropkey.sh
 #${MGDPOSTGRES}/bin/editcreateview.sh
 #${MGDPOSTGRES}/bin/editdropview.sh
 

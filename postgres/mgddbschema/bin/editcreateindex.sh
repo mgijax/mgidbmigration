@@ -40,10 +40,6 @@ g/ on \${DBNONCLUSTIDXSEG}/s//;/g
 g/ on \$DBNONCLUSTIDXSEG/s//;/g
 g/offset/s//cmOffset/g
 g/^go/s///g
-/create unique
-d
-d
-.
 /cat
 d
 .

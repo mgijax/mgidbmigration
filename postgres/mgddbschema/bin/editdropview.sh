@@ -41,6 +41,7 @@ d
 /go
 d
 a
+CASCADE
 ;
 .
 /checkpoint

@@ -16,6 +16,6 @@ ${MGDPOSTGRES}/bin/editdropkey.sh
 ${MGDPOSTGRES}/bin/editcreateindex.sh
 ${MGDPOSTGRES}/bin/editdropindex.sh
 
-#${MGDPOSTGRES}/bin/editcreateview.sh
-#${MGDPOSTGRES}/bin/editdropview.sh
+${MGDPOSTGRES}/bin/editcreateview.sh
+${MGDPOSTGRES}/bin/editdropview.sh
 

@@ -52,5 +52,10 @@ rm -rf ${LOG}
 #
 ${MGDPOSTGRES}/bin/key_create.sh
 
+#
+# execute the view
+#
+${MGDPOSTGRES}/bin/view_create.sh
+
 echo "end of convertToPsql..."
 date | tee -a ${LOG}

@@ -36,7 +36,7 @@ g/& source/s//./g
 g/tinyint/s//smallint/g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g
-g/offset/s//mgdoffset/g
+g/offset/s//cmOffset/g
 g/^)/s//);/
 /cat
 d

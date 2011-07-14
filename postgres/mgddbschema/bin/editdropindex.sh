@@ -24,8 +24,12 @@ ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/${t}.idx/s//$t/g
-g/offset/s//mgdoffset/g
+g/offset/s//cmOffset/g
 g/^go/s//\\;/g
+/drop index
+d
+d
+.
 /cat
 d
 .

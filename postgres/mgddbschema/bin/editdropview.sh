@@ -16,7 +16,7 @@ fi
 #
 # copy mgddbschema/view/*_drop.object to postgres directory
 #
-cd ${POSTGRESTABLE}
+cd ${POSTGRESVIEW}
 cp ${MGD_DBSCHEMADIR}/view/${findObject} .
 
 #

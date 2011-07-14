@@ -20,7 +20,7 @@ fi
 #
 # copy mgddbschema/view/*_create.object to postgres directory
 #
-cd ${POSTGRESTABLE}
+cd ${POSTGRESVIEW}
 cp ${MGD_DBSCHEMADIR}/view/${findObject} .
 
 #
@@ -31,6 +31,11 @@ for i in ${findObject}
 do
 
 ed $i <<END
+g/csh -f -x/s//sh/g
+g/& source/s//./g
+g/^go/s///g
+g/active = 1/s//active = true/g
+g/private = 0/s//private = false/g
 /cat
 d
 a
@@ -42,9 +47,12 @@ d
 d
 d
 .
-/^on
+/^checkpoint
 ;d
+.
 a
+;
+
 EOSQL
 .
 w

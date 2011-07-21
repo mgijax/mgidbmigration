@@ -35,18 +35,28 @@ g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/^go/s///g
 g/active = 1/s//active = true/g
+g/private = 1/s//private = true/g
 g/private = 0/s//private = false/g
 g/preferred = 1/s//preferred = true/g
 g/preferred = 0/s//preferred = false/g
 g/preferred = 1/s//preferred = true/g
 g/isObsolete = 1/s//isObsolete = true/g
 g/isObsolete = 0/s//isObsolete = false/g
+g/isMutant = 1/s//isMutant = true/g
+g/isMutant = 0/s//isMutant = false/g
+g/isNeverUsed = 1/s//isNeverUsed = true/g
+g/isNeverUsed = 0/s//isNeverUsed = false/g
+g/isReviewArticle = 1/s//isReviewArticle = true/g
+g/isReviewArticle = 0/s//isReviewArticle = false/g
+g/\"03\/13\/2002\"/s//03\/13\/2002/g
 g/offset/s//cmOffset/g
 g/convert(varchar(5), t.stage)/s//cast(t.stage as varchar(5))/g
 g/convert(varchar(30), a.accID)/s//cast(a.accID as varchar(30))/g
 g/convert(varchar(10), r._Class_key)/s//cast( r._Class_key as varchar(10))/g
 g/convert(varchar(5), tag)/s//cast(tag as varchar(5))/g
 g/convert(char(10), h.event_date, 101)/s//cast(h.event_date as char(10))/g
+g/convert(varchar(10), r._Class_key)/s//cast(r._Class_key as varchar(10))/g
+g/convert(varchar(10), r._Refs_key)/s//cast(r._Refs_key as varchar(10))/g
 /cat
 d
 a

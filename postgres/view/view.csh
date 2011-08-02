@@ -8,8 +8,24 @@
 #	----
 #	 218
 #
-# mgddbschema-
+# mgddbschema-4-4-1-54
 #	- must 'cvs remove the views below, then tag
+#
+# do *NOT* remove:
+#
+# ACC_ActualDB_Summary_View                                                        
+# ALL_Type_Summary_View                                                            
+# ALL_Derivation_Summary_View                                                      
+# GXD_Genotype_Summary_View                                                        
+# MGI_Organism_Summary_View                                                        
+# MGI_Statistic_View                                                               
+# MRK_Summary_View                                                                 
+# MRK_Types_Summary_View    
+# PRB_Source_Summary_View                                                          
+# PRB_Strain_Summary_View                                                          
+# PRB_Tissue_Summary_View                                                          
+# VOC_Term_Summary_View                                                            
+# VOC_Term_Summary_View                                                            
 #
 
 cd `dirname $0` && source ./Configuration
@@ -48,7 +64,6 @@ drop view VOC_Term_ALLType_View
 go
 
 drop view VOC_Term_GOProperty_View
-drop view VOC_Term_GXDIndexCondMut_View
 go
 
 drop view VOC_Term_IMGClass_View
@@ -79,13 +94,36 @@ drop view VOC_Term_ALLInheritMode_View
 go
 
 /* 11, 12, 13, 14 */
+drop view VOC_Term_GXDIndexCondMut_View
 drop view VOC_Term_GXDIndexPriority_View
 drop view VOC_Term_GXDIndexAssay_View
 drop view VOC_Term_GXDIndexStage_View
 drop view VOC_Term_GXDReporterGene_View
 go
 
-checkpoint
+/* rules */
+
+exec sp_unbindrule "BIB_Refs.NLMstatus"
+exec sp_unbindrule "GXD_GelLane.sex"
+exec sp_unbindrule "GXD_ProbePrep.type"
+exec sp_unbindrule "GXD_Specimen.sex"
+exec sp_unbindrule "GXD_Specimen.hybridization"
+exec sp_unbindrule "PRB_Marker.relationship"
+go
+
+drop rule check_Hybridization
+drop rule check_NLM_status
+drop rule check_NucleicAcidType
+drop rule check_Relationship
+drop rule check_Sex
+go
+
+/* defaults */
+
+exec sp_unbindefault "MLC_Text.userID"
+go
+
+checkpoin
 go
 
 quit

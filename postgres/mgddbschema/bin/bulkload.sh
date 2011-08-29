@@ -81,7 +81,7 @@ cd ${MGDDATA}
 
 echo "converting bcp using python regular expressions..." | tee -a ${LOG}
 # exporter scrip
-cat $i.bcp | ${MGDPOSTGRES}/bin/postgresTextCleaner.py > $i.new
+cat $i.bcp | ${POSTGRES}/bin/postgresTextCleaner.py > $i.new
 rm $i.bcp
 mv $i.new $i.bcp
 

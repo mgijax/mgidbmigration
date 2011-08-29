@@ -18,13 +18,13 @@ fi
 #
 
 #
-# copy mgddbschema/table/*_create.object to postgres directory
+# copy radardbschema/table/*_create.object to postgres directory
 #
 cd ${POSTGRESTABLE}
 cp ${RADAR_DBSCHEMADIR}/table/${findObject} .
 
 #
-# convert each mgd-format table script to a postgres script
+# convert each radar-format table script to a postgres script
 #
 
 for i in ${findObject}
@@ -33,11 +33,9 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-g/create table /s//create table mgd./g
-g/tinyint/s//smallint/g
+g/create table /s//create table radar./g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g
-g/offset/s//cmOffset/g
 g/^)/s//);/
 /cat
 d

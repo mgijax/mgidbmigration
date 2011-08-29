@@ -7,13 +7,13 @@ cd `dirname $0` && . ../Configuration
 #
 
 #
-# copy mgddbschema/table/*_truncate.object to postgres directory
+# copy radardbschema/table/*_truncate.object to postgres directory
 #
 cd ${POSTGRESTABLE}
 cp ${RADAR_DBSCHEMADIR}/table/*truncate.object .
 
 #
-# convert each mgd-format table script to a postgres script
+# convert each radar-format table script to a postgres script
 #
 
 for i in *truncate.object
@@ -22,7 +22,6 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
-g/partition/d
 /cat
 d
 a

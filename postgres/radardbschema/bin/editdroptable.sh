@@ -14,13 +14,13 @@ fi
 #
 
 #
-# copy mgddbschema/table/*_drop.object to postgres directory
+# copy radardbschema/table/*_drop.object to postgres directory
 #
 cd ${POSTGRESTABLE}
 cp ${RADAR_DBSCHEMADIR}/table/${findObject} .
 
 #
-# convert each mgd-format table script to a postgres script
+# convert each radar-format table script to a postgres script
 #
 
 for i in ${findObject}
@@ -29,7 +29,7 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
-g/drop table /s//drop table mgd./g
+g/drop table /s//drop table radar./g
 /cat
 d
 a

@@ -33,6 +33,7 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
+g/create view /s//create view mgd./g
 g/^go/s///g
 g/active = 1/s//active = true/g
 g/private = 1/s//private = true/g

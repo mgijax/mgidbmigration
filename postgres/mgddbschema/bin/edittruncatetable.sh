@@ -22,10 +22,11 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
+g/partition/d
 /cat
 d
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
 
 .
 /^use

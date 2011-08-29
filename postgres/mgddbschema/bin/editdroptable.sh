@@ -29,6 +29,7 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
+g/drop table /s//drop table mgd./g
 /cat
 d
 a

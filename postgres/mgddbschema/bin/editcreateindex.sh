@@ -38,6 +38,7 @@ g/on \${DBCLUSTIDXSEG}/s//;/g
 g/ on \$DBCLUSTIDXSEG/s//;/g
 g/ on \${DBNONCLUSTIDXSEG}/s//;/g
 g/ on \$DBNONCLUSTIDXSEG/s//;/g
+g/ on /s//on mgd./g
 g/offset/s//cmOffset/g
 g/^go/s///g
 /cat

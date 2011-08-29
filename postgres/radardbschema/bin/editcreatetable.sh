@@ -37,7 +37,7 @@ g/create table /s//create table radar./g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g
 g/^)/s//);/
-/cat
+/^cat
 d
 a
 cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${RADAR_DBSERVER} \${RADAR_DBNAME} \$0
@@ -48,7 +48,7 @@ d
 d
 d
 .
-/^on
+/^go
 ;d
 a
 EOSQL

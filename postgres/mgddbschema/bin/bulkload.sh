@@ -5,14 +5,14 @@
 
 cd `dirname $0` && . ../Configuration
 
-LOG=${RADARDATA}/`basename $0`.log
+LOG=${MGDDATA}/`basename $0`.log
 rm -rf ${LOG}
 touch ${LOG}
 
 date >> ${LOG}
 
 #
-#${MGI_DBUTILS}/bin/bcpout.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} $i ${POSTGRESDATA} $i.bcp "\t" "#=#"
+#${MGI_DBUTILS}/bin/bcpout.csh ${MGD_DBSERVER} ${MGD_DBNAME} $i ${POSTGRESDATA} $i.bcp "\t" "#=#"
 #
 
 if [ $# -eq 1 ]
@@ -25,7 +25,7 @@ else
 fi
 
 #
-# sybase:  bcp out the radar data files
+# sybase:  bcp out the mgd data files
 #
 
 cd ${POSTGRESDIR}/table
@@ -55,7 +55,7 @@ for i in ${findObject}
 do
 i=`basename $i _create.object`
 echo $i | tee -a ${LOG}
-${MGI_DBUTILS}/bin/bcpout.csh ${RADAR_DBSERVER} ${OLDRADAR_DBNAME} $i ${RADARDATA} $i.bcp
+${MGI_DBUTILS}/bin/bcpout.csh ${MGD_DBSERVER} ${OLDMGD_DBNAME} $i ${MGDDATA} $i.bcp
 done
 fi
 #
@@ -85,7 +85,7 @@ echo "truncating table..." | tee -a ${LOG}
 ${POSTGRESDIR}/table/${i}_truncate.object
 fi
 
-cd ${RADARDATA}
+cd ${MGDDATA}
 
 #
 # convert sybase data to postgres
@@ -113,10 +113,10 @@ fi
 #
 
 echo "calling postgres copy..." | tee -a ${LOG}
-psql -d ${RADAR_DBNAME} <<END 
-\copy radar.$i from '$i.bcp' with null as ''
+psql -d ${MGD_DBNAME} <<END 
+\copy mgd.$i from '$i.bcp' with null as ''
 \g
-vacuum analyze radar.$i;
+vacuum analyze mgd.$i;
 END
 
 if [ $runAll -eq '0' ]

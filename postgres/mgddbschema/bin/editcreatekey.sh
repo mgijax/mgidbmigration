@@ -59,11 +59,12 @@ fkey=`grep "sp_foreignkey" ${i} | sed "s/sp_foreignkey //g" | cut -f1,3 -d"," | 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-g/sp_primarykey ${t}, /s//ALTER TABLE ${t} ADD PRIMARY KEY (/
+g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
-g/sp_foreignkey/s//ALTER TABLE/
+g/sp_foreignkey/s//ALTER TABLE mgd./
 g/, ${t}, /s// ADD FOREIGN KEY (/
-g/FOREIGN KEY/s/$/) REFERENCES ${t};/
+g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
+g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
 /cat
 d
 a
@@ -93,9 +94,9 @@ ed ${dropScript} <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/sp_dropkey foreign, /d
-g/sp_dropkey primary, /s//ALTER TABLE /
+g/sp_dropkey primary, /s//ALTER TABLE mgd./
 g/, ${t}/s// DROP CONSTRAINT/
-g/ALTER TABLE ${t}/s//ALTER TABLE ${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
+g/ALTER TABLE mgd.${t}/s//ALTER TABLE mgd.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
 /cat
 d
 a
@@ -144,7 +145,7 @@ ed ${dropScript} <<END
 /cat
 a
 
-ALTER TABLE ${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
+ALTER TABLE mgd.${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
 .
 w
 q

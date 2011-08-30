@@ -23,6 +23,7 @@ ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
 g/partition/d
+g/truncate table /s//truncate table mgd./g
 /cat
 d
 a

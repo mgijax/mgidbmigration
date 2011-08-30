@@ -22,7 +22,7 @@ t=`basename $i _create.object`
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/& source/s///g
+g/& source/s//./g
 g/nonclustered /s///g
 g/clustered /s///g
 g/idx/s//${t}/g
@@ -38,7 +38,7 @@ g/on \${DBCLUSTIDXSEG}/s//;/g
 g/ on \$DBCLUSTIDXSEG/s//;/g
 g/ on \${DBNONCLUSTIDXSEG}/s//;/g
 g/ on \$DBNONCLUSTIDXSEG/s//;/g
-g/ on /s//on mgd./g
+g/ on /s// on mgd./g
 g/offset/s//cmOffset/g
 g/^go/s///g
 /cat

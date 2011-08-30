@@ -21,13 +21,31 @@ fi
 OLDMGD_DBNAME="mgd_lec1"
 export OLDMGD_DBNAME
 
-MGD_DBNAME="mgd_lec2"
+MGD_DBNAME="lec"
 export MGD_DBNAME
+
+RADAR_DBNAME="lec"
+export RADAR_DBNAME
 
 MGDPOSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres/mgddbschema"
 export MGDPOSTGRES
 
-POSTGRESDIR="/home/lec/mgi4.0/dbutils/mgd/mgddbschema-pg"
+POSTGRESDATA="/data/loads/postgres"
+export POSTGRESDATA
+
+MGDDATA=${POSTGRESDATA}/mgd
+export MGDDATA
+
+RADARDATA=${POSTGRESDATA}/radar
+export RADARDATA
+
+MGDPOSTGRESDIR="/home/lec/mgi4.0/dbutils/mgd/mgddbschema-pg"
+export MGDPOSTGRESDIR
+
+RADARPOSTGRESDIR="/home/lec/mgi4.0/dbutils/radar/radardbschema-pg"
+export RADARPOSTGRESDIR
+
+POSTGRESDIR=${MGDPOSTGRESDIR}
 export POSTGRESDIR
 
 POSTGRESDATA=${POSTGRESDIR}/data

@@ -96,9 +96,9 @@ echo "converting bcp using perl #3..." | tee -a ${LOG}
 
 echo "calling postgres copy..." | tee -a ${LOG}
 psql -d ${MGD_DBNAME} <<END 
-\copy $i from '$i.bcp' with null as ''
+\copy mgd.$i from '$i.bcp' with null as ''
 \g
-vacuum analyze $i;
+vacuum analyze mgd.$i;
 END
 
 if [ $runAll -eq '0' ]

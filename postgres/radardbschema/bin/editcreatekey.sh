@@ -16,15 +16,15 @@ fi
 #
 
 #
-# copy mgddbschema/key/*_create.object to postgres directory
-# copy mgddbschema/key/*_drop.object to postgres directory
+# copy radardbschema/key/*_create.object to postgres directory
+# copy radardbschema/key/*_drop.object to postgres directory
 #
 cd ${POSTGRESKEY}
 cp ${RADAR_DBSCHEMADIR}/key/${findObject1} .
 cp ${RADAR_DBSCHEMADIR}/key/${findObject2} .
 
 #
-# convert each mgd-format key script to a postgres script
+# convert each radar-format key script to a postgres script
 #
 # sp_primarykey MRK_Marker, _Marker_key
 # to
@@ -59,11 +59,12 @@ fkey=`grep "sp_foreignkey" ${i} | sed "s/sp_foreignkey //g" | cut -f1,3 -d"," | 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-g/sp_primarykey ${t}, /s//ALTER TABLE ${t} ADD PRIMARY KEY (/
+g/sp_primarykey ${t}, /s//ALTER TABLE radar.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
-g/sp_foreignkey/s//ALTER TABLE/
+g/sp_foreignkey/s//ALTER TABLE radar./
 g/, ${t}, /s// ADD FOREIGN KEY (/
-g/FOREIGN KEY/s/$/) REFERENCES ${t};/
+g/FOREIGN KEY/s/$/) REFERENCES radar.${t};/
+g/ALTER TABLE radar. /s//ALTER TABLE radar./
 /cat
 d
 a
@@ -93,9 +94,9 @@ ed ${dropScript} <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/sp_dropkey foreign, /d
-g/sp_dropkey primary, /s//ALTER TABLE /
+g/sp_dropkey primary, /s//ALTER TABLE radar./
 g/, ${t}/s// DROP CONSTRAINT/
-g/ALTER TABLE ${t}/s//ALTER TABLE ${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
+g/ALTER TABLE radar.${t}/s//ALTER TABLE radar.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
 /cat
 d
 a
@@ -144,7 +145,7 @@ ed ${dropScript} <<END
 /cat
 a
 
-ALTER TABLE ${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
+ALTER TABLE radar.${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
 .
 w
 q

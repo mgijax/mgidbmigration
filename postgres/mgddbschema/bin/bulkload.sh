@@ -5,14 +5,14 @@
 
 cd `dirname $0` && . ../Configuration
 
-LOG=${MGDDATA}/`basename $0`.log
+LOG=${RADARDATA}/`basename $0`.log
 rm -rf ${LOG}
 touch ${LOG}
 
 date >> ${LOG}
 
 #
-#${MGI_DBUTILS}/bin/bcpout.csh ${MGD_DBSERVER} ${MGD_DBNAME} $i ${POSTGRESDATA} $i.bcp "\t" "#=#"
+#${MGI_DBUTILS}/bin/bcpout.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} $i ${POSTGRESDATA} $i.bcp "\t" "#=#"
 #
 
 if [ $# -eq 1 ]
@@ -25,7 +25,7 @@ else
 fi
 
 #
-# sybase:  bcp out the mgd data files
+# sybase:  bcp out the radar data files
 #
 
 cd ${POSTGRESDIR}/table
@@ -45,14 +45,22 @@ fi
 # else run script by object (see below)
 #
 
-#comment out if you are not going to create bcp files
+#
+# bcp out the sybase data
+#
+if [ ${runBCP} -eq '1' ]
+then
 echo 'bcp out the files from sybase...' | tee -a ${LOG}
 for i in ${findObject}
 do
 i=`basename $i _create.object`
 echo $i | tee -a ${LOG}
-${MGI_DBUTILS}/bin/bcpout.csh ${MGD_DBSERVER} ${OLDMGD_DBNAME} $i ${MGDDATA} $i.bcp
+${MGI_DBUTILS}/bin/bcpout.csh ${RADAR_DBSERVER} ${OLDRADAR_DBNAME} $i ${RADARDATA} $i.bcp
 done
+fi
+#
+# end: bcp out the sybase data
+#
 
 #
 # migrate bcp data format and load into postgres
@@ -77,7 +85,13 @@ echo "truncating table..." | tee -a ${LOG}
 ${POSTGRESDIR}/table/${i}_truncate.object
 fi
 
-cd ${MGDDATA}
+cd ${RADARDATA}
+
+#
+# convert sybase data to postgres
+#
+if [ ${runBCP} -eq '1' ]
+then
 
 echo "converting bcp using python regular expressions..." | tee -a ${LOG}
 # exporter scrip
@@ -93,12 +107,16 @@ echo "converting bcp using perl #2..." | tee -a ${LOG}
 
 echo "converting bcp using perl #3..." | tee -a ${LOG}
 /usr/local/bin/perl -p -i -e 's/#=#//g' $i.bcp
+fi
+#
+# end: convert sybase data to postgres
+#
 
 echo "calling postgres copy..." | tee -a ${LOG}
-psql -d ${MGD_DBNAME} <<END 
-\copy mgd.$i from '$i.bcp' with null as ''
+psql -d ${RADAR_DBNAME} <<END 
+\copy radar.$i from '$i.bcp' with null as ''
 \g
-vacuum analyze mgd.$i;
+vacuum analyze radar.$i;
 END
 
 if [ $runAll -eq '0' ]

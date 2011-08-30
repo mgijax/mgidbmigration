@@ -25,7 +25,7 @@ else
 fi
 
 #
-# sybase:  bcp out the mgd data files
+# sybase:  bcp out the radar data files
 #
 
 cd ${POSTGRESDIR}/table
@@ -96,9 +96,9 @@ echo "converting bcp using perl #3..." | tee -a ${LOG}
 
 echo "calling postgres copy..." | tee -a ${LOG}
 psql -d ${RADAR_DBNAME} <<END 
-\copy $i from '$i.bcp' with null as ''
+\copy radar.$i from '$i.bcp' with null as ''
 \g
-vacuum analyze $i;
+vacuum analyze radar.$i;
 END
 
 #if [ $runAll -eq '0' ]

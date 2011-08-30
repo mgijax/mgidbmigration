@@ -10,7 +10,7 @@ else
 fi
 
 #
-# copy mgddbschema/index/*_create.object to postgres directory
+# copy radardbschema/index/*_create.object to postgres directory
 #
 cd ${POSTGRESINDEX}
 cp ${RADAR_DBSCHEMADIR}/index/${findObject} .
@@ -22,24 +22,12 @@ t=`basename $i _create.object`
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/& source/s///g
+g/& source/s//./g
 g/nonclustered /s///g
 g/clustered /s///g
 g/idx/s//${t}/g
-g/ on seg2/s//;/g
-g/ on seg3/s//;/g
-g/ on seg4/s//;/g
-g/ on seg5/s//;/g
-g/ on seg6/s//;/g
-g/ on seg7/s//;/g
-g/ on seg8/s//;/g
-g/ on \${DBCLUSTIDXSEG}/s//;/g
-g/on \${DBCLUSTIDXSEG}/s//;/g
-g/ on \$DBCLUSTIDXSEG/s//;/g
-g/ on \${DBNONCLUSTIDXSEG}/s//;/g
-g/ on \$DBNONCLUSTIDXSEG/s//;/g
-g/ on /s//on mgd./g
-g/offset/s//cmOffset/g
+g/ on /s// on radar./g
+g/)/s//);/g
 g/^go/s///g
 /cat
 d

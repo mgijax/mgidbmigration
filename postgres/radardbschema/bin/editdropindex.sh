@@ -10,7 +10,7 @@ else
 fi
 
 #
-# copy mgddbschema/index/*_drop.object to postgres directory
+# copy radardbschema/index/*_drop.object to postgres directory
 #
 cd ${POSTGRESINDEX}
 cp ${RADAR_DBSCHEMADIR}/index/${findObject} .
@@ -23,9 +23,8 @@ t=`basename $i _drop.object`
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-g/drop index /s//drop index mgd./g
+g/drop index /s//drop index radar./g
 g/${t}.idx/s//$t/g
-g/offset/s//cmOffset/g
 g/^go/s//\\;/g
 /cat
 d

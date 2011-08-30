@@ -36,6 +36,7 @@ g/& source/s//./g
 g/create table /s//create table radar./g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g
+g/numeric(8,0)    identity/s//serial/g
 g/^)/s//);/
 /^cat
 d

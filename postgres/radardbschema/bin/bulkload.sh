@@ -36,7 +36,7 @@ cd ${POSTGRESDIR}/table
 if [ $runAll -eq '1' ]
 then
 echo 'run drop/truncate for all tables...' | tee -a ${LOG}
-#${POSTGRESDIR}/index/index_drop.sh
+${POSTGRESDIR}/index/index_drop.sh
 #${POSTGRESDIR}/key/key_drop.sh
 ${POSTGRESDIR}/table/table_truncate.sh
 fi
@@ -45,7 +45,11 @@ fi
 # else run script by object (see below)
 #
 
-#comment out if you are not going to create bcp files
+#
+# bcp out the sybase data
+#
+if [ ${runBCP} -eq '1' ]
+then
 echo 'bcp out the files from sybase...' | tee -a ${LOG}
 for i in ${findObject}
 do
@@ -53,6 +57,10 @@ i=`basename $i _create.object`
 echo $i | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/bcpout.csh ${RADAR_DBSERVER} ${OLDRADAR_DBNAME} $i ${RADARDATA} $i.bcp
 done
+fi
+#
+# end: bcp out the sybase data
+#
 
 #
 # migrate bcp data format and load into postgres
@@ -79,6 +87,12 @@ fi
 
 cd ${RADARDATA}
 
+#
+# convert sybase data to postgres
+#
+if [ ${runBCP} -eq '1' ]
+then
+
 echo "converting bcp using python regular expressions..." | tee -a ${LOG}
 # exporter scrip
 cat $i.bcp | ${POSTGRES}/bin/postgresTextCleaner.py > $i.new
@@ -93,6 +107,10 @@ echo "converting bcp using perl #2..." | tee -a ${LOG}
 
 echo "converting bcp using perl #3..." | tee -a ${LOG}
 /usr/local/bin/perl -p -i -e 's/#=#//g' $i.bcp
+fi
+#
+# end: convert sybase data to postgres
+#
 
 echo "calling postgres copy..." | tee -a ${LOG}
 psql -d ${RADAR_DBNAME} <<END 

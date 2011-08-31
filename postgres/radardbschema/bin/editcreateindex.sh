@@ -15,6 +15,8 @@ fi
 cd ${POSTGRESINDEX}
 cp ${RADAR_DBSCHEMADIR}/index/${findObject} .
 
+#g/ on /s// on radar./g
+
 for i in ${findObject}
 do
 
@@ -26,7 +28,6 @@ g/& source/s//./g
 g/nonclustered /s///g
 g/clustered /s///g
 g/idx/s//${t}/g
-g/ on /s// on radar./g
 g/)/s//);/g
 g/^go/s///g
 /cat

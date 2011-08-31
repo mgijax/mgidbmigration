@@ -112,11 +112,14 @@ fi
 # end: convert sybase data to postgres
 #
 
+#\copy radar.$i from '$i.bcp' with null as ''
+#vacuum analyze radar.$i;
+
 echo "calling postgres copy..." | tee -a ${LOG}
 psql -d ${RADAR_DBNAME} <<END 
-\copy radar.$i from '$i.bcp' with null as ''
+\copy $i from '$i.bcp' with null as ''
 \g
-vacuum analyze radar.$i;
+vacuum analyze $i;
 END
 
 if [ $runAll -eq '0' ]

@@ -18,12 +18,13 @@ cp ${RADAR_DBSCHEMADIR}/index/${findObject} .
 for i in ${findObject}
 do
 
+#g/drop index /s//drop index radar./g
+
 t=`basename $i _drop.object`
 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-g/drop index /s//drop index radar./g
 g/${t}.idx/s//$t/g
 g/^go/s//\\;/g
 /cat

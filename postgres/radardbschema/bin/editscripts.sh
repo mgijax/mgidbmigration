@@ -16,6 +16,3 @@ ${RADARPOSTGRES}/bin/editdropkey.sh
 ${RADARPOSTGRES}/bin/editcreateindex.sh
 ${RADARPOSTGRES}/bin/editdropindex.sh
 
-${RADARPOSTGRES}/bin/editcreateview.sh
-${RADARPOSTGRES}/bin/editdropview.sh
-

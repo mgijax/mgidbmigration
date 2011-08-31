@@ -18,19 +18,21 @@ fi
 # MGD
 #
 
-runBCP=1
+runBCP=0
 export runBCP
 
-OLDMGD_DBNAME="mgd_test"
+OLDMGD_DBNAME="mgd_lec1"
 export OLDMGD_DBNAME
 
 OLDRADAR_DBNAME="radar_1"
 export OLDRADAR_DBNAME
 
-MGD_DBNAME="lec"
+#MGD_DBNAME="lec"
+MGD_DBNAME="mgd_lec"
 export MGD_DBNAME
 
-RADAR_DBNAME="lec"
+#RADAR_DBNAME="lec"
+RADAR_DBNAME="mgd_lec"
 export RADAR_DBNAME
 
 MGD_SCHEMA="mgd"

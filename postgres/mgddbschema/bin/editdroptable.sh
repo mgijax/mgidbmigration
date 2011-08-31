@@ -23,13 +23,14 @@ cp ${MGD_DBSCHEMADIR}/table/${findObject} .
 # convert each mgd-format table script to a postgres script
 #
 
+#g/drop table /s//drop table mgd./g
+
 for i in ${findObject}
 do
 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
-g/drop table /s//drop table mgd./g
 /cat
 d
 a

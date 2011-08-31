@@ -112,11 +112,13 @@ fi
 # end: convert sybase data to postgres
 #
 
+#\copy mgd.$i from '$i.bcp' with null as ''
+#vacuum analyze mgd.$i;
 echo "calling postgres copy..." | tee -a ${LOG}
 psql -d ${MGD_DBNAME} <<END 
-\copy mgd.$i from '$i.bcp' with null as ''
+\copy $i from '$i.bcp' with null as ''
 \g
-vacuum analyze mgd.$i;
+vacuum analyze $i;
 END
 
 if [ $runAll -eq '0' ]

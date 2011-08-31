@@ -16,6 +16,8 @@ cp ${MGD_DBSCHEMADIR}/table/*truncate.object .
 # convert each mgd-format table script to a postgres script
 #
 
+#g/truncate table /s//truncate table mgd./g
+
 for i in *truncate.object
 do
 
@@ -23,7 +25,6 @@ ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
 g/partition/d
-g/truncate table /s//truncate table mgd./g
 /cat
 d
 a

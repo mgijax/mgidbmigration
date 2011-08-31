@@ -18,8 +18,14 @@ fi
 # MGD
 #
 
-OLDMGD_DBNAME="mgd_lec1"
+runBCP=1
+export runBCP
+
+OLDMGD_DBNAME="mgd_test"
 export OLDMGD_DBNAME
+
+OLDRADAR_DBNAME="radar_1"
+export OLDRADAR_DBNAME
 
 MGD_DBNAME="lec"
 export MGD_DBNAME
@@ -27,8 +33,20 @@ export MGD_DBNAME
 RADAR_DBNAME="lec"
 export RADAR_DBNAME
 
+MGD_SCHEMA="mgd"
+export MGD_SCHEMA
+
+RADAR_SCHEMA="radar"
+export RADAR_SCHEMA
+
+POSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres"
+export POSTGRES
+
 MGDPOSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres/mgddbschema"
 export MGDPOSTGRES
+
+RADARPOSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres/radardbschema"
+export RADARPOSTGRES
 
 POSTGRESDATA="/data/loads/postgres"
 export POSTGRESDATA

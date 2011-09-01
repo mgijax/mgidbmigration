@@ -28,7 +28,7 @@ date | tee -a ${LOG}
 echo "--- Updating version numbers in db..." | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.42" | tee -a ${LOG}
-${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-4-2-0" | tee -a ${LOG}
+${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-4-2-1" | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- tables ---"
@@ -46,6 +46,6 @@ ${SNPBE_DBSCHEMADIR}/index/MRK_Location_Cache_create.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
-#${SNPBE_DBSCHEMADIR}/all_perms.sh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${SNPBE_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

@@ -24,9 +24,9 @@ date | tee -a ${LOG}
 echo 'ALO Marker load' | tee -a ${LOG}
 ${ALOMRKLOAD}/bin/alomrkload.sh
 
-date | tee -a ${LOG}
-echo 'SNP Cache load' | tee -a ${LOG}
-${SNPCACHELOAD}/snpmarker.sh
+#date | tee -a ${LOG}
+#echo 'SNP Cache load' | tee -a ${LOG}
+#${SNPCACHELOAD}/snpmarker.sh
 
 ###-----------------------###
 ###--- final datestamp ---###

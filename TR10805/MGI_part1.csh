@@ -36,6 +36,7 @@ echo "--- tables ---"
 ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/MRK_Location_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/default/MRK_Location_Cache_bind.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a ${LOG}
 

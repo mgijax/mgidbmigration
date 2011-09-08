@@ -30,20 +30,21 @@ echo "--- Updating version numbers in db..." | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.42" | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-4-2-1" | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- logical DB (TR10819) ---"
-
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-update ACC_ActualDB 
-set url = 'http://www.ncbi.nlm.nih.gov/gene/@@@@' 
-where _LogicalDB_key in (55,59)
-go
-
-EOSQL
+#per Jill, we will not do this as part of this release
+#date | tee -a ${LOG}
+#echo "--- logical DB (TR10819) ---"
+#
+#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+#
+#use ${MGD_DBNAME}
+#go
+#
+#update ACC_ActualDB 
+#set url = 'http://www.ncbi.nlm.nih.gov/gene/@@@@' 
+#where _LogicalDB_key in (55,59)
+#go
+#
+#EOSQL
 
 date | tee -a ${LOG}
 echo "--- tables ---"

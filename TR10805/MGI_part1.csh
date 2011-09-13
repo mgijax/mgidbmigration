@@ -64,6 +64,30 @@ ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a ${LOG}
 ${SNPBE_DBSCHEMADIR}/index/MRK_Location_Cache_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
+echo "--- views ---"
+
+${MGD_DBSCHEMADIR}/view/ALL_Derivation_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/ALL_Derivation_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_Summary_All_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_Summary_All_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_Antigen_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_Antigen_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_Image_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/IMG_Image_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_Organism_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_Organism_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MRK_Types_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MRK_Types_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/PRB_Source_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/PRB_Source_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/PRB_Strain_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/PRB_Strain_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/VOC_Term_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/VOC_Term_Summary_View_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"
 #${MGD_DBSCHEMADIR}/reconfig.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}

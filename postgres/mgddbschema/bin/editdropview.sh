@@ -23,14 +23,13 @@ cp ${MGD_DBSCHEMADIR}/view/${findObject} .
 # convert each mgd-format view script to a postgres script
 #
 
-#g/drop view /s//drop view mgd./g
-
 for i in ${findObject}
 do
 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
+g/drop view /s//drop view mgd./g
 /cat
 d
 a

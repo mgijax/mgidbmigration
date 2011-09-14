@@ -12,7 +12,6 @@ fi
 #
 # copy mgddbschema/index/*_create.object to postgres directory
 #
-#g/ on /s// on mgd./g
 cd ${POSTGRESINDEX}
 cp ${MGD_DBSCHEMADIR}/index/${findObject} .
 
@@ -27,6 +26,7 @@ g/& source/s//./g
 g/nonclustered /s///g
 g/clustered /s///g
 g/idx/s//${t}/g
+g/ on /s// on mgd./g
 g/ on seg2/s//;/g
 g/ on seg3/s//;/g
 g/ on seg4/s//;/g

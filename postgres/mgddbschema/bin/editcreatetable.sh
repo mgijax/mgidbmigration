@@ -27,14 +27,13 @@ cp ${MGD_DBSCHEMADIR}/table/${findObject} .
 # convert each mgd-format table script to a postgres script
 #
 
-#g/create table /s//create table mgd./g
-
 for i in ${findObject}
 do
 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
+g/create table /s//create table mgd./g
 g/tinyint/s//smallint/g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g

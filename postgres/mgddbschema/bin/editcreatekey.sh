@@ -56,18 +56,14 @@ pkey=`grep "sp_primarykey" ${i} | sed "s/sp_primarykey //g" | cut -f1,2 -d"," | 
 # foreign key table name + key
 fkey=`grep "sp_foreignkey" ${i} | sed "s/sp_foreignkey //g" | cut -f1,3 -d"," | sed "s/, /+/g"`
 
-#g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
-#g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
-#g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
-
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-g/sp_primarykey ${t}, /s//ALTER TABLE ${t} ADD PRIMARY KEY (/
+#g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
 g/sp_foreignkey/s//ALTER TABLE/
 g/, ${t}, /s// ADD FOREIGN KEY (/
-g/FOREIGN KEY/s/$/) REFERENCES ${t};/
+g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
 /cat
 d
 a
@@ -92,17 +88,15 @@ END
 #
 # edit the drop script for the master table
 #
-#g/sp_dropkey primary, /s//ALTER TABLE mgd./
-#g/ALTER TABLE mgd.${t}/s//ALTER TABLE mgd.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
 
 dropScript=${t}_drop.object
 ed ${dropScript} <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/sp_dropkey foreign, /d
-g/sp_dropkey primary, /s//ALTER TABLE/
+g/sp_dropkey primary, /s//ALTER TABLE mgd./
 g/, ${t}/s// DROP CONSTRAINT/
-g/ALTER TABLE ${t}/s//ALTER TABLE ${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
+g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
 /cat
 d
 a
@@ -138,8 +132,6 @@ END
 
 # for each foreign key
 
-#ALTER TABLE mgd.${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
-
 for f in ${fkey}
 do
 
@@ -153,7 +145,7 @@ ed ${dropScript} <<END
 /cat
 a
 
-ALTER TABLE ${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
+ALTER TABLE mgd.${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
 .
 w
 q

@@ -16,8 +16,6 @@ fi
 cd ${POSTGRESINDEX}
 cp ${MGD_DBSCHEMADIR}/index/${findObject} .
 
-#g/drop index /s//drop index mgd./g
-
 for i in ${findObject}
 do
 
@@ -26,6 +24,7 @@ t=`basename $i _drop.object`
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
+g/drop index /s//drop index mgd./g
 g/${t}.idx/s//$t/g
 g/offset/s//cmOffset/g
 g/^go/s//\\;/g

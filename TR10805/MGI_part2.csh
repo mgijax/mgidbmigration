@@ -24,6 +24,12 @@ date | tee -a ${LOG}
 echo 'ALO Marker load' | tee -a ${LOG}
 ${ALOMRKLOAD}/bin/alomrkload.sh
 
+date | tee -a ${LOG}
+echo 'GOA/Mouse load' | tee -a ${LOG}
+${GOALOAD}/bin/goa.sh
+cd ${QCRPTS}/mgd
+./GO_stats.py
+
 #date | tee -a ${LOG}
 #echo 'SNP Cache load' | tee -a ${LOG}
 #${SNPCACHELOAD}/snpmarker.sh

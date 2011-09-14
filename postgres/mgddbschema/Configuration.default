@@ -27,12 +27,12 @@ export OLDMGD_DBNAME
 OLDRADAR_DBNAME="radar_1"
 export OLDRADAR_DBNAME
 
-#MGD_DBNAME="lec"
-MGD_DBNAME="mgd_lec"
+MGD_DBNAME="lec"
+#MGD_DBNAME="mgd_lec"
 export MGD_DBNAME
 
-#RADAR_DBNAME="lec"
-RADAR_DBNAME="mgd_lec"
+RADAR_DBNAME="lec"
+#RADAR_DBNAME="mgd_lec"
 export RADAR_DBNAME
 
 MGD_SCHEMA="mgd"

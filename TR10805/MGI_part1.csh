@@ -47,6 +47,25 @@ ${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-4-2-
 #EOSQL
 
 date | tee -a ${LOG}
+echo "--- TR10620/add user ---"
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+declare @userKey integer
+
+select @userKey = max(_User_key) + 1 from MGI_User
+
+insert into MGI_User values(@userKey, 316353, 316350, 'GOA_DFLAT', 'GOA DFLAT', 
+1000, 1000, getdate(), getdate())
+
+go
+
+EOSQL
+
+date | tee -a ${LOG}
 echo "--- tables ---"
 
 ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
@@ -58,6 +77,8 @@ ${MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a ${LOG}
 
 ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
 ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a ${LOG}

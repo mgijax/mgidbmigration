@@ -59,6 +59,9 @@ g/convert(char(10), h.event_date, 101)/s//cast(h.event_date as char(10))/g
 g/convert(varchar(10), r._Class_key)/s//cast(r._Class_key as varchar(10))/g
 g/convert(varchar(10), r._Refs_key)/s//cast(r._Refs_key as varchar(10))/g
 g/ltrim(str(l.size,10,2))/s//to_char(l.size, '9999.99')/g
+g/'Allele'/s//character varying(10) 'Allele'/g
+g/'Marker'/s//character varying(10) 'Marker'/g
+g/'Probe'/s//character varying(10) 'Probe'/g
 /cat
 d
 a

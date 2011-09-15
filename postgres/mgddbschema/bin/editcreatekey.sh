@@ -59,7 +59,7 @@ fkey=`grep "sp_foreignkey" ${i} | sed "s/sp_foreignkey //g" | cut -f1,3 -d"," | 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
-#g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
+g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
 g/sp_foreignkey/s//ALTER TABLE/
 g/, ${t}, /s// ADD FOREIGN KEY (/

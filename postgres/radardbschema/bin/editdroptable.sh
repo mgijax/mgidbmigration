@@ -26,11 +26,10 @@ cp ${RADAR_DBSCHEMADIR}/table/${findObject} .
 for i in ${findObject}
 do
 
-#g/drop table /s//drop table radar./g
-
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
+g/drop table /s//drop table radar./g
 /cat
 d
 a

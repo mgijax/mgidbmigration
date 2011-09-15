@@ -30,11 +30,10 @@ cp ${RADAR_DBSCHEMADIR}/table/${findObject} .
 for i in ${findObject}
 do
 
-#g/create table /s//create table radar./g
-
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
+g/create table /s//create table radar./g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g
 g/numeric(8,0)    identity/s//serial/g

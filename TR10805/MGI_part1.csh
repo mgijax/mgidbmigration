@@ -75,6 +75,10 @@ ${MGD_DBSCHEMADIR}/default/MRK_Location_Cache_bind.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/index/MGI_AttributeHistory_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/MGI_AttributeHistory_truncate.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/MGI_AttributeHistory_create.object | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_drop.object | tee -a ${LOG}

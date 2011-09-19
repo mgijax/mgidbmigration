@@ -11,7 +11,6 @@ ${RADARPOSTGRES}/bin/editdroptable.sh
 ${RADARPOSTGRES}/bin/edittruncatetable.sh
 
 ${RADARPOSTGRES}/bin/editcreatekey.sh
-${RADARPOSTGRES}/bin/editdropkey.sh
 
 ${RADARPOSTGRES}/bin/editcreateindex.sh
 ${RADARPOSTGRES}/bin/editdropindex.sh

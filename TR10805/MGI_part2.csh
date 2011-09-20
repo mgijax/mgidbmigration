@@ -26,7 +26,11 @@ ${ALOMRKLOAD}/bin/alomrkload.sh
 
 date | tee -a ${LOG}
 echo 'GOA/Mouse load' | tee -a ${LOG}
-${GOALOAD}/bin/goa.sh
+${GOALOAD}/bin/goa.csh
+
+date | tee -a ${LOG}
+echo 'GO Stats' | tee -a ${LOG}
+source ${QCRPTS}/Configuration
 cd ${QCRPTS}/mgd
 ./GO_stats.py
 

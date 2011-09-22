@@ -83,6 +83,12 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_split_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_split_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_update_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_update_create.object | tee -a ${LOG}
 
 ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
 ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a ${LOG}

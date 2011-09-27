@@ -3,6 +3,8 @@
 #
 # create 'trigger' scripts
 #
+# a) remove referential integrity checks from 'delete' triggers
+#
 
 cd `dirname $0` && . ../Configuration
 
@@ -21,8 +23,25 @@ fi
 # copy mgddbschema/trigger/*_create.object to postgres directory
 #
 cd ${POSTGRESTRIGGER}
+#
+# copy all
+#
 cp ${MGD_DBSCHEMADIR}/trigger/${findObject} .
+
 exit 0
+
+#
+# only copy the ones we need to migrate
+#
+#for i in ACC_Accession_create.object \
+#ACC_LogicalDB_create.object \
+#do
+#cp ${MGD_DBSCHEMADIR}/trigger/${i} .
+#done
+
+#
+# when ready, cvs remove the non-migrated triggers
+#
 
 #
 # convert each mgd-format trigger script to a postgres script

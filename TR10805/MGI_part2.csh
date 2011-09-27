@@ -29,6 +29,10 @@ echo 'GOA/Mouse load' | tee -a ${LOG}
 ${GOALOAD}/bin/goa.csh
 
 date | tee -a ${LOG}
+echo 'DOI update' | tee -a ${LOG}
+/mgi/all/wts_projects/10700/10725/doiload.sh
+
+date | tee -a ${LOG}
 echo 'GO Stats' | tee -a ${LOG}
 source ${QCRPTS}/Configuration
 cd ${QCRPTS}/mgd

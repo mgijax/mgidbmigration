@@ -61,9 +61,10 @@ g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
-g/sp_foreignkey/s//ALTER TABLE/
+g/sp_foreignkey/s//ALTER TABLE mgd./
 g/, ${t}, /s// ADD FOREIGN KEY (/
 g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
+g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
 /cat
 d
 a
@@ -94,9 +95,8 @@ ed ${dropScript} <<END
 g/csh -f -x/s//sh/g
 g/& source/s//./g
 g/sp_dropkey foreign, /d
-g/sp_dropkey primary, /s//ALTER TABLE mgd./
-g/, ${t}/s// DROP CONSTRAINT/
-g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
+g/sp_dropkey primary, /s//ALTER TABLE /
+g/ALTER TABLE ${t}/s//ALTER TABLE mgd.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
 /cat
 d
 a

@@ -63,7 +63,7 @@ g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
 g/sp_foreignkey/s//ALTER TABLE mgd./
 g/, ${t}, /s// ADD FOREIGN KEY (/
-g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
+g/FOREIGN KEY/s/$/) REFERENCES mgd.${t} ON DELETE CASCADE;/
 g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
 /cat
 d

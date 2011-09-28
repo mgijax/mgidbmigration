@@ -26,7 +26,6 @@ g/& source/s//./g
 g/nonclustered /s///g
 g/clustered /s///g
 g/idx/s//${t}/g
-g/ on /s// on mgd./g
 g/ on seg2/s//;/g
 g/ on seg3/s//;/g
 g/ on seg4/s//;/g
@@ -40,6 +39,7 @@ g/ on \$DBCLUSTIDXSEG/s//;/g
 g/ on \${DBNONCLUSTIDXSEG}/s//;/g
 g/ on \$DBNONCLUSTIDXSEG/s//;/g
 g/offset/s//cmOffset/g
+g/ on /s// on mgd./g
 g/^go/s///g
 /cat
 d

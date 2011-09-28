@@ -23,7 +23,7 @@ t=`basename $i _drop.object`
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/& source/s//./g
+g/source/s//./g
 g/drop index /s//drop index mgd./g
 g/${t}.idx/s//$t/g
 g/offset/s//cmOffset/g

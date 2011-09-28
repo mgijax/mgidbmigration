@@ -58,7 +58,7 @@ fkey=`grep "sp_foreignkey" ${i} | sed "s/sp_foreignkey //g" | cut -f1,3 -d"," | 
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/& source/s//./g
+g/source/s//./g
 g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
 g/sp_foreignkey/s//ALTER TABLE mgd./
@@ -93,7 +93,7 @@ END
 dropScript=${t}_drop.object
 ed ${dropScript} <<END
 g/csh -f -x/s//sh/g
-g/& source/s//./g
+g/source/s//./g
 g/sp_dropkey foreign, /d
 g/sp_dropkey primary, /s//ALTER TABLE /
 g/ALTER TABLE ${t}/s//ALTER TABLE mgd.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/

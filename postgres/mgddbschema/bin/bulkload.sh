@@ -121,6 +121,7 @@ END
 
 if [ $runAll -eq '0' ]
 then
+
 echo "adding indexes..." | tee -a ${LOG}
 ${POSTGRESDIR}/index/${i}_create.object
 

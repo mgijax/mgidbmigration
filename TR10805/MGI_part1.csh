@@ -79,6 +79,9 @@ ${MGD_DBSCHEMADIR}/index/MGI_AttributeHistory_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/MGI_AttributeHistory_truncate.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/MGI_AttributeHistory_create.object | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo "--- procedures ---"
+
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_drop.object | tee -a ${LOG}
@@ -89,6 +92,9 @@ ${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_update_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_update_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- mrk_location ---"
 
 ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a ${LOG}
 ${SNPBE_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a ${LOG}
@@ -117,6 +123,12 @@ ${MGD_DBSCHEMADIR}/view/PRB_Strain_Summary_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/PRB_Strain_Summary_View_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/VOC_Term_Summary_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/VOC_Term_Summary_View_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo "--- trigger ---"
+
+${MGD_DBSCHEMADIR}/trigger/PRB_Strain_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/PRB_Strain_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"

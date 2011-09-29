@@ -1,0 +1,108 @@
+
+Triggers that need to be migrated to Postgres
+=============================================
+
+. 'delete' needs to include 'CASCADE' for master/detail relationships
+  in the 'create table':add 'ON DELETE CASCADE'
+  to the primary key which represents the
+
+. cannot set 'ON DELETE CASCADE' in all cases; that is, for multi-field values
+      ACC_Accession._Object_key + _MGIType_key
+
+a) add 'delete cascade' for children that need to be deleted when their parent is deleted
+b) retain for postgres version; multi-field referential integrity
+c) do nothing; allow referential integrity (foreign key restraints) protect deletions
+   do not migrated trigger to postgres (obsolete)
+
+a) those that will allow 'delete cascade' on 'create table'
+   that is, deleting the parent will delete the children
+   ========================================================
+ACC_Accession._Accession_key
+ACC_AccessionReference
+
+ACC_LogicalDB._LogicalDB_key
+ACC_ActualDB
+
+ALL_Allele._Allele_key
+ALL_Allele_CellLine
+ALL_Allele_Mutation
+ALL_Knockout_Cache
+ALL_Marker_Assoc
+SEQ_Allele_Assoc
+
+ALL_Cellline._CellLne_key
+ALL_Allele_CellLine._MutantCellLine_key
+ALL_CellLine_Derivation._ParentCellLine_key
+
+ALL_CellLine_Derivation._Derivation_key
+ALL_Cellline
+
+BIB_DataSet._DataSet_key
+BIB_DataSet_Assoc
+
+BIB_Refs._Refs_key
+BIB_Books
+BIB_Citation
+BIB_DataSet_Assoc
+BIB_Notes
+
+GXD_Antibody._Antibody_key
+GXD_AntibodyMarker
+GXD_AntibodyAlias
+
+GXD_Antigen._Antigene_key
+GXD_Antibody
+
+GXD_Assay._Assay_key
+GXD_Specimen
+GXD_GelLane
+GXD_GelRow
+GXD_AssayNote
+GXD_Expression
+GXD_ProbePrep
+GXD_AntibodyPrep
+
+GXD_Genotype._Genotype_key
+GXD_AlleleGenotype
+GXD_AllelePair
+MRK_OMIM_Cache
+IMG_ImagePane_Assoc
+MGI_Note
+
+b) retain for postgres version
+   ===================================================
+
+_MGIType_key + _Object_key
+   MGI_Note
+   MGI_Reference_Assoc
+   MGI_Synonym
+   IMG_ImagePane_Assoc
+   ACC_Accession
+
+c) if parent is deleted, referential integrity will prevent child from being deleted
+   do *not* add 'ON DELETE CASCADE"
+   ================================
+
+d) delete trigges removed entirely:
+   ================================
+ACC_MGIType._MGIType_key
+DAG_DAG._DAG_key
+DAG_Label._Label_key
+DAG_Node._Parent_key, _Child_key, _Ancestor_key, _Descendent_key
+GXD_AntibodyClass._AntibodyClass_key
+GXD_AntibodyPrep (GXD_Assay)
+GXD_AntibodyType
+GXD_AssayType
+GXD_EmbeddingMethod
+GXD_FixationMethod
+GXD_GelControl
+GXD_GelLane._GelLane_key (GXD_GelLaneStructure, GXD_GelBand)
+GXD_GelRNAType
+GXD_GelRow (GXD_GelBand)
+GXD_GelUnits (GXD_GelRow)
+
+insert trigges:
+===============
+
+update trigges:
+===============

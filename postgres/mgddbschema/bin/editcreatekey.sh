@@ -78,6 +78,7 @@ g/sp_foreignkey/s//ALTER TABLE mgd./
 g/, ${t}, /s// ADD FOREIGN KEY (/
 g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
 g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
+g/_Marker_key, ./s//_Marker_key, source/
 /cat
 d
 a

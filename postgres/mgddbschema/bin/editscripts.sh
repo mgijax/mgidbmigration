@@ -10,8 +10,9 @@ ${MGDPOSTGRES}/bin/editcreatetable.sh
 ${MGDPOSTGRES}/bin/editdroptable.sh
 ${MGDPOSTGRES}/bin/edittruncatetable.sh
 
-${MGDPOSTGRES}/bin/editcreatekey.sh
-${MGDPOSTGRES}/bin/editdropkey.sh
+#see editcreatekey.sh before un-commenting this call
+#${MGDPOSTGRES}/bin/editcreatekey.sh
+#${MGDPOSTGRES}/bin/editdropkey.sh
 
 ${MGDPOSTGRES}/bin/editcreateindex.sh
 ${MGDPOSTGRES}/bin/editdropindex.sh

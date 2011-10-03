@@ -1,5 +1,18 @@
 #!/bin/sh
 
+#
+# NOTE:
+#
+# had to manually edit the *create.object scripts to include 
+# "ON DELETE CASCADE" for instances where the child records
+# can be deleted if the parent is record is deleted.
+#
+# a copy of *create.object has been stored in *create.object.save
+#
+# if you run this script, then you will *LOOSE* the manual edits
+# of "ON DELETE CASCADE" that are in the *.save scripts
+#
+
 cd `dirname $0` && . ../Configuration
 
 if [ $# -eq 1 ]

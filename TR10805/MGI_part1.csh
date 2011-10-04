@@ -31,20 +31,24 @@ ${MGI_DBUTILS}/bin/updatePublicVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "MGI 4.
 ${MGI_DBUTILS}/bin/updateSchemaVersion.csh ${MGD_DBSERVER} ${MGD_DBNAME} "4-4-2-1" | tee -a ${LOG}
 
 #per Jill, we will not do this as part of this release
-#date | tee -a ${LOG}
+#
 #echo "--- logical DB (TR10819) ---"
-#
-#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-#
-#use ${MGD_DBNAME}
-#go
-#
 #update ACC_ActualDB 
 #set url = 'http://www.ncbi.nlm.nih.gov/gene/@@@@' 
 #where _LogicalDB_key in (55,59)
 #go
-#
-#EOSQL
+date | tee -a ${LOG}
+echo "--- remove obsolete trigger ---"
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+drop trigger MGI_TranslationType_Delete
+go
+
+EOSQL
 
 date | tee -a ${LOG}
 echo "--- TR10620/add user ---"
@@ -92,6 +96,8 @@ ${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_update_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_update_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_Other_Markers_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_Other_Markers_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- mrk_location ---"

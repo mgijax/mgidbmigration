@@ -9,7 +9,12 @@ Triggers that need to be migrated to Postgres
 . cannot set 'ON DELETE CASCADE' in all cases; that is, for multi-field values
       ACC_Accession._Object_key + _MGIType_key
 
+. cannot set 'ON DELETE CASCADE' for vocabularies/master tables
+
+. permissions
+
 a) add 'delete cascade' for children that need to be deleted when their parent is deleted
+   drop keys; create keys; verify 
 b) retain for postgres version; multi-field referential integrity
 c) do nothing; allow referential integrity (foreign key restraints) protect deletions
    do not migrated trigger to postgres (obsolete)
@@ -17,41 +22,57 @@ c) do nothing; allow referential integrity (foreign key restraints) protect dele
 a) those that will allow 'delete cascade' on 'create table'
    that is, deleting the parent will delete the children
    ========================================================
+
 ACC_Accession._Accession_key
 ACC_AccessionReference
 
 ACC_LogicalDB._LogicalDB_key
 ACC_ActualDB
 
+ACC_MGIType : no cascades
+
 ALL_Allele._Allele_key
 ALL_Allele_CellLine
 ALL_Allele_Mutation
-ALL_Knockout_Cache
 ALL_Marker_Assoc
+ALL_Label
+ALL_Cre_Cache
+ALL_Knockout_Cache
+MRK_OMIM_Cache
 SEQ_Allele_Assoc
+MGI_Note._MGIType_key = 11
+MGI_Reference_Assoc._MGIType_key = 11
+MGI_Synonym._MGIType_key = 11
+IMG_ImagePane._MGIType_key = 11
+ACC_Accession._MGIType_key = 11
 
 ALL_Cellline._CellLne_key
-ALL_Allele_CellLine._MutantCellLine_key
-ALL_CellLine_Derivation._ParentCellLine_key
+ACC_Accession._MGIType_key = 28
 
 ALL_CellLine_Derivation._Derivation_key
 ALL_Cellline
-
-BIB_DataSet._DataSet_key
-BIB_DataSet_Assoc
 
 BIB_Refs._Refs_key
 BIB_Books
 BIB_Citation
 BIB_DataSet_Assoc
 BIB_Notes
+MRK_Homology_Cache
+MRK_OMIM_Cache
+IMG_Cache
+SEQ_Marker_Cache
+SEQ_Probe_Cache
+ACC_Accession._MGIType_key = 1
 
 GXD_Antibody._Antibody_key
 GXD_AntibodyMarker
 GXD_AntibodyAlias
+MGI_Reference_Assoc._MGIType_key = 6
+ACC_Accession._MGIType_key = 6
 
 GXD_Antigen._Antigene_key
 GXD_Antibody
+ACC_Accession._MGIType_key = 7
 
 GXD_Assay._Assay_key
 GXD_Specimen
@@ -59,15 +80,211 @@ GXD_GelLane
 GXD_GelRow
 GXD_AssayNote
 GXD_Expression
-GXD_ProbePrep
-GXD_AntibodyPrep
+ALL_Cre_Cache
+ACC_Accession._MGIType_key = 8
 
 GXD_Genotype._Genotype_key
 GXD_AlleleGenotype
 GXD_AllelePair
+GXD_Espression
 MRK_OMIM_Cache
+IMG_ImagePane_Assoc._MGIType_key = 12
+MGI_Note._MGIType_key = 12
+ACC_Accession._MGIType_key = 12
+
+GXD_Index._Index_key
+GXD_Index_Stages
+
+GXD_InSituResult._Result_key
+GXD_InSituResultImage
+GXD_ISResultStructure
+
+GXD_Specimen._Specimen_key
+GXD_InSituResult
+
+GXD_Structure._Structure_key
+GXD_StructureClosure
+GXD_StructureName
+ACC_Accession._MGIType_key = 38
+
+HMD_Class._Class_key
+HMD_Homology
+MRK_Homology_Cache
+
+HMD_Homology._Homology_key
+HMD_Homology_Marker
+HMD_Homology_Assay
+HMD_Notes
+MRK_HomologyCache
+
+IMG_Image._Image_key, _ThumbnailImage_key
+IMG_ImagePane
+IMG_Cache
+MGI_Note._MGIType_key = 9
+ACC_Accession._MGIType_key = 9
+
 IMG_ImagePane_Assoc
+IMG_Cache
 MGI_Note
+MGI_Reference_Assoc
+
+IMG_ImagePane._Image_key
+IMG_Cache
+
+MAP_Coord_Collection._Collection_key
+MAP_Coordinate
+
+MAP_Coordinate._Map_key
+MAP_Coord_Feature
+SEQ_Coord_Cache
+
+MGI_Note._Note_key
+MGI_NoteChunk
+
+MGI_Organism._Organism_key
+MRK_Chromosome
+MGI_Organism_MGIType
+ACC_Accession._MGIType_key = 20
+
+MGI_Set._Set_key
+MGI_SetMember
+
+MGI_Statistic._Statistic_key
+MGI_StatisticSql
+MGI_Measurement
+
+MGI_TranslationType._TranslationType_key
+MGI_Translation
+
+MLC_Text._Marker_key
+MLC_Marker
+MLC_Reference
+
+MLD_Contig._Contig_key
+MLD_ContigProbe
+
+MLD_Expts._Expt_key
+MLD_Expt_Marker
+MLD_Expt_Notes
+MLD_FISH
+MLD_FISH_Region
+MLD_Hybrid
+MLD_Concordance
+MLD_InSItu
+MLD_ISRegion
+MLD_Matrix
+MLD_MC2point
+MLD_MCDataList
+MLD_RI
+MLD_RIData
+MLD_RI2Point
+MLD_Hit
+MLD_Contig
+MLD_Statistics
+ACC_Accession._MGIType_key = 4
+
+MLD_Matrix._Cross_key
+CRS_Cross
+
+MRK_Marker._Marker_key
+ALL_Allele
+ALL_Marker_Assoc
+GO_Tracking
+MRK_Alias
+MRK_Anchors
+MRK_Classes
+MRK_Current
+MRK_History
+MRK_Homology_Cache
+MRK_Lable
+MRK_Location_Cache
+MRK_Notes
+MRK_Offset
+MRK_Reference
+SEQ_Marker_Cache
+MGI_Notes._MGIType_key = 2
+MGI_Reference_Assoc._MGIType_key = 2
+MGI_Synonym._MGIType_key = 2
+ACC_Accession._MGIType_key = 2
+
+NOM_Marker._Nomen_key
+MGI_Notes._MGIType_key = 21
+MGI_Reference_Assoc._MGIType_key = 21
+MGI_Synonym._MGIType_key = 21
+ACC_Accession._MGIType_key = 21
+
+PRB_Allele._Allele_key
+PRB_Allele_Strain
+
+PRB_Probe._Probe_key
+PRB_Marker
+PRB_Notes
+PRB_Reference
+SEQ_Probe_Cache
+ACC_Accession._MGIType_key = 3
+
+PRB_Reference._Reference_key
+PRB_Alias
+PRB_Ref_Notes
+PRB_RFLV
+ACC_AccessionReference._MGIType_key = 3
+
+PRB_RFLV._RFLV_key
+PRB_Allele
+
+PRB_Source._Source_key
+MGI_SetMember
+MGI_AttributeHistory._MGIType_key = 5
+ACC_Accession._MGIType_key = 5
+
+PRB_Strain._Strain_key
+PRB_Strain_Marker
+VOC_Annot._MGIType_key = 10
+MGI_Not._MGIType_key = 10
+MGI_Synonym._MGIType_key = 10
+MGI_Translation._MGIType_key = 10
+VOC_Annot._MGIType_key = 10
+ACC_Accession._MGIType_key = 10
+
+SEQ_Sequence._Sequence_key
+SEQ_Allele_Assoc
+SEQ_Coord_Cache
+SEQ_Decscription_Cache
+SEQ_GeneModel
+SEQ_GeneTrap
+SEQ_Marker_Cache
+SEQ_Probe_Cache
+SEQ_Sequence_Assoc
+SEQ_Sequence_Raw
+SEQ_Source_Assoc
+MGI_AttributeHistory._MGIType_key = 19
+MGI_Reference_Assoc._MGIType_key = 19
+MGI_Note._MGIType_key = 19
+ACC_Accession._MGIType_key = 19
+
+VOC_Annot._Annot_key
+VOC_Evidence
+
+VOC_Evidence._AnnotEvidence_key
+VOC_Evidence_Property
+MGI_Note._MGIType_key = 25
+ACC_Accession._MGIType_key = 25
+
+VOC_Term._Term_key
+VOC_GO_Cache
+VOC_Text
+MGI_Note._MGIType_key = 13
+MGI_Synonym._MGIType_key = 13
+ACC_Accession._MGIType_key = 13
+
+VOC_Vocab._Vocab_key
+VOC_VocabDAG
+VOC_Term
+VOC_AnnotType
+
+GXD_StructureClosure
+GXD_StructureName
+VOC_AnnotType
 
 b) retain for postgres version
    ===================================================
@@ -86,7 +303,9 @@ c) if parent is deleted, referential integrity will prevent child from being del
 d) delete trigges removed entirely:
    ================================
 ACC_MGIType._MGIType_key
-DAG_DAG._DAG_key
+BIB_DataSet
+BIB_ReviewStatus
+CRS_Cross
 DAG_Label._Label_key
 DAG_Node._Parent_key, _Child_key, _Ancestor_key, _Descendent_key
 GXD_AntibodyClass._AntibodyClass_key
@@ -100,6 +319,41 @@ GXD_GelLane._GelLane_key (GXD_GelLaneStructure, GXD_GelBand)
 GXD_GelRNAType
 GXD_GelRow (GXD_GelBand)
 GXD_GelUnits (GXD_GelRow)
+GXD_Label (GXD_AntibodyPrep, GXD_ProbePrep)
+GXD_Pattern (GXD_InSituResult)
+GXD_ProbePrep (GXD_Assay)
+GXD_ProbeSense (GXD_ProbePrep)
+GXD_Specimen
+GXD_Secondary (GXD_ANtibodyPrep)
+GXD_Strength (GXD_InSItuResult)
+GXD_TheilerStage (GXD_Structure)
+GXD_VisualizationMethod (GXD_ProbePrep)
+HMD_Assay (HMD_Homology_Assay)
+HMD_Class (see cascade)
+HMD_Homology (see cascade)
+MAP_Coord_Colection (see cascade)
+MAP_Coordinate (see cascade)
+MGI_NoteType
+MGI_RefAssocType
+MGI_Set
+MGI_SynonymType
+MGI_Translation
+MGI_VocAssociationType
+MLD_Assay_Types
+MRK_Alias
+MRK_Class (MRK_Marker)
+MRK_Event
+MRK_EventReason (MRK_Marker)
+MRK_Status (MRK_Marker)
+MRK_Types (MRK_Marker)
+PRB_Allele
+PRB_RFLV
+PRB_Tissue
+RI_RISet
+VOC_Annot
+VOC_AnnotType
+VOC_Evidence
+VOC_Vocab
 
 insert trigges:
 ===============

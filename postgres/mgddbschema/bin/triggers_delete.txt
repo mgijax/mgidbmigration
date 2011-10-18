@@ -1,0 +1,22 @@
+BIB_Refs:_Refs_key:1:
+MRK_Marker:_Marker_key:2:permissions
+PRB_Probe:_Probe_key:3
+PRB_Reference:_Probe_key:3:add 'and ar._Refs_key = OLD._Refs_key'
+MLD_Expts:_Expt_key:4:re-order
+PRB_Source:_Source_key:5:restriction
+GXD_Antibody:_Antibody_key:6
+GXD_Antigen:_Antigene_key:7:delete prb_source if anonymous
+GXD_Assay:_Assay_key:8;check probe prep deletion
+IMG_Image:_Image_key:9:add thumbnail
+PRB_Strain:_Strain_key:10
+ALL_Allele:_Allele_key:11:permissions
+GXD_Genotype:_Genotype_key:12
+VOC_Term:_Term_key:13
+SEQ_Sequence:_Sequence_key:19
+MGI_Organism:_Organism_key:20
+NOM_Marker:_Nomen_key:21:permissions
+VOC_Evidence:_AnnotEvidence_key:28
+ALL_CellLine:_CellLine_key:28
+IMG_ImagePane_Assoc:_Assoc_key:29
+MGI_Statistic:_Statistic_key:34
+GXD_Structure:_Structure_key:38

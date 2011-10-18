@@ -3,78 +3,44 @@
 #
 # create 'trigger' scripts
 #
-# a) remove referential integrity checks from 'delete' triggers
-#
 
 cd `dirname $0` && . ../Configuration
 
-if [ $# -eq 1 ]
-then
-    findObject=$1_create.object
-else
-    findObject=*_create.object
-fi
-
 #
-# edit "create" triggers from sybase to postgres
+# read thru triggers_deletion.txt
 #
 
-#
-# copy mgddbschema/trigger/*_create.object to postgres directory
-#
-cd ${POSTGRESTRIGGER}
-#
-# copy all
-#
-cp ${MGD_DBSCHEMADIR}/trigger/${findObject} .
-
-exit 0
-
-#
-# only copy the ones we need to migrate
-#
-#for i in ACC_Accession_create.object \
-#ACC_LogicalDB_create.object \
-#do
-#cp ${MGD_DBSCHEMADIR}/trigger/${i} .
-#done
-
-#
-# when ready, cvs remove the non-migrated triggers
-#
-
-#
-# convert each mgd-format trigger script to a postgres script
-#
-
-#g/create trigger /s//create trigger mgd./g
-
-for i in ${findObject}
+while IFS=: read object mgikey mgitype
 do
+echo $object
+echo $mgikey
+echo $mgitype
 
-ed $i <<END
-g/csh -f -x/s//sh/g
-g/source/s//./g
-g/^)/s//);/
-/cat
-d
-a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cp ${POSTGRESTRIGGER}/template_create.object.new ${POSTGRESTRIGGER}/${object}_create.object
+cp ${POSTGRESTRIGGER}/template_drop.object.new ${POSTGRESTRIGGER}/${object}_drop.object
 
-.
-/^use
-d
-d
-d
-.
-/^on
-;d
-a
-EOSQL
+ed ${POSTGRESTRIGGER}/${object}_create.object <<END
+g/PG-TABLE/s//${object}/g
+g/PG-KEY/s//${mgikey}/g
+g/PG-TYPE/s//${mgitype}/g
 .
 w
 q
 END
 
-done
+ed ${POSTGRESTRIGGER}/${object}_drop.object <<END
+g/PG-TABLE/s//${object}/g
+g/PG-KEY/s//${mgikey}/g
+g/PG-TYPE/s//${mgitype}/g
+.
+w
+q
+END
+
+#
+# execute the script to create the delete function/trigger
+#
+${POSTGRESTRIGGER}/${object}_create.object
+
+done < triggers_delete.txt
 

@@ -35,7 +35,7 @@ g/csh -f -x/s//sh/g
 g/source/s//./g
 g/create table /s//create table mgd./g
 g/tinyint/s//smallint/g
-g/datetime/s//timestamp without time zone/g
+g/datetime/s//timestamp without time zone DEFAULT now()/g
 g/bit/s//boolean/g
 g/offset/s//cmOffset/g
 g/^)/s//);/

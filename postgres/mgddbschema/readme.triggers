@@ -18,6 +18,12 @@ a) add 'delete cascade' for children that need to be deleted when their parent i
 b) retain for postgres version; multi-field referential integrity
 c) do nothing; allow referential integrity (foreign key restraints) protect deletions
    do not migrated trigger to postgres (obsolete)
+d) PostgreSQL/p. 354
+	AFTER: will show referential integrity error *first*
+	BEFORE: will show return from trigger *first*
+e) use 'template_create.object.new'
+   use 'template_drop.object.new'
+   create deletion triggers for all _Object_key/_MGIType_key tables
 
 a) those that will allow 'delete cascade' on 'create table'
    that is, deleting the parent will delete the children
@@ -352,7 +358,6 @@ PRB_Tissue
 RI_RISet
 VOC_Annot
 VOC_AnnotType
-VOC_Evidence
 VOC_Vocab
 
 insert trigges:
@@ -360,3 +365,269 @@ insert trigges:
 
 update trigges:
 ===============
+
+document some Business Rules
+============================
+
+these trigger scripts contains business rules that should
+be reviewed.  Determine which ones can be removed.
+
+delete
+======
+ACC_Accession_create.object
+	0) nomenclature permissions
+
+	1) if deleting MGI Image Pixel number, then nullify X/Y Dimensions
+
+	2) If deleting Sequence ID for Molecular Segment 
+           and the same Sequence ID exists for one of the Segment's Markers:
+	     Please review the relationship(s) between the Sequence ID 'xxx' 
+             and the Molecular Segment's Marker(s).  
+             These relationships may no longer be appropriate.
+
+	3) If deleting the Sequence ID for a Marker 
+           and the same Sequence ID exists for one of the Marker's Segments:
+	     Please review the relationship(s) between the Sequence ID 'xxx' 
+             and its Molecular Segments.  
+             These relationships may no longer be appropriate.
+
+	4) If max J: in Acc table does not equal max J: in max table, then re-set max J: in max table
+
+ALL_Allele_Mutation_create.object	
+	1) permissions
+
+ALL_Marker_Assoc_create.object		
+	1) if we are deleting a marker/allele association
+	   then we need to set the cached marker key in ALL_Allele to be null
+
+	2) also remove the marker association in various other tables
+
+GXD_Antigen_create.object
+	1) If Probe Source Name is null, then Anonymous Source
+	   If Anonymous Source, delete upon deletion of Antigen
+
+GXD_Assay_create.object
+	1) only delete the probe prep if it is not used by another assay
+	   that is, if count = 1
+
+GXD_Structure_create.object
+	1) Disallow deletion if record is not an MGI-added record,
+	   only if the user does not have the sa_role
+
+IMG_Image_create.object
+	1) if this is a Full Size Image, then delete its Thumbnail
+
+MGI_Note_create.object
+	1) allele permissions
+
+MGI_Reference_Assoc_create.object	
+	1) nomenclature permissions
+	2) allele permissions
+	3) antibody permissions
+
+MGI_Synonym_create.object		
+	1) allele permissions
+
+MLD_Expts_create.object
+	1) Re-order the tag numbers for experiments if one is deleted
+
+MRK_Marker_create.object			
+	1) TR 2225 - Permissions for deletion of Markers
+	2) Permission for non-mouse deletion (djr only)
+	3) Cannot delete records w/ reference of J:80000 (RIKEN; Fantom2) 
+	4) Cannot delete records w/ reference of J:65060 (RIKEN; Fantom1)
+
+MRK_Notes_create.object			
+	1) marker clip permissions
+
+NOM_Marker_create.object
+	1) Cannot delete records w/ primary reference of J:65060 (RIKEN)
+
+PRB_Marker_create.object		
+	1) If deleting an encoding Marker from a Molecular Segment and 
+	   Molecular Segment contains a Seq ID and
+	   the Marker is associated with the Seq ID
+	     Please review the relationship(s) between the deleted Marker and its Seq IDs.
+	     These relationships may no longer be appropriate.
+
+PRB_Probe_create.object
+	1) Disallow deletion if Mol Seg is Restricted 
+	   (MGI_Set_ResMolSeg_View)
+
+PRB_Reference_create.object
+	1) Disallow edits to load References
+	2) Disallow edits to WashU data - TR 611
+
+PRB_Source_create.object
+	1) Restrict edits to Molecular Source
+
+SEQ_Sequence_create.object
+	1) Disallow *any* deletion
+
+VOC_Evidence_create.object
+	1) If there are no more Evidence records for this Annotation, 
+	   then delete the Annotation record as well
+
+insert
+======
+ACC_Accession_create.object
+
+ALL_Allele_create.object
+
+ALL_Allele_Mutation_create.object	permissions
+
+ALL_Marker_Assoc_create.object		set _Marker_key in ALL_Allele, GXD_AlleleGenotype, etc.
+
+BIB_Refs_create.object
+
+GXD_AllelePair_create.object		check State attribute
+
+GXD_Antibody_create.object
+
+GXD_Antigen_create.object
+
+GXD_Assay_create.object
+
+GXD_GelRow_create.object
+
+GXD_Genotype_create.object
+
+GXD_Index_create.object			BIB_DataSet_Assoc
+
+GXD_InSituResult_create.object		check Strength/Pattern
+
+GXD_Structure_create.object
+
+GXD_StructureName_create.object
+
+IMG_Image_create.object
+
+MGI_Note_create.object			permissions
+
+MGI_Organism_create.object
+
+MGI_Reference_Assoc_create.object	permissions
+
+MGI_Synonym_create.object		permissions
+
+MLD_Expts_create.object
+
+MRK_Alias_create.object
+
+MRK_Marker_create.object
+
+MRK_Notes_create.object			permissions
+
+NOM_Marker_create.object
+
+PRB_Marker_create.object		auot-e/null/'H'/'P'
+
+PRB_Probe_create.object
+
+PRB_Reference_create.object
+
+PRB_Source_create.object
+
+PRB_Strain_create.object
+
+VOC_Annot_create.object			check isObsolete
+
+VOC_Evidence_create.object
+
+VOC_Term_create.object
+
+update
+======
+ACC_Accession_create.object		permissions (nomen)
+
+   Marker module: MODIFY
+
+	1) For Nucleotide Sequences, check that it is valid
+             Invalid Nucleotide Sequence Accession Number:
+	     Number must be single uppercase letter + 5 numbers OR 
+               2 uppercase letters + 6 numbers.
+
+	2) If updating Sequence ID for Molecular Segment 
+           and the same Sequence ID exists for one of the Segment's Markers:
+	     Please review the relationship(s) between the Sequence ID 'xxx' 
+             and the Molecular Segment's Marker(s).  
+             These relationships may no longer be appropriate.
+
+	3) If updating the Sequence ID for a Marker 
+           and the same Sequence ID exists for one of the Marker's Segments:
+	     Please review the relationship(s) between the Sequence ID 'xxx' 
+             and its Molecular Segments.  
+             These relationships may no longer be appropriate.
+
+	4) If updating the Sequence for a Marker 
+           and the same ID exists for another Marker:
+	     The Accession ID 'xxx' is associated with another Marker.
+
+	5) If updating a Jax Registry ID for a Strain 
+           and the same ID exists for another Strain:
+	     The Accession ID 'xxx' is associated with another Strain.
+
+	6) For Marker/Probe/Nomen where 
+             ldb in (GenBank, SWISSProt, RefSeq, DFCI, DoTS, TrEMBL, NIA Mouse Gene Index),
+           if the sequence has already been associated with an allele (via the ALO load):
+	     Sequence is already associated with an allele by the ALO load; 
+             cannot also associate it with a marker
+
+ALL_Allele_create.object
+
+ALL_Allele_Mutation_create.object	permissions
+
+ALL_CellLine_create.object
+
+ALL_CellLine_Derivation_create.object	permissions; propagate parent
+
+ALL_Marker_Assoc_create.object		set _Marker_key in ALL_Allele, GXD_AlleleGenotype, etc.
+
+GXD_AllelePair_create.object		check State attribute
+
+GXD_Assay_create.object
+
+GXD_Genotype_create.object
+
+GXD_Index_create.object			update priority/conditional by reference
+
+GXD_InSituResult_create.object		check Strength/Pattern
+
+GXD_Structure_create.object
+
+GXD_StructureName_create.object
+
+IMG_Image_create.object
+
+IMG_ImagePane_create.object		update IMG_Cache when paneLabel is changed
+
+MGI_Note_create.object			permissions
+
+MGI_Reference_Assoc_create.object	permissions
+
+MGI_Synonym_create.object		permissions
+
+MLD_Expt_Marker_create.object
+
+MLD_Expts_create.object
+
+MRK_Marker_create.object
+
+MRK_Notes_create.object			permissions
+
+NOM_Marker_create.object
+
+PRB_Marker_create.object		auot-e/null/'H'/'P'
+
+PRB_Probe_create.object
+
+PRB_Reference_create.object
+
+PRB_Source_create.object
+
+PRB_Strain_create.object
+
+SEQ_Sequence_create.object
+
+VOC_Annot_create.object			update modification date
+

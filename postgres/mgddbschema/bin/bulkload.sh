@@ -140,6 +140,7 @@ then
 echo 'run create key/index for all tables...' | tee -a ${LOG}
 ${POSTGRESDIR}/index/index_create.sh
 ${POSTGRESDIR}/key/key_create.sh
+${POSTGRESDIR}/trigger/trigger_create.sh
 fi
 
 date | tee -a ${LOG}

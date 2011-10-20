@@ -450,17 +450,6 @@ PRB_Marker_create.object
 	     Please review the relationship(s) between the deleted Marker and its Seq IDs.
 	     These relationships may no longer be appropriate.
 
-PRB_Probe_create.object
-	1) Disallow deletion if Mol Seg is Restricted 
-	   (MGI_Set_ResMolSeg_View)
-
-PRB_Reference_create.object
-	1) Disallow edits to load References
-	2) Disallow edits to WashU data - TR 611
-
-PRB_Source_create.object
-	1) Restrict edits to Molecular Source
-
 SEQ_Sequence_create.object
 	1) Disallow *any* deletion
 
@@ -468,80 +457,162 @@ VOC_Evidence_create.object
 	1) If there are no more Evidence records for this Annotation, 
 	   then delete the Annotation record as well
 
-insert
-======
-ACC_Accession_create.object
+insert (32)
+===========
 
-ALL_Allele_create.object
-
-ALL_Allele_Mutation_create.object	permissions
-
-ALL_Marker_Assoc_create.object		set _Marker_key in ALL_Allele, GXD_AlleleGenotype, etc.
+ALL_Allele_Mutation_create.object:for insert, update
+GXD_AllelePair_create.object:for insert, update
+GXD_GelRow_create.object
+GXD_InSituResult_create.object:for insert, update
+MGI_Reference_Assoc_create.object:for insert, update
+MGI_Synonym_create.object:for insert, update
+MRK_Notes_create.object:for insert, update
+PRB_Source_create.object
+VOC_Evidence_create.object:for insert, update
+	1) same as MODIFY
 
 BIB_Refs_create.object
-
-GXD_AllelePair_create.object		check State attribute
-
 GXD_Antibody_create.object
-
 GXD_Antigen_create.object
+GXD_Genotype_create.object
+IMG_Image_create.object
+MGI_Organism_create.object
+PRB_Probe_create.object
+	1) accession ids
+
+ALL_Allele_create.object
+GXD_Assay_create.object
+GXD_Structure_create.object
+MLD_Expts_create.object
+NOM_Marker_create.object
+PRB_Strain_create.object
+VOC_Term_create.object
+	1) accession ids (but has other things in trigger as well)
+
+ACC_Accession_create.object		
+	1) For Nucleotide Sequences, check that it is valid
+             Invalid Nucleotide Sequence Accession Number:
+	     Number must be single uppercase letter + 5 numbers OR 
+               2 uppercase letters + 6 numbers.
+
+	2) If adding Sequence ID for Molecular Segment 
+           and the same Sequence ID exists for one of the Segment's Markers:
+	     Sequence IDs for Marker(s) encoding this segment do not exist for all encodes relationships specified.
+    	     Some Sequence ids might need to be added.
+
+	3) If adding the Sequence for a Marker 
+           and the same ID exists for another Marker:
+	     The Accession ID 'xxx' is associated with another Marker.
+
+	4) If inserting a Jax Registry ID for a Strain 
+           and the same ID exists for another Strain:
+	     The Accession ID 'xxx' is associated with another Strain.
+
+	5) For Marker/Probe/Nomen where 
+             ldb in (GenBank, SWISSProt, RefSeq, DFCI, DoTS, TrEMBL, NIA Mouse Gene Index),
+           if the sequence has already been associated with an allele (via the ALO load):
+	     Sequence is already associated with an allele by the ALO load; 
+             cannot also associate it with a marker
+
+	6) nomenclature permissions
+
+ALL_Allele_create.object
+	1) accession ids
+
+	2) allele permissions
+
+	3) Cannot use the Autoload status
+
+	4) Approved Alleles must have a valid MGD Marker, unless they are
+ 	   gene trap alleles (which can have no marker)
+
+ALL_Marker_Assoc_create.object
+	1) if we already have an associated marker for the allele, then bail out;
+           we can only have one marker per allele currently
+
+	2) if the allele already has a nomenSymbol marker, then bail out; this
+           would also essentially be a second marker association
 
 GXD_Assay_create.object
+	1) accession ids
 
-GXD_GelRow_create.object
+	2) BIB_DataSet_Assoc: insert 'Expression' data set for given reference
 
-GXD_Genotype_create.object
+GXD_Index_create.object
+	1) same as MODIFY
 
-GXD_Index_create.object			BIB_DataSet_Assoc
-
-GXD_InSituResult_create.object		check Strength/Pattern
+	2) BIB_DataSet_Assoc: insert 'Expression' data set for given reference
 
 GXD_Structure_create.object
+	1) accession ids
+
+	2) Ensure that _Parent_key of inserted exists as a _Structure_key and
+           that parent has the same _Stage_key as inserted, if _Parent_key != NULL
+
+	3) if the assumption doesn't hold, then the following query will set the
+           current child's treeDepth
+
+
+	4) /* find out the depth of the parent structure */
+
+	5) /* update the inserted node */
+
+	6) /* incrementally modify the closure */
+
+	7) _Parent_key will be null for an immediate child of a stage root,
+   	   this node, by definition will not have any entries in the closure table,
+   	   since it is a root node as far as the database is concerned 
 
 GXD_StructureName_create.object
+	1) ensure that the structure specified exists 
 
-IMG_Image_create.object
+	2) look for duplicate (structure key, structure) tuples 
 
-MGI_Note_create.object			permissions
+	3) Prevent two children from having the same preferred name 
 
-MGI_Organism_create.object
-
-MGI_Reference_Assoc_create.object	permissions
-
-MGI_Synonym_create.object		permissions
-
-MLD_Expts_create.object
-
-MRK_Alias_create.object
+	4) call stored procedure that recalculates printNames, if a preferred
+   	   structure name is changed.  Preferred StructureNames are those
+   	   that are referred to by a record in GXD_Structure 
 
 MRK_Marker_create.object
+	1) For Mouse Organism, create Accession #, Current Symbol records
 
-MRK_Notes_create.object			permissions
+	2) For Genes only, create GO_Tracking
+
+	3) For Genes only, create wild type
 
 NOM_Marker_create.object
+	1) accession ids
+
+	2) permissions
+
+	3) For Nucleotide Sequences, check that it is valid...
 
 PRB_Marker_create.object		auot-e/null/'H'/'P'
+	1) accession ids
 
-PRB_Probe_create.object
+	2) Cannot annotate using the Auto-E reference
 
-PRB_Reference_create.object
+	3) Relationship cannot be null
 
-PRB_Source_create.object
+	4) Relationship must be 'H' for Probes of non-mouse source
+
+	5) Relationship 'P' can only be used during an EST bulk load
 
 PRB_Strain_create.object
+	1) accession ids if standard = 1
+
+	2) Potential Duplicate Strain Found
 
 VOC_Annot_create.object			check isObsolete
-
-VOC_Evidence_create.object
+	1) Cannot Annotate to an Obsolete Term.
 
 VOC_Term_create.object
+	1) accession ids
 
-update
-======
-ACC_Accession_create.object		permissions (nomen)
-
-   Marker module: MODIFY
-
+update (29)
+===========
+ACC_Accession_create.object
 	1) For Nucleotide Sequences, check that it is valid
              Invalid Nucleotide Sequence Accession Number:
 	     Number must be single uppercase letter + 5 numbers OR 
@@ -573,61 +644,232 @@ ACC_Accession_create.object		permissions (nomen)
 	     Sequence is already associated with an allele by the ALO load; 
              cannot also associate it with a marker
 
-ALL_Allele_create.object
+	7) nomenclature permissions
 
-ALL_Allele_Mutation_create.object	permissions
+	8) If max J: in Acc table does not equal max J: in max table, then re-set max J: in max table
+
+ALL_Allele_create.object
+	1) allele permissions
+
+	2) GO check: approved/autoload
+	     You cannot change the Allele status from Approved/Autoload to Deleted, Reserved or Pending.
+	     This Allele is cross-referenced to a GO annotation.
+
+	3) Non-Approved Alleles cannot have Genotypes or Strain associations
+
+	4) If updating symbol, set needsReview flag for Strain 
+
+ALL_Allele_Mutation_create.object
+	1) allele permissions
 
 ALL_CellLine_create.object
+	1) allele permissions
 
-ALL_CellLine_Derivation_create.object	permissions; propagate parent
+	2) if the strain is updated, then...
+		1. if this is a mutant cell line, disallow it and rollback
+		2. if this is a parent cell line, propagate the new cell line to all
+		   mutant cell lines derived form this parent
 
-ALL_Marker_Assoc_create.object		set _Marker_key in ALL_Allele, GXD_AlleleGenotype, etc.
+	3) If a mutant cell line has a change in its derivation key, 
+	   then its strain key must change to match the strain of its new parent cell line.
 
-GXD_AllelePair_create.object		check State attribute
+ALL_CellLine_Derivation_create.object	
+	1) allele permissions
+
+	2) if we update the derivation's parent cell line, then we need to propagate
+	   the new parent's strain down to all of the mutant cell lines using citing
+	   this derivation
+
+ALL_Marker_Assoc_create.object		
+	1) if the allele already has a nomenSymbol marker, then bail out; this
+	   would also essentially be a second marker association
+
+	2) if we change the allele or marker keys, then we need to invalidate the
+	   prior cached relationships and cache the new ones (as long as the new
+	   ones were not invalidated by a curator).  similar process should work
+	   for changes to the status key.
+
+GXD_AllelePair_create.object		
+	1) Pair State error checks
+	     a) State Attribute Error:  Homozygous state is not valid.
+	     b) State Attribute Error:  Heterozygous state is not valid.
+	     c) State Attribute Error:  Hemizygous X-linked state is not valid.
+	     d) State Attribute Error:  Hemizygous Y-linked state is not valid.
+	     e) State Attribute Error:  Hemizygous Insertion state is not valid.
+	     f) State Attribute Error:  Hemizygous Deletion state is not valid.
+	     g) State Attribute Error:  Indeterminate state is not valid.
+
+	2)  Compound error checks
+	     a) Compound Attribute Error:  Allele 2 for all Compound Allele Pairs must be null or wild type.
+	     b) Allele Compound Error:  Top/Bottom compound is not valid for Hemi-X, Hemi-Y or Indeterminate states.
 
 GXD_Assay_create.object
+	1) Update Expression Cache for Assay
+	   The update of a GXD_Assay record should be called AFTER any updates to GXD detail records
 
-GXD_Genotype_create.object
+GXD_GelRow_create.object
+	1) If Gel Row Size is entered, Gel Row Units must be specified.
 
-GXD_Index_create.object			update priority/conditional by reference
+GXD_Index_create.object
+	1) if updating priority/conditional mutant, 
+	   then set priority/condiational mutant for all said references
 
-GXD_InSituResult_create.object		check Strength/Pattern
+GXD_InSituResult_create.object
+	1) If Strength is "Absent", then Pattern must be "Not Applicable".
+
+	2) If Pattern is "Not Applicable", then Strength must be "Absent".
 
 GXD_Structure_create.object
+	1) make certain that printStop bits don't get cleared on Structures
+	   that are children of the Stage root nodes
+
+	2) recalculate printnames on those structures where printStop has been changed
 
 GXD_StructureName_create.object
+	1) GXD_StructureName_Update: Non-existent Structure in StructureName record
+
+	2) GXD_StructureName_Update: Inserted StructureName has duplicate structure attribute
+
+	3) call stored procedure that recalculates printNames, if a preferred
+	   structure name is changed.  Preferred StructureNames are those
+	   that are referred to by a record in GXD_Structure
 
 IMG_Image_create.object
+	1) be sure to update IMG_Cache with any cached values that changed
 
-IMG_ImagePane_create.object		update IMG_Cache when paneLabel is changed
+	2) if updating a thumbnail:
+	   Each image has at most one thumbnail, so if we removed a
+	   thumbnail, then we are safe to just delete the cached
+	   records for that image.  (An image cannot be in the cache
+	   table without a thumbnail.)
 
-MGI_Note_create.object			permissions
+           If we changed a thumbnail, then go ahead and update the
+           cached records.
 
-MGI_Reference_Assoc_create.object	permissions
+	3) Update Expression Cache for Assay by Reference 
+           this is turned off, because it is very rare 
+           for a curator to remove a pix id from an image 
+           after the assay has been added 
+           but if this becomes common, then this call can be turned on 
 
-MGI_Synonym_create.object		permissions
+IMG_ImagePane_create.object		
+	1) be sure to update IMG_Cache when a paneLabel is changed
+
+MGI_Reference_Assoc_create.object
+	1) nomenclature permissions
+
+MGI_Synonym_create.object
+	1) allele permissions
+
+MRK_Notes_create.object
+	1) marker clip permission
 
 MLD_Expt_Marker_create.object
-
-MLD_Expts_create.object
+	1) Propagate modification of Marker to experiment tables
 
 MRK_Marker_create.object
+	1) If no Current symbol exists for the Marker, then abort
 
-MRK_Notes_create.object			permissions
+	2) If updating symbol or organism:
+	      exec ALL_convertAllele
+	      exec NOM_updateReserved
+
+	3) for non-mouse species ....
+           for mouse we have to be careful because of nomenclature events...
+	      exec MRK_reloadLabel
+
+	4) If updating chromosome and changing from unknown to known, update offset to -1
 
 NOM_Marker_create.object
+	1) if updating symbol:
+             NOM_Marker_Update:  Duplicate. Symbol Already Exists in Nomen.
+	     NOM_Marker_Update:  Duplicate. Symbol Already Exists in MGD.
 
-PRB_Marker_create.object		auot-e/null/'H'/'P'
+	2) permissions
+
+	3) If the modification date is the ONLY field being updated, then let anyone update it
+	   else, permissions
+
+PRB_Marker_create.object
+	1) Cannot annotate using the Auto-E reference
+
+	2) Relationship cannot be changed from non-null to null
+
+	3) Relationship must be 'H' for Probes of non-mouse source
+
+	4) Allow update of 'P' to other relationship 
+	   Disallow update of other relationship to 'P' 
+	   Only check on individual inserts 
+
+	5) If updating to an non-encoding Marker for a Molecular Segment and 
+	   Molecular Segment contains a Seq ID and 
+	   the Marker is associated with the Seq ID 
+
+	6) Propagate changes to _Marker_key to RFLV tables
 
 PRB_Probe_create.object
+	1) if updating source:
+		Delete orphan Anonymous _Source_keys
+		Update _Source_key for all children of Parent
 
 PRB_Reference_create.object
+	1) update the accession reference that is attached to this J: 
 
 PRB_Source_create.object
+	1) Restrict edits to Sequence Source Organism
+
+	2) Separate agePrefix from ageSuffix (numerics)
+
+	3) If age is one of the following prefixes, then there can be no numeric values
+
+	4) If age is one of the following prefixes, then there must be numeric values
 
 PRB_Strain_create.object
 
-SEQ_Sequence_create.object
+	1) Potential Duplicate Strain Found
 
-VOC_Annot_create.object			update modification date
+	2) if changing Strain from public to private, 
+	   then the Strain cannot be cross-referenced to any other data set
+
+	3) if changing Strain from "nonstandard" to "standard" and no MGI Acc ID exists
+	   for the Strain, then create it
+
+VOC_Annot_create.object
+	1) propagate modification date and modified by to all evidence records */
+	   when the annotation term is modified. (TR 5721) */
+
+VOC_AnnotType_create.object
+	1) Vocab Annotation Type is referenced in Vocab Annotation Record(s)
+
+VOC_Evidence_create.object
+	1) /* TR 7865: Disallow Annotation if adding an Annotation to an "unknown" term (120, 1098, 6113) */
+	   /* and an Annotation to a known Term in the same DAG already exists */
+	   /* If the Annotation to a known Term is to */
+	   /* J:72247 (InterPro) */
+	   /* J:60000 (Swiss-Prot) */
+	   /* J:72245 (Swiss-Prot) */
+	   /* J:80000 (RIKEN) */
+	   /* J:56000 */
+	   /* then it's okay */
+
+	      This Object has already been annotated to this DAG.
+	      Therefore, you cannot annotate it to an unknown term
+
+	2) If the new Object is already annotated to an unknown term in the same DAG
+	   then delete the Annotation to the unknown term.
+             determine if the same Object contains an Annotation to an unknown Term 
+             within the same DAG */
+
+	3) if this is a GO annotation, then remove the NOGO designation for the reference
+
+
+	4) if this an MP annotation                       
+	   and the evidence code = CUR                    
+	   and the Reference is associated with an Allele 
+	   then change the Allele Reference to "Used-CUR"  
+
+	5) if this an MP annotation                       
+	   and the evidence code != CUR                    
+	   and the Reference is associated with an Allele 
+	   then change the Allele Reference to "Used-FC"  
 

@@ -46,6 +46,12 @@ go
 drop trigger BIB_Refs_Update
 go
 
+drop trigger GXD_GelRow_Insert
+go
+
+drop trigger GXD_GelRow_Update
+go
+
 drop trigger GXD_Genotype_Update
 go
 
@@ -80,6 +86,18 @@ drop trigger MLD_InSitu_Insert
 go
 
 drop trigger MLD_InSitu_Update
+go
+
+drop trigger MRK_Alias_Insert
+go
+
+drop trigger PRB_Reference_Insert
+go
+
+drop trigger PRB_Source_Insert
+go
+
+drop trigger PRB_Source_Update
 go
 
 drop trigger SEQ_Sequence_Insert

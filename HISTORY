@@ -1,3 +1,10 @@
+TAG: mgidbmigration-4-4-2-15
+DATE: 10/20/2011
+STAFF: lec
+CHANGES: postgres cleanup:views/views-10172011.csh
+	mgddbschema-4-4-2-15
+	ei-4-4-2-2
+
 TAG: mgidbmigration-4-4-2-14
 TAG: mgidbmigration-4-4-2-13
 TAG: mgidbmigration-4-4-2-12

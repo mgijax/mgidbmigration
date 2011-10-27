@@ -113,7 +113,9 @@ fi
 #
 
 echo "calling postgres copy..." | tee -a ${LOG}
-psql -d ${MGD_DBNAME} <<END 
+echo ${MGD_DBUSER}
+echo ${MGD_DBNAME}
+psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} <<END 
 \copy mgd.$i from '$i.bcp' with null as ''
 \g
 vacuum analyze mgd.$i;

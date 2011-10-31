@@ -38,7 +38,8 @@ then
 echo 'run drop/truncate for all tables...' | tee -a ${LOG}
 ${POSTGRESDIR}/index/index_drop.sh
 ${POSTGRESDIR}/key/key_drop.sh
-${POSTGRESDIR}/table/table_truncate.sh
+${POSTGRESDIR}/table/table_drop.sh
+${POSTGRESDIR}/table/table_create.sh
 fi
 
 #

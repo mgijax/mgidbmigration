@@ -10,11 +10,12 @@ cd `dirname $0` && . ../Configuration
 # read thru triggers_deletion.txt
 #
 
-while IFS=: read object mgikey mgitype
+while IFS=: read object mgikey mgitype text
 do
 echo $object
 echo $mgikey
 echo $mgitype
+echo $text
 
 cp ${MGD_DBSCHEMADIR}/trigger/${object}_create.object ${POSTGRESTRIGGER}
 cp ${POSTGRESTRIGGER}/template_delete_create.object.new ${POSTGRESTRIGGER}/${object}_delete_create.object

@@ -22,7 +22,7 @@ t=`basename $i _create.object`
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/& source/s//./g
+g/source/s//./g
 g/ on /s// on radar./g
 g/nonclustered /s///g
 g/clustered /s///g

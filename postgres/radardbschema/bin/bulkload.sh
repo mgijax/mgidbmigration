@@ -35,10 +35,11 @@ cd ${POSTGRESDIR}/table
 #
 if [ $runAll -eq '1' ]
 then
-echo 'run drop/truncate for all tables...' | tee -a ${LOG}
+echo 'run drop for all tables...' | tee -a ${LOG}
 ${POSTGRESDIR}/index/index_drop.sh
 ${POSTGRESDIR}/key/key_drop.sh
-${POSTGRESDIR}/table/table_truncate.sh
+${POSTGRESDIR}/table/table_drop.sh
+${POSTGRESDIR}/table/table_create.sh
 fi
 
 #
@@ -112,9 +113,8 @@ fi
 # end: convert sybase data to postgres
 #
 
-
 echo "calling postgres copy..." | tee -a ${LOG}
-psql -d ${RADAR_DBNAME} <<END 
+psql -U ${MGD_DBUSER} -d ${RADAR_DBNAME} <<END 
 \copy radar.$i from '$i.bcp' with null as ''
 \g
 vacuum analyze radar.$i;

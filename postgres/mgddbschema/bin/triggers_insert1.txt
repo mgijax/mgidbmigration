@@ -1,0 +1,10 @@
+ALL_Allele:_Allele_key:Allele
+BIB_Refs:_Refs_key:Reference
+GXD_Antibody:_Antibody_key:Antibody
+GXD_Antigen:_Antigene_key:Antigen
+GXD_Assay:_Assay_key:Assay
+GXD_Structure:_Structure_key:GXD Structures
+IMG_Image:_Image_key:Image
+MGI_Organism:_Organism_key:Organism
+MLD_Expts:_Expt_key:Experiment
+PRB_Probe:_Probe_key:Segment

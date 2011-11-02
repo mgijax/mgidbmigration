@@ -157,5 +157,13 @@ ${POSTGRESDIR}/trigger/trigger_create.sh
 ${POSTGRESDIR}/view/view_create.sh
 fi
 
+#
+# comments
+#
+echo "updating comments..." | tee -a ${LOG}
+./comments.py
+psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} < comments.txt
+
+
 date | tee -a ${LOG}
 

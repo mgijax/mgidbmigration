@@ -49,7 +49,6 @@ g/isNeverUsed = 1/s//isNeverUsed = true/g
 g/isNeverUsed = 0/s//isNeverUsed = false/g
 g/isReviewArticle = 1/s//isReviewArticle = true/g
 g/isReviewArticle = 0/s//isReviewArticle = false/g
-g/\"03\/13\/2002\"/s//03\/13\/2002/g
 g/offset/s//cmOffset/g
 g/convert(varchar(5), t.stage)/s//cast(t.stage as varchar(5))/g
 g/convert(varchar(30), a.accID)/s//cast(a.accID as varchar(30))/g
@@ -62,6 +61,7 @@ g/ltrim(str(l.size,10,2))/s//to_char(l.size, '9999.99')/g
 g/'Allele'/s//character varying(10) 'Allele'/g
 g/'Marker'/s//character varying(10) 'Marker'/g
 g/'Probe'/s//character varying(10) 'Probe'/g
+g/"/s//'/g
 /cat
 d
 a

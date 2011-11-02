@@ -35,7 +35,7 @@ cd ${POSTGRESDIR}/table
 #
 if [ $runAll -eq '1' ]
 then
-echo 'run drop/truncate for all tables...' | tee -a ${LOG}
+echo 'run drop for all tables...' | tee -a ${LOG}
 ${POSTGRESDIR}/index/index_drop.sh
 ${POSTGRESDIR}/key/key_drop.sh
 ${POSTGRESDIR}/table/table_drop.sh
@@ -145,6 +145,8 @@ ${POSTGRESDIR}/index/index_create.sh
 ${POSTGRESDIR}/key/key_create.sh
 ${POSTGRESDIR}/trigger/trigger_create.sh
 fi
+
+${POSTGRESDIR}/view/view_create.sh
 
 date | tee -a ${LOG}
 

@@ -28,7 +28,7 @@ do
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/source/s//./g
+g/ source/s// ./g
 g/drop view /s//drop view mgd./g
 /cat
 d

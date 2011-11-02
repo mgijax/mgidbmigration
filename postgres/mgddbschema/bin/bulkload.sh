@@ -38,6 +38,8 @@ then
 echo 'run drop for all tables...' | tee -a ${LOG}
 ${POSTGRESDIR}/index/index_drop.sh
 ${POSTGRESDIR}/key/key_drop.sh
+${POSTGRESDIR}/trigger/trigger_drop.sh
+${POSTGRESDIR}/view/view.sh
 ${POSTGRESDIR}/table/table_drop.sh
 ${POSTGRESDIR}/table/table_create.sh
 fi
@@ -82,6 +84,10 @@ ${POSTGRESDIR}/index/${i}_drop.object
 echo "dropping key..." | tee -a ${LOG}
 ${POSTGRESDIR}/key/${i}_drop.object
 
+#echo "dropping trigger..." | tee -a ${LOG}
+#${POSTGRESDIR}/trigger/${i}_drop.object
+
+echo "truncating table..." | tee -a ${LOG}
 echo "truncating table..." | tee -a ${LOG}
 ${POSTGRESDIR}/table/${i}_truncate.object
 fi
@@ -130,6 +136,10 @@ ${POSTGRESDIR}/index/${i}_create.object
 
 echo "adding keys..." | tee -a ${LOG}
 ${POSTGRESDIR}/key/${i}_create.object
+
+#echo "adding trigger..." | tee -a ${LOG}
+#${POSTGRESDIR}/trigger/${i}_create.object
+
 fi
 
 echo "#########" | tee -a ${LOG}
@@ -140,13 +150,12 @@ done
 #
 if [ $runAll -eq '1' ]
 then
-echo 'run create key/index for all tables...' | tee -a ${LOG}
+echo 'run create key/index/trigger/view for all tables...' | tee -a ${LOG}
 ${POSTGRESDIR}/index/index_create.sh
 ${POSTGRESDIR}/key/key_create.sh
 ${POSTGRESDIR}/trigger/trigger_create.sh
-fi
-
 ${POSTGRESDIR}/view/view_create.sh
+fi
 
 date | tee -a ${LOG}
 

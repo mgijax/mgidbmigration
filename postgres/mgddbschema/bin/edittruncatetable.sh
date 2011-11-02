@@ -21,7 +21,7 @@ do
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/source/s//./g
+g/ source/s// ./g
 g/truncate table /s//truncate table mgd./g
 g/partition/d
 /cat

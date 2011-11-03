@@ -62,3 +62,11 @@ currently NOT installed as 64 bit
 
    ) copy: invokes triggers and contraints
 
+.  set maintenance_work_mem="256MB";
+   show maintenance_work_mem;
+
+   specifies the maximum amount of memory to be used in maintenance operations, such as
+   VACUUM, CREATE INDEX and ALTER TABLE ADD FOREIGN KEY.
+   It defaults to 16MB.  Large settings might improve performance for vaccuming and for restoring
+   database dumps.
+

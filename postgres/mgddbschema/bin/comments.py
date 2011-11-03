@@ -42,6 +42,25 @@ for r in results:
 	mgi_utils.prvalue(description) + \
 	"';\n")
 
+results = db.sql('select table_name, column_name, description from MGI_Columns', 'auto')
+
+for r in results:
+
+    tableName = r['table_name']
+    columnName = r['column_name']
+    description = r['description']
+
+    if description != None:
+    	description = string.replace(description, "'", "''")
+    	description = string.replace(description, "offset", "cmOffset")
+
+    fp.write("COMMENT ON COLUMN "+
+	tableName + "." + \
+	columnName + \
+	" IS '" + \
+	mgi_utils.prvalue(description) + \
+	"';\n")
+
 fp.close()
 db.useOneConnection(0)
 

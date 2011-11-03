@@ -15,17 +15,21 @@ Triggers that need to be migrated to Postgres
 
 a) add 'delete cascade' for children that need to be deleted when their parent is deleted
    drop keys; create keys; verify 
+
 b) retain for postgres version; multi-field referential integrity
+
 c) do nothing; allow referential integrity (foreign key restraints) protect deletions
    do not migrated trigger to postgres (obsolete)
+
 d) PostgreSQL/p. 354
 	AFTER: will show referential integrity error *first*
 	BEFORE: will show return from trigger *first*
+
 e) use 'template_create.object.new'
    use 'template_drop.object.new'
    create deletion triggers for all _Object_key/_MGIType_key tables
 
-a) those that will allow 'delete cascade' on 'create table'
+f) those that will allow 'delete cascade' on 'create table'
    that is, deleting the parent will delete the children
    ========================================================
 
@@ -292,21 +296,19 @@ GXD_StructureClosure
 GXD_StructureName
 VOC_AnnotType
 
-b) retain for postgres version
+g) retain for postgres version
    ===================================================
+see:
+	mgddbschema-pg/trigger/template_delete_create.object.new
+	mgidbmigration/postgres/mgddbschema/bin/triggers_delete.txt
 
 _MGIType_key + _Object_key
-   MGI_Note
-   MGI_Reference_Assoc
-   MGI_Synonym
-   IMG_ImagePane_Assoc
-   ACC_Accession
 
-c) if parent is deleted, referential integrity will prevent child from being deleted
+h) if parent is deleted, referential integrity will prevent child from being deleted
    do *not* add 'ON DELETE CASCADE"
    ================================
 
-d) delete trigges removed entirely:
+i) delete trigges removed entirely:
    ================================
 ACC_MGIType._MGIType_key
 BIB_DataSet
@@ -362,6 +364,15 @@ VOC_Vocab
 
 insert trigges:
 ===============
+see:
+	mgddbschema-pg/trigger/template_insert1_create.object.new
+	mgidbmigration/postgres/mgddbschema/bin/triggers_insert1.txt
+see:
+	mgddbschema-pg/trigger/template_insert2_create.object.new
+	mgidbmigration/postgres/mgddbschema/bin/triggers_insert2.txt
+
+cannot use templates:
+VOC_Term
 
 update trigges:
 ===============
@@ -504,9 +515,10 @@ ACC_Accession_create.object
            and the same ID exists for another Marker:
 	     The Accession ID 'xxx' is associated with another Marker.
 
-	4) If inserting a Jax Registry ID for a Strain 
+	4) If inserting a Resource ID (accession ID) for a Strain 
            and the same ID exists for another Strain:
 	     The Accession ID 'xxx' is associated with another Strain.
+	     (see list of Resource ids (ldb) in trigger)
 
 	5) For Marker/Probe/Nomen where 
              ldb in (GenBank, SWISSProt, RefSeq, DFCI, DoTS, TrEMBL, NIA Mouse Gene Index),
@@ -552,7 +564,6 @@ GXD_Structure_create.object
 	3) if the assumption doesn't hold, then the following query will set the
            current child's treeDepth
 
-
 	4) /* find out the depth of the parent structure */
 
 	5) /* update the inserted node */
@@ -588,7 +599,7 @@ NOM_Marker_create.object
 
 	3) For Nucleotide Sequences, check that it is valid...
 
-PRB_Marker_create.object		auot-e/null/'H'/'P'
+PRB_Marker_create.object
 	1) accession ids
 
 	2) Cannot annotate using the Auto-E reference
@@ -604,7 +615,7 @@ PRB_Strain_create.object
 
 	2) Potential Duplicate Strain Found
 
-VOC_Annot_create.object			check isObsolete
+VOC_Annot_create.object
 	1) Cannot Annotate to an Obsolete Term.
 
 VOC_Term_create.object
@@ -646,13 +657,15 @@ ACC_Accession_create.object
 
 	7) nomenclature permissions
 
-	8) If max J: in Acc table does not equal max J: in max table, then re-set max J: in max table
+	8) If max J: in Acc table does not equal max J: in max table, 
+	   then re-set max J: in max table
 
 ALL_Allele_create.object
 	1) allele permissions
 
 	2) GO check: approved/autoload
-	     You cannot change the Allele status from Approved/Autoload to Deleted, Reserved or Pending.
+	     You cannot change the Allele status from 
+		Approved/Autoload to Deleted, Reserved or Pending.
 	     This Allele is cross-referenced to a GO annotation.
 
 	3) Non-Approved Alleles cannot have Genotypes or Strain associations
@@ -700,12 +713,15 @@ GXD_AllelePair_create.object
 	     g) State Attribute Error:  Indeterminate state is not valid.
 
 	2)  Compound error checks
-	     a) Compound Attribute Error:  Allele 2 for all Compound Allele Pairs must be null or wild type.
-	     b) Allele Compound Error:  Top/Bottom compound is not valid for Hemi-X, Hemi-Y or Indeterminate states.
+	     a) Compound Attribute Error:  
+		     Allele 2 for all Compound Allele Pairs must be null or wild type.
+	     b) Allele Compound Error:  
+		     Top/Bottom compound is not valid for Hemi-X, Hemi-Y or Indeterminate states.
 
 GXD_Assay_create.object
 	1) Update Expression Cache for Assay
-	   The update of a GXD_Assay record should be called AFTER any updates to GXD detail records
+	   The update of a GXD_Assay record should be called 
+	   AFTER any updates to GXD detail records
 
 GXD_GelRow_create.object
 	1) If Gel Row Size is entered, Gel Row Units must be specified.
@@ -861,7 +877,6 @@ VOC_Evidence_create.object
              within the same DAG */
 
 	3) if this is a GO annotation, then remove the NOGO designation for the reference
-
 
 	4) if this an MP annotation                       
 	   and the evidence code = CUR                    

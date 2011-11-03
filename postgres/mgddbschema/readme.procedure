@@ -1,0 +1,65 @@
+
+. Chapter 7
+
+. DEFAULT: defaults must be placed last in the variable list
+
+.%TYPE creates the variable using whatever type table.field is defined to be
+ function becomes self-maintaining (p318)
+
+. Every PL/pgSQL funcation must termine with a RETURN statement (p333)
+
+. Use RAISE (DEBUG or NOTICE or EXCEPTION) to explicitly raise an error (p341)
+
+EI only
+=======
+ACC_assignJ_create.object                   
+ACC_assignMGI_create.object                 
+ACC_delete_byAccKey_create.object           
+ACC_findMax_create.object                   
+
+Other products
+==============
+ACC_insert_create.object                    
+	ei
+	libraryload
+
+ACC_insertNoChecks_create.object            
+	mgicacheload
+
+ACC_setMax_create.object                    
+	assayload
+	gxdimageload
+	mappingload
+	nomenload
+	probeload
+	strainload
+	genotypeannotload
+
+ACC_update_create.object                    
+	ei
+	libraryload
+
+Called by another SP
+====================
+ACC_split_create.object
+	ACC_update_create.object
+
+Not Used/Obsolete?
+==================
+ACC_reserveMGIBlock_create.object           
+
+ACC_verifySequenceAnnotation_create.object  
+ACCRef_insert_create.object
+ACCRef_process_create.object
+ALL_associateCellLine_create.object
+ALL_cacheMarker_create.object
+ALL_convertAllele_create.object
+ALL_create.logical
+ALL_createWildType_create.object
+ALL_createWildType_drop.object
+ALL_insertAllele_create.object
+ALL_insertAllele_create.object.tr10317
+ALL_mergeAllele_create.object
+ALL_mergeWildTypes_create.object
+ALL_reloadLabel_create.object
+

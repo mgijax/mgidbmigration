@@ -87,9 +87,10 @@ ${POSTGRESDIR}/key/${i}_drop.object
 #echo "dropping trigger..." | tee -a ${LOG}
 #${POSTGRESDIR}/trigger/${i}_drop.object
 
-echo "truncating table..." | tee -a ${LOG}
-echo "truncating table..." | tee -a ${LOG}
-${POSTGRESDIR}/table/${i}_truncate.object
+echo "dropping/creating table..." | tee -a ${LOG}
+${POSTGRESDIR}/table/${i}_drop.object
+${POSTGRESDIR}/table/${i}_create.object
+
 fi
 
 cd ${MGDDATA}

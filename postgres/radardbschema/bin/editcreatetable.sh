@@ -32,7 +32,7 @@ do
 
 ed $i <<END
 g/csh -f -x/s//sh/g
-g/source/s//./g
+g/\&\& source/s//\&\& ./g
 g/create table /s//create table radar./g
 g/datetime/s//timestamp without time zone/g
 g/bit/s//boolean/g

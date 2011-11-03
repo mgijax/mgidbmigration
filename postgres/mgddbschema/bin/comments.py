@@ -17,13 +17,6 @@ import mgi_utils
 # Main
 #
 
-user = os.environ['MGD_DBUSER']
-passwordFileName = os.environ['MGD_DBPASSWORDFILE']
-db.set_sqlUser(user)
-db.set_sqlPasswordFromFile(passwordFileName)
-
-db.useOneConnection(1)
-
 fp = open('comments.txt', 'w')
 
 results = db.sql('select table_name, description from MGI_Tables', 'auto')
@@ -62,5 +55,4 @@ for r in results:
 	"';\n")
 
 fp.close()
-db.useOneConnection(0)
 

@@ -1,0 +1,29 @@
+
+subject:
+funcation within a function/rollbacks/exception handling
+
+I have a function, call it 'functionMain'.  And I have several tables that each have trigger functions:
+
+table A => trigger function A ==> functionMain
+table B => trigger function B ==> functionMain
+table C => trigger function C ==> functionMain
+
+Each trigger function needs to call 'functionMain' (with different parameters).
+'functionMain' returns VOID (runs an insert statement).
+There is an exception/raise exception block in 'functionMain'.
+
+An insert transaction for table A is launched (insertA), trigger function A is called,
+'functionMain' is called and 'functionMain' fails.  Hence, trigger function A needs to rollback.
+
+Questions:
+
+a) I am assuming that the trigger functions should use 'PERFORM functionMain(....)'?
+
+b) if 'functionMain' fails, then 'funtionMain' automatically performs an implicit rollback, correct?
+
+c) if 'functionMain' fails, should the trigger function also contain an exception handler
+   or will the rollback from 'functionMain' cascade up to the original transaction (insertA)?
+
+Thanks.
+Lori
+

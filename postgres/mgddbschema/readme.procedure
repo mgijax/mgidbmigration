@@ -10,6 +10,20 @@
 
 . Use RAISE (DEBUG or NOTICE or EXCEPTION) to explicitly raise an error (p341)
 
+. END commits the transaction.  If the transaction fails due to exception, then
+  the transaction is automatically rolled back (ROLLBACK).  But, I cannot find
+  this in the documentation...only in the archived user-group documentation.
+  What I have decided to do is:
+
+  EXCEPTION
+      WHEN OTHERS THEN
+	  RAISE NOTICE 'an EXCEPTION is about to be raised';
+	  RAISE EXCEPTION 'ACC_assignMGI: error';
+
+. http://www.postgresql.org/docs/9.0/interactive/plpgsql-control-structures.html#PLPGSQL-ERROR-TRAPPING
+
+. PERFORM:  performs the command but discards the result
+
 EI only
 =======
 ACC_assignJ_create.object                   

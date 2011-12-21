@@ -119,6 +119,8 @@ fi
 #
 # end: convert sybase data to postgres
 #
+# not necessary...this is done as part of the call to the create index 
+#vacuum analyze mgd.$i;
 
 echo "calling postgres copy..." | tee -a ${LOG}
 echo ${MGD_DBUSER}
@@ -126,7 +128,6 @@ echo ${MGD_DBNAME}
 psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} <<END 
 \copy mgd.$i from '$i.bcp' with null as ''
 \g
-vacuum analyze mgd.$i;
 END
 
 if [ $runAll -eq '0' ]

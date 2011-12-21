@@ -33,5 +33,9 @@ quit
 
 EOSQL
 
+${MGD_DBSCHEMADIR}/procedure/MGI_updateReferenceAssoc_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MGI_updateReferenceAssoc_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
 date | tee -a  ${LOG}
 

@@ -3,8 +3,7 @@ Triggers that need to be migrated to Postgres
 =============================================
 
 . 'delete' needs to include 'CASCADE' for master/detail relationships
-  in the 'create table':add 'ON DELETE CASCADE'
-  to the primary key which represents the
+  in the foreign key scripts (key)
 
 . cannot set 'ON DELETE CASCADE' in all cases; that is, for multi-field values
       ACC_Accession._Object_key + _MGIType_key
@@ -306,6 +305,7 @@ _MGIType_key + _Object_key
 
 h) if parent is deleted, referential integrity will prevent child from being deleted
    do *not* add 'ON DELETE CASCADE"
+   we *want* the exception
    ================================
 
 i) delete trigges removed entirely:

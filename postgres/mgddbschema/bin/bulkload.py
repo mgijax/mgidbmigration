@@ -2,6 +2,21 @@
 
 '''
 #
+# table    can be run thru automatic conversion
+# 
+# key       
+#     needs manual add ON DELETE CASCADE
+#
+# index
+#     needs manual removal of CREATE UNIQUE
+# 
+# trigger
+#     all need manual conversion
+#     except for those used in _Object_key/_MGIType_key list
+# 
+# procedure
+#     all need manualy conversion
+#
 #
 '''
  

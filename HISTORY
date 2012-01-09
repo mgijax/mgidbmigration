@@ -1,7 +1,13 @@
+TAG: mgidbmigration-4-4-2-25
 TAG: mgidbmigration-4-4-2-24
+DATE: 01/09/2012
+STAFF: lec
+CHANGES:
+1) TR10788/mgddbschema/index/ACC_Accession
+
 TAG: mgidbmigration-4-4-2-23
 TAG: mgidbmigration-4-4-2-22
-DATE: 02/04/2012
+DATE: 01/04/2012
 STAFF: lec
 CHANGES:
 1) TR10788/mgddbschema/index/ACC_Accession

@@ -4,9 +4,9 @@
 # Template
 #
 
-#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 #setenv MGICONFIG /usr/local/mgi/test/mgiconfig
-#source ${MGICONFIG}/master.config.csh
+source ${MGICONFIG}/master.config.csh
 
 cd `dirname $0`
 

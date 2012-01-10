@@ -4,7 +4,7 @@
 # call pg_dump to dump this schema
 #
 
-cd `dirname $0` &. ./Configuration
+cd `dirname $0` . ../Configuration
 
 cd ${RADARDATA}
 

@@ -51,6 +51,8 @@ fi
 #
 if [ ${runBCP} -eq '1' ]
 then
+echo 'run cleanup..' | tee -a ${LOG}
+`dirname $0`/cleanup.sh | tee -a ${LOG}
 echo 'bcp out the files from sybase...' | tee -a ${LOG}
 for i in ${findObject}
 do

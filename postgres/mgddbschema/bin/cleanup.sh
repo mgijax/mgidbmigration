@@ -4,7 +4,7 @@
 # cleanup for postgres migration
 #
 
-cd `dirname $0` && ../Configuration
+cd `dirname $0` && . ../Configuration
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0
 
@@ -27,6 +27,8 @@ delete from CRS_Cross a where not exists (select 1 from PRB_Strain b where a._ma
 delete from PRB_Strain_Genotype a where not exists (select 1 from PRB_Strain b where a._strain_key = b._strain_key);
 
 delete from PRB_Source a where not exists (select 1 from PRB_Tissue b where a._Tissue_key = b._Tissue_key);
+
+delete from VOC_Evidence a where not exists (select 1 from VOC_Annot b where a._Annot_key = b._Annot_key);
 
 update ACC_LogicalDB set _Organism_key = null where _LogicalDB_key in (142,143);
 

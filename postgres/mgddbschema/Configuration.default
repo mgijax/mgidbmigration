@@ -18,7 +18,7 @@ fi
 # MGD
 #
 
-runBCP=0
+runBCP=1
 export runBCP
 
 OLDMGD_DBNAME="mgd_lec1"

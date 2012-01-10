@@ -163,6 +163,7 @@ fi
 # comments
 #
 echo "updating comments..." | tee -a ${LOG}
+cd `dirname $0`
 ./comments.py
 psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} < comments.txt
 

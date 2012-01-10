@@ -4,7 +4,7 @@
 # cleanup for postgres migration
 #
 
-cd `dirname $0` &. ./Configuration
+cd `dirname $0` && ../Configuration
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0
 

@@ -130,6 +130,11 @@ psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} <<END
 \g
 END
 
+#
+# cleanup obsolete children
+#
+`dirname $0`/cleanup.sh | tee -a ${LOG}
+
 if [ $runAll -eq '0' ]
 then
 

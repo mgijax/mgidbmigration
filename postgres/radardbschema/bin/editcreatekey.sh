@@ -61,8 +61,9 @@ g/csh -f -x/s//sh/g
 g/source/s//./g
 g/sp_primarykey ${t}, /s//ALTER TABLE radar.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
-g/sp_foreignkey/s//ALTER TABLE/
+g/sp_foreignkey/s//ALTER TABLE radar./
 g/, ${t}, /s// ADD FOREIGN KEY (/
+g/ALTER TABLE radar. /s//ALTER TABLE radar./
 g/FOREIGN KEY/s/$/) REFERENCES radar.${t};/
 /cat
 d

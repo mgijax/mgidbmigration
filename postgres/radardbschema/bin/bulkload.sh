@@ -51,8 +51,6 @@ fi
 #
 if [ ${runBCP} -eq '1' ]
 then
-echo 'run cleanup..' | tee -a ${LOG}
-`dirname $0`/cleanup.sh | tee -a ${LOG}
 echo 'bcp out the files from sybase...' | tee -a ${LOG}
 for i in ${findObject}
 do
@@ -124,6 +122,9 @@ psql -U ${MGD_DBUSER} -d ${RADAR_DBNAME} <<END
 \g
 vacuum analyze radar.$i;
 END
+
+echo 'run cleanup..' | tee -a ${LOG}
+`dirname $0`/cleanup.sh | tee -a ${LOG}
 
 if [ $runAll -eq '0' ]
 then

@@ -34,10 +34,10 @@ cp ${RADAR_DBSCHEMADIR}/key/${findObject2} .
 # to
 # ALTER TABLE ALL_Allele 
 #	ADD CONSTRAINT ALL_Allele_Marker_key_fkey 
-#	FOREIGN KEY (_Marker_key) REFERENCES MRK_Marker;
+#	FOREIGN KEY (_Marker_key) REFERENCES MRK_Marker ON DELETE CASCADE;
 #
 # add: );
-# add: ) REFERENCE ${t};
+# add: ) REFERENCE ${t} ON DELETE CASCADE;
 #
 # sp_dropkey foreign, ALL_Allele, MRK_Marker
 # to
@@ -64,7 +64,7 @@ g/PRIMARY KEY/s/$/);/
 g/sp_foreignkey/s//ALTER TABLE radar./
 g/, ${t}, /s// ADD FOREIGN KEY (/
 g/ALTER TABLE radar. /s//ALTER TABLE radar./
-g/FOREIGN KEY/s/$/) REFERENCES radar.${t};/
+g/FOREIGN KEY/s/$/) REFERENCES radar.${t} ON DELETE CASCADE;/
 /cat
 d
 a

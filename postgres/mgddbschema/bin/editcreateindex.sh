@@ -57,7 +57,6 @@ d
 ;d
 .
 a
-VACUUM ANALYZE mgd.$i;
 
 EOSQL
 .

@@ -18,38 +18,61 @@ fi
 # MGD
 #
 
+#
+# 1 = generate BCP files from Sybase database; see $POSTGRESDATA
+# 0 = do not generate BCP files from Sybase database
+#
 runBCP=0
 export runBCP
 
+#
+# Sybase database names
+#
 OLDMGD_DBNAME="mgd_lec1"
 export OLDMGD_DBNAME
 
 OLDRADAR_DBNAME="radar_1"
 export OLDRADAR_DBNAME
 
+#
+# Postgres database name
+#
 MGD_DBNAME="lec"
-#MGD_DBNAME="mgd_lec"
 export MGD_DBNAME
 
 RADAR_DBNAME="lec"
-#RADAR_DBNAME="mgd_lec"
 export RADAR_DBNAME
 
+#
+# Postgres database schemas
+#
 MGD_SCHEMA="mgd"
 export MGD_SCHEMA
 
 RADAR_SCHEMA="radar"
 export RADAR_SCHEMA
 
-POSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres"
-export POSTGRES
+#
+# not used
+#
+#POSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres"
+#export POSTGRES
 
+#
+# migdbmigration/postgres/mgddbschema directory
+#
 MGDPOSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres/mgddbschema"
 export MGDPOSTGRES
 
+#
+# migdbmigration/postgres/radardbschema directory
+#
 RADARPOSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres/radardbschema"
 export RADARPOSTGRES
 
+#
+# where the Sybase/Postgres BCP files are stored
+#
 POSTGRESDATA="/data/loads/postgres"
 export POSTGRESDATA
 
@@ -59,12 +82,22 @@ export MGDDATA
 RADARDATA=${POSTGRESDATA}/radar
 export RADARDATA
 
+#
+# the mgddbschema postgres branch
+#
 MGDPOSTGRESDIR="/home/lec/mgi4.0/dbutils/mgd/mgddbschema-pg"
 export MGDPOSTGRESDIR
 
+#
+# the radardbschema postgres branch
+#
 RADARPOSTGRESDIR="/home/lec/mgi4.0/dbutils/radar/radardbschema-pg"
 export RADARPOSTGRESDIR
 
+#
+# if set to $MGDPOSTGRESDIR: then we're running a mgd migration
+# if set to $RADARPOSTGRESDIR: then we're running a radar migration
+#
 POSTGRESDIR=${MGDPOSTGRESDIR}
 export POSTGRESDIR
 

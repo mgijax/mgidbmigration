@@ -107,14 +107,15 @@ cat $i.bcp | ${POSTGRES}/bin/postgresTextCleaner.py > $i.new
 rm $i.bcp
 mv $i.new $i.bcp
 
-#echo "converting bcp using perl #1..." | tee -a ${LOG}
-#/usr/local/bin/perl -p -i -e 's/&=&/\t/g' $i.bcp
+echo "converting bcp using perl #1..." | tee -a ${LOG}
+/usr/local/bin/perl -p -i -e 's/&=&/\t/g' $i.bcp
 
-#echo "converting bcp using perl #2..." | tee -a ${LOG}
-#/usr/local/bin/perl -p -i -e 's/\t(... {1,2}\d{1,2} \d{4} {1,2}\d{1,2}:\d\d:\d\d):(.{5})/\t\1.\2/g' $i.bcp
+echo "converting bcp using perl #2..." | tee -a ${LOG}
+/usr/local/bin/perl -p -i -e 's/\t(... {1,2}\d{1,2} \d{4} {1,2}\d{1,2}:\d\d:\d\d):(.{5})/\t\1.\2/g' $i.bcp
 
-#echo "converting bcp using perl #3..." | tee -a ${LOG}
-#/usr/local/bin/perl -p -i -e 's/#=#//g' $i.bcp
+echo "converting bcp using perl #3..." | tee -a ${LOG}
+/usr/local/bin/perl -p -i -e 's/#=#//g' $i.bcp
+
 fi
 #
 # end: convert sybase data to postgres

@@ -22,13 +22,14 @@ fi
 # 1 = generate BCP files from Sybase database; see $POSTGRESDATA
 # 0 = do not generate BCP files from Sybase database
 #
-runBCP=0
+runBCP=1
 export runBCP
 
 #
 # Sybase database names
 #
-OLDMGD_DBNAME="mgd_lec1"
+#OLDMGD_DBNAME="mgd_lec1"
+OLDMGD_DBNAME="mgd_sc1"
 export OLDMGD_DBNAME
 
 OLDRADAR_DBNAME="radar_1"
@@ -53,10 +54,10 @@ RADAR_SCHEMA="radar"
 export RADAR_SCHEMA
 
 #
-# not used
+# Postgres main directory
 #
-#POSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres"
-#export POSTGRES
+POSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres"
+export POSTGRES
 
 #
 # migdbmigration/postgres/mgddbschema directory

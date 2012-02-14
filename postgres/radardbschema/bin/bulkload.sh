@@ -124,7 +124,7 @@ vacuum analyze radar.$i;
 END
 
 echo 'run cleanup..' | tee -a ${LOG}
-`dirname $0`/cleanup.sh | tee -a ${LOG}
+${RADARPOSTGRES}/bin/cleanup.sh | tee -a ${LOG}
 
 if [ $runAll -eq '0' ]
 then

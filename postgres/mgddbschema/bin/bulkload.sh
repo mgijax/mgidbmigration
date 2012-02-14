@@ -135,7 +135,7 @@ END
 # cleanup obsolete children
 #
 echo "cleaning up obsolete children..." | tee -a ${LOG}
-`dirname $0`/cleanup.sh | tee -a ${LOG}
+${MGDPOSTGRES}/bin/cleanup.sh | tee -a ${LOG}
 
 if [ $runAll -eq '0' ]
 then
@@ -170,7 +170,7 @@ fi
 # comments
 #
 echo "updating comments..." | tee -a ${LOG}
-cd `dirname $0`
+cd ${MGDPOSTGRES}/bin
 ./comments.py
 psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} < comments.txt
 

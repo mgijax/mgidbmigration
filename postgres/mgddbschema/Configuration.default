@@ -28,8 +28,8 @@ export runBCP
 #
 # Sybase database names
 #
-#OLDMGD_DBNAME="mgd_lec1"
-OLDMGD_DBNAME="mgd_sc1"
+OLDMGD_DBNAME="mgd_lec1"
+#OLDMGD_DBNAME="mgd_sc1"
 export OLDMGD_DBNAME
 
 OLDRADAR_DBNAME="radar_1"

@@ -10,11 +10,11 @@ else
 fi
 
 #
-# copy mgddbschema/index/*_drop.object to postgres directory
+# copy snpdbschema/index/*_drop.object to postgres directory
 #
 
 cd ${POSTGRESINDEX}
-cp ${MGD_DBSCHEMADIR}/index/${findObject} .
+cp ${SNPBE_DBSCHEMADIR}/index/${findObject} .
 
 for i in ${findObject}
 do
@@ -24,7 +24,7 @@ t=`basename $i _drop.object`
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/ source/s// ./g
-g/drop index /s//drop index mgd./g
+g/drop index /s//drop index snp./g
 g/${t}.idx/s//$t/g
 g/offset/s//cmOffset/g
 g/^go/s//\\;/g
@@ -32,7 +32,7 @@ g/^go/s//\\;/g
 d
 .
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${SNPBE_DBSERVER} \${SNPBE_DBNAME} \$0
 
 .
 /^use

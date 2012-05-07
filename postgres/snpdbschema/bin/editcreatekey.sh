@@ -29,15 +29,15 @@ fi
 #
 
 #
-# copy mgddbschema/key/*_create.object to postgres directory
-# copy mgddbschema/key/*_drop.object to postgres directory
+# copy snpdbschema/key/*_create.object to postgres directory
+# copy snpdbschema/key/*_drop.object to postgres directory
 #
 cd ${POSTGRESKEY}
-cp ${MGD_DBSCHEMADIR}/key/${findObject1} .
-cp ${MGD_DBSCHEMADIR}/key/${findObject2} .
+cp ${SNPBE_DBSCHEMADIR}/key/${findObject1} .
+cp ${SNPBE_DBSCHEMADIR}/key/${findObject2} .
 
 #
-# convert each mgd-format key script to a postgres script
+# convert each snp-format key script to a postgres script
 #
 # sp_primarykey MRK_Marker, _Marker_key
 # to
@@ -72,17 +72,17 @@ fkey=`grep "sp_foreignkey" ${i} | sed "s/sp_foreignkey //g" | cut -f1,3 -d"," | 
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/ source/s// ./g
-g/sp_primarykey ${t}, /s//ALTER TABLE mgd.${t} ADD PRIMARY KEY (/
+g/sp_primarykey ${t}, /s//ALTER TABLE snp.${t} ADD PRIMARY KEY (/
 g/PRIMARY KEY/s/$/);/
-g/sp_foreignkey/s//ALTER TABLE mgd./
+g/sp_foreignkey/s//ALTER TABLE snp./
 g/, ${t}, /s// ADD FOREIGN KEY (/
-g/FOREIGN KEY/s/$/) REFERENCES mgd.${t};/
-g/ALTER TABLE mgd. /s//ALTER TABLE mgd./
+g/FOREIGN KEY/s/$/) REFERENCES snp.${t};/
+g/ALTER TABLE snp. /s//ALTER TABLE snp./
 g/_Marker_key, ./s//_Marker_key, source/
 /cat
 d
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${SNPBE_DBSERVER} \${SNPBE_DBNAME} \$0
 
 .
 /^use
@@ -110,11 +110,11 @@ g/csh -f -x/s//sh/g
 g/ source/s// ./g
 g/sp_dropkey foreign, /d
 g/sp_dropkey primary, /s//ALTER TABLE /
-g/ALTER TABLE ${t}/s//ALTER TABLE mgd.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
+g/ALTER TABLE ${t}/s//ALTER TABLE snp.${t} DROP CONSTRAINT ${t}_pkey CASCADE;/
 /cat
 d
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${SNPBE_DBSERVER} \${SNPBE_DBNAME} \$0
 
 .
 /^use
@@ -159,7 +159,7 @@ ed ${dropScript} <<END
 /cat
 a
 
-ALTER TABLE mgd.${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
+ALTER TABLE snp.${t2} DROP CONSTRAINT ${f2}_fkey CASCADE;
 .
 w
 q

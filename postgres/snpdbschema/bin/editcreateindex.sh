@@ -10,10 +10,10 @@ else
 fi
 
 #
-# copy mgddbschema/index/*_create.object to postgres directory
+# copy snpdbschema/index/*_create.object to postgres directory
 #
 cd ${POSTGRESINDEX}
-cp ${MGD_DBSCHEMADIR}/index/${findObject} .
+cp ${SNPBE_DBSCHEMADIR}/index/${findObject} .
 
 for i in ${findObject}
 do
@@ -39,13 +39,13 @@ g/ on \$DBCLUSTIDXSEG/s//;/g
 g/ on \${DBNONCLUSTIDXSEG}/s//;/g
 g/ on \$DBNONCLUSTIDXSEG/s//;/g
 g/offset/s//cmOffset/g
-g/ on /s// on mgd./g
+g/ on /s// on snp./g
 g/^go/s///g
 /cat
 d
 .
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${SNPBE_DBSERVER} \${SNPBE_DBNAME} \$0
 
 .
 /^use

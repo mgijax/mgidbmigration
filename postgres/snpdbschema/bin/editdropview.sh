@@ -14,13 +14,13 @@ fi
 #
 
 #
-# copy mgddbschema/view/*_drop.object to postgres directory
+# copy snpdbschema/view/*_drop.object to postgres directory
 #
 cd ${POSTGRESVIEW}
-cp ${MGD_DBSCHEMADIR}/view/${findObject} .
+cp ${SNPBE_DBSCHEMADIR}/view/${findObject} .
 
 #
-# convert each mgd-format view script to a postgres script
+# convert each snp-format view script to a postgres script
 #
 
 for i in ${findObject}
@@ -29,11 +29,11 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/ source/s// ./g
-g/drop view /s//drop view mgd./g
+g/drop view /s//drop view snp./g
 /cat
 d
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${SNPBE_DBSERVER} \${SNPBE_DBNAME} \$0
 
 .
 /^use

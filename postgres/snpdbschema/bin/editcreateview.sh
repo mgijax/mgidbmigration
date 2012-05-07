@@ -18,13 +18,13 @@ fi
 #
 
 #
-# copy mgddbschema/view/*_create.object to postgres directory
+# copy snpdbschema/view/*_create.object to postgres directory
 #
 cd ${POSTGRESVIEW}
-cp ${MGD_DBSCHEMADIR}/view/${findObject} .
+cp ${SNPBE_DBSCHEMADIR}/view/${findObject} .
 
 #
-# convert each mgd-format view script to a postgres script
+# convert each snp-format view script to a postgres script
 #
 
 for i in ${findObject}
@@ -33,39 +33,15 @@ do
 ed $i <<END
 g/csh -f -x/s//sh/g
 g/ source/s// ./g
-g/create view /s//create view mgd./g
+g/create view /s//create view snp./g
 g/^go/s///g
-g/active = 1/s//active = true/g
-g/private = 1/s//private = true/g
 g/private = 0/s//private = false/g
-g/preferred = 1/s//preferred = true/g
-g/preferred = 0/s//preferred = false/g
-g/preferred = 1/s//preferred = true/g
-g/isObsolete = 1/s//isObsolete = true/g
-g/isObsolete = 0/s//isObsolete = false/g
-g/isMutant = 1/s//isMutant = true/g
-g/isMutant = 0/s//isMutant = false/g
-g/isNeverUsed = 1/s//isNeverUsed = true/g
-g/isNeverUsed = 0/s//isNeverUsed = false/g
-g/isReviewArticle = 1/s//isReviewArticle = true/g
-g/isReviewArticle = 0/s//isReviewArticle = false/g
-g/offset/s//cmOffset/g
-g/convert(varchar(5), t.stage)/s//cast(t.stage as varchar(5))/g
-g/convert(varchar(30), a.accID)/s//cast(a.accID as varchar(30))/g
-g/convert(varchar(10), r._Class_key)/s//cast( r._Class_key as varchar(10))/g
-g/convert(varchar(5), tag)/s//cast(tag as varchar(5))/g
-g/convert(char(10), h.event_date, 101)/s//cast(h.event_date as char(10))/g
-g/convert(varchar(10), r._Class_key)/s//cast(r._Class_key as varchar(10))/g
-g/convert(varchar(10), r._Refs_key)/s//cast(r._Refs_key as varchar(10))/g
-g/ltrim(str(l.size,10,2))/s//to_char(l.size, '9999.99')/g
-g/'Allele'/s//character varying(10) 'Allele'/g
-g/'Marker'/s//character varying(10) 'Marker'/g
-g/'Probe'/s//character varying(10) 'Probe'/g
+g/convert(varchar(25),s._VarClass_key)/s//cast(s._VarClass_key as varchar(25))/g
 g/"/s//'/g
 /cat
 d
 a
-cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${MGD_DBSERVER} \${MGD_DBNAME} \$0
+cat - <<EOSQL | \${PG_DBUTILS}/bin/doisql.csh \${SNPBE_DBSERVER} \${SNPBE_DBNAME} \$0
 
 .
 /^use

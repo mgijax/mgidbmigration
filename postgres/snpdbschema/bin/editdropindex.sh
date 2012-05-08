@@ -26,7 +26,6 @@ g/csh -f -x/s//sh/g
 g/ source/s// ./g
 g/drop index /s//drop index snp./g
 g/${t}.idx/s//$t/g
-g/offset/s//cmOffset/g
 g/^go/s//\\;/g
 /cat
 d

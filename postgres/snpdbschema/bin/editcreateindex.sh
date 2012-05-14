@@ -26,6 +26,7 @@ g/ source/s// ./g
 g/nonclustered /s///g
 g/clustered /s///g
 g/idx/s//${t}/g
+g/offset/s//cmOffset/g
 g/ on seg0/s//;/g
 g/ on seg2/s//;/g
 g/ on seg3/s//;/g

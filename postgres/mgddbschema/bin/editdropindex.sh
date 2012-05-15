@@ -25,7 +25,7 @@ ed $i <<END
 g/csh -f -x/s//sh/g
 g/ source/s// ./g
 g/drop index /s//drop index mgd./g
-g/${t}.idx/s//$t/g
+g/${t}.idx/s//${t}_idx/g
 g/offset/s//cmOffset/g
 g/^go/s//\\;/g
 /cat

@@ -24,7 +24,7 @@ ed $i <<END
 g/csh -f -x/s//sh/g
 g/source/s//./g
 g/drop index /s//drop index radar./g
-g/${t}.idx/s//$t/g
+g/${t}.idx/s//${t}_idx/g
 g/^go/s//\\;/g
 /cat
 d

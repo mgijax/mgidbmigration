@@ -133,8 +133,8 @@ END
 #
 # cleanup obsolete children
 #
-echo "cleaning up obsolete children..." | tee -a ${LOG}
-${MGDPOSTGRES}/bin/cleanup.sh | tee -a ${LOG}
+#echo "cleaning up obsolete children..." | tee -a ${LOG}
+#${MGDPOSTGRES}/bin/cleanup.sh | tee -a ${LOG}
 
 if [ $runAll -eq '0' ]
 then

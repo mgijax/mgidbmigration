@@ -168,11 +168,10 @@ fi
 #
 # comments
 #
-echo "updating comments..." | tee -a ${LOG}
-cd ${MGDPOSTGRES}/bin
-./comments.py
-psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} < comments.txt
-
+#echo "updating comments..." | tee -a ${LOG}
+#cd ${MGDPOSTGRES}/bin
+#./comments.py
+#psql -U ${MGD_DBUSER} -d ${MGD_DBNAME} < comments.txt
 
 date | tee -a ${LOG}
 

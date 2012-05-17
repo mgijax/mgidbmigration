@@ -72,18 +72,6 @@ RADARPOSTGRES="/home/lec/mgi4.0/dbutils/mgidbmigration/postgres/radardbschema"
 export RADARPOSTGRES
 
 #
-# where the Sybase/Postgres BCP files are stored
-#
-POSTGRESDATA="/data/loads/postgres"
-export POSTGRESDATA
-
-MGDDATA=${POSTGRESDATA}/mgd
-export MGDDATA
-
-RADARDATA=${POSTGRESDATA}/radar
-export RADARDATA
-
-#
 # the mgddbschema postgres branch
 #
 MGDPOSTGRESDIR="/home/lec/mgi4.0/dbutils/mgd/mgddbschema-pg"

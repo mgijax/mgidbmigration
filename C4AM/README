@@ -1,0 +1,10 @@
+copy each template file to sprint#_part*.csh and edit as necessary
+
+template_part1.csh - for running dev database load, do schema changes
+    and migrate data
+template_part2.csh - for running loads
+template_part3.csh - for running reports
+
+sprint1_part1.csh - runs dev database load for sprint 1
+sprint1_part2.csh - runs loads for sprint 1
+sprint1_part3.csh - runs reports for sprint 1

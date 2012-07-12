@@ -2,7 +2,8 @@
 
 #
 # Migration for C4AM -- Sprint 1
-# (part 1 - migration of existing data into new structures)
+# (part 1 - optionally load dev database. Migration of existing data 
+# into new structures)
 
 ###----------------------###
 ###--- initialization ---###
@@ -21,7 +22,9 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
+#
 # load a production backup into mgd and radar
+#
 
 if ("${1}" == "dev") then
     echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
@@ -40,3 +43,37 @@ else
 endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
+
+#
+# Migrate data
+#
+date | tee -a ${LOG}
+echo "--- Collection Abbreviation Updates" | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+update MAP_Coord_Collection
+set abbreviation = 'MGI'
+where name = 'MGI QTL'
+go
+
+update MAP_Coord_Collection
+set abbreviation = 'UniSTS'
+where name = 'NCBI UniSTS'
+go
+
+update MAP_Coord_Collection
+set abbreviation = 'MGI'
+where name = 'Roopenian STS'
+go
+
+update MAP_Coord_Collection
+set abbreviation = 'MGI'
+where name = 'MGI QTL'
+go
+
+EOSQL
+echo "--- Finished Collection Abbreviation Updates " | tee -a ${LOG}

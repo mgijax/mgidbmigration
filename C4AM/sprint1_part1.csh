@@ -75,5 +75,10 @@ set abbreviation = 'MGI'
 where name = 'MGI QTL'
 go
 
+update MAP_Coord_Collection
+set abbreviation = 'MGI'
+where name = 'TR9601 DNA sequences'
+go
+
 EOSQL
 echo "--- Finished Collection Abbreviation Updates " | tee -a ${LOG}

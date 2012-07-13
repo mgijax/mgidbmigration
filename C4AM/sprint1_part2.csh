@@ -27,6 +27,10 @@ echo 'Marker Coordinate Load' | tee -a ${LOG}
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh 
 
 date | tee -a ${LOG}
+echo 'Running C4AM sanity checks' | tee -a ${LOG}
+./C4aM_sanity.py /mgi/all/wts_projects/7100/7106/loads/C4AM_Sprint1_input.txt > ./C4aM_sanity.out
+
+date | tee -a ${LOG}
 echo "Run ALO Marker Association Load" | tee -a ${LOG}
 ${ALOMRKLOAD}/bin/alomrkload.sh
 

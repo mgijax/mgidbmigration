@@ -80,5 +80,20 @@ set abbreviation = 'MGI'
 where name = 'TR9601 DNA sequences'
 go
 
+update MAP_Coord_Collection
+set abbreviation = 'VEGA'
+where name = 'VEGA Gene Model'
+go
+
+update MAP_Coord_Collection
+set abbreviation = 'Ensembl'
+where name = 'Ensembl Gene Model'
+go
+
+update MAP_Coord_Collection
+set abbreviation = 'NCBI'
+where name = 'NCBI Gene Model'
+go
+
 EOSQL
 echo "--- Finished Collection Abbreviation Updates " | tee -a ${LOG}

@@ -97,3 +97,38 @@ go
 
 EOSQL
 echo "--- Finished Collection Abbreviation Updates " | tee -a ${LOG}
+
+#
+# Migrate database structures
+#
+date | tee -a ${LOG}
+echo "--- Add column to MRK_Location_Cache" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object
+${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_create.object
+
+date | tee -a ${LOG}
+echo "--- Add indexes to MRK_Location_Cache" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/index/MRK_Location_Cache_create.object
+
+date | tee -a ${LOG}
+echo "--- Add primary key for MRK_Location_Cache" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/MRK_Location_Cache_create.object
+
+date | tee -a ${LOG}
+echo "--- Add foreign key relationships for MRK_Location_Cache" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/MGI_Organism_create.object
+${MGD_DBSCHEMADIR}/key/MGI_User_create.object
+${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object
+
+date | tee -a ${LOG}
+echo "--- Re-setting permissions/schema ---"
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'Reload Marker Location Cache table' | tee -a ${LOG}
+${MRKCACHELOAD}/mrklocation.csh
+

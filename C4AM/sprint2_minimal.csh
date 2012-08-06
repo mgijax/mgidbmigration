@@ -48,6 +48,10 @@ ${MGD_DBSCHEMADIR}/key/MRK_Location_Cache_create.object
 date | tee -a ${LOG}
 echo "--- Add foreign key relationships for MRK_Location_Cache" | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object
+${MGD_DBSCHEMADIR}/key/MGI_User_drop.object
+${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object
+
 ${MGD_DBSCHEMADIR}/key/MGI_Organism_create.object
 ${MGD_DBSCHEMADIR}/key/MGI_User_create.object
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object

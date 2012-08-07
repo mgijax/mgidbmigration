@@ -8,3 +8,15 @@ template_part3.csh - for running reports
 sprint1_part1.csh - runs dev database load for sprint 1
 sprint1_part2.csh - runs loads for sprint 1
 sprint1_part3.csh - runs reports for sprint 1
+
+Notes:
+------
+The input file for the coordinate load is expected to be at:
+	/data/loads/mgi/mrkcoordload/input/mrkcoordload.txt
+This is currently a symbolic link to:
+	/mgi/all/wts_projects/7100/7106/loads/C4AM_Sprint1_input.txt
+
+Migration parts can be run from the mgiadmin crontab or from the
+command-line.  If running from the command-line, be sure to capture
+stdout and stderr to a file.
+

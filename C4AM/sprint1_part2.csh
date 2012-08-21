@@ -27,10 +27,6 @@ echo 'Marker Coordinate Load' | tee -a ${LOG}
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh 
 
 date | tee -a ${LOG}
-echo "Run ALO Marker Association Load" | tee -a ${LOG}
-${ALOMRKLOAD}/bin/alomrkload.sh
-
-date | tee -a ${LOG}
 echo 'Run SNP Marker Load ' | tee -a ${LOG}
 ${SNPCACHELOAD}/snpmarker.sh 
 
@@ -53,6 +49,10 @@ ${MRKCACHELOAD}/mrkhomology.csh
 ${MRKCACHELOAD}/mrklocation.csh
 ${MRKCACHELOAD}/mrkprobe.csh
 ${MRKCACHELOAD}/mrkmcv.csh
+
+date | tee -a ${LOG}
+echo "Run ALO Marker Association Load" | tee -a ${LOG}
+${ALOMRKLOAD}/bin/alomrkload.sh
 
 date | tee -a ${LOG}
 echo 'Load Genetic Map Tables' | tee -a ${LOG}

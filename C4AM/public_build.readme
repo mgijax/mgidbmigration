@@ -1,0 +1,35 @@
+1. Run exporter
+    a.	Installed on server mtdoom
+    b.	Source db: DEV1_MGI..mgd_wi1, target db: mgi-testdb3..export
+    c.	Time to run: 7 hours 30  minutes
+    d.	Invocation - added to mtdoom mgiadmin crontab:
+	setenv MGICONFIG /usr/local/mgi/scrum-bob/mgiconfig;/usr/local/mgi/scrum-bob/exporter/bin/export_wrapper.sh 
+    e.  Must hack out all process control from export_wrapper.sh
+
+2. Run femover
+    a.	Installed on server mtdoom
+    b.	Source db: mgi-testdb3..export, target db: mgi-testdb3..fe_mover
+    c.	Time to run: 7 hours 42 minutes
+    d.	Invocation  added to mtdoom mgiadmin crontab:
+    	setenv MGICONFIG /usr/local/mgi/scrum-bob/mgiconfig;/usr/local/mgi/scrum-bob/femover/control/buildDB.sh postgres
+
+3. Run feindexer
+    a.	Installed on server mtdoom
+    b.	Source db: mgi-testdb3..fe_mover
+    c.	Time to run: 34 minutes
+    d.	Invocation - added to mtdoom mgiadmin crontab:
+	jsb - There.s only a fixed set of four possible 
+	parameters for this script, but you can use .pub1. because the 
+	mgiconfig.s pub1 setting is pointed at mgi-testdb3 to facilitate it.
+    	setenv MGICONFIG /usr/local/mgi/scrum-bob/mgiconfig;/usr/local/mgi/scrum-bob/feindexer/bin/configureAndBuildAll pub1
+
+4. Rename export to pub_dev and fe_mover to fe_dev
+	a.	Need to be logged into a different database to rename, Only the database owner or a superuser can rename a database
+	b.	On rohan login via psql: psql .U mgd_dbo .h mgi-testdb3 .d fe 
+	c.	ALTER DATABASE pub_dev RENAME TO pub_dev_temp
+	d.	ALTER DATABASE export RENAME TO pub_dev
+	e.	ALTER DATABASE pub_dev_temp RENAME TO export
+	f.	ALTER DATABASE fe_dev RENAME TO fe_dev_temp
+	g.	ALTER DATABASE fe_mover RENAME TO fe_dev
+	h.	ALTER DATABASE fe_dev_temp RENAME TO fe_mover
+

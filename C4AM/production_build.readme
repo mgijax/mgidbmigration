@@ -1,0 +1,9 @@
+1. Run sprint1_part1.csh 
+    a. reloads from production backup if passed 'dev'
+    b. does schema and data migration
+
+2. Run sprint1_part2.csh
+    a. runs all loads for the build in the proper order
+
+3. Run sprint1_part3.csh - if reports are desired
+    a. Runs all public and qc reports

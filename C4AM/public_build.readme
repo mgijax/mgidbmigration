@@ -1,3 +1,4 @@
+0. Run steps in production_build.readme
 1. Run exporter
     a.	Installed on server mtdoom
     b.	Source db: DEV1_MGI..mgd_wi1, target db: mgi-testdb3..export

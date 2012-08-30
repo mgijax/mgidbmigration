@@ -25,12 +25,15 @@
     	setenv MGICONFIG /usr/local/mgi/scrum-bob/mgiconfig;/usr/local/mgi/scrum-bob/feindexer/bin/configureAndBuildAll pub1
 
 4. Rename export to pub_dev and fe_mover to fe_dev
-	a.	Need to be logged into a different database to rename, Only the database owner or a superuser can rename a database
-	b.	On rohan login via psql: psql .U mgd_dbo .h mgi-testdb3 .d fe 
-	c.	ALTER DATABASE pub_dev RENAME TO pub_dev_temp
-	d.	ALTER DATABASE export RENAME TO pub_dev
-	e.	ALTER DATABASE pub_dev_temp RENAME TO export
-	f.	ALTER DATABASE fe_dev RENAME TO fe_dev_temp
-	g.	ALTER DATABASE fe_mover RENAME TO fe_dev
-	h.	ALTER DATABASE fe_dev_temp RENAME TO fe_mover
+   Use: pgdbutilities/bin/swapDB.csh db_server db1 db2
+   Or: 
+	a. Need to be logged into a different database to rename, 
+	  Only the database owner or a superuser can rename a database
+	b. On rohan login via psql: psql .U mgd_dbo .h mgi-testdb3 .d fe 
+	c. ALTER DATABASE pub_dev RENAME TO pub_dev_temp
+	d. ALTER DATABASE export RENAME TO pub_dev
+	e. ALTER DATABASE pub_dev_temp RENAME TO export
+	f. ALTER DATABASE fe_dev RENAME TO fe_dev_temp
+	g. ALTER DATABASE fe_mover RENAME TO fe_dev
+	h. ALTER DATABASE fe_dev_temp RENAME TO fe_mover
 

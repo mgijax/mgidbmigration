@@ -23,28 +23,25 @@ date | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
+use $MGD_DBNAME
 go
 
-declare @nextProperty integer
-select @nextProperty = max(_EvidenceProperty_key) from VOC_Evidence_Property
-declare @propertyKey integer
-select @propertyKey = _Term_key from VOC_Term where _Vocab_key = 86
-
-select seq = identity(10), e._AnnotEvidence_key
-into #toadd
-from VOC_Annot a, VOC_Evidence e
-where a._AnnotType_key = 1002
-and a._Annot_key = e._Annot_key
-
-insert into VOC_Evidence_Property
-select @nextProperty + seq,_AnnotEvidence_key,@propertyKey,1,1,'NA',1001,1001,getdate(),getdate()
-from #toadd
+print "Female"
+select a1.accID, c._Note_key, c.note
+from MGI_NoteChunk c, MGI_Note n, ACC_Accession a1
+where n._NoteType_key in (1008)
+and n._Note_key = c._Note_key
+and c.note like '% female %'
+and n._Object_key = a1._Object_key
+and a1._MGIType_key = 11
 go
+
+checkpoint
+go
+
+end
 
 EOSQL
-
-./sexauto.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

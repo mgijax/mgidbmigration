@@ -1,7 +1,7 @@
 #!/bin/csh -fx
 
 #
-# Migration for C4AM -- Sprint 1
+# Migration for C4AM -- 
 # (part 1 - optionally load dev database. Migration of existing data 
 # into new structures)
 

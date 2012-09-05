@@ -106,7 +106,7 @@ go
 select * from #toupdate3
 go
 
-/* MP:0001145, MP:0003698, MP:0002789, MP:0006262 or child ==> M */
+/* MP:0001145, MP:0003698, MP:0002789, MP:0006262 ==> M */
 
 select aa.accID, substring(t.term,1,25) as term, p._EvidenceProperty_key
 into #toupdate4
@@ -132,10 +132,39 @@ go
 select * from #toupdate4
 go
 
+/* children of MP:0001145, MP:0003698, MP:0002789, MP:0006262 ==> M */
+
+select aa.accID, aaa.accID as childAccID, substring(t.term,1,25) as term, p._EvidenceProperty_key
+into #toupdate5
+from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p,
+     VOC_Term t, ACC_Accession aa, ACC_Accession aaa,
+     DAG_Closure dc
+where a._AnnotType_key = 1002
+and a._Annot_key = e._Annot_key
+and e._AnnotEvidence_key = p._AnnotEvidence_key
+and a._Term_key = t._Term_key
+and a._Object_key = aa._Object_key
+and aa._MGIType_key = 12
+and a._Term_key = aaa._Object_key
+and aaa._MGIType_key = 13
+and dc._DAG_key = 4
+and dc._AncestorObject_key in (50301,55401,865129,1072176)
+and a._Term_key = dc._DescendentObject_key
+go
+     
+update VOC_Evidence_Property
+set value = 'M'
+from #toupdate5 t, VOC_Evidence_Property p
+where t._EvidenceProperty_key = p._EvidenceProperty_key
+go
+
+select * from #toupdate5
+go
+
 /* MP:0003699, MP:0008779, MP:0002788, MP:0008000 or child ==> F */
 
 select aa.accID, substring(t.term,1,25) as term, p._EvidenceProperty_key
-into #toupdate5
+into #toupdate6
 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p,
      VOC_Term t, ACC_Accession aa, ACC_Accession aaa
 where a._AnnotType_key = 1002
@@ -150,12 +179,41 @@ and aaa.accID in ('MP:0003699', 'MP:0008779', 'MP:0002788', 'MP:0008000')
 go
      
 update VOC_Evidence_Property
-set value = 'M'
-from #toupdate5 t, VOC_Evidence_Property p
+set value = 'F'
+from #toupdate6 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate5
+select * from #toupdate6
+go
+
+/* children of MP:0003699, MP:0008779, MP:0002788, MP:0008000 or child ==> F */
+
+select aa.accID, aaa.accID as childAccID, substring(t.term,1,25) as term, p._EvidenceProperty_key
+into #toupdate7
+from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p,
+     VOC_Term t, ACC_Accession aa, ACC_Accession aaa,
+     DAG_Closure dc
+where a._AnnotType_key = 1002
+and a._Annot_key = e._Annot_key
+and e._AnnotEvidence_key = p._AnnotEvidence_key
+and a._Term_key = t._Term_key
+and a._Object_key = aa._Object_key
+and aa._MGIType_key = 12
+and a._Term_key = aaa._Object_key
+and aaa._MGIType_key = 13
+and dc._DAG_key = 4
+and dc._AncestorObject_key in (55400,865128,2310645,3311115)
+and a._Term_key = dc._DescendentObject_key
+go
+
+update VOC_Evidence_Property
+set value = 'F'
+from #toupdate7 t, VOC_Evidence_Property p
+where t._EvidenceProperty_key = p._EvidenceProperty_key
+go
+
+select * from #toupdate7
 go
 
 checkpoint

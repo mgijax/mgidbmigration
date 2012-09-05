@@ -26,6 +26,9 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+delete from VOC_Evidence_Property where _PropertyTerm_key = 8809651
+go
+
 declare @nextProperty integer
 select @nextProperty = max(_EvidenceProperty_key) from VOC_Evidence_Property
 declare @propertyKey integer
@@ -44,7 +47,7 @@ go
 
 EOSQL
 
-./sexauto.csh | tee -a ${LOG}
+#./sexauto.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

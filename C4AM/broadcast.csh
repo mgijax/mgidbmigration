@@ -18,11 +18,11 @@ touch $LOG
  
 date | tee -a $LOG
 
-echo 'running ensembl nomenload' | tee -a $LOG 
-${NOMENLOAD}/bin/nomenload.csh /mgi/all/wts_projects/11100/11133/ENSEMBL/NovelGene/ensembl_nomen.config | tee -a $LOG
+echo 'running ensembl broadcast' | tee -a $LOG 
+${NOMENLOAD}/bin/broadcast.csh /mgi/all/wts_projects/11100/11133/ENSEMBL/NovelGene/ensembl_nomen.config | tee -a $LOG
 
-echo 'running ncbi nomenload' | tee -a $LOG
-${NOMENLOAD}/bin/nomenload.csh /mgi/all/wts_projects/11100/11133/NCBI/NovelGene/ncbi_nomen.config | tee -a $LOG
+echo 'running ncbi broadcast' | tee -a $LOG
+${NOMENLOAD}/bin/broadcast.csh /mgi/all/wts_projects/11100/11133/NCBI/NovelGene/ncbi_nomen.config | tee -a $LOG
 
 date |tee -a $LOG
 

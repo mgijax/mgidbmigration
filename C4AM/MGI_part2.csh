@@ -19,6 +19,12 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+# 9/5/ - sc Added this temporarily because the backup of part1 is missing the defaults
+date | tee -a ${LOG}
+echo "--- Bind defaults for MRK_Location_Cache" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/default/MRK_Location_Cache_bind.object
+
 ###-------------------------------------------------------------------------###
 ### Broadcast the build 38 novel genes.  The broadcast script also runs the
 ### mapping load using the input file created by the initial nomen load.

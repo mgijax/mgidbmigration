@@ -108,6 +108,11 @@ ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object
 ${MGD_DBSCHEMADIR}/table/MRK_Location_Cache_create.object
 
 date | tee -a ${LOG}
+echo "--- Bind defaults for MRK_Location_Cache" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/default/MRK_Location_Cache_bind.object
+
+date | tee -a ${LOG}
 echo "--- Add indexes to MRK_Location_Cache" | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/index/MRK_Location_Cache_create.object

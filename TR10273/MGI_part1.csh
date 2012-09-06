@@ -47,6 +47,7 @@ go
 
 EOSQL
 
+/mgi/all/wts_projects/11100/11110/tr11110.csh | tee -a ${LOG}
 #./sexauto.csh | tee -a ${LOG}
 
 ###-----------------------###

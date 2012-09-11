@@ -50,7 +50,7 @@ from #toupdate1 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate1
+select * from #toupdate1 order by accID
 go
 
 /* chr = 'X', state is Hemizygous X-linked ==> M */
@@ -77,7 +77,7 @@ from #toupdate2 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate2
+select * from #toupdate2 order by accID
 go
 
 /* chr = 'Y' ==> M */
@@ -103,7 +103,7 @@ from #toupdate3 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate3
+select * from #toupdate3 order by accID
 go
 
 /* MP:0001145, MP:0003698, MP:0002789, MP:0006262 ==> M */
@@ -129,7 +129,7 @@ from #toupdate4 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate4
+select * from #toupdate4 order by accID
 go
 
 /* children of MP:0001145, MP:0003698, MP:0002789, MP:0006262 ==> M */
@@ -158,7 +158,7 @@ from #toupdate5 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate5
+select * from #toupdate5 order by accID
 go
 
 /* MP:0003699, MP:0008779, MP:0002788, MP:0008000 or child ==> F */
@@ -184,7 +184,7 @@ from #toupdate6 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate6
+select * from #toupdate6 order by accID
 go
 
 /* children of MP:0003699, MP:0008779, MP:0002788, MP:0008000 or child ==> F */
@@ -213,7 +213,7 @@ from #toupdate7 t, VOC_Evidence_Property p
 where t._EvidenceProperty_key = p._EvidenceProperty_key
 go
 
-select * from #toupdate7
+select * from #toupdate7 order by accID
 go
 
 checkpoint

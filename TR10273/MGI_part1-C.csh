@@ -21,8 +21,22 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_create.object | tee -a ${LOG}
+# load a backup
+
+if ("${1}" == "dev") then
+    echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
+    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
+    date | tee -a ${LOG}
+else
+    echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
+endif
+
+# run sangermpload
+echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+
+#${MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_create.object | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

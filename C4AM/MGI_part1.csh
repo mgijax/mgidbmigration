@@ -175,16 +175,16 @@ date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
+###-------------------------------------------------------------------------###
+### Broadcast the build 38 novel genes.  The broadcast script also runs the
+### mapping load using the input file created by the initial nomen load.
+###-------------------------------------------------------------------------###
+date | tee -a ${LOG}
+echo 'Running Nomen Broadcast' | tee -a ${LOG}
+./broadcast.csh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 echo 'Reload Marker Location Cache table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklocation.csh
-
-#date | tee -a ${LOG}
-#echo 'Running Nomen Loads' | tee -a ${LOG}
-#./nomenload.csh | tee -a ${LOG}
-
-#date | tee -a ${LOG}
-#echo 'Creating new genes report'  | tee -a ${LOG}
-#./getMGIIDList.sh  | tee -a ${LOG}
 
 date | tee -a ${LOG}

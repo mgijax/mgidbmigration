@@ -134,6 +134,12 @@ ${MGD_DBSCHEMADIR}/key/MGI_User_create.object
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object
 
 date | tee -a ${LOG}
+echo "--- Re-build dependent trigger on MRK_Marker" | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object
+
+date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
@@ -141,12 +147,12 @@ date | tee -a ${LOG}
 echo 'Reload Marker Location Cache table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklocation.csh
 
-date | tee -a ${LOG}
-echo 'Running Nomen Loads' | tee -a ${LOG}
-./nomenload.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'Running Nomen Loads' | tee -a ${LOG}
+#./nomenload.csh | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'Creating new genes report'  | tee -a ${LOG}
-./getMGIIDList.sh  | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'Creating new genes report'  | tee -a ${LOG}
+#./getMGIIDList.sh  | tee -a ${LOG}
 
 date | tee -a ${LOG}

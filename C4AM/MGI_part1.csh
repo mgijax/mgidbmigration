@@ -48,55 +48,87 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 # Migrate data
 #
 date | tee -a ${LOG}
-echo "--- Collection Abbreviation Updates" | tee -a ${LOG}
+#echo "--- Collection Abbreviation Updates" | tee -a ${LOG}
+
+# with sprint 6 we are deleting all of these collections + gene models
+#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+#use ${MGD_DBNAME}
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'MGI'
+#where name = 'MGI QTL'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'UniSTS'
+#where name = 'NCBI UniSTS'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'MGI'
+#where name = 'Roopenian STS'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'MGI'
+#where name = 'MGI QTL'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'MGI'
+#where name = 'TR9601 DNA sequences'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'VEGA'
+#where name = 'VEGA Gene Model'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'Ensembl'
+#where name = 'Ensembl Gene Model'
+#go
+
+#update MAP_Coord_Collection
+#set abbreviation = 'NCBI'
+#where name = 'NCBI Gene Model'
+#go
+
+#EOSQL
+
+echo "--- Direct Marker and Gene Model Collection Deletes" | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
+exec MAP_deleteByCollection "ENSEMBL Gene Model"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'MGI'
-where name = 'MGI QTL'
+exec MAP_deleteByCollection "VEGA Gene Model"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'UniSTS'
-where name = 'NCBI UniSTS'
+exec MAP_deleteByCollection "NCBI Gene Model"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'MGI'
-where name = 'Roopenian STS'
+exec MAP_deleteByCollection "MGI QTL"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'MGI'
-where name = 'MGI QTL'
+exec MAP_deleteByCollection "Roopenian STS"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'MGI'
-where name = 'TR9601 DNA sequences'
+exec MAP_deleteByCollection "NCBI UniSTS"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'VEGA'
-where name = 'VEGA Gene Model'
+exec MAP_deleteByCollection "TR9601 DNA sequences"
 go
 
-update MAP_Coord_Collection
-set abbreviation = 'Ensembl'
-where name = 'Ensembl Gene Model'
-go
-
-update MAP_Coord_Collection
-set abbreviation = 'NCBI'
-where name = 'NCBI Gene Model'
+exec MAP_deleteByCollection "miRBase"
 go
 
 EOSQL
-echo "--- Finished Collection Abbreviation Updates " | tee -a ${LOG}
+
+echo "--- Finished  Direct Marker and Gene Model Collection Deletes" | tee -a ${LOG}
 
 #
 # Migrate database structures

@@ -1,8 +1,8 @@
 #!/bin/csh -fx
 
 #
-# Migration for C4AM --  Sprint 1
-# (part 3 running reports)
+# Migration for C4AM/B38
+# (part 3 running cache loads & additional loads)
 #
 
 ###----------------------###
@@ -10,7 +10,6 @@
 ###----------------------###
 
 cd `dirname $0` && source ../Configuration
-setenv CWD `pwd`        # current working directory
 echo "Server: ${MGD_DBSERVER}"
 echo "Database: ${MGD_DBNAME}"
 
@@ -20,45 +19,48 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-###------------------------------###
-###--- MGI Marker feed report ---###
-###------------------------------###
+###--------------------------------------------------------------###
+###--- run cache loads       	      	                      ---###
+###--------------------------------------------------------------###
+date | tee -a ${LOG}
+echo 'Load Sequence Cache tables' | tee -a ${LOG}
+${SEQCACHELOAD}/seqdummy.csh
+${SEQCACHELOAD}/seqcoord.csh
+${SEQCACHELOAD}/seqmarker.csh
+${SEQCACHELOAD}/seqprobe.csh
+${SEQCACHELOAD}/seqdescription.csh
 
 date | tee -a ${LOG}
-echo 'MGI Marker feed report' | tee -a ${LOG}
-${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
+echo 'Load Marker Cache tables' | tee -a ${LOG}
+${MRKCACHELOAD}/mrklabel.csh
+${MRKCACHELOAD}/mrkref.csh
+${MRKCACHELOAD}/mrkhomology.csh
+${MRKCACHELOAD}/mrklocation.csh
+${MRKCACHELOAD}/mrkprobe.csh
+${MRKCACHELOAD}/mrkmcv.csh
 
-###------------------###
-###--- QC reports ---###
-###------------------###
+# removed genmapload
 
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcnightly_reports.sh
+#date | tee -a ${LOG}
+#echo "Run ALO Marker Association Load" | tee -a ${LOG}
+#${ALOMRKLOAD}/bin/alomrkload.sh
 
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcweekly_reports.sh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcmonthly_reports.sh
-
-###----------------------###
-###--- Public reports ---###
-###----------------------###
+#date | tee -a ${LOG}
+#echo 'Run SNP Marker Load ' | tee -a ${LOG}
+#${SNPCACHELOAD}/snpmarker.sh
 
 date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/nightly_reports.sh
+echo 'Running C4AM sanity checks' | tee -a ${LOG}
+./C4aM_sanity.py /mgi/all/wts_projects/7100/7106/loads/C4AM_Sprint1_input.txt > ./C4aM_sanity.out
 
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/weekly_reports.sh
+# run mini  home page measurements here
 
+#
+# Backup databases.
+#
 date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/monthly_reports.sh
+echo 'Backup mgd/radar databases'
+${MGI_DBUTILS}/bin/mgi_backup_to_disk.csh ${MGD_DBSERVER} "${MGD_DBNAME} ${RADAR_DBNAME}" Build38
 
 ###-----------------------###
 ###--- final datestamp ---###

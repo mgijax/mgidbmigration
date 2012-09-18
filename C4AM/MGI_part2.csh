@@ -22,6 +22,9 @@ touch ${LOG}
 ###--------------------------------------------------------------###
 ###--- run loads                                              ---###
 ###--------------------------------------------------------------###
+date | tee -a ${LOG}
+echo 'Load MCV Annotations' | tee -a ${LOG}
+${MCVLOAD}/bin/mcvload.sh
 
 date | tee -a ${LOG}
 echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}

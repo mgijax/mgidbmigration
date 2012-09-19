@@ -27,6 +27,13 @@ date | tee -a ${LOG}
 echo 'Load MCV Annotations' | tee -a ${LOG}
 ${MCVLOAD}/bin/mcvload.sh
 
+echo 'Load Sequence Cache tables' | tee -a ${LOG}
+${SEQCACHELOAD}/seqdummy.csh
+${SEQCACHELOAD}/seqcoord.csh
+${SEQCACHELOAD}/seqmarker.csh
+${SEQCACHELOAD}/seqprobe.csh
+${SEQCACHELOAD}/seqdescription.csh
+
 date | tee -a ${LOG}
 echo 'Load Marker Cache tables' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklabel.csh

@@ -179,6 +179,11 @@ date | tee -a ${LOG}
 echo 'Reload Marker Location Cache table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklocation.csh
 
+date | tee -a ${LOG}
+echo 'Drop and Recreate Stored Procedures' | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object
+${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object
+
 ###-------------------------------------------------------------------------###
 ### Broadcast the build 38 novel genes.  The broadcast script also runs the
 ### mapping load using the input file created by the initial nomen load.

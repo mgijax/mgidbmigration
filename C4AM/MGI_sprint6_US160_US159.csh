@@ -20,7 +20,7 @@ ${GENEMODELLOAD}/bin/genemodelload.sh vega
 
 date | tee -a ${LOG}
 echo 'Ensembl Gene Model Load' | tee -a ${LOG}
-${GENEMODELLOAD}/bin/genemodelload.sh ensembl
+${GENEMODELLOAD}/bin/genemodelload.sh ncbi
 
 ###--------------------------------------------------------------###
 ###--- run cache loads       	      	                      ---###

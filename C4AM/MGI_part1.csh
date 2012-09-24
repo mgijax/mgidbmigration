@@ -172,17 +172,17 @@ ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object
 
 date | tee -a ${LOG}
+echo 'Drop and Recreate Stored Procedures' | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object
+${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object
+
+date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Reload Marker Location Cache table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklocation.csh
-
-date | tee -a ${LOG}
-echo 'Drop and Recreate Stored Procedures' | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_drop.object
-${MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object
 
 ###-------------------------------------------------------------------------###
 ### Broadcast the build 38 novel genes.  The broadcast script also runs the

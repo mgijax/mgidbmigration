@@ -52,13 +52,33 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 
 # QTL load goes here
 
-#date | tee -a ${LOG}
-#echo 'Marker Coordinate Load' | tee -a ${LOG}
-#${MRKCOORDLOAD}/bin/mrkcoordload.sh
+date | tee -a ${LOG}
+echo 'Marker Coordinate Load' | tee -a ${LOG}
+${MRKCOORDLOAD}/bin/mrkcoordload.sh
 
-# gene trap  load goes here w/o cacheloads and alomrkload
+# load build 38 gene trap coordinates
+date | tee -a ${LOG}
+echo 'Gene Trap Coordinate Load' | tee -a ${LOG}
+${GTCOORDLOAD}/bin/gtcoordload.sh
 
-# Old TIGM migration goes here
+# strand migration must happen after gtcoordload and before running cache loads
+date | tee -a ${LOG}
+echo 'Updating Old TIGM strand' | tee -a ${LOG}
+./updateOldTIGM.csh | tee -a ${LOG}
+
+# cache loads update for alomrkload
+date | tee -a ${LOG}
+echo "Running Sequence Coordinate Cache Load" | tee -a ${LOG}
+${SEQCACHELOAD}/seqcoord.csh
+
+date | tee -a ${LOG}
+echo "Running Marker/Location Cache Load" | tee -a ${LOG}
+${MRKCACHELOAD}/mrklocation.csh
+
+# recalculate genetrap/marker overlaps
+date | tee -a ${LOG}
+echo "Running ALO/Marker Load" | tee -a ${LOG}
+${ALOMRKLOAD}/bin/alomrkload.sh
 
 ###-----------------------###
 ###--- final datestamp ---###

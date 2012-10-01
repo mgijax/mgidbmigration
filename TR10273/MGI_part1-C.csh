@@ -65,9 +65,13 @@ EOSQL
 
 ${MGD_DBSCHEMADIR}/index/GXD_AllelePair_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Marker_Assoc_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Marker_Assoc_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_AllelePair_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_AllelePair_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/key/ALL_CellLine_drop.object | tee -a ${LOG}

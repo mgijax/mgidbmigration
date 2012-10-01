@@ -41,6 +41,7 @@ go
 
 EOSQL
 
+${MGD_DBSCHEMADIR}/table/GXD_AllelePair_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/GXD_AllelePair_create.object | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

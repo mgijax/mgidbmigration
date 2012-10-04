@@ -66,6 +66,9 @@ date | tee -a ${LOG}
 echo 'Updating Old TIGM strand' | tee -a ${LOG}
 ./updateOldTIGM.csh | tee -a ${LOG}
 
+# goodHitCount update after loading new coordinates
+./goodHitCountUpdater.csh  | tee -a ${LOG}
+
 # cache loads update for alomrkload
 date | tee -a ${LOG}
 echo "Running Sequence Coordinate Cache Load" | tee -a ${LOG}

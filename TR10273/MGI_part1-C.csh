@@ -126,6 +126,7 @@ ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
 # run tests
 cp ${SANGERMPLOAD}/sangermpload.config.test ${SANGERMPLOAD}/sangermpload.config
+cp ${SANGERMPLOAD}/mgi_sanger_mp_test.tsv /data/loads/scrum-dog/mgi/sangermpload.test/input
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 

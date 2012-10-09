@@ -121,8 +121,13 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # run sangermpload
-#echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-#${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+
+# run tests
+cp ${SANGERMPLOAD}/sangermpload.config.test ${SANGERMPLOAD}/sangermpload.config
+echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -66,22 +66,8 @@ date | tee -a ${LOG}
 echo 'Updating Old TIGM strand' | tee -a ${LOG}
 ./updateOldTIGM.csh | tee -a ${LOG}
 
-# goodHitCount update after loading new coordinates
+# goodHitCount update after reloading gene trap coordinates
 ./goodHitCountUpdater.csh  | tee -a ${LOG}
-
-# cache loads update for alomrkload
-date | tee -a ${LOG}
-echo "Running Sequence Coordinate Cache Load" | tee -a ${LOG}
-${SEQCACHELOAD}/seqcoord.csh
-
-date | tee -a ${LOG}
-echo "Running Marker/Location Cache Load" | tee -a ${LOG}
-${MRKCACHELOAD}/mrklocation.csh
-
-# recalculate genetrap/marker overlaps
-date | tee -a ${LOG}
-echo "Running ALO/Marker Load" | tee -a ${LOG}
-${ALOMRKLOAD}/bin/alomrkload.sh
 
 ###-----------------------###
 ###--- final datestamp ---###

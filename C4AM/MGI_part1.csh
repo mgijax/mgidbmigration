@@ -81,6 +81,38 @@ EOSQL
 
 echo "--- Finished  Direct Marker and Gene Model Collection Deletes" | tee -a ${LOG}
 
+date | tee -a ${LOG}
+
+echo "--- Delete MirBase Ids from Markers " | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+select _Accession_key
+into #toDelete
+from ACC_Accession
+where _LogicalDB_key = 83
+and _MGIType_key = 2
+go
+
+create index idx1 on #toDelete(_Accession_key)
+go
+
+delete from ACC_AccessionReference
+where _Accession_key in (
+select _Accession_key
+from #toDelete)
+go
+
+delete from ACC_Accession
+where _Accession_key in (
+select _Accession_key
+from #toDelete)
+go
+
+EOSQL
+
+echo "--- Finished Deleting MirBase Ids from Markers " | tee -a ${LOG}
+
 #
 # Migrate database structures
 #

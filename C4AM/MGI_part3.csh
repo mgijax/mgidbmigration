@@ -41,13 +41,13 @@ ${MRKCACHELOAD}/mrkmcv.csh
 
 # removed genmapload
 
-#date | tee -a ${LOG}
-#echo "Run ALO Marker Association Load" | tee -a ${LOG}
-#${ALOMRKLOAD}/bin/alomrkload.sh
+date | tee -a ${LOG}
+echo "Run ALO Marker Association Load" | tee -a ${LOG}
+${ALOMRKLOAD}/bin/alomrkload.sh
 
-#date | tee -a ${LOG}
-#echo 'Run SNP Marker Load ' | tee -a ${LOG}
-#${SNPCACHELOAD}/snpmarker.sh
+date | tee -a ${LOG}
+echo 'Run SNP Marker Load ' | tee -a ${LOG}
+${SNPCACHELOAD}/snpmarker.sh
 
 date | tee -a ${LOG}
 echo 'Running C4AM sanity checks' | tee -a ${LOG}

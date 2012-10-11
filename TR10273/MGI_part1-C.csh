@@ -130,6 +130,11 @@ cp ${SANGERMPLOAD}/mgi_sanger_mp_test.tsv /data/loads/scrum-dog/mgi/sangermpload
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
+# run annotation tests
+cp ${SANGERMPLOAD}/mgi_annotload_test.txt /data/loads/scrum-dog/mgi/sangermpload.test/input
+echo ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
+${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

@@ -143,8 +143,9 @@ ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
 cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
 cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 
+# the genotypeload-er should handle this
 # run allcacheload
-${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
+#${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
 #
 # make sure Allele Detail Display notes were created

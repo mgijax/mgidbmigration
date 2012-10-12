@@ -146,6 +146,25 @@ cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 # run allcacheload
 ${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
+#
+# make sure Allele Detail Display notes were created
+#
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+select count(g._Genotype_key)
+from GXD_Genotype g
+where g._CreatedBy_key = 1524
+and exists (select 1 from MGI_Note n
+where n._MGIType_key = 12
+and n._NoteType_key = 1018
+and n._Object_key = g._Genotype_key)
+go
+
+EOSQL
+
 # remind Kim that she needs to manually add genotype notes
 
 date | tee -a ${LOG}

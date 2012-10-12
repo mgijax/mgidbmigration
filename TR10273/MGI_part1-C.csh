@@ -143,6 +143,11 @@ ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
 cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
 cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 
+# run allcacheload
+${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
+
+# remind Kim that she needs to manually add genotype notes
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

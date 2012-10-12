@@ -121,6 +121,9 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # run sangermpload
+# make sure factory settings
+cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
+cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 

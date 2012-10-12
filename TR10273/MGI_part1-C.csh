@@ -136,6 +136,10 @@ cp ${SANGERMPLOAD}/mgi_annotload_test.txt /data/loads/scrum-dog/mgi/sangermpload
 echo ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
 
+# re-set factory settings
+cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
+cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

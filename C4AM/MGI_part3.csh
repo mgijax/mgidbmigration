@@ -53,15 +53,6 @@ date | tee -a ${LOG}
 echo 'Running C4AM sanity checks' | tee -a ${LOG}
 ./C4aM_sanity.py /mgi/all/wts_projects/7100/7106/loads/C4AM_input.txt > ./C4aM_sanity.out
 
-# run mini  home page measurements here
-
-#
-# Backup databases.
-#
-date | tee -a ${LOG}
-echo 'Backup mgd/radar databases'
-${MGI_DBUTILS}/bin/mgi_backup_to_disk.csh ${MGD_DBSERVER} "${MGD_DBNAME} ${RADAR_DBNAME}" Build38
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

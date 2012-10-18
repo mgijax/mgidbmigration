@@ -107,6 +107,7 @@ select * from #toupdate3 order by accID
 go
 
 /* MP:0001145, MP:0003698, MP:0002789, MP:0006262 ==> M */
+/* MP:0006362, MP:0001156, MP:0002673, MP:0003597, MP:0010357, MP:0001380 => M */
 
 select aa.accID, substring(t.term,1,25) as term, p._EvidenceProperty_key
 into #toupdate4
@@ -120,7 +121,7 @@ and a._Object_key = aa._Object_key
 and aa._MGIType_key = 12
 and a._Term_key = aaa._Object_key
 and aaa._MGIType_key = 13
-and aaa.accID in ('MP:0001145', 'MP:0003698', 'MP:0002789', 'MP:0006262')
+and aaa.accID in ('MP:0001145', 'MP:0003698', 'MP:0002789', 'MP:0006262', 'MP:0006362', 'MP:0001156', 'MP:0002673', 'MP:0003597', 'MP:0010357', 'MP:0001380')
 go
      
 update VOC_Evidence_Property
@@ -132,7 +133,7 @@ go
 select * from #toupdate4 order by accID
 go
 
-/* children of MP:0001145, MP:0003698, MP:0002789, MP:0006262 ==> M */
+/* children of ==> M */
 
 select aa.accID, aaa.accID as childAccID, substring(t.term,1,25) as term, p._EvidenceProperty_key
 into #toupdate5
@@ -148,7 +149,7 @@ and aa._MGIType_key = 12
 and a._Term_key = aaa._Object_key
 and aaa._MGIType_key = 13
 and dc._DAG_key = 4
-and dc._AncestorObject_key in (50301,55401,865129,1072176)
+and dc._AncestorObject_key in (50301,50449,50531,54793,55401,718760,865129,1072176,2506309,6150751)
 and a._Term_key = dc._DescendentObject_key
 go
      
@@ -162,6 +163,7 @@ select * from #toupdate5 order by accID
 go
 
 /* MP:0003699, MP:0008779, MP:0002788, MP:0008000 or child ==> F */
+/* MP:0006361, MP:0001931, MP:0001119, MP:0009222, MP:0001376, MP:0000627 => F */
 
 select aa.accID, substring(t.term,1,25) as term, p._EvidenceProperty_key
 into #toupdate6
@@ -175,7 +177,7 @@ and a._Object_key = aa._Object_key
 and aa._MGIType_key = 12
 and a._Term_key = aaa._Object_key
 and aaa._MGIType_key = 13
-and aaa.accID in ('MP:0003699', 'MP:0008779', 'MP:0002788', 'MP:0008000')
+and aaa.accID in ('MP:0003699', 'MP:0008779', 'MP:0002788', 'MP:0008000', 'MP:0006361', 'MP:0001931', 'MP:0001119', 'MP:0009222', 'MP:0001376', 'MP:0000627')
 go
      
 update VOC_Evidence_Property
@@ -187,7 +189,7 @@ go
 select * from #toupdate6 order by accID
 go
 
-/* children of MP:0003699, MP:0008779, MP:0002788, MP:0008000 or child ==> F */
+/* children of or child ==> F */
 
 select aa.accID, aaa.accID as childAccID, substring(t.term,1,25) as term, p._EvidenceProperty_key
 into #toupdate7
@@ -203,7 +205,7 @@ and aa._MGIType_key = 12
 and a._Term_key = aaa._Object_key
 and aaa._MGIType_key = 13
 and dc._DAG_key = 4
-and dc._AncestorObject_key in (55400,865128,2310645,3311115)
+and dc._AncestorObject_key in (49936,50300,50529,50448,55400,865128,2506308,2310645,3311115,4043320)
 and a._Term_key = dc._DescendentObject_key
 go
 

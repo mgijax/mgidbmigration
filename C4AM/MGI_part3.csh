@@ -50,6 +50,10 @@ echo 'Run SNP Marker Load ' | tee -a ${LOG}
 ${SNPCACHELOAD}/snpmarker.sh
 
 date | tee -a ${LOG}
+echo 'Add New Measurements' | tee -a ${LOG}
+${MGI_DBUTILS}/bin/addMeasurements.csh
+
+date | tee -a ${LOG}
 echo 'Running C4AM sanity checks' | tee -a ${LOG}
 ./C4aM_sanity.py /mgi/all/wts_projects/7100/7106/loads/C4AM_input.txt > ./C4aM_sanity.out
 

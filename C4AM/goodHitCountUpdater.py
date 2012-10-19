@@ -99,7 +99,7 @@ db.set_sqlPasswordFromFile(passwordFileName)
 
 for s in toUpdateDict.keys():
     ghc = toUpdateDict[s]
-    print 'updating %s to %s' % (s, ghc)
+    #print 'updating %s to %s' % (s, ghc)
     db.sql('''update SEQ_GeneTrap
 		set goodHitCount = %s
 		where _Sequence_key = %s''' % (ghc, s), None)

@@ -147,6 +147,9 @@ cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 # run allcacheload
 #${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
+# run mrkomim.csh
+${MRKCACHELOAD}/mrkomim.csh | tee -a ${LOG}
+
 #
 # make sure Allele Detail Display notes were created
 #

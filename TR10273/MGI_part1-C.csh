@@ -134,7 +134,13 @@ cp ${SANGERMPLOAD}/mgi_sanger_mp_test.tsv /data/loads/scrum-dog/mgi/sangermpload
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
-# run annotation tests
+# run stand-alone genotype tests
+cp ${SANGERMPLOAD}/sangermpload.config.genotype.test ${SANGERMPLOAD}/sangermpload.config
+cp ${SANGERMPLOAD}/mgi_genotype_test.txt /data/loads/scrum-dog/mgi/sangermpload.test/input
+echo ${SANGERMPLOAD}/bin/makeGenotypeTest.sh | tee -a ${LOG}
+${SANGERMPLOAD}/bin/makeGenotypeTest.sh | tee -a ${LOG}
+
+# run stand-alone annotation tests
 cp ${SANGERMPLOAD}/mgi_annotload_test.txt /data/loads/scrum-dog/mgi/sangermpload.test/input
 echo ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/makeAnnotationTest.sh | tee -a ${LOG}

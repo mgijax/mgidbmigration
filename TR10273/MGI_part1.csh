@@ -21,38 +21,102 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
+# load a backup
+
+if ("${1}" == "dev") then
+    echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
+    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
+    date | tee -a ${LOG}
+else
+    echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
+endif
+
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
 
-delete from VOC_Evidence_Property where _PropertyTerm_key = 8809651
-go
-
-declare @nextProperty integer
-select @nextProperty = max(_EvidenceProperty_key) from VOC_Evidence_Property
-declare @propertyKey integer
-select @propertyKey = _Term_key from VOC_Term where _Vocab_key = 86
-
-select seq = identity(10), e._AnnotEvidence_key
-into #toadd
-from VOC_Annot a, VOC_Evidence e
-where a._AnnotType_key = 1002
-and a._Annot_key = e._Annot_key
-
-insert into VOC_Evidence_Property
-select @nextProperty + seq,_AnnotEvidence_key,@propertyKey,1,1,'NA',1001,1001,getdate(),getdate()
-from #toadd
+sp_rename GXD_AllelePair, GXD_AllelePair_Old
 go
 
 EOSQL
 
-/mgi/all/wts_projects/11100/11110/tr11110.csh | tee -a ${LOG}
-#./sexauto.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/GXD_AllelePair_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/GXD_AllelePair_create.object | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+insert into GXD_AllelePair
+select _AllelePair_key, _Genotype_key, _Allele_key_1, _Allele_key_2, _Marker_key, null, null,
+_PairState_key, _Compound_key, sequenceNum, _CreatedBy_key, _ModifiedBy_key,
+creation_date, modification_date
+from GXD_AllelePair_Old
+go
+
+select count(*) from GXD_AllelePair_Old
+go
+
+select count(*) from GXD_AllelePair
+go
+
+EOSQL
+
+${MGD_DBSCHEMADIR}/index/GXD_AllelePair_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/default/GXD_AllelePair_bind.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Marker_Assoc_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Marker_Assoc_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_AllelePair_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_AllelePair_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/ALL_CellLine_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_CellLine_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_AllelePair_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_AllelePair_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/view/GXD_AllelePair_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_AllelePair_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_Genotype_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/GXD_Genotype_Summary_View_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
+
+#no changes
+#ALL_mergeAllele_create
+#GXD_checkDuplicateGenotype_create
+#GXD_orderAllelePairs_create
+#GXD_orderGenotypes_create
+#MGI_resetSequenceNum_create
+#MRK_updateKeys_create
+
+#allcacheload
+#qcreports_db
+#reports_db
+#genotypeload
+#sangermpload
+
+date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
+
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

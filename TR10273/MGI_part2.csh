@@ -29,34 +29,13 @@ echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
 # run tests
-cp ${SANGERMPLOAD}/sangermpload.config.test ${SANGERMPLOAD}/sangermpload.config
-cp ${SANGERMPLOAD}/annotload.config.test ${SANGERMPLOAD}/annotload.config
 cp ${SANGERMPLOAD}/test/mgi_sanger_mp_test.tsv /data/loads/scrum-dog/mgi/sangermpload.test/input
-echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-
-# run stand-alone genotype tests
-cp ${SANGERMPLOAD}/sangermpload.config.genotype.test ${SANGERMPLOAD}/sangermpload.config
-cp ${SANGERMPLOAD}/test/mgi_genotypeload_test.txt /data/loads/scrum-dog/mgi/sangermpload.test/input
-echo ${SANGERMPLOAD}/test/makeGenotypeTest.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/makeGenotypeTest.sh | tee -a ${LOG}
-
-# run stand-alone annotation tests
-cp ${SANGERMPLOAD}/annotloadtest.config.default ${SANGERMPLOAD}/annotloadtest.config
-cp ${SANGERMPLOAD}/test/mgi_annotload_test.txt /data/loads/scrum-dog/mgi/sangermpload.test/input
-echo ${SANGERMPLOAD}/test/makeAnnotationTest.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/makeAnnotationTest.sh | tee -a ${LOG}
-
-# re-set factory settings
-cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
-cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
+echo ${SANGERMPLOAD}/test/sangermpload_test.sh | tee -a ${LOG}
+${SANGERMPLOAD}/test/sangermpload_test.sh | tee -a ${LOG}
 
 # the genotypeload-er should handle this
 # run allcacheload
 #${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
-
-# run mrkomim.csh
-${MRKCACHELOAD}/mrkomim.csh | tee -a ${LOG}
 
 #
 # make sure Allele Detail Display notes were created

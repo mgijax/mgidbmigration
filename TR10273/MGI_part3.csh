@@ -2,7 +2,11 @@
 
 #
 # Migration for TR10273 -- Europhenome/Sanger MP annotations
-# (part 3 running reports)
+# (part 3)
+#
+# 1. run 'runtest_part2' to load additional genotypes & annotations for testing
+# 2. run 'runtest_part3' to review the tests (pass/fail)
+#
 #
 
 ###----------------------###

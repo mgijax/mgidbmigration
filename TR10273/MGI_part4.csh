@@ -2,11 +2,12 @@
 
 #
 # Migration for TR10273 -- Europhenome/Sanger MP annotations
-# (part 2 running loads)
+# (part 4)
 #
-# 1. use current Sanger BioMart data
-# 2. run Sanger dataload with Sanger BioMart as input
-# 3. run 'runtest_part1' to load the Sanger test data
+# 1. run mirror_wget to download the most recent Sanger BioMart file
+# 2. run Sanger BioMart dataload
+#
+# all other test data is retained
 #
 
 ###----------------------###
@@ -21,18 +22,15 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+# run mirror_wget to download the latest Sanger BioMart file
+#
+echo ${MIRROR_WGET}/www.sanger.ac.uk5 | tee -a ${LOG}
+${MIRROR_WGET}/www.sanger.ac.uk5 | tee -a ${LOG}
+
 # run sangermpload
 # make sure factory settings
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-
-# run test - part 1 - sanger biomart input file + additonal genotypes
-echo ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
-
-# the genotypeload-er should handle this; but if you have a problem...
-# run allcacheload
-#${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

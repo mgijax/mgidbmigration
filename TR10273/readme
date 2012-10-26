@@ -42,3 +42,7 @@ MGI_part3.csh
 - to execute:
 	MGI_part3.sh
 
+MGI_part4.csh
+- runs the mirror_wget to grab a new copy of the Sanger Biomart file
+- runs the sangermpload-er using the sanger biomart input file
+

@@ -17,18 +17,14 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
-
 # run sangermpload
 # make sure factory settings
-cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
-cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
+#cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config
+#cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
-# run test - part 1 - sanger biomart input file
+# run test - part 1 - sanger biomart input file + additonal genotypes
 echo ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 
@@ -54,6 +50,10 @@ and n._Object_key = g._Genotype_key)
 go
 
 EOSQL
+
+###-----------------------###
+###--- final datestamp ---###
+###-----------------------###
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

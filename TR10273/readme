@@ -1,5 +1,23 @@
-mgidbmigration-5-1-0-3
-sangermpload-5-1-0-1
-gennotypeload-5-1-0-2
-lib-py-dataload-5-1-0-1
-ei-5-1-0-2 (installed on production)
+products requiring tags:
+mgidbmigration-5-1-0-?
+sangermpload-5-1-0-?
+gennotypeload-5-1-0-?
+lib-py-dataload-5-1-0-?
+ei-5-1-0-?
+
+MGI_part1.csh
+- runs the schema scripts needed to convert production Sybase
+  to TR10273/schema
+- to execute with fresh copy of production database:
+	MGI_part1.csh dev
+
+MGI_part2.csh
+- runs the sangermpload-er using the sanger biomart input file
+- runs test part1 (sanger test + additional genotypes)
+- the genotype IDs generated in this step can then be used
+  for the additional annotations loaded in part2
+
+MGI_part3.csh
+- runs test part2 (additional mp + omim)
+- runs test part3 (review)
+

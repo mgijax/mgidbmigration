@@ -96,27 +96,13 @@ ${MGD_DBSCHEMADIR}/view/GXD_Genotype_Summary_View_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
 
-#no changes
-#ALL_mergeAllele_create
-#GXD_checkDuplicateGenotype_create
-#GXD_orderAllelePairs_create
-#GXD_orderGenotypes_create
-#MGI_resetSequenceNum_create
-#MRK_updateKeys_create
-
-#allcacheload
-#qcreports_db
-#reports_db
-#genotypeload
-#sangermpload
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
-
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -17,45 +17,13 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-###------------------------------###
-###--- MGI Marker feed report ---###
-###------------------------------###
+# run test - part 2 - MP & OMIM annotations
+echo ${SANGERMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
+${SANGERMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'MGI Marker feed report' | tee -a ${LOG}
-${PUBRPTS}/mgimarkerfeed_reports.sh
-
-###------------------###
-###--- QC reports ---###
-###------------------###
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcnightly_reports.sh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcweekly_reports.sh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcmonthly_reports.sh
-
-###----------------------###
-###--- Public reports ---###
-###----------------------###
-
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/nightly_reports.sh
-
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/weekly_reports.sh
-
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/monthly_reports.sh
+# run test - part 3 - review
+echo ${SANGERMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
+${SANGERMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

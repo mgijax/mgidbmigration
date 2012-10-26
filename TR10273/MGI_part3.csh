@@ -25,6 +25,10 @@ ${SANGERMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
 echo ${SANGERMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
 
+#
+# log into cardolan and run the exporter
+#
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

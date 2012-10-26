@@ -17,6 +17,11 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+# run mirror_wget to download the latest Sanger BioMart file
+#
+echo ${MIRROR_WGET}/www.sanger.ac.uk5 | tee -a ${LOG}
+${MIRROR_WGET}/www.sanger.ac.uk5 | tee -a ${LOG}
+
 # run sangermpload
 # make sure factory settings
 #cp ${SANGERMPLOAD}/sangermpload.config.default ${SANGERMPLOAD}/sangermpload.config

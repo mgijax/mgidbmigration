@@ -5,6 +5,16 @@ gennotypeload-5-1-0-?
 lib-py-dataload-5-1-0-?
 ei-5-1-0-?
 
+Backups:
+rohan:/backups/rohan/scrum-dog/mgd_dev[12]
+
+To load the backup into your test database:
+- example
+	load_db.csh DEV1_MGI mgd_lec1 /backups/rohan/scrum-dog/mgd_dev
+
+To simulate a weekly/monthly Sanger load:
+- run MGI_part2.csh && comment out lines that are running the tests
+
 MGI_part1.csh
 - runs the schema scripts needed to convert production Sybase to TR10273/schema
 - should be run with a fresh copy of production database:
@@ -20,6 +30,8 @@ MGI_part2.csh
 	mgi_genoload_test.txt
 - to execute:
 	MGI_part2.sh
+- the exporter/mover can now be run on cardolan
+  cardolan:/usr/local/mgi/scrum-dog/exporter/bin/exportPostgres_sangermpload.sh
 
 MGI_part3.csh
 - runs sangermpload/test/runtest_part2.sh (additional mp + omim)

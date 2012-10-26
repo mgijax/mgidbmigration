@@ -28,12 +28,11 @@ cp ${SANGERMPLOAD}/annotload.config.default ${SANGERMPLOAD}/annotload.config
 echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
-# run tests
-cp ${SANGERMPLOAD}/test/mgi_sanger_mp_test.tsv /data/loads/scrum-dog/mgi/sangermpload.test/input
-echo ${SANGERMPLOAD}/test/sangermpload_test.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/sangermpload_test.sh | tee -a ${LOG}
+# run test - part 1 - sanger biomart input file
+echo ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
+${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 
-# the genotypeload-er should handle this
+# the genotypeload-er should handle this; but if you have a problem...
 # run allcacheload
 #${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
@@ -55,8 +54,6 @@ and n._Object_key = g._Genotype_key)
 go
 
 EOSQL
-
-# remind Kim that she needs to manually add genotype notes
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

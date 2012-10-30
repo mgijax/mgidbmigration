@@ -34,7 +34,7 @@ ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 # run allcacheload
 #${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
 
-# VOC_Allele_Cache
+# cache tables
 ${MGICACHELOAD}/vocallele.csh | tee -a ${LOG}
 ${MGICACHELOAD}/voccounts.csh | tee -a ${LOG}
 ${MGICACHELOAD}/vocmarker.csh | tee -a ${LOG}

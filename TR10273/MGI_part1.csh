@@ -92,6 +92,10 @@ ${MGD_DBSCHEMADIR}/view/GXD_AllelePair_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_AllelePair_View_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_Genotype_Summary_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_Genotype_Summary_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_Summary_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_Summary_View_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}

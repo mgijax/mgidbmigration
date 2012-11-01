@@ -50,6 +50,10 @@ echo 'Run SNP Marker Load ' | tee -a ${LOG}
 ${SNPCACHELOAD}/snpmarker.sh
 
 date | tee -a ${LOG}
+echo 'Load Voc/Count Cache Table' | tee -a ${LOG}
+${MGICACHELOAD}/voccounts.csh
+
+date | tee -a ${LOG}
 echo 'Add New Measurements' | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/addMeasurements.csh
 

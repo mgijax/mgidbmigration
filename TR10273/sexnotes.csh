@@ -1,9 +1,5 @@
 #!/bin/csh -fx
 
-#
-# Migration for TR10273 -- Europhenome/Sanger MP annotations
-# (part 1 - migration of existing data into new structures)
-
 ###----------------------###
 ###--- initialization ---###
 ###----------------------###

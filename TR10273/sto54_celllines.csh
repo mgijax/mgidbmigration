@@ -23,7 +23,7 @@ use $MGD_DBNAME
 go
 
 -- Alleles already in our database which are in a genotype 
--- and have only 1 known cell line (already in the database) 
+-- and have > 1 known cell line (already in the database) 
 -- can have that cell line associated with the genotype. 
 --
 -- the association *cannot* be manually made until this project is installed in production
@@ -38,7 +38,7 @@ from ALL_Allele_CellLine c, ALL_CellLine cc
 where c._MutantCellLine_key = cc._CellLine_key
 and cc.cellline != "Not Specified"
 and exists (select 1 from GXD_AllelePair g where c._Allele_key = g._Allele_key_1)
-group by _Allele_key having count(*) = 1
+group by _Allele_key having count(*) > 1
 go
 
 insert into #sql
@@ -47,7 +47,7 @@ from ALL_Allele_CellLine c, ALL_CellLine cc
 where c._MutantCellLine_key = cc._CellLine_key
 and cc.cellline != "Not Specified"
 and exists (select 1 from GXD_AllelePair g where c._Allele_key = g._Allele_key_2)
-group by _Allele_key having count(*) = 1
+group by _Allele_key having count(*) > 1
 go
 
 select distinct s._Allele_key, 'no ' as hasMP
@@ -86,7 +86,7 @@ where exists (select 1 from GXD_AllelePair g, VOC_Annot v
 	and v._AnnotType_key = 1005)
 go
 
-select distinct ldb.name, a.symbol, substring(cc.cellLine,1,25) as cellLine, 
+select distinct substring(ldb.name,1,25) as name, a.symbol, substring(cc.cellLine,1,25) as cellLine, 
 	h1.hasMP, h2.hasOMIM
 from #sql s, ACC_Accession aa, ACC_LogicalDB ldb, ALL_Allele a, ALL_CellLine cc, #hasMP h1, #hasOMIM h2
 where s._MutantCellLine_key = aa._Object_key

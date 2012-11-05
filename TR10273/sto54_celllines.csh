@@ -86,14 +86,17 @@ where exists (select 1 from GXD_AllelePair g, VOC_Annot v
 	and v._AnnotType_key = 1005)
 go
 
-select distinct a.symbol, substring(cc.cellLine,1,25) as cellLine, 
+select distinct ldb.name, a.symbol, substring(cc.cellLine,1,25) as cellLine, 
 	h1.hasMP, h2.hasOMIM
-from #sql s, ALL_Allele a, ALL_CellLine cc, #hasMP h1, #hasOMIM h2
-where s._Allele_key = a._Allele_key
+from #sql s, ACC_Accession aa, ACC_LogicalDB ldb, ALL_Allele a, ALL_CellLine cc, #hasMP h1, #hasOMIM h2
+where s._MutantCellLine_key = aa._Object_key
+and aa._MGIType_key = 28
+and aa._LogicalDB_key = ldb._LogicalDB_key
+and s._Allele_key = a._Allele_key
 and s._MutantCellLine_key = cc._CellLine_key
 and s._Allele_key = h1._Allele_key
 and s._Allele_key = h2._Allele_key
-order by a.symbol, cc.cellLine
+order by ldb.name, a.symbol, cc.cellLine
 go
 
 checkpoint

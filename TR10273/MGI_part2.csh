@@ -30,15 +30,6 @@ ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 echo ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 
-# the genotypeload-er should handle this; but if you have a problem...
-# run allcacheload
-#${ALLCACHELOAD}/allelecombination.csh | tee -a ${LOG}
-
-# cache tables
-${MGICACHELOAD}/vocallele.csh | tee -a ${LOG}
-${MGICACHELOAD}/voccounts.csh | tee -a ${LOG}
-${MGICACHELOAD}/vocmarker.csh | tee -a ${LOG}
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

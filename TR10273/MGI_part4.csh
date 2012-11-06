@@ -37,32 +37,32 @@ touch ${LOG}
 #echo 'Load Sequence/Description Cache Table' | tee -a ${LOG}
 #${SEQCACHELOAD}/seqdescription.csh
 
-date | tee -a ${LOG}
-echo 'Load Marker/Label Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrklabel.csh
-date | tee -a ${LOG}
-echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrkref.csh
-date | tee -a ${LOG}
-echo 'Load Marker/Homology Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrkhomology.csh
-date | tee -a ${LOG}
-echo 'Load Marker/Location Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrklocation.csh
-date | tee -a ${LOG}
-echo 'Load Marker/Probe Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrkprobe.csh
-date | tee -a ${LOG}
-echo 'Load Marker/MCV Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrkmcv.csh
+#date | tee -a ${LOG}
+#echo 'Load Marker/Label Cache Table' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrklabel.csh
+#date | tee -a ${LOG}
+#echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrkref.csh
+#date | tee -a ${LOG}
+#echo 'Load Marker/Homology Cache Table' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrkhomology.csh
+#date | tee -a ${LOG}
+#echo 'Load Marker/Location Cache Table' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrklocation.csh
+#date | tee -a ${LOG}
+#echo 'Load Marker/Probe Cache Table' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrkprobe.csh
+#date | tee -a ${LOG}
+#echo 'Load Marker/MCV Cache Table' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrkmcv.csh
 
 #date | tee -a ${LOG}
 #echo 'Load Genetic Map Tables' | tee -a ${LOG}
 #${GENMAPLOAD}/bin/genmapload.sh
 
-date | tee -a ${LOG}
-echo 'Load Allele/Label Cache Table' | tee -a ${LOG}
-${ALLCACHELOAD}/alllabel.csh
+#date | tee -a ${LOG}
+#echo 'Load Allele/Label Cache Table' | tee -a ${LOG}
+#${ALLCACHELOAD}/alllabel.csh
 date | tee -a ${LOG}
 echo 'Load Allele/Combination Cache Table' | tee -a ${LOG}
 ${ALLCACHELOAD}/allelecombination.csh
@@ -71,28 +71,28 @@ echo 'Load Marker/OMIM Cache Table' | tee -a ${LOG}
 # the OMIM cache depends on the allele combination note 3
 ${MRKCACHELOAD}/mrkomim.csh
 date | tee -a ${LOG}
-echo 'Load Allele/Strain Cache Table' | tee -a ${LOG}
-${ALLCACHELOAD}/allstrain.csh
-date | tee -a ${LOG}
-echo 'Load Allele/CRE Cache Table' | tee -a ${LOG}
-${ALLCACHELOAD}/allelecrecache.csh
+#echo 'Load Allele/Strain Cache Table' | tee -a ${LOG}
+#${ALLCACHELOAD}/allstrain.csh
+#date | tee -a ${LOG}
+#echo 'Load Allele/CRE Cache Table' | tee -a ${LOG}
+#${ALLCACHELOAD}/allelecrecache.csh
 
-date | tee -a ${LOG}
-echo 'Load Bib Citation Cache Table' | tee -a ${LOG}
-${MGICACHELOAD}/bibcitation.csh
-date | tee -a ${LOG}
-echo 'Load Image Cache Table' | tee -a ${LOG}
-${MGICACHELOAD}/imgcache.csh
+#date | tee -a ${LOG}
+#echo 'Load Bib Citation Cache Table' | tee -a ${LOG}
+#${MGICACHELOAD}/bibcitation.csh
+#date | tee -a ${LOG}
+#echo 'Load Image Cache Table' | tee -a ${LOG}
+#${MGICACHELOAD}/imgcache.csh
 
-date | tee -a ${LOG}
-echo 'Load Voc/Count Cache Table' | tee -a ${LOG}
-${MGICACHELOAD}/voccounts.csh
-date | tee -a ${LOG}
-echo 'Load Voc/Marker Cache Table' | tee -a ${LOG}
-${MGICACHELOAD}/vocmarker.csh
-date | tee -a ${LOG}
-echo 'Load Voc/Allele Cache Table' | tee -a ${LOG}
-${MGICACHELOAD}/vocallele.csh
+#date | tee -a ${LOG}
+#echo 'Load Voc/Count Cache Table' | tee -a ${LOG}
+#${MGICACHELOAD}/voccounts.csh
+#date | tee -a ${LOG}
+#echo 'Load Voc/Marker Cache Table' | tee -a ${LOG}
+#${MGICACHELOAD}/vocmarker.csh
+#date | tee -a ${LOG}
+#echo 'Load Voc/Allele Cache Table' | tee -a ${LOG}
+#${MGICACHELOAD}/vocallele.csh
 
 date | tee -a ${LOG}
 echo 'QC Reports' | tee -a ${LOG}

@@ -27,10 +27,10 @@ touch ${LOG}
 echo ${MIRROR_WGET}/www.sanger.ac.uk5 | tee -a ${LOG}
 ${MIRROR_WGET}/www.sanger.ac.uk5 | tee -a ${LOG}
 
-# run sangermpload
+# run htmpload
 # make sure factory settings
-echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

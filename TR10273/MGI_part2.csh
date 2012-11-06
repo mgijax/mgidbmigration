@@ -21,14 +21,14 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-# run sangermpload
+# run htmpload
 # make sure factory settings
-echo ${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-${SANGERMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 
 # run test - part 1 - sanger biomart input file + additonal genotypes
-echo ${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

@@ -1,6 +1,6 @@
 products requiring tags:
 mgidbmigration-5-1-0-?
-sangermpload-5-1-0-?
+htmpload-5-1-0-?
 gennotypeload-5-1-0-?
 lib-py-dataload-5-1-0-?
 ei-5-1-0-?
@@ -21,22 +21,22 @@ MGI_part1.csh
 	MGI_part1.csh dev
 
 MGI_part2.csh
-- runs the sangermpload-er using the sanger biomart input file
-- runs sangermpload/test/runtest_part1.sh (sanger test + additional genotypes)
+- runs the htmpload-er using the sanger biomart input file
+- runs htmpload/test/runtest_part1.sh (sanger test + additional genotypes)
 - the genotype IDs generated in this step can then be used
   for the additional annotations loaded in part2
-- input files in sangermpload/test directory:
-	mgi_sangermpload_test.txt
+- input files in htmpload/test directory:
+	mgi_htmpload_test.txt
 	mgi_genoload_test.txt
 - to execute:
 	MGI_part2.sh
 - the exporter/mover can now be run on cardolan
-  cardolan:/usr/local/mgi/scrum-dog/exporter/bin/exportPostgres_sangermpload.sh
+  cardolan:/usr/local/mgi/scrum-dog/exporter/bin/exportPostgres_htmpload.sh
 
 MGI_part3.csh
-- runs sangermpload/test/runtest_part2.sh (additional mp + omim)
-- runs sangermpload/test/runtest_part3.sh (review)
-- input files in sangermpload/test directory:
+- runs htmpload/test/runtest_part2.sh (additional mp + omim)
+- runs htmpload/test/runtest_part3.sh (review)
+- input files in htmpload/test directory:
 	mgi_annotload_test.txt
 	mgi_omimload_test.txt
 - to execute:
@@ -44,5 +44,5 @@ MGI_part3.csh
 
 MGI_part4.csh
 - runs the mirror_wget to grab a new copy of the Sanger Biomart file
-- runs the sangermpload-er using the sanger biomart input file
+- runs the htmpload-er using the sanger biomart input file
 

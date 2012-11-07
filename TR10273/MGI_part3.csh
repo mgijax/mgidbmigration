@@ -22,12 +22,12 @@ rm -rf ${LOG}
 touch ${LOG}
 
 # run test - part 2 - MP & OMIM annotations
-echo ${SANGERMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
 
 # run test - part 3 - review
-echo ${SANGERMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
-${SANGERMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
 
 #
 # log into cardolan and run the exporter

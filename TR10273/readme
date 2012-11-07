@@ -33,6 +33,9 @@ MGI_part2.csh
 - the exporter/mover can now be run on cardolan
   cardolan:/usr/local/mgi/scrum-dog/exporter/bin/exportPostgres_htmpload.sh
 
+STOP; if the a new database backup is being used, then the additional mp + omim
+file needs to be updated with the new genotype ids created by part2
+
 MGI_part3.csh
 - runs htmpload/test/runtest_part2.sh (additional mp + omim)
 - runs htmpload/test/runtest_part3.sh (review)
@@ -43,6 +46,9 @@ MGI_part3.csh
 	MGI_part3.sh
 
 MGI_part4.csh
+- runs caches
+
+MGI_part5.csh
 - runs the mirror_wget to grab a new copy of the Sanger Biomart file
 - runs the htmpload-er using the sanger biomart input file
 

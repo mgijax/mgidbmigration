@@ -6,7 +6,8 @@
 #
 # 1. use current Sanger BioMart data
 # 2. run Sanger dataload with Sanger BioMart as input
-# 3. run 'runtest_part1' to load the Sanger test data
+# 3. run Europhenome dataload with Europhenome BioMart as input
+# 4. run 'runtest_part1' to load the Sanger test data
 #
 
 ###----------------------###
@@ -21,10 +22,13 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-# run htmpload
-# make sure factory settings
+# run htmpload/sanger
 echo ${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
 ${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
+
+# run htmpload/europhenom
+echo ${HTMPLOAD}/bin/europhenompload.sh | tee -a ${LOG}
+${HTMPLOAD}/bin/europhenompload.sh | tee -a ${LOG}
 
 # run test - part 1 - sanger biomart input file + additonal genotypes
 echo ${HTMPLOAD}/test/runtest_part1.sh | tee -a ${LOG}

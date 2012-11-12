@@ -22,12 +22,12 @@ rm -rf ${LOG}
 touch ${LOG}
 
 # run test - part 2 - MP & OMIM annotations
-echo ${HTMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
-${HTMPLOAD}/test/runtest_part2.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/test/runtest_part2.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part2.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/test/annotload.new.config.test ${HTMPLOAD}/test/omimload.config.test | tee -a ${LOG}
 
 # run test - part 3 - review
-echo ${HTMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
-${HTMPLOAD}/test/runtest_part3.sh | tee -a ${LOG}
+echo ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
 
 #
 # log into cardolan and run the exporter

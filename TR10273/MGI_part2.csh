@@ -37,14 +37,14 @@ touch ${LOG}
 # run htmpload/sanger
 ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/sangermpload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}
 
+# run test - part 1 - sanger input file + additonal genotypes
+${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/test/annotload.new.config.test | tee -a ${LOG}
+
 # run htmpload/europhenom
 ${HTMPLOAD}/bin/europhenompload.sh ${HTMPLOAD}/europhenompload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}
 
-# run test - part 1 - sanger input file + additonal genotypes
-${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/bin/sangermpload.sh | tee -a ${LOG}
-
 # run test - part 1 - europhenome input file + additonal genotypes
-${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/europhenompload.config.test ${HTMPLOAD}/bin/europhenompload.sh | tee -a ${LOG}
+#${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/europhenompload.config.test ${HTMPLOAD}/bin/europhenompload.sh ${HTMPLOAD}/test/annotload.append.config.test | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

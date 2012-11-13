@@ -4,13 +4,12 @@
 # Migration for TR10273 -- Europhenome/Sanger MP annotations
 # (part 2 running loads)
 #
-# 1. use current Sanger BioMart data
-# 2. run Sanger dataload with Sanger BioMart as input
-# 3. run 'runtest_part1' to load the Sanger test data
-# 4. run Europhenome dataload with Europhenome BioMart as input
-# 5. run 'runtest_part1' to load the Europhenome test data
-# 6. run 'runtest_part2' to load additional genotypes & annotations for testing
-# 7. run 'runtest_part3' to review the tests (pass/fail)
+# 1. run Sanger dataload with Sanger BioMart as input
+# 2. run 'runtest_part1' to load the Sanger test data
+# 3. run Europhenome dataload with Europhenome BioMart as input
+# 4. run 'runtest_part1' to load the Europhenome test data
+# 5. run 'runtest_part2' to load additional genotypes & annotations for testing (sanger)
+# 6. run 'runtest_part3' to review the tests (pass/fail) (sanger)
 #
 #
 

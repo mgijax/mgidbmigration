@@ -50,9 +50,9 @@ EOSQL
 # due to the need for genotype ids set to specific values further down the pipeline
 # the sanger tests need to run **before** the euro load
 #
-# run test - part 1 - sanger input file + additonal genotypes
+# run test - part 1 - sanger input file
 ${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/test/annotload.new.config.test | tee -a ${LOG}
-# additional genotypes
+# run test - part 1A - additional genotypes
 ${HTMPLOAD}/test/runtest_part1A.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -92,7 +92,7 @@ go
 
 EOSQL
 
-# run test - part 1 - europhenome input file + additonal genotypes
+# run test - part 1 - europhenome input file
 ${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/europhenompload.config.test ${HTMPLOAD}/bin/europhenompload.sh ${HTMPLOAD}/test/annotload.append.config.test | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

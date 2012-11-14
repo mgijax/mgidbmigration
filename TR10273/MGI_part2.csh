@@ -6,10 +6,11 @@
 #
 # 1. run Sanger dataload with Sanger BioMart as input
 # 2. run 'runtest_part1' to load the Sanger test data
-# 3. run Europhenome dataload with Europhenome BioMart as input
-# 4. run 'runtest_part1' to load the Europhenome test data
-# 5. run 'runtest_part2' to load additional genotypes & annotations for testing (sanger)
-# 6. run 'runtest_part3' to review the tests (pass/fail) (sanger)
+# 3. run 'runtest_part1A' to load the Sanger test data
+# 4. run Europhenome dataload with Europhenome BioMart as input
+# 5. run 'runtest_part1' to load the Europhenome test data
+# 6. run 'runtest_part2' to load additional genotypes & annotations for testing (sanger)
+# 7. run 'runtest_part3' to review the tests (pass/fail) (sanger)
 #
 #
 
@@ -51,6 +52,8 @@ EOSQL
 #
 # run test - part 1 - sanger input file + additonal genotypes
 ${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/test/annotload.new.config.test | tee -a ${LOG}
+# additional genotypes
+${HTMPLOAD}/test/runtest_part1A.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 

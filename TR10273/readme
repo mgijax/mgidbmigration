@@ -6,7 +6,7 @@ lib-py-dataload-5-1-0-?
 ei-5-1-0-?
 
 Backups:
-rohan:/backups/rohan/scrum-dog/mgd_dev[12]
+rohan:/backups/rohan/scrum-dog/mgd.backup[12]
 
 To load the backup into your test database:
 - example
@@ -41,6 +41,32 @@ MGI_part3.csh
 - runs caches
 
 MGI_part4.csh
-- runs the mirror_wget to grab a new copy of the Sanger Biomart file
+- runs the mirror_wget to grab a new copy of the bilmart files
 - runs the htmpload-er using the sanger biomart input file
+- runs the htmpload-er using the euro biomart input file
+
+TO RUN:
+
+.) login as 'mgiadmim'
+
+.) run scrum-dog configuration
+	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig;source ${MGICONFIG}/master.config.csh
+
+.) if changes are made to the test .txt files:
+
+   -- copy new test .txt files
+   cp the test .txt files to /usr/local/mgi/scrum-dog/dataload/htmpload/test
+   cd /usr/local/mgi/scrum-dog/dataload/htmpload/test
+   -- dos2unix to remove dox carriage returns
+   dos2unix mgi_eurompload_test.txt mgi_eurompload_test.txt
+   -- save the changes to CVS
+   cvs update -m"TR10273"
+
+.) cd to migration directory
+	cd /usr/local/mgi/scrum-dog/dbutils/mgidbmigration-trunk/TR10273
+
+.) run part1 and part2 (to start from scrum-dog Sybase backup)
+	MGI_part1.csh dev; MGI_part2.csh
+
+TO JUST RUN TESTS:
 

@@ -21,34 +21,26 @@ MGI_part1.csh
 	MGI_part1.csh dev
 
 MGI_part2.csh
-- runs the htmpload-er using the sanger biomart input file
-- runs htmpload/test/runtest_part1.sh (sanger test + additional genotypes)
-- the genotype IDs generated in this step can then be used
-  for the additional annotations loaded in part2
-- input files in htmpload/test directory:
-	mgi_htmpload_test.txt
-	mgi_genoload_test.txt
-- to execute:
-	MGI_part2.sh
+# 1. run Sanger dataload with Sanger BioMart as input
+# 2. run 'runtest_part1' to load the Sanger test data
+# 3. run 'runtest_part1A' to load the Sanger test data (additional genotypes)
+#
+# STOP here if "additional genotypes" IDs are changing from last run
+#
+# 4. run Europhenome dataload with Europhenome BioMart as input
+# 5. run 'runtest_part1' to load the Europhenome test data
+# 6. run 'runtest_part2' to load additional genotypes & annotations for testing (sanger)
+# 7. run 'runtest_part3' to review the tests (pass/fail) (sanger)
+
+Cardolan:Cron:
+- turn on
 - the exporter/mover can now be run on cardolan
   cardolan:/usr/local/mgi/scrum-dog/exporter/bin/exportPostgres_htmpload.sh
 
-STOP; if the a new database backup is being used, then the additional mp + omim
-file needs to be updated with the new genotype ids created by part2
-
 MGI_part3.csh
-- runs htmpload/test/runtest_part2.sh (additional mp + omim)
-- runs htmpload/test/runtest_part3.sh (review)
-- input files in htmpload/test directory:
-	mgi_annotload_test.txt
-	mgi_omimload_test.txt
-- to execute:
-	MGI_part3.sh
-
-MGI_part4.csh
 - runs caches
 
-MGI_part5.csh
+MGI_part4.csh
 - runs the mirror_wget to grab a new copy of the Sanger Biomart file
 - runs the htmpload-er using the sanger biomart input file
 

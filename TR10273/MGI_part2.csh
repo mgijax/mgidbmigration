@@ -75,13 +75,13 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-select count(*) from GXD_Genotype g where g._createdby_key = 1526 
+select count(*) from GXD_Genotype g where g._createdby_key = 1524
 go
 
-select a.* 
-from GXD_Genotype g, VOC_Annot a 
-where g._createdby_key = 1526 
-and g._Genotype_key = a._Object_key 
+select a.*
+from GXD_Genotype g, VOC_Annot a
+where g._createdby_key = 1524
+and g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
 go
 
@@ -95,13 +95,13 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-select count(*) from GXD_Genotype g where g._createdby_key = 1524 
+select count(*) from GXD_Genotype g where g._createdby_key = 1524
 go
 
-select a.* 
-from GXD_Genotype g, VOC_Annot a 
-where g._createdby_key = 1524 
-and g._Genotype_key = a._Object_key 
+select a.*
+from GXD_Genotype g, VOC_Annot a
+where g._createdby_key = 1524
+and g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
 go
 
@@ -115,20 +115,38 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-select count(*) from GXD_Genotype g where g._createdby_key = 1526 
+select count(*) from GXD_Genotype g where g._createdby_key = 1524
 go
 
-select a.* 
-from GXD_Genotype g, VOC_Annot a 
-where g._createdby_key = 1526 
-and g._Genotype_key = a._Object_key 
+select a.*
+from GXD_Genotype g, VOC_Annot a
+where g._createdby_key = 1524
+and g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
 go
 
 EOSQL
 
+
 # run test - part 2 - MP & OMIM annotations (sanger)
 ${HTMPLOAD}/test/runtest_part2.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+select count(*) from GXD_Genotype g where g._createdby_key = 1526
+go
+
+select a.*
+from GXD_Genotype g, VOC_Annot a
+where g._createdby_key = 1526
+and g._Genotype_key = a._Object_key
+and a._AnnotType_key = 1002
+go
+
+EOSQL
 
 # run test - part 3 - review (sanger)
 ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}

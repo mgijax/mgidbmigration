@@ -17,12 +17,16 @@
 # 5. run 'runtest_part1' to load the Europhenome test data (kick-out/mock)
 #
 # 6. run 'runtest_part2' to load additional MP & OMIM annotations for testing (sanger only)
+# MP/OMIM data files use the created-by = 'scrum-dog'
 #
 # 7. run 'runtest_part3' to review the tests (pass/fail) (sanger)
 #
 # ALL TEST DATA RUNS THE MP ANNOTATIONS IN "APPEND" MODE.
 # this means that the MP annotations will be "appended-to" the current 'htmpload' data
 # that was loaded as part of the "real" data load
+#
+# Both the "real" and "kick-out/mock" data will use created-by = 'htmpload'
+# 
 #
 
 ###----------------------###

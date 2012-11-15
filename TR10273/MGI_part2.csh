@@ -20,6 +20,9 @@
 #
 # 7. run 'runtest_part3' to review the tests (pass/fail) (sanger)
 #
+# ALL TEST DATA RUNS THE MP ANNOTATIONS IN "APPEND" MODE.
+# this means that the MP annotations will be "appended-to" the current 'htmpload' data
+# that was loaded as part of the "real" data load
 #
 
 ###----------------------###

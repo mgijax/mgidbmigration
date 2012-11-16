@@ -52,6 +52,15 @@ TO RUN:
 .) run scrum-dog configuration
 	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig;source ${MGICONFIG}/master.config.csh
 
+   this has been configured to talke to DEV1_MGI..mgd_lec1
+   to verify:
+
+   env | grep MGD
+
+   MGDEXP_DBNAME=mgd_lec1
+   MGDEXP_DBSERVER=DEV1_MGI
+   MGD_DBNAME=mgd_lec1
+
 .) if changes are made to the test files ($HTMPLOAD/tests/*txt):
 
    -- copy new test files

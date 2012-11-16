@@ -41,6 +41,8 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+date | tee -a ${LOG}
+
 # run htmpload/sanger
 ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/sangermpload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}
 

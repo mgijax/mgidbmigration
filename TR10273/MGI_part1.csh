@@ -68,6 +68,10 @@ update MGI_User set name = 'High Throughput MP Load', login = 'htmpload' where _
 go
 delete from MGI_User where _User_key = 1527
 go
+update VOC_Evidence_Property set value = 'M' where value = 'M'
+go
+update VOC_Evidence_Property set value = 'F' where value = 'F'
+go
 
 
 EOSQL

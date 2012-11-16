@@ -52,19 +52,19 @@ TO RUN:
 .) run scrum-dog configuration
 	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig;source ${MGICONFIG}/master.config.csh
 
-.) if changes are made to the test .txt files:
+.) if changes are made to the test files ($HTMPLOAD/tests/*txt):
 
-   -- copy new test .txt files
+   -- copy new test files
    cp the test .txt files to /usr/local/mgi/scrum-dog/dataload/htmpload/test
    cd /usr/local/mgi/scrum-dog/dataload/htmpload/test
-   -- dos2unix to remove dox carriage returns
+   -- dos2unix to remove dos carriage returns
    dos2unix mgi_eurompload_test.txt mgi_eurompload_test.txt
    -- save the changes to CVS
-   cvs update -m"TR10273"
+   cvs update -m"TR10273/test files"
 
-.) cd to migration directory
+.) cd to migration directory:
 	cd /usr/local/mgi/scrum-dog/dbutils/mgidbmigration-trunk/TR10273
 
-.) run part1 and part2 (to start from scrum-dog Sybase backup)
+.) run part1 and part2 (to start from scrum-dog Sybase backup):
 	MGI_part1.csh dev; MGI_part2.csh
 

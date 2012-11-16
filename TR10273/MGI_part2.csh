@@ -146,10 +146,30 @@ and g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
 go
 
+-- should be zero (empy)
+select distinct _Allele_key_1 from GXD_AllelePair a
+where not exists
+(select 1 from GXD_AlleleGenotype g
+where a._Genotype_key = g._Genotype_key
+and a._Allele_key_1 = g._Allele_key)
+union
+select distinct _Allele_key_2 from GXD_AllelePair a
+where a._Allele_key_2 is not null
+and not exists
+(select 1 from GXD_AlleleGenotype g
+where a._Genotype_key = g._Genotype_key
+and a._Allele_key_2 = g._Allele_key)
+go
+
 EOSQL
 
-# run test - part 3 - review (sanger)
+# run test - part 3 - review (sanger + euro)
 ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/europhenompload.config.test | tee -a ${LOG}
+
+# run test of real input data - part 3 - review (sanger + euro)
+${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/sangermpload.config | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/europhenompload.config | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

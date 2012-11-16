@@ -68,5 +68,3 @@ TO RUN:
 .) run part1 and part2 (to start from scrum-dog Sybase backup)
 	MGI_part1.csh dev; MGI_part2.csh
 
-TO JUST RUN TESTS:
-

@@ -142,13 +142,13 @@ select count(*) from GXD_Genotype g where g._createdby_key = 1526
 go
 
 select a.*
-from GXD_Genotype g, VOC_Annot a
-where g._createdby_key = 1526
-and g._Genotype_key = a._Object_key
-and a._AnnotType_key = 1002
+from VOC_Annot a, VOC_Evidence e
+where a._AnnotType_key = 1002
+and a._Annot_key = e._Annot_key
+and e._createdby_key = 1526
 go
 
--- should be zero (empy)
+-- should be zero (empty)
 select distinct _Allele_key_1 from GXD_AllelePair a
 where not exists
 (select 1 from GXD_AlleleGenotype g

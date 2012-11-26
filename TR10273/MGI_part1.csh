@@ -111,7 +111,7 @@ ${MGD_DBSCHEMADIR}/view/BIB_Summary_View_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_drop.objecT | TEE -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}

@@ -54,7 +54,7 @@ go
 select count(*) from GXD_Genotype g where g._createdby_key = 1524 
 go
 
-select a.* 
+select count(a._Annot_key)
 from GXD_Genotype g, VOC_Annot a 
 where g._createdby_key = 1524 
 and g._Genotype_key = a._Object_key 
@@ -80,7 +80,7 @@ go
 select count(*) from GXD_Genotype g where g._createdby_key = 1524
 go
 
-select a.*
+select count(a._Annot_key)
 from GXD_Genotype g, VOC_Annot a
 where g._createdby_key = 1524
 and g._Genotype_key = a._Object_key
@@ -100,7 +100,7 @@ go
 select count(*) from GXD_Genotype g where g._createdby_key = 1524
 go
 
-select a.*
+select count(a._Annot_key)
 from GXD_Genotype g, VOC_Annot a
 where g._createdby_key = 1524
 and g._Genotype_key = a._Object_key
@@ -120,7 +120,7 @@ go
 select count(*) from GXD_Genotype g where g._createdby_key = 1524
 go
 
-select a.*
+select count(a._Annot_key)
 from GXD_Genotype g, VOC_Annot a
 where g._createdby_key = 1524
 and g._Genotype_key = a._Object_key
@@ -141,7 +141,7 @@ go
 select count(*) from GXD_Genotype g where g._createdby_key = 1526
 go
 
-select a.*
+select count(a._Annot_key)
 from VOC_Annot a, VOC_Evidence e
 where a._AnnotType_key = 1002
 and a._Annot_key = e._Annot_key

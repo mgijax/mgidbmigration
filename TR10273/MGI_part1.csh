@@ -117,6 +117,8 @@ ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ALL_updateTransmission_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ALL_updateTransmission_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

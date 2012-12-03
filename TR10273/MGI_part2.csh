@@ -73,6 +73,19 @@ ${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HT
 # STOP IF NEW GENOTYPE IDS ARE NEEDED
 exit 0
 
+# for testing only; turn off before running on production
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+-- change the transmission type for Allele: MGI:4435328, Zfp715<tm1a(EUCOMM)Hmgu> (610449)
+-- to 'Chimeric'
+update ALL_Allele set _Transmission_key = 3982952 where _Allele_key = 610449
+go
+
+EOSQL
+
 # run test - part 1A - additional genotypes
 ${HTMPLOAD}/test/runtest_part1A.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
 

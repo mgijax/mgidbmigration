@@ -4,7 +4,6 @@
 # Migration for TR10273 -- Europhenome/Sanger MP annotations
 # Transmission
 #
-#
 
 ###----------------------###
 ###--- initialization ---###
@@ -34,7 +33,7 @@ where g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
 and g._Allele_key = aa._Allele_key
 and aa.isWildType = 0
-and aa._Transmission_key != 3982951
+and aa._Transmission_key in (3982952, 3982953)
 and a._Annot_key = e._Annot_key
 and e._Refs_key = c._Refs_key
 and c.jnumID in ('J:165965', 'J:175295')

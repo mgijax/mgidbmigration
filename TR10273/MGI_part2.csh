@@ -8,9 +8,9 @@
 #
 # 2. run 'runtest_part1' to load the Sanger test data (kick-out/mock)
 #
-# 3. run 'runtest_part1A' to load the Sanger test data (additional genotypes)
-#
 # STOP here if "additional genotypes" IDs are changing from last run
+#
+# 3. run 'runtest_part1A' to load the Sanger test data (additional genotypes)
 #
 # 4. run Europhenome dataload with Europhenome BioMart as input (real)
 #
@@ -69,6 +69,10 @@ EOSQL
 #
 # run test - part 1 - sanger input file
 ${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/test/annotload.config.test | tee -a ${LOG}
+
+# STOP IF NEW GENOTYPE IDS ARE NEEDED
+exit 0
+
 # run test - part 1A - additional genotypes
 ${HTMPLOAD}/test/runtest_part1A.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
 

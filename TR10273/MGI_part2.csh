@@ -8,9 +8,9 @@
 #
 # 2. run 'runtest_part1' to load the Sanger test data (kick-out/mock)
 #
-# STOP here if "additional genotypes" IDs are changing from last run
-#
 # 3. run 'runtest_part1A' to load the Sanger test data (additional genotypes)
+#
+# STOP here if "additional genotypes" IDs are changing from last run
 #
 # 4. run Europhenome dataload with Europhenome BioMart as input (real)
 #
@@ -61,6 +61,19 @@ and g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
 go
 
+-- should return (0)
+select count(aa._Allele_key)
+from GXD_AlleleGenotype g, VOC_Annot a, VOC_Evidence e, ALL_Allele aa, BIB_Citation_Cache c
+where g._Genotype_key = a._Object_key
+and a._AnnotType_key = 1002
+and g._Allele_key = aa._Allele_key
+and aa.isWildType = 0
+and aa._Transmission_key in (3982952, 3982953)
+and a._Annot_key = e._Annot_key
+and e._Refs_key = c._Refs_key
+and c.jnumID in ('J:175295')
+go
+
 EOSQL
 
 #
@@ -69,9 +82,6 @@ EOSQL
 #
 # run test - part 1 - sanger input file
 ${HTMPLOAD}/test/runtest_part1.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/test/annotload.config.test | tee -a ${LOG}
-
-# STOP IF NEW GENOTYPE IDS ARE NEEDED
-exit 0
 
 # for testing only; turn off before running on production
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -82,6 +92,10 @@ go
 -- change the transmission type for Allele: MGI:4435328, Zfp715<tm1a(EUCOMM)Hmgu> (610449)
 -- to 'Chimeric'
 update ALL_Allele set _Transmission_key = 3982952 where _Allele_key = 610449
+go
+
+-- should be (1)
+select count(*) from ALL_Allele where _Allele_key = 610449 and _Transmission_key = 3982952
 go
 
 EOSQL
@@ -106,6 +120,9 @@ go
 
 EOSQL
 
+# STOP IF NEW GENOTYPE IDS ARE NEEDED
+exit 0
+
 # run htmpload/europhenom
 ${HTMPLOAD}/bin/europhenompload.sh ${HTMPLOAD}/europhenompload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}
 
@@ -122,6 +139,19 @@ from GXD_Genotype g, VOC_Annot a
 where g._createdby_key = 1524
 and g._Genotype_key = a._Object_key
 and a._AnnotType_key = 1002
+go
+
+-- should return (0)
+select count(aa._Allele_key)
+from GXD_AlleleGenotype g, VOC_Annot a, VOC_Evidence e, ALL_Allele aa, BIB_Citation_Cache c
+where g._Genotype_key = a._Object_key
+and a._AnnotType_key = 1002
+and g._Allele_key = aa._Allele_key
+and aa.isWildType = 0
+and aa._Transmission_key in (3982952, 3982953)
+and a._Annot_key = e._Annot_key
+and e._Refs_key = c._Refs_key
+and c.jnumID in ('J:165965')
 go
 
 EOSQL

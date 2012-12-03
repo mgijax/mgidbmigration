@@ -121,7 +121,7 @@ go
 EOSQL
 
 # STOP IF NEW GENOTYPE IDS ARE NEEDED
-exit 0
+#exit 0
 
 # run htmpload/europhenom
 ${HTMPLOAD}/bin/europhenompload.sh ${HTMPLOAD}/europhenompload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}

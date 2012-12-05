@@ -176,9 +176,8 @@ go
 
 EOSQL
 
-
 # run test - part 2 - MP & OMIM annotations (sanger)
-${HTMPLOAD}/test/runtest_part2.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part2.sh ${HTMPLOAD}/test/sangermpload.config.test ${HTMPLOAD}/test/sanger.annotload.config.test | tee -a ${LOG}
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -217,8 +216,8 @@ ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/sangermpload.config.test | te
 ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/europhenompload.config.test | tee -a ${LOG}
 
 # run test of real input data - part 3 - review (sanger + euro)
-${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/sangermpload.config | tee -a ${LOG}
-${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/europhenompload.config | tee -a ${LOG}
+#${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/sangermpload.config | tee -a ${LOG}
+#${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/europhenompload.config | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

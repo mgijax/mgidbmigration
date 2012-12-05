@@ -2,10 +2,11 @@
 
 #
 # Migration for TR10273 -- Europhenome/Sanger MP annotations
-# (part 4 running loads)
+# (part 3 running loads & caches)
 #
-# 1. run cache loads
-# 2. run qc/public reports
+# 1. run marker-coordinate
+# 2. run cache loads
+# 3. run qc/public reports
 #
 
 ###----------------------###
@@ -20,9 +21,10 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-#date | tee -a ${LOG}
-#echo 'Create Dummy Sequences' | tee -a ${LOG}
-#${SEQCACHELOAD}/seqdummy.csh
+date | tee -a ${LOG}
+echo 'Marker-Coordinate load' | tee -a ${LOG}
+cp ${DBUTILS}/mgidbmigration/TR10273/C4AM_AlphaBuild_input.txt ${DATALOADSOUTPUT}/mgi/mrkcoordload/input/mrkcoordload.txt
+${MRKCOORDLOAD}/bin/mrkcoordload.sh
 
 date | tee -a ${LOG}
 echo 'Load Sequence/Coordinate Cache Table' | tee -a ${LOG}
@@ -55,10 +57,6 @@ ${MRKCACHELOAD}/mrkprobe.csh
 date | tee -a ${LOG}
 echo 'Load Marker/MCV Cache Table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkmcv.csh
-
-date | tee -a ${LOG}
-echo 'Load Genetic Map Tables' | tee -a ${LOG}
-${GENMAPLOAD}/bin/genmapload.sh
 
 date | tee -a ${LOG}
 echo 'Load Allele/Label Cache Table' | tee -a ${LOG}

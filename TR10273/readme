@@ -1,9 +1,15 @@
 products requiring tags:
-mgidbmigration-5-1-0-?
+
+-- branch
+ei-
+annotload-
+
+-- trunk
 htmpload-5-1-0-?
 gennotypeload-5-1-0-?
-lib-py-dataload-5-1-0-?
-ei-5-1-0-?
+lib_py_dataload-5-1-1-1
+mrkcacheload-5-1-1-2
+mgidbmigration-5-1-0-?
 
 merge from trunk: 11/28/2012
 mgddbschema

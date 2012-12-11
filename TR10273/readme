@@ -1,83 +1,48 @@
 products requiring tags:
-
--- branch
-ei-
-annotload-
-
--- trunk
+mgidbmigration-5-1-0-?
 htmpload-5-1-0-?
 gennotypeload-5-1-0-?
-lib_py_dataload-5-1-1-1
-mrkcacheload-5-1-1-2
-mgidbmigration-5-1-0-?
-
-merge from trunk: 11/28/2012
-mgddbschema
-pgmgddbschema
+lib-py-dataload-5-1-0-?
+ei-5-1-0-?
 
 Backups:
-rohan:/backups/rohan/scrum-dog/mgd.backup[12]
+rohan:/backups/rohan/scrum-dog/mgd_dev[12]
 
 To load the backup into your test database:
 - example
 	load_db.csh DEV1_MGI mgd_lec1 /backups/rohan/scrum-dog/mgd_dev
 
-MGI_part1.csh (production)
+To simulate a weekly/monthly Sanger load:
+- run MGI_part2.csh && comment out lines that are running the tests
+
+MGI_part1.csh
 - runs the schema scripts needed to convert production Sybase to TR10273/schema
+- should be run with a fresh copy of production database:
+	MGI_part1.csh dev
 
-MGI_part2.csh (production)
-# 1. run Sanger dataload with Sanger BioMart as input
-# 2. run Europhenome dataload with Europhenome BioMart as input
-# 3. run marker/omim cache
-# 4. run qc/public reports
-
-MGI_test1.csh
-# 1. run MGI_part1.csh dev (to load backup)
-# 2. run Sanger dataload with Sanger BioMart as input
-# 3. run 'runtest_part1' to load the Sanger test data
-# 4. run 'runtest_part1A' to load the Sanger test data (additional genotypes)
-#
-MGI_test2.csh
-# 1. run Europhenome dataload with Europhenome BioMart as input
-# 2. run 'runtest_part1' to load the Europhenome test data
-# 3. run 'runtest_part2' to load additional genotypes & annotations for testing (sanger)
-# 4. run 'runtest_part3' to review the tests (pass/fail) (sanger)
-# 5. run marker/coordinate test
-
-Cardolan:Cron:
-- turn on
+MGI_part2.csh
+- runs the htmpload-er using the sanger biomart input file
+- runs htmpload/test/runtest_part1.sh (sanger test + additional genotypes)
+- the genotype IDs generated in this step can then be used
+  for the additional annotations loaded in part2
+- input files in htmpload/test directory:
+	mgi_htmpload_test.txt
+	mgi_genoload_test.txt
+- to execute:
+	MGI_part2.sh
 - the exporter/mover can now be run on cardolan
   cardolan:/usr/local/mgi/scrum-dog/exporter/bin/exportPostgres_htmpload.sh
 
-TO RUN:
+MGI_part3.csh
+- runs htmpload/test/runtest_part2.sh (additional mp + omim)
+- runs htmpload/test/runtest_part3.sh (review)
+- input files in htmpload/test directory:
+	mgi_annotload_test.txt
+	mgi_omimload_test.txt
+- to execute:
+	MGI_part3.sh
 
-.) login as 'mgiadmim'
-
-.) run scrum-dog configuration
-	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig;source ${MGICONFIG}/master.config.csh
-
-   this has been configured to talke to DEV1_MGI..mgd_lec1
-   to verify:
-
-   env | grep MGD
-
-   MGDEXP_DBNAME=mgd_lec1
-   MGDEXP_DBSERVER=DEV1_MGI
-   MGD_DBNAME=mgd_lec1
-
-.) if changes are made to the test files ($HTMPLOAD/tests/*txt):
-
-   -- copy new test files
-   cp the test .txt files to /usr/local/mgi/scrum-dog/dataload/htmpload/test
-   cd /usr/local/mgi/scrum-dog/dataload/htmpload/test
-   -- dos2unix to remove dos carriage returns
-   dos2unix mgi_eurompload_test.txt mgi_eurompload_test.txt
-   -- save the changes to CVS
-   cvs update -m"TR10273/test files"
-
-.) cd to migration directory:
-	cd /usr/local/mgi/scrum-dog/dbutils/mgidbmigration-trunk/TR10273
-
-.) run part1 and part2 (to start from scrum-dog Sybase backup):
-	MGI_test1.csh; MGI_test2.csh
+MGI_part4.csh
+- runs the mirror_wget to grab a new copy of the Sanger Biomart file
+- runs the htmpload-er using the sanger biomart input file
 

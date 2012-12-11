@@ -25,8 +25,8 @@ date | tee -a ${LOG}
 
 if ("${1}" == "dev") then
     echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
-    #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
-    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup | tee -a ${LOG}
+    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
+    #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup | tee -a ${LOG}
     date | tee -a ${LOG}
 else
     echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
@@ -62,17 +62,6 @@ go
 
 select count(*) from GXD_AllelePair
 go
-
--- just until we start using a new backup file
-update MGI_User set name = 'High Throughput MP Load', login = 'htmpload' where _User_key = 1524
-go
-delete from MGI_User where _User_key = 1527
-go
-update VOC_Evidence_Property set value = 'M' where value = 'M'
-go
-update VOC_Evidence_Property set value = 'F' where value = 'F'
-go
-
 
 EOSQL
 
@@ -111,14 +100,10 @@ ${MGD_DBSCHEMADIR}/view/BIB_Summary_View_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/ALL_updateTransmission_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/ALL_updateTransmission_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

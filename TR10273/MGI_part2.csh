@@ -10,6 +10,8 @@
 #
 # 3. run marker/omim cache
 #
+# 4. run qc/public reports
+#
 
 ###----------------------###
 ###--- initialization ---###

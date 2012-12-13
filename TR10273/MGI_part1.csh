@@ -26,7 +26,7 @@ date | tee -a ${LOG}
 if ("${1}" == "dev") then
     echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
     #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
-    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup | tee -a ${LOG}
+    load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup | tee -a ${LOG}
     date | tee -a ${LOG}
 else
     echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
@@ -113,6 +113,8 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${L
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesMissing_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesByUser_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_orderGenotypesByUser_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}

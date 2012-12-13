@@ -1,19 +1,18 @@
 products requiring tags:
 
 -- branch
-ei-
-annotload-
+ei-5-1-1-1
+annotload-5-1-1-2
+mgddbschema-5-1-1-3
+pgmgddbschema-5-1-1-3
 
 -- trunk
 htmpload-5-1-1-2
 genotypeload-5-1-1-1
 lib_py_dataload-5-1-1-1
 mrkcacheload-5-1-1-2
-mgidbmigration-5-1-0-?
-
-merge from trunk: 11/28/2012
-mgddbschema
-pgmgddbschema
+mgidbmigration-5-1-1-2
+exporter-5-1-1-2
 
 Backups:
 rohan:/backups/rohan/scrum-dog/mgd.backup[12]

@@ -32,6 +32,11 @@ else
     echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
 endif
 
+#
+# remove 'lastrun'
+#
+rm -rf ${DATALOADSOUTPUT}/mgi/htmpload/*/*/lastrun
+
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}

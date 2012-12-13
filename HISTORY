@@ -1,4 +1,10 @@
 TAG: mgidbmigration-5-1-1-1
+DATE: 12/13/2012
+STAFF: lec
+CHANGES:
+1) TR10273/htmp project
+
+TAG: mgidbmigration-5-1-1-1
 DATE: 11/07/2012
 STAFF: dbm
 CHANGES: C4AM/B38 build tag
@@ -11,7 +17,6 @@ DATE: 09/05/2012,10/18/2012
 STAFF: lec
 CHANGES:
 1) TR10273/sanger
-2) TR10273/sanger/MGI_part1-B.csh
 
 TAG: mgidbmigration-4-4-2-27
 DATE: 02/13/2012

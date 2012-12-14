@@ -44,7 +44,7 @@ touch ${LOG}
 date | tee -a ${LOG}
 
 # run part 1 of migration
-#./MGI_part1.csh dev
+./MGI_part1.csh dev
 
 # run htmpload/sanger
 ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/sangermpload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}

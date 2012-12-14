@@ -17,6 +17,12 @@
 #
 # 5. run marker/coordinate test
 #
+# 6. run cache loads
+#
+# 7. make backup of DEV1_MGI..mgd_lec1
+#
+# 8. load backup into DEV_MGI..mgd_dev
+#
 # ALL TEST DATA RUNS THE MP ANNOTATIONS IN "APPEND" MODE.
 # this means that the MP annotations will be "appended-to" the current 'htmpload' data
 # that was loaded as part of the "real" data load
@@ -206,27 +212,34 @@ date | tee -a ${LOG}
 echo 'Load Voc/Allele Cache Table' | tee -a ${LOG}
 ${MGICACHELOAD}/vocallele.csh
 
-#date | tee -a ${LOG}
-#echo 'QC Reports' | tee -a ${LOG}
-#${QCRPTS}/qcnightly_reports.csh
+date | tee -a ${LOG}
+echo 'Make backup of DEV1_MGI..mgd_lec1' | tee -a ${LOG}
+${MGI_DBUTILS}/bin/dump_db.csh DEV1_MGI mgd_lec1 /backups/rohan/scrum-dog/mgd_htmp.sybase
+date | tee -a ${LOG}
+echo 'Load backup into DEV_MGI..mgd_dev' | tee -a ${LOG}
+${MGI_DBUTILS}/bin/load_db.csh DEV_MGI mgd_dev /backups/rohan/scrum-dog/mgd_htmp.sybase
 
-#date | tee -a ${LOG}
-#echo 'QC Reports' | tee -a ${LOG}
-#${QCRPTS}/qcmonthly_reports.csh
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcnightly_reports.csh
+
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcmonthly_reports.csh
 
 # this must run before the generateGIAAssoc.csh script
 # which depends on GIA_???.py reports
-#date | tee -a ${LOG}
-#echo 'QC Reports' | tee -a ${LOG}
-#${QCRPTS}/qcweekly_reports.csh
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcweekly_reports.csh
 
-#date | tee -a ${LOG}
-#echo 'Daily Public Reports' | tee -a ${LOG}
-#${PUBRPTS}/nightly_reports.csh
+date | tee -a ${LOG}
+echo 'Daily Public Reports' | tee -a ${LOG}
+${PUBRPTS}/nightly_reports.csh
 
-#date | tee -a ${LOG}
-#echo 'Weekly Public Reports' | tee -a ${LOG}
-#${PUBRPTS}/weekly_reports.csh
+date | tee -a ${LOG}
+echo 'Weekly Public Reports' | tee -a ${LOG}
+${PUBRPTS}/weekly_reports.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

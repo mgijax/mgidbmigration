@@ -44,7 +44,7 @@ touch ${LOG}
 date | tee -a ${LOG}
 
 # run part 1 of migration
-./MGI_part1.csh dev
+#./MGI_part1.csh dev
 
 # run htmpload/sanger
 ${HTMPLOAD}/bin/sangermpload.sh ${HTMPLOAD}/sangermpload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG}
@@ -78,6 +78,8 @@ and c.jnumID in ('J:175295')
 go
 
 EOSQL
+
+exit 0
 
 #
 # due to the need for genotype ids set to specific values further down the pipeline

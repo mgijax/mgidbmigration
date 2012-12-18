@@ -25,13 +25,17 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 echo 'Load Human Coordinates' | tee -a ${LOG}
-${MAPVIEWLOAD}/bin/mapviewload.sh true
+${MAPVIEWLOAD}/bin/mapviewload.sh false
 
 # NOTE THIS IS DUMMY DATA FOR TESTING geneticVsGenomic only
 # MUST BE REMOVED PRIOR TO RELEASE
 date | tee -a ${LOG}
 echo 'Marker Coordinate Load' | tee -a ${LOG}
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh
+
+date | tee -a ${LOG}
+echo 'Homology Load' | tee -a ${LOG}
+${HOMOLOGYLOAD}/bin/homologyload.sh
 
 ###-----------------------###
 ###--- final datestamp ---###

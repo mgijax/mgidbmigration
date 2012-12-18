@@ -79,8 +79,6 @@ go
 
 EOSQL
 
-exit 0
-
 #
 # due to the need for genotype ids set to specific values further down the pipeline
 # the sanger tests need to run **before** the euro load

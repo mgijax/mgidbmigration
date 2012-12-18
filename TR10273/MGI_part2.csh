@@ -93,9 +93,13 @@ go
 
 EOSQL
 
+date | tee -a ${LOG}
 echo 'Load Marker/OMIM Cache Table' | tee -a ${LOG}
-# the OMIM cache depends on the allele combination note 3
 ${MRKCACHELOAD}/mrkomim.csh
+
+date | tee -a ${LOG}
+echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
+${MRKCACHELOAD}/mrkref.csh
 
 date | tee -a ${LOG}
 echo 'QC Reports' | tee -a ${LOG}

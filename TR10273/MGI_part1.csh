@@ -69,15 +69,14 @@ select count(*) from GXD_AllelePair
 go
 
 -- just until we start using a new backup file
-update MGI_User set name = 'High Throughput MP Load', login = 'htmpload' where _User_key = 1524
-go
-delete from MGI_User where _User_key = 1527
-go
-update VOC_Evidence_Property set value = 'M' where value = 'M'
-go
-update VOC_Evidence_Property set value = 'F' where value = 'F'
-go
-
+--update MGI_User set name = 'High Throughput MP Load', login = 'htmpload' where _User_key = 1524
+--go
+--delete from MGI_User where _User_key = 1527
+--go
+--update VOC_Evidence_Property set value = 'M' where value = 'M'
+--go
+--update VOC_Evidence_Property set value = 'F' where value = 'F'
+--go
 
 EOSQL
 

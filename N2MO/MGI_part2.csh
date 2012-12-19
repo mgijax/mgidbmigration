@@ -25,7 +25,7 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 echo 'Load Human Coordinates' | tee -a ${LOG}
-${MAPVIEWLOAD}/bin/mapviewload.sh false
+${MAPVIEWLOAD}/bin/mapviewload.sh true
 
 # NOTE THIS IS DUMMY DATA FOR TESTING geneticVsGenomic only
 # MUST BE REMOVED PRIOR TO RELEASE

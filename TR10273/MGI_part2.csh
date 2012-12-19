@@ -10,6 +10,8 @@
 #
 # 3. run marker/omim cache
 #
+# 4. run test of real input data
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -98,6 +100,10 @@ ${MRKCACHELOAD}/mrkomim.csh
 date | tee -a ${LOG}
 echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkref.csh
+
+# run test of real input data
+${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/sangermpload.config | tee -a ${LOG}
+${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/europhenompload.config | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

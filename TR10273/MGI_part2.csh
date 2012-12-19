@@ -10,8 +10,6 @@
 #
 # 3. run marker/omim cache
 #
-# 4. run qc/public reports
-#
 
 ###----------------------###
 ###--- initialization ---###
@@ -100,28 +98,6 @@ ${MRKCACHELOAD}/mrkomim.csh
 date | tee -a ${LOG}
 echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkref.csh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcnightly_reports.csh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcmonthly_reports.csh
-
-# this must run before the generateGIAAssoc.csh script
-# which depends on GIA_???.py reports
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcweekly_reports.csh
-
-date | tee -a ${LOG}
-echo 'Daily Public Reports' | tee -a ${LOG}
-${PUBRPTS}/nightly_reports.csh
-
-date | tee -a ${LOG}
-echo 'Weekly Public Reports' | tee -a ${LOG}
-${PUBRPTS}/weekly_reports.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

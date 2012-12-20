@@ -94,6 +94,10 @@ go
 EOSQL
 
 date | tee -a ${LOG}
+echo 'Load Allele/Combination Cache Table' | tee -a ${LOG}
+${ALLCACHELOAD}/allelecombination.csh
+
+date | tee -a ${LOG}
 echo 'Load Marker/OMIM Cache Table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkomim.csh
 

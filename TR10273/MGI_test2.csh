@@ -133,6 +133,18 @@ go
 
 EOSQL
 
+date | tee -a ${LOG}
+echo 'Load Allele/Combination Cache Table' | tee -a ${LOG}
+{ALLCACHELOAD}/allelecombination.csh
+
+date | tee -a ${LOG}
+echo 'Load Marker/OMIM Cache Table' | tee -a ${LOG}
+${MRKCACHELOAD}/mrkomim.csh
+
+date | tee -a ${LOG}
+echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
+${MRKCACHELOAD}/mrkref.csh
+
 # run test - part 3 - review (sanger + euro)
 ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/sangermpload.config.test | tee -a ${LOG}
 ${HTMPLOAD}/test/runtest_part3.sh ${HTMPLOAD}/test/europhenompload.config.test | tee -a ${LOG}
@@ -163,9 +175,6 @@ date | tee -a ${LOG}
 echo 'Load Marker/Label Cache Table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklabel.csh
 date | tee -a ${LOG}
-echo 'Load Marker/Reference Cache Table' | tee -a ${LOG}
-${MRKCACHELOAD}/mrkref.csh
-date | tee -a ${LOG}
 echo 'Load Marker/Homology Cache Table' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkhomology.csh
 date | tee -a ${LOG}
@@ -181,13 +190,6 @@ ${MRKCACHELOAD}/mrkmcv.csh
 date | tee -a ${LOG}
 echo 'Load Allele/Label Cache Table' | tee -a ${LOG}
 ${ALLCACHELOAD}/alllabel.csh
-ate | tee -a ${LOG}
-cho 'Load Allele/Combination Cache Table' | tee -a ${LOG}
-{ALLCACHELOAD}/allelecombination.csh
-date | tee -a ${LOG}
-echo 'Load Marker/OMIM Cache Table' | tee -a ${LOG}
-# the OMIM cache depends on the allele combination note 3
-${MRKCACHELOAD}/mrkomim.csh
 date | tee -a ${LOG}
 echo 'Load Allele/Strain Cache Table' | tee -a ${LOG}
 ${ALLCACHELOAD}/allstrain.csh

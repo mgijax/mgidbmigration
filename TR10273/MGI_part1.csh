@@ -104,6 +104,9 @@ ${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
 
+# add indexes on _CreatedBy_key and _ModifiedBy_key
+${MGD_DBSCHEMADIR}/index/BIB_Refs_create.object | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/view/GXD_AllelePair_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_AllelePair_View_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/GXD_Genotype_Summary_View_drop.object | tee -a ${LOG}

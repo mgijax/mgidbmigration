@@ -42,6 +42,9 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+update MGI_dbinfo set schema_version = "5-1-2", public_version = "MGI 5.12"
+go
+
 sp_rename GXD_AllelePair, GXD_AllelePair_Old
 go
 

@@ -56,7 +56,6 @@ date | tee -a ${LOG}
 echo "--- Bind defaults for MRK__create.object" | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/default/MRK_Cluster_bind.object
-${MGD_DBSCHEMADIR}/default/MRK_ClusterMember_bind.object
 
 date | tee -a ${LOG}
 echo "--- Add indexes to MRK_Cluster*" | tee -a ${LOG}

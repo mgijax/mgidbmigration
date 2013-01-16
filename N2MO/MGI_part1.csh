@@ -89,10 +89,16 @@ ${MGD_DBSCHEMADIR}/trigger/MRK_Cluster_create.object
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object
 ${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object
 
-#date | tee -a ${LOG}
-#echo 'Create Stored Procedures?' | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/
-#${MGD_DBSCHEMADIR}/procedure/
+date | tee -a ${LOG}
+echo '---Create Stored Procedures' | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_reloadLabel_drop.object
+${MGD_DBSCHEMADIR}/procedure/MRK_reloadLabel_create.object
+
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Counts_drop.object
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Counts_create.object
+
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Markers_drop.object
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Markers_create.object 
 
 date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---"

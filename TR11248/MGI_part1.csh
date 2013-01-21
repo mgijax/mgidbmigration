@@ -9,6 +9,7 @@
 #
 # trunk:
 # pgsnpdbschema
+# lib_py_postgres (add sym-link of "pg_db_py/db.py" to Install)
 #
 # retire:
 # snpdbschema
@@ -37,6 +38,7 @@ if ("${1}" == "dev") then
     echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
     #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
     #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup | tee -a ${LOG}
+    # need to load SNP postgres database to pub_dev/snp 
     date | tee -a ${LOG}
 else
     echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
@@ -63,8 +65,6 @@ drop index snp.SNP_Accession_Object_key;
 drop index snp.SNP_Accession_Accession_key;
 
 EOSQL
-
-${PG_SNP_DBSCHEMADIR}/index/?_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

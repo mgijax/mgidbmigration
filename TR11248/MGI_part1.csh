@@ -14,6 +14,10 @@
 # retire:
 # snpdbschema
 #
+# on Sybase: load new vocabularies
+# dbsnpload/bin/loadTranslations.sh
+# dbsnpload/bin/loadVoc.sh
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -21,8 +25,7 @@
 
 source ../Configuration
 
-echo "Server: ${MGD_DBSERVER}"
-echo "Database: ${MGD_DBNAME}"
+env | grep PG
 
 # start a new log file for this migration, and add a datestamp
 
@@ -35,13 +38,11 @@ date | tee -a ${LOG}
 # load a backup
 
 if ("${1}" == "dev") then
-    echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
-    #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup | tee -a ${LOG}
-    #load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup | tee -a ${LOG}
-    # need to load SNP postgres database to pub_dev/snp 
+    echo "--- Loading new database into ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
+    #${PGDBUTILS}/bin/loadDB.csh mgi-testdb4 export snp /export/dump/snp
     date | tee -a ${LOG}
 else
-    echo "--- Working on existing database: ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
+    echo "--- Using existing database:  ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
 endif
 
 #cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -58,15 +59,33 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 
 -- remove extra unique index; schema product has already been fixed
 
-drop index snp.SNP_ConsensusSnp_Marker_idx_ConsensusSnp_Marker_key;
-
+-- being renamed to SNP_Accession_idx_clustered
 drop index snp.SNP_Accession_Object_key;
 
-drop index snp.SNP_Accession_Accession_key;
+-- duplicate of primary key
+drop index snp.dp_snp_marker_idx_snpmarker_key;
+drop index snp.snp_consensussnp_idx_consensussnp_key;
+drop index snp.snp_consensussnp_marker_idx_consensussnp_marker_key;
+drop index snp.snp_coord_cache_idx_cache_cs_key;
+drop index snp.snp_subsnp_idx_subsnp_key;
+drop index snp.snp_accession_idx_accession_key;
+
+-- as part of TR10788/postgres, this table is no longer needed
+drop table snp.mrk_location_cache;
+
+-- tables that are no longer needed?
+-- remove from pgsnpdbschema as well
+-- drop table mgi_columns
+-- drop table mgi_tables
+-- drop table mgi_dbinfo
 
 EOSQL
 
 date | tee -a ${LOG}
+
+# should not need to do this step
+#${PG_SNP_DBSCHEMADIR}/index/SNP_Accession_create.object | tee -a ${LOG}
+#${PG_SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_create.object | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

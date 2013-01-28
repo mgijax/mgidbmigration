@@ -26,9 +26,10 @@ date | tee -a ${LOG}
 # counts
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
-select count(*) from SNP_Accession;
-select count(*) from SNP_ConsensusSnp;
-select count(*) from MRK_Location_Cache;
+select count(*) from snp.SNP_Accession;
+select count(*) from snp.SNP_ConsensusSnp;
+select count(*) from snp.SNP_ConsensusSnp_Marker;
+select count(*) from mgd.MRK_Location_Cache;
 EOSQL
 
 #
@@ -36,9 +37,10 @@ EOSQL
 ${SNPCACHELOAD}/snpmarker.sh | tee -a ${LOG}
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
-select count(*) from SNP_Accession;
-select count(*) from SNP_ConsensusSnp;
-select count(*) from MRK_Location_Cache;
+select count(*) from snp.SNP_Accession;
+select count(*) from snp.SNP_ConsensusSnp;
+select count(*) from snp.SNP_ConsensusSnp_Marker;
+select count(*) from mgd.MRK_Location_Cache;
 EOSQL
 
 ###-----------------------###

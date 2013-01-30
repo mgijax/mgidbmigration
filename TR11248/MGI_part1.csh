@@ -78,6 +78,7 @@ drop index snp.snp_population_idx_population_key;
 drop index snp.snp_strain_idx_snpstrain_key;
 drop index snp.snp_strain_idx_mgdstrain_key;
 drop index snp.snp_subsnp_idx_consensussnp_key;
+drop index snp.snp_subsnp_strainallele_idx_subsnp_key;
 
 
 -- as part of TR10788/postgres, this table is no longer needed

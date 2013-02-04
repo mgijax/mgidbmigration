@@ -79,6 +79,7 @@ drop index snp.snp_strain_idx_snpstrain_key;
 drop index snp.snp_strain_idx_mgdstrain_key;
 drop index snp.snp_subsnp_idx_consensussnp_key;
 drop index snp.snp_subsnp_strainallele_idx_subsnp_key;
+drop index snp.snp_subsnp_strainallele_idx_primary_key;
 
 
 -- as part of TR10788/postgres, this table is no longer needed
@@ -89,6 +90,10 @@ drop table snp.mrk_location_cache;
 drop table snp.mgi_columns;
 drop table snp.mgi_tables;
 -- drop table snp.mgi_dbinfo
+
+-- create snp_subsnp_strainallele primary key
+-- the exporter, for some reason, did not create this key
+ALTER TABLE snp_subsnp_strainallele ADD PRIMARY KEY (_subsnp_key, _population_key, _mgdstrain_key);
 
 EOSQL
 

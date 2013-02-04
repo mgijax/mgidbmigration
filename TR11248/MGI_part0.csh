@@ -41,8 +41,15 @@ EOSQL
 
 date | tee -a ${LOG}
 
+# only fxnClass will need to be re-loaded
+# needs to run on Sybase only
 ${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
+
+# can do this manually using ei/translation module
 ${DBSNPLOAD}/bin/loadTranslations.sh | tee -a ${LOG}
+
+# this runs on postgres; snp_population, snp_subsnp_strainallele
+${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

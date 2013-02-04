@@ -2,6 +2,7 @@
 
 MGI_part0.csh
 - run any dbsnpload/bin/python scripts to re-fresh the export/postgres database
+- one script may need to be run on the Sybase-side
 
 MGI_part1.csh
 - do some migrations on the export/postgres database
@@ -10,7 +11,8 @@ MGI_part1.csh
 - make a backup (snp.part1.postgres.dump)
 
 MGI_part2.csh
-- call dbsnpload
+- call snpcacheload; IN_SYNC=yes
+- make a backup (snp.part2.postgres.dump)
 
 MGI_part3.csh
 - run reports (may not be necessary)

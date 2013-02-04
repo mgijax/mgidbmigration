@@ -37,33 +37,22 @@ date | tee -a ${LOG}
 
 # load a backup
 
-if ("${1}" == "dev") then
-    echo "--- Loading new database into ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
-    #${PGDBUTILS}/bin/loadDB.csh mgi-testdb4 export snp /export/dump/snp
-    date | tee -a ${LOG}
-else
-    echo "--- Using existing database:  ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
-endif
+#if ("${1}" == "dev") then
+#    echo "--- Loading new database into ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
+#    #${PGDBUTILS}/bin/loadDB.csh mgi-testdb4 export snp /export/dump/snp
+#    date | tee -a ${LOG}
+#else
+#    echo "--- Using existing database:  ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
+#endif
 
-#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-#
-#use ${MGD_DBNAME}
-#go
-#
-#update MGI_dbinfo set schema_version = "5-1-2", public_version = "MGI 5.12"
-#go
-#
-#EOSQL
-
+date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 
--- remove extra unique index; schema product has already been fixed
+update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
 
--- being renamed to SNP_Accession_idx_clustered
-drop index snp.SNP_Accession_Object_key;
-
--- duplicate of primary key
+-- duplicate of primary key/clustered indexes
 drop index snp.dp_snp_marker_idx_snpmarker_key;
+drop index snp.shp_accession_object_key;
 drop index snp.snp_accession_idx_accession_key;
 drop index snp.snp_consensussnp_idx_consensussnp_key;
 drop index snp.snp_consensussnp_marker_idx_marker_fxn_cs_key;
@@ -81,7 +70,6 @@ drop index snp.snp_subsnp_idx_consensussnp_key;
 drop index snp.snp_subsnp_strainallele_idx_subsnp_key;
 drop index snp.snp_subsnp_strainallele_idx_primary_key;
 
-
 -- as part of TR10788/postgres, this table is no longer needed
 drop table snp.mrk_location_cache;
 
@@ -96,10 +84,10 @@ drop table snp.mgi_tables;
 ALTER TABLE snp_subsnp_strainallele ADD PRIMARY KEY (_subsnp_key, _population_key, _mgdstrain_key);
 
 EOSQL
-
 date | tee -a ${LOG}
 
 # should not need to do this step
+date | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/index/SNP_Accession_create.object | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_create.object | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_Marker_create.object | tee -a ${LOG}
@@ -110,6 +98,13 @@ ${PG_SNP_DBSCHEMADIR}/index/SNP_Population_create.object | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/index/SNP_Strain_create.object | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/index/SNP_SubSnp_create.object | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/index/SNP_SubSnp_StrainAllele_create.object | tee -a ${LOG}
+date | tee -a ${LOG}
+
+#
+# take a backup
+#
+${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part1.postgres.dump
+date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

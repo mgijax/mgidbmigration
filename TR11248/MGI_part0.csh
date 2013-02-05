@@ -25,33 +25,26 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-# load a backup
-
-if ("${1}" == "dev") then
-    echo "--- Loading new database into ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
-    #${MGI_DBUTILS}/bin/loadDB.csh ${MGD_DBSERVER} ${MGD_DBNAME} ...
-    date | tee -a ${LOG}
-else
-    echo "--- Using existing database:  ${MGD_DBSERVER}..${MGD_DBNAME}" | tee -a ${LOG}
-endif
-
-cat - <<EOSQL | ${MGD_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
-
-EOSQL
-
-#
-# run on rohan (Sybase)
-#
-
 #
 # make any necessary changes to the MGD/SNP Sybase databases on production
 # make copies to /backups/rohan/scrum-dog
 #
 # only fxnClass will need to be re-loaded
 # needs to run on Sybase only
-#date | tee -a ${LOG}
-#${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
-#date | tee -a ${LOG}
+#
+# Determine whether to source the new common cshrc files based on the server.
+#
+switch (`uname -n`)
+    case rohan:
+    case firien:
+	set doSybase="yes"
+        breaksw
+    default:
+	set doSybase="no"
+        breaksw
+endsw
+
+if ( ${doSybase} == "yes" ) then
 
 #
 # may need to load Sybase/MGD backup into scrum-dog
@@ -62,9 +55,21 @@ EOSQL
 #${MGI_DBUTILS}/bin/load_db.csh ${SNPEXP_DBSERVER} ${SNPEXP_DBNAME} /backups/rohan/scrum-dog/snp.backup
 #date | tee -a ${LOG}
 
-#
-# run on mgi-testdb4 (Postgres)
-#
+# load new SNP Function Class
+# load new SNP handler
+date | tee -a ${LOG}
+${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+# load new Translations (fxnClass.goodbad)
+date | tee -a ${LOG}
+${DBSNPLOAD}/bin/loadTranslations.sh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+echo "--- Finished Sybase" | tee -a ${LOG}
+exit 0
+
+endif
 
 #
 # Export Sybase SNP database to Postgres.

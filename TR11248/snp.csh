@@ -20,9 +20,6 @@ date | tee -a ${LOG}
 #cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 
-select * from snp_test..SNP_Population order by subHandle
-;
-
 select _Term_key, term from VOC_Term where _Vocab_key = 51
 ;
 

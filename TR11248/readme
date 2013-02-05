@@ -1,5 +1,8 @@
 'export' refers to a postgres version of the sybase schema
 
+snp:  DEV_MGI..snp
+export SNP to postgres
+
 MGI_part0.csh
 - run any dbsnpload/bin/python scripts to re-fresh the export/postgres database
 - one script may need to be run on the Sybase-side

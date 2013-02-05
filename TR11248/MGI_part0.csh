@@ -39,11 +39,41 @@ cat - <<EOSQL | ${MGD_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 
 EOSQL
 
-date | tee -a ${LOG}
+#
+# run on rohan (Sybase)
+#
 
+#
+# make any necessary changes to the MGD/SNP Sybase databases on production
+# make copies to /backups/rohan/scrum-dog
+#
 # only fxnClass will need to be re-loaded
 # needs to run on Sybase only
-${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
+#date | tee -a ${LOG}
+
+#
+# may need to load Sybase/MGD backup into scrum-dog
+# may need to load Sybase/SNP backup into scrum-dog
+#
+#date | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/load_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd.backup
+#${MGI_DBUTILS}/bin/load_db.csh ${SNPEXP_DBSERVER} ${SNPEXP_DBNAME} /backups/rohan/scrum-dog/snp.backup
+#date | tee -a ${LOG}
+
+#
+# run on mgi-testdb4 (Postgres)
+#
+
+#
+# Export Sybase SNP database to Postgres.
+# uses SNPEXP variables
+#
+date | tee -a ${LOG}
+${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
+date | tee -a ${LOG}
 
 # can do this manually using ei/translation module
 ${DBSNPLOAD}/bin/loadTranslations.sh | tee -a ${LOG}

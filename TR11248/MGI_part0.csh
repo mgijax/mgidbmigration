@@ -85,9 +85,6 @@ ${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 date | tee -a ${LOG}
 
-# this runs on postgres; snp_population, snp_subsnp_strainallele
-${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

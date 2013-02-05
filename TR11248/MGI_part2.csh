@@ -22,6 +22,10 @@ env | grep PG | tee -a ${LOG}
 
 date | tee -a ${LOG}
 
+# snp_population, snp_subsnp_strainallele
+${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
+exit 0
+
 #
 # counts
 #

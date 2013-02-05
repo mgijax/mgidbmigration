@@ -24,7 +24,8 @@ MGI_part3.csh
 on rohan:
 MGI_part0.csh
 
-on mgi-testdb4:
-MGI_part0.csh
-MGI_part1.csh
+on mgi-testdb4 in this order:
+MGI_part0.csh: to run the exporter
+MGI_part1.csh: to run the schema changes on postgres
+MGI_part2.csh: to run the snp_population, dbsnpload
 

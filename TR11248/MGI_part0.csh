@@ -50,10 +50,10 @@ if ( ${doSybase} == "yes" ) then
 # may need to load Sybase/MGD backup into scrum-dog
 # may need to load Sybase/SNP backup into scrum-dog
 #
-#date | tee -a ${LOG}
-#${MGI_DBUTILS}/bin/load_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd.backup
+date | tee -a ${LOG}
+${MGI_DBUTILS}/bin/load_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd.backup
 #${MGI_DBUTILS}/bin/load_db.csh ${SNPEXP_DBSERVER} ${SNPEXP_DBNAME} /backups/rohan/scrum-dog/snp.backup
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
 
 # load new SNP Function Class
 # load new SNP handler
@@ -64,6 +64,11 @@ date | tee -a ${LOG}
 # load new Translations (fxnClass.goodbad)
 date | tee -a ${LOG}
 ${DBSNPLOAD}/bin/loadTranslations.sh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+# make backup of mgd with snp changes
+date | tee -a ${LOG}
+${MGI_DBUTILS}/bin/dump_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd-TR11248.backup
 date | tee -a ${LOG}
 
 echo "--- Finished Sybase" | tee -a ${LOG}

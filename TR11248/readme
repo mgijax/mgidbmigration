@@ -20,3 +20,11 @@ MGI_part2.csh
 MGI_part3.csh
 - run reports (may not be necessary)
 
+
+on rohan:
+MGI_part0.csh
+
+on mgi-testdb4:
+MGI_part0.csh
+MGI_part1.csh
+

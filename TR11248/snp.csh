@@ -21,17 +21,28 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-#cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
+#${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
+cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
-select _Term_key, term from VOC_Term where _Vocab_key = 51
-;
+use snp
+go
 
-select accID, _Object_key from ACC_Accession where _LogicalDB_key = 77
-;
+select s.* from snp_consensussnp_strainallele s
+where not exists (select * from snp_strain ss where s._mgdstrain_key = ss._mgdstrain_key)
+go
 
-select  _LogicalDB_key, name from ACC_LogicalDB where description like '%dbsnp%'
-;
+select s.* from snp_subsnp_strainallele s
+where not exists (select * from snp_strain ss where s._mgdstrain_key = ss._mgdstrain_key)
+go
+
+--select _Term_key, term from VOC_Term where _Vocab_key = 51
+--go
+
+--select accID, _Object_key from ACC_Accession where _LogicalDB_key = 77
+--go
+
+--select  _LogicalDB_key, name from ACC_LogicalDB where description like '%dbsnp%'
+--go
 
 EOSQL
 

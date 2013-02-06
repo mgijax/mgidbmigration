@@ -24,7 +24,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-        setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig
+        setenv MGICONFIG /usr/local/mgi/test/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
@@ -46,9 +46,9 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 ${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
-#${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
+${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
-#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

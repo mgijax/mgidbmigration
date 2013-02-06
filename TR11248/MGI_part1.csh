@@ -41,13 +41,14 @@ date | tee -a ${LOG}
 
 # load a backup
 
-#if ("${1}" == "dev") then
-#    echo "--- Loading new database into ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
-#    #${PGDBUTILS}/bin/loadDB.csh mgi-testdb4 export snp /export/dump/snp
-#    date | tee -a ${LOG}
-#else
-#    echo "--- Using existing database:  ${PG_DBSERVER}..${PG_DBNAME}" | tee -a ${LOG}
-#endif
+#
+# Export Sybase SNP database to Postgres.
+# uses SNPEXP variables
+#
+date | tee -a ${LOG}
+${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}

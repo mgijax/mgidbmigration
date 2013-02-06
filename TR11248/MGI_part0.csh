@@ -30,28 +30,7 @@ touch ${LOG}
 date | tee -a ${LOG}
 
 #
-# make any necessary changes to the MGD/SNP Sybase databases on production
-# make copies to /backups/rohan/scrum-dog
-#
-# only fxnClass will need to be re-loaded
-# needs to run on Sybase only
-#
-# Determine whether to source the new common cshrc files based on the server.
-#
-switch (`uname -n`)
-    case rohan:
-    case firien:
-	set doSybase="yes"
-        breaksw
-    default:
-	set doSybase="no"
-        breaksw
-endsw
-
-if ( ${doSybase} == "yes" ) then
-
-#
-# may need to load Sybase/MGD backup into scrum-dog
+# load Sybase/MGD backup into scrum-dog
 # may need to load Sybase/SNP backup into scrum-dog
 #
 date | tee -a ${LOG}
@@ -73,20 +52,6 @@ date | tee -a ${LOG}
 # make backup of mgd with snp changes
 date | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/dump_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd-TR11248.backup
-date | tee -a ${LOG}
-
-echo "--- Finished Sybase" | tee -a ${LOG}
-exit 0
-
-endif
-
-#
-# Export Sybase SNP database to Postgres.
-# uses SNPEXP variables
-#
-date | tee -a ${LOG}
-${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 date | tee -a ${LOG}
 
 ###-----------------------###

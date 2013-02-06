@@ -23,7 +23,7 @@
 ###--- initialization ---###
 ###----------------------###
 
-source ../Configuration
+source ${DBUTILS}/mgidbmigration/Configuration
 
 env | grep PG
 

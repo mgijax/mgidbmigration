@@ -10,7 +10,7 @@
 ###--- initialization ---###
 ###----------------------###
 
-source ../Configuration
+source ${DBUTILS}/mgidbmigration/Configuration
 
 # start a new log file for this migration, and add a datestamp
 

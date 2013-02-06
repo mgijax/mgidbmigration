@@ -39,15 +39,16 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-# load a backup
-
 #
+# Export Sybase MGD database to Postgres.
 # Export Sybase SNP database to Postgres.
 # uses SNPEXP variables
 #
 date | tee -a ${LOG}
-${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
+${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
+#${EXPORTER}/bin/exportDB.sh snp postgres | tee -a ${LOG}
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
+#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

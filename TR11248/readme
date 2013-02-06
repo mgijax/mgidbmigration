@@ -29,7 +29,6 @@ MGI_part0.csh
 	- creates mgd dump
 
 on mgi-testdb4:
-MGI_part0.csh: run the exporter (exports the sybase db to postgres)
-MGI_part1.csh: run the schema changes on postgres
+MGI_part1.csh: run the exporter, schema changes on postgres
 MGI_part2.csh: run the snp_population, dbsnpload
 

@@ -5,7 +5,11 @@
 ###--- initialization ---###
 ###----------------------###
 
-source ../Configuration
+if ( ${?MGICONFIG} == 0 ) then
+        setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
 
 env | grep MGD
 

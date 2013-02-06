@@ -10,7 +10,12 @@
 ###--- initialization ---###
 ###----------------------###
 
-source ${DBUTILS}/mgidbmigration/Configuration
+if ( ${?MGICONFIG} == 0 ) then
+        setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
 
 # start a new log file for this migration, and add a datestamp
 

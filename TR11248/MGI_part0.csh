@@ -55,8 +55,8 @@ if ( ${doSybase} == "yes" ) then
 # may need to load Sybase/SNP backup into scrum-dog
 #
 date | tee -a ${LOG}
-${MGI_DBUTILS}/bin/load_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd.backup
-#${MGI_DBUTILS}/bin/load_db.csh ${SNPEXP_DBSERVER} ${SNPEXP_DBNAME} /backups/rohan/scrum-dog/snp.backup
+${MGI_DBUTILS}/bin/load_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd.backup | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/load_db.csh ${SNPEXP_DBSERVER} ${SNPEXP_DBNAME} /backups/rohan/scrum-dog/snp.backup | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # load new SNP Function Class

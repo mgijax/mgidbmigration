@@ -29,28 +29,39 @@ date | tee -a ${LOG}
 
 # snp_population, snp_subsnp_strainallele
 ${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
-exit 0
 
 #
 # counts
 #
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
-select count(*) from snp.SNP_Accession;
-select count(*) from snp.SNP_ConsensusSnp;
-select count(*) from snp.SNP_ConsensusSnp_Marker;
-select count(*) from mgd.MRK_Location_Cache;
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
+#select count(*) from snp.SNP_Accession;
+#select count(*) from snp.SNP_ConsensusSnp;
+#select count(*) from snp.SNP_ConsensusSnp_Marker;
+#select count(*) from mgd.MRK_Location_Cache;
+#EOSQL
 
 #
 # run snp cache load:  INSYNC=no
-${SNPCACHELOAD}/snpmarker.sh | tee -a ${LOG}
+#${SNPCACHELOAD}/snpmarker.sh | tee -a ${LOG}
 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
-select count(*) from snp.SNP_Accession;
-select count(*) from snp.SNP_ConsensusSnp;
-select count(*) from snp.SNP_ConsensusSnp_Marker;
-select count(*) from mgd.MRK_Location_Cache;
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
+#select count(*) from snp.SNP_Accession;
+#select count(*) from snp.SNP_ConsensusSnp;
+#select count(*) from snp.SNP_ConsensusSnp_Marker;
+#select count(*) from mgd.MRK_Location_Cache;
+#EOSQL
+
+#
+# take a backup
+#
+${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part2.postgres.dump
+date | tee -a ${LOG}
+
+#
+# load backup/'export' to 'dev'
+#
+#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} pub_dev mgd /export/dump/mgd.postgres.dump | tee -a ${LOG}
+#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} pub_dev snp /export/dump/snp.part2.postgres.dump | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

@@ -61,12 +61,6 @@ update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
 EOSQL
 date | tee -a ${LOG}
 
-#
-# take a backup
-#
-${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part1.postgres.dump
-date | tee -a ${LOG}
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

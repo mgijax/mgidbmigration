@@ -53,6 +53,7 @@ date | tee -a ${LOG}
 ${PG_DBUTILS}/bin/dropSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 ${PG_DBUTILS}/bin/createSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 ${PG_SNP_DBSCHEMADIR}/all_create.csh | tee -a ${LOG}
+${PG_DBUTILS}/bin/grantPublicPerms ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}

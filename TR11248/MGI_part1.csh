@@ -42,10 +42,10 @@ date | tee -a ${LOG}
 #
 # Export Sybase MGD database to Postgres.
 #
-date | tee -a ${LOG}
-${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
+#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 #
 # Re-fresh SNP database
@@ -61,6 +61,7 @@ ${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
+update snp.mgi_dbinfo set schema_version = 'pgsnpdbschema-5-1-4', public_version = 'MGI 5.14';
 delete from MGI_Tables where table_name in ('MGI_Columns', 'MRK_Location_Cache');
 EOSQL
 date | tee -a ${LOG}

@@ -42,10 +42,10 @@ date | tee -a ${LOG}
 #
 # Export Sybase MGD database to Postgres.
 #
-#date | tee -a ${LOG}
-#${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
-#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
+date | tee -a ${LOG}
 
 #
 # Re-fresh SNP database

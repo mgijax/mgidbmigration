@@ -44,26 +44,6 @@ endif
 echo "--- Finished loading databases " | tee -a ${LOG}
 
 #
-# Update EUCOMM references
-#
-
-date | tee -a ${LOG}
-echo "--- Update EUCOMM Reference titles ---" | tee -a ${LOG}
-
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-update BIB_Refs
-set title = "Alleles produced for the EUCOMM and EUCOMMTools projects by the Wellcome Trust Sanger Institute"
-where _Refs_key = 156938
-go
-
-update BIB_Refs
-set title = "Alleles produced for the EUCOMM and EUCOMMTools projects by the Helmholtz Zentrum Muenchen GmbH (Hmgu)"
-where _Refs_key = 158158
-go
-
-EOSQL
-
-#
 # Migrate database structures
 #
 date | tee -a ${LOG}

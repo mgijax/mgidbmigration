@@ -25,16 +25,60 @@ touch ${LOG}
 
 env | grep PG | tee -a ${LOG}
 
-date | tee -a ${LOG}
-
+#
 # snp_population, snp_subsnp_strainallele
+#
+date | tee -a ${LOG}
 ${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
+date | tee -a ${LOG}
 
 #
 # take a backup
 #
-${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part2.postgres.dump
+#${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part2.postgres.dump
+#date | tee -a ${LOG}
+
+#
+# dbsnpload
+#
 date | tee -a ${LOG}
+${DATALOAD}/dbsnpload/bin/dbsnpload.sh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+# remove keys and indexes
+psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SNP_Accession where _mgitype_key != 33"
+${PG_SNP_DBSCHEMADIR}/key/key_drop.sh
+${PG_SNP_DBSCHEMADIR}/index/index_drop.sh
+
+for i in DP_SNP_Marker \
+       SNP_Strain \
+       SNP_ConsensusSnp \
+       SNP_ConsensusSnp_StrainAllele \
+       SNP_Coord_Cache \
+       SNP_Flank \
+       SNP_SubSnp \
+       SNP_SubSnp_StrainAllele
+do
+date
+echo $i
+${PG_SNP_DBSCHEMADIR}/table/${i}_truncate.object
+psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "\copy snp.${i} from '${OUTPUTDIR}/${i}.bcp' with null as ''"
+date
+done
+
+for i in SNP_Accession
+do
+date
+psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "\copy snp.${i} from '${OUTPUTDIR}/${i}.bcp' with null as ''"
+date
+done
+
+# do we need to run vacuum?
+#psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "VACUUM ANALYZE"
+
+# install keys and indexes
+${PG_SNP_DBSCHEMADIR}/key/key_create.sh
+${PG_SNP_DBSCHEMADIR}/index/index_create.sh
 
 #
 # counts
@@ -48,7 +92,7 @@ date | tee -a ${LOG}
 
 #
 # run snp cache load:  INSYNC=no
-#${SNPCACHELOAD}/snpmarker.sh | tee -a ${LOG}
+${SNPCACHELOAD}/snpmarker.sh | tee -a ${LOG}
 
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 #select count(*) from snp.SNP_Accession;
@@ -60,10 +104,10 @@ date | tee -a ${LOG}
 #
 # load backup/'export' to 'dev'
 #
-#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} pub_dev mgd /export/dump/mgd.postgres.dump | tee -a ${LOG}
-${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} pub_dev snp /export/dump/snp.part2.postgres.dump | tee -a ${LOG}
-#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} pub_stable mgd /export/dump/mgd.postgres.dump | tee -a ${LOG}
-${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} pub_stable snp /export/dump/snp.part2.postgres.dump | tee -a ${LOG}
+#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
+#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part3.postgres.dump
+#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable snp /export/dump/snp.part3.postgres.dump
+#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable mgd /export/dump/mgd.postgres.dump
 
 ###-----------------------###
 ###--- final datestamp ---###

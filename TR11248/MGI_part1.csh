@@ -33,42 +33,42 @@ env | grep PG
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG $0.log.$$
-rm -rf ${LOG}
-touch ${LOG}
+setenv PART1LOG $0.log.$$
+rm -rf ${PART1LOG}
+touch ${PART1LOG}
 
-date | tee -a ${LOG}
+date | tee -a ${PART1LOG}
 
 #
 # Export Sybase MGD database to Postgres.
 #
-#date | tee -a ${LOG}
-#${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${LOG}
-#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${LOG}
-#date | tee -a ${LOG}
+#date | tee -a ${PART1LOG}
+#${EXPORTER}/bin/exportDB.sh mgd postgres | tee -a ${PART1LOG}
+#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a ${PART1LOG}
+#date | tee -a ${PART1LOG}
 
 #
 # Re-fresh SNP database
 #
-${PG_DBUTILS}/bin/dropSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
-${PG_DBUTILS}/bin/createSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
-${PG_SNP_DBSCHEMADIR}/all_create.csh | tee -a ${LOG}
-${PG_DBUTILS}/bin/grantPublicPerms ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${LOG}
-${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump SNP_Strain | tee -a ${LOG}
-${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump MGI_dbinfo | tee -a ${LOG}
-${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump MGI_Tables | tee -a ${LOG}
+${PG_DBUTILS}/bin/dropSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/createSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${PART1LOG}
+${PG_SNP_DBSCHEMADIR}/all_create.csh | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/grantPublicPerms ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump SNP_Strain | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump MGI_dbinfo | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump MGI_Tables | tee -a ${PART1LOG}
 
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
+date | tee -a ${PART1LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART1LOG}
 update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
 update snp.mgi_dbinfo set schema_version = 'pgsnpdbschema-5-1-4', public_version = 'MGI 5.14';
 EOSQL
-date | tee -a ${LOG}
+date | tee -a ${PART1LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${PART1LOG}
+echo "--- Finished" | tee -a ${PART1LOG}
 

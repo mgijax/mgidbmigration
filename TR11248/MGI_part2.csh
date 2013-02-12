@@ -82,8 +82,10 @@ echo 'DONE: bcping in each table' | tee -a ${PART2LOG}
 
 # install keys and indexes
 echo 'START: installing keys and indexes' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 ${PG_SNP_DBSCHEMADIR}/key/key_create.sh | tee -a ${PART2LOG}
 ${PG_SNP_DBSCHEMADIR}/index/index_create.sh | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 echo 'DONE: installing keys and indexes' | tee -a ${PART2LOG}
 
 #
@@ -99,7 +101,9 @@ echo 'DONE: installing keys and indexes' | tee -a ${PART2LOG}
 #
 # run snp cache load:  INSYNC=no
 echo 'START: running snp cache load' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 ${SNPCACHELOAD}/snpmarker.sh | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 echo 'DONE: running snp cache load' | tee -a ${PART2LOG}
 
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART2LOG}
@@ -110,21 +114,29 @@ echo 'DONE: running snp cache load' | tee -a ${PART2LOG}
 #EOSQL
 
 #
-# word-count of dbsnpload/logs/dbsnpload.cur.log
+# some counts
 #
 echo 'word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 grep " RS" ${LOGSDIR}/dbsnpload.cur.log | cut -f5 -d " " | sort | uniq | wc -l | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
+
 echo 'count of number of RS loaded into database' | tee -a ${PART2LOG}
-psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "select count(*) from snp_accession where _logicaldb_key = 73"
+date | tee -a ${PART2LOG}
+psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "select count(*) from snp_accession where _logicaldb_key = 73" | tee -a ${PART2LOG}
+psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "select count(distinct entrezgeneid) from dp_snp_marker" | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 
 #
 # load backup/'export' to 'dev'
 #
 echo 'START: creating backups' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 #${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
 ${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable snp /export/dump/snp.part2.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable mgd /export/dump/mgd.postgres.dump
+date | tee -a ${PART2LOG}
 echo 'DONE: creating backups' | tee -a ${PART2LOG}
 
 ###-----------------------###

@@ -56,7 +56,7 @@ echo 'DONE: updateSnpStrainOrder' | tee -a ${PART2LOG}
 
 # remove keys and indexes
 echo 'START: remove database keys and indexes' | tee -a ${PART2LOG}
-#psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SNP_Accession where _mgitype_key != 33"
+psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SNP_Accession where _mgitype_key != 33"
 ${PG_SNP_DBSCHEMADIR}/key/key_drop.sh | tee -a ${PART2LOG}
 ${PG_SNP_DBSCHEMADIR}/index/index_drop.sh | tee -a ${PART2LOG}
 echo 'DONE: database keys and indexes' | tee -a ${PART2LOG}
@@ -113,7 +113,7 @@ echo 'DONE: running snp cache load' | tee -a ${PART2LOG}
 # word-count of dbsnpload/logs/dbsnpload.cur.log
 #
 echo 'word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
-grep " RS" ${LOGSDIR}/dbsnpload.cur.log | cut -f5 -d " " | sort | uniq | wc -l
+grep " RS" ${LOGSDIR}/dbsnpload.cur.log | cut -f5 -d " " | sort | uniq | wc -l | tee -a ${PART2LOG}
 echo 'count of number of RS loaded into database' | tee -a ${PART2LOG}
 psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "select count(*) from snp_accession where _logicaldb_key = 73"
 

@@ -3,6 +3,10 @@
 snp:  DEV_MGI..snp
 export SNP to postgres
 
+Translation file: (/mgi/all/wts_projects/11200/11248/Snp)
+- TranslationsForFunctionClass_YZ.xlsx: saved as tab-delimited file
+- TranslationsForFunctionClass_YZ.txt: converted to 'dbsnpload/data/fxnClass.goodbad'
+
 MGI_part0.csh
 - run any dbsnpload/bin/python scripts to re-fresh the export/postgres database
 - one script may need to be run on the Sybase-side

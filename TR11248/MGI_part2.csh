@@ -1,4 +1,4 @@
-#!/bin/csh -fx
+#!/bin/csh -f
 
 #
 # Migration for TR11248
@@ -28,53 +28,58 @@ env | grep PG | tee -a ${LOG}
 #
 # snp_population, snp_subsnp_strainallele
 #
-date | tee -a ${LOG}
-${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 #
 # take a backup
 #
-#${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part2.postgres.dump
+#date | tee -a ${LOG}
+#${PG_DBUTILS}/bin/dumpDB.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.part2.postgres.dump | tee -a ${LOG}
 #date | tee -a ${LOG}
 
 #
 # dbsnpload
 #
-date | tee -a ${LOG}
-${DATALOAD}/dbsnpload/bin/dbsnpload.sh | tee -a ${LOG}
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${DATALOAD}/dbsnpload/bin/dbsnpload.sh | tee -a ${LOG}
+#date | tee -a ${LOG}
+
+#
+# update strains
+#
+#date | tee -a ${LOG}
+#${PG_DBUTILS}/bin/updateSnpStrainOrder.sh | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 # remove keys and indexes
 psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SNP_Accession where _mgitype_key != 33"
 ${PG_SNP_DBSCHEMADIR}/key/key_drop.sh
 ${PG_SNP_DBSCHEMADIR}/index/index_drop.sh
 
-for i in DP_SNP_Marker \
+setenv OUTPUTDIR ${DATALOADSOUTPUT}/dbsnp/dbsnpload/output
+
+foreach i (DP_SNP_Marker \
        SNP_Strain \
        SNP_ConsensusSnp \
        SNP_ConsensusSnp_StrainAllele \
        SNP_Coord_Cache \
        SNP_Flank \
        SNP_SubSnp \
-       SNP_SubSnp_StrainAllele
-do
+       SNP_SubSnp_StrainAllele)
 date
 echo $i
 ${PG_SNP_DBSCHEMADIR}/table/${i}_truncate.object
 psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "\copy snp.${i} from '${OUTPUTDIR}/${i}.bcp' with null as ''"
 date
-done
+end
 
-for i in SNP_Accession
-do
+foreach i (SNP_Accession)
 date
 psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "\copy snp.${i} from '${OUTPUTDIR}/${i}.bcp' with null as ''"
 date
-done
-
-# do we need to run vacuum?
-#psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "VACUUM ANALYZE"
+end
 
 # install keys and indexes
 ${PG_SNP_DBSCHEMADIR}/key/key_create.sh

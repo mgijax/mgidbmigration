@@ -106,9 +106,10 @@ echo '##########'
 #
 # some counts
 #
-echo 'START: word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
+echo 'START: counts from dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 grep " RS" ${LOGSDIR}/dbsnpload.cur.log | cut -f5 -d " " | sort | uniq | wc -l | tee -a ${PART2LOG}
+grep "Total" ${LOGSDIR}/dbsnpload.cur.log | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'END: word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
 echo '##########'
@@ -116,8 +117,13 @@ echo '##########'
 echo 'START: counts' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART2LOG}
+
+-- number of RS ids
 select count(*) from snp_accession where _logicaldb_key = 73;
+
+-- number of EG ids (genes)
 select count(distinct entrezgeneid) from dp_snp_marker;
+
 EOSQL
 date | tee -a ${PART2LOG}
 echo 'END: count of number of RS loaded into database' | tee -a ${PART2LOG}

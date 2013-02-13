@@ -4,21 +4,9 @@
 # Migration for TR11248
 # (part 1 - migration of existing data into new structures)
 #
-# branches:
-# snpcacheload-postgres
-#
-# trunk:
-# pgsnpdbschema
-# lib_py_postgres (add sym-link of "pg_db_py/db.py" to Install)
-#
-# retire:
-# snpdbschema
-#
-# on Sybase: load new vocabularies
-# dbsnpload/bin/loadTranslations.sh
-# dbsnpload/bin/loadVoc.sh
-#
-# MUST RUN lib_java_dbssnp INSTALL after this is completed!!!!
+# a) exports Sybase/mgd database to Postgres
+# b) builds new SNP schema on Postgres
+# c) installs lib_java_dbssnp to set java/snp libraries
 #
 
 ###----------------------###
@@ -30,8 +18,6 @@ if ( ${?MGICONFIG} == 0 ) then
 endif
 
 source ${MGICONFIG}/master.config.csh
-
-env | grep PG
 
 # start a new log file for this migration, and add a datestamp
 
@@ -66,6 +52,13 @@ update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
 update snp.mgi_dbinfo set schema_version = 'pgsnpdbschema-5-1-4', public_version = 'MGI 5.14';
 EOSQL
 date | tee -a ${PART1LOG}
+
+date | tee -a ${PART1LOG}
+echo "START: installing lib_java_dbssnp to pick up SNP schema"
+cd ${MGI_JAVALIB}/lib_java_dbssnp
+./Install | tee -a ${PART1LOG}
+date | tee -a ${PART1LOG}
+echo "DONE: installing lib_java_dbssnp"
 
 ###-----------------------###
 ###--- final datestamp ---###

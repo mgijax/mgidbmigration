@@ -110,6 +110,7 @@ echo 'START: counts from dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 grep " RS" ${LOGSDIR}/dbsnpload.cur.log | cut -f5 -d " " | sort | uniq | wc -l | tee -a ${PART2LOG}
 grep "Total" ${LOGSDIR}/dbsnpload.cur.log | tee -a ${PART2LOG}
+grep "Total" ${LOGSDIR}/dbsnpload.diag.log | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'END: word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
 echo '##########'

@@ -35,6 +35,7 @@ date | tee -a ${PART2LOG}
 ${DBSNPLOAD}/bin/snpPopulation.sh | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'DONE: snp_population' | tee -a ${PART2LOG}
+echo '##########'
 
 #
 # dbsnpload
@@ -44,6 +45,7 @@ date | tee -a ${PART2LOG}
 ${DATALOAD}/dbsnpload/bin/dbsnpload.sh | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'DONE: dbsnpload' | tee -a ${PART2LOG}
+echo '##########'
 
 #
 # update strains
@@ -53,6 +55,7 @@ date | tee -a ${PART2LOG}
 ${DBSNPLOAD}/bin/updateSnpStrainOrder.sh | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'DONE: updateSnpStrainOrder' | tee -a ${PART2LOG}
+echo '##########'
 
 # remove keys and indexes
 echo 'START: remove database keys and indexes' | tee -a ${PART2LOG}
@@ -60,6 +63,7 @@ psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SN
 ${PG_SNP_DBSCHEMADIR}/key/key_drop.sh | tee -a ${PART2LOG}
 ${PG_SNP_DBSCHEMADIR}/index/index_drop.sh | tee -a ${PART2LOG}
 echo 'DONE: database keys and indexes' | tee -a ${PART2LOG}
+echo '##########'
 
 echo 'START: bcping in each table' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
@@ -79,6 +83,7 @@ psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "\copy snp.${i}
 end
 date | tee -a ${PART2LOG}
 echo 'DONE: bcping in each table' | tee -a ${PART2LOG}
+echo '##########'
 
 # install keys and indexes
 echo 'START: installing keys and indexes' | tee -a ${PART2LOG}
@@ -87,16 +92,7 @@ ${PG_SNP_DBSCHEMADIR}/key/key_create.sh | tee -a ${PART2LOG}
 ${PG_SNP_DBSCHEMADIR}/index/index_create.sh | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'DONE: installing keys and indexes' | tee -a ${PART2LOG}
-
-#
-# counts
-#
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART2LOG}
-#select count(*) from snp.SNP_Accession;
-#select count(*) from snp.SNP_ConsensusSnp;
-#select count(*) from snp.SNP_ConsensusSnp_Marker;
-#select count(*) from mgd.MRK_Location_Cache;
-#EOSQL
+echo '##########'
 
 #
 # run snp cache load:  INSYNC=no
@@ -105,27 +101,27 @@ date | tee -a ${PART2LOG}
 ${SNPCACHELOAD}/snpmarker.sh | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'DONE: running snp cache load' | tee -a ${PART2LOG}
-
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART2LOG}
-#select count(*) from snp.SNP_Accession;
-#select count(*) from snp.SNP_ConsensusSnp;
-#select count(*) from snp.SNP_ConsensusSnp_Marker;
-#select count(*) from mgd.MRK_Location_Cache;
-#EOSQL
+echo '##########'
 
 #
 # some counts
 #
-echo 'word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
+echo 'START: word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 grep " RS" ${LOGSDIR}/dbsnpload.cur.log | cut -f5 -d " " | sort | uniq | wc -l | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
+echo 'END: word-count of dbsnpload/logs/dbsnpload.cur.log' | tee -a ${PART2LOG}
+echo '##########'
 
-echo 'count of number of RS loaded into database' | tee -a ${PART2LOG}
+echo 'START: counts' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
-psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "select count(*) from snp_accession where _logicaldb_key = 73" | tee -a ${PART2LOG}
-psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "select count(distinct entrezgeneid) from dp_snp_marker" | tee -a ${PART2LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART2LOG}
+select count(*) from snp_accession where _logicaldb_key = 73;
+select count(distinct entrezgeneid) from dp_snp_marker;
+EOSQL
 date | tee -a ${PART2LOG}
+echo 'END: count of number of RS loaded into database' | tee -a ${PART2LOG}
+echo '##########'
 
 #
 # load backup/'export' to 'dev'
@@ -138,6 +134,7 @@ ${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.post
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable mgd /export/dump/mgd.postgres.dump
 date | tee -a ${PART2LOG}
 echo 'DONE: creating backups' | tee -a ${PART2LOG}
+echo '##########'
 
 ###-----------------------###
 ###--- final datestamp ---###

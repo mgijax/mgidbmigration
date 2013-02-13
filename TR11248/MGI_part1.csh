@@ -18,6 +18,8 @@
 # dbsnpload/bin/loadTranslations.sh
 # dbsnpload/bin/loadVoc.sh
 #
+# MUST RUN lib_java_dbssnp INSTALL after this is completed!!!!
+#
 
 ###----------------------###
 ###--- initialization ---###

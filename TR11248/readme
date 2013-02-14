@@ -1,29 +1,45 @@
 'export' refers to a postgres version of the sybase schema
 
+mgd:  DEV_MGI..mgd_dev
 snp:  DEV_MGI..snp
 export SNP to postgres
 
-Translation file: (/mgi/all/wts_projects/11200/11248/Snp)
-- TranslationsForFunctionClass_YZ.xlsx: saved as tab-delimited file
-- TranslationsForFunctionClass_YZ.txt: converted to 'dbsnpload/data/fxnClass.goodbad'
+Translation files: (/mgi/all/wts_projects/11200/11248/Snp)
 
-MGI_part0.csh
-- run any dbsnpload/bin/python scripts to re-fresh the export/postgres database
-- one script may need to be run on the Sybase-side
+Configuration Management:
+- Dave installs the manifest up-to-the java libraries
+- this includes the schema changes and utilitie products
 
-MGI_part1.csh
-- do some migrations on the export/postgres database
--- remove some obsolete tables
--- re-arrange the indexes; remove duplicate primary indexes; set clustered indexes
-- make a backup (snp.part1.postgres.dump)
+MGI_part0.csh: Sybase
+- purpose: to update the SNP Handle and SNP Function classes in MGD
+- inputs: dbsnpload/data/subHandle.vocab.in, SNP_FXN_DAG.ontology
+- run: dbsnpload/bin/loadTranslations.sh, loadVoc.sh
+- affects:  
+  VOC_Terms/_Vocab_key = 
+          49 SNP Function Class
+          51 SNP Submitter Handle 
+          50 SNP Variation Class  (no updates requried)
+  DAG_DAG/_DAG_key: 6 SNP Marker Distance DAG
+- results: DEV_MGI..mgd_dev ready to be used by exporter
+
+MGI_part1.csh: Postgres
+- purpose: to update the SNP schema
+- input: Sybase MGD database (DEV_MGI..mgd_dev), pgsnpdbschema
+- input: dbsnpload/data/populations.txt
+- run: exporter (to export DEV_MGI..mgd_dev to Postgres "export/mgd"
+- run: dbsnpload/bin/snpPopulation.sh
+- affects: SNP_Population (vocabulary)
+- results: new SNP database
+
+Configuration Management:
+- Dave installs the java libraries + remaining manifest items
 
 MGI_part2.csh
+- run: dbsnpload/bin/dbsnpload.sh
+- run: dbsnpload/bin/updateSnpStrainOrder.sh (sets ordering of SNP Strains for WI)
+- run: pgsnpdbschema/key, index and copies BCP files into "export/snp"
 - call snpcacheload; IN_SYNC=yes
 - make a backup (snp.part2.postgres.dump)
-
-MGI_part3.csh
-- run reports (may not be necessary)
-
 
 on rohan:
 MGI_part0.csh

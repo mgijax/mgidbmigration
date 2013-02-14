@@ -47,16 +47,6 @@ date | tee -a ${PART2LOG}
 echo 'DONE: dbsnpload' | tee -a ${PART2LOG}
 echo '##########'
 
-#
-# update strains
-#
-echo 'START: running updateSnpStrainOrder' | tee -a ${PART2LOG}
-date | tee -a ${PART2LOG}
-${DBSNPLOAD}/bin/updateSnpStrainOrder.sh | tee -a ${PART2LOG}
-date | tee -a ${PART2LOG}
-echo 'DONE: updateSnpStrainOrder' | tee -a ${PART2LOG}
-echo '##########'
-
 # remove keys and indexes
 echo 'START: remove database keys and indexes' | tee -a ${PART2LOG}
 psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SNP_Accession where _mgitype_key != 33"
@@ -101,6 +91,16 @@ date | tee -a ${PART2LOG}
 ${SNPCACHELOAD}/snpmarker.sh | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 echo 'DONE: running snp cache load' | tee -a ${PART2LOG}
+echo '##########'
+
+#
+# update strains
+#
+echo 'START: running updateSnpStrainOrder' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
+${DBSNPLOAD}/bin/updateSnpStrainOrder.sh | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
+echo 'DONE: updateSnpStrainOrder' | tee -a ${PART2LOG}
 echo '##########'
 
 #

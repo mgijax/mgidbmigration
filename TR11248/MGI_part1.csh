@@ -55,10 +55,16 @@ date | tee -a ${PART1LOG}
 
 date | tee -a ${PART1LOG}
 echo "START: installing lib_java_dbssnp to pick up SNP schema"
-cd ${MGI_JAVALIB}/lib_java_dbssnp
+cd ${MGI_JAVALIB}/lib_java_dbssnp | tee -a ${PART1LOG}
+./Install | tee -a ${PART1LOG}
+echo "START: installing lib_java_core"
+cd ${DBSNPLOAD}/lib_java_core | tee -a ${PART1LOG}
+./Install | tee -a ${PART1LOG}
+echo "START: installing dbsnpload"
+cd ${DBSNPLOAD} | tee -a ${PART1LOG}
 ./Install | tee -a ${PART1LOG}
 date | tee -a ${PART1LOG}
-echo "DONE: installing lib_java_dbssnp"
+echo "DONE: installing lib_java_dbssnp, lib_java_core, dbsnpload"
 
 ###-----------------------###
 ###--- final datestamp ---###

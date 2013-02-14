@@ -25,30 +25,29 @@ MGI_part0.csh: Sybase
 MGI_part1.csh: Postgres
 - purpose: to update the SNP schema
 - input: Sybase MGD database (DEV_MGI..mgd_dev), pgsnpdbschema
-- input: dbsnpload/data/populations.txt
 - run: exporter (to export DEV_MGI..mgd_dev to Postgres "export/mgd"
-- run: dbsnpload/bin/snpPopulation.sh
-- affects: SNP_Population (vocabulary)
+- run: creattion scripts to create the new SNP database (pgsnpdbschema)
 - results: new SNP database
 
 Configuration Management:
 - Dave installs the java libraries + remaining manifest items
 
 MGI_part2.csh
-- run: dbsnpload/bin/dbsnpload.sh
-- run: dbsnpload/bin/updateSnpStrainOrder.sh (sets ordering of SNP Strains for WI)
+- purpuse: to load the build 38 SNP data into Postgres
+- input: dbsnpload/data/populations.txt
+- input: NCBI dbSNP *xml files
+- run: dbsnpload/bin/snpPopulation.sh (SNP_Population vocabulary)
+- run: dbsnpload/bin/dbsnpload.sh (read SNP input data/generate SNP bcp files)
 - run: pgsnpdbschema/key, index and copies BCP files into "export/snp"
-- call snpcacheload; IN_SYNC=yes
-- make a backup (snp.part2.postgres.dump)
+- run: snpcacheload; IN_SYNC=yes (weekly process)
+- run: dbsnpload/bin/updateSnpStrainOrder.sh (sets ordering of SNP Strains for WI)
+- affects: most SNP_* tables
+- make a backup (snp.part2.postgres.dump).  
+  this backup can be used to load into other postgres databases
 
-on rohan:
-MGI_part0.csh
-	- loads mgd backup into scrum-dog database (DEV_MGI..mgd_dev)
-	- runs dbsnpload vocabulary loads (handler, function class)
-	- runs dbsnpload translations (function class)
-	- creates mgd dump
+Configuration: Cardolan:
+- build: javawi2_pg to pick up the new vocabularies (uses STATIC variable)
 
-on mgi-testdb4:
-MGI_part1.csh: run the exporter, schema changes on postgres
-MGI_part2.csh: run the snp_population, dbsnpload
+ISSUES:
+- installing java libraries; order is important
 

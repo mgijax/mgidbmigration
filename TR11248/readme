@@ -1,14 +1,14 @@
-'export' refers to a postgres version of the sybase schema
 
 mgd:  DEV_MGI..mgd_dev
 snp:  DEV_MGI..snp
-export SNP to postgres
 
-Translation files: (/mgi/all/wts_projects/11200/11248/Snp)
+Scrum-Dog Team:
+- CVS tags
+- tag list sent to Dave
 
 Configuration Management:
 - Dave installs the manifest up-to-the java libraries
-- this includes the schema changes and utilitie products
+- this includes the schema and utilitie products
 
 MGI_part0.csh: Sybase
 - purpose: to update the SNP Handle and SNP Function classes in MGD
@@ -23,14 +23,16 @@ MGI_part0.csh: Sybase
 - results: DEV_MGI..mgd_dev ready to be used by exporter
 
 MGI_part1.csh: Postgres
-- purpose: to update the SNP schema
+- purpose: to prepare MGD/SNP for the dbsnpload run (see part 2)
 - input: Sybase MGD database (DEV_MGI..mgd_dev), pgsnpdbschema
 - run: exporter (to export DEV_MGI..mgd_dev to Postgres "export/mgd"
-- run: creattion scripts to create the new SNP database (pgsnpdbschema)
-- results: new SNP database
+-- **NOTE this export includes private data**
+- run: scripts to create the new SNP database (pgsnpdbschema)
+- results: MGD loaded into postgres; new SNP database in postgres
 
 Configuration Management:
 - Dave installs the java libraries + remaining manifest items
+- TO DO: ordering of java library installation is important!  discuss at meeting
 
 MGI_part2.csh
 - purpuse: to load the build 38 SNP data into Postgres
@@ -40,14 +42,13 @@ MGI_part2.csh
 - run: dbsnpload/bin/dbsnpload.sh (read SNP input data/generate SNP bcp files)
 - run: pgsnpdbschema/key, index and copies BCP files into "export/snp"
 - run: snpcacheload; IN_SYNC=yes (weekly process)
+-- TO DO: the weeky snpcacheload process needs to be discussed in more detail
 - run: dbsnpload/bin/updateSnpStrainOrder.sh (sets ordering of SNP Strains for WI)
-- affects: most SNP_* tables
+- affects: SNP_* tables
 - make a backup (snp.part2.postgres.dump).  
   this backup can be used to load into other postgres databases
+  this backup is our new "SNP" master
 
 Configuration: Cardolan:
-- build: javawi2_pg to pick up the new vocabularies (uses STATIC variable)
-
-ISSUES:
-- installing java libraries; order is important
+- build: install javawi2_pg to pick up the new vocabularies (uses STATIC variable)
 

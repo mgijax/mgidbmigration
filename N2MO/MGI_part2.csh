@@ -31,6 +31,10 @@ date | tee -a ${LOG}
 echo 'Homology Load' | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh
 
+date | tee -a ${LOG}
+echo 'Run GO Inferencing and reports' | tee -a ${LOG}
+./runGoInf.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

@@ -16,7 +16,7 @@ cp -p ${REPORTOUTPUTDIR}/gene_association.mgi ./gene_association.mgi.preload
 
 date | tee -a ${LOG}
 echo 'Load GOA/Human Annotations' | tee -a ${LOG}
-source ./Configuration
+source ../Configuration
 ${GOAHUMANLOAD}/bin/goahuman.sh
 
 echo 'Running preload GO report' | tee -a ${LOG}

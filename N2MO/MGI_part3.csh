@@ -43,6 +43,9 @@ date | tee -a ${LOG}
 echo 'Load Voc/Count Cache Table' | tee -a ${LOG}
 ${MGICACHELOAD}/voccounts.csh
 
+echo 'Load Voc/Marker Cache Table' | tee -a ${LOG}
+${MGICACHELOAD}/vocmarker.csh
+
 date | tee -a ${LOG}
 echo 'Add New Measurements' | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/addMeasurements.csh

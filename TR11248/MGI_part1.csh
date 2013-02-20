@@ -6,7 +6,6 @@
 #
 # a) exports Sybase/mgd database to Postgres
 # b) builds new SNP schema on Postgres
-# c) installs lib_java_dbssnp to set java/snp libraries
 #
 
 ###----------------------###
@@ -52,19 +51,6 @@ update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
 update snp.mgi_dbinfo set schema_version = 'pgsnpdbschema-5-1-4', public_version = 'MGI 5.14';
 EOSQL
 date | tee -a ${PART1LOG}
-
-date | tee -a ${PART1LOG}
-echo "START: installing lib_java_dbssnp to pick up SNP schema"
-cd ${MGI_JAVALIB}/lib_java_dbssnp | tee -a ${PART1LOG}
-./Install | tee -a ${PART1LOG}
-echo "START: installing lib_java_core"
-cd ${DBSNPLOAD}/lib_java_core | tee -a ${PART1LOG}
-./Install | tee -a ${PART1LOG}
-echo "START: installing dbsnpload"
-cd ${DBSNPLOAD} | tee -a ${PART1LOG}
-./Install | tee -a ${PART1LOG}
-date | tee -a ${PART1LOG}
-echo "DONE: installing lib_java_dbssnp, lib_java_core, dbsnpload"
 
 ###-----------------------###
 ###--- final datestamp ---###

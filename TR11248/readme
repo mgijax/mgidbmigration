@@ -1,17 +1,16 @@
 
-current:
-DB_SNP_Marker:	                 5,070,548
-SNP_Accession:                  42,128,023
-SNP_ConsensusSnp:               10,089,892
-SNP_ConsensusSnp_Marker:         4,951,300
-SNP_ConsensusSnp_StrainAllele: 116,439,392
-SNP_Coord_Cache:                10,131,009
-SNP_Flank:                      25,234,371
-SNP_Population:                         17
-SNP_Strain:                             89
-SNP_SubSnp:                     11,126,308
-SNP_SubSnp_StrainAllele:       118,899,312
-
+                                 sybase         postgres
+DP_SNP_Marker:	                 5,070,548        
+SNP_Accession:                  42,128,023       
+SNP_ConsensusSnp:               10,089,892       
+SNP_ConsensusSnp_Marker:         4,951,300       
+SNP_ConsensusSnp_StrainAllele: 116,439,392      
+SNP_Coord_Cache:                10,131,009      
+SNP_Flank:                      25,234,371      
+SNP_Population:                         17               27
+SNP_Strain:                             89               86
+SNP_SubSnp:                     11,126,308      
+SNP_SubSnp_StrainAllele:       118,899,312      
 
 mgd:  DEV_MGI..mgd_dev
 snp:  DEV_MGI..snp
@@ -21,8 +20,7 @@ Scrum-Dog Team:
 - tag list sent to Dave
 
 Configuration Management:
-- Dave installs the manifest up-to-the java libraries
-- this includes the schema and utilitie products
+- Dave installs the full manifest
 
 MGI_part0.csh: Sybase
 - purpose: to update the SNP Handle and SNP Function classes in MGD
@@ -64,13 +62,14 @@ MGI_part2.csh
   this backup can be used to load into other postgres databases
   this backup is our new "SNP" master
 
-Configuration: Cardolan:
-- build: rerun javawi2_pg to pick up the new vocabularies (uses STATIC variable)
-
-lib_java_core
-lib_java_dbsmgd
-lib_java_dbsrdr
-lib_java_dbssnp
-lib_java_dla
-lib_java_searchtool
+dbsnpload
+- build lib_java_core
+- copy lib_java_core "core.jar" to "live"/lib/java
+- build
+    lib_java_dbsmgd
+    lib_java_dbsrdr
+    lib_java_dbssnp
+    lib_java_dla
+- copy the dbs and dla jar files to dbsnpload/lib/java
+- tag dbsnpload; ready to build this product
 

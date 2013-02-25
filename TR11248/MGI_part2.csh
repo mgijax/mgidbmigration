@@ -39,20 +39,14 @@ echo '##########'
 
 #
 # dbsnpload
+# (3 hours)
 #
 echo 'START: running dbsnpload' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
-#foreach i (18)
-#echo $i
-#rm -rf ${DATALOAD}/tmpfile.config
-#sed 's/^SNP_CHROMOSOMES_TOLOAD.*$/SNP_CHROMOSOMES_TOLOAD="'${i}'"/g' ${DATALOAD}/dbsnpload/dbsnpload.config > ${DATALOAD}/tmpfile.config
-#mv ${DATALOAD}/tmpfile.config ${DATALOAD}/dbsnpload/dbsnpload.config
 ${DATALOAD}/dbsnpload/bin/dbsnpload.sh | tee -a ${PART2LOG}
-#end
 date | tee -a ${PART2LOG}
 echo 'DONE: dbsnpload' | tee -a ${PART2LOG}
 echo '##########'
-exit 0
 
 # remove keys and indexes
 echo 'START: remove database keys and indexes' | tee -a ${PART2LOG}
@@ -144,9 +138,9 @@ echo '##########'
 echo 'START: creating backups' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 #${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
-#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.postgres.dump
-#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable snp /export/dump/snp.part2.postgres.dump
+${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable mgd /export/dump/mgd.postgres.dump
+#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable snp /export/dump/snp.part2.postgres.dump
 date | tee -a ${PART2LOG}
 echo 'DONE: creating backups' | tee -a ${PART2LOG}
 echo '##########'

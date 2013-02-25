@@ -16,7 +16,6 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
-
 # start a new log file for this migration, and add a datestamp
 
 setenv PART2LOG $0.log.$$
@@ -26,6 +25,8 @@ touch ${PART2LOG}
 setenv OUTPUTDIR ${DATALOADSOUTPUT}/dbsnp/dbsnpload/output
 setenv LOGSDIR ${DATALOADSOUTPUT}/dbsnp/dbsnpload/logs
 rm -rf ${LOGSDIR}/*
+
+env | grep PG | tee -a ${PART2LOG}
 
 #
 # snp_population, snp_subsnp_strainallele
@@ -50,9 +51,11 @@ echo '##########'
 
 # remove keys and indexes
 echo 'START: remove database keys and indexes' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 psql -h ${PG_DBSERVER} -d ${PG_DBNAME} -U ${PG_DBUSER} --command "delete from SNP_Accession where _mgitype_key != 33"
 ${PG_SNP_DBSCHEMADIR}/key/key_drop.sh | tee -a ${PART2LOG}
 ${PG_SNP_DBSCHEMADIR}/index/index_drop.sh | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
 echo 'DONE: database keys and indexes' | tee -a ${PART2LOG}
 echo '##########'
 

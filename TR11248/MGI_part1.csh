@@ -24,6 +24,8 @@ setenv PART1LOG $0.log.$$
 rm -rf ${PART1LOG}
 touch ${PART1LOG}
 
+env | grep PG | tee -a ${PART1LOG}
+
 date | tee -a ${PART1LOG}
 
 #

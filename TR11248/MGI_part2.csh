@@ -11,7 +11,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-        setenv MGICONFIG /usr/local/mgi/test/mgiconfig
+        setenv MGICONFIG /usr/local/mgi/dev/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
@@ -140,7 +140,7 @@ echo '##########'
 #
 echo 'START: creating backups' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
-#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
+${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
 ${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable mgd /export/dump/mgd.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable snp /export/dump/snp.part2.postgres.dump

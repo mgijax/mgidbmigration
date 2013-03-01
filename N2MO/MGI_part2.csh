@@ -24,6 +24,14 @@ touch ${LOG}
 ###-----------------###
 
 date | tee -a ${LOG}
+echo 'EntrezGene Load - Create Input Files' | tee -a ${LOG}
+${ENTREZGENELOAD}/loadFiles.csh
+
+date | tee -a ${LOG}
+echo 'EntrezGene Load' | tee -a ${LOG}
+${ENTREZGENELOAD}/loadAll.csh
+
+date | tee -a ${LOG}
 echo 'Load Human Coordinates' | tee -a ${LOG}
 ${MAPVIEWLOAD}/bin/mapviewload.sh true
 

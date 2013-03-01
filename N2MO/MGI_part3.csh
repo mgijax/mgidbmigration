@@ -38,6 +38,7 @@ ${MRKCACHELOAD}/mrkhomology.csh
 ${MRKCACHELOAD}/mrklocation.csh
 ${MRKCACHELOAD}/mrkprobe.csh
 ${MRKCACHELOAD}/mrkmcv.csh
+${MRKCACHELOAD}/mrkomim.csh
 
 date | tee -a ${LOG}
 echo 'Load Voc/Count Cache Table' | tee -a ${LOG}

@@ -54,6 +54,22 @@ date | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/dump_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd-TR11248.backup
 date | tee -a ${LOG}
 
+# update the MGI_dbinfo information
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+update MGI_dbinfo set 
+	schema_version = '5-1-4', 
+	public_version = 'MGI 5.14',
+	snp_data_version = 'dbSNP Build 137'
+go
+
+EOSQL
+date | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

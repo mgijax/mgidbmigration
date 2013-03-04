@@ -49,8 +49,10 @@ ${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp
 
 date | tee -a ${PART1LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART1LOG}
-update mgd.mgi_dbinfo set schema_version = '5-1-4', public_version = 'MGI 5.14';
-update snp.mgi_dbinfo set schema_version = 'pgsnpdbschema-5-1-4', public_version = 'MGI 5.14';
+update snp.mgi_dbinfo set 
+	schema_version = 'pgsnpdbschema-5-1-4', 
+	public_version = 'MGI 5.14',
+	snp_data_version = 'dbSNP Build 137';
 EOSQL
 date | tee -a ${PART1LOG}
 

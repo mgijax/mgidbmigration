@@ -135,7 +135,7 @@ echo 'END: count of number of RS loaded into database' | tee -a ${PART2LOG}
 echo '##########'
 
 #
-# run femover
+# run entire femover (4 hours)
 #
 echo 'START running femover' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}

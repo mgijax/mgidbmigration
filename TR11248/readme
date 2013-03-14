@@ -1,4 +1,6 @@
 
+- export/Configuration
+  DUMP_AFTER_EXPORT=0
                                  sybase         postgres
 DP_SNP_Marker:	                 5,070,548        
 SNP_Accession:                  42,128,023       

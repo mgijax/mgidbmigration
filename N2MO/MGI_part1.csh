@@ -44,6 +44,21 @@ endif
 echo "--- Finished loading databases " | tee -a ${LOG}
 
 #
+# Update MGI_Organism
+#
+date | tee -a ${LOG}
+
+echo "--- Update MGI_Organism 'monkey, Rhesus' to 'rhesus macaque' " | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+update MGI_Organism
+set commonName = 'rhesus macaque'
+where _Organism_key = 94
+go
+
+EOSQL
+#
 # Migrate database structures
 #
 date | tee -a ${LOG}

@@ -50,9 +50,9 @@ ${DBSNPLOAD}/bin/loadTranslations.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # make backup of mgd with snp changes
-date | tee -a ${LOG}
-${MGI_DBUTILS}/bin/dump_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd-TR11248.backup
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/dump_db.csh ${MGDEXP_DBSERVER} ${MGDEXP_DBNAME} /backups/rohan/scrum-dog/mgd-TR11248.backup
+#date | tee -a ${LOG}
 
 # update the MGI_dbinfo information
 date | tee -a ${LOG}

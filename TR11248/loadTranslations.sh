@@ -43,7 +43,6 @@ date | tee -a ${LOG}
 #  Verify the argument(s) to the shell script.
 #
 doFxn=yes
-doVar=no
 
 set -- `getopt fv $*`
 if [ $? != 0 ]
@@ -56,7 +55,6 @@ for i in $*
 do
     case $i in
         -f) doFxn=yes; shift;;
-        -v) doVar=yes; shift;;
         --) shift; break;;
     esac
 done
@@ -65,7 +63,6 @@ done
 #  Establish the configuration file names
 #
 CONFIG_LOAD=`pwd`/dbsnpload.config
-CONFIG_VARCLASS=`pwd`/varClassTrans.config
 CONFIG_FXNCLASS=`pwd`/fxnClassTrans.config
 
 #
@@ -74,12 +71,6 @@ CONFIG_FXNCLASS=`pwd`/fxnClassTrans.config
 if [ ! -r ${CONFIG_LOAD} ]
 then
     echo "Cannot read configuration file: ${CONFIG_LOAD}" | tee -a ${LOG}
-    exit 1
-fi
-
-if [ ! -r ${CONFIG_VARCLASS} ]
-then
-    echo "Cannot read configuration file: ${CONFIG_VARCLASS}" | tee -a ${LOG}
     exit 1
 fi
 
@@ -119,15 +110,6 @@ checkstatus ()
 # main
 #
 
-
-if [ ${doVar} = "yes" ]
-then
-    echo "Running variation class translationload " | tee -a $LOADTRANSLOG
-    ${TRANSLATIONLOAD}/translationload.csh ${CONFIG_VARCLASS}
-    STAT=$?
-    msg="varClass translation load "
-    checkstatus  ${STAT} "${msg}"
-fi
 
 if [ ${doFxn} = "yes" ]
 then

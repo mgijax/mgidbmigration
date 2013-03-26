@@ -15,10 +15,8 @@
 #	10/12/2005	sc
 #	- new
 
-#RUNTIME_DIR = /data/loads/dbsnp/dbsnpload/output/vocload/fxnClass
-RUNTIME_DIR = /data/loads/scrum-dog/dbsnp/dbsnpload/output/vocload/fxnClass
-#SNP_DATA_DIR = /usr/local/mgi/live/dataload/dbsnpload/data
-SNP_DATA_DIR = /home/lec/mgi/dataload/dbsnpload/data
+RUNTIME_DIR = ${DBUTILS}/mgidbmigration/TR11248/fxnClass
+SNP_DATA_DIR = ${DBUTILS}/mgidbmigration/TR11248/fxnClass
 
 # DAGs which are part of the vocabulary (for complex vocabularies)
 

@@ -15,8 +15,10 @@
 #	10/12/2005	sc
 #	- new
 
-RUNTIME_DIR = ${DBUTILS}/mgidbmigration/TR11248/fxnClass
-SNP_DATA_DIR = ${DBUTILS}/mgidbmigration/TR11248/fxnClass
+RUNTIME_DIR = /home/lec/mgi/dbutils/mgidbmigration/TR11248/fxnClass
+#RUNTIME_DIR = ${DBUTILS}/mgidbmigration/TR11248/fxnClass
+SNP_DATA_DIR = /home/lec/mgi/dbutils/mgidbmigration/TR11248/fxnClass
+#SNP_DATA_DIR = ${DBUTILS}/mgidbmigration/TR11248/fxnClass
 
 # DAGs which are part of the vocabulary (for complex vocabularies)
 

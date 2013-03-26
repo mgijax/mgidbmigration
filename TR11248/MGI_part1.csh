@@ -13,7 +13,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-        setenv MGICONFIG /usr/local/mgi/test/mgiconfig
+        setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
@@ -43,9 +43,9 @@ ${PG_DBUTILS}/bin/dropSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${PART
 ${PG_DBUTILS}/bin/createSchema.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${PART1LOG}
 ${PG_SNP_DBSCHEMADIR}/all_create.csh | tee -a ${PART1LOG}
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp | tee -a ${PART1LOG}
-${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump SNP_Strain | tee -a ${PART1LOG}
-${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump MGI_dbinfo | tee -a ${PART1LOG}
-${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /export/dump/snp.postgres.dump MGI_Tables | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /falas/dump/snp.postgres.dump SNP_Strain | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /falas/dump/snp.postgres.dump MGI_dbinfo | tee -a ${PART1LOG}
+${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /falas/dump/snp.postgres.dump MGI_Tables | tee -a ${PART1LOG}
 
 date | tee -a ${PART1LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART1LOG}

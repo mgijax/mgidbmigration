@@ -41,13 +41,13 @@ date | tee -a ${LOG}
 # load new SNP Function Class
 # load new SNP handler
 date | tee -a ${LOG}
-${VOCDAGLOAD} ${FXNCLASS_VOCAB_CONFIG}
-${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
+${VOCLOAD}/runDAGFullLoad.sh ${DBUTILS}/mgidbmigration/TR11248/fxnClass/fxnClassDag.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11248/fxnClass/subHandleVocab.config | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # load new Translations (fxnClass.goodbad)
 date | tee -a ${LOG}
-${TRANSLATIONLOAD}/translationload.csh fxnClassTrans.config | tee -a ${LOG}
+${TRANSLATIONLOAD}/translationload.csh ${DBUTILS}/mgidbmigration/TR11248/fxnClass/fxnClassTrans.config | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # make backup of mgd with snp changes

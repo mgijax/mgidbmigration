@@ -41,13 +41,13 @@ date | tee -a ${LOG}
 # load new SNP Function Class
 # load new SNP handler
 date | tee -a ${LOG}
+${VOCDAGLOAD} ${FXNCLASS_VOCAB_CONFIG}
 ${DBSNPLOAD}/bin/loadVoc.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # load new Translations (fxnClass.goodbad)
 date | tee -a ${LOG}
-${TRANSLATIONLOAD}/translationload.csh fxnClassTrans.config
-#${DBSNPLOAD}/bin/loadTranslations.sh | tee -a ${LOG}
+${TRANSLATIONLOAD}/translationload.csh fxnClassTrans.config | tee -a ${LOG}
 date | tee -a ${LOG}
 
 # make backup of mgd with snp changes

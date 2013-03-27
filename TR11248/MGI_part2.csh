@@ -148,17 +148,17 @@ echo '##########'
 # load backup/'export' to 'dev'
 # REMEMBER:  everytime part0 is re-run, reload "mgd" on both pub_dev AND pub_stable
 #
-echo 'START: creating backups' | tee -a ${PART2LOG}
-date | tee -a ${PART2LOG}
-${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
-${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.postgres.dump
-${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 fe_dev fe /export/dump/fe.postgres.dump
+#echo 'START: creating backups' | tee -a ${PART2LOG}
+#date | tee -a ${PART2LOG}
+#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev mgd /export/dump/mgd.postgres.dump
+#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 pub_dev snp /export/dump/snp.part2.postgres.dump
+#${PG_DBUTILS}/bin/dumpDB.csh mgi-testdb4 fe_dev fe /export/dump/fe.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable mgd /export/dump/mgd.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 pub_stable snp /export/dump/snp.part2.postgres.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 fe_stable fe /export/dump/fe.postgres.dump
-date | tee -a ${PART2LOG}
-echo 'DONE: creating backups' | tee -a ${PART2LOG}
-echo '##########'
+#date | tee -a ${PART2LOG}
+#echo 'DONE: creating backups' | tee -a ${PART2LOG}
+#echo '##########'
 
 ###-----------------------###
 ###--- final datestamp ---###

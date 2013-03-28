@@ -48,11 +48,15 @@ ${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /falas/dump/snp.
 ${PG_DBUTILS}/bin/loadtable.csh ${PG_DBSERVER} ${PG_DBNAME} snp /falas/dump/snp.postgres.dump MGI_Tables | tee -a ${PART1LOG}
 
 date | tee -a ${PART1LOG}
+setenv thisDate `date "+%m/%d/%Y"`
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${PART1LOG}
 update snp.mgi_dbinfo set 
 	schema_version = 'pgsnpdbschema-5-1-4', 
 	public_version = 'MGI 5.14',
-	snp_data_version = 'dbSNP Build 137';
+	snp_data_version = 'dbSNP Build 137',
+        lastdump_date = '${thisDate}',
+        creation_date = '${thisDate}',
+        modification_date = '${thisDate}';
 EOSQL
 date | tee -a ${PART1LOG}
 

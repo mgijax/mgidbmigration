@@ -129,6 +129,17 @@ select count(*) from snp_accession where _logicaldb_key = 73;
 -- number of EG ids (genes)
 select count(distinct entrezgeneid) from dp_snp_marker;
 
+select count(*) from snp_accession;
+select count(*) from snp_consensussnp;
+select count(*) from snp_consensussnp_marker;
+select count(*) from snp_consensussnp_strainallele;
+select count(*) from snp_coord_cache;
+select count(*) from snp_flank;
+select count(*) from snp_population;
+select count(*) from snp_strain;
+select count(*) from snp_subsnp;
+select count(*) from snp_subsnp_strainallele;
+
 EOSQL
 date | tee -a ${PART2LOG}
 echo 'END: count of number of RS loaded into database' | tee -a ${PART2LOG}

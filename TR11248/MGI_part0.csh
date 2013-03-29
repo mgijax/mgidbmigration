@@ -80,18 +80,28 @@ update MGI_dbinfo set
 	snp_data_version = 'dbSNP Build 137'
 go
 
+-- 1/0 if NOT 10,11
 update GXD_Expression
 set isForGXD = 1, isRecombinase = 0
 from GXD_Expression
 where _AssayType_key not in (10,11)
 go
 
+-- 0/1 if 10,11
 update GXD_Expression
 set isForGXD = 0, isRecombinase = 1
 from GXD_Expression
 where _AssayType_key in (10,11)
 go
 
+-- 1/0 if 9
+update GXD_Expression
+set isForGXD = 1, isRecombinase = 0
+from GXD_Expression
+where _AssayType_key in (9)
+go
+
+-- 1/1 if 9 with recombinase
 update GXD_Expression
 set isForGXD = 1, isRecombinase = 1
 from GXD_Expression e, GXD_Assay a, VOC_Term t

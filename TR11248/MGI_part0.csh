@@ -38,6 +38,15 @@ date | tee -a ${LOG}
 #${MGI_DBUTILS}/bin/load_db.csh ${SNPEXP_DBSERVER} ${SNPEXP_DBNAME} /backups/rohan/scrum-dog/snp.backup | tee -a ${LOG}
 #date | tee -a ${LOG}
 
+#
+# schema fix
+#
+date | tee -a ${LOG}
+${MGDDBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${MGDDBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+
+date | tee -a ${LOG}
+
 # load new SNP Function Class
 # load new SNP handler
 date | tee -a ${LOG}

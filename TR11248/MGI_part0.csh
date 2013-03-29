@@ -44,6 +44,9 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ${MGDDBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
 ${MGDDBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGDDBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
+${MGDDBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
+${MGDDBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 
@@ -75,6 +78,40 @@ update MGI_dbinfo set
 	schema_version = '5-1-4', 
 	public_version = 'MGI 5.14',
 	snp_data_version = 'dbSNP Build 137'
+go
+
+update GXD_Expression
+set isForGXD = 1, isRecombinase = 0
+from GXD_Expression
+where _AssayType_key not in (10,11)
+go
+
+update GXD_Expression
+set isForGXD = 0, isRecombinase = 1
+from GXD_Expression
+where _AssayType_key in (10,11)
+go
+
+update GXD_Expression
+set isForGXD = 1, isRecombinase = 1
+from GXD_Expression e, GXD_Assay a, VOC_Term t
+where e._AssayType_key in (9)
+and e._Assay_key = a._Assay_key
+and a._ReporterGene_key = t._Term_key
+and t.term in ('Cre', 'FLP')
+go
+
+select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0
+go
+select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1
+go
+select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and _AssayType_key = 10
+go
+select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and _AssayType_key = 11
+go
+select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0
+go
+select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1
 go
 
 EOSQL

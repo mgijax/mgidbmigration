@@ -42,11 +42,11 @@ date | tee -a ${LOG}
 # schema fix
 #
 date | tee -a ${LOG}
-${MGDDBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
-${MGDDBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
-${MGDDBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
-${MGDDBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
-${MGDDBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

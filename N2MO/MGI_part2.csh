@@ -32,6 +32,10 @@ echo 'EntrezGene Load' | tee -a ${LOG}
 ${ENTREZGENELOAD}/loadAll.csh
 
 date | tee -a ${LOG}
+echo 'NextProt Load' | tee -a ${LOG}
+${NEXTPROTLOAD}/bin/nextprotload.sh
+
+date | tee -a ${LOG}
 echo 'Load Human Coordinates' | tee -a ${LOG}
 ${MAPVIEWLOAD}/bin/mapviewload.sh true
 

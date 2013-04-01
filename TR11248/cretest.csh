@@ -10,7 +10,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh

@@ -80,6 +80,12 @@ update MGI_dbinfo set
 	snp_data_version = 'dbSNP Build 137'
 go
 
+-- delete children prb_strain_marker where no parent
+delete PRB_Strain_Marker
+from PRB_Strain_Marker p
+where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key)
+go
+
 -- 1/0 if NOT 10,11
 update GXD_Expression
 set isForGXD = 1, isRecombinase = 0
@@ -119,7 +125,7 @@ select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and
 go
 select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and _AssayType_key = 11
 go
-select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0
+select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0 and _AssayType_key = 9
 go
 select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1
 go

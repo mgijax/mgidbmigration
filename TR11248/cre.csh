@@ -61,6 +61,12 @@ and e._Assay_key = a._Object_key
 and a._MGIType_key = 8
 go
 
+--select distinct a.accID as 'isForGXD=1/isRecombinase=0'
+--from GXD_Expression e, ACC_Accession a where e.isForGXD = 1 and e.isRecombinase = 0 and e._AssayType_key != 9
+--and e._Assay_key = a._Object_key
+--and a._MGIType_key = 8
+--go
+
 EOSQL
 date | tee -a ${LOG}
 

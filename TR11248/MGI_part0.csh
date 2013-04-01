@@ -127,7 +127,9 @@ select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and
 go
 select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0 and _AssayType_key = 9
 go
-select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1
+select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1 and _AssayType_key = 9
+go
+select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1 and _AssayType_key != 9
 go
 
 EOSQL

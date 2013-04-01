@@ -86,6 +86,9 @@ from PRB_Strain_Marker p
 where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key)
 go
 
+-- delete 'Recombinases' from MGI_Set
+delete from MGI_Set where _Set_key = 1041
+
 -- 1/0 if NOT 10,11
 update GXD_Expression
 set isForGXD = 1, isRecombinase = 0

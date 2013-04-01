@@ -43,8 +43,14 @@ go
 select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1 and _AssayType_key != 9
 go
 
-select distinct a.accID as 'isForGXD=0/isRecombinase=1'
-from GXD_Expression e, ACC_Accession a where e.isForGXD = 0 and e.isRecombinase = 1
+select distinct a.accID as 'isForGXD=0/isRecombinase=1/10'
+from GXD_Expression e, ACC_Accession a where e.isForGXD = 0 and e.isRecombinase = 1 and e._AssayType_key = 10
+and e._Assay_key = a._Object_key
+and a._MGIType_key = 8
+go
+
+select distinct a.accID as 'isForGXD=0/isRecombinase=1/11'
+from GXD_Expression e, ACC_Accession a where e.isForGXD = 0 and e.isRecombinase = 1 and e._AssayType_key = 11
 and e._Assay_key = a._Object_key
 and a._MGIType_key = 8
 go

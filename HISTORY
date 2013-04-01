@@ -1,3 +1,8 @@
+TAG: mgidbmigration-5-1-2-2
+DATE: 4/1/2013
+STAFF: sc
+CHANGES: Tagged to pick up N2MO/EUCOMM.csh - which needs to run in production
+
 TAG: mgidbmigration-5-1-1-6
 TAG: mgidbmigration-5-1-1-5
 TAG: mgidbmigration-5-1-1-4

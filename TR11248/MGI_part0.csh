@@ -117,23 +117,10 @@ and a._ReporterGene_key = t._Term_key
 and t.term in ('Cre', 'FLP')
 go
 
-select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0
-go
-select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1
-go
-select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and _AssayType_key = 10
-go
-select count(*) from GXD_Expression where isForGXD = 0 and isRecombinase = 1 and _AssayType_key = 11
-go
-select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 0 and _AssayType_key = 9
-go
-select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1 and _AssayType_key = 9
-go
-select count(*) from GXD_Expression where isForGXD = 1 and isRecombinase = 1 and _AssayType_key != 9
-go
-
 EOSQL
 date | tee -a ${LOG}
+
+${DBUTILS}/mgidbmigration/TR11248/cre.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

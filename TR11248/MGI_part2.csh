@@ -11,7 +11,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-        setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+        setenv MGICONFIG /usr/local/mgi/test/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
@@ -99,6 +99,7 @@ echo '##########'
 
 #
 # update strains
+# (6 hours)
 #
 echo 'START: running updateSnpStrainOrder' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
@@ -148,12 +149,12 @@ echo '##########'
 #
 # run entire femover (4 hours)
 #
-#echo 'START running femover' | tee -a ${PART2LOG}
-#date | tee -a ${PART2LOG}
-#${FEMOVER}/control/buildDB.sh | tee -a ${PART2LOG}
-#date | tee -a ${PART2LOG}
-#echo 'DONE: running femover' | tee -a ${PART2LOG}
-#echo '##########'
+echo 'START running femover' | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
+${FEMOVER}/control/buildDB.sh | tee -a ${PART2LOG}
+date | tee -a ${PART2LOG}
+echo 'DONE: running femover' | tee -a ${PART2LOG}
+echo '##########'
 
 #
 # load backup/'export' to 'dev'

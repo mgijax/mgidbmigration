@@ -90,6 +90,8 @@ echo '##########'
 
 #
 # run snp cache load:  INSYNC=no
+# (6 hours)
+#
 echo 'START: running snp cache load' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}
 ${SNPCACHELOAD}/snpmarker.sh | tee -a ${PART2LOG}
@@ -99,7 +101,6 @@ echo '##########'
 
 #
 # update strains
-# (6 hours)
 #
 echo 'START: running updateSnpStrainOrder' | tee -a ${PART2LOG}
 date | tee -a ${PART2LOG}

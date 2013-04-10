@@ -116,7 +116,11 @@ ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Markers_drop.object
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Markers_create.object 
 
 date | tee -a ${LOG}
-echo "--- Re-setting permissions/schema ---"
+echo "--- Re-setting permissions/schema ---" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo "--- Create Wild Type Alleles (TR11223) ---" | tee -a ${LOG}
+./createWTAlleles.csh
 
+date | tee -a ${LOG}

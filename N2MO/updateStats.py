@@ -316,10 +316,11 @@ orthoStatsPageGroup.setStatistics(allStatistics)
 
 report ('Assigned Statistics to groups')
 
-# now compute new measurements to ensure that the new statistics have one
-stats.measureAllHavingSql()
+# now compute new measurements to ensure that the new statistics have one.
+# SKIP THIS AS THE MIGRATION ALREADY DOES THIS IN PART 3.
+#stats.measureAllHavingSql()
+#report ('Computed new measurements')
 
-report ('Computed new measurements')
 db.useOneConnection(0)
 
 report ('Finished')

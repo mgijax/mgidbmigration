@@ -50,6 +50,9 @@ ${MGICACHELOAD}/vocmarker.csh
 echo 'Load Voc/Allele Cache Table' | tee -a ${LOG}
 ${MGICACHELOAD}/vocallele.csh
 
+echo 'Updates to statistics' | tee -a ${LOG
+./updateStats.csh
+
 date | tee -a ${LOG}
 echo 'Add New Measurements' | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/addMeasurements.csh

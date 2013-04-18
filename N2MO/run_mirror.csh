@@ -39,5 +39,13 @@ date | tee -a ${LOG}
 echo 'Run ftp.nextprot.org mirror' | tee -a ${LOG}
 ./runmirror ftp.nextprot.org ftp.nextprot.org.log
 
+#
+# Run ftp.geneontology.org mirror. This includes:
+#    package GO_ANNOTATIONS (for goahumanload and goratload)
+#
+date | tee -a ${LOG}
+echo 'Run ftp.geneontology.org mirror' | tee -a ${LOG}
+./runmirror ftp.geneontology.org ftp.geneontology.org.log
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

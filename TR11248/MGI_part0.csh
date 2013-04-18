@@ -161,6 +161,7 @@ ${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 # some reports
 #
 ${DBUTILS}/mgidbmigration/TR11248/cre.csh | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11248/age.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

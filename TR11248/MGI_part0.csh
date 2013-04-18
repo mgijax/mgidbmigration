@@ -42,10 +42,29 @@ date | tee -a ${LOG}
 # schema fix
 #
 date | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/default/ALL_Cre_Cache_bind.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_create.object | tee -a ${LOG}
+
+# permissions
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
@@ -120,9 +139,27 @@ and a._ReporterGene_key = t._Term_key
 and t.term in ('Cre', 'FLP')
 go
 
+-- update "postnatal adult" = 77 (from 42)
+update GXD_Expression set ageMin = 77.01 where age = 'postnatal adult'
+go
+update GXD_Specimen set ageMin = 77.01 where age = 'postnatal adult'
+go
+update GXD_GelLane set ageMin = 77.01 where age = 'postnatal adult'
+go
+update PRB_Source set ageMin = 77.01 where age = 'postnatal adult'
+go
+
 EOSQL
 date | tee -a ${LOG}
 
+#
+# allele-cre-cache
+#
+${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
+
+#
+# some reports
+#
 ${DBUTILS}/mgidbmigration/TR11248/cre.csh | tee -a ${LOG}
 
 ###-----------------------###

@@ -48,27 +48,6 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
-#
-# all_cre_cache
-#
-${MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/default/ALL_Cre_Cache_bind.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_create.object | tee -a ${LOG}
-${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
-
 date | tee -a ${LOG}
 
 # load new SNP Function Class

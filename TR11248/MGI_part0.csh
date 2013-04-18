@@ -139,14 +139,14 @@ and a._ReporterGene_key = t._Term_key
 and t.term in ('Cre', 'FLP')
 go
 
--- update "postnatal adult" = 77 (from 42)
-update GXD_Expression set ageMin = 77.01 where age = 'postnatal adult'
+-- update "postnatal adult" = 63 (from 42)
+update GXD_Expression set ageMin = 63.01 where age = 'postnatal adult'
 go
-update GXD_Specimen set ageMin = 77.01 where age = 'postnatal adult'
+update GXD_Specimen set ageMin = 63.01 where age = 'postnatal adult'
 go
-update GXD_GelLane set ageMin = 77.01 where age = 'postnatal adult'
+update GXD_GelLane set ageMin = 63.01 where age = 'postnatal adult'
 go
-update PRB_Source set ageMin = 77.01 where age = 'postnatal adult'
+update PRB_Source set ageMin = 63.01 where age = 'postnatal adult'
 go
 
 EOSQL

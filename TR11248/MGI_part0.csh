@@ -61,8 +61,6 @@ ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_MP_Alleles_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_create.object | tee -a ${LOG}
 
 # permissions
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
@@ -139,13 +137,18 @@ and a._ReporterGene_key = t._Term_key
 and t.term in ('Cre', 'FLP')
 go
 
--- update "postnatal adult" = 63 (from 42)
+-- update "postnatal immature" ageMax = 63 (from 42)
+-- update "postnatal adult" ageMin = 63.01 (from 42)
+update GXD_Expression set ageMax = 63.00 where age = 'postnatal immature'
 update GXD_Expression set ageMin = 63.01 where age = 'postnatal adult'
 go
+update GXD_Specimen set ageMax = 63.00 where age = 'postnatal immature'
 update GXD_Specimen set ageMin = 63.01 where age = 'postnatal adult'
 go
+update GXD_GelLane set ageMax = 63.00 where age = 'postnatal immature'
 update GXD_GelLane set ageMin = 63.01 where age = 'postnatal adult'
 go
+update PRB_Source set ageMax = 63.00 where age = 'postnatal immature'
 update PRB_Source set ageMin = 63.01 where age = 'postnatal adult'
 go
 

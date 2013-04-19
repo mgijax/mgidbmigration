@@ -21,18 +21,23 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
-select distinct age, ageMin, ageMax from ALL_Cre_Cache
-order by age
+select c.accID, a.symbol, a.age, a.ageMin, a.ageMax 
+from ALL_Cre_Cache a, ACC_Accession c
+where a._Allele_key = c._Object_key
+and c._MGIType_key = 8
+order by a.age
 go
 
-select c.accID, a.symbol, a.driverNote from ALL_Cre_Cache a, ACC_Accession c
+select c.accID, a.symbol, a.driverNote 
+from ALL_Cre_Cache a, ACC_Accession c
 where a.age like 'not specified%'
 and a._Allele_key = c._Object_key
 and c._MGIType_key = 8
 order by a.symbol
 go
 
-select c.accID, a.symbol, a.driverNote from ALL_Cre_Cache a, ACC_Accession c
+select c.accID, a.symbol, a.driverNote 
+from ALL_Cre_Cache a, ACC_Accession c
 where a.age is null
 and a._Allele_key = c._Object_key
 and c._MGIType_key = 8

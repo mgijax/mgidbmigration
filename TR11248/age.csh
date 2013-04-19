@@ -30,7 +30,7 @@ and aa._MGIType_key = 8
 order by a.symbol, a.age
 go
 
-select c.accID, a.symbol, a.driverNote 
+select c.accID, a.symbol, a._Allele_key, a._Assay_key
 from ALL_Cre_Cache a, ACC_Accession c
 where a.age is null
 and a._Allele_key = c._Object_key

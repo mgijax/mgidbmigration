@@ -21,13 +21,15 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
-select c.accID, aa.accID, a.symbol, a.age, a.ageMin, a.ageMax, a._Allele_key, a._Assay_key
+select c.accID, aa.accID, a.symbol, a.age, a.ageMin, a.ageMax, 
+substring(a.structure,1,50), substring(a.system,1,50), 
+a._Allele_key, a._Assay_key
 from ALL_Cre_Cache a, ACC_Accession c, ACC_Accession aa
 where a._Allele_key = c._Object_key
 and c._MGIType_key = 11
 and a._Assay_key = aa._Object_key
 and aa._MGIType_key = 8
-order by a.symbol, a.age
+order by a.symbol, a.system
 go
 
 select c.accID, a.symbol, a._Allele_key, a._Assay_key

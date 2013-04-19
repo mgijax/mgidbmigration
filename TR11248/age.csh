@@ -29,7 +29,7 @@ where a._Allele_key = c._Object_key
 and c._MGIType_key = 11
 and a._Assay_key = aa._Object_key
 and aa._MGIType_key = 8
-order by a.symbol, a.system
+order by a.symbol, a.system, a.ageMin
 go
 
 select c.accID, a.symbol, a._Allele_key, a._Assay_key

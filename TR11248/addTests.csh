@@ -19,7 +19,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh | tee -a $LOG
 
 -- MGI:5310731
-update image set external_link = '\\Link(https://www.google.com/|Test'
+update image set external_link = '\\Link(https://www.google.com/|Test Link|)'
 where image_key = 388284;
 
 -- MGI:5429049

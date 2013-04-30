@@ -40,6 +40,7 @@ select distinct  a.accID,
 substring(a.symbol,1,25), 
 a.expressed, 
 substring(a.age,1,25), a.ageMin, a.ageMax, 
+substring(cc.age,1,25), cc.ageMin, cc.ageMax, 
 substring(a.structure,1,25) as structure, a.hasImage,
 substring(a.system,1,25) as system, 
 a._Allele_key, a._Assay_key
@@ -50,6 +51,24 @@ and a._Allele_key = cc._Allele_key
 and a._system_key = cc._system_key
 and a._structure_key = cc._structure_key
 and cc.age = 'postnatal'
+order by a._Allele_key, a.system, a.structure, a.expressed desc, a.hasImage desc
+go
+
+select distinct  a.accID,
+substring(a.symbol,1,25), 
+a.expressed, 
+substring(a.age,1,25), a.ageMin, a.ageMax, 
+substring(a.structure,1,25) as structure, a.hasImage,
+substring(a.system,1,25) as system, 
+a._Allele_key, a._Assay_key
+from ALL_Cre_Cache a
+where a.system is not null
+and a.age like 'postnatal [a-z]%'
+and not exists (select 1 from ALL_Cre_Cache cc
+where a._Allele_key = cc._Allele_key
+and a._system_key = cc._system_key
+and a._structure_key = cc._structure_key
+and cc.age = 'postnatal')
 order by a._Allele_key, a.system, a.structure, a.expressed desc, a.hasImage desc
 go
 

@@ -16,77 +16,53 @@ touch $LOG
  
 date | tee -a $LOG
  
-cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh | tee -a $LOG
 
-use $MGD_DBNAME
-go
+-- MGI:5310731
+update image set external_link = '\\Link(https://www.google.com/|Test'
+where image_key = 388284;
 
-begin transaction
-update IMG_Image set _ModifiedBy_key = 1001, modification_date = getdate() where _Image_key = 442054
-declare @noteKey int
-select @noteKey = max(_Note_key) + 1 from MGI_Note
-if @noteKey is NULL or @noteKey = 0
-begin
-select @noteKey = 1000
-end
-insert MGI_Note (_Note_key, _Object_key, _MGIType_key, _NoteType_key, _CreatedBy_key, _ModifiedBy_key)
-values(@noteKey,442054,9,1039,1001,1001)
-insert MGI_NoteChunk (_Note_key, sequenceNum, note, _CreatedBy_key, _ModifiedBy_key)
-values(@noteKey,1,'\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=29307&XPos=-11951804&YPos=-4048671&ZPos=0&Lens=0.6912477047653858&SignIn=Sign%20in%20as%20Guest|Full Image|)',1001,1001)
-select @noteKey = @noteKey + 1
+-- MGI:5429049
+update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?page_num=0&page_size=38&no_paging=false&exact_match=false&search_term=Calb2-IRES-cre&search_type=line|AIBS Data|)'
+where image_key = 442098;
 
-commit transaction
-go
+-- MGI:5429059
+update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?page_num=0&page_size=38&no_paging=false&exact_match=false&search_term=Calb2-IRES-cre&search_type=line|AIBS Data|)'
+where image_key = 442108;
 
-begin transaction
-update IMG_Image set _ModifiedBy_key = 1001, modification_date = getdate() where _Image_key = 442058
-declare @noteKey int
-select @noteKey = max(_Note_key) + 1 from MGI_Note
-if @noteKey is NULL or @noteKey = 0
-begin
-select @noteKey = 1000
-end
-insert MGI_Note (_Note_key, _Object_key, _MGIType_key, _NoteType_key, _CreatedBy_key, _ModifiedBy_key)
-values(@noteKey,442058,9,1039,1001,1001)
-insert MGI_NoteChunk (_Note_key, sequenceNum, note, _CreatedBy_key, _ModifiedBy_key)
-values(@noteKey,1,'\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=19855&XPos=19464953&YPos=7550599&ZPos=0&Lens=8.322464221082296&SignIn=Sign%20in%20as%20Guest|Full Image|)',1001,1001)
-select @noteKey = @noteKey + 1
+-- MGI:5429015
+update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?page_num=0&page_size=38&no_paging=false&exact_match=false&search_term=Calb2-IRES-cre&search_type=line|AIBS Data|)'
+where image_key = 442066;
 
-commit transaction
-gp
+-- MGI:5429057
+update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?exact_match=false&search_term=Calb2-IRES-cre&search_type=line|AIBS Data|)'
+where image_key = 442106;
 
-begin transaction
-update IMG_Image set _ModifiedBy_key = 1001, modification_date = getdate() where _Image_key = 442086
-declare @noteKey int
-select @noteKey = max(_Note_key) + 1 from MGI_Note
-if @noteKey is NULL or @noteKey = 0
-begin
-select @noteKey = 1000
-end
-insert MGI_Note (_Note_key, _Object_key, _MGIType_key, _NoteType_key, _CreatedBy_key, _ModifiedBy_key)
-values(@noteKey,442086,9,1039,1001,1001)
-insert MGI_NoteChunk (_Note_key, sequenceNum, note, _CreatedBy_key, _ModifiedBy_key)
-values(@noteKey,1,'\Link(http://connectivity.brain-map.org/transgenic/search?exact_match=false&search_term=Calb2-IRES-cre&search_type=line|Full Image|)',1001,1001)
-select @noteKey = @noteKey + 1
+-- MGI:5429064
+update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?page_num=0&page_size=38&no_paging=false&exact_match=false&search_term=Calb2-IRES-cre&search_type=line|AIBS Data|)'
+where image_key = 442110;
 
-commit transaction
-go
+-- MGI:5429003
+update image set external_link = '\\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=29307&XPos=-11951804&YPos=-4048671&ZPos=0&Lens=0.6912477047653858&SignIn=Sign%20in%20as%20Guest|GRS Image|)'
+where image_key = 442054;
 
-checkpoint
-go
+-- MGI:5429005
+update image set external_link = '\\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=29307&XPos=-12533302&YPos=3324627&ZPos=0&Lens=0.7870385852010384&SignIn=Sign%20in%20as%20Guest|GRS Image|)'
+where image_key = 442056;
 
-end
+-- MGI:5429036
+update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?exact_match=false&search_term=Calb2-IRES-cre&search_type=line|GRS Image|)'
+where image_key = 442086;
+
+-- MGI:5428971
+update image set external_link = '\\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=19847&XPos=20954428&YPos=-1405049&ZPos=0&Lens=40&SignIn=Sign%20in%20as%20Guest|GRS Image|)'
+where image_key = 442038;
+
+-- MGI:5429007
+update image set external_link = '\\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=19855&XPos=19464953&YPos=7550599&ZPos=0&Lens=8.322464221082296&SignIn=Sign%20in%20as%20Guest|GRS Image|)'
+where image_key = 442058;
 
 EOSQL
-
-update image set external_link = '\\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=29307&XPos=-11951804&YPos=-4048671&ZPos=0&Lens=0.6912477047653858&SignIn=Sign%20in%20as%20Guest|Full Image|)'
-where image_key = 442054
-
-update image set external_link = '\\Link(https://ndp.jax.org/NDPServe.dll?ViewItem?ItemID=19855&XPos=19464953&YPos=7550599&ZPos=0&Lens=8.322464221082296&SignIn=Sign%20in%20as%20Guest|Full Image|)'
-where image_key = 442058 
-
-update image set external_link = '\\Link(http://connectivity.brain-map.org/transgenic/search?exact_match=false&search_term=Calb2-IRES-cre&search_type=line|Full Image|)'
-where image_key = 442086 
 
 date |tee -a $LOG
 

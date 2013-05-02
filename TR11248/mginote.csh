@@ -25,8 +25,11 @@ go
 declare @nextType integer
 select @nextType = max(_NoteType_key) + 1 from MGI_NoteType
 
+--insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
+--values (@nextType, 9, "External Link", 0)
+
 insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
-values (@nextType, 9, "External Link", 0)
+values (@nextType, 9, "Cre-User Note", 0)
 
 go
 

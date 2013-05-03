@@ -29,7 +29,7 @@ select @nextType = max(_NoteType_key) + 1 from MGI_NoteType
 --values (@nextType, 9, "External Link", 0)
 
 insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
-values (@nextType, 11, "Cre-User Note", 0)
+values (@nextType, 11, "User (Cre)", 0)
 
 go
 

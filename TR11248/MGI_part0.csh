@@ -63,6 +63,10 @@ ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/VOC_Cache_OMIM_Alleles_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/MGI_NoteType_Image_View_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/MGI_NoteType_Image_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Allele_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Allele_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_AllDriver_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_AllDriver_View_create.object | tee -a ${LOG}
 
 # permissions
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}

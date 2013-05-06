@@ -28,14 +28,21 @@ select @nextType = max(_NoteType_key) + 1 from MGI_NoteType
 --insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
 --values (@nextType, 9, "External Link", 0)
 
-insert into mgi_notetype (_notetype_key, _mgitype_key, notetype, private)
-values (@nextType, 11, "User (Cre)", 0)
+insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
+values (@nextType, 9, "Cre-User Note", 0)
 
 go
 
 quit
 
 EOSQL
+
+# this will be picked up by
+# private curator note (1025) in image module
+
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Image_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_NoteType_Image_View_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 

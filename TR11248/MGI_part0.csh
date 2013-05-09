@@ -103,6 +103,14 @@ update MGI_dbinfo set
 	snp_data_version = 'dbSNP Build 137'
 go
 
+/* create new note type */
+
+declare @nextType integer
+select @nextType = max(_NoteType_key) + 1 from MGI_NoteType
+insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
+values (@nextType, 11, "User (Cre)", 0)
+go
+
 -- delete children prb_strain_marker where no parent
 delete PRB_Strain_Marker
 from PRB_Strain_Marker p
@@ -141,14 +149,6 @@ where e._AssayType_key in (9)
 and e._Assay_key = a._Assay_key
 and a._ReporterGene_key = t._Term_key
 and t.term in ('Cre', 'FLP')
-go
-
-/* create new note type */
-
-declare @nextType integer
-select @nextType = max(_NoteType_key) + 1 from MGI_NoteType
-insert MGI_NoteType (_NoteType_key, _MGIType_key, noteType, private)
-values (@nextType, 9, "User (Cre)", 0)
 go
 
 EOSQL

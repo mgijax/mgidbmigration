@@ -15,5 +15,13 @@ touch ${LOG}
  
 date | tee -a  ${LOG}
 ./sto135.py | tee -a ${LOG}
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+EOSQL
+
 date | tee -a  ${LOG}
 

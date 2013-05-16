@@ -61,7 +61,7 @@ for r in results:
     note = r['note']
     allIDs = re.findall('MGI:[0-9]*', note)
     for m in allIDs:
-    	note = note.replace(m, '\Acc(' + m + ')')
+    	note = note.replace(m, '\Acc(' + m + '||)')
 
     print r['accID']
     print r['note']
@@ -91,7 +91,7 @@ for r in results:
     note = r['note']
     allIDs = re.findall('MGI:[0-9]*', note)
     for m in allIDs:
-    	note = note.replace(m, '\Acc(' + m + ')')
+    	note = note.replace(m, '\Acc(' + m + '||)')
 
     print r['accID']
     print r['note']

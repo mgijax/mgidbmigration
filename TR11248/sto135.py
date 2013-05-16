@@ -12,6 +12,7 @@
  
 import sys 
 import os
+import re
 import db
 import reportlib
 
@@ -41,7 +42,8 @@ db.useOneConnection(1)
 
 print 'assay notes that have \Acc() added'
 results = db.sql('''
-	select g1.* from gxd_assaynote g1
+	select g1._assay_key, rtrim(g1.assayNote) as assayNote 
+	from gxd_assaynote g1
 	where g1.assaynote like '%MGI:%'
 	and not exists (select 1 from gxd_assaynote g2
 		where g1._assay_key = g2._assay_key
@@ -50,14 +52,22 @@ results = db.sql('''
 	''', 'auto')
 
 for r in results:
-    assayNote = r['assaynote']
-    startMGI = assayNote.find('MGI:')
-    endMGI = assayNote.find(' ', startMGI)
-    newNote = assayNote[:startMGI] + '\Acc(' + assayNote[startMGI, endMGI] + ')' + assayNote[endMGI:]
-    print assayNote
-    print newNote
-    print '------------'
+    assayNote = r['assayNote']
 
+    newNote = assayNote
+    allIDs = re.findall('MGI:[0-9]*', assayNote)
+    for m in allIDs:
+    	newNote = newNote.replace(m, '\Acc(' + m + ')')
+
+    if len(newNote) > 255:
+	print 'the new note is too long...send to Connie'
+    else:
+    	updateSQL = '''
+		update gxd_assaynote set assaynote = '%s' where _assay_key = %s
+		''' % (newNote, r['_assay_key'])
+	print updateSQL
+
+    print '---------------'
 
 db.useOneConnection(0)
 

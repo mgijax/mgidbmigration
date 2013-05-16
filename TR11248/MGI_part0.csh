@@ -160,6 +160,11 @@ date | tee -a ${LOG}
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 
 #
+# sto135/migration Assay Notes/Specimen Notes
+#
+${DBUTILS}/mgidbmigration/TR11248/sto135.csh | tee -a ${LOG}
+
+#
 # some reports
 #
 ${DBUTILS}/mgidbmigration/TR11248/cre.csh | tee -a ${LOG}

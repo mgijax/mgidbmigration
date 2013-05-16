@@ -27,18 +27,19 @@ db.set_sqlPasswordFromFile(passwordFileName)
 
 db.useOneConnection(1)
 
-#results = db.sql('''
-#	select g1.* from gxd_assaynote g1
-#	where g1.assaynote like '%MGI:%'
-#	and exists (select 1 from gxd_assaynote g2
-#		where g1._assay_key = g2._assay_key
-#		and g2.sequencenum != 1)
-#	order by g1._assay_key, g1.sequencenum
-#	''', 'auto')
-#
-#print 'assay notes that contain > 1 note chunk (> 255)'
-#for r in results:
-#    print r
+results = db.sql('''
+	select g1.* from gxd_assaynote g1
+	where g1.assaynote like '%MGI:%'
+	and exists (select 1 from gxd_assaynote g2
+		where g1._assay_key = g2._assay_key
+		and g2.sequencenum != 1)
+	order by g1._assay_key, g1.sequencenum
+	''', 'auto')
+
+print 'assay notes that contain > 1 note chunk (> 255)'
+for r in results:
+    print r
+print '---------------'
 
 print 'assay notes that have \Acc() added'
 results = db.sql('''
@@ -58,6 +59,8 @@ for r in results:
     allIDs = re.findall('MGI:[0-9]*', assayNote)
     for m in allIDs:
     	newNote = newNote.replace(m, '\Acc(' + m + ')')
+
+    print r
 
     if len(newNote) > 255:
 	print 'the new note is too long...send to Connie'

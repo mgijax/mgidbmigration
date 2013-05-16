@@ -52,7 +52,6 @@ results = db.sql('''
 	and g1._assay_key = a._object_key
 	and a._mgitype_key = 8
 	and a._logicaldb_key = 1
-	and g1._assay_key = 47866
 	and not exists (select 1 from gxd_assaynote g2
 		where g1._assay_key = g2._assay_key
 		and g2.sequencenum != 1)

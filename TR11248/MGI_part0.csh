@@ -114,7 +114,8 @@ go
 -- delete children prb_strain_marker where no parent
 delete PRB_Strain_Marker
 from PRB_Strain_Marker p
-where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key)
+where p._Allele_key is not null
+and not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key)
 go
 
 -- delete 'Recombinases' from MGI_Set

@@ -12,7 +12,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-        setenv MGICONFIG /usr/local/mgi/test/mgiconfig
+        setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh

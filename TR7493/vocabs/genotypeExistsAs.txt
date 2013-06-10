@@ -1,5 +1,0 @@
-Mouse Line	mouseLine
-Cell Line	cellLine
-Chimeric	chimeric
-Not Specified	NS
-Not Applicable	NA

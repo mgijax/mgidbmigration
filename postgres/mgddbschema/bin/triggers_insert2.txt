@@ -1,3 +1,0 @@
-GXD_Genotype:_Genotype_key:Genotype:true
-NOM_Marker:_Nomen_key:Nomenclature:true
-PRB_Strain:_Strain_key:Strain:true

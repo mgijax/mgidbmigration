@@ -1,4 +1,0 @@
-upstream	upstream
-downstream	downstream
-Not Specified	NS
-Not Applicable	NA

@@ -29,12 +29,16 @@ go
 delete from MGI_StatisticSql where _Statistic_key in (43,44)
 go
 
-update MGI_Measurement set intValue = 15908632, timeRecorded = getdate() where _Statistic_key = 43
+update MGI_Measurement set intValue = 15908632, timeRecorded = getdate() where _Statistic_key = 43 and isLatest = 1
+go
+
+select * from MGI_StatisticSql where _Statistic_key in (43,44)
+go
+
+select * from MGI_Measurement where _Statistic_key in (43,44) and isLatest = 1
 go
 
 EOSQL
-
-${MGI_DBUTILS}/bin/loadMeasurements.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

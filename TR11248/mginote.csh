@@ -48,3 +48,20 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a  ${LOG}
 
+#
+#insert into mgi_note (_Note_key, _Object_key, _MGIType_key, _NoteType_key, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date)
+#values(277515714,37151,11,1040,1001,1001,'06/06/2013','06/06/2013');
+#insert into MGI_NoteChunk (_Note_key, sequenceNum, note, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date)
+#values(277515714,1,'Scrum is an iterative and incremental agile software development framework for managing software projects and product or application development. Its focus is on "a flexible, holistic product development strategy where a development team works as a unit t',1001,1001,'06/06/2013','06/06/2013');
+#insert into mgi_notechunk (_Note_key, sequenceNum, note, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date)
+#values(277515714,2,'o reach a common goal" as opposed to a "traditional, sequential approach".',1001,1001,'06/06/2013','06/06/2013');
+
+#
+#
+
+insert into MGI_Note (_Note_key, _Object_key, _MGIType_key, _NoteType_key, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date)
+values(277515715,442110,9,1039,1065,1065, '06/06/2013', '06/06/2013');
+insert into MGI_NoteChunk (_Note_key, sequenceNum, note, _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date)
+values(277515715,1,'\Link(http://connectivity.brain-map.org/transgenic/search?page_num=0&page_size=38&no_paging=false&exact_match=false&search_term=Calb2-IRES-cre&search_type=line|AIBS Data|)
+',1065,1065, '06/06/2013', '06/06/2013');
+

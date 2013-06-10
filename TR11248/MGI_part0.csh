@@ -171,6 +171,11 @@ ${DBUTILS}/mgidbmigration/TR11248/sto135.csh | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11248/cre.csh | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11248/age.csh | tee -a ${LOG}
 
+#
+# statistics
+#
+${DBUTILS}/mgidbmigration/TR11248/snpstat.csh | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

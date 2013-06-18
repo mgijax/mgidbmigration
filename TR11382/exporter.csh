@@ -1,4 +1,4 @@
-#!/bin/csh -fx
+#!/bin/csh -f
 
 #
 ###----------------------###
@@ -21,14 +21,15 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-foreach i (${PG_RADAR_DBSCHEMADIR}/table/*create.object)
-table=`basename $i _create.object`
-echo $i
-end
-
+foreach i (${RADAR_DBSCHEMADIR}/table/*create.object)
+setenv table `basename $i _create.object`
 cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
+use radar
+go
+select count(*) from $table
+go
 EOSQL
+end
 
 date | tee -a ${LOG}
 

@@ -14,6 +14,7 @@ if ( ${?MGICONFIG} == 0 ) then
 endif
 
 source ${MGICONFIG}/master.config.csh
+source ${MGI_DBUTILS}/Configuration
 
 env | grep MGD
 env | grep RADAR
@@ -29,10 +30,24 @@ date | tee -a ${LOG}
 #
 # load Sybase 15 from Sybase 12.5 backup
 #
+#date | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postpart0.backup | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.postpart0.backup | tee -a ${LOG}
+#date | tee -a ${LOG}
+
+#
+# or use BCP to copy data out of Sybase 12.5
+#
 date | tee -a ${LOG}
-${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postpart0.backup | tee -a ${LOG}
-${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.postpart0.backup | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/all_create.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+cd ${MGD_DBSCHEMADIR}/table
+foreach i (W*_create.object)
+set i=`basename $i _create.object`
+${MGI_DBUTILS}/bin/bcpout.csh DEV_MGI mgd_dev $i ${DATADIR}
+end
 date | tee -a ${LOG}
+exit 0
 
 #
 # delete/re-load indexes

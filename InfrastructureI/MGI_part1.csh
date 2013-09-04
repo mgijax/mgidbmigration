@@ -65,8 +65,8 @@ quit
 
 EOSQL
 
-#date | tee -a ${LOG}
-#echo "--- Re-setting permissions/schema ---" | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- Re-setting permissions/schema ---" | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}

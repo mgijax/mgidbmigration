@@ -1,4 +1,4 @@
-#!/bin/csh -fx
+#!/bin/csh -f
 
 #
 # Migration for TR11423
@@ -10,10 +10,13 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+	setenv MGICONFIG /home/lec/mgi/mgiconfig
+	#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
+echo $MGICONFIG
+env | grep MGD
 
 env | grep MGD
 

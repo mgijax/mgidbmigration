@@ -66,7 +66,7 @@ date | tee -a ${LOG}
 #
 ${ENTREZGENELOAD}/human/annotations.csh | tee -a ${LOG}
 
-# some femover/gather-ers use these cache tables
+# some femover/gather-ers use cache table(s)
 ${MRKCACHELOAD}/mrkomim.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}

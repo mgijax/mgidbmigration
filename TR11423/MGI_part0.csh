@@ -66,6 +66,10 @@ date | tee -a ${LOG}
 #
 ${ENTREZGENELOAD}/human/annotations.csh | tee -a ${LOG}
 
+# if we don't need the cache-tables...then skip these
+#${MRKCACHELOAD}/mrkomim.csh | tee -a ${LOG}
+#${MGICACHELOAD}/voccounts.csh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 

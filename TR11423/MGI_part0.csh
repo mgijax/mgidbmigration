@@ -1,4 +1,4 @@
-#!/bin/csh -f
+#!/bin/csh -fx
 
 #
 # Migration for TR11423
@@ -10,13 +10,11 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-	setenv MGICONFIG /home/lec/mgi/mgiconfig
+	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig
 	#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
-echo $MGICONFIG
-env | grep MGD
 
 env | grep MGD
 
@@ -44,7 +42,7 @@ update MGI_dbinfo set
 	public_version = 'MGI 5.16'
 go
 
-delete from VOC_AnnotType where name = "OMIM/Human Marker/Phenotype"
+delete from VOC_AnnotType where name = "OMIM/Human Marker/Pheno"
 go
 
 declare @annotType integer
@@ -53,8 +51,12 @@ from VOC_AnnotType
 
 insert VOC_AnnotType (_AnnotType_key, _MGIType_key, _Vocab_key,
         _EvidenceVocab_key, _QualifierVocab_key, name)
-values (@annotType, 2, 44, 43, 53, "OMIM/Human Marker/Phenotype")
+values (@annotType, 2, 44, 43, 53, "OMIM/Human Marker/Pheno")
 go
+
+select * from VOC_AnnotType where name = "OMIM/Human Marker/Pheno"
+go
+
 
 EOSQL
 date | tee -a ${LOG}
@@ -62,7 +64,25 @@ date | tee -a ${LOG}
 #
 # entrezgeneload
 #
-#${ENTREZGENELOAD}/human/annotations.csh | tee -a ${LOG}
+${ENTREZGENELOAD}/human/annotations.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+select distinct a.accID, m.symbol
+from VOC_Annot v, ACC_Accession a, MRK_Marker m
+where v._AnnotType_key = 1013
+and v._Term_key = a._Object_key
+and a._LogicalDB_key = 15
+and v._Object_key = m._Marker_key
+order by m.symbol
+go
+
+EOSQL
+date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

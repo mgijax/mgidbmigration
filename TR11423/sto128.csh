@@ -30,21 +30,38 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-declare @annotType integer
-select @annotType = max(_AnnotType_key) + 1
-from VOC_AnnotType
+declare @ldbKey integer
+select @ldbKey = max(_LogicalDB_key) + 1 from ACC_LogicalDB
 
-insert VOC_AnnotType (_AnnotType_key, _MGIType_key, _Vocab_key,
-        _EvidenceVocab_key, _QualifierVocab_key, name)
-values (@annotType, 2, 44, 43, 53, "OMIM/Human Marker/Pheno")
+declare @vocabKey integer
+select @vocabKey = max(_Vocab_key) + 1 from VOC_Vocab
+
+declare @dagKey integer
+select @dagKey = max(_DAG_key) + 1 from DAG_DAG
+
+insert ACC_LogicalDB (_LogicalDB_key, name, description, _Organism_key)
+values (@ldbKey, 'Disease Cluster', 'Disease Cluster', null)
 go
 
-select * from VOC_AnnotType where name = "OMIM/Human Marker/Pheno"
+insert VOC_Vocab (_Vocab_key, _Refs_key, _LogicalDB_key, isSimple, isPrivate, name)
+values (@vocabKey, ???, @ldbKey, 0, 0, 'Disease Cluster')
 go
 
+insert DAG_DAG (_DAG_key, _Refs_key, _MGIType_key, name, abbreviation)
+values (@dagKey, ???, 13, 'Disease Cluster', 'DC')
+go
+
+insert VOC_VocabDAG (_Vocab_key, _DAG_key)
+values (@vocabKey, @dagKey)
+go
 
 EOSQL
 date | tee -a ${LOG}
+
+#
+# load the DC vocabulary/dag
+# 
+#${VOCLOAD}/runOBOIncLoad.sh DC.config | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

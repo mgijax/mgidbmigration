@@ -2,7 +2,7 @@
 
 #
 # Migration for TR11423
-# (part 0 - load new HDP annotation type & data)
+# sto88 - add new annotation type
 #
 
 ###----------------------###
@@ -35,11 +35,6 @@ date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
-go
-
-update MGI_dbinfo set 
-	schema_version = '5-1-6', 
-	public_version = 'MGI 5.16'
 go
 
 delete from VOC_AnnotType where name = "OMIM/Human Marker/Pheno"

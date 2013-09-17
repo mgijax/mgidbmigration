@@ -24,6 +24,20 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+update MGI_dbinfo set 
+        schema_version = '5-1-6', 
+        public_version = 'MGI 5.16'
+go
+
+EOSQL
+date | tee -a ${LOG}
+
 #
 # sto88
 #

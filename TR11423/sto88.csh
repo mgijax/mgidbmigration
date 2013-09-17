@@ -2,7 +2,7 @@
 
 #
 # Migration for TR11423
-# sto88 - add new annotation type
+# sto88 : add new annotation type
 #
 
 ###----------------------###
@@ -24,8 +24,8 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-date | tee -a ${LOG}
 # change VOC_AnnotType.idx_MGITypeVocabEvidence index to non-unique
+date | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/VOC_AnnotType_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/VOC_AnnotType_create.object | tee -a ${LOG}
 date | tee -a ${LOG}

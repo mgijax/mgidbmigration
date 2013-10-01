@@ -39,13 +39,6 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# sto88
-#
-date | tee -a ${LOG}
-./sto88.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
 # sto128
 #
 date | tee -a ${LOG}

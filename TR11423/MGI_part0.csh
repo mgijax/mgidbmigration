@@ -45,6 +45,13 @@ date | tee -a ${LOG}
 ./sto128.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
+#
+# sto88
+#
+date | tee -a ${LOG}
+./sto88.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

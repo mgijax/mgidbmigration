@@ -23,12 +23,6 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-# change VOC_AnnotType.idx_MGITypeVocabEvidence index to non-unique
-date | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/VOC_AnnotType_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/VOC_AnnotType_create.object | tee -a ${LOG}
-date | tee -a ${LOG}
-
 # add new synonym type
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

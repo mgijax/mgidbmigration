@@ -49,7 +49,7 @@ date | tee -a ${LOG}
 # sto149 : run OMIM load with new disease-clumps
 #
 date | tee -a ${LOG}
-${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
+./sto149.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 ###-----------------------###

@@ -53,16 +53,7 @@ date | tee -a ${LOG}
 # call vocload
 #
 date | tee -a ${LOG}
-${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-EOSQL
+${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a ${LOG}
 date | tee -a ${LOG}
 
 ###-----------------------###

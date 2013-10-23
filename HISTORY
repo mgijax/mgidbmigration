@@ -1,3 +1,9 @@
+TAG: mgidbmigration-5-1-5-4
+DATE: 10/23/2013
+STAFF: sc
+CHANGES:GXD Anatomy
+1) GXD_Anatomy/MGI_part1.csh - update to drop tables recreate everything else
+
 TAG: mgidbmigration-5-1-5-3
 DATE: 09/03/2013
 STAFF: sc

@@ -50,7 +50,9 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 date | tee -a ${LOG}
 
 echo '---Create tables, indexes, keys on EMAP* tables' | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/VOC_Term_EMAPA_drop.object
 ${MGD_DBSCHEMADIR}/table/VOC_Term_EMAPA_create.object
+${MGD_DBSCHEMADIR}/table/VOC_Term_EMAPS_drop.object
 ${MGD_DBSCHEMADIR}/table/VOC_Term_EMAPS_create.object
 
 ${MGD_DBSCHEMADIR}/key/VOC_Term_EMAPA_create.object

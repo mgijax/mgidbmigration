@@ -56,6 +56,24 @@ date | tee -a ${LOG}
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a ${LOG}
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+select a.accID, s._Object_key, substring(s.synonym, 1, 50) as synonym
+from MGI_Synonym s, ACC_Accession a
+where s._SynonymType_key = 1031
+and s._Object_key = a._Object_key
+and s._MGIType_key = a._MGIType_key
+and a.preferred = 1
+order by a.accID
+go
+
+EOSQL
+date | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

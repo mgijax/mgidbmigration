@@ -15,6 +15,7 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
+env | grep MGICONFIG
 env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
@@ -22,6 +23,10 @@ env | grep MGD
 setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
+
+# JUST FOR  TESTING
+#${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
+${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

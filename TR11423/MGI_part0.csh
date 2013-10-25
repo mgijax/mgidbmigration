@@ -10,8 +10,7 @@
 ###----------------------###
 
 if ( ${?MGICONFIG} == 0 ) then
-	setenv MGICONFIG /usr/local/mgi/scrum-dog/mgiconfig
-	#setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
 
 source ${MGICONFIG}/master.config.csh
@@ -55,6 +54,8 @@ date | tee -a ${LOG}
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
+
+${MGD_DBSCHEMADIR}/procedure/MGI_Table_Column_Cleanup_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -24,9 +24,9 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
-# JUST FOR  TESTING
+# JUST FOR TESTING
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
-${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup
+#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -60,7 +60,17 @@ date | tee -a ${LOG}
 ###--- final datestamp ---###
 ###-----------------------###
 
-${MGD_DBSCHEMADIR}/procedure/MGI_Table_Column_Cleanup_create.object | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+exec MGI_Table_Column_Cleanup
+go
+
+EOSQL
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -1,3 +1,9 @@
+TAG: mgidbmigration-5-1-6-2
+DATE: 11/08/2013
+STAFF: dbm
+CHANGES: GXD Anatomy
+1) Added GXD_Anatomy/BuildMappingTable.csh
+
 TAG: mgidbmigration-5-1-6-1
 TAG: mgidbmigration-5-1-5-6
 TAG: mgidbmigration-5-1-5-5

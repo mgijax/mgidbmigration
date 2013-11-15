@@ -1,3 +1,9 @@
+TAG: mgidbmigration-5-1-6-3
+DATE: 11/15/2013
+STAFF: sc
+CHANGES:
+1) added GXD_Anatomy/EMAPA_EMAPS.csh (replaces MGI_part1.csh and edited)
+
 TAG: mgidbmigration-5-1-6-2
 DATE: 11/08/2013
 STAFF: dbm

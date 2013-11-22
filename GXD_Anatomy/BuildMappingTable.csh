@@ -33,6 +33,12 @@ ${MGD_DBSCHEMADIR}/key/MGI_EMAPS_Mapping_create.object
 
 ${MGD_DBSCHEMADIR}/index/MGI_EMAPS_Mapping_create.object
 
+echo '---MGI_EMAPS_Maping' | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/default/MGI_EMAPS_Mapping_unbind.object
+${MGD_DBSCHEMADIR}/default/MGI_EMAPS_Mapping_bind.object
+#${MGD_DBSCHEMADIR}/view/MGI_EMAPS_Mapping_View_drop.object
+${MGD_DBSCHEMADIR}/view/MGI_EMAPS_Mapping_View_create.object
+
 date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}

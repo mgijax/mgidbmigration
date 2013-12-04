@@ -1,0 +1,16 @@
+Spontaneous
+Targeted
+Endonuclease-mediated
+Gene trapped
+Chemically Induced (ENU)
+Chemically Induced (other)
+Chemically and Radiation Induced
+Radiation induced
+Transgenic (random, gene disruption)
+Transgenic (random, expressed)
+Transgenic (Cre/Flp)
+Transgenic (Reporter)
+Transgenic (Transposase)
+Transposon Induced
+Transposon Concatemer
+QTL

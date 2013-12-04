@@ -79,10 +79,15 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
--- delete old VOC_Term._Vocab_key = 38 terms
--- if the delete fales, then there is still an Allele associated with this term
---delete from VOC_Term where _Term_key in ()
---go
+-- delete old VOC_Term._Vocab_key = 38 terms that are no longer used
+-- (exclude the new terms added as part of this projects)
+delete VOC_Term
+from VOC_Term t
+where t._Vocab_key = 38
+and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
+and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
+and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer')
+go
 
 -- verify
 select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
@@ -151,6 +156,14 @@ and t.term in (
  'Transposon Concatemer',
  'Transgenic'
 )
+go
+
+select t.*
+from VOC_Term t
+where t._Vocab_key = 38
+and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
+and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
+and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer')
 go
 
 EOSQL

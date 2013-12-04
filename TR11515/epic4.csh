@@ -45,13 +45,16 @@ go
 select count(*) from ALL_Allele where _Allele_Type_key in (847118, 847117, 847116, 847120, 847119)
 go
 
+delete from VOC_Vocab where name = 'Allele Attribute'
+go
+
 EOSQL
 date | tee -a ${LOG}
 
 #
 # create new vocabulary for "Allele Attribute"
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleleAttribute.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/epic4/alleleAttribute.config | tee -a ${LOG}
 
 #
 # migrate existing _Vocab_key = 38 to the new terms (generationType.txt)

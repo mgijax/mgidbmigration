@@ -5,10 +5,7 @@
 ###--- initialization ---###
 ###----------------------###
 
-if ( ${?MGICONFIG} == 0 ) then
-        setenv MGICONFIG /usr/local/mgi/dev/mgiconfig
-endif
-
+setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 source ${MGICONFIG}/master.config.csh
 
 env | grep MGD
@@ -21,14 +18,26 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-foreach i (${RADAR_DBSCHEMADIR}/table/*create.object)
-setenv table `basename $i _create.object`
-cat - <<EOSQL | ${MGI_DBUTILS}/bin/doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-use radar
-go
-select count(*) from $table
+echo "****MGD" | tee -a ${LOG}
+foreach i (${MGD_DBSCHEMADIR}/table/*create.object)
+setenv table `basename ${i} _create.object`
+echo $table | tee -a ${LOG}
+isql -SMGISYDEV01 -Umgd_dbo -Dmgd -w200 -Popenup <<EOSQL | tee -a ${LOG}
+select count(*) from ${table}
 go
 EOSQL
+psql -hmgi-testdb4 -dpub_dev -Umgd_dbo --command "select count(*) from mgd.${table}" | tee -a ${LOG}
+end
+
+echo "****RADAR" | tee -a ${LOG}
+foreach i (${RADAR_DBSCHEMADIR}/table/*create.object)
+setenv table `basename ${i} _create.object`
+echo $table | tee -a ${LOG}
+isql -SMGISYDEV01 -Umgd_dbo -Dradar -w200 -Popenup <<EOSQL | tee -a ${LOG}
+select count(*) from ${table}
+go
+EOSQL
+psql -hmgi-testdb4 -dpub_dev -Umgd_dbo --command "select count(*) from radar.${table}" | tee -a ${LOG}
 end
 
 date | tee -a ${LOG}

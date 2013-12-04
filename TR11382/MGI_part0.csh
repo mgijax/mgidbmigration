@@ -50,14 +50,17 @@ date | tee -a ${LOG}
 exit 0
 
 #
+# now go to the Sybase 15 server and load the bcps into Sybase 15
+#
+#
 # delete/re-load indexes
 # update statistics
 #
-date | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/index_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/index_create.csh | tee -a ${LOG}
-${RADAR_DBSCHEMADIR}/index/index_drop.csh | tee -a ${LOG}
-${RADAR_DBSCHEMADIR}/index/index_create.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/index/index_drop.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/index/index_create.csh | tee -a ${LOG}
+#${RADAR_DBSCHEMADIR}/index/index_drop.csh | tee -a ${LOG}
+#${RADAR_DBSCHEMADIR}/index/index_create.csh | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/updateStatisticsAll.csh ${MGD_DBSERVER} ${MGD_DBNAME} ${MGD_DBSCHEMADIR} | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/updateStatisticsAll.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} ${RADAR_DBSCHEMADIR} | tee -a ${LOG}
 date | tee -a ${LOG}

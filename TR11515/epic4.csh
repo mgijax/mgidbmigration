@@ -48,8 +48,24 @@ go
 delete from VOC_Vocab where name = 'Allele Attribute'
 go
 
+-- add new VOC_Term._Vocab_key = 38 terms (both old and new terms exist)
+declare @maxKey integer
+select @maxKey = max(_Term_key) + 1 from VOC_Term
+
+insert into VOC_Term values (@maxKey, 38, 'Targeted', null, 21, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@maxKey+1, 38, 'Endonuclease-mediated', null, 22, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@maxKey+2, 38, 'Transposon Concatemer', null, 23, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@maxKey+3, 38, 'Transgenic', null, 24, 0, 1001, 1001, getdate(), getdate())
+
+go
+
 EOSQL
 date | tee -a ${LOG}
+
+#
+# update allele-types
+#
+./epic4/epic4-generation.py | tee -a ${LOG}
 
 #
 # create new vocabulary for "Allele Attribute"
@@ -57,7 +73,19 @@ date | tee -a ${LOG}
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/epic4/alleleAttribute.config | tee -a ${LOG}
 
 #
-# migrate existing _Vocab_key = 38 to the new terms (generationType.txt)
+# migrate existing ALL_Allele._Allele_Type_key from old type to new type
+#
+
+#
+# add appropriate allele-attribute
+#
+
+#
+# delete old VOC_Term._Vocab_key = 38 terms
+#
+
+#
+# verify
 #
 
 date | tee -a ${LOG}

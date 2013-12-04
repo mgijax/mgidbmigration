@@ -1,5 +1,5 @@
-Conditional Ready (lox, frt,... flanked)	Conditional Ready (lox, frt,... flanked)						
-Recombinase (cre, flp,...)	Recombinase (cre, flp,...)						
+Conditional Ready	Conditional Ready						
+Recombinase	Recombinase						
 Reporter	Reporter						
 Transposase	Transposase						
 Transposon Concatemer	Transposon Concatemer						

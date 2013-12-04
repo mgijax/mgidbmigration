@@ -63,22 +63,16 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# update allele-types
-#
-./epic4/epic4-generation.py | tee -a ${LOG}
-
-#
 # create new vocabulary for "Allele Attribute"
 #
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/epic4/alleleAttribute.config | tee -a ${LOG}
 
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
-#
-
-#
 # add appropriate allele-attribute
 #
+./epic4/epic4.py | tee -a ${LOG}
+
 
 #
 # delete old VOC_Term._Vocab_key = 38 terms

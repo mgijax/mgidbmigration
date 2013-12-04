@@ -73,19 +73,84 @@ ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/epic4
 #
 ./epic4/epic4.py | tee -a ${LOG}
 
-
-#
-# delete old VOC_Term._Vocab_key = 38 terms
-#
-
-#
-# verify
-#
-
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
+go
+
+-- delete old VOC_Term._Vocab_key = 38 terms
+-- if the delete fales, then there is still an Allele associated with this term
+--delete from VOC_Term where _Term_key in ()
+--go
+
+-- verify
+select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
+go
+
+select _Term_key, substring(term,1,50) from VOC_Term where name = 'Allele Attribute'
+go
+
+-- should return (0) results
+select a.symbol, a._Allele_key, a._Allele_Type_key, t.term
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+and t.term in (
+ 'Targeted (Floxed/Frt)',
+ 'Targeted (knock-in)',
+ 'Targeted (knock-out)',
+ 'Targeted (other)',
+ 'Targeted (Reporter)',
+ 'Transgenic (Cre/Flp)',
+ 'Transgenic (random, expressed)',
+ 'Transgenic (random, gene disruption)',
+ 'Transgenic (Reporter)',
+ 'Transgenic (Transposase)'
+)
+order by a.symbol
+go
+
+-- should return (0) results
+select a.name, a._Derivation_key, a._DerivationType_key, t.term
+from ALL_CellLine_Derivation a, VOC_Term t
+where a._DerivationType_key = t._Term_key
+and t.term in (
+ 'Targeted (Floxed/Frt)',
+ 'Targeted (knock-in)',
+ 'Targeted (knock-out)',
+ 'Targeted (other)',
+ 'Targeted (Reporter)',
+ 'Transgenic (Cre/Flp)',
+ 'Transgenic (random, expressed)',
+ 'Transgenic (random, gene disruption)',
+ 'Transgenic (Reporter)',
+ 'Transgenic (Transposase)'
+)
+order by a.name
+go
+
+-- should return (?) results
+select count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+and t.term in (
+ 'Targeted',
+ 'Endonuclease-mediated',
+ 'Transposon Concatemer',
+ 'Transgenic'
+)
+go
+
+-- should return (?) results
+select count(a._Derivation_key)
+from ALL_CellLine_Derivation a, VOC_Term t
+where a._DerivationType_key = t._Term_key
+and t.term in (
+ 'Targeted',
+ 'Endonuclease-mediated',
+ 'Transposon Concatemer',
+ 'Transgenic'
+)
 go
 
 EOSQL

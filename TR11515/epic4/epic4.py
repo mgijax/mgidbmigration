@@ -27,19 +27,16 @@ passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 db.set_sqlUser(user)
 db.set_sqlPasswordFromFile(passwordFileName)
 
-def updateAllele():
+def runUpdate(toUpdate):
 
 	updateSQL = ''
 
 	# select terms that require migration
 
 	results = db.sql('''
-		select aa.accID, a.symbol, a._Allele_key, a._Allele_Type_key, t.term 
-		from ALL_Allele a, VOC_Term t, ACC_Accession aa
-		where a._Allele_Type_key = t._Term_key
-		and a._Allele_key = aa._Object_key
-		and aa._LogicalDB_key = 1
-		and aa._MGIType_key = 11
+		select t._Term_key, t.term 
+		from VOC_Term t
+		where t._Vocab_key = 38
 		and t.term in (
 			'Targeted (Floxed/Frt)',
 			'Targeted (knock-in)',
@@ -52,15 +49,11 @@ def updateAllele():
 			'Transgenic (Reporter)',
 			'Transgenic (Transposase)'
 			)
-
 		''', 'auto')
 
-	updateSQL = ''
 	for r in results:
 
-		print r
-
-		alleleKey = r['_Allele_key']
+		termKey = r['_Term_key']
 		oldTerm = r['term']
 
 		#
@@ -87,12 +80,9 @@ def updateAllele():
 
 		if len(newTermName) > 0:
 			newTermKey = newTerm[newTermName][0]
-			updateSQL = updateSQL + '''
-				update ALL_Allele 
-				set _Allele_Type_key = %s
-				where _Allele_key = %s
-				''' % (newTermKey, alleleKey)
-
+			updateSQL = toUpdate % (newTermKey, termKey)
+			print updateSQL
+			db.sql(updateSQL, None)
 		else:
 			print 'ERROR: ' + r
 
@@ -119,10 +109,9 @@ def updateAllele():
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(r['symbol'] + TAB)
 			attrFile.write(oldTerm + TAB)
 			attrFile.write(str(newAttrName) + TAB)
-			attrFile.write(str(alleleKey) + TAB)
+			attrFile.write(str(termKey) + TAB)
 			attrFile.write(str(newAttrKey) + TAB)
 			attrFile.write(CRT)
 
@@ -137,15 +126,12 @@ def updateAllele():
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(r['symbol'] + TAB)
 			attrFile.write(oldTerm + TAB)
 			attrFile.write(str(newAttrName) + TAB)
-			attrFile.write(str(alleleKey) + TAB)
+			attrFile.write(str(termKey) + TAB)
 			attrFile.write(str(newAttrKey) + TAB)
 			attrFile.write(CRT)
 
-	print updateSQL
-	#db.sql(updateSQL, None)
 
 #
 # main
@@ -177,7 +163,11 @@ for r in results:
 	newAttr[key].append(value)
 print newAttr
 
-updateAllele()
+alleleToUpdate = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s'
+derivationToUpdate = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s'
+
+runUpdate(alleleToUpdate)
+runUpdate(derivationToUpdate)
 
 attrFile.close()
 

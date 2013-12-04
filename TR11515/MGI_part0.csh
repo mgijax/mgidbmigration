@@ -35,19 +35,30 @@ use ${MGD_DBNAME}
 go
 
 update MGI_dbinfo set 
-        schema_version = '5-1-6', 
-        public_version = 'MGI 5.16'
+        schema_version = '5-1-8', 
+        public_version = 'MGI 5.18'
 go
 
 EOSQL
 date | tee -a ${LOG}
 
 #
+# epic 4: allele type
 #
+date | tee -a ${LOG}
+date | tee -a ${LOG}
+
 #
-#date | tee -a ${LOG}
-#./sto88.csh | tee -a ${LOG}
-#date | tee -a ${LOG}
+# epic 6: allele collection
+#
+date | tee -a ${LOG}
+date | tee -a ${LOG}
+
+#
+# epic 7: germline transmission
+#
+date | tee -a ${LOG}
+date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

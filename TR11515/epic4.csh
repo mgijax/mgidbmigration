@@ -7,9 +7,11 @@
 #
 # _Vocab_key = 38
 #
-# 1) migration existing _Vocab_key = 38 to new terms
+# * migration existing _Vocab_key = 38 to new terms
+#	- ALL_Allele._Allele_Type_key
+#	- ALL_CellLine_Derivation._DerivationType_key
 #
-# 2) create new vocabulary for "Allele Attribute" (see TR11515/epic4 directory)
+# * create new vocabulary for "Allele Attribute" (see TR11515/epic4 directory)
 #
 
 ###----------------------###
@@ -30,12 +32,31 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+-- existing terms
+select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
+go
+
+select count(*) from ALL_Allele where _Allele_Type_key in (847118, 847117, 847116, 847120, 847119)
+go
+
+EOSQL
+date | tee -a ${LOG}
+
 #
 # create new vocabulary for "Allele Attribute"
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11248/fxnClass/subHandleVocab.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleleAttribute.config | tee -a ${LOG}
 
-# add new synonym type
+#
+# migrate existing _Vocab_key = 38 to the new terms (generationType.txt)
+#
+
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 

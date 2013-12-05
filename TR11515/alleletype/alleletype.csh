@@ -2,7 +2,7 @@
 
 #
 # Migration for TR11515
-# epic 4 : allele type
+# allele type
 # sto? : ?
 #
 # _Vocab_key = 38
@@ -11,7 +11,7 @@
 #	- ALL_Allele._Allele_Type_key
 #	- ALL_CellLine_Derivation._DerivationType_key
 #
-# * create new vocabulary for "Allele Attribute" (see TR11515/epic4 directory)
+# * create new vocabulary for "Allele Attribute" (see TR11515/alleletype directory)
 #
 
 ###----------------------###
@@ -65,13 +65,13 @@ date | tee -a ${LOG}
 #
 # create new vocabulary for "Allele Attribute"
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/epic4/alleleAttribute.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
 
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #
-./epic4/epic4.py | tee -a ${LOG}
+./alleletype/alleletype.py | tee -a ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

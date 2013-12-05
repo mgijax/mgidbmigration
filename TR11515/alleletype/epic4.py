@@ -94,6 +94,11 @@ def processAttribute():
 	for r in results:
 		hasDerivation.append(r['_Object_key'])
 
+	hasInducible = []
+	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1032', 'auto')
+	for r in results:
+		hasInducible.append(r['_Object_key'])
+
 	results = db.sql('''
 		select a.symbol, a._Allele_key, t._Term_key, t.term
 		from ALL_Allele a, VOC_Term t
@@ -160,13 +165,16 @@ def processAttribute():
 		# 	if driver note, then add 'Inserted expressed sequence'
 		#		and 'Recombinase'
 		#
-		# 	elif inducible note , then add 'Incucible''
+		# 	elif inducible note , then add 'Inducible''
 		#
 
 		if oldTerm in ('Targeted (knock-in)') and aKey in hasDerivation:
 			newAttrName = 'Recombinase'
 			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
 			newAttrName = 'Inserted expressed sequence'
+			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
+		elif oldTerm in ('Targeted (knock-in)') and aKey in hasInducible:
+			newAttrName = 'Inducible'
 			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
 
 #

@@ -27,9 +27,10 @@ passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 db.set_sqlUser(user)
 db.set_sqlPasswordFromFile(passwordFileName)
 
-def runUpdate(toUpdate):
+generationSQL = ''
 
-	updateSQL = ''
+def processGeneration(generationScript):
+	global generationSQL
 
 	# select terms that require migration
 
@@ -80,17 +81,46 @@ def runUpdate(toUpdate):
 
 		if len(newTermName) > 0:
 			newTermKey = newTerm[newTermName][0]
-			updateSQL = toUpdate % (newTermKey, termKey)
-			print updateSQL
-			db.sql(updateSQL, None)
+			generationSQL = generationSQL + generationScript % (newTermKey, termKey)
 		else:
 			print 'ERROR: ' + r
 
-		#
-		# allele-attribute
-		#
+def processAttribute():
 
-		# plus note #1
+	# special code to handle knock-in / allele-attribute
+
+	hasDerivation = []
+	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1034', 'auto')
+	for r in results:
+		hasDerivation.append(r['_Object_key'])
+
+	results = db.sql('''
+		select a.symbol, a._Allele_key, t._Term_key, t.term
+		from ALL_Allele a, VOC_Term t
+		where t._Vocab_key = 38
+		and t.term in (
+			'Targeted (Floxed/Frt)',
+			'Targeted (knock-in)',
+			'Targeted (knock-out)',
+			'Targeted (other)',
+			'Targeted (Reporter)',
+			'Transgenic (Cre/Flp)',
+			'Transgenic (random, expressed)',
+			'Transgenic (random, gene disruption)',
+			'Transgenic (Reporter)',
+			'Transgenic (Transposase)'
+			)
+		and t._Term_key = a._Allele_Type_key
+		order by t.term, a.symbol
+		''', 'auto')
+
+	for r in results:
+
+		symbol = r['symbol']
+		aKey = r['_Allele_key']
+		termKey = r['_Term_key']
+		oldTerm = r['term']
+
 		newAttrName = ''
 		if oldTerm in ('Targeted (knock-out)'):
 			newAttrName = 'Null (knock-out)'
@@ -109,11 +139,7 @@ def runUpdate(toUpdate):
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(oldTerm + TAB)
-			attrFile.write(str(newAttrName) + TAB)
-			attrFile.write(str(termKey) + TAB)
-			attrFile.write(str(newAttrKey) + TAB)
-			attrFile.write(CRT)
+			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
 
 		# do another one...
 		newAttrName = ''
@@ -126,13 +152,24 @@ def runUpdate(toUpdate):
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(oldTerm + TAB)
-			attrFile.write(str(newAttrName) + TAB)
-			attrFile.write(str(termKey) + TAB)
-			attrFile.write(str(newAttrKey) + TAB)
-			attrFile.write(CRT)
+			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
 
+		#
+		# if term == 'Targeted (knock-in)':
+		#
+		# 	if driver note, then add 'Inserted expressed sequence'
+		#		and 'Recombinase'
+		#
+		# 	elif inducible note , then add 'Incucible''
+		#
 
+		if oldTerm in ('Targeted (knock-in)') and aKey in hasDerivation:
+			newAttrName = 'Recombinase'
+			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
+			newAttrName = 'Inserted expressed sequence'
+			attrFile.write(symbol + TAB + oldTerm + TAB + str(newAttrName) + TAB + str(termKey) + TAB + str(newAttrKey) +  CRT)
+
+#
 #
 # main
 #
@@ -163,11 +200,15 @@ for r in results:
 	newAttr[key].append(value)
 print newAttr
 
-alleleToUpdate = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s'
-derivationToUpdate = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s'
+alleleGeneration = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s\n'
+derivationGeneration = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s\n'
 
-runUpdate(alleleToUpdate)
-runUpdate(derivationToUpdate)
+processGeneration(alleleGeneration)
+processGeneration(derivationGeneration)
+processAttribute()
+
+print generationSQL
+#db.sql(generationSQL, None)
 
 attrFile.close()
 

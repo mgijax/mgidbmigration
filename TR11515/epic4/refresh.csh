@@ -12,3 +12,9 @@ ${MGD_DBSCHEMADIR}/table/ALL_CellLine_Derivation_truncate.object
 bcpin.csh DEV1_MGI mgd_lec1 ALL_Allele
 ${MGD_DBSCHEMADIR}/index/ALL_CellLine_Derivation_create.object
 
+${MGD_DBSCHEMADIR}/index/VOC_Term_drop.object
+${MGD_DBSCHEMADIR}/table/VOC_Term_truncate.object
+#bcpin.csh DEV_MGI mgd_dev VOC_Term
+bcpin.csh DEV1_MGI mgd_lec1 VOC_Term
+${MGD_DBSCHEMADIR}/index/VOC_Term_create.object
+

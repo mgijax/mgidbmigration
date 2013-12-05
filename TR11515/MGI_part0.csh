@@ -43,10 +43,10 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# epic 4: allele type
+# allele type
 #
 date | tee -a ${LOG}
-./epic4/epic4.csh | tee -a ${LOG}
+./alleletype/alleletype.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #

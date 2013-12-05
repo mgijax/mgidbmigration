@@ -71,7 +71,8 @@ ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allel
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #
-./alleletype/alleletype.py | tee -a ${LOG}
+cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
+./alleletype.py | tee -a ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

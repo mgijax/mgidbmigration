@@ -45,10 +45,16 @@ go
 select count(*) from ALL_Allele where _Allele_Type_key in (847118, 847117, 847116, 847120, 847119)
 go
 
+-- start: allows a fresh of a previous migration
 delete from VOC_Vocab where name = 'Allele Attribute'
 go
 
+delete from VOC_Term where _Vocab_key = 38 and sequenceNum > 20
+go
+-- end: allows a fresh of a previous migration
+
 -- add new VOC_Term._Vocab_key = 38 terms (both old and new terms exist)
+
 declare @maxKey integer
 select @maxKey = max(_Term_key) + 1 from VOC_Term
 

@@ -62,6 +62,7 @@ insert into VOC_Term values (@maxKey, 38, 'Targeted', null, 21, 0, 1001, 1001, g
 insert into VOC_Term values (@maxKey+1, 38, 'Endonuclease-mediated', null, 22, 0, 1001, 1001, getdate(), getdate())
 insert into VOC_Term values (@maxKey+2, 38, 'Transposon Concatemer', null, 23, 0, 1001, 1001, getdate(), getdate())
 insert into VOC_Term values (@maxKey+3, 38, 'Transgenic', null, 24, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@maxKey+4, 38, 'Other (see notes)', null, 25, 0, 1001, 1001, getdate(), getdate())
 
 go
 
@@ -93,14 +94,14 @@ from VOC_Term t
 where t._Vocab_key = 38
 and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
 and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
-and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer')
+and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other (see notes)')
 go
 
 -- verify
 select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
 go
 
-select _Term_key, substring(term,1,50) from VOC_Term where name = 'Allele Attribute'
+select _Term_key, substring(term,1,50) from VOC_Term where term = 'Allele Attribute'
 go
 
 -- should return (0) results
@@ -153,7 +154,7 @@ and t.term in (
 )
 go
 
--- should return (?) results
+-- should return (0) results
 select count(a._Derivation_key)
 from ALL_CellLine_Derivation a, VOC_Term t
 where a._DerivationType_key = t._Term_key
@@ -161,16 +162,18 @@ and t.term in (
  'Targeted',
  'Endonuclease-mediated',
  'Transposon Concatemer',
- 'Transgenic'
+ 'Transgenic',
+ 'Other (see notes)'
 )
 go
 
+-- should return (0) results
 select t.*
 from VOC_Term t
 where t._Vocab_key = 38
 and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
 and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
-and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer')
+and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other (see notes)')
 go
 
 EOSQL

@@ -101,7 +101,10 @@ go
 select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
 go
 
-select _Term_key, substring(term,1,50) from VOC_Term where term = 'Allele Attribute'
+select vv.* 
+from VOC_Vocab v, VOC_Term vv 
+where v.name = 'Allele Attribute' 
+and v._Vocab_key = vv._Vocab_key
 go
 
 -- should return (0) results
@@ -165,6 +168,13 @@ and t.term in (
  'Transgenic',
  'Other (see notes)'
 )
+go
+
+-- 
+select distinct t.term
+from ALL_CellLine_Derivation a, VOC_Term t
+where a._DerivationType_key = t._Term_key
+order by t.term
 go
 
 -- should return (0) results

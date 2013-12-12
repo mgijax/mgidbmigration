@@ -2,16 +2,14 @@
 
 #
 # Migration for TR11515
-# allele type
-# sto? : ?
 #
-# _Vocab_key = 38
+# Allele Type: _Vocab_key = 38
+# Allele Subtype: _Vocab_key = 93
+# Allele/Subtype annotation: _AnnotType_key = 1014
 #
 # * migration existing _Vocab_key = 38 to new terms
 #	- ALL_Allele._Allele_Type_key
 #	- ALL_CellLine_Derivation._DerivationType_key
-#
-# * create new vocabulary for "Allele Attribute" (see TR11515/alleletype directory)
 #
 
 ###----------------------###
@@ -46,7 +44,7 @@ select count(*) from ALL_Allele where _Allele_Type_key in (847118, 847117, 84711
 go
 
 -- start: allows a fresh of a previous migration
-delete from VOC_Vocab where name = 'Allele Attribute'
+delete from VOC_Term where _Vocab_key = 93
 go
 
 delete from VOC_Term where _Vocab_key = 38 and sequenceNum > 20
@@ -55,14 +53,14 @@ go
 
 -- add new VOC_Term._Vocab_key = 38 terms (both old and new terms exist)
 
-declare @maxKey integer
-select @maxKey = max(_Term_key) + 1 from VOC_Term
+declare @nextTermKey integer
+select @nextTermKey = max(_Term_key) + 1 from VOC_Term
 
-insert into VOC_Term values (@maxKey, 38, 'Targeted', null, 21, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@maxKey+1, 38, 'Endonuclease-mediated', null, 22, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@maxKey+2, 38, 'Transposon Concatemer', null, 23, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@maxKey+3, 38, 'Transgenic', null, 24, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@maxKey+4, 38, 'Other (see notes)', null, 25, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey, 38, 'Targeted', null, 21, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey+1, 38, 'Endonuclease-mediated', null, 22, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey+2, 38, 'Transposon Concatemer', null, 23, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey+3, 38, 'Transgenic', null, 24, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey+4, 38, 'Other (see notes)', null, 25, 0, 1001, 1001, getdate(), getdate())
 
 go
 
@@ -70,9 +68,9 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# create new vocabulary for "Allele Attribute"
+# create new vocabulary
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleIncLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
 
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
@@ -103,7 +101,7 @@ go
 
 select vv.* 
 from VOC_Vocab v, VOC_Term vv 
-where v.name = 'Allele Attribute' 
+where v.name = 'Allele Subtype' 
 and v._Vocab_key = vv._Vocab_key
 go
 

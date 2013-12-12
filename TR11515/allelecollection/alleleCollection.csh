@@ -35,8 +35,8 @@ go
 delete from VOC_Term where _Vocab_key = 92
 
 -- rename ALL_Allele
-sp_rename ALL_Allele, ALL_Allele_Old
-go
+--sp_rename ALL_Allele, ALL_Allele_Old
+--go
 
 EOSQL
 date | tee -a ${LOG}
@@ -44,7 +44,8 @@ date | tee -a ${LOG}
 #
 # create new vocabulary
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleIncLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
+exit 0
 
 #
 # schema

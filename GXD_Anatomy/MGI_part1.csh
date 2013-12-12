@@ -55,9 +55,10 @@ ${MGD_DBSCHEMADIR}/table/MGI_EMAPS_Mapping_truncate.object
 echo '---Reloading MGI_EMAPS_Mapping' | tee -a ${LOG}
 /mgi/all/wts_projects/11500/11533/loadMapping.sh
 
-reportisql.csh ${QCRPTS}/weekly/GXD_EMAPS_MappingChecks.sql GXD_EMAPS_MappingChecks.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
-
 echo '---Running EMAPA/EMAPS load' | tee -a ${LOG}
 ${EMAPLOAD}/bin/emapload.sh
+
+echo '---Running Mapping QC' | tee -a ${LOG}
+reportisql.csh ${QCRPTS}/weekly/GXD_EMAPS_MappingChecks.sql GXD_EMAPS_MappingChecks.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 
 date | tee -a ${LOG}

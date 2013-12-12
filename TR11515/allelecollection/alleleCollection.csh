@@ -32,10 +32,7 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
--- start: allows a fresh of a previous migration
-delete from VOC_Vocab where name = 'Allele Collection'
-go
--- end: allows a fresh of a previous migration
+delete from VOC_Term where _Vocab_key = 92
 
 -- rename ALL_Allele
 sp_rename ALL_Allele, ALL_Allele_Old
@@ -45,9 +42,14 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# create new vocabulary for "Allele Collection"
+# create new vocabulary
 #
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
+
+#
+# schema
+#
+${MGD_DBSCHEMADIR}/table/ALL_Allele_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -56,10 +58,9 @@ use ${MGD_DBNAME}
 go
 
 declare @collectionKey integer
-select @collectionKey = _Term_key from VOC_Vocab v, VOC_Term t
-where v.name = 'Allele Collection'
-and v._Vocab_key = t._Vocab_key
-and t.term = 'Not Specified'
+select @collectionKey = _Term_key from VOC_Term
+where _Vocab_key = 92
+and term = 'Not Specified'
 
 insert into ALL_Allele
 select _Allele_key, _Marker_key, _Strain_key, _Mode_key, _Allele_Type_key, _Allele_Status_key,
@@ -73,36 +74,39 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# schema
+#
+${MGD_DBSCHEMADIR}/default/ALL_Allele_bind.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/ALL_Allele_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
+#
 # migrate
 #
 #cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
-#./allelecollection.py | tee -a ${LOG}
+#./alleleCollection.py | tee -a ${LOG}
 
-exit 0
-
+#
+# SQL reports
+#
 date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-select vv.* 
-from VOC_Vocab v, VOC_Term vv 
-where v.name = 'Allele Attribute' 
-and v._Vocab_key = vv._Vocab_key
-go
-
-select a.symbol, vv.term
-from VOC_Vocab v, VOC_Term vv, ALL_Allle a
-where v.name = 'Allele Attribute' 
-and v._Vocab_key = vv._Vocab_key
-and vv._Term_key = a._Collection_key
-go
-
-EOSQL
+./alleleCollectionSQL.csh 
 date | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/all_perms.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

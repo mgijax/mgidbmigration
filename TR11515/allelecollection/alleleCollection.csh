@@ -88,13 +88,14 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

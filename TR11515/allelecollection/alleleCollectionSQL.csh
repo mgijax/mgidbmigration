@@ -28,10 +28,10 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-select v.name, vv._Term_key, vv.term
-from VOC_Vocab v, VOC_Term vv 
+select v._Term_key, substring(v.term,1,50)
+from VOC_Term v 
 where v._Vocab_key = 92
-and v._Vocab_key = vv._Vocab_key
+order by v.term
 go
 
 --select a.symbol, vv.term

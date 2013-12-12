@@ -22,7 +22,8 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG $0.log.$$
+#setenv LOG $0.log.$$
+setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
@@ -33,10 +34,10 @@ use ${MGD_DBNAME}
 go
 
 delete from VOC_Term where _Vocab_key = 92
+go
 
--- rename ALL_Allele
---sp_rename ALL_Allele, ALL_Allele_Old
---go
+sp_rename ALL_Allele, ALL_Allele_Old
+go
 
 EOSQL
 date | tee -a ${LOG}
@@ -44,8 +45,7 @@ date | tee -a ${LOG}
 #
 # create new vocabulary
 #
-${VOCLOAD}/runSimpleIncLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
-exit 0
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
 
 #
 # schema
@@ -89,11 +89,13 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 #

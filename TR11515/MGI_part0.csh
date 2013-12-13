@@ -43,23 +43,18 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# allele collection
+#
+date | tee -a ${LOG}
+./allelecollection/allelecollection.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+#
 # allele type
 #
-date | tee -a ${LOG}
-./alleletype/alleletype.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
-# epic 6: allele collection
-#
-date | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
-# epic 7: germline transmission
-#
-date | tee -a ${LOG}
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#./alleletype/alleletype.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

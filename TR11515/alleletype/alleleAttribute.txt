@@ -12,4 +12,3 @@ Dominant Negative	Dominant Negative
 Inserted expressed sequence	Inserted expressed sequence						
 Humanized	Humanized						
 No Functional Change	No Functional Change						
-Not Applicable	Not Applicable						

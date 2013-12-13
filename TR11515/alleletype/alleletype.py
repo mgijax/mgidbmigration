@@ -154,12 +154,13 @@ def processGeneration(generationScript):
 	print generationSQL
 	if not DEBUG:
 		print '\nstart: executing update...'
-		db.sql(generationSQL, None)
+		#db.sql(generationSQL, None)
 		print 'end: executing update...'
 
 	print 'end: process generation...'
 
 def processIKMC():
+	global newAnnotKey
 
 	# IKMC alleles
 	# 125 KOMP-Regeneron-Project
@@ -204,6 +205,8 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 		elif (ldb == 143 and symbol.find('(NCOM)') != -1) or \
 		   (ldb == 125 and symbol.find('tm1(KOMP)Vlcg>') != -1) or \
@@ -222,6 +225,9 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
+
 			newAttrName = 'Reporter'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \
@@ -230,7 +236,8 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 		elif (ldb == 126 and symbol.find('tm1a(KOMP)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('tm1a(EUCOMM)Wtsi>') != -1) or \
@@ -243,6 +250,9 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
+
 			newAttrName = 'Reporter'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \
@@ -251,6 +261,9 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
+
 			newAttrName = 'Conditional Ready'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \
@@ -259,6 +272,8 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 		elif (ldb == 126 and symbol.find('tm1c(KOMP)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('tm1c(EUCOMM)Wtsi>') != -1) or \
@@ -271,11 +286,13 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 	print 'end: processing IKMC alleles...'
 
 def processAttribute():
+	global newAnnotKey
 
 	# special code to handle knock-in / allele-attribute
 
@@ -348,6 +365,8 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 		# do another one...
 		newAttrName = ''
@@ -365,6 +384,8 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 		#
 		# if term == 'Targeted (knock-in)':
@@ -383,6 +404,9 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
+
 			newAttrName = 'Inserted expressed sequence'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(symbol + TAB + \
@@ -390,6 +414,9 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
+
 		elif oldTerm in ('Targeted (knock-in)') and aKey in hasInducible:
 			newAttrName = 'Inducible'
 			newAttrKey = newAttr[newAttrName][0]
@@ -398,6 +425,8 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
+			attrFile.write(attrFormat % (newAnnotKey, aKey, newAttrKey))
+			newAnnotKey += 1
 
 	print 'end: processing non-IKMC alleles...'
 
@@ -420,10 +449,7 @@ print '\nnewTerms....'
 print newTerm
 
 newAttr = {}
-results = db.sql('''select t._Term_key, t.term from VOC_Term t, VOC_Vocab v
-	where v.name = 'Allele Attribute'
-	and v._Vocab_key = t._Vocab_key
-	''', 'auto')
+results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 93', 'auto')
 for r in results:
 	key = r['term']
 	value = r['_Term_key']
@@ -440,7 +466,11 @@ processPrintGeneration(alleleGeneration)
 processGeneration(alleleGeneration)
 processGeneration(derivationGeneration)
 
+# primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
+attrFormat = '%s\t1014\t%s\t%s\t1614158\n'
+
 attrFile = open('alleleAttribute.bcp', 'w')
+newAnnotKey = 1
 processIKMC()
 processAttribute()
 attrFile.close()

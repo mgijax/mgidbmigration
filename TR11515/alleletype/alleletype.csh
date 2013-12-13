@@ -71,14 +71,12 @@ date | tee -a ${LOG}
 # create new vocabulary
 #
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
-
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #
 cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
 ./alleletype.py | tee -a ${LOG}
-exit 0
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -170,11 +168,11 @@ and t.term in (
 go
 
 -- 
-select distinct t.term
-from ALL_CellLine_Derivation a, VOC_Term t
-where a._DerivationType_key = t._Term_key
-order by t.term
-go
+--select distinct t.term
+--from ALL_CellLine_Derivation a, VOC_Term t
+--where a._DerivationType_key = t._Term_key
+--order by t.term
+--go
 
 -- should return (0) results
 select t.*
@@ -187,8 +185,6 @@ go
 
 EOSQL
 date | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/all_perms.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

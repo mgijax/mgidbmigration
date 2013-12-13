@@ -30,7 +30,7 @@ passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 db.set_sqlUser(user)
 db.set_sqlPasswordFromFile(passwordFileName)
 
-currentDate = mti_utils.date('%m/%d/%y')
+currentDate = mgi_utils.date('%m/%d/%y')
 
 def processPrintGeneration(generationScript):
 
@@ -157,7 +157,7 @@ def processGeneration(generationScript):
 	print generationSQL
 	if not DEBUG:
 		print '\nstart: executing update...'
-		#db.sql(generationSQL, None)
+		db.sql(generationSQL, None)
 		print 'end: executing update...'
 
 	print 'end: process generation...'
@@ -472,13 +472,13 @@ processGeneration(derivationGeneration)
 # primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
 attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s#=#\n'
 
-attrFile = open('alleleAttribute.out', 'w')
-attrFileBCP = open('alleleAttribute.bcp', 'w')
-newAnnotKey = 1
-processIKMC()
-processAttribute()
-attrFile.close()
-attrFileBCP.close()
+#attrFile = open('alleleAttribute.out', 'w')
+#attrFileBCP = open('alleleAttribute.bcp', 'w')
+#newAnnotKey = 1
+#processIKMC()
+#processAttribute()
+#attrFile.close()
+#attrFileBCP.close()
 
 db.useOneConnection(0)
 

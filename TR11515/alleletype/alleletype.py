@@ -208,7 +208,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		elif (ldb == 143 and symbol.find('(NCOM)') != -1) or \
@@ -228,7 +228,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 			newAttrName = 'Reporter'
@@ -239,7 +239,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		elif (ldb == 126 and symbol.find('tm1a(KOMP)Wtsi>') != -1) or \
@@ -253,7 +253,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 			newAttrName = 'Reporter'
@@ -264,7 +264,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 			newAttrName = 'Conditional Ready'
@@ -275,7 +275,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		elif (ldb == 126 and symbol.find('tm1c(KOMP)Wtsi>') != -1) or \
@@ -289,7 +289,7 @@ def processIKMC():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 	print 'end: processing IKMC alleles...'
@@ -368,7 +368,7 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		# do another one...
@@ -387,7 +387,7 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		#
@@ -407,7 +407,7 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 			newAttrName = 'Inserted expressed sequence'
@@ -417,7 +417,7 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		elif oldTerm in ('Targeted (knock-in)') and aKey in hasInducible:
@@ -428,7 +428,7 @@ def processAttribute():
 				str(newAttrName) + TAB + \
 				str(termKey) + TAB + \
 				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate))
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 	print 'end: processing non-IKMC alleles...'
@@ -469,16 +469,22 @@ processPrintGeneration(alleleGeneration)
 processGeneration(alleleGeneration)
 processGeneration(derivationGeneration)
 
-# primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
-attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s#=#\n'
+#
+# annotations
+#
 
-#attrFile = open('alleleAttribute.out', 'w')
-#attrFileBCP = open('alleleAttribute.bcp', 'w')
-#newAnnotKey = 1
-#processIKMC()
-#processAttribute()
-#attrFile.close()
-#attrFileBCP.close()
+results = db.sql('select max(_Annot_key) + 1 as newAnnotKey from VOC_Annot', 'auto')
+newAnnotKey = results[0]['newAnnotKey']
+
+# primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
+attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s&=&%s#=#\n'
+
+attrFile = open('alleleAttribute.out', 'w')
+attrFileBCP = open('VOC_Annot.bcp', 'w')
+processIKMC()
+processAttribute()
+attrFile.close()
+attrFileBCP.close()
 
 db.useOneConnection(0)
 

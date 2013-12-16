@@ -100,6 +100,7 @@ date | tee -a ${LOG}
 
 # verify migration
 ./alleletypeSQL.csh | tee -a ${LOG}
+./alleletypeSQL2.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

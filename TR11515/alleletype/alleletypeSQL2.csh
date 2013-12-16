@@ -29,56 +29,24 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
--- verify
-select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
-go
-
-select vv._Term_key, substring(vv.term,1,50)
-from VOC_Vocab v, VOC_Term vv 
-where v.name = 'Allele Subtype' 
-and v._Vocab_key = vv._Vocab_key
-go
-
--- should return (0) results
-select a.symbol, a._Allele_key, a._Allele_Type_key, t.term
-from ALL_Allele a, VOC_Term t
+-- should return (?) results
+(
+select a.symbol, substring(t.term,1,20) as term, substring(tt.term,1,50) as subtype
+from ALL_Allele a, VOC_Term t, VOC_Annot va, VOC_Term tt
 where a._Allele_Type_key = t._Term_key
 and t.term in (
- 'Targeted (Floxed/Frt)',
- 'Targeted (knock-in)',
- 'Targeted (knock-out)',
- 'Targeted (other)',
- 'Targeted (Reporter)',
- 'Transgenic (Cre/Flp)',
- 'Transgenic (random, expressed)',
- 'Transgenic (random, gene disruption)',
- 'Transgenic (Reporter)',
- 'Transgenic (Transposase)'
+ 'Targeted',
+ 'Endonuclease-mediated',
+ 'Transposon Concatemer',
+ 'Transgenic'
 )
-order by a.symbol
-go
+and a._Allele_key = va._Object_key
+and va._AnnotType_key = 1014
+and va._Term_key = tt._Term_key
 
--- should return (0) results
-select a.name, a._Derivation_key, a._DerivationType_key, t.term
-from ALL_CellLine_Derivation a, VOC_Term t
-where a._DerivationType_key = t._Term_key
-and t.term in (
- 'Targeted (Floxed/Frt)',
- 'Targeted (knock-in)',
- 'Targeted (knock-out)',
- 'Targeted (other)',
- 'Targeted (Reporter)',
- 'Transgenic (Cre/Flp)',
- 'Transgenic (random, expressed)',
- 'Transgenic (random, gene disruption)',
- 'Transgenic (Reporter)',
- 'Transgenic (Transposase)'
-)
-order by a.name
-go
+union
 
--- should return (?) results
-select count(a._Allele_key)
+select a.symbol, substring(t.term,1,20) as term, null
 from ALL_Allele a, VOC_Term t
 where a._Allele_Type_key = t._Term_key
 and t.term in (
@@ -87,28 +55,11 @@ and t.term in (
  'Transposon Concatemer',
  'Transgenic'
 )
-go
-
--- should return (2) results
-select distinct t.term
-from ALL_CellLine_Derivation a, VOC_Term t
-where a._DerivationType_key = t._Term_key
-and t.term in (
- 'Targeted',
- 'Endonuclease-mediated',
- 'Transposon Concatemer',
- 'Transgenic',
- 'Other (see notes)'
+and not exists (select 1 from VOC_Annot va
+	where a._Allele_key = va._Object_key and va._AnnotType_key = 1014
+	)
 )
-go
-
--- should return (0) results
-select t.*
-from VOC_Term t
-where t._Vocab_key = 38
-and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
-and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
-and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other (see notes)')
+order by a.symbol, t.term, subtype
 go
 
 EOSQL

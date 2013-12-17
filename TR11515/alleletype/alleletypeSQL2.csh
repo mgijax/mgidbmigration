@@ -39,9 +39,8 @@ from ALL_Allele a, ACC_Accession aa, VOC_Term t, VOC_Annot va, VOC_Term tt, VOC_
 where a._Allele_Type_key = t._Term_key
 and t.term in (
  'Targeted',
- 'Endonuclease-mediated',
- 'Transposon Concatemer',
- 'Transgenic'
+ 'Transgenic',
+ 'Endonuclease-mediated'
 )
 and a._Collection_key = ttt._Term_key
 and a._Allele_key = va._Object_key
@@ -62,9 +61,8 @@ from ALL_Allele a, ACC_Accession aa, VOC_Term t, VOC_Term ttt
 where a._Allele_Type_key = t._Term_key
 and t.term in (
  'Targeted',
- 'Endonuclease-mediated',
- 'Transposon Concatemer',
- 'Transgenic'
+ 'Transgenic',
+ 'Endonuclease-mediated'
 )
 and a._Collection_key = ttt._Term_key
 and a._Allele_key = aa._Object_key

@@ -111,9 +111,8 @@ from ALL_Allele a, VOC_Term t
 where a._Allele_Type_key = t._Term_key
 and t.term in (
  'Targeted',
- 'Endonuclease-mediated',
- 'Transposon Concatemer',
- 'Transgenic'
+ 'Transgenic',
+ 'Endonuclease-mediated'
 )
 go
 
@@ -123,9 +122,8 @@ from ALL_CellLine_Derivation a, VOC_Term t
 where a._DerivationType_key = t._Term_key
 and t.term in (
  'Targeted',
- 'Endonuclease-mediated',
- 'Transposon Concatemer',
  'Transgenic',
+ 'Endonuclease-mediated',
  'Other (see notes)'
 )
 go
@@ -136,7 +134,7 @@ from VOC_Term t
 where t._Vocab_key = 38
 and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
 and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
-and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other (see notes)')
+and t.term not in ('Endonuclease-mediated', 'Other (see notes)')
 go
 
 EOSQL

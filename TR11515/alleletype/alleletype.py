@@ -192,10 +192,10 @@ def processIKMC():
 
 		newAttrName = ''
 
-		if (ldb == 125 and symbol.find('tm1.2(KOMP)Vlcg>') != -1) or \
-		   (ldb == 126 and symbol.find('tm1d(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1d(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1d(EUCOMM)Hmgu>') != -1):
+		if (ldb == 125 and symbol.find('.2(KOMP)Vlcg>') != -1) or \
+		   (ldb == 126 and symbol.find('d(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('d(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('d(EUCOMM)Hmgu>') != -1):
 			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \
@@ -208,14 +208,13 @@ def processIKMC():
 			newAnnotKey += 1
 
 		elif (ldb == 143 and symbol.find('(NCOM)') != -1) or \
-		   (ldb == 125 and symbol.find('tm1(KOMP)Vlcg>') != -1) or \
-		   (ldb == 125 and symbol.find('tm1.1(KOMP)Vlcg>') != -1) or \
-		   (ldb == 126 and symbol.find('tm1b(KOMP)Wtsi>') != -1) or \
-		   (ldb == 126 and symbol.find('tm1e(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1b(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1b(EUCOMM)Hmgu>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1e(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1e(EUCOMM)Hmgu>') != -1):
+		   (ldb == 125 and symbol.find('(KOMP)Vlcg>') != -1) or \
+		   (ldb == 126 and symbol.find('b(KOMP)Wtsi>') != -1) or \
+		   (ldb == 126 and symbol.find('e(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('b(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('b(EUCOMM)Hmgu>') != -1) or \
+		   (ldb == 138 and symbol.find('e(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('e(EUCOMM)Hmgu>') != -1):
 			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \
@@ -238,9 +237,9 @@ def processIKMC():
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
-		elif (ldb == 126 and symbol.find('tm1a(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1a(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1a(EUCOMM)Hmgu>') != -1):
+		elif (ldb == 126 and symbol.find('a(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('a(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('a(EUCOMM)Hmgu>') != -1):
 			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \
@@ -274,9 +273,9 @@ def processIKMC():
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
-		elif (ldb == 126 and symbol.find('tm1c(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1c(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('tm1c(EUCOMM)Hmgu>') != -1):
+		elif (ldb == 126 and symbol.find('c(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('c(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('c(EUCOMM)Hmgu>') != -1):
 			newAttrName = 'Conditional Ready'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFile.write(ldbName + TAB + \

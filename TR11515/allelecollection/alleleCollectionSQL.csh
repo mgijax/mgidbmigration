@@ -28,18 +28,35 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+-- all collections
 select v._Term_key, substring(v.term,1,50)
 from VOC_Term v 
 where v._Vocab_key = 92
 order by v.term
 go
 
---select a.symbol, vv.term
---from VOC_Vocab v, VOC_Term vv, ALL_Allele a
---where v._Vocab_key = 92
---and v._Vocab_key = vv._Vocab_key
---and vv._Term_key = a._Collection_key
---go
+-- collection terms used
+select v._Term_key, substring(v.term,1,50)
+from VOC_Term v 
+where v._Vocab_key = 92
+and exists (select 1 from ALL_Allele a where v._Term_key = a._Collection_key)
+order by v.term
+go
+
+-- collection terms not used
+select v._Term_key, substring(v.term,1,50)
+from VOC_Term v 
+where v._Vocab_key = 92
+and not exists (select 1 from ALL_Allele a where v._Term_key = a._Collection_key)
+order by v.term
+go
+
+-- collection counts
+select a._Collection_key, substring(t.term,1,20) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Collection_key = t._Term_key
+group by a._Collection_key, t.term
+go
 
 EOSQL
 

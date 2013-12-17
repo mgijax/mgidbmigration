@@ -83,8 +83,6 @@ ${MGD_DBSCHEMADIR}/index/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
@@ -102,8 +100,8 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 #
 # migrate
 #
-#cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
-#./alleleCollection.py | tee -a ${LOG}
+cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
+./alleleCollection.py | tee -a ${LOG}
 
 #
 # SQL reports

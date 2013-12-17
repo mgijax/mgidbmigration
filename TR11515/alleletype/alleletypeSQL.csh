@@ -29,14 +29,42 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
--- verify
+-- allele type vocabulary
 select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
 go
 
-select vv._Term_key, substring(vv.term,1,50)
-from VOC_Vocab v, VOC_Term vv 
-where v.name = 'Allele Subtype' 
-and v._Vocab_key = vv._Vocab_key
+-- allele subtype/attribute vocabulary
+select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 93 order by term
+go
+
+-- not every allele has a subtype/attribute
+select count(*)
+from ALL_Allele a
+where not exists (select 1 from VOC_Annot va 
+	where va._AnnotType_key = 1014
+	and va._Object_key = a._Allele_key)
+go
+select count(*)
+from ALL_Allele a
+where exists (select 1 from VOC_Annot va 
+	where va._AnnotType_key = 1014
+	and va._Object_key = a._Allele_key)
+go
+
+-- count of allele types
+select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+group by a._Allele_Type_key, t.term
+go
+
+-- count of allele subtype/attribute
+select va._Term_key, substring(t.term,1,30) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Annot va, VOC_Term t
+where a._Allele_key = va._Object_key
+and va._AnnotType_key = 1014
+and va._Term_key = t._Term_key
+group by va._Term_key, t.term
 go
 
 -- should return (0) results

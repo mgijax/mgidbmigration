@@ -2,13 +2,9 @@
 
 '''
 #
-# Report:
-#       Enter TR # and describe report inputs/output
+# 1) translate "current" allele-type to "generation" allele-type
 #
-# History:
-#
-# lec	01/18/99
-#	- created
+# 2) create vocabulary-associations between "generation" and "allele attribute (subtype)"
 #
 '''
  
@@ -440,6 +436,10 @@ def processAttribute():
 
 db.useOneConnection(1)
 
+#
+# translate allele-type => allele-generation-type
+#
+
 newTerm = {}
 results = db.sql('''select _Term_key, term from VOC_Term 
 	where _Vocab_key = 38 and term in ('Targeted', 'Transgenic')''', 'auto')
@@ -470,7 +470,7 @@ processGeneration(alleleGeneration)
 processGeneration(derivationGeneration)
 
 #
-# annotations
+# allele sub-types associations
 #
 
 results = db.sql('select max(_Annot_key) + 1 as newAnnotKey from VOC_Annot', 'auto')

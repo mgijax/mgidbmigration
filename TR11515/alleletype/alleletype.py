@@ -19,8 +19,6 @@ SPACE = reportlib.SPACE
 TAB = reportlib.TAB
 PAGE = reportlib.PAGE
 
-DEBUG = 1
-
 user = os.environ['MGD_DBUSER']
 passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 db.set_sqlUser(user)
@@ -91,12 +89,11 @@ def processPrintGeneration(generationScript):
 	print 'end: print generation...'
 
 def processGeneration(generationScript):
+	global generationSQL
 
 	# select terms that require migration
 
 	print '\nstart: process generation...'
-
-	generationSQL = ''
 
 	results = db.sql('''
 		select t._Term_key, t.term 
@@ -149,12 +146,6 @@ def processGeneration(generationScript):
 			generationSQL = generationSQL + generationScript % (newTermKey, termKey)
 		else:
 			print 'ERROR: ' + r
-
-	print generationSQL
-	if not DEBUG:
-		print '\nstart: executing update...'
-		db.sql(generationSQL, None)
-		print 'end: executing update...'
 
 	print 'end: process generation...'
 
@@ -486,8 +477,8 @@ print newAttr
 alleleGeneration = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s\n'
 derivationGeneration = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s\n'
 
+generationSQL = ''
 processPrintGeneration(alleleGeneration)
-
 processGeneration(alleleGeneration)
 processGeneration(derivationGeneration)
 
@@ -507,6 +498,12 @@ processIKMC()
 processAttribute()
 attrFile.close()
 attrFileBCP.close()
+
+# must be done at the end
+print generationSQL
+print '\nstart: executing update...'
+#db.sql(generationSQL, None)
+print 'end: executing update...'
 
 db.useOneConnection(0)
 

@@ -5,13 +5,11 @@ EUCOMM	EUCOMM
 EUCOMM Tools	EUCOMM Tools						
 Bench to Bassinet Program (CvDC)	Bench to Bassinet Program (CvDC)						
 Pleiades Project	Pleiades Project						
-CanEuCre	CanEuCre						
 Mutagenix	Mutagenix						
 Mouse Mutagenesis for Developmental Defects Program (Baylor)	Mouse Mutagenesis for Developmental Defects Program (Baylor)						
 NeuroMice	NeuroMice						
 Australian Phenomics Facility (ANU)	Australian Phenomics Facility (ANU)						
 MRC Harwell Mutagenesis	MRC Harwell Mutagenesis						
-Toronto Centre for Modeling Human Disease	Toronto Centre for Modeling Human Disease						
-Lexicon Genetics	Lexicon Genetics						
+Toronto Centre for Modeling Human Disease (ENU and tms)	Toronto Centre for Modeling Human Disease (ENU and tms)						
 Not Specified	Not Specified						
 Not Applicable	Not Applicable						

@@ -192,6 +192,9 @@ def processIKMC():
 
 		newAttrName = ''
 
+		#
+		# Null (knock-out) only
+		#
 		if (ldb == 125 and symbol.find('.2(KOMP)Vlcg>') != -1) or \
 		   (ldb == 126 and symbol.find('d(KOMP)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('d(EUCOMM)Wtsi>') != -1) or \
@@ -207,6 +210,10 @@ def processIKMC():
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
+		#
+		# Null (knoci-out)
+		# Reporter
+		#
 		elif (ldb == 143 and symbol.find('(NCOM)') != -1) or \
 		   (ldb == 125 and symbol.find('(KOMP)Vlcg>') != -1) or \
 		   (ldb == 126 and symbol.find('b(KOMP)Wtsi>') != -1) or \
@@ -237,6 +244,11 @@ def processIKMC():
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
+		#
+		# Null (knoci-out)
+		# Reporter
+		# Conditional Ready
+		#
 		elif (ldb == 126 and symbol.find('a(KOMP)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('a(EUCOMM)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('a(EUCOMM)Hmgu>') != -1):
@@ -273,6 +285,9 @@ def processIKMC():
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
+		#
+		# Conditional Ready
+		#
 		elif (ldb == 126 and symbol.find('c(KOMP)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('c(EUCOMM)Wtsi>') != -1) or \
 		   (ldb == 138 and symbol.find('c(EUCOMM)Hmgu>') != -1):

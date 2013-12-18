@@ -500,6 +500,8 @@ attrFile.close()
 attrFileBCP.close()
 
 # must be done at the end
+# we need to *before* vocabulary to still be in place
+# so that the attribute-migration work correctly
 print generationSQL
 print '\nstart: executing update...'
 #db.sql(generationSQL, None)

@@ -43,6 +43,15 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# before report
+#
+date | tee -a ${LOG}
+cd alleletype
+./alleletype-before-SQL.csh | tee -a ${LOG}
+cd ..
+date | tee -a ${LOG}
+
+#
 # allele collection
 #
 date | tee -a ${LOG}

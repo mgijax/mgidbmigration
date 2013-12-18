@@ -111,7 +111,7 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ./alleletypeSQL.csh | tee -a ${LOG}
 date | tee -a ${LOG}
-./alleletypeSQL2.csh | tee -a ${LOG}
+./alleletype-after-SQL.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 ###-----------------------###

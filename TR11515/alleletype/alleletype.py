@@ -398,40 +398,41 @@ def processAttribute():
 		# 	if driver note, then add 'Inserted expressed sequence'
 		#		and 'Recombinase'
 		#
-		# 	elif inducible note , then add 'Inducible''
+		# 	if inducible note , then add 'Inducible''
 		#
 
-		if oldTerm in ('Targeted (knock-in)') and aKey in hasDerivation:
-			newAttrName = 'Recombinase'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
+		if oldTerm in ('Targeted (knock-in)'):
+			if aKey in hasDerivation:
+				newAttrName = 'Recombinase'
+				newAttrKey = newAttr[newAttrName][0]
+				attrFile.write(symbol + TAB + \
+					oldTerm + TAB + \
+					str(newAttrName) + TAB + \
+					str(termKey) + TAB + \
+					str(newAttrKey) +  CRT)
+				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+				newAnnotKey += 1
+	
+				newAttrName = 'Inserted expressed sequence'
+				newAttrKey = newAttr[newAttrName][0]
+				attrFile.write(symbol + TAB + \
+					oldTerm + TAB + \
+					str(newAttrName) + TAB + \
+					str(termKey) + TAB + \
+					str(newAttrKey) +  CRT)
+				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+				newAnnotKey += 1
 
-			newAttrName = 'Inserted expressed sequence'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
-		elif oldTerm in ('Targeted (knock-in)') and aKey in hasInducible:
-			newAttrName = 'Inducible'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
+			if aKey in hasInducible:
+				newAttrName = 'Inducible'
+				newAttrKey = newAttr[newAttrName][0]
+				attrFile.write(symbol + TAB + \
+					oldTerm + TAB + \
+					str(newAttrName) + TAB + \
+					str(termKey) + TAB + \
+					str(newAttrKey) +  CRT)
+				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+				newAnnotKey += 1
 
 	print 'end: processing non-IKMC alleles...'
 

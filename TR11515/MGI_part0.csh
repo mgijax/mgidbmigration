@@ -72,6 +72,11 @@ go
 EOSQL
 date | tee -a ${LOG}
 
+#
+# set permissions
+#
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

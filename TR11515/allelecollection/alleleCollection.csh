@@ -92,8 +92,6 @@ ${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
-
 #
 # migrate
 #

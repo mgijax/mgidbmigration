@@ -68,7 +68,7 @@ def processPrintGeneration(generationScript):
 			'Targeted (knock-out)',
 			'Targeted (knock-in)',
 			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)'),
+			'Targeted (Reporter)',
 			'Targeted (other)'):
 			newTermName = 'Targeted'
 
@@ -504,7 +504,7 @@ attrFileBCP.close()
 # so that the attribute-migration work correctly
 print generationSQL
 print '\nstart: executing update...'
-#db.sql(generationSQL, None)
+db.sql(generationSQL, None)
 print 'end: executing update...'
 
 db.useOneConnection(0)

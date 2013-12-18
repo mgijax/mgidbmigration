@@ -34,6 +34,7 @@ select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
 from ALL_Allele a, VOC_Term t
 where a._Allele_Type_key = t._Term_key
 group by a._Allele_Type_key, t.term
+order by term
 go
 
 (

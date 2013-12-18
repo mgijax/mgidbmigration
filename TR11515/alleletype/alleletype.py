@@ -19,7 +19,7 @@ SPACE = reportlib.SPACE
 TAB = reportlib.TAB
 PAGE = reportlib.PAGE
 
-DEBUG = 0
+DEBUG = 1
 
 user = os.environ['MGD_DBUSER']
 passwordFileName = os.environ['MGD_DBPASSWORDFILE']
@@ -341,18 +341,25 @@ def processAttribute():
 		oldTerm = r['term']
 
 		newAttrName = ''
+
 		if oldTerm in ('Targeted (knock-out)'):
 			newAttrName = 'Null (knock-out)'
+
 		elif oldTerm in ('Targeted (Floxed/Frt)'):
 			newAttrName = 'Conditional Ready'
+
 		elif oldTerm in ('Targeted (Reporter)'):
 			newAttrName = 'Reporter'
+
 		elif oldTerm in ('Transgenic (random, expressed)'):
 			newAttrName = 'Inserted expressed sequence'
+
 		elif oldTerm in ('Transgenic (Cre/Flp)'):
 			newAttrName = 'Inserted expressed sequence'
+
 		elif oldTerm in ('Transgenic (Reporter)'):
 			newAttrName = 'Inserted expressed sequence'
+
 		elif oldTerm in ('Transgenic (Transposase)'):
 			newAttrName = 'Inserted expressed sequence'
 

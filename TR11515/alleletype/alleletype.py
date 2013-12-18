@@ -300,10 +300,10 @@ def processAttribute():
 
 	# special code to handle knock-in / allele-attribute
 
-	hasDerivation = []
+	hasDriver = []
 	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1034', 'auto')
 	for r in results:
-		hasDerivation.append(r['_Object_key'])
+		hasDriver.append(r['_Object_key'])
 
 	hasInducible = []
 	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1032', 'auto')
@@ -408,7 +408,7 @@ def processAttribute():
 		#
 
 		if oldTerm in ('Targeted (knock-in)'):
-			if aKey in hasDerivation:
+			if aKey in hasDriver:
 				newAttrName = 'Recombinase'
 				newAttrKey = newAttr[newAttrName][0]
 				attrFile.write(symbol + TAB + \

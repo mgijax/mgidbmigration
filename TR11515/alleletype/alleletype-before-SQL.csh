@@ -29,6 +29,35 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+select _Allele_key, hasDriver = 1
+into #hasDriver 
+from ALL_Allele a
+where exists (select 1 from MGI_Note n where n._MGIType_key = 11 and n._NoteType_key = 1034
+	and a._Allele_key = n._Object_key)
+union
+select _Allele_key, hasDriver = 0
+from ALL_Allele a
+where not exists (select 1 from MGI_Note n where n._MGIType_key = 11 and n._NoteType_key = 1034
+	and a._Allele_key = n._Object_key)
+go
+
+select _Allele_key, hasInducible = 1
+into #hasInducible 
+from ALL_Allele a
+where exists (select 1 from MGI_Note n where n._MGIType_key = 11 and n._NoteType_key = 1032
+	and a._Allele_key = n._Object_key)
+union
+select _Allele_key, hasInducible = 0
+from ALL_Allele a
+where not exists (select 1 from MGI_Note n where n._MGIType_key = 11 and n._NoteType_key = 1032
+	and a._Allele_key = n._Object_key)
+go
+
+create index idx1 on #hasDriver(_Allele_key)
+go
+create index idx2 on #hasInducible(_Allele_key)
+go
+
 -- count of allele types
 select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
 from ALL_Allele a, VOC_Term t
@@ -40,8 +69,10 @@ go
 (
 select aa.accID, 
 substring(a.symbol,1,50) as symbol,
-substring(t.term,1,50) as alleleType 
-from ALL_Allele a, ACC_Accession aa, VOC_Term t
+substring(t.term,1,50) as alleleType,
+h1.hasDriver, h2.hasInducible
+from ALL_Allele a, ACC_Accession aa, VOC_Term t, 
+	#hasDriver h1, #hasInducible h2
 where a._Allele_Type_key = t._Term_key
 and t.term in (
 'Targeted (knock-out)',
@@ -58,7 +89,8 @@ and t.term in (
 and a._Allele_key = aa._Object_key
 and aa._MGIType_key = 11
 and aa._LogicalDB_key = 1
-
+and a._Allele_key = h1._Allele_key
+and a._Allele_key = h2._Allele_key
 )
 order by a.symbol, alleleType
 go

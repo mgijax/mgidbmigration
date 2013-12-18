@@ -39,11 +39,11 @@ def processPrintGeneration(generationScript):
 		from VOC_Term t, ALL_Allele a
 		where t._Vocab_key = 38
 		and t.term in (
-			'Targeted (Floxed/Frt)',
-			'Targeted (knock-in)',
 			'Targeted (knock-out)',
-			'Targeted (other)',
+			'Targeted (knock-in)',
+			'Targeted (Floxed/Frt)',
 			'Targeted (Reporter)',
+			'Targeted (other)',
 			'Transgenic (Cre/Flp)',
 			'Transgenic (random, expressed)',
 			'Transgenic (random, gene disruption)',
@@ -67,11 +67,11 @@ def processPrintGeneration(generationScript):
 		newTermName = ''
 
 		if oldTerm in (
-			'Targeted (Floxed/Frt)',
-			'Targeted (knock-in)',
 			'Targeted (knock-out)',
-			'Targeted (other)',
-			'Targeted (Reporter)'):
+			'Targeted (knock-in)',
+			'Targeted (Floxed/Frt)',
+			'Targeted (Reporter)'),
+			'Targeted (other)'):
 			newTermName = 'Targeted'
 
 		elif oldTerm in (
@@ -103,11 +103,11 @@ def processGeneration(generationScript):
 		from VOC_Term t
 		where t._Vocab_key = 38
 		and t.term in (
-			'Targeted (Floxed/Frt)',
-			'Targeted (knock-in)',
 			'Targeted (knock-out)',
-			'Targeted (other)',
+			'Targeted (knock-in)',
+			'Targeted (Floxed/Frt)',
 			'Targeted (Reporter)',
+			'Targeted (other)',
 			'Transgenic (Cre/Flp)',
 			'Transgenic (random, expressed)',
 			'Transgenic (random, gene disruption)',
@@ -128,11 +128,11 @@ def processGeneration(generationScript):
 		newTermName = ''
 
 		if oldTerm in (
-			'Targeted (Floxed/Frt)',
-			'Targeted (knock-in)',
 			'Targeted (knock-out)',
-			'Targeted (other)',
-			'Targeted (Reporter)'):
+			'Targeted (knock-in)',
+			'Targeted (Floxed/Frt)',
+			'Targeted (Reporter)',
+			'Targeted (other)'):
 			newTermName = 'Targeted'
 
 		elif oldTerm in (
@@ -319,11 +319,11 @@ def processAttribute():
 				and aa._MGIType_key = 11
 				and aa._LogicalDB_key in (125, 126, 138, 143))
 		and t.term in (
-			'Targeted (Floxed/Frt)',
-			'Targeted (knock-in)',
 			'Targeted (knock-out)',
-			'Targeted (other)',
+			'Targeted (knock-in)',
+			'Targeted (Floxed/Frt)',
 			'Targeted (Reporter)',
+			'Targeted (other)',
 			'Transgenic (Cre/Flp)',
 			'Transgenic (random, expressed)',
 			'Transgenic (random, gene disruption)',

@@ -105,17 +105,6 @@ and t.term in (
 order by a.name
 go
 
--- should return (?) results
-select count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
-and t.term in (
- 'Targeted',
- 'Transgenic',
- 'Endonuclease-mediated'
-)
-go
-
 -- should return (2) results
 select distinct t.term
 from ALL_CellLine_Derivation a, VOC_Term t

@@ -399,10 +399,11 @@ def processAttribute():
 			newAnnotKey += 1
 
 		#
-		# if term == 'Targeted (knock-in)':
+		# if term == 'Targeted (knock-in)'
+		# if term == 'Transgenic (Cre/Flp)'
 		#
-		# 	if driver note, then add 'Inserted expressed sequence'
-		#		and 'Recombinase'
+		# 	if driver note, 
+		#		then add 'Inserted expressed sequence' and 'Recombinase'
 		#
 		# 	if inducible note , then add 'Inducible''
 		#
@@ -429,6 +430,18 @@ def processAttribute():
 				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 				newAnnotKey += 1
 
+			if aKey in hasInducible:
+				newAttrName = 'Inducible'
+				newAttrKey = newAttr[newAttrName][0]
+				attrFile.write(symbol + TAB + \
+					oldTerm + TAB + \
+					str(newAttrName) + TAB + \
+					str(termKey) + TAB + \
+					str(newAttrKey) +  CRT)
+				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+				newAnnotKey += 1
+
+		if oldTerm in ('Transgenic (Cre/Flp)'):
 			if aKey in hasInducible:
 				newAttrName = 'Inducible'
 				newAttrKey = newAttr[newAttrName][0]

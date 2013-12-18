@@ -46,15 +46,15 @@ date | tee -a ${LOG}
 # allele collection
 #
 date | tee -a ${LOG}
-./allelecollection/allelecollection.csh | tee -a ${LOG}
+./allelecollection/alleleCollection.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
 # allele type
 #
-#date | tee -a ${LOG}
-#./alleletype/alleletype.csh | tee -a ${LOG}
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+./alleletype/alleletype.csh | tee -a ${LOG}
+date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

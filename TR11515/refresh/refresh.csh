@@ -2,6 +2,12 @@
 
 #load_db.csh DEV_MGI mgd_dev /backups/rohan/scrum-dog/mgd.backup
 
+bcpout.csh DEV_MGI mgd_dev ALL_Allele
+bcpout.csh DEV_MGI mgd_dev ALL_CellLine_Derivation
+bcpout.csh DEV_MGI mgd_dev VOC_Term
+bcpout.csh DEV_MGI mgd_dev VOC_Annot
+exit 0
+
 ${MGD_DBSCHEMADIR}/index/ALL_Allele_drop.object
 ${MGD_DBSCHEMADIR}/table/ALL_Allele_truncate.object
 bcpin.csh DEV_MGI mgd_dev ALL_Allele

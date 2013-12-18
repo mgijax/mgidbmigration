@@ -1,11 +1,7 @@
 #!/bin/csh -fx
 
 #
-# Migration for TR11515
-#
-# _Vocab_key = new
-#
-# * create new vocabulary for "Allele Collection" (see TR11515/allelecollection directory)
+# Migration for TR11515/Allele Collection
 #
 
 ###----------------------###
@@ -22,10 +18,11 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-#setenv LOG $0.log.$$
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
+
+cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -100,8 +97,9 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 #
 # migrate
 #
-cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
+date | tee -a ${LOG}
 ./alleleCollection.py | tee -a ${LOG}
+date | tee -a ${LOG}
 
 #
 # SQL reports

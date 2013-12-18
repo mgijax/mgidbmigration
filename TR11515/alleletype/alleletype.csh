@@ -1,7 +1,7 @@
 #!/bin/csh -fx
 
 #
-# Migration for TR11515
+# Migration for TR11515/Allele Type
 #
 # Allele Type: _Vocab_key = 38
 # Allele Subtype: _Vocab_key = 93
@@ -29,6 +29,8 @@ env | grep MGD
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
+
+cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -69,14 +71,18 @@ date | tee -a ${LOG}
 #
 # create new vocabulary
 #
+date | tee -a ${LOG}
 ${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
+date | tee -a ${LOG}
+
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #
-cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
+date | tee -a ${LOG}
 ./alleletype.py | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} VOC_Annot
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -102,8 +108,11 @@ EOSQL
 date | tee -a ${LOG}
 
 # verify migration
+date | tee -a ${LOG}
 ./alleletypeSQL.csh | tee -a ${LOG}
+date | tee -a ${LOG}
 ./alleletypeSQL2.csh | tee -a ${LOG}
+date | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

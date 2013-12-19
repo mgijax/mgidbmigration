@@ -113,6 +113,10 @@ date | tee -a ${TYPELOG}
 date | tee -a ${TYPELOG}
 ./alleletype-after-SQL.csh | tee -a ${TYPELOG}
 date | tee -a ${TYPELOG}
+./alleletype-byprovider-SQL.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-noattribute-SQL.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

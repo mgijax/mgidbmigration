@@ -19,12 +19,12 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv AFTERLOG $0.log
-rm -rf ${AFTERLOG}
-touch ${AFTERLOG}
+setenv PROVIDERLOG $0.log
+rm -rf ${PROVIDERLOG}
+touch ${PROVIDERLOG}
 
-date | tee -a ${AFTERLOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${AFTERLOG}
+date | tee -a ${PROVIDERLOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${PROVIDERLOG}
 
 use ${MGD_DBNAME}
 go
@@ -88,12 +88,12 @@ order by provider, a.symbol, generationType, attributeType
 go
 
 EOSQL
-date | tee -a ${AFTERLOG}
+date | tee -a ${PROVIDERLOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${AFTERLOG}
-echo "--- Finished" | tee -a ${AFTERLOG}
+date | tee -a ${PROVIDERLOG}
+echo "--- Finished" | tee -a ${PROVIDERLOG}
 

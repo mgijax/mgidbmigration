@@ -152,23 +152,46 @@ def processGeneration(generationScript):
 def processIKMC():
 	global newAnnotKey
 
-	# IKMC alleles
+	# IKMC alleles (iin ldb group):
 	# 125 KOMP-Regeneron-Project
 	# 126 KOMP-CSD-Project
 	# 138 EUCOMM projects
 	# 143 NorCOMM-projects
+	# + add "<tm%(" (tm1a, tm1b, etc.)
+	#
+	# not in ldb group
+	# + add "<tm[0-9][a-e](" (tm1a, tm1b, etc.)
+	#
 
 	print '\nstart: processing IKMC alleles...'
 
 	results = db.sql('''
-		select a.symbol, a._Allele_key, aa._LogicalDB_key, t._Term_key, t.term, ldb.name as ldbname
-		from ALL_Allele a, VOC_Term t, ACC_Accession aa, ACC_LogicalDB ldb
+		(
+		select a.symbol, a._Allele_key, t._Term_key, t.term
+		from ALL_Allele a, VOC_Term t
 		where t._Vocab_key = 38
-		and a._Allele_key = aa._Object_key
-		and aa._MGIType_key = 11
-		and aa._LogicalDB_key in (125, 126, 138, 143)
-		and aa._LogicalDB_key = ldb._LogicalDB_key
+		and a.symbol like '%<tm%(%'
 		and t._Term_key = a._Allele_Type_key
+		and exists (select 1 from ACC_Accession aa
+			where a._Allele_key = aa._Object_key
+			and aa._MGIType_key = 11
+			and aa._LogicalDB_key in (125, 126, 138, 143)
+			)
+		)
+		union
+		(
+		select a.symbol, a._Allele_key, t._Term_key, t.term
+		from ALL_Allele a, VOC_Term t
+		where t._Vocab_key = 38
+		and a._Allele_Type_key = t._Term_key
+		and t._Term_key = a._Allele_Type_key
+		and a.symbol like '%<tm[0-9][a-e](%'
+		and not exists (select 1 from ACC_Accession aa
+			where a._Allele_key = aa._Object_key
+			and aa._MGIType_key = 11
+			and aa._LogicalDB_key in (125, 126, 138, 143)
+			)
+		)
 		order by a.symbol
 		''', 'auto')
 
@@ -178,121 +201,65 @@ def processIKMC():
 		aKey = r['_Allele_key']
 		termKey = r['_Term_key']
 		oldTerm = r['term']
-		ldb = r['_LogicalDB_key']
-		ldbName = r['ldbname']
 
 		newAttrName = ''
 
 		#
-		# Null (knock-out) only
+		# tmX.2() => Null (knock-out)
+		# tmXd() => Null (knock-out)
 		#
-		if (ldb == 125 and symbol.find('.2(KOMP)Vlcg>') != -1) or \
-		   (ldb == 126 and symbol.find('d(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('d(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('d(EUCOMM)Hmgu>') != -1):
+		if (symbol.find('.2(') != -1) \
+			or (symbol.find('d(') != -1):
 			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		#
-		# Null (knoci-out)
-		# Reporter
+		# tmXa() => Null (knock-out), Reporter, Conditional Ready
 		#
-		elif (ldb == 143 and symbol.find('(NCOM)') != -1) or \
-		   (ldb == 125 and symbol.find('(KOMP)Vlcg>') != -1) or \
-		   (ldb == 126 and symbol.find('b(KOMP)Wtsi>') != -1) or \
-		   (ldb == 126 and symbol.find('e(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('b(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('b(EUCOMM)Hmgu>') != -1) or \
-		   (ldb == 138 and symbol.find('e(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('e(EUCOMM)Hmgu>') != -1):
+		elif (symbol.find('a(') != -1):
 			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 			newAttrName = 'Reporter'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+			newAnnotKey += 1
+
+			newAttrName = 'Conditional Ready'
+			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		#
-		# Null (knoci-out)
-		# Reporter
-		# Conditional Ready
+		# tmXc() => Conditional Ready
 		#
-		elif (ldb == 126 and symbol.find('a(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('a(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('a(EUCOMM)Hmgu>') != -1):
+		elif (symbol.find('c(') != -1):
+			newAttrName = 'Conditional Ready'
+			newAttrKey = newAttr[newAttrName][0]
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+			newAnnotKey += 1
+
+		#
+		# the rest:
+		# tmX() => Null (knock-out), Reporter
+		# tmX.1() => Null (knock-out), Reporter
+		# tmXb() => Null (knock-out), Reporter
+		# tmXe() => Null (knock-out), Reporter
+		#
+		else:
 			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 			newAttrName = 'Reporter'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
-
-			newAttrName = 'Conditional Ready'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
-		#
-		# Conditional Ready
-		#
-		elif (ldb == 126 and symbol.find('c(KOMP)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('c(EUCOMM)Wtsi>') != -1) or \
-		   (ldb == 138 and symbol.find('c(EUCOMM)Hmgu>') != -1):
-			newAttrName = 'Conditional Ready'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(ldbName + TAB + \
-				symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
 	print 'end: processing IKMC alleles...'
 
 def processAttribute():
@@ -371,11 +338,6 @@ def processAttribute():
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
@@ -390,11 +352,6 @@ def processAttribute():
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFile.write(symbol + TAB + \
-				oldTerm + TAB + \
-				str(newAttrName) + TAB + \
-				str(termKey) + TAB + \
-				str(newAttrKey) +  CRT)
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
@@ -412,32 +369,17 @@ def processAttribute():
 			if aKey in hasDriver:
 				newAttrName = 'Recombinase'
 				newAttrKey = newAttr[newAttrName][0]
-				attrFile.write(symbol + TAB + \
-					oldTerm + TAB + \
-					str(newAttrName) + TAB + \
-					str(termKey) + TAB + \
-					str(newAttrKey) +  CRT)
 				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 				newAnnotKey += 1
 	
 				newAttrName = 'Inserted expressed sequence'
 				newAttrKey = newAttr[newAttrName][0]
-				attrFile.write(symbol + TAB + \
-					oldTerm + TAB + \
-					str(newAttrName) + TAB + \
-					str(termKey) + TAB + \
-					str(newAttrKey) +  CRT)
 				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 				newAnnotKey += 1
 
 			if aKey in hasInducible:
 				newAttrName = 'Inducible'
 				newAttrKey = newAttr[newAttrName][0]
-				attrFile.write(symbol + TAB + \
-					oldTerm + TAB + \
-					str(newAttrName) + TAB + \
-					str(termKey) + TAB + \
-					str(newAttrKey) +  CRT)
 				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 				newAnnotKey += 1
 
@@ -445,11 +387,6 @@ def processAttribute():
 			if aKey in hasInducible:
 				newAttrName = 'Inducible'
 				newAttrKey = newAttr[newAttrName][0]
-				attrFile.write(symbol + TAB + \
-					oldTerm + TAB + \
-					str(newAttrName) + TAB + \
-					str(termKey) + TAB + \
-					str(newAttrKey) +  CRT)
 				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 				newAnnotKey += 1
 
@@ -505,11 +442,9 @@ newAnnotKey = results[0]['newAnnotKey']
 # primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
 attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s&=&%s#=#\n'
 
-attrFile = open('alleleAttribute.out', 'w')
 attrFileBCP = open('VOC_Annot.bcp', 'w')
 processIKMC()
 processAttribute()
-attrFile.close()
 attrFileBCP.close()
 
 # must be done at the end

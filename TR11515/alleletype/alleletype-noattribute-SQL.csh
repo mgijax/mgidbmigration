@@ -47,7 +47,7 @@ and aa._LogicalDB_key = 1
 and not exists (select 1 from VOC_Annot va
 	where a._Allele_key = va._Object_key and va._AnnotType_key = 1014
 	)
-order by a.symbol, generationType
+order by generationType, a.symbol
 go
 
 EOSQL

@@ -43,7 +43,7 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# before report
+# what the allele types look like *before* migration
 #
 date | tee -a ${LOG}
 ./alleletype/alleletype-before-SQL.csh | tee -a ${LOG}
@@ -73,6 +73,9 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+drop table ALL_Allele_Old
+go
+
 exec MGI_Table_Column_Cleanup
 go
 
@@ -80,9 +83,10 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# set permissions
+# set permissions & counts
 #
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

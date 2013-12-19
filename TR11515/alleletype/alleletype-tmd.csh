@@ -29,6 +29,10 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${TMXLOG}
 use ${MGD_DBNAME}
 go
 
+print ""
+print "'tmXd()' -> 'Null (knock-out)'"
+print ""
+
 (
 select aa.accID, 
 substring(a.symbol,1,50) as symbol,

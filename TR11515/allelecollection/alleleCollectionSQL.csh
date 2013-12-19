@@ -18,12 +18,12 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG $0.log
-rm -rf ${LOG}
-touch ${LOG}
+setenv COLLSQLLOG $0.log
+rm -rf ${COLLSQLLOG}
+touch ${COLLSQLLOG}
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${COLLSQLLOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${COLLSQLLOG}
 
 use ${MGD_DBNAME}
 go
@@ -64,6 +64,6 @@ EOSQL
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${COLLSQLLOG}
+echo "--- Finished" | tee -a ${COLLSQLLOG}
 

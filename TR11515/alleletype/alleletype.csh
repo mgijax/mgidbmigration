@@ -117,6 +117,24 @@ date | tee -a ${TYPELOG}
 date | tee -a ${TYPELOG}
 ./alleletype-noattribute-SQL.csh | tee -a ${TYPELOG}
 date | tee -a ${TYPELOG}
+./alleletype-tma.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tmb.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tmc.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tmd.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tme.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tmx.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tmx1.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-tmx2.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

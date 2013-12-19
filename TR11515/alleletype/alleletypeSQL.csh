@@ -128,13 +128,13 @@ go
 
 -- count of allele subtype/attribute
 -- should match 'wc -l VOC_Annot.bcp'
-select count(*) form VOC_Annot where _AnnotType_key = 1014
+select count(*) from VOC_Annot where _AnnotType_key = 1014
 go
 
 EOSQL
 
 # should match last count
-wc -l VOC_Annot.bcp | tee -a ${SQLOG}
+/usr/bin/wc -l VOC_Annot.bcp | tee -a ${SQLLOG}
 
 date | tee -a ${SQLLOG}
 echo "--- Finished" | tee -a ${SQLLOG}

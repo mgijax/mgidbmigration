@@ -51,11 +51,6 @@ order by generationType, a.symbol
 go
 
 EOSQL
-date | tee -a ${NOATTRLOG}
-
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
 
 date | tee -a ${NOATTRLOG}
 echo "--- Finished" | tee -a ${NOATTRLOG}

@@ -96,11 +96,6 @@ order by a.symbol, alleleType
 go
 
 EOSQL
-date | tee -a ${BEFORELOG}
-
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
 
 date | tee -a ${BEFORELOG}
 echo "--- Finished" | tee -a ${BEFORELOG}

@@ -127,11 +127,6 @@ and t.term not in ('Endonuclease-mediated', 'Other (see notes)')
 go
 
 EOSQL
-date | tee -a ${SQLLOG}
-
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
 
 date | tee -a ${SQLLOG}
 echo "--- Finished" | tee -a ${SQLLOG}

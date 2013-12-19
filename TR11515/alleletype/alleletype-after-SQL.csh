@@ -84,11 +84,6 @@ order by a.symbol, generationType, attributeType
 go
 
 EOSQL
-date | tee -a ${AFTERLOG}
-
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
 
 date | tee -a ${AFTERLOG}
 echo "--- Finished" | tee -a ${AFTERLOG}

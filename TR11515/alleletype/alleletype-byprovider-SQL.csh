@@ -88,11 +88,6 @@ order by provider, a.symbol, generationType, attributeType
 go
 
 EOSQL
-date | tee -a ${PROVIDERLOG}
-
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
 
 date | tee -a ${PROVIDERLOG}
 echo "--- Finished" | tee -a ${PROVIDERLOG}

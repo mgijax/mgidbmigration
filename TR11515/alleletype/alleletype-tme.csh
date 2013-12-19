@@ -82,11 +82,6 @@ order by a.symbol, generationType, attributeType
 go
 
 EOSQL
-date | tee -a ${TMXLOG}
-
-###-----------------------###
-###--- final datestamp ---###
-###-----------------------###
 
 date | tee -a ${TMXLOG}
 echo "--- Finished" | tee -a ${TMXLOG}

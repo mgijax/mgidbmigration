@@ -26,14 +26,14 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG $0.log
-rm -rf ${LOG}
-touch ${LOG}
+setenv TYPELOG $0.log
+rm -rf ${TYPELOG}
+touch ${TYPELOG}
 
 cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${TYPELOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${TYPELOG}
 
 use ${MGD_DBNAME}
 go
@@ -66,26 +66,26 @@ insert into VOC_Term values (@nextTermKey+4, 38, 'Other (see notes)', null, 24, 
 go
 
 EOSQL
-date | tee -a ${LOG}
+date | tee -a ${TYPELOG}
 
 #
 # create new vocabulary
 #
-date | tee -a ${LOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
-date | tee -a ${LOG}
+date | tee -a ${TYPELOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
 
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #
-date | tee -a ${LOG}
-./alleletype.py | tee -a ${LOG}
+date | tee -a ${TYPELOG}
+./alleletype.py | tee -a ${TYPELOG}
 ${MGI_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} VOC_Annot
-date | tee -a ${LOG}
+date | tee -a ${TYPELOG}
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${TYPELOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${TYPELOG}
 
 use ${MGD_DBNAME}
 go
@@ -105,19 +105,19 @@ exec VOC_reorderTerms 38
 go
 
 EOSQL
-date | tee -a ${LOG}
+date | tee -a ${TYPELOG}
 
 # verify migration
-date | tee -a ${LOG}
-./alleletypeSQL.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-./alleletype-after-SQL.csh | tee -a ${LOG}
-date | tee -a ${LOG}
+date | tee -a ${TYPELOG}
+./alleletypeSQL.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
+./alleletype-after-SQL.csh | tee -a ${TYPELOG}
+date | tee -a ${TYPELOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${TYPELOG}
+echo "--- Finished" | tee -a ${TYPELOG}
 

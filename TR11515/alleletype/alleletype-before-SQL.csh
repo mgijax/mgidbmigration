@@ -29,6 +29,36 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${BEFORELOG
 use ${MGD_DBNAME}
 go
 
+-- count of allele types
+select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+group by a._Allele_Type_key, t.term
+order by term
+go
+
+-- count of allele types totals
+select term = 'Targeted', count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+and t.term like 'Targeted %'
+go
+
+-- count of allele types totals
+select term = 'Transgenic', count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+and t.term like 'Transgenic %'
+go
+
+-- count of allele types totals
+select term = 'Targeted + Transgenic', count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+and (t.term like 'Targeted %' or t.term like 'Transgenic %')
+go
+
+-- temp tables for the next query
 select _Allele_key, hasDriver = 1
 into #hasDriver 
 from ALL_Allele a
@@ -58,14 +88,7 @@ go
 create index idx2 on #hasInducible(_Allele_key)
 go
 
--- count of allele types
-select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
-group by a._Allele_Type_key, t.term
-order by term
-go
-
+-- alleles of type 'Targeted' and 'Transgenic'
 (
 select aa.accID, 
 substring(a.symbol,1,50) as symbol,

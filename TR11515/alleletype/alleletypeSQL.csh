@@ -19,12 +19,12 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG $0.log
-rm -rf ${LOG}
-touch ${LOG}
+setenv SQLLOG $0.log
+rm -rf ${SQLLOG}
+touch ${SQLLOG}
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${SQLLOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${SQLLOG}
 
 use ${MGD_DBNAME}
 go
@@ -127,12 +127,12 @@ and t.term not in ('Endonuclease-mediated', 'Other (see notes)')
 go
 
 EOSQL
-date | tee -a ${LOG}
+date | tee -a ${SQLLOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${SQLLOG}
+echo "--- Finished" | tee -a ${SQLLOG}
 

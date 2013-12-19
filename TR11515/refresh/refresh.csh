@@ -23,3 +23,7 @@ ${MGD_DBSCHEMADIR}/table/VOC_Term_truncate.object
 bcpin.csh DEV_MGI mgd_dev VOC_Term
 ${MGD_DBSCHEMADIR}/index/VOC_Term_create.object
 
+${MGD_DBSCHEMADIR}/index/VOC_Annot_drop.object
+${MGD_DBSCHEMADIR}/table/VOC_Annot_truncate.object
+bcpin.csh DEV_MGI mgd_dev VOC_Annot
+${MGD_DBSCHEMADIR}/index/VOC_Annot_create.object

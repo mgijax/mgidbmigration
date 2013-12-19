@@ -126,7 +126,15 @@ and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._D
 and t.term not in ('Endonuclease-mediated', 'Other (see notes)')
 go
 
+-- count of allele subtype/attribute
+-- should match 'wc -l VOC_Annot.bcp'
+select count(*) form VOC_Annot where _AnnotType_key = 1014
+go
+
 EOSQL
+
+# should match last count
+wc -l VOC_Annot.bcp | tee -a ${SQLOG}
 
 date | tee -a ${SQLLOG}
 echo "--- Finished" | tee -a ${SQLLOG}

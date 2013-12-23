@@ -35,7 +35,6 @@ def processLDB():
 
 	print '\nstart: processing LDBs...'
 
-#		and a._Collection_key = 10911086
 	updateSQL = '''
 		update ALL_Allele 
 		set _Collection_key = %s
@@ -121,6 +120,7 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key = 176309
+		and a._Collection_key = 10911086
 		''' % (newTerm['B2B/CvDC'][0])
 	print updateSQL
 	db.sql(updateSQL, None)
@@ -137,20 +137,8 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key in (110234,162437,86090,90083)
+		and a._Collection_key = 10911086
 		''' % (newTerm['Mutagenesis for Dev. Defects'][0])
-	print updateSQL
-	db.sql(updateSQL, None)
-
-	# J:104190     105261 
-
-	updateSQL = '''
-		update ALL_Allele
-		set _Collection_key = %s
-		from ALL_Allele a, MGI_Reference_Assoc av
-		where a._Allele_key = av._Object_key
-		and av._MGIType_key = 11
-		and av._Refs_key in (105261)
-		''' % (newTerm['Australian PhenomeBank'][0])
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -160,8 +148,6 @@ def processJNum():
 #
 # main
 #
-
-db.useOneConnection(1)
 
 newTerm = {}
 results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 92', 'auto')
@@ -173,13 +159,13 @@ for r in results:
 print '\nnewTerms....'
 print newTerm
 
-setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = 10911086 and '
-
+# to re-test
 #db.sql('update ALL_Allele set _Collection_key = 10911086', None)
+
+# this query will only update collections that are "Not Specified"
+setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = 10911086 and '
 
 processLDB()
 processName()
 processJNum()
-
-db.useOneConnection(0)
 

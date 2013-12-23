@@ -96,7 +96,7 @@ ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${COLLLOG}
 # migrate
 #
 date | tee -a ${COLLLOG}
-#./alleleCollection.py | tee -a ${COLLLOG}
+./alleleCollection.py | tee -a ${COLLLOG}
 date | tee -a ${COLLLOG}
 
 #

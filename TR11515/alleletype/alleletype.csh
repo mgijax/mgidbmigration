@@ -128,6 +128,7 @@ echo 'start: running migration reports...'
 ./alleletype-tmx.csh
 ./alleletype-tmx1.csh
 ./alleletype-tmx2.csh
+./alleletypeTests.csh
 echo 'done: running migration reports...'
 date | tee -a ${TYPELOG}
 
@@ -135,7 +136,7 @@ date | tee -a ${TYPELOG}
 # compare alleletype-before-SQL.csh.log and alleletype-after-SQL.csh.log
 #
 grep "^ Targeted" alleletype-before-SQL.csh.log
-#grep "Targeted" alleletype-after-SQL.csh.log
+grep "Targeted" alleletype-after-SQL.csh.log
 
 
 ###-----------------------###

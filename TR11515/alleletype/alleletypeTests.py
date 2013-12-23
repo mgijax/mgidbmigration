@@ -10,7 +10,6 @@ import sys
 import os
 import db
 import reportlib
-import mgi_utils
 
 CRT = reportlib.CRT
 SPACE = reportlib.SPACE
@@ -27,14 +26,15 @@ db.useOneConnection(1)
 inFile = open('/mgi/all/wts_projects/11500/11515/AlleleTypeMigrationTests.txt', 'r')
 
 for line in inFile.readlines():
+
 	tokens = line[:-1].split('\t')
 	symbol = tokens[0]
 	mgiID = tokens[1]
 	inGterm = tokens[2]
 	subTypes = tokens[3].split(', ')
-	#print symbol, mgiID, inGterm, subTypes
 
-	sql = '''select a.symbol, gt.term as outGterm, st.term as outSterm
+	sql = '''
+		select a.symbol, gt.term as outGterm, st.term as outSterm
 		from ALL_Allele a, ACC_Accession aa, VOC_Term gt, VOC_Annot va, VOC_Term st
 		where aa.accID = '%s'
 		and aa._MGIType_key = 11
@@ -59,7 +59,6 @@ for line in inFile.readlines():
 
 	value = 'pass'
 
-	#print sql
 	results = db.sql(sql % (mgiID, mgiID), 'auto')
 
 	if len(results) == 0:

@@ -4,7 +4,7 @@ Reporter	Reporter
 Transposase	Transposase						
 Transposon Concatemer	Transposon Concatemer						
 Inducible	Inducible						
-Null (knock-out)	Null (knock-out)						
+Null/knockout	Null/knockout						
 Hypomorph	Hypomorph						
 Constitutively Active	Constitutively Active						
 Dominant Negative	Dominant Negative						

@@ -138,7 +138,6 @@ date | tee -a ${TYPELOG}
 grep "^ Targeted" alleletype-before-SQL.csh.log
 grep "Targeted" alleletype-after-SQL.csh.log
 
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

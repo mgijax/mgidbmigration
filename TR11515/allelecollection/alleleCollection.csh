@@ -103,7 +103,7 @@ date | tee -a ${COLLLOG}
 # SQL reports
 #
 date | tee -a ${COLLLOG}
-#./alleleCollectionSQL.csh 
+./alleleCollectionSQL.csh 
 date | tee -a ${COLLLOG}
 
 ###-----------------------###

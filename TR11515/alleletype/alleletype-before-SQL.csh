@@ -51,13 +51,6 @@ where a._Allele_Type_key = t._Term_key
 and t.term like 'Transgenic %'
 go
 
--- count of allele types totals
-select term = 'Targeted + Transgenic', count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
-and (t.term like 'Targeted %' or t.term like 'Transgenic %')
-go
-
 -- temp tables for the next query
 select _Allele_key, hasDriver = 1
 into #hasDriver 

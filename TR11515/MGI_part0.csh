@@ -46,21 +46,21 @@ date | tee -a ${LOG}
 # what the allele types look like *before* migration
 #
 date | tee -a ${LOG}
-./alleletype/alleletype-before-SQL.csh
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-before-SQL.csh
 date | tee -a ${LOG}
 
 #
 # allele collection
 #
 date | tee -a ${LOG}
-./allelecollection/alleleCollection.csh | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
 # allele type
 #
 date | tee -a ${LOG}
-./alleletype/alleletype.csh | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 ###-----------------------###

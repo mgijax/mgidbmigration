@@ -42,9 +42,9 @@ def processLDB():
 		where a._Allele_key = aa._Object_key
 		and aa._MGIType_key = 11
 		and aa._LogicalDB_key = 125
-		''' % (newTerm['KOMP-Regeneron'])
+		''' % (newTerm['KOMP-Regeneron'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	updateSQL = '''
 		update ALL_Allele 
@@ -53,9 +53,9 @@ def processLDB():
 		where a._Allele_key = aa._Object_key
 		and aa._MGIType_key = 11
 		and aa._LogicalDB_key = 126
-		''' % (newTerm['KOMP-CSD'])
+		''' % (newTerm['KOMP-CSD'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	updateSQL = '''
 		update ALL_Allele 
@@ -64,9 +64,9 @@ def processLDB():
 		where a._Allele_key = aa._Object_key
 		and aa._MGIType_key = 11
 		and aa._LogicalDB_key = 138
-		''' % (newTerm['EUCOMM'])
+		''' % (newTerm['EUCOMM'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	updateSQL = '''
 		update ALL_Allele 
@@ -75,9 +75,9 @@ def processLDB():
 		where a._Allele_key = aa._Object_key
 		and aa._MGIType_key = 11
 		and aa._LogicalDB_key = 143
-		''' % (newTerm['NorCOMM'])
+		''' % (newTerm['NorCOMM'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	print 'end: processing LDBs...'
 
@@ -85,47 +85,25 @@ def processName():
 
 	print 'start: processing allele name...'
 
-	updateSQL = '''
-		update ALL_Allele
-		set _Collection_key = %s
-		where name like '%deltagen%'
-		''' % (newTerm['Deltagen'])
+	updateSQL = setSQL % (newTerm['Deltagen'][0]) + " where name like '%deltagen%'"
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
-	updateSQL = '''
-		update ALL_Allele
-		set _Collection_key = %s
-		where name like '%lexicon%'
-		''' % (newTerm['Lexicon'])
+	updateSQL = setSQL % (newTerm['Lexicon'][0]) + " where name like '%lexicon%'"
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
-	updateSQL = '''
-		update ALL_Allele
-		set _Collection_key = %s
-		where name like '%gensat project%'
-		''' % (newTerm['GENSAT'])
+	updateSQL = setSQL % (newTerm['GENSAT'][0]) + " where name like '%gensat project%'"
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
-	updateSQL = '''
-		update ALL_Allele
-		set _Collection_key = %s
-		where name like '%wellcome trust%'
-		and _Allele_Type_key = 847121
-		''' % (newTerm['Sanger Inst. Gene Trap Res.'])
+	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0]) + " where name like '%wellcome trust%'"
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
-	updateSQL = '''
-		update ALL_Allele
-		set _Collection_key = %s
-		where name like '%riken genomic%'
-		and _Allele_Type_key = 847122
-		''' % (newTerm['RIKEN GSC ENU Project'])
+	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0]) + " where name like '%riken genomi%'"
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	print 'end: processing allele name...'
 
@@ -142,9 +120,9 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key = 176309
-		''' % (newTerm['B2B/CvDC'])
+		''' % (newTerm['B2B/CvDC'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
  	# J:109155     110234 
  	# J:161341     162437 
@@ -158,9 +136,9 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key in (110234,162437,86090,90083)
-		''' % (newTerm['Mutagenesis for Dev. Defects'])
+		''' % (newTerm['Mutagenesis for Dev. Defects'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	# J:104190     105261 
 
@@ -171,9 +149,9 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key in (105261)
-		''' % (newTerm['Australian PhenomeBank'])
+		''' % (newTerm['Australian PhenomeBank'][0])
 	print updateSQL
-	#db.sql(updateSQL, None)
+	db.sql(updateSQL, None)
 
 	print 'start: processing jnumber...'
 
@@ -194,7 +172,9 @@ for r in results:
 print '\nnewTerms....'
 print newTerm
 
-updateSQL = 'update ALL_Allele set _Collection_key = %s where _Allele_key = %s'
+setSQL = 'update ALL_Allele set _Collection_key = %s'
+
+#db.sql('update ALL_Allele set _Collection_key = 10911086', None)
 
 processLDB()
 processName()

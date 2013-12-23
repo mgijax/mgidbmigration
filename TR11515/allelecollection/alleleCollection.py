@@ -35,6 +35,7 @@ def processLDB():
 
 	print '\nstart: processing LDBs...'
 
+#		and a._Collection_key = 10911086
 	updateSQL = '''
 		update ALL_Allele 
 		set _Collection_key = %s
@@ -85,23 +86,23 @@ def processName():
 
 	print 'start: processing allele name...'
 
-	updateSQL = setSQL % (newTerm['Deltagen'][0]) + " where name like '%deltagen%'"
+	updateSQL = setSQL % (newTerm['Deltagen'][0]) + "name like '%deltagen%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['Lexicon'][0]) + " where name like '%lexicon%'"
+	updateSQL = setSQL % (newTerm['Lexicon'][0]) + "name like '%lexicon%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['GENSAT'][0]) + " where name like '%gensat project%'"
+	updateSQL = setSQL % (newTerm['GENSAT'][0]) + "name like '%gensat project%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0]) + " where name like '%wellcome trust%'"
+	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0]) + "name like '%wellcome trust%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0]) + " where name like '%riken genomi%'"
+	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0]) + "name like '%riken genomi%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -172,7 +173,7 @@ for r in results:
 print '\nnewTerms....'
 print newTerm
 
-setSQL = 'update ALL_Allele set _Collection_key = %s'
+setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = 10911086 and '
 
 #db.sql('update ALL_Allele set _Collection_key = 10911086', None)
 

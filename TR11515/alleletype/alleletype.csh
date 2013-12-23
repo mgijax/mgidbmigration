@@ -109,6 +109,7 @@ date | tee -a ${TYPELOG}
 
 # verify migration
 date | tee -a ${TYPELOG}
+echo 'start: running migration reports...'
 ./alleletypeSQL.csh
 ./alleletype-after-SQL.csh
 ./alleletype-byprovider-SQL.csh
@@ -121,6 +122,7 @@ date | tee -a ${TYPELOG}
 ./alleletype-tmx.csh
 ./alleletype-tmx1.csh
 ./alleletype-tmx2.csh
+echo 'done: running migration reports...'
 date | tee -a ${TYPELOG}
 
 #

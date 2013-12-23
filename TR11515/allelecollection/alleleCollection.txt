@@ -2,7 +2,6 @@ KOMP-Regeneron	KOMP-Regeneron
 KOMP-CSD	KOMP-CSD						
 NorCOMM	NorCOMM						
 EUCOMM	EUCOMM						
-EUCOMM	EUCOMM						
 B2B/CvDC	Bench to Bassinet Program (CvDC)						
 Pleiades Promoter Project	Pleiades Promoter Project						
 Beutler Mutagenix	Beutler Mutagenix						

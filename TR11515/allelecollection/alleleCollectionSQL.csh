@@ -36,12 +36,12 @@ order by v.term
 go
 
 -- collection terms used
-select v._Term_key, substring(v.term,1,50)
-from VOC_Term v 
-where v._Vocab_key = 92
-and exists (select 1 from ALL_Allele a where v._Term_key = a._Collection_key)
-order by v.term
-go
+--select v._Term_key, substring(v.term,1,50)
+--from VOC_Term v 
+--where v._Vocab_key = 92
+--and exists (select 1 from ALL_Allele a where v._Term_key = a._Collection_key)
+--order by v.term
+--go
 
 -- collection terms not used
 select v._Term_key, substring(v.term,1,50)

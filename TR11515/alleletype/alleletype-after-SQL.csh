@@ -17,11 +17,11 @@ source ${MGICONFIG}/master.config.csh
 
 env | grep MGD
 
-# start a new log file for this migration, and add a datestamp
+# concatenate the "after" counts
 
 setenv LOG $0.log
-rm -rf ${LOG}
-touch ${LOG}
+#rm -rf ${LOG}
+#touch ${LOG}
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}

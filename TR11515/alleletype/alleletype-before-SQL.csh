@@ -17,9 +17,8 @@ source ${MGICONFIG}/master.config.csh
 
 env | grep MGD
 
-# start a new log file for this migration, and add a datestamp
-
-setenv AFTERLOG $0.log
+# use the AFTERLOG for some of the counts
+setenv AFTERLOG alleletype-after-SQL.csh.log
 rm -rf ${AFTERLOG}
 touch ${AFTERLOG}
 
@@ -39,24 +38,19 @@ go
 
 -- count of allele types
 select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
+from ALL_Allele a, VOC_Term t where a._Allele_Type_key = t._Term_key
 group by a._Allele_Type_key, t.term
 order by term
 go
 
 -- count of allele types totals
 select term = 'Targeted', count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
-and t.term like 'Targeted %'
+from ALL_Allele a, VOC_Term t where a._Allele_Type_key = t._Term_key and t.term like 'Targeted %'
 go
 
 -- count of allele types totals
 select term = 'Transgenic', count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
-and t.term like 'Transgenic %'
+from ALL_Allele a, VOC_Term t where a._Allele_Type_key = t._Term_key and t.term like 'Transgenic %'
 go
 
 EOSQL

@@ -19,12 +19,16 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
+setenv AFTERLOG $0.log
+rm -rf ${AFTERLOG}
+touch ${AFTERLOG}
+
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
 date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${AFTERLOG}
 
 use ${MGD_DBNAME}
 go
@@ -49,6 +53,13 @@ select term = 'Transgenic', count(a._Allele_key)
 from ALL_Allele a, VOC_Term t
 where a._Allele_Type_key = t._Term_key
 and t.term like 'Transgenic %'
+go
+
+EOSQL
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
 go
 
 -- temp tables for the next query

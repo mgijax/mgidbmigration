@@ -33,6 +33,20 @@ go
 -- AFTER-COUNTS
 --
 
+-- count of allele types
+select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Term t where a._Allele_Type_key = t._Term_key
+group by a._Allele_Type_key, t.term
+order by term
+go
+
+-- count of allele subtypes
+select a._Term_key, substring(t.term,1,30) as term, count(a._Object_key)
+from VOC_Annot a, VOC_Term t where a._AnnotType_key = 1014 and a._Term_key = t._Term_key
+group by a._Term_key, t.term
+order by term
+go
+
 -- allele types
 select t._Term_key, substring(t.term,1,30) as term
 from VOC_Term t
@@ -42,25 +56,7 @@ go
 
 -- allele subtype
 select t._Term_key, substring(t.term,1,30) as term
-from VOC_Term t
-where t._Vocab_key = 93
-order by term
-go
-
--- count of allele types
-select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Allele_Type_key = t._Term_key
-group by a._Allele_Type_key, t.term
-order by term
-go
-
--- count of allele subtypes
-select a._Term_key, substring(t.term,1,30) as term, count(a._Object_key)
-from VOC_Annot a, VOC_Term t
-where a._AnnotType_key = 1014
-and a._Term_key = t._Term_key
-group by a._Term_key, t.term
+from VOC_Term t where t._Vocab_key = 93
 order by term
 go
 

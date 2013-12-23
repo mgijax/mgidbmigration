@@ -60,6 +60,20 @@ from VOC_Term t where t._Vocab_key = 93
 order by term
 go
 
+-- all collections
+select v._Term_key, substring(v.term,1,50)
+from VOC_Term v 
+where v._Vocab_key = 92
+order by v.term
+go
+
+-- collection counts
+select a._Collection_key, substring(t.term,1,20) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Collection_key = t._Term_key
+group by a._Collection_key, t.term
+go
+
 EOSQL
 
 date | tee -a ${LOG}

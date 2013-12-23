@@ -22,6 +22,7 @@ setenv AFTERLOG alleletype-after-SQL.csh.log
 rm -rf ${AFTERLOG}
 touch ${AFTERLOG}
 
+# use the LOG for other things
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}

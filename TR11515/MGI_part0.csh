@@ -46,7 +46,7 @@ date | tee -a ${LOG}
 # what the allele types look like *before* migration
 #
 date | tee -a ${LOG}
-./alleletype/alleletype-before-SQL.csh | tee -a ${LOG}
+./alleletype/alleletype-before-SQL.csh
 date | tee -a ${LOG}
 
 #

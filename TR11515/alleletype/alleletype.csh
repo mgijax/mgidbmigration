@@ -109,32 +109,26 @@ date | tee -a ${TYPELOG}
 
 # verify migration
 date | tee -a ${TYPELOG}
-./alleletypeSQL.csh | tee -a ${TYPELOG}
+./alleletypeSQL.csh
+./alleletype-after-SQL.csh
+./alleletype-byprovider-SQL.csh
+./alleletype-noattribute-SQL.csh
+./alleletype-tma.csh
+./alleletype-tmb.csh
+./alleletype-tmc.csh
+./alleletype-tmd.csh
+./alleletype-tme.csh
+./alleletype-tmx.csh
+./alleletype-tmx1.csh
+./alleletype-tmx2.csh
 date | tee -a ${TYPELOG}
-./alleletype-after-SQL.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-byprovider-SQL.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-noattribute-SQL.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tma.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tmb.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tmc.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tmd.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tme.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tmx.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tmx1.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype-tmx2.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
-./alleletype.csh | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
+
+#
+# compare alleletype-before-SQL.csh.log and alleletype-after-SQL.csh.log
+#
+grep "^ Targeted" alleletype-before-SQL.csh.log
+#grep "Targeted" alleletype-after-SQL.csh.log
+
 
 ###-----------------------###
 ###--- final datestamp ---###

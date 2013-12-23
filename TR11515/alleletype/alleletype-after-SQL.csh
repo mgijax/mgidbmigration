@@ -29,6 +29,20 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${AFTERLOG}
 use ${MGD_DBNAME}
 go
 
+-- allele types
+select t._Term_key, substring(t.term,1,30) as term
+from VOC_Term t
+where t._Vocab_key = 38
+order by term
+go
+
+-- allele subtype
+select t._Term_key, substring(t.term,1,30) as term
+from VOC_Term t
+where t._Vocab_key = 93
+order by term
+go
+
 -- count of allele types
 select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)
 from ALL_Allele a, VOC_Term t

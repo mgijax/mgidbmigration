@@ -4,13 +4,14 @@ Reporter	Reporter
 Transposase	Transposase						
 Transposon Concatemer	Transposon Concatemer						
 Inducible	Inducible						
-Over-expression	Over-expression						
 Null (knock-out)	Null (knock-out)						
 Hypomorph	Hypomorph						
 Constitutively Active	Constitutively Active						
 Dominant Negative	Dominant Negative						
 Inserted expressed sequence	Inserted expressed sequence						
 Humanized	Humanized						
+RMCE-Ready	RMCE-Ready						
+Modified Isoform(s)	Modified Isoform(s)						
 No Functional Change	No Functional Change						
 Not Applicable	Not Applicable						
 Not Specified	Not Specified						

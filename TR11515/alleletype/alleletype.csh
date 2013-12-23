@@ -104,6 +104,12 @@ go
 exec VOC_reorderTerms 38
 go
 
+exec VOC_reorderTerms 92
+go
+
+exec VOC_reorderTerms 93
+go
+
 EOSQL
 date | tee -a ${TYPELOG}
 

@@ -19,15 +19,15 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv SQLLOG $0.log
-rm -rf ${SQLLOG}
-touch ${SQLLOG}
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
 
-./alleletypeTests.py | tee -a ${SQLLOG}
+./alleletypeTests.py | tee -a ${LOG}
 
 rm -rf alleletypeTests.csh.log.sorted
 sort alleletypeTests.csh.log > alleletypeTests.csh.log.sorted
 
-date | tee -a ${SQLLOG}
-echo "--- Finished" | tee -a ${SQLLOG}
+date | tee -a ${LOG}
+echo "--- Finished" | tee -a ${LOG}
 

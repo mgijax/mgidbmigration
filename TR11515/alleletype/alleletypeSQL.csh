@@ -19,12 +19,12 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv SQLLOG $0.log
-rm -rf ${SQLLOG}
-touch ${SQLLOG}
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
 
-date | tee -a ${SQLLOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${SQLLOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -134,8 +134,8 @@ go
 EOSQL
 
 # should match last count
-/usr/bin/wc -l VOC_Annot.bcp | tee -a ${SQLLOG}
+/usr/bin/wc -l VOC_Annot.bcp | tee -a ${LOG}
 
-date | tee -a ${SQLLOG}
-echo "--- Finished" | tee -a ${SQLLOG}
+date | tee -a ${LOG}
+echo "--- Finished" | tee -a ${LOG}
 

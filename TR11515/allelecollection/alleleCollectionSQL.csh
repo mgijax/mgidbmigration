@@ -18,12 +18,12 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv COLLSQLLOG $0.log
-rm -rf ${COLLSQLLOG}
-touch ${COLLSQLLOG}
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
 
-date | tee -a ${COLLSQLLOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${COLLSQLLOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -32,22 +32,6 @@ go
 select v._Term_key, substring(v.term,1,50)
 from VOC_Term v 
 where v._Vocab_key = 92
-order by v.term
-go
-
--- collection terms used
---select v._Term_key, substring(v.term,1,50)
---from VOC_Term v 
---where v._Vocab_key = 92
---and exists (select 1 from ALL_Allele a where v._Term_key = a._Collection_key)
---order by v.term
---go
-
--- collection terms not used
-select v._Term_key, substring(v.term,1,50)
-from VOC_Term v 
-where v._Vocab_key = 92
-and not exists (select 1 from ALL_Allele a where v._Term_key = a._Collection_key)
 order by v.term
 go
 
@@ -64,6 +48,6 @@ EOSQL
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${COLLSQLLOG}
-echo "--- Finished" | tee -a ${COLLSQLLOG}
+date | tee -a ${LOG}
+echo "--- Finished" | tee -a ${LOG}
 

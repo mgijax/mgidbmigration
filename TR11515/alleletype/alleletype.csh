@@ -26,14 +26,14 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv TYPELOG $0.log
-rm -rf ${TYPELOG}
-touch ${TYPELOG}
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
 
 cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
 
-date | tee -a ${TYPELOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${TYPELOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -66,26 +66,26 @@ insert into VOC_Term values (@nextTermKey+4, 38, 'Other (see notes)', null, 24, 
 go
 
 EOSQL
-date | tee -a ${TYPELOG}
+date | tee -a ${LOG}
 
 #
 # create new vocabulary
 #
-date | tee -a ${TYPELOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${TYPELOG}
-date | tee -a ${TYPELOG}
+date | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
+date | tee -a ${LOG}
 
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #
-date | tee -a ${TYPELOG}
-./alleletype.py | tee -a ${TYPELOG}
+date | tee -a ${LOG}
+./alleletype.py | tee -a ${LOG}
 ${MGI_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} VOC_Annot
-date | tee -a ${TYPELOG}
+date | tee -a ${LOG}
 
-date | tee -a ${TYPELOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${TYPELOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -111,14 +111,14 @@ exec VOC_reorderTerms 93
 go
 
 EOSQL
-date | tee -a ${TYPELOG}
+date | tee -a ${LOG}
 
 # verify migration
-date | tee -a ${TYPELOG}
+date | tee -a ${LOG}
 echo 'start: running migration reports...'
+#./alleletype-byprovider-SQL.csh
 ./alleletypeSQL.csh
 ./alleletype-after-SQL.csh
-./alleletype-byprovider-SQL.csh
 ./alleletype-noattribute-SQL.csh
 ./alleletype-tma.csh
 ./alleletype-tmb.csh
@@ -130,7 +130,7 @@ echo 'start: running migration reports...'
 ./alleletype-tmx2.csh
 ./alleletypeTests.csh
 echo 'done: running migration reports...'
-date | tee -a ${TYPELOG}
+date | tee -a ${LOG}
 
 #
 # compare alleletype-before-SQL.csh.log and alleletype-after-SQL.csh.log
@@ -142,6 +142,6 @@ grep "Targeted" alleletype-after-SQL.csh.log
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${TYPELOG}
-echo "--- Finished" | tee -a ${TYPELOG}
+date | tee -a ${LOG}
+echo "--- Finished" | tee -a ${LOG}
 

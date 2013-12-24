@@ -18,14 +18,14 @@ env | grep MGD
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG $0.log
-rm -rf ${LOG}
-touch ${LOG}
+setenv COLLLOG $0.log
+rm -rf ${COLLLOG}
+touch ${COLLLOG}
 
 cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${COLLLOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${COLLLOG}
 
 use ${MGD_DBNAME}
 go
@@ -37,20 +37,20 @@ sp_rename ALL_Allele, ALL_Allele_Old
 go
 
 EOSQL
-date | tee -a ${LOG}
+date | tee -a ${COLLLOG}
 
 #
 # create new vocabulary
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${COLLLOG}
 
 #
 # schema
 #
-${MGD_DBSCHEMADIR}/table/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/ALL_Allele_create.object | tee -a ${COLLLOG}
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${COLLLOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${COLLLOG}
 
 use ${MGD_DBNAME}
 go
@@ -69,47 +69,47 @@ from ALL_Allele_Old
 go
 
 EOSQL
-date | tee -a ${LOG}
+date | tee -a ${COLLLOG}
 
 #
 # schema
 #
-${MGD_DBSCHEMADIR}/default/ALL_Allele_bind.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/default/ALL_Allele_bind.object | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/index/ALL_Allele_create.object | tee -a ${COLLLOG}
 
-${MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${COLLLOG}
 
-${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${COLLLOG}
 
-${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${COLLLOG}
 
-${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${COLLLOG}
 
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${COLLLOG}
 
 #
 # migrate
 #
-date | tee -a ${LOG}
-./alleleCollection.py | tee -a ${LOG}
-date | tee -a ${LOG}
+date | tee -a ${COLLLOG}
+./alleleCollection.py | tee -a ${COLLLOG}
+date | tee -a ${COLLLOG}
 
 #
 # SQL reports
 #
-date | tee -a ${LOG}
+date | tee -a ${COLLLOG}
 ./alleleCollectionSQL.csh 
-date | tee -a ${LOG}
+date | tee -a ${COLLLOG}
 
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${COLLLOG}
+echo "--- Finished" | tee -a ${COLLLOG}
 

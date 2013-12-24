@@ -19,12 +19,12 @@ env | grep MGD
 
 # concatenate the "after" counts
 
-setenv LOG $0.log
-#rm -rf ${LOG}
-#touch ${LOG}
+setenv AFTERLOG $0.log
+#rm -rf ${AFTERLOG}
+#touch ${AFTERLOG}
 
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+date | tee -a ${AFTERLOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${AFTERLOG}
 
 use ${MGD_DBNAME}
 go
@@ -76,6 +76,6 @@ go
 
 EOSQL
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${AFTERLOG}
+echo "--- Finished" | tee -a ${AFTERLOG}
 

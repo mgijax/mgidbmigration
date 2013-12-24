@@ -15,8 +15,6 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
-env | grep MGD
-
 # use the AFTERLOG for some of the counts
 setenv AFTERLOG ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-SQL.csh.log
 rm -rf ${AFTERLOG}

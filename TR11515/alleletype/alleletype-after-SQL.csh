@@ -15,8 +15,6 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
-env | grep MGD
-
 # concatenate the "after" counts
 
 setenv AFTERLOG $0.log

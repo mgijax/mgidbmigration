@@ -126,17 +126,17 @@ and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._D
 and t.term not in ('Endonuclease-mediated', 'Other (see notes)')
 go
 
--- count of allele subtype/attribute
--- should match 'wc -l VOC_Annot.bcp'
-select count(*) from VOC_Annot where _AnnotType_key = 1014
-go
-
 --
 -- duplicate 
 ---
 select _Object_key, _Term_key from VOC_Annot where _AnnotType_key = 1014
 group by _Object_key, _Term_key having count(*) > 1
 order by _Term_key, _Object_key
+go
+
+-- count of allele subtype/attribute
+-- should match 'wc -l VOC_Annot.bcp'
+select count(*) from VOC_Annot where _AnnotType_key = 1014
 go
 
 EOSQL

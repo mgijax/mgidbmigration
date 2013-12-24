@@ -85,23 +85,23 @@ def processName():
 
 	print 'start: processing allele name...'
 
-	updateSQL = setSQL % (newTerm['Deltagen'][0]) + "name like '%deltagen%'"
+	updateSQL = setSQL % (newTerm['Deltagen'][0], notSpecified) + "name like '%deltagen%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['Lexicon'][0]) + "name like '%lexicon%'"
+	updateSQL = setSQL % (newTerm['Lexicon'][0], notSpecified) + "name like '%lexicon%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['GENSAT'][0]) + "name like '%gensat project%'"
+	updateSQL = setSQL % (newTerm['GENSAT'][0], notSpecified) + "name like '%gensat project%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0]) + "name like '%wellcome trust%'"
+	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0], notSpecified) + "name like '%wellcome trust%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0]) + "name like '%riken genomi%'"
+	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0], notSpecified) + "name like '%riken genomi%'"
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -120,8 +120,8 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key = 176309
-		and a._Collection_key = 10911086
-		''' % (newTerm['B2B/CvDC'][0])
+		and a._Collection_key = %s
+		''' % (newTerm['B2B/CvDC'][0], notSpecified)
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -137,8 +137,8 @@ def processJNum():
 		where a._Allele_key = av._Object_key
 		and av._MGIType_key = 11
 		and av._Refs_key in (110234,162437,86090,90083)
-		and a._Collection_key = 10911086
-		''' % (newTerm['Mutagenesis for Dev. Defects'][0])
+		and a._Collection_key = %s
+		''' % (newTerm['Mutagenesis for Dev. Defects'][0], notSpecified)
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -159,11 +159,13 @@ for r in results:
 print '\nnewTerms....'
 print newTerm
 
+notSpecified = newTerm['Not Specified'][0]
+
 # to re-test
-#db.sql('update ALL_Allele set _Collection_key = 10911086', None)
+#db.sql('update ALL_Allele set _Collection_key = %s' % (notSpecified), None)
 
 # this query will only update collections that are "Not Specified"
-setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = 10911086 and '
+setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = %s and '
 
 processLDB()
 processName()

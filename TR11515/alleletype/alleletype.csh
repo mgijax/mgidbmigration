@@ -128,7 +128,6 @@ echo 'start: running migration reports...'
 ./alleletype-tmx.csh
 ./alleletype-tmx1.csh
 ./alleletype-tmx2.csh
-./alleletypeTests.csh
 echo 'done: running migration reports...'
 date | tee -a ${LOG}
 

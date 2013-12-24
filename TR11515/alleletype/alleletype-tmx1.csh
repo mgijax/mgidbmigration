@@ -30,7 +30,7 @@ use ${MGD_DBNAME}
 go
 
 print ""
-print "'tmX.1()' -> 'Null (knock-out)', 'Reporter'"
+print "'tmX.1()' -> 'Null/knockout', 'Reporter'"
 print ""
 
 (

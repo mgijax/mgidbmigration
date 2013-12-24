@@ -1,4 +1,4 @@
-Conditional Ready	Conditional Ready						
+Conditional ready	Conditional ready						
 Recombinase	Recombinase						
 Reporter	Reporter						
 Transposase	Transposase						

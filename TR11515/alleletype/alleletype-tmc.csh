@@ -30,7 +30,7 @@ use ${MGD_DBNAME}
 go
 
 print ""
-print "'tmXc()' -> 'Conditional Ready'"
+print "'tmXc()' -> 'Conditional ready'"
 print ""
 
 (

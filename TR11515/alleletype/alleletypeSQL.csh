@@ -131,6 +131,13 @@ go
 select count(*) from VOC_Annot where _AnnotType_key = 1014
 go
 
+--
+-- duplicate 
+---
+select _Object_key, _Term_key from VOC_Annot where _AnnotType_key = 1014
+group by _Object_key, _Term_key having count(*) > 1
+go
+
 EOSQL
 
 # should match last count

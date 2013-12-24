@@ -216,7 +216,7 @@ def processIKMC():
 			newAnnotKey += 1
 
 		#
-		# tmXa() => Null/knockout, Reporter, Conditional Ready
+		# tmXa() => Null/knockout, Reporter, Conditional ready
 		#
 		elif (symbol.find('a(') != -1):
 			newAttrName = 'Null/knockout'
@@ -229,16 +229,16 @@ def processIKMC():
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
-			newAttrName = 'Conditional Ready'
+			newAttrName = 'Conditional ready'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		#
-		# tmXc() => Conditional Ready
+		# tmXc() => Conditional ready
 		#
 		elif (symbol.find('c(') != -1):
-			newAttrName = 'Conditional Ready'
+			newAttrName = 'Conditional ready'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
@@ -319,7 +319,7 @@ def processAttribute():
 			newAttrName = 'Null/knockout'
 
 		elif oldTerm in ('Targeted (Floxed/Frt)'):
-			newAttrName = 'Conditional Ready'
+			newAttrName = 'Conditional ready'
 
 		elif oldTerm in ('Targeted (Reporter)'):
 			newAttrName = 'Reporter'

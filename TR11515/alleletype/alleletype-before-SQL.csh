@@ -20,12 +20,12 @@ setenv AFTERLOG ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-SQ
 rm -rf ${AFTERLOG}
 touch ${AFTERLOG}
 
-# use the LOG for other things
-setenv LOG $0.log
-rm -rf ${LOG}
-touch ${LOG}
+# use the BEFORELOG for other things
+setenv BEFORELOG $0.log
+rm -rf ${BEFORELOG}
+touch ${BEFORELOG}
 
-date | tee -a ${LOG}
+date | tee -a ${BEFORELOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${AFTERLOG}
 
 use ${MGD_DBNAME}
@@ -54,7 +54,7 @@ go
 
 EOSQL
 
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${BEFORELOG}
 
 use ${MGD_DBNAME}
 go
@@ -121,6 +121,6 @@ go
 
 EOSQL
 
-date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+date | tee -a ${BEFORELOG}
+echo "--- Finished" | tee -a ${BEFORELOG}
 

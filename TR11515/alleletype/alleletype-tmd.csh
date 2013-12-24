@@ -15,8 +15,6 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
-env | grep MGD
-
 # start a new log file for this migration, and add a datestamp
 
 setenv LOG $0.log

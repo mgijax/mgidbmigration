@@ -31,9 +31,7 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${AFTERLOG}
 use ${MGD_DBNAME}
 go
 
----
---- BEFORE-COUNTS
----
+-- BEFORE-COUNTS
 
 -- count of allele types
 select a._Allele_Type_key, substring(t.term,1,30) as term, count(a._Allele_key)

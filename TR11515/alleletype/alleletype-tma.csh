@@ -30,7 +30,7 @@ use ${MGD_DBNAME}
 go
 
 print ""
-print "'tmXa()' -> 'Null (knock-out)', 'Reporter', 'Conditional Ready'"
+print "'tmXa()' -> 'Null/knockout', 'Reporter', 'Conditional ready'"
 print ""
 
 (

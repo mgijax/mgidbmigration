@@ -136,6 +136,7 @@ go
 ---
 select _Object_key, _Term_key from VOC_Annot where _AnnotType_key = 1014
 group by _Object_key, _Term_key having count(*) > 1
+order by _Term_key, _Object_key
 go
 
 EOSQL

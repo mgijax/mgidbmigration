@@ -82,7 +82,7 @@ def processPrintGeneration(generationScript):
 
 		if len(newTermName) > 0:
 			newTermKey = newTerm[newTermName][0]
-			print symbol, oldTerm, newTermName
+			#print symbol, oldTerm, newTermName
 		else:
 			print 'ERROR: ' + r
 
@@ -142,7 +142,7 @@ def processGeneration(generationScript):
 
 		if len(newTermName) > 0:
 			newTermKey = newTerm[newTermName][0]
-			print oldTerm, newTermName
+			#print oldTerm, newTermName
 			generationSQL = generationSQL + generationScript % (newTermKey, termKey)
 		else:
 			print 'ERROR: ' + r
@@ -205,21 +205,21 @@ def processIKMC():
 		newAttrName = ''
 
 		#
-		# tmX.2() => Null (knock-out)
-		# tmXd() => Null (knock-out)
+		# tmX.2() => Null/knockout
+		# tmXd() => Null/knockout
 		#
 		if (symbol.find('.2(') != -1) \
 			or (symbol.find('d(') != -1):
-			newAttrName = 'Null (knock-out)'
+			newAttrName = 'Null/knockout'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		#
-		# tmXa() => Null (knock-out), Reporter, Conditional Ready
+		# tmXa() => Null/knockout, Reporter, Conditional Ready
 		#
 		elif (symbol.find('a(') != -1):
-			newAttrName = 'Null (knock-out)'
+			newAttrName = 'Null/knockout'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
@@ -245,13 +245,13 @@ def processIKMC():
 
 		#
 		# the rest:
-		# tmX() => Null (knock-out), Reporter
-		# tmX.1() => Null (knock-out), Reporter
-		# tmXb() => Null (knock-out), Reporter
-		# tmXe() => Null (knock-out), Reporter
+		# tmX() => Null/knockout, Reporter
+		# tmX.1() => Null/knockout, Reporter
+		# tmXb() => Null/knockout, Reporter
+		# tmXe() => Null/knockout, Reporter
 		#
 		else:
-			newAttrName = 'Null (knock-out)'
+			newAttrName = 'Null/knockout'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
@@ -316,7 +316,7 @@ def processAttribute():
 		newAttrName = ''
 
 		if oldTerm in ('Targeted (knock-out)'):
-			newAttrName = 'Null (knock-out)'
+			newAttrName = 'Null/knockout'
 
 		elif oldTerm in ('Targeted (Floxed/Frt)'):
 			newAttrName = 'Conditional Ready'

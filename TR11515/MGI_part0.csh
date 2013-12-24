@@ -92,7 +92,7 @@ ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 # final tests (need full permissions
 #
 date | tee -a ${LOG}
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

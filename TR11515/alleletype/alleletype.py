@@ -26,6 +26,8 @@ db.set_sqlPasswordFromFile(passwordFileName)
 
 currentDate = mgi_utils.date('%m/%d/%y')
 
+alleleProcessed = []
+
 def processPrintGeneration(generationScript):
 
 	# select alleles/terms that require migration
@@ -150,6 +152,7 @@ def processGeneration(generationScript):
 	print 'end: process generation...'
 
 def processIKMC():
+	global alleleProcessed
 	global newAnnotKey
 
 	# IKMC alleles (iin ldb group):
@@ -201,6 +204,8 @@ def processIKMC():
 		aKey = r['_Allele_key']
 		termKey = r['_Term_key']
 		oldTerm = r['term']
+
+		alleleProcessed.append(aKey)
 
 		newAttrName = ''
 
@@ -263,6 +268,7 @@ def processIKMC():
 	print 'end: processing IKMC alleles...'
 
 def processAttribute():
+	global alleleProcessed
 	global newAnnotKey
 
 	# special code to handle knock-in / allele-attribute
@@ -312,6 +318,9 @@ def processAttribute():
 		aKey = r['_Allele_key']
 		termKey = r['_Term_key']
 		oldTerm = r['term']
+
+		if aKey in alleleProcessed:
+			continue
 
 		newAttrName = ''
 

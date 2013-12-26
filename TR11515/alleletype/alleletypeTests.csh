@@ -19,7 +19,7 @@ cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
 
 # start a new log file for this migration, and add a datestamp
 
-setenv LOG ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh.log
+setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 

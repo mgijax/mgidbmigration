@@ -21,7 +21,7 @@ rm -rf ${AFTERLOG}
 touch ${AFTERLOG}
 
 # use the BEFORELOG for other things
-setenv BEFORELOG $0.log
+setenv BEFORELOG ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-before-SQL.csh.log
 rm -rf ${BEFORELOG}
 touch ${BEFORELOG}
 

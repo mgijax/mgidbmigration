@@ -17,7 +17,7 @@ source ${MGICONFIG}/master.config.csh
 
 # concatenate the "after" counts
 
-setenv AFTERLOG $0.log
+setenv AFTERLOG ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-SQL.csh.log
 #rm -rf ${AFTERLOG}
 #touch ${AFTERLOG}
 

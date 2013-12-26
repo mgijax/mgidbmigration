@@ -24,11 +24,11 @@ source ${MGICONFIG}/master.config.csh
 
 # start a new log file for this migration, and add a datestamp
 
+cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
+
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
-
-cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
 
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -43,7 +43,7 @@ go
 select count(*) from ALL_Allele where _Allele_Type_key in (847118, 847117, 847116, 847120, 847119)
 go
 
--- start: allows a fresh of a previous migration
+-- start: allows a refresh of a previous migration
 delete from VOC_Term where _Vocab_key = 93
 go
 

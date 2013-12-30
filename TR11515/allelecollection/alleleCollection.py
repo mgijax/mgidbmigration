@@ -142,7 +142,50 @@ def processJNum():
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	print 'start: processing jnumber...'
+	print 'end: processing jnumber...'
+
+def processSpecificFiles():
+
+	print 'start: processing specific file(s)...'
+
+ 	for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mutagenesis',
+			'Neuroscience Blueprint cre', 'Pleiades Promoter Project', 'Sanger miRNA knockouts']:
+
+		if provider == 'Australian PhenomeBank':
+			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Australian_PhenomeBank.txt', 'r')
+		elif provider == 'Beutler Mutagenix':
+			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Beutler_Mutagenix.txt', 'r')
+		elif provider == 'Harwell ENU Mutagenesis':
+			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Harwell_ENU_Mutagenesis.txt', 'r')
+		elif provider == 'Neuroscience Blueprint cre':
+			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Neuroscience_Blueprint_cre.txt', 'r')
+		elif provider == 'Pleiades Promoter Project':
+			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Pleiades_Promoter_Project.txt', 'r')
+		elif provider == 'Sanger miRNA knockouts':
+			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Sanger_miRNA_knockouts.txt', 'r')
+
+		newTermKey = newTerm[provider][0]
+
+		for line in inFile.readlines():
+
+        		tokens = line[:-1].split('\t')
+        		symbol = tokens[0]
+        		mgiID = tokens[1]
+
+			updateSQL = '''
+				update ALL_Allele 
+				set _Collection_key = %s
+				from ALL_Allele a, ACC_Accession aa
+				where a._Allele_key = aa._Object_key
+				and aa._MGIType_key = 11
+				and aa._LogicalDB_key = 1
+				and aa.preferred = 1
+				and aa.accID = '%s'
+				''' % (newTermKey, mgiID)
+			print updateSQL
+			db.sql(updateSQL, None)
+
+	print 'end: processing specific file(s)...'
 
 #
 #
@@ -167,7 +210,8 @@ notSpecified = newTerm['Not Specified'][0]
 # this query will only update collections that are "Not Specified"
 setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = %s and '
 
-processLDB()
-processName()
-processJNum()
+#processLDB()
+#processName()
+#processJNum()
+processSpecificFiles()
 

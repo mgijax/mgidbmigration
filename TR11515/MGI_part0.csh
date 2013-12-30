@@ -21,9 +21,13 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-# JUST FOR TESTING
+#
+# PLEASE READ!
+# FOR TESTING ONLY 
+# MAKE SURE BOTH ARE TURNED OFF FOR REAL MIGRATION
+#
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
-${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
+#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
 
 #
 # pre-migration counts
@@ -32,6 +36,9 @@ date | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
+#
+# update schema-version and public-version
+#
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
@@ -47,7 +54,7 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# what the allele types look like *before* migration
+# what the allele vocabulary/counts like *before* migration
 #
 date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-before-SQL.csh

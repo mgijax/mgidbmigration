@@ -25,6 +25,13 @@ touch ${LOG}
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
 ${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
 
+#
+# pre-migration counts
+#
+date | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+date | tee -a ${LOG}
+
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 

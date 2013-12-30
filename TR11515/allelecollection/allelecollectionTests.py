@@ -9,12 +9,6 @@
 import sys 
 import os
 import db
-import reportlib
-
-CRT = reportlib.CRT
-SPACE = reportlib.SPACE
-TAB = reportlib.TAB
-PAGE = reportlib.PAGE
 
 #
 #
@@ -38,6 +32,8 @@ for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mut
 		inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Pleiades_Promoter_Project.txt', 'r')
 	elif provider == 'Sanger miRNA knockouts':
 		inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Sanger_miRNA_knockouts.txt', 'r')
+	else:
+		inFile = open('/mgi/all/wts_projects/11500/11515/', 'r')
 
 	for line in inFile.readlines():
 

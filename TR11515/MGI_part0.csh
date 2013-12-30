@@ -100,6 +100,11 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 #
+# run cache tables
+#
+${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
+
+#
 # final tests (need full permissions
 #
 date | tee -a ${LOG}

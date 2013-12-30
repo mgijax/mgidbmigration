@@ -36,6 +36,13 @@ group by a._Allele_Type_key, t.term
 order by term
 go
 
+-- count of allele derivation
+select a._DerivationType_key, substring(t.term,1,30) as term, count(a._Derivation_key)
+from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key
+group by a._DerivationType_key, t.term
+order by term
+go
+
 -- count of allele subtypes
 select a._Term_key, substring(t.term,1,30) as term, count(a._Object_key)
 from VOC_Annot a, VOC_Term t where a._AnnotType_key = 1014 and a._Term_key = t._Term_key

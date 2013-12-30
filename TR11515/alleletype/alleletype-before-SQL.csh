@@ -50,6 +50,23 @@ select term = 'Transgenic', count(a._Allele_key)
 from ALL_Allele a, VOC_Term t where a._Allele_Type_key = t._Term_key and t.term like 'Transgenic %'
 go
 
+-- count of allele derivation
+select a._DerivationType_key, substring(t.term,1,30) as term, count(a._Derivation_key)
+from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key
+group by a._DerivationType_key, t.term
+order by term
+go
+
+-- count of allele derivation totals
+select term = 'Targeted', count(a._Derivation_key)
+from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key and t.term like 'Targeted %'
+go
+
+-- count of allele derivation totals
+select term = 'Transgenic', count(a._Derivation_key)
+from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key and t.term like 'Transgenic %'
+go
+
 EOSQL
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${BEFORELOG}

@@ -15,7 +15,7 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
-cd ${DBUTILS}/mgidbmigration/TR11515/alleletype
+cd ${DBUTILS}/mgidbmigration/TR11515/allelecollection
 
 # start a new log file for this migration, and add a datestamp
 

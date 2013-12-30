@@ -210,8 +210,8 @@ notSpecified = newTerm['Not Specified'][0]
 # this query will only update collections that are "Not Specified"
 setSQL = 'update ALL_Allele set _Collection_key = %s where _Collection_key = %s and '
 
-#processLDB()
-#processName()
-#processJNum()
+processLDB()
+processName()
+processJNum()
 processSpecificFiles()
 

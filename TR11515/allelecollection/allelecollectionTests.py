@@ -18,7 +18,9 @@ import db
 db.useOneConnection(1)
 
 for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mutagenesis',
-			'Neuroscience Blueprint cre', 'Pleiades Promoter Project', 'Sanger miRNA knockouts']:
+			'Neuroscience Blueprint cre', 'Pleiades Promoter Project', 'Sanger miRNA knockouts', 'Other']:
+
+	isOther = 0
 
 	if provider == 'Australian PhenomeBank':
 		inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Australian_PhenomeBank.txt', 'r')
@@ -33,13 +35,17 @@ for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mut
 	elif provider == 'Sanger miRNA knockouts':
 		inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Sanger_miRNA_knockouts.txt', 'r')
 	else:
-		inFile = open('/mgi/all/wts_projects/11500/11515/', 'r')
+		inFile = open('/mgi/all/wts_projects/11500/11515/AlleleCollectionTests.txt', 'r')
+		isOther = 1
 
 	for line in inFile.readlines():
 
        		tokens = line[:-1].split('\t')
        		symbol = tokens[0]
        		mgiID = tokens[1]
+
+		if isOther:
+			provider = tokens[2]
 
 		sql = '''
 			select a.symbol, t.term as outCollection
@@ -61,7 +67,7 @@ for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mut
 				if r['outCollection'] != provider:
 					value = 'fail'
 
-		print value, symbol, mgiID, provider
+		print value, symbol, mgiID, provider, r['outCollection']
 
 	inFile.close()
 

@@ -338,6 +338,8 @@ db.useOneConnection(1)
 
 attrFile = open('alleleAttribute.bcp', 'w')
 
+# use existing term keys for new terms
+# term names will be changed in the wrapper
 newTerm = {'Targeted' : 847116, 'Transgenic' : 847126}
 print '\nnewTerms....'
 print newTerm

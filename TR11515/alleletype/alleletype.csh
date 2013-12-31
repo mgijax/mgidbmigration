@@ -92,6 +92,7 @@ go
 
 -- change existing terms to "new" terms
 update VOC_Term set term = 'Targeted' where _Term_key = 847116
+go
 update VOC_Term set term = 'Transgenic' where _Term_key = 847126
 go
 

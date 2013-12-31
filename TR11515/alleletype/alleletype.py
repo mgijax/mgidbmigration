@@ -2,9 +2,13 @@
 
 '''
 #
-# 1) translate "current" allele-type to "generation" allele-type
+# Report:
+#       Enter TR # and describe report inputs/output
 #
-# 2) create vocabulary-associations between "generation" and "allele attribute (subtype)"
+# History:
+#
+# lec	01/18/99
+#	- created
 #
 '''
  
@@ -12,7 +16,6 @@ import sys
 import os
 import db
 import reportlib
-import mgi_utils
 
 CRT = reportlib.CRT
 SPACE = reportlib.SPACE
@@ -24,71 +27,7 @@ passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 db.set_sqlUser(user)
 db.set_sqlPasswordFromFile(passwordFileName)
 
-currentDate = mgi_utils.date('%m/%d/%y')
-
-alleleProcessed = []
-
-def processPrintGeneration(generationScript):
-
-	# select alleles/terms that require migration
-
-	print '\nstart: print generation...'
-
-	results = db.sql('''
-		select a.symbol, t._Term_key, t.term 
-		from VOC_Term t, ALL_Allele a
-		where t._Vocab_key = 38
-		and t.term in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
-			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
-			'Targeted (other)',
-			'Transgenic (Cre/Flp)',
-			'Transgenic (random, expressed)',
-			'Transgenic (random, gene disruption)',
-			'Transgenic (Reporter)',
-			'Transgenic (Transposase)'
-			)
-		and t._Term_key = a._Allele_Type_key
-		order by a.symbol
-		''', 'auto')
-
-	for r in results:
-
-		symbol = r['symbol']
-		termKey = r['_Term_key']
-		oldTerm = r['term']
-
-		#
-		# allele-type
-		#
-
-		newTermName = ''
-
-		if oldTerm in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
-			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
-			'Targeted (other)'):
-			newTermName = 'Targeted'
-
-		elif oldTerm in (
-			'Transgenic (Cre/Flp)',
-			'Transgenic (random, expressed)',
-			'Transgenic (random, gene disruption)',
-			'Transgenic (Reporter)',
-			'Transgenic (Transposase)'):
-			newTermName = 'Transgenic'
-
-		if len(newTermName) > 0:
-			newTermKey = newTerm[newTermName][0]
-			#print symbol, oldTerm, newTermName
-		else:
-			print 'ERROR: ' + r
-
-	print 'end: print generation...'
+generationSQL = ''
 
 def processGeneration(generationScript):
 	global generationSQL
@@ -102,11 +41,11 @@ def processGeneration(generationScript):
 		from VOC_Term t
 		where t._Vocab_key = 38
 		and t.term in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
 			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
+			'Targeted (knock-in)',
+			'Targeted (knock-out)',
 			'Targeted (other)',
+			'Targeted (Reporter)',
 			'Transgenic (Cre/Flp)',
 			'Transgenic (random, expressed)',
 			'Transgenic (random, gene disruption)',
@@ -127,11 +66,11 @@ def processGeneration(generationScript):
 		newTermName = ''
 
 		if oldTerm in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
 			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
-			'Targeted (other)'):
+			'Targeted (knock-in)',
+			'Targeted (knock-out)',
+			'Targeted (other)',
+			'Targeted (Reporter)'):
 			newTermName = 'Targeted'
 
 		elif oldTerm in (
@@ -144,57 +83,43 @@ def processGeneration(generationScript):
 
 		if len(newTermName) > 0:
 			newTermKey = newTerm[newTermName][0]
-			#print oldTerm, newTermName
 			generationSQL = generationSQL + generationScript % (newTermKey, termKey)
 		else:
 			print 'ERROR: ' + r
 
 	print 'end: process generation...'
 
-def processIKMC():
-	global alleleProcessed
-	global newAnnotKey
+def processAttribute():
 
-	# IKMC alleles (iin ldb group):
+	# special code to handle knock-in / allele-attribute
+
+	hasDerivation = []
+	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1034', 'auto')
+	for r in results:
+		hasDerivation.append(r['_Object_key'])
+
+	hasInducible = []
+	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1032', 'auto')
+	for r in results:
+		hasInducible.append(r['_Object_key'])
+
+	# IKMC alleles
 	# 125 KOMP-Regeneron-Project
 	# 126 KOMP-CSD-Project
 	# 138 EUCOMM projects
 	# 143 NorCOMM-projects
-	# + add "<tm%(" (tm1a, tm1b, etc.)
-	#
-	# not in ldb group
-	# + add "<tm[0-9][a-e](" (tm1a, tm1b, etc.)
-	#
 
 	print '\nstart: processing IKMC alleles...'
 
 	results = db.sql('''
-		(
-		select a.symbol, a._Allele_key, t._Term_key, t.term
-		from ALL_Allele a, VOC_Term t
+		select a.symbol, a._Allele_key, aa._LogicalDB_key, t._Term_key, t.term, ldb.name as ldbname
+		from ALL_Allele a, VOC_Term t, ACC_Accession aa, ACC_LogicalDB ldb
 		where t._Vocab_key = 38
-		and a.symbol like '%<tm%(%'
+		and a._Allele_key = aa._Object_key
+		and aa._MGIType_key = 11
+		and aa._LogicalDB_key in (125, 126, 138, 143)
+		and aa._LogicalDB_key = ldb._LogicalDB_key
 		and t._Term_key = a._Allele_Type_key
-		and exists (select 1 from ACC_Accession aa
-			where a._Allele_key = aa._Object_key
-			and aa._MGIType_key = 11
-			and aa._LogicalDB_key in (125, 126, 138, 143)
-			)
-		)
-		union
-		(
-		select a.symbol, a._Allele_key, t._Term_key, t.term
-		from ALL_Allele a, VOC_Term t
-		where t._Vocab_key = 38
-		and a._Allele_Type_key = t._Term_key
-		and t._Term_key = a._Allele_Type_key
-		and a.symbol like '%<tm[0-9][a-e](%'
-		and not exists (select 1 from ACC_Accession aa
-			where a._Allele_key = aa._Object_key
-			and aa._MGIType_key = 11
-			and aa._LogicalDB_key in (125, 126, 138, 143)
-			)
-		)
 		order by a.symbol
 		''', 'auto')
 
@@ -204,90 +129,99 @@ def processIKMC():
 		aKey = r['_Allele_key']
 		termKey = r['_Term_key']
 		oldTerm = r['term']
-
-		alleleProcessed.append(aKey)
+		ldb = r['_LogicalDB_key']
+		ldbName = r['ldbname']
 
 		newAttrName = ''
 
-		#
-		# tmX.2() => Null/knockout
-		# tmXd() => Null/knockout
-		#
-		if (symbol.find('.2(') != -1) \
-			or (symbol.find('d(') != -1):
-			newAttrName = 'Null/knockout'
+		if (ldb == 125 and symbol.find('tm1.2(KOMP)Vlcg>') != -1) or \
+		   (ldb == 126 and symbol.find('tm1d(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1d(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1d(EUCOMM)Hmgu>') != -1):
+			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
-		#
-		# tmXa() => Null/knockout, Reporter, Conditional ready
-		#
-		elif (symbol.find('a(') != -1):
-			newAttrName = 'Null/knockout'
+		elif (ldb == 143 and symbol.find('(NCOM)') != -1) or \
+		   (ldb == 125 and symbol.find('tm1(KOMP)Vlcg>') != -1) or \
+		   (ldb == 125 and symbol.find('tm1.1(KOMP)Vlcg>') != -1) or \
+		   (ldb == 126 and symbol.find('tm1b(KOMP)Wtsi>') != -1) or \
+		   (ldb == 126 and symbol.find('tm1e(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1b(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1b(EUCOMM)Hmgu>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1e(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1e(EUCOMM)Hmgu>') != -1):
+			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 			newAttrName = 'Reporter'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
-			newAttrName = 'Conditional ready'
+
+		elif (ldb == 126 and symbol.find('tm1a(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1a(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1a(EUCOMM)Hmgu>') != -1):
+			newAttrName = 'Null (knock-out)'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
-		#
-		# tmXc() => Conditional ready
-		#
-		elif (symbol.find('c(') != -1):
-			newAttrName = 'Conditional ready'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
-		#
-		# the rest:
-		# tmX() => Null/knockout, Reporter
-		# tmX.1() => Null/knockout, Reporter
-		# tmXb() => Null/knockout, Reporter
-		# tmXe() => Null/knockout, Reporter
-		#
-		else:
-			newAttrName = 'Null/knockout'
-			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 			newAttrName = 'Reporter'
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-	print 'end: processing IKMC alleles...'
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
+			newAttrName = 'Conditional Ready'
+			newAttrKey = newAttr[newAttrName][0]
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
-def processAttribute():
-	global alleleProcessed
-	global newAnnotKey
+		elif (ldb == 126 and symbol.find('tm1c(KOMP)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1c(EUCOMM)Wtsi>') != -1) or \
+		   (ldb == 138 and symbol.find('tm1c(EUCOMM)Hmgu>') != -1):
+			newAttrName = 'Conditional Ready'
+			newAttrKey = newAttr[newAttrName][0]
+			attrFile.write(symbol + TAB + \
+				ldbName + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
-	# special code to handle knock-in / allele-attribute
 
-	hasDriver = []
-	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1034', 'auto')
-	for r in results:
-		hasDriver.append(r['_Object_key'])
-
-	hasInducible = []
-	results = db.sql('select _Object_key from MGI_Note where _MGIType_key = 11 and _NoteType_key = 1032', 'auto')
-	for r in results:
-		hasInducible.append(r['_Object_key'])
+	print 'end: processing IKMC alleles...\n'
 
 	#
 	# non-IKMC alleles
 	#
 
-	print '\nstart: processing non-IKMC alleles...'
+	print 'start: processing non-IKMC alleles...'
 
 	results = db.sql('''
 		select a.symbol, a._Allele_key, t._Term_key, t.term
@@ -298,11 +232,11 @@ def processAttribute():
 				and aa._MGIType_key = 11
 				and aa._LogicalDB_key in (125, 126, 138, 143))
 		and t.term in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
 			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
+			'Targeted (knock-in)',
+			'Targeted (knock-out)',
 			'Targeted (other)',
+			'Targeted (Reporter)',
 			'Transgenic (Cre/Flp)',
 			'Transgenic (random, expressed)',
 			'Transgenic (random, gene disruption)',
@@ -319,36 +253,29 @@ def processAttribute():
 		termKey = r['_Term_key']
 		oldTerm = r['term']
 
-		if aKey in alleleProcessed:
-			continue
-
 		newAttrName = ''
-
 		if oldTerm in ('Targeted (knock-out)'):
-			newAttrName = 'Null/knockout'
-
+			newAttrName = 'Null (knock-out)'
 		elif oldTerm in ('Targeted (Floxed/Frt)'):
-			newAttrName = 'Conditional ready'
-
+			newAttrName = 'Conditional Ready'
 		elif oldTerm in ('Targeted (Reporter)'):
 			newAttrName = 'Reporter'
-
 		elif oldTerm in ('Transgenic (random, expressed)'):
 			newAttrName = 'Inserted expressed sequence'
-
 		elif oldTerm in ('Transgenic (Cre/Flp)'):
 			newAttrName = 'Inserted expressed sequence'
-
 		elif oldTerm in ('Transgenic (Reporter)'):
 			newAttrName = 'Inserted expressed sequence'
-
 		elif oldTerm in ('Transgenic (Transposase)'):
 			newAttrName = 'Inserted expressed sequence'
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
+			attrFile.write(symbol + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
 		# do another one...
 		newAttrName = ''
@@ -361,45 +288,46 @@ def processAttribute():
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
+			attrFile.write(symbol + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
 		#
-		# if term == 'Targeted (knock-in)'
-		# if term == 'Transgenic (Cre/Flp)'
+		# if term == 'Targeted (knock-in)':
 		#
-		# 	if driver note, 
-		#		then add 'Inserted expressed sequence' and 'Recombinase'
+		# 	if driver note, then add 'Inserted expressed sequence'
+		#		and 'Recombinase'
 		#
-		# 	if inducible note , then add 'Inducible''
+		# 	elif inducible note , then add 'Inducible''
 		#
 
-		if oldTerm in ('Targeted (knock-in)'):
-			if aKey in hasDriver:
-				newAttrName = 'Recombinase'
-				newAttrKey = newAttr[newAttrName][0]
-				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-				newAnnotKey += 1
-	
-				newAttrName = 'Inserted expressed sequence'
-				newAttrKey = newAttr[newAttrName][0]
-				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-				newAnnotKey += 1
+		if oldTerm in ('Targeted (knock-in)') and aKey in hasDerivation:
+			newAttrName = 'Recombinase'
+			newAttrKey = newAttr[newAttrName][0]
+			attrFile.write(symbol + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
+			newAttrName = 'Inserted expressed sequence'
+			newAttrKey = newAttr[newAttrName][0]
+			attrFile.write(symbol + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
+		elif oldTerm in ('Targeted (knock-in)') and aKey in hasInducible:
+			newAttrName = 'Inducible'
+			newAttrKey = newAttr[newAttrName][0]
+			attrFile.write(symbol + TAB + \
+				oldTerm + TAB + \
+				str(newAttrName) + TAB + \
+				str(termKey) + TAB + \
+				str(newAttrKey) +  CRT)
 
-			if aKey in hasInducible:
-				newAttrName = 'Inducible'
-				newAttrKey = newAttr[newAttrName][0]
-				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-				newAnnotKey += 1
-
-		if oldTerm in ('Transgenic (Cre/Flp)'):
-			if aKey in hasInducible:
-				newAttrName = 'Inducible'
-				newAttrKey = newAttr[newAttrName][0]
-				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-				newAnnotKey += 1
-
-	print 'end: processing non-IKMC alleles...'
+	print 'end: processing non-IKMC alleles...\n'
 
 #
 #
@@ -408,9 +336,7 @@ def processAttribute():
 
 db.useOneConnection(1)
 
-#
-# translate allele-type => allele-generation-type
-#
+attrFile = open('alleleAttribute.bcp', 'w')
 
 newTerm = {}
 results = db.sql('''select _Term_key, term from VOC_Term 
@@ -424,7 +350,10 @@ print '\nnewTerms....'
 print newTerm
 
 newAttr = {}
-results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 93', 'auto')
+results = db.sql('''select t._Term_key, t.term from VOC_Term t, VOC_Vocab v
+	where v.name = 'Allele Attribute'
+	and v._Vocab_key = t._Vocab_key
+	''', 'auto')
 for r in results:
 	key = r['term']
 	value = r['_Term_key']
@@ -436,33 +365,14 @@ print newAttr
 alleleGeneration = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s\n'
 derivationGeneration = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s\n'
 
-generationSQL = ''
-processPrintGeneration(alleleGeneration)
 processGeneration(alleleGeneration)
 processGeneration(derivationGeneration)
-
-#
-# allele sub-types associations
-#
-
-results = db.sql('select max(_Annot_key) + 1 as newAnnotKey from VOC_Annot', 'auto')
-newAnnotKey = results[0]['newAnnotKey']
-
-# primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
-attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s&=&%s#=#\n'
-
-attrFileBCP = open('VOC_Annot.bcp', 'w')
-processIKMC()
 processAttribute()
-attrFileBCP.close()
 
-# must be done at the end
-# we need to *before* vocabulary to still be in place
-# so that the attribute-migration work correctly
-#print generationSQL
-print '\nstart: executing update...'
-db.sql(generationSQL, None)
-print 'end: executing update...'
+print generationSQL
+#db.sql(generationSQL, None)
+
+attrFile.close()
 
 db.useOneConnection(0)
 

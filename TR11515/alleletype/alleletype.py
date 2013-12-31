@@ -82,7 +82,7 @@ def processGeneration(generationScript):
 			newTermName = 'Transgenic'
 
 		if len(newTermName) > 0:
-			newTermKey = newTerm[newTermName][0]
+			newTermKey = newTerm[newTermName]
 			generationSQL = generationSQL + generationScript % (newTermKey, termKey)
 		else:
 			print 'ERROR: ' + r
@@ -338,14 +338,7 @@ db.useOneConnection(1)
 
 attrFile = open('alleleAttribute.bcp', 'w')
 
-newTerm = {}
-results = db.sql('''select _Term_key, term from VOC_Term 
-	where _Vocab_key = 38 and term in ('Targeted', 'Transgenic')''', 'auto')
-for r in results:
-	key = r['term']
-	value = r['_Term_key']
-	newTerm[key] = []
-	newTerm[key].append(value)
+newTerm = {'Targeted' : 847116, 'Transgenic' : 847126}
 print '\nnewTerms....'
 print newTerm
 

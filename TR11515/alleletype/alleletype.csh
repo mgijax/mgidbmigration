@@ -11,6 +11,10 @@
 #	- ALL_Allele._Allele_Type_key
 #	- ALL_CellLine_Derivation._DerivationType_key
 #
+# _Allele_Type_key = 847116, 'Targeted (knock-out)'  ==> "Targeted"
+#
+# _Allele_Type_key = 847126, 'Transgenic (random, gene disruption)'  ==> "Transgenic"
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -56,10 +60,8 @@ go
 declare @nextTermKey integer
 select @nextTermKey = max(_Term_key) + 1 from VOC_Term
 
-insert into VOC_Term values (@nextTermKey, 38, 'Targeted', null, 21, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@nextTermKey+2, 38, 'Transgenic', null, 22, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@nextTermKey+3, 38, 'Endonuclease-mediated', null, 23, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@nextTermKey+4, 38, 'Other (see notes)', null, 24, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey, 38, 'Endonuclease-mediated', null, 21, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey+2, 38, 'Other (see notes)', null, 22, 0, 1001, 1001, getdate(), getdate())
 
 go
 
@@ -86,6 +88,11 @@ date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
+go
+
+-- change existing terms to "new" terms
+update VOC_Term set term = 'Targeted' where _Term_key = 847116
+update VOC_Term set term = 'Transgenic' where _Term_key = 847126
 go
 
 -- delete old VOC_Term._Vocab_key = 38 terms that are no longer used

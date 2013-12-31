@@ -42,6 +42,23 @@ ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
+# run some qc/public reports using existing reports and existing database
+# we don't need to do this for the release-testing
+#
+setenv PUBRPTS $MGICONFIG/reports_db-tr11515-BP
+source ${PUBRPTS}/Configuration
+${PUBRPTS}/weekly_postgres/MGI_Mutations.py
+${PUBRPTS}/weekly_sybase/ALL_CellLine_Targeted.py
+${PUBRPTS}/weekly_sybase/MGI_Knockout.py
+cp ${PUBREPORTDIR}/output/MGI_Mutations.html ${PUBREPORTDIR}/output/MGI_Mutations.html.before
+cp ${PUBREPORTDIR}/output/MGI_Mutations.rpt ${PUBREPORTDIR}/output/MGI_Mutations.rpt.before
+cp ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt.before
+cp ${PUBREPORTDIR}/output/MGI_Knockout_Full.rpt ${PUBREPORTDIR}/output/MGI_Knockout_Full.rpt.before
+cp ${PUBREPORTDIR}/output/MGI_Knockout_Full.html ${PUBREPORTDIR}/output/MGI_Knockout_Full.html.before
+cp ${PUBREPORTDIR}/output/MGI_Knockout_NotPublic.rpt ${PUBREPORTDIR}/output/MGI_Knockout_NotPublic.rpt.before
+cp ${PUBREPORTDIR}/output/MGI_Knockout_Public.rpt ${PUBREPORTDIR}/output/MGI_Knockout_Public.rpt.before
+
+#
 # update schema-version and public-version
 #
 date | tee -a ${LOG}

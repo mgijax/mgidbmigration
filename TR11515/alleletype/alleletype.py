@@ -11,13 +11,7 @@
 import sys 
 import os
 import db
-import reportlib
 import mgi_utils
-
-CRT = reportlib.CRT
-SPACE = reportlib.SPACE
-TAB = reportlib.TAB
-PAGE = reportlib.PAGE
 
 user = os.environ['MGD_DBUSER']
 passwordFileName = os.environ['MGD_DBPASSWORDFILE']

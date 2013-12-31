@@ -345,10 +345,7 @@ print '\nnewTerms....'
 print newTerm
 
 newAttr = {}
-results = db.sql('''select t._Term_key, t.term from VOC_Term t, VOC_Vocab v
-	where v.name = 'Allele Attribute'
-	and v._Vocab_key = t._Vocab_key
-	''', 'auto')
+results = db.sql('select t._Term_key, t.term from VOC_Term t where t._Vocab_key = 93', 'auto')
 for r in results:
 	key = r['term']
 	value = r['_Term_key']

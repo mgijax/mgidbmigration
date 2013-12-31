@@ -370,7 +370,7 @@ processGeneration(derivationGeneration)
 processAttribute()
 
 print generationSQL
-#db.sql(generationSQL, None)
+db.sql(generationSQL, None)
 
 attrFile.close()
 

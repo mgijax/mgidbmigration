@@ -1,13 +1,7 @@
 #!/bin/csh -fx
 
 #
-# Migration for TR11515
-# (part 0 - load new allele stuff
-#
-#
-# for Dave:
-# vocassociationload - obsolete
-# exporter
+# Migration for TR11515/collections only
 #
 
 ###----------------------###
@@ -42,41 +36,10 @@ ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
-# update schema-version and public-version
-#
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-update MGI_dbinfo set 
-        schema_version = '5-1-8', 
-        public_version = 'MGI 5.18'
-go
-
-EOSQL
-date | tee -a ${LOG}
-
-#
-# what the allele vocabulary/counts like *before* migration
-#
-date | tee -a ${LOG}
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-before-SQL.csh
-date | tee -a ${LOG}
-
-#
 # allele collection
 #
 date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
-# allele type
-#
-date | tee -a ${LOG}
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 ###-----------------------###
@@ -87,17 +50,6 @@ date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
-go
-
---
--- drop obsoleted tables which were used by the front-end only
---
---drop table MGI_VocAssociation
---go
---drop table MGI_VocAssociationType
---go
-
-drop table ALL_Allele_Old
 go
 
 exec MGI_Table_Column_Cleanup
@@ -113,16 +65,10 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 #
-# run cache tables
-#
-${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
-
-#
 # final tests (need full permissions
 #
 date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/allelecollection/allelecollectionTests.csh
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

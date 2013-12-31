@@ -4,6 +4,10 @@
 # Migration for TR11423
 # (part 0 - load new HDP annotation type & data)
 #
+#
+# for Dave:
+# vocassociationload - obsolete
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -83,6 +87,14 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
+
+--
+-- drop obsoleted tables which were used by the front-end only
+--
+--drop table MGI_VocAssociation
+--go
+--drop table MGI_VocAssociationType
+--go
 
 drop table ALL_Allele_Old
 go

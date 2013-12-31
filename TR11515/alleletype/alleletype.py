@@ -22,68 +22,6 @@ currentDate = mgi_utils.date('%m/%d/%y')
 
 alleleProcessed = []
 
-def processPrintGeneration(generationScript):
-
-	# select alleles/terms that require migration
-
-	print '\nstart: print generation...'
-
-	results = db.sql('''
-		select a.symbol, t._Term_key, t.term 
-		from VOC_Term t, ALL_Allele a
-		where t._Vocab_key = 38
-		and t.term in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
-			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
-			'Targeted (other)',
-			'Transgenic (Cre/Flp)',
-			'Transgenic (random, expressed)',
-			'Transgenic (random, gene disruption)',
-			'Transgenic (Reporter)',
-			'Transgenic (Transposase)'
-			)
-		and t._Term_key = a._Allele_Type_key
-		order by a.symbol
-		''', 'auto')
-
-	for r in results:
-
-		symbol = r['symbol']
-		termKey = r['_Term_key']
-		oldTerm = r['term']
-
-		#
-		# allele-type
-		#
-
-		newTermName = ''
-
-		if oldTerm in (
-			'Targeted (knock-out)',
-			'Targeted (knock-in)',
-			'Targeted (Floxed/Frt)',
-			'Targeted (Reporter)',
-			'Targeted (other)'):
-			newTermName = 'Targeted'
-
-		elif oldTerm in (
-			'Transgenic (Cre/Flp)',
-			'Transgenic (random, expressed)',
-			'Transgenic (random, gene disruption)',
-			'Transgenic (Reporter)',
-			'Transgenic (Transposase)'):
-			newTermName = 'Transgenic'
-
-		if len(newTermName) > 0:
-			newTermKey = newTerm[newTermName][0]
-			#print symbol, oldTerm, newTermName
-		else:
-			print 'ERROR: ' + r
-
-	print 'end: print generation...'
-
 def processGeneration(generationScript):
 	global generationSQL
 
@@ -137,7 +75,7 @@ def processGeneration(generationScript):
 			newTermName = 'Transgenic'
 
 		if len(newTermName) > 0:
-			newTermKey = newTerm[newTermName][0]
+			newTermKey = newTerm[newTermName]
 			#print oldTerm, newTermName
 			generationSQL = generationSQL + generationScript % (newTermKey, termKey)
 		else:
@@ -426,7 +364,6 @@ alleleGeneration = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Ty
 derivationGeneration = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s\n'
 
 generationSQL = ''
-processPrintGeneration(alleleGeneration)
 processGeneration(alleleGeneration)
 processGeneration(derivationGeneration)
 

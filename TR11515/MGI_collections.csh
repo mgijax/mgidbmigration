@@ -42,6 +42,14 @@ date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
+#
+# create new vocabulary
+#
+date | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config 
+| tee -a ${LOG}
+date | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

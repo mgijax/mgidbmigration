@@ -80,6 +80,7 @@ ${MGD_DBSCHEMADIR}/index/ALL_Allele_create.object | tee -a ${COLLLOG}
 ${MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a ${COLLLOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${COLLLOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_drop.object | tee -a ${COLLLOG}
 
 ${MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a ${COLLLOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${COLLLOG}
@@ -91,6 +92,7 @@ ${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${COLLLOG}
 ${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${COLLLOG}
 
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${COLLLOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a ${COLLLOG}
 
 #
 # migrate

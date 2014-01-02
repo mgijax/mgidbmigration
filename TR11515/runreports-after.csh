@@ -14,9 +14,14 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
+# start a new log file for this migration, and add a datestamp
+
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
+
 #
-# run some qc/public reports using existing reports and existing database
-# we don't need to do this for the release-testing
+# public reports
 #
 
 source ${PUBRPTS}/Configuration
@@ -27,6 +32,25 @@ cd ${PUBRPTS}/weekly_postgres
 cd ${PUBRPTS}/weekly_sybase
 ./ALL_CellLine_Targeted.py
 ./MGI_Knockout.py
+
+#
+# qc reports
+#
+
+source ${QCRPTS}/Configuration
+
+cd ${QCRPTS}/mgd
+
+foreach i (ALL_NoMCL.sql)
+reportisql.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
+end
+
+cd ${QCRPTS}/monthly
+./GXD_Transgenic.py
+
+cd ${QCRPTS}/weekly
+./ALL_MolNotesNoMP.py
+./ALL_Progress.py
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

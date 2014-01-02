@@ -14,6 +14,12 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
+# start a new log file for this migration, and add a datestamp
+
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
+
 #
 # run some qc/public reports using existing reports and existing database
 # we don't need to do this for the release-testing

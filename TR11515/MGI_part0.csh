@@ -42,23 +42,6 @@ ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
-# run some qc/public reports using existing reports and existing database
-# we don't need to do this for the release-testing
-#
-#setenv PUBRPTS ${MGI_LIVE}/reports_db-tr11515-BP
-#source ${PUBRPTS}/Configuration
-#${PUBRPTS}/weekly_postgres/MGI_Mutations.py
-#${PUBRPTS}/weekly_sybase/ALL_CellLine_Targeted.py
-#${PUBRPTS}/weekly_sybase/MGI_Knockout.py
-#cp ${PUBREPORTDIR}/output/MGI_Mutations.html ${PUBREPORTDIR}/output/MGI_Mutations.html.before
-#cp ${PUBREPORTDIR}/output/MGI_Mutations.rpt ${PUBREPORTDIR}/output/MGI_Mutations.rpt.before
-#cp ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt.before
-#cp ${PUBREPORTDIR}/output/MGI_Knockout_Full.rpt ${PUBREPORTDIR}/output/MGI_Knockout_Full.rpt.before
-#cp ${PUBREPORTDIR}/output/MGI_Knockout_Full.html ${PUBREPORTDIR}/output/MGI_Knockout_Full.html.before
-#cp ${PUBREPORTDIR}/output/MGI_Knockout_NotPublic.rpt ${PUBREPORTDIR}/output/MGI_Knockout_NotPublic.rpt.before
-#cp ${PUBREPORTDIR}/output/MGI_Knockout_Public.rpt ${PUBREPORTDIR}/output/MGI_Knockout_Public.rpt.before
-
-#
 # update schema-version and public-version
 #
 date | tee -a ${LOG}
@@ -73,6 +56,15 @@ update MGI_dbinfo set
 go
 
 EOSQL
+date | tee -a ${LOG}
+
+#
+# run some qc/public reports before migration
+# use *before* report changes
+# comment out when running release it-self
+#
+date | tee -a ${LOG}
+./runreports-before.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
@@ -140,6 +132,15 @@ ${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/allelecollection/allelecollectionTests.csh
 ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
+date | tee -a ${LOG}
+
+#
+# run some qc/public reports after migration
+# use *after* report changes
+# comment out when running release it-self
+#
+date | tee -a ${LOG}
+./runreports-after.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

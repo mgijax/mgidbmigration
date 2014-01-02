@@ -78,6 +78,13 @@ where a._Allele_Type_key = t._Term_key
 group by a._Allele_Type_key, t.term
 go
 
+-- allele categories 40, 41
+select substring(tt.name,1,20) as name, t._Term_key, substring(t.term,1,30) as term 
+from VOC_Term t, VOC_Vocab tt 
+where t._Vocab_key in (40,41) and t._Vocab_key = tt._Vocab_key
+order by name, term
+go
+
 EOSQL
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${BEFORELOG}

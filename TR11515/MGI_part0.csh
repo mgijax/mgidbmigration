@@ -59,15 +59,6 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# run some qc/public reports before migration
-# use *before* report changes
-# comment out when running release it-self
-#
-date | tee -a ${LOG}
-./runreports-before.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
 # what the allele vocabulary/counts like *before* migration
 #
 date | tee -a ${LOG}
@@ -78,7 +69,7 @@ date | tee -a ${LOG}
 # allele collection
 #
 date | tee -a ${LOG}
-${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.csh | tee -a ${LOG}
+./MGI_collections.csh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #

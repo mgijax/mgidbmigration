@@ -48,9 +48,6 @@ select count(*) from ALL_Allele where _Allele_Type_key in (847118, 847117, 84711
 go
 
 -- start: allows a refresh of a previous migration
-delete from VOC_Term where _Vocab_key = 93
-go
-
 delete from VOC_Term where _Vocab_key = 38 and sequenceNum > 20
 go
 -- end: allows a fresh of a previous migration
@@ -71,9 +68,9 @@ date | tee -a ${LOG}
 #
 # create new vocabulary
 #
-date | tee -a ${LOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 #
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type

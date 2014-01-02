@@ -67,6 +67,17 @@ select term = 'Transgenic', count(a._Derivation_key)
 from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key and t.term like 'Transgenic %'
 go
 
+-- count of all_cre_cache
+select count(*) from ALL_Cre_Cache
+go
+
+-- count of all_cre_cache/allele types
+select t.term, count(a._Allele_key)
+from ALL_Cre_Cache a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+group by a._Allele_Type_key, t.term
+go
+
 EOSQL
 
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${BEFORELOG}

@@ -121,7 +121,6 @@ ${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 # final tests (need full permissions
 #
 date | tee -a ${LOG}
-${DBUTILS}/mgidbmigration/TR11515/allelecollection/allelecollectionTests.csh
 ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
 date | tee -a ${LOG}
 

@@ -77,6 +77,17 @@ where a._Collection_key = t._Term_key
 group by a._Collection_key, t.term
 go
 
+-- count of all_cre_cache
+select count(*) from ALL_Cre_Cache
+go
+
+-- count of all_cre_cache/allele types
+select t.term, count(a._Allele_key)
+from ALL_Cre_Cache a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+group by a._Allele_Type_key, t.term
+go
+
 EOSQL
 
 date | tee -a ${AFTERLOG}

@@ -42,6 +42,10 @@ where a._Collection_key = t._Term_key
 group by a._Collection_key, t.term
 go
 
+-- allele subtype/attribute vocabulary
+select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 93 order by term
+go
+
 EOSQL
 
 ###-----------------------###

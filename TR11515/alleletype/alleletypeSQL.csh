@@ -31,10 +31,6 @@ go
 select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 38 order by term
 go
 
--- allele subtype/attribute vocabulary
-select _Term_key, substring(term,1,50) from VOC_Term where _Vocab_key = 93 order by term
-go
-
 -- not every allele has a subtype/attribute
 select count(*)
 from ALL_Allele a

@@ -66,13 +66,6 @@ ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-before-SQL.csh
 date | tee -a ${LOG}
 
 #
-# allele collection
-#
-date | tee -a ${LOG}
-./MGI_collections.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
 # allele type
 #
 date | tee -a ${LOG}
@@ -99,9 +92,6 @@ go
 delete from VOC_Term where _Vocab_key in (40,41)
 go
 delete from VOC_Vocab where _Vocab_key in (40,41)
-go
-
-drop table ALL_Allele_Old
 go
 
 exec MGI_Table_Column_Cleanup

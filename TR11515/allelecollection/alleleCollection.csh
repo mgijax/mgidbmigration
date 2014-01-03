@@ -72,6 +72,12 @@ _CreatedBy_key, _ModifiedBy_key, _ApprovedBy_key, approval_date, creation_date, 
 from ALL_Allele_Old
 go
 
+exec VOC_reorderTerms 92
+go
+
+exec VOC_reorderTerms 93
+go
+
 EOSQL
 date | tee -a ${COLLLOG}
 

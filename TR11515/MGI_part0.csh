@@ -89,9 +89,19 @@ go
 --go
 --drop table MGI_VocAssociationType
 --go
-delete from VOC_Term where _Vocab_key in (40,41)
+--delete from VOC_Term where _Vocab_key in (40,41)
+--go
+--delete from VOC_Vocab where _Vocab_key in (40,41)
+--go
+
+delete MGI_VocAssociation 
+from MGI_VocAssociation mv 
+where not exists (select 1 from VOC_Term t where mv._Term_key_1 = t._Term_key)
 go
-delete from VOC_Vocab where _Vocab_key in (40,41)
+
+delete MGI_VocAssociation 
+from MGI_VocAssociation mv 
+where not exists (select 1 from VOC_Term t where mv._Term_key_2 = t._Term_key)
 go
 
 exec MGI_Table_Column_Cleanup
@@ -103,12 +113,12 @@ date | tee -a ${LOG}
 #
 # due to drop of MGI_VocAssociation and vocab 40,41
 #
-${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Vocab_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Vocab_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/VOC_Vocab_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/VOC_Vocab_create.object | tee -a ${LOG}
 
 #
 # set permissions & counts

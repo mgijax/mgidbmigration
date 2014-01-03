@@ -4,7 +4,6 @@
 # Migration for TR11515/Allele Type
 #
 # Allele Type: _Vocab_key = 38
-# Allele Subtype: _Vocab_key = 93
 # Allele/Subtype annotation: _AnnotType_key = 1014
 #
 # * migration existing _Vocab_key = 38 to new terms

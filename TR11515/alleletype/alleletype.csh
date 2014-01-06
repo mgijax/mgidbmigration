@@ -10,9 +10,16 @@
 #	- ALL_Allele._Allele_Type_key
 #	- ALL_CellLine_Derivation._DerivationType_key
 #
-# _Allele_Type_key = 847116, 'Targeted (knock-out)'  ==> "Targeted"
-#
-# _Allele_Type_key = 847126, 'Transgenic (random, gene disruption)'  ==> "Transgenic"
+# 847116 Targeted (knock-out)                 847116 Targeted
+# 847117 Targeted (knock-in)                  
+# 847118 Targeted (Floxed/Frt)                
+# 847119 Targeted (Reporter)                  
+# 847120 Targeted (other)                     
+# 847126 Transgenic (random, gene disru       847126 Transgenic
+# 847127 Transgenic (random, expressed)
+# 847128 Transgenic (Cre/Flp)        
+# 847129 Transgenic (Reporter)       
+# 2327160 Transgenic (Transposase)   
 #
 
 ###----------------------###

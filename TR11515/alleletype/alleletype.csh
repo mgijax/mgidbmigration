@@ -1,4 +1,4 @@
-#!/bin/csh -fx
+#!/bin/csh -f
 
 #
 # Migration for TR11515/Allele Type

@@ -30,23 +30,11 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${COLLLOG}
 use ${MGD_DBNAME}
 go
 
-delete from VOC_Term where _Vocab_key = 92
-go
-
-delete from VOC_Term where _Vocab_key = 93
-go
-
 sp_rename ALL_Allele, ALL_Allele_Old
 go
 
 EOSQL
 date | tee -a ${COLLLOG}
-
-#
-# create new vocabulary
-#
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${COLLLOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
 
 #
 # schema
@@ -70,12 +58,6 @@ _Transmission_key, @collectionKey, symbol, name, nomenSymbol,
 isWildType, isExtinct, isMixed,
 _CreatedBy_key, _ModifiedBy_key, _ApprovedBy_key, approval_date, creation_date, modification_date
 from ALL_Allele_Old
-go
-
-exec VOC_reorderTerms 92
-go
-
-exec VOC_reorderTerms 93
 go
 
 EOSQL

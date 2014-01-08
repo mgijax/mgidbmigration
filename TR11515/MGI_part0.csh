@@ -59,6 +59,13 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# allele collection
+#
+date | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+#
 # what the allele vocabulary/counts like *before* migration
 #
 date | tee -a ${LOG}
@@ -104,6 +111,9 @@ from MGI_VocAssociation mv
 where not exists (select 1 from VOC_Term t where mv._Term_key_2 = t._Term_key)
 go
 
+drop table ALL_Allele_Old
+go
+
 exec MGI_Table_Column_Cleanup
 go
 
@@ -130,6 +140,13 @@ ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 # run cache tables
 #
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
+
+#
+# final tests (need full permissions
+#
+date | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/allelecollection/allelecollectionTests.csh
+date | tee -a ${LOG}
 
 #
 # final tests (need full permissions

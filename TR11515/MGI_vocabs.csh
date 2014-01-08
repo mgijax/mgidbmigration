@@ -28,8 +28,8 @@ touch ${LOG}
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
 #${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /lindon/sybase/mgd.backup
 
-date | tee -a ${COLLLOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${COLLLOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
@@ -41,12 +41,12 @@ delete from VOC_Term where _Vocab_key = 93
 go
 
 EOSQL
-date | tee -a ${COLLLOG}
+date | tee -a ${LOG}
 
 #
 # 92 - allele collection
 #
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${COLLLOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/allelecollection/alleleCollection.config | tee -a ${LOG}
 
 #
 # 93 - allele subtypes

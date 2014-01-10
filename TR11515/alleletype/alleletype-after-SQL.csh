@@ -82,11 +82,11 @@ select count(*) from ALL_Cre_Cache
 go
 
 -- count of all_cre_cache/allele types
---select t.term, count(a._Allele_key)
---from ALL_Cre_Cache a, VOC_Term t
---where a._Allele_Type_key = t._Term_key
---group by a._Allele_Type_key, t.term
---go
+select t.term, count(a._Allele_key)
+from ALL_Cre_Cache a, VOC_Term t
+where a._Allele_Type_key = t._Term_key
+group by a._Allele_Type_key, t.term
+go
 
 -- allele categories 40, 41 (should be 0)
 select substring(tt.name,1,20) as name, t._Term_key, substring(t.term,1,30) as term 

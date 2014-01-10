@@ -116,6 +116,12 @@ go
 EOSQL
 date | tee -a ${LOG}
 
+
+#
+# run cache tables
+#
+${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
+
 # verify migration
 date | tee -a ${LOG}
 echo 'start: running migration reports...'

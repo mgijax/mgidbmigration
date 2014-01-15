@@ -116,7 +116,6 @@ go
 EOSQL
 date | tee -a ${LOG}
 
-
 #
 # run cache tables
 #
@@ -145,6 +144,11 @@ date | tee -a ${LOG}
 #
 grep "^ Targeted" alleletype-before-SQL.csh.log
 grep "Targeted" alleletype-after-SQL.csh.log
+
+#
+# update/run MGI_Statistics
+#
+./alleletype-stats.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

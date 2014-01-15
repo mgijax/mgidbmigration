@@ -133,6 +133,9 @@ go
 select count(*) from VOC_Annot where _AnnotType_key = 1014
 go
 
+select * from MGI_StatisticSql where sqlChunk like '%Allele_Type%'
+go
+
 EOSQL
 
 # should match last count

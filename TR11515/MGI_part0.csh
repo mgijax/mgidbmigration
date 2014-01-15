@@ -4,8 +4,12 @@
 # Migration for TR11515
 # (part 0 - load new allele stuff
 #
+# mgidbmigration
+# mgddbschema
+# reports_db
+# qcreports_db
 #
-# for Dave:
+# allcacheload - add subtype?
 # vocassociationload - obsolete
 # exporter
 #
@@ -92,14 +96,14 @@ go
 --
 -- drop obsoleted tables which were used by the front-end only
 --
---drop table MGI_VocAssociation
---go
---drop table MGI_VocAssociationType
---go
---delete from VOC_Term where _Vocab_key in (40,41)
---go
---delete from VOC_Vocab where _Vocab_key in (40,41)
---go
+drop table MGI_VocAssociation
+go
+drop table MGI_VocAssociationType
+go
+delete from VOC_Term where _Vocab_key in (40,41)
+go
+delete from VOC_Vocab where _Vocab_key in (40,41)
+go
 
 delete MGI_VocAssociation 
 from MGI_VocAssociation mv 

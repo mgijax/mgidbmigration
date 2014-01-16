@@ -72,13 +72,6 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# create new vocabulary
-#
-#date | tee -a ${LOG}
-#${VOCLOAD}/runSimpleFullLoadNoArchive.sh ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleleAttribute.config | tee -a ${LOG}
-#date | tee -a ${LOG}
-
-#
 # migrate existing ALL_Allele._Allele_Type_key from old type to new type
 # add appropriate allele-attribute
 #

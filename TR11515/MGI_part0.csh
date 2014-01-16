@@ -105,15 +105,15 @@ go
 delete from VOC_Vocab where _Vocab_key in (40,41)
 go
 
-delete MGI_VocAssociation 
-from MGI_VocAssociation mv 
-where not exists (select 1 from VOC_Term t where mv._Term_key_1 = t._Term_key)
-go
+--delete MGI_VocAssociation 
+--from MGI_VocAssociation mv 
+--where not exists (select 1 from VOC_Term t where mv._Term_key_1 = t._Term_key)
+--go
 
-delete MGI_VocAssociation 
-from MGI_VocAssociation mv 
-where not exists (select 1 from VOC_Term t where mv._Term_key_2 = t._Term_key)
-go
+--delete MGI_VocAssociation 
+--from MGI_VocAssociation mv 
+--where not exists (select 1 from VOC_Term t where mv._Term_key_2 = t._Term_key)
+--go
 
 drop table ALL_Allele_Old
 go

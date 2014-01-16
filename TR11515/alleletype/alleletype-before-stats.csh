@@ -36,15 +36,9 @@ go
 EOSQL
 date | tee -a ${LOG}
 
-#
-# run MGI_Statistics
-#
-${MGI_DBUTILS}/bin/addMeasurements.csh | tee -a ${LOG}
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
-

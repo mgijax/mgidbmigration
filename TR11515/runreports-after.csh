@@ -29,9 +29,6 @@ setenv LINDON2 lindon:/data/reports/qcreports_db/output
 rcp ${LINDON1}/MGI_Mutations.rpt ${PUBREPORTDIR}/output/MGI_Mutations.rpt.bak
 rcp ${LINDON1}/ALL_CellLine_Targeted.rpt ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt.bak
 rcp ${LINDON1}/MGI_OMIM.rpt ${PUBREPORTDIR}/output/MGI_OMIM.rpt.bak
-rcp ${LINDON1}/MGI_Knockout_Full.rpt ${PUBREPORTDIR}/output/MGI_Knockout_Full.rpt.bak
-rcp ${LINDON1}/MGI_Knockout_NotPublic.rpt ${PUBREPORTDIR}/output/MGI_Knockout_NotPublic.rpt.bak
-rcp ${LINDON1}/MGI_Knockout_Public.rpt ${PUBREPORTDIR}/output/MGI_Knockout_Public.rpt.bak
 
 rcp ${LINDON2}/ALL_NoMCL.sql.rpt ${QCREPORTDIR}/output/ALL_NoMCL.sql.rpt.bak
 rcp ${LINDON2}/GXD_Transgenic.rpt ${QCREPORTDIR}/output/GXD_Transgenic.rpt.bak
@@ -52,7 +49,6 @@ cd ${PUBRPTS}/weekly_postgres
 
 cd ${PUBRPTS}/weekly_sybase
 ./ALL_CellLine_Targeted.py
-./MGI_Knockout.py
 ./MGI_OMIM.py
 
 #
@@ -83,7 +79,7 @@ ln -s $QCOUTPUTDIR/`basename $i py`${DATE}.rpt $QCOUTPUTDIR/`basename $i py`curr
 #
 
 cd ${PUBREPORTDIR}/output
-foreach i (MGI_Mutations.rpt ALL_CellLine_Targeted.rpt MGI_Knockout*.rpt MGI_OMIM.rpt)
+foreach i (MGI_Mutations.rpt ALL_CellLine_Targeted.rpt MGI_OMIM.rpt)
 wc -l ${PUBREPORTDIR}/output/${i}.bak | tee -a ${LOG}
 wc -l ${PUBREPORTDIR}/output/${i} | tee -a ${LOG}
 end

@@ -60,6 +60,21 @@ date | tee -a ${LOG}
 #
 ${MGI_DBUTILS}/bin/addMeasurements.csh | tee -a ${LOG}
 
+#
+# get latest stats
+#
+date | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+select * from MGI_Measurement where isLatest = 1 order by _Statistic_key
+go
+
+EOSQL
+date | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

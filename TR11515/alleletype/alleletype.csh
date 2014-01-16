@@ -148,7 +148,7 @@ grep "Targeted" alleletype-after-SQL.csh.log
 #
 # update/run MGI_Statistics
 #
-./alleletype-stats.csh | tee -a ${LOG}
+./alleletype-after-stats.csh | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

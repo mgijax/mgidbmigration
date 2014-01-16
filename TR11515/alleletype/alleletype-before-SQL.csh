@@ -154,6 +154,11 @@ go
 
 EOSQL
 
+#
+# before-statistics
+#
+./alleletype-before-stats.csh | tee -a ${LOG}
+
 date | tee -a ${BEFORELOG}
 echo "--- Finished" | tee -a ${BEFORELOG}
 

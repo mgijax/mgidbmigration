@@ -80,10 +80,8 @@ go
 EOSQL
 date | tee -a ${LOG}
 
-#
-# if possible, run
-#
-echo "ON MGIHOME (VALINOR), RUN: ${USRLOCALMGI}/mgihome/admin/gen_stats" | tee -a ${LOG}
+# for testing, run on VALINOR
+echo "AFTER EXPORTER IS RUN, RUN: ${USRLOCALMGI}/mgihome/admin/gen_stats" | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

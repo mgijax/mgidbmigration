@@ -30,7 +30,10 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-select * from MGI_Measurement where isLatest = 1 order by _Statistic_key
+select * from MGI_Measurement 
+where isLatest = 1 
+and _Statistic_key in (17,18,22,69,70,71,76,77,78,81,85,86,88,89)
+order by _Statistic_key
 go
 
 EOSQL

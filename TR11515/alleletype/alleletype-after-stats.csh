@@ -58,7 +58,7 @@ date | tee -a ${LOG}
 #
 # run MGI_Statistics
 #
-#${MGI_DBUTILS}/bin/addMeasurements.csh | tee -a ${LOG}
+${MGI_DBUTILS}/bin/addMeasurements.csh | tee -a ${LOG}
 
 #
 # get latest stats

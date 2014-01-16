@@ -83,7 +83,7 @@ date | tee -a ${LOG}
 #
 # if possible, run
 #
-${USRLOCALMGI}/mgihome/admin/gen_stats | tee -a ${LOG}
+echo "ON MGIHOME (VALINOR), RUN: ${USRLOCALMGI}/mgihome/admin/gen_stats" | tee -a ${LOG}
 
 ###-----------------------###
 ###--- final datestamp ---###

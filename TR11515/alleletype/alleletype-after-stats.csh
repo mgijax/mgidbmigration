@@ -80,6 +80,11 @@ go
 EOSQL
 date | tee -a ${LOG}
 
+#
+# if possible, run
+#
+${USRLOCALMGI}/mgihome/admin/gen_stats | tee -a ${LOG}
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

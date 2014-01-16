@@ -58,7 +58,7 @@ date | tee -a ${LOG}
 #
 # run MGI_Statistics
 #
-${MGI_DBUTILS}/bin/addMeasurements.csh | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/addMeasurements.csh | tee -a ${LOG}
 
 #
 # get latest stats
@@ -69,9 +69,11 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-select * from MGI_Measurement 
-where isLatest = 1 
-and _Statistic_key in (17,18,22,69,70,71,76,77,78,81,85,86,88,89)
+select s._Statistic_key, substring(s.name,1,50), m.intValue
+from MGI_Statistic s, MGI_Measurement m
+where m.isLatest = 1 
+and m._Statistic_key in (17,18,22,69,70,71,76,77,78,81,85,86,88,89)
+and m._Statistic_key = s._Statistic_key
 order by _Statistic_key
 go
 

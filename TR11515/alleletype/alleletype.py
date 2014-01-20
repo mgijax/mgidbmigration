@@ -269,25 +269,11 @@ def processAttribute():
 			newAttrName = 'Inserted expressed sequence'
 
 		elif oldTerm in ('Transgenic (Cre/Flp)'):
-			newAttrName = 'Inserted expressed sequence'
-
-		elif oldTerm in ('Transgenic (Reporter)'):
-			newAttrName = 'Inserted expressed sequence'
-
-		elif oldTerm in ('Transgenic (Transposase)'):
-			newAttrName = 'Inserted expressed sequence'
-
-		if len(newAttrName) > 0:
-			newAttrKey = newAttr[newAttrName][0]
-			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-			newAnnotKey += 1
-
-		# do another one...
-		newAttrName = ''
-		if oldTerm in ('Transgenic (Cre/Flp)'):
 			newAttrName = 'Recombinase'
+
 		elif oldTerm in ('Transgenic (Reporter)'):
 			newAttrName = 'Reporter'
+
 		elif oldTerm in ('Transgenic (Transposase)'):
 			newAttrName = 'Transposase'
 
@@ -298,7 +284,6 @@ def processAttribute():
 
 		#
 		# if term == 'Targeted (knock-in)'
-		# if term == 'Transgenic (Cre/Flp)'
 		#
 		# 	if driver note, 
 		#		then add 'Inserted expressed sequence' and 'Recombinase'
@@ -452,48 +437,52 @@ db.useOneConnection(1)
 # use existing term keys for new terms
 # term names will be changed in the wrapper
 #
-#newTerm = {'Targeted' : 847116, 'Transgenic' : 847126}
-#print '\nnewTerms....'
-#print newTerm
+newTerm = {'Targeted' : 847116, 'Transgenic' : 847126}
+print '\nnewTerms....'
+print newTerm
 
-#newAttr = {}
-#results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 93', 'auto')
-#for r in results:
-#	key = r['term']
-#	value = r['_Term_key']
-#	newAttr[key] = []
-#	newAttr[key].append(value)
-#print '\nnewAttr...'
-#print newAttr
+newAttr = {}
+results = db.sql('select _Term_key, term from VOC_Term where _Vocab_key = 93', 'auto')
+for r in results:
+	key = r['term']
+	value = r['_Term_key']
+	newAttr[key] = []
+	newAttr[key].append(value)
+print '\nnewAttr...'
+print newAttr
 
-#alleleGeneration = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s\n'
-#derivationGeneration = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s\n'
+alleleGeneration = 'update ALL_Allele set _Allele_Type_key = %s where _Allele_Type_key = %s\n'
+derivationGeneration = 'update ALL_CellLine_Derivation set _DerivationType_key = %s where _DerivationType_key = %s\n'
 
-#generationSQL = ''
-#processGeneration(alleleGeneration)
-#processGeneration(derivationGeneration)
+generationSQL = ''
+processGeneration(alleleGeneration)
+processGeneration(derivationGeneration)
 
 #
 # allele sub-types associations
 #
 
-#results = db.sql('select max(_Annot_key) + 1 as newAnnotKey from VOC_Annot', 'auto')
-#newAnnotKey = results[0]['newAnnotKey']
+results = db.sql('select max(_Annot_key) + 1 as newAnnotKey from VOC_Annot', 'auto')
+newAnnotKey = results[0]['newAnnotKey']
 
+#
 # primary key, annotation type (1014), allele key, term key, qualifier key (1614158)
-#attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s&=&%s#=#\n'
+#
+attrFormat = '%s&=&1014&=&%s&=&%s&=&1614158&=&%s&=&%s#=#\n'
 
-#attrFileBCP = open('VOC_Annot.bcp', 'w')
-#processIKMC()
-#processAttribute()
-#attrFileBCP.close()
+attrFileBCP = open('VOC_Annot.bcp', 'w')
+processIKMC()
+processAttribute()
+attrFileBCP.close()
 
+#
 # must be done at the end
 # we need to *before* vocabulary to still be in place
 # so that the attribute-migration work correctly
-#print '\nstart: executing update...'
-#db.sql(generationSQL, None)
-#print 'end: executing update...'
+#
+print '\nstart: executing update...'
+db.sql(generationSQL, None)
+print 'end: executing update...'
 
 #
 # update Allele-Derivation "name"s

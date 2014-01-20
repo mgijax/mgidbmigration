@@ -131,18 +131,7 @@ h1.hasDriver, h2.hasInducible
 from ALL_Allele a, ACC_Accession aa, VOC_Term t, 
 	#hasDriver h1, #hasInducible h2
 where a._Allele_Type_key = t._Term_key
-and t.term in (
-'Targeted (knock-out)',
-'Targeted (knock-in)',
-'Targeted (Floxed/Frt)',
-'Targeted (Reporter)',
-'Targeted (other)',
-'Transgenic (Cre/Flp)',
-'Transgenic (random, expressed)',
-'Transgenic (random, gene disruption)',
-'Transgenic (Reporter)',
-'Transgenic (Transposase)'
-)
+and a._Term_key in (847116,847117,847118,847119,847120,847126,847127,847128,847129,2327160)
 and a._Allele_key = aa._Object_key
 and aa._MGIType_key = 11
 and aa._LogicalDB_key = 1
@@ -150,6 +139,13 @@ and a._Allele_key = h1._Allele_key
 and a._Allele_key = h2._Allele_key
 )
 order by a.symbol, alleleType
+go
+
+-- allele derivation
+select a._DerivationType_key, a.name, substring(t.term,1,30) as term
+from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key
+and a._DerivationType_key in (847116,847117,847118,847119,847120,847126,847127,847128,847129,2327160)
+order by term
 go
 
 EOSQL

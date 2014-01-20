@@ -95,6 +95,30 @@ where t._Vocab_key in (40,41) and t._Vocab_key = tt._Vocab_key
 order by name, term
 go
 
+-- allele derivation
+-- around (767)
+select count(a1._Derivation_key)
+from ALL_CellLine_Derivation a1
+where a1._DerivationType_key in (847116,847126)
+go
+
+-- allele derivation
+-- should be (0)
+select a1._Derivation_key, a1.name
+from ALL_CellLine_Derivation a1, ALL_CellLine_Derivation a2
+where a1._DerivationType_key in (847116,847126)
+and a1.name = a2.name
+and a1._Derivation_key != a2._Derivation_key
+go
+
+-- allele cell lines with invalid allele derivations
+-- should be (0)
+select c._Derivation_key
+from ALL_CellLine c
+where not exists (select 1 from ALL_CellLine_Derivation a where c._Derivation_key = a._Derivation_key)
+and c._Derivation_key is not null
+go
+
 EOSQL
 
 date | tee -a ${AFTERLOG}

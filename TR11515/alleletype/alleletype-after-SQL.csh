@@ -77,6 +77,14 @@ where a._Collection_key = t._Term_key
 group by a._Collection_key, t.term
 go
 
+-- collection counts
+select a._Collection_key, substring(t.term,1,20) as term, count(a._Allele_key)
+from ALL_Allele a, VOC_Term t
+where a._Collection_key = t._Term_key
+and a.isWildType = 0
+group by a._Collection_key, t.term
+go
+
 -- count of all_cre_cache
 select count(*) from ALL_Cre_Cache
 go
@@ -88,7 +96,7 @@ where a._Allele_Type_key = t._Term_key
 group by a._Allele_Type_key, t.term
 go
 
--- allele categories 40, 41 (should be 0)
+-- allele categories 40, 41 (SHOULD BE ZERO)
 select substring(tt.name,1,20) as name, t._Term_key, substring(t.term,1,30) as term 
 from VOC_Term t, VOC_Vocab tt 
 where t._Vocab_key in (40,41) and t._Vocab_key = tt._Vocab_key
@@ -102,8 +110,7 @@ from ALL_CellLine_Derivation a1
 where a1._DerivationType_key in (847116,847126)
 go
 
--- allele derivation
--- should be (0)
+-- allele derivation (SHOULD BE ZERO)
 select a1._Derivation_key, a1.name
 from ALL_CellLine_Derivation a1, ALL_CellLine_Derivation a2
 where a1._DerivationType_key in (847116,847126)
@@ -111,8 +118,7 @@ and a1.name = a2.name
 and a1._Derivation_key != a2._Derivation_key
 go
 
--- allele cell lines with invalid allele derivations
--- should be (0)
+-- allele cell lines with invalid allele derivations (SHOULD BE ZERO)
 select c._Derivation_key
 from ALL_CellLine c
 where not exists (select 1 from ALL_CellLine_Derivation a where c._Derivation_key = a._Derivation_key)

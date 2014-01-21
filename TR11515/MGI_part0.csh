@@ -133,7 +133,7 @@ ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 #
 # update/run MGI_Statistics
 #
-./alleletype-after-stats.csh | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
 
 #
 # final tests (need full permissions

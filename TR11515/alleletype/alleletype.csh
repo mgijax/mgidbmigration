@@ -138,11 +138,6 @@ date | tee -a ${LOG}
 grep "^ Targeted" alleletype-before-SQL.csh.log
 grep "Targeted" alleletype-after-SQL.csh.log
 
-#
-# update/run MGI_Statistics
-#
-./alleletype-after-stats.csh | tee -a ${LOG}
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

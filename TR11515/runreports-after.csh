@@ -44,8 +44,8 @@ rm -rf ${QCREPORTDIR}/output/*.diff
 
 source ${PUBRPTS}/Configuration
 
-cd ${PUBRPTS}/weekly_postgres
-./MGI_Mutations.py
+#cd ${PUBRPTS}/weekly_postgres
+#./MGI_Mutations.py
 
 cd ${PUBRPTS}/weekly_sybase
 ./ALL_CellLine_Targeted.py

@@ -131,11 +131,6 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 #
-# update/run MGI_Statistics
-#
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
-
-#
 # final tests (need full permissions
 #
 date | tee -a ${LOG}
@@ -148,6 +143,11 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
 date | tee -a ${LOG}
+
+#
+# update/run MGI_Statistics
+#
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
 
 #
 # run some qc/public reports after migration

@@ -131,6 +131,11 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 #
+# update/run MGI_Statistics
+#
+./alleletype-after-stats.csh | tee -a ${LOG}
+
+#
 # final tests (need full permissions
 #
 date | tee -a ${LOG}

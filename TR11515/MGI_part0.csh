@@ -104,6 +104,8 @@ delete from VOC_Term where _Vocab_key in (40,41)
 go
 delete from VOC_Vocab where _Vocab_key in (40,41)
 go
+drop table MGI_AttributeHistory
+go
 
 drop table ALL_Allele_Old
 go
@@ -117,6 +119,8 @@ date | tee -a ${LOG}
 #
 # due to drop of MGI_VocAssociation and vocab 40,41
 #
+${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}

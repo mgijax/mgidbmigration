@@ -42,7 +42,7 @@ ${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scru
 # pre-migration counts
 #
 date | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+/usr/local/mgi/live/dbutils/mgd/mgddbschema/objectCounter.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #

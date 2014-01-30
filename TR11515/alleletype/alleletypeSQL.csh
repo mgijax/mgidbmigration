@@ -107,7 +107,7 @@ and t.term in (
  'Targeted',
  'Transgenic',
  'Endonuclease-mediated',
- 'Other (see notes)'
+ 'Other'
 )
 go
 
@@ -117,7 +117,7 @@ from VOC_Term t
 where t._Vocab_key = 38
 and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
 and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
-and t.term not in ('Endonuclease-mediated', 'Other (see notes)')
+and t.term not in ('Endonuclease-mediated', 'Other')
 go
 
 --

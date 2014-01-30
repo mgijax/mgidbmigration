@@ -64,7 +64,7 @@ declare @nextTermKey integer
 select @nextTermKey = max(_Term_key) + 1 from VOC_Term
 
 insert into VOC_Term values (@nextTermKey, 38, 'Endonuclease-mediated', null, 21, 0, 1001, 1001, getdate(), getdate())
-insert into VOC_Term values (@nextTermKey+2, 38, 'Other (see notes)', null, 22, 0, 1001, 1001, getdate(), getdate())
+insert into VOC_Term values (@nextTermKey+2, 38, 'Other', null, 22, 0, 1001, 1001, getdate(), getdate())
 
 go
 
@@ -109,7 +109,7 @@ from VOC_Term t
 where t._Vocab_key = 38
 and not exists (select 1 from ALL_Allele a where t._Term_key = a._Allele_Type_key)
 and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._DerivationType_key)
-and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other (see notes)')
+and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other')
 go
 
 drop table MGI_VocAssociation

@@ -119,6 +119,14 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# update the Allele_CellLine_Derivation.name
+#
+date | tee -a ${LOG}
+./alleletypeDerivation.py | tee -a ${LOG}
+${MGI_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} VOC_Annot
+date | tee -a ${LOG}
+
+#
 # run cache tables
 #
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}

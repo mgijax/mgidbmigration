@@ -118,6 +118,10 @@ and a1.name = a2.name
 and a1._Derivation_key != a2._Derivation_key
 go
 
+-- allele derivation name (SNOULD BE ZERO)
+select count(*) from ALL_CellLine_Derivation where name like '%knock%'
+go
+
 -- allele cell lines with invalid allele derivations (SHOULD BE ZERO)
 select c._Derivation_key
 from ALL_CellLine c

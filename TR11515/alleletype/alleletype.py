@@ -256,7 +256,7 @@ def processAttribute():
 
 		newAttrName = ''
 
-		if oldTerm in ('Targeted (knock-out)'):
+		if oldTerm in ('Targeted (knock-out)');
 			newAttrName = 'Null/knockout'
 
 		elif oldTerm in ('Targeted (Floxed/Frt)'):
@@ -279,6 +279,18 @@ def processAttribute():
 
 		if len(newAttrName) > 0:
 			newAttrKey = newAttr[newAttrName][0]
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+			newAnnotKey += 1
+
+		# secondary atrributes
+
+		if oldTerm in ('Targeted (Floxed/Frt)'):
+			newAttrName = 'No Functional Change'
+			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
+			newAnnotKey += 1
+
+		if oldTerm in ('Targeted (Reporter)'):
+			newAttrName = 'Null/knockout'
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 

@@ -118,7 +118,7 @@ and a1.name = a2.name
 and a1._Derivation_key != a2._Derivation_key
 go
 
--- allele derivation name (SNOULD BE ZERO)
+-- allele derivation name (SHOULD BE ZERO)
 select count(*) from ALL_CellLine_Derivation where name like '%knock%'
 go
 

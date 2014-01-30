@@ -118,6 +118,8 @@ ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Vocab_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Vocab_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MLD_Expts_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MLD_Expts_create.object | tee -a ${LOG}
 
 #
 # set permissions & counts

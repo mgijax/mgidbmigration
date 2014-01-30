@@ -102,6 +102,15 @@ and not exists (select 1 from ALL_CellLine_Derivation a where t._Term_key = a._D
 and t.term not in ('Endonuclease-mediated', 'Transposon Concatemer', 'Other (see notes)')
 go
 
+drop table MGI_VocAssociation
+go
+drop table MGI_VocAssociationType
+go
+delete from VOC_Term where _Vocab_key in (40,41)
+go
+delete from VOC_Vocab where _Vocab_key in (40,41)
+go
+
 -- reorder the sequence number
 exec VOC_reorderTerms 38
 go

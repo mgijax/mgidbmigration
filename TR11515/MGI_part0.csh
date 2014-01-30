@@ -36,7 +36,7 @@ touch ${LOG}
 # MAKE SURE BOTH ARE TURNED OFF FOR REAL MIGRATION
 #
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
-#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
+${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
 
 #
 # pre-migration counts
@@ -93,18 +93,9 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
---
--- drop obsoleted tables which were used by the front-end only
---
-drop table MGI_VocAssociation
-go
-drop table MGI_VocAssociationType
-go
-delete from VOC_Term where _Vocab_key in (40,41)
-go
-delete from VOC_Vocab where _Vocab_key in (40,41)
-go
 drop table MGI_AttributeHistory
+go
+drop table MLD_PhysMap
 go
 
 drop table ALL_Allele_Old

@@ -158,16 +158,16 @@ date | tee -a ${LOG}
 #
 # update/run MGI_Statistics
 #
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
+#${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
 
 #
 # run some qc/public reports after migration
 # use *after* report changes
 # comment out when running release it-self
 #
-date | tee -a ${LOG}
-./runreports-after.csh | tee -a ${LOG}
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#./runreports-after.csh | tee -a ${LOG}
+#date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

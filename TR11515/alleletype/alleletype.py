@@ -298,7 +298,7 @@ def processAttribute():
 		# if term == 'Targeted (knock-in)'
 		#
 		# 	if driver note, 
-		#		then add 'Inserted expressed sequence' and 'Recombinase'
+		#		then add 'Recombinase'
 		#
 		# 	if inducible note , then add 'Inducible''
 		#
@@ -310,11 +310,6 @@ def processAttribute():
 				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 				newAnnotKey += 1
 	
-				newAttrName = 'Inserted expressed sequence'
-				newAttrKey = newAttr[newAttrName][0]
-				attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
-				newAnnotKey += 1
-
 			if aKey in hasInducible:
 				newAttrName = 'Inducible'
 				newAttrKey = newAttr[newAttrName][0]

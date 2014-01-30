@@ -256,7 +256,7 @@ def processAttribute():
 
 		newAttrName = ''
 
-		if oldTerm in ('Targeted (knock-out)');
+		if oldTerm in ('Targeted (knock-out)'):
 			newAttrName = 'Null/knockout'
 
 		elif oldTerm in ('Targeted (Floxed/Frt)'):

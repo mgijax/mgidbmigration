@@ -48,7 +48,7 @@ source ${PUBRPTS}/Configuration
 #./MGI_Mutations.py
 
 cd ${PUBRPTS}/weekly_sybase
-./ALL_CellLine_Targeted.py
+#./ALL_CellLine_Targeted.py
 ./MGI_OMIM.py
 
 #

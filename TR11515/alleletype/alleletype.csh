@@ -92,6 +92,16 @@ go
 update VOC_Term set term = 'Transgenic' where _Term_key = 847126
 go
 
+-- rename 'Targeted (xxx)' to 'Targeted'
+update ALL_CellLine_Derivation set _DerivationType_key = 847116 
+where _DerivationType_key in (847117,847118,847119,847120)
+go
+
+-- rename 'Transgenic (xxx)' to 'Transgenic'
+update ALL_CellLine_Derivation set _DerivationType_key = 847126 
+where _DerivationType_key in (847127,847128,847129,2327160)
+go
+
 -- delete old VOC_Term._Vocab_key = 38 terms that are no longer used
 -- (exclude the new terms added as part of this projects)
 delete VOC_Term

@@ -11,8 +11,6 @@ db.set_sqlPasswordFromFile(passwordFileName)
 
 def processDerivations():
 
-	db.sql('update ALL_CellLine_Derivation set _DerivationType_key = 847116 where _DerivationType_key = 847117', None)
-
 	derivationSQL = ''
 
 	print 'start: processing derivation names...'

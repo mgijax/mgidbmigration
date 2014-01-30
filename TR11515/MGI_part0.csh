@@ -93,9 +93,16 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+delete from ACC_Accession where accid like 'MGD-PMEX-%'
+go
+
+drop view MLD_Distance_View
+go
 drop table MGI_AttributeHistory
 go
 drop table MLD_PhysMap
+go
+drop table MLD_Distance
 go
 
 drop table ALL_Allele_Old
@@ -120,6 +127,13 @@ ${MGD_DBSCHEMADIR}/key/VOC_Vocab_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/VOC_Vocab_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MLD_Expts_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MLD_Expts_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MLD_Expt_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MLD_Expt_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
 
 #
 # set permissions & counts

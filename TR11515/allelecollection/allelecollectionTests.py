@@ -35,7 +35,7 @@ for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mut
 	elif provider == 'Sanger miRNA knockouts':
 		inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Sanger_miRNA_knockouts.txt', 'r')
 	else:
-		inFile = open('/mgi/all/wts_projects/11500/11515/AlleleCollectionTests.txt', 'r')
+		inFile = open('AlleleCollectionTests.txt', 'r')
 		isOther = 1
 
 	for line in inFile.readlines():

@@ -23,7 +23,7 @@ PAGE = reportlib.PAGE
 
 db.useOneConnection(1)
 
-inFile = open('/mgi/all/wts_projects/11500/11515/AlleleTypeMigrationTests.txt', 'r')
+inFile = open('AlleleTypeMigrationTests.txt', 'r')
 
 for line in inFile.readlines():
 

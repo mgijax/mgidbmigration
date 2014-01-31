@@ -1,0 +1,100 @@
+Allele symbol	MGI ID	New allele type (generation type)	New subtypes (attributes) - comma-delimited list
+a	MGI:1855937	Spontaneous	none
+Btnt2	MGI:5487551	Spontaneous	none
+Vps52<t-w5+Art>	MGI:5469354	Spontaneous	none
+2010111I01Rik<Gt(GT411)Lmf>	MGI:4357693	Gene trapped	none
+Atg16l1<Gt(BC0122)Wtsi>	MGI:3818574	Gene trapped	none
+12aex	MGI:3578166	Chemically induced (ENU)	none
+b2b1625.2Clo	MGI:5489925	Chemically induced (ENU)	none
+Myo5a<d-n3Btlr>	MGI:5515382	Chemically induced (ENU)	none
+a<10R>	MGI:2384104	Chemically induced (other)	none
+Mut1446	MGI:5442340	Chemically induced (other)	none
+Atp7a<Mo-10H>	MGI:1856322	Chemically and radiation induced	none
+Vm	MGI:5320605	Chemically and radiation induced	none
+Bmp5<se-15THO-I>	MGI:2153987	Radiation induced	none
+Tyrp1<b-11PU>	MGI:1857374	Radiation induced	none
+Arpc3<Tn(sb-lacZ,GFP)T5.117Jtak>	MGI:3613188	Transposon induced	none
+In(15Rictor;Slc1a3)1Ove	MGI:5287026	Transposon induced	none
+Cdh23<Ahl+>	MGI:2665714	QTL	none
+Cmcs<CBA/N>	MGI:3522316	QTL	none
+Acadvl-rs1<+>	MGI:2436697	Not Applicable	none
+Acads<a>	MGI:3029771	Not Applicable	none
+Emv1<a>	MGI:3579288	Not Applicable	none
+4930405L22Rik<+>	MGI:5482780	Not Specified	none
+Mitf<Mi>	MGI:1856085	Not Specified	none
+Ts(10<16>)232Dn	MGI:3698134	Not Specified	none
+Blm<tm2Khor>	MGI:3620978	Targeted	none
+App<tm1Tsuz>-deleted	MGI:3769587	Targeted	none
+Braf<tm1.1Cpri>	MGI:3612534	Targeted	none
+Braf<tm2.1Cpri>	MGI:5440060	Targeted	none
+Ace<tm3Unc>	MGI:2155951	Targeted	none
+Gng7<tm1(cre)Mmsh>	MGI:3833955	Targeted	Recombinase
+Gng7<tm2(cre/PGR)Mmsh>	MGI:3833956	Targeted	Inducible, Recombinase
+Grin2c<tm2(icre)Mwa>	MGI:5306941	Targeted	Recombinase
+Gt(ROSA)26Sor<tm1(cre/ERT)Brn>	MGI:2445311	Targeted	Inducible, Recombinase
+Cdkn2a<tm2Rdp>	MGI:2384176	Targeted	Null/knockout
+Adamts4<tm2Lex>	MGI:3529334	Targeted	Null/knockout
+Zscan21<tm2Htz>	MGI:3526148	Targeted	Null/knockout
+Adar<tm2Knk>	MGI:5436438	Targeted	Null/knockout
+Bid<tm1.1Ast>	MGI:4440571	Targeted	Null/knockout
+Bmpr2<tm1.2Enl>	MGI:3574813	Targeted	Null/knockout
+Drd2<tm1Mrub>	MGI:5313252	Targeted	Conditional ready, No functional change
+Brca1<tm2Brn>	MGI:3762183	Targeted	Conditional ready, No functional change
+Gt(ROSA)26Sor<tm4(CAG-GFP*)Nat>	MGI:5449932	Targeted	Conditional ready, No functional change
+Ankrd17<tm1Yty>	MGI:4360511	Targeted	Conditional ready, No functional change
+Rdh1<tm1Jln>	MGI:3804064	Targeted	Conditional ready, No functional change
+Gopc<tm1Tno>	MGI:2386792	Targeted	Reporter, Null/knockout
+Dvl2<tm2Awb>	MGI:3603160	Targeted	Reporter, Null/knockout
+Abca3<tm1Dgen>	MGI:3757572	Targeted	Reporter, Null/knockout
+Cbln1<tm1.2Mmsh>	MGI:4839626	Targeted	none
+Shank3<tm1.1Pfw>	MGI:5085999	Targeted	none
+Del(1)Tg(250OVE)Mm	MGI:1857960	Transgenic	none
+Amn<amn>	MGI:2135304	Transgenic	none
+Pcgf3<TgTn(sb-cHS4,Tyr)2349AOve>	MGI:5287257	Transgenic	none
+Tg(HA-T)#Men	MGI:3039900	Transgenic	Inserted expressed sequence
+Tg(hAGT)2041Sig	MGI:2447399	Transgenic	Inserted expressed sequence
+Tg(Vav1-cre)1Nki	MGI:4398921	Transgenic	Recombinase
+Tg(Prm-cre)#Og	MGI:5284868	Transgenic	Recombinase
+Tg(Sox10-icre/ERT2)2Dimo	MGI:5431880	Transgenic	Inducible, Recombinase
+Tg(Nppa-cre)4Vmc	MGI:3710255	Transgenic	Recombinase
+Tg(Pcp2-cre/ERT2,-ALPP)1Alj	MGI:4360711	Transgenic	Inducible, Recombinase
+Tg(CAG-EGFP,CAG-EBFP)19Sro	MGI:3527457	Transgenic	Reporter
+Tg(Eif1-EGFP)LC125Gsat	MGI:4940583	Transgenic	Reporter
+Tg(Atoh1-sb11)1Mtay	MGI:5316979	Transgenic	Transposase
+Tg(Prm1-sb16)BFsp	MGI:5305593	Transgenic	Transposase
+Lrp6<tm1(KOMP)Vlcg>	MGI:5312373	Targeted	Null/knockout, Reporter
+Abcd4<tm1(KOMP)Vlcg>	MGI:5051119	Targeted	Null/knockout, Reporter
+Acd<tm1(KOMP)Mbp>	MGI:5287769	Targeted	Null/knockout, Reporter
+Aatk<tm1(NCOM)Mfgc>	MGI:4880525	Targeted	Null/knockout, Reporter
+Abca16<tm1(NCOM)Cmhd>	MGI:4880137	Targeted	Null/knockout, Reporter
+Rbm8a<tm1(EUCOMM)Hmgu>	MGI:5520227	Targeted	Null/knockout, Reporter
+Dnajc9<tm1(EUCOMM)Wtsi>	MGI:4881080	Targeted	Null/knockout, Reporter
+Alg10b<tm2(KOMP)Vlcg>	MGI:4881093	Targeted	Null/knockout, Reporter
+Cdk1<tm2(NCOM)Cmhd>	MGI:4936837	Targeted	Null/knockout, Reporter
+Fktn<tm2(FCMD)Ttd>	MGI:3690337	Targeted	none
+Brms1<tm3(EUCOMM)Wtsi>	MGI:5050951	Targeted	Null/knockout, Reporter
+Aar2<tm1a(EUCOMM)Wtsi>	MGI:4842831	Targeted	Null/knockout, Reporter, Conditional ready
+Abca7<tm1a(EUCOMM)Hmgu>	MGI:5304884	Targeted	Null/knockout, Reporter, Conditional ready
+BC049715<tm1a(KOMP)Mbp>	MGI:4462503	Targeted	Null/knockout, Reporter, Conditional ready
+Notch4<tm1a(NCOM)Mfgc>	MGI:5513805	Targeted	Null/knockout, Reporter, Conditional ready
+Rpa1<tm1b(KOMP)Wtsi>	MGI:5446173	Targeted	Null/knockout, Reporter
+S100a14<tm1b(EUCOMM)Hmgu>	MGI:5513816	Targeted	Null/knockout, Reporter
+Rab39<tm1b(KOMP)Wtsi>	MGI:5505641	Targeted	Null/knockout, Reporter
+Ptprv<tm1b(NCOM)Mfgc>	MGI:5513815	Targeted	Null/knockout, Reporter
+Lman1<tm1c(KOMP)Wtsi>	MGI:5501339	Targeted	Conditional ready
+Fbxo9<tm1c(EUCOMM)Hmgu>	MGI:5513777	Targeted	Conditional ready
+Zfp260<tm1c(NCOM)Mfgc>	MGI:5513840	Targeted	Conditional ready
+Lman1<tm1d(KOMP)Wtsi>	MGI:5501340	Targeted	Null/knockout
+B9d1<tm1d(EUCOMM)Wtsi>	MGI:5301332	Targeted	Null/knockout
+Abca7<tm1e(EUCOMM)Hmgu>	MGI:5304868	Targeted	Null/knockout, Reporter
+Bax<tm1e(EUCOMM)Wtsi>	MGI:4842290	Targeted	Null/knockout, Reporter
+Bbc3<tm1e(KOMP)Wtsi>	MGI:4419747	Targeted	Null/knockout, Reporter
+BC026585<tm1e(KOMP)Mbp>	MGI:4843593	Targeted	Null/knockout, Reporter
+AI182371<tm2a(KOMP)Wtsi>	MGI:5286211	Targeted	Null/knockout, Reporter, Conditional ready
+AI467606<tm2a(EUCOMM)Wtsi>	MGI:5473064	Targeted	Null/knockout, Reporter, Conditional ready
+Sdha<tm2b(KOMP)Wtsi>	MGI:5498775	Targeted	Null/knockout, Reporter
+Slc29a1<tm2b(NCOM)Mfgc>	MGI:5513821	Targeted	Null/knockout, Reporter
+Eea1<tm2e(EUCOMM)Hmgu>	MGI:5307115	Targeted	Null/knockout, Reporter
+Efemp2<tm2e(KOMP)Wtsi>	MGI:4455542	Targeted	Null/knockout, Reporter
+Incenp<tm3a(EUCOMM)Hmgu>	MGI:5296586	Targeted	Null/knockout, Reporter, Conditional ready
+Atf5<tm3e(EUCOMM)Wtsi>	MGI:5511899	Targeted	Null/knockout, Reporter

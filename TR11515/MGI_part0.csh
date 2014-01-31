@@ -96,6 +96,9 @@ go
 delete from ACC_Accession where accid like 'MGD-PMEX-%'
 go
 
+delete from MLD_Expts where exptType = 'MAP'
+go
+
 drop view MLD_Distance_View
 go
 drop table MGI_AttributeHistory

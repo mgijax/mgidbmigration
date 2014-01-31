@@ -104,7 +104,7 @@ order by name, term
 go
 
 -- allele derivation
--- around (780)
+-- around (771)
 select count(a1._Derivation_key)
 from ALL_CellLine_Derivation a1
 where a1._DerivationType_key in (847116,847126)

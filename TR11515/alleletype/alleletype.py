@@ -286,11 +286,13 @@ def processAttribute():
 
 		if oldTerm in ('Targeted (Floxed/Frt)'):
 			newAttrName = 'No Functional Change'
+			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 
 		if oldTerm in ('Targeted (Reporter)'):
 			newAttrName = 'Null/knockout'
+			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1
 

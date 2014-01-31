@@ -104,7 +104,7 @@ order by name, term
 go
 
 -- allele derivation
--- around (767)
+-- around (780)
 select count(a1._Derivation_key)
 from ALL_CellLine_Derivation a1
 where a1._DerivationType_key in (847116,847126)
@@ -118,8 +118,9 @@ and a1.name = a2.name
 and a1._Derivation_key != a2._Derivation_key
 go
 
--- allele derivation name (SNOULD BE ZERO)
-select count(*) from ALL_CellLine_Derivation where name like '%knock%'
+select count(a._DerivationType_key)
+from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key
+and a._DerivationType_key in (847116,847117,847118,847119,847120,847126,847127,847128,847129,2327160)
 go
 
 -- allele cell lines with invalid allele derivations (SHOULD BE ZERO)

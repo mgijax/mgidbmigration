@@ -142,10 +142,9 @@ order by a.symbol, alleleType
 go
 
 -- allele derivation
-select a._DerivationType_key, a.name, substring(t.term,1,30) as term
+select count(a._DerivationType_key)
 from ALL_CellLine_Derivation a, VOC_Term t where a._DerivationType_key = t._Term_key
 and a._DerivationType_key in (847116,847117,847118,847119,847120,847126,847127,847128,847129,2327160)
-order by term
 go
 
 EOSQL

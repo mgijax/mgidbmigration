@@ -1,4 +1,3 @@
-Allele symbol	MGI ID	New allele type (generation type)	New subtypes (attributes) - comma-delimited list
 a	MGI:1855937	Spontaneous	none
 Btnt2	MGI:5487551	Spontaneous	none
 Vps52<t-w5+Art>	MGI:5469354	Spontaneous	none

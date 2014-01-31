@@ -9,7 +9,7 @@ Kank3<tm1(KOMP)Mbp>	MGI:4453999	KOMP-CSD	By logical DB
 Arf3<tm1(KOMP)Vlcg>	MGI:5085749	KOMP-Regeneron	By logical DB
 Crtam<tm1Lex>	MGI:5007093	Lexicon	By name
 Mc4r<Glu3>	MGI:2671841	Mutagenesis for Dev. Defects	J:89098,J:85113,J:109155, J:161341
-nur33	MGI:3038764	Mutagenesis for Dev. Defects<b>J:89098</b>, J:85113, J:109155, J:161341
+nur33	MGI:3038764	Mutagenesis for Dev. Defects	J:89098, J:85113, J:109155, J:161341
 Calb2<tm2.1(cre/ERT2)Zjh>	MGI:4880758	Neuroscience Blueprint cre	List
 Iqcd<tm1(NCOM)Mfgc>	MGI:4880499	NorCOMM	By logical DB
 Hprt<tm151(Ple99-EGFP)Ems>	MGI:5303234	Pleiades Promoter Project	List

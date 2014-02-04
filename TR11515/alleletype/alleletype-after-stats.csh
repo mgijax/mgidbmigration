@@ -189,6 +189,10 @@ EOSQL
 date | tee -a ${LOG}
 
 # for testing, run on VALINOR
+# mgi-testdb4; configdev
+# exportDB.sh mgd postgres "MGI_Statistic MGI_StatisticSQL MGI_Measurement"
+# valinor
+# ${USRLOCALMGI}/mgihome/admin/gen_stats
 echo "AFTER EXPORTER IS RUN, RUN: ${USRLOCALMGI}/mgihome/admin/gen_stats" | tee -a ${LOG}
 
 ###-----------------------###

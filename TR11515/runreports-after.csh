@@ -29,6 +29,7 @@ setenv LINDON2 lindon:/data/reports/qcreports_db/output
 rcp ${LINDON1}/MGI_Mutations.rpt ${PUBREPORTDIR}/output/MGI_Mutations.rpt.bak
 rcp ${LINDON1}/ALL_CellLine_Targeted.rpt ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt.bak
 rcp ${LINDON1}/MGI_OMIM.rpt ${PUBREPORTDIR}/output/MGI_OMIM.rpt.bak
+rcp ${LINDON1}/MGI_PhenotypicAllele.rpt ${PUBREPORTDIR}/output/MGI_PhenotypicAllele.rpt.bak
 
 rcp ${LINDON2}/ALL_NoMCL.sql.rpt ${QCREPORTDIR}/output/ALL_NoMCL.sql.rpt.bak
 rcp ${LINDON2}/GXD_Transgenic.rpt ${QCREPORTDIR}/output/GXD_Transgenic.rpt.bak
@@ -44,10 +45,11 @@ rm -rf ${QCREPORTDIR}/output/*.diff
 
 source ${PUBRPTS}/Configuration
 
-#cd ${PUBRPTS}/weekly_postgres
-#./MGI_Mutations.py
+cd ${PUBRPTS}/weekly_postgres
+./MGI_Mutations.py
+./MGI_PhenotypicAllele.py
 
-cd ${PUBRPTS}/weekly_sybase
+#cd ${PUBRPTS}/weekly_sybase
 #./ALL_CellLine_Targeted.py
 ./MGI_OMIM.py
 

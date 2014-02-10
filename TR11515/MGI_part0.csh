@@ -166,7 +166,7 @@ date | tee -a ${LOG}
 #
 # run some qc/public reports after migration
 # use *after* report changes
-# comment out when running release it-self
+# only run for testing; do not run during release
 #
 #date | tee -a ${LOG}
 #./runreports-after.csh | tee -a ${LOG}

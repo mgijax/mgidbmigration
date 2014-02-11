@@ -37,11 +37,11 @@ Zscan21<tm2Htz>	MGI:3526148	Targeted	Null/knockout
 Adar<tm2Knk>	MGI:5436438	Targeted	Null/knockout
 Bid<tm1.1Ast>	MGI:4440571	Targeted	Null/knockout
 Bmpr2<tm1.2Enl>	MGI:3574813	Targeted	Null/knockout
-Drd2<tm1Mrub>	MGI:5313252	Targeted	Conditional ready, No Functional Change
-Brca1<tm2Brn>	MGI:3762183	Targeted	Conditional ready, No Functional Change
-Gt(ROSA)26Sor<tm4(CAG-GFP*)Nat>	MGI:5449932	Targeted	Conditional ready, No Functional Change
-Ankrd17<tm1Yty>	MGI:4360511	Targeted	Conditional ready, No Functional Change
-Rdh1<tm1Jln>	MGI:3804064	Targeted	Conditional ready, No Functional Change
+Drd2<tm1Mrub>	MGI:5313252	Targeted	Conditional ready, No functional change
+Brca1<tm2Brn>	MGI:3762183	Targeted	Conditional ready, No functional change
+Gt(ROSA)26Sor<tm4(CAG-GFP*)Nat>	MGI:5449932	Targeted	Conditional ready, No functional change
+Ankrd17<tm1Yty>	MGI:4360511	Targeted	Conditional ready, No functional change
+Rdh1<tm1Jln>	MGI:3804064	Targeted	Conditional ready, No functional change
 Gopc<tm1Tno>	MGI:2386792	Targeted	Reporter, Null/knockout
 Dvl2<tm2Awb>	MGI:3603160	Targeted	Reporter, Null/knockout
 Abca3<tm1Dgen>	MGI:3757572	Targeted	Reporter, Null/knockout

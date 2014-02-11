@@ -285,7 +285,7 @@ def processAttribute():
 		# secondary atrributes
 
 		if oldTerm in ('Targeted (Floxed/Frt)'):
-			newAttrName = 'No Functional Change'
+			newAttrName = 'No functional change'
 			newAttrKey = newAttr[newAttrName][0]
 			attrFileBCP.write(attrFormat % (newAnnotKey, aKey, newAttrKey, currentDate, currentDate))
 			newAnnotKey += 1

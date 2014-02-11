@@ -8,6 +8,8 @@
 # mgddbschema
 # reports_db
 # qcreports_db
+# mgidbutilities
+# mirror_wget
 #
 # allcacheload - add subtype?
 # vocassociationload - obsolete
@@ -162,16 +164,22 @@ date | tee -a ${LOG}
 #
 # update/run MGI_Statistics
 #
-#${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
 
 #
 # run some qc/public reports after migration
 # use *after* report changes
 # only run for testing; do not run during release
 #
-#date | tee -a ${LOG}
-#./runreports-after.csh | tee -a ${LOG}
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+./runreports-after.csh | tee -a ${LOG}
+date | tee -a ${LOG}
+
+#
+# run sto85/update IMSR/germline
+#
+${MGI_DBUTILS}/bin/updateIMSRgermline.csh | tee -a ${LOG}
+cat ${DATALOADSOUTPUT}/mgi/mgidbutilities/logs/updateIMSRgermline.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

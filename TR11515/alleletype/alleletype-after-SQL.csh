@@ -77,14 +77,6 @@ where a._Collection_key = t._Term_key
 group by a._Collection_key, t.term
 go
 
--- collection counts
-select a._Collection_key, substring(t.term,1,20) as term, count(a._Allele_key)
-from ALL_Allele a, VOC_Term t
-where a._Collection_key = t._Term_key
-and a.isWildType = 0
-group by a._Collection_key, t.term
-go
-
 -- count of all_cre_cache
 select count(*) from ALL_Cre_Cache
 go

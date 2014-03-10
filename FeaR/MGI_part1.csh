@@ -48,4 +48,32 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
+echo "--- Create Schema " | tee -a ${LOG}
+./createSchema.csh
+
+echo "--- Load Relationship Categories ---" | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+insert into MGI_Relationship_Category
+values(1001, 'regulates', 96, 44, 2, 2, 94, 95, 1001, 1001, getdate(), getdate())
+go
+
+insert into MGI_Relationship_Category
+values(1002, 'cluster_member', 96, 45, 2, 2, 94, 95, 1001, 1001, getdate(), getdate())
+go
+
+insert into MGI_Relationship_Category
+values(1003, 'mutation_overlaps', 96, 46, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
+go
+
+insert into MGI_Relationship_Category
+values(1004, 'expresses', 96, 47, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
+go
+
+
+EOSQL
+
 date | tee -a ${LOG}

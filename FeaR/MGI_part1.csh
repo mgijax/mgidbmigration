@@ -51,6 +51,9 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 echo "--- Create Schema " | tee -a ${LOG}
 ./createSchema.csh
 
+echo "--- Running RV vocabulary load " | tee -a ${LOG}
+${RVLOAD}/bin/rvload.sh
+
 echo "--- Load Relationship Categories ---" | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 

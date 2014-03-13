@@ -48,6 +48,11 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 
 #
+# TR11540/removing obsolete stored procedures
+#
+/mgi/all/wts_projects/11500/11540/tr11540.csh | tee -a ${LOG}
+
+#
 # update schema-version and public-version
 #
 date | tee -a ${LOG}

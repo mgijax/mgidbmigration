@@ -127,18 +127,8 @@ date | tee -a ${LOG}
 #
 # due to drop of MGI_VocAssociation and vocab 40,41
 #
-${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Vocab_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/VOC_Vocab_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MLD_Expts_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MLD_Expts_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/key_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/key_create.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MLD_Expt_Marker_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MLD_Expt_Marker_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}

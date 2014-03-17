@@ -97,11 +97,11 @@ def processName():
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0], notSpecified) + "name like '%wellcome trust%'"
+	updateSQL = setSQL % (newTerm['Sanger Inst. Gene Trap Res.'][0], notSpecified) + "name like '%wellcome trust%' and _Allele_Type_key = 847121"
 	print updateSQL
 	db.sql(updateSQL, None)
 
-	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0], notSpecified) + "name like '%riken genomi%'"
+	updateSQL = setSQL % (newTerm['RIKEN GSC ENU Project'][0], notSpecified) + "name like '%riken genomi%' and _Allele_Type_key = 847122"
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -187,6 +187,46 @@ def processSpecificFiles():
 
 	print 'end: processing specific file(s)...'
 
+def processRemaining():
+
+	print 'start: processing remaining set....'
+
+	newTermKey = newTerm['EUCOMM'][0]
+	updateSQL = '''
+		update ALL_Allele
+		set _Collection_key = %s
+		from ALL_Allele
+		where _Collection_key = %s
+		and (symbol like '%<tm%(EUCOMM)Wtsi>'
+			or symbol like '%<tm%(EUCOMM)Hmgu>')
+		''' % (newTermKey, notSpecified)
+	print updateSQL
+	db.sql(updateSQL, None)
+
+	newTermKey = newTerm['KOMP-CSD'][0]
+	updateSQL = '''
+		update ALL_Allele
+		set _Collection_key = %s
+		from ALL_Allele
+		where _Collection_key = %s
+		and (symbol like '%<tm%(KOMP)Wtsi>'
+			or symbol like '%<tm%(KOMP)Mbp>')
+		''' % (newTermKey, notSpecified)
+	print updateSQL
+	db.sql(updateSQL, None)
+
+	newTermKey = newTerm['KOMP-Regeneron'][0]
+	updateSQL = '''
+		update ALL_Allele
+		set _Collection_key = %s
+		from ALL_Allele
+		where _Collection_key = %s
+		and (symbol like '%<tm%(KOMP)Vlcg>')
+		''' % (newTermKey, notSpecified)
+	print updateSQL
+	db.sql(updateSQL, None)
+	print 'end: processing remaining set....'
+
 #
 #
 # main
@@ -214,4 +254,5 @@ processLDB()
 processName()
 processJNum()
 processSpecificFiles()
+processRemaining()
 

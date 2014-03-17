@@ -192,14 +192,14 @@ def processRemaining():
 	print 'start: processing remaining set....'
 
 	newTermKey = newTerm['EUCOMM'][0]
+
 	updateSQL = '''
 		update ALL_Allele
 		set _Collection_key = %s
 		from ALL_Allele
 		where _Collection_key = %s
-		and (symbol like '%<tm%(EUCOMM)Wtsi>'
-			or symbol like '%<tm%(EUCOMM)Hmgu>')
 		''' % (newTermKey, notSpecified)
+	updateSQL = updateSQL + 'and (symbol like "%<tm%(EUCOMM)Wtsi>" or symbol like "%<tm%(EUCOMM)Hmgu>")'
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -209,9 +209,8 @@ def processRemaining():
 		set _Collection_key = %s
 		from ALL_Allele
 		where _Collection_key = %s
-		and (symbol like '%<tm%(KOMP)Wtsi>'
-			or symbol like '%<tm%(KOMP)Mbp>')
 		''' % (newTermKey, notSpecified)
+	updateSQL = updateSQL + 'and (symbol like "%<tm%(KOMP)Wtsi>" or symbol like "%<tm%(KOMP)Mbp>")'
 	print updateSQL
 	db.sql(updateSQL, None)
 
@@ -221,10 +220,11 @@ def processRemaining():
 		set _Collection_key = %s
 		from ALL_Allele
 		where _Collection_key = %s
-		and (symbol like '%<tm%(KOMP)Vlcg>')
 		''' % (newTermKey, notSpecified)
+	updateSQL = updateSQL + 'and (symbol like "%<tm%(KOMP)Vlcg>")'
 	print updateSQL
 	db.sql(updateSQL, None)
+
 	print 'end: processing remaining set....'
 
 #

@@ -125,15 +125,16 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# due to drop of MGI_VocAssociation and vocab 40,41
+# re-fresh
 #
 ${MGD_DBSCHEMADIR}/key/key_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/key_create.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MLD_Expt_Marker_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MLD_Expt_Marker_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/view_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/view_create.object | tee -a ${LOG}
 
 #
 # set permissions & counts

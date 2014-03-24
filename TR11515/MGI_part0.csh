@@ -121,6 +121,11 @@ go
 exec MGI_Table_Column_Cleanup
 go
 
+update ACC_ActualDB 
+set url = 'http://gensat.org/bgem_probe_dump.jsp?probe_id=@@@@' 
+where _ActualDB_key = 132
+go
+
 EOSQL
 date | tee -a ${LOG}
 

@@ -65,7 +65,7 @@ values(1001, 'regulates', 96, 44, 2, 2, 94, 95, 1001, 1001, getdate(), getdate()
 go
 
 insert into MGI_Relationship_Category
-values(1002, 'cluster_member', 96, 45, 2, 2, 94, 95, 1001, 1001, getdate(), getdate())
+values(1002, 'cluster_has_member', 96, 45, 2, 2, 94, 95, 1001, 1001, getdate(), getdate())
 go
 
 insert into MGI_Relationship_Category

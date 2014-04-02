@@ -133,7 +133,6 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 ./alleletypeDerivation.py | tee -a ${LOG}
-${MGI_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} VOC_Annot
 date | tee -a ${LOG}
 
 #

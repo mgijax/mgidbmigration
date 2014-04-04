@@ -61,7 +61,7 @@ use ${MGD_DBNAME}
 go
 
 insert into MGI_Relationship_Category
-values(1001, 'regulates', 96, 44, 2, 2, 94, 95, 1001, 1001, getdate(), getdate())
+values(1001, 'interacts_with', 96, 44, 2, 2, 94, 95, 1001, 1001, getdate(), getdate())
 go
 
 insert into MGI_Relationship_Category
@@ -73,7 +73,7 @@ values(1003, 'mutation_overlaps', 96, 46, 11, 2, 94, 95, 1001, 1001, getdate(), 
 go
 
 insert into MGI_Relationship_Category
-values(1004, 'expresses', 96, 47, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
+values(1004, 'expresses_component', 96, 47, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
 go
 
 

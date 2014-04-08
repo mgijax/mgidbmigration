@@ -2,18 +2,15 @@
 
 #
 # Migration for TR11515
-# (part 0 - load new allele stuff
+# (part 1 - load new allele stuff
 #
 # mgidbmigration
 # mgddbschema
 # reports_db
 # qcreports_db
 # mgidbutilities
-# mirror_wget
 #
-# allcacheload - add subtype?
 # vocassociationload - obsolete
-# exporter
 #
 
 ###----------------------###
@@ -38,14 +35,7 @@ touch ${LOG}
 # MAKE SURE BOTH ARE TURNED OFF FOR REAL MIGRATION
 #
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
-#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.postdailybackup
-
-#
-# pre-migration counts
-#
-date | tee -a ${LOG}
-/usr/local/mgi/live/dbutils/mgd/mgddbschema/objectCounter.sh | tee -a ${LOG}
-date | tee -a ${LOG}
+#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
 
 #
 # TR11540/removing obsolete stored procedures
@@ -160,26 +150,6 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
 date | tee -a ${LOG}
-
-#
-# update/run MGI_Statistics
-#
-${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
-
-#
-# run some qc/public reports after migration
-# use *after* report changes
-# only run for testing; do not run during release
-#
-date | tee -a ${LOG}
-./runreports-after.csh | tee -a ${LOG}
-date | tee -a ${LOG}
-
-#
-# run sto85/update IMSR/germline
-#
-${MGI_DBUTILS}/bin/updateIMSRgermline.csh | tee -a ${LOG}
-cat ${DATALOADSOUTPUT}/mgi/mgidbutilities/logs/updateIMSRgermline.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

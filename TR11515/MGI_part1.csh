@@ -151,6 +151,12 @@ date | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletypeTests.csh
 date | tee -a ${LOG}
 
+#
+# run sto85/update IMSR/germline
+#
+${MGI_DBUTILS}/bin/updateIMSRgermline.csh | tee -a ${LOG}
+cat ${DATALOADSOUTPUT}/mgi/mgidbutilities/logs/updateIMSRgermline.csh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

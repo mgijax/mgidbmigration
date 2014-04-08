@@ -2,7 +2,7 @@
 
 #
 # Migration for TR11515
-# (part 2 - run data loads
+# (part 3 - reports
 #
 
 ###----------------------###
@@ -22,16 +22,18 @@ rm -rf ${LOG}
 touch ${LOG}
 
 #
-# alleleload
+# update/run MGI_Statistics
 #
+${DBUTILS}/mgidbmigration/TR11515/alleletype/alleletype-after-stats.csh | tee -a ${LOG}
 
 #
-# targeted allele load
+# run some qc/public reports after migration
+# use *after* report changes
+# only run for testing; do not run during release
 #
-
-#
-# gene trap load
-#
+date | tee -a ${LOG}
+./runreports-after.csh | tee -a ${LOG}
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -45,12 +45,13 @@ rm -rf ${QCREPORTDIR}/output/*.diff
 
 source ${PUBRPTS}/Configuration
 
-cd ${PUBRPTS}/weekly_postgres
-./MGI_Mutations.py
-./MGI_PhenotypicAllele.py
+# manually run the postgres reports after exporter
+#cd ${PUBRPTS}/weekly_postgres
+#./MGI_Mutations.py
+#./MGI_PhenotypicAllele.py
 
-#cd ${PUBRPTS}/weekly_sybase
-#./ALL_CellLine_Targeted.py
+cd ${PUBRPTS}/weekly_sybase
+./ALL_CellLine_Targeted.py
 ./MGI_OMIM.py
 
 #

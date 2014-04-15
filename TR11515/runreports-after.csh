@@ -26,15 +26,15 @@ touch ${LOG}
 setenv LINDON1 lindon:/data/reports/reports_db/output
 setenv LINDON2 lindon:/data/reports/qcreports_db/output
 
-rcp ${LINDON1}/MGI_Mutations.rpt ${PUBREPORTDIR}/output/MGI_Mutations.rpt.bak
-rcp ${LINDON1}/ALL_CellLine_Targeted.rpt ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt.bak
-rcp ${LINDON1}/MGI_OMIM.rpt ${PUBREPORTDIR}/output/MGI_OMIM.rpt.bak
-rcp ${LINDON1}/MGI_PhenotypicAllele.rpt ${PUBREPORTDIR}/output/MGI_PhenotypicAllele.rpt.bak
+#rcp ${LINDON1}/MGI_Mutations.rpt ${PUBREPORTDIR}/output/MGI_Mutations.rpt.bak
+#rcp ${LINDON1}/ALL_CellLine_Targeted.rpt ${PUBREPORTDIR}/output/ALL_CellLine_Targeted.rpt.bak
+#rcp ${LINDON1}/MGI_OMIM.rpt ${PUBREPORTDIR}/output/MGI_OMIM.rpt.bak
+#rcp ${LINDON1}/MGI_PhenotypicAllele.rpt ${PUBREPORTDIR}/output/MGI_PhenotypicAllele.rpt.bak
 
-rcp ${LINDON2}/ALL_NoMCL.sql.rpt ${QCREPORTDIR}/output/ALL_NoMCL.sql.rpt.bak
-rcp ${LINDON2}/GXD_Transgenic.rpt ${QCREPORTDIR}/output/GXD_Transgenic.rpt.bak
-rcp ${LINDON2}/ALL_MolNotesNoMP.rpt ${QCREPORTDIR}/output/ALL_MolNotesNoMP.rpt.bak
-rcp ${LINDON2}/ALL_Progress.current.rpt ${QCREPORTDIR}/output/ALL_Progress.current.rpt.bak
+#rcp ${LINDON2}/ALL_NoMCL.sql.rpt ${QCREPORTDIR}/output/ALL_NoMCL.sql.rpt.bak
+#rcp ${LINDON2}/GXD_Transgenic.rpt ${QCREPORTDIR}/output/GXD_Transgenic.rpt.bak
+#rcp ${LINDON2}/ALL_MolNotesNoMP.rpt ${QCREPORTDIR}/output/ALL_MolNotesNoMP.rpt.bak
+#rcp ${LINDON2}/ALL_Progress.current.rpt ${QCREPORTDIR}/output/ALL_Progress.current.rpt.bak
 
 rm -rf ${PUBREPORTDIR}/output/*.diff
 rm -rf ${QCREPORTDIR}/output/*.diff
@@ -72,10 +72,10 @@ cd ${QCRPTS}/monthly
 cd ${QCRPTS}/weekly
 ./ALL_MolNotesNoMP.py
 
-mv -f $QCOUTPUTDIR/`basename $i py`[0-9]*.rpt $QCALLELEARCHIVE
-rm -rf $QCOUTPUTDIR/`basename $i py`current.rpt
+mv -f $QCOUTPUTDIR/`basename $i py`.[0-9]*.rpt $QCALLELEARCHIVE
+rm -rf $QCOUTPUTDIR/`basename $i py`.current.rpt
 ./ALL_Progress.py
-ln -s $QCOUTPUTDIR/`basename $i py`${DATE}.rpt $QCOUTPUTDIR/`basename $i py`current.rpt
+ln -s $QCOUTPUTDIR/`basename $i py`.${DATE}.rpt $QCOUTPUTDIR/`basename $i py`.current.rpt
 
 #
 # diffs

@@ -46,6 +46,11 @@ into #allelesToDelete
 from ACC_Accession
 where _MGIType_key = 11
 and accid in  ('33373', '118822', '118823', '89792', '101612', '118801')
+union
+select accid, _Object_key as _Allele_key
+from ACC_Accession
+where _MGIType_key = 11
+and _Object_key in (828784, 828915)
 go
 
 /* use to delete from ACC_Accession */

@@ -41,6 +41,8 @@ use ${MGD_DBNAME}
 go
 
 /* use to delete from ALL_Allele_CellLine, ALL_Allele_Mutation, ALL_Allele */
+/* first set gets all alleles for the project IDs in the list */
+/* the second set are orphaned alleles we want to remove */
 select accid, _Object_key as _Allele_key
 into #allelesToDelete
 from ACC_Accession

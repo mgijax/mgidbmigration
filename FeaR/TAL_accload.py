@@ -197,11 +197,10 @@ def processFile():
 	(mgiID, preferred, symbol) = map(string.strip, string.split(line, '\t') )
         results = db.sql('''select _Allele_key from ALL_Allele
 		where symbol = "%s"''' % symbol, 'auto')
-	alleleKey = r['_Allele_key']
+	alleleKey = results[0]['_Allele_key']
 
         # MGI Accession ID for the allelearker
-
-        accFile.write('%s|%s%d|%s|%s|1|%d|%d|0|%s|%s|%s|%s|%s\n' \
+        accFile.write('%s|%s%s|%s|%s|1|%s|%s|0|%s|%s|%s|%s|%s\n' \
             % (accKey, mgiPrefix, mgiKey, mgiPrefix, mgiKey, alleleKey, preferred, mgiTypeKey, \
 	       createdByKey, createdByKey, loaddate, loaddate))
         accKey = accKey + 1

@@ -148,14 +148,14 @@ def processSpecificFiles():
 
 	print 'start: processing specific file(s)...'
 
- 	for provider in ['Australian PhenomeBank', 'Beutler Mutagenetix', 'Harwell Mouse Genetics',
+ 	for provider in ['Australian PhenomeBank', 'Beutler Mutagenix', 'Harwell ENU Mutagenesis',
 			'Neuroscience Blueprint cre', 'Pleiades Promoter Project', 'Sanger miRNA knockouts']:
 
 		if provider == 'Australian PhenomeBank':
 			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Australian_PhenomeBank.txt', 'r')
-		elif provider == 'Beutler Mutagenetix':
+		elif provider == 'Beutler Mutagenix':
 			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Beutler_Mutagenix.txt', 'r')
-		elif provider == 'Harwell Mouse Genetics':
+		elif provider == 'Harwell ENU Mutagenesis':
 			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Harwell_ENU_Mutagenesis.txt', 'r')
 		elif provider == 'Neuroscience Blueprint cre':
 			inFile = open('/mgi/all/wts_projects/11500/11515/allele_collections/Neuroscience_Blueprint_cre.txt', 'r')

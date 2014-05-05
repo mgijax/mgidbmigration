@@ -29,11 +29,6 @@ date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Targeted Allele Loads' | tee -a ${LOG}
-echo 'KOMP-CSD mbp' | tee -a ${LOG}
-${TARGETEDALLELELOAD}/bin/targetedalleleload.sh tal_csd_mbp.config
-
-echo 'KOMP-CSD wtsi' | tee -a ${LOG}
-${TARGETEDALLELELOAD}/bin/targetedalleleload.sh tal_csd_wtsi.config
 
 echo 'EUCOMM hmgu' | tee -a ${LOG}
 ${TARGETEDALLELELOAD}/bin/targetedalleleload.sh tal_eucomm_hmgu.config

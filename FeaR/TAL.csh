@@ -134,4 +134,10 @@ go
 
 EOSQL
 
+echo "--- Run EUCOMM wtsi and hmgu loads ..." | tee -a ${LOG}
+./run_TAL.csh
+
+echo "--- Hook up old MGI IDs; make new secondary ..." | tee -a ${LOG}
+./run_TAL_accload.csh
+
 date | tee -a ${LOG}

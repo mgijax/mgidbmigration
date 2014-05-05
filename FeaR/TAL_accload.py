@@ -5,7 +5,7 @@
 #
 # Inputs:
 #
-#	file of recreated allele symbols
+#	file of recreated allele cell lines 
 #
 # Outputs:
 #
@@ -194,11 +194,22 @@ def processFile():
     for line in fp.readlines():
         error = 0
 
-	(mgiID, preferred, symbol) = map(string.strip, string.split(line, '\t') )
-        results = db.sql('''select _Allele_key from ALL_Allele
-		where symbol = "%s"''' % symbol, 'auto')
+	(mgiID, preferred, cellline) = map(string.strip, string.split(line, '\t') )
+        results = db.sql('''select ac._Allele_key from 
+	    	ALL_Allele_CellLine ac, ALL_CellLine c
+		where c.cellline = "%s"
+		and c._CellLine_key = ac._MutantCellLine_key''' % cellline, 'auto')
 	alleleKey = results[0]['_Allele_key']
 
+	# update existing MGI ID to non-preferred
+        db.sql('''update ACC_Accession 
+		set preferred = 0
+		where _MGIType_key = 11
+		and preferred = 1
+		and _Object_key = %s
+		and prefixPart = "MGI:" ''' % alleleKey, None)
+
+	# Add new preferred ID and non-preferred where dups
         # MGI Accession ID for the allelearker
         accFile.write('%s|%s%s|%s|%s|1|%s|%s|0|%s|%s|%s|%s|%s\n' \
             % (accKey, mgiPrefix, mgiKey, mgiPrefix, mgiKey, alleleKey, preferred, mgiTypeKey, \

@@ -38,8 +38,8 @@ import loadlib
 user = os.environ['MGD_DBUSER']
 passwordFileName = os.environ['MGD_DBPASSWORDFILE']
 
-#DEBUG = 0		# if 0, not in debug mode
-DEBUG = 1		# if 0, not in debug mode
+DEBUG = 0		# if 0, not in debug mode
+#DEBUG = 1		# if 0, not in debug mode
 TAB = '\t'		# tab
 CRT = '\n'		# carriage return/newline
 

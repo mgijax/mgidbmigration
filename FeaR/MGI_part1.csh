@@ -69,7 +69,7 @@ values(1002, 'cluster_has_member', 96, 45, 2, 2, 94, 95, 1001, 1001, getdate(), 
 go
 
 insert into MGI_Relationship_Category
-values(1003, 'mutation_overlaps', 96, 46, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
+values(1003, 'mutation_involves', 96, 46, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
 go
 
 insert into MGI_Relationship_Category

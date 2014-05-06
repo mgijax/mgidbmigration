@@ -55,7 +55,6 @@ diagFileName = ''	# diagnostic file name
 errorFileName = ''	# error file name
 
 accKey = 0              # ACC_Accession._Accession_key
-mgiKey = 0              # ACC_AccessionMax.maxNumericPart
 
 mgiTypeKey = 11		# ALL_Allele
 mgiPrefix = "MGI:"
@@ -143,14 +142,11 @@ def init():
 
 def setPrimaryKeys():
 
-    global accKey, mgiKey
+    global accKey
 
     results = db.sql('select maxKey = max(_Accession_key) + 1 from ACC_Accession', 'auto')
     accKey = results[0]['maxKey']
 
-    results = db.sql('select maxKey = maxNumericPart + 1 from ACC_AccessionMax ' + \
-        'where prefixPart = "%s"' % (mgiPrefix), 'auto')
-    mgiKey = results[0]['maxKey']
 
 # Purpose:  BCPs the data into the database
 # Returns:  nothing
@@ -186,7 +182,7 @@ def bcpFiles():
 
 def processFile():
 
-    global accKey, mgiKey
+    global accKey
 
     createdByKey = 1001
     fp = open('TAL_Old_Ids.txt', 'r')
@@ -196,6 +192,7 @@ def processFile():
         error = 0
 
 	(mgiID, preferred, cellline) = map(string.strip, string.split(line, '\t') )
+	(prefix, mgiKey) = string.split(mgiID, ':')
         results = db.sql('''select ac._Allele_key from 
 	    	ALL_Allele_CellLine ac, ALL_CellLine c
 		where c.cellline = "%s"
@@ -226,16 +223,9 @@ def processFile():
             % (accKey, mgiPrefix, mgiKey, mgiPrefix, mgiKey, ldbKey, alleleKey, mgiTypeKey, private, \
 	       preferred, createdByKey, createdByKey, loaddate, loaddate))
         accKey = accKey + 1
-        mgiKey = mgiKey + 1
 
 	row = row + 1
 
-    #
-    # Update the AccessionMax value
-    #
-
-    if not DEBUG:
-        db.sql('exec ACC_setMax %d' % (row), None)
 
 #
 # Main

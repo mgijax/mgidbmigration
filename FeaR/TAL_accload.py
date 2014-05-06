@@ -204,10 +204,11 @@ def processFile():
 	# update existing MGI ID to non-preferred
         db.sql('''update ACC_Accession 
 		set preferred = 0
+		modification_date = %s
 		where _MGIType_key = 11
 		and preferred = 1
 		and _Object_key = %s
-		and prefixPart = "MGI:" ''' % alleleKey, None)
+		and prefixPart = "MGI:" ''' % (alleleKey, loaddate), None)
 
 	# Add new preferred ID and non-preferred where dups
         # MGI Accession ID for the allelearker

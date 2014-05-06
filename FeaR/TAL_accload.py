@@ -59,7 +59,8 @@ mgiKey = 0              # ACC_AccessionMax.maxNumericPart
 
 mgiTypeKey = 11		# ALL_Allele
 mgiPrefix = "MGI:"
-
+ldbKey = 1
+private = 0
 loaddate = loadlib.loaddate
 
 # Purpose: prints error message and exits
@@ -200,21 +201,30 @@ def processFile():
 		where c.cellline = "%s"
 		and c._CellLine_key = ac._MutantCellLine_key''' % cellline, 'auto')
 	alleleKey = results[0]['_Allele_key']
+	print 'mgiID %s, alleleKey %s, preferred, %s, cellline %s' % (mgiID, alleleKey, preferred, cellline)
+ 	print '''update ACC_Accession
+               set preferred = 0,
+               modification_date = "%s"
+               where _MGIType_key = 11
+               and preferred = 1
+               and _Object_key = %s
+               and prefixPart = "MGI:" ''' % (loaddate, alleleKey)
 
 	# update existing MGI ID to non-preferred
         db.sql('''update ACC_Accession 
-		set preferred = 0
-		modification_date = %s
+		set preferred = 0,
+		modification_date = "%s"
 		where _MGIType_key = 11
 		and preferred = 1
 		and _Object_key = %s
-		and prefixPart = "MGI:" ''' % (alleleKey, loaddate), None)
+		and prefixPart = "MGI:" ''' % (loaddate, alleleKey), None)
+	
 
 	# Add new preferred ID and non-preferred where dups
         # MGI Accession ID for the allelearker
-        accFile.write('%s|%s%s|%s|%s|1|%s|%s|0|%s|%s|%s|%s|%s\n' \
-            % (accKey, mgiPrefix, mgiKey, mgiPrefix, mgiKey, alleleKey, preferred, mgiTypeKey, \
-	       createdByKey, createdByKey, loaddate, loaddate))
+        accFile.write('%s|%s%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s\n' \
+            % (accKey, mgiPrefix, mgiKey, mgiPrefix, mgiKey, ldbKey, alleleKey, mgiTypeKey, private, \
+	       preferred, createdByKey, createdByKey, loaddate, loaddate))
         accKey = accKey + 1
         mgiKey = mgiKey + 1
 

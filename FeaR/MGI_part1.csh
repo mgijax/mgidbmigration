@@ -48,9 +48,6 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
-echo "--- Create Schema " | tee -a ${LOG}
-./createSchema.csh
-
 echo "--- Running RV vocabulary load " | tee -a ${LOG}
 ${RVLOAD}/bin/rvload.sh
 

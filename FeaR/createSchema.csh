@@ -55,11 +55,8 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 date | tee -a ${LOG}
 
 echo '---Create table tables---' | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/table/MGI_Relationship_Category_drop.object
 ${MGD_DBSCHEMADIR}/table/MGI_Relationship_Category_create.object
-${MGD_DBSCHEMADIR}/table/MGI_Relationship_drop.object
 ${MGD_DBSCHEMADIR}/table/MGI_Relationship_create.object
-${MGD_DBSCHEMADIR}/table/MGI_Relationship_Property_drop.object
 ${MGD_DBSCHEMADIR}/table/MGI_Relationship_Property_create.object
 
 echo '---Create table defaults---' | tee -a ${LOG}

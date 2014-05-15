@@ -1,3 +1,9 @@
+TAG: mgidbmigration-5-1-8-8
+DATE: 05/15/2014
+STAFF: sc
+CHANGES: TR11560 
+1) Tag for Dave to run FeaR/createSchema.csh in production
+
 TAG: mgidbmigration-5-1-8-7
 TAG: mgidbmigration-5-1-8-6
 DATE: 05/06/2014

@@ -1,3 +1,12 @@
+TAG: mgidbmigration-5-1-8-9
+DATE: 06/04/2014
+STAFF: sc
+CHANGES: TR11560
+1) FeaR - added test_tempdb.csh, test_tempdb.py, mgi_id.bcp to  add
+   data to tempdb to test the sybase database fearQC runtime issue
+   where updating statistics clears things up
+   tagged this so we could test on production
+
 TAG: mgidbmigration-5-1-8-8
 DATE: 05/15/2014
 STAFF: sc

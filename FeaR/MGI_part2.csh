@@ -35,7 +35,7 @@ echo "--- Run test file 1 ---"
 rm ${INPUT}/fearload.txt
 ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Interacts_TempTest1.txt  ${INPUT}/fearload.txt
 
-#${FEARLOAD}/bin/fearload.sh
+${FEARLOAD}/bin/fearload.sh
 
 # move output directories
 mv ${LOGS} ${LOGS}.Interacts_TempTest1
@@ -49,7 +49,7 @@ echo "--- Run test file 2 ---"
 rm ${INPUT}/fearload.txt
 ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Mutations_TempTest1.txt  ${INPUT}/fearload.txt
 
-#${FEARLOAD}/bin/fearload.sh
+${FEARLOAD}/bin/fearload.sh
 
 # move output directories
 mv ${LOGS} ${LOGS}.Mutations_TempTest1
@@ -63,7 +63,7 @@ echo "--- Run cluster file  ---"
 rm ${INPUT}/fearload.txt
 ln -s /data/loads/scrum-bob/mgi/fearload/input/howard_wendy_cluster.txt  ${INPUT}/fearload.txt
 
-#${FEARLOAD}/bin/fearload.sh
+${FEARLOAD}/bin/fearload.sh
 
 # move output directories
 mv ${LOGS} ${LOGS}.howard_wendy_cluster
@@ -77,7 +77,7 @@ echo "--- Run mutations file  ---"
 rm ${INPUT}/fearload.txt
 ln -s /data/loads/scrum-bob/mgi/fearload/input/mutations.txt  ${INPUT}/fearload.txt
 
-#${FEARLOAD}/bin/fearload.sh
+${FEARLOAD}/bin/fearload.sh
 
 # move output directories
 mv ${LOGS} ${LOGS}.mutations
@@ -91,7 +91,7 @@ echo "--- Run interacts file  ---"
 rm ${INPUT}/fearload.txt
 ln -s /data/loads/scrum-bob/mgi/fearload/input/interacts.txt  ${INPUT}/fearload.txt
 
-#${FEARLOAD}/bin/fearload.sh
+${FEARLOAD}/bin/fearload.sh
 
 # move output directories
 mv ${LOGS} ${LOGS}.interacts

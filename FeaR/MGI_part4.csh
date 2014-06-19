@@ -40,10 +40,6 @@ date | tee -a ${LOG}
 echo 'Public Reports' | tee -a ${LOG}
 ${PUBRPTS}/run_weekly_sybase.csh
 
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_weekly_postgres.csh >>& ${LOG}
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

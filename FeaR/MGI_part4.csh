@@ -40,6 +40,21 @@ date | tee -a ${LOG}
 echo 'Public Reports' | tee -a ${LOG}
 ${PUBRPTS}/run_weekly_sybase.csh
 
+###----------------------###
+###---   QC reports   ---###
+###----------------------###
+date | tee -a ${LOG}
+echo 'Nightly QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcnightly_reports.csh
+
+date | tee -a ${LOG}
+echo 'Weekly QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcweekly_reports.csh
+
+date | tee -a ${LOG}
+echo 'QC Reports' | tee -a ${LOG}
+${QCRPTS}/qcmonthly_reports.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

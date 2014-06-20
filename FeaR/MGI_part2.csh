@@ -41,6 +41,16 @@ ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Interacts_TempTest1.txt  
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
+if (  -d ${LOGS}.Interacts_TempTest1 ) then
+   rm -rf  ${LOGS}.Interacts_TempTest1
+endif
+if (  -d ${REPORTS}.Interacts_TempTest1 ) then
+   rm -rf  ${REPORTS}.Interacts_TempTest1
+endif
+if (  -d ${OUTPUT}.Interacts_TempTest1 ) then
+   rm -rf  ${OUTPUT}.Interacts_TempTest1
+endif
+
 mv ${LOGS} ${LOGS}.Interacts_TempTest1
 mkdir  ${LOGS}
 mv ${REPORTS}  ${REPORTS}.Interacts_TempTest1
@@ -56,6 +66,16 @@ ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Mutations_TempTest1.txt  
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
+if (  -d ${LOGS}.Mutations_TempTest1 ) then
+   rm -rf  ${LOGS}.Mutations_TempTest1
+endif
+if (  -d ${REPORTS}.Mutations_TempTest1 ) then
+   rm -rf  ${REPORTS}.Mutations_TempTest1
+endif
+if (  -d ${OUTPUT}.Mutations_TempTest1 ) then
+   rm -rf  ${OUTPUT}.Mutations_TempTest1
+endif
+
 mv ${LOGS} ${LOGS}.Mutations_TempTest1
 mkdir  ${LOGS}
 mv ${REPORTS} ${REPORTS}.Mutations_TempTest1
@@ -71,6 +91,16 @@ ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/clusters_2a_howard_04April
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
+if (  -d ${LOGS}.howard_cluster ) then
+   rm -rf  ${LOGS}.howard_cluster
+endif
+if (  -d ${REPORTS}.howard_cluster ) then
+   rm -rf  ${REPORTS}.howard_cluster
+endif
+if (  -d ${OUTPUT}.howard_cluster ) then
+   rm -rf  ${OUTPUT}.howard_cluster
+endif
+
 mv ${LOGS} ${LOGS}.howard_cluster
 mkdir  ${LOGS}
 mv ${REPORTS} ${REPORTS}.howard_cluster
@@ -86,6 +116,16 @@ ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/wp_cluster_membership_uplo
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
+if (  -d ${LOGS}.wendy_cluster ) then
+   rm -rf  ${LOGS}.wendy_cluster
+endif
+if (  -d ${REPORTS}.wendy_cluster ) then
+   rm -rf  ${REPORTS}.wendy_cluster
+endif
+if (  -d ${OUTPUT}.wendy_cluster ) then
+   rm -rf  ${OUTPUT}.wendy_cluster
+endif
+
 mv ${LOGS} ${LOGS}.wendy_cluster
 mkdir  ${LOGS}
 mv ${REPORTS} ${REPORTS}.wendy_cluster
@@ -101,6 +141,16 @@ ln -s /mgi/all/wts_projects/11500/11560/Mutation_stuff/MutationOverlaps_2.txt ${
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
+if (  -d ${LOGS}.mutations ) then
+   rm -rf  ${LOGS}.mutations
+endif
+if (  -d ${REPORTS}.mutations ) then
+   rm -rf  ${REPORTS}.mutations
+endif
+if (  -d ${OUTPUT}.mutations ) then
+   rm -rf  ${OUTPUT}.mutations
+endif
+
 mv ${LOGS} ${LOGS}.mutations
 mkdir  ${LOGS}
 mv ${REPORTS} ${REPORTS}.mutations
@@ -116,6 +166,16 @@ ln -s /mgi/all/wts_projects/11500/11560/Interacts_stuff/microT_Tarbase_upload_28
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
+if (  -d ${LOGS}.interacts ) then
+   rm -rf  ${LOGS}.interacts
+endif
+if (  -d ${REPORTS}.interacts ) then
+   rm -rf  ${REPORTS}.interacts
+endif
+if (  -d ${OUTPUT}.interacts ) then
+   rm -rf  ${OUTPUT}.interacts
+endif
+
 mv ${LOGS} ${LOGS}.interacts
 mkdir  ${LOGS}
 mv ${REPORTS} ${REPORTS}.interacts

@@ -28,10 +28,10 @@ echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 date | tee -a ${LOG}
 echo "--- Run Feature Relationship Loads ---" | tee -a ${LOG}
 
-setenv INPUT /data/loads/sc/mgi/fearload/input
-setenv LOGS /data/loads/sc/mgi/fearload/logs
-setenv REPORTS /data/loads/sc/mgi/fearload/reports
-setenv OUTPUT /data/loads/sc/mgi/fearload/output
+setenv INPUT /data/loads/mgi/fearload/input
+setenv LOGS /data/loads/mgi/fearload/logs
+setenv REPORTS /data/loads/mgi/fearload/reports
+setenv OUTPUT /data/loads/mgi/fearload/output
 
 date | tee -a ${LOG}
 echo "--- Run test file 1 ---" | tee -a ${LOG}
@@ -64,24 +64,39 @@ mv ${OUTPUT} ${OUTPUT}.Mutations_TempTest1
 mkdir ${OUTPUT}
 
 date | tee -a ${LOG}
-echo "--- Run cluster file  ---"  | tee -a ${LOG}
+echo "--- Run Howard cluster file  ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /data/loads/scrum-bob/mgi/fearload/input/howard_wendy_cluster.txt  ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/clusters_2a_howard_04April2014.txt  ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
-mv ${LOGS} ${LOGS}.howard_wendy_cluster
+mv ${LOGS} ${LOGS}.howard_cluster
 mkdir  ${LOGS}
-mv ${REPORTS} ${REPORTS}.howard_wendy_cluster
+mv ${REPORTS} ${REPORTS}.howard_cluster
 mkdir ${REPORTS}
-mv ${OUTPUT} ${OUTPUT}.howard_wendy_cluster
+mv ${OUTPUT} ${OUTPUT}.howard_cluster
+mkdir ${OUTPUT}
+
+date | tee -a ${LOG}
+echo "--- Run Wendy cluster file  ---"  | tee -a ${LOG}
+rm ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/wp_cluster_membership_upload_24Mar2014.txt ${INPUT}/fearload.txt
+
+${FEARLOAD}/bin/fearload.sh
+
+# move output directories
+mv ${LOGS} ${LOGS}.wendy_cluster
+mkdir  ${LOGS}
+mv ${REPORTS} ${REPORTS}.wendy_cluster
+mkdir ${REPORTS}
+mv ${OUTPUT} ${OUTPUT}.wendy_cluster
 mkdir ${OUTPUT}
 
 date | tee -a ${LOG}
 echo "--- Run mutations file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /data/loads/scrum-bob/mgi/fearload/input/mutations.txt  ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/Mutation_stuff/MutationOverlaps_2.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
@@ -96,7 +111,7 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run interacts file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /data/loads/scrum-bob/mgi/fearload/input/interacts.txt  ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/Interacts_stuff/microT_Tarbase_upload_28Apr2014_1.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 

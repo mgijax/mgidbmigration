@@ -25,13 +25,16 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
-echo "--- Run Feature Relationship Loads ---"
-setenv INPUT /data/loads/scrum-bob/mgi/fearload/input
-setenv LOGS /data/loads/scrum-bob/mgi/fearload/logs
-setenv REPORTS /data/loads/scrum-bob/mgi/fearload/reports
-setenv OUTPUT /data/loads/scrum-bob/mgi/fearload/output
+date | tee -a ${LOG}
+echo "--- Run Feature Relationship Loads ---" | tee -a ${LOG}
 
-echo "--- Run test file 1 ---"
+setenv INPUT /data/loads/sc/mgi/fearload/input
+setenv LOGS /data/loads/sc/mgi/fearload/logs
+setenv REPORTS /data/loads/sc/mgi/fearload/reports
+setenv OUTPUT /data/loads/sc/mgi/fearload/output
+
+date | tee -a ${LOG}
+echo "--- Run test file 1 ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
 ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Interacts_TempTest1.txt  ${INPUT}/fearload.txt
 
@@ -45,7 +48,8 @@ mkdir ${REPORTS}
 mv ${OUTPUT}  ${OUTPUT}.Interacts_TempTest1
 mkdir ${OUTPUT}
 
-echo "--- Run test file 2 ---"
+date | tee -a ${LOG}
+echo "--- Run test file 2 ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
 ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Mutations_TempTest1.txt  ${INPUT}/fearload.txt
 
@@ -59,7 +63,8 @@ mkdir ${REPORTS}
 mv ${OUTPUT} ${OUTPUT}.Mutations_TempTest1
 mkdir ${OUTPUT}
 
-echo "--- Run cluster file  ---"
+date | tee -a ${LOG}
+echo "--- Run cluster file  ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
 ln -s /data/loads/scrum-bob/mgi/fearload/input/howard_wendy_cluster.txt  ${INPUT}/fearload.txt
 
@@ -73,7 +78,8 @@ mkdir ${REPORTS}
 mv ${OUTPUT} ${OUTPUT}.howard_wendy_cluster
 mkdir ${OUTPUT}
 
-echo "--- Run mutations file  ---"
+date | tee -a ${LOG}
+echo "--- Run mutations file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
 ln -s /data/loads/scrum-bob/mgi/fearload/input/mutations.txt  ${INPUT}/fearload.txt
 
@@ -87,7 +93,8 @@ mkdir ${REPORTS}
 mv ${OUTPUT} ${OUTPUT}.mutations
 mkdir ${OUTPUT}
 
-echo "--- Run interacts file  ---"
+date | tee -a ${LOG}
+echo "--- Run interacts file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
 ln -s /data/loads/scrum-bob/mgi/fearload/input/interacts.txt  ${INPUT}/fearload.txt
 
@@ -101,6 +108,7 @@ mkdir ${REPORTS}
 mv ${OUTPUT} ${OUTPUT}.interacts
 mkdir ${OUTPUT}
 
-echo "--- Done running Feature Relationship Loads  ---"
+date | tee -a ${LOG}
+echo "--- Done running Feature Relationship Loads  ---" | tee -a ${LOG}
 
 date | tee -a ${LOG}

@@ -73,6 +73,10 @@ insert into MGI_Relationship_Category
 values(1004, 'expresses_component', 96, 47, 11, 2, 94, 95, 1001, 1001, getdate(), getdate())
 go
 
+update MGI_dbinfo set
+        schema_version = '5-1-9',
+        public_version = 'MGI 5.19'
+go
 
 EOSQL
 

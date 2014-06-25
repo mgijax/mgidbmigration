@@ -36,7 +36,7 @@ setenv OUTPUT /data/loads/mgi/fearload/output
 date | tee -a ${LOG}
 echo "--- Run test file 1 ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Interacts_TempTest1.txt  ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/US163_testData/Interacts_TempTest1.txt  ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
@@ -61,26 +61,26 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run test file 2 ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/US142_testData/Mutations_TempTest1.txt  ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/US163_testData/Mutations_TempTest2.txt  ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
 # move output directories
-if (  -d ${LOGS}.Mutations_TempTest1 ) then
-   rm -rf  ${LOGS}.Mutations_TempTest1
+if (  -d ${LOGS}.Mutations_TempTest2 ) then
+   rm -rf  ${LOGS}.Mutations_TempTest2
 endif
-if (  -d ${REPORTS}.Mutations_TempTest1 ) then
-   rm -rf  ${REPORTS}.Mutations_TempTest1
+if (  -d ${REPORTS}.Mutations_TempTest2 ) then
+   rm -rf  ${REPORTS}.Mutations_TempTest2
 endif
-if (  -d ${OUTPUT}.Mutations_TempTest1 ) then
-   rm -rf  ${OUTPUT}.Mutations_TempTest1
+if (  -d ${OUTPUT}.Mutations_TempTest2 ) then
+   rm -rf  ${OUTPUT}.Mutations_TempTest2
 endif
 
-mv ${LOGS} ${LOGS}.Mutations_TempTest1
+mv ${LOGS} ${LOGS}.Mutations_TempTest2
 mkdir  ${LOGS}
-mv ${REPORTS} ${REPORTS}.Mutations_TempTest1
+mv ${REPORTS} ${REPORTS}.Mutations_TempTest2
 mkdir ${REPORTS}
-mv ${OUTPUT} ${OUTPUT}.Mutations_TempTest1
+mv ${OUTPUT} ${OUTPUT}.Mutations_TempTest2
 mkdir ${OUTPUT}
 
 date | tee -a ${LOG}

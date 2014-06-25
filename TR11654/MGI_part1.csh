@@ -60,6 +60,20 @@ go
 
 drop procedure BIB_isNOGO
 go
+drop procedure BIB_GO_Exists_create.object
+go
+drop procedure BIB_GXD_Exists_create.object
+go
+drop procedure BIB_HMD_Exists_create.object
+go
+drop procedure BIB_MLC_Exists_create.object
+go
+drop procedure BIB_MLD_Exists_create.object
+go
+drop procedure BIB_NOM_Exists_create.object
+go
+drop procedure BIB_PRB_Exists_create.object
+go
 
 EOSQL
 date | tee -a ${LOG}

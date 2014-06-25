@@ -60,19 +60,19 @@ go
 
 drop procedure BIB_isNOGO
 go
-drop procedure BIB_GO_Exists_create.object
+drop procedure BIB_GO_Exists
 go
-drop procedure BIB_GXD_Exists_create.object
+drop procedure BIB_GXD_Exists
 go
-drop procedure BIB_HMD_Exists_create.object
+drop procedure BIB_HMD_Exists
 go
-drop procedure BIB_MLC_Exists_create.object
+drop procedure BIB_MLC_Exists
 go
-drop procedure BIB_MLD_Exists_create.object
+drop procedure BIB_MLD_Exists
 go
-drop procedure BIB_NOM_Exists_create.object
+drop procedure BIB_NOM_Exists
 go
-drop procedure BIB_PRB_Exists_create.object
+drop procedure BIB_PRB_Exists
 go
 
 EOSQL

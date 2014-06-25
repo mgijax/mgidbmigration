@@ -78,6 +78,9 @@ update MGI_dbinfo set
         public_version = 'MGI 5.19'
 go
 
+exec MGI_Table_Column_Cleanup
+go
+
 EOSQL
 
 date | tee -a ${LOG}

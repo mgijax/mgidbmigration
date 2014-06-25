@@ -25,25 +25,35 @@ date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
 echo "--- Run Deletes ---" 
-setenv INPUT /data/loads/scrum-bob/mgi/fearload/input
-setenv LOGS /data/loads/scrum-bob/mgi/fearload/logs
-setenv REPORTS /data/loads/scrum-bob/mgi/fearload/reports
-setenv OUTPUT /data/loads/scrum-bob/mgi/fearload/output
+setenv INPUT /data/loads/mgi/fearload/input
+setenv LOGS /data/loads/mgi/fearload/logs
+setenv REPORTS /data/loads/mgi/fearload/reports
+setenv OUTPUT /data/loads/mgi/fearload/output
 
- ${LOG}
 echo "--- Run delete file 1 ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/testing/US60_testing/US60_DEL_Alpha.txt
+ln -s /mgi/all/wts_projects/11500/11560/US163_testData/US163_delete.txt ${INPUT}/fearload.txt
 
 #${FEARLOAD}/bin/fearload.sh
 
 # move output directories
-mv ${LOGS} ${LOGS}.US60_DEL_Alpha.txt
+if (  -d ${LOGS}.US163_delete ) then
+   rm -rf  ${LOGS}.US163_delete
+endif
+mv ${LOGS} ${LOGS}.US163_delete
 mkdir  ${LOGS}
-mv ${REPORTS}  ${REPORTS}.US60_DEL_Alpha.txt
-mkdir ${REPORTS}
-mv ${OUTPUT}  ${OUTPUT}.US60_DEL_Alpha.txt
-mkdir ${OUTPUT}
+
+if (  -d ${REPORTS}.US163_delete ) then
+   rm -rf  ${REPORTS}.US163_delete
+endif
+mv ${REPORTS} ${REPORTS}.US163_delete
+mkdir  ${REPORTS}
+
+if (  -d ${OUTPUT}.US163_delete ) then
+   rm -rf  ${OUTPUT}.US163_delete
+endif
+mv ${OUTPUT} ${OUTPUT}.US163_delete
+mkdir  ${OUTPUT}
 
 echo "--- Done running Deletes  ---"
 

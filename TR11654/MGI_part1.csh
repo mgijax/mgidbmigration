@@ -74,6 +74,8 @@ drop procedure BIB_NOM_Exists
 go
 drop procedure BIB_PRB_Exists
 go
+drop procedure BIB_getYear
+go
 
 EOSQL
 date | tee -a ${LOG}

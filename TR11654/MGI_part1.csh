@@ -49,6 +49,13 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# re-set trigger
+#
+date | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
+
+#
 # obsolete stored procecures
 #
 
@@ -76,6 +83,8 @@ drop procedure BIB_PRB_Exists
 go
 drop procedure BIB_getYear
 go
+drop procedure BIB_removeNOGO
+go
 
 -- obsolete
 drop procedure ALL_associateCellLine
@@ -87,7 +96,6 @@ EOSQL
 date | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
-
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

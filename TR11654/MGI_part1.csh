@@ -41,8 +41,8 @@ use ${MGD_DBNAME}
 go
 
 update MGI_dbinfo set 
-        schema_version = '5-1-8', 
-        public_version = 'MGI 5.18'
+        schema_version = '5-1-9', 
+        public_version = 'MGI 5.19'
 go
 
 EOSQL

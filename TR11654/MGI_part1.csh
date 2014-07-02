@@ -85,6 +85,8 @@ drop procedure BIB_getYear
 go
 drop procedure BIB_removeNOGO
 go
+drop procedure NOM_verifyMarker
+go
 
 -- obsolete
 drop procedure ALL_associateCellLine

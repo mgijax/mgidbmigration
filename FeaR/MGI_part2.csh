@@ -86,6 +86,7 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run Howard cluster file  ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
+# 6/26 - Howard' final alpha/production file
 ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/clusters_2a_howard_04April2014.txt  ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
@@ -111,7 +112,7 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run Wendy cluster file  ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/wp_cluster_membership_upload_24Mar2014.txt ${INPUT}/fearload.txt
+ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/cluster_membership_upload_wp_26Jun2014.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
@@ -136,7 +137,8 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run mutations file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/Mutation_stuff/MutationOverlaps_2.txt ${INPUT}/fearload.txt
+# sc 6/26 Howard's final alpha/production file
+ln -s /hobbiton/data/fear/current/mutation_involves/MutationOverlaps_2.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
@@ -161,7 +163,7 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run interacts file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/Interacts_stuff/microT_Tarbase_upload_28Apr2014_1.txt ${INPUT}/fearload.txt
+ln -s  /hobbiton/data/fear/current/interacts_with/all_interacts_wp.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 

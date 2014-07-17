@@ -34,60 +34,12 @@ setenv REPORTS /data/loads/mgi/fearload/reports
 setenv OUTPUT /data/loads/mgi/fearload/output
 
 date | tee -a ${LOG}
-echo "--- Run test file 1 ---" | tee -a ${LOG}
-rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/US163_testData/Interacts_TempTest1.txt  ${INPUT}/fearload.txt
-
-${FEARLOAD}/bin/fearload.sh
-
-# move output directories
-if (  -d ${LOGS}.Interacts_TempTest1 ) then
-   rm -rf  ${LOGS}.Interacts_TempTest1
-endif
-if (  -d ${REPORTS}.Interacts_TempTest1 ) then
-   rm -rf  ${REPORTS}.Interacts_TempTest1
-endif
-if (  -d ${OUTPUT}.Interacts_TempTest1 ) then
-   rm -rf  ${OUTPUT}.Interacts_TempTest1
-endif
-
-mv ${LOGS} ${LOGS}.Interacts_TempTest1
-mkdir  ${LOGS}
-mv ${REPORTS}  ${REPORTS}.Interacts_TempTest1
-mkdir ${REPORTS}
-mv ${OUTPUT}  ${OUTPUT}.Interacts_TempTest1
-mkdir ${OUTPUT}
-
-date | tee -a ${LOG}
-echo "--- Run test file 2 ---"  | tee -a ${LOG}
-rm ${INPUT}/fearload.txt
-ln -s /mgi/all/wts_projects/11500/11560/US163_testData/Mutations_TempTest2.txt  ${INPUT}/fearload.txt
-
-${FEARLOAD}/bin/fearload.sh
-
-# move output directories
-if (  -d ${LOGS}.Mutations_TempTest2 ) then
-   rm -rf  ${LOGS}.Mutations_TempTest2
-endif
-if (  -d ${REPORTS}.Mutations_TempTest2 ) then
-   rm -rf  ${REPORTS}.Mutations_TempTest2
-endif
-if (  -d ${OUTPUT}.Mutations_TempTest2 ) then
-   rm -rf  ${OUTPUT}.Mutations_TempTest2
-endif
-
-mv ${LOGS} ${LOGS}.Mutations_TempTest2
-mkdir  ${LOGS}
-mv ${REPORTS} ${REPORTS}.Mutations_TempTest2
-mkdir ${REPORTS}
-mv ${OUTPUT} ${OUTPUT}.Mutations_TempTest2
-mkdir ${OUTPUT}
-
-date | tee -a ${LOG}
 echo "--- Run Howard cluster file  ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
-# 6/26 - Howard' final alpha/production file
-ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/clusters_2a_howard_04April2014.txt  ${INPUT}/fearload.txt
+rm ${INPUT}/lastrun
+
+# 7/17 - Howard' final production file
+ln -s /hobbiton/data/loads/mgi/fearload/input/fearload.txt  ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
 
@@ -112,6 +64,7 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run Wendy cluster file  ---"  | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
+rm ${INPUT}/lastrun
 ln -s /mgi/all/wts_projects/11500/11560/Cluster_stuff/cluster_membership_upload_wp_26Jun2014.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh
@@ -137,6 +90,8 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run mutations file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
+rm ${INPUT}/lastrun
+
 # sc 6/26 Howard's final alpha/production file
 ln -s /hobbiton/data/fear/current/mutation_involves/MutationOverlaps_2.txt ${INPUT}/fearload.txt
 
@@ -163,6 +118,7 @@ mkdir ${OUTPUT}
 date | tee -a ${LOG}
 echo "--- Run interacts file  ---" | tee -a ${LOG}
 rm ${INPUT}/fearload.txt
+rm ${INPUT}/lastrun
 ln -s  /hobbiton/data/fear/current/interacts_with/all_interacts_wp.txt ${INPUT}/fearload.txt
 
 ${FEARLOAD}/bin/fearload.sh

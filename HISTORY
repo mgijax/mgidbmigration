@@ -1,3 +1,11 @@
+TAG: mgidbmigration-5-1-9-2
+DATE: 07/17/2014
+STAFF: sc
+CHANGES: TR11560 - production release
+1) ./FeaR/MGI_Part2.csh - add new howard cluster file path, added
+   rm of lastrun file now that we have uncommented creation of such
+   in the load
+
 TAG: mgidbmigration-5-1-9-1
 DATE: 07/03/2014
 STAFF: sc

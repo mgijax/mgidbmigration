@@ -94,12 +94,6 @@ go
 drop procedure SEQ_createCoordinate
 go
 
--- obsolete
-drop procedure ALL_associateCellLine
-go
-drop procedure SEQ_createCoordinate
-go
-
 EOSQL
 date | tee -a ${LOG}
 

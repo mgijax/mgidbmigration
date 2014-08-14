@@ -56,6 +56,12 @@ ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
 
 #
+# re-create procedure
+#
+${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
+
+#
 # obsolete stored procecures
 #
 
@@ -92,6 +98,12 @@ go
 drop procedure ALL_associateCellLine
 go
 drop procedure SEQ_createCoordinate
+go
+drop procedure HMD_hasHomology
+go
+drop procedure MRK_MaxOffset
+go
+drop procedure MRK_MiniMapMarkers
 go
 
 EOSQL

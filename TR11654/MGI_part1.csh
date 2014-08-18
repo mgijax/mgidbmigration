@@ -60,6 +60,8 @@ ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
 #
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_create.object | tee -a ${LOG}
 
 #
 # obsolete stored procecures

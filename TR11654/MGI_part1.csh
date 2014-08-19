@@ -62,6 +62,10 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${L
 ${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_create.object | tee -a ${LOG}
 
 #
 # obsolete stored procecures

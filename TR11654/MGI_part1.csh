@@ -54,18 +54,8 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
-
-#
-# re-create procedure
-#
-${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
 
 #
 # obsolete stored procecures
@@ -111,9 +101,28 @@ drop procedure MRK_MaxOffset
 go
 drop procedure MRK_MiniMapMarkers
 go
+drop procedure ACC_verifySequenceAnnotation
+go
 
 EOSQL
 date | tee -a ${LOG}
+
+#
+# re-create procedure
+#
+${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+
+#${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/MGI_Table_Column_Cleanup_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/MGI_Table_Column_Cleanup_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_drop.object | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

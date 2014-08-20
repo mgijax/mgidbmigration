@@ -60,7 +60,6 @@ go
 
 ###
 
-
 EOSQL
 date | tee -a ${LOG}
 

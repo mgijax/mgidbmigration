@@ -103,6 +103,10 @@ drop procedure MRK_MiniMapMarkers
 go
 drop procedure ACC_verifySequenceAnnotation
 go
+drop procedure MRK_deleteIMAGESeqAssoc
+go
+drop procedure MRK_updateIMAGESeqAssoc
+go
 
 EOSQL
 date | tee -a ${LOG}

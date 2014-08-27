@@ -117,18 +117,9 @@ date | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
 
-#${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_drop.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_drop.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/GXD_removeBadGelBand_create.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MGI_Table_Column_Cleanup_drop.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MGI_Table_Column_Cleanup_create.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_drop.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_drop.object | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/MRK_updateOffset_create.object | tee -a ${LOG}
-
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

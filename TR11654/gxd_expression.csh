@@ -62,16 +62,10 @@ select _Expression_key,
 from GXD_Expression_Old
 go
 
--- for testing
-update GXD_GelLane set
-_Genotype_key = -1, _GelRNAType_key = -1, _GelControl_key = 1,
-sex = 'Not Specified', age = 'postnatal', ageMin = 21.010000, ageMax = 1846.000000
-where _GelLane_key = 151728
-go
-
 EOSQL
 date | tee -a ${LOG}
 
+echo "--- begin : keys/triggers/sp" | tee -a ${LOG}
 date | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/default/GXD_Expression_bind.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
@@ -97,34 +91,32 @@ ${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_Structure_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a ${LOG}
 
+# only drop/create the sp needed to complete the migration
+# all of the sps will be re-created as part of the full migration
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByRef_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByRef_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_create.object | tee -a ${LOG}
+echo "--- end : keys/triggers/sp" | tee -a ${LOG}
 
-date | tee -a ${LOG}
 echo "--- Run A Test" | tee -a ${LOG}
+date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
 
---MGI:3765895
+-- TEST USING : MGI:3765895/'T-B-'
+-- stage28:B-lymphocyte is a structure with no EMAPS id
+-- it should appear in the cacche with _emaps_key = null
 
-delete from GXD_Expression where _Assay_key = 29767
+update GXD_GelLane set
+_Genotype_key = -1, _GelRNAType_key = -1, _GelControl_key = 1,
+sex = 'Not Specified', age = 'postnatal', ageMin = 21.010000, ageMax = 1846.000000
+where _GelLane_key = 151728
 go
 
--- should return 0
+-- should return 4
 select * from GXD_Expression where _Assay_key = 29767
 go
 
@@ -142,8 +134,8 @@ go
 
 EOSQL
 
+echo "--- begin : Execute All" | tee -a ${LOG}
 date | tee -a ${LOG}
-echo "--- Execute All" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_truncate.object | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
@@ -158,6 +150,9 @@ select count(*) from GXD_Expression
 go
 
 EOSQL
+
+${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
+echo "--- end : Execute All" | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -112,6 +112,11 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# gxd_expression
+#
+./gxd_expression.csh | tee -a ${LOG}
+
+#
 # re-create procedure
 #
 ${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}

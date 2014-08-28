@@ -26,6 +26,9 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
+select count(*) from GXD_Expression
+go
+
 sp_rename GXD_Expression, GXD_Expression_Old
 go
 
@@ -84,9 +87,14 @@ ${MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/trigger/GXD_AssayType_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_AssayType_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Assay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/GXD_Structure_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_drop.object | tee -a ${LOG}
@@ -95,8 +103,6 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByRef_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByRef_create.object | tee -a ${LOG}
-exit 0
-
 ${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
@@ -106,6 +112,8 @@ ${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_create.object | tee -a ${L
 ${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_create.object | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo "--- Run A Test" | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
@@ -120,7 +128,7 @@ go
 select * from GXD_Expression where _Assay_key = 29767
 go
 
-exec GXD_loadCacheAll
+exec GXD_loadCacheByAssay 29767
 go
 
 -- should return 6
@@ -130,6 +138,23 @@ go
 -- should return 2; 7069's _emaps_key is null
 select _Structure_key, _emaps_key from GXD_Expression where _Assay_key = 29767
 and _Structure_key in (7040, 7069)
+go
+
+EOSQL
+
+date | tee -a ${LOG}
+echo "--- Execute All" | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/GXD_Expression_truncate.object | tee -a ${LOG}
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+exec GXD_loadCacheAll
+go
+
+select count(*) from GXD_Expression
 go
 
 EOSQL

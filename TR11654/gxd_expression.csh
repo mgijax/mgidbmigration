@@ -36,33 +36,33 @@ EOSQL
 
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-insert into GXD_Expression
-select _Expression_key,
-       _Assay_key,
-        _Refs_key,
-        _AssayType_key,
-        _Genotype_key,
-        _Marker_key,
-        _Structure_key,
-        null,
-        expressed,
-        age,
-        ageMin,
-        ageMax,
-        isRecombinase,
-        isForGXD,
-        hasImage,
-        creation_date,
-        modification_date 
-from GXD_Expression_Old
-go
-
-EOSQL
+#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+#
+#use ${MGD_DBNAME}
+#go
+#
+#insert into GXD_Expression
+#select _Expression_key,
+#       _Assay_key,
+#        _Refs_key,
+#        _AssayType_key,
+#        _Genotype_key,
+#        _Marker_key,
+#        _Structure_key,
+#        null,
+#        expressed,
+#        age,
+#        ageMin,
+#        ageMax,
+#        isRecombinase,
+#        isForGXD,
+#        hasImage,
+#        creation_date,
+#        modification_date 
+#from GXD_Expression_Old
+#go
+#
+#EOSQL
 date | tee -a ${LOG}
 
 echo "--- begin : keys/triggers/sp" | tee -a ${LOG}
@@ -93,11 +93,35 @@ ${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a ${LOG}
 
 # only drop/create the sp needed to complete the migration
 # all of the sps will be re-created as part of the full migration
-${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheByAssay_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_create.object | tee -a ${LOG}
 echo "--- end : keys/triggers/sp" | tee -a ${LOG}
+
+echo "--- begin : Execute All" | tee -a ${LOG}
+date | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/table/GXD_Expression_truncate.object | tee -a ${LOG}
+
+# call python script to create input file
+# load file
+
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+exec GXD_loadCacheAll
+go
+
+select count(*) from GXD_Expression
+go
+
+EOSQL
+
+${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
+echo "--- end : Execute All" | tee -a ${LOG}
 
 echo "--- Run A Test" | tee -a ${LOG}
 date | tee -a ${LOG}
@@ -108,7 +132,7 @@ go
 
 -- TEST USING : MGI:3765895/'T-B-'
 -- stage28:B-lymphocyte is a structure with no EMAPS id
--- it should appear in the cacche with _emaps_key = null
+-- it should appear in the cache with _emaps_key = null
 
 update GXD_GelLane set
 _Genotype_key = -1, _GelRNAType_key = -1, _GelControl_key = 1,
@@ -133,26 +157,6 @@ and _Structure_key in (7040, 7069)
 go
 
 EOSQL
-
-echo "--- begin : Execute All" | tee -a ${LOG}
-date | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/table/GXD_Expression_truncate.object | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-exec GXD_loadCacheAll
-go
-
-select count(*) from GXD_Expression
-go
-
-EOSQL
-
-${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
-echo "--- end : Execute All" | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

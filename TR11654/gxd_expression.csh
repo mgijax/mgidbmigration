@@ -99,15 +99,15 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_create.object | tee -a ${LOG}
 echo "--- end : keys/triggers/sp" | tee -a ${LOG}
 
-echo "--- begin : update EMAPS ids" | tee -a ${LOG}
+echo "--- begin : set EMAPS ids" | tee -a ${LOG}
 date | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
 
-update GXD_Expression
-set _emaps_key = ea._Object_key
+select distinct _Structure_key, ea._Object_key
+into #toupdate
   from GXD_Expression g, ACC_Accession sa, MGI_EMAPS_Mapping e, ACC_Accession ea
     where g._Structure_key = sa._Object_key
               and sa._LogicalDB_key = 1
@@ -117,6 +117,15 @@ set _emaps_key = ea._Object_key
               and ea._MGIType_key = 13
 go
 
+create index idx1 on #toupdate(_Structure_key)
+go
+
+update GXD_Expression 
+set _emaps_key = _Object_key 
+from #toupdate t, GXD_Expression e
+where t._Stucture_key = e._Structure_key
+go
+
 -- should be 0 (none)
 select * from GXD_Expression where _emaps_key is null
 go
@@ -124,7 +133,7 @@ go
 EOSQL
 
 date | tee -a ${LOG}
-echo "--- end : update EMAPS ids" | tee -a ${LOG}
+echo "--- end : set EMAPS ids" | tee -a ${LOG}
 
 echo "--- Run A Test" | tee -a ${LOG}
 date | tee -a ${LOG}

@@ -122,11 +122,11 @@ go
 
 update GXD_Expression set _emaps_key = _Object_key 
 from #toupdate t, GXD_Expression e
-where t._Stucture_key = e._Structure_key
+where t._Structure_key = e._Structure_key
 go
 
--- should be 0 (none)
-select * from GXD_Expression where _emaps_key is null
+-- should be 4
+select count(*) from GXD_Expression where _emaps_key is null
 go
 
 EOSQL

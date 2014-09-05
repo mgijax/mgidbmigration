@@ -120,8 +120,7 @@ go
 create index idx1 on #toupdate(_Structure_key)
 go
 
-update GXD_Expression 
-set _emaps_key = _Object_key 
+update GXD_Expression set _emaps_key = _Object_key 
 from #toupdate t, GXD_Expression e
 where t._Stucture_key = e._Structure_key
 go

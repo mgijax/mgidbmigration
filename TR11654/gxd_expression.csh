@@ -108,13 +108,13 @@ go
 
 select distinct _Structure_key, ea._Object_key
 into #toupdate
-  from GXD_Expression g, ACC_Accession sa, MGI_EMAPS_Mapping e, ACC_Accession ea
-    where g._Structure_key = sa._Object_key
-              and sa._LogicalDB_key = 1
-              and sa._MGIType_key = 38
-              and sa.accID = e.accID
-              and e.emapsID = ea.accID
-              and ea._MGIType_key = 13
+from GXD_Expression g, ACC_Accession sa, MGI_EMAPS_Mapping e, ACC_Accession ea
+where g._Structure_key = sa._Object_key
+and sa._LogicalDB_key = 1
+and sa._MGIType_key = 38
+and sa.accID = e.accID
+and e.emapsID = ea.accID
+and ea._MGIType_key = 13
 go
 
 create index idx1 on #toupdate(_Structure_key)

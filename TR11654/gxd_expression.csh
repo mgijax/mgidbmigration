@@ -36,33 +36,33 @@ EOSQL
 
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a ${LOG}
 
-#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-#
-#use ${MGD_DBNAME}
-#go
-#
-#insert into GXD_Expression
-#select _Expression_key,
-#       _Assay_key,
-#        _Refs_key,
-#        _AssayType_key,
-#        _Genotype_key,
-#        _Marker_key,
-#        _Structure_key,
-#        null,
-#        expressed,
-#        age,
-#        ageMin,
-#        ageMax,
-#        isRecombinase,
-#        isForGXD,
-#        hasImage,
-#        creation_date,
-#        modification_date 
-#from GXD_Expression_Old
-#go
-#
-#EOSQL
+cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+
+use ${MGD_DBNAME}
+go
+
+insert into GXD_Expression
+select _Expression_key,
+       _Assay_key,
+        _Refs_key,
+        _AssayType_key,
+        _Genotype_key,
+        _Marker_key,
+        _Structure_key,
+        null,
+        expressed,
+        age,
+        ageMin,
+        ageMax,
+        isRecombinase,
+        isForGXD,
+        hasImage,
+        creation_date,
+        modification_date 
+from GXD_Expression_Old
+go
+
+EOSQL
 date | tee -a ${LOG}
 
 echo "--- begin : keys/triggers/sp" | tee -a ${LOG}
@@ -99,29 +99,32 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/GXD_loadCacheAll_create.object | tee -a ${LOG}
 echo "--- end : keys/triggers/sp" | tee -a ${LOG}
 
-echo "--- begin : Execute All" | tee -a ${LOG}
+echo "--- begin : update EMAPS ids" | tee -a ${LOG}
 date | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/table/GXD_Expression_truncate.object | tee -a ${LOG}
-
-# call python script to create input file
-# load file
-
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
 go
 
-exec GXD_loadCacheAll
+update GXD_Expression
+set _emaps_key = ea._Object_key
+  from GXD_Expression g, ACC_Accession sa, MGI_EMAPS_Mapping e, ACC_Accession ea
+    where g._Structure_key = sa._Object_key
+              and sa._LogicalDB_key = 1
+              and sa._MGIType_key = 38
+              and sa.accID = e.accID
+              and e.emapsID = ea.accID
+              and ea._MGIType_key = 13
 go
 
-select count(*) from GXD_Expression
+-- should be 0 (none)
+select * from GXD_Expression where _emaps_key is null
 go
 
 EOSQL
 
-${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
-echo "--- end : Execute All" | tee -a ${LOG}
+date | tee -a ${LOG}
+echo "--- end : update EMAPS ids" | tee -a ${LOG}
 
 echo "--- Run A Test" | tee -a ${LOG}
 date | tee -a ${LOG}

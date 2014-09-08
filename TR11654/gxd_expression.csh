@@ -120,9 +120,15 @@ go
 create index idx1 on #toupdate(_Structure_key)
 go
 
+drop index GXD_Expression.idx_emaps_key 
+go
+
 update GXD_Expression set _emaps_key = _Object_key 
 from #toupdate t, GXD_Expression e
 where t._Structure_key = e._Structure_key
+go
+
+create nonclustered index idx_emaps_key on GXD_Expression (_emaps_key) on seg1
 go
 
 -- should be 4

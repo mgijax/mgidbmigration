@@ -1,3 +1,9 @@
+TAG: mgidbmigration-5-2-0-1
+DATE: 09/15/2014
+STAFF: lec
+CHANGES: TR11654
+1) matrix views/stored procedure-to-postgres/gxd_expression cache change
+
 TAG: mgidbmigration-5-1-9-2
 DATE: 07/17/2014
 STAFF: sc

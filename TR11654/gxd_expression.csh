@@ -140,40 +140,40 @@ EOSQL
 date | tee -a ${LOG}
 echo "--- end : set EMAPS ids" | tee -a ${LOG}
 
-echo "--- Run A Test" | tee -a ${LOG}
-date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+#echo "--- Run A Test" | tee -a ${LOG}
+#date | tee -a ${LOG}
+#cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
+#
+#use ${MGD_DBNAME}
+#go
 
-use ${MGD_DBNAME}
-go
-
--- TEST USING : MGI:3765895/'T-B-'
--- stage28:B-lymphocyte is a structure with no EMAPS id
--- it should appear in the cache with _emaps_key = null
-
-update GXD_GelLane set
-_Genotype_key = -1, _GelRNAType_key = -1, _GelControl_key = 1,
-sex = 'Not Specified', age = 'postnatal', ageMin = 21.010000, ageMax = 1846.000000
-where _GelLane_key = 151728
-go
-
--- should return 4
-select * from GXD_Expression where _Assay_key = 29767
-go
-
-exec GXD_loadCacheByAssay 29767
-go
-
--- should return 6
-select * from GXD_Expression where _Assay_key = 29767
-go
-
--- should return 2; 7069's _emaps_key is null
-select _Structure_key, _emaps_key from GXD_Expression where _Assay_key = 29767
-and _Structure_key in (7040, 7069)
-go
-
-EOSQL
+#-- TEST USING : MGI:3765895/'T-B-'
+#-- stage28:B-lymphocyte is a structure with no EMAPS id
+#-- it should appear in the cache with _emaps_key = null
+#
+#update GXD_GelLane set
+#_Genotype_key = -1, _GelRNAType_key = -1, _GelControl_key = 1,
+#sex = 'Not Specified', age = 'postnatal', ageMin = 21.010000, ageMax = 1846.000000
+#where _GelLane_key = 151728
+#go
+#
+#-- should return 4
+#select * from GXD_Expression where _Assay_key = 29767
+#go
+#
+#exec GXD_loadCacheByAssay 29767
+#go
+#
+#-- should return 6
+#select * from GXD_Expression where _Assay_key = 29767
+#go
+#
+#-- should return 2; 7069's _emaps_key is null
+#select _Structure_key, _emaps_key from GXD_Expression where _Assay_key = 29767
+#and _Structure_key in (7040, 7069)
+#go
+#
+#EOSQL
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

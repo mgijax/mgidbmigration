@@ -121,6 +121,8 @@ date | tee -a ${LOG}
 #
 ${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_GOXRef_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/BIB_GOXRef_View_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

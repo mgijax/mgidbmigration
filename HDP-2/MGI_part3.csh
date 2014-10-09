@@ -26,13 +26,6 @@ date | tee -a ${LOG}
 echo 'Allele combination cache' | tee -a ${LOG}
 ${ALLCACHELOAD}/allelecombination.csh
 
-echo 'Updates to statistics' | tee -a ${LOG}
-./updateStats.csh
-
-date | tee -a ${LOG}
-echo 'Add New Measurements' | tee -a ${LOG}
-${MGI_DBUTILS}/bin/addMeasurements.csh
-
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

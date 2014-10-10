@@ -38,8 +38,3 @@ date | tee -a ${LOG}
 echo "--- Done running HTMP Loads  ---" | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo "--- Run IMPC Rollup Load ---" | tee -a ${LOG}
-${ROLLUPLOAD}/bin/rollupload.sh
-
-echo "--- Done running Rollup Load ---" | tee -a ${LOG}
-date | tee -a ${LOG}

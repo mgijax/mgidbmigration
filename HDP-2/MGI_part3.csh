@@ -19,6 +19,12 @@ setenv LOG $0.log.$$
 rm -rf ${LOG}
 touch ${LOG}
 
+date | tee -a ${LOG}
+echo "--- Run IMPC Rollup Load ---" | tee -a ${LOG}
+${ROLLUPLOAD}/bin/rollupload.sh
+
+echo "--- Done running Rollup Load ---" | tee -a ${LOG}
+
 ###--------------------------------------------------------------###
 ###--- run cache loads       	      	                      ---###
 ###--------------------------------------------------------------###

@@ -35,6 +35,10 @@ echo "--- Run Sanger HTMP Load ---" | tee -a ${LOG}
 ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/sangermpload.config ${HTMPLOAD}/annotload.config
 
 date | tee -a ${LOG}
+echo "--- Run Expressed Component Relationship Load ---" | tee -a ${LOG}
+
+date | tee -a ${LOG}
 echo "--- Done running HTMP Loads  ---" | tee -a ${LOG}
+${FEARLOAD}/bin/fearload.sh
 
 date | tee -a ${LOG}

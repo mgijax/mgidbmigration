@@ -27,7 +27,6 @@ echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Run IMPC HTMP Load ---" | tee -a ${LOG}
-
 ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config
 
 date | tee -a ${LOG}
@@ -36,9 +35,6 @@ ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/sangermpload.config ${HTMPLOAD}/annotloa
 
 date | tee -a ${LOG}
 echo "--- Run Expressed Component Relationship Load ---" | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo "--- Done running HTMP Loads  ---" | tee -a ${LOG}
 ${FEARLOAD}/bin/fearload.sh
 
 date | tee -a ${LOG}

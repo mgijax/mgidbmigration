@@ -20,16 +20,14 @@ rm -rf ${LOG}
 touch ${LOG}
 
 date | tee -a ${LOG}
-echo "--- Run IMPC Rollup Load ---" | tee -a ${LOG}
+echo "--- Run Rollup Load ---" | tee -a ${LOG}
 ${ROLLUPLOAD}/bin/rollupload.sh
-
-echo "--- Done running Rollup Load ---" | tee -a ${LOG}
 
 ###--------------------------------------------------------------###
 ###--- run cache loads       	      	                      ---###
 ###--------------------------------------------------------------###
 date | tee -a ${LOG}
-echo 'Allele combination cache' | tee -a ${LOG}
+echo "--- Run Allele combination cache ---" | tee -a ${LOG}
 ${ALLCACHELOAD}/allelecombination.csh
 
 ###-----------------------###

@@ -1,3 +1,10 @@
+TAG: mgidbmigration-5-2-1-2
+DATE: 12/31/2014
+STAFF: sc
+CHANGES: TR11886 M&M project
+1) added MandM directory
+2) added MandM/mrkcluster.csh to make clusterID nullable
+
 TAG: mgidbmigration-5-2-1-1
 DATE: 12/03/2014
 STAFF: sc

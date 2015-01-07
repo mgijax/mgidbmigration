@@ -55,8 +55,12 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
 use $MGD_DBNAME
 go
 
-insert into NOM_Marker
-select
+insert into NOM_Marker values(_Nomen_key, _Marker_Type_key, _NomenStatus_key, symbol, name, chromosome,
+statusNote, broadcast_date, _BroadcastBy_key, _CreatedBy_key, _ModifiedBy_key, 
+creation_date, modification_date)
+select _Nomen_key, _Marker_Type_key, _NomenStatus_key, symbol, name, chromosome,
+statusNote, broadcast_date, _BroadcastBy_key, _CreatedBy_key, _ModifiedBy_key, 
+creation_date, modification_date
 from NOM_Marker_old
 go
 
@@ -73,6 +77,15 @@ end
 
 EOSQL
 date | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/default/NOM_Marker_bind.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/NOM_Marker_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/NOM_Marker_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/NOM_updateReserved_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/NOM_Marker_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/NOM_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a $LOG
 
 ###-----------------------###
 ###--- final datestamp ---###

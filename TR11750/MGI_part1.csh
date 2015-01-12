@@ -57,6 +57,9 @@ go
 drop view MGI_Organism_Sequence_View
 go
 
+drop view MGI_SynonymType_Nomen_View
+go
+
 checkpoint
 go
 

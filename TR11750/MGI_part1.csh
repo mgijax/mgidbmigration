@@ -57,9 +57,6 @@ go
 drop view MGI_Organism_Sequence_View
 go
 
-drop view PRB_RFLV_View
-go
-
 checkpoint
 go
 
@@ -79,8 +76,8 @@ ${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/NOM_updateReserved_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/trigger/NOM_Marker_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/trigger/NOM_Marker_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/view/NOM_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/view/NOM_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/NOM_drop.logical | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/NOM_create.logical | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_create.object | tee -a $LOG

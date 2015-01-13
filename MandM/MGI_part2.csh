@@ -27,7 +27,7 @@ echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Run HGNC Load ---" | tee -a ${LOG}
-${HOMOLOGYLOAD}/bin/homologyload.sh hngcload.config
+${HOMOLOGYLOAD}/bin/homologyload.sh hgncload.config
 
 date | tee -a ${LOG}
 echo "--- Run ZFIN Load ---" | tee -a ${LOG}

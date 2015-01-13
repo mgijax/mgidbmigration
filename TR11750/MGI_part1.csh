@@ -60,6 +60,9 @@ go
 drop view MGI_SynonymType_Nomen_View
 go
 
+drop view MGI_Synonym_Nomen_View
+go
+
 checkpoint
 go
 
@@ -94,6 +97,7 @@ date | tee -a ${LOG}
 #
 # set permissions & counts
 #
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

@@ -73,8 +73,14 @@ date | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/ALL_createWildType_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/ALL_createWildType_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/NOM_updateReserved_drop.object | tee -a $LOG

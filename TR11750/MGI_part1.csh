@@ -9,11 +9,11 @@
 ###--- initialization ---###
 ###----------------------###
 
-if ( ${?MGICONFIG} == 0 ) then
-	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
-endif
-
-source ${MGICONFIG}/master.config.csh
+#if ( ${?MGICONFIG} == 0 ) then
+#	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+#endif
+#
+#source ${MGICONFIG}/master.config.csh
 
 # start a new log file for this migration, and add a datestamp
 
@@ -27,7 +27,7 @@ touch ${LOG}
 # MAKE SURE BOTH ARE TURNED OFF FOR REAL MIGRATION
 #
 #${MGI_DBUTILS}/bin/load_db.csh ${RADAR_DBSERVER} ${RADAR_DBNAME} /backups/rohan/scrum-dog/radar.backup
-#${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd.backup
+${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd_dog.backup
 
 date | tee -a ${LOG}
 
@@ -57,12 +57,6 @@ go
 drop view MGI_Organism_Sequence_View
 go
 
-drop view MGI_SynonymType_Nomen_View
-go
-
-drop view MGI_Synonym_Nomen_View
-go
-
 checkpoint
 go
 
@@ -90,6 +84,10 @@ ${MGD_DBSCHEMADIR}/trigger/NOM_Marker_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/trigger/NOM_Marker_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/view/NOM_drop.logical | tee -a $LOG
 ${MGD_DBSCHEMADIR}/view/NOM_create.logical | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/MGI_SynonymType_Nomen_View_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/MGI_SynonymType_Nomen_View_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/MGI_Synonym_Nomen_View_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/view/MGI_Synonym_Nomen_View_create.object | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_create.object | tee -a $LOG

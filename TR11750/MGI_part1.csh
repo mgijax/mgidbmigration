@@ -57,6 +57,9 @@ go
 drop view MGI_Organism_Sequence_View
 go
 
+exec MGI_Table_Column_Cleanup
+go
+
 checkpoint
 go
 
@@ -76,6 +79,8 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG
 
+${MGD_DBSCHEMADIR}/index/NOM_Marker_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/NOM_Marker_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/NOM_updateReserved_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_create.object | tee -a $LOG

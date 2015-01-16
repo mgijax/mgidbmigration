@@ -60,9 +60,48 @@ go
 exec MGI_Table_Column_Cleanup
 go
 
-checkpoint
+-- add indexes for PG/referential integrity that are missing
+
+NOM_Marker_create.object SEQ_Allele_Assoc_create.object SEQ_GeneTrap_create.object
+
+create nonclustered index idx_Allele_Type_key on ALL_Cre_Cache (_Allele_Type_key) on ${DBNONCLUSTIDXSEG}
 go
 
+create nonclustered index idx_System_key on ALL_Cre_Cache (_System_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_Qualifier_key on ALL_Marker_Assoc (_Qualifier_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_CurationState_key on MRK_Marker (_Marker_Type_key, _Marker_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_Evidence_key on MGI_Relationship (_Refs_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_Qualifier_key on MGI_Relationship (_Refs_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_NomenStatus_key on NOM_Marker (_NomenStatus_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_CurationState_key on NOM_Marker (_BroadcastBy_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_Qualifier_key on SEQ_Allele_Assoc (_Allele_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_TagMethod_key on SEQ_GeneTrap (_TagMethod_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_VectorEnd_key on SEQ_GeneTrap (_VectorEnd_key) on ${DBNONCLUSTIDXSEG}
+go
+
+create nonclustered index idx_ReverseComp_key on SEQ_GeneTrap (_ReverseComp_key) on ${DBNONCLUSTIDXSEG}
+go
+
+checkpoint
+go
 end
 
 EOSQL

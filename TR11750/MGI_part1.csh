@@ -71,22 +71,22 @@ go
 create nonclustered index idx_Qualifier_key on ALL_Marker_Assoc (_Qualifier_key) on seg1
 go
 
-create nonclustered index idx_CurationState_key on MRK_Marker (_Marker_Type_key, _Marker_key) on seg1
+create nonclustered index idx_CurationState_key on MRK_Marker (_CurationState_key) on seg1
 go
 
-create nonclustered index idx_Evidence_key on MGI_Relationship (_Refs_key) on seg1
+create nonclustered index idx_Evidence_key on MGI_Relationship (_Evidence_key) on seg1
 go
 
-create nonclustered index idx_Qualifier_key on MGI_Relationship (_Refs_key) on seg1
+create nonclustered index idx_Qualifier_key on MGI_Relationship (_Qualifier_key) on seg1
 go
 
 create nonclustered index idx_NomenStatus_key on NOM_Marker (_NomenStatus_key) on seg1
 go
 
-create nonclustered index idx_CurationState_key on NOM_Marker (_BroadcastBy_key) on seg1
+create nonclustered index idx_CurationState_key on NOM_Marker (_CurationState_key) on seg1
 go
 
-create nonclustered index idx_Qualifier_key on SEQ_Allele_Assoc (_Allele_key) on seg1
+create nonclustered index idx_Qualifier_key on SEQ_Allele_Assoc (_Qualifier_key) on seg1
 go
 
 create nonclustered index idx_TagMethod_key on SEQ_GeneTrap (_TagMethod_key) on seg1

@@ -54,6 +54,9 @@ go
 drop procedure NOM_updateReserved
 go
 
+drop procedure MRK_reloadSequence
+go
+
 drop view MGI_Organism_Sequence_View
 go
 

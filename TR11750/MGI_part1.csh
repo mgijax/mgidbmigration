@@ -66,9 +66,6 @@ go
 drop procedure PRB_reloadSequence
 go
 
-drop view MGI_Organism_Sequence_View
-go
-
 exec MGI_Table_Column_Cleanup
 go
 
@@ -90,9 +87,6 @@ create nonclustered index idx_Evidence_key on MGI_Relationship (_Evidence_key) o
 go
 
 create nonclustered index idx_Qualifier_key on MGI_Relationship (_Qualifier_key) on seg1
-go
-
-create nonclustered index idx_NomenStatus_key on NOM_Marker (_NomenStatus_key) on seg1
 go
 
 create nonclustered index idx_CurationState_key on NOM_Marker (_CurationState_key) on seg1

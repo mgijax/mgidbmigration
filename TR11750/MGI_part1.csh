@@ -54,6 +54,12 @@ go
 drop procedure NOM_updateReserved
 go
 
+drop procedure MRK_reloadLabel
+go
+
+drop procedure MRK_reloadReference
+go
+
 drop procedure MRK_reloadSequence
 go
 

@@ -57,6 +57,9 @@ go
 drop procedure MRK_reloadSequence
 go
 
+drop procedure PRB_reloadSequence
+go
+
 drop view MGI_Organism_Sequence_View
 go
 
@@ -118,6 +121,8 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/index/NOM_Marker_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/NOM_Marker_create.object | tee -a $LOG

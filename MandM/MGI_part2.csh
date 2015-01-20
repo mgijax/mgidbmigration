@@ -34,3 +34,7 @@ echo "--- Run ZFIN Load ---" | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh zfinload.config
 
 date | tee -a ${LOG}
+echo "--- Run GEISHA Load ---" | tee -a ${LOG}
+${HOMOLOGYLOAD}/bin/homologyload.sh geishaload.config
+
+date | tee -a ${LOG}

@@ -51,9 +51,6 @@ go
 drop procedure PRB_getTissueDataSets
 go
 
-drop procedure NOM_updateReserved
-go
-
 drop procedure MRK_reloadLabel
 go
 

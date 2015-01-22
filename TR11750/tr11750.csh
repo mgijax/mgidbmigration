@@ -1,5 +1,11 @@
 #!/bin/csh -fx
 
+if ( ${?MGICONFIG} == 0 ) then
+       setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}

@@ -5,7 +5,7 @@ rm -rf ${LOG}
 touch ${LOG}
 
 # COMMENT OUT BEFORE RUNNING ON PRODUCTION
-${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd_dog.backup
+# ${MGI_DBUTILS}/bin/load_db.csh ${MGD_DBSERVER} ${MGD_DBNAME} /backups/rohan/scrum-dog/mgd_dog.backup
 
 date | tee -a ${LOG}
 

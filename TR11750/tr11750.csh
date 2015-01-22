@@ -69,6 +69,22 @@ go
 
 checkpoint
 go
+
+use $RADAR_DBNAME
+go
+
+drop table VOC_DAGSort
+go
+
+drop table VOC_Header
+go
+
+drop table VOC_Note
+go
+
+drop table VOC_Synonym
+go
+
 end
 
 EOSQL

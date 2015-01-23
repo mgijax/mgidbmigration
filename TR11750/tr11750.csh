@@ -109,3 +109,11 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 
+#${ALLCACHELOAD}/allelecrecache.csh
+#${ALOMRKLOAD}/bin/alomrkload.sh
+#${FEARLOAD}/bin/fearload.sh
+#${VOCLOAD}/runOBOIncLoad.sh MP.config
+#${VOCLOAD}/runOBOIncLoad.sh GO.config
+#${VOCLOAD}/runOBOIncLoad.sh MA.config
+#${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
+

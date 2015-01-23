@@ -51,6 +51,7 @@ go
 drop procedure PRB_getTissueDataSets
 go
 
+-- once PWI is live, we can remove these
 --drop procedure MRK_reloadLabel
 --go
 

@@ -51,17 +51,17 @@ go
 drop procedure PRB_getTissueDataSets
 go
 
-drop procedure MRK_reloadLabel
-go
+--drop procedure MRK_reloadLabel
+--go
 
-drop procedure MRK_reloadReference
-go
+--drop procedure MRK_reloadReference
+--go
 
-drop procedure MRK_reloadSequence
-go
+--drop procedure MRK_reloadSequence
+--go
 
-drop procedure PRB_reloadSequence
-go
+--drop procedure PRB_reloadSequence
+--go
 
 exec MGI_Table_Column_Cleanup
 go

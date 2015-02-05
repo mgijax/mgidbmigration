@@ -55,8 +55,8 @@ use ${MGD_DBNAME}
 go
 
 update MGI_dbinfo set
-        schema_version = '5-2-1',
-        public_version = 'MGI 5.21'
+        schema_version = '5-2-2',
+        public_version = 'MGI 5.22'
 go
 
 exec MGI_Table_Column_Cleanup

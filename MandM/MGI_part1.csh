@@ -103,10 +103,14 @@ date | tee -a ${LOG}
 echo "--- Re-setting permissions/schema ---" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
-echo "--- Update schema version ---" | tee -a ${LOG}
+echo "--- Add propertyType, Update schema version ---" | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}
+go
+
+insert into MGI_PropertyType
+values(1001, 39, 101, 'HGNC/HG Hybrid Homology', 1001, 1001, getdate(), getdate())
 go
 
 update MGI_dbinfo set

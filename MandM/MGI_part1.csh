@@ -67,7 +67,7 @@ ${MGD_DBSCHEMADIR}/key/MGI_PropertyType_create.object
 ${MGD_DBSCHEMADIR}/key/MGI_Property_create.object
 
 date | tee -a ${LOG}
-echo "--- Add foreign key relationships for MGI_Property*" | tee -a ${LOG
+echo "--- Add foreign key relationships for MGI_Property*" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object
 ${MGD_DBSCHEMADIR}/key/MGI_User_drop.object
 ${MGD_DBSCHEMADIR}/key/VOC_Term_drop.object

@@ -30,6 +30,10 @@ echo "--- Run HGNC Load ---" | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh hgncload.config
 
 date | tee -a ${LOG}
+echo "--- Run Hybrid HGNC/HomoloGene Load ---" | tee -a ${LOG}
+${HOMOLOGYLOAD}/bin/hybridload.sh hybridload.config
+
+date | tee -a ${LOG}
 echo "--- Run ZFIN Load ---" | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh zfinload.config
 

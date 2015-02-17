@@ -104,7 +104,19 @@ ${MGD_DBSCHEMADIR}/view/MGI_SynonymType_Nomen_View_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/view/MGI_SynonymType_Nomen_View_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/view/MGI_Synonym_Nomen_View_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/view/MGI_Synonym_Nomen_View_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
+
+
+# Create and index new PWI specific tables
+${MGD_DBSCHEMADIR}/table/PWI_Report_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/table/PWI_Report_Label_create.object | tee -a $LOG
+
+${MGD_DBSCHEMADIR}/key/PWI_Report_create.object | tee -a $LOG
+
+${MGD_DBSCHEMADIR}/index/PWI_Report_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/PWI_Report_Label_create.object | tee -a $LOG
+
+
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}

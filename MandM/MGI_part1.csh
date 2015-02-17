@@ -87,7 +87,6 @@ ${MGD_DBSCHEMADIR}/index/MGI_Property_create.object
 date | tee -a ${LOG}
 echo "--- Create triggers" | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MGI_PropertyType_create.object
-${MGD_DBSCHEMADIR}/trigger/MGI_Property_create.object
 
 ${MGD_DBSCHEMADIR}/drop/ACC_MGIType_create.object
 ${MGD_DBSCHEMADIR}/drop/MRK_Cluster_create.object

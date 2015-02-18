@@ -22,6 +22,11 @@ touch ${LOG}
 ###--------------------------------------------------------------###
 ###--- run cache loads       	      	                      ---###
 ###--------------------------------------------------------------###
+
+date | tee -a ${LOG}
+echo "--- Run Roll Up cache load ---" | tee -a ${LOG}
+${ROLLUPLOAD}/bin/rollupload.sh
+
 date | tee -a ${LOG}
 echo "--- Run Marker Label cache ---" | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklabel.csh

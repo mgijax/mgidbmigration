@@ -46,6 +46,47 @@ ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG
+
+# update referencing keys
+${MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_AssayType_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_AssayType_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Structure_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Specimen_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_Specimen_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_GelLane_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/key/GXD_GelLane_create.object | tee -a $LOG
+
+# update referencing procedures
+${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_create.object | tee -a $LOG
+
+# update referencing triggers
+${MGD_DBSCHEMADIR}/trigger/GXD_Assay_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_AssayType_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_AssayType_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_Structure_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a $LOG
+
 ${MGD_DBSCHEMADIR}/default/GXD_Expression_bind.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG
 

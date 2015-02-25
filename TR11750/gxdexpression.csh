@@ -18,7 +18,6 @@ ${MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/default/GXD_Expression_bind.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG
 
-
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

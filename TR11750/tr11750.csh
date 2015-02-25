@@ -40,7 +40,7 @@ ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
 
-./gxdexpression.csh
+./gxdexpression.csh | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}

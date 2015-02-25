@@ -52,5 +52,7 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGICACHELOAD}/gxdexpression.csh | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 

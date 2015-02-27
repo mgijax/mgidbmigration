@@ -54,10 +54,6 @@ cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 use ${MGD_DBNAME}
 go
 
-insert into MGI_PropertyType
-values(1001, 39, 101, 'HGNC/HG Hybrid Homology', 1001, 1001, getdate(), getdate())
-go
-
 update MGI_dbinfo set
         schema_version = '5-2-2',
         public_version = 'MGI 5.22'

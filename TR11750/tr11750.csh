@@ -90,6 +90,19 @@ ${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/default/GXD_Expression_bind.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG
 
+cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
+
+use $MGD_DBNAME
+go
+
+exec MGI_Table_Column_Cleanup
+go
+
+end
+
+EOSQL
+date | tee -a ${LOG}
+
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 

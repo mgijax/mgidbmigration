@@ -41,6 +41,8 @@ ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object | tee -a $LOG
 
 -- GXD_Expression
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_drop.object | tee -a $LOG

@@ -48,7 +48,7 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
-echo "--- Add propertyType, Update schema version ---" | tee -a ${LOG}
+echo "--- Update schema version ---" | tee -a ${LOG}
 cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
 
 use ${MGD_DBNAME}

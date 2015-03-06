@@ -15,89 +15,34 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+/usr/local/mgi/live/dbutils/mgd/mgddbschema/objectCounter.sh | tee -a ${LOG}
 
-cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
+cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 
 use $MGD_DBNAME
 go
 
 -- obsolete
-drop view MLC_Marker_View
+
+drop procedure SEQ_loadMarkerCache
 go
 
-drop trigger MLC_Text_Delete
+drop procedure SEQ_loadProbeCache
 go
 
-end
-
-EOSQL
-date | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/trigger/BIB_Refs_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG
-
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object | tee -a $LOG
-
--- GXD_Expression
-${MGD_DBSCHEMADIR}/table/GXD_Expression_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG
-
-# update referencing keys
-${MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_AssayType_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_AssayType_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Structure_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Structure_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Specimen_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_Specimen_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_GelLane_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/key/GXD_GelLane_create.object | tee -a $LOG
-
-# update referencing procedures
-${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainByReference_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/procedure/PRB_getStrainReferences_create.object | tee -a $LOG
-
-# update referencing triggers
-${MGD_DBSCHEMADIR}/trigger/GXD_Assay_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_AssayType_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_AssayType_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_Structure_drop.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/trigger/GXD_Structure_create.object | tee -a $LOG
-
-${MGD_DBSCHEMADIR}/default/GXD_Expression_bind.object | tee -a $LOG
-${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG
-
-cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a $LOG
-
-use $MGD_DBNAME
+drop trigger MGI_Reference_Assoc_Insert
 go
 
-exec MGI_Table_Column_Cleanup
+drop trigger HMD_Assay_Delete
+go
+
+drop trigger HMD_Class_Delete
+go
+
+drop trigger HMD_Homology_Delete
+go
+
+drop procedure HMD_updateClass
 go
 
 end
@@ -105,10 +50,20 @@ end
 EOSQL
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
 
-${MGICACHELOAD}/gxdexpression.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/SEQ_split_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/SEQ_split_create.object | tee -a ${LOG}
+
+${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

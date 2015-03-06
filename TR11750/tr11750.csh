@@ -45,6 +45,20 @@ go
 drop procedure HMD_updateClass
 go
 
+drop view HMD_Homology_Assay_View
+go
+
+drop view HMD_Homology_View
+go
+
+--still used by reports_db/weekly_postgres/MGI_MarkerNames.py
+--drop view HMD_Homology_Pairs_View
+--go
+
+--still used by wi
+--drop view HMD_Summary_View
+--go
+
 end
 
 EOSQL

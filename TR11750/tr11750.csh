@@ -30,6 +30,12 @@ go
 drop procedure SEQ_loadProbeCache
 go
 
+drop procedure PRB_getTissueDataSets
+go
+
+drop procedure PRB_reloadSequence
+go
+
 drop trigger MGI_Reference_Assoc_Insert
 go
 

@@ -42,7 +42,3 @@ echo "--- Run GEISHA Load ---" | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh geishaload.config
 
 date | tee -a ${LOG}
-echo "--- Run XENBASE Load ---" | tee -a ${LOG}
-${HOMOLOGYLOAD}/bin/homologyload.sh xenbaseload.config
-
-date | tee -a ${LOG}

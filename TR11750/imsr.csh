@@ -79,5 +79,11 @@ ${RADAR_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${RADAR_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/view/MGI_Synonym_Strain_View_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/MGI_Synonym_Strain_View_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+
 date | tee -a ${LOG}
 

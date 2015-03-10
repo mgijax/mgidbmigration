@@ -27,6 +27,18 @@ go
 drop procedure APP_EIcheck
 go
 
+drop index MGI_Columns.index_modification_date
+go
+
+drop index MGI_Columns.index_creation_date
+go
+
+drop index MGI_Tables.index_modification_date
+go
+
+drop index MGI_Tables.index_creation_date
+go
+
 end
 
 EOSQL

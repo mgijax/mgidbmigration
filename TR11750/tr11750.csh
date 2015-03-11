@@ -80,6 +80,9 @@ ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/SEQ_split_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/SEQ_split_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/index/GXD_AlleleGenotype_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/GXD_AlleleGenotype_create.object | tee -a ${LOG}
+
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}

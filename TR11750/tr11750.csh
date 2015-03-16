@@ -88,6 +88,8 @@ ${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a ${L
 
 ${MGD_DBSCHEMADIR}/index/GXD_AlleleGenotype_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/GXD_AlleleGenotype_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/VOC_Annot_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/index/VOC_Annot_create.object | tee -a ${LOG}
 

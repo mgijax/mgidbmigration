@@ -2,6 +2,13 @@
 ## what to include in migration scripts
 ##
 
+TAG: mgidbmigration-5-2-1-19
+DATE: 03/18/2015
+STAFF: lec
+CHANGES:
+1) see mgidbmigration/TR11750/tr11750.csh
+2) assorted changes per sybase-to-postgres, HMD, etc.
+
 TAG: mgidbmigration-5-2-1-18
 TAG: mgidbmigration-5-2-1-17
 TAG: mgidbmigration-5-2-1-16

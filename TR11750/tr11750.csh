@@ -76,6 +76,8 @@ ${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/SEQ_split_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/SEQ_split_create.object | tee -a ${LOG}

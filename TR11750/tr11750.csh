@@ -22,41 +22,6 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
--- obsolete
-
-drop procedure SEQ_loadMarkerCache
-go
-
-drop procedure SEQ_loadProbeCache
-go
-
-drop procedure PRB_getTissueDataSets
-go
-
-drop procedure PRB_reloadSequence
-go
-
-drop trigger MGI_Reference_Assoc_Insert
-go
-
-drop trigger HMD_Assay_Delete
-go
-
-drop trigger HMD_Class_Delete
-go
-
-drop trigger HMD_Homology_Delete
-go
-
-drop procedure HMD_updateClass
-go
-
-drop view HMD_Homology_Assay_View
-go
-
-drop view HMD_Homology_View
-go
-
 --still used by reports_db/weekly_postgres/MGI_MarkerNames.py
 --drop view HMD_Homology_Pairs_View
 --go
@@ -70,17 +35,9 @@ end
 EOSQL
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/procedure/SEQ_split_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/SEQ_split_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MRK_reloadReference_drop.object | tee -a ${LOG}

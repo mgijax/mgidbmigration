@@ -30,27 +30,16 @@ go
 --drop view HMD_Summary_View
 --go
 
+drop trigger PRB_Marker_Delete
+go
+
 end
 
 EOSQL
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_reloadReference_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_reloadReference_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/index/GXD_AlleleGenotype_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/GXD_AlleleGenotype_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/VOC_Annot_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/index/VOC_Annot_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/PRB_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/PRB_Marker_create.object | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 

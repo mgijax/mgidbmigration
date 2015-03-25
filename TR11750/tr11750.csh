@@ -88,8 +88,6 @@ ${MGD_DBSCHEMADIR}/trigger/MGI_Note_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MGI_Note_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MGI_Synonym_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MRK_Notes_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_create.object | tee -a ${LOG}
 

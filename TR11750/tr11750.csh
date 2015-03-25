@@ -44,11 +44,11 @@ go
 
 -- keep
 select * from VOC_Term where _Vocab_key = 34 
-and term in ('pheno:use Delete button', 'pheno:edit nomen data deleted', 'pheno:create/modify references/deleted')
+and term in ('pheno:use Delete button', 'pheno:edit nomen data deleted')
 go
 
 delete from VOC_Term where _Vocab_key = 34
-and term not in ('pheno:use Delete button', 'pheno:edit nomen data deleted', 'pheno:create/modify references/deleted')
+and term not in ('pheno:use Delete button', 'pheno:edit nomen data deleted')
 go
 
 -- what is left

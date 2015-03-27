@@ -29,6 +29,11 @@ ${MGD_DBSCHEMADIR}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_create.object | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 

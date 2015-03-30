@@ -22,6 +22,11 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
+delete from MGI_UserRole where _Role_key in (6763219,3566936)
+go
+delete from VOC_Term where _Term_key in (6763219,3566936)
+go
+
 EOSQL
 date | tee -a ${LOG}
 
@@ -31,9 +36,30 @@ ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/SEQ_Sequence_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/SEQ_Sequence_create.object | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/ACC_assignMGI_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_assignMGI_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_insertNoChecks_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_insert_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_insert_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_update_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_update_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/ACCRef_insert_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACCRef_insert_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACCRef_process_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACCRef_process_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/NOM_transferToMGD_create.object | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
@@ -41,6 +67,8 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+
+${MGICACHELOAD}/inferredfrom.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

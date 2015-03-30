@@ -30,18 +30,14 @@ go
 EOSQL
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/trigger/ACC_Accession_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/SEQ_Sequence_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/SEQ_Sequence_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/MGI_checkTask_create.object | tee -a ${LOG}
 
+${MGD_DBSCHEMADIR}/procedure/ACC_assignJ_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/ACC_assignJ_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_assignMGI_drop.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_assignMGI_create.object | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/ACC_delete_byAccKey_drop.object | tee -a ${LOG}

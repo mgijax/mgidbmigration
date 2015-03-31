@@ -22,9 +22,15 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
-delete from MGI_UserRole where _Role_key in (6763219,3566936)
+delete from MGI_UserRole where _Role_key in (6763219,3566936,2721211)
 go
-delete from VOC_Term where _Term_key in (6763219,3566936)
+delete from VOC_Term where _Term_key in (6763219,3566936,2721211)
+go
+
+drop procedure ACC_insert
+go
+
+drop procedure MRK_reloadSequence
 go
 
 EOSQL
@@ -43,7 +49,7 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
-${MGICACHELOAD}/inferredfrom.csh | tee -a ${LOG}
+#${MGICACHELOAD}/inferredfrom.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

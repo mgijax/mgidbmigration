@@ -33,6 +33,9 @@ go
 drop procedure MRK_reloadSequence
 go
 
+drop trigger MRK_Marker_Insert
+go
+
 EOSQL
 date | tee -a ${LOG}
 

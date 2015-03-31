@@ -22,9 +22,17 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
-delete from MGI_UserRole where _Role_key in (6763219,3566936,2721211)
+delete from MGI_UserRole where _Role_key in (6763219,3566936,2721211,753715)
 go
-delete from VOC_Term where _Term_key in (6763219,3566936,2721211)
+delete from VOC_Term where _Term_key in (6763219,3566936,2721211,753715)
+go
+select * from MGI_UserRole where not exists (select 1 from VOC_Term t1 where MGI_UserRole._Role_key = t1._Term_key)
+go
+select * from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Role_key = t1._Term_key)
+go
+delete from MGI_UserRole where not exists (select 1 from VOC_Term t1 where MGI_UserRole._Role_key = t1._Term_key)
+go
+delete from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Role_key = t1._Term_key)
 go
 
 drop procedure ACC_insert

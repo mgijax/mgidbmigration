@@ -22,14 +22,33 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
-drop procedure MRK_reloadLabel
+delete from MGI_UserRole where _Role_key in (6763219,3566936,2721211,753715)
+go
+delete from VOC_Term where _Term_key in (6763219,3566936,2721211,753715)
+go
+select * from MGI_UserRole where not exists (select 1 from VOC_Term t1 where MGI_UserRole._Role_key = t1._Term_key)
+go
+select * from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Role_key = t1._Term_key)
+go
+delete from MGI_UserRole where not exists (select 1 from VOC_Term t1 where MGI_UserRole._Role_key = t1._Term_key)
+go
+delete from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Role_key = t1._Term_key)
+go
+
+drop procedure ACC_insert
+go
+
+drop procedure MRK_reloadSequence
+go
+
+drop trigger MRK_Marker_Insert
 go
 
 EOSQL
 date | tee -a ${LOG}
 
-#${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
@@ -40,6 +59,8 @@ ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 ${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+
+#${MGICACHELOAD}/inferredfrom.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 

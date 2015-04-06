@@ -22,6 +22,9 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
+drop procedure MRK_reloadLabel
+go
+
 EOSQL
 date | tee -a ${LOG}
 

@@ -28,8 +28,20 @@ date | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/key/key_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/key/key_create.csh | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 

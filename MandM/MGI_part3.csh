@@ -31,6 +31,10 @@ date | tee -a ${LOG}
 echo "--- Run Marker Label cache ---" | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklabel.csh
 
+date | tee -a ${LOG}
+echo "--- Run Marker OMIM cache ---" | tee -a ${LOG}
+${MRKCACHELOAD}/mrkomim.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

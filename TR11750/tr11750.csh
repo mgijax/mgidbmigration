@@ -22,6 +22,67 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
+drop view MGI_Set_ResMolSeg_View
+go
+
+drop view MGI_Set_ResSequence_View
+go
+
+drop procedure ACC_reserveMGIBlock
+go
+
+drop procedure GXD_ComputePrintNamesFrom
+go
+
+drop procedure GXD_SetStructDescPrintName
+go
+
+drop procedure GXD_orderGenotypesByUser
+go
+
+drop procedure VOC_getGOInferredFrom
+go
+
+drop procedure VOC_reorderTerms
+go
+
+drop procedure MGI_createReferenceSet
+go
+
+drop procedure MGI_createRestrictedMolSegSet
+go
+
+drop procedure MGI_createRestrictedSeqSet
+go
+
+--
+-- most of < 1024 no longer used
+-- can be done *after* April 27 when production WI is turned OFF
+--
+-- keep:
+-- 'Actual DB' / 1009
+-- 'Clone Collection (all)' / 1021
+-- 'IMAGE' / 1003
+-- 'NIA' / 1004
+-- 'RIKEN' / 1005
+-- 'RPCI-23' / 1006
+-- 'RPCI-24' / 1007
+-- 'RIKEN (FANTOM)' / 1008
+--
+-- remove:
+-- 'GXD Expression Link' / 1046
+--
+
+select * from MGI_Set 
+where _Set_key not in (1003,1004,1005,1006,1007,1008,1009,1021)
+and (_Set_key < 1024 or _Set_key = 1046)
+go
+
+delete from MGI_Set
+where _Set_key not in (1003,1004,1005,1006,1007,1008,1009,1021)
+and (_Set_key < 1024 or _Set_key = 1046)
+go
+
 EOSQL
 date | tee -a ${LOG}
 
@@ -31,22 +92,13 @@ date | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a ${LOG}
-
-${MGD_DBSCHEMADIR}/key/key_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/key/key_create.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/key_drop.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/key/key_create.csh | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

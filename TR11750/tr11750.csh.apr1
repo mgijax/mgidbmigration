@@ -30,6 +30,8 @@ select * from MGI_UserRole where not exists (select 1 from VOC_Term t1 where MGI
 go
 select * from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Role_key = t1._Term_key)
 go
+select * from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Task_key = t1._Term_key)
+go
 delete from MGI_UserRole where not exists (select 1 from VOC_Term t1 where MGI_UserRole._Role_key = t1._Term_key)
 go
 delete from MGI_RoleTask where not exists (select 1 from VOC_Term t1 where MGI_RoleTask._Role_key = t1._Term_key)

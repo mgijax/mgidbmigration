@@ -12,6 +12,8 @@ fi
 
 CONFIG_MASTER=${MGICONFIG}/master.config.sh
 
+. ${CONFIG_MASTER}
+
 export CONFIG_MASTER
 
 echo "MGD_DBSERVER: $MGD_DBSERVER"

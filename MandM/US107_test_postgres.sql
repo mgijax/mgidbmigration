@@ -14,6 +14,8 @@ CONFIG_MASTER=${MGICONFIG}/master.config.sh
 
 export CONFIG_MASTER
 
+. ${CONFIG_MASTER}
+
 echo "PG_DBSERVER: $PG_DBSERVER"
 echo "PG_DBNAME: $PG_DBNAME"
 echo ""

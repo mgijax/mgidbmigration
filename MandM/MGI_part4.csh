@@ -34,11 +34,7 @@ ${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
 
 date | tee -a ${LOG}
 echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_daily_sybase.csh
-
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_weekly_sybase.csh
+${PUBRPTS}/run_daily.csh
 
 ###----------------------###
 ###---   QC reports   ---###

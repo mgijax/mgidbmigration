@@ -40,20 +40,20 @@ go
 drop procedure GXD_orderGenotypesByUser
 go
 
-drop procedure VOC_getGOInferredFrom
-go
+--drop procedure VOC_getGOInferredFrom
+--go
 
 drop procedure VOC_reorderTerms
 go
 
-drop procedure MGI_createReferenceSet
-go
+--drop procedure MGI_createReferenceSet
+--go
 
-drop procedure MGI_createRestrictedMolSegSet
-go
+--drop procedure MGI_createRestrictedMolSegSet
+--go
 
-drop procedure MGI_createRestrictedSeqSet
-go
+--drop procedure MGI_createRestrictedSeqSet
+--go
 
 --
 -- most of < 1024 no longer used
@@ -86,11 +86,14 @@ go
 EOSQL
 date | tee -a ${LOG}
 
-#${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
-#${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+
+${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/key/key_drop.csh | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/key/key_create.csh | tee -a ${LOG}

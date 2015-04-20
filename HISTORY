@@ -2,7 +2,11 @@
 ## what to include in migration scripts
 ##
 
+TAG: mgidbmigration-5-2-1-31
 TAG: mgidbmigration-5-2-1-30
+DATE: 04/20/2015
+STAFF: lec
+CHANGES:
 1) see mgidbmigration/TR11750/tr11750.csh
 
 TAG: mgidbmigration-5-2-1-29

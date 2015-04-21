@@ -100,8 +100,8 @@ ${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}
 
 ${MGI_DBUTILS}/bin/updateSchemaDoc.csh ${MGD_DBSERVER} ${MGD_DBNAME} | tee -a ${LOG}
 
-#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
-#${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/all_perms.csh | tee -a ${LOG}
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

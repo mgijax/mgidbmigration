@@ -1,7 +1,7 @@
 ##
 ## what to include in migration scripts
 ##
-
+TAG: mgidbmigration-5-2-2-1
 TAG: mgidbmigration-5-2-1-32
 DATE: 04/24/2015
 STAFF: sc

@@ -35,6 +35,10 @@ date | tee -a ${LOG}
 echo "--- Run Marker OMIM cache ---" | tee -a ${LOG}
 ${MRKCACHELOAD}/mrkomim.csh
 
+date | tee -a ${LOG}
+echo "--- Inferred From cache ---" | tee -a ${LOG}
+${MGICACHELOAD}/inferredFrom.csh
+
 ###-----------------------###
 ###--- final datestamp ---###
 ###-----------------------###

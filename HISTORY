@@ -2,6 +2,11 @@
 ## what to include in migration scripts
 ##
 
+TAG: mgidbmigration-5-2-1-32
+DATE: 04/24/2015
+STAFF: sc
+CHANGES: TR11886 tag for scrum-bob build
+
 TAG: mgidbmigration-5-2-1-31
 TAG: mgidbmigration-5-2-1-30
 DATE: 04/20/2015

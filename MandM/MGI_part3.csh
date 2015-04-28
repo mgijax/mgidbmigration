@@ -41,7 +41,7 @@ ${MRKCACHELOAD}/mrkomim.csh
 
 date | tee -a ${LOG}
 echo "--- Inferred From cache ---" | tee -a ${LOG}
-${MGICACHELOAD}/inferredrom.csh
+${MGICACHELOAD}/inferredfrom.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

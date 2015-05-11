@@ -25,9 +25,6 @@ go
 --drop procedure VOC_getGOInferredFrom
 --go
 
-drop procedure VOC_reorderTerms
-go
-
 --drop procedure MGI_createReferenceSet
 --go
 
@@ -40,11 +37,14 @@ go
 EOSQL
 date | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_drop.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_create.csh | tee -a ${LOG}
+
+#${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
+#${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/view/view_drop.csh | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/view/view_create.csh | tee -a ${LOG}

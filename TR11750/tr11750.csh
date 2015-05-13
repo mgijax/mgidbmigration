@@ -34,14 +34,20 @@ go
 --drop procedure MGI_createRestrictedSeqSet
 --go
 
+drop view HMD_Homology_Pairs_View
+go
+
+drop view HMD_Summary_View
+go
+
 EOSQL
 date | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/trigger/trigger_drop.csh | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/trigger/trigger_create.csh | tee -a ${LOG}
 
-${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_drop.csh | tee -a ${LOG}
-${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_create.csh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_drop.object | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_create.object | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/procedure/procedure_drop.csh | tee -a ${LOG}
 #${MGD_DBSCHEMADIR}/procedure/procedure_create.csh | tee -a ${LOG}

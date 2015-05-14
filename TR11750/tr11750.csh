@@ -34,6 +34,9 @@ go
 --drop procedure MGI_createRestrictedSeqSet
 --go
 
+drop procedure MRK_splitWithdrawal
+go
+
 drop view HMD_Homology_Pairs_View
 go
 

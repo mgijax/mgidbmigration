@@ -54,6 +54,16 @@ delete from MGI_Set
 where _Set_key >= 1046 or _Set_key <= 1008 or _Set_key in (1042)
 go
 
+update MGI_StatisticSQL set sqlChunk = 
+'SELECT COUNT(DISTINCT a._Marker_key) as "mutant alleles cell line only"
+FROM ALL_Allele a, MRK_Marker m
+WHERE a.isWildType = 0
+AND a._Allele_Type_key != 847130
+AND a._Allele_Status_key in (847114, 3983021)
+AND a._Marker_key = m._Marker_key'
+where _Statistic_key = 84 and sequenceNum = 1
+go
+
 EOSQL
 date | tee -a ${LOG}
 

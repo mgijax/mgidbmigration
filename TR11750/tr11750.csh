@@ -22,46 +22,7 @@ cat - <<EOSQL | doisql.csh $MGD_DBSERVER $MGD_DBNAME $0 | tee -a ${LOG}
 use $MGD_DBNAME
 go
 
-drop procedure MGI_createReferenceSet
-go
-
-drop procedure MGI_createRestrictedMolSegSet
-go
-
-drop procedure MGI_createRestrictedSeqSet
-go
-
---
--- 1003 IMAGE                                              
--- 1004 NIA                                                
--- 1005 RIKEN                                              
--- 1006 RPCI-23                                            
--- 1007 RPCI-24                                            
--- 1008 RIKEN (FANTOM)         
--- 1042 IMSR Providers                                     
--- 1046 Load References                                    
--- 1047 Personal References                                
--- 1048 GenBank References                                 
--- 1049 Book References                                    
--- 1050 Submission References                              
--- 1051 Curatorial References           
-
-select * from MGI_Set 
-where _Set_key >= 1046 or _Set_key <= 1008 or _Set_key in (1042)
-go
-
-delete from MGI_Set
-where _Set_key >= 1046 or _Set_key <= 1008 or _Set_key in (1042)
-go
-
-update MGI_StatisticSQL set sqlChunk = 
-'SELECT COUNT(DISTINCT a._Marker_key) as "mutant alleles cell line only"
-FROM ALL_Allele a, MRK_Marker m
-WHERE a.isWildType = 0
-AND a._Allele_Type_key != 847130
-AND a._Allele_Status_key in (847114, 3983021)
-AND a._Marker_key = m._Marker_key'
-where _Statistic_key = 84 and sequenceNum = 1
+create nonclustered index idx_SequenceType_key on SEQ_Sequence (_SequenceType_key) on seg3
 go
 
 EOSQL

@@ -51,12 +51,9 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 echo "--- Update schema version ---" | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 
-use ${MGD_DBNAME}
-go
-
 update MGI_dbinfo set
-        schema_version = '5-2-2',
-        public_version = 'MGI 5.22';
+        schema_version = '6-0-1',
+        public_version = 'MGI 6.01';
 
 EOSQL
 

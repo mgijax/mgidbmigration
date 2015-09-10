@@ -31,8 +31,8 @@ date | tee -a ${LOG}
 echo "--- Run GO Slim Load ---" | tee -a ${LOG}
 ${VOCABBREVLOAD}/bin/vaload.sh goslimload.config
 
-#date | tee -a ${LOG}
-#echo "--- Run MP Slim Load ---" | tee -a ${LOG}
-#${VOCABBREVLOAD}/bin/vaload.sh mpload.config
+date | tee -a ${LOG}
+echo "--- Run MP Slim Load ---" | tee -a ${LOG}
+${VOCABBREVLOAD}/bin/vaload.sh mpslimload.config
 
 date | tee -a ${LOG}

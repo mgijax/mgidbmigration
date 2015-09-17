@@ -48,12 +48,18 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
-echo "--- Update schema version ---" | tee -a ${LOG}
+echo "--- Delete DoTS/NIA/DFCI accession IDS and Update schema version ---" | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
+
+delete from ACC_Accession where _LogicalDB_key in (35,36,53)
+;
+delete from ACC_LogicalDB where _LogicalDB_key in (35,36,53)
+;
 
 update MGI_dbinfo set
         schema_version = '6-0-1',
-        public_version = 'MGI 6.01';
+        public_version = 'MGI 6.01'
+;
 
 EOSQL
 

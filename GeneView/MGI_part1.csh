@@ -40,7 +40,7 @@ endif
 
 if ("${1}" == "dev") then
     echo "--- Loading new database into ${RADAR_DBSERVER}.${RADAR_DBNAME}.radar" | tee -a ${LOG}
-    ${PG_DBUTILS}/bin/loadDB.csh  ${RADAR_DBSERVER} ${RADAR_DBNAME} mgd /bhmgidb01/dump/radar.dump | tee -a ${LOG}
+    ${PG_DBUTILS}/bin/loadDB.csh  ${RADAR_DBSERVER} ${RADAR_DBNAME} radar /bhmgidb01/dump/radar.dump | tee -a ${LOG}
     date | tee -a ${LOG}
 else
     echo "--- Working on existing database: ${RADAR_DBSERVER}.${RADAR_DBNAME}.radar" | tee -a ${LOG}

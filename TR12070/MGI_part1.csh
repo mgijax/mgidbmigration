@@ -50,12 +50,20 @@ date | tee -a ${LOG}
 #
 # TR12038/DoTS/DFCI/NIA
 #
+echo 'deleting DoTS/DFCI/NIA data...'
 /mgi/all/wts_projects/12000/12038/tr12038.csh | tee -a ${LOG}
 
 #
 # load synonyms
 #
+echo 'loading MGI-GORel synonyms....'
 /mgi/all/wts_projects/12000/12070/analysis/tr12070.csh | tee -a ${LOG}
+
+#
+# loading GO annotation extension display link notes
+#
+echo 'loading GO annotation extension display link notes'
+${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

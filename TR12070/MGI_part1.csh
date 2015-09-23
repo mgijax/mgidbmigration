@@ -5,12 +5,12 @@
 #
 # mgidbmigration
 #
-# lib_py_report
+# lib_py_report (trunk)
 # ei
 # pgmgddbschema
-# seqcacheload
-# assocload (tr12070)
 # reports_db
+# seqcacheload (tr12070-1)
+# assocload (tr12070)
 # mgicacheload (tr12070)
 # proload (tr12070)
 #
@@ -47,6 +47,11 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-2', public_version = 'MGI 6.02';
 EOSQL
 date | tee -a ${LOG}
+
+#
+# only for testing until a new production load is done
+#
+/mgi/all/wts_projects/12000/12070/tr12070.csh | tee -a ${LOG}
 
 #
 # TR12038/DoTS/DFCI/NIA

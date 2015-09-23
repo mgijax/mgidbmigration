@@ -5,6 +5,15 @@
 #
 # mgidbmigration
 #
+# ei
+# pgmgddbschema
+# assocload
+# seqcacheload
+# reports_db
+# proload
+# mgicacheload
+# lib_py_report
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -49,21 +58,28 @@ date | tee -a ${LOG}
 
 #
 # TR12038/DoTS/DFCI/NIA
+# ei, assocload, pgmddbschema, seqcacheload, reports_db
 #
-echo 'deleting DoTS/DFCI/NIA data...'
+echo 'deleting DoTS/DFCI/NIA data...' | tee -a ${LOG}
 /mgi/all/wts_projects/12000/12038/tr12038.csh | tee -a ${LOG}
 
 #
 # load synonyms
 #
-echo 'loading MGI-GORel synonyms....'
+echo 'loading MGI-GORel synonyms....' | tee -a ${LOG}
 /mgi/all/wts_projects/12000/12070/analysis/tr12070.csh | tee -a ${LOG}
 
 #
 # loading GO annotation extension display link notes
 #
-echo 'loading GO annotation extension display link notes'
+echo 'loading GO annotation extension display link notes' | tee -a ${LOG}
 ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
+
+#
+# proload
+#
+echo 'Loading proload annotations" | tee -a ${LOG}
+${PROLOAD}/bin/proload.sh | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

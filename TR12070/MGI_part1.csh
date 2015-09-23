@@ -6,9 +6,9 @@
 # mgidbmigration
 #
 # lib_py_report (trunk)
-# ei
-# pgmgddbschema
-# reports_db
+# ei (tr12070)
+# pgmgddbschema (tr12070)
+# reports_db (tr12070)
 # seqcacheload (tr12070-1)
 # assocload (tr12070)
 # mgicacheload (tr12070)

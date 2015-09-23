@@ -49,11 +49,6 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# only for testing until a new production load is done
-#
-/mgi/all/wts_projects/12000/12070/tr12070.csh | tee -a ${LOG}
-
-#
 # TR12038/DoTS/DFCI/NIA
 #
 echo 'deleting DoTS/DFCI/NIA data...' | tee -a ${LOG}
@@ -74,7 +69,7 @@ ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 #
 # proload
 #
-echo 'Loading proload annotations" | tee -a ${LOG}
+echo 'Loading proload annotations' | tee -a ${LOG}
 ${PROLOAD}/bin/proload.sh | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}

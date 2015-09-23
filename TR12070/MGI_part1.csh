@@ -8,10 +8,10 @@
 # lib_py_report
 # ei
 # pgmgddbschema
-# seqcacheload (run)
-# mgicacheload (tr12070)
-# assocload
+# seqcacheload
+# assocload (tr12070)
 # reports_db
+# mgicacheload (tr12070)
 # proload (tr12070)
 #
 
@@ -36,8 +36,8 @@ touch ${LOG}
 # FOR TESTING ONLY 
 # MAKE SURE BOTH ARE TURNED OFF FOR REAL MIGRATION
 #
-#${PG_DBUTILS}/bin/load_db.csh ${PG_DBSERVER} ${PG_DBNAME} radar /bhmgidevdb01/dump/radar.dump
-#${PG_DBUTILS}/bin/load_db.csh ${PG_DBSERVER} ${PG_DBNAME} mgd /bhmgidevdb01/dump/mgd.dump
+#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} ${PG_DBNAME} radar /bhmgidevdb01/dump/radar.dump
+#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} ${PG_DBNAME} mgd /bhmgidevdb01/dump/mgd.dump
 
 #
 # update schema-version and public-version
@@ -50,7 +50,6 @@ date | tee -a ${LOG}
 
 #
 # TR12038/DoTS/DFCI/NIA
-# ei, assocload, pgmddbschema, seqcacheload, reports_db
 #
 echo 'deleting DoTS/DFCI/NIA data...' | tee -a ${LOG}
 /mgi/all/wts_projects/12000/12038/tr12038.csh | tee -a ${LOG}

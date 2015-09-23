@@ -5,14 +5,14 @@
 #
 # mgidbmigration
 #
+# lib_py_report
 # ei
 # pgmgddbschema
+# seqcacheload (run)
+# mgicacheload (tr12070)
 # assocload
-# seqcacheload
 # reports_db
-# proload
-# mgicacheload
-# lib_py_report
+# proload (tr12070)
 #
 
 ###----------------------###
@@ -43,16 +43,8 @@ touch ${LOG}
 # update schema-version and public-version
 #
 date | tee -a ${LOG}
-cat - <<EOSQL | doisql.csh ${MGD_DBSERVER} ${MGD_DBNAME} $0 | tee -a ${LOG}
-
-use ${MGD_DBNAME}
-go
-
-update MGI_dbinfo set 
-        schema_version = '6-0-2', 
-        public_version = 'MGI 6.02'
-go
-
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update MGI_dbinfo set schema_version = '6-0-2', public_version = 'MGI 6.02';
 EOSQL
 date | tee -a ${LOG}
 

@@ -29,7 +29,6 @@ ${ROLLUPLOAD}/bin/rollupload.sh
 date | tee -a ${LOG}
 echo 'Load Sequence Cache tables' | tee -a ${LOG}
 ${SEQCACHELOAD}/seqdummy.csh
-${SEQCACHELOAD}/seqcoord.csh
 ${SEQCACHELOAD}/seqmarker.csh
 ${SEQCACHELOAD}/seqprobe.csh
 
@@ -40,7 +39,12 @@ ${MRKCACHELOAD}/mrkref.csh
 ${MRKCACHELOAD}/mrklocation.csh
 ${MRKCACHELOAD}/mrkprobe.csh
 ${MRKCACHELOAD}/mrkmcv.csh
+${ALLCACHELOAD}/alllabel.csh
+${ALLCACHELOAD}/allelecombination.csh
 ${MRKCACHELOAD}/mrkomim.csh
+${ALLCACHELOAD}/allstrain.csh
+${ALLCACHELOAD}/allelecrecache.csh
+${TOPOSORTLOAD}/toposort.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

@@ -22,7 +22,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --        into temporary table annotations 
-        select distinct p.value
+        select distinct p._AnnotEvidence_key, p.value
         from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p, VOC_Term t
         where a._AnnotType_key = 1000 
         and a._Annot_key = e._Annot_key 

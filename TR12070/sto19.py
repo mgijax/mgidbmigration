@@ -1,30 +1,12 @@
 #!/usr/local/bin/python
 
-'''
-#
-# Report:
-#       Enter TR # and describe report inputs/output
-#
-# History:
-#
-# lec	01/18/99
-#	- created
-#
-'''
- 
 import sys 
 import os
 import db
-import reportlib
 
 db.setTrace()
 db.setAutoTranslate(False)
 db.setAutoTranslateBE(False)
-
-CRT = reportlib.CRT
-SPACE = reportlib.SPACE
-TAB = reportlib.TAB
-PAGE = reportlib.PAGE
 
 #
 # Main

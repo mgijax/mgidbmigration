@@ -17,6 +17,9 @@ db.useOneConnection(1)
 logFile = open('sto19.log', 'w')
 errorFile = open('sto19.error.log', 'w')
 
+
+# Parse mapping file into lookup
+#	of {emap_id : 'emapa_id + TS'}
 emapLookup = {}
 inFile = open('EMAP-EMAPA_mapping.txt', 'r')
 lineNum = 0
@@ -24,15 +27,22 @@ for line in inFile.readlines():
 	lineNum = lineNum + 1
 
 	tokens = line[:-1].split('\t')
-	emapID = tokens[0]
-	emapLookup[emapID] = []
-	emapLookup[emapID].append(tokens)
+	emapID = 'EMAP:' + tokens[0].strip()
+	tsValue = tokens[1].strip()
+	emapaID = tokens[3].strip()
+
+	# format of new EMAPA ID + TS
+	propertyValue = 'EMAPA:%s %s' % (emapaID, tsValue)
+	
+	# if there are duplicate mappings
+	#	the last value in the file wins
+	emapLookup[emapID] = propertyValue
 inFile.close()
-#for r in emapLookup:
-#	print emapLookup[r][0][0], emapLookup[r][0][1], emapLookup[r][0][3]
+#for emap, emapa in emapLookup.items():
+#	print emap, emapa
 
 results = db.sql('''
-        select distinct p._AnnotEvidence_key, p.value, aa.accID, m.symbol
+        select distinct p._EvidenceProperty_key, p.value, aa.accID, m.symbol
         from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p, VOC_Term t,
 		ACC_Accession aa, MRK_Marker m
         where a._AnnotType_key = 1000 
@@ -61,27 +71,35 @@ results = db.sql('''
 	''', 'auto')
 
 for r in results:
-	key = r['_AnnotEvidence_key']
+	propertyKey = r['_EvidenceProperty_key']
 	value = r['value']
 
-	tokens = value.split('; ')
+	# parse out comments, which occur after the last semicolon
+	tokens = value.split(';')
+	comments = ''
 
 	if len(tokens) > 1:
-		keepText = tokens[0]
-		emapID = tokens[1]
-	else:
-		keepText = ''
-		emapID = tokens[0]
+		comments = ''.join(tokens[:-1]).strip()
+	# force uppercase ID for searching
+	emapID = tokens[-1].strip().upper()
 
-	search_emapID = emapID.replace('EMAP:', '')
-	if emapLookup.has_key(search_emapID):
-		newValue = keepText + '; ' + 'EMAPA:' + emapLookup[search_emapID][0][3] + ' ' + emapLookup[search_emapID][0][1]
+	# skip any blank property values there may be
+	if not emapID:
+		continue
+
+	if emapID in emapLookup:
+		newValue = emapLookup[emapID]
+
+		# add any pre-existing comments
+		if comments:
+			newValue = '%s; %s' % (comments, newValue)
+
 		updateSQL = '''
 			update VOC_Evidence_Property
 			set value = '%s'
-			where _AnnotEvidence_key = %s
+			where _EvidenceProperty_key = %s
 			;
-			''' % (newValue, key)
+			''' % (newValue, propertyKey)
 		logFile.write(updateSQL + '\n')
 		db.sql(updateSQL, None)
 	else:

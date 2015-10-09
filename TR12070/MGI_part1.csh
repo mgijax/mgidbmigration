@@ -72,6 +72,11 @@ ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 echo 'Loading proload annotations' | tee -a ${LOG}
 ${PROLOAD}/bin/proload.sh | tee -a ${LOG}
 
+#
+# sto19/EMAP->EMAPA
+#
+${DBUTILS}/mgidbmigration/TR12070/sto19.py | tee -a ${LOG}
+
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}

@@ -101,9 +101,10 @@ for r in results:
 			;
 			''' % (newValue, key)
 		logFile.write(updateSQL + '\n')
-		#db.sql(updateSQL)
+		db.sql(updateSQL, None)
 	else:
 		errorFile.write(r['accID'] + '\t' + r['symbol'] + '\t' + value + '\n')
 
+db.commit()
 db.useOneConnection(0)
 

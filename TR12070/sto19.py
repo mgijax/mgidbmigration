@@ -80,6 +80,7 @@ for r in results:
 
 	if len(tokens) > 1:
 		comments = ''.join(tokens[:-1]).strip()
+
 	# force uppercase ID for searching
 	emapID = tokens[-1].strip().upper()
 

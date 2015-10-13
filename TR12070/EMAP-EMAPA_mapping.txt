@@ -1,3 +1,4 @@
+EMAP ID	TS	EMAP TERM NAME	EMAPA ID	EMAPA TERM NAME
 1	TS01 	first polar body	16032	first polar body
 2	TS01 	one-cell stage embryo	16033	one-cell stage embryo
 3	TS01 	second polar body	16034	second polar body
@@ -20374,8 +20375,8 @@
 6675	TS22	mesenchyme of metanephros	36437	mesenchyme of metanephros
 6686	TS22	medullary renal tubule	31414	medullary renal tubule
 6709	TS22	seminiferous cord	18685	seminiferous cord
-8227	TS 23	mesenchyme of metanephros	36437	mesenchyme of metanephros
-8242	TS 23	medullary renal tubule	31414	medullary renal tubule
+8227	TS23	mesenchyme of metanephros	36437	mesenchyme of metanephros
+8242	TS23	medullary renal tubule	31414	medullary renal tubule
 8248	TS23	genital tubercle of female	18680	genital tubercle of female
 9739	TS24	tail segmental spinal nerve	25149	tail segmental spinal nerve
 12275	TS26	Bowman's capsule of mature renal corpuscle	28257	Bowman's capsule of mature renal corpuscle

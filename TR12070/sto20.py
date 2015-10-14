@@ -64,13 +64,17 @@ for r in results:
 	tokens = value.split(';')
 	try:
 		maID = tokens[1].strip()
-		newValue = tokens[0]
+		comment = tokens[0]
 	except:
 		maID = tokens[0].strip()
-		newValue = ''
+		comment = ''
 
 	if maID in maLookup:
-		newValue = newValue + '; ' + maLookup[maID]
+		newValue = maLookup[maID]
+		
+		if comment:
+			newValue = comment + '; ' + newValue
+		
 		newValue = newValue.replace("'","''")
 		updateSQL = '''
 			update VOC_Evidence_Property

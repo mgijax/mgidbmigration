@@ -89,7 +89,14 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 #
 # sto19/EMAP->EMAPA
 #
+echo 'loading sto19/EMAP-EMAPA migration' | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR12070/sto19.py | tee -a ${LOG} || exit1
+
+#
+# sto20/MA-EMAPA-TS
+#
+echo 'loading sto20/MA->EMAPS migration' | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR12070/sto20.py | tee -a ${LOG} || exit1
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

@@ -25,8 +25,8 @@ for line in inFile.readlines():
 	emapaID = tokens[1] + ' ' + tokens[2]
 	maLookup[maID] = emapaID
 inFile.close()
-for r in maLookup.items():
-	print r[0], r[1]
+#for r in maLookup.items():
+#	print r[0], r[1]
 
 results = db.sql('''
         select distinct p._EvidenceProperty_key, p.value, aa.accID, m.symbol
@@ -70,7 +70,8 @@ for r in results:
 		newValue = ''
 
 	if maID in maLookup:
-		newValue = newValue + ' ; ' + maLookup[maID]
+		newValue = newValue + '; ' + maLookup[maID]
+		newValue = newValue.replace("'","''")
 		updateSQL = '''
 			update VOC_Evidence_Property
 			set value = '%s'
@@ -78,7 +79,7 @@ for r in results:
 			;
 			''' % (newValue, propertyKey)
 		logFile.write(updateSQL + '\n')
-		#db.sql(updateSQL, None)
+		db.sql(updateSQL, None)
 	else:
 		errorFile.write(r['accID'] + '\t' + r['symbol'] + '\t' + value + '\n')
 

@@ -49,13 +49,20 @@ endif
 echo "--- Finished loading databases " | tee -a ${LOG}
 
 echo "--- Update SNP Schema ---" | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a ${LOG}
 
-${SNP_DBSCHEMADIR}
-${SNP_DBSCHEMADIR}
+${SNP_DBSCHEMADIR}/table/SNP_ConsensusSnp_Marker_drop.object
+${SNP_DBSCHEMADIR}/table/SNP_ConsensusSnp_Marker_create.object
+${SNP_DBSCHEMADIR}/key/SNP_ConsensusSnp_Marker_create.object
+${SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_Marker_create.object
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
 
+drop view snp.SNP_Summary_View
+
+CASCADE
+;
 EOSQL
+
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

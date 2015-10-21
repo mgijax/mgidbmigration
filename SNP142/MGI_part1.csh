@@ -63,9 +63,6 @@ drop view snp.SNP_Summary_View
 CASCADE
 ;
 
-delete from DAG_DAG
-where _DAG_key = 11'
-
 EOSQL
 
 

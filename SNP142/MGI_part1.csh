@@ -55,12 +55,17 @@ ${SNP_DBSCHEMADIR}/table/SNP_ConsensusSnp_Marker_create.object
 ${SNP_DBSCHEMADIR}/key/SNP_ConsensusSnp_Marker_create.object
 ${SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_Marker_create.object
 
+echo "--- Drop SNP_Summary_View ---"  | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
 
 drop view snp.SNP_Summary_View
 
 CASCADE
 ;
+
+delete from DAG_DAG
+where _DAG_key = 11'
+
 EOSQL
 
 

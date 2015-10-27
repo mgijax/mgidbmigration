@@ -63,6 +63,11 @@ drop view snp.SNP_Summary_View
 CASCADE
 ;
 
+update snp.mgi_dbinfo
+set snp_data_version = 'dbSNP Build 142'
+where snp_data_version= 'dbSNP Build 137'
+;
+
 EOSQL
 
 

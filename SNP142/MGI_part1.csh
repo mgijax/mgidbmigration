@@ -5,8 +5,31 @@
 # (part 1 - optionally load dev database. etc)
 #
 # Products:
-# pgsnpdbschema
-# 
+#
+# Delete 'SNP Marker Distance DAG': DAG_DAG._Dag_key = 11
+#
+# Remove the following 'SNP Function Class' terms (_Vocab_key = 49)
+#  10125470 SNP_Marker_Distance_DAG
+#  10125471 dbSNP Function Class
+#  10125480 Locus-Region (downstream)
+#  10125481 Locus-Region (upstream)
+#  10125485 within 1000 kb downstream of
+#  10125486 within 1000 kb upstream of
+#  10125487 within 500 kb of
+#  10125488 within 500 kb downstream of
+#  10125489 within 500 kb upstream of
+#  10125490 within 100 kb of
+#  10125491 within 100 kb downstream of
+#  10125492 within 100 kb upstream of
+#  10125493 within 10 kb of
+#  10125494 within 10 kb downstream of
+#  10125495 within 10 kb upstream of
+#  10125496 within 2 kb of
+#  10125497 within 2 kb downstream of
+#  10125498 within 2 kb upstream of
+#
+# Update (reuse the key) the following 'SNP Function Class' term
+#  10125472 within 1000 kb of to within distance of
 #
 
 ###----------------------###
@@ -48,28 +71,34 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
-echo "--- Update SNP Schema ---" | tee -a ${LOG}
+echo "--- Delete SNP Fxn Class DAG and update Fxn Class Vocabulary---"  | tee -a ${LOG}
 
-${SNP_DBSCHEMADIR}/table/SNP_ConsensusSnp_Marker_drop.object
-${SNP_DBSCHEMADIR}/table/SNP_ConsensusSnp_Marker_create.object
-${SNP_DBSCHEMADIR}/key/SNP_ConsensusSnp_Marker_create.object
-${SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_Marker_create.object
-
-echo "--- Drop SNP_Summary_View ---"  | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
 
-drop view snp.SNP_Summary_View
+delete from DAG_DAG
+        where _DAG_key = 11
+;
 
-CASCADE
+update VOC_Term
+	set term = 'within distance of'
+	where _Term_key = 10125472 
+;
+
+delete from VOC_Term
+	where _Term_key in (10125470, 10125471, 10125480, 10125481, 10125485, 10125486, 10125487, 10125488, 10125489, 10125490, 10125491, 10125492, 10125493, 10125494, 10125495, 10125496, 10125497, 10125498)
+;
+
+update mgd.mgi_dbinfo
+    set snp_data_version = 'dbSNP Build 142'
+where snp_data_version= 'dbSNP Build 137'
 ;
 
 update snp.mgi_dbinfo
-set snp_data_version = 'dbSNP Build 142'
+    set snp_data_version = 'dbSNP Build 142'
 where snp_data_version= 'dbSNP Build 137'
 ;
 
 EOSQL
-
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

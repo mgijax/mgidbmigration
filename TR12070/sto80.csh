@@ -65,16 +65,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 
 #
-# biotypemapping load
-# using /mgi/all/wts_projects/10300/10308/RawBioTypeEquivalence/biotypemap.txt
-# to load data into MRK_BioTypeMapping table
-#
-#cp /mgi/all/wts_projects/10300/10308/RawBioTypeEquivalence/biotypemap.txt /data/biotypemapping/current
-#${BIOTYPEMAPLOAD}/bin/biotypemapload.sh ${BIOTYPEMAPLOAD}/biotypemapload.config
-
-#
-# run seqmarkercache.csh
-#
+#${GENEMODELLOAD}/bin/biotypemapping.sh
 #${SEQCACHELOAD}/seqmarkercache.csh
 
 #

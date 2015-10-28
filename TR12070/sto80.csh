@@ -1,13 +1,12 @@
 #!/bin/csh -f
 
 #
-# pgmgddbschema-tr12070 (or put on trunk?)
-# vocload :trunk?:convert to Git?
-# biotypemapload (new)
-# seqcacheload-tr12070 : convert to Git?
-# genemodelload : convert to Git?
-#	assemblyseqload : convert to Git?
-#	vega_ensemblseqload : convert to Git?
+# pgmgddbschema-tr12070
+# vocload (trunk)
+# seqcacheload-tr12070
+# genemodelload-tr12070
+#	assemblyseqload-?
+#	vega_ensemblseqload-?
 #
 
 if ( ${?MGICONFIG} == 0 ) then

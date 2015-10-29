@@ -53,6 +53,7 @@ EOSQL
 #
 ${PG_MGD_DBSCHEMADIR}/table/MRK_BiotypeMapping_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/MRK_BiotypeMapping_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MRK_BiotypeMapping_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_BiotypeMapping_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Vocab_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Vocab_create.object | tee -a $LOG || exit 1

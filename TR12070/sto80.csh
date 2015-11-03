@@ -43,8 +43,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- this needs to run as part of the migration
 -- remove existing raw biotype translation
---delete from MGI_Translation where _translationtype_key = 1020;
---delete from MGI_TranslationType where _translationtype_key = 1020;
+delete from MGI_Translation where _translationtype_key = 1020;
+delete from MGI_TranslationType where _translationtype_key = 1020;
 
 EOSQL
 
@@ -65,12 +65,19 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 
 #
-#${GENEMODELLOAD}/bin/biotypemapping.sh
-#${SEQCACHELOAD}/seqmarkercache.csh
-
+# run the genemodelload
+# 
+rm -rf ${INPUTFILE}/Ensembl.lastrun
+echo "Running ${GENEMODELLOAD}/bin/genemodelload.sh ensembl"
+${GENEMODELLOAD}/bin/genemodelload.sh ensembl | tee -a ${LOG}
 #
+# run all cache loads (see wiki/section 11/Processing)
 #
-#
+${SEQCACHELOAD}/seqcoord.csh
+${SEQCACHELOAD}/seqmarker.csh
+${MRKCACHELOAD}/mrklabel.csh
+${MRKCACHELOAD}/mrkref.csh
+${MRKCACHELOAD}/mrklocation.csh 
 
 date |tee -a $LOG
 

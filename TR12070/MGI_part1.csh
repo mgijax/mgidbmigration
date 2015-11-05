@@ -107,6 +107,13 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 #echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
 #${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit1
 
+#
+# sto18/goaload/Uberon
+#
+#echo 'running GOA-Mouse (goaload) translation Uberon Ids to EMAPA' | tee -a ${LOG}
+#${GOALOAD}/bin/goa.csh | tee -a ${LOG} || exit 1
+#
+
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}

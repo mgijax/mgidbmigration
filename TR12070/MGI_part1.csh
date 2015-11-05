@@ -112,6 +112,11 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 #
 #echo 'running GOA-Mouse (goaload) translation Uberon Ids to EMAPA' | tee -a ${LOG}
 #${GOALOAD}/bin/goa.csh | tee -a ${LOG} || exit 1
+#cd ${PUBRPTS}
+#echo 'running GO-GAF file' | tee -a ${LOG}
+#source ./Configuration
+#cd ${PUBRPTS}/daily
+#./GO_gene_association.py | tee -a ${LOG}
 #
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}

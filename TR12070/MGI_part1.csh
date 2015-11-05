@@ -83,6 +83,18 @@ echo 'loading sto20/MA->EMAPS migration' | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR12070/sto20.py | tee -a ${LOG} || exit1
 
 #
+# sto18/goaload/Uberon
+#
+echo 'running GOA-Mouse (goaload) translation Uberon Ids to EMAPA' | tee -a ${LOG}
+${GOALOAD}/bin/goa.csh | tee -a ${LOG} || exit 1
+echo 'running GO-GAF file' | tee -a ${LOG}
+cd ${PUBRPTS}
+source ./Configuration
+cd ${PUBRPTS}/daily
+./GO_gene_association.py | tee -a ${LOG}
+
+
+#
 # loading GO annotation extension display link notes
 #
 echo 'loading GO annotation extension display link notes' | tee -a ${LOG}
@@ -106,17 +118,6 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 # not ready yet
 #echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
 #${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit1
-
-#
-# sto18/goaload/Uberon
-#
-echo 'running GOA-Mouse (goaload) translation Uberon Ids to EMAPA' | tee -a ${LOG}
-${GOALOAD}/bin/goa.csh | tee -a ${LOG} || exit 1
-echo 'running GO-GAF file' | tee -a ${LOG}
-cd ${PUBRPTS}
-source ./Configuration
-cd ${PUBRPTS}/daily
-./GO_gene_association.py | tee -a ${LOG}
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

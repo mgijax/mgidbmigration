@@ -63,6 +63,8 @@ ${PG_MGD_DBSCHEMADIR}/key/MRK_Types_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Types_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 
 #
 # the migration should *not* run this...for testing purposes only

@@ -116,8 +116,8 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 #
 # sto80/genemodelload stuff
 # not ready yet
-#echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
-#${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit1
+echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
+${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit1
 
 #${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 

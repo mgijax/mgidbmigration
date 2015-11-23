@@ -35,10 +35,10 @@ echo "--- Update SNP_ConsensusSnp_Marker Schema ---" | tee -a ${LOG}
 #${SNP_DBSCHEMADIR}/key/SNP_ConsensusSnp_Marker_create.object
 #${SNP_DBSCHEMADIR}/index/SNP_ConsensusSnp_Marker_create.object
 #
-echo "--- Create new SNP_RefSeq_Accession Table ---" | tee -a ${LOG}
-#${SNP_DBSCHEMADIR}/table/SNP_RefSeq_Accession_create.object
-#${SNP_DBSCHEMADIR}/key/SNP_RefSeq_Accession_create.object
-#${SNP_DBSCHEMADIR}/index/SNP_RefSeq_Accession_create.object
+echo "--- Create new SNP_Transcript_Protein Table ---" | tee -a ${LOG}
+#${SNP_DBSCHEMADIR}/table/SNP_Transcript_Protein_create.object
+#${SNP_DBSCHEMADIR}/key/SNP_Transcript_Protein_create.object
+#${SNP_DBSCHEMADIR}/index/SNP_Transcript_Protein_create.object
 
 echo "--- Drop SNP_Summary_View ---"  | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
@@ -74,24 +74,24 @@ EOSQL
 
 # drop/create all indexes for tables wih clustered indexes so that indexes i
 # are clustered immediately after creation
-${SNP_DBSCHEMADIR}/index/SNP_Accession_create.object
 ${SNP_DBSCHEMADIR}/index/SNP_Accession_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_ConsensusSnp_Marker_create.object
+${SNP_DBSCHEMADIR}/index/SNP_Accession_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_ConsensusSnp_Marker_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_ConsensusSnp_StrainAllele_create.object
+${SNP_DBSCHEMADIR}/indexSNP_ConsensusSnp_Marker_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_ConsensusSnp_StrainAllele_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_Coord_Cache_create.object
+${SNP_DBSCHEMADIR}/indexSNP_ConsensusSnp_StrainAllele_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_Coord_Cache_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_Flank_create.object
+${SNP_DBSCHEMADIR}/indexSNP_Coord_Cache_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_Flank_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_RefSeq_Accession_create.object
+${SNP_DBSCHEMADIR}/indexSNP_Flank_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_RefSeq_Accession_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_Strain_create.object
+${SNP_DBSCHEMADIR}/indexSNP_RefSeq_Accession_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_Strain_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_SubSnp_create.object
+${SNP_DBSCHEMADIR}/indexSNP_Strain_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_SubSnp_drop.object
-${SNP_DBSCHEMADIR}/indexSNP_SubSnp_StrainAllele_create.object
+${SNP_DBSCHEMADIR}/indexSNP_SubSnp_create.object
 ${SNP_DBSCHEMADIR}/indexSNP_SubSnp_StrainAllele_drop.object
+${SNP_DBSCHEMADIR}/indexSNP_SubSnp_StrainAllele_create.object
 
 # Create public perms (when dropping/creating tables)
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} snp

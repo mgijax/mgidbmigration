@@ -14,12 +14,13 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
+${MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-drop table MGI_Tables;
+drop view mgi_table_column_view;
 drop table MGI_Columns;
+drop table MGI_Tables;
 
 EOSQL
 

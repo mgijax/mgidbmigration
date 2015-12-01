@@ -18,6 +18,7 @@ ${MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+DROP FUNCTION IF EXISTS MGI_Table_Column_Cleanup();
 drop view mgi_table_column_view;
 drop table MGI_Columns;
 drop table MGI_Tables;

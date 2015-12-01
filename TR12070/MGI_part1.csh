@@ -35,14 +35,6 @@ touch ${LOG}
 #./scrumdog_testdata.sh
 
 #
-# PLEASE READ!
-# FOR TESTING ONLY 
-# MAKE SURE BOTH ARE TURNED OFF FOR REAL MIGRATION
-#
-#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} ${PG_DBNAME} radar /bhmgidevdb01/dump/radar.dump
-#${PG_DBUTILS}/bin/loadDB.csh ${PG_DBSERVER} ${PG_DBNAME} mgd /bhmgidevdb01/dump/mgd.dump
-
-#
 # update schema-version and public-version
 #
 date | tee -a ${LOG}
@@ -84,6 +76,7 @@ ${DBUTILS}/mgidbmigration/TR12070/sto20.py | tee -a ${LOG} || exit1
 
 #
 # sto18/goaload/Uberon
+# /data/downloads/goa/gene_association.goa_mouse.gz
 #
 echo 'running GOA-Mouse (goaload) translation Uberon Ids to EMAPA' | tee -a ${LOG}
 ${GOALOAD}/bin/goa.csh | tee -a ${LOG} || exit 1
@@ -92,7 +85,6 @@ cd ${PUBRPTS}
 source ./Configuration
 cd ${PUBRPTS}/daily
 ./GO_gene_association.py | tee -a ${LOG}
-
 
 #
 # loading GO annotation extension display link notes
@@ -115,11 +107,10 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 
 #
 # sto80/genemodelload stuff
-# not ready yet
 echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit1
 
-#${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
+${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -4,9 +4,6 @@
 # pgmgddbschema-tr12070
 # vocload (trunk)
 # seqcacheload-tr12070
-# genemodelload-tr12070
-#	assemblyseqload-?
-#	vega_ensemblseqload-?
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -65,23 +62,6 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
-
-#
-# the migration should *not* run this...for testing purposes only
-#
-# run the genemodelload
-# 
-#rm -rf ${INPUTFILE}/Ensembl.lastrun
-#echo "Running ${GENEMODELLOAD}/bin/genemodelload.sh ensembl"
-#${GENEMODELLOAD}/bin/genemodelload.sh ensembl | tee -a ${LOG}
-#
-# run all cache loads (see wiki/section 11/Processing)
-#
-#${SEQCACHELOAD}/seqcoord.csh
-#${SEQCACHELOAD}/seqmarker.csh
-#${MRKCACHELOAD}/mrklabel.csh
-#${MRKCACHELOAD}/mrkref.csh
-#${MRKCACHELOAD}/mrklocation.csh 
 
 date |tee -a $LOG
 

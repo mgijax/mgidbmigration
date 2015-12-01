@@ -70,15 +70,15 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 # 
 rm -rf ${INPUTFILE}/Ensembl.lastrun
 echo "Running ${GENEMODELLOAD}/bin/genemodelload.sh ensembl"
-${GENEMODELLOAD}/bin/genemodelload.sh ensembl | tee -a ${LOG}
+${GENEMODELLOAD}/bin/genemodelload.sh ensembl | tee -a ${LOG} || exit 1
 #
 # run all cache loads (see wiki/section 11/Processing)
 #
-${SEQCACHELOAD}/seqcoord.csh
-${SEQCACHELOAD}/seqmarker.csh
-${MRKCACHELOAD}/mrklabel.csh
-${MRKCACHELOAD}/mrkref.csh
-${MRKCACHELOAD}/mrklocation.csh 
+${SEQCACHELOAD}/seqcoord.csh || exit 1
+${SEQCACHELOAD}/seqmarker.csh || exit 1
+${MRKCACHELOAD}/mrklabel.csh || exit 1
+${MRKCACHELOAD}/mrkref.csh || exit 1
+${MRKCACHELOAD}/mrklocation.csh  || exit 1
 
 date |tee -a $LOG
 

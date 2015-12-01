@@ -102,6 +102,11 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit1
 
+#
+## comments
+echo 'add schema comments' | tee -a ${LOG}
+./comments_create.sh
+
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}

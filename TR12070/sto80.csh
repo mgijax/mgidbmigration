@@ -68,7 +68,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 #
 # run the genemodelload
 # 
-rm -rf ${INPUTFILE}/Ensembl.lastrun
+rm -rf $DATALOADSOUTPUT/mgi/genemodelload/input/Ensembl.lastrun
 echo "Running ${GENEMODELLOAD}/bin/genemodelload.sh ensembl"
 ${GENEMODELLOAD}/bin/genemodelload.sh ensembl | tee -a ${LOG} || exit 1
 #

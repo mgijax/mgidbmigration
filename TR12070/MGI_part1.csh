@@ -3,16 +3,9 @@
 #
 # Migration for TR12070
 #
-# mgidbmigration
-#
-# lib_py_report (trunk)
-# ei (tr12070)
-# pgmgddbschema (tr12070)
-# reports_db (tr12070)
-# seqcacheload (tr12070-1)
-# assocload (tr12070)
-# mgicacheload (tr12070)
-# proload (tr12070)
+# verify the most recent copies of these files exist:
+# /data/downloads/goa/gene_association.goa_mouse.gz
+# /data/downloads/purl.obolibrary.org/obo/uberon.obo
 #
 
 ###----------------------###
@@ -76,7 +69,6 @@ ${DBUTILS}/mgidbmigration/TR12070/sto20.py | tee -a ${LOG} || exit1
 
 #
 # sto18/goaload/Uberon
-# /data/downloads/goa/gene_association.goa_mouse.gz
 #
 echo 'running GOA-Mouse (goaload) translation Uberon Ids to EMAPA' | tee -a ${LOG}
 ${GOALOAD}/bin/goa.csh | tee -a ${LOG} || exit 1

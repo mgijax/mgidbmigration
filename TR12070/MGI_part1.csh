@@ -105,7 +105,7 @@ echo 'deleting DoTS/DFCI/NIA data...' | tee -a ${LOG}
 #
 ## comments
 echo 'add schema comments' | tee -a ${LOG}
-./comments.csh | tee -a ${LOG} || exit 1
+${DBUTILS}/mgidbmigration/TR12070/comments.csh | tee -a ${LOG} || exit 1
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG} || exit 1
 

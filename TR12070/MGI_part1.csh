@@ -7,7 +7,7 @@
 # /data/downloads/goa/gene_association.goa_mouse.gz
 # /data/downloads/purl.obolibrary.org/obo/uberon.obo
 #
-# from: bhmgidevapp01:/data/loads/scrum-dog/mgi/genemodelload/input
+# from: bhmgidevapp01:/data/loads/test/mgi/genemodelload/input
 # to: bhmgidevapp01:/data/loads/mgi/genemodelload/input
 # ensembl_assoc.txt
 # ensembl_genemodels.txt

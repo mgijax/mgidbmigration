@@ -37,12 +37,6 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# TR12038/DoTS/DFCI/NIA
-#
-echo 'deleting DoTS/DFCI/NIA data...' | tee -a ${LOG}
-/mgi/all/wts_projects/12000/12038/tr12038.csh | tee -a ${LOG} || exit 1
-
-#
 # load synonyms
 #
 echo 'loading MGI-GORel synonyms....' | tee -a ${LOG}
@@ -101,6 +95,12 @@ ${PROLOAD}/bin/proload.sh | tee -a ${LOG} || exit 1
 # sto80/genemodelload stuff
 echo 'loading sto80/genemodelload stuff' | tee -a ${LOG}
 ${DBUTILS}/mgidbmigration/TR12070/sto80.csh | tee -a ${LOG} || exit 1
+
+#
+# TR12038/DoTS/DFCI/NIA
+#
+echo 'deleting DoTS/DFCI/NIA data...' | tee -a ${LOG}
+/mgi/all/wts_projects/12000/12038/tr12038.csh | tee -a ${LOG} || exit 1
 
 #
 ## comments

@@ -117,7 +117,11 @@ echo 'add schema comments' | tee -a ${LOG}
 cd ${DBUTILS}/mgidbmigration/TR12070
 ./comments.csh | tee -a ${LOG} || exit 1
 
-${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a ${LOG} || exit 1
+#
+# sto89/cleanup of inducer notes
+#
+echo 'cleanup of inducer notes' | tee -a ${LOG}
+./sto89.csh | tee -a $${LOG} || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

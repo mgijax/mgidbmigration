@@ -123,6 +123,12 @@ cd ${DBUTILS}/mgidbmigration/TR12070
 echo 'cleanup of inducer notes' | tee -a ${LOG}
 ./sto89.csh | tee -a $${LOG} || exit 1
 
+#
+# TR12083/notes
+#
+echo 'cleanup of note chunks'
+/mgi/all/wts_projects/12000/12083/tr12083_note2.csh | tee -a ${LOG} || exit 1
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

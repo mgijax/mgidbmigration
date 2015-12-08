@@ -43,6 +43,9 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from MGI_Translation where _translationtype_key = 1020;
 delete from MGI_TranslationType where _translationtype_key = 1020;
 
+-- incorrect name
+DROP FUNCTION IF EXISTS VOC_AnnotHeaderMissing(int);
+
 EOSQL
 
 #
@@ -60,6 +63,9 @@ ${PG_MGD_DBSCHEMADIR}/key/MRK_Types_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Types_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/ALL_postMP_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeaderMissing_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeader_create.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 

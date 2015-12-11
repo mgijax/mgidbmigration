@@ -6,6 +6,7 @@
 # verify the most recent copies of these files exist:
 # /data/downloads/goa/gene_association.goa_mouse.gz
 # /data/downloads/purl.obolibrary.org/obo/uberon.obo
+# /data/downloads/ikmc.vm.bytemark.co.uk/imits.json
 #
 # from: bhmgidevapp01:/data/loads/test/mgi/genemodelload/input
 # to: bhmgidevapp01:/data/loads/mgi/genemodelload/input
@@ -128,6 +129,12 @@ echo 'cleanup of inducer notes' | tee -a ${LOG}
 #
 echo 'cleanup of note chunks'
 /mgi/all/wts_projects/12000/12083/tr12083_note2.csh | tee -a ${LOG} || exit 1
+
+#
+## TR12011/turn htmpload on
+#
+echo 'running htmpload...'
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config | tee -a $PLOG} || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

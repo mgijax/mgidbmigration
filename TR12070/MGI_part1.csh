@@ -135,7 +135,7 @@ echo 'cleanup of note chunks'
 ## TR12011/turn htmpload on
 #
 echo 'running htmpload...'
-${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config | tee -a $PLOG} || exit 1
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG} || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

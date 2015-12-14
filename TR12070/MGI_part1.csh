@@ -7,6 +7,7 @@
 # /data/downloads/goa/gene_association.goa_mouse.gz
 # /data/downloads/purl.obolibrary.org/obo/uberon.obo
 # /data/downloads/ikmc.vm.bytemark.co.uk/imits.json
+# /data/downloads/www.ebi.ac.uk/impc.json
 #
 # from: bhmgidevapp01:/data/loads/test/mgi/genemodelload/input
 # to: bhmgidevapp01:/data/loads/mgi/genemodelload/input

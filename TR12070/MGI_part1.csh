@@ -136,6 +136,8 @@ echo 'cleanup of note chunks'
 #
 echo 'running htmpload...'
 ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config | tee -a ${LOG} || exit 1
+echo 'running rollupload.csh...'
+${ROLLUPLOAD}/bin/rollupload.sh | tee -a ${LOG} || exit 1
 echo 'running alllabel.csh...'
 ${ALLCACHELOAD}/alllabel.csh | tee -a ${LOG} || exit 1
 echo 'running allelecombination.csh...'

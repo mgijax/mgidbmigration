@@ -28,4 +28,6 @@ date | tee -a ${LOG}
 echo "--- Run DBNSP Load ---" | tee -a ${LOG}
 ${DBSNPLOAD/bin/dbsnpload.sh >& /data/loads/dbsnp/dbsnpload/logs/dbsnpload.sh.out
 
+${DBSNPLOAD}/bin/migrateRefSeqs.sh >& /data/loads/dbsnp/dbsnpload/logs/migrateRefSeqs.sh.out
+
 date | tee -a ${LOG}

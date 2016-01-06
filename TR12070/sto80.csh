@@ -66,6 +66,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/ALL_postMP_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeaderMissing_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeader_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/PRB_Probe_create.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 

@@ -1,3 +1,10 @@
+TAG: mgidbmigration-6-0-2-8
+DATE: 01/06/2016
+STAFF: lec
+1) TR12223 - scrum-dog
+GXD - replacing AD structures with EMAPA
+PWI - replacing EI/AD module with PWI/EMAPA module
+
 TAG: mgidbmigration-6-0-2-7
 TAG: mgidbmigration-6-0-2-6
 TAG: mgidbmigration-6-0-2-5

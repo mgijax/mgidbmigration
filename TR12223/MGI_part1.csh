@@ -3,6 +3,9 @@
 #
 # Migration for TR12223
 #
+# schema change
+# schema migration
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -23,11 +26,103 @@ touch ${LOG}
 #
 # update schema-version and public-version
 #
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#update MGI_dbinfo set schema_version = '6-0-2', public_version = 'MGI 6.02';
-#EOSQL
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update MGI_dbinfo set schema_version = '6-0-?', public_version = 'MGI 6.0?';
+EOSQL
+date | tee -a ${LOG}
+
+echo 'step 1 : drop/alter tables' | tee -a $LOG
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
+
+DROP TABLE ALL_Cre_Cache;
+DROP TABLE GXD_Expression;
+DROP TABLE GXD_StructureClosure;
+
+ALTER TABLE GXD_GelLaneStructure RENAME TO GXD_GelLaneStructure_old;
+ALTER TABLE GXD_ISResultStructure RENAME TO GXD_ISResultStructure_old;
+
+ALTER TABLE GXD_TheilerStage DROP COLUMN IF EXISTS _defaultSystem_key;
+ALTER TABLE mgd.GXD_Structure DROP CONSTRAINT GXD_Structure__Stage_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_TheilerStage DROP CONSTRAINT GXD_TheilerStage_pkey CASCADE;
+
+ALTER TABLE VOC_Term_EMAPA ALTER startStage TYPE integer USING startStage::integer;
+ALTER TABLE VOC_Term_EMAPA ALTER endStage TYPE integer USING endStage::integer;
+
+DROP VIEW IF EXISTS mgd.GXD_Structure_Acc_View;
+
+EOSQL
+date | tee -a ${LOG}
+
+echo 'step 2 : create new tables' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+
+echo 'step 3 : run migration (NOT YET)' | tee -a $LOG
+
+echo 'step 4 : create foreign keys for new tables' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
+
+echo 'step 5 : create more foreign keys for new tables' | tee -a $LOG
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
+
+ALTER TABLE mgd.ALL_Cre_Cache ADD FOREIGN KEY (_Allele_key) REFERENCES mgd.ALL_Allele ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.ALL_Cre_Cache ADD FOREIGN KEY (_Assay_key) REFERENCES mgd.GXD_Assay ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.ALL_Cre_Cache ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.ALL_Cre_Cache ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.ALL_Cre_Cache ADD FOREIGN KEY (_Allele_Type_key) REFERENCES mgd.VOC_Term ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.ALL_Cre_Cache ADD FOREIGN KEY (_EMAPA_Term_key) REFERENCES mgd.VOC_Term ON DELETE CASCADE DEFERRABLE;
+
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_Refs_key) REFERENCES mgd.BIB_Refs ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_Assay_key) REFERENCES mgd.GXD_Assay ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_AssayType_key) REFERENCES mgd.GXD_AssayType DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_GelLane_key) REFERENCES mgd.GXD_GelLane ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_Genotype_key) REFERENCES mgd.GXD_Genotype DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_Specimen_key) REFERENCES mgd.GXD_Specimen ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker DEFERRABLE;
+ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_EMAPA_Term_key) REFERENCES mgd.VOC_Term ON DELETE CASCADE DEFERRABLE;
+
+ALTER TABLE mgd.GXD_GelLaneStructure ADD FOREIGN KEY (_EMAPA_Term_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_GelLaneStructure ADD FOREIGN KEY (_GelLane_key) REFERENCES mgd.GXD_GelLane ON DELETE CASCADE DEFERRABLE;
+
+ALTER TABLE mgd.GXD_ISResultStructure ADD FOREIGN KEY (_Result_key) REFERENCES mgd.GXD_InSituResult ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.GXD_ISResultStructure ADD PRIMARY KEY (_Result_key, _EMAPA_Term_key, _Stage_key);
+ALTER TABLE mgd.GXD_ISResultStructure ADD FOREIGN KEY (_EMAPA_Term_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+
+EOSQL
+date | tee -a ${LOG}
+
+echo 'step 6 : create indexes on new tables' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
+
+echo 'step 7 : add comments/views' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/comments/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/GXD_Expression_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
+
+EOSQL
+date | tee -a ${LOG}
+
+#
+# step 8 : run allcacheload/allelecrecache.csh
+# step 9: run mgicacheload/gxdexpression.csh
+#
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

@@ -23,6 +23,8 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
+${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postdaily.dump
+
 #
 # update schema-version and public-version
 #
@@ -32,13 +34,18 @@ update MGI_dbinfo set schema_version = '6-0-?', public_version = 'MGI 6.0?';
 EOSQL
 date | tee -a ${LOG}
 
-echo 'step 1 : drop/alter tables' | tee -a $LOG
+echo 'step 1 : drop/alter tables/views/etc.' | tee -a $LOG
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
 DROP TABLE ALL_Cre_Cache;
 DROP TABLE GXD_Expression;
 DROP TABLE GXD_StructureClosure;
+
+ALTER TABLE mgd.GXD_GelLaneStructure DROP CONSTRAINT GXD_GelLaneStructure__GelLane_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_GelLaneStructure DROP CONSTRAINT GXD_GelLaneStructure_pkey CASCADE;
+ALTER TABLE mgd.GXD_ISResultStructure DROP CONSTRAINT GXD_ISResultStructure__Result_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_ISResultStructure DROP CONSTRAINT GXD_ISResultStructure_pkey CASCADE;
 
 ALTER TABLE GXD_GelLaneStructure RENAME TO GXD_GelLaneStructure_old;
 ALTER TABLE GXD_ISResultStructure RENAME TO GXD_ISResultStructure_old;
@@ -53,6 +60,8 @@ ALTER TABLE VOC_Term_EMAPA ALTER endStage TYPE integer USING endStage::integer;
 DROP VIEW IF EXISTS mgd.GXD_Structure_Acc_View;
 
 EOSQL
+${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 echo 'step 2 : create new tables' | tee -a $LOG
@@ -62,6 +71,7 @@ ${PG_MGD_DBSCHEMADIR}/table/GXD_GelLaneStructure_create.object | tee -a $LOG || 
 ${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
 
 echo 'step 3 : run migration (NOT YET)' | tee -a $LOG
+./adToemapa.csh | tee -a $LOG || exit 1
 
 echo 'step 4 : create foreign keys for new tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1

@@ -23,16 +23,16 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postdaily.dump
+#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postdaily.dump
 
 #
 # update schema-version and public-version
 #
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-?', public_version = 'MGI 6.0?';
-EOSQL
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#update MGI_dbinfo set schema_version = '6-0-?', public_version = 'MGI 6.0?';
+#EOSQL
+#date | tee -a ${LOG}
 
 echo 'step 1 : drop/alter tables/views/etc.' | tee -a $LOG
 date | tee -a ${LOG}

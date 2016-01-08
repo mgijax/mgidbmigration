@@ -56,6 +56,8 @@ ALTER TABLE mgd.GXD_TheilerStage DROP CONSTRAINT GXD_TheilerStage_pkey CASCADE;
 
 ALTER TABLE VOC_Term_EMAPA ALTER startStage TYPE integer USING startStage::integer;
 ALTER TABLE VOC_Term_EMAPA ALTER endStage TYPE integer USING endStage::integer;
+ALTER TABLE VOC_Term_EMAPS RENAME COLUMN stage to _Stage_key;
+ALTER TABLE VOC_Term_EMAPS ALTER _Stage_key TYPE integer USING _Stage_key::integer;
 
 DROP VIEW IF EXISTS mgd.GXD_Structure_Acc_View;
 

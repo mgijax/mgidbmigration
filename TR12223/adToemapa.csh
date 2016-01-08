@@ -47,7 +47,7 @@ select count(*) from GXD_ISResultStructure_old;
 select count(*) from GXD_ISResultStructure;
 
 INSERT INTO GXD_GelLaneStructure
-SELECT g._gellane_key, emapa._Term_key, emaps.stage::integer, g.creation_date, g.modification_date
+SELECT g._gellane_key, emapa._Term_key, emaps._Stage_key, g.creation_date, g.modification_date
 FROM MGI_EMAPS_Mapping m, 
 	ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
 	VOC_Term_EMAPA emapa, VOC_Term emapat,
@@ -64,7 +64,7 @@ and emapa._Term_key = emapat._Term_key
 ;
 
 INSERT INTO GXD_ISResultStructure
-SELECT g._result_key, emapa._Term_key, emaps.stage::integer, g.creation_date, g.modification_date
+SELECT g._result_key, emapa._Term_key, emaps._Stage_key, g.creation_date, g.modification_date
 FROM MGI_EMAPS_Mapping m, 
 	ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
 	VOC_Term_EMAPA emapa, VOC_Term emapat,

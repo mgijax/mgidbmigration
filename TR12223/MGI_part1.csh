@@ -119,6 +119,10 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_create.object | tee -a $LOG || 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_create.object | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_drop.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
 

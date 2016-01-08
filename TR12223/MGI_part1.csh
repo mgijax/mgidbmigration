@@ -129,10 +129,10 @@ ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LO
 EOSQL
 date | tee -a ${LOG}
 
-#
-# step 8 : run allcacheload/allelecrecache.csh
-# step 9: run mgicacheload/gxdexpression.csh
-#
+echo 'step 8 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
+${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
+
+# step 9 : run allcacheload/allelecrecache.csh
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

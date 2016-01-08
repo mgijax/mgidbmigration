@@ -3,10 +3,6 @@
 #
 # Migration for TR12223
 #
-# obsolete:
-# adsystemload
-# toposortload
-#
 
 ###----------------------###
 ###--- initialization ---###
@@ -24,14 +20,12 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-#
-# update schema-version and public-version
-#
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#update MGI_dbinfo set schema_version = '6-0-2', public_version = 'MGI 6.02';
-#EOSQL
-#date | tee -a ${LOG}
+echo 'run qc reports' | tee -a $LOG
+
+${QCRPTS}/qcnightly_reports.csh | tee -a $LOG
+${QCRPTS}/qcmonthly_reports.csh | tee -a $LOG
+${QCRPTS}/qcweekly_reports.csh | tee -a $LOG
+${QCRPTS}/qcsunday_reports.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

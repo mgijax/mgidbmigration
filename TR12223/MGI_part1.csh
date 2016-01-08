@@ -23,7 +23,7 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postdaily.dump
+${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postdaily.dump
 
 #
 # update schema-version and public-version
@@ -132,7 +132,8 @@ date | tee -a ${LOG}
 echo 'step 8 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
 
-# step 9 : run allcacheload/allelecrecache.csh
+echo 'step 9 : run allcacheload/allelecrecache.csh' | tee -a $LOG
+${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

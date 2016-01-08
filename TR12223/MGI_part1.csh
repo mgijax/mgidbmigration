@@ -115,16 +115,19 @@ ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_create.object | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_drop.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
 
-echo 'step 7 : add comments/views' | tee -a $LOG
+echo 'step 7 : add comments/views/procedure' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
 
 EOSQL
 date | tee -a ${LOG}

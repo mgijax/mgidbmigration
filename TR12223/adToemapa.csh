@@ -41,7 +41,7 @@ touch ${LOG}
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
--- not interested in gel lane structures where gel control != No (1)
+-- not interested in gel lane structures where gel control != No (1), per connie
 DELETE FROM GXD_GelLaneStructure_old
 USING GXD_GelLane g
 WHERE g._gelcontrol_key != 1

@@ -41,6 +41,13 @@ touch ${LOG}
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
+-- not interested in gel lane structures where gel control != No (1)
+DELETE FROM GXD_GelLaneStructure_old
+USING GXD_GelLane g
+WHERE g._gelcontrol_key != 1
+AND g._gellane_key = s._gellane_key
+;
+
 select count(*) from GXD_GelLaneStructure_old;
 select count(*) from GXD_GelLaneStructure;
 select count(*) from GXD_ISResultStructure_old;
@@ -66,42 +73,23 @@ order by s._Stage_key, sn.structure
 ;
 
 -- should be 0
---SELECT g.*
---FROM GXD_GelLaneStructure_old g
---where not exists (select 1 
-	--from MGI_EMAPS_Mapping m, 
-		--ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
-		--VOC_Term_EMAPA emapa, VOC_Term emapat
-	--where g._Structure_key = a1._Object_key
-	--and a1._MGIType_key = 38
-	--and a1.accID = m.accID
-	--and m.emapsID = a2.accID
-	--and a2._MGIType_key = 13
-	--and a2._Object_key = emapst._Term_key
-	--and emapst._Term_key = emaps._Term_key
-	--and emaps._emapa_term_key = emapa._Term_key
-	--and emapa._Term_key = emapat._Term_key
-	--)
---;
-
--- should be 0
---SELECT g.*
---FROM GXD_ISResultStructure_old g
---where not exists (select 1 
-	--from MGI_EMAPS_Mapping m, 
-		--ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
-		--VOC_Term_EMAPA emapa, VOC_Term emapat
-	--where g._Structure_key = a1._Object_key
-	--and a1._MGIType_key = 38
-	--and a1.accID = m.accID
-	--and m.emapsID = a2.accID
-	--and a2._MGIType_key = 13
-	--and a2._Object_key = emapst._Term_key
-	--and emapst._Term_key = emaps._Term_key
-	--and emaps._emapa_term_key = emapa._Term_key
-	--and emapa._Term_key = emapat._Term_key
-	--)
---;
+SELECT g.*
+FROM GXD_ISResultStructure_old g
+where not exists (select 1 
+	from MGI_EMAPS_Mapping m, 
+		ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
+		VOC_Term_EMAPA emapa, VOC_Term emapat
+	where g._Structure_key = a1._Object_key
+	and a1._MGIType_key = 38
+	and a1.accID = m.accID
+	and m.emapsID = a2.accID
+	and a2._MGIType_key = 13
+	and a2._Object_key = emapst._Term_key
+	and emapst._Term_key = emaps._Term_key
+	and emaps._emapa_term_key = emapa._Term_key
+	and emapa._Term_key = emapat._Term_key
+	)
+;
 
 INSERT INTO GXD_GelLaneStructure
 SELECT g._gellane_key, emapa._Term_key, emaps._Stage_key, g.creation_date, g.modification_date

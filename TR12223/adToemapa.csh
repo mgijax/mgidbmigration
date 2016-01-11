@@ -65,6 +65,44 @@ and emapa._Term_key = emapat._Term_key
 order by s._Stage_key, sn.structure
 ;
 
+-- should be 0
+--SELECT g.*
+--FROM GXD_GelLaneStructure_old g
+--where not exists (select 1 
+	--from MGI_EMAPS_Mapping m, 
+		--ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
+		--VOC_Term_EMAPA emapa, VOC_Term emapat
+	--where g._Structure_key = a1._Object_key
+	--and a1._MGIType_key = 38
+	--and a1.accID = m.accID
+	--and m.emapsID = a2.accID
+	--and a2._MGIType_key = 13
+	--and a2._Object_key = emapst._Term_key
+	--and emapst._Term_key = emaps._Term_key
+	--and emaps._emapa_term_key = emapa._Term_key
+	--and emapa._Term_key = emapat._Term_key
+	--)
+--;
+
+-- should be 0
+--SELECT g.*
+--FROM GXD_ISResultStructure_old g
+--where not exists (select 1 
+	--from MGI_EMAPS_Mapping m, 
+		--ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
+		--VOC_Term_EMAPA emapa, VOC_Term emapat
+	--where g._Structure_key = a1._Object_key
+	--and a1._MGIType_key = 38
+	--and a1.accID = m.accID
+	--and m.emapsID = a2.accID
+	--and a2._MGIType_key = 13
+	--and a2._Object_key = emapst._Term_key
+	--and emapst._Term_key = emaps._Term_key
+	--and emaps._emapa_term_key = emapa._Term_key
+	--and emapa._Term_key = emapat._Term_key
+	--)
+--;
+
 INSERT INTO GXD_GelLaneStructure
 SELECT g._gellane_key, emapa._Term_key, emaps._Stage_key, g.creation_date, g.modification_date
 FROM MGI_EMAPS_Mapping m, 
@@ -104,12 +142,20 @@ select count(*) from GXD_GelLaneStructure;
 select count(*) from GXD_ISResultStructure_old;
 select count(*) from GXD_ISResultStructure;
 
-DROP TABLE MGI_EMAPS_Mapping;
-DROP TABLE GXD_GelLaneStructure_old;
-DROP TABLE GXD_ISResultStructure_old;
-DROP TABLE GXD_Structure;
-DROP TABLE GXD_StructureName;
-DROP FROM ACC_MGITYPE WHERE _MGIType_key = 38;
+select o.* from GXD_GelLaneStructure_old o
+where not exists (select 1 from GXD_GelLaneStructure n where o._GelLane_key = n._GelLane_key)
+;
+
+select o.* from GXD_ISResultStructure_old o
+where not exists (select 1 from GXD_ISResultStructure n where o._Result_key = n._Result_key)
+;
+
+--DROP TABLE MGI_EMAPS_Mapping;
+--DROP TABLE GXD_GelLaneStructure_old;
+--DROP TABLE GXD_ISResultStructure_old;
+--DROP TABLE GXD_Structure;
+--DROP TABLE GXD_StructureName;
+--DROP FROM ACC_MGITYPE WHERE _MGIType_key = 38;
 
 EOSQL
 date | tee -a ${LOG}

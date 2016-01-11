@@ -45,7 +45,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 DELETE FROM GXD_GelLaneStructure_old
 USING GXD_GelLane g
 WHERE g._gelcontrol_key != 1
-AND g._gellane_key = s._gellane_key
+AND g._gellane_key = GXD_GelLaneStructure_old._gellane_key
 ;
 
 select count(*) from GXD_GelLaneStructure_old;

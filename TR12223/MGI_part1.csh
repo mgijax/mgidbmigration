@@ -135,7 +135,6 @@ ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
 
-EOSQL
 date | tee -a ${LOG}
 
 echo 'step 8 : run mgicacheload/gxdexpression.csh' | tee -a $LOG

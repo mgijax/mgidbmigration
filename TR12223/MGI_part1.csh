@@ -23,7 +23,7 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postsunday.dump
+${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postsunday.dump
 
 #
 # update schema-version and public-version
@@ -60,6 +60,11 @@ ALTER TABLE VOC_Term_EMAPS RENAME COLUMN stage to _Stage_key;
 ALTER TABLE VOC_Term_EMAPS ALTER _Stage_key TYPE integer USING _Stage_key::integer;
 
 DROP VIEW IF EXISTS mgd.GXD_Structure_Acc_View;
+
+UPDATE MGI_StatisticSql 
+SET sqlchunk = 'select count(distinct _EMAPA_Term_key, _Stage_key) from All_Cre_Cache'
+WHERE _statistic_key = 90
+;
 
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1

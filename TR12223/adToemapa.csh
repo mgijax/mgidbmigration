@@ -72,7 +72,7 @@ and emapa._Term_key = emapat._Term_key
 order by s._Stage_key, sn.structure
 ;
 
--- should be 0
+-- should be 0/check invalid ad structure->emaps terms with annotations
 SELECT g.*
 FROM GXD_ISResultStructure_old g
 where not exists (select 1 

@@ -61,6 +61,15 @@ ALTER TABLE VOC_Term_EMAPS ALTER _Stage_key TYPE integer USING _Stage_key::integ
 
 DROP VIEW IF EXISTS mgd.GXD_Structure_Acc_View;
 
+DROP TRIGGER IF EXISTS GXD_Structure_delete_trigger ON GXD_Structure;
+DROP FUNCTION IF EXISTS GXD_Structure_delete();
+DROP TRIGGER IF EXISTS GXD_Structure_insert_trigger ON GXD_Structure;
+DROP FUNCTION IF EXISTS GXD_Structure_insert();
+DROP TRIGGER IF EXISTS GXD_StructureName_insert_trigger ON GXD_StructureName;
+DROP FUNCTION IF EXISTS GXD_StructureName_insert();
+DROP TRIGGER IF EXISTS GXD_StructureName_update_trigger ON GXD_StructureName;
+DROP FUNCTION IF EXISTS GXD_StructureName_update();
+
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 'select count(distinct _EMAPA_Term_key, _Stage_key) from All_Cre_Cache'
 WHERE _statistic_key = 90

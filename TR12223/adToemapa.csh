@@ -138,12 +138,12 @@ select o.* from GXD_ISResultStructure_old o
 where not exists (select 1 from GXD_ISResultStructure n where o._Result_key = n._Result_key)
 ;
 
---DROP TABLE MGI_EMAPS_Mapping;
---DROP TABLE GXD_GelLaneStructure_old;
---DROP TABLE GXD_ISResultStructure_old;
---DROP TABLE GXD_Structure;
---DROP TABLE GXD_StructureName;
---DROP FROM ACC_MGITYPE WHERE _MGIType_key = 38;
+DROP TABLE MGI_EMAPS_Mapping;
+DROP TABLE GXD_GelLaneStructure_old;
+DROP TABLE GXD_ISResultStructure_old;
+DROP TABLE GXD_Structure;
+DROP TABLE GXD_StructureName;
+DROP FROM ACC_MGITYPE WHERE _MGIType_key = 38;
 
 EOSQL
 date | tee -a ${LOG}

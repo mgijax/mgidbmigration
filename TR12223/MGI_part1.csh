@@ -157,6 +157,9 @@ ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
 echo 'step 9 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 
+echo 'step 10 : run statistics' | tee -a $LOG
+${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
+
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

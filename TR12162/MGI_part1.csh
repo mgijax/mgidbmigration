@@ -47,8 +47,8 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
-echo "--- Running RR ID migration " | tee -a ${LOG}
+echo "--- Running Property Updates " | tee -a ${LOG}
 ./doUpdates.py
-echo "--- Done running RR ID migration " | tee -a ${LOG}
+echo "--- Done running Property Updates " | tee -a ${LOG}
 
 date | tee -a ${LOG}

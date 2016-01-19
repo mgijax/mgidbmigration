@@ -85,6 +85,7 @@ ${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
 
 echo 'step 3 : run migration (NOT YET)' | tee -a $LOG
 ./adToemapa.csh | tee -a $LOG || exit 1
@@ -95,6 +96,9 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_create.object | tee -a $LOG || exit 1
 
 echo 'step 5 : create more foreign keys for new tables' | tee -a $LOG
 date | tee -a ${LOG}
@@ -123,6 +127,9 @@ ALTER TABLE mgd.GXD_ISResultStructure ADD FOREIGN KEY (_Result_key) REFERENCES m
 ALTER TABLE mgd.GXD_ISResultStructure ADD PRIMARY KEY (_Result_key, _EMAPA_Term_key, _Stage_key);
 ALTER TABLE mgd.GXD_ISResultStructure ADD FOREIGN KEY (_EMAPA_Term_key) REFERENCES mgd.VOC_Term DEFERRABLE;
 
+ALTER TABLE mgd.MGI_SetMember_EMAPA ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MGI_SetMember_EMAPA ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+
 EOSQL
 date | tee -a ${LOG}
 
@@ -137,6 +144,9 @@ ${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_EMAPA_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_create.object | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_drop.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
 

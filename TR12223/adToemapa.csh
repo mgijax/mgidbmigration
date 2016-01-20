@@ -143,7 +143,7 @@ DROP TABLE GXD_GelLaneStructure_old;
 DROP TABLE GXD_ISResultStructure_old;
 DROP TABLE GXD_Structure;
 DROP TABLE GXD_StructureName;
-DROP FROM ACC_MGITYPE WHERE _MGIType_key = 38;
+DELETE FROM ACC_MGITYPE WHERE _MGIType_key = 38;
 
 EOSQL
 date | tee -a ${LOG}

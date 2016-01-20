@@ -130,12 +130,20 @@ select count(*) from GXD_GelLaneStructure;
 select count(*) from GXD_ISResultStructure_old;
 select count(*) from GXD_ISResultStructure;
 
-select o.* from GXD_GelLaneStructure_old o
+select a.accID, o.* 
+from GXD_GelLaneStructure_old o, GXD_GelLane r, ACC_Accession a
 where not exists (select 1 from GXD_GelLaneStructure n where o._GelLane_key = n._GelLane_key)
+and r._Assay_key = a._Object_key
+and a._MGIType_key = 8
 ;
 
-select o.* from GXD_ISResultStructure_old o
+select a.accID, o.* 
+from GXD_ISResultStructure_old o, GXD_InSituResult r, GXD_Specimen s, ACC_Accession a
 where not exists (select 1 from GXD_ISResultStructure n where o._Result_key = n._Result_key)
+and o._Result_key = r._Result_key
+and r._Specimen_key = s._Specimen_key
+and s._Assay_key = a._Object_key
+and a._MGIType_key = 8
 ;
 
 DROP TABLE MGI_EMAPS_Mapping;

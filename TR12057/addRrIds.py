@@ -31,7 +31,7 @@ results = db.sql('''select _Object_key as genotypeKey
         from ACC_Accession
         where _MGIType_key = 12
         and _LogicalDB_key = 179
-	and prefixPart = 'RR:MGI:' ''', 'auto')
+	and prefixPart = 'RRID:MGI:' ''', 'auto')
 for r in results:
     genoWithRRList.append(r['genotypeKey'])
 
@@ -58,7 +58,7 @@ for r in results:
 	continue
     ct+=1
     mgiID = r['accID']
-    rrID = 'RR:%s' % mgiID
+    rrID = 'RRID:%s' % mgiID
     db.sql('''select * from ACC_insertNoChecks(%s, %s, '%s', %s, '%s')''' % (userKey, objectKey, rrID, logicalDbKey, mgiType), 'auto')
 db.commit()
 print 'RR IDs added to %s genotypes' % ct

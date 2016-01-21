@@ -51,12 +51,4 @@ db.commit()
 print 'updated %s records' % ct
 print 'Done doing updates' 
 
-results = db.sql('''select vp._EvidenceProperty_key, vp.value
-from VOC_Evidence ve, VOC_Annot a, VOC_Evidence_Property vp
-where a._AnnotType_key = 1000 -- GO/Marker
-and a._Annot_key = ve._Annot_key
-and ve._AnnotEvidence_key = vp._AnnotEvidence_key
-and vp.value like '%NCBI:%_%'
-and vp._PropertyTerm_key != 6481779 -- text''', 'auto')
-
 db.useOneConnection(1)

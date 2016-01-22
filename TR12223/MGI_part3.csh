@@ -23,27 +23,7 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcnightly_reports.sh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcweekly_reports.sh
-
-date | tee -a ${LOG}
-echo 'QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcmonthly_reports.sh
-
-###----------------------###
-###--- Public reports ---###
-###----------------------###
-
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_daily.csh
-
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_weekly.csh
+./qcnightly_reports.sh | tee -a $LOG || exit 1
 
 ###-----------------------###
 ###--- final datestamp ---###

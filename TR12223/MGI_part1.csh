@@ -168,6 +168,8 @@ ${PG_MGD_DBSCHEMADIR}/comments/ALL_Cre_Cache_create.object | tee -a $LOG || exit
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1

@@ -41,6 +41,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 DROP TABLE ALL_Cre_Cache;
 DROP TABLE GXD_Expression;
 DROP TABLE GXD_StructureClosure;
+DROP TABLE MRK_OMIM_Cache;
 
 ALTER TABLE mgd.GXD_GelLaneStructure DROP CONSTRAINT GXD_GelLaneStructure__GelLane_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelLaneStructure DROP CONSTRAINT GXD_GelLaneStructure_pkey CASCADE;
@@ -86,6 +87,7 @@ ${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 
 echo 'step 3 : run migration (NOT YET)' | tee -a $LOG
 ./adToemapa.csh | tee -a $LOG || exit 1
@@ -99,6 +101,7 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 
 echo 'step 5 : create more foreign keys for new tables' | tee -a $LOG
 date | tee -a ${LOG}
@@ -130,6 +133,16 @@ ALTER TABLE mgd.GXD_ISResultStructure ADD FOREIGN KEY (_EMAPA_Term_key) REFERENC
 ALTER TABLE mgd.MGI_SetMember_EMAPA ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.MGI_SetMember_EMAPA ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Allele_key) REFERENCES mgd.ALL_Allele ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Refs_key) REFERENCES mgd.BIB_Refs ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Genotype_key) REFERENCES mgd.GXD_Genotype ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Organism_key) REFERENCES mgd.MGI_Organism DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_OrthologOrganism_key) REFERENCES mgd.MGI_Organism DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_OrthologMarker_key) REFERENCES mgd.MRK_Marker ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Marker_Type_key) REFERENCES mgd.MRK_Types DEFERRABLE;
+ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Term_key) REFERENCES mgd.VOC_Term ON DELETE CASCADE DEFERRABLE;
+
 EOSQL
 date | tee -a ${LOG}
 
@@ -158,11 +171,15 @@ ${PG_MGD_DBSCHEMADIR}/comments/GXD_ISResultStructure_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
 echo 'step 8 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
+
+echo 'step 9 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
+${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 
 echo 'step 9 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1

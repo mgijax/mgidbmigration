@@ -145,6 +145,7 @@ ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Term_key) REFERENCES mgd.VOC_Te
 
 DELETE FROM ACC_Accession where _MGIType_key = 38;
 DELETE FROM ACC_MGIType where _MGIType_key = 38;
+DELETE FROM MGI_NoteType where _notetype_key = 1006;
 
 EOSQL
 date | tee -a ${LOG}

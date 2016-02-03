@@ -27,7 +27,7 @@ echo 'clipboard testing' | tee -a $LOG
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
-insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now());
+--insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now());
 
 insert into MGI_SetMember values(8587442, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = 'heart'), 1, 1001, 1001, now(), now());
 insert into MGI_SetMember values(8587443, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = 'eye'), 2, 1001, 1001, now(), now());

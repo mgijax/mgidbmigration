@@ -147,6 +147,8 @@ DELETE FROM ACC_Accession where _MGIType_key = 38;
 DELETE FROM ACC_MGIType where _MGIType_key = 38;
 DELETE FROM MGI_NoteType where _notetype_key = 1006;
 
+insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now());
+
 EOSQL
 date | tee -a ${LOG}
 

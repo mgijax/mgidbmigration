@@ -1,5 +1,0 @@
-build=GRCm38; 	 	 	 	 	 	 		
-MGI:3783367	4	107370439	107370559	-	MGI Test	MGI		Mir1194 - test data to verify C4AM changes in Alpha
-MGI:1196607	X	169974684	169974964		MGI Test	MGI		DXYCbl1 - test data to verify C4AM changes in Alpha
-MGI:1096399	13	4001111	4002222	+	MGI Test	MGI		Vamp7 - genetic/genomic test in Alpha
-MGI:2158492	13	5001111	5002222	+	MGI Test	MGI		Ahsp - genetic/genomic test in Alpha

@@ -178,6 +178,7 @@ ${PG_MGD_DBSCHEMADIR}/comments/MGI_SetMember_EMAPA_create.object | tee -a $LOG |
 ${PG_MGD_DBSCHEMADIR}/comments/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_Genotype_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
 

@@ -79,6 +79,7 @@ WHERE _statistic_key = 90
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_Genotype_View_drop.object | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 echo 'step 2 : create new tables' | tee -a $LOG

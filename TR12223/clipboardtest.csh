@@ -40,14 +40,10 @@ insert into MGI_SetMember values(8587446, 1046, (select _Term_key from voc_term 
 insert into MGI_SetMember values(8587447, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = 'unfertilized egg'), 1, 1080, 1080, now(), now());
 insert into MGI_SetMember values(8587448, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = '8-cell stage conceptus'), 2, 1080, 1080, now(), now());
 insert into MGI_SetMember values(8587449, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = 'blastocyst-stage conceptus'), 3, 1080, 1080, now(), now());
-insert into MGI_SetMember values(8587450, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = '1-cell stage conceptus'), 4, 1080, 1080, now(), now());
-insert into MGI_SetMember values(8587451, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = '2-cell stage conceptus'), 5, 1080, 1080, now(), now());
 
 insert into MGI_SetMember values(8587452, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = 'unfertilized egg'), 1, 1013, 1013, now(), now());
 insert into MGI_SetMember values(8587453, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = '8-cell stage conceptus'), 2, 1013, 1013, now(), now());
 insert into MGI_SetMember values(8587454, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = 'blastocyst-stage conceptus'), 3, 1013, 1013, now(), now());
-insert into MGI_SetMember values(8587455, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = '1-cell stage conceptus'), 4, 1013, 1013, now(), now());
-insert into MGI_SetMember values(8587456, 1046, (select _Term_key from voc_term where _vocab_key = 90 and term = '2-cell stage conceptus'), 5, 1013, 1013, now(), now());
 
 insert into MGI_SetMember_EMAPA values(1, 8587442, 28, 1001, 1001, now(), now());
 insert into MGI_SetMember_EMAPA values(2, 8587443, 3, 1001, 1001, now(), now());

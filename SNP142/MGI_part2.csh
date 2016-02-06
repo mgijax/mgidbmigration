@@ -24,10 +24,18 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
+#date | tee -a ${LOG}
+#echo "--- Run DBNSP Load ---" | tee -a ${LOG}
+#${DBSNPLOAD/bin/dbsnpload.sh >& /data/loads/dbsnp/dbsnpload/logs/dbsnpload.sh.out
+
+#${DBSNPLOAD}/bin/migrateRefSeqs.sh >& /data/loads/dbsnp/dbsnpload/logs/migrateRefSeqs.sh.out
+
 date | tee -a ${LOG}
-echo "--- Run DBNSP Load ---" | tee -a ${LOG}
-${DBSNPLOAD/bin/dbsnpload.sh >& /data/loads/dbsnp/dbsnpload/logs/dbsnpload.sh.out
+echo "--- Run Gene Summary Load ---" | tee -a ${LOG}
+${GENESUMMARYLOAD}/bin/genesummaryload.sh
+date | tee -a ${LOG}
 
-${DBSNPLOAD}/bin/migrateRefSeqs.sh >& /data/loads/dbsnp/dbsnpload/logs/migrateRefSeqs.sh.out
-
+date | tee -a ${LOG}
+echo "--- Run SNP Cache Load ---" | tee -a ${LOG}
+${SNPCACHELOAD}/snpmarker.sh
 date | tee -a ${LOG}

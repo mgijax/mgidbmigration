@@ -8,7 +8,7 @@
 # Usage: qcnightly_reports.csh
 #
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ${QCRPTS}/Configuration
 
 setenv LOG ${QCLOGSDIR}/`basename $0`.log
 rm -rf ${LOG}

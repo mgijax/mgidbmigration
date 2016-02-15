@@ -200,7 +200,7 @@ ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 echo 'step 10 : run statistics' | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
-echo 'tep 11 : permissions'
+echo 'step 11 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 
 date | tee -a ${LOG}

@@ -23,7 +23,8 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.postsunday.dump
+#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
+#${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
 #
 # update schema-version and public-version

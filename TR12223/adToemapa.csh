@@ -41,6 +41,50 @@ touch ${LOG}
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
+-- should be 0
+SELECT distinct ss.structure, g._Structure_key, s._Stage_key
+FROM GXD_ISResultStructure_old g, GXD_Structure s, GXD_StructureName ss
+where not exists (select 1
+        from MGI_EMAPS_Mapping m, 
+                ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
+                VOC_Term_EMAPA emapa, VOC_Term emapat
+        where g._Structure_key = a1._Object_key
+        and a1._MGIType_key = 38
+        and a1.accID = m.accID
+        and m.emapsID = a2.accID
+        and a2._MGIType_key = 13
+        and a2._Object_key = emapst._Term_key
+        and emapst._Term_key = emaps._Term_key
+        and emaps._emapa_term_key = emapa._Term_key
+        and emapa._Term_key = emapat._Term_key
+        )
+        and g._Structure_key = s._Structure_key
+        and s._StructureName_key = ss._StructureName_key
+order by s._Stage_key, ss.structure
+;
+
+-- should be 0
+SELECT distinct ss.structure, g._Structure_key, s._Stage_key
+FROM GXD_ISResultStructure_old g, GXD_Structure s, GXD_StructureName ss
+where not exists (select 1 
+	from MGI_EMAPS_Mapping m, 
+		ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
+		VOC_Term_EMAPA emapa, VOC_Term emapat
+	where g._Structure_key = a1._Object_key
+	and a1._MGIType_key = 38
+	and a1.accID = m.accID
+	and m.emapsID = a2.accID
+	and a2._MGIType_key = 13
+	and a2._Object_key = emapst._Term_key
+	and emapst._Term_key = emaps._Term_key
+	and emaps._emapa_term_key = emapa._Term_key
+	and emapa._Term_key = emapat._Term_key
+	)
+        and g._Structure_key = s._Structure_key
+        and s._StructureName_key = ss._StructureName_key
+order by s._Stage_key, ss.structure
+;
+
 -- not interested in gel lane structures where gel control != No (1), per connie
 DELETE FROM GXD_GelLaneStructure_old
 USING GXD_GelLane
@@ -70,25 +114,6 @@ and emapst._Term_key = emaps._Term_key
 and emaps._emapa_term_key = emapa._Term_key
 and emapa._Term_key = emapat._Term_key
 order by s._Stage_key, sn.structure
-;
-
--- should be 0/check invalid ad structure->emaps terms with annotations
-SELECT g.*
-FROM GXD_ISResultStructure_old g
-where not exists (select 1 
-	from MGI_EMAPS_Mapping m, 
-		ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,
-		VOC_Term_EMAPA emapa, VOC_Term emapat
-	where g._Structure_key = a1._Object_key
-	and a1._MGIType_key = 38
-	and a1.accID = m.accID
-	and m.emapsID = a2.accID
-	and a2._MGIType_key = 13
-	and a2._Object_key = emapst._Term_key
-	and emapst._Term_key = emaps._Term_key
-	and emaps._emapa_term_key = emapa._Term_key
-	and emapa._Term_key = emapat._Term_key
-	)
 ;
 
 INSERT INTO GXD_GelLaneStructure

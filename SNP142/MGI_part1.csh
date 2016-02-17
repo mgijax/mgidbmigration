@@ -101,4 +101,8 @@ where snp_data_version= 'dbSNP Build 137'
 EOSQL
 
 date | tee -a ${LOG}
+echo "--- Run Gene Summary Load ---" | tee -a ${LOG}
+${GENESUMMARYLOAD}/bin/genesummaryload.sh
+
+date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

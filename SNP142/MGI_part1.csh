@@ -88,14 +88,15 @@ delete from VOC_Term
 	where _Term_key in (10125470, 10125471, 10125480, 10125481, 10125485, 10125486, 10125487, 10125488, 10125489, 10125490, 10125491, 10125492, 10125493, 10125494, 10125495, 10125496, 10125497, 10125498)
 ;
 
-update mgd.mgi_dbinfo
-    set snp_data_version = 'dbSNP Build 142'
-where snp_data_version= 'dbSNP Build 137'
+update mgd.MGI_dbinfo set
+        schema_version = '6-0-3',
+        public_version = 'MGI 6.03'
+	snp_data_version = 'dbSNP Build 142'
 ;
-
-update snp.mgi_dbinfo
-    set snp_data_version = 'dbSNP Build 142'
-where snp_data_version= 'dbSNP Build 137'
+update snp.mgi_dbinfo set
+        schema_version = '6-0-3',
+        public_version = 'MGI 6.03'
+        snp_data_version = 'dbSNP Build 142'
 ;
 
 EOSQL

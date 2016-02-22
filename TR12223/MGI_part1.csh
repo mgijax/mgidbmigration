@@ -3,8 +3,13 @@
 #
 # Migration for TR12223
 #
-# schema change
-# schema migration
+# new input files to copy from production:
+#
+# scp bhmgiapp01:/data/loads/mgi/emapsload/input/EMAPA.obo /data/loads/mgi/vocload/emap/input
+#
+# on production (bhmgiapp01 and hobbiton)
+# rm -rf /data/loads/mgi/emapload
+# make sure Terry uses bhmgiapp01, not hobbiton!
 #
 
 ###----------------------###
@@ -149,6 +154,10 @@ DELETE FROM ACC_Accession where _MGIType_key = 38;
 DELETE FROM ACC_MGIType where _MGIType_key = 38;
 DELETE FROM MGI_NoteType where _notetype_key = 1006;
 
+-- remove old Anatomical System vocabulary (CRE)
+DELETE FROM VOC_Term where _vocab_key = 75;
+DELETE FROM VOC_Vocab where _vocab_key = 75;
+
 insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now());
 
 EOSQL
@@ -191,19 +200,22 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
-echo 'step 8 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
+#echo 'step 8 : run vocload/emap/emapload.sh' | tee -a $LOG
+#${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
+
+echo 'step 9 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
 
-echo 'step 9 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
+echo 'step 10 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 
-echo 'step 9 : run allcacheload/allelecrecache.csh' | tee -a $LOG
+echo 'step 11 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 
-echo 'step 10 : run statistics' | tee -a $LOG
+echo 'step 12 : run statistics' | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
-echo 'step 11 : permissions' | tee -a $LOG
+echo 'step 13 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 
 date | tee -a ${LOG}

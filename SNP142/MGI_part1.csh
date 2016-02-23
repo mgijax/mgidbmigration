@@ -73,6 +73,12 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 
 echo "--- Delete SNP Fxn Class DAG and update Fxn Class Vocabulary---"  | tee -a ${LOG}
 
+# NOTE: we do not update snp.MGI_dbinfo here as the snp schema being used
+#       in builds is located in a different database than the mgd schema
+#       whomever is running the build is responsible for updating
+#       that table manually.
+#
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
 
 delete from DAG_DAG
@@ -92,11 +98,6 @@ update mgd.MGI_dbinfo set
         schema_version = '6-0-3',
         public_version = 'MGI 6.03',
 	snp_data_version = 'dbSNP Build 142'
-;
-update snp.mgi_dbinfo set
-        schema_version = '6-0-3',
-        public_version = 'MGI 6.03',
-        snp_data_version = 'dbSNP Build 142'
 ;
 
 EOSQL

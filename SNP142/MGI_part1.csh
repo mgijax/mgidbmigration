@@ -90,12 +90,12 @@ delete from VOC_Term
 
 update mgd.MGI_dbinfo set
         schema_version = '6-0-3',
-        public_version = 'MGI 6.03'
+        public_version = 'MGI 6.03',
 	snp_data_version = 'dbSNP Build 142'
 ;
 update snp.mgi_dbinfo set
         schema_version = '6-0-3',
-        public_version = 'MGI 6.03'
+        public_version = 'MGI 6.03',
         snp_data_version = 'dbSNP Build 142'
 ;
 

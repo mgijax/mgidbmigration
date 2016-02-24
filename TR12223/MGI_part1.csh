@@ -76,6 +76,7 @@ DROP TRIGGER IF EXISTS GXD_StructureName_insert_trigger ON GXD_StructureName;
 DROP FUNCTION IF EXISTS GXD_StructureName_insert();
 DROP TRIGGER IF EXISTS GXD_StructureName_update_trigger ON GXD_StructureName;
 DROP FUNCTION IF EXISTS GXD_StructureName_update();
+DROP FUNCTION IF EXISTS GXD_removeBadGelBand(int);
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 'select count(*) from (select distinct _EMAPA_Term_key, _Stage_key from All_Cre_Cache) as s'

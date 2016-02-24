@@ -66,7 +66,7 @@ order by s._Stage_key, ss.structure
 
 -- should be 0
 SELECT distinct ss.structure, g._Structure_key, s._Stage_key
-FROM GXD_ISResultStructure_old g, GXD_Structure s, GXD_StructureName ss
+FROM GXD_GelLaneStructure_old g, GXD_Structure s, GXD_StructureName ss
 where not exists (select 1 
 	from MGI_EMAPS_Mapping m, 
 		ACC_Accession a1, ACC_Accession a2, VOC_Term emapst, VOC_Term_EMAPS emaps,

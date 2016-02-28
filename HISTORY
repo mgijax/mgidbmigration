@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-3-6
+DATE: 02/28/2016
+STAFF: sc
+1) Added updateIds.csh to TR12074 and T12274
+
 TAG: mgidbmigration-6-0-3-5
 DATE: 02/17/2016
 STAFF: sc

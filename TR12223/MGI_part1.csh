@@ -5,7 +5,7 @@
 #
 # new input files to copy from production:
 #
-# scp bhmgiapp01:/data/loads/mgi/emapsload/input/EMAPA.obo /data/loads/mgi/vocload/emap/input
+# scp bhmgiapp01:/data/loads/mgi/emapload/input/EMAPA.obo /data/loads/mgi/vocload/emap/input
 #
 # on production (bhmgiapp01 and hobbiton)
 # rm -rf /data/loads/mgi/emapload
@@ -34,11 +34,11 @@ touch ${LOG}
 #
 # update schema-version and public-version
 #
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#update MGI_dbinfo set schema_version = '6-0-?', public_version = 'MGI 6.0?';
-#EOSQL
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update MGI_dbinfo set schema_version = '6-0-4', public_version = 'MGI 6.04';
+EOSQL
+date | tee -a ${LOG}
 
 echo 'step 1 : drop/alter tables/views/etc.' | tee -a $LOG
 date | tee -a ${LOG}
@@ -178,8 +178,6 @@ ${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_EMAPA_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_create.object | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_drop.object | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/index/GXD_TheilerStage_create.object | tee -a $LOG || exit 1
 
 echo 'step 7 : add comments/views/procedure' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
@@ -196,8 +194,6 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/procedure/GXD_addEMAPASet_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

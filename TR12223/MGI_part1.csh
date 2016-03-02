@@ -168,6 +168,7 @@ DELETE FROM VOC_Term where _vocab_key = 75;
 DELETE FROM VOC_Vocab where _vocab_key = 75;
 
 insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now());
+insert into MGI_Set values(1047, 13, 'Cre System', 1, 1001, 1001, now(), now());
 
 EOSQL
 date | tee -a ${LOG}

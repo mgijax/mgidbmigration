@@ -212,22 +212,25 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
-echo 'step 9 : run vocload/emap/emapload.sh' | tee -a $LOG
+#echo 'step 9 : run setload/setload.csh cre.config' | tee -a $LOG
+#${SETLOAD}/setload.csh cre.config | tee -a $LOG || exit 1
+
+echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
 ${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
 
-echo 'step 10 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
+echo 'step 11 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
 
-echo 'step 11 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
+echo 'step 12 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 
-echo 'step 12 : run allcacheload/allelecrecache.csh' | tee -a $LOG
+echo 'step 13 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 
-echo 'step 13 : run statistics' | tee -a $LOG
+echo 'step 14 : run statistics' | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
-echo 'step 14 : permissions' | tee -a $LOG
+echo 'step 15 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 
 date | tee -a ${LOG}

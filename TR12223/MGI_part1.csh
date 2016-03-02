@@ -211,8 +211,8 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
-#echo 'step 9 : run vocload/emap/emapload.sh' | tee -a $LOG
-#${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
+echo 'step 9 : run vocload/emap/emapload.sh' | tee -a $LOG
+${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
 
 echo 'step 10 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1

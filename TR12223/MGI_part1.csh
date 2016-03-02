@@ -56,6 +56,7 @@ ALTER TABLE mgd.GXD_ISResultStructure DROP CONSTRAINT GXD_ISResultStructure_pkey
 
 ALTER TABLE GXD_GelLaneStructure RENAME TO GXD_GelLaneStructure_old;
 ALTER TABLE GXD_ISResultStructure RENAME TO GXD_ISResultStructure_old;
+ALTER TABLE MGI_SetMember RENAME TO MGI_SetMember_old;
 
 ALTER TABLE GXD_TheilerStage DROP COLUMN IF EXISTS _defaultSystem_key;
 ALTER TABLE mgd.GXD_Structure DROP CONSTRAINT GXD_Structure__Stage_key_fkey CASCADE;
@@ -87,6 +88,7 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_Genotype_View_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/MGI_Statistic_View_drop.object | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 echo 'step 2 : create new tables' | tee -a $LOG
@@ -94,13 +96,17 @@ ${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/MGI_SetMember_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 
-echo 'step 3 : run migration (NOT YET)' | tee -a $LOG
+echo 'step 3 : run ad-to-emapa migration' | tee -a $LOG
 ./adToemapa.csh | tee -a $LOG || exit 1
 
-echo 'step 4 : create foreign keys for new tables' | tee -a $LOG
+echo 'step 4 : run cre (mgi_setmember) migration' | tee -a $LOG
+./cre.csh | tee -a $LOG || exit 1
+
+echo 'step 5 : create foreign keys for new tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
@@ -111,7 +117,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 
-echo 'step 5 : create more foreign keys for new tables' | tee -a $LOG
+echo 'step 6 : create more foreign keys for new tables' | tee -a $LOG
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
@@ -140,6 +146,8 @@ ALTER TABLE mgd.GXD_ISResultStructure ADD FOREIGN KEY (_EMAPA_Term_key) REFERENC
 
 ALTER TABLE mgd.MGI_SetMember_EMAPA ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.MGI_SetMember_EMAPA ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MGI_SetMember ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MGI_SetMember ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 
 ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Allele_key) REFERENCES mgd.ALL_Allele ON DELETE CASCADE DEFERRABLE;
 ALTER TABLE mgd.MRK_OMIM_Cache ADD FOREIGN KEY (_Refs_key) REFERENCES mgd.BIB_Refs ON DELETE CASCADE DEFERRABLE;
@@ -164,7 +172,7 @@ insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now())
 EOSQL
 date | tee -a ${LOG}
 
-echo 'step 6 : create indexes on new tables' | tee -a $LOG
+echo 'step 7 : create indexes on new tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
@@ -179,41 +187,44 @@ ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_EMAPA_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_create.object | tee -a $LOG
 
-echo 'step 7 : add comments/views/procedure' | tee -a $LOG
+echo 'step 8 : add comments/views/procedure' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_ISResultStructure_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/MGI_SetMember_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_Genotype_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/MGI_Statistic_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MGI_Statistic_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
-#echo 'step 8 : run vocload/emap/emapload.sh' | tee -a $LOG
+#echo 'step 9 : run vocload/emap/emapload.sh' | tee -a $LOG
 #${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
 
-echo 'step 9 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
+echo 'step 10 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
 
-echo 'step 10 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
+echo 'step 11 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 
-echo 'step 11 : run allcacheload/allelecrecache.csh' | tee -a $LOG
+echo 'step 12 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 
-echo 'step 12 : run statistics' | tee -a $LOG
+echo 'step 13 : run statistics' | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
-echo 'step 13 : permissions' | tee -a $LOG
+echo 'step 14 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 
 date | tee -a ${LOG}

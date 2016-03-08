@@ -1,0 +1,24 @@
+EMAPA:35112		
+EMAPA:16246		
+EMAPA:16117	branchial arches	
+EMAPA:16104		
+EMAPA:16060	cavities & their linings	
+EMAPA:36032		
+EMAPA:16039	embryo-other	
+EMAPA:35306		
+EMAPA:16042		
+EMAPA:31858		
+EMAPA:18765		
+EMAPA:17524		
+EMAPA:16405	limbs	
+EMAPA:16840	liver & biliary system	
+EMAPA:16097		
+EMAPA:32715	muscle	
+EMAPA:16469		
+EMAPA:25765	postnatal-other	
+EMAPA:17366	renal & urinary system	
+EMAPA:17381		
+EMAPA:16727		
+EMAPA:35955	sensory organs	
+EMAPA:35773		
+EMAPA:16748		

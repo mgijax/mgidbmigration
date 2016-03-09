@@ -233,7 +233,10 @@ ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 echo 'step 14 : run statistics' | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
-echo 'step 15 : permissions' | tee -a $LOG
+echo 'step 15 : orphan clean-up' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+
+echo 'step 16 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 
 date | tee -a ${LOG}

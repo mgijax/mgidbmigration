@@ -4,12 +4,15 @@
 # Migration for TR12223
 #
 # new input files to copy from production:
-#
 # scp bhmgiapp01:/data/loads/mgi/emapload/input/EMAPA.obo /data/loads/mgi/vocload/emap/input
 #
-# on production (bhmgiapp01 and hobbiton)
+# on production (bhmgiapp01)
 # rm -rf /data/loads/mgi/emapload
 # make sure Terry uses bhmgiapp01, not hobbiton!
+#
+# loadadmin/prod/dailytasks.csh:${EMAPLOAD}/bin/emapload.sh
+# change to:
+# loadadmin/prod/dailytasks.csh:${VOCLOAD}/emap/emapload.sh
 #
 
 ###----------------------###

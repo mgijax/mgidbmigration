@@ -237,7 +237,10 @@ echo 'step 15 : orphan clean-up' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 
 echo 'step 16 : permissions' | tee -a $LOG
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+
+#echo 'step 17 : public' | tee -a $LOG
+#${PG_DBUTILS}/sp/zMGI_deletePrivateData.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

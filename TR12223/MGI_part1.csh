@@ -218,8 +218,8 @@ date | tee -a ${LOG}
 echo 'step 9 : run setload/setload.csh cre.config' | tee -a $LOG
 ${SETLOAD}/setload.csh cre.config | tee -a $LOG || exit 1
 
-echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
-${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
+#echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
+#${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
 
 echo 'step 11 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
@@ -240,7 +240,7 @@ echo 'step 16 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
 #echo 'step 17 : public' | tee -a $LOG
-#${PG_DBUTILS}/sp/zMGI_deletePrivateData.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_DBUTILS}/sp/MGI_deletePrivateData.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

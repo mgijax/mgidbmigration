@@ -217,6 +217,15 @@ date | tee -a ${LOG}
 
 echo 'step 9 : run setload/setload.csh cre.config' | tee -a $LOG
 ${SETLOAD}/setload.csh cre.config | tee -a $LOG || exit 1
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select a.accID, t.term, s.* 
+from MGI_SetMember s, VOC_Term t, ACC_Accession a
+where s._Set_key = 1047
+and s._Object_key = t._Term_key
+and t._Term_key = a._Object_key
+and a._MGIType_key = 13
+;
+EOSQL
 
 #echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
 #${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1

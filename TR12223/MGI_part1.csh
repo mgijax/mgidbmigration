@@ -227,8 +227,8 @@ and a._MGIType_key = 13
 ;
 EOSQL
 
-#echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
-#${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
+echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
+${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
 
 echo 'step 11 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1

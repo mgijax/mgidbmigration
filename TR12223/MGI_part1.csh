@@ -240,6 +240,7 @@ echo 'step 13 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 
 echo 'step 14 : run statistics' | tee -a $LOG
+rm -rf ${MGI_PYTHONLIB}/stats* | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
 echo 'step 15 : orphan clean-up' | tee -a $LOG

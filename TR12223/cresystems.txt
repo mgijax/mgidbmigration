@@ -15,7 +15,7 @@ EMAPA:16840	liver & biliary system
 EMAPA:16097		
 EMAPA:32715	muscle	
 EMAPA:16469		
-EMAPA:25765	postnatal-other	
+EMAPA:25765	mouse-other	
 EMAPA:17366	renal & urinary system	
 EMAPA:17381		
 EMAPA:16727		

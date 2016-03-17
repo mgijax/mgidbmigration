@@ -14,6 +14,10 @@
 # change to:
 # loadadmin/prod/dailytasks.csh:${VOCLOAD}/emap/emapload.sh
 #
+# is-obsolete:
+# adsystemload
+# toposortload
+#
 
 ###----------------------###
 ###--- initialization ---###

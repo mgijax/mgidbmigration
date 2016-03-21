@@ -23,7 +23,7 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 echo 'QC Reports' | tee -a ${LOG}
-./qcnightly_reports.sh | tee -a $LOG || exit 1
+./qcnightly_reports.csh | tee -a $LOG || exit 1
 
 ###-----------------------###
 ###--- final datestamp ---###

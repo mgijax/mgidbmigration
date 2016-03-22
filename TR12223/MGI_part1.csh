@@ -89,7 +89,7 @@ DROP FUNCTION IF EXISTS MGI_resetSequenceNum(varchar,int);
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 
-'select count(*) from (select distinct _EMAPA_Term_key, _Stage_key from All_Cre_Cache) as s WHERE _statistic_key = 90
+'select count(*) from (select distinct _EMAPA_Term_key, _Stage_key from All_Cre_Cache) as s' WHERE _statistic_key = 90
 ;
 
 EOSQL

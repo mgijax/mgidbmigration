@@ -86,6 +86,7 @@ DROP TRIGGER IF EXISTS GXD_StructureName_update_trigger ON GXD_StructureName;
 DROP FUNCTION IF EXISTS GXD_StructureName_update();
 DROP FUNCTION IF EXISTS GXD_removeBadGelBand(int);
 DROP FUNCTION IF EXISTS MGI_resetSequenceNum(varchar,int);
+DROP FUNCTION IF EXISTS MRK_insertHistory(int,int,int,int,int,int,varchar,timestamp,int,int,timestamp,timestamp);
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 

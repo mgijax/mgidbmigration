@@ -87,6 +87,7 @@ DROP FUNCTION IF EXISTS GXD_StructureName_update();
 DROP FUNCTION IF EXISTS GXD_removeBadGelBand(int);
 DROP FUNCTION IF EXISTS MGI_resetSequenceNum(varchar,int);
 DROP FUNCTION IF EXISTS MRK_insertHistory(int,int,int,int,int,int,varchar,timestamp,int,int,timestamp,timestamp);
+DROP FUNCTION IF EXISTS MGI_resetAgeMinMax(varchar,int);
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 

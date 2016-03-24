@@ -35,4 +35,9 @@ foreach i (GXD_StatsMonthly.py)
     $i >>& ${LOG}
 end
 
+cd ${PUBRPTS}
+source ./Configuration
+cd weekly
+./MGI_Recombinase_Full.py
+
 echo `date`: End nightly QC reports | tee -a ${LOG}

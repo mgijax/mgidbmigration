@@ -90,6 +90,11 @@ DROP FUNCTION IF EXISTS GXD_removeBadGelBand(int);
 DROP FUNCTION IF EXISTS MGI_resetSequenceNum(varchar,int);
 DROP FUNCTION IF EXISTS MRK_insertHistory(int,int,int,int,int,int,varchar,timestamp,int,int,timestamp,timestamp);
 DROP FUNCTION IF EXISTS MGI_resetAgeMinMax(varchar,int);
+DROP TRIGGER IF EXISTS IMG_ImagePane_Assoc_delete_trigger ON IMG_ImagePane_Assoc;
+DROP FUNCTION IF EXISTS IMG_ImagePane_Assoc_delete();
+
+drop view if exists mgd.MGI_Organism_Homology_View;
+drop view if exists mgd.MAP_Feature_View;
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 

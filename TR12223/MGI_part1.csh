@@ -101,6 +101,10 @@ SET sqlchunk =
 'select count(*) from (select distinct _EMAPA_Term_key, _Stage_key from All_Cre_Cache) as s' WHERE _statistic_key = 90
 ;
 
+DELETE FROM MGI_Reference_Assoc where _MGIType_key = 29; 
+DELETE FROM MGI_RefAssocType where _MGIType_key = 29; 
+DELETE FROM ACC_MGIType where _MGIType_key in (29);
+
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1

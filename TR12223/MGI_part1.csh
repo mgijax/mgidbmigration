@@ -95,7 +95,7 @@ DROP FUNCTION IF EXISTS IMG_ImagePane_Assoc_delete();
 
 drop view if exists mgd.MGI_Organism_Homology_View;
 drop view if exists mgd.MAP_Feature_View;
-drop view if exists mgd.MGI_Types_Summary_View;
+drop view if exists mgd.MRK_Types_Summary_View;
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 

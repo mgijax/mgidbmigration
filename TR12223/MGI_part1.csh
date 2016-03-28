@@ -74,6 +74,8 @@ ALTER TABLE VOC_Term_EMAPA ALTER endStage TYPE integer USING endStage::integer;
 ALTER TABLE VOC_Term_EMAPS RENAME COLUMN stage to _Stage_key;
 ALTER TABLE VOC_Term_EMAPS ALTER _Stage_key TYPE integer USING _Stage_key::integer;
 
+ALTER TABLE mgd.VOC_Annot ADD FOREIGN KEY (_Qualifier_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+
 DROP VIEW IF EXISTS mgd.GXD_Structure_Acc_View;
 
 DROP TRIGGER IF EXISTS GXD_Structure_delete_trigger ON GXD_Structure;

@@ -93,9 +93,24 @@ DROP FUNCTION IF EXISTS MGI_resetAgeMinMax(varchar,int);
 DROP TRIGGER IF EXISTS IMG_ImagePane_Assoc_delete_trigger ON IMG_ImagePane_Assoc;
 DROP FUNCTION IF EXISTS IMG_ImagePane_Assoc_delete();
 
-drop view if exists mgd.MGI_Organism_Homology_View;
-drop view if exists mgd.MAP_Feature_View;
-drop view if exists mgd.MRK_Types_Summary_View;
+DROP VIEW IF EXISTS mgd.MGI_Organism_Homology_View;
+DROP VIEW IF EXISTS mgd.MAP_Feature_View;
+DROP VIEW IF EXISTS mgd.MRK_Types_Summary_View;
+DROP VIEW IF EXISTS mgd.ALL_Allele_Strain_View;
+DROP VIEW IF EXISTS mgd.ALL_CellLine_Strain_View;
+DROP VIEW IF EXISTS mgd.BIB_Summary_View;
+DROP VIEW IF EXISTS mgd.GXD_Antibody_Summary_View;
+DROP VIEW IF EXISTS mgd.GXD_Assay_Summary_View;
+DROP VIEW IF EXISTS mgd.PRB_Summary_View;
+DROP VIEW IF EXISTS mgd.VOC_InterPro_Summary_View;
+DROP VIEW IF EXISTS mgd.VOC_Term_Gender_View;
+DROP VIEW IF EXISTS mgd.VOC_Term_SegmentType_View;
+DROP VIEW IF EXISTS mgd.VOC_Vocab_DAG_Summary_View;
+DROP VIEW IF EXISTS mgd.VOC_Vocab_Summary_View;
+DROP VIEW IF EXISTS mgd.MGI_Organism_Antibody_View;
+DROP VIEW IF EXISTS mgd.MGI_Synonym_HumMarker_View;
+DROP VIEW IF EXISTS mgd.MGI_TranslationType_View;
+DROP VIEW IF EXISTS mgd.MGI_User_Active_View;
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 

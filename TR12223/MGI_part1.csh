@@ -110,7 +110,6 @@ DROP VIEW IF EXISTS mgd.VOC_Vocab_Summary_View;
 DROP VIEW IF EXISTS mgd.MGI_Organism_Antibody_View;
 DROP VIEW IF EXISTS mgd.MGI_Synonym_HumMarker_View;
 DROP VIEW IF EXISTS mgd.MGI_TranslationType_View;
-DROP VIEW IF EXISTS mgd.MGI_User_Active_View;
 
 UPDATE MGI_StatisticSql 
 SET sqlchunk = 

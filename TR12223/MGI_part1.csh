@@ -92,8 +92,6 @@ DROP FUNCTION IF EXISTS MRK_insertHistory(int,int,int,int,int,int,varchar,timest
 DROP FUNCTION IF EXISTS MGI_resetAgeMinMax(varchar,int);
 DROP TRIGGER IF EXISTS IMG_ImagePane_Assoc_delete_trigger ON IMG_ImagePane_Assoc;
 DROP FUNCTION IF EXISTS IMG_ImagePane_Assoc_delete();
-DROP TRIGGER IF EXISTS ALL_CellLine_insert_trigger ON ALL_CellLine;
-DROP FUNCTION IF EXISTS ALL_CellLine_insert();
 
 DROP VIEW IF EXISTS mgd.MGI_Organism_Homology_View;
 DROP VIEW IF EXISTS mgd.MAP_Feature_View;
@@ -121,9 +119,6 @@ SET sqlchunk =
 DELETE FROM MGI_Reference_Assoc where _MGIType_key = 29; 
 DELETE FROM MGI_RefAssocType where _MGIType_key = 29; 
 DELETE FROM ACC_MGIType where _MGIType_key in (14,26,29,37);
-
--- remove mgi ids added to es cell lines when postgres migration was done
-DELETE FROM ACC_Accession where _MGIType_key = 28 and _logicaldb_key = 1;
 
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1

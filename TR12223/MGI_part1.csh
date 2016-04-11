@@ -121,32 +121,6 @@ DELETE FROM MGI_Reference_Assoc where _MGIType_key = 29;
 DELETE FROM MGI_RefAssocType where _MGIType_key = 29; 
 DELETE FROM ACC_MGIType where _MGIType_key in (14,26,29,37);
 
--- Add AssayType sequencenum
-ALTER TABLE GXD_AssayType ADD COLUMN sequencenum integer NOT NULL DEFAULT 9999;
-UPDATE GXD_AssayType SET sequencenum = 1
-WHERE assaytype = 'Immunohistochemistry';
-UPDATE GXD_AssayType SET sequencenum = 2
-WHERE assaytype = 'RNA in situ';
-UPDATE GXD_AssayType SET sequencenum = 3
-WHERE assaytype = 'In situ reporter (knock in)';
-UPDATE GXD_AssayType SET sequencenum = 4
-WHERE assaytype = 'Northern blot';
-UPDATE GXD_AssayType SET sequencenum = 5
-WHERE assaytype = 'Western blot';
-UPDATE GXD_AssayType SET sequencenum = 6
-WHERE assaytype = 'RT-PCR';
-UPDATE GXD_AssayType SET sequencenum = 7
-WHERE assaytype = 'RNase protection';
-UPDATE GXD_AssayType SET sequencenum = 8
-WHERE assaytype = 'Nuclease S1';
-UPDATE GXD_AssayType SET sequencenum = 9
-WHERE assaytype = 'In situ reporter (transgenic)';
-UPDATE GXD_AssayType SET sequencenum = 10
-WHERE assaytype = 'Recombinase reporter';
-UPDATE GXD_AssayType SET sequencenum = 99998
-WHERE assaytype = 'Not Specified';
-UPDATE GXD_AssayType SET sequencenum = 99999
-WHERE assaytype = 'Not Applicable';
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1
@@ -169,7 +143,10 @@ echo 'step 3 : run ad-to-emapa migration' | tee -a $LOG
 echo 'step 4 : run cre (mgi_setmember) migration' | tee -a $LOG
 ./cre.csh | tee -a $LOG || exit 1
 
-echo 'step 5 : create foreign keys for new tables' | tee -a $LOG
+echo 'step 5 : run gxd_assaytype migration' | tee -a $LOG
+./gxdassaytype.csh | tee -a $LOG || exit 1
+
+echo 'step 6 : create foreign keys for new tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
@@ -180,7 +157,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_SetMember_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
 
-echo 'step 6 : create more foreign keys for new tables' | tee -a $LOG
+echo 'step 7 : create more foreign keys for new tables' | tee -a $LOG
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 
@@ -235,7 +212,7 @@ insert into MGI_Set values(1046, 13, 'EMAPA/Stage', 1, 1001, 1001, now(), now())
 EOSQL
 date | tee -a ${LOG}
 
-echo 'step 7 : create indexes on new tables' | tee -a $LOG
+echo 'step 8 : create indexes on new tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
@@ -250,7 +227,7 @@ ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_EMAPA_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_SetMember_create.object | tee -a $LOG
 
-echo 'step 8 : add comments/views/procedure' | tee -a $LOG
+echo 'step 9 : add comments/views/procedure' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_Expression_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_GelLaneStructure_create.object | tee -a $LOG || exit 1
@@ -258,7 +235,6 @@ ${PG_MGD_DBSCHEMADIR}/comments/GXD_ISResultStructure_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/MGI_SetMember_EMAPA_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MGI_SetMember_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MRK_OMIM_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/comments/GXD_AssayType_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_Genotype_View_create.object | tee -a $LOG || exit 1
@@ -275,7 +251,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
-echo 'step 9 : run setload/setload.csh cre.config' | tee -a $LOG
+echo 'step 10 : run setload/setload.csh cre.config' | tee -a $LOG
 ${SETLOAD}/setload.csh cre.config | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select a.accID, t.term, s.* 
@@ -287,38 +263,38 @@ and a._MGIType_key = 13
 ;
 EOSQL
 
-echo 'step 10 : run vocload/emap/emapload.sh' | tee -a $LOG
+echo 'step 11 : run vocload/emap/emapload.sh' | tee -a $LOG
 ${VOCLOAD}/emap/emapload.sh | tee -a $LOG || exit 1
 
-echo 'step 11 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
+echo 'step 12 : run mgicacheload/gxdexpression.csh' | tee -a $LOG
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG || exit 1
 
-echo 'step 12 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
+echo 'step 13 : run mrkcacheload/mrkomim.csh' | tee -a $LOG
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 
-echo 'step 13 : run allcacheload/allelecrecache.csh' | tee -a $LOG
+echo 'step 14 : run allcacheload/allelecrecache.csh' | tee -a $LOG
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from all_cre_cache;
 EOSQL
 
-echo 'step 14 : run statistics' | tee -a $LOG
+echo 'step 15 : run statistics' | tee -a $LOG
 rm -rf ${MGI_PYTHONLIB}/stats* | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
-echo 'step 15 : orphan clean-up' | tee -a $LOG
+echo 'step 16 : orphan clean-up' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 
-echo 'step 16 : run pwi.csh' | tee -a $LOG
+echo 'step 17 : run pwi.csh' | tee -a $LOG
 ./pwi.csh | tee -a $LOG || exit 1
 
-echo 'step 17 : permissions' | tee -a $LOG
+echo 'step 18 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
-echo 'step 18 : reports' | tee -a $LOG
+echo 'step 19 : reports' | tee -a $LOG
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 
-#echo 'step 18 : public' | tee -a $LOG
+#echo 'step 20 : public' | tee -a $LOG
 #${PG_DBUTILS}/sp/MGI_deletePrivateData.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

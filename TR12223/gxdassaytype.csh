@@ -95,10 +95,12 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayType_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_View_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_Summary_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_AssayType_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayType_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_AssayType_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_Summary_View_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 DROP TABLE GXD_AssayType_old;

@@ -1,0 +1,48 @@
+#!/bin/csh -f
+
+#
+# Program: www.ebi.ac.uk
+#
+# Original Author: sc
+#
+# Purpose:
+#
+#	Download the IMPC europhenome data
+#
+# Modification History:
+#
+
+if ( ${?MGICONFIG} == 0 ) then
+        setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
+# full path to mirror log directory
+setenv MIRRORLOG        ${DATADOWNLOADS}/mirror_wget_logs
+
+
+# Full URL of the file
+
+setenv URL	"http://www.ebi.ac.uk/mi/impc/solr/genotype-phenotype/select?q=resource_name:"EuroPhenome"&fl=phenotyping_center,marker_symbol,sex,strain_name,strain_accession_id,marker_accession_id,allele_symbol,allele_accession_id,resource_name,zygosity,mp_term_id,mp_term_name,colony_id&rows=100000&wt=json&indent=true"
+
+
+# Base URL of the file
+setenv BASEURL www.ebi.ac.uk.europhenome
+
+# full path to log file
+setenv LOGFILE	${MIRRORLOG}/${BASEURL}.log
+
+# output directory
+setenv OUTPUTDIR        ${DATADOWNLOADS}/${BASEURL}
+
+# output file
+setenv OUTPUTFILE       ${OUTPUTDIR}/impc.json.europhenome
+
+#
+# -k = insecure/SSL; allows curl to perform insecure SSL connections 
+# -o = the output file
+# --create-dirs = used with -o, create dirs that don't exist in output file path
+#
+
+curl --create-dirs -ko ${OUTPUTFILE} "${URL}" >& ${LOGFILE}

@@ -18,12 +18,12 @@ echo `date`: Start nightly QC reports | tee -a ${LOG}
 
 cd ${QCMGD}
 
-foreach i (GXD_NotInCache.sql GXD_SpecNoAge.sql GXD_SpecTheiler.sql RECOMB_SpecTheiler.sql RECOMB_SpecNoAge.sql)
+foreach i (GXD_NotInCache.sql GXD_SpecNoAge.sql GXD_SpecTheiler.sql RECOMB_SpecTheiler.sql RECOMB_SpecNoAge.sql MGI_QTL_ReferenceNotes.sql)
     echo `date`: $i | tee -a ${LOG}
     ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end
 
-foreach i (GXD_SpecTheilerAge.py GXD_EMAPS_Terms.py GXD_Stats.py RECOMB_SpecTheilerAge.py GXD_ExpPresNotPres.py GXD_ChildExpNotParent)
+foreach i (GXD_SpecTheilerAge.py GXD_EMAPS_Terms.py GXD_Stats.py RECOMB_SpecTheilerAge.py GXD_ExpPresNotPres.py GXD_ChildExpNotParent.py)
     echo `date`: $i | tee -a ${LOG}
     $i >>& ${LOG}
 end

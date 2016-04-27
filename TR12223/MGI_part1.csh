@@ -288,10 +288,13 @@ echo 'step 16 : run pwi.csh' | tee -a $LOG
 echo 'step 17 : permissions' | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
-echo 'step 18 : reports' | tee -a $LOG
+#echo 'step 18 : assay/lacz' | tee -a $LOG
+#${GXDLOAD}/tr12026/tr12026insitu.sh | tee -a $LOG || exit 1
+
+echo 'step 19 : reports' | tee -a $LOG
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 
-#echo 'step 19 : public' | tee -a $LOG
+#echo 'step 20 : public' | tee -a $LOG
 #${PG_DBUTILS}/sp/MGI_deletePrivateData.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

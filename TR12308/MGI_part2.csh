@@ -25,9 +25,9 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo "--- Run mgp load  ---"  | tee -a ${LOG}
-#${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmgpload.config  ${HTMPLOAD}/annotload.config
+date | tee -a ${LOG}
+echo "--- Run mgp load  ---"  | tee -a ${LOG}
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmgpload.config  ${HTMPLOAD}/annotload.config
 
 date | tee -a ${LOG}
 echo "--- Run europhenome load  ---"  | tee -a ${LOG}

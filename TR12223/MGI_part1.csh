@@ -121,6 +121,14 @@ DELETE FROM MGI_Reference_Assoc where _MGIType_key = 29;
 DELETE FROM MGI_RefAssocType where _MGIType_key = 29; 
 DELETE FROM ACC_MGIType where _MGIType_key in (14,26,29,37);
 
+
+UPDATE VOC_Text SET note = 'Immunohistochemistry (section)'
+WHERE _Term_key = 74717
+;
+UPDATE VOC_Text SET note = 'Immunohistochemistry (whole mount)'
+WHERE _Term_key = 74719
+;
+
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1

@@ -10,6 +10,8 @@
 # rm -rf /data/loads/mgi/emapload
 # make sure Terry uses bhmgiapp01, not hobbiton!
 #
+# start : for SE-Admin
+#
 # loadadmin/prod/dailytasks.csh:${EMAPLOAD}/bin/emapload.sh
 # change to:
 # loadadmin/prod/dailytasks.csh:${VOCLOAD}/emap/emapload.sh
@@ -17,6 +19,8 @@
 # is-obsolete:
 # adsystemload
 # toposortload
+#
+# end : for SE-Admin
 #
 
 ###----------------------###
@@ -248,6 +252,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/MGI_Statistic_create.object | tee -a $LOG || exit 
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 
@@ -288,16 +293,13 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 echo 'step 16 : run pwi.csh' | tee -a $LOG
 ./pwi.csh | tee -a $LOG || exit 1
 
-echo 'step 17 : permissions' | tee -a $LOG
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+echo 'step 17 : assay/lacz' | tee -a $LOG
+${GXDLOAD}/tr12026/tr12026insitu.sh | tee -a $LOG || exit 1
 
-#echo 'step 18 : assay/lacz' | tee -a $LOG
-#${GXDLOAD}/tr12026/tr12026insitu.sh | tee -a $LOG || exit 1
-
-echo 'step 19 : reports' | tee -a $LOG
+echo 'step 18 : reports' | tee -a $LOG
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 
-#echo 'step 20 : public' | tee -a $LOG
+#echo 'step 19 : public' | tee -a $LOG
 #${PG_DBUTILS}/sp/MGI_deletePrivateData.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

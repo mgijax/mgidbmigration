@@ -283,18 +283,17 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from all_cre_cache;
 EOSQL
 
-echo 'step 14 : run statistics' | tee -a $LOG
-rm -rf ${MGI_PYTHONLIB}/stats* | tee -a $LOG
-${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
-
-echo 'step 15 : orphan clean-up' | tee -a $LOG
+echo 'step 14 : orphan clean-up' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 
-echo 'step 16 : run pwi.csh' | tee -a $LOG
+echo 'step 15 : run pwi.csh' | tee -a $LOG
 ./pwi.csh | tee -a $LOG || exit 1
 
-echo 'step 17 : assay/lacz' | tee -a $LOG
+echo 'step 16 : assay/lacz' | tee -a $LOG
 ${GXDLOAD}/tr12026/tr12026insitu.sh | tee -a $LOG || exit 1
+
+echo 'step 17 : run statistics' | tee -a $LOG
+${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
 echo 'step 18 : reports' | tee -a $LOG
 ./qcnightly_reports.csh | tee -a $LOG || exit 1

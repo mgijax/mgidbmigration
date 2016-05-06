@@ -128,6 +128,12 @@ DELETE FROM ACC_MGIType where _MGIType_key in (14,26,29,37);
 UPDATE VOC_Text SET note = 'Immunohistochemistry (section)' WHERE _Term_key = 74717;
 UPDATE VOC_Text SET note = 'Immunohistochemistry (whole mount)' WHERE _Term_key = 74719;
 
+UPDATE GXD_TheilerStage SET dpcmax = 16.99 WHERE _Stage_key = 24;
+UPDATE GXD_TheilerStage SET dpcmax = 17.99 WHERE _Stage_key = 25;
+UPDATE GXD_TheilerStage SET dpcmax = 20.99 WHERE _Stage_key = 26;
+UPDATE GXD_TheilerStage SET dpcmin = 21.0 WHERE _Stage_key = 27;
+UPDATE GXD_TheilerStage SET dpcmin = 21.0 WHERE _Stage_key = 28;
+
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GelLaneStructure_View_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_ISResultStructure_View_drop.object | tee -a $LOG || exit 1

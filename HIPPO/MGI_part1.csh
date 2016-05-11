@@ -46,7 +46,7 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
-echo "--- Drop/create VOC_Term triggers
+echo "--- Drop/create VOC_Term triggers ---"
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object
 
 date | tee -a ${LOG}

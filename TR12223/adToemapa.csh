@@ -181,6 +181,7 @@ DROP TABLE GXD_GelLaneStructure_old;
 DROP TABLE GXD_ISResultStructure_old;
 DROP TABLE GXD_Structure;
 DROP TABLE GXD_StructureName;
+DELETE FROM ACC_Accession WHERE _MGIType_key = 38;
 DELETE FROM ACC_MGITYPE WHERE _MGIType_key = 38;
 
 EOSQL

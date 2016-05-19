@@ -49,7 +49,7 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 echo "--- Delete Annotations, properties, evidence ---"  | tee -a ${LOG}
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
-select a._Annot_key
+select distinct a._Annot_key
 into temporary table toDelete
 from VOC_Annot a, VOC_Evidence ve
 where a._AnnotType_key = 1002

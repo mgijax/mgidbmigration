@@ -41,8 +41,7 @@ _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date
 FROM MGI_User_old
 ;
 
-UPDATE MGI_User SET orcID = 'http://orcid.org/0000-0001-7476-6306' 
-WHERE _User_key = 1072;
+UPDATE MGI_User SET orcID = 'http://orcid.org/0000-0001-7476-6306' WHERE login = 'dph';
 
 select count(*) from MGI_User;
 select count(*) from MGI_User_old;

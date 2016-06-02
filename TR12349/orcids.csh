@@ -64,7 +64,5 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 DROP TABLE MGI_User_old;
 EOSQL
 
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-
 date | tee -a ${LOG}
 

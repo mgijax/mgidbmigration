@@ -42,6 +42,9 @@ FROM MGI_User_old
 ;
 
 UPDATE MGI_User SET orcID = 'http://orcid.org/0000-0001-7476-6306' WHERE login = 'dph';
+UPDATE MGI_User SET orcID = 'http://orcid.org/0000-0001-5501-853X' WHERE login = 'krc';
+UPDATE MGI_User SET orcID = 'http://orcid.org/0000-0003-2689-5511' WHERE login = 'hjd';
+UPDATE MGI_User SET orcID = 'http://orcid.org/0000-0002-9796-7693' WHERE login = 'ln';
 
 select count(*) from MGI_User;
 select count(*) from MGI_User_old;

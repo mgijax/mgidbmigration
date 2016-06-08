@@ -26,15 +26,27 @@ date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
 date | tee -a ${LOG}
-
 echo "--- Load HPO Vocab ---"  | tee -a ${LOG}
 ${VOCLOAD}/runOBOIncLoad.sh HPO.config
 
+date | tee -a ${LOG}
 echo "--- Load MP/HPO relationships ---"  | tee -a ${LOG}
 ${MPHPOLOAD}/bin/mp_hpoload.sh
 
+date | tee -a ${LOG}
 echo "--- Load OMIM/HPO annotations ---"  | tee -a ${LOG}
 ${OMIMHPOLOAD}/bin/omim_hpoload.sh
+
+#
+# must have TR12267 branch of htmpload installed to run this
+#
+date | tee -a ${LOG}
+echo "--- Run mgp load  ---"  | tee -a ${LOG}
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmgpload.config  ${HTMPLOAD}/annotload.config
+
+date | tee -a ${LOG}
+echo "--- Run europhenome load  ---"  | tee -a ${LOG}
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impceurompload.config ${HTMPLOAD}/annotload.config
 
 echo "--- done running loads ---" | tee -a ${LOG}
 

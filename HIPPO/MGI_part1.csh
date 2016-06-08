@@ -46,8 +46,32 @@ endif
 
 echo "--- Finished loading databases " | tee -a ${LOG}
 
+#
+# run migration
+#
 echo "--- Drop/create VOC_Term triggers ---"
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object
+
+echo "--- Delete Old Sanger/Euph Annotations, properties, evidence ---"  | tee -a ${LOG}
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
+select distinct a._Annot_key
+into temporary table toDelete
+from VOC_Annot a, VOC_Evidence ve
+where a._AnnotType_key = 1002
+and a._Annot_key = ve._Annot_key
+and ve._Refs_key in (167061, 176391)
+;
+
+create index idx1 on toDelete(_Annot_key)
+;
+
+delete from VOC_Annot a
+using toDelete d
+where d._Annot_key = a._Annot_key
+;
+
+EOSQL
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

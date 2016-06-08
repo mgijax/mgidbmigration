@@ -1,0 +1,38 @@
+Installs:
+1. mgidbmigration (trunk)
+2. annotload (currently on tr12267 branch, to be merged to trunk)
+3. omim_hpoload (new)
+4. mp_hpoload (new)
+5. vocload (currently on tr12267 branch, to be merged to trunk)
+6. pgmgddbschema (currenty on tr12267 branch, to be merged to trunk)
+7. htmpload (tr12308 branch, one-time load of IMPC MGP(Sanger)/EUPH data will NOT be merged to trunk)
+    git clone git@github.com:MGIJax/htmpload.git htmpload-tr12267
+    ln -s htmpload-tr12267 htmpload
+8. mirror_wget (currently on tr12317 branch, to be merged to trunk)
+
+Migration:
+MGI_part1.csh >& MGI_part1.csh.out
+* recreates VOC_Term delete trigger
+* deletes old Sanger/Euph annotations
+
+MGI_part2.csh >& MGI_part2.csh.out
+* Run IMPC MGP htmp load 
+* Run IMPC EUPH htmp load
+
+Install:
+htmpload (currently on tr12317 branch, to be merged to trunk)
+
+Files for new IMPC load, we want to use the same files we used in development:
+scp mgi-testapp3:/data/downloads/www.ebi.ac.uk/impc.json to production
+scp mgi-testapp3:/data/downloads/www.mousephenotype.org/mp2_load_phenotyping_colonies_report.tsv to production
+
+Migration:
+MGI_part2b.csh >& MGI_part2b.csh.out
+* Run IMPC htmp load
+
+MGI_part3.csh > MGI_part3.csh.out
+* Runs cache loads (including rollupload)
+
+MGI_part4.csh > MGI_part4.csh.out
+* Runs reports
+

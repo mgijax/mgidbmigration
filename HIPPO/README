@@ -42,6 +42,7 @@ Files:
 for new IMPC load, we want to use the same files we used in development:
 * scp mgi-testapp3:/data/downloads/www.ebi.ac.uk/impc.json to same directory on bhmgiapp01
 * scp mgi-testapp3:/data/downloads/www.mousephenotype.org/mp2_load_phenotyping_colonies_report.tsv to same directory on bhmgiapp01
+* remove /data/loads/mgi/htmpload/impcmpload/input/lastrun
 
 Migration:
 MGI_part2b.csh >& MGI_part2b.csh.out

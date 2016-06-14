@@ -10,21 +10,38 @@ Installs:
     ln -s htmpload-tr12267 htmpload
 8. mirror_wget (currently on tr12317 branch, to be merged to trunk)
 
+Files:
+1. scp mgi-testapp3:/data/loads/mgi/htmpload/impcmgpload/input/MGP_load_file.txt to same location on bhmgiapp01 # this is the IMPC MGP intermediate file edited 
+ by Cindy
+2. On bhmgiapp01: ln -as MGP_load_file.txt impc.json.mgp_int # this is the name
+ of the file expected by the load
+3. scp mgi-testapp3:/data/loads/mgi/htmpload/impcmgpload/input/mp2_load_phenotyping_colonies_report.tsv to same location on bhmgiapp01 # this is the IMITS file
+4. scp mgi-testapp3:/data/loads/mgi/htmpload/impceurompload/input/EUPH_load_file.txt to same location on bhmgiapp01 * this is the IMPC EUPH intermediate file 
+ edited by Cindy
+5. On bhmgiapp01: ln -as EUPH_load_file.txt impc.json.europhenome_int  # this is the name of the file expected by the load
+6. scp mgi-testapp3:/data/loads/mgi/htmpload/impceurompload/input/mp2_load_phenotyping_colonies_report.tsv to same location on bhmgiapp01 # this is the IMITS 
+ file
+
 Migration:
 MGI_part1.csh >& MGI_part1.csh.out
 * recreates VOC_Term delete trigger
 * deletes old Sanger/Euph annotations
 
 MGI_part2.csh >& MGI_part2.csh.out
+* Run HPO Vocab Load
+* Run HP/HPO Relationship Load
+* Run OMIM/HPO Annotation Load
 * Run IMPC MGP htmp load 
 * Run IMPC EUPH htmp load
+* Run HPO Annotation Report
 
 Install:
 htmpload (currently on tr12317 branch, to be merged to trunk)
 
-Files for new IMPC load, we want to use the same files we used in development:
-scp mgi-testapp3:/data/downloads/www.ebi.ac.uk/impc.json to production
-scp mgi-testapp3:/data/downloads/www.mousephenotype.org/mp2_load_phenotyping_colonies_report.tsv to production
+Files:
+for new IMPC load, we want to use the same files we used in development:
+* scp mgi-testapp3:/data/downloads/www.ebi.ac.uk/impc.json to same directory on bhmgiapp01
+* scp mgi-testapp3:/data/downloads/www.mousephenotype.org/mp2_load_phenotyping_colonies_report.tsv to same directory on bhmgiapp01
 
 Migration:
 MGI_part2b.csh >& MGI_part2b.csh.out

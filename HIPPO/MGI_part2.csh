@@ -48,6 +48,11 @@ date | tee -a ${LOG}
 echo "--- Run europhenome load  ---"  | tee -a ${LOG}
 ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impceurompload.config ${HTMPLOAD}/annotload.config
 
+date | tee -a ${LOG}
+echo "--- Running HPO Annotation Report  ---"  | tee -a ${LOG}
+./omim_mp_hpo_jsb.py
+cp omim_mp_hpo_jsb.rpt /mgi/all/wts_projects/12200/12267/reports/omim_mp_hpo_jsb.rpt
+
 echo "--- done running loads ---" | tee -a ${LOG}
 
 date | tee -a ${LOG}

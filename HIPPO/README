@@ -21,7 +21,9 @@ Files:
 5. On bhmgiapp01: ln -as EUPH_load_file.txt impc.json.europhenome_int  # this is the name of the file expected by the load
 6. scp mgi-testapp3:/data/loads/mgi/htmpload/impceurompload/input/mp2_load_phenotyping_colonies_report.tsv to same location on bhmgiapp01 # this is the IMITS 
  file
-7. scp mgi-testapp3:/data/downloads/purl.obolibrary.org/obo/hp/hpo.obo to same location on bhmgiapp01
+7. scp mgi-testapp3:/data/downloads/purl.obolibrary.org/obo/hp/hpo.obo to same location on bhmgiapp01 # this is the input file for the HPO vocabulary load
+8. scp mgi-testapp3:/data/loads/mp_hpo/input/mp_hpo.txt to same location on bhmgiapp01 # this is the MP/HPO relationship load input file created by Sue
+9. scp mgi-testapp3:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab to same location on bhmgiapp01 # this is the OMIM/HPO annotation load input file.
 
 Migration:
 MGI_part1.csh >& MGI_part1.csh.out

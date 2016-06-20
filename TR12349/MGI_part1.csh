@@ -48,7 +48,7 @@ date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 2 : goload (goamousenoctua)' | tee -a $LOG || exit 1
-${GOLOAD}/go..sh | tee -a $LOG || exit 1
+${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1

@@ -56,5 +56,10 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
+echo 'step 3 : qc reports' | tee -a $LOG || exit 1
+./qcnightly_reports.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

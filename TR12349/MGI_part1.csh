@@ -47,12 +47,12 @@ echo 'step 1 : orc ids' | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 3 : load ECO ontology (vocload)' | tee -a $LOG || exit 1
+echo 'step 2 : load ECO ontology (vocload)' | tee -a $LOG || exit 1
 ${VOCLOAD}/runOBOFullLoad.sh ECO.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 4 : goload (goamousenoctua)' | tee -a $LOG || exit 1
+echo 'step 3 : goload (goamousenoctua)' | tee -a $LOG || exit 1
 ${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
@@ -61,7 +61,7 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
-echo 'step 5 : qc reports' | tee -a $LOG || exit 1
+echo 'step 4 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

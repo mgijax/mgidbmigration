@@ -41,6 +41,8 @@ update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
 EOSQL
 date | tee -a ${LOG}
 
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+
 date | tee -a ${LOG}
 echo 'step 1 : orc ids' | tee -a $LOG || exit 1
 ./orcids.csh | tee -a $LOG || exit 1
@@ -56,7 +58,6 @@ echo 'step 3 : goload (goamousenoctua)' | tee -a $LOG || exit 1
 ${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 

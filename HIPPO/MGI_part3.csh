@@ -45,7 +45,6 @@ ${MRKCACHELOAD}/mrkomim.csh
 ${ALLCACHELOAD}/allstrain.csh
 ${ALLCACHELOAD}/allelecrecache.csh
 ${MGICACHELOAD}/bibcitation.csh
-${TOPOSORTLOAD}/toposort.csh
 
 ###-----------------------###
 ###--- final datestamp ---###

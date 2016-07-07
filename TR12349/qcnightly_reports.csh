@@ -31,6 +31,8 @@ end
 cd ${PUBRPTS}
 source ./Configuration
 cd daily
-./GO_gene_association.py
+foreach i (GO_gene_association.py GO_gpi.py)
+    echo `date`: $i | tee -a ${LOG}
+    $i >>& ${LOG}
 
 echo `date`: End nightly QC reports | tee -a ${LOG}

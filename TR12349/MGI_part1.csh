@@ -46,19 +46,29 @@ echo 'step 1 : orc ids' | tee -a $LOG || exit 1
 ./orcids.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
-
-date | tee -a ${LOG}
-echo 'step 2 : load ECO ontology (vocload)' | tee -a $LOG || exit 1
-${VOCLOAD}/runOBOFullLoad.sh ECO.config | tee -a $LOG || exit 1
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'step 2 : load ECO ontology (vocload)' | tee -a $LOG || exit 1
+#${VOCLOAD}/runOBOFullLoad.sh ECO.config | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 3 : goload (goamousenoctua)' | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG || exit 1
 ${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 4 : proisoformload' | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
+${PROISOFORMLOAD}/bin/proisoform.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'step 4 : qc reports' | tee -a $LOG || exit 1

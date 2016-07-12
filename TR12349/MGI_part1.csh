@@ -12,6 +12,13 @@
 # obsolete:
 # gaf_fprocessor
 #
+# loadadmin
+# remove as these are now called from goload/go.sh
+# prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
+# prod/dailytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+# prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
+# prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+#
 
 ###----------------------###
 ###--- initialization ---###

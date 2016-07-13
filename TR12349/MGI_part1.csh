@@ -61,13 +61,14 @@ echo 'step 2 : orc ids' | tee -a $LOG || exit 1
 ./orcids.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
+# do all schema/stored procedure changes before the loads are run
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+
 #date | tee -a ${LOG}
 #echo 'step 3 : load ECO ontology (vocload)' | tee -a $LOG || exit 1
 #${VOCLOAD}/runOBOFullLoad.sh ECO.config | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
-
-# to pick up new stored procedure
-${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'step 4 : goload (goamousenoctua)' | tee -a $LOG || exit 1
@@ -79,13 +80,13 @@ echo 'step 5 : proisoformload' | tee -a $LOG || exit 1
 ${PROISOFORMLOAD}/bin/proisoform.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
-
 date | tee -a ${LOG}
 echo 'step 6 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
+
+# final database check
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}

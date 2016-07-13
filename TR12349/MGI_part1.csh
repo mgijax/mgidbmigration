@@ -13,11 +13,11 @@
 # gaf_fprocessor
 #
 # loadadmin
+# keep: prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
+# keep: prod/dailytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
 # remove as these are now called from goload/go.sh
-# prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
-# prod/dailytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
-# prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
-# prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+# remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
+# remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
 #
 
 ###----------------------###
@@ -66,6 +66,9 @@ date | tee -a ${LOG}
 #${VOCLOAD}/runOBOFullLoad.sh ECO.config | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
+# to pick up new stored procedure
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+
 date | tee -a ${LOG}
 echo 'step 4 : goload (goamousenoctua)' | tee -a $LOG || exit 1
 ${GOLOAD}/go.sh | tee -a $LOG || exit 1
@@ -76,7 +79,6 @@ echo 'step 5 : proisoformload' | tee -a $LOG || exit 1
 ${PROISOFORMLOAD}/bin/proisoform.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 

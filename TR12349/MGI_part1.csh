@@ -48,13 +48,13 @@ update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
 EOSQL
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
-${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
-${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
-${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1
-${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG || exit 1
-${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+#echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
+#${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
+#${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
+#${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1
+#${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG || exit 1
+#${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'step 2 : orc ids' | tee -a $LOG || exit 1

@@ -31,7 +31,7 @@ end
 cd ${PUBRPTS}
 source ./Configuration
 cd daily
-foreach i (GO_gene_association.py GP_gpi.py)
+foreach i (GO_gene_association.py GO_gpi.py)
     echo `date`: $i | tee -a ${LOG}
     $i >>& ${LOG}
 

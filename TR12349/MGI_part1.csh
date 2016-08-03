@@ -20,6 +20,11 @@
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
 #
+# change
+# /data/downloads/goa -> ./ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE
+# to
+# /data/downloads/goa -> ./ftp.ebi.ac.uk/pub/databases/GO/goa
+#
 
 ###----------------------###
 ###--- initialization ---###
@@ -46,6 +51,8 @@ touch ${LOG}
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
+delete from ACC_LogicalDB where _LogicalDB_key = 182;
+delete from VOC_Vocab where _Vocab_key = 111;
 EOSQL
 date | tee -a ${LOG}
 

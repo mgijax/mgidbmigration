@@ -9,6 +9,7 @@
 # proisoformload
 # reports_db
 # qcreports_db : GO_GPI_verify.py
+# lib_py_report
 # vocload : remove ECO config/etc.
 #
 # obsolete:

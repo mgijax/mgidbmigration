@@ -8,6 +8,7 @@
 # goload
 # proisoformload
 # reports_db
+# qcreports_db : GO_GPI_verify.py
 # vocload : remove ECO config/etc.
 #
 # obsolete:
@@ -20,6 +21,7 @@
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
 #
+# mirror_wget : ftp.geneontology.org.goload : remove goa_human
 # change
 # /data/downloads/goa -> ./ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE
 # to
@@ -51,18 +53,18 @@ touch ${LOG}
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
-delete from ACC_LogicalDB where _LogicalDB_key = 182;
 delete from VOC_Vocab where _Vocab_key = 111;
+delete from ACC_LogicalDB where _LogicalDB_key = 182;
 EOSQL
 date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'step 2 : orc ids' | tee -a $LOG || exit 1

@@ -97,7 +97,7 @@ ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
-${PG_DBUTILS}/sp/VOC_Cache_Other_Makers.csh ${PG_DBSERVER} ${PG_DBNAME} 0| tee -a $LOG || exit 1
+${PG_DBUTILS}/sp/VOC_Cache_Other_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} 0| tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

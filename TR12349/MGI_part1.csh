@@ -3,17 +3,18 @@
 #
 # Migration for TR12349
 #
-# mgidbmigration
-# pgmgddbschema
-# goload
-# proisoformload
-# reports_db
-# qcreports_db : GO_GPI_verify.py
-# lib_py_report
-# vocload : remove ECO config/etc.
+# mgidbmigration : cvs/trunk
+# pgmgddbschema : branch
+# goload : branch
+# proisoformload : trunk
+# reports_db : branch
+# qcreports_db : trunk : GO_GPI_verify.py
+# ei : trunk
+# lib_py_report : cvs/trunk
 #
 # obsolete:
 # gaf_fprocessor
+# vocload : remove ECO config/etc.
 #
 # loadadmin
 # keep: prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh

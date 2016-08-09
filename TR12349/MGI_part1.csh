@@ -49,16 +49,6 @@ touch ${LOG}
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
-#
-# update schema-version and public-version
-#
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
-delete from VOC_Vocab where _Vocab_key = 111;
-delete from ACC_LogicalDB where _LogicalDB_key = 182;
-EOSQL
-date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
@@ -105,9 +95,19 @@ echo 'step 6 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
+#
+# update schema-version and public-version
+#
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
+delete from VOC_Vocab where _Vocab_key = 111;
+delete from ACC_LogicalDB where _LogicalDB_key = 182;
+select distinct annottype from VOC_Marker_Cache order by annottype;
+EOSQL
+
 # final database check
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
-date | tee -a ${LOG}
 echo "--- Finished" | tee -a ${LOG}
 

@@ -88,7 +88,12 @@ ${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 5 : qc reports' | tee -a $LOG || exit 1
+echo 'step 5 : voc_cache_markers' | tee -a $LOG || exit 1
+${PG_DBUTILS}/sp/VOC_Cache_Markers.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 6 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

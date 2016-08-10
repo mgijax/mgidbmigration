@@ -13,6 +13,7 @@
 # qcreports_db : trunk : GO_GPI_verify.py
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh
 # lib_py_report : cvs/trunk
+# lib_py_dataload : cvs/trunk
 #
 # obsolete:
 # gaf_fprocessor
@@ -24,6 +25,11 @@
 # remove as these are now called from goload/go.sh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+#
+# mirror_wget things to do:
+#
+# cd /data/downloads
+# ln -s ./build.berkeleybop.org/view/GO/job/export-lego-to-legacy/lastSuccessfulBuild/artifact/legacy/gpad/production go_noctua
 #
 # mirror_wget : ftp.geneontology.org.goload : remove goa_human
 # change
@@ -57,6 +63,7 @@ touch ${LOG}
 ${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package build.berkeleybop.org.gpad.goload | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG || exit 1
 
@@ -67,6 +74,14 @@ date | tee -a ${LOG}
 
 # do all schema/stored procedure changes before the loads are run
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
@@ -81,14 +96,6 @@ date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 5 : voc_cache_markers' | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

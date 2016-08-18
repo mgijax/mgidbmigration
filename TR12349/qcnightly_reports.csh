@@ -23,7 +23,7 @@ cd ${QCMGD}
 #    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 #end
 
-foreach i (GO_Stats.py GO_GPI_verify.py)
+foreach i (GO_stats.py GO_GPI_verify.py)
     echo `date`: $i | tee -a ${LOG}
     $i >>& ${LOG}
 end

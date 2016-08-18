@@ -7,11 +7,15 @@
 # pgmgddbschema : branch
 # goload : branch
 # reports_db : branch
+# annotload : branch
+#
 # mirror_wget : trunk
 # proisoformload : trunk
 # ei : trunk
 # qcreports_db : trunk : GO_GPI_verify.py
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh
+# mgicacheload : trunk : inferredfrom.gomousenoctua
+#
 # lib_py_report : cvs/trunk
 # lib_py_dataload : cvs/trunk
 #

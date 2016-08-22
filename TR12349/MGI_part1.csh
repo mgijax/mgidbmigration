@@ -114,12 +114,13 @@ echo 'step 4 : goload (goamousenoctua)' | tee -a $LOG || exit 1
 ${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 5 : voc_cache_markers' | tee -a $LOG || exit 1
-${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-${PG_DBUTILS}/sp/VOC_Cache_Allele.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-date | tee -a ${LOG}
+# this will run MGI_deletePrivateData.csh
+#date | tee -a ${LOG}
+#echo 'step 5 : voc_cache_markers' | tee -a $LOG || exit 1
+#${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_DBUTILS}/sp/VOC_Cache_Allele.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 6 : qc reports' | tee -a $LOG || exit 1

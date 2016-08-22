@@ -14,14 +14,13 @@
 # ei : trunk
 # qcreports_db : trunk : GO_GPI_verify.py
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh
-# mgicacheload : trunk : inferredfrom.gomousenoctua
+# mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production
 #
 # lib_py_report : cvs/trunk
 # lib_py_dataload : cvs/trunk
 #
 # obsolete:
 # gaf_fprocessor
-# vocload : remove ECO config/etc.
 #
 # loadadmin
 # keep: prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
@@ -78,14 +77,31 @@ date | tee -a ${LOG}
 
 # do all schema/stored procedure changes before the loads are run
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Allele_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Annot_Count_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/VOC_Allele_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/VOC_Allele_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/VOC_Annot_Count_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/VOC_Annot_Count_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Allele_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Annot_Count_Cache_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Allele_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Annot_Count_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Allele_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Annot_Count_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/VOC_Allele_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/VOC_Annot_Count_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
@@ -100,7 +116,9 @@ date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 5 : voc_cache_markers' | tee -a $LOG || exit 1
+${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 ${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+${PG_DBUTILS}/sp/VOC_Cache_Allele.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}

@@ -132,10 +132,21 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
 update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
 delete from VOC_Vocab where _Vocab_key = 111;
 delete from ACC_LogicalDB where _LogicalDB_key = 182;
 select distinct annottype from VOC_Marker_Cache order by annottype;
+
+select * from ACC_insertNoChecks (1001,156949,'0000096',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,162524,'0000033',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,165659,'0000096',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,61933,'0000004',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,73197,'0000003',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,73199,'0000002',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,74017,'0000008',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,74750,'0000015',185,'Reference',-1,0,1);
+
 EOSQL
 
 # final database check

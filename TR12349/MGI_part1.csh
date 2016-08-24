@@ -138,14 +138,14 @@ delete from VOC_Vocab where _Vocab_key = 111;
 delete from ACC_LogicalDB where _LogicalDB_key = 182;
 select distinct annottype from VOC_Marker_Cache order by annottype;
 
-select * from ACC_insertNoChecks (1001,156949,'0000096',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,162524,'0000033',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,165659,'0000096',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,61933,'0000004',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,73197,'0000003',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,73199,'0000002',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,74017,'0000008',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,74750,'0000015',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,156949,'GO_REF:0000096',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,162524,'GO_REF:0000033',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,165659,'GO_REF:0000096',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,61933,'GO_REF:0000004',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,73197,'GO_REF:0000003',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,73199,'GO_REF:0000002',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,74017,'GO_REF:0000008',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,74750,'GO_REF:0000015',185,'Reference',-1,0,1);
 
 EOSQL
 

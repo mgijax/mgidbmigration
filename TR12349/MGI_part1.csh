@@ -104,6 +104,29 @@ ${PG_MGD_DBSCHEMADIR}/comments/VOC_Annot_Count_Cache_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
+#
+# update schema-version and public-version
+#
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
+
+delete from VOC_Vocab where _Vocab_key = 111;
+delete from ACC_LogicalDB where _LogicalDB_key = 182;
+select distinct annottype from VOC_Marker_Cache order by annottype;
+
+select * from ACC_insertNoChecks (1001,156949,'GO_REF:0000096',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,162524,'GO_REF:0000033',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,165659,'GO_REF:0000096',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,61933,'GO_REF:0000004',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,73197,'GO_REF:0000003',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,73199,'GO_REF:0000002',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,74017,'GO_REF:0000008',185,'Reference',-1,0,1);
+select * from ACC_insertNoChecks (1001,74750,'GO_REF:0000015',185,'Reference',-1,0,1);
+
+EOSQL
+
 date | tee -a ${LOG}
 echo 'step 3 : proisoformload' | tee -a $LOG || exit 1
 ${PROISOFORMLOAD}/bin/proisoform.sh | tee -a $LOG || exit 1
@@ -127,27 +150,6 @@ echo 'step 6 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-#
-# update schema-version and public-version
-#
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-update MGI_dbinfo set schema_version = '6-0-6', public_version = 'MGI 6.06';
-delete from VOC_Vocab where _Vocab_key = 111;
-delete from ACC_LogicalDB where _LogicalDB_key = 182;
-select distinct annottype from VOC_Marker_Cache order by annottype;
-
-select * from ACC_insertNoChecks (1001,156949,'GO_REF:0000096',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,162524,'GO_REF:0000033',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,165659,'GO_REF:0000096',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,61933,'GO_REF:0000004',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,73197,'GO_REF:0000003',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,73199,'GO_REF:0000002',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,74017,'GO_REF:0000008',185,'Reference',-1,0,1);
-select * from ACC_insertNoChecks (1001,74750,'GO_REF:0000015',185,'Reference',-1,0,1);
-
-EOSQL
 
 # final database check
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

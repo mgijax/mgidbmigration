@@ -5,18 +5,16 @@
 #
 # mgidbmigration : cvs/trunk
 # pgmgddbschema : branch
-# reports_db : branch
 #
+# mirror_wget : trunk
 # goload : trunk
 # annotload : trunk
 # proisoformload : trunk
 # ei : trunk
 # qcreports_db : trunk : GO_GPI_verify.py
+# reports_db : branch
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh
-#
-# mirror_wget : trunk
 # mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production
-#
 # lib_py_report : cvs/trunk
 # lib_py_dataload : cvs/trunk
 #
@@ -78,6 +76,10 @@ date | tee -a ${LOG}
 
 # do all schema/stored procedure changes before the loads are run
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_alleleWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Allele_Cache_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Annot_Count_Cache_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Marker_Cache_drop.object | tee -a $LOG || exit 1

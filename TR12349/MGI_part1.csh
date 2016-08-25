@@ -5,7 +5,6 @@
 #
 # mgidbmigration : cvs/trunk
 # pgmgddbschema : branch
-#
 # mirror_wget : trunk
 # goload : trunk
 # annotload : trunk
@@ -27,6 +26,7 @@
 # remove as these are now called from goload/go.sh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+# add: prod/dailytasks.csh: ${PROISOFORMLOAD}/bin/proisoform.sh
 #
 # mirror_wget things to do:
 #

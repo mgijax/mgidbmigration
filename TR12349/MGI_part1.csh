@@ -5,15 +5,16 @@
 #
 # mgidbmigration : cvs/trunk
 # pgmgddbschema : branch
-# goload : branch
 # reports_db : branch
-# annotload : branch
 #
-# mirror_wget : trunk
+# goload : trunk
+# annotload : trunk
 # proisoformload : trunk
 # ei : trunk
 # qcreports_db : trunk : GO_GPI_verify.py
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh
+#
+# mirror_wget : trunk
 # mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production
 #
 # lib_py_report : cvs/trunk
@@ -124,6 +125,11 @@ select * from ACC_insertNoChecks (1001,73197,'GO_REF:0000003',185,'Reference',-1
 select * from ACC_insertNoChecks (1001,73199,'GO_REF:0000002',185,'Reference',-1,0,1);
 select * from ACC_insertNoChecks (1001,74017,'GO_REF:0000008',185,'Reference',-1,0,1);
 select * from ACC_insertNoChecks (1001,74750,'GO_REF:0000015',185,'Reference',-1,0,1);
+
+select * from VOC_Vocab where _Vocab_key = 112;
+update VOC_Vocab set name = 'Proteoform' where _Vocab_key = 112;
+select * from VOC_AnnotType where _annottype_key = 1019;
+update VOC_AnnotType set name = 'Proteoform/Marker' where _annottype_key = 1019;
 
 EOSQL
 

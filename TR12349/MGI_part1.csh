@@ -8,6 +8,7 @@
 # mirror_wget : trunk
 # goload : trunk
 # annotload : trunk
+# assocload : trunk
 # proisoformload : trunk
 # ei : trunk
 # qcreports_db : trunk : GO_GPI_verify.py
@@ -130,8 +131,11 @@ select * from ACC_insertNoChecks (1001,74750,'GO_REF:0000015',185,'Reference',-1
 
 select * from VOC_Vocab where _Vocab_key = 112;
 update VOC_Vocab set name = 'Proteoform' where _Vocab_key = 112;
+select * from VOC_Vocab where _Vocab_key = 112;
+
 select * from VOC_AnnotType where _annottype_key = 1019;
 update VOC_AnnotType set name = 'Proteoform/Marker' where _annottype_key = 1019;
+select * from VOC_AnnotType where _annottype_key = 1019;
 
 EOSQL
 

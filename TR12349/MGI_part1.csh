@@ -22,13 +22,12 @@
 # gaf_fprocessor
 #
 # loadadmin
-# keep: prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
-# keep: prod/dailytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
-# remove as these are now called from goload/go.sh
-# remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
-# remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
-# add: prod/dailytasks.csh: ${PROISOFORMLOAD}/bin/proisoform.sh
-# add: prod/dailytasks.csh: ${GOLOAD}/gomousenoctua/gomousenoctua.sh
+# remove as these are now called from goload/godaily.sh and goload/go.sh
+# remove prod/dailytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
+# remove prod/dailytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+# remove prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
+# remove prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
+# add: prod/dailytasks.csh: ${GOLOAD}/gomousenoctua/godaily.sh
 #
 # mirror_wget things to do:
 #
@@ -143,25 +142,20 @@ insert into BIB_Dataset values(1012, 'PRO', 'PRO', 'BIB_PRO_Exists', 13, 0, 1000
 EOSQL
 
 date | tee -a ${LOG}
-echo 'step 3 : proisoformload' | tee -a $LOG || exit 1
-${PROISOFORMLOAD}/bin/proisoform.sh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo 'step 4 : goload (goamousenoctua)' | tee -a $LOG || exit 1
+echo 'step 3 : goload (goamousenoctua)' | tee -a $LOG || exit 1
 ${GOLOAD}/go.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 # this will run MGI_deletePrivateData.csh
 #date | tee -a ${LOG}
-#echo 'step 5 : voc_cache_markers' | tee -a $LOG || exit 1
+#echo 'step 4 : voc_cache_markers' | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Allele.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 6 : qc reports' | tee -a $LOG || exit 1
+echo 'step 5 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

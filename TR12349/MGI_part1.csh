@@ -32,7 +32,7 @@
 # mirror_wget things to do:
 #
 # cd /data/downloads
-# ln -s ./build.berkeleybop.org/view/GO/job/export-lego-to-legacy/lastSuccessfulBuild/artifact/legacy/gpad/production go_noctua
+# ln -s ./build.berkeleybop.org/job/gaf-check-mgi/lastBuild/artifact/gene_association.mgi.inf.gaf go_noctua
 #
 # mirror_wget : ftp.geneontology.org.goload : remove goa_human
 # change

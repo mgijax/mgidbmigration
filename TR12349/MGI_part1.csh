@@ -27,7 +27,7 @@
 # remove prod/dailytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
 # remove prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
 # remove prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
-# add: prod/dailytasks.csh: ${GOLOAD}/gomousenoctua/godaily.sh
+# add: prod/dailytasks.csh: ${GOLOAD}/godaily.sh
 #
 # mirror_wget things to do:
 #

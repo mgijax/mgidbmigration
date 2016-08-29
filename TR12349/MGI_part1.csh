@@ -28,6 +28,7 @@
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_annot_extensions_display_load.csh
 # remove :prod/sundaytasks.csh:${MGICACHELOAD}/go_isoforms_display_load.csh
 # add: prod/dailytasks.csh: ${PROISOFORMLOAD}/bin/proisoform.sh
+# add: prod/dailytasks.csh: ${GOLOAD}/gomousenoctua/gomousenoctua.sh
 #
 # mirror_wget things to do:
 #
@@ -136,6 +137,8 @@ select * from VOC_Vocab where _Vocab_key = 112;
 select * from VOC_AnnotType where _annottype_key = 1019;
 update VOC_AnnotType set name = 'Proteoform/Marker' where _annottype_key = 1019;
 select * from VOC_AnnotType where _annottype_key = 1019;
+
+insert into BIB_Dataset values(1012, 'PRO', 'PRO', 'BIB_PRO_Exists', 13, 0, 1000, 1000, now(), now());
 
 EOSQL
 

@@ -3,7 +3,7 @@
 #
 #
 # Migration for GXD: Index high throughput expression data project TR12330
-# (part 1 - optionally load dev database. etc)
+# (part 2 - run loads)
 #
 #
 # Products:

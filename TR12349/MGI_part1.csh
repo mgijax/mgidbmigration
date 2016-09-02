@@ -141,6 +141,7 @@ select * from VOC_AnnotType where _annottype_key = 1019;
 
 insert into BIB_Dataset values(1012, 'PRO', 'PRO', 'BIB_PRO_Exists', 13, 0, 1000, 1000, now(), now());
 
+-- move an 'In Progress' to 'Reserved' and remove 'In Progress'
 select * from VOC_Term where _Vocab_key = 16;
 select * from NOM_Marker where _NomenStatus_key = 166899;
 update NOM_Marker set _NomenStatus_key = 166901 where _NomenStatus_key = 166899;

@@ -148,6 +148,8 @@ update NOM_Marker set _NomenStatus_key = 166901 where _NomenStatus_key = 166899;
 delete from VOC_Term where _Term_key = 166899;
 select * from VOC_Term where _Vocab_key = 16;
 
+DROP FUNCTION IF EXISTS NOM_transferToMGD(int,int,int);
+
 EOSQL
 
 date | tee -a ${LOG}

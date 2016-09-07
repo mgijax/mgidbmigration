@@ -76,6 +76,12 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object
+${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object
+${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object
 
 echo "--- Create indexes ---"
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTExperiment_create.object

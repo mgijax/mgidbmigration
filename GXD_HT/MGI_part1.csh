@@ -6,6 +6,10 @@
 #
 # Products:
 #
+# mgidbmigration : cvs/trunk
+# pgmgddbschema : branch
+# mirror_wget : trunk
+# gxdhtload : trunk
 
 ###----------------------###
 ###--- initialization ---###
@@ -49,6 +53,10 @@ echo "--- Finished loading databases " | tee -a ${LOG}
 #
 # run migration
 #
+
+# run mirror_wget to get data
+${MIRROR_WGET}/download_package www.ebi.ac.uk.arrayexpress.json | tee -a $LOG || exit 1
+
 echo "--- Create tables ---"
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTExperiment_drop.object
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_drop.object
@@ -62,6 +70,12 @@ echo "--- Create keys ---"
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_create.object
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperimentVariable_create.object
+g
+echo "--- Create foreign keys ---"
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object
 
 echo "--- Create indexes ---"
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTExperiment_create.object
@@ -73,5 +87,17 @@ ${PG_MGD_DBSCHEMADIR}/comments/GXD_HTExperiment_create.object
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_HTSample_create.object
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_HTExperimentVariable_create.object
 
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+
+#
+# update schema-version and public-version
+#
 date | tee -a ${LOG}
-echo "--- Finished" | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+update MGI_dbinfo set schema_version = '6-0-7', public_version = 'MGI 6.07';
+
+EOSQL
+
+date | tee -a ${LOG}
+

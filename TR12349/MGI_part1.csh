@@ -4,19 +4,19 @@
 # Migration for TR12349
 #
 # mgidbmigration : cvs/trunk
-# pgmgddbschema : branch
-# mirror_wget : trunk
+# pgmgddbschema : trunk
+# mirror_wget : trunk : 6-0-6-2
 # goload : trunk
 # annotload : trunk
-# assocload : trunk
-# proisoformload : trunk
+# assocload : trunk : 6-0-6-1
+# proisoformload : trunk : 6-0-6-1
 # ei : trunk
 # qcreports_db : trunk : GO_GPI_verify.py
 # reports_db : branch
-# pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh
-# mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production
-# lib_py_report : cvs/trunk
-# lib_py_dataload : cvs/trunk
+# pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh : 6-0-6-1
+# mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production : 6-0-5-1
+# lib_py_report : cvs/trunk : 6-0-6-1
+# lib_py_dataload : cvs/trunk : 6-0-6-1
 #
 # obsolete:
 # gaf_fprocessor
@@ -166,6 +166,8 @@ select * from GXD_removeBadGelBand();
 delete from gxd_gelband
 where not exists (select 1 from gxd_gellane where gxd_gelband._gellane_key = gxd_gellane._gellane_key)
 ;
+
+delete from MRK_Status where _marker_status_key = 3;
 
 EOSQL
 

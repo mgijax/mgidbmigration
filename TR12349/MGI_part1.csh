@@ -118,10 +118,6 @@ ${PG_MGD_DBSCHEMADIR}/comments/VOC_Allele_Cache_create.object | tee -a $LOG || e
 ${PG_MGD_DBSCHEMADIR}/comments/VOC_Annot_Count_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/VOC_Marker_Cache_create.object | tee -a $LOG || exit 1
 
-${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG || exit 1
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
@@ -165,7 +161,27 @@ select * from VOC_Term where _Vocab_key = 16;
 
 DROP FUNCTION IF EXISTS NOM_transferToMGD(int,int,int);
 
+select * from GXD_removeBadGelBand();
+
+delete from gxd_gelband
+where not exists (select 1 from gxd_gellane where gxd_gelband._gellane_key = gxd_gellane._gellane_key)
+;
+
 EOSQL
+
+# re-run some foreign keys/clean up
+${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MLD_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MLD_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/PRB_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/PRB_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'step 3 : goload (goamousenoctua)' | tee -a $LOG || exit 1

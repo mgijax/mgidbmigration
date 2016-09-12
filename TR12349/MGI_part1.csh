@@ -3,16 +3,16 @@
 #
 # Migration for TR12349
 #
-# mgidbmigration : cvs/trunk
-# pgmgddbschema : trunk
+# mgidbmigration : cvs/trunk : 6-0-6-1
+# pgmgddbschema : trunk : 6-0-6-1
+# goload : trunk : 6-0-6-1
+# ei : trunk : 6-0-6-1
 # mirror_wget : trunk : 6-0-6-2
-# goload : trunk
-# annotload : trunk
+# annotload : trunk : 6-0-6-1
 # assocload : trunk : 6-0-6-1
 # proisoformload : trunk : 6-0-6-1
-# ei : trunk
-# qcreports_db : trunk : GO_GPI_verify.py
-# reports_db : branch
+# qcreports_db : trunk : GO_GPI_verify.py : qcreports_db-6-0-6-1
+# reports_db : trunk : 6-0-6-1
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh : 6-0-6-1
 # mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production : 6-0-5-1
 # lib_py_report : cvs/trunk : 6-0-6-1

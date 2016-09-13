@@ -14,7 +14,7 @@
 # qcreports_db : trunk : GO_GPI_verify.py : qcreports_db-6-0-6-1
 # reports_db : trunk : 6-0-6-1
 # pgdbutilities : trunk : sp/VOC_Cache_Other_Markers.csh : 6-0-6-1
-# mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production : 6-0-5-1
+# mgicacheload : trunk : inferredfrom.gomousenoctua : installed on production : 6-0-6-1
 # lib_py_report : cvs/trunk : 6-0-6-1
 # lib_py_dataload : cvs/trunk : 6-0-6-1
 #
@@ -32,7 +32,7 @@
 # mirror_wget things to do:
 #
 # cd /data/downloads
-# ln -s ./build.berkeleybop.org/job/export-lego-to-legacy/lastSuccessfulBuild/artifact/legacy/gpad/production/mgi.gpad go_noctua
+# ln -s ../build.berkeleybop.org/job/export-lego-to-legacy/lastSuccessfulBuild/artifact/legacy/gpad/production go_noctua
 #
 # mirror_wget : ftp.geneontology.org.goload : remove goa_human
 # change

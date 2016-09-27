@@ -63,6 +63,7 @@ touch ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package purl.obolibrary.org.eco.obo | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package ftp.pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package build.berkeleybop.org.goload | tee -a $LOG || exit 1

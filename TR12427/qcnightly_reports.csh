@@ -23,16 +23,16 @@ cd ${QCMGD}
 #    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 #end
 
-foreach i (GO_stats.py GO_GPI_verify.py)
+foreach i (HOM_AllOrganism.py HOM_MouseHumanSequence.py MGI_GeneOMIM.py MGI_GenePheno.py MGI_Geno_Disease.py MGI_Geno_NotDisease.py MGI_MarkerNames.py MGI_OMIM.py MRK_GeneTrap.py MRK_Sequence.py)
     echo `date`: $i | tee -a ${LOG}
     $i >>& ${LOG}
 end
 
-cd ${PUBRPTS}
-source ./Configuration
-cd daily
-foreach i (GO_gene_association.py GO_gpi.py)
-    echo `date`: $i | tee -a ${LOG}
-    $i >>& ${LOG}
+#cd ${PUBRPTS}
+#source ./Configuration
+#cd daily
+#foreach i (GO_gene_association.py GO_gpi.py)
+#    echo `date`: $i | tee -a ${LOG}
+#    $i >>& ${LOG}
 
 echo `date`: End nightly QC reports | tee -a ${LOG}

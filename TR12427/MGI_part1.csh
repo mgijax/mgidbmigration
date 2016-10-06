@@ -54,6 +54,22 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 --insert into VOC_AnnotType values (1023, 2, 125, 2, 53, 'DO/Marker (Dervied)', now(), now());
 --insert into VOC_AnnotType values (1024, 13, 106, 107, 108, 'HPO/DO', now(), now());
 
+--
+-- non-preferred OMIM ids (44) can be deleted
+--
+
+select * from ACC_Accession 
+where _MGIType_key = 13
+and _LogicalDB_key = 15
+and preferred = 0
+;
+
+delete from ACC_Accession 
+where _MGIType_key = 13
+and _LogicalDB_key = 15
+and preferred = 0
+;
+
 select accID
 from ACC_Accession
 where _MGIType_key = 13

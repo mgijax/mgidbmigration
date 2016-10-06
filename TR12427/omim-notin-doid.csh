@@ -28,6 +28,7 @@ select a1.accID, oo.term
 from ACC_Accession a1, VOC_Term oo
 where a1._MGIType_key = 13
 and a1._Object_key = oo._Term_key
+and a1.preferred = 1
 and oo._Vocab_key = 44
 and not exists (select 1 from ACC_Accession a2, VOC_Term oo2
 	where a1.accID = a2.accID
@@ -47,6 +48,7 @@ select a1.accID, oo.term
 from ACC_Accession a1, VOC_Term oo
 where a1._MGIType_key = 13
 and a1._Object_key = oo._Term_key
+and a1.preferred = 1
 and oo._Vocab_key = 44
 and not exists (select 1 from ACC_Accession a2, VOC_Term oo2
 	where a1.accID = a2.accID

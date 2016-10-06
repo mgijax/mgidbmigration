@@ -10,7 +10,7 @@
 
 cd `dirname $0` && source ${QCRPTS}/Configuration
 
-setenv LOG ${QCLOGSDIR}/`basename $0`.log
+setenv LOG `basename $0`.log
 rm -rf ${LOG}
 touch ${LOG}
 
@@ -18,21 +18,34 @@ echo `date`: Start nightly QC reports | tee -a ${LOG}
 
 cd ${QCMGD}
 
-#foreach i ()
-#    echo `date`: $i | tee -a ${LOG}
-#    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
-#end
-
-foreach i (HOM_AllOrganism.py HOM_MouseHumanSequence.py MGI_GeneOMIM.py MGI_GenePheno.py MGI_Geno_Disease.py MGI_Geno_NotDisease.py MGI_MarkerNames.py MGI_OMIM.py MRK_GeneTrap.py MRK_Sequence.py)
+foreach i (MRK_GOUnknown.sql)
     echo `date`: $i | tee -a ${LOG}
-    $i >>& ${LOG}
+    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
+end
+
+foreach i (GO_Combined_Report.py MRK_GOIEA.py)
+    echo `date`: $i | tee -a ${LOG}
+    $i | tee -a ${LOG}
+end
+
+cd ${QCWEEKLY}
+
+foreach i (VOC_OMIMObsolete.sql)
+    echo `date`: $i | tee -a ${LOG}
+    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
+end
+
+foreach i (ALL_OMIMNoMP.py ALL_Progress.py)
+    echo `date`: $i | tee -a ${LOG}
+    $i | tee -a ${LOG}
 end
 
 #cd ${PUBRPTS}
 #source ./Configuration
-#cd daily
-#foreach i (GO_gene_association.py GO_gpi.py)
+#cd weekly
+#foreach i (MGI_GeneOMIM.py MGI_OMIM.py MGI_iphone_app.py)
 #    echo `date`: $i | tee -a ${LOG}
-#    $i >>& ${LOG}
+#    $i | tee -a ${LOG}
+#end
 
 echo `date`: End nightly QC reports | tee -a ${LOG}

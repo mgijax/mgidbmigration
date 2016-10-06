@@ -114,14 +114,9 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 # reports : move to qcreports_db?
-./doid-notin-omim.csh
-./doslim.csh
-./omim-notin-doid.csh
-./omim-vs-doid.csh
-./omimallele.csh
-./omimgenotype.csh
-#./omimderivation.csh
-#./omimhuman.csh
+foreach i (o*.csh doid-notin-omim.csh.csh doslim.csh dovocab.csh)
+$i
+end
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

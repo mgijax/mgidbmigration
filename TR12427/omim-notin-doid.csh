@@ -23,7 +23,9 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 \echo ''
 \echo '-- omim-to-genotype (1005)'
+\echo '-- omim-to-allele (1012)'
 \echo ''
+(
 select a1.accID, oo.term
 from ACC_Accession a1, VOC_Term oo
 where a1._MGIType_key = 13
@@ -38,12 +40,7 @@ and not exists (select 1 from ACC_Accession a2, VOC_Term oo2
 	and oo2._Vocab_key = 125
 	)
 and exists (select 1 from VOC_Annot v where v._AnnotType_key = 1005 and v._Term_key = a1._Object_key)
-order by a1.accID
-;
-
-\echo ''
-\echo '-- omim-to-allele (1012)'
-\echo ''
+union all
 select a1.accID, oo.term
 from ACC_Accession a1, VOC_Term oo
 where a1._MGIType_key = 13
@@ -58,7 +55,8 @@ and not exists (select 1 from ACC_Accession a2, VOC_Term oo2
 	and oo2._Vocab_key = 125
 	)
 and exists (select 1 from VOC_Annot v where v._AnnotType_key = 1012 and v._Term_key = a1._Object_key)
-order by a1.accID
+)
+order by accID
 ;
 
 --\echo ''

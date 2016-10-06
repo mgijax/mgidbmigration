@@ -75,6 +75,11 @@ and _LogicalDB_key = 15
 and accID not like 'OMIM:%'
 ;
 
+--
+-- DO annotations need to be removed
+--
+delete from VOC_Annot where _AnnotType_key in (1020,1021,1022,1023,1024);
+
 EOSQL
 
 #
@@ -87,6 +92,9 @@ echo 'step 1 : vocload/OMIM.config' | tee -a $LOG || exit 1
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
+#
+# if using full load, delete VOC_Annot first
+#
 date | tee -a ${LOG}
 echo 'step 2 : vocload/DO.config' | tee -a $LOG || exit 1
 ${VOCLOAD}/runOBOFullLoad.sh DO.config | tee -a $LOG || exit 1

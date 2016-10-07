@@ -116,10 +116,10 @@ echo 'step 2 : vocload/DO.config' | tee -a $LOG || exit 1
 ${VOCLOAD}/runOBOFullLoad.sh DO.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 3 : omim-to-DO annotation translation' | tee -a $LOG || exit 1
-./do.sh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'step 3 : omim-to-DO annotation translation' | tee -a $LOG || exit 1
+#./do.sh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 5 : qc reports' | tee -a $LOG || exit 1

@@ -40,7 +40,7 @@ and not exists (select 1 from ACC_Accession a2, VOC_Term oo2
 	and oo2._Vocab_key = 125
 	)
 and exists (select 1 from VOC_Annot v where v._AnnotType_key = 1005 and v._Term_key = a1._Object_key)
-union all
+union 
 select a1.accID, oo.term
 from ACC_Accession a1, VOC_Term oo
 where a1._MGIType_key = 13

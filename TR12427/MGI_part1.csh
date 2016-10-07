@@ -121,6 +121,11 @@ date | tee -a ${LOG}
 #./do.sh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'step 4 : run omim cache' | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
 #date | tee -a ${LOG}
 #echo 'step 5 : qc reports' | tee -a $LOG || exit 1
 #./qcnightly_reports.csh | tee -a $LOG || exit 1

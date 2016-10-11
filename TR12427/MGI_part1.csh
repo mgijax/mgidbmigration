@@ -30,10 +30,10 @@ touch ${LOG}
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
-#date | tee -a ${LOG}
-#echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology | tee -a $LOG || exit 1
-#${MIRROR_WGET}/download_package data.omim.org.omim | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package data.omim.org.omim | tee -a $LOG || exit 1
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
@@ -103,12 +103,8 @@ echo 'step 1 : vocload/OMIM.config' | tee -a $LOG || exit 1
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-#
-# if using full load, delete VOC_Annot first
-#
 date | tee -a ${LOG}
 echo 'step 2 : vocload/DO.config' | tee -a $LOG || exit 1
-#${VOCLOAD}/runOBOFullLoad.sh DO.config | tee -a $LOG || exit 1
 ${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
@@ -122,10 +118,10 @@ echo 'step 4 : run omim cache' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo 'step 5 : qc reports' | tee -a $LOG || exit 1
-#./qcnightly_reports.csh | tee -a $LOG || exit 1
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+echo 'step 5 : qc reports' | tee -a $LOG || exit 1
+./qcnightly_reports.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
 # final database check
 #${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

@@ -93,7 +93,7 @@ and accID not like 'OMIM:%'
 --
 -- DO annotations need to be removed
 --
-delete from VOC_Annot where _AnnotType_key in (1020,1021,1022,1023,1024);
+--delete from VOC_Annot where _AnnotType_key in (1020,1021,1022,1023,1024);
 
 EOSQL
 
@@ -112,13 +112,14 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'step 2 : vocload/DO.config' | tee -a $LOG || exit 1
-${VOCLOAD}/runOBOFullLoad.sh DO.config | tee -a $LOG || exit 1
+#${VOCLOAD}/runOBOFullLoad.sh DO.config | tee -a $LOG || exit 1
+${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo 'step 3 : omim-to-DO annotation translation' | tee -a $LOG || exit 1
-#./do.sh | tee -a $LOG || exit 1
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+echo 'step 3 : omim-to-DO annotation translation' | tee -a $LOG || exit 1
+${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 4 : run omim cache' | tee -a $LOG || exit 1

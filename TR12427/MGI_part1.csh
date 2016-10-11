@@ -6,6 +6,7 @@
 # mgidbmigration : cvs/trunk : 
 # pgmgddbschema : git tr12427
 # vocload : git tr12427
+# pgdbutilities : git tr12427
 # reports_db : git need to make tr12427
 # mirror_wget-6-0-6-4
 #
@@ -50,7 +51,7 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 --insert into VOC_AnnotType values (1020, 12, 125, 43, 53, 'DO/Genotype', now(), now());
 --insert into VOC_AnnotType values (1021, 11, 125, 85, 84, 'DO/Allele', now(), now());
 --insert into VOC_AnnotType values (1022, 2, 125, 43, 53, 'DO/Human Marker', now(), now());
---insert into VOC_AnnotType values (1023, 2, 125, 2, 53, 'DO/Marker (Dervied)', now(), now());
+--insert into VOC_AnnotType values (1023, 2, 125, 2, 53, 'DO/Marker (Derived)', now(), now());
 --insert into VOC_AnnotType values (1024, 13, 106, 107, 108, 'HPO/DO', now(), now());
 
 --
@@ -89,11 +90,6 @@ where _MGIType_key = 13
 and _LogicalDB_key = 15
 and accID not like 'OMIM:%'
 ;
-
---
--- DO annotations need to be removed
---
---delete from VOC_Annot where _AnnotType_key in (1020,1021,1022,1023,1024);
 
 EOSQL
 

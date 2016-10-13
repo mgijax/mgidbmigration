@@ -131,9 +131,9 @@ date | tee -a ${LOG}
 echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/12000/12083/caches/caches.csh | tee -a $LOG || exit 1
 # testing only : remove as ${PG_DBUTILS}/sp/MGI_deletePrivateData.csh runs this when running public migration
-${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
-${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
-${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
+#${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
+#${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
+#${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
 date | tee -a ${LOG}
 
 #date | tee -a ${LOG}

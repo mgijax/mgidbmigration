@@ -136,17 +136,17 @@ ${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
 ${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
 date | tee -a ${LOG}
 
+#date | tee -a ${LOG}
+#echo 'step 7 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
+#/mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+
 # final database check
-#${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
-# reports : move to qcreports_db?
-foreach i (o*.csh doid-notin-omim.csh.csh doslim.csh dovocab.csh)
-$i
-end
-
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#
+#EOSQL
 
 echo "--- Finished" | tee -a ${LOG}
 

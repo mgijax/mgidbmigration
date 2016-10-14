@@ -7,6 +7,7 @@
 # pgmgddbschema : git tr12427
 # vocload : git tr12427
 # pgdbutilities : git tr12427
+# mgicacheload : git tr12427
 # ei : git tr12427
 # reports_db : git need to make tr12427
 # mirror_wget-6-0-6-4

@@ -62,7 +62,7 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 --insert into ACC_LogicalDB values (195, 'NCI', 'NCI Thesaurus', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (196, 'ORDO', 'Orphan Disease Ontology', 1, 1001, 1001, now(), now());
 
-update ACC_LogicalDB set name = 'HP' where _LogicalDB_key = 180;
+--update ACC_LogicalDB set name = 'HP' where _LogicalDB_key = 180;
 
 --
 -- non-preferred OMIM ids (44) can be deleted
@@ -145,10 +145,10 @@ echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit
 #${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
 date | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo 'step 7 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
-#/mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+echo 'step 7 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
+/mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
 # final database check
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

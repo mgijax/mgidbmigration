@@ -3,6 +3,11 @@ DATE: 10/03/2016
 STAFF: lec
 1) TR12427/Disease Ontology (DO)
 
+TAG: mgidbmigration-6-0-6-5
+DATE: 10/17/2016
+STAFF: dbm
+1) Conversion from CVS to Github
+
 TAG: mgidbmigration-6-0-6-4
 TAG: mgidbmigration-6-0-6-3
 TAG: mgidbmigration-6-0-6-2

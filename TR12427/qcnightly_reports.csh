@@ -18,7 +18,7 @@ echo `date`: Start nightly QC reports | tee -a ${LOG}
 
 cd ${QCMGD}
 
-foreach i (MRK_GOUnknown.sql)
+foreach i (MRK_GOUnknown.sql MRK_Reserved.sql)
     echo `date`: $i | tee -a ${LOG}
     ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end

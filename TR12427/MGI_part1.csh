@@ -8,6 +8,7 @@
 # vocload : git tr12427
 # pgdbutilities : git tr12427
 # mgicacheload : git tr12427
+# qcreports_db : git tr12427
 # ei : git tr12427
 # reports_db : git need to make tr12427
 # mirror_wget-6-0-6-4
@@ -62,7 +63,8 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 --insert into ACC_LogicalDB values (195, 'NCI', 'NCI Thesaurus', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (196, 'ORDO', 'Orphan Disease Ontology', 1, 1001, 1001, now(), now());
 
---update ACC_LogicalDB set name = 'HP' where _LogicalDB_key = 180;
+update ACC_LogicalDB set name = 'HPO' where _LogicalDB_key = 180;
+update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191
 
 --
 -- non-preferred OMIM ids (44) can be deleted

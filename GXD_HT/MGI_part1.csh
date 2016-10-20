@@ -70,7 +70,7 @@ echo "--- Create keys ---"
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_create.object
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperimentVariable_create.object
-g
+
 echo "--- Create foreign keys ---"
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object

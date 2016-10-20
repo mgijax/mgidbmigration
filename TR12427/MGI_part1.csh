@@ -13,6 +13,8 @@
 # reports_db : git need to make tr12427
 # mirror_wget-6-0-6-4
 #
+#
+# 
 
 ###----------------------###
 ###--- initialization ---###
@@ -113,22 +115,27 @@ EOSQL
 rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.clusters.*
 
 date | tee -a ${LOG}
-echo 'step 1 : omim-to-DO annotation translation' | tee -a $LOG || exit 1
+echo 'step 1 : vocload/OMIM.config' | tee -a $LOG || exit 1
+${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 2 : vocload/DO & omim-to-DO annotation translation' | tee -a $LOG || exit 1
 ${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 2 : run omim cache' | tee -a $LOG || exit 1
+echo 'step 3 : run omim cache' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 3 : qc reports' | tee -a $LOG || exit 1
+echo 'step 4 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 4 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
+echo 'step 5 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/12000/12083/caches/caches.csh | tee -a $LOG || exit 1
 # testing only : remove as ${PG_DBUTILS}/sp/MGI_deletePrivateData.csh runs this when running public migration
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
@@ -137,7 +144,7 @@ echo 'step 4 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 5 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
+echo 'step 6 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

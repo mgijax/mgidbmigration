@@ -23,7 +23,7 @@ foreach i (MRK_GOUnknown.sql MRK_Reserved.sql)
     ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end
 
-foreach i (GO_Combined_Report.py MRK_GOIEA.py)
+foreach i (GO_Combined_Report.py MRK_GOIEA.py MRK_QTL.py HMD_SymbolDiffs.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end

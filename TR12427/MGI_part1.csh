@@ -68,6 +68,8 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 update ACC_LogicalDB set name = 'HPO' where _LogicalDB_key = 180;
 update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191
 
+insert into DAG_DAG values(51,99561,13,'Disease Ontology','DOID',now(),now));
+
 --
 -- non-preferred OMIM ids (44) can be deleted
 --

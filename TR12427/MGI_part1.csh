@@ -65,9 +65,9 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 --insert into ACC_LogicalDB values (195, 'NCI', 'NCI Thesaurus', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (196, 'ORDO', 'Orphan Disease Ontology', 1, 1001, 1001, now(), now());
 
-insert into ACC_LogicalDB values (197, 'UMLS', 'United Medical Language System', 1, 1001, 1001, now(), now());
-insert into ACC_LogicalDB values (198, 'ICD10', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
-insert into ACC_LogicalDB values (199, 'ICD9', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
+insert into ACC_LogicalDB values (197, 'UMLS_CUI', 'United Medical Language System', 1, 1001, 1001, now(), now());
+insert into ACC_LogicalDB values (198, 'ICD10CM', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
+insert into ACC_LogicalDB values (199, 'ICD9CM', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
 
 update ACC_LogicalDB set name = 'HPO' where _LogicalDB_key = 180;
 update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;

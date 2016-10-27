@@ -70,7 +70,7 @@ insert into ACC_LogicalDB values (198, 'ICD10', 'International Classification of
 insert into ACC_LogicalDB values (199, 'ICD9', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
 
 update ACC_LogicalDB set name = 'HPO' where _LogicalDB_key = 180;
-update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191
+update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
 
 --
 -- non-preferred OMIM ids (44) can be deleted

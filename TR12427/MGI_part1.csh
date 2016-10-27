@@ -109,8 +109,9 @@ and _LogicalDB_key = 15
 and accID not like 'OMIM:%'
 ;
 
-insert into DAG_DAG values(51,99561,13,'Disease Ontology','DOID',now(),now());
-insert into VOC_VocabDAG values(125, 51, now(), now());
+delete from DAG_DAG where _DAG_key = 50;
+insert into DAG_DAG values(50,99561,13,'Disease Ontology','DOID',now(),now());
+insert into VOC_VocabDAG values(125, 50, now(), now());
 delete from VOC_Annot where _AnnotType_key in (1020, 1021, 1022, 1023, 1024);
 delete from VOC_Term where _Vocab_key = 125;
 

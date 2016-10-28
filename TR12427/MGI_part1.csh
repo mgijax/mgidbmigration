@@ -69,7 +69,6 @@ insert into ACC_LogicalDB values (197, 'UMLS_CUI', 'United Medical Language Syst
 insert into ACC_LogicalDB values (198, 'ICD10CM', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
 insert into ACC_LogicalDB values (199, 'ICD9CM', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
 
-update ACC_LogicalDB set name = 'HPO' where _LogicalDB_key = 180;
 update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
 
 --

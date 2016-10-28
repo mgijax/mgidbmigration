@@ -13,6 +13,8 @@
 # reports_db : git need to make tr12427
 # mirror_wget-6-0-6-4
 #
+#
+# 
 
 ###----------------------###
 ###--- initialization ---###
@@ -63,8 +65,12 @@ delete from MGI_SynonymType where _synonymtype_key = 1031;
 --insert into ACC_LogicalDB values (195, 'NCI', 'NCI Thesaurus', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (196, 'ORDO', 'Orphan Disease Ontology', 1, 1001, 1001, now(), now());
 
+insert into ACC_LogicalDB values (197, 'UMLS_CUI', 'United Medical Language System', 1, 1001, 1001, now(), now());
+insert into ACC_LogicalDB values (198, 'ICD10CM', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
+insert into ACC_LogicalDB values (199, 'ICD9CM', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
+
 update ACC_LogicalDB set name = 'HPO' where _LogicalDB_key = 180;
-update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191
+update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
 
 --
 -- non-preferred OMIM ids (44) can be deleted
@@ -103,7 +109,11 @@ and _LogicalDB_key = 15
 and accID not like 'OMIM:%'
 ;
 
+delete from DAG_DAG where _DAG_key = 50;
+insert into DAG_DAG values(50,99561,13,'Disease Ontology','DOID',now(),now());
+insert into VOC_VocabDAG values(125, 50, now(), now());
 delete from VOC_Annot where _AnnotType_key in (1020, 1021, 1022, 1023, 1024);
+delete from VOC_Term where _Vocab_key = 125;
 
 EOSQL
 
@@ -118,28 +128,22 @@ ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 2 : vocload/DO.config' | tee -a $LOG || exit 1
-${VOCLOAD}/runOBOFullLoad.sh DO.config | tee -a $LOG || exit 1
-#${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo 'step 3 : omim-to-DO annotation translation' | tee -a $LOG || exit 1
+echo 'step 2 : vocload/DO & omim-to-DO annotation translation' | tee -a $LOG || exit 1
 ${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 4 : run omim cache' | tee -a $LOG || exit 1
+echo 'step 3 : run omim cache' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 5 : qc reports' | tee -a $LOG || exit 1
+echo 'step 4 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
+echo 'step 5 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/12000/12083/caches/caches.csh | tee -a $LOG || exit 1
 # testing only : remove as ${PG_DBUTILS}/sp/MGI_deletePrivateData.csh runs this when running public migration
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
@@ -148,7 +152,7 @@ echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 7 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
+echo 'step 6 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

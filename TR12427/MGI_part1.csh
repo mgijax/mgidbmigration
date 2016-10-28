@@ -53,23 +53,20 @@ update MGI_dbinfo set schema_version = '6-0-8', public_version = 'MGI 6.08';
 delete from MGI_Synonym where _synonymtype_key = 1031;
 delete from MGI_SynonymType where _synonymtype_key = 1031;
 
+--update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
 --insert into VOC_AnnotType values (1020, 12, 125, 43, 53, 'DO/Genotype', now(), now());
 --insert into VOC_AnnotType values (1021, 11, 125, 85, 84, 'DO/Allele', now(), now());
 --insert into VOC_AnnotType values (1022, 2, 125, 43, 53, 'DO/Human Marker', now(), now());
 --insert into VOC_AnnotType values (1023, 2, 125, 2, 53, 'DO/Marker (Derived)', now(), now());
 --insert into VOC_AnnotType values (1024, 13, 106, 107, 108, 'HPO/DO', now(), now());
-
 --insert into ACC_LogicalDB values (192, 'EFO', 'Environmental Factor Ontology', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (193, 'KEGG', 'KEGG Pathway Database', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (194, 'MESH', 'MESH (Medical Subject Headings)', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (195, 'NCI', 'NCI Thesaurus', 1, 1001, 1001, now(), now());
 --insert into ACC_LogicalDB values (196, 'ORDO', 'Orphan Disease Ontology', 1, 1001, 1001, now(), now());
-
-insert into ACC_LogicalDB values (197, 'UMLS_CUI', 'United Medical Language System', 1, 1001, 1001, now(), now());
-insert into ACC_LogicalDB values (198, 'ICD10CM', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
-insert into ACC_LogicalDB values (199, 'ICD9CM', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
-
-update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
+--insert into ACC_LogicalDB values (197, 'UMLS_CUI', 'United Medical Language System', 1, 1001, 1001, now(), now());
+--insert into ACC_LogicalDB values (198, 'ICD10CM', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
+--insert into ACC_LogicalDB values (199, 'ICD9CM', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
 
 --
 -- non-preferred OMIM ids (44) can be deleted

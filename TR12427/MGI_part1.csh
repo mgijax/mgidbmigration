@@ -6,7 +6,9 @@
 # mgidbmigration : cvs/trunk : 
 # pgmgddbschema : git tr12427
 # vocload : git tr12427
-# annotload : git tr12427
+# doload : git trunk
+# annotload :git tr12427
+# rollupload : git tr12427
 # pgdbutilities : git tr12427
 # mgicacheload : git tr12427
 # qcreports_db : git tr12427

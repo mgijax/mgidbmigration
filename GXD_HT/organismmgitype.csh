@@ -23,6 +23,8 @@ touch ${LOG}
 
 date | tee -a ${LOG}
 
+${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 ALTER TABLE MGI_Organism_MGIType RENAME TO MGI_Organism_MGIType_old;
 EOSQL
@@ -36,7 +38,7 @@ SELECT _Organism_key, _MGIType_key, 1, _CreatedBy_key, _ModifiedBy_Key, creation
 FROM MGI_Organism_MGIType_old
 
 EOSQL
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
+
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1

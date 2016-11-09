@@ -13,7 +13,7 @@
 # mgicacheload : git tr12427
 # qcreports_db : git tr12427
 # ei : git tr12427
-# reports_db : git need to make tr12427
+# reports_db : git tr12427
 # mirror_wget-6-0-6-4
 #
 #
@@ -56,6 +56,7 @@ update MGI_dbinfo set schema_version = '6-0-8', public_version = 'MGI 6.08';
 delete from MGI_Synonym where _synonymtype_key = 1031;
 delete from MGI_SynonymType where _synonymtype_key = 1031;
 
+update ACC_LogicalDB set name = 'HP' where _logicaldb_key = 180;
 --update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
 --insert into VOC_AnnotType values (1020, 12, 125, 43, 53, 'DO/Genotype', now(), now());
 --insert into VOC_AnnotType values (1021, 11, 125, 85, 84, 'DO/Allele', now(), now());

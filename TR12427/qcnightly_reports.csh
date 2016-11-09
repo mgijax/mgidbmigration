@@ -40,12 +40,12 @@ foreach i (ALL_OMIMNoMP.py ALL_Progress.py)
     $i | tee -a ${LOG}
 end
 
-#cd ${PUBRPTS}
-#source ./Configuration
-#cd weekly
-#foreach i (MGI_GeneOMIM.py MGI_OMIM.py MGI_iphone_app.py)
-#    echo `date`: $i | tee -a ${LOG}
-#    $i | tee -a ${LOG}
-#end
+cd ${PUBRPTS}
+source ./Configuration
+cd weekly
+foreach i (MGI_GeneOMIM.py MGI_GenePhenoDO.py MGI_DO.py MGI_GenePhenoOMIM.py MGI_OMIM.py)
+    echo `date`: $i | tee -a ${LOG}
+    $i | tee -a ${LOG}
+end
 
 echo `date`: End nightly QC reports | tee -a ${LOG}

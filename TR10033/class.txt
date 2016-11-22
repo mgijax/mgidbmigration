@@ -1,3 +1,0 @@
-Expression	Expression
-Phenotypes	Phenotypes
-Molecular	Molecular

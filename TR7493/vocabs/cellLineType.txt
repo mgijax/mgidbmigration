@@ -1,4 +1,0 @@
-Embryonic Stem Cell	ES cell
-Spermatogonial Stem Cell	SS cell
-Not Specified	NS
-Not Applicable	NA

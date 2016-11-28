@@ -118,6 +118,17 @@ delete from VOC_Term where _Vocab_key = 125;
 
 EOSQL
 
+${PG_MGD_DBSCHEMADIR}/table/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
+
 #
 # obsolete
 #
@@ -138,27 +149,13 @@ echo 'step 3 : run omim cache' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-echo 'step 4 : run omim cache' | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
-${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo 'step 5 : qc reports' | tee -a $LOG || exit 1
+echo 'step 4 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
+echo 'step 5 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/12000/12083/caches/caches.csh | tee -a $LOG || exit 1
 # testing only : remove as ${PG_DBUTILS}/sp/MGI_deletePrivateData.csh runs this when running public migration
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
@@ -167,7 +164,7 @@ echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 7 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
+echo 'step 6 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 

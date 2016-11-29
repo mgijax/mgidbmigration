@@ -47,5 +47,7 @@ foreach i (MGI_OMIM.py MGI_DO.py MGI_GenePheno.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end
+#cd ${PUBRPTS}/mgimarkerfeed
+#./mgimarkerfeed_reports.csh
 
 echo `date`: End nightly QC reports | tee -a ${LOG}

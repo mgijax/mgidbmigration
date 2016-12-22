@@ -10,14 +10,12 @@
 # annotload :git tr12427
 # rollupload : git tr12427
 # pgdbutilities : git tr12427
-# mgicacheload : git tr12427
 # qcreports_db : git tr12427
+# reports_db : git tr12427
+# mgicacheload : git tr12427
 # mrkcacheload : git tr12427
 # ei : git tr12427
-# reports_db : git tr12427
 # mirror_wget-6-0-6-4
-#
-#
 # 
 
 ###----------------------###
@@ -43,8 +41,6 @@ date | tee -a ${LOG}
 echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package data.omim.org.omim | tee -a $LOG || exit 1
-
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
 #
 # update schema-version and public-version
@@ -113,7 +109,7 @@ and accID not like 'OMIM:%'
 delete from DAG_DAG where _DAG_key = 50;
 insert into DAG_DAG values(50,99561,13,'Disease Ontology','DOID',now(),now());
 insert into VOC_VocabDAG values(125, 50, now(), now());
-delete from VOC_Annot where _AnnotType_key in (1020, 1021, 1022, 1023, 1024);
+delete from VOC_Annot where _AnnotType_key in (1020, 1021, 1022, 1023, 1024, 1025, 1026);
 delete from VOC_Term where _Vocab_key = 125;
 
 EOSQL
@@ -172,6 +168,9 @@ date | tee -a ${LOG}
 
 # final database check
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_create.object | tee -a $LOG || exit 1
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

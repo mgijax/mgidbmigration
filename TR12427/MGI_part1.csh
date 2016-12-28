@@ -3,19 +3,19 @@
 #
 # Migration for TR12427/Disease Ontology
 #
-# mgidbmigration : cvs/trunk : 
-# pgmgddbschema : git tr12427
-# vocload : git tr12427
-# doload : git trunk
 # annotload :git tr12427
-# rollupload : git tr12427
+# doload : git trunk
+# ei : git tr12427
+# mgicacheload : git tr12427
+# mgidbmigration : git/trunk : 
+# mirror_wget-6-0-6-4
+# mrkcacheload : git tr12427
 # pgdbutilities : git tr12427
+# pgmgddbschema : git tr12427
 # qcreports_db : git tr12427
 # reports_db : git tr12427
-# mgicacheload : git tr12427
-# mrkcacheload : git tr12427
-# ei : git tr12427
-# mirror_wget-6-0-6-4
+# rollupload : git tr12427
+# vocload : git tr12427
 # 
 
 ###----------------------###

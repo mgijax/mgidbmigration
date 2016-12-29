@@ -1,7 +1,6 @@
 #!/bin/csh -fx
 
-#
-# Migration for TR12427/Disease Ontology
+# # Migration for TR12427/Disease Ontology
 #
 # annotload :git tr12427
 # doload : git trunk
@@ -166,9 +165,15 @@ echo 'step 6 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'step 7 : re-run statistics' | tee -a $LOG || exit 1
+./statschunk.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
 # final database check
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1

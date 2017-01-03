@@ -171,6 +171,8 @@ ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a 
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 

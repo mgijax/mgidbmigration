@@ -21,10 +21,6 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
--- obsolete statistic/organisms no longer exist in MGD
-delete from mgi_statistic where _statistic_key in (97, 102)
-;
-
 update mgi_statisticsql
 set sqlchunk = regexp_replace(sqlchunk, 'IN \(1,3\)', '= 1', 'g')
 where sqlchunk like '%IN (1,3)%'

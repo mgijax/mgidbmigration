@@ -165,11 +165,6 @@ echo 'step 6 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 7 : re-run statistics' | tee -a $LOG || exit 1
-./statschunk.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-
 # final database check
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1

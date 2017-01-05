@@ -7,7 +7,7 @@
 # ei : git tr12427
 # mgicacheload : git tr12427
 # mgidbmigration : git/trunk : 
-# mirror_wget-6-0-6-4
+# mirror_wget : git trunk
 # mrkcacheload : git tr12427
 # pgdbutilities : git tr12427
 # pgmgddbschema : git tr12427
@@ -173,6 +173,7 @@ date | tee -a ${LOG}
 # final database check
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_create.object | tee -a $LOG || exit 1

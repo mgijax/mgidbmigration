@@ -116,6 +116,8 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/table/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GO_Tracking_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GO_Tracking_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG || exit 1

@@ -15,6 +15,7 @@
 # reports_db : git tr12427
 # rollupload : git tr12427
 # vocload : git tr12427
+# lib_py_postgres : cvs (TR12069)
 # 
 
 ###----------------------###

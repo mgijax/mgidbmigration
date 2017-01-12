@@ -47,6 +47,10 @@ foreach i (MGI_OMIM.py MGI_DO.py MGI_GenePheno.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end
+foreach i (VOC_DOAnnotNotInSlim.sql)
+    echo `date`: $i | tee -a ${LOG}
+    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
+end
 #cd ${PUBRPTS}/mgimarkerfeed
 #./mgimarkerfeed_reports.csh
 

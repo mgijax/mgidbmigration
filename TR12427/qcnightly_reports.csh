@@ -30,12 +30,12 @@ end
 
 cd ${QCWEEKLY}
 
-foreach i (VOC_OMIMObsolete.sql)
+foreach i (VOC_DOAnnotNotInSlim.sql VOC_OMIMObsolete.sql)
     echo `date`: $i | tee -a ${LOG}
     ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end
 
-foreach i (ALL_OMIMNoMP.py ALL_Progress.py)
+foreach i (ALL_OMIMNoMP.py VOC_OMIMDOMult.py VOC_OMIMDOObsolete.py VOC_OMIMGenotypeNoMapDO.py VOC_OMIMDOMult.py  VOC_OMIMDOObsolete.py  VOC_OMIMGenotypeNoMapDO.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end
@@ -46,10 +46,6 @@ cd weekly
 foreach i (MGI_OMIM.py MGI_DO.py MGI_GenePheno.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
-end
-foreach i (VOC_DOAnnotNotInSlim.sql)
-    echo `date`: $i | tee -a ${LOG}
-    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end
 #cd ${PUBRPTS}/mgimarkerfeed
 #./mgimarkerfeed_reports.csh

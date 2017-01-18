@@ -9,13 +9,16 @@
 # mgidbmigration : git/trunk : 
 # mirror_wget : git trunk
 # mrkcacheload : git tr12427
+# omim_hpoload : git tr12427
 # pgdbutilities : git tr12427
 # pgmgddbschema : git tr12427
 # qcreports_db : git tr12427
 # reports_db : git tr12427
 # rollupload : git tr12427
 # vocload : git tr12427
-# lib_py_postgres : cvs (TR12069)
+# lib_py_postgres : git tr12427 (TR12069)
+#
+# nomenload : on demand
 # 
 
 ###----------------------###

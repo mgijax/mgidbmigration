@@ -44,6 +44,7 @@ date | tee -a ${LOG}
 echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology | tee -a $LOG || exit 1
 ${MIRROR_WGET}/download_package data.omim.org.omim | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package compbio.charite.de.phenotype_annotation | tee -a $LOG || exit 1
 
 #
 # update schema-version and public-version
@@ -143,37 +144,48 @@ ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 2 : vocload/DO & omim-to-DO annotation translation' | tee -a $LOG || exit 1
+echo 'step 2 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
+${OMIMHPOLOAD}/bin/omim_hpoload.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 3 : vocload/DO & omim-to-DO annotation translation' | tee -a $LOG || exit 1
 ${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 3 : run omim cache' | tee -a $LOG || exit 1
+echo 'step 4 : run omim cache' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 4 : qc reports' | tee -a $LOG || exit 1
+echo 'step 5 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 5 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
+echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/12000/12083/caches/caches.csh | tee -a $LOG || exit 1
 # testing only : remove as ${PG_DBUTILS}/sp/MGI_deletePrivateData.csh runs this when running public migration
-#${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
-#${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
-#${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 6 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
+echo 'step 7 : TR11083/nomenclature merge' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/11000/11083/tr11083.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 7 : bib_refs' | tee -a $LOG || exit 1
+echo 'step 8 : bib_refs' | tee -a $LOG || exit 1
 ./bibrefs.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 9 : htmpload (for bobs/comment out when no longer needed))' | tee -a $LOG || exit 1
+${MIRROR_WGET}/download_package www.ebi.ac.uk.impc.json
+${MIRROR_WGET}/download_package www.mousephenotype.org.reports
+rm -rf $DATALOADSOUTPUT/mgi/htmpload/impcmpload/input/last* | tee -a $LOG
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config | tee -a $LOG
+${ALLCACHELOAD}/allelecombination.csh | tee -a $LOG
 date | tee -a ${LOG}
 
 # final database check

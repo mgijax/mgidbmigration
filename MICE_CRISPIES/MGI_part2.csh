@@ -31,9 +31,9 @@ date | tee -a ${LOG}
 echo "--- Load CRISPR  Data ---"  | tee -a ${LOG}
 ${EMALLOAD}/bin/emalload.sh ${EMALLOAD}/impc.config
 
-#date | tee -a ${LOG}
-#echo "--- Run IMPC HTMP Load ---"  | tee -a ${LOG}
-#${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config
+date | tee -a ${LOG}
+echo "--- Run IMPC HTMP Load ---"  | tee -a ${LOG}
+${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config
 `
 echo "--- done running loads ---" | tee -a ${LOG}
 

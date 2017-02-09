@@ -193,6 +193,7 @@ ${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Reference_Assoc_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/MGI_NoteType_Marker_View_create.object | tee -a $LOG || exit 1

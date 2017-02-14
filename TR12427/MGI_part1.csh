@@ -2,23 +2,22 @@
 
 # # Migration for TR12427/Disease Ontology
 #
-# annotload :git tr12427
-# doload : git trunk
-# ei : git tr12427
-# mgicacheload : git tr12427
 # mgidbmigration : git/trunk : 
 # mirror_wget : git trunk
-# mrkcacheload : git tr12427
-# omim_hpoload : git tr12427
-# pgdbutilities : git tr12427
-# pgmgddbschema : git tr12427
-# qcreports_db : git tr12427
-# reports_db : git tr12427
-# rollupload : git tr12427
-# vocload : git tr12427
-# lib_py_postgres : git tr12427 (TR12069)
-#
-# nomenload : on demand
+# annotload-6-0-8-1
+# doload-6-0-8-1
+# ei-6-0-8-1
+# mgicacheload-6-0-8-1
+# mrkcacheload-6-0-8-1
+# omim_hpoload-6-0-8-1
+# pgdbutilities-6-0-8-1
+# pgmgddbschema-6-0-8-1
+# qcreports_db-6-0-8-2
+# reports_db-6-0-8-1
+# rollupload-6-0-8-1
+# vocload-6-0-8-1
+# lib_py_postgres-6-0-8-1
+# nomenload-6-0-8-1
 # 
 
 ###----------------------###

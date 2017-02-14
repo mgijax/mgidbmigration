@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-8-1
+DATE: 10/03/2016, 02/14/2017
+STAFF: lec
+1) TR12427/Disease Ontology (DO)
+
 TAG: mgidbmigration-6-0-6-10
 DATE: 11/16/2016
 STAFF: sc
@@ -14,11 +19,6 @@ TAG: mgidbmigration-6-0-6-6
 DATE: 10/26/2016
 STAFF: sc
 1) TR12370 added GXD_HT
-
-TAG: mgidbmigration-6-0-?
-DATE: 10/03/2016
-STAFF: lec
-1) TR12427/Disease Ontology (DO)
 
 TAG: mgidbmigration-6-0-6-5
 DATE: 10/17/2016

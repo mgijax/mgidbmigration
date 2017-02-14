@@ -1,6 +1,6 @@
 #!/bin/csh -fx
 
-# # Migration for TR12427/Disease Ontology
+# Migration for TR12427/Disease Ontology
 #
 # mgidbmigration : git/trunk : 
 # mirror_wget : git trunk
@@ -57,20 +57,6 @@ delete from MGI_Synonym where _synonymtype_key = 1031;
 delete from MGI_SynonymType where _synonymtype_key = 1031;
 
 update ACC_LogicalDB set name = 'HP' where _logicaldb_key = 180;
---update ACC_LogicalDB set name = 'Disease Ontology' where _logicaldb_key = 191;
---insert into VOC_AnnotType values (1020, 12, 125, 43, 53, 'DO/Genotype', now(), now());
---insert into VOC_AnnotType values (1021, 11, 125, 85, 84, 'DO/Allele', now(), now());
---insert into VOC_AnnotType values (1022, 2, 125, 43, 53, 'DO/Human Marker', now(), now());
---insert into VOC_AnnotType values (1023, 2, 125, 2, 53, 'DO/Marker (Derived)', now(), now());
---insert into VOC_AnnotType values (1024, 13, 106, 107, 108, 'HPO/DO', now(), now());
---insert into ACC_LogicalDB values (192, 'EFO', 'Environmental Factor Ontology', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (193, 'KEGG', 'KEGG Pathway Database', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (194, 'MESH', 'MESH (Medical Subject Headings)', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (195, 'NCI', 'NCI Thesaurus', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (196, 'ORDO', 'Orphan Disease Ontology', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (197, 'UMLS_CUI', 'United Medical Language System', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (198, 'ICD10CM', 'International Classification of Diseases, Tenth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
---insert into ACC_LogicalDB values (199, 'ICD9CM', 'International Classification of Diseases, Ninth Revision, Clinical Modification', 1, 1001, 1001, now(), now());
 
 --
 -- non-preferred OMIM ids (44) can be deleted
@@ -157,15 +143,14 @@ echo 'step 4 : run omim cache' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 5 : qc reports' | tee -a $LOG || exit 1
-./qcnightly_reports.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'step 5 : qc reports' | tee -a $LOG || exit 1
+#./qcnightly_reports.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 6 : adding cache key to cache tables (TR12083)' | tee -a $LOG || exit 1
 /mgi/all/wts_projects/12000/12083/caches/caches.csh | tee -a $LOG || exit 1
-# testing only : remove as ${PG_DBUTILS}/sp/MGI_deletePrivateData.csh runs this when running public migration
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
@@ -176,15 +161,6 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step 8 : bib_refs' | tee -a $LOG || exit 1
 ./bibrefs.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo 'step 9 : htmpload (for bobs/comment out when no longer needed))' | tee -a $LOG || exit 1
-${MIRROR_WGET}/download_package www.ebi.ac.uk.impc.json
-${MIRROR_WGET}/download_package www.mousephenotype.org.reports
-rm -rf $DATALOADSOUTPUT/mgi/htmpload/impcmpload/input/last* | tee -a $LOG
-${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config | tee -a $LOG
-${ALLCACHELOAD}/allelecombination.csh | tee -a $LOG
 date | tee -a ${LOG}
 
 # final database check

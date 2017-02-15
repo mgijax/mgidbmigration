@@ -18,6 +18,7 @@
 # vocload-6-0-8-1
 # lib_py_postgres-6-0-8-1
 # nomenload-6-0-8-1
+# seqcacheload-6-0-8-1
 # 
 
 ###----------------------###
@@ -161,6 +162,22 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step 8 : bib_refs' | tee -a $LOG || exit 1
 ./bibrefs.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 9 : seqcacheload/seqmarker.csh' | tee -a $LOG || exit 1
+${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG || exit 1
+${SEQCACHELOAD}/seqprobe.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 10 : seqcacheload/seqmarker.csh' | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrklabel.csh | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrkref.csh | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrkprobe.csh | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrkmcv.csh | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrkomim.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 # final database check

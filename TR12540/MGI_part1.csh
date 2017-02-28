@@ -11,6 +11,12 @@
 # qcreports_db :
 # reports_db :
 # 
+#if /mgi/all/wts_projects/12000/12083/allele | tee -a $LOG || exit 1
+#	ei
+#	alleleload
+#	emalload
+#	targetedalleleload
+#	pgmgddbschema
 
 ###----------------------###
 ###--- initialization ---###
@@ -76,7 +82,12 @@ ${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 6 : qc reports' | tee -a $LOG || exit 1
+echo 'step 6 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
+${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 7 : qc reports' | tee -a $LOG || exit 1
 ./qcnightly_reports.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
@@ -85,6 +96,14 @@ date | tee -a ${LOG}
 #./varchars.csh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
+#date | tee -a ${LOG}
+#echo 'step 8 : cleanobjects.sh' | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+
+${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
+
 # final database check
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
@@ -92,7 +111,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 --delete from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 --delete from VOC_AnnotType where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
---drop table mrk_omim_cache;
+--drop table MRK_OMIM_Cache;
 EOSQL
 
 echo "--- Finished" | tee -a ${LOG}

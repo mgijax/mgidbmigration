@@ -92,12 +92,12 @@ echo 'step 7 : qc reports' | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 7 : varchars' | tee -a $LOG || exit 1
+#echo 'step 8 : varchars' | tee -a $LOG || exit 1
 #./varchars.csh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 8 : cleanobjects.sh' | tee -a $LOG || exit 1
+#echo 'step 9 : cleanobjects.sh' | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 

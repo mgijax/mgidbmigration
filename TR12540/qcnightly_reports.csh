@@ -18,15 +18,15 @@ echo `date`: Start nightly QC reports | tee -a ${LOG}
 
 cd ${QCMGD}
 
-foreach i (MRK_GOUnknown.sql)
-    echo `date`: $i | tee -a ${LOG}
-    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
-end
+#foreach i ()
+#    echo `date`: $i | tee -a ${LOG}
+#    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
+#end
 
-foreach i (GO_Combined_Report.py MRK_GOIEA.py)
-    echo `date`: $i | tee -a ${LOG}
-    $i | tee -a ${LOG}
-end
+#foreach i ()
+#    echo `date`: $i | tee -a ${LOG}
+#    $i | tee -a ${LOG}
+#end
 
 cd ${QCWEEKLY}
 
@@ -35,7 +35,7 @@ foreach i (VOC_DOAnnotNotInSlim.sql VOC_OMIMObsolete.sql)
     ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end
 
-foreach i (ALL_OMIMNoMP.py VOC_OMIMDOMult.py VOC_OMIMDOObsolete.py VOC_OMIMGenotypeNoMapDO.py VOC_OMIMDOMult.py  VOC_OMIMDOObsolete.py  VOC_OMIMGenotypeNoMapDO.py)
+foreach i (ALL_OMIMNoMP.py VOC_OMIMDOMult.py VOC_OMIMDOObsolete.py VOC_OMIMGenotypeNoMapDO.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end

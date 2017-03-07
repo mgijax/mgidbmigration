@@ -63,13 +63,12 @@ touch ${LOG}
 #echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
 #scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology/doid-merged.obo
 #scp bhmgiapp01:/data/downloads/data.omim.org/omim.txt.gz /data/downloads/data.omim.org
-#scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
+#scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab /data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
 
 #
 # update schema-version and public-version
 #
 #
-
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-10', public_version = 'MGI 6.010';
@@ -106,15 +105,15 @@ date | tee -a ${LOG}
 #${ROLLUPLOAD}/bin/rollup_check.py ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo 'step 4 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
-#${OMIMHPOLOAD}/bin/omim_hpoload.sh | tee -a $LOG || exit 1
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+echo 'step 4 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
+${OMIMHPOLOAD}/bin/omim_hpoload.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
-#date | tee -a ${LOG}
-#echo 'step 5 : entrezgeneload' | tee -a $LOG || exit 1
-#${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG || exit 1
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+echo 'step 5 : entrezgeneload' | tee -a $LOG || exit 1
+${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 6 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
@@ -152,11 +151,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1
-
-# final database check
 ${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 #
 # create "after" tab-delimited files for each annotation type/without keys
@@ -177,6 +172,9 @@ select count(*) from MRK_DO_Cache;
 --select distinct annottype from VOC_Marker_Cache order by annottype;
 --select distinct annottype from VOC_Annot_Count_Cache order by annottype;
 EOSQL
+
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 echo "--- Finished" | tee -a ${LOG}
 

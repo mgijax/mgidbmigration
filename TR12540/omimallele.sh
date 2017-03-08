@@ -16,7 +16,7 @@ touch $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 >> $LOG
 
-select a3.accID, v._annot_key, v._annottype_key, v._object_key,v._term_key, v._qualifier_key
+select a3.accID, v._annottype_key, v._object_key,v._term_key, v._qualifier_key
 from VOC_Annot v, ACC_Accession a3
 where v._AnnotType_key = 1021
 and v._Term_key = a3._Object_key

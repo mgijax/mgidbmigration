@@ -82,8 +82,22 @@ end
 #
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
 update MGI_dbinfo set schema_version = '6-0-10', public_version = 'MGI 6.010';
+
+drop view if exists mgd.MGI_NoteType_Nomen_View;
+drop view if exists mgd.MGI_Note_Nomen_View;
+drop view if exists mgd.MGI_RefType_Nomen_View;
+drop view if exists mgd.MGI_Reference_Nomen_View;
+drop view if exists mgd.MGI_SynonymType_Nomen_View;
+drop view if exists mgd.MGI_Synonym_Nomen_View;
+drop view if exists mgd.VOC_Term_NomenStatus_View;
+delete from BIB_DataSet_Assoc where _dataset_key = 1006;
+delete from BIB_DataSet where _dataset_key = 1006;
+
 update VOC_Vocab set name = 'DO Evidence Codes' where _Vocab_key = 43;
+update VOC_Term set term = 'DOVocAnnot' where _Term_key = 6738026;
+
 select count(*) from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 select count(*) from VOC_Annot where _AnnotType_key = 1020;
 select count(*) from VOC_Annot where _AnnotType_key = 1021;
@@ -167,6 +181,8 @@ ${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 
 #
@@ -196,7 +212,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #
 # post-processing reports
 #
-foreach i in (omim*sh)
+foreach i (omim*sh)
 $i
 end
 foreach i (omim*log)

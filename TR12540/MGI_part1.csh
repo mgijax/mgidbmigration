@@ -66,6 +66,17 @@ touch ${LOG}
 #scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab /data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
 
 #
+# pre-processing reports
+#
+for i in (omim*sh)
+$i
+end
+for i in (omim*log)
+rm -rf $i.pre
+mv $i $i.pre
+end
+
+#
 # update schema-version and public-version
 #
 #
@@ -81,6 +92,8 @@ select count(*) from VOC_Annot where _AnnotType_key = 1023;
 select count(*) from VOC_Annot where _AnnotType_key = 1024;
 --select distinct _Term_key from VOC_Annot where _AnnotType_key = 1024;
 select count(*) from MRK_DO_Cache;
+select count(*) from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
+delete from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
 --select distinct annottype from VOC_Allele_Cache order by annottype;
 --select distinct annottype from VOC_Marker_Cache order by annottype;
 --select distinct annottype from VOC_Annot_Count_Cache order by annottype;
@@ -160,8 +173,8 @@ ${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 # create "after" tab-delimited files for each annotation type/without keys
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
-delete from VOC_AnnotType where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
+--delete from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
+--delete from VOC_AnnotType where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 drop table MRK_OMIM_Cache;
 select count(*) from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 select count(*) from VOC_Annot where _AnnotType_key = 1020;
@@ -171,6 +184,7 @@ select count(*) from VOC_Annot where _AnnotType_key = 1023;
 select count(*) from VOC_Annot where _AnnotType_key = 1024;
 --select distinct _Term_key from VOC_Annot where _AnnotType_key = 1024;
 select count(*) from MRK_DO_Cache;
+select count(*) from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
 --select distinct annottype from VOC_Allele_Cache order by annottype;
 --select distinct annottype from VOC_Marker_Cache order by annottype;
 --select distinct annottype from VOC_Annot_Count_Cache order by annottype;
@@ -178,6 +192,17 @@ EOSQL
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+
+#
+# post-processing reports
+#
+for i in (omim*sh)
+$i
+end
+for i in (omim*log)
+rm -rf $i.diff
+diff $i $i.pre > $i.diff
+end
 
 echo "--- Finished" | tee -a ${LOG}
 

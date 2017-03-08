@@ -68,15 +68,13 @@ touch ${LOG}
 #
 # pre-processing reports
 #
-for i in (omim*sh)
-do
+foreach i (omim*sh)
 $i
-done
-for i in (omim*log)
-do
+end
+foreach i (omim*log)
 rm -rf $i.pre
 mv $i $i.pre
-done
+end
 
 #
 # update schema-version and public-version
@@ -198,15 +196,13 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #
 # post-processing reports
 #
-for i in (omim*sh)
-do
+foreach i in (omim*sh)
 $i
-done
-for i in (omim*log)
-do
+end
+foreach i (omim*log)
 rm -rf $i.diff
 diff $i $i.pre > $i.diff
-done
+end
 
 echo "--- Finished" | tee -a ${LOG}
 

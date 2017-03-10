@@ -94,6 +94,7 @@ drop view if exists mgd.MGI_Synonym_Nomen_View;
 drop view if exists mgd.VOC_Term_NomenStatus_View;
 delete from BIB_DataSet_Assoc where _dataset_key = 1006;
 delete from BIB_DataSet where _dataset_key = 1006;
+drop table MRK_OMIM_Cache;
 
 create temp table deleteA as
 select p._Allele_key from PRB_Allele p 
@@ -203,7 +204,6 @@ ${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 --delete from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 --delete from VOC_AnnotType where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
-drop table MRK_OMIM_Cache;
 select count(*) from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 select count(*) from VOC_Annot where _AnnotType_key = 1020;
 select count(*) from VOC_Annot where _AnnotType_key = 1021;

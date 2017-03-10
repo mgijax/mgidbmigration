@@ -61,7 +61,7 @@ touch ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
-#scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology/doid-merged.obo
+#scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology/doid-merged.obo /data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology
 #scp bhmgiapp01:/data/downloads/data.omim.org/omim.txt.gz /data/downloads/data.omim.org
 #scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab /data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
 
@@ -94,6 +94,18 @@ drop view if exists mgd.MGI_Synonym_Nomen_View;
 drop view if exists mgd.VOC_Term_NomenStatus_View;
 delete from BIB_DataSet_Assoc where _dataset_key = 1006;
 delete from BIB_DataSet where _dataset_key = 1006;
+
+create temp table deleteA as
+select p._Allele_key from PRB_Allele p 
+where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key) ;
+create index deleteA_idx on deleteA (_Allele_key);
+delete from PRB_Allele a using deleteA d where d._Allele_key = a._Allele_key;
+
+create temp table deleteB as
+select p._Allele_key from PRB_Allele_Strain p 
+where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key) ;
+create index deleteB_idx on deleteA (_Allele_key);
+delete from PRB_Allele_Strain a using deleteB d where d._Allele_key = a._Allele_key;
 
 update VOC_Vocab set name = 'DO Evidence Codes' where _Vocab_key = 43;
 update VOC_Term set term = 'DOVocAnnot' where _Term_key = 6738026;
@@ -189,8 +201,8 @@ ${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 # create "after" tab-delimited files for each annotation type/without keys
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
-delete from VOC_AnnotType where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
+--delete from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
+--delete from VOC_AnnotType where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 drop table MRK_OMIM_Cache;
 select count(*) from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
 select count(*) from VOC_Annot where _AnnotType_key = 1020;

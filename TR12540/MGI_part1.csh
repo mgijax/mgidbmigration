@@ -96,18 +96,6 @@ delete from BIB_DataSet_Assoc where _dataset_key = 1006;
 delete from BIB_DataSet where _dataset_key = 1006;
 drop table MRK_OMIM_Cache;
 
-create temp table deleteA as
-select p._Allele_key from PRB_Allele p 
-where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key) ;
-create index deleteA_idx on deleteA (_Allele_key);
-delete from PRB_Allele a using deleteA d where d._Allele_key = a._Allele_key;
-
-create temp table deleteB as
-select p._Allele_key from PRB_Allele_Strain p 
-where not exists (select 1 from ALL_Allele a where p._Allele_key = a._Allele_key) ;
-create index deleteB_idx on deleteA (_Allele_key);
-delete from PRB_Allele_Strain a using deleteB d where d._Allele_key = a._Allele_key;
-
 update VOC_Vocab set name = 'DO Evidence Codes' where _Vocab_key = 43;
 update VOC_Term set term = 'DOVocAnnot' where _Term_key = 6738026;
 
@@ -183,8 +171,6 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG || exit 1

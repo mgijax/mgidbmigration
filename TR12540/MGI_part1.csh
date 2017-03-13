@@ -133,7 +133,8 @@ select count(*) from ACC_Accession where _LogicalDB_key = 15 and prefixPart is n
 --select distinct annottype from VOC_Annot_Count_Cache order by annottype;
 EOSQL
 
-#not that ROLLUP load is skipped/not run in the DOLOAD
+# note that ROLLUP load is skipped/not run in the DOLOAD
+# this version is the DO version (no OMIM version)
 date | tee -a ${LOG}
 echo 'step 3 : rollupload' | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1

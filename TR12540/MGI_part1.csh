@@ -66,17 +66,6 @@ touch ${LOG}
 #scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab /data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
 
 #
-# pre-processing reports
-#
-foreach i (omim*sh)
-$i
-end
-foreach i (omim*log)
-rm -rf $i.pre
-mv $i $i.pre
-end
-
-#
 # update schema-version and public-version
 #
 #
@@ -116,6 +105,17 @@ date | tee -a ${LOG}
 echo 'step 2 : doload' | tee -a $LOG || exit 1
 ${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
+
+#
+# pre-processing reports
+#
+foreach i (omim*sh)
+$i
+end
+foreach i (omim*log)
+rm -rf $i.pre
+mv $i $i.pre
+end
 
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

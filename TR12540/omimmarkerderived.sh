@@ -23,7 +23,7 @@ and v._Term_key = a3._Object_key
 and a3._MGIType_key = 13
 and a3._LogicalDB_key =  191 
 and a3.preferred = 1 
-order by a3.accID
+order by a3.accID, v._object_key
 ;
 
 EOSQL

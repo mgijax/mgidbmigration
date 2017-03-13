@@ -92,26 +92,17 @@ drop view if exists mgd.MGI_Reference_Nomen_View;
 drop view if exists mgd.MGI_SynonymType_Nomen_View;
 drop view if exists mgd.MGI_Synonym_Nomen_View;
 drop view if exists mgd.VOC_Term_NomenStatus_View;
+
+drop table MRK_OMIM_Cache;
+
 delete from BIB_DataSet_Assoc where _dataset_key = 1006;
 delete from BIB_DataSet where _dataset_key = 1006;
-drop table MRK_OMIM_Cache;
 
 update VOC_Vocab set name = 'DO Evidence Codes' where _Vocab_key = 43;
 update VOC_Term set term = 'DOVocAnnot' where _Term_key = 6738026;
 
-select count(*) from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
-select count(*) from VOC_Annot where _AnnotType_key = 1020;
-select count(*) from VOC_Annot where _AnnotType_key = 1021;
-select count(*) from VOC_Annot where _AnnotType_key = 1022;
-select count(*) from VOC_Annot where _AnnotType_key = 1023;
-select count(*) from VOC_Annot where _AnnotType_key = 1024;
---select distinct _Term_key from VOC_Annot where _AnnotType_key = 1024;
-select count(*) from MRK_DO_Cache;
-select count(*) from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
 delete from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
---select distinct annottype from VOC_Allele_Cache order by annottype;
---select distinct annottype from VOC_Marker_Cache order by annottype;
---select distinct annottype from VOC_Annot_Count_Cache order by annottype;
+
 EOSQL
 
 date | tee -a ${LOG}
@@ -126,12 +117,28 @@ echo 'step 2 : doload' | tee -a $LOG || exit 1
 ${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-#not needed because this is run as part of the doload above...
-#date | tee -a ${LOG}
-#echo 'step 3 : rollupload' | tee -a $LOG || exit 1
-#${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1
-#${ROLLUPLOAD}/bin/rollup_check.py ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select count(*) from VOC_Annot where _AnnotType_key in (1005, 1012, 1006, 1016, 1018, 1025, 1026);
+select count(*) from VOC_Annot where _AnnotType_key = 1020;
+select count(*) from VOC_Annot where _AnnotType_key = 1021;
+select count(*) from VOC_Annot where _AnnotType_key = 1022;
+select count(*) from VOC_Annot where _AnnotType_key = 1023;
+select count(*) from VOC_Annot where _AnnotType_key = 1024;
+--select distinct _Term_key from VOC_Annot where _AnnotType_key = 1024;
+select count(*) from MRK_DO_Cache;
+select count(*) from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
+--select distinct annottype from VOC_Allele_Cache order by annottype;
+--select distinct annottype from VOC_Marker_Cache order by annottype;
+--select distinct annottype from VOC_Annot_Count_Cache order by annottype;
+EOSQL
+
+#not that ROLLUP load is skipped/not run in the DOLOAD
+date | tee -a ${LOG}
+echo 'step 3 : rollupload' | tee -a $LOG || exit 1
+${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1
+${ROLLUPLOAD}/bin/rollup_check.py ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'step 4 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1

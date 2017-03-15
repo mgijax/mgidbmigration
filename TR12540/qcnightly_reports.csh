@@ -16,26 +16,33 @@ touch ${LOG}
 
 echo `date`: Start nightly QC reports | tee -a ${LOG}
 
+rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.animalmodel
+rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.clusters*
+rm -rf ${PUBREPORTDIR}/output/MGI_Geno_Disease.rpt
+rm -rf ${PUBREPORTDIR}/output/MGI_Geno_NotDisease.rpt
+rm -rf ${QCREPORTDIR}/output/ALL_OMIMNoMP.rpt
+rm -rf ${QCREPORTDIR}/output/VOC_OMIMObsolete.sql.rpt
+
 cd ${QCMGD}
 
-#foreach i ()
-#    echo `date`: $i | tee -a ${LOG}
-#    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
-#end
-
-#foreach i ()
-#    echo `date`: $i | tee -a ${LOG}
-#    $i | tee -a ${LOG}
-#end
-
-cd ${QCWEEKLY}
-
-foreach i (VOC_DOAnnotNotInSlim.sql VOC_OMIMObsolete.sql)
+foreach i (MRK_GOUnknown.sql GXD_OrphanGenotype.sql)
     echo `date`: $i | tee -a ${LOG}
     ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
 end
 
-foreach i (ALL_OMIMNoMP.py VOC_OMIMDOMult.py VOC_OMIMDOObsolete.py VOC_OMIMGenotypeNoMapDO.py)
+foreach i (GO_Combined_Report.py MRK_GOIEA.py)
+    echo `date`: $i | tee -a ${LOG}
+    $i | tee -a ${LOG}
+end
+
+cd ${QCWEEKLY}
+
+foreach i (VOC_DOAnnotNotInSlim.sql VOC_DOObsolete.sql)
+    echo `date`: $i | tee -a ${LOG}
+    ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${MGD_DBSERVER} ${MGD_DBNAME}
+end
+
+foreach i (ALL_Progress.py ALL_DONoMP.py VOC_OMIMDOMult.py VOC_OMIMDOObsolete.py VOC_OMIMGenotypeNoMapDO.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end
@@ -43,7 +50,7 @@ end
 cd ${PUBRPTS}
 source ./Configuration
 cd weekly
-foreach i (MGI_OMIM.py MGI_DO.py MGI_GenePheno.py MGI_iphone_app.py)
+foreach i (MGI_DO.py MGI_GenePheno.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end

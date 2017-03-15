@@ -50,7 +50,7 @@ end
 cd ${PUBRPTS}
 source ./Configuration
 cd weekly
-foreach i (MGI_DO.py MGI_GenePheno.py)
+foreach i (MGI_DO.py MGI_GenePheno.py MGI_iphone_app.py)
     echo `date`: $i | tee -a ${LOG}
     $i | tee -a ${LOG}
 end

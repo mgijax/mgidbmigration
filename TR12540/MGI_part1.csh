@@ -159,10 +159,10 @@ echo 'step 6 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 7 : qc reports' | tee -a $LOG || exit 1
-./qcnightly_reports.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'step 7 : qc reports' | tee -a $LOG || exit 1
+#./qcnightly_reports.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 8 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1

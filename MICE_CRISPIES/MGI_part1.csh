@@ -7,9 +7,9 @@
 # Products:
 #
 # mgidbmigration : cvs/trunk
-# pgmgddbschema : branch
-# mirror_wget : trunk
-# gxdhtload : trunk
+# mirror_wget : branch
+# htmpload : branch
+# emalload : trunk (new)
 
 ###----------------------###
 ###--- initialization ---###

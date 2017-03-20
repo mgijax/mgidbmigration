@@ -16,14 +16,6 @@ touch ${LOG}
 
 echo `date`: Start nightly QC reports | tee -a ${LOG}
 
-rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.animalmodel
-rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.clusters
-rm -rf ${PUBREPORTDIR}/output/MGI_Geno_Disease.rpt
-rm -rf ${PUBREPORTDIR}/output/MGI_Geno_NotDisease.rpt
-rm -rf ${PUBREPORTDIR}/output/MGI_GeneOMIM.rpt
-rm -rf ${QCREPORTDIR}/output/ALL_OMIMNoMP.rpt
-rm -rf ${QCREPORTDIR}/output/VOC_OMIMObsolete.sql.rpt
-
 cd ${QCMGD}
 
 foreach i (MRK_GOUnknown.sql GXD_OrphanGenotype.sql)

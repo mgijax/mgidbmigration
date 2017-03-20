@@ -159,10 +159,10 @@ echo 'step 6 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 7 : qc reports' | tee -a $LOG || exit 1
-./qcnightly_reports.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'step 7 : qc reports' | tee -a $LOG || exit 1
+#./qcnightly_reports.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
 #echo 'step 8 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
@@ -225,6 +225,16 @@ foreach i (omim*log)
 rm -rf $i.diff
 diff $i $i.pre > $i.diff
 end
+
+# obsolete reports
+rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.animalmodel
+rm -rf ${DATALOADSOUTPUT}/mgi/vocload/OMIM/OMIM.clusters
+rm -rf ${PUBREPORTDIR}/output/MGI_Geno_Disease.rpt
+rm -rf ${PUBREPORTDIR}/output/MGI_Geno_NotDisease.rpt
+rm -rf ${PUBREPORTDIR}/output/MGI_GeneOMIM.rpt
+rm -rf ${PUBREPORTDIR}/output/mgimarkerfeed/*
+rm -rf ${QCREPORTDIR}/output/ALL_OMIMNoMP.rpt
+rm -rf ${QCREPORTDIR}/output/VOC_OMIMObsolete.sql.rpt
 
 echo "--- Finished" | tee -a ${LOG}
 

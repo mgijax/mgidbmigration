@@ -10,7 +10,7 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
-scp bhmgiapp01:${DATALOADSOUTPUT}/mgi/vocload/runTimeMA/adult_mouse_anatomy.obo ${DATALOADSOUTPUT}/mgi/vocload/runTimeMA
+#scp bhmgiapp01:${DATALOADSOUTPUT}/mgi/vocload/runTimeMA/adult_mouse_anatomy.obo ${DATALOADSOUTPUT}/mgi/vocload/runTimeMA
 scp bhmgiapp01:${DATALOADSOUTPUT}/mgi/vocload/emap/input/EMAPA.obo ${DATALOADSOUTPUT}/mgi/vocload/emap/input
 scp bhmgiapp01:${DATALOADSOUTPUT}/mgi/vocload/runTimeMP/MPheno_OBO.ontology ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP
 
@@ -19,7 +19,6 @@ ${MIRROR_WGET}/download_package purl.obolibrary.org.cl-basic.obo
 ${MIRROR_WGET}/download_package data.omim.org
 ${MIRROR_WGET}/download_package compbio.charite.de.phenotype_annotation
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
-exit
 
 ${VOCLOAD}/runOBOIncLoad.sh MP.config | tee -a ${LOG}
 cut -f3,7 ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP/Termfile | grep obsolete | uniq | tee -a ${LOG}

@@ -1,6 +1,0 @@
-Thu Mar 16 15:48:48 EDT 2017
---- Starting in /home/sc/work.MOUSE_CRISP/dbutils/mgidbmigration-trunk/TR10987...
-Thu Mar 16 15:48:48 EDT 2017
-delete from MGI_Note where _NoteType_key = 1037
-DELETE 1500
-Thu Mar 16 15:51:28 EDT 2017

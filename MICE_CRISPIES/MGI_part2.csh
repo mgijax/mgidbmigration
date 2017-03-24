@@ -27,9 +27,9 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- Load CRISPR  Data ---"  | tee -a ${LOG}
-${EMALLOAD}/bin/emalload.sh ${EMALLOAD}/impc.config
+#date | tee -a ${LOG}
+#echo "--- Load CRISPR  Data ---"  | tee -a ${LOG}
+#${EMALLOAD}/bin/emalload.sh ${EMALLOAD}/impc.config
 
 date | tee -a ${LOG}
 echo "--- Run DMDD HTMP Load ---"  | tee -a ${LOG}

@@ -32,15 +32,18 @@ echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Run RefSeq Contig Sequence Load' | tee -a ${LOG}
-#${REFSEQLOAD}/bin/refseqload.sh
+${REFSEQLOAD}/bin/refseqload.sh
 
 date | tee -a ${LOG}
 echo 'Run GenBank Contig Sequence Load' | tee -a ${LOG}
-#${GBSEQLOAD}/bin/gbseqload.sh
+${GBSEQLOAD}/bin/gbseqload.sh
 
 date | tee -a ${LOG}
 echo 'Run Contig Assoc Load' | tee -a ${LOG}
 ${ASSOCLOAD}/bin/AssocLoad2.sh ${ASSOCLOAD}/DP.config.contig
 
+date | tee -a ${LOG}
+echo 'Run Location Note Load' | tee -a ${LOG}
+${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/9800/9835/noteload/tr9835.config
 date | tee -a ${LOG}
 

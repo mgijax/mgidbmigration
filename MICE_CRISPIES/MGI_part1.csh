@@ -6,10 +6,13 @@
 #
 # Products:
 #
-# mgidbmigration : cvs/trunk
 # mirror_wget : branch
 # htmpload : branch
-# emalload : trunk (new)
+# refseqload : branch
+# gbseqload : branch
+# lib_java_dla : branch
+# assocload : trunk
+
 
 ###----------------------###
 ###--- initialization ---###

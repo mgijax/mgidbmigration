@@ -1,13 +1,8 @@
 #!/bin/csh -fx
 
 #
-# Mirror refseq and genbank genomic release files
-# Run record splitter to get mouse CON division
-#
-# Products:
-#
-# mirror_wget : branch
-# refseqload : branch
+# Run loads for the contig epic
+# 
 
 ###----------------------###
 ###--- initialization ---###

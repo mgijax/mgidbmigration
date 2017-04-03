@@ -20,6 +20,8 @@
 # entrezgeneload (1006/1022) : tr12540 : ready
 # vocload : tr12540 : ready
 # doload : trunk : add genotype/note and edit reports
+# targetedalleleload (see TR12083, branch)
+# emalload (see TR12083, trunk)
 #
 # qcreports_db : tr12540
 # reports_db   : tr12540

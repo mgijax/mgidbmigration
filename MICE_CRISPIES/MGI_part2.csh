@@ -27,9 +27,9 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo "--- Starting in ${CWD}..." | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo "--- Load CRISPR  Data ---"  | tee -a ${LOG}
-${EMALLOAD}/bin/emalload.sh ${EMALLOAD}/impc.config
+#date | tee -a ${LOG}
+#echo "--- Load CRISPR  Data ---"  | tee -a ${LOG}
+#${EMALLOAD}/bin/emalload.sh ${EMALLOAD}/impc.config
 
 date | tee -a ${LOG}
 echo "--- Run DMDD HTMP Load ---"  | tee -a ${LOG}
@@ -38,6 +38,10 @@ ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/dmddmpload.config ${HTMPLOAD}/annotload.
 date | tee -a ${LOG}
 echo "--- Run IMPC HTMP Load ---"  | tee -a ${LOG}
 ${HTMPLOAD}/bin/htmpload.sh ${HTMPLOAD}/impcmpload.config ${HTMPLOAD}/annotload.config
+
+date | tee -a ${LOG}
+echo "--- Running TR9835_LoadContigs.csh ---"  | tee -a ${LOG}
+./TR9835_LoadContigs.csh 
 
 echo "--- done running loads ---" | tee -a ${LOG}
 

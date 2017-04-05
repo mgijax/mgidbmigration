@@ -162,17 +162,17 @@ ${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 7 : qc reports' | tee -a $LOG || exit 1
-/mgi/all/wts_projects/12000/12083/allele/allele.csh | tee -a $LOG || exit 1
+echo 'step 7 : varchars' | tee -a $LOG || exit 1
+/mgi/all/wts_projects/12000/12083/varchars/varchars.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 7 : qc reports' | tee -a $LOG || exit 1
+#echo 'step 8 : qc reports' | tee -a $LOG || exit 1
 #./qcnightly_reports.csh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 8 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
+#echo 'step 9 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

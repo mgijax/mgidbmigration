@@ -60,6 +60,7 @@ touch ${LOG}
 
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
@@ -96,15 +97,25 @@ delete from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
 
 EOSQL
 
+#
+# do all of the varchar->text changes first
+#
 date | tee -a ${LOG}
-echo 'step 1 : vocload/OMIM.config' | tee -a $LOG || exit 1
+echo 'step 2a : varchars/radar' | tee -a $LOG || exit 1
+/mgi/all/wts_projects/12000/12083/varchars/varcharsradar.csh | tee -a $LOG || exit 1
+echo 'step 2b : varchars/mgd' | tee -a $LOG || exit 1
+/mgi/all/wts_projects/12000/12083/varchars/varcharsmgd.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 3 : vocload/OMIM.config' | tee -a $LOG || exit 1
 echo 'OMIMtermcheck.current.rpt : only report 1' | tee -a $LOG || exit 1
 echo 'OMIM.animalmodel : turned off' | tee -a $LOG || exit 1
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 2 : doload' | tee -a $LOG || exit 1
+echo 'step 4 : doload' | tee -a $LOG || exit 1
 ${DOLOAD}/bin/do.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
@@ -138,18 +149,18 @@ EOSQL
 # note that ROLLUP load is skipped/not run in the DOLOAD
 # this version is the DO version (no OMIM version)
 date | tee -a ${LOG}
-echo 'step 3 : rollupload' | tee -a $LOG || exit 1
+echo 'step 5 : rollupload' | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollup_check.py ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 4 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
+echo 'step 6 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
 ${OMIMHPOLOAD}/bin/omim_hpoload.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 5 : entrezgeneload' | tee -a $LOG || exit 1
+echo 'step 7 : entrezgeneload' | tee -a $LOG || exit 1
 ${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
@@ -157,47 +168,21 @@ date | tee -a ${LOG}
 # must be run *after* doload and omim_hpoload
 #
 date | tee -a ${LOG}
-echo 'step 6 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
+echo 'step 8 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'step 7 : varchars' | tee -a $LOG || exit 1
-/mgi/all/wts_projects/12000/12083/varchars/varchars.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-
 #date | tee -a ${LOG}
-#echo 'step 8 : qc reports' | tee -a $LOG || exit 1
+#echo 'step 9 : qc reports' | tee -a $LOG || exit 1
 #./qcnightly_reports.csh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 9 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
+#echo 'step 10 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
-
-${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/GXD_Genotype_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Term_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/MGI_checkUserRole_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG || exit 1
 
 #
 # create "after" tab-delimited files for each annotation type/without keys

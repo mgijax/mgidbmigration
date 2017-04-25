@@ -14,6 +14,7 @@
 # pgmgddbschema : tr12450 : mrk_omim_cache is obsolete
 # pgdbutilties  : tr12540 : sp/*OMIM* scripts are obsolete : ready
 # mrkcacheload  : tr12540 : mrkomim is obsolete : ready
+# mgicacheload  : on trunk: TR12520/inferredfrom.py
 #
 # rollupload (1005/1016, 1020/1023) : tr12540 : ready
 # omim_hpoload (1018, 1024) : tr12540 : ready
@@ -22,6 +23,8 @@
 # doload : trunk : add genotype/note and edit reports
 # targetedalleleload (see TR12083, branch)
 # emalload (see TR12083, trunk)
+# htmpload : tr12540 (Sharon)
+# annotload : tr12540 (Sharon)
 #
 # qcreports_db : tr12540
 # reports_db   : tr12540
@@ -86,6 +89,7 @@ drop view if exists mgd.MGI_Synonym_Nomen_View;
 drop view if exists mgd.VOC_Term_NomenStatus_View;
 
 drop table MRK_OMIM_Cache;
+DROP FUNCTION IF EXISTS ALL_postMP(int,int,text);
 
 delete from BIB_DataSet_Assoc where _dataset_key = 1006;
 delete from BIB_DataSet where _dataset_key = 1006;
@@ -94,6 +98,8 @@ update VOC_Vocab set name = 'DO Evidence Codes' where _Vocab_key = 43;
 update VOC_Term set term = 'DOVocAnnot' where _Term_key = 6738026;
 
 delete from ACC_Accession where _LogicalDB_key = 15 and prefixPart is null;
+
+delete from MGI_Statistic where _Statistic_key in (15,16);
 
 EOSQL
 
@@ -206,6 +212,9 @@ EOSQL
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+
+echo 'step 11 : run statistics' | tee -a $LOG
+${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
 #
 # post-processing reports

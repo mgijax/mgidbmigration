@@ -36,9 +36,11 @@
 # 	${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
 #
 #	replace:
+#	prod/dailytasks.csh:${MRKCACHELOAD}/mrkomim.csh
 #	prod/saturdaytasks.csh:${MRKCACHELOAD}/mrkomim.csh
+#	prod/sundaytasks.csh:${MRKCACHELOAD}/mrkomim.csh
 #	with:
-#	prod/saturdaytasks.csh:${MRKCACHELOAD}/mrkdo.csh
+#	${MRKCACHELOAD}/mrkdo.csh
 #
 #	remove:
 #	prod/sundaytasks.csh:${DOLOAD}/bin/do.sh

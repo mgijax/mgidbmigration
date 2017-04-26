@@ -29,12 +29,19 @@
 # qcreports_db : tr12540
 # reports_db   : tr12540
 # 
-# loadadmin : add
+# loadadmin:
+#
+#	add:
+#	prod/sundaytasks.csh: after ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
 # 	${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
-#	${MRKCACHELOAD}/mrkdo.csh
-# loadadmin : remove
-#	mrkcacheload/mrkomim.csh
-#	doload
+#
+#	replace:
+#	prod/saturdaytasks.csh:${MRKCACHELOAD}/mrkomim.csh
+#	with:
+#	prod/saturdaytasks.csh:${MRKCACHELOAD}/mrkdo.csh
+#
+#	remove:
+#	prod/sundaytasks.csh:${DOLOAD}/bin/do.sh
 #
 # migration to-do:
 # existing data has migrated DO annotations

@@ -179,6 +179,11 @@ echo 'step 7 : entrezgeneload' | tee -a $LOG || exit 1
 ${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'step 8 : htmpload (sharon)' | tee -a $LOG || exit 1
+${HTMPLOAD}/bin/runMpLoads.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
 #
 # must be run *after* doload and omim_hpoload
 #

@@ -98,7 +98,7 @@ drop view if exists mgd.MGI_Synonym_Nomen_View;
 drop view if exists mgd.VOC_Term_NomenStatus_View;
 
 drop table MRK_OMIM_Cache;
-DROP FUNCTION IF EXISTS ALL_postMP(int,int,text);
+DROP FUNCTION IF EXISTS ALL_postMP(int,int,varchar);
 
 delete from BIB_DataSet_Assoc where _dataset_key = 1006;
 delete from BIB_DataSet where _dataset_key = 1006;

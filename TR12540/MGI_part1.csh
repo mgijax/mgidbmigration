@@ -79,6 +79,8 @@ echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
 scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology/doid-merged.obo /data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology
 scp bhmgiapp01:/data/downloads/data.omim.org/omim.txt.gz /data/downloads/data.omim.org
 scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab /data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
+scp bhmgiapp01:/data/downloads/dmdd.org.uk/DMDD_MP_annotations.tsv /data/downloads/dmdd.org.uk
+scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk
 
 #
 # update schema-version and public-version

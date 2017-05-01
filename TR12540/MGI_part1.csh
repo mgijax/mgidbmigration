@@ -81,6 +81,8 @@ scp bhmgiapp01:/data/downloads/data.omim.org/omim.txt.gz /data/downloads/data.om
 scp bhmgiapp01:/data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc/phenotype_annotation.tab /data/downloads/compbio.charite.de/jenkins/job/hpo.annotations/lastStableBuild/artifact/misc
 scp bhmgiapp01:/data/downloads/dmdd.org.uk/DMDD_MP_annotations.tsv /data/downloads/dmdd.org.uk
 scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk
+scp /mgi/all/wts_projects/12200/12291/RelationshipVocab4_26_17b /data/loads/mgi/rvload/input/RelationshipVocab.obo
+scp /mgi/all/wts_projects/12200/12291/RNAI_load4_26_2017.txt /data/loads/mgi/fearload/input/fearload.txt
 
 #
 # update schema-version and public-version
@@ -163,26 +165,37 @@ select count(*) from ACC_Accession where _LogicalDB_key = 15 and prefixPart is n
 --select distinct annottype from VOC_Annot_Count_Cache order by annottype;
 EOSQL
 
+#
+# per Sharon
+#
+date | tee -a ${LOG}
+echo 'step 5a : rvload' | tee -a $LOG || exit 1
+echo 'step 5b : fearload' | tee -a $LOG || exit 1
+${RVLOAD}/bin/rvload.sh | tee -a $LOG || exit 1
+${FEARLOAD}/bin/fearload.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+#
 # note that ROLLUP load is skipped/not run in the DOLOAD
 # this version is the DO version (no OMIM version)
 date | tee -a ${LOG}
-echo 'step 5 : rollupload' | tee -a $LOG || exit 1
+echo 'step 6 : rollupload' | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollup_check.py ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 6 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
+echo 'step 7 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
 ${OMIMHPOLOAD}/bin/omim_hpoload.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 7 : entrezgeneload' | tee -a $LOG || exit 1
+echo 'step 8 : entrezgeneload' | tee -a $LOG || exit 1
 ${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 8 : htmpload (sharon)' | tee -a $LOG || exit 1
+echo 'step 9 : htmpload (sharon)' | tee -a $LOG || exit 1
 ${HTMPLOAD}/bin/runMpLoads.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
@@ -190,17 +203,17 @@ date | tee -a ${LOG}
 # must be run *after* doload and omim_hpoload
 #
 date | tee -a ${LOG}
-echo 'step 8 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
+echo 'step 10 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 9 : qc reports' | tee -a $LOG || exit 1
+#echo 'step 11 : qc reports' | tee -a $LOG || exit 1
 #./qcnightly_reports.csh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
 #date | tee -a ${LOG}
-#echo 'step 10 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
+#echo 'step 12 : VOC_Cache_Counts.csh/VOC_Cache_Markers.csh/VOC_Cache_Alleles.csh' | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Counts.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Markers.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/sp/VOC_Cache_Alleles.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
@@ -229,7 +242,7 @@ EOSQL
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
-echo 'step 11 : run statistics' | tee -a $LOG
+echo 'step 13 : run statistics' | tee -a $LOG
 ${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
 
 #

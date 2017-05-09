@@ -175,28 +175,28 @@ ${RVLOAD}/bin/rvload.sh | tee -a $LOG || exit 1
 ${FEARLOAD}/bin/fearload.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'step 6 : htmpload (sharon)' | tee -a $LOG || exit 1
+${HTMPLOAD}/bin/runMpLoads.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
 #
 # note that ROLLUP load is skipped/not run in the DOLOAD
 # this version is the DO version (no OMIM version)
 date | tee -a ${LOG}
-echo 'step 6 : rollupload' | tee -a $LOG || exit 1
+echo 'step 7 : rollupload' | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollupload.sh | tee -a $LOG || exit 1
 ${ROLLUPLOAD}/bin/rollup_check.py ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 7 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
+echo 'step 8 : omim_hpoload (OMIM format changes)' | tee -a $LOG || exit 1
 ${OMIMHPOLOAD}/bin/omim_hpoload.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo 'step 8 : entrezgeneload' | tee -a $LOG || exit 1
+echo 'step 9 : entrezgeneload' | tee -a $LOG || exit 1
 ${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo 'step 9 : htmpload (sharon)' | tee -a $LOG || exit 1
-${HTMPLOAD}/bin/runMpLoads.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 #
@@ -205,6 +205,11 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step 10 : mrkcacheload/mrkdo.csh' | tee -a $LOG || exit 1
 ${MRKCACHELOAD}/mrkdo.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'step 11 : ${ALLCACHELOAD}/allelecombination.csh' | tee -a $LOG || exit 1
+${ALLCACHELOAD}/allelecombination.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 #date | tee -a ${LOG}

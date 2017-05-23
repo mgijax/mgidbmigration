@@ -6,6 +6,16 @@
 #
 # (part 1 running schema changes)
 #
+# pgmgddbschema
+# pgdbutilities (sp)
+# ei
+# mgipython
+# pwi
+#
+# obsolete:
+# jfilescanner?
+# pgdbutilities/bin/ei/nlm.py
+# 
 
 ###----------------------###
 ###--- initialization ---###

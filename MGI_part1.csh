@@ -67,6 +67,13 @@ echo 'data cleanup' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 
 #
+# rebuild the java dla, if needed due to schema changes
+#
+${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+
+#
+#
 # run the measurements for are later used for the front-end
 #
 date | tee -a ${LOG}

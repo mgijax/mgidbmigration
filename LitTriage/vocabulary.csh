@@ -99,6 +99,23 @@ insert into VOC_Term values(
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Status'), 
 'Fully curated',null,6,0,1001,1001,now(),now());
 
+insert into VOC_Term values(
+(select max(_Term_key) + 1 from VOC_Term),
+(select _Vocab_key from VOC_Vocab where name = 'Workflow Tag'), 
+'nomen',null,1,0,1001,1001,now(),now());
+insert into VOC_Term values(
+(select max(_Term_key) + 1 from VOC_Term),
+(select _Vocab_key from VOC_Vocab where name = 'Workflow Tag'), 
+'PRO',null,2,0,1001,1001,now(),now());
+insert into VOC_Term values(
+(select max(_Term_key) + 1 from VOC_Term),
+(select _Vocab_key from VOC_Vocab where name = 'Workflow Tag'), 
+'strains',null,3,0,1001,1001,now(),now());
+insert into VOC_Term values(
+(select max(_Term_key) + 1 from VOC_Term),
+(select _Vocab_key from VOC_Vocab where name = 'Workflow Tag'), 
+'mapping',null,4,0,1001,1001,now(),now());
+
 EOSQL
 
 date |tee -a $LOG

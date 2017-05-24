@@ -58,6 +58,13 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# 
+#
+date | tee -a ${LOG}
+echo 'running varchar-to-text for ACC tables' | tee -a $LOG
+./accession.csh | tee -a $LOG || exit 1
+
+#
 # indexes
 # only run the ones needed per schema changes
 #

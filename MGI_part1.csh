@@ -60,6 +60,13 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 #
+# cleanobjects.sh : removing stray mgi_notes
+#
+date | tee -a ${LOG}
+echo 'data cleanup' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+
+#
 # run the measurements for are later used for the front-end
 #
 date | tee -a ${LOG}

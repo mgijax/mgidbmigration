@@ -19,12 +19,12 @@ touch $LOG
  
 date | tee -a $LOG
 
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Reference Type',now(),now());
-#insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Group',now(),now());
-#insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Status',now(),now());
-#insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Tag',now(),now());
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Reference Type',now(),now());
+insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Group',now(),now());
+insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Status',now(),now());
+insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Tag',now(),now());
+EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -35,23 +35,23 @@ insert into VOC_Term values(
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Book',null,1,0,1001,1001,now(),now());
+'Book',null,2,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Direct Submission',null,1,0,1001,1001,now(),now());
+'Direct Submission',null,3,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Personal Communication',null,1,0,1001,1001,now(),now());
+'Personal Communication',null,4,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'GenBank Submission',null,1,0,1001,1001,now(),now());
+'GenBank Submission',null,5,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Newsletter',null,1,0,1001,1001,now(),now());
+'Newsletter',null,6,0,1001,1001,now(),now());
 
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
@@ -60,19 +60,19 @@ insert into VOC_Term values(
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Group'), 
-'Expression','Expr',1,0,1001,1001,now(),now());
+'Expression','Expr',2,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Group'), 
-'Gene Ontology','GO',1,0,1001,1001,now(),now());
+'Gene Ontology','GO',3,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Group'), 
-'Tumor','Tumor',1,0,1001,1001,now(),now());
+'Tumor','Tumor',4,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Group'), 
-'QTL','QTL',1,0,1001,1001,now(),now());
+'QTL','QTL',5,0,1001,1001,now(),now());
 
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
@@ -81,23 +81,23 @@ insert into VOC_Term values(
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Status'), 
-'Routed',null,1,0,1001,1001,now(),now());
+'Routed',null,2,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Status'), 
-'Chosen',null,1,0,1001,1001,now(),now());
+'Chosen',null,3,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Status'), 
-'Rejected',null,1,0,1001,1001,now(),now());
+'Rejected',null,4,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Status'), 
-'Indexed',null,1,0,1001,1001,now(),now());
+'Indexed',null,5,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Status'), 
-'Fully curated',null,1,0,1001,1001,now(),now());
+'Fully curated',null,6,0,1001,1001,now(),now());
 
 EOSQL
 

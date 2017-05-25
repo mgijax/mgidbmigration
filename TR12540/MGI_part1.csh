@@ -104,8 +104,8 @@ drop view if exists mgd.VOC_Term_NomenStatus_View;
 drop table MRK_OMIM_Cache;
 DROP FUNCTION IF EXISTS ALL_postMP(int,int,varchar);
 
-delete from BIB_DataSet_Assoc where _dataset_key = 1006;
-delete from BIB_DataSet where _dataset_key = 1006;
+--delete from BIB_DataSet_Assoc where _dataset_key = 1006;
+--delete from BIB_DataSet where _dataset_key = 1006;
 
 update VOC_Vocab set name = 'DO Evidence Codes' where _Vocab_key = 43;
 update VOC_Term set term = 'DOVocAnnot' where _Term_key = 6738026;

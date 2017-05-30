@@ -58,11 +58,27 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# 
+# TR12083/ACC varchar-to-text 
 #
 date | tee -a ${LOG}
 echo 'running varchar-to-tee for ACC tables' | tee -a $LOG
 ./accession.csh | tee -a $LOG || exit 1
+
+#
+# vocabularies
+#
+date | tee -a ${LOG}
+echo 'adding vocabularies' | tee -a $LOG
+cd vocabulary
+./vocabulary.csh | tee -a $LOG || exit 1
+
+#
+# datasets
+#
+date | tee -a ${LOG}
+echo 'running data sets migration' | tee -a $LOG
+cd datasets
+./datasets.csh | tee -a $LOG || exit 1
 
 #
 # indexes

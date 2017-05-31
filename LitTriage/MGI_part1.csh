@@ -13,6 +13,7 @@
 # pwi-tr12250
 # reports_db-tr12250
 # qcrepoerts_db-tr12250
+# mgicacheload-tr12250
 # femover-tr12250
 #
 # obsolete:
@@ -63,6 +64,8 @@ date | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Status_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Tag_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG || exit 1
@@ -72,6 +75,8 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG || exit 1
 
 #
 # TR12083/ACC varchar-to-text 
+# the accession.csh wrapper will drop/create procedure/view/triggers
+# so don't need to add an extra call to procedure/view/triggers from this wrapper
 #
 date | tee -a ${LOG}
 echo 'running varchar-to-tee for ACC tables' | tee -a $LOG

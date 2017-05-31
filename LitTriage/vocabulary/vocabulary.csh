@@ -18,10 +18,10 @@ touch $LOG
  
 date | tee -a $LOG
 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from VOC_Term where _Vocab_key in (128,129,130);
-delete from VOC_Vocab where _Vocab_key in (128,129,130);
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#delete from VOC_Term where _Vocab_key in (128,129,130);
+#delete from VOC_Vocab where _Vocab_key in (128,129,130);
+#EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Reference Type',now(),now());

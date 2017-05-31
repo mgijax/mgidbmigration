@@ -116,6 +116,7 @@ insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Supplemental Status'), 
 'not checked',null,3,0,1001,1001,now(),now());
+
 EOSQL
 
 ./vocabulary.py | tee -a $LOG

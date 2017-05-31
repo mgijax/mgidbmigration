@@ -55,7 +55,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-11', public_version = 'MGI 6.11';
-EOSQL
+EsOSQL
 date | tee -a ${LOG}
 
 #
@@ -89,6 +89,11 @@ date | tee -a ${LOG}
 echo 'adding vocabularies' | tee -a $LOG
 cd vocabulary
 ./vocabulary.csh | tee -a $LOG || exit 1
+
+#
+# EI depends on this cache
+#
+${MGICACHELOAD}/bibcitation.csh | tee -a $LOG || exit 1
 
 #
 # datasets

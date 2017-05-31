@@ -84,4 +84,4 @@ MGI:curator_CindySmith
 MGI:curator_ConnieSmith
 MGI:curator_MonikaTomczuk
 MGI:curator_LaurensWilming
-MGI:curator_JingziaXu
+MGI:curator_JingxiaXu

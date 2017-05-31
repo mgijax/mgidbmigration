@@ -64,7 +64,7 @@ insert into VOC_Term values(
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Group'), 
-'Expression','Expr',2,0,1001,1001,now(),now());
+'Expression','GXD',2,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Workflow Group'), 

@@ -252,12 +252,8 @@ def apgxdgoqtl_rejected():
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
 
-   wf_status_bcp.close()
-
-#
-# ap/Rejected
-#
-def ap_rejected():
+   #
+   # AP-only Rejected
    #
    # selected : any
    # used : false
@@ -265,12 +261,6 @@ def ap_rejected():
    # never used : true
    # incomplete : any
    #
-   # wf_status = Rejected
-   #
-
-   global assocStatusKey
-
-   wf_status_bcp = open('wf_status_rejected.bcp', 'w+')
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -283,6 +273,35 @@ def ap_rejected():
 	and not exists (select 1 from MGI_Reference_Allele_View gi where gi._Refs_key = r._Refs_key)
 	order by r.jnumID
 	''' % (apKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
+	assocStatusKey += 1
+
+   #
+   # GO-only Rejected
+   #
+   # selected : any
+   # used : false
+   # not used : any
+   # never used : true
+   # incomplete : any
+   #
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from BIB_DataSet_Assoc dbsa
+            where dbsa._dataset_key in (1005)
+	    and r._Refs_key = dbsa._Refs_key
+	    and dbsa.isNeverUsed = 1
+	    )
+        and not exists (select 1 from VOC_Evidence e, VOC_Annot a
+           where e._Refs_key = r._Refs_key
+	   and e._Annot_key = a._Annot_key
+	   and a._AnnotType_key = 1000)
+	order by r.jnumID
+	''' % (goKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
@@ -422,26 +441,17 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'R
 #
 #apgxdgoqtl_indexed()
 #apgxdgoqtl_chosen()
-#apgxdgoqtl_rejected()
-
-#
-# ap/Rejected
-#
-#ap_rejected()
+apgxdgoqtl_rejected()
 
 #
 # ap/AP:Incomplete
 #
-ap_incomplete()
+#ap_incomplete()
 
 #
 # gxd/GXD:Loads
 #
-gxd_loads()
-
-#
-# go/Rejected
-#
+#gxd_loads()
 
 #
 # Tumor

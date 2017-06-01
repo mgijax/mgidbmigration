@@ -40,8 +40,9 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DB
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_indexed.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_rejected.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 
-${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag_apincomplete.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
-${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag_gxdloads.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag_ap.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag_gxd.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_create.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_create.object | tee -a ${LOG}

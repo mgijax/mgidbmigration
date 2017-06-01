@@ -564,12 +564,12 @@ def tumor_status():
    for line in inFile.readlines():
    	tokens = line[:-1]
 	jnumID = tokens
-	querySQL = '''select * from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
    	results = db.sql(querySQL, 'auto')
    	for r in results:
    		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, indexedKey, currentDate, currentDate))
 		assocStatusKey += 1
-		counter += 1
+	        counter += 1
    print 'Tumor           | INDEXED | %d\n' % (counter)
    inFile.close()
 
@@ -578,12 +578,12 @@ def tumor_status():
    for line in inFile.readlines():
    	tokens = line[:-1].split('\t')
 	jnumID = tokens[1]
-	querySQL = '''select * from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
    	results = db.sql(querySQL, 'auto')
    	for r in results:
    		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, rejectedKey, currentDate, currentDate))
 		assocStatusKey += 1
-		counter += 1
+	        counter += 1
    print 'Tumor           | REJECTED | %d\n' % (counter)
    inFile.close()
 
@@ -592,12 +592,12 @@ def tumor_status():
    for line in inFile.readlines():
    	tokens = line[:-1].split('\t')
 	jnumID = tokens[1]
-	querySQL = '''select * from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
-   	results = db.sql(querySQL, 'auto')
+	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+  	results = db.sql(querySQL, 'auto')
    	for r in results:
    		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, curatedKey, currentDate, currentDate))
 		assocStatusKey += 1
-		counter += 1
+	        counter += 1
    print 'Tumor           | FULLY CURATED | %d\n' % (counter)
    inFile.close()
 

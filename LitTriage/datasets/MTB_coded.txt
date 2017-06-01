@@ -1,4 +1,3 @@
-MTB_reference_key	J_number	authors	year	journal	volume	issue	pages
 1276	J:82288	Yamada T; Mori Y; Hayashi R; Takada M; Ino Y; Naishiro Y; Kondo T; Hirohashi S	2003	Cancer Res	63	5	895-901
 254	J:10061	Angel JM; Morizot DC; Richie ER	1989	J Natl Cancer Inst	81	21	1652-5
 1277	J:88127	Gupta RA; Wang D; Katkuri S; Wang H; Dey SK; DuBois RN	2004	Nat Med	10	3	245-7

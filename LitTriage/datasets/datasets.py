@@ -560,7 +560,7 @@ def tumor_status():
    wf_status_bcp = open('wf_status_tumor.bcp', 'w+')
 
    inFile = open('MTB_indexed.txt', 'r')
-   counter = 1
+   counter = 0
    for line in inFile.readlines():
    	tokens = line[:-1]
 	jnumID = tokens
@@ -574,7 +574,7 @@ def tumor_status():
    inFile.close()
 
    inFile = open('MTB_rejected.txt', 'r')
-   counter = 1
+   counter = 0
    for line in inFile.readlines():
    	tokens = line[:-1].split('\t')
 	jnumID = tokens[1]
@@ -588,7 +588,7 @@ def tumor_status():
    inFile.close()
 
    inFile = open('MTB_coded.txt', 'r')
-   counter = 1
+   counter = 0
    for line in inFile.readlines():
    	tokens = line[:-1].split('\t')
 	jnumID = tokens[1]

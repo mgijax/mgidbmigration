@@ -375,8 +375,6 @@ def ap_tag():
    # wf_tag = AP:strain
    #
 
-   wf_tag_bcp = open('wf_tag_ap.bcp', 'w+')
-
    tagKey = db.sql('''
    select t._Term_key from VOC_Vocab v, VOC_Term t
    where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'AP:strains'
@@ -553,6 +551,59 @@ def other_tags():
    wf_tag_bcp.close()
 
 #
+# tumor
+#
+def tumor_status():
+
+   global assocStatusKey
+
+   wf_status_bcp = open('wf_status_tumor.bcp', 'w+')
+
+   inFile = open('MTB_indexed.txt', 'r')
+   counter = 1
+   for line in inFile.readlines():
+   	tokens = line[:-1]
+	jnumID = tokens
+	querySQL = '''select * from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+   	results = db.sql(querySQL, 'auto')
+   	for r in results:
+   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, indexedKey, currentDate, currentDate))
+		assocStatusKey += 1
+		counter += 1
+   print 'Tumor           | INDEXED | %d\n' % (counter)
+   inFile.close()
+
+   inFile = open('MTB_rejected.txt', 'r')
+   counter = 1
+   for line in inFile.readlines():
+   	tokens = line[:-1].split('\t')
+	jnumID = tokens[1]
+	querySQL = '''select * from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+   	results = db.sql(querySQL, 'auto')
+   	for r in results:
+   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, rejectedKey, currentDate, currentDate))
+		assocStatusKey += 1
+		counter += 1
+   print 'Tumor           | REJECTED | %d\n' % (counter)
+   inFile.close()
+
+   inFile = open('MTB_coded.txt', 'r')
+   counter = 1
+   for line in inFile.readlines():
+   	tokens = line[:-1].split('\t')
+	jnumID = tokens[1]
+	querySQL = '''select * from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+   	results = db.sql(querySQL, 'auto')
+   	for r in results:
+   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, curatedKey, currentDate, currentDate))
+		assocStatusKey += 1
+		counter += 1
+   print 'Tumor           | FULLY CURATED | %d\n' % (counter)
+   inFile.close()
+
+   wf_status_bcp.close()
+   
+#
 # Main
 #
 
@@ -578,6 +629,11 @@ select t._Term_key from VOC_Vocab v, VOC_Term t
 where v.name = 'Workflow Group' and v._Vocab_key = t._Vocab_key and t.term = 'QTL'
 ''')[0]['_Term_key']
 
+tumorKey = db.sql('''
+select t._Term_key from VOC_Vocab v, VOC_Term t 
+where v.name = 'Workflow Group' and v._Vocab_key = t._Vocab_key and t.term = 'Tumor'
+''')[0]['_Term_key']
+
 indexedKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
 where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Indexed'
@@ -591,6 +647,11 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'C
 rejectedKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
 where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Rejected'
+''')[0]['_Term_key']
+
+curatedKey = db.sql('''
+select t._Term_key from VOC_Vocab v, VOC_Term t 
+where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Fully curated'
 ''')[0]['_Term_key']
 
 #
@@ -615,12 +676,7 @@ other_tags()
 # Tumor
 # Indexed, Rejected, Fully coded
 #
-
-#inFile = open('', 'r')
-#lineNum = 0
-#for line in inFile.readlines():
-#	lineNum = lineNum + 1
-#	tokens = line[:-1].split('|')
+tumor_status()
 
 db.useOneConnection(0)
 

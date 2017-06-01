@@ -11,13 +11,16 @@ import os
 import db
 import mgi_utils
 
-db.setTrace()
+#db.setTrace()
 
 wf_status = '%s|%s|%s|%s|1|1001|1001|%s|%s\n'
 
 wf_tag = '%s|%s|%s|1001|1001|%s|%s\n'
 
 currentDate = mgi_utils.date('%m/%d/%Y')
+
+assocStatusKey = 1
+assocTagKey = 1
 
 #
 # ap/gxd/go/qtl : indexed
@@ -47,6 +50,7 @@ def apgxdgoqtl_indexed():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Allele/Pheno | INDEXED | used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -59,6 +63,7 @@ def apgxdgoqtl_indexed():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Expression   | INDEXED | used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -73,6 +78,7 @@ def apgxdgoqtl_indexed():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'GO           | INDEXED | used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -85,6 +91,7 @@ def apgxdgoqtl_indexed():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'QTL          | INDEXED | used | %d\n' % (len(results))
 
    wf_status_bcp.close()
 
@@ -119,6 +126,7 @@ def apgxdgoqtl_chosen():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], chosenKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Allele/Pheno | CHOSEN | selected/not used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -134,6 +142,7 @@ def apgxdgoqtl_chosen():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], chosenKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Expression   | CHOSEN | selected/not used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -151,6 +160,7 @@ def apgxdgoqtl_chosen():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], chosenKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'GO           | CHOSEN | selected/not used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -166,6 +176,7 @@ def apgxdgoqtl_chosen():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], chosenKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'QTL          | CHOSEN | selected/not used | %d\n' % (len(results))
 
    wf_status_bcp.close()
 
@@ -201,6 +212,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Allele/Pheno | REJECTED | not selected/not used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -217,6 +229,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Expression   | REJECTED | not selected/not used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -235,6 +248,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'GO           | REJECTED | not selected/not used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -251,6 +265,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'QTL          | REJECTED | not selected/not used | %d\n' % (len(results))
 
    #
    # AP-only Rejected
@@ -277,6 +292,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'Allele/Pheno | REJECTED | not used | never used | %d\n' % (len(results))
 
    #
    # GO-only Rejected
@@ -306,13 +322,14 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
+   print 'GO           | REJECTED | not used | never used | %d\n' % (len(results))
 
    wf_status_bcp.close()
 
 #
 # ap/AP:Incomplete
 #
-def ap_incomplete():
+def ap_tag():
    #
    # selected : any
    # used : any
@@ -325,7 +342,7 @@ def ap_incomplete():
 
    global assocTagKey
 
-   wf_tag_bcp = open('wf_tag_apincomplete.bcp', 'w+')
+   wf_tag_bcp = open('wf_tag_ap.bcp', 'w+')
 
    tagKey = db.sql('''
    select t._Term_key from VOC_Vocab v, VOC_Term t 
@@ -346,13 +363,45 @@ def ap_incomplete():
    for r in results:
    	wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
 	assocTagKey += 1
+   print 'Allele/Pheno | AP:Incomplete | incomplete | %d\n' % (len(results))
+
+   #
+   # selected : true
+   # used : na
+   # not used : na
+   # never used : na
+   # incomplete : na
+   #
+   # wf_tag = AP:strain
+   #
+
+   wf_tag_bcp = open('wf_tag_ap.bcp', 'w+')
+
+   tagKey = db.sql('''
+   select t._Term_key from VOC_Vocab v, VOC_Term t
+   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'AP:strains'
+   ''')[0]['_Term_key']
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r
+        where exists (select 1 from BIB_DataSet_Assoc dbsa
+            where dbsa._dataset_key in (1008)
+            and r._Refs_key = dbsa._Refs_key
+            )
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        assocTagKey += 1
+   print 'SCC          | AP:strains | selected | %d\n' % (len(results))
 
    wf_tag_bcp.close()
 
-#
 # gxd/GXD:Loads
 #
-def gxd_loads():
+def gxd_tag():
    #
    # selected : any
    # used : false
@@ -365,7 +414,7 @@ def gxd_loads():
 
    global assocTagKey
 
-   wf_tag_bcp = open('wf_tag_gxdloads.bcp', 'w+')
+   wf_tag_bcp = open('wf_tag_gxd.bcp', 'w+')
 
    tagKey = db.sql('''
    select t._Term_key from VOC_Vocab v, VOC_Term t
@@ -388,6 +437,118 @@ def gxd_loads():
    for r in results:
         wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
         assocTagKey += 1
+   print 'GXD          | GXD:Loads | not used | never used | %d\n' % (len(results))
+
+   wf_tag_bcp.close()
+
+#
+# probe, mapping, nomen, markers, PRO tags
+#
+def other_tags():
+   #
+   # selected : any
+   # used : true
+   # not used : any
+   # never used : any
+   # incomplete : any
+   #
+   # wf_tag = MGI:probes
+   #
+
+   global assocTagKey
+
+   wf_tag_bcp = open('wf_tag.bcp', 'w+')
+
+   tagKey = db.sql('''
+   select t._Term_key from VOC_Vocab v, VOC_Term t
+   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:probe'
+   ''')[0]['_Term_key']
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r
+        where exists (select 1 from PRB_Reference gi where gi._Refs_key = r._Refs_key)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        assocTagKey += 1
+   print 'Probe | MGI:probe | used | %d\n' % (len(results))
+
+   tagKey = db.sql('''
+   select t._Term_key from VOC_Vocab v, VOC_Term t
+   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:mapping'
+   ''')[0]['_Term_key']
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r
+        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        assocTagKey += 1
+   print 'Mapping | MGI:mapping | used | %d\n' % (len(results))
+
+   tagKey = db.sql('''
+   select t._Term_key from VOC_Vocab v, VOC_Term t
+   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:nomen'
+   ''')[0]['_Term_key']
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r
+        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        assocTagKey += 1
+   print 'Nomen | MGI:homen | used | %d\n' % (len(results))
+
+   tagKey = db.sql('''
+   select t._Term_key from VOC_Vocab v, VOC_Term t
+   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:markers'
+   ''')[0]['_Term_key']
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r
+        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        assocTagKey += 1
+   print 'Marker | MGI:markers | used | %d\n' % (len(results))
+
+   tagKey = db.sql('''
+   select t._Term_key from VOC_Vocab v, VOC_Term t
+   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:PRO'
+   ''')[0]['_Term_key']
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r
+        where exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p
+        	where e._Refs_key = r._Refs_key
+        	and a._AnnotType_key = 1000
+        	and a._Annot_key = e._Annot_key
+        	and e._AnnotEvidence_key = p._AnnotEvidence_key
+        	and p._PropertyTerm_key = 6481775
+        	)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        assocTagKey += 1
+   print 'PRO | MGI:PRO used | %d\n' % (len(results))
 
    wf_tag_bcp.close()
 
@@ -396,9 +557,6 @@ def gxd_loads():
 #
 
 db.useOneConnection(1)
-
-assocStatusKey = 1
-assocTagKey = 1
 
 apKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
@@ -436,22 +594,22 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'R
 ''')[0]['_Term_key']
 
 #
+# Status
 # ap/gxd/go/qtl
 # Indexed, Chosen, Rejected
 #
-#apgxdgoqtl_indexed()
-#apgxdgoqtl_chosen()
+apgxdgoqtl_indexed()
+apgxdgoqtl_chosen()
 apgxdgoqtl_rejected()
 
-#
-# ap/AP:Incomplete
-#
-#ap_incomplete()
+# Tags
+ap_tag()
+gxd_tag()
 
 #
-# gxd/GXD:Loads
+# probe, mapping, nomen, markers, PRO tags
 #
-#gxd_loads()
+other_tags()
 
 #
 # Tumor

@@ -98,10 +98,10 @@ ${MGICACHELOAD}/bibcitation.csh | tee -a $LOG || exit 1
 #
 # datasets
 #
-#date | tee -a ${LOG}
-#echo 'running data sets migration' | tee -a $LOG
-#cd datasets
-#./datasets.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'running data sets migration' | tee -a $LOG
+cd datasets
+./datasets.csh | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

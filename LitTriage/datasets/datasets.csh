@@ -47,5 +47,9 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTI
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_create.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_create.object | tee -a ${LOG}
 
-date | tee -a $LOG
+allstatus.csh
+alltags.csh
+counts.csh
+nostatus.csh
+tagnostatus.csh
 

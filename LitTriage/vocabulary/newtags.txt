@@ -85,3 +85,4 @@ MGI:curator_ConnieSmith
 MGI:curator_MonikaTomczuk
 MGI:curator_LaurensWilming
 MGI:curator_JingxiaXu
+MGI:Erratum

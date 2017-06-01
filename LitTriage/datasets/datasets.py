@@ -43,7 +43,7 @@ def apgxdgoqtl_indexed():
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
-        where exists (select 1 from MGI_Reference_Allele_View gi where gi._Refs_key = r._Refs_key)
+        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -119,7 +119,7 @@ def apgxdgoqtl_chosen():
         where dbsa._DataSet_key in (1002)
 	and dbsa._Refs_key = r._Refs_key
 	and dbsa.isNeverUsed = 0
-        and not exists (select 1 from MGI_Reference_Allele_View gi where gi._Refs_key = dbsa._Refs_key)
+        and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -205,7 +205,7 @@ def apgxdgoqtl_rejected():
             where dbsa._dataset_key in (1002)
 	    and r._Refs_key = dbsa._Refs_key
 	    )
-	and not exists (select 1 from MGI_Reference_Allele_View gi where gi._Refs_key = r._Refs_key)
+        and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -285,7 +285,7 @@ def apgxdgoqtl_rejected():
 	    and r._Refs_key = dbsa._Refs_key
 	    and dbsa.isNeverUsed = 1
 	    )
-	and not exists (select 1 from MGI_Reference_Allele_View gi where gi._Refs_key = r._Refs_key)
+        and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -323,6 +323,33 @@ def apgxdgoqtl_rejected():
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
    print 'GO           | REJECTED | not used | never used | %d\n' % (len(results))
+
+   #
+   # QTL-only Rejected
+   #
+   # selected : any
+   # used : false
+   # not used : any
+   # never used : true
+   # incomplete : any
+   #
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from BIB_DataSet_Assoc dbsa
+            where dbsa._dataset_key in (1011)
+	    and r._Refs_key = dbsa._Refs_key
+	    )
+        and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+	order by r.jnumID
+	''' % (qtlKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
+	assocStatusKey += 1
+   print 'QTL           | REJECTED | not used | never used | %d\n' % (len(results))
 
    wf_status_bcp.close()
 

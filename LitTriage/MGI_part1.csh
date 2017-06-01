@@ -92,6 +92,7 @@ cd vocabulary
 
 #
 # EI depends on this cache
+# and needed by the dataset migration
 #
 ${MGICACHELOAD}/bibcitation.csh | tee -a $LOG || exit 1
 

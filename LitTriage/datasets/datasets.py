@@ -340,6 +340,7 @@ def apgxdgoqtl_rejected():
         where exists (select 1 from BIB_DataSet_Assoc dbsa
             where dbsa._dataset_key in (1011)
 	    and r._Refs_key = dbsa._Refs_key
+	    and dbsa.isNeverUsed = 1
 	    )
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))

@@ -106,7 +106,8 @@ ${PG_MGD_DBSCHEMADIR}/table/BIB_Refs_create.object | tee -a $LOG || exit 1
 
 #
 # insert data into new table using "Not Specified"
-# ADD CALL TO migration python script when ready
+# OR
+# use rules to translate to correct Reference Type
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

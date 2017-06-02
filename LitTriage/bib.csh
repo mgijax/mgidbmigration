@@ -1,6 +1,7 @@
 #!/bin/csh -f
 
 #
+# migrates existing bib_refs to new bib_refs table
 # migration of bib_dataset/bib_dataset_assoc to bib_workflow_status, bib_workflow_tag
 #
 
@@ -100,7 +101,10 @@ ALTER TABLE mgd.BIB_Refs_old DROP CONSTRAINT BIB_Refs_pkey CASCADE;
 
 EOSQL
 
+#
 # insert data into new table using "Not Specified"
+# ADD CALL TO migration python script when ready
+#
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 INSERT INTO BIB_Refs

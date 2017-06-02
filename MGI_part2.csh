@@ -3,6 +3,10 @@
 #
 # (part 2 - run loads)
 #
+# BEFORE adding a call to a load:
+# . Delete any "lastrun" files that may exist in the "input" directory
+# . Copy any new /data/downloads files OR run mirror_wget package, if necessary
+#
 
 ###----------------------###
 ###--- initialization ---###

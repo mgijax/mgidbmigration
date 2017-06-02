@@ -101,6 +101,9 @@ ALTER TABLE mgd.BIB_Refs_old DROP CONSTRAINT BIB_Refs_pkey CASCADE;
 
 EOSQL
 
+# new table
+${PG_MGD_DBSCHEMADIR}/table/BIB_Refs_create.object | tee -a $LOG || exit 1
+
 #
 # insert data into new table using "Not Specified"
 # ADD CALL TO migration python script when ready
@@ -119,7 +122,6 @@ FROM BIB_Refs_old
 EOSQL
 
 # new table
-${PG_MGD_DBSCHEMADIR}/table/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
@@ -137,10 +139,10 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG || exit 1
 
 #
 # turn on when ready to remove BIB_DataSet* tables
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-drop table mgd.BIB_Refs_old
-drop table mgd.BIB_ReviewStatus
---after migration, this term can be deleted
---delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#drop table mgd.BIB_Refs_old
+#drop table mgd.BIB_ReviewStatus
+#--after migration, this term can be deleted
+#--delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';
+#EOSQL
 

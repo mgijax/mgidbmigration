@@ -696,7 +696,7 @@ ap_tag()
 gxd_tag()
 
 #
-# probe, mapping, nomen, markers, PRO tags
+# probe, mapping, nomen, markers, PRO, SCC tags
 #
 other_tags()
 

@@ -124,16 +124,12 @@ ${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/view_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/view_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.logical | tee -a $LOG || exit 1
 
-#
-# EI depends on this cache
-# and needed by the dataset migration
-#
-${MGICACHELOAD}/bibcitation.csh | tee -a $LOG || exit 1
+# done in MGI_part1.csh
+#${PG_MGD_DBSCHEMADIR}/view/view_drop.logical | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/view/view_create.logical | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.logical | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.logical | tee -a $LOG || exit 1
 
 #
 # turn on when ready to remove BIB_DataSet* tables
@@ -143,7 +139,4 @@ drop table mgd.BIB_ReviewStatus
 --after migration, this term can be deleted
 --delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';
 EOSQL
-
-# to verify success of migration
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 

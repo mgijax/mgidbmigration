@@ -19,9 +19,11 @@ touch $LOG
  
 date | tee -a $LOG
 
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
+# done in MGI_part1.csh
+#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
+
 ${PG_MGD_DBSCHEMADIR}/index/ACC_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ACC_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG
@@ -55,13 +57,13 @@ ${PG_MGD_DBSCHEMADIR}/index/ACC_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ACC_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG
 
-# verify counts
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
+# done in MGI_part1.csh
+#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 date |tee -a $LOG
 

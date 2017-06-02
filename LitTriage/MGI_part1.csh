@@ -67,16 +67,16 @@ date | tee -a ${LOG}
 #
 # drop before running other migration scripts
 #
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
 
 #
 # add new workflow tables & changes to bib_refs
 #
-date | tee -a ${LOG}
-echo 'running new workflow/bib_refs changes' | tee -a $LOG
-./bib.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+#echo 'running new workflow/bib_refs changes' | tee -a $LOG
+#./bib.csh | tee -a $LOG || exit 1
 
 #
 # TR12083/ACC varchar-to-text 

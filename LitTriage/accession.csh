@@ -53,10 +53,10 @@ ALTER TABLE ACC_MGIType ALTER COLUMN dbView TYPE text;
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/index/ACC_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ACC_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/ACC_create.logical | tee -a $LOG
 
 # done in MGI_part1.csh
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG

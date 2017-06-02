@@ -67,17 +67,9 @@ date | tee -a ${LOG}
 #
 # add new workflow tables
 #
-${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Status_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Tag_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/BIB_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'running new workflow/bib_refs changes' | tee -a $LOG
+./workflow.csh | tee -a $LOG || exit 1
 
 #
 # TR12083/ACC varchar-to-text 
@@ -95,12 +87,6 @@ date | tee -a ${LOG}
 echo 'adding vocabularies' | tee -a $LOG
 cd vocabulary
 ./vocabulary.csh | tee -a $LOG || exit 1
-
-#
-# EI depends on this cache
-# and needed by the dataset migration
-#
-${MGICACHELOAD}/bibcitation.csh | tee -a $LOG || exit 1
 
 #
 # datasets

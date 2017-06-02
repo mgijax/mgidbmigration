@@ -19,12 +19,10 @@ touch $LOG
 date | tee -a $LOG
 
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#delete from VOC_Term where _Vocab_key in (128,129,130);
-#delete from VOC_Vocab where _Vocab_key in (128,129,130);
+#delete from VOC_Term where _Vocab_key >= 128
 #EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Reference Type',now(),now());
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Group',now(),now());
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Status',now(),now());
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Workflow Tag',now(),now());
@@ -32,31 +30,6 @@ insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Article',null,1,0,1001,1001,now(),now());
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Book',null,2,0,1001,1001,now(),now());
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Direct Submission',null,3,0,1001,1001,now(),now());
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Personal Communication',null,4,0,1001,1001,now(),now());
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'GenBank Submission',null,5,0,1001,1001,now(),now());
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Newsletter',null,6,0,1001,1001,now(),now());
 
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),

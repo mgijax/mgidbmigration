@@ -54,3 +54,10 @@ counts.csh
 nostatus.csh
 tagnostatus.csh
 
+#
+# turn on when ready to remove BIB_DataSet* tables
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#drop table mgd.BIB_DataSet_Assoc
+#drop table mgd.BIB_DataSet
+#EOSQL
+

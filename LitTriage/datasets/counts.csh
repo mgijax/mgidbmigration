@@ -27,7 +27,7 @@ where r._Refs_key = s._Refs_key
 and s._Group_key = wfg._Term_key
 and s._Status_key = wfs._Term_key
 group by wfg.term, wfs.term
-order by wfg.term
+order by wfg.term, wfs.term
 ;
 
 select wft.term, count(*)

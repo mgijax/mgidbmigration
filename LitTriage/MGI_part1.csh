@@ -61,11 +61,11 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-11', public_version = 'MGI 6.11';
-EsOSQL
+EOSQL
 date | tee -a ${LOG}
 
 #
-# drop before running migration scripts
+# drop before running other migration scripts
 #
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
@@ -77,6 +77,7 @@ ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
 date | tee -a ${LOG}
 echo 'running new workflow/bib_refs changes' | tee -a $LOG
 ./bib.csh | tee -a $LOG || exit 1
+exit 0
 
 #
 # TR12083/ACC varchar-to-text 

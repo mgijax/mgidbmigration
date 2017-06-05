@@ -152,8 +152,8 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG || exit 1
 #
 # turn on when ready to remove BIB_DataSet* tables
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-drop table mgd.BIB_Refs_old
-drop table mgd.BIB_ReviewStatus
+drop table mgd.BIB_Refs_old;
+drop table mgd.BIB_ReviewStatus;
 --after migration, this term can be deleted
 --delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';
 EOSQL

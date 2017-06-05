@@ -111,23 +111,23 @@ ${PG_MGD_DBSCHEMADIR}/table/BIB_Refs_create.object | tee -a $LOG || exit 1
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-INSERT INTO BIB_Refs
-SELECT _Refs_key, 
+insert into BIB_Refs
+select _Refs_key, 
 (select t._Term_key from VOC_Term t, VOC_Vocab v 
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified'),
 authors, _primary, title, journal, vol, issue, date, year, pgs, abstract, isReviewArticle,
 _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date  
-FROM BIB_Refs_old
+from BIB_Refs_old
 where not exists (select 1 from BIB_Books where BIB_Refs_old._Refs_key = BIB_Books._Refs_key)
 ;
 
-INSERT INTO BIB_Refs
-SELECT _Refs_key, 
+insert into BIB_Refs
+select _Refs_key, 
 (select t._Term_key from VOC_Term t, VOC_Vocab v 
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Book'),
 authors, _primary, title, journal, vol, issue, date, year, pgs, abstract, isReviewArticle,
 _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date  
-FROM BIB_Refs_old
+from BIB_Refs_old
 where exists (select 1 from BIB_Books where BIB_Refs_old._Refs_key = BIB_Books._Refs_key)
 ;
 

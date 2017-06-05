@@ -4,7 +4,6 @@ AP:strains
 MGI:mapping
 MGI:markers
 MGI:probe
-GO:GOA
 MGI:Discard
 GXD:HTS
 AP:NewAlleleNomenclature
@@ -28,6 +27,8 @@ MGI:CorrectionAdded
 MGI:Retracted
 MGI:NoAbstract
 MGI:HasSupplementalData
+MGI_OpenAccess
+GO:GOA
 GO:HasCellLines
 GO:MicroRNA
 GO:Cancer

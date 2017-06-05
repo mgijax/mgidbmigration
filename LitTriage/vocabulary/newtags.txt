@@ -27,7 +27,7 @@ MGI:CorrectionAdded
 MGI:Retracted
 MGI:NoAbstract
 MGI:HasSupplementalData
-MGI_OpenAccess
+MGI_CreativeCommons
 GO:GOA
 GO:HasCellLines
 GO:MicroRNA

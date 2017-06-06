@@ -50,51 +50,47 @@ insert into VOC_Term values(
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Curated Relationships',null,4,0,1001,1001,now(),now());
+'MGI Data Load',null,4,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'MGI Data Load',null,5,0,1001,1001,now(),now());
+'MGI Direct Data Submission',null,5,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'MGI Direct Data Submission',null,6,0,1001,1001,now(),now());
+'Dissertation/Thesis',null,6,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Dissertation/Thesis',null,7,0,1001,1001,now(),now());
+'External Resource',null,7,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'External Resource',null,8,0,1001,1001,now(),now());
+'JAX Notes',null,8,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'JAX Notes',null,9,0,1001,1001,now(),now());
+'MGI Curation Record',null,9,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'MGI Curatorion Record',null,10,0,1001,1001,now(),now());
+'Peer Reviewed Article',null,10,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Peer Reviewed Article',null,11,0,1001,1001,now(),now());
+'Personal Communication',null,11,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Personal Communication',null,12,0,1001,1001,now(),now());
+'Unreviewed Article',null,12,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Unreviewed Article',null,13,0,1001,1001,now(),now());
+'Newsletter',null,13,0,1001,1001,now(),now());
 insert into VOC_Term values(
 (select max(_Term_key) + 1 from VOC_Term),
 (select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Newsletter',null,14,0,1001,1001,now(),now());
-insert into VOC_Term values(
-(select max(_Term_key) + 1 from VOC_Term),
-(select _Vocab_key from VOC_Vocab where name = 'Reference Type'), 
-'Not Specified',null,15,0,1001,1001,now(),now());
+'Not Specified',null,14,0,1001,1001,now(),now());
 
 ALTER TABLE BIB_Refs RENAME TO BIB_Refs_old;
 ALTER TABLE mgd.BIB_Refs_old DROP CONSTRAINT BIB_Refs_pkey CASCADE;

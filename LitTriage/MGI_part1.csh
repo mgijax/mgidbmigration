@@ -79,6 +79,7 @@ echo 'running new workflow/bib_refs changes' | tee -a $LOG
 ./bib.csh | tee -a $LOG || exit 1
 cd referencetype
 ./bibreftype.csh | tee -a $LOG || exit 1
+cd ..
 
 #
 # TR12083/ACC varchar-to-text 

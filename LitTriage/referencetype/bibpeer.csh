@@ -84,7 +84,7 @@ where r.journal in (
 'Teratology',
 'Tex Rep Biol Med',
 'Trans R Soc Trop Med Hyg',
-'Transgenic Res'
+'Transgenic Res',
 'Res Rep Health Eff Inst',
 'Acad J Xian Jiaotong Univ',
 'ACS Chem Neurosci',

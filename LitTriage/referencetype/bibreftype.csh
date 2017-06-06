@@ -253,7 +253,7 @@ or r.journal like ('%Final Report%')
 
 EOSQL
 
-#./bibpeer.csh | tee -a $LOG
+./bibpeer.csh | tee -a $LOG
 
 #
 # there should be no reference associated with Reference Type 'Not Specified'

@@ -57,6 +57,7 @@ set _ReferenceType_key = (select t._Term_key
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
 	and t.term = 'Dissertation/Thesis')
 where lower(r.journal) like '% thesis%'
+or lower(r.journal) like '%dissertation%')
 ;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
@@ -183,9 +184,8 @@ set _ReferenceType_key = (select t._Term_key
         from VOC_Vocab v, VOC_Term t
         where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
         and t.term = 'MGI Curation Record')
-where r.journal in (
-'Begins ''Companion to''',
-'Res Rep Health Eff Inst'
+where r.journal like 'Companion to%'
+or r.journal in ('Res Rep Health Eff Inst')
 )
 ;
 
@@ -196,12 +196,12 @@ set _ReferenceType_key = (select t._Term_key
         and t.term = 'Newsletter')
 where r.journal in (
 'Mouse Mutagenesis Memo No. 6',
-'Begins ''Companion Issue''',
-'Begins ''Mouse Genome''',
 'Mouse News Lett',
 'Peromyscus News Lett'
 'Rat News Let'
 )
+or r.journal like 'Companion Issue%'
+or r.journal like 'Mouse Genome%'
 ;
 
 update BIB_Refs r

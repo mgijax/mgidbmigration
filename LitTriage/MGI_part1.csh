@@ -103,13 +103,13 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 ${MGICACHELOAD}/bibcitation.csh | tee -a $LOG || exit 1
 
 #
-# vocabularies
+# vocabularies : done on produciton 06/06/2017
 #
-date | tee -a ${LOG}
-echo 'adding vocabularies' | tee -a $LOG
-cd vocabulary
-./vocabulary.csh | tee -a $LOG || exit 1
-cd ..
+#date | tee -a ${LOG}
+#echo 'adding vocabularies' | tee -a $LOG
+#cd vocabulary
+#./vocabulary.csh | tee -a $LOG || exit 1
+#cd ..
 
 #
 # datasets

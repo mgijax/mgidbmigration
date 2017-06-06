@@ -2,7 +2,6 @@
 
 #
 # migrates existing bib_refs to new bib_refs table
-# migration of bib_dataset/bib_dataset_assoc to bib_workflow_status, bib_workflow_tag
 #
 
 

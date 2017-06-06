@@ -99,6 +99,7 @@ set _ReferenceType_key = (select t._Term_key
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
 	and t.term = 'Personal Communication')
 where lower(r.title) like '%personal communication%'
+or lower(r.journal) like '%personal communication%'
 ;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
@@ -108,6 +109,13 @@ set _ReferenceType_key = (select t._Term_key
 where r.journal in ('The Jackson Laboratory Summer Student Program, Eva M. Eicher, Sponsor')
 ;
 
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'MGI Direct Data Submission')
+where r.journal = 'MGI Direct Data Submission'
+;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
 	from VOC_Vocab v, VOC_Term t
@@ -230,6 +238,20 @@ where r.journal in (
 'Sichuan J of Zoology'
 )
 ;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+        from VOC_Vocab v, VOC_Term t
+        where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+        and t.term = 'Annual Report/Bulletin')
+where r.journal like ('%Special Bulletin')
+or r.journal like ('%Annu Rep%')
+or r.journal like ('%Ann Rep%')
+or r.journal like ('%Annual Report%')
+or r.journal like ('%Scientific Report%')
+or r.journal like ('%Final Report%')
+;
+
 EOSQL
 
 ./bibpeer.csh | tee -a $LOG
@@ -238,11 +260,13 @@ EOSQL
 # there should be no reference associated with Reference Type 'Not Specified'
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-select count(r.*) from BIB_Refs r, VOC_Vocab v, VOC_Term t
+select distinct journal 
+from BIB_Refs r, VOC_Vocab v, VOC_Term t
 where v.name = 'Reference Type' 
 and v._Vocab_key = t._Vocab_key 
 and t.term = 'Not Specified'
 and t._Term_key = r._ReferenceType_key
+order by journal
 ;
 
 --delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';

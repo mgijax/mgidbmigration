@@ -57,7 +57,7 @@ set _ReferenceType_key = (select t._Term_key
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
 	and t.term = 'Dissertation/Thesis')
 where lower(r.journal) like '% thesis%'
-or lower(r.journal) like '%dissertation%')
+or lower(r.journal) like '%dissertation%'
 ;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
@@ -115,7 +115,7 @@ set _ReferenceType_key = (select t._Term_key
 	from VOC_Vocab v, VOC_Term t
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
 	and t.term = 'MGI Direct Data Submission')
-where r.journal = 'MGI Direct Data Submission'
+where r.journal like '%Submission%'
 ;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
@@ -186,7 +186,6 @@ set _ReferenceType_key = (select t._Term_key
         and t.term = 'MGI Curation Record')
 where r.journal like 'Companion to%'
 or r.journal in ('Res Rep Health Eff Inst')
-)
 ;
 
 update BIB_Refs r
@@ -200,8 +199,8 @@ where r.journal in (
 'Peromyscus News Lett'
 'Rat News Let'
 )
-or r.journal like 'Companion Issue%'
-or r.journal like 'Mouse Genome%'
+or lower(r.journal) like 'companion issue%'
+or lower(r.journal) like 'mouse genome%'
 ;
 
 update BIB_Refs r
@@ -254,7 +253,7 @@ or r.journal like ('%Final Report%')
 
 EOSQL
 
-./bibpeer.csh | tee -a $LOG
+#./bibpeer.csh | tee -a $LOG
 
 #
 # there should be no reference associated with Reference Type 'Not Specified'

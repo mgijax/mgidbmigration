@@ -77,6 +77,8 @@ ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
 date | tee -a ${LOG}
 echo 'running new workflow/bib_refs changes' | tee -a $LOG
 ./bib.csh | tee -a $LOG || exit 1
+cd referencetype
+./bibreftype.csh | tee -a $LOG || exit 1
 
 #
 # TR12083/ACC varchar-to-text 

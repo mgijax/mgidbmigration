@@ -19,11 +19,9 @@ touch $LOG
  
 date | tee -a $LOG
 
-# start on a clean slate
+# start on a clean slate (exclude Books)
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update BIB_Refs set _ReferenceType_key = 31576691
-where _ReferenceType_key != 31576679
-;
+update BIB_Refs set _ReferenceType_key = 31576691 where _ReferenceType_key != 31576679;
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

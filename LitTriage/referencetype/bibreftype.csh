@@ -228,15 +228,9 @@ or r.journal like ('%Scientific Report%')
 or r.journal like ('%Final Report%')
 ;
 
-update BIB_Refs r
-set _ReferenceType_key = (select t._Term_key
-	from VOC_Vocab v, VOC_Term t
-	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
-	and t.term = 'MGI Direct Data Submission')
-from ACC_Accession a
-where r._Refs_key = a._Object_key
-and a.accID in ('J:207088', 'J:77793', 'J:26637', 'J:23000')
-;
+--
+-- by J:
+--
 
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
@@ -246,6 +240,46 @@ set _ReferenceType_key = (select t._Term_key
 from ACC_Accession a
 where r._Refs_key = a._Object_key
 and a.accID in ('J:29152', 'J:30723')
+;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'MGI Direct Data Submission')
+from ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.accID in ('J:207088', 'J:77793', 'J:153498', 'J:85243')
+;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'MGI Curation Record')
+from ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.accID in ('J:23000')
+;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'Peer Reviewed Article')
+from ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.accID in ('J:180727')
+;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'Unreviewed Article')
+from ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.accID in ('J:26637')
 ;
 
 EOSQL

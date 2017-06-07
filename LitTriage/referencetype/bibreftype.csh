@@ -242,7 +242,7 @@ EOSQL
 # there should be no reference associated with Reference Type 'Not Specified'
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-select distinct journal 
+select distinct substring(title,1,50), journal 
 from BIB_Refs r, VOC_Vocab v, VOC_Term t
 where v.name = 'Reference Type' 
 and v._Vocab_key = t._Vocab_key 

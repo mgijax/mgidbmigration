@@ -264,7 +264,7 @@ where r.journal in (
 'Semin Reprod Med',
 'Theor Appl Genet',
 'Toxicol Appl Pharmacol',
-'Toxins (Basel)'
+'Toxins (Basel)',
 'Acad J Xian Jiaotong Univ',
 'ACS Chem Neurosci',
 'Acta',

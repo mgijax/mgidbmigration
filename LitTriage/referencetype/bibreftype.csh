@@ -144,7 +144,10 @@ where r.journal in (
 'http://www.gudmap.org',
 'Online Mendelian Inheritance in Man, OMIM (TM)',
 'Patent Application     US20100138936 A1',
-'PhenoSITE, World Wide Web (URL: http://www.brc.riken.jp/lab/gsc/mouse/)'
+'PhenoSITE, World Wide Web (URL: http://www.brc.riken.jp/lab/gsc/mouse/)',
+'Scientific info. sheet (http://www.criver.com/files/pdfs/rms/ncg/ncg-mouse-scientific--sheet.aspx)',
+'Swiss Prot',
+'World Wide Web (URL: http://www.mgc.har.mrc.ac.uk/xmap/xmap.html)'
 )
 or r.journal like 'Mouse Phenome Database Web Site%'
 ;
@@ -155,7 +158,15 @@ set _ReferenceType_key = (select t._Term_key
         where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
         and t.term = 'MGI Curation Record')
 where r.journal like 'Companion to%'
-or r.journal in ('Res Rep Health Eff Inst')
+or r.journal in (
+'Calculated microRNA cluster membership based on chromosomal location',
+'Curated Relationships',
+'Data Association Load',
+'GenBank Submission',
+'Rat Genome',
+'Res Rep Health Eff Inst',
+'Unpublished'
+)
 ;
 
 update BIB_Refs r

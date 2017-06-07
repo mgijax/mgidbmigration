@@ -42,7 +42,8 @@ set _ReferenceType_key = (select t._Term_key
         from VOC_Vocab v, VOC_Term t
         where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
         and t.term = 'MGI Data Load')
-where lower(r.title) like '%fantom2%' and lower(r.authors) like 'mouse genome informatics%'
+where r.authors like 'Mouse Genome Informatics%'
+and r.journal is null
 ;
 
 update BIB_Refs r

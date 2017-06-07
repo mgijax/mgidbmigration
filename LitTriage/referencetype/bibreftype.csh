@@ -75,7 +75,7 @@ set _ReferenceType_key = (select t._Term_key
 	from VOC_Vocab v, VOC_Term t
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
 	and t.term = 'MGI Data Load')
-where lower(r.journal) in ('database download', 'database procedure', 'database release')
+where lower(r.journal) in ('database download', 'database procedure', 'database release', 'data association load')
 ;
 
 update BIB_Refs r

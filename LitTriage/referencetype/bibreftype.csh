@@ -109,16 +109,6 @@ where r.journal like '%Submission%'
 ;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
-	from VOC_Vocab v, VOC_Term t
-	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
-	and t.term = 'MGI Direct Data Submission')
-from ACC_Accession a
-where r._Refs_key = a._Object_key
-and a.accID in ('J:207088', 'J:77793', 'J:26637', 'J:23000')
-;
-
-update BIB_Refs r
-set _ReferenceType_key = (select t._Term_key
         from VOC_Vocab v, VOC_Term t
         where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
         and t.term = 'Conference Proceedings/Abstracts')
@@ -236,6 +226,26 @@ or r.journal like ('%Ann Rep%')
 or r.journal like ('%Annual Report%')
 or r.journal like ('%Scientific Report%')
 or r.journal like ('%Final Report%')
+;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'MGI Direct Data Submission')
+from ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.accID in ('J:207088', 'J:77793', 'J:26637', 'J:23000')
+;
+
+update BIB_Refs r
+set _ReferenceType_key = (select t._Term_key
+	from VOC_Vocab v, VOC_Term t
+	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
+	and t.term = 'Book')
+from ACC_Accession a
+where r._Refs_key = a._Object_key
+and a.accID in ('J:29152', 'J:30723')
 ;
 
 EOSQL

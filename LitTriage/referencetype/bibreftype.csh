@@ -256,6 +256,8 @@ and t._Term_key = r._ReferenceType_key
 order by journal
 ;
 
---delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';
+delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified'
+;
+
 EOSQL
 

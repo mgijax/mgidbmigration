@@ -19,7 +19,9 @@ touch $LOG
  
 date | tee -a $LOG
 
-# done in MGI_part1.csh
+#
+# if running standalone...turn this on...else see MGI_part1.csh
+#
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
@@ -58,12 +60,27 @@ ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/ACC_create.logical | tee -a $LOG
 
-# done in MGI_part1.csh
+#
+# if running standalone...turn this on...else see MGI_part1.csh
+#
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
+#
+# rebuild the java dla, if needed due to schema changes
+#
+# done in MGI_part1.csh
+#${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+#${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+#
+# cache tables
+#
+#./MGI_part3.csh | tee -a $LOG
+#
+# end running standalone
+#
 
 date |tee -a $LOG
 

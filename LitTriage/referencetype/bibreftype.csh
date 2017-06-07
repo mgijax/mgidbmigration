@@ -58,6 +58,7 @@ set _ReferenceType_key = (select t._Term_key
 	and t.term = 'Dissertation/Thesis')
 where lower(r.journal) like '% thesis%'
 or lower(r.journal) like '%dissertation%'
+or lower(r.title) like '% thesis%'
 ;
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
@@ -81,27 +82,11 @@ update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
 	from VOC_Vocab v, VOC_Term t
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
-	and t.term = 'MGI Data Load')
-where r.title in ('Mammalian Orthology Load', 'Protein SuperFamily Classification Load', 'HCOP Orthology Load',
-	'Allen Brain Atlas [Internet] database Load', 'MouseFuncLoad', 'Wikipedia Gene Summary Load')
-;
-
-update BIB_Refs r
-set _ReferenceType_key = (select t._Term_key
-	from VOC_Vocab v, VOC_Term t
-	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
-	and t.term = 'MGI Data Load')
-where lower(r.title) like '%fantom2%' and lower(r.authors) like 'mouse genome informatics%'
-;
-
-update BIB_Refs r
-set _ReferenceType_key = (select t._Term_key
-	from VOC_Vocab v, VOC_Term t
-	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
 	and t.term = 'Personal Communication')
 where lower(r.title) like '%personal communication%'
 or lower(r.journal) like '%personal communication%'
 ;
+
 update BIB_Refs r
 set _ReferenceType_key = (select t._Term_key
 	from VOC_Vocab v, VOC_Term t
@@ -125,22 +110,6 @@ set _ReferenceType_key = (select t._Term_key
 from ACC_Accession a
 where r._Refs_key = a._Object_key
 and a.accID in ('J:207088', 'J:77793')
-;
-
-update BIB_Refs r
-set _ReferenceType_key = (select t._Term_key
-	from VOC_Vocab v, VOC_Term t
-	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
-	and t.term = 'Conference Proceedings/Abstracts')
-where lower(r.pgs) like '%abstr%'
-;
-
-update BIB_Refs r
-set _ReferenceType_key = (select t._Term_key
-	from VOC_Vocab v, VOC_Term t
-	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key 
-	and t.term = 'Conference Proceedings/Abstracts')
-where lower(r.title) like '%abstract%'
 ;
 
 update BIB_Refs r
@@ -177,6 +146,7 @@ where r.journal in (
 'Patent Application     US20100138936 A1',
 'PhenoSITE, World Wide Web (URL: http://www.brc.riken.jp/lab/gsc/mouse/)'
 )
+or r.journal like 'Mouse Phenome Database Web Site%'
 ;
 
 update BIB_Refs r
@@ -196,8 +166,8 @@ set _ReferenceType_key = (select t._Term_key
 where r.journal in (
 'Mouse Mutagenesis Memo No. 6',
 'Mouse News Lett',
-'Peromyscus News Lett'
-'Rat News Let'
+'Peromyscus News Lett',
+'Rat News Lett'
 )
 or lower(r.journal) like 'companion issue%'
 or lower(r.journal) like 'mouse genome%'
@@ -215,6 +185,7 @@ where r.journal in (
 'Acta Veterinaria-Beograd',
 'Acta Zooligica Sinica',
 'Adv Neurochem',
+'bioRxiv',
 'BioRxiv',
 'bioRxiv (Cold Spring Harbor Lab reprint)',
 'Cardiovascular Research',
@@ -254,6 +225,7 @@ or r.journal like ('%Final Report%')
 EOSQL
 
 ./bibpeer.csh | tee -a $LOG
+./bibtitle.csh | tee -a $LOG
 
 #
 # there should be no reference associated with Reference Type 'Not Specified'

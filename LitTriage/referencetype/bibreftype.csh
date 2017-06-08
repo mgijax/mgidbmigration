@@ -259,7 +259,7 @@ set _ReferenceType_key = (select t._Term_key
 	and t.term = 'MGI Curation Record')
 from ACC_Accession a
 where r._Refs_key = a._Object_key
-and a.accID in ('J:23000')
+and a.accID in ('J:23000', 'J:55930', 'J:181539')
 ;
 
 update BIB_Refs r

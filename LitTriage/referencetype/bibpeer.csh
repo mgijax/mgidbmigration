@@ -2570,7 +2570,8 @@ where r.journal in (
 'Zoolog Mag',
 'Zoolog Sci',
 'Zschr Versuchstierk',
-'Zygote'
+'Zygote',
+'Int J Hypertens'
 )
 ;
 EOSQL

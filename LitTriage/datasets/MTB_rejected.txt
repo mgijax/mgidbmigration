@@ -2591,4 +2591,6 @@
 104282	J:239989	Kular J; Scheer KG; Pyne NT; Allam AH; Pollard AN; Magenau A; Wright RL; Kolesnikoff N; Moretti PA; Wullkopf L; Stomski FC; Cowin AJ; Woodcock JM; Grimbaldeston MA; Pitson SM; Timpson P; Ramshaw HS; Lopez AF; Samuel MS	2015	Dev Cell	35	6	759-74
 104294	J:241034	Bordini J; Galvan S; Ponzoni M; Bertilaccio MT; Chesi M; Bergsagel PL; Camaschella C; Campanella A	2017	Leukemia	31	4	967-970
 104298	J:241091	Ai J; Pascal LE; Wei L; Zang Y; Zhou Y; Yu X; Gong Y; Nakajima S; Nelson JB; Levine AS; Lan L; Wang Z	2017	Oncogene	36	15	2054-2065
+104309	J:241153	Guryanova OA; Shank K; Spitzer B; Luciani L; Koche RP; Garrett-Bakelman FE; Ganzel C; Durham BH; Mohanty A; Hoermann G; Rivera SA; Chramiec AG; Pronier E; Bastian L; Keller MD; Tovbin D; Loizou E; Weinstein AR; Gonzalez AR; Lieu YK; Rowe JM; Pastore F; McKenney AS; Krivtsov AV; Sperr WR; Cross JR; Mason CE; Tallman MS; Arcila ME; Abdel-Wahab O; Armstrong SA; Kubicek S; Staber PB; Gonen M; Paietta EM; Melnick AM; Nimer SD; Mukherjee S; Levine RL	2016	Nat Med	22	12	1488-1495
 104315	J:241184	Liu Z; Xiao Y; Zhou Z; Mao X; Cai J; Xiong L; Liao C; Huang F; Liu Z; Ali Sheikh MS; Plutzky J; Huang H; Yang T; Duan Q	2016	Mol Cell Endocrinol	427		57-64
+104340	J:241303	Yeo D; Phillips P; Baldwin GS; He H; Nikfarjam M	2017	Int J Cancer	140	9	2101-2111

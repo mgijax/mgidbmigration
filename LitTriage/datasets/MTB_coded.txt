@@ -4345,6 +4345,9 @@
 104217	J:239679	Vila IK; Yao Y; Kim G; Xia W; Kim H; Kim SJ; Park MK; Hwang JP; Gonzalez-Billalabeitia E; Hung MC; Song SJ; Song MS	2017	Cancer Cell	31	2	208-224
 104221	J:239735	Leroy B; Ballinger ML; Baran-Marszak F; Bond GL; Braithwaite A; Concin N; Donehower LA; El-Deiry WS; Fenaux P; Gaidano G; Langerod A; Hellstrom-Lindberg E; Iggo R; Lehmann-Che J; Mai PL; Malkin D; Moll UM; Myers JN; Nichols KE; Pospisilova S; Ashton-Prolla P; Rossi D; Savage SA; Strong LC; Tonin PN; Zeillinger R; Zenz T; Fraumeni JF Jr; Taschner PE; Hainaut P; Soussi T	2017	Cancer Res	77	6	1250-1260
 104235	J:239560	Gubbiotti MA; Vallet SD; Ricard-Blum S; Iozzo RV	2016	Matrix Biol	55		7-21
+104238	J:240009	Saloustros E; Salpea P; Qi CF; Gugliotti LA; Tsang K; Liu S; Starost MF; Morse HC 3rd; Stratakis CA	2015	J Exp Clin Cancer Res	34		143
 104246	J:240182	Semenza GL	2017	EMBO J	36	3	252-259
 104252	J:240395	Romiti A; Falcone R; Roberto M; Marchetti P	2017	Cancer Lett	394		88-95
 104303	J:241109	Bonastre E; Brambilla E; Sanchez-Cespedes M	2016	J Pathol	238	5	606-16
+104335	J:241288	Roy S; Trinchieri G	2017	Nat Rev Cancer	17	5	271-285
+104336	J:241291	Schneider G; Schmidt-Supprian M; Rad R; Saur D	2017	Nat Rev Cancer	17	4	239-253

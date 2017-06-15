@@ -810,7 +810,6 @@ where r.journal in (
 'Cell Microbiol',
 'Cell Mol Biol',
 'Cell Mol Biol (Noisy-Le-Grand)',
-'Cell Mol Biol (Noisy-le-grand)',
 'Cell Mol Biol Lett',
 'Cell Mol Biol Res',
 'Cell Mol Gastroenterol Hepatol',

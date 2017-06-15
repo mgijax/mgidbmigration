@@ -96,7 +96,7 @@ echo 'running varchar-to-tee for ACC tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 #

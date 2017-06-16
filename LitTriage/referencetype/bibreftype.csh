@@ -249,7 +249,7 @@ set _ReferenceType_key = (select t._Term_key
 	and t.term = 'MGI Direct Data Submission')
 from ACC_Accession a
 where r._Refs_key = a._Object_key
-and a.accID in ('J:207088', 'J:77793', 'J:153498', 'J:85243')
+and a.accID in ('J:207088', 'J:77793')
 ;
 
 update BIB_Refs r

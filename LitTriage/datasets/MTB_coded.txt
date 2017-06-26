@@ -3994,6 +3994,7 @@
 102397	J:221410	Turner DP	2015	Cancer Res	75	10	1925-1929
 102398	J:221412	Maywald RL; Doerner SK; Pastorelli L; De Salvo C; Benton SM; Dawson EP; Lanza DG; Berger NA; Markowitz SD; Lenz HJ; Nadeau JH; Pizarro TT; Heaney JD	2015	Proc Natl Acad Sci U S A	112	19	E2487-96
 102411	J:221575	Bovenga F; Sabba C; Moschetta A	2015	Cell Metab	21	4	517-26
+102412	J:221632	Bai F; Chan HL; Smith MD; Kiyokawa H; Pei XH	2014	Mol Cell Biol	34	12	2121-34
 102413	J:221441	Li Q	2015	Biol Reprod	92	2	50
 102420	J:221729	Powell AE; Vlacich G; Zhao ZY; McKinley ET; Washington MK; Manning HC; Coffey RJ	2014	Am J Physiol Gastrointest Liver Physiol	307	1	G16-23
 102425	J:221951	Khanna A	2015	Cancer Res	75	11	2133-2138

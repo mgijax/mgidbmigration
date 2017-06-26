@@ -2594,3 +2594,4 @@
 104309	J:241153	Guryanova OA; Shank K; Spitzer B; Luciani L; Koche RP; Garrett-Bakelman FE; Ganzel C; Durham BH; Mohanty A; Hoermann G; Rivera SA; Chramiec AG; Pronier E; Bastian L; Keller MD; Tovbin D; Loizou E; Weinstein AR; Gonzalez AR; Lieu YK; Rowe JM; Pastore F; McKenney AS; Krivtsov AV; Sperr WR; Cross JR; Mason CE; Tallman MS; Arcila ME; Abdel-Wahab O; Armstrong SA; Kubicek S; Staber PB; Gonen M; Paietta EM; Melnick AM; Nimer SD; Mukherjee S; Levine RL	2016	Nat Med	22	12	1488-1495
 104315	J:241184	Liu Z; Xiao Y; Zhou Z; Mao X; Cai J; Xiong L; Liao C; Huang F; Liu Z; Ali Sheikh MS; Plutzky J; Huang H; Yang T; Duan Q	2016	Mol Cell Endocrinol	427		57-64
 104340	J:241303	Yeo D; Phillips P; Baldwin GS; He H; Nikfarjam M	2017	Int J Cancer	140	9	2101-2111
+104342	J:240241	Saggio I; Remoli C; Spica E; Cersosimo S; Sacchetti B; Robey PG; Holmbeck K; Cumano A; Boyde A; Bianco P; Riminucci M	2014	J Bone Miner Res	29	11	2357-68

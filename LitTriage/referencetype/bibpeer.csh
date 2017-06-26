@@ -2572,7 +2572,8 @@ where r.journal in (
 'Zschr Versuchstierk',
 'Zygote',
 'Int J Hypertens',
-'Lancet Neurol'
+'Lancet Neurol',
+'Biotechnol Bioeng'
 )
 ;
 EOSQL

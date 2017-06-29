@@ -89,10 +89,11 @@ cd ..
 # TR12083/ACC varchar-to-text 
 # the accession.csh wrapper will drop/create procedure/view/triggers
 # so don't need to add an extra call to procedure/view/triggers from this wrapper
+# done on production 07/05
 #
-date | tee -a ${LOG}
-echo 'running varchar-to-tee for ACC tables' | tee -a $LOG
-./accession.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+#echo 'running varchar-to-tee for ACC tables' | tee -a $LOG
+#./accession.csh | tee -a $LOG || exit 1
 
 #
 # rebuild some things before continuing...

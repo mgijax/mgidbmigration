@@ -22,9 +22,9 @@ date | tee -a $LOG
 #
 # if running standalone...turn this on...else see MGI_part1.csh
 #
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/index/ACC_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ACC_drop.logical | tee -a $LOG
@@ -63,24 +63,39 @@ ${PG_MGD_DBSCHEMADIR}/index/ACC_create.logical | tee -a $LOG
 #
 # if running standalone...turn this on...else see MGI_part1.csh
 #
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/comments/comments_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #
 # rebuild the java dla, if needed due to schema changes
 #
-# done in MGI_part1.csh
-#${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+## done in MGI_part1.csh
+${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 #
 # cache tables
 #
-#./MGI_part3.csh | tee -a $LOG
+#${DBUTILS}/mgidbmigration/MGI_part3.csh | tee -a $LOG
 #
 # end running standalone
 #
+
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#select count(*) from ALL_Cre_Cache;
+#select count(*) from ALL_Knockout_Cache;
+#select count(*) from BIB_Citation_Cache;
+#select count(*) from MRK_DO_Cache;
+#select count(*) from MRK_Location_Cache;
+#select count(*) from MRK_MCV_Cache;
+#select count(*) from MRK_MCV_Count_Cache;
+#select count(*) from SEQ_Coord_Cache;
+#select count(*) from SEQ_Marker_Cache;
+#select count(*) from SEQ_Probe_Cache;
+#EOSQL
+
+${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG
 
 date |tee -a $LOG
 

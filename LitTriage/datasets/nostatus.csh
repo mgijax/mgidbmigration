@@ -51,8 +51,7 @@ where not exists (select 1 from BIB_Workflow_Status s
 	and s._Group_key = 31576666)
 ;
 
---select 'Tumor', r._Refs_key, r.jnumID, r.short_citation
-select count(r._Refs_key)
+select 'Tumor', r._Refs_key, r.jnumID, r.short_citation
 from BIB_Citation_Cache r
 where not exists (select 1 from BIB_Workflow_Status s
 	where r._Refs_key = s._Refs_key

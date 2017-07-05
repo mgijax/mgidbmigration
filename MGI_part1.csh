@@ -75,14 +75,6 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 ${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
-#
-#
-# run the measurements for are later used for the front-end
-#
-date | tee -a ${LOG}
-echo 'step ??: run statistics' | tee -a $LOG
-${PG_DBUTILS}/bin/measurements/addMeasurements.csh | tee -a $LOG || exit 1
-
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}
 

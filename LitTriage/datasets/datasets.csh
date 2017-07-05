@@ -31,9 +31,8 @@ rm -rf *bcp
 ./datasets.py | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Status_truncate.object | tee -a ${LOG}
-${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Tag_truncate.object | tee -a ${LOG}
-
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_drop.object | tee -a ${LOG}
+${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Tag_truncate.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_drop.object | tee -a ${LOG}
 
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_chosen.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
@@ -47,6 +46,13 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTI
 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_create.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_create.object | tee -a ${LOG}
+
+# post-migration for tumor/rejected
+rm -rf wf_status_tumor_more.bcp
+./tumor_more.py | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_drop.object | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_tumor_more.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_create.object | tee -a ${LOG}
 
 #allstatus.csh
 #alltags.csh

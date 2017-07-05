@@ -525,7 +525,6 @@
 380	J:52883	Hirabayashi H; Sato T; Kohno S; Tanaka M; Kobayashi S; Ohta Y; Iguchi T	1999	Anat Rec	254	2	205-13
 445	J:52891	Shiota G; Harada K; Ishida M; Tomie Y; Okubo M; Katayama S; Ito H; Kawasaki H	1999	Carcinogenesis	20	1	59-63
 365	J:52961	Krynska B; Otte J; Franks R; Khalili K; Croul S	1999	Oncogene	18	1	39-46
-434	J:53006	Bass NM	1999	Hepatology	29	2	606-8
 597	J:53065	Podsypanina K; Ellenson LH; Nemes A; Gu J; Tamura M; Yamada KM ; Cordon-Cardo C ; Catoretti G ; Fisher PE ; Parsons R	1999	Proc Natl Acad Sci U S A	96	4	1563-8
 404	J:53175	Husler MR; Kotopoulis KA; Sundberg JP; Tennent BJ; Kunig SV; Knowles BB	1998	Transgenic Res	7	4	253-63
 353	J:53305	Perl AK; Dahl U; Wilgenbus P; Cremer H; Semb H; Christofori G	1999	Nat Med	5	3	286-91
@@ -1317,7 +1316,6 @@
 89158	J:78026	Tevethia MJ; Bonneau RH; Griffith JW; Mylin L	1997	J Virol	71	11	8157-66
 89164	J:78174	Tang B; Bottinger EP; Jakowlew SB; Bagnall KM; Mariano J; Anver MR; Letterio JJ; Wakefield LM	1998	Nat Med	4	7	802-7
 89167	J:78178	Kim CM; Koike K; Saito I; Miyamura T; Jay G	1991	Nature	351	6324	317-20
-89170	J:78290	Hennighausen L	2001	Semin Cancer Biol	11	3	239-44
 89171	J:78291	Huss WJ; Maddison LA; Greenberg NM	2001	Semin Cancer Biol	11	3	245-60
 89172	J:78292	Yang FC; Merlino G; Chin L	2001	Semin Cancer Biol	11	3	261-8
 89181	J:78496	Difilippantonio MJ; Petersen S; Chen HT; Johnson R; Jasin M; Kanaar R; Ried T; Nussenzweig A	2002	J Exp Med	196	4	469-80
@@ -1703,6 +1701,7 @@
 90634	J:97828	Deshpande A; Sicinski P; Hinds PW	2005	Oncogene	24	17	2909-15
 90652	J:59526	Bhisey RA; Ramchandani AG; D'Souza AV; Borges AM; Notani PN	1999	Int J Cancer	83	5	679-84
 90655	J:62967	Tennent BJ; Cardiff RD	2000	Mol Med Today	6	4	143-4
+90660	J:78529	Lund AH; Turner G; Trubetskoy A; Verhoeven E; Wientjens E; Hulsman D; Russell R; DePinho RA; Lenz J; van Lohuizen M	2002	Nat Genet	32	1	160-5
 90661	J:80304	Katoh M	2002	Int J Oncol	21	6	1269-73
 90673	J:54879	Beermann F; Hunziker A; Foletti A	1999	Pigment Cell Res	12	2	71-80
 90682	J:55707	Oliff A	1999	Biochim Biophys Acta	1423	3	C19-30
@@ -3228,6 +3227,7 @@
 98787	J:176506	Sher RB; Cox GA; Mills KD; Sundberg JP	2011	PLoS One	6	8	e23498
 98788	J:176507	Yu R; Dhall D; Nissen NN; Zhou C; Ren SG	2011	PLoS One	6	8	e23397
 98791	J:176672	Bell DW; Sikdar N; Lee KY; Price JC; Chatterjee R; Park HD; Fox J; Ishiai M; Rudd ML; Pollock LM; Fogoros SK; Mohamed H; Hanigan CL; Zhang S; Cruz P; Renaud G; Hansen NF; Cherukuri PF; Borate B; McManus KJ; Stoepel J; Sipahimalani P; Godwin AK; Sgroi DC;	2011	PLoS Genet	7	8	e1002245
+98798	J:177100	Saji M; Narahara K; McCarty SK; Vasko VV; La Perle KM; Porter K; Jarjoura D; Lu C; Cheng SY; Ringel MD	2011	Oncogene	30	42	4307-15
 98803	J:177118	Sethi N; Kang Y	2011	Nat Rev Cancer	11	10	735-48
 98804	J:177119	Kim S; You S; Hwang D	2011	Nat Rev Cancer	11	10	708-18
 98805	J:177138	Ahmad I; Patel R; Singh LB; Nixon C; Seywright M; Barnetson RJ; Brunton VG; Muller WJ; Edwards J; Sansom OJ; Leung HY	2011	Proc Natl Acad Sci U S A	108	39	16392-7
@@ -3454,6 +3454,7 @@
 99752	J:191179	Armata HL; Shroff P; Garlick DE; Penta K; Tapper AR; Sluss HK	2011	PLoS One	6	9	e24813
 99761	J:191322	Anand S; Ortel BJ; Pereira SP; Hasan T; Maytin EV	2012	Cancer Lett	326	1	8-16
 99762	J:191324	Ziegler A; Corvalan A; Roa I; Branes JA; Wollscheid B	2012	Cancer Lett	326	1	1-7
+99766	J:191334	Floc'h N; Kinkade CW; Kobayashi T; Aytes A; Lefebvre C; Mitrofanova A; Cardiff RD; Califano A; Shen MM; Abate-Shen C	2012	Cancer Res	72	17	4483-93
 99767	J:191335	Hong CW; Zeng Q	2012	Cancer Res	72	15	3715-9
 99770	J:191383	Welsh J	2012	Arch Biochem Biophys	523	1	107-14
 99777	J:191662	Raafat A; Strizzi L; Lashin K; Ginsburg E; McCurdy D; Salomon D; Smith GH; Medina D; Callahan R	2012	PLoS One	7	8	e43624
@@ -3900,6 +3901,7 @@
 101855	J:216040	Chan SR; Vermi W; Luo J; Lucini L; Rickert C; Fowler AM; Lonardi S; Arthur C; Young LJ; Levy DE; Welch MJ; Cardiff RD; Schreiber RD	2012	Breast Cancer Res	14	1	R16
 101856	J:216041	Zhu M; Yi M; Kim CH; Deng C; Li Y; Medina D; Stephens RM; Green JE	2011	Genome Biol	12	8	R77
 101858	J:215507	Yan R; Hallam A; Stockley PG; Boyes J	2014	Biochem J	461	1	1-13
+101865	J:216187	Sakamori R; Yu S; Zhang X; Hoffman A; Sun J; Das S; Vedula P; Li G; Fu J; Walker F; Yang CS; Yi Z; Hsu W; Yu DH; Shen L; Rodriguez AJ; Taketo MM; Bonder EM; Verzi MP; Gao N	2014	Cancer Res	74	19	5480-92
 101875	J:216275	Chen WT; Zhu G; Pfaffenbach K; Kanel G; Stiles B; Lee AS	2014	Oncogene	33	42	4997-5005
 101888	J:216440	Tumiati M; Hemmes A; Uusivirta S; Koopal S; Kankainen M; Lehtonen E; Kuznetsov SG	2015	J Pathol	235	1	136-46
 101893	J:216494	Nandi B; Pai C; Huang Q; Prabhala RH; Munshi NC; Gold JS	2014	PLoS One	9	5	e97566
@@ -4279,6 +4281,7 @@
 103874	J:236841	Sherr CJ; Beach D; Shapiro GI	2016	Cancer Discov	6	4	353-67
 103875	J:236842	Yuan R; Peters LL; Paigen B	2011	ILAR J	52	1	4-15
 103876	J:236843	Pettan-Brewer C; Treuting PM	2011	Pathobiol Aging Age Relat Dis	1		
+103877	J:236844	Sundberg JP; Berndt A; Sundberg BA; Silva KA; Kennedy V; Bronson R; Yuan R; Paigen B; Harrison D; Schofield PN	2011	Pathobiol Aging Age Relat Dis	1		
 103882	J:236851	Zhou S; Treloar AE; Lupien M	2016	Cancer Discov	6	11	1215-1229
 103889	J:236861	Fernandez-Marrero Y; Spinner S; Kaufmann T; Jost PJ	2016	Leukemia	30	11	2152-2159
 103894	J:236868	Okkenhaug K; Graupera M; Vanhaesebroeck B	2016	Cancer Discov	6	10	1090-1105
@@ -4349,6 +4352,7 @@
 104238	J:240009	Saloustros E; Salpea P; Qi CF; Gugliotti LA; Tsang K; Liu S; Starost MF; Morse HC 3rd; Stratakis CA	2015	J Exp Clin Cancer Res	34		143
 104246	J:240182	Semenza GL	2017	EMBO J	36	3	252-259
 104252	J:240395	Romiti A; Falcone R; Roberto M; Marchetti P	2017	Cancer Lett	394		88-95
+104290	J:241023	Heath EM; Chan SM; Minden MD; Murphy T; Shlush LI; Schimmer AD	2017	Leukemia	31	4	798-807
 104303	J:241109	Bonastre E; Brambilla E; Sanchez-Cespedes M	2016	J Pathol	238	5	606-16
 104335	J:241288	Roy S; Trinchieri G	2017	Nat Rev Cancer	17	5	271-285
 104336	J:241291	Schneider G; Schmidt-Supprian M; Rad R; Saur D	2017	Nat Rev Cancer	17	4	239-253

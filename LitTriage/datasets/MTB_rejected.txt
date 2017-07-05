@@ -2595,3 +2595,4 @@
 104315	J:241184	Liu Z; Xiao Y; Zhou Z; Mao X; Cai J; Xiong L; Liao C; Huang F; Liu Z; Ali Sheikh MS; Plutzky J; Huang H; Yang T; Duan Q	2016	Mol Cell Endocrinol	427		57-64
 104340	J:241303	Yeo D; Phillips P; Baldwin GS; He H; Nikfarjam M	2017	Int J Cancer	140	9	2101-2111
 104342	J:240241	Saggio I; Remoli C; Spica E; Cersosimo S; Sacchetti B; Robey PG; Holmbeck K; Cumano A; Boyde A; Bianco P; Riminucci M	2014	J Bone Miner Res	29	11	2357-68
+104345	J:241033	Afzal TA; Luong LA; Chen D; Zhang C; Yang F; Chen Q; An W; Wilkes E; Yashiro K; Cutillas PR; Zhang L; Xiao Q	2016	J Am Heart Assoc	5	12	

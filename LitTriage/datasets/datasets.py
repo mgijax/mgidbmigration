@@ -129,6 +129,7 @@ def apgxdgoqtl_chosen():
    print 'Allele/Pheno | CHOSEN | selected/not used | %d\n' % (len(results))
 
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
         where dbsa._DataSet_key in (1004)
@@ -136,8 +137,13 @@ def apgxdgoqtl_chosen():
 	and dbsa.isNeverUsed = 0
         and not ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
        	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
-	order by r.jnumID
-	''' % (gxdKey)
+	union
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+	where r._Refs_key in (82826,154970,162862,178645,202491)
+	)
+	order by jnumID
+	''' % (gxdKey, gxdKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], chosenKey, currentDate, currentDate))

@@ -2573,7 +2573,9 @@ where r.journal in (
 'Zygote',
 'Int J Hypertens',
 'Lancet Neurol',
-'Biotechnol Bioeng'
+'Biotechnol Bioeng',
+'Cerebrospinal Fluid Res',
+'Front Aging Neurosci'
 )
 ;
 EOSQL

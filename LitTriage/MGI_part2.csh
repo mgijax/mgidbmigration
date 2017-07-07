@@ -50,9 +50,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #
 #date | tee -a ${LOG}
 echo 'running jfilescanner migration' | tee -a $LOG
-setenv MASTERTRIAGEDIR '/data/littriage'
-setenv MASTERTRIAGEDIR '/data/loads/lec/littriage'
-rm -rf ${MASTERTRIAGEDIR}/[0-9]*
 cd jfilescanner
 ./jfilescanner.csh | tee -a $LOG || exit 1
 cd ..

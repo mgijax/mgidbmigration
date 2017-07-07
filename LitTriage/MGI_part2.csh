@@ -35,7 +35,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #
 ## copy /data/downloads files needed for loads (move to part2?)
 #
-##date | tee -a ${LOG}
+#date | tee -a ${LOG}
 #echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
 #scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology/doid-merged.obo /data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology
 #scp bhmgiapp01:/data/downloads/data.omim.org/omim.txt.gz /data/downloads/data.omim.org
@@ -44,6 +44,25 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk
 #scp /mgi/all/wts_projects/12200/12291/RelationshipVocab4_26_17b /data/loads/mgi/rvload/input/RelationshipVocab.obo
 #scp /mgi/all/wts_projects/12200/12291/RNAI_load4_26_2017.txt /data/loads/mgi/fearload/input/fearload.txt
+
+#
+## jfilescanner
+#
+#date | tee -a ${LOG}
+echo 'running jfilescanner migration' | tee -a $LOG
+setenv MASTERTRIAGEDIR '/data/littriage'
+setenv MASTERTRIAGEDIR '/data/loads/lec/littriage'
+rm -rf ${MASTERTRIAGEDIR}/[0-9]*
+cd jfilescanner
+./jfilescanner.csh | tee -a $LOG || exit 1
+cd ..
+
+#
+## littriageload
+#
+##date | tee -a ${LOG}
+#echo 'running littriageload' | tee -a $LOG
+#./littriage | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

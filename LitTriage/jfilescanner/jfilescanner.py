@@ -75,7 +75,7 @@ for jfilePath in os.listdir(parentDir):
 
 	results = db.sql('''select _Refs_key, mgiID from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID), 'auto')
 	if len(results) == 0:
-	    print 'J: no longer in MGD: ', jnumID
+	    print 'J: not in MGD: ', jnumID
 	    notmovedPDF += 1
 	    continue
 	refsKey = results[0]['_Refs_key']
@@ -89,13 +89,13 @@ for jfilePath in os.listdir(parentDir):
 
 	# 4. copy xxxxx.pdf to appropriate /data/littriage/ path 
 
-	#try:
-	    #os.makedirs(newFileDir)
-	#except:
-	    #pass
+	try:
+	    os.makedirs(newFileDir)
+	except:
+	    pass
 
 	try:
-	    #shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
+	    shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
 	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
             db.commit()
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName

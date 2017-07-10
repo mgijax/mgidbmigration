@@ -20,10 +20,9 @@ touch $LOG
  
 date | tee -a $LOG
 
-#setenv MASTERTRIAGEDIR '/data/littriage'
+setenv MASTERTRIAGEDIR '/data/littriage'
 #setenv MASTERTRIAGEDIR '/data/loads/lec/littriage'
-#rm -rf ${MASTERTRIAGEDIR}/[0-9]*/*
-#rm -rf ${MASTERTRIAGEDIR}/[0-9]*
+rm -rf ${MASTERTRIAGEDIR}/[0-9]*
 
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_truncate.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a ${LOG}

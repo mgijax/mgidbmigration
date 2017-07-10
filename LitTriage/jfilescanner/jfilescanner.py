@@ -24,7 +24,7 @@ parentDir = '/mgi/all/Jfiles'
 
 jfilecount = 0
 notmovedPDF = 0
-movedPDF = 0
+movedPDF = []
 
 # 1. read /mgi/all/Jfiles/
 
@@ -96,18 +96,17 @@ for jfilePath in os.listdir(parentDir):
 	try:
 	    #shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
 	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
+            db.commit()
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
-	    movedPDF += 1
+	    movedPDF.append(refsKey)
         except:
 	    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
 	    notmovedPDF += 1
 
-db.commit()
-
 print ''
 print 'j file count: ', str(jfilecount)
 print 'not moved pdfs: ', str(notmovedPDF)
-print 'moved pdfs: ', str(movedPDF)
+print 'moved pdfs: ', str(len(movedPDF))
 print 'not moved + moved: ', str(notmovedPDF + movedPDF)
 print ''
 

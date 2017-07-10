@@ -48,7 +48,8 @@ for jfilePath in os.listdir(parentDir):
 
     for pdfFile in os.listdir(fullFilePath):
 
-        if not pdfFile.startswith('J') or not pdfFile.endswith('.pdf'):
+        #if not pdfFile.startswith('J') or not pdfFile.endswith('.pdf'):
+        if not pdfFile.startswith('J:1') or not pdfFile.startswith('J:2') or not pdfFile.endswith('.pdf'):
 	    #print 'not in jfile/pdf format: ', pdfFile
 	    #notmovedPDF += 1
             continue

@@ -25,6 +25,7 @@ parentDir = '/mgi/all/Jfiles'
 jfilecount = 0
 notmovedPDF = 0
 movedPDF = []
+duplicatePDF = 0
 
 # 1. read /mgi/all/Jfiles/
 
@@ -100,6 +101,8 @@ for jfilePath in os.listdir(parentDir):
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
 	    if refsKey not in movedPDF:
 	    	movedPDF.append(refsKey)
+	    else:
+	        duplicatePDF += 0
         except:
 	    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
 	    notmovedPDF += 1
@@ -108,6 +111,7 @@ print ''
 print 'j file count: ', str(jfilecount)
 print 'not moved pdfs: ', str(notmovedPDF)
 print 'moved pdfs: ', str(len(movedPDF))
-print 'not moved + moved: ', str(notmovedPDF + len(movedPDF))
+print 'dupliate pdfs: ', str(dupliatePDF)
+print 'not moved + moved + duplicates: ', str(notmovedPDF + len(movedPDF) + duplicatePDF)
 print ''
 

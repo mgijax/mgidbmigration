@@ -39,6 +39,10 @@ for jfilePath in os.listdir(parentDir):
 	#notmovedPDF += 1
         continue
 
+    print fullFilePath
+    if fullFilePath == parentDir + '/saved':
+        continue
+
     #print fullFilePath
 
     for pdfFile in os.listdir(fullFilePath):

@@ -107,6 +107,6 @@ print ''
 print 'j file count: ', str(jfilecount)
 print 'not moved pdfs: ', str(notmovedPDF)
 print 'moved pdfs: ', str(len(movedPDF))
-print 'not moved + moved: ', str(notmovedPDF + movedPDF)
+print 'not moved + moved: ', str(notmovedPDF + len(movedPDF))
 print ''
 

@@ -18,8 +18,7 @@ import shutil
 import db
 import Pdfpath
 
-MASTERTRIAGEDIR='/data/loads/lec/littriage'
-#MASTERTRIAGEDIR='/data/littriage'
+MASTERTRIAGEDIR='/data/littriage'
 
 parentDir = '/mgi/all/Jfiles'
 
@@ -28,29 +27,28 @@ notmovedPDF = 0
 movedPDF = 0
 
 # 1. read /mgi/all/Jfiles/
-    #fileDir = os.path.join(jfilePath, 
 
 for jfilePath in os.listdir(parentDir):
 
-    jfilecount += 1
+    #jfilecount += 1
 
     fullFilePath = os.path.join(parentDir, jfilePath)
 
     if not os.path.isdir(fullFilePath):
-	print 'not a jfile folder: ', fullFilePath
-	notmovedPDF += 1
+	#print 'not a jfile folder: ', fullFilePath
+	#notmovedPDF += 1
         continue
 
     #print fullFilePath
 
     for pdfFile in os.listdir(fullFilePath):
 
-        jfilecount += 1
-
         if not pdfFile.startswith('J') or not pdfFile.endswith('.pdf'):
-	    print 'not in jfile/pdf format: ', pdfFile
-	    notmovedPDF += 1
+	    #print 'not in jfile/pdf format: ', pdfFile
+	    #notmovedPDF += 1
             continue
+
+        jfilecount += 1
 
 	fullpdfFile = os.path.join(fullFilePath, pdfFile)
 
@@ -65,6 +63,9 @@ for jfilePath in os.listdir(parentDir):
 
 	jnumID = pdfFile
 	jnumID = jnumID.replace('J', 'J:')
+	jnumID = jnumID.replace('d.pdf', '')
+	jnumID = jnumID.replace('D.pdf', '')
+	jnumID = jnumID.replace('R.pdf', '')
 	jnumID = jnumID.replace('.pdf', '')
 
 	results = db.sql('''select _Refs_key, mgiID from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID), 'auto')

@@ -46,18 +46,18 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #scp /mgi/all/wts_projects/12200/12291/RNAI_load4_26_2017.txt /data/loads/mgi/fearload/input/fearload.txt
 
 #
-## jfilescanner
+# jfilescanner
 #
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
 echo 'running jfilescanner migration' | tee -a $LOG
 cd jfilescanner
 ./jfilescanner.csh | tee -a $LOG || exit 1
 cd ..
 
 #
-## littriageload
+# littriageload
 #
-##date | tee -a ${LOG}
+#date | tee -a ${LOG}
 #echo 'running littriageload' | tee -a $LOG
 #./littriage | tee -a $LOG || exit 1
 

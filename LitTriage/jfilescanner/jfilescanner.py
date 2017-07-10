@@ -48,8 +48,8 @@ for jfilePath in os.listdir(parentDir):
 
     for pdfFile in os.listdir(fullFilePath):
 
-        #if not pdfFile.startswith('J') or not pdfFile.endswith('.pdf'):
-        if not pdfFile.startswith('J1') or not pdfFile.startswith('J2') or not pdfFile.endswith('.pdf'):
+        #if not pdfFile.startswith('J1') or not pdfFile.startswith('J2') or not pdfFile.endswith('.pdf'):
+        if not pdfFile.startswith('J') or not pdfFile.endswith('.pdf'):
 	    #print 'not in jfile/pdf format: ', pdfFile
 	    #notmovedPDF += 1
             continue
@@ -90,13 +90,13 @@ for jfilePath in os.listdir(parentDir):
 
 	# 4. copy xxxxx.pdf to appropriate /data/littriage/ path 
 
-	try:
-	    os.makedirs(newFileDir)
-	except:
-	    pass
+	#try:
+	    #os.makedirs(newFileDir)
+	#except:
+	    #pass
 
 	try:
-	    shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
+	    #shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
 	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
             db.commit()
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName

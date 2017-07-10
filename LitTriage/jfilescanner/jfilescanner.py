@@ -98,7 +98,8 @@ for jfilePath in os.listdir(parentDir):
 	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
             db.commit()
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
-	    movedPDF.append(refsKey)
+	    if refsKey not in movedPDF:
+	    	movedPDF.append(refsKey)
         except:
 	    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
 	    notmovedPDF += 1

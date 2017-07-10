@@ -102,7 +102,7 @@ for jfilePath in os.listdir(parentDir):
 	    if refsKey not in movedPDF:
 	    	movedPDF.append(refsKey)
 	    else:
-	        duplicatePDF += 0
+	        duplicatePDF += 1
         except:
 	    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
 	    notmovedPDF += 1

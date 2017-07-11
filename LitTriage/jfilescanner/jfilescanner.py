@@ -49,7 +49,7 @@ for jfilePath in os.listdir(parentDir):
     for pdfFile in os.listdir(fullFilePath):
 
         #if not pdfFile.startswith('J') or not pdfFile.endswith('.pdf'):
-        if not pdfFile.startswith('J24') or not pdfFile.endswith('.pdf'):
+        if not pdfFile.startswith('J240') or not pdfFile.endswith('.pdf'):
             continue
 
         jfilecount += 1

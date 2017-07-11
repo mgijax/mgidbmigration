@@ -2,6 +2,8 @@
 
 '''
 #
+# pdfs only
+#
 # convert (copy) /mgi/all/Jfiles/ over to /data/littriage directory
 #
 # 1. read /mgi/all/Jfiles/
@@ -88,15 +90,15 @@ for jfilePath in os.listdir(parentDir):
 
 	# 4. copy xxxxx.pdf to appropriate /data/littriage/ path 
 
-	#try:
-	    #os.makedirs(newFileDir)
-	#except:
-	    #pass
+	try:
+	    os.makedirs(newFileDir)
+	except:
+	    pass
 
 	try:
-	    #shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
-	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
-            db.commit()
+	    shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
+	    #db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
+            #db.commit()
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
 	    if refsKey not in movedPDF:
 	    	movedPDF.append(refsKey)

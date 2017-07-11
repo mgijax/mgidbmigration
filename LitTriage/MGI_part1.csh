@@ -29,6 +29,10 @@
 #	. ei/remove Reference module
 #	. remove pgdbutiliites/bin/ei/nlm*
 # 
+# . Run on test/DEV, production the night before the migration:
+# 	jfilescanner/jfilescannerpdf.csh
+#	this will run *only* the PDF piece
+#
 # . Dave : add 'littriageload/bin/littriageload.csh' to daily tasks?
 #
 

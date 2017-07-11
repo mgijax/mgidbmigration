@@ -43,7 +43,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # jfilescanner
 #
 date | tee -a ${LOG}
-echo 'running jfilescanner migration' | tee -a $LOG
+echo 'running jfilescanner migration (this runs the BIB_Workflow_Data piece only)' | tee -a $LOG
 cd jfilescanner
 ./jfilescanner.csh | tee -a $LOG || exit 1
 cd ..

@@ -44,7 +44,8 @@ elif processType == '2':
 else:
     processPDF = 0
     processWF = 1
-    jfileset = 'J240'
+    #jfileset = 'J240'
+    jfileset = 'J'
 
 print 'processPDF= ', processPDF, ', processWF= ', processWF, ', jfileset= ', jfileset
 

@@ -18,8 +18,7 @@ import shutil
 import db
 import Pdfpath
 
-MASTERTRIAGEDIR='/data/littriage'
-
+masterTriageDir = '/data/littriage'
 parentDir = '/mgi/all/Jfiles'
 
 jfilecount = 0
@@ -30,14 +29,15 @@ duplicatePDF = 0
 processType = os.environ['PROCESSTYPE']
 
 # for production
-if processType == 3:
+if processType == '3':
     processPDF = 1
     processWF = 0
     jfileset = 'J'
 
 # for development/all jfile counts
-elif processType == 2:
+elif processType == '2':
     processPDF = 0
+    processWF = 1
     jfileset = 'J'
 
 # for development/short list 
@@ -45,6 +45,8 @@ else:
     processPDF = 1
     processWF = 1
     jfileset = 'J240'
+
+print 'processPDF= ', processPDF, ', processWF= ', processWF, ', jfileset= ', jfileset
 
 # 1. read /mgi/all/Jfiles/
 
@@ -102,7 +104,7 @@ for jfilePath in os.listdir(parentDir):
 
         # 3. rename file from Jxxxxx.pdf to xxxxx.pdf (numeric part of MGI:xxxxx)
 
-        newFileDir = Pdfpath.getPdfpath(MASTERTRIAGEDIR, mgiID)
+        newFileDir = Pdfpath.getPdfpath(masterTriageDir, mgiID)
 
 	# 4. copy xxxxx.pdf to appropriate /data/littriage/ path 
 

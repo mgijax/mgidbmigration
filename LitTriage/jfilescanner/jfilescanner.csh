@@ -23,8 +23,8 @@ switch (`uname -n`)
 	setenv PROCESSTYPE 3
         breaksw
     default:
-        #setenv PROCESSTYPE 2
-        setenv PROCESSTYPE 1
+        setenv PROCESSTYPE 2
+        #setenv PROCESSTYPE 1
 	#rm -rf /data/littriage/[0-9]*
         breaksw
 endsw

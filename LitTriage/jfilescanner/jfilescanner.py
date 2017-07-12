@@ -106,8 +106,11 @@ for jfilePath in os.listdir(parentDir):
 
 	# 4. copy xxxxx.pdf to appropriate /data/littriage/ path 
 
-	if processPDF:
-	    os.makedirs(newFileDir)
+	try:
+	    if processPDF:
+	        os.makedirs(newFileDir)
+        except:
+	    pass
 
 	try:
 	    if processPDF:

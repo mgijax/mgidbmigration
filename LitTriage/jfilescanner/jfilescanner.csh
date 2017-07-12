@@ -56,7 +56,7 @@ select count(*) from BIB_Workflow_Data where hasPDF = 0;
 select count(*) from BIB_Workflow_Data where hasPDF = 1;
 EOSQL
 
-if ( "${PROCESSTYPE}" == "3" ) then
+if ( "${PROCESSTYPE}" != "2" ) then
 then
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select r.jnumID, r.short_citation 

@@ -19,11 +19,8 @@ rm -rf $LOG
 touch $LOG
  
 switch (`uname -n`)
-    case bhmgiapp01:
-	setenv JFILESUBSET 'J'
-        breaksw
     default:
-	setenv JFILESUBSET 'J240'
+	setenv JFILESUBSET 'J'
         breaksw
 endsw
 

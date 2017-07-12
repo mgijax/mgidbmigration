@@ -20,12 +20,14 @@ touch $LOG
  
 switch (`uname -n`)
     case bhmgiapp01:
-	setenv PROCESSTYPE 3
+	setenv PROCESSTYPE 1
         breaksw
-    default:
+    case bhmgidevapp01:
         setenv PROCESSTYPE 2
-        #setenv PROCESSTYPE 1
-	#rm -rf /data/littriage/[0-9]*
+	rm -rf /data/littriage/[0-9]*
+	breaksw
+    default:
+        setenv PROCESSTYPE 3
         breaksw
 endsw
 

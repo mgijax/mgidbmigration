@@ -28,21 +28,21 @@ duplicatePDF = 0
 
 processType = os.environ['PROCESSTYPE']
 
-# for production
+# for production (bhmgiapp01)
 if processType == '1':
     processPDF = 1
     processWF = 0
     jfileset = 'J'
 
-# for development/all jfile counts
+# for development (bhmgidevapp01)
 elif processType == '2':
-    processPDF = 0
-    processWF = 1
-    jfileset = 'J'
-
-# for development/short list 
-else:
     processPDF = 1
+    processWF = 0
+    jfileset = 'J240'
+
+# for development
+else:
+    processPDF = 0
     processWF = 1
     jfileset = 'J240'
 

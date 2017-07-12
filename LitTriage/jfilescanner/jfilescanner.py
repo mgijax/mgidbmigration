@@ -29,7 +29,7 @@ duplicatePDF = 0
 processType = os.environ['PROCESSTYPE']
 
 # for production
-if processType == '3':
+if processType == '1':
     processPDF = 1
     processWF = 0
     jfileset = 'J'

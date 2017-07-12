@@ -42,8 +42,7 @@ elif processType == 2:
 
 # for development/short list 
 else:
-    processPDF = 0
-    #processPDF = 1
+    processPDF = 1
     processWF = 1
     jfileset = 'J240'
 

@@ -40,7 +40,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology/doid-merged.obo /data/downloads/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/master/src/ontology
 
 #
-# jfilescanner
+# jfilescanner/pdfs will be run manually as a separate process
 #
 date | tee -a ${LOG}
 echo 'running jfilescanner migration (this runs the BIB_Workflow_Data piece only)' | tee -a $LOG

@@ -20,10 +20,12 @@ touch $LOG
  
 switch (`uname -n`)
     case bhmgiapp01:
-        setenv JFILESUBSET 'J' 
+	setenv PROCESSTYPE 3
         breaksw
     default:
-        setenv JFILESUBSET 'J'
+        #setenv PROCESSTYPE 2
+        setenv PROCESSTYPE 1
+	#rm -rf /data/littriage/[0-9]*
         breaksw
 endsw
 

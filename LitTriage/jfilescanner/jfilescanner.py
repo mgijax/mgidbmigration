@@ -19,7 +19,6 @@ import db
 import Pdfpath
 
 MASTERTRIAGEDIR='/data/littriage'
-JFILESUBSET = os.environ['JFILESUBSET']
 
 parentDir = '/mgi/all/Jfiles'
 
@@ -27,6 +26,26 @@ jfilecount = 0
 notmovedPDF = 0
 movedPDF = []
 duplicatePDF = 0
+
+jfileset = os.environ['JFILESET']
+processType = os.environ['PROCESSTYPE']
+
+# for production
+if processType == 3:
+    processPDF = 1
+    processWF = 0
+    jfileset = 'J'
+
+# for development/all jfile counts
+elif processType == 2:
+    processPDF = 0
+    jfileset = 'J'
+
+# for development/short list 
+else:
+    processPDF = 1
+    processWF = 1
+    jfileset = 'J240'
 
 # 1. read /mgi/all/Jfiles/
 
@@ -49,7 +68,7 @@ for jfilePath in os.listdir(parentDir):
 
     for pdfFile in os.listdir(fullFilePath):
 
-        if not pdfFile.startswith(JFILESUBSET) or not pdfFile.endswith('.pdf'):
+        if not pdfFile.startswith(jfileset) or not pdfFile.endswith('.pdf'):
             continue
 
         jfilecount += 1
@@ -88,15 +107,15 @@ for jfilePath in os.listdir(parentDir):
 
 	# 4. copy xxxxx.pdf to appropriate /data/littriage/ path 
 
-	#try:
-	    #os.makedirs(newFileDir)
-	#except:
-	    #pass
+	if processPDF:
+	    os.makedirs(newFileDir)
 
 	try:
-	    #shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
-	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
-            db.commit()
+	    if processPDF:
+	        shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
+	    if processWF:
+	        db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
+                db.commit()
 	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
 	    if refsKey not in movedPDF:
 	    	movedPDF.append(refsKey)

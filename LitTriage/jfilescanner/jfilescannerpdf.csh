@@ -18,10 +18,14 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
  
-date | tee -a $LOG
-
-#setenv MASTERTRIAGEDIR '/data/littriage'
-#rm -rf ${MASTERTRIAGEDIR}/[0-9]*
+switch (`uname -n`)
+    case bhmgiapp01:
+        setenv JFILESUBSET 'J' 
+        breaksw
+    default:
+        setenv JFILESUBSET 'J240'
+        breaksw
+endsw
 
 date | tee -a ${LOG}
 echo 'migrating jfilescanner pdfs only'

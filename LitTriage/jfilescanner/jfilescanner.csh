@@ -18,10 +18,16 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
  
-date | tee -a $LOG
+switch (`uname -n`)
+    case bhmgiapp01:
+	setenv JFILESUBSET 'J'
+        breaksw
+    default:
+	setenv JFILESUBSET 'J240'
+        breaksw
+endsw
 
-#setenv MASTERTRIAGEDIR '/data/littriage'
-#rm -rf ${MASTERTRIAGEDIR}/[0-9]*
+date | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_truncate.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a ${LOG}

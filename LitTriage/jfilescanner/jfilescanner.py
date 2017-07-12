@@ -27,7 +27,6 @@ notmovedPDF = 0
 movedPDF = []
 duplicatePDF = 0
 
-jfileset = os.environ['JFILESET']
 processType = os.environ['PROCESSTYPE']
 
 # for production
@@ -43,7 +42,8 @@ elif processType == 2:
 
 # for development/short list 
 else:
-    processPDF = 1
+    processPDF = 0
+    #processPDF = 1
     processWF = 1
     jfileset = 'J240'
 

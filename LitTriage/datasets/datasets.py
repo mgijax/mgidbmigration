@@ -607,7 +607,7 @@ def tumor_status():
    print 'Tumor           | INDEXED | %d\n' % (counter)
    inFile.close()
 
-   inFile = open('MTB_rejected.txt', 'r')
+   inFile = open('MTB_notrouted.txt', 'r')
    counter = 0
    for line in inFile.readlines():
    	tokens = line[:-1].split('\t')
@@ -618,7 +618,7 @@ def tumor_status():
    		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, rejectedKey, currentDate, currentDate))
 		assocStatusKey += 1
 	        counter += 1
-   print 'Tumor           | REJECTED | %d\n' % (counter)
+   print 'Tumor           | NOT ROUTED | %d\n' % (counter)
    inFile.close()
 
    inFile = open('MTB_coded.txt', 'r')

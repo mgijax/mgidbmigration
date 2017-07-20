@@ -615,7 +615,7 @@ def tumor_status():
 	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
    	results = db.sql(querySQL, 'auto')
    	for r in results:
-   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, rejectedKey, currentDate, currentDate))
+   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, notroutedKey, currentDate, currentDate))
 		assocStatusKey += 1
 	        counter += 1
    print 'Tumor           | NOT ROUTED | %d\n' % (counter)
@@ -681,6 +681,11 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'C
 rejectedKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
 where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Rejected'
+''')[0]['_Term_key']
+
+notroutedKey = db.sql('''
+select t._Term_key from VOC_Vocab v, VOC_Term t 
+where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Not Routed'
 ''')[0]['_Term_key']
 
 curatedKey = db.sql('''

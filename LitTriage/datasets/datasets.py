@@ -635,20 +635,6 @@ def tumor_status():
    print 'Tumor           | FULLY CURATED | %d\n' % (counter)
    inFile.close()
 
-   inFile = open('MTB_notrouted.txt', 'r')
-   counter = 0
-   for line in inFile.readlines():
-   	tokens = line[:-1].split('\t')
-	jnumID = tokens[1]
-	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
-   	results = db.sql(querySQL, 'auto')
-   	for r in results:
-   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, notroutedKey, currentDate, currentDate))
-		assocStatusKey += 1
-	        counter += 1
-   print 'Tumor           | NOT ROUTED | %d\n' % (counter)
-   inFile.close()
-
    wf_status_bcp.close()
    
 #

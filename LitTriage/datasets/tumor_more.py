@@ -38,7 +38,7 @@ def tumor_status():
 		and r._Refs_key = s._Refs_key)
    	''', 'auto')
    for r in results:
-      wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, rejectedKey, currentDate, currentDate))
+      wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, Key, currentDate, currentDate))
       assocStatusKey += 1
       counter += 1
    print 'Tumor           | REJECTED (other)| %d\n' % (counter)
@@ -56,9 +56,9 @@ select t._Term_key from VOC_Vocab v, VOC_Term t
 where v.name = 'Workflow Group' and v._Vocab_key = t._Vocab_key and t.term = 'Tumor'
 ''')[0]['_Term_key']
 
-rejectedKey = db.sql('''
+notroutedKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
-where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Rejected'
+where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Not Routed'
 ''')[0]['_Term_key']
 
 # Tumor

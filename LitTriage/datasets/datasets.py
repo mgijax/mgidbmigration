@@ -607,7 +607,7 @@ def tumor_status():
    print 'Tumor           | INDEXED | %d\n' % (counter)
    inFile.close()
 
-   inFile = open('MTB_notrouted.txt', 'r')
+   inFile = open('MTB_rejected.txt', 'r')
    counter = 0
    for line in inFile.readlines():
    	tokens = line[:-1].split('\t')
@@ -615,10 +615,10 @@ def tumor_status():
 	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
    	results = db.sql(querySQL, 'auto')
    	for r in results:
-   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, notroutedKey, currentDate, currentDate))
+   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, rejectedKey, currentDate, currentDate))
 		assocStatusKey += 1
 	        counter += 1
-   print 'Tumor           | NOT ROUTED | %d\n' % (counter)
+   print 'Tumor           | REJECTED | %d\n' % (counter)
    inFile.close()
 
    inFile = open('MTB_coded.txt', 'r')
@@ -633,6 +633,20 @@ def tumor_status():
 		assocStatusKey += 1
 	        counter += 1
    print 'Tumor           | FULLY CURATED | %d\n' % (counter)
+   inFile.close()
+
+   inFile = open('MTB_notrouted.txt', 'r')
+   counter = 0
+   for line in inFile.readlines():
+   	tokens = line[:-1].split('\t')
+	jnumID = tokens[1]
+	querySQL = '''select distinct _Refs_key from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID)
+   	results = db.sql(querySQL, 'auto')
+   	for r in results:
+   		wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, notroutedKey, currentDate, currentDate))
+		assocStatusKey += 1
+	        counter += 1
+   print 'Tumor           | NOT ROUTED | %d\n' % (counter)
    inFile.close()
 
    wf_status_bcp.close()

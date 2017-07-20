@@ -107,8 +107,8 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
-${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 #
 # EI depends on this cache

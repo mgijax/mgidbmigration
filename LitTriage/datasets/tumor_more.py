@@ -38,7 +38,7 @@ def tumor_status():
 		and r._Refs_key = s._Refs_key)
    	''', 'auto')
    for r in results:
-      wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, Key, currentDate, currentDate))
+      wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, notroutedKey, currentDate, currentDate))
       assocStatusKey += 1
       counter += 1
    print 'Tumor           | REJECTED (other)| %d\n' % (counter)

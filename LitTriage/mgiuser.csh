@@ -66,8 +66,8 @@ ${PG_MGD_DBSCHEMADIR}/comments/MGI_User_create.object | tee -a $LOG || exit 1
 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 
-${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG || exit 1
 DROP TABLE MGI_User_old;

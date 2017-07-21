@@ -57,7 +57,8 @@ select count(*) from MGI_User_old;
 
 select u._User_key, u.login, u.name, t.term, t.abbreviation
 from MGI_User u, VOC_Term t
-where u._Group_key = v._Term_key
+where u._Group_key = t._Term_key
+order by t.abbreviation, u.login
 ;
 
 EOSQL

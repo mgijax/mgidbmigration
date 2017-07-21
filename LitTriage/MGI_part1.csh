@@ -79,6 +79,13 @@ ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG
 
 #
+# add _Group_key to MGI_User
+#
+date | tee -a ${LOG}
+echo 'running mgi_user change' | tee -a $LOG
+./mgiuser.csh | tee -a $LOG || exit 1
+
+#
 # add new workflow tables & changes to bib_refs
 #
 date | tee -a ${LOG}

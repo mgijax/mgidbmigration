@@ -47,13 +47,18 @@ FROM MGI_User_old
 --31576667 | Tumor
 --31576668 | QTL
 UPDATE MGI_User SET _Group_key = 31576664 where login in ('smb', 'mnk', 'honda', 'cms', 'monikat', 'wilmil');
-UPDATE MGI_User SET _Group_key = 31576665 where login in ('csmith', 'jfinger', 'jx', 'terryh');
+UPDATE MGI_User SET _Group_key = 31576665 where login in ('csmith', 'jfinger', 'jx', 'terryh', 'ijm');
 UPDATE MGI_User SET _Group_key = 31576666 where login in ('krc', 'hjd', 'dph', 'mmh', 'ln', 'dmitrys');
 UPDATE MGI_User SET _Group_key = 31576667 where login in ('dab', 'dmk');
 UPDATE MGI_User SET _Group_key = 31576668 where login in ('djr', 'jrecla')
 
 select count(*) from MGI_User;
 select count(*) from MGI_User_old;
+
+select u._User_key, u.login, u.name, t.term, t.abbreviation
+from MGI_User u, VOC_Term t
+where u._Group_key = v._Term_key
+;
 
 EOSQL
 

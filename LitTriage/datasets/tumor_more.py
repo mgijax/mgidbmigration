@@ -41,7 +41,7 @@ def tumor_status():
       wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], tumorKey, notroutedKey, currentDate, currentDate))
       assocStatusKey += 1
       counter += 1
-   print 'Tumor           | REJECTED (other)| %d\n' % (counter)
+   print 'Tumor           | NOT ROUTED (other)| %d\n' % (counter)
 
    wf_status_bcp.close()
    

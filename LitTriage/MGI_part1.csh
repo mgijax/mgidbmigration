@@ -142,6 +142,15 @@ cd datasets
 cd ..
 
 #
+# pwireport
+#
+date | tee -a ${LOG}
+echo 'running pwi/report migration' | tee -a $LOG
+cd pwireport
+./pwireport.csh | tee -a $LOG || exit 1
+cd ..
+
+#
 # reconfig.sh: already done
 #
 date | tee -a ${LOG}

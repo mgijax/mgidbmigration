@@ -54,6 +54,13 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_drop.object | tee -a ${LOG}
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_tumor_more.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Status_create.object | tee -a ${LOG}
 
+# post-migration for Tumor:NotSelected
+rm -rf wf_tag_tumor_notselected.bcp
+./tumor_tag.py | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_drop.object | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag_tumor_notselected.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_create.object | tee -a ${LOG}
+
 #allstatus.csh
 #alltags.csh
 counts.csh

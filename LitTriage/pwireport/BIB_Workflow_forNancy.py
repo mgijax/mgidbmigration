@@ -16,15 +16,9 @@
  
 import sys 
 import os
-import reportlib
 import db
 
 db.setTrace()
-
-CRT = reportlib.CRT
-SPACE = reportlib.SPACE
-TAB = reportlib.TAB
-PAGE = reportlib.PAGE
 
 apJournals = [
 'Nat Neurosci',
@@ -67,8 +61,6 @@ tumorJournals= [
 # Main
 #
 
-fp = reportlib.init(sys.argv[0], printHeading = None, outputdir = os.environ['QCOUTPUTDIR'])
-
 ajournals = '\'' + '\',\''.join(apJournals) + '\''
 ojournals = '\'' + '\',\''.join(goJournals) + '\''
 gjournals = '\'' + '\',\''.join(gxdJournals) + '\''
@@ -79,7 +71,7 @@ discardExclude = 'MGI:Discard'
 notSelectedExclude = 'Tumor:NotSelected'
 
 countQuery = '''
-	select count(r.*) as rCount
+	select '%s' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Citation_Cache r, BIB_Workflow_Status ws, MGI_User u, VOC_Term wst, VOC_Term gt
 	where u._Group_key = ws._Group_key
 	and ws._Refs_key = r._Refs_Key
@@ -93,21 +85,21 @@ countQuery = '''
 		and wt._Tag_key = wtt._Term_key
 		and wtt.term like '%s'
 		)
+	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
+		where r._Refs_key = wt._Refs_key
+		and wt._Tag_key = wtt._Term_key
+		and wtt.term in ('MGI:Discard', 'Tumor:NotSelected')
+		)
 	'''
 
-results = db.sql(countQuery % (ajournals, 'AP'), 'auto')
-for r in results:
-	fp.write('A&P journals  :  ' + str(r['rCount']) + '\n')
-results = db.sql(countQuery % (gjournals, 'GXD'), 'auto')
-for r in results:
-	fp.write('GXD journals  :  ' + str(r['rCount']) + '\n')
-results = db.sql(countQuery % (ojournals, 'GO'), 'auto')
-for r in results:
-	fp.write('GO journals   :  ' + str(r['rCount']) + '\n')
-results = db.sql(countQuery % (tjournals, 'Tumor'), 'auto')
-for r in results:
-	fp.write('Tumor journals:  ' + str(r['rCount']) + '\n')
-fp.write('\n\n')
+fullQuery = countQuery % ('AP', ajournals, 'AP', curatorExclude)
+fullQuery += '\nunion\n'
+fullQuery += countQuery % ('GXD', gjournals, 'GXD', curatorExclude)
+fullQuery += '\nunion\n'
+fullQuery += countQuery % ('GO', ojournals, 'GO', curatorExclude)
+fullQuery += '\nunion\n'
+fullQuery += countQuery % ('Tumor', tjournals, 'Tumor', curatorExclude)
+print fullQuery
 sys.exit(0)
 
 login = 'jfinger'
@@ -135,9 +127,10 @@ elif group == 'Tumor':
 elif group == 'QTL':
     masterjournals = 'None'
 
-results = db.sql('''
+#results = db.sql('''
+print '''
 	(
-	select r.mgiID
+	select r.mgiID, r.journal, 1 as relevance
 	from BIB_Citation_Cache r
 	where r.journal in (%s)
 	and exists (select 1 from BIB_Workflow_Status ws, VOC_Term wst
@@ -151,8 +144,13 @@ results = db.sql('''
 		and wt._Tag_key = wtt._Term_key
 		and wtt.term like '%s'
 		)
+	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
+		where r._Refs_key = wt._Refs_key
+		and wt._Tag_key = wtt._Term_key
+		and wtt.term in ('MGI:Discard', 'Tumor:NotSelected')
+		)
 	union
-	select r.mgiID
+	select r.mgiID, r.journal, 2 as relevance
 	from BIB_Citation_Cache r
 	where r.journal not in (%s)
 	and r.journal not in (%s)
@@ -193,15 +191,18 @@ results = db.sql('''
 		and wt._Tag_key = wtt._Term_key
 		and wtt.term like '%s'
 		)
+	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
+		where r._Refs_key = wt._Refs_key
+		and wt._Tag_key = wtt._Term_key
+		and wtt.term in ('MGI:Discard', 'Tumor:NotSelected')
+		)
 	)
-	order by mgiID
+	order by revelance, mgiID
 	limit 200
-	'''  % (masterjournals, groupKey, curatorExclude, ajournals, ojournals, gjournals, tjournals, curatorExclude), 'auto')
+	'''  % (masterjournals, groupKey, curatorExclude, ajournals, ojournals, gjournals, tjournals, curatorExclude)
+#	'''  % (masterjournals, groupKey, curatorExclude, ajournals, ojournals, gjournals, tjournals, curatorExclude), 'auto')
 
-for r in results:
-	fp.write(str(r) + '\n')
+#for r in results:
+#	print str(r) + '\n'
 
-fp.write('\n%s rows()' % (len(results)))
-
-reportlib.finish_nonps(fp)
 

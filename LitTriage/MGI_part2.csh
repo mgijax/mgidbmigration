@@ -51,9 +51,9 @@ cd ..
 #
 # littriageload
 #
-#date | tee -a ${LOG}
-#echo 'running littriageload' | tee -a $LOG
-#${LITTRIAGELOAD}/bin/littriageload.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'running littriageload' | tee -a $LOG
+${LITTRIAGELOAD}/bin/littriageload.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

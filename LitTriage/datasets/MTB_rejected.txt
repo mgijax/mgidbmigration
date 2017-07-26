@@ -2596,3 +2596,6 @@
 104340	J:241303	Yeo D; Phillips P; Baldwin GS; He H; Nikfarjam M	2017	Int J Cancer	140	9	2101-2111
 104342	J:240241	Saggio I; Remoli C; Spica E; Cersosimo S; Sacchetti B; Robey PG; Holmbeck K; Cumano A; Boyde A; Bianco P; Riminucci M	2014	J Bone Miner Res	29	11	2357-68
 104345	J:241033	Afzal TA; Luong LA; Chen D; Zhang C; Yang F; Chen Q; An W; Wilkes E; Yashiro K; Cutillas PR; Zhang L; Xiao Q	2016	J Am Heart Assoc	5	12	
+104358	J:241644	Dhar S; Kumar A; Gomez CR; Akhtar I; Hancock JC; Lage JM; Pound CR; Levenson AS	2017	FEBS Lett	591	6	924-933
+104361	J:241678	Tzeng A; Kauke MJ; Zhu EF; Moynihan KD; Opel CF; Yang NJ; Mehta N; Kelly RL; Szeto GL; Overwijk WW; Irvine DJ; Wittrup KD	2016	Cell Rep	17	10	2503-2511
+104379	J:241945	Fumagalli A; Drost J; Suijkerbuijk SJ; van Boxtel R; de Ligt J; Offerhaus GJ; Begthel H; Beerling E; Tan EH; Sansom OJ; Cuppen E; Clevers H; van Rheenen J	2017	Proc Natl Acad Sci U S A	114	12	E2357-E2364

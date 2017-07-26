@@ -31,7 +31,7 @@ def tumor_tag():
    counter = 0
 
    results = db.sql('''
-   	select r._Refs_key from BIB_Workflow_Status where _Group_key = 31576667 and _Status_key = 31576669
+   	select _Refs_key from BIB_Workflow_Status where _Group_key = 31576667 and _Status_key = 31576669
 	''', 'auto')
    for r in results:
       wf_tag_bcp.write(wf_tag % (assocStatusKey, r['_Refs_key'], tumorKey, currentDate, currentDate))

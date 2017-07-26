@@ -4354,5 +4354,17 @@
 104252	J:240395	Romiti A; Falcone R; Roberto M; Marchetti P	2017	Cancer Lett	394		88-95
 104290	J:241023	Heath EM; Chan SM; Minden MD; Murphy T; Shlush LI; Schimmer AD	2017	Leukemia	31	4	798-807
 104303	J:241109	Bonastre E; Brambilla E; Sanchez-Cespedes M	2016	J Pathol	238	5	606-16
+104326	J:241260	Puccetti MV; Fischer MA; Arrate MP; Boyd KL; Duszynski RJ; Betous R; Cortez D; Eischen CM	2017	Oncogene	36	18	2553-2564
 104335	J:241288	Roy S; Trinchieri G	2017	Nat Rev Cancer	17	5	271-285
 104336	J:241291	Schneider G; Schmidt-Supprian M; Rad R; Saur D	2017	Nat Rev Cancer	17	4	239-253
+104348	J:241543	Li Z; Gonzalez CL; Wang B; Zhang Y; Mejia O; Katsonis P; Lichtarge O; Myers JN; El-Naggar AK; Caulin C	2016	J Pathol	240	2	224-34
+104364	J:241733	Lau JK; Zhang X; Yu J	2017	J Pathol	241	1	36-44
+104375	J:241886	Jin K; Li T; van Dam H; Zhou F; Zhang L	2017	J Pathol	241	5	567-577
+104377	J:241935	Hou S; Zhou S; Qin Z; Yang L; Han X; Yao S; Ji H	2017	Am J Pathol	187	5	954-962
+104398	J:242088	Kerbel RS; Shaked Y	2017	Cancer Lett	400		293-304
+104402	J:242151	Sarig R; Tzahor E	2017	Carcinogenesis	38	4	359-366
+104403	J:242152	Molchadsky A; Rotter V	2017	Carcinogenesis	38	4	347-358
+104405	J:242154	Rabellino A; Andreani C; Scaglioni PP	2017	Cancer Res	77	7	1542-1547
+104406	J:242155	Guo C; Yeh S; Niu Y; Li G; Zheng J; Li L; Chang C	2017	Cancer Lett	397		133-143
+104407	J:242159	Thomas S; Izard J; Walsh E; Batich K; Chongsathidkiet P; Clarke G; Sela DA; Muller AJ; Mullin JM; Albert K; Gilligan JP; DiGuilio K; Dilbarova R; Alexander W; Prendergast GC	2017	Cancer Res	77	8	1783-1812
+104410	J:242167	Riesco-Martinez M; Parra K; Saluja R; Francia G; Emmenegger U	2017	Cancer Lett	400		311-318

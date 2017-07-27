@@ -1,5 +1,5 @@
 
-	select count(distinct r._Refs_key) as rCount
+	select 'Other' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Citation_Cache r, BIB_Workflow_Status ws, VOC_Term wst
 	where r._Refs_key = ws._Refs_Key
 	and r.journal not in ('Nat Neurosci','Neurobiol Aging','Neuroscience',
@@ -41,7 +41,7 @@
         and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
-                and wtt.term like '%s'
+                and wtt.term like 'MGI:curator_%s'
                 )
         and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
                 where r._Refs_key = wt._Refs_key

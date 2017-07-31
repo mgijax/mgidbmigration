@@ -42,10 +42,11 @@ elif processType == '2':
 
 # for development
 else:
-    processPDF = 0
+    processPDF = 1
+    #processPDF = 0
     processWF = 1
-    #jfileset = 'J240'
-    jfileset = 'J'
+    jfileset = 'J240'
+    #jfileset = 'J'
 
 print 'processPDF= ', processPDF, ', processWF= ', processWF, ', jfileset= ', jfileset
 

@@ -28,11 +28,17 @@ for line in inFile.readlines():
 	(select _Term_key from VOC_Term where _Vocab_key = 129 and term = '%s'),
 	1001,1001,now(),now())
 	''' % (r['_Refs_key'], tag)
+#      sql = '''
+#  	delete from BIB_WorkFlow_Tag
+#	where _Refs_key = %s
+#	and _Tag_key = (select _Term_key from VOC_Term where _Vocab_key = 129 and term = '%s')
+#	''' % (r['_Refs_key'], tag)
       print sql
-      #db.sql(sql, None)
+      db.sql(sql, None)
       db.commit()
 
 inFile.close()
+sys.exit(0)
 
 inFile = open('/mgi/all/wts_projects/12200/12250/sto106/sto106StatusToChange.txt', 'r')
 
@@ -41,6 +47,8 @@ for line in inFile.readlines():
 
    pubmedID = tokens[0]
    status = tokens[1]
+   #to set back to 'Not Routed'
+   #status = 'Not Routed'
    print pubmedID, status
 
    results = db.sql('''
@@ -54,7 +62,7 @@ for line in inFile.readlines():
 	''' % (r['_Refs_key'])
 
       print sql
-      #db.sql(sql, None)
+      db.sql(sql, None)
       db.commit()
       sql = '''
       	insert into BIB_WorkFlow_Status 
@@ -65,7 +73,7 @@ for line in inFile.readlines():
 	1, 1001,1001,now(),now())
 	''' % (r['_Refs_key'], status)
       print sql
-      #db.sql(sql, None)
+      db.sql(sql, None)
       db.commit()
 
 inFile.close()

@@ -6,7 +6,7 @@ import db
 
 db.setTrace()
 
-inFile = open('/mgi/all/wts_projects/12200/12250/sto106/sto106TagsToAdd-1.txt', 'r')
+inFile = open('/mgi/all/wts_projects/12200/12250/sto106/sto106TagsToAdd.txt', 'r')
 
 for line in inFile.readlines():
    tokens = line[:-1].split('\t')
@@ -38,7 +38,6 @@ for line in inFile.readlines():
       db.commit()
 
 inFile.close()
-sys.exit(0)
 
 inFile = open('/mgi/all/wts_projects/12200/12250/sto106/sto106StatusToChange.txt', 'r')
 
@@ -68,7 +67,7 @@ for line in inFile.readlines():
       	insert into BIB_WorkFlow_Status 
 	values((select max(_Assoc_key) + 1 from BIB_WorkFlow_Status),
 	%s,
-	groupKey,
+	31576665,
 	(select _Term_key from VOC_Term where _Vocab_key = 128 and term = '%s'),
 	1, 1001,1001,now(),now())
 	''' % (r['_Refs_key'], status)

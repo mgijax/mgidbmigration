@@ -19,8 +19,8 @@
 # obsolete:
 # jfilescanner?
 # pgdbutilities/bin/ei/nlm.py
-# pgdbutilities/bin/measurements
-# lib_py_postgres/stats_pg.py
+# pgdbutilities/bin/measurements?
+# lib_py_postgres/stats_pg.py?
 #
 # Tasks:
 # 

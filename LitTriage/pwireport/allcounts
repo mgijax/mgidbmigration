@@ -35,7 +35,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
         and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
-                and lower(wtt.term) like 'mgi:curator_%s'
+                and lower(wtt.term) like 'mgi:curator_%'
                 )
         and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
                 where r._Refs_key = wt._Refs_key

@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# Template
+# obsolete/BIB_DataSet tables
 #
 
 
@@ -18,14 +18,9 @@ rm -rf $LOG
 touch $LOG
  
 date | tee -a $LOG
- 
-./sto106_tag.py | tee -a $LOG
-./sto106_status.py | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-select * from BIB_Workflow_Status where _assoc_key >= 1186911;
-select * from BIB_Workflow_Tag where _assoc_key >= 414211;
+drop table mgd.BIB_DataSet_Assoc CASCADE;
+drop table mgd.BIB_DataSet CASCADE;
 EOSQL
-
-date |tee -a $LOG
 

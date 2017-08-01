@@ -89,5 +89,7 @@ drop table mgd.BIB_Refs_old;
 drop table mgd.BIB_ReviewStatus;
 --after migration, this term can be deleted
 --delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified';
+--drop table mgd.BIB_DataSet_Assoc;
+--drop table mgd.BIB_DataSet;
 EOSQL
 

@@ -67,7 +67,7 @@ for line in inFile.readlines():
       	insert into BIB_WorkFlow_Status 
 	values((select max(_Assoc_key) + 1 from BIB_WorkFlow_Status),
 	%s,
-	31576665,
+	31576664,
 	(select _Term_key from VOC_Term where _Vocab_key = 128 and term = '%s'),
 	1, 1001,1001,now(),now())
 	''' % (r['_Refs_key'], status)

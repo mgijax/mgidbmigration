@@ -19,11 +19,11 @@ touch $LOG
  
 date | tee -a $LOG
  
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-EOSQL
-
 ./sto106_tag.py | tee -a $LOG
+./sto106_status.py | tee -a $LOG
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+EOSQL
 
 date |tee -a $LOG
 

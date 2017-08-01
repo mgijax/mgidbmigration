@@ -99,8 +99,7 @@ fullQuery += '\nunion\n'
 fullQuery += countQuery % ('GO', ojournals, 'GO', curatorExclude)
 fullQuery += '\nunion\n'
 fullQuery += countQuery % ('Tumor', tjournals, 'Tumor', curatorExclude)
-print fullQuery
-sys.exit(0)
+#print fullQuery
 
 login = 'jfinger'
 #login = 'csmith'
@@ -156,45 +155,22 @@ print '''
 	and r.journal not in (%s)
 	and r.journal not in (%s)
 	and r.journal not in (%s)
-	and exists (select 1 from BIB_Workflow_Status ws, VOC_Term wst
+	and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst
 		where r._Refs_key = ws._Refs_Key
 		and ws._Status_key = wst._Term_key
 		and wst.term in ('Not Routed')
-		and ws._Group_key = 31576664
-		)
-	and exists (select 1 from BIB_Workflow_Status ws, VOC_Term wst
-		where r._Refs_key = ws._Refs_Key
-		and ws._Status_key = wst._Term_key
-		and wst.term in ('Not Routed')
-		and ws._Group_key = 31576665
-		)
-	and exists (select 1 from BIB_Workflow_Status ws, VOC_Term wst
-		where r._Refs_key = ws._Refs_Key
-		and ws._Status_key = wst._Term_key
-		and wst.term in ('Not Routed')
-		and ws._Group_key = 31576666
-		)
-	and exists (select 1 from BIB_Workflow_Status ws, VOC_Term wst
-		where r._Refs_key = ws._Refs_Key
-		and ws._Status_key = wst._Term_key
-		and wst.term in ('Not Routed')
-		and ws._Group_key = 31576667
-		)
-	and exists (select 1 from BIB_Workflow_Status ws, VOC_Term wst
-		where r._Refs_key = ws._Refs_Key
-		and ws._Status_key = wst._Term_key
-		and wst.term in ('Not Routed')
-		and ws._Group_key = 31576668
+		and ws.isCurrent = 1
+		group by _Refs_key having count(*) = 5
 		)
 	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
 		where r._Refs_key = wt._Refs_key
 		and wt._Tag_key = wtt._Term_key
-		and wtt.term like '%s'
+		and lower(wtt.term) like 'mgi:curator_%'
 		)
 	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
 		where r._Refs_key = wt._Refs_key
 		and wt._Tag_key = wtt._Term_key
-		and wtt.term in ('MGI:Discard', 'Tumor:NotSelected')
+		and lower(wtt.term) in ('mgi:discard')
 		)
 	)
 	order by revelance, mgiID

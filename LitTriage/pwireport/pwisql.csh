@@ -90,7 +90,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 and lower(wtt.term) in ('mgi:discard')
                 )
 ;
-	select 'AP' as group, count(distinct r._Refs_key) as rCount
+	select 'Tumor' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Citation_Cache r, BIB_Workflow_Status ws, VOC_Term wst
 	where r._Refs_key = ws._Refs_Key
 	and r.journal in ('Cancer Cell','Cancer Discov','Cancer Lett','Cancer Res','Carcinogenesis','Int J Cancer','J Natl Cancer Inst','Leukemia','Mol Cancer Res','Nat Rev Cancer','Oncogene','Semin Cancer Biol')

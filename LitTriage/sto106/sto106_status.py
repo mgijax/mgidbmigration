@@ -24,7 +24,7 @@ for line in inFile.readlines():
 	''' % (pubmedID), 'auto')
    for r in results:
       sql = '''
-      	update BIB_WorkFlow_Status set isCurrent = 0 where _Refs_key = %s
+      	update BIB_WorkFlow_Status set isCurrent = 0 where _Refs_key = %s and _Group_key = 31576664
 	''' % (r['_Refs_key'])
 
       print sql

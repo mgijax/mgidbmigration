@@ -21,13 +21,16 @@ for line in inFile.readlines():
 	where r.pubmedID = '%s'
 	''' % (pubmedID), 'auto')
    for r in results:
-      sql = '''
-      	insert into BIB_WorkFlow_Tag 
-	values((select max(_Assoc_key) + 1 from BIB_WorkFlow_Tag),
-	%s,
-	(select _Term_key from VOC_Term where _Vocab_key = 129 and term = '%s'),
-	1001,1001,now(),now())
-	''' % (r['_Refs_key'], tag)
+      if tag == 'MGI:Discard':
+        sql = 'update BIB_Refs set isDiscard = 1 where _Refs_key = %s' % (r['_Refs_key'])
+      else:
+         sql = '''
+      	 insert into BIB_WorkFlow_Tag 
+	 values((select max(_Assoc_key) + 1 from BIB_WorkFlow_Tag),
+	 %s,
+	 (select _Term_key from VOC_Term where _Vocab_key = 129 and term = '%s'),
+	 1001,1001,now(),now())
+	 ''' % (r['_Refs_key'], tag)
 #      sql = '''
 #  	delete from BIB_WorkFlow_Tag
 #	where _Refs_key = %s

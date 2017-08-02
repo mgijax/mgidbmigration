@@ -48,7 +48,7 @@ insert into BIB_Refs
 select _Refs_key, 
 (select t._Term_key from VOC_Term t, VOC_Vocab v 
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified'),
-authors, _primary, title, journal, vol, issue, date, year, pgs, abstract, isReviewArticle,
+authors, _primary, title, journal, vol, issue, date, year, pgs, abstract, isReviewArticle, 0,
 _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date  
 from BIB_Refs_old
 where not exists (select 1 from BIB_Books where BIB_Refs_old._Refs_key = BIB_Books._Refs_key)
@@ -58,7 +58,7 @@ insert into BIB_Refs
 select _Refs_key, 
 (select t._Term_key from VOC_Term t, VOC_Vocab v 
 	where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Book'),
-authors, _primary, title, journal, vol, issue, date, year, pgs, abstract, isReviewArticle,
+authors, _primary, title, journal, vol, issue, date, year, pgs, abstract, isReviewArticle, 0,
 _CreatedBy_key, _ModifiedBy_key, creation_date, modification_date  
 from BIB_Refs_old
 where exists (select 1 from BIB_Books where BIB_Refs_old._Refs_key = BIB_Books._Refs_key)

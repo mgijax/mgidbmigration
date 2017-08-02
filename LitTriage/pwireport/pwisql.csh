@@ -20,6 +20,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 	select 'AP' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Refs r
 	where r.journal in ('Nat Neurosci','Neurobiol Aging','Neuroscience')
+	and r.isDiscard = 0
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
                 and ws._Status_key = wst._Term_key
@@ -31,17 +32,13 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
                 and lower(wtt.term) like 'mgi:curator_%'
-                )
-        and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
-                where r._Refs_key = wt._Refs_key
-                and wt._Tag_key = wtt._Term_key
-                and lower(wtt.term) in ('mgi:discard')
                 )
 ;
 
 	select 'GO' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Refs r
 	where r.journal in ('J Biol Chem','Biochem J')
+	and r.isDiscard = 0
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
                 and ws._Status_key = wst._Term_key
@@ -53,16 +50,12 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
                 and lower(wtt.term) like 'mgi:curator_%'
-                )
-        and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
-                where r._Refs_key = wt._Refs_key
-                and wt._Tag_key = wtt._Term_key
-                and lower(wtt.term) in ('mgi:discard')
                 )
 ;
 	select 'GXD' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Refs r
 	where r.journal in ('Development','Dev Biol','Dev Dyn','Mech Dev','Genes Dev','Gene Expr Patterns','Dev Cell','BMC Dev Biol')
+	and r.isDiscard = 0
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
                 and ws._Status_key = wst._Term_key
@@ -74,16 +67,12 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
                 and lower(wtt.term) like 'mgi:curator_%'
-                )
-        and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
-                where r._Refs_key = wt._Refs_key
-                and wt._Tag_key = wtt._Term_key
-                and lower(wtt.term) in ('mgi:discard')
                 )
 ;
 	select 'Tumor' as group, count(distinct r._Refs_key) as rCount
 	from BIB_Refs r
 	where r.journal in ('Cancer Cell','Cancer Discov','Cancer Lett','Cancer Res','Carcinogenesis','Int J Cancer','J Natl Cancer Inst','Leukemia','Mol Cancer Res','Nat Rev Cancer','Oncogene','Semin Cancer Biol')
+	and r.isDiscard = 0
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
                 and ws._Status_key = wst._Term_key
@@ -95,11 +84,6 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
                 and lower(wtt.term) like 'mgi:curator_%'
-                )
-        and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
-                where r._Refs_key = wt._Refs_key
-                and wt._Tag_key = wtt._Term_key
-                and lower(wtt.term) in ('mgi:discard')
                 )
 ;
 	select 'Other' as group, count(distinct r._Refs_key) as rCount
@@ -108,6 +92,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 	'Development','Dev Biol','Dev Dyn','Mech Dev','Genes Dev','Gene Expr Patterns','Dev Cell','BMC Dev Biol',
 	'J Biol Chem','Biochem J',
 	'Cancer Cell','Cancer Discov','Cancer Lett','Cancer Res','Carcinogenesis','Int J Cancer','J Natl Cancer Inst','Leukemia','Mol Cancer Res','Nat Rev Cancer','Oncogene','Semin Cancer Biol')
+	and r.isDiscard = 0
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
                 and ws._Status_key = wst._Term_key
@@ -119,11 +104,6 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 where r._Refs_key = wt._Refs_key
                 and wt._Tag_key = wtt._Term_key
                 and lower(wtt.term) like 'mgi:curator_%'
-                )
-        and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt 
-                where r._Refs_key = wt._Refs_key
-                and wt._Tag_key = wtt._Term_key
-                and lower(wtt.term) in ('mgi:discard')
                 )
 ;
 

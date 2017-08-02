@@ -18,7 +18,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 
 	select 'AP' as group, count(distinct r._Refs_key) as rCount
-	from BIB_Citation_Cache r
+	from BIB_Refs r
 	where r.journal in ('Nat Neurosci','Neurobiol Aging','Neuroscience')
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
@@ -30,7 +30,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ;
 
 	select 'GO' as group, count(distinct r._Refs_key) as rCount
-	from BIB_Citation_Cache r
+	from BIB_Refs r
 	where r.journal in ('J Biol Chem','Biochem J')
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
@@ -41,7 +41,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 )
 ;
 	select 'GXD' as group, count(distinct r._Refs_key) as rCount
-	from BIB_Citation_Cache r
+	from BIB_Refs r
 	where r.journal in ('Development','Dev Biol','Dev Dyn','Mech Dev','Genes Dev','Gene Expr Patterns','Dev Cell','BMC Dev Biol')
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
@@ -52,7 +52,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 )
 ;
 	select 'Tumor' as group, count(distinct r._Refs_key) as rCount
-	from BIB_Citation_Cache r
+	from BIB_Refs r
 	where r.journal in ('Cancer Cell','Cancer Discov','Cancer Lett','Cancer Res','Carcinogenesis','Int J Cancer','J Natl Cancer Inst','Leukemia','Mol Cancer Res','Nat Rev Cancer','Oncogene','Semin Cancer Biol')
         and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst 
                 where r._Refs_key = ws._Refs_Key
@@ -63,7 +63,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 )
 ;
 	select 'Other' as group, count(distinct r._Refs_key) as rCount
-	from BIB_Citation_Cache r
+	from BIB_Refs r
 	where r.journal not in ('Nat Neurosci','Neurobiol Aging','Neuroscience',
 	'Development','Dev Biol','Dev Dyn','Mech Dev','Genes Dev','Gene Expr Patterns','Dev Cell','BMC Dev Biol',
 	'J Biol Chem','Biochem J',

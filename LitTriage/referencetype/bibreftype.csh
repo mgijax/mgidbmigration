@@ -286,24 +286,5 @@ EOSQL
 
 ./bibpeer.csh | tee -a $LOG
 ./bibtitle.csh | tee -a $LOG
-
-#
-# there should be no reference associated with Reference Type 'Not Specified'
-#
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-select distinct c.jnumID, substring(r.title,1,50), r.journal 
-from BIB_Refs r, VOC_Vocab v, VOC_Term t, BIB_Citation_Cache c
-where v.name = 'Reference Type' 
-and v._Vocab_key = t._Vocab_key 
-and t.term = 'Not Specified'
-and t._Term_key = r._ReferenceType_key
-and r._Refs_key = c._Refs_key
-order by journal
-;
-
-delete from VOC_Term t using VOC_Vocab v where v.name = 'Reference Type' and v._Vocab_key = t._Vocab_key and t.term = 'Not Specified'
-;
-
-EOSQL
+./bibleft.csh | tee -a $LOG
 

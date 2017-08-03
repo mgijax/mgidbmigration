@@ -1,0 +1,68 @@
+#!/bin/sh
+
+#cd `dirname $0` && . ./Configuration
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
+drop view if exists mgd.BIB_GOXRef_View_old CASCADE ;
+EOSQL
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
+
+create view mgd.BIB_GOXRef_View_old
+as
+
+-- References which are:
+--
+-- a. not 'GenBank Submission' or 'Mouse News Lett'		           
+--                                                                        
+-- b. < 03/13/2002
+--    and not Never Used for GO (1005)
+--    and Selected for Allele (1002), Expression (1004) bucket                       
+--    and Used for Allele/Used (MGI_Reference_Allele_View)
+--                                                                         
+-- c. >= 03/13/2002, in Gene Ontology bucket (1005) and not never-used     
+--                                                                         
+-- d. is-reviewed = true in Gene Ontology bucket (1005) and not never-used 
+--                                                                         
+
+select r._Refs_key, r.jnum, r.short_citation, m._Marker_key, r.jnumID, r.title, r.creation_date
+from MRK_Reference m, BIB_All_View r
+where m._Refs_key = r._Refs_key
+and r.journal not in ('GenBank Submission', 'Mouse News Lett') 
+and r.creation_date < '03/13/2002' 
+and not exists (select 1 from BIB_DataSet_Assoc ba
+	  where r._Refs_key = ba._Refs_key and
+	  ba._DataSet_key = 1005 and
+	  ba.isNeverUsed = 1)
+and exists (select 1 from BIB_DataSet_Assoc ba
+  	  where r._Refs_key = ba._Refs_key and
+  	  ba._DataSet_key in (1002, 1004))
+and exists (select 1 from MGI_Reference_Allele_View aa where r._Refs_key = aa._Refs_key)
+
+union
+select r._Refs_key, r.jnum, r.short_citation, m._Marker_key, r.jnumID, r.title, r.creation_date
+from MRK_Reference m, BIB_All_View r
+where m._Refs_key = r._Refs_key
+and r.journal not in ('GenBank Submission', 'Mouse News Lett')
+and r.creation_date >= '03/13/2002' 
+and exists (select 1 from BIB_DataSet_Assoc ba
+	  where r._Refs_key = ba._Refs_key and
+	  ba._DataSet_key = 1005 and 
+	  ba.isNeverUsed = 0)
+
+union
+select r._Refs_key, r.jnum, r.short_citation, m._Marker_key, r.jnumID, r.title, r.creation_date
+from MRK_Reference m, BIB_All_View r
+where m._Refs_key = r._Refs_key
+and r.journal not in ('GenBank Submission', 'Mouse News Lett')
+and r.isReviewArticle = 1 
+and exists (select 1 from BIB_DataSet_Assoc ba
+	  where r._Refs_key = ba._Refs_key and
+	  ba._DataSet_key = 1005 and 
+	  ba.isNeverUsed = 0)
+
+
+
+;
+
+EOSQL

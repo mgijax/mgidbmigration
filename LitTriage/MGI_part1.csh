@@ -49,6 +49,7 @@ source ${MGICONFIG}/master.config.csh
 setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
+rm -rf */${LOG}
 
 date | tee -a ${LOG}
 echo '--- starting part 1' | tee -a $LOG

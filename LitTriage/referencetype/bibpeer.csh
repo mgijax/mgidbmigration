@@ -211,6 +211,7 @@ where r.journal in (
 'FEBS Lett',
 'Fertil Steril',
 'Front Mol Neurosci',
+'Front Synaptic Neurosci',
 'Gamete Res',
 'Genes Cells',
 'Genes Immun',

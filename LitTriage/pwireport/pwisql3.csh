@@ -24,6 +24,7 @@ and a._MGIType_key = 1
 and a._LogicalDB_key = 1
 and a.prefixPart = 'MGI:'
 and r.journal in ('Nat Neurosci','Neurobiol Aging','Neuroscience')
+
 and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst
 	where r._Refs_key = ws._Refs_Key
 	and ws._Status_key = wst._Term_key
@@ -49,6 +50,7 @@ and r.journal not in ('Nat Neurosci','Neurobiol Aging','Neuroscience')
 and r.journal not in ('J Biol Chem','Biochem J')
 and r.journal not in ('Development','Dev Biol','Dev Dyn','Mech Dev','Genes Dev','Gene Expr Patterns','Dev Cell','BMC Dev Biol')
 and r.journal not in ('Cancer Cell','Cancer Discov','Cancer Lett','Cancer Res','Carcinogenesis','Int J Cancer','J Natl Cancer Inst','Leukemia','Mol Cancer Res','Nat Rev Cancer','Oncogene','Semin Cancer Biol')
+
 and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst
 	where r._Refs_key = ws._Refs_Key
 	and ws._Status_key = wst._Term_key

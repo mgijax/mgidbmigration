@@ -82,7 +82,8 @@ print '''
 	(
 	select r.mgiID, r.journal, 1 as relevance
 	from BIB_Refs r
-	where r.journal in (%s)
+	where r.isDiscard = 0
+	and r.journal in (%s)
 	and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst
 		where r._Refs_key = ws._Refs_Key
 		and ws._Status_key = wst._Term_key
@@ -93,17 +94,13 @@ print '''
 	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
 		where r._Refs_key = wt._Refs_key
 		and wt._Tag_key = wtt._Term_key
-		and wtt.term like '%s'
-		)
-	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
-		where r._Refs_key = wt._Refs_key
-		and wt._Tag_key = wtt._Term_key
-		and wtt.term in ('MGI:Discard', 'Tumor:NotSelected')
+		and lower(wtt.term) like 'mgi:curator_%'
 		)
 	union
 	select r.mgiID, r.journal, 2 as relevance
 	from BIB_Refs r
-	where r.journal not in (%s)
+	where r.isDiscard = 0
+	and r.journal not in (%s)
 	and r.journal not in (%s)
 	and r.journal not in (%s)
 	and r.journal not in (%s)
@@ -119,11 +116,6 @@ print '''
 		and wt._Tag_key = wtt._Term_key
 		and lower(wtt.term) like 'mgi:curator_%'
 		)
-	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
-		where r._Refs_key = wt._Refs_key
-		and wt._Tag_key = wtt._Term_key
-		and lower(wtt.term) in ('mgi:discard')
-		)
 	)
 	order by revelance, mgiID
 	limit 200
@@ -133,3 +125,8 @@ print '''
 #	print str(r) + '\n'
 
 
+#	and not exists (select 1 from BIB_Workflow_Tag wt, VOC_Term wtt
+#		where r._Refs_key = wt._Refs_key
+#		and wt._Tag_key = wtt._Term_key
+#		and lower(wtt.term) in ('tumor:notselected')
+#		)

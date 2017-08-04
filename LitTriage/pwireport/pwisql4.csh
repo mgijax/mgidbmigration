@@ -14,6 +14,18 @@ touch $LOG
  
 date | tee -a $LOG
 
+#ap
+#and r.journal in ('Nat Neurosci', 'Neurobiol Aging', 'Neuroscience')
+
+#go
+#and r.journal in ('J Biol Chem', 'Biochem J')
+
+#gxd
+#and r.journal in ('Development', 'Dev Biol', 'Dev Dyn', 'Mech Dev', 'Genes Dev', 'Gene Expr Patterns', 'Dev Cell', 'BMC Dev Biol')
+
+#tumor
+#and r.journal in ('Cancer Cell', 'Cancer Discov', 'Cancer Lett', 'Cancer Res', 'Carcinogenesis', 'Int J Cancer', 'J Natl Cancer Inst', 'Leukemia', 'Mol Cancer Res', 'Nat Rev Cancer', 'Oncogene', 'Semi Cancer Biol')
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 WITH relevanceSet AS (

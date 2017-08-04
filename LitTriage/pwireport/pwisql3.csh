@@ -16,6 +16,7 @@ date | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+(
 select a.accID, r.journal, 1 as relevance
 from BIB_Refs r, ACC_Accession a
 where r.isDiscard = 0

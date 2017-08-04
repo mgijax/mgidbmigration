@@ -81,8 +81,12 @@ elif group == 'QTL':
 print '''
 	(
 	select r.mgiID, r.journal, 1 as relevance
-	from BIB_Refs r
-	where r.isDiscard = 0
+        from BIB_Refs r, ACC_Accession a
+        where r.isDiscard = 0 
+        and r._Refs_key = a._Object_key
+        and a._MGIType_key = 1 
+        and a._LogicalDB_key = 1 
+        and a.prefixPart = 'MGI:'
 	and r.journal in (%s)
 	and exists (select ws._Refs_key from BIB_Workflow_Status ws, VOC_Term wst
 		where r._Refs_key = ws._Refs_Key
@@ -98,8 +102,12 @@ print '''
 		)
 	union
 	select r.mgiID, r.journal, 2 as relevance
-	from BIB_Refs r
-	where r.isDiscard = 0
+        from BIB_Refs r, ACC_Accession a
+        where r.isDiscard = 0 
+        and r._Refs_key = a._Object_key
+        and a._MGIType_key = 1 
+        and a._LogicalDB_key = 1 
+        and a.prefixPart = 'MGI:'
 	and r.journal not in (%s)
 	and r.journal not in (%s)
 	and r.journal not in (%s)

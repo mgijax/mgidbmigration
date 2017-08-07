@@ -2576,7 +2576,9 @@ where r.journal in (
 'Lancet Neurol',
 'Biotechnol Bioeng',
 'Cerebrospinal Fluid Res',
-'Front Aging Neurosci'
+'Front Aging Neurosci',
+'J Am Chem Soc',
+'IBRO Reports'
 )
 ;
 EOSQL

@@ -378,11 +378,6 @@ def ap_tag():
 
    wf_tag_bcp = open('wf_tag_ap.bcp', 'w+')
 
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t 
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'AP:Incomplete'
-   ''')[0]['_Term_key']
-
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r
@@ -395,7 +390,7 @@ def ap_tag():
 	'''
    results = db.sql(querySQL, 'auto')
    for r in results:
-   	wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+   	wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576705, currentDate, currentDate))
 	assocTagKey += 1
    print 'Allele/Pheno | AP:Incomplete | incomplete | %d\n' % (len(results))
 
@@ -409,11 +404,6 @@ def ap_tag():
    # wf_tag = AP:strain
    #
 
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'AP:strains'
-   ''')[0]['_Term_key']
-
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r
@@ -425,7 +415,7 @@ def ap_tag():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576694, currentDate, currentDate))
         assocTagKey += 1
    print 'SCC          | AP:strains | selected | %d\n' % (len(results))
 
@@ -448,11 +438,6 @@ def gxd_tag():
 
    wf_tag_bcp = open('wf_tag_gxd.bcp', 'w+')
 
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'GXD:Loads'
-   ''')[0]['_Term_key']
-
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r
@@ -467,7 +452,7 @@ def gxd_tag():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576733, currentDate, currentDate))
         assocTagKey += 1
    print 'GXD          | GXD:Loads | not used | never used | %d\n' % (len(results))
 
@@ -491,11 +476,6 @@ def other_tags():
 
    wf_tag_bcp = open('wf_tag.bcp', 'w+')
 
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:probe'
-   ''')[0]['_Term_key']
-
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r
@@ -504,14 +484,9 @@ def other_tags():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576697, currentDate, currentDate))
         assocTagKey += 1
    print 'Probe | MGI:probe | used | %d\n' % (len(results))
-
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:mapping'
-   ''')[0]['_Term_key']
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
@@ -521,15 +496,10 @@ def other_tags():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576695, currentDate, currentDate))
         assocTagKey += 1
    print 'Mapping | MGI:mapping | used | %d\n' % (len(results))
 
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:nomen'
-   ''')[0]['_Term_key']
-
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r
@@ -538,15 +508,10 @@ def other_tags():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576692, currentDate, currentDate))
         assocTagKey += 1
    print 'Nomen | MGI:homen | used | %d\n' % (len(results))
 
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:markers'
-   ''')[0]['_Term_key']
-
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r
@@ -555,14 +520,9 @@ def other_tags():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576696, currentDate, currentDate))
         assocTagKey += 1
    print 'Marker | MGI:markers | used | %d\n' % (len(results))
-
-   tagKey = db.sql('''
-   select t._Term_key from VOC_Vocab v, VOC_Term t
-   where v.name = 'Workflow Tag' and v._Vocab_key = t._Vocab_key and t.term = 'MGI:PRO'
-   ''')[0]['_Term_key']
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
@@ -578,7 +538,7 @@ def other_tags():
         '''
    results = db.sql(querySQL, 'auto')
    for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], tagKey, currentDate, currentDate))
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576693, currentDate, currentDate))
         assocTagKey += 1
    print 'PRO | MGI:PRO used | %d\n' % (len(results))
 

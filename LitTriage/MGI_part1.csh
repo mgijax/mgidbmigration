@@ -118,6 +118,10 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_UserRole_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_UserRole_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/BIB_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_User_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG

@@ -63,11 +63,11 @@ order by t.abbreviation, u.login
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/key/MGI_UserRole_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/key/MGI_UserRole_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 
-${PG_MGD_DBSCHEMADIR}/index/MGI_User_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MGI_User_create.object | tee -a $LOG || exit 1
 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1

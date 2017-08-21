@@ -645,7 +645,7 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'R
 
 curatedKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
-where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Fully curated'
+where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Full-coded'
 ''')[0]['_Term_key']
 
 #

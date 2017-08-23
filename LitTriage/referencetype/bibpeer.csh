@@ -2577,6 +2577,7 @@ where r.journal in (
 'Biotechnol Bioeng',
 'Cerebrospinal Fluid Res',
 'Front Aging Neurosci',
+'Front Neurol',
 'J Am Chem Soc',
 'IBRO Reports'
 )

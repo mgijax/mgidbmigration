@@ -128,8 +128,9 @@ for jfilePath in os.listdir(parentDir):
 	    else:
 	        duplicatePDF += 1
         except:
-	    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
-	    notmovedPDF += 1
+	     pass
+	#    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
+	#    notmovedPDF += 1
 
 print ''
 print 'j file count: ', str(jfilecount)

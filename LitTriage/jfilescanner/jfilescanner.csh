@@ -38,11 +38,13 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a ${LOG}
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- add BIB_Workflow_Data records for all references
+-- if not Peer Reviewed Article (33853681), then "does not have" (31576676)
 insert into BIB_Workflow_Data
 select _Refs_key, 0, 31576676, null, null, 1001, 1001, now(), now()
 from BIB_Refs
 where _ReferenceType_key != 31576687
 ;
+-- if Peer Reviewed Article (33853681), then "Not Specified" (33853681)
 insert into BIB_Workflow_Data
 select _Refs_key, 0, 33853681, null, null, 1001, 1001, now(), now()
 from BIB_Refs

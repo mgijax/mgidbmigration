@@ -119,18 +119,20 @@ for jfilePath in os.listdir(parentDir):
 	try:
 	    if processPDF:
 	        shutil.copy(fullpdfFile, newFileDir + '/' + newFileName)
-	    if processWF:
-	        db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
-                db.commit()
-	    print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
-	    if refsKey not in movedPDF:
-	    	movedPDF.append(refsKey)
-	    else:
-	        duplicatePDF += 1
         except:
-	     pass
-	#    print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
-	#    notmovedPDF += 1
+	    pass
+	    #print 'failed: ', fullpdfFile, ' to: ', newFileDir, newFileName
+	    #notmovedPDF += 1
+
+	if processWF:
+	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
+            db.commit()
+	print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
+
+	if refsKey not in movedPDF:
+	    movedPDF.append(refsKey)
+	else:
+	    duplicatePDF += 1
 
 print ''
 print 'j file count: ', str(jfilecount)

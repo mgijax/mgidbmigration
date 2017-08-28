@@ -2599,3 +2599,6 @@
 104358	J:241644	Dhar S; Kumar A; Gomez CR; Akhtar I; Hancock JC; Lage JM; Pound CR; Levenson AS	2017	FEBS Lett	591	6	924-933
 104361	J:241678	Tzeng A; Kauke MJ; Zhu EF; Moynihan KD; Opel CF; Yang NJ; Mehta N; Kelly RL; Szeto GL; Overwijk WW; Irvine DJ; Wittrup KD	2016	Cell Rep	17	10	2503-2511
 104379	J:241945	Fumagalli A; Drost J; Suijkerbuijk SJ; van Boxtel R; de Ligt J; Offerhaus GJ; Begthel H; Beerling E; Tan EH; Sansom OJ; Cuppen E; Clevers H; van Rheenen J	2017	Proc Natl Acad Sci U S A	114	12	E2357-E2364
+104429	J:242417	Kartha N; Shen L; Maskin C; Wallace M; Schimenti JC	2016	Genetics	203	4	1601-11
+104431	J:242452	Tarang S; Doi SM; Gurumurthy CB; Harms D; Quadros R; Rocha-Sanchez SM	2015	Front Cell Neurosci	9		52
+104453	J:242567	Zhang Y; Kwok-Shing Ng P; Kucherlapati M; Chen F; Liu Y; Tsang YH; de Velasco G; Jeong KJ; Akbani R; Hadjipanayis A; Pantazi A; Bristow CA; Lee E; Mahadeshwar HS; Tang J; Zhang J; Yang L; Seth S; Lee S; Ren X; Song X; Sun H; Seidman J; Luquette LJ; Xi R; Chin L; Protopopov A; Westbrook TF; Shelley CS; Choueiri TK; Ittmann M; Van Waes C; Weinstein JN; Liang H; Henske EP; Godwin AK; Park PJ; Kucherlapati R; Scott KL; Mills GB; Kwiatkowski DJ; Creighton CJ	2017	Cancer Cell	31	6	820-832.e3

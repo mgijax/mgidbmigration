@@ -14,12 +14,16 @@
 
 import sys 
 import os
+import re
 import shutil
 import db
+import PdfParser
+import PubMedAgent
 import Pdfpath
 
 masterTriageDir = '/data/littriage'
 parentDir = '/mgi/all/Jfiles'
+litparser = os.getenv('LITPARSER')
 
 jfilecount = 0
 notmovedPDF = 0
@@ -27,6 +31,7 @@ movedPDF = []
 duplicatePDF = 0
 
 processType = os.environ['PROCESSTYPE']
+PdfParser.setLitParserDir(litparser)
 
 # for production (bhmgiapp01)
 if processType == '1':
@@ -125,7 +130,24 @@ for jfilePath in os.listdir(parentDir):
 	    #notmovedPDF += 1
 
 	if processWF:
-	    db.sql('update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s' % (refsKey), None)
+	    pdf = PdfParser.PdfParser(os.path.join(newFileDir, newFileName))
+	    extractedText = pdf.getText()
+	    if extractedText != None:
+                extractedText = re.sub(r'[^\x00-\x7F]','', extractedText)
+                extractedText = extractedText.replace('\\', '\\\\')
+                extractedText = extractedText.replace('\n', '\\n')
+                extractedText = extractedText.replace('\r', '\\r')
+                extractedText = extractedText.replace('|', '\\n')
+                extractedText = extractedText.replace("'", "''")
+	        db.sql('''
+	    	    update BIB_Workflow_Data 
+		    set hasPDF = 1, 
+		    extractedText = E'%s' where _Refs_key = %s
+		    ''' % (extractedText, refsKey), None)
+	    else:
+	        db.sql('''
+	    	    update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s
+		    ''' % (refsKey), None)
             db.commit()
 	print 'successful: ', jnumID, mgiID, fullpdfFile, ' to: ', newFileDir, newFileName
 

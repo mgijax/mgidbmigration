@@ -33,8 +33,8 @@ endsw
 
 date | tee -a $LOG
 
-${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_truncate.object | tee -a ${LOG}
-${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a ${LOG}
+#${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_truncate.object | tee -a ${LOG}
+#${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a ${LOG}
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- add BIB_Workflow_Data records for all references
@@ -56,6 +56,7 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_create.object | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'migrating jfilescanner pdfs and update BIB_Workflow_Data.hasPDF = 1'
+setenv LITPARSER ${MGIUTILS}/litparser
 ./jfilescanner.py | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

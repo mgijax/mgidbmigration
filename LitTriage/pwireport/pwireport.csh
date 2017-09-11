@@ -19,9 +19,8 @@ touch $LOG
  
 date | tee -a $LOG
 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from PWI_Report where id >= 12;
-EOSQL
+${PG_MGD_DBSCHEMADIR}/table/PWI_Report_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/PWI_Report_create.object | tee -a $LOG
 
 setenv COLDELIM "|"
 setenv LINEDELIM  "\n"
@@ -29,5 +28,5 @@ setenv LINEDELIM  "\n"
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} PWI_Report ${DBUTILS}/mgidbmigration/LitTriage/pwireport PWI_Report.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-select * from PWI_Report where id >= 12;
+select * from PWI_Report;
 EOSQL

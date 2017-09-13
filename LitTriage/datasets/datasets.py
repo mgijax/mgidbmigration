@@ -57,7 +57,6 @@ def apgxdgoqtl_indexed():
         from BIB_Citation_Cache r
         where ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
        	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
-	order by r.jnumID
 	''' % (gxdKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
@@ -66,14 +65,27 @@ def apgxdgoqtl_indexed():
    print 'Expression   | INDEXED | used | %d\n' % (len(results))
 
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from VOC_Evidence e, VOC_Annot a
            where e._Refs_key = r._Refs_key
 	   and e._Annot_key = a._Annot_key
 	   and a._AnnotType_key = 1000)
+	union
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
+        where dbsa._DataSet_key in (1005)
+	and dbsa._Refs_key = r._Refs_key
+	and dbsa.isNeverUsed = 0
+        and not exists (select 1 from VOC_Evidence e, VOC_Annot a
+           where e._Refs_key = r._Refs_key
+	   and e._Annot_key = a._Annot_key
+	   and a._AnnotType_key = 1000)
+	and exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
+	)
 	order by r.jnumID
-	''' % (goKey)
+	''' % (goKey, goKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
@@ -137,10 +149,12 @@ def apgxdgoqtl_chosen():
 	and dbsa.isNeverUsed = 0
         and not ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
        	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
+	and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
 	union
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
 	where r._Refs_key in (82826,154970,162862,178645,202491)
+	and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
 	)
 	order by jnumID
 	''' % (gxdKey, gxdKey)
@@ -156,6 +170,7 @@ def apgxdgoqtl_chosen():
         where dbsa._DataSet_key in (1005)
 	and dbsa._Refs_key = r._Refs_key
 	and dbsa.isNeverUsed = 0
+	and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
         and not exists (select 1 from VOC_Evidence e, VOC_Annot a
            where e._Refs_key = r._Refs_key
 	   and e._Annot_key = a._Annot_key

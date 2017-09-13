@@ -84,7 +84,7 @@ def apgxdgoqtl_indexed():
 	   and a._AnnotType_key = 1000)
 	and exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
 	)
-	order by r.jnumID
+	order by jnumID
 	''' % (goKey, goKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
@@ -149,12 +149,10 @@ def apgxdgoqtl_chosen():
 	and dbsa.isNeverUsed = 0
         and not ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
        	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
-	and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
 	union
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
 	where r._Refs_key in (82826,154970,162862,178645,202491)
-	and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
 	)
 	order by jnumID
 	''' % (gxdKey, gxdKey)

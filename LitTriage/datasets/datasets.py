@@ -67,13 +67,6 @@ def apgxdgoqtl_indexed():
    querySQL = '''
 	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
-        from BIB_Citation_Cache r
-        where exists (select 1 from VOC_Evidence e, VOC_Annot a
-           where e._Refs_key = r._Refs_key
-	   and e._Annot_key = a._Annot_key
-	   and a._AnnotType_key = 1000)
-	union
-        select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
         where dbsa._DataSet_key in (1005)
 	and dbsa._Refs_key = r._Refs_key
@@ -85,7 +78,7 @@ def apgxdgoqtl_indexed():
 	and exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
 	)
 	order by jnumID
-	''' % (goKey, goKey)
+	''' % (goKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
@@ -372,6 +365,35 @@ def apgxdgoqtl_rejected():
    print 'QTL           | REJECTED | not used | never used | %d\n' % (len(results))
 
    wf_status_bcp.close()
+
+#
+# go : full-coded
+#
+def go_fullcoded():
+   #   
+   # wf_status = Full-coded
+   #   
+
+   global assocStatusKey
+
+   wf_status_bcp = open('wf_status_fullcoded.bcp', 'w+')
+
+   querySQL = ''' 
+        (
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from VOC_Evidence e, VOC_Annot a
+           where e._Refs_key = r._Refs_key
+           and e._Annot_key = a._Annot_key
+           and a._AnnotType_key = 1000)
+        )
+        order by jnumID
+        ''' % (goKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], curatedKey, currentDate, currentDate))
+        assocStatusKey += 1
+   print 'GO           | FULL-CODED | used | %d\n' % (len(results))
 
 #
 # ap/AP:Incomplete
@@ -669,6 +691,7 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'F
 apgxdgoqtl_indexed()
 apgxdgoqtl_chosen()
 apgxdgoqtl_rejected()
+go_fullcoded()
 
 # Tags
 ap_tag()

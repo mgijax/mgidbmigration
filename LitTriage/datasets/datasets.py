@@ -64,6 +64,10 @@ def apgxdgoqtl_indexed():
 	assocStatusKey += 1
    print 'Expression   | INDEXED | used | %d\n' % (len(results))
 
+   #
+   # no annotations
+   # marker is indexed
+   #
    querySQL = '''
 	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
@@ -368,6 +372,9 @@ def apgxdgoqtl_rejected():
 
 #
 # go : full-coded
+#
+# reference is annotated to GO
+#
 #
 def go_fullcoded():
    #   

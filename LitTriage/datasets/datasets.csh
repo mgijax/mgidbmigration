@@ -38,6 +38,7 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Tag_drop.object | tee -a ${LOG}
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_chosen.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_indexed.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_rejected.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_fullcoded.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Status ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_status_tumor.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Tag ${DBUTILS}/mgidbmigration/LitTriage/datasets wf_tag_ap.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}

@@ -6,14 +6,12 @@
 #
 # (part 1 running schema changes)
 #
-# pgmgddbschema-tr12250
-# pgdbutilities-tr12250
-# ei-tr12250
-# mgipython-tr12250
-# pwi-tr12250
-# reports_db-tr12250
-# qcrepoerts_db-tr12250
-# mgicacheload-tr12250
+# pgmgddbschema
+# pgdbutilities
+# ei
+# reports_db
+# qcrepoerts_db
+# mgicacheload
 # femover-tr12250
 #
 # obsolete:

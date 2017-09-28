@@ -552,7 +552,7 @@ def other_tags():
    for r in results:
         wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576692, currentDate, currentDate))
         assocTagKey += 1
-   print 'Nomen | MGI:homen | used | %d\n' % (len(results))
+   print 'Nomen | MGI:nomen | used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID

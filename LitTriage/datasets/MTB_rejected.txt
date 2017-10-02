@@ -2602,3 +2602,8 @@
 104429	J:242417	Kartha N; Shen L; Maskin C; Wallace M; Schimenti JC	2016	Genetics	203	4	1601-11
 104431	J:242452	Tarang S; Doi SM; Gurumurthy CB; Harms D; Quadros R; Rocha-Sanchez SM	2015	Front Cell Neurosci	9		52
 104453	J:242567	Zhang Y; Kwok-Shing Ng P; Kucherlapati M; Chen F; Liu Y; Tsang YH; de Velasco G; Jeong KJ; Akbani R; Hadjipanayis A; Pantazi A; Bristow CA; Lee E; Mahadeshwar HS; Tang J; Zhang J; Yang L; Seth S; Lee S; Ren X; Song X; Sun H; Seidman J; Luquette LJ; Xi R; Chin L; Protopopov A; Westbrook TF; Shelley CS; Choueiri TK; Ittmann M; Van Waes C; Weinstein JN; Liang H; Henske EP; Godwin AK; Park PJ; Kucherlapati R; Scott KL; Mills GB; Kwiatkowski DJ; Creighton CJ	2017	Cancer Cell	31	6	820-832.e3
+104482	J:242774	Tasiou V; Hiber M; Steenpass L	2015	PLoS One	10	8	e0134672
+104518	J:243158	Pomeroy EJ; Lee LA; Lee RDW; Schirm DK; Temiz NA; Ma J; Gruber TA; Diaz-Flores E; Moriarity BS; Downing JR; Shannon KM; Largaespada DA; Eckfeldt CE	2017	Oncogene	36	23	3263-3273
+104530	J:243264	Dang H; Takai A; Forgues M; Pomyen Y; Mou H; Xue W; Ray D; Ha KCH; Morris QD; Hughes TR; Wang XW	2017	Cancer Cell	32	1	101-114.e8
+104535	J:243269	Zheng S; Koh XY; Goh HC; Rahmat SAB; Hwang LA; Lane DP	2017	Cancer Res	77	16	4342-4354
+104543	J:243281	Jung E; Osswald M; Blaes J; Wiestler B; Sahm F; Schmenger T; Solecki G; Deumelandt K; Kurz FT; Xie R; Weil S; Heil O; Thome C; Gommel M; Syed M; Haring P; Huber PE; Heiland S; Platten M; von Deimling A; Wick W; Winkler F	2017	J Neurosci	37	29	6837-6850

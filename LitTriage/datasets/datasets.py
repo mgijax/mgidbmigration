@@ -552,7 +552,22 @@ def other_tags():
    for r in results:
         wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576692, currentDate, currentDate))
         assocTagKey += 1
-   print 'Nomen | MGI:nomen | used | %d\n' % (len(results))
+   print 'Nomen | MGI:nomen_used | %d\n' % (len(results))
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
+        where dbsa._DataSet_key in (1010,1006)
+	and dbsa._Refs_key = r._Refs_key
+	and dbsa.isNeverUsed = 0
+        and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 34693807, currentDate, currentDate))
+        assocTagKey += 1
+   print 'Nomen | MGI:nomen_selected | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
@@ -582,7 +597,28 @@ def other_tags():
    for r in results:
         wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576693, currentDate, currentDate))
         assocTagKey += 1
-   print 'PRO | MGI:PRO used | %d\n' % (len(results))
+   print 'PRO | MGI:PRO_used | %d\n' % (len(results))
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID
+        from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
+        where dbsa._DataSet_key in (1010,1006)
+	and dbsa._Refs_key = r._Refs_key
+	and dbsa.isNeverUsed = 0
+        and not exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p
+        	where e._Refs_key = r._Refs_key
+        	and a._AnnotType_key = 1000
+        	and a._Annot_key = e._Annot_key
+        	and e._AnnotEvidence_key = p._AnnotEvidence_key
+        	and p._PropertyTerm_key = 6481775
+        	)
+        order by r.jnumID
+        '''
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 34693808, currentDate, currentDate))
+        assocTagKey += 1
+   print 'PRO | MGI:PRO_selected | %d\n' % (len(results))
 
    wf_tag_bcp.close()
 

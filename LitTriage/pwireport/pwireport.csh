@@ -32,3 +32,9 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE PWI_Report ALTER id SET DEFAULT NEXTVAL('pwi_report_id_seq');
 select * from PWI_Report;
 EOSQL
+
+${PG_MGD_DBSCHEMADIR}/key/PWI_drop.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/PWI_create.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/PWI_drop.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/PWI_create.logical | tee -a $LOG
+

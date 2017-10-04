@@ -33,7 +33,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #
 date | tee -a ${LOG}
 echo 'running littriageload' | tee -a $LOG
-${PDFDOWNLOADLOAD}/bin/littriageload.sh | tee -a $LOG || exit 1
+${PDFDOWNLOAD}/download_plos.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo '--- finished part 5' | tee -a ${LOG}

@@ -34,7 +34,6 @@ ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Run GO/GOA Loads' | tee -a ${LOG}
-${PROISOFORMLOAD}/bin/proisoform.sh | tee -a ${LOG}
 ${GOLOAD}/goamouse/goamouse.sh | tee -a ${LOG}
 ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 ${MGICACHELOAD}/go_isoforms_display_load.csh | tee -a ${LOG}

@@ -12,13 +12,18 @@
 # reports_db
 # qcrepoerts_db
 # mgicacheload
-# femover-tr12250
 #
 # obsolete:
 # jfilescanner?
 # pgdbutilities/bin/ei/nlm.py
-# pgdbutilities/bin/measurements?
-# lib_py_postgres/stats_pg.py?
+# pgdbutilities/bin/measurements? jon
+# lib_py_postgres/stats_pg.py? jon
+#
+# For CutOver:
+#
+# 1. make sure littriageload/littriageload.config:CUTOVER=1
+# 2. update datasets/MTB  (/mgi/all/wts_projects/12200/12250/DebbieK)
+# 3. after cutover, set CUTOVER=0
 #
 # Tasks:
 # 

@@ -21,6 +21,8 @@
 #
 # For CutOver:
 #
+# new tag : 6-0-11-1
+#
 # 1. make sure littriageload/littriageload.config:CUTOVER=1
 # 2. update datasets/MTB  (/mgi/all/wts_projects/12200/12250/DebbieK)
 # 3. after cutover, set CUTOVER=0

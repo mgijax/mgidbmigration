@@ -12,6 +12,9 @@
 # reports_db
 # qcrepoerts_db
 # mgicacheload
+# lib_py_littriage
+# littriageload
+# mgidbmigration
 #
 # obsolete:
 # jfilescanner?

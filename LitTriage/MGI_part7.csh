@@ -3,7 +3,7 @@
 #
 # TR12250/Literature Triage
 #
-# (part 6 - run littriageload, pub2geneload, qc reports)
+# (part 7 - run littriageload, qc reports)
 #
 
 ###----------------------###
@@ -34,13 +34,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 echo 'running littriageload' | tee -a $LOG
 ${LITTRIAGELOAD}/bin/littriageload.sh | tee -a $LOG || exit 1
-
-#
-# pubmed2geneload
-#
-date | tee -a ${LOG}
-echo 'running pubmed2geneload' | tee -a $LOG
-${PUBMED2GENELOAD}/bin/pubmed2geneload.sh | tee -a $LOG || exit 1
 
 ###----------------------###
 ###---   QC reports   ---###

@@ -602,7 +602,7 @@ def other_tags():
    querySQL = '''
         select distinct r._Refs_key, r.jnumID
         from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
-        where dbsa._DataSet_key in (1010,1006)
+        where dbsa._DataSet_key in (1012)
 	and dbsa._Refs_key = r._Refs_key
 	and dbsa.isNeverUsed = 0
         and not exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p

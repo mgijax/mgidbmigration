@@ -28,6 +28,19 @@ echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
 echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
 echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
+#
+# copy /data/downloads files needed for loads (move to part2?)
+#
+date | tee -a ${LOG}
+echo 'step 1 : run mirror_wget downloads' | tee -a $LOG || exit 1
+scp bhmgiapp01:/data/downloads/uniprot/uniprotload/uniprotmus.dat /data/downloads/uniprot/uniprotload
+scp bhmgiapp01:/data/downloads/go_translation/ec2go /data/downloads/go_translation
+scp bhmgiapp01:/data/downloads/go_translation/interpro2go /data/downloads/go_translation
+scp bhmgiapp01:/data/downloads/go_translation/uniprotkb_kw2go /data/downloads/go_translation
+scp bhmgiapp01:/data/downloads/goa/MOUSE/goa_mouse.gaf.gz /data/downloads/goa/MOUSE
+scp bhmgiapp01:/data/downloads/goa/MOUSE/goa_mouse_isoform.gaf.gz /data/downloads/goa/MOUSE
+scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/uberon.obo /data/downloads/purl.obolibrary.org
+
 date | tee -a ${LOG}
 echo 'Run UniProt Load' | tee -a ${LOG}
 ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a ${LOG}

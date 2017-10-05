@@ -55,6 +55,14 @@ else:
 
 print 'processPDF= ', processPDF, ', processWF= ', processWF, ', jfileset= ', jfileset
 
+refLookup = {}
+results = db.sql('select _Refs_key, mgiID, jnumID from BIB_Citation_Cache', 'auto')
+for r in results:
+    key = r['jnumID']
+    value = r
+    refLookup[key] = []
+    refLookup[key].append(value)
+
 # 1. read /mgi/all/Jfiles/
 
 for jfilePath in os.listdir(parentDir):
@@ -99,11 +107,13 @@ for jfilePath in os.listdir(parentDir):
 	jnumID = jnumID.replace('R.pdf', '')
 	jnumID = jnumID.replace('.pdf', '')
 
-	results = db.sql('''select _Refs_key, mgiID from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID), 'auto')
-	if len(results) == 0:
+	#results = db.sql('''select _Refs_key, mgiID from BIB_Citation_Cache where jnumID = '%s' ''' % (jnumID), 'auto')
+	#if len(results) == 0:
+	if jnumID not in refLookup:
 	    print 'J: not in MGD: ', jnumID
 	    notmovedPDF += 1
 	    continue
+	results = refLookup[jnumID]
 	refsKey = results[0]['_Refs_key']
         mgiID = results[0]['mgiID']
 	prefixPart, numericPart = mgiID.split('MGI:')

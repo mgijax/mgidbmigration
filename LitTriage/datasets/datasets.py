@@ -105,9 +105,9 @@ def apgxdgoqtl_indexed():
    wf_status_bcp.close()
 
 #
-# ap/gxd/go/qtl : chosen
+# ap/gxd/go : chosen
 #
-def apgxdgoqtl_chosen():
+def apgxdgo_chosen():
    #
    # selected : true
    # used : false
@@ -178,6 +178,26 @@ def apgxdgoqtl_chosen():
 	assocStatusKey += 1
    print 'GO           | CHOSEN | selected/not used | %d\n' % (len(results))
 
+   wf_status_bcp.close()
+
+#
+# qtl : routed
+#
+def qtl_routed():
+   #
+   # selected : true
+   # used : false
+   # not used : true
+   # never used : false
+   # incomplete : any
+   #
+   # wf_status = Routed
+   #
+
+   global assocStatusKey
+
+   wf_status_bcp = open('wf_status_routed.bcp', 'w+')
+
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
@@ -190,9 +210,9 @@ def apgxdgoqtl_chosen():
 	''' % (qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
-   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], chosenKey, currentDate, currentDate))
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], routedKey, currentDate, currentDate))
 	assocStatusKey += 1
-   print 'QTL          | CHOSEN | selected/not used | %d\n' % (len(results))
+   print 'QTL          | ROUTED | selected/not used | %d\n' % (len(results))
 
    wf_status_bcp.close()
 
@@ -721,6 +741,11 @@ select t._Term_key from VOC_Vocab v, VOC_Term t
 where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Rejected'
 ''')[0]['_Term_key']
 
+routedKey = db.sql('''
+select t._Term_key from VOC_Vocab v, VOC_Term t 
+where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Routed'
+''')[0]['_Term_key']
+
 curatedKey = db.sql('''
 select t._Term_key from VOC_Vocab v, VOC_Term t 
 where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'Full-coded'
@@ -729,10 +754,11 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'F
 #
 # Status
 # ap/gxd/go/qtl
-# Indexed, Chosen, Rejected
+# Indexed, Chosen, Routed, Rejected
 #
 apgxdgoqtl_indexed()
-apgxdgoqtl_chosen()
+apgxdgo_chosen()
+qtl_routed()
 apgxdgoqtl_rejected()
 go_fullcoded()
 

@@ -26,9 +26,11 @@
 #
 # new tag : 6-0-11-1
 #
-# 1. make sure littriageload/littriageload.config:CUTOVER=1
-# 2. update datasets/MTB  (/mgi/all/wts_projects/12200/12250/DebbieK)
-# 3. after cutover, set CUTOVER=0
+# 1. on bhmgiapp01:  after littriageload is installeld:
+# 	ln -s /mgi/all/Triage/PDF_files/Master_Failed failed
+# 2. make sure littriageload/littriageload.config:CUTOVER=1
+# 3. update datasets/MTB  (/mgi/all/wts_projects/12200/12250/DebbieK)
+# 4. after cutover, set CUTOVER=0
 #
 # Tasks:
 # 

@@ -27,6 +27,8 @@ masterTriageDir = '/data/littriage'
 parentDir = '/mgi/all/Jfiles'
 litparser = os.getenv('LITPARSER')
 
+PdfParser.setLitParserDir(litparser)
+
 mgifilecount = 0
 
 # 1. read /mgi/all/Jfiles/

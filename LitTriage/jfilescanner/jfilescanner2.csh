@@ -18,18 +18,6 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
  
-switch (`uname -n`)
-    case bhmgiapp01:
-	setenv PROCESSTYPE 1
-        breaksw
-    case bhmgidevapp01:
-        setenv PROCESSTYPE 2
-	breaksw
-    default:
-        setenv PROCESSTYPE 3
-        breaksw
-endsw
-
 date | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_truncate.object | tee -a ${LOG}

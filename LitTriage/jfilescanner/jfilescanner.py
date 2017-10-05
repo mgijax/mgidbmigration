@@ -42,7 +42,7 @@ if processType == '1':
 # for development (bhmgidevapp01)
 elif processType == '2':
     processPDF = 1
-    processWF = 0
+    processWF = 1
     jfileset = 'J'
 
 # for development

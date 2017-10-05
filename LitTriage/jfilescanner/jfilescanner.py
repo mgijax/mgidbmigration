@@ -43,7 +43,7 @@ if processType == '1':
 elif processType == '2':
     processPDF = 1
     processWF = 0
-    jfileset = 'J240'
+    jfileset = 'J'
 
 # for development
 else:

@@ -24,7 +24,6 @@ switch (`uname -n`)
         breaksw
     case bhmgidevapp01:
         setenv PROCESSTYPE 2
-	rm -rf /data/littriage/[0-9]*
 	breaksw
     default:
         setenv PROCESSTYPE 3
@@ -57,7 +56,7 @@ ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_create.object | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'migrating jfilescanner pdfs and update BIB_Workflow_Data.hasPDF = 1'
 setenv LITPARSER ${MGIUTILS}/litparser
-./jfilescanner.py | tee -a $LOG || exit 1
+./jfilescanner2.py | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from BIB_Workflow_Data;

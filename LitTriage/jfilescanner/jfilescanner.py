@@ -36,7 +36,7 @@ PdfParser.setLitParserDir(litparser)
 # for production (bhmgiapp01)
 if processType == '1':
     processPDF = 1
-    processWF = 0
+    processWF = 1
     jfileset = 'J'
 
 # for development (bhmgidevapp01)

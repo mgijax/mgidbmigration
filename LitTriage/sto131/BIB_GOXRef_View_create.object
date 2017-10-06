@@ -36,7 +36,8 @@ and not exists (select 1 from BIB_DataSet_Assoc ba
 	  ba.isNeverUsed = 1)
 and exists (select 1 from BIB_DataSet_Assoc ba
   	  where r._Refs_key = ba._Refs_key and
-  	  ba._DataSet_key in (1002, 1004))
+  	  --ba._DataSet_key in (1002, 1004))
+  	  ba._DataSet_key in (1002))
 and exists (select 1 from MGI_Reference_Allele_View aa where r._Refs_key = aa._Refs_key)
 
 union

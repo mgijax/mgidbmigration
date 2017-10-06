@@ -15,7 +15,6 @@
 import sys 
 import os
 import re
-import shutil
 import db
 import PdfParser
 import PubMedAgent
@@ -30,16 +29,17 @@ litparser = os.getenv('LITPARSER')
 PdfParser.setLitParserDir(litparser)
 
 mgifilecount = 0
+sql = ''
 
 # 1. read /mgi/all/Jfiles/
 
-#refLookup = {}
-#results = db.sql('''select _Refs_key, mgiID from BIB_Citation_Cache''', 'auto')
-#for r in results:
-#    key = r['mgiID']
-#    value = r['_Refs_key']
-#    refLookup[key] = []
-#    refLookup[key].append(value)
+refLookup = {}
+results = db.sql('''select mgiID, _Refs_key from BIB_Citation_Cache''', 'auto')
+for r in results:
+    key = r['mgiID']
+    value = r['_Refs_key']
+    refLookup[key] = []
+    refLookup[key].append(value)
 
 for mgifilePath in os.listdir(masterTriageDir):
 
@@ -55,14 +55,12 @@ for mgifilePath in os.listdir(masterTriageDir):
 	mgiID = pdfFile
 	mgiID = mgiID.replace('.pdf', '')
 	mgiID = 'MGI:' + mgiID
-	results = db.sql('''select _Refs_key, mgiID from BIB_Citation_Cache where mgiID = '%s' ''' % (mgiID), 'auto')
-	if len(results) ==  0:
+
+	if mgiID not in refLookup:
 	    continue
 
-	refsKey = results[0]['_Refs_key']
-        mgiID = results[0]['mgiID']
-	prefixPart, numericPart = mgiID.split('MGI:')
-	newFileName = numericPart + '.pdf'
+	results = refLookup[mgiID]
+	refsKey = results[0]
 
 	pdf = PdfParser.PdfParser(fullpdfFile)
 	extractedText = pdf.getText()
@@ -73,18 +71,33 @@ for mgifilePath in os.listdir(masterTriageDir):
             extractedText = extractedText.replace('\r', '\\r')
             extractedText = extractedText.replace('|', '\\n')
             extractedText = extractedText.replace("'", "''")
+	    #sql += '''
+#
+#	    	    update BIB_Workflow_Data 
+#		    set hasPDF = 1, 
+#		    extractedText = E'%s' where _Refs_key = %s;
+#
+#		    ''' % (extractedText, refsKey)
 	    db.sql('''
 	    	    update BIB_Workflow_Data 
 		    set hasPDF = 1, 
 		    extractedText = E'%s' where _Refs_key = %s
 		    ''' % (extractedText, refsKey), None)
 	else:
+	    #sql += '''
+#
+#	    	    update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s;
+#
+#		    ''' % (refsKey)
 	    db.sql('''
 	    	    update BIB_Workflow_Data set hasPDF = 1 where _Refs_key = %s
 		    ''' % (refsKey), None)
         db.commit()
         mgifilecount += 1
 	print 'successful: ', mgiID, fullpdfFile
+
+#db.sql(sql, None)
+#db.commit()
 
 print ''
 print 'mgi file count: ', str(mgifilecount)

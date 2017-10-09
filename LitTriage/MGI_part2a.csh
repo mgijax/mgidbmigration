@@ -32,9 +32,9 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # jfilescanner/pdfs will be run manually as a separate process
 #
 date | tee -a ${LOG}
-echo 'running jfilescanner migration (this runs the BIB_Workflow_Data piece only)' | tee -a $LOG
+echo 'running jfilescanner3 migration/load BIB_Workflow_Data from /backups/build/BIB_Workflow_Data.dump' | tee -a $LOG
 cd jfilescanner
-./jfilescanner.csh | tee -a $LOG || exit 1
+./jfilescanner3.csh | tee -a $LOG || exit 1
 cd ..
 
 date | tee -a ${LOG}

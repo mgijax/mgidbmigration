@@ -23,11 +23,19 @@ date | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_truncate.object | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a ${LOG}
 
+date | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select count(*) from BIB_Refs;
+select count(*) from BIB_Workflow_Data;
+select count(*) from BIB_Workflow_Data where hasPDF = 0;
+select count(*) from BIB_Workflow_Data where hasPDF = 1;
+EOSQL
+
 date | tee -a ${LOG}
 echo 'load BIB_Workflow_Data'
 setenv COLDELIM "|"
 setenv LINEDELIM  "\n"
-${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Data ${DBUTILS}/mgidbmigration/LitTriage/jfilescanner BIB_Workflow_Data.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
+${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} BIB_Workflow_Data /backups/build BIB_Workflow_Data.dump ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 date | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_create.object | tee -a ${LOG}

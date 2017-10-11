@@ -21,7 +21,7 @@ rm -rf ${LOG}
 touch ${LOG}
 
 date | tee -a ${LOG}
-echo '--- starting part 2' | tee -a $LOG
+echo '--- starting part 2c' | tee -a $LOG
 
 echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
 echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
@@ -52,4 +52,4 @@ ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 ${MGICACHELOAD}/go_isoforms_display_load.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
-echo '--- finished part 2' | tee -a ${LOG}
+echo '--- finished part 2c' | tee -a ${LOG}

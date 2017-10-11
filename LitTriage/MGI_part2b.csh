@@ -21,7 +21,7 @@ rm -rf ${LOG}
 touch ${LOG}
 
 date | tee -a ${LOG}
-echo '--- starting part 2' | tee -a $LOG
+echo '--- starting part 2b' | tee -a $LOG
 
 echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
 echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
@@ -43,4 +43,4 @@ echo 'running pubmed2geneload' | tee -a $LOG
 ${PUBMED2GENELOAD}/bin/pubmed2geneload.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
-echo '--- finished part 2' | tee -a ${LOG}
+echo '--- finished part 2b' | tee -a ${LOG}

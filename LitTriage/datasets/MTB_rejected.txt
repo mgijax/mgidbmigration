@@ -2607,3 +2607,5 @@
 104530	J:243264	Dang H; Takai A; Forgues M; Pomyen Y; Mou H; Xue W; Ray D; Ha KCH; Morris QD; Hughes TR; Wang XW	2017	Cancer Cell	32	1	101-114.e8
 104535	J:243269	Zheng S; Koh XY; Goh HC; Rahmat SAB; Hwang LA; Lane DP	2017	Cancer Res	77	16	4342-4354
 104543	J:243281	Jung E; Osswald M; Blaes J; Wiestler B; Sahm F; Schmenger T; Solecki G; Deumelandt K; Kurz FT; Xie R; Weil S; Heil O; Thome C; Gommel M; Syed M; Haring P; Huber PE; Heiland S; Platten M; von Deimling A; Wick W; Winkler F	2017	J Neurosci	37	29	6837-6850
+104575	J:243603	Principe DR; Diaz AM; Torres C; Mangan RJ; DeCant B; McKinney R; Tsao MS; Lowy A; Munshi HG; Jung B; Grippo PJ	2017	Oncogene	36	30	4336-4348
+104579	J:243619	van der Weyden L; Arends MJ; Campbell AD; Bald T; Wardle-Jones H; Griggs N; Velasco-Herrera MD; Tuting T; Sansom OJ; Karp NA; Clare S; Gleeson D; Ryder E; Galli A; Tuck E; Cambridge EL; Voet T; Macaulay IC; Wong K; Spiegel S; Speak AO; Adams DJ	2017	Nature	541	7636	233-236

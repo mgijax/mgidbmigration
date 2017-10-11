@@ -27,7 +27,7 @@
 # new tag : 6-0-11-1
 #
 # 1. on bhmgiapp01:  after littriageload is installeld:
-# 	ln -s /mgi/all/Triage/PDF_files/Master_Failed failed
+# 	ln -s /mgi/all/Triage/PDF_files/Master_Needs_Review needs_review
 # 2. make sure littriageload/littriageload.config:CUTOVER=1
 # 3. update datasets/MTB  (/mgi/all/wts_projects/12200/12250/DebbieK)
 # 4. after cutover, set CUTOVER=0

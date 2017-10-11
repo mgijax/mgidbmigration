@@ -2324,6 +2324,7 @@
 94091	J:121732	Ramsey MR; Krishnamurthy J; Pei XH; Torrice C; Lin W; Carrasco DR; Ligon KL; Xiong Y; Sharpless NE	2007	Cancer Res	67	10	4732-41
 94094	J:121797	Engelman RW; Jackson RJ; Coppola D; Wharton W; Cantor AB; Pledger WJ	2007	Exp Mol Pathol	82	3	234-44
 94099	J:122308	Kitamura T; Kometani K; Hashida H; Matsunaga A; Miyoshi H; Hosogi H; Aoki M; Oshima M; Hattori M; Takabayashi A; Minato N; Taketo MM	2007	Nat Genet	39	4	467-75
+94109	J:122698	Ma Y; Fiering S; Black C; Liu X; Yuan Z; Memoli VA; Robbins DJ; Bentley HA; Tsongalis GJ; Demidenko E; Freemantle SJ; Dmitrovsky E	2007	Proc Natl Acad Sci U S A	104	10	4089-94
 94112	J:122751	Maser RS; Choudhury B; Campbell PJ; Feng B; Wong KK; Protopopov A; O'Neil J; Gutierrez A; Ivanova E; Perna I; Lin E; Mani V; Jiang S; McNamara K; Zaghlul S; Edkins S; Stevens C; Brennan C; Martin ES; Wiedemeyer R; Kabbarah O; Nogueira C; Histen G; Aster J	2007	Nature	447	7147	966-71
 94113	J:122805	Lin X; Liu CC; Gao Q; Zhang X; Wu G; Lee WH	2007	Mol Cell Biol	27	13	4905-16
 94140	J:123168	Besson A; Hwang HC; Cicero S; Donovan SL; Gurian-West M; Johnson D; Clurman BE; Dyer MA; Roberts JM	2007	Genes Dev	21	14	1731-46
@@ -3685,6 +3686,7 @@
 100729	J:202801	Taddei ML; Giannoni E; Comito G; Chiarugi P	2013	Cancer Lett	341	1	80-96
 100730	J:202802	Marie-Egyptienne DT; Lohse I; Hill RP	2013	Cancer Lett	341	1	63-72
 100731	J:202803	Fessler E; Dijkgraaf FE; De Sousa E Melo F; Medema JP	2013	Cancer Lett	341	1	97-104
+100747	J:203214	Wang G; Lunardi A; Zhang J; Chen Z; Ala U; Webster KA; Tay Y; Gonzalez-Billalabeitia E; Egia A; Shaffer DR; Carver B; Liu XS; Taulli R; Kuo WP; Nardella C; Signoretti S; Cordon-Cardo C; Gerald WL; Pandolfi PP	2013	Nat Genet	45	7	739-46
 100748	J:203215	Lunardi A; Ala U; Epping MT; Salmena L; Clohessy JG; Webster KA; Wang G; Mazzucchelli R; Bianconi M; Stack EC; Lis R; Patnaik A; Cantley LC; Bubley G; Cordon-Cardo C; Gerald WL; Montironi R; Signoretti S; Loda M; Nardella C; Pandolfi PP	2013	Nat Genet	45	7	747-55
 100751	J:203230	Tan Ide A; Ricciardelli C; Russell DL	2013	Int J Cancer	133	10	2263-76
 100752	J:203231	Duijf PH; Benezra R	2013	Oncogene	32	40	4727-36
@@ -4405,3 +4407,4 @@
 104545	J:243284	He L; Xiao X; Yang X; Zhang Z; Wu L; Liu Z	2017	Cancer Lett	402		203-212
 104553	J:243361	Agliano A; Calvo A; Box C	2017	Semin Cancer Biol	44		25-42
 104556	J:243366	Walls GV; Stevenson M; Lines KE; Newey PJ; Reed AAC; Bowl MR; Jeyabalan J; Harding B; Bradley KJ; Manek S; Chen J; Wang P; Williams BO; Teh BT; Thakker RV	2017	Oncogene	36	28	4025-4036
+104566	J:243252	Javadekar SM; Raghavan SC	2015	FEBS J	282	14	2627-45

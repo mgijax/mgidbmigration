@@ -3,7 +3,10 @@
 #
 # migration of bib_dataset/bib_dataset_assoc to bib_workflow_status, bib_workflow_tag
 #
-
+# cp /mgi/all/wts_projects/12200/12250/DebbieK/MTB* .
+# foreach i in (MTB*)
+# dos2unix $i $i
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig

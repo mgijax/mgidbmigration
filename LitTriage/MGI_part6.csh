@@ -21,7 +21,7 @@ rm -rf ${LOG}
 touch ${LOG}
 
 date | tee -a ${LOG}
-echo '--- starting part 2' | tee -a $LOG
+echo '--- starting part 6' | tee -a $LOG
 
 echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
 echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
@@ -62,4 +62,4 @@ echo 'Monthly QC Reports' | tee -a ${LOG}
 ${QCRPTS}/qcmonthly_reports.csh
 
 date | tee -a ${LOG}
-echo '--- finished part 5' | tee -a ${LOG}
+echo '--- finished part 6' | tee -a ${LOG}

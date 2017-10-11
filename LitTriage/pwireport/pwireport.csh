@@ -35,7 +35,7 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} PWI_Report ${DBUTILS}/mg
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 SELECT setval('pwi_report_id_seq', max(id)) FROM PWI_Report;
---select * from PWI_Report;
+select count(*) from PWI_Report;
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/PWI_drop.logical | tee -a $LOG

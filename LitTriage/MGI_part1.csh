@@ -31,6 +31,7 @@
 # 2. make sure littriageload/littriageload.config:CUTOVER=1
 # 3. update datasets/MTB  (/mgi/all/wts_projects/12200/12250/DebbieK)
 # 4. after cutover, set CUTOVER=0
+# 5. check that bhmgiapp01:/data/loads/New_New link is correct
 #
 # Tasks:
 # 

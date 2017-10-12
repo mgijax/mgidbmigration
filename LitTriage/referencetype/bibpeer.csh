@@ -2579,7 +2579,11 @@ where r.journal in (
 'Front Aging Neurosci',
 'Front Neurol',
 'J Am Chem Soc',
-'IBRO Reports'
+'IBRO Reports',
+'Am J Cardiovasc Dis',
+'Cell Reprogram',
+'Clin Chem Lab Med',
+'Int J Cardiol Heart Vasc'
 )
 ;
 EOSQL

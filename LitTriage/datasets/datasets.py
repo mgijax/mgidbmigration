@@ -45,6 +45,7 @@ def apgxdgoqtl_indexed():
    # not in MP annot
    #
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
@@ -101,11 +102,19 @@ def apgxdgoqtl_indexed():
 	assocStatusKey += 1
    print 'GO           | INDEXED | used | %d\n' % (len(results))
 
+   #
+   # no Mapping
+   # QTL marker
+   #
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
-        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+        where not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+        and exists (select 1 from MRK_Reference gi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+		and gi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
 	order by r.jnumID
 	''' % (qtlKey)
    results = db.sql(querySQL, 'auto')
@@ -210,7 +219,13 @@ def qtl_routed():
 
    wf_status_bcp = open('wf_status_routed.bcp', 'w+')
 
+   #
+   # selected, no Mapping
+   # Mapping and no QTL marker
+   #
+
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r, BIB_DataSet_Assoc dbsa
         where dbsa._DataSet_key in (1011)
@@ -218,8 +233,19 @@ def qtl_routed():
 	and dbsa.isNeverUsed = 0
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-	order by r.jnumID
-	''' % (qtlKey)
+	union
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+           and gi.exptType in ('TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+        and not exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+                and gi._Expt_key = mi._Expt_key
+                and mi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
+	)
+	order by jnumID
+	''' % (qtlKey, qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], routedKey, currentDate, currentDate))
@@ -299,6 +325,7 @@ def apgxdgoqtl_rejected():
    print 'GO           | REJECTED | not selected/not used | %d\n' % (len(results))
 
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where not exists (select 1 from BIB_DataSet_Assoc dbsa
@@ -307,8 +334,19 @@ def apgxdgoqtl_rejected():
 	    )
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-	order by r.jnumID
-	''' % (qtlKey)
+	union
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+        and not exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+                and gi._Expt_key = mi._Expt_key
+                and mi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
+	)
+	order by jnumID
+	''' % (qtlKey, qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
@@ -381,8 +419,12 @@ def apgxdgoqtl_rejected():
    # never used : true
    # incomplete : any
    #
+   # no Mapping
+   # no QTL marker
+   #
 
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from BIB_DataSet_Assoc dbsa
@@ -392,8 +434,23 @@ def apgxdgoqtl_rejected():
 	    )
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-	order by r.jnumID
-	''' % (qtlKey)
+        and not exists (select 1 from MRK_Reference gi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+		and gi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
+	union
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+           and gi.exptType in ('TEXT'))
+        and not exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+                and gi._Expt_key = mi._Expt_key
+                and mi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
+	)
+	order by jnumID
+	''' % (qtlKey, qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
@@ -403,11 +460,9 @@ def apgxdgoqtl_rejected():
    wf_status_bcp.close()
 
 #
-# ap : full-coded
-# gxd: full-coded
-# go : full-coded
+# ap/gxd/go/qtl : full-coded
 #
-def apgxdgo_fullcoded():
+def apgxdgoqtl_fullcoded():
    #   
    # wf_status = Full-coded
    #   
@@ -421,6 +476,7 @@ def apgxdgo_fullcoded():
    # in MP annotation
    #
    querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
@@ -470,6 +526,28 @@ def apgxdgo_fullcoded():
         wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], curatedKey, currentDate, currentDate))
         assocStatusKey += 1
    print 'GO           | FULL-CODED | used | %d\n' % (len(results))
+
+   #
+   # Mapping
+   # QTL marker
+   #
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+        and exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+                and gi._Expt_key = mi._Expt_key
+                and mi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
+	order by r.jnumID
+	''' % (qtlKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], curatedKey, currentDate, currentDate))
+	assocStatusKey += 1
+   print 'QTL          | FULL-CODED | used | %d\n' % (len(results))
 
 #
 # ap/AP:Incomplete
@@ -807,7 +885,7 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'F
 #
 apgxdgoqtl_indexed()
 apgxdgo_chosen()
-apgxdgo_fullcoded()
+apgxdgoqtl_fullcoded()
 apgxdgoqtl_rejected()
 qtl_routed()
 

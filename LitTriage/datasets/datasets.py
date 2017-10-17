@@ -757,9 +757,9 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'F
 #
 goqtl_indexed()
 apgxdgo_chosen()
-qtl_routed()
-apgxdgoqtl_rejected()
 apgxdgo_fullcoded()
+apgxdgoqtl_rejected()
+qtl_routed()
 
 # Tags
 ap_tag()

@@ -23,9 +23,9 @@ assocStatusKey = 1
 assocTagKey = 1
 
 #
-# ap/gxd/go/qtl : indexed
+# go/qtl : indexed
 #
-def apgxdgoqtl_indexed():
+def goqtl_indexed():
    #
    # selected : any
    # used : true
@@ -39,30 +39,6 @@ def apgxdgoqtl_indexed():
    global assocStatusKey
 
    wf_status_bcp = open('wf_status_indexed.bcp', 'w+')
-
-   querySQL = '''
-        select distinct r._Refs_key, r.jnumID, %s as groupKey
-        from BIB_Citation_Cache r
-        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
-	order by r.jnumID
-	''' % (apKey)
-   results = db.sql(querySQL, 'auto')
-   for r in results:
-   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
-	assocStatusKey += 1
-   print 'Allele/Pheno | INDEXED | used | %d\n' % (len(results))
-
-   querySQL = '''
-        select distinct r._Refs_key, r.jnumID, %s as groupKey
-        from BIB_Citation_Cache r
-        where ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
-       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
-	''' % (gxdKey)
-   results = db.sql(querySQL, 'auto')
-   for r in results:
-   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], indexedKey, currentDate, currentDate))
-	assocStatusKey += 1
-   print 'Expression   | INDEXED | used | %d\n' % (len(results))
 
    #
    # no annotations
@@ -391,12 +367,11 @@ def apgxdgoqtl_rejected():
    wf_status_bcp.close()
 
 #
+# ap : full-coded
+# gxd: full-coded
 # go : full-coded
 #
-# reference is annotated to GO
-#
-#
-def go_fullcoded():
+def apgxdgo_fullcoded():
    #   
    # wf_status = Full-coded
    #   
@@ -404,6 +379,30 @@ def go_fullcoded():
    global assocStatusKey
 
    wf_status_bcp = open('wf_status_fullcoded.bcp', 'w+')
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
+	order by r.jnumID
+	''' % (apKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], curatedKey, currentDate, currentDate))
+	assocStatusKey += 1
+   print 'Allele/Pheno | FULL-CODED | used | %d\n' % (len(results))
+
+   querySQL = '''
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
+       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
+	''' % (gxdKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], curatedKey, currentDate, currentDate))
+	assocStatusKey += 1
+   print 'Expression   | FULL-CODED | used | %d\n' % (len(results))
 
    querySQL = ''' 
         (
@@ -756,11 +755,11 @@ where v.name = 'Workflow Status' and v._Vocab_key = t._Vocab_key and t.term = 'F
 # ap/gxd/go/qtl
 # Indexed, Chosen, Routed, Rejected
 #
-apgxdgoqtl_indexed()
+goqtl_indexed()
 apgxdgo_chosen()
 qtl_routed()
 apgxdgoqtl_rejected()
-go_fullcoded()
+apgxdgo_fullcoded()
 
 # Tags
 ap_tag()

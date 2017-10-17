@@ -150,6 +150,10 @@ def apgxdgo_chosen():
 	and dbsa._Refs_key = r._Refs_key
 	and dbsa.isNeverUsed = 0
         and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
+        and not exists (select 1 from VOC_Evidence e, VOC_Annot a
+           where e._Refs_key = r._Refs_key
+           and e._Annot_key = a._Annot_key
+           and a._AnnotType_key = 1002)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -280,6 +284,10 @@ def apgxdgoqtl_rejected():
 	    and r._Refs_key = dbsa._Refs_key
 	    )
         and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
+        and not exists (select 1 from VOC_Evidence e, VOC_Annot a
+           where e._Refs_key = r._Refs_key
+           and e._Annot_key = a._Annot_key
+           and a._AnnotType_key = 1002)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -372,6 +380,10 @@ def apgxdgoqtl_rejected():
 	    and dbsa.isNeverUsed = 1
 	    )
         and not exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
+        and not exists (select 1 from VOC_Evidence e, VOC_Annot a
+           where e._Refs_key = r._Refs_key
+           and e._Annot_key = a._Annot_key
+           and a._AnnotType_key = 1002)
 	order by r.jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
@@ -479,13 +491,12 @@ def apgxdgoqtl_fullcoded():
 	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
-        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 11)
-        and exists (select 1 from VOC_Evidence e, VOC_Annot a
+        where exists (select 1 from VOC_Evidence e, VOC_Annot a
            where e._Refs_key = r._Refs_key
            and e._Annot_key = a._Annot_key
            and a._AnnotType_key = 1002)
         )
-	order by r.jnumID
+	order by jnumID
 	''' % (apKey)
    results = db.sql(querySQL, 'auto')
    for r in results:

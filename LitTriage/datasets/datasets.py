@@ -484,7 +484,6 @@ def apgxdgoqtl_fullcoded():
    wf_status_bcp = open('wf_status_fullcoded.bcp', 'w+')
 
    #
-   # in MGI_Reference_Assoc
    # in MP annotation
    #
    querySQL = '''

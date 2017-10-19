@@ -237,16 +237,6 @@ def qtl_routed():
 	and dbsa.isNeverUsed = 0
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-	union
-        select distinct r._Refs_key, r.jnumID, %s as groupKey
-        from BIB_Citation_Cache r
-        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
-           and gi.exptType in ('TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-        and exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
-                where gi._Refs_key = r._Refs_key
-                and gi._Expt_key = mi._Expt_key
-                and mi._Marker_key = m._Marker_key
-                and m._Marker_Type_key = 6)
 	)
 	order by jnumID
 	''' % (qtlKey, qtlKey)
@@ -545,7 +535,7 @@ def apgxdgoqtl_fullcoded():
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
-           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+           and gi.exptType in ('TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
         and exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
                 where gi._Refs_key = r._Refs_key
                 and gi._Expt_key = mi._Expt_key

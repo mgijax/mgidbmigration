@@ -455,7 +455,7 @@ def apgxdgoqtl_rejected():
                 and m._Marker_Type_key = 6)
 	)
 	order by jnumID
-	''' % (qtlKey, qtlKey)
+	''' % (qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))

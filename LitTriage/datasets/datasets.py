@@ -225,7 +225,7 @@ def qtl_routed():
 
    #
    # selected, no Mapping
-   # Mapping and no QTL marker
+   # Mapping and QTL marker
    #
 
    querySQL = '''

@@ -242,7 +242,7 @@ def qtl_routed():
         from BIB_Citation_Cache r
         where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-        and not exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
+        and exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
                 where gi._Refs_key = r._Refs_key
                 and gi._Expt_key = mi._Expt_key
                 and mi._Marker_key = m._Marker_key

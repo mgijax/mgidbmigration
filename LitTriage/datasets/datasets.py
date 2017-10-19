@@ -460,7 +460,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
-   print 'QTL           | REJECTED | used in mapping | no QTL marker for "TEXT" | %d\n' % (len(results))
+   print 'QTL           | REJECTED | used in mapping | no QTL marker | %d\n' % (len(results))
 
    wf_status_bcp.close()
 

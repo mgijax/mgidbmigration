@@ -225,7 +225,6 @@ def qtl_routed():
 
    #
    # selected, no Mapping
-   # Mapping and QTL marker
    #
 
    querySQL = '''
@@ -322,35 +321,6 @@ def apgxdgoqtl_rejected():
 	assocStatusKey += 1
    print 'GO           | REJECTED | not selected/not used | %d\n' % (len(results))
 
-   querySQL = '''
-	(
-        select distinct r._Refs_key, r.jnumID, %s as groupKey
-        from BIB_Citation_Cache r
-        where not exists (select 1 from BIB_DataSet_Assoc dbsa
-            where dbsa._dataset_key in (1011)
-	    and r._Refs_key = dbsa._Refs_key
-	    )
-        and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
-           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-	union
-        select distinct r._Refs_key, r.jnumID, %s as groupKey
-        from BIB_Citation_Cache r
-        where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
-           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-        and not exists (select 1 from MLD_Expts gi, MLD_Expt_Marker mi, MRK_Marker m
-                where gi._Refs_key = r._Refs_key
-                and gi._Expt_key = mi._Expt_key
-                and mi._Marker_key = m._Marker_key
-                and m._Marker_Type_key = 6)
-	)
-	order by jnumID
-	''' % (qtlKey, qtlKey)
-   results = db.sql(querySQL, 'auto')
-   for r in results:
-   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
-	assocStatusKey += 1
-   print 'QTL          | REJECTED | not selected/not used | %d\n' % (len(results))
-
    #
    # AP-only Rejected
    #
@@ -415,14 +385,37 @@ def apgxdgoqtl_rejected():
    #
    # QTL-only Rejected
    #
+   # selected : false
+   # used : false
+   # not used : any
+   # never used : any
+   # incomplete : any
+   #
+   querySQL = '''
+	(
+        select distinct r._Refs_key, r.jnumID, %s as groupKey
+        from BIB_Citation_Cache r
+        where not exists (select 1 from BIB_DataSet_Assoc dbsa
+            where dbsa._dataset_key in (1011)
+	    and r._Refs_key = dbsa._Refs_key
+	    )
+        and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
+           and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+	)
+	order by jnumID
+	''' % (qtlKey, qtlKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
+	assocStatusKey += 1
+   print 'QTL          | REJECTED | not selected/not used | %d\n' % (len(results))
+
+   #
    # selected : any
    # used : false
    # not used : any
    # never used : true
    # incomplete : any
-   #
-   # no Mapping
-   # no QTL marker
    #
 
    querySQL = '''
@@ -436,11 +429,21 @@ def apgxdgoqtl_rejected():
 	    )
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
-        and not exists (select 1 from MRK_Reference gi, MRK_Marker m
-                where gi._Refs_key = r._Refs_key
-		and gi._Marker_key = m._Marker_key
-                and m._Marker_Type_key = 6)
-	union
+	)
+	order by jnumID
+	''' % (qtlKey, qtlKey)
+   results = db.sql(querySQL, 'auto')
+   for r in results:
+   	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
+	assocStatusKey += 1
+   print 'QTL           | REJECTED | not used | never used | %d\n' % (len(results))
+
+   # exists Mapping for TEXT 
+   # marker is not QTL
+   #
+
+   querySQL = '''
+	(
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
@@ -457,7 +460,7 @@ def apgxdgoqtl_rejected():
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
 	assocStatusKey += 1
-   print 'QTL           | REJECTED | not used | never used | %d\n' % (len(results))
+   print 'QTL           | REJECTED | used in mapping | no QTL marker for "TEXT" | %d\n' % (len(results))
 
    wf_status_bcp.close()
 

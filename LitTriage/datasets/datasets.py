@@ -434,6 +434,11 @@ def apgxdgoqtl_rejected():
 	    )
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+        and not exists (select 1 from MGI_Reference_Assoc gi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+		and gi._MGIType_key = 2
+                and gi._Object_key = m._Marker_key
+                and m._Marker_Type_key = 6)
 	)
 	order by jnumID
 	''' % (qtlKey)

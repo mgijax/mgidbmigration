@@ -704,17 +704,18 @@ def other_tags():
         assocTagKey += 1
    print 'Mapping | MGI:mapping | used | %d\n' % (len(results))
 
-   querySQL = '''
-        select distinct r._Refs_key, r.jnumID
-        from BIB_Citation_Cache r
-        where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
-        order by r.jnumID
-        '''
-   results = db.sql(querySQL, 'auto')
-   for r in results:
-        wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576692, currentDate, currentDate))
-        assocTagKey += 1
-   print 'Nomen | MGI:nomen_used | %d\n' % (len(results))
+   #commented out per Monica
+   #querySQL = '''
+   #     select distinct r._Refs_key, r.jnumID
+   #     from BIB_Citation_Cache r
+   #     where exists (select 1 from MGI_Reference_Assoc gi where gi._Refs_key = r._Refs_key and gi._MGIType_key = 2)
+   #     order by r.jnumID
+   #     '''
+   #results = db.sql(querySQL, 'auto')
+   #for r in results:
+   #     wf_tag_bcp.write(wf_tag % (assocTagKey, r['_Refs_key'], 31576692, currentDate, currentDate))
+   #     assocTagKey += 1
+   #print 'Nomen | MGI:nomen_used | %d\n' % (len(results))
 
    querySQL = '''
         select distinct r._Refs_key, r.jnumID

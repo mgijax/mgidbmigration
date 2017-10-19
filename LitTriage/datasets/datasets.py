@@ -238,7 +238,7 @@ def qtl_routed():
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
 	)
 	order by jnumID
-	''' % (qtlKey, qtlKey)
+	''' % (qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], routedKey, currentDate, currentDate))
@@ -403,7 +403,7 @@ def apgxdgoqtl_rejected():
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
 	)
 	order by jnumID
-	''' % (qtlKey, qtlKey)
+	''' % (qtlKey,)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))
@@ -431,7 +431,7 @@ def apgxdgoqtl_rejected():
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
 	)
 	order by jnumID
-	''' % (qtlKey, qtlKey)
+	''' % (qtlKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
    	wf_status_bcp.write(wf_status % (assocStatusKey, r['_Refs_key'], r['groupKey'], rejectedKey, currentDate, currentDate))

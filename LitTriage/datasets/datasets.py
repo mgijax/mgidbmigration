@@ -236,6 +236,10 @@ def qtl_routed():
 	and dbsa.isNeverUsed = 0
         and not exists (select 1 from MLD_Expts gi where gi._Refs_key = r._Refs_key
            and gi.exptType in ('TEXT', 'TEXT-QTL', 'TEXT-QTL-Candidate Genes', 'TEXT-Congenic', 'TEXT-Meta Analysis'))
+        and not exists (select 1 from MRK_Reference gi, MRK_Marker m
+                where gi._Refs_key = r._Refs_key
+		and gi._Marker_key = m._Marker_key
+                and m._Marker_Type_key = 6)
 	)
 	order by jnumID
 	''' % (qtlKey)

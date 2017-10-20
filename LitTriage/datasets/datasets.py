@@ -704,7 +704,7 @@ def other_tags():
         assocTagKey += 1
    print 'Mapping | MGI:mapping | used | %d\n' % (len(results))
 
-   #commented out per Monica
+   #commented out per Monica 10/19/2017
    #querySQL = '''
    #     select distinct r._Refs_key, r.jnumID
    #     from BIB_Citation_Cache r

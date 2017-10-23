@@ -70,7 +70,7 @@ def apgxdgoqtl_indexed():
         from BIB_Citation_Cache r
         where exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
 	and not exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key
-		and ga._AssayType_key in (1,2,3,4,5,6,8,9))
+		and ga._AssayType_key in (1,2,3,4,5,6,8,9)
 		)
 	''' % (gxdKey)
    results = db.sql(querySQL, 'auto')

@@ -32,7 +32,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # pdfdownload
 #
 date | tee -a ${LOG}
-echo 'running pdfdownload | tee -a $LOG
+echo 'running pdfdownload' | tee -a $LOG
 ${PDFDOWNLOAD}/download_plos.sh | tee -a $LOG || exit 1
 
 #

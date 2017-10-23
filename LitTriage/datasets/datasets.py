@@ -69,7 +69,9 @@ def apgxdgoqtl_indexed():
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
         where exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
-	and not exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)
+	and not exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key
+		and ga._AssayType_key in (1,2,3,4,5,6,8,9))
+		)
 	''' % (gxdKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
@@ -170,7 +172,8 @@ def apgxdgo_chosen():
 	and dbsa._Refs_key = r._Refs_key
 	and dbsa.isNeverUsed = 0
         and not ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
-       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
+       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key
+		and ga._AssayType_key in (1,2,3,4,5,6,8,9))))
 	union
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
@@ -297,7 +300,8 @@ def apgxdgoqtl_rejected():
 	    and r._Refs_key = dbsa._Refs_key
 	    )
         and not ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
-       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
+       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key
+		and ga._AssayType_key in (1,2,3,4,5,6,8,9))))
 	order by r.jnumID
 	''' % (gxdKey)
    results = db.sql(querySQL, 'auto')
@@ -514,7 +518,8 @@ def apgxdgoqtl_fullcoded():
    querySQL = '''
         select distinct r._Refs_key, r.jnumID, %s as groupKey
         from BIB_Citation_Cache r
-        where exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)
+        where exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key
+		and ga._AssayType_key in (1,2,3,4,5,6,8,9))
 	''' % (gxdKey)
    results = db.sql(querySQL, 'auto')
    for r in results:
@@ -651,7 +656,8 @@ def gxd_tag():
             and dbsa.isNeverUsed = 1
             )
         and not ((exists (select 1 from GXD_Index gi where gi._Refs_key = r._Refs_key)
-       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key)))
+       	  or exists (select 1 from GXD_Assay ga where ga._Refs_key = r._Refs_key
+		and ga._AssayType_key in (1,2,3,4,5,6,8,9))))
         order by r.jnumID
         '''
    results = db.sql(querySQL, 'auto')

@@ -54,7 +54,7 @@ ${MRKCACHELOAD}/mrkmcv.csh
 ${ALOMRKLOAD}/bin/alomrkload.sh
 ${ALLCACHELOAD}/alllabel.csh
 ${ALLCACHELOAD}/allelecombination.csh
-${MRKCACHELOAD}/mrkomim.csh
+${MRKCACHELOAD}/mrkdo.csh
 ${ALLCACHELOAD}/allstrain.csh
 ${ALLCACHELOAD}/allelecrecache.csh
 ${MGICACHELOAD}/bibcitation.csh

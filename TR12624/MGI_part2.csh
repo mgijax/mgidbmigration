@@ -64,4 +64,8 @@ ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 ${MGICACHELOAD}/go_isoforms_display_load.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
+echo 'Update Reference Workflow Status' | tee -a ${LOG}
+${PG_DBUTILS}/sp/run_BIB_updateWFStatus.csh
+
+date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

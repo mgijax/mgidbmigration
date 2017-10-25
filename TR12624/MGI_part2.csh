@@ -50,6 +50,9 @@ scp bhmgiapp01:/data/downloads/build.berkeleybop.org/job/gaf-check-mgi/lastSucce
 scp bhmgiapp01:/data/downloads/go_gene_assoc/gene_association.rgd.gz /data/downloads/go_gene_assoc
 scp bhmgiapp01:/data/downloads/go_gene_assoc/submission/paint/pre-submission/gene_association.paint_mgi.gz /data/downloads/go_gene_assoc/submission/paint/pre-submission
 
+# copy the new MCV obo file from the TR directory to the input directory
+scp /mgi/all/wts_projects/12600/12643/MCV_Vocab.obo ${DATALOADSOUTPUT}/mgi/mcvload/input/
+
 date | tee -a ${LOG}
 echo 'Run UniProt Load' | tee -a ${LOG}
 ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a ${LOG}
@@ -61,6 +64,10 @@ ${GOLOAD}/go.sh | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'Update Reference Workflow Status' | tee -a ${LOG}
 ${PG_DBUTILS}/sp/run_BIB_updateWFStatus.csh | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run MCV Vocabulary Load' | tee -a ${LOG}
+${MCVLOAD}/bin/run_mcv_vocload.sh
 
 #echo 'generate GPA file...'
 #REPORTOUTPUTDIR=${PUBREPORTDIR}/output;export REPORTOUTPUTDIR

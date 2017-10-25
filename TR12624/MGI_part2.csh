@@ -51,15 +51,6 @@ scp bhmgiapp01:/data/downloads/go_gene_assoc/gene_association.rgd.gz go_gene_ass
 scp bhmgiapp01:/data/downloads/go_gene_assoc/submission/paint/pre-submission/gene_association.paint_mgi.gz go_gene_assoc/submission/paint/pre-submission
 
 date | tee -a ${LOG}
-echo 'change voc_term to noctua-model-id' | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update VOC_Term set term = 'noctua-model-id', abbreviation = 'noctua-model-id'
-where _term_key = 18583061
-;
-EOSQL
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
 echo 'Run UniProt Load' | tee -a ${LOG}
 ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a ${LOG}
 

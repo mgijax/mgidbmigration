@@ -48,12 +48,12 @@ where _term_key = 18583061
 EOSQL
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'rebuild BIB_updateWF procedures' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGO_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGXD_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusQTL_create.object | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+#echo 'rebuild BIB_updateWF procedures' | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGO_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGXD_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusQTL_create.object | tee -a $LOG || exit 1
 
 #
 # indexes

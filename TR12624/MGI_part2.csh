@@ -72,9 +72,4 @@ echo 'Update Reference Workflow Status' | tee -a ${LOG}
 ${PG_DBUTILS}/sp/run_BIB_updateWFStatus.csh
 
 date | tee -a ${LOG}
-echo 'Run GO_gene_association' | tee -a ${LOG}
-REPORTOUTPUTDIR=${PUBREPORTDIR}/output;export REPORTOUTPUTDIR
-${PUBRPTS}/daily/GO_gene_association.py | tee -a ${LOG}
-
-date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

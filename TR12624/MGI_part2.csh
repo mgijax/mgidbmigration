@@ -62,5 +62,9 @@ date | tee -a ${LOG}
 echo 'Update Reference Workflow Status' | tee -a ${LOG}
 ${PG_DBUTILS}/sp/run_BIB_updateWFStatus.csh
 
+#echo 'generate GPA file...'
+#REPORTOUTPUTDIR=${PUBREPORTDIR}/output;export REPORTOUTPUTDIR
+#${PUBRPTS}/daily/GO_gene_association.py | tee -a ${GOLOG} || exit 1
+
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

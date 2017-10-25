@@ -48,6 +48,13 @@ where _term_key = 18583061
 EOSQL
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'rebuild BIB_updateWF procedures' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGO_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGXD_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusQTL_create.object | tee -a $LOG || exit 1
+
 #
 # indexes
 # only run the ones needed per schema changes
@@ -65,8 +72,8 @@ date | tee -a ${LOG}
 #date | tee -a ${LOG}
 #echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 

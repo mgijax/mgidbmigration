@@ -60,11 +60,11 @@ ${GOLOAD}/go.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Update Reference Workflow Status' | tee -a ${LOG}
-${PG_DBUTILS}/sp/run_BIB_updateWFStatus.csh
+${PG_DBUTILS}/sp/run_BIB_updateWFStatus.csh | tee -a ${LOG}
 
 #echo 'generate GPA file...'
 #REPORTOUTPUTDIR=${PUBREPORTDIR}/output;export REPORTOUTPUTDIR
-#${PUBRPTS}/daily/GO_gene_association.py | tee -a ${GOLOG} || exit 1
+#${PUBRPTS}/daily/GO_gene_association.py | tee -a ${GOLOG}
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

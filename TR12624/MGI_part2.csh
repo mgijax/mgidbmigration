@@ -40,6 +40,17 @@ scp bhmgiapp01:/data/downloads/go_translation/uniprotkb_kw2go /data/downloads/go
 scp bhmgiapp01:/data/downloads/goa/MOUSE/goa_mouse.gaf.gz /data/downloads/goa/MOUSE
 scp bhmgiapp01:/data/downloads/goa/MOUSE/goa_mouse_isoform.gaf.gz /data/downloads/goa/MOUSE
 scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/uberon.obo /data/downloads/purl.obolibrary.org
+scp bhmgiapp01:/data/downloads/go_noctua/mgi.gpad /data/downloads/go_noctua
+scp bhmgiapp01:/data/downloads/raw.githubusercontent.com/evidenceontology/evidenceontology/master/gaf-eco-mapping-derived.txt /data/downloads/raw.githubusercontent.com/evidenceontology/evidenceontology/master
+
+date | tee -a ${LOG}
+echo 'change voc_term to noctua-model-id' | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update VOC_Term set term = 'noctua-model-id', abbreviation = 'noctua-model-id'
+where _term_key = 18583061
+;
+EOSQL
+date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Run UniProt Load' | tee -a ${LOG}
@@ -47,6 +58,7 @@ ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'Run GO/GOA Loads' | tee -a ${LOG}
+${GOLOAD}/gomousenoctua/gomousenoctua.sh | tee -a ${LOG}
 ${GOLOAD}/goamouse/goamouse.sh | tee -a ${LOG}
 ${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a ${LOG}
 ${MGICACHELOAD}/go_isoforms_display_load.csh | tee -a ${LOG}

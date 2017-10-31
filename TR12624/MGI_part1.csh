@@ -52,6 +52,10 @@ date | tee -a ${LOG}
 echo 'rebuild VOC_Term_MCV_View' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/VOC_Term_MCV_View_create.object | tee -a $LOG || exit 1
 
+date | tee -a ${LOG}
+echo 'rebuild BIB_updateWFStatusAP' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object tee -a $LOG || exit 1
+
 #
 # indexes
 # only run the ones needed per schema changes

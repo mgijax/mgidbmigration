@@ -57,5 +57,8 @@ ${ALLCACHELOAD}/allstrain.csh
 ${ALLCACHELOAD}/allelecrecache.csh
 ${MGICACHELOAD}/bibcitation.csh
 
+# check for duplicate dummy sequences after the seqdummy cache is run
+/mgi/all/wts_projects/12600/12627/checkDups.csh
+
 date | tee -a ${LOG}
 echo '--- finished part 3' | tee -a $LOG

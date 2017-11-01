@@ -56,6 +56,10 @@ date | tee -a ${LOG}
 echo 'rebuild BIB_updateWFStatusAP' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object tee -a $LOG || exit 1
 
+date | tee -a ${LOG}
+echo 'Delete Dup dummy sequences TR12627' | tee -a $LOG
+/mgi/all/wts_projects/12600/12627/deleteDups.csh
+
 #
 # indexes
 # only run the ones needed per schema changes

@@ -24,7 +24,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --c.name, t1.name as vocab, t2.term as relterm, t3.term as qualifier, t4.term as evidence,  b.jnumID
-select a.symbol as organizer, m.symbol as participant
+select a.symbol as organizer, m.symbol as participant, m._Organism_key
 from MGI_Relationship r, MGI_Relationship_Category c, ALL_Allele a, MRK_Marker m, 
 VOC_Vocab t1, VOC_Term t2, VOC_Term t3, VOC_Term t4, BIB_Citation_Cache b
 where r._Category_key = 1006
@@ -36,7 +36,7 @@ and r._RelationshipTerm_key = t2._Term_key
 and r._Qualifier_key = t3._Term_key
 and r._Evidence_key = t4._Term_key
 and r._Refs_key = b._Refs_key
-order by a.symbol
+order by m._organism_key, a.symbol
 ;
 
 EOSQL

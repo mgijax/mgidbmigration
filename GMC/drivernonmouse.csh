@@ -32,6 +32,7 @@ from mgi_note n, mgi_notechunk c, all_allele a
 where n._notetype_key = 1034 
 and n._note_key = c._note_key
 and n._object_key = a._allele_key
+and c.note not like 'unknown%'
 and (
 	not exists (select 1 from mrk_marker m where c.note = m.symbol)
         or a._Allele_Type_key != 847116

@@ -30,6 +30,7 @@ select distinct a._allele_key, a.symbol, n._object_key, substring(c.note,1,25) a
 from mgi_note n, mgi_notechunk c, all_allele a, mgi_reference_assoc r, bib_citation_cache b
 where n._notetype_key = 1034 
 and n._note_key = c._note_key
+and c.note not like 'unknown%'
 and n._object_key = a._allele_key
 and a._allele_key = r._object_key
 and r._mgitype_key = 11

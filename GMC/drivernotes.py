@@ -49,7 +49,7 @@ def doMouse():
 #
 # non-mouse : marker = yes, mol note = yes
 #
-doNonMouse1():
+def doNonMouse1():
     global relKey
 
     sql = '''
@@ -101,7 +101,7 @@ db.useOneConnection(1)
 relBcp = open('MGI_Relationship.bcp', 'w')
 
 doMouse()
-doNonMouse1()
+#doNonMouse1()
 
 #
 #

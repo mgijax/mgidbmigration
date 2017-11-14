@@ -37,6 +37,9 @@ setenv LINEDELIM  "\n"
 
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} MGI_Relationship ${DBUTILS}/mgidbmigration/GMC MGI_Relationship.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 
+# query alleles with no mol reference
+./driverref.csh
+
 # query using driver note data
 ./drivermouse.csh
 

@@ -28,6 +28,7 @@ from mgi_note n, mgi_notechunk c, all_allele a
 where n._notetype_key = 1034 
 and n._note_key = c._note_key
 and n._object_key = a._allele_key
+and a._allele_status_key != 847112
 and not exists (select 1 from mgi_reference_assoc r
 	where a._allele_key = r._object_key
 	and r._mgitype_key = 11

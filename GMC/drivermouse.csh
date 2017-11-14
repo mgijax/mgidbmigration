@@ -21,7 +21,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select distinct m._organism_key, m._marker_key, m.symbol, a._allele_key, a.symbol, substring(c.note,1,25)
+select distinct m._organism_key, m._marker_key, a._marker_key, m.symbol, a._allele_key, a.symbol, substring(c.note,1,25)
 from mgi_note n, mgi_notechunk c, mrk_marker m, all_allele a
 where n._notetype_key = 1034 
 and n._note_key = c._note_key

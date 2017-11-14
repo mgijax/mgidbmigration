@@ -37,5 +37,11 @@ setenv LINEDELIM  "\n"
 
 ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} MGI_Relationship ${DBUTILS}/mgidbmigration/GMC MGI_Relationship.bcp ${COLDELIM} ${LINEDELIM} mgd | tee -a ${LOG}
 
+# query using driver note data
+./drivermouse.csh
+
+# query using mgi_relationship data
+./drivercheck.csh
+
 date |tee -a $LOG
 

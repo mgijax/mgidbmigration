@@ -33,7 +33,7 @@ and n._note_key = c._note_key
 and n._object_key = a._allele_key
 and (
 	not exists (select 1 from mrk_marker m where c.note = m.symbol)
-	or a.symbol like 'Tg%'
+	or a._Allele_Type_key != 847116
 	or a.symbol like 'Gt(ROSA)%'
 	or a.symbol like 'Hprt<%'
 	or a.symbol like 'Col1a1<%'

@@ -33,7 +33,7 @@ def doMouse():
 	and n._object_key = a._allele_key
 	and c.note = m.symbol
 	and m._organism_key = 1
-        and a.symbol not like 'Tg%'
+	and a._Allele_Type_key = 847116
         and a.symbol not like 'Gt(ROSA)%'
         and a.symbol not like 'Hprt<%'
         and a.symbol not like 'Col1a1<%'
@@ -65,6 +65,7 @@ and r._refassoctype_key in (1012)
 and r._refs_key = b._refs_key
 and (
         not exists (select 1 from mrk_marker m where c.note = m.symbol)
+	or a._Allele_Type_key = 847116
         or a.symbol like 'Tg%'
         or a.symbol like 'Gt(ROSA)%'
         or a.symbol like 'Hprt<%'

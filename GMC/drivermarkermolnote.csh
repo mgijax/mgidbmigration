@@ -37,7 +37,7 @@ and r._refassoctype_key in (1012)
 and r._refs_key = b._refs_key
 and (
 	not exists (select 1 from mrk_marker m where c.note = m.symbol)
-	or a.symbol like 'Tg%'
+	or a._Allele_Type_key != 847116
 	or a.symbol like 'Gt(ROSA)%'
 	or a.symbol like 'Hprt<%'
 	or a.symbol like 'Col1a1<%'

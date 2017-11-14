@@ -3,6 +3,8 @@
 #
 # driver notes
 #
+# no original or molecular reference
+#
 
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -21,18 +23,17 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select distinct m._organism_key, m._marker_key, m.symbol, a._allele_key, a.symbol, substring(c.note,1,25)
-from mgi_note n, mgi_notechunk c, mrk_marker m, all_allele a
+select distinct a._allele_key, a.symbol, substring(c.note,1,25) as note
+from mgi_note n, mgi_notechunk c, all_allele a
 where n._notetype_key = 1034 
 and n._note_key = c._note_key
-and c.note = m.symbol
-and m._organism_key = 1
 and n._object_key = a._allele_key
-and a._Allele_Type_key = 847116
-and a.symbol not like 'Gt(ROSA)%'
-and a.symbol not like 'Hprt<%'
-and a.symbol not like 'Col1a1<%'
-order by m.symbol, m._organism_key
+and not exists (select 1 from mgi_reference_assoc r
+	where a._allele_key = r._object_key
+	and r._mgitype_key = 11
+	and r._refassoctype_key in (1012)
+	)
+order by a.symbol
 ;
 
 EOSQL

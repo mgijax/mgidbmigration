@@ -17,8 +17,7 @@ import mgi_utils
 # 11391898 = qualifier 'Not Specified'
 # 17396909 = evidence 'Not Specified'
 
-#refKey = 2222
-relFormat = '%s|1006|%s|%s|36770349|11391898|17396909|2222|1001|1001|%s|%s\n'
+relFormat = '%s|1006|%s|%s|36770349|11391898|17396909|254076|1001|1001|%s|%s\n'
 
 currentDate = mgi_utils.date('%m/%d/%Y')
 

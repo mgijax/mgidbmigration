@@ -25,7 +25,7 @@ select distinct m._organism_key, m._marker_key, a._marker_key, m.symbol, a._alle
 from mgi_note n, mgi_notechunk c, mrk_marker m, all_allele a
 where n._notetype_key = 1034 
 and n._note_key = c._note_key
-and c.note = m.symbol
+and lower(rtrim(c.note)) = lower(m.symbol)
 and m._organism_key = 1
 and n._object_key = a._allele_key
 and a._Allele_Type_key = 847116

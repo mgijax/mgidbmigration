@@ -23,22 +23,16 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 delete from MGI_Organism_MGIType where _MGIType_key = 11;
 
-select t.*
-from MGI_Organism o, MGI_Organism_MGIType t
-where o._Organism_key = t._Organism_key
-and t._MGIType_key = 2
-order by t.sequenceNum
-;
-
 -- create one for alleles
 insert into MGI_Organism_MGIType
 select t._organism_key, 11, t.sequencenum, 1001, 1001, now(), now() 
 from MGI_Organism o, MGI_Organism_MGIType t
 where o._Organism_key = t._Organism_key
+and o.commonname in ('mouse, laboratory', 'human', 'rat')
 and t._MGIType_key = 2
 ;
 
-select t.*
+select o.commonname, t.*
 from MGI_Organism o, MGI_Organism_MGIType t
 where o._Organism_key = t._Organism_key
 and t._MGIType_key = 11

@@ -46,6 +46,15 @@ echo 'driver notes' | tee -a $LOG
 ./drivernotes.csh | tee -a $LOG
 
 #
+# triggers
+# only run the ones needed per schema changes
+#
+date | tee -a ${LOG}
+echo 'running triggers' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
+
+#
 # indexes
 # only run the ones needed per schema changes
 #

@@ -57,18 +57,11 @@ echo 'driver notes' | tee -a $LOG
 # only run the ones needed per schema changes
 #
 date | tee -a ${LOG}
-echo 'running triggers' | tee -a $LOG
+echo 'running triggers/views' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
-
-#
-# indexes
-# only run the ones needed per schema changes
-#
-#date | tee -a ${LOG}
-#echo 'running indexes' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/MGI_Organism_Allele_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/MGI_Organism_Allele_View_drop.object | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

@@ -25,27 +25,25 @@ def doMouse():
     global relKey
 
     sql = '''
-	select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, min(r._Refs_key) as _Refs_key
-	from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m, MGI_Reference_Assoc r
-	where n._NoteType_key = 1034 
-	and n._Note_key = c._Note_key
-	and n._Object_key = a._Allele_key
-	and a._Marker_key = m._Marker_key
-	and a._Allele_key = r._Object_key
-	and r._MGIType_key = 11
-	and r._RefAssocType_key in (1012)
-	-- recombinase attribute/subtype
-	and exists (select 1 from VOC_Annot va 
-		where va._AnnotType_key = 1014
-		and a._Allele_key = va._Object_key
-		and va._Term_key = 11025588
-		)
+	select a._Allele_key, a.symbol, m._Marker_key, m.symbol, min(r._Refs_key) as _Refs_key
+	from ALL_Allele a, MRK_Marker m, MGI_Reference_Assoc r
+	where a._Marker_key = m._Marker_key
 	-- Targeted, Endonuclease/mediated
 	and a._Allele_Type_key in (847116, 11927650)
         and a.symbol not like 'Gt(ROSA)%'
         and a.symbol not like 'Hprt<%'
         and a.symbol not like 'Col1a1<%'
 	and a.symbol not like 'Evx2/Hoxd13<tm4(cre)Ddu>'
+	-- recombinase attribute/subtype
+	and exists (select 1 from VOC_Annot va 
+		where va._AnnotType_key = 1014
+		and a._Allele_key = va._Object_key
+		and va._Term_key = 11025588
+		)
+	-- molecular reference
+	and a._Allele_key = r._Object_key
+	and r._MGIType_key = 11
+	and r._RefAssocType_key in (1012)
 	group by a._Allele_key, a.symbol, m._Marker_key, m.symbol
    	'''
 
@@ -64,20 +62,22 @@ def doMouse():
 def doNonMouse1():
     global relKey
 
-    inFile = open('complicated_cre_Markers.txt', 'r')
+    inFile = open('complicated_cre_markers.txt', 'r')
 
     for line in inFile.readlines():
         tokens = line[:-1].split('\t')
 	allele = tokens[0]
 	marker = tokens[1]
-	organism = tokens[2]
+	chromosome = tokens[2]
+	organism = tokens[3]
 
-	results = db.sql('''select a._Allele_key, r._Refs_key
+	results = db.sql('''select a._Allele_key, min(r._Refs_key) as _Refs_key
 		from ALL_Allele a, MGI_Reference_Assoc r
 		where a.symbol = '%s' 
 		and a._Allele_key = r._Object_key
 		and r._MGIType_key = 11
 		and r._RefAssocType_key in (1012)
+		group by a._Allele_key
 		''' % (allele), 'auto')
 	if len(results) == 1:
 	    organizer = results[0]['_Allele_key']
@@ -103,7 +103,7 @@ def doNonMouse1():
 	    continue
         else:
 	    #print sql
-	    print 'invalid marker: ', marker, organism
+	    print 'invalid marker: ', marker, organism, chromosome
 	    continue
 
 	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))

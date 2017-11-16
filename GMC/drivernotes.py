@@ -25,7 +25,7 @@ def doMouse():
     global relKey
 
     sql = '''
-	select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, r._Refs_key
+	select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, min(r._Refs_key) as _Refs_key
 	from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m, MGI_Reference_Assoc r
 	where n._NoteType_key = 1034 
 	and n._Note_key = c._Note_key
@@ -46,6 +46,7 @@ def doMouse():
         and a.symbol not like 'Hprt<%'
         and a.symbol not like 'Col1a1<%'
 	and a.symbol not like 'Evx2/Hoxd13<tm4(cre)Ddu>'
+	group by a._Allele_key, a.symbol, m._Marker_key, m.symbol
    	'''
 
     results = db.sql(sql, 'auto')

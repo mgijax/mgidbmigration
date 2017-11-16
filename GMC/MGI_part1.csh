@@ -59,12 +59,10 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'running triggers/views' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/MGI_Organism_Allele_View_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/MGI_Organism_Allele_View_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/ALL_Allele_Driver_View_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/ALL_Allele_Driver_View_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

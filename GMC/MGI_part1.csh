@@ -53,10 +53,6 @@ update MGI_dbinfo set schema_version = '6-0-12', public_version = 'MGI 6.12';
 EOSQL
 date | tee -a ${LOG}
 
-date | tee -a ${LOG}
-echo 'driver notes' | tee -a $LOG
-./drivernotes.csh | tee -a $LOG
-
 #
 # triggers
 # only run the ones needed per schema changes
@@ -82,6 +78,10 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+
+date | tee -a ${LOG}
+echo 'driver notes' | tee -a $LOG
+./drivernotes.csh | tee -a $LOG
 
 #
 # cleanobjects.sh : removing stray mgi_notes

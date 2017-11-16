@@ -25,15 +25,15 @@ def doMouse():
     global relKey
 
     sql = '''
-	select distinct a._allele_key, a.symbol, m._marker_key, m.symbol, r._refs_key
-	from mgi_note n, mgi_notechunk c, all_allele a, mrk_marker m, mgi_reference_assoc r
-	where n._notetype_key = 1034 
-	and n._note_key = c._note_key
-	and n._object_key = a._allele_key
-	and a._marker_key = m._marker_key
-	and a._allele_key = r._object_key
-	and r._mgitype_key = 11
-	and r._refassoctype_key in (1012)
+	select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, r._Refs_key
+	from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m, MGI_Reference_Assoc r
+	where n._NoteType_key = 1034 
+	and n._Note_key = c._Note_key
+	and n._Object_key = a._Allele_key
+	and a._Marker_key = m._Marker_key
+	and a._Allele_key = r._Object_key
+	and r._MGIType_key = 11
+	and r._RefAssocType_key in (1012)
 	-- recombinase attribute/subtype
 	and exists (select 1 from VOC_Annot va 
 		where va._AnnotType_key = 1014
@@ -50,10 +50,10 @@ def doMouse():
 
     results = db.sql(sql, 'auto')
     for r in results:
-        organizer = r['_allele_key']
-	participant = r['_marker_key']
-	refKey = r['_refs_key']
-	relBcp.write(relFormat % (relKey, organizer, participant, refKey, currentDate, currentDate))
+        organizer = r['_Allele_key']
+	participant = r['_Marker_key']
+	refsKey = r['_Refs_key']
+	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))
 	relKey += 1
 
 #
@@ -63,7 +63,7 @@ def doMouse():
 def doNonMouse1():
     global relKey
 
-    inFile = open('complicated_cre_markers.txt', 'r')
+    inFile = open('complicated_cre_Markers.txt', 'r')
 
     for line in inFile.readlines():
         tokens = line[:-1].split('\t')
@@ -71,9 +71,16 @@ def doNonMouse1():
 	marker = tokens[1]
 	organism = tokens[2]
 
-	results = db.sql('''select _allele_key from ALL_Allele where symbol = '%s' ''' % (allele), 'auto')
+	results = db.sql('''select a._Allele_key, r._Refs_key
+		from ALL_Allele a, MGI_Reference_Assoc r
+		where a.symbol = '%s' 
+		and a._Allele_key = r._Object_key
+		and r._MGIType_key = 11
+		and r._RefAssocType_key in (1012)
+		''' % (allele), 'auto')
 	if len(results) == 1:
-	    organizer = results[0]['_allele_key']
+	    organizer = results[0]['_Allele_key']
+	    refsKey = results[0]['_Refs_key']
 	elif len(results) > 1:
 	    print 'more than 1 allele: ', results
 	    continue
@@ -81,7 +88,7 @@ def doNonMouse1():
 	    print 'invalid allele: ', allele
 	    continue
 
-	sql = '''select m._marker_key 
+	sql = '''select m._Marker_key 
 		from MRK_Marker m, MGI_Organism o
 		where m.symbol = '%s' 
 		and m._Organism_key = o._Organism_key
@@ -89,7 +96,7 @@ def doNonMouse1():
 		''' % (marker, organism)
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
-	    participant = results[0]['_marker_key']
+	    participant = results[0]['_Marker_key']
 	elif len(results) > 1:
 	    print 'more than 1 marker: ', results
 	    continue
@@ -98,7 +105,7 @@ def doNonMouse1():
 	    print 'invalid marker: ', marker, organism
 	    continue
 
-	relBcp.write(relFormat % (relKey, organizer, participant, currentDate, currentDate))
+	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))
 	relKey += 1
 
     inFile.close()

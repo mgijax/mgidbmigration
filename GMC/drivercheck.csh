@@ -23,7 +23,6 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
---c.name, t1.name as vocab, t2.term as relterm, t3.term as qualifier, t4.term as evidence,  b.jnumID
 select a.symbol as organizer, m.symbol as participant, m._Organism_key, b.jnumID
 from MGI_Relationship r, MGI_Relationship_Category c, ALL_Allele a, MRK_Marker m, 
 VOC_Vocab t1, VOC_Term t2, VOC_Term t3, VOC_Term t4, BIB_Citation_Cache b
@@ -36,8 +35,36 @@ and r._RelationshipTerm_key = t2._Term_key
 and r._Qualifier_key = t3._Term_key
 and r._Evidence_key = t4._Term_key
 and r._Refs_key = b._Refs_key
-order by m._organism_key, a.symbol
+order by a.symbol
 ;
+
+--
+-- drivermouse that are not in MGI_Relationship
+--
+select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
+        from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m
+        where n._NoteType_key = 1034 
+        and n._Note_key = c._Note_key
+        and n._Object_key = a._Allele_key
+        and a._Marker_key = m._Marker_key
+     
+        and exists (select 1 from VOC_Annot va
+                where va._AnnotType_key = 1014 
+                and a._Allele_key = va._Object_key
+                and va._Term_key = 11025588
+                )
+     
+        and a._Allele_Type_key in (847116, 11927650)
+        and a.symbol not like 'Gt(ROSA)%'
+        and a.symbol not like 'Hprt<%'
+        and a.symbol not like 'Col1a1<%'
+        and a.symbol not like 'Evx2/Hoxd13<tm4(cre)Ddu>'
+
+	and not exists (select 1 from MGI_Relationship r
+        	where a._Allele_key = r._Object_key_1
+        	and r._Category_key = 1006
+        	)
+	;
 
 EOSQL
 

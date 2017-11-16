@@ -50,72 +50,72 @@ Tg(CAG-flpo)1Afst	CAG	UN	chicken
 Tg(CAG-XBP1*/cre/ERT2)#Grtn	CAG	UN	chicken
 Tg(AAT-cre)31Rbrc	SERPINA1	14	human
 Tg(AAT-cre)50Rbrc	SERPINA1	14	human
-Gt(ROSA)26Sor<tm1.1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/ERT)Brn>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/ERT)Nat>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/ERT2)Thl>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/ERT2)Tyj>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/Esr1)Tkp>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(cre/Esr1*)Nns>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(creB)Dwi>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(FLP1)Dym>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm1(FLP1)Wtsi>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm16(cre)Arte>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm2(cre/ERT2)Brn>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm2(EGFP/cre)Alj>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm2(FLP*)Sor>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm2(icre/ERT2)Jphe>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm3.1(cre/ERT2)Vlcg>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm3(phiC31*)Sor>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm4(flpe)Vlcg>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm5(phiC31)Sor>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm6(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm7(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm8(cre/Esr1*)Nat>	Gt(ROSA)26Sor	6	mouse
-Gt(ROSA)26Sor<tm9(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse
-Hprt<tm313(cre/EGFP)Ems>	Hprt	X	mouse
-Hprt<tm314(cre/EGFP)Ems>	Hprt	X	mouse
-Hprt<tm318(EGFP/cre)Ems>	Hprt	X	mouse
-Hprt<tm320(cre)Ems>	Hprt	X	mouse
-Hprt<tm322(cre/EGFP)Ems>	Hprt	X	mouse
-Hprt<tm328(EGFP/cre)Ems>	Hprt	X	mouse
-Hprt<tm345(icre/ERT2)Ems>	Hprt	X	mouse
-Hprt<tm5(EGFP/cre)Ems>	Hprt	X	mouse
-Tg(A230065H16Rik-cre)RA13Gsat	Lbhd2	12	mouse
-Tg(A230065H16Rik-cre)RA31Gsat	Lbhd2	12	mouse
-Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik		mouse
-Tg(A930038C07Rik-cre)1Aibs	Ndnf	6	mouse
-Tg(A930038C07Rik-cre)4Aibs	Ndnf	6	mouse
-Tg(Chx10-cre)5Tfur	Vsx2	12	mouse
-Tg(Chx10-EGFP/cre,-ALPP)2Clc	Vsx2	12	mouse
-Tg(Colgalt2-cre)NF107Gsat	Colgalt2	1	mouse
+Gt(ROSA)26Sor<tm1.1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT)Brn>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT)Nat>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT2)Thl>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT2)Tyj>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/Esr1)Tkp>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/Esr1*)Nns>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(creB)Dwi>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(FLP1)Dym>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(FLP1)Wtsi>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm16(cre)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm2(cre/ERT2)Brn>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm2(EGFP/cre)Alj>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm2(FLP*)Sor>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm2(icre/ERT2)Jphe>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm3.1(cre/ERT2)Vlcg>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm3(phiC31*)Sor>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm4(flpe)Vlcg>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm5(phiC31)Sor>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm6(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm7(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm8(cre/Esr1*)Nat>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm9(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
+Hprt<tm313(cre/EGFP)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm314(cre/EGFP)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm318(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm320(cre)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm322(cre/EGFP)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm328(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm345(icre/ERT2)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm5(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
+Tg(A230065H16Rik-cre)RA13Gsat	Lbhd2	12	mouse, laboratory
+Tg(A230065H16Rik-cre)RA31Gsat	Lbhd2	12	mouse, laboratory
+Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik		mouse, laboratory
+Tg(A930038C07Rik-cre)1Aibs	Ndnf	6	mouse, laboratory
+Tg(A930038C07Rik-cre)4Aibs	Ndnf	6	mouse, laboratory
+Tg(Chx10-cre)5Tfur	Vsx2	12	mouse, laboratory
+Tg(Chx10-EGFP/cre,-ALPP)2Clc	Vsx2	12	mouse, laboratory
+Tg(Colgalt2-cre)NF107Gsat	Colgalt2	1	mouse, laboratory
 Tg(Abpa-cre)1Cmal	Shbg	10	rat
-Tg(Bglap2-cre)1Kry	Bglap2	UN	unknown
-Tg(Bglap2-cre)2Kry	Bglap2	UN	unknown
-Hprt<tm1(CMV-cre)Brd>	CMV	UN	viral
-Hprt<tm1(CMV-cre)Wtsi>	CMV	UN	viral
-Tg(CMV-cre)#Bgmn	CMV	UN	viral
-Tg(CMV-cre)1And	CMV	UN	viral
-Tg(CMV-cre)1Cgn	CMV	UN	viral
-Tg(CMV-cre)1Ipc	CMV	UN	viral
-Tg(CMV-cre)1Mem	CMV	UN	viral
-Tg(CMV-cre)1Nagy	CMV	UN	viral
-Tg(CMV-cre)27Rbrc	CMV	UN	viral
-Tg(CMV-cre)64Rbrc	CMV	UN	viral
-Tg(CMV-cre/ERT)1Ipc	CMV	UN	viral
-Tg(CMV-flpe)14Narl	CMV	UN	viral
-Tg(CMV-flpe)15Narl	CMV	UN	viral
-Tg(CMV-rtTA/cre)2Jcha	CMV	UN	viral
-Tg(MMTV-cre)#Mam	MMTV	UN	viral
-Tg(MMTV-cre)#Tfln	MMTV	UN	viral
-Tg(MMTV-cre)105Ayn	MMTV	UN	viral
-Tg(MMTV-cre)1Kem	MMTV	UN	viral
-Tg(MMTV-cre)1Mam	MMTV	UN	viral
-Tg(MMTV-cre)4Mam	MMTV	UN	viral
-Tg(MMTV-cre)7Mul	MMTV	UN	viral
-Tg(MMTV-cre)AElee	MMTV	UN	viral
-Tg(MMTV-cre)BElee	MMTV	UN	viral
-Tg(MMTV-cre)FMam	MMTV	UN	viral
-Tg(MMTV-Erbb2*,-cre)1Mul	MMTV	UN	viral
+Tg(Bglap2-cre)1Kry	Bglap2	UN	Not Specified
+Tg(Bglap2-cre)2Kry	Bglap2	UN	Not Specified
+Hprt<tm1(CMV-cre)Brd>	CMV	UN	virus
+Hprt<tm1(CMV-cre)Wtsi>	CMV	UN	virus
+Tg(CMV-cre)#Bgmn	CMV	UN	virus
+Tg(CMV-cre)1And	CMV	UN	virus
+Tg(CMV-cre)1Cgn	CMV	UN	virus
+Tg(CMV-cre)1Ipc	CMV	UN	virus
+Tg(CMV-cre)1Mem	CMV	UN	virus
+Tg(CMV-cre)1Nagy	CMV	UN	virus
+Tg(CMV-cre)27Rbrc	CMV	UN	virus
+Tg(CMV-cre)64Rbrc	CMV	UN	virus
+Tg(CMV-cre/ERT)1Ipc	CMV	UN	virus
+Tg(CMV-flpe)14Narl	CMV	UN	virus
+Tg(CMV-flpe)15Narl	CMV	UN	virus
+Tg(CMV-rtTA/cre)2Jcha	CMV	UN	virus
+Tg(MMTV-cre)#Mam	MMTV	UN	virus
+Tg(MMTV-cre)#Tfln	MMTV	UN	virus
+Tg(MMTV-cre)105Ayn	MMTV	UN	virus
+Tg(MMTV-cre)1Kem	MMTV	UN	virus
+Tg(MMTV-cre)1Mam	MMTV	UN	virus
+Tg(MMTV-cre)4Mam	MMTV	UN	virus
+Tg(MMTV-cre)7Mul	MMTV	UN	virus
+Tg(MMTV-cre)AElee	MMTV	UN	virus
+Tg(MMTV-cre)BElee	MMTV	UN	virus
+Tg(MMTV-cre)FMam	MMTV	UN	virus
+Tg(MMTV-Erbb2*,-cre)1Mul	MMTV	UN	virus

@@ -23,6 +23,9 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+\echo 'all MGI_Relationship'
+\echo ''
+
 select a.symbol as organizer, m.symbol as participant, m._Organism_key, b.jnumID
 from MGI_Relationship r, MGI_Relationship_Category c, ALL_Allele a, MRK_Marker m, 
 VOC_Vocab t1, VOC_Term t2, VOC_Term t3, VOC_Term t4, BIB_Citation_Cache b
@@ -38,10 +41,9 @@ and r._Refs_key = b._Refs_key
 order by a.symbol
 ;
 
---
--- drivermouse that are not in MGI_Relationship
--- no molecular reference
---
+\echo 'drivermouse that are not in MGI_Relationship'
+\echo 'no molecular reference'
+\echo ''
 select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
         from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m
         where n._NoteType_key = 1034 
@@ -68,6 +70,9 @@ select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
 	;
 
 
+\echo 'MGI_Relationship that are not in drivermouse'
+\echo 'no drive note'
+\echo ''
 select a.symbol as organizer, m.symbol as participant, m._Organism_key, b.jnumID
 from MGI_Relationship r, MGI_Relationship_Category c, ALL_Allele a, MRK_Marker m, 
 VOC_Vocab t1, VOC_Term t2, VOC_Term t3, VOC_Term t4, BIB_Citation_Cache b

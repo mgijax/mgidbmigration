@@ -3,11 +3,16 @@
 #
 # TR12662/GMC/MGI 6.12
 #
+# /mgi/all/wts_projects/12600/12662/drivernotes
+#
 # (part 1 running schema changes)
 #
 # tr12262 branches:
 # pgmgddbschema
 # ei
+#
+# needs branch:
+# entrezgeneload
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh
@@ -62,6 +67,8 @@ ${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/ALL_Allele_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/MGI_Organism_Allele_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/MGI_Organism_Allele_View_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/ALL_Allele_Driver_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/ALL_Allele_Driver_View_drop.object | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

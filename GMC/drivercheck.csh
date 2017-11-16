@@ -50,19 +50,17 @@ select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
         and n._Note_key = c._Note_key
         and n._Object_key = a._Allele_key
         and a._Marker_key = m._Marker_key
-     
+	and a._Allele_Status_key != 847112
         and exists (select 1 from VOC_Annot va
                 where va._AnnotType_key = 1014 
                 and a._Allele_key = va._Object_key
                 and va._Term_key = 11025588
                 )
-     
         and a._Allele_Type_key in (847116, 11927650)
         and a.symbol not like 'Gt(ROSA)%'
         and a.symbol not like 'Hprt<%'
         and a.symbol not like 'Col1a1<%'
         and a.symbol not like 'Evx2/Hoxd13<tm4(cre)Ddu>'
-
 	and not exists (select 1 from MGI_Relationship r
         	where a._Allele_key = r._Object_key_1
         	and r._Category_key = 1006

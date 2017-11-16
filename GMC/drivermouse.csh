@@ -35,7 +35,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
                 and va._Term_key = 11025588
                 )
         -- Targeted, Endonuclease/mediated
-        and a._Allele_Type_key in (847116, 11987835)
+        and a._Allele_Type_key in (847116, 11927650)
         and a.symbol not like 'Gt(ROSA)%'
         and a.symbol not like 'Hprt<%'
         and a.symbol not like 'Col1a1<%'

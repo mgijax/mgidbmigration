@@ -28,6 +28,8 @@ def doMouse():
 	select a._Allele_key, a.symbol, m._Marker_key, m.symbol, min(r._Refs_key) as _Refs_key
 	from ALL_Allele a, MRK_Marker m, MGI_Reference_Assoc r
 	where a._Marker_key = m._Marker_key
+	-- exclude deleted alleles
+	and a._Allele_Status_key != 847112
 	-- Targeted, Endonuclease/mediated
 	and a._Allele_Type_key in (847116, 11927650)
         and a.symbol not like 'Gt(ROSA)%'

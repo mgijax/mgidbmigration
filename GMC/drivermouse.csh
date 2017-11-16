@@ -28,12 +28,17 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
         and n._Object_key = a._Allele_key
         and a._Marker_key = m._Marker_key
 	and m.symbol != rtrim(c.note)
+
+	-- exclude deleted alleles
+	and a._Allele_Status_key != 847112
+
         -- recombinase attribute/subtype
         and exists (select 1 from VOC_Annot va
                 where va._AnnotType_key = 1014
                 and a._Allele_key = va._Object_key
                 and va._Term_key = 11025588
                 )
+
         -- Targeted, Endonuclease/mediated
         and a._Allele_Type_key in (847116, 11927650)
         and a.symbol not like 'Gt(ROSA)%'
@@ -49,12 +54,17 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
         and n._Note_key = c._Note_key
         and n._Object_key = a._Allele_key
         and a._Marker_key = m._Marker_key
+
+	-- exclude deleted alleles
+	and a._Allele_Status_key != 847112
+
         -- recombinase attribute/subtype
         and exists (select 1 from VOC_Annot va
                 where va._AnnotType_key = 1014
                 and a._Allele_key = va._Object_key
                 and va._Term_key = 11025588
                 )
+
         -- Targeted, Endonuclease/mediated
         and a._Allele_Type_key in (847116, 11927650)
         and a.symbol not like 'Gt(ROSA)%'

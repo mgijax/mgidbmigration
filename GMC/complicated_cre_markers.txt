@@ -1,0 +1,121 @@
+Gt(ROSA)26Sor<tm3(rtTA,tetO-cre/ERT)Nat>	tetO	bacteria
+Tg(tetO-cre)1Dgt	tetO	bacteria
+Tg(tetO-cre)1Jaw	tetO	bacteria
+Tg(tetO-cre)1Kdmc	tetO	bacteria
+Tg(tetO-cre)1Lin	tetO	bacteria
+Tg(tetO-cre)3Jig	tetO	bacteria
+Tg(tetO-cre,-EGFP)2Mull	tetO	bacteria
+Tg(tetO-cre,-EGFP)3Mull	tetO	bacteria
+Tg(tetO-cre)LC1Bjd	tetO	bacteria
+Tg(tetO-EGFP/cre)1Kdmc	tetO	bacteria
+Tg(tetO-PyVT,-cre)#Mul	tetO	bacteria
+Col1a1<tm1.1(CAG-cre/ERT2)Dgk>	CAG	chicken
+Col1a1<tm2.1(CAG-cre/ERT2)Dgk>	CAG	chicken
+Gt(ROSA)26Sor<tm1.1(CAG-cre)Jphe>	CAG	chicken
+Gt(ROSA)26Sor<tm1(CAG-cre)Jphe>	CAG	chicken
+Gt(ROSA)26Sor<tm1(CAG-flpe)Arte>	CAG	chicken
+Gt(ROSA)26Sor<tm1(CAG-flpe)Hmpr>	CAG	chicken
+Gt(ROSA)26Sor<tm2(CAG-flpo,-EYFP)Ics>	CAG	chicken
+Gt(ROSA)26Sor<tm3.1(CAG-Cre/ERT2)Dsa>	CAG	chicken
+Gt(ROSA)26Sor<tm3(CAG-Cre/ERT2)Dsa>	CAG	chicken
+Gt(ROSA)26Sor<tm3(CAG-flpo/ERT2)Alj>	CAG	chicken
+Gt(ROSA)26Sor<tm5(CAG-flpo)Zjh>	CAG	chicken
+Hprt<tm1(CAG-cre)Mnn>	CAG	chicken
+Hprt<tm315(CAG-EGFP/cre)Ems>	CAG	chicken
+Hprt<tm319(CAG-cre)Ems>	CAG	chicken
+Hprt<tm364(CAG-icre/ERT2)Ems>	CAG	chicken
+Tg(CAG-cre)13Miya	CAG	chicken
+Tg(CAG-cre)1Htak	CAG	chicken
+Tg(CAG-cre)1Kymm	CAG	chicken
+Tg(CAG-cre)1Nagy	CAG	chicken
+Tg(CAG-cre)2Osb	CAG	chicken
+Tg(CAG-cre/ERT2)F34Fmr	CAG	chicken
+Tg(CAG-cre/ERT2/Hif1a)#Hhas	CAG	chicken
+Tg(CAG-cre/ERT2)#Rlb	CAG	chicken
+Tg(CAG-cre/Esr1*)1Egwa	CAG	chicken
+Tg(CAG-cre/Esr1*)1Lbe	CAG	chicken
+Tg(CAG-cre/Esr1*)5Amc	CAG	chicken
+Tg(CAG-cre/Esr1*)67Csk	CAG	chicken
+Tg(CAG-cre/Esr1*)70Lbgn	CAG	chicken
+Tg(CAG-cre/Esr1*)86Lbgn	CAG	chicken
+Tg(CAG-dre)1Afst	CAG	chicken
+Tg(CAG-FLP1)1Imeg	CAG	chicken
+Tg(CAG-flpe)16Ito	CAG	chicken
+Tg(CAG-flpe)2Arte	CAG	chicken
+Tg(CAG-flpe)36Ito	CAG	chicken
+Tg(CAG-flpe)37Ito	CAG	chicken
+Tg(CAG-flpe/ERT2)1Dym	CAG	chicken
+Tg(CAG-flpe)#Ito	CAG	chicken
+Tg(CAG-flpo)1Afst	CAG	chicken
+Tg(CAG-XBP1*/cre/ERT2)#Grtn	CAG	chicken
+Tg(AAT-cre)31Rbrc	SERPINA1	human
+Tg(AAT-cre)50Rbrc	SERPINA1	human
+Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik	mouse, laboratory
+Tg(Colgalt2-cre)NF107Gsat	Colgalt2	mouse, laboratory
+Gt(ROSA)26Sor<tm1.1(cre/ERT2)Alj>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm16(cre)Arte>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(creB)Dwi>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT2)Alj>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT2)Thl>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT2)Tyj>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT)Brn>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/ERT)Nat>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/Esr1*)Nns>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(cre/Esr1)Tkp>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(FLP1)Dym>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm1(FLP1)Wtsi>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm2(cre/ERT2)Brn>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm2(EGFP/cre)Alj>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm2(FLP*)Sor>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm2(icre/ERT2)Jphe>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm3.1(cre/ERT2)Vlcg>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm3(phiC31*)Sor>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm4(flpe)Vlcg>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm5(phiC31)Sor>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm6(cre/ESR1)Arte>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm7(cre/ESR1)Arte>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm8(cre/Esr1*)Nat>	Gt(ROSA)26Sor	mouse, laboratory
+Gt(ROSA)26Sor<tm9(cre/ESR1)Arte>	Gt(ROSA)26Sor	mouse, laboratory
+Hprt<tm313(cre/EGFP)Ems>	Hprt	mouse, laboratory
+Hprt<tm314(cre/EGFP)Ems>	Hprt	mouse, laboratory
+Hprt<tm318(EGFP/cre)Ems>	Hprt	mouse, laboratory
+Hprt<tm320(cre)Ems>	Hprt	mouse, laboratory
+Hprt<tm322(cre/EGFP)Ems>	Hprt	mouse, laboratory
+Hprt<tm328(EGFP/cre)Ems>	Hprt	mouse, laboratory
+Hprt<tm345(icre/ERT2)Ems>	Hprt	mouse, laboratory
+Hprt<tm5(EGFP/cre)Ems>	Hprt	mouse, laboratory
+Tg(A230065H16Rik-cre)RA13Gsat	Lbhd2	mouse, laboratory
+Tg(A230065H16Rik-cre)RA31Gsat	Lbhd2	mouse, laboratory
+Tg(A930038C07Rik-cre)1Aibs	Ndnf	mouse, laboratory
+Tg(A930038C07Rik-cre)4Aibs	Ndnf	mouse, laboratory
+Tg(Chx10-cre)5Tfur	Vsx2	mouse, laboratory
+Tg(Chx10-EGFP/cre,-ALPP)2Clc	Vsx2	mouse, laboratory
+Tg(Abpa-cre)1Cmal	Shbg	rat
+Tg(Bglap2-cre)1Kry	Bglap2	Not Specified
+Tg(Bglap2-cre)2Kry	Bglap2	Not Specified
+Hprt<tm1(CMV-cre)Brd>	CMV	virus
+Hprt<tm1(CMV-cre)Wtsi>	CMV	virus
+Tg(CMV-cre)1And	CMV	virus
+Tg(CMV-cre)1Cgn	CMV	virus
+Tg(CMV-cre)1Ipc	CMV	virus
+Tg(CMV-cre)1Mem	CMV	virus
+Tg(CMV-cre)1Nagy	CMV	virus
+Tg(CMV-cre)27Rbrc	CMV	virus
+Tg(CMV-cre)64Rbrc	CMV	virus
+Tg(CMV-cre)#Bgmn	CMV	virus
+Tg(CMV-cre/ERT)1Ipc	CMV	virus
+Tg(CMV-flpe)14Narl	CMV	virus
+Tg(CMV-flpe)15Narl	CMV	virus
+Tg(CMV-rtTA/cre)2Jcha	CMV	virus
+Tg(MMTV-cre)105Ayn	MMTV	virus
+Tg(MMTV-cre)1Kem	MMTV	virus
+Tg(MMTV-cre)1Mam	MMTV	virus
+Tg(MMTV-cre)4Mam	MMTV	virus
+Tg(MMTV-cre)7Mul	MMTV	virus
+Tg(MMTV-cre)AElee	MMTV	virus
+Tg(MMTV-cre)BElee	MMTV	virus
+Tg(MMTV-cre)FMam	MMTV	virus
+Tg(MMTV-cre)#Mam	MMTV	virus
+Tg(MMTV-cre)#Tfln	MMTV	virus
+Tg(MMTV-Erbb2*,-cre)1Mul	MMTV	virus

@@ -10,6 +10,7 @@
 # tr12262 branches:
 # pgmgddbschema
 # ei
+# alleleload : no branch; just add comments
 # allcacheload
 # entrezgeneload
 #

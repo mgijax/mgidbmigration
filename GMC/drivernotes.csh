@@ -49,7 +49,5 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} MGI_Relationship ${DBUTI
 #delete from MGI_NoteType where _NoteType_key = 1034;
 #EOSQL
 
-${MGICACHELOAD}/allelecrecache.csh | tee -a ${LOG}
-
 date |tee -a $LOG
 

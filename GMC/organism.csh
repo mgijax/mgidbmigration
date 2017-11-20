@@ -21,21 +21,34 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-delete from MGI_Organism_MGIType where _MGIType_key = 11;
+--delete from MGI_Organism_MGIType where _MGIType_key = 11;
 
 -- create one for alleles
 insert into MGI_Organism_MGIType
-select t._organism_key, 11, t.sequencenum, 1001, 1001, now(), now() 
-from MGI_Organism o, MGI_Organism_MGIType t
-where o._Organism_key = t._Organism_key
-and o.commonname in ('mouse, laboratory', 'human', 'rat')
-and t._MGIType_key = 2
+select o._organism_key, 11, 4, 1001, 1001, now(), now() 
+from MGI_Organism o
+where o.commonname in ('bacteria')
+;
+insert into MGI_Organism_MGIType
+select o._organism_key, 11, 5, 1001, 1001, now(), now() 
+from MGI_Organism o
+where o.commonname in ('virus')
+;
+insert into MGI_Organism_MGIType
+select o._organism_key, 11, 6, 1001, 1001, now(), now() 
+from MGI_Organism o
+where o.commonname in ('Not Specified')
+;
+insert into MGI_Organism_MGIType
+select o._organism_key, 11, 7, 1001, 1001, now(), now() 
+from MGI_Organism o
+where o.commonname in ('chicken')
 ;
 
 select o.commonname, t.*
 from MGI_Organism o, MGI_Organism_MGIType t
 where o._Organism_key = t._Organism_key
-and t._MGIType_key = 11
+and t._MGIType_key = 2
 order by t.sequenceNum
 ;
 

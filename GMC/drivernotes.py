@@ -122,8 +122,8 @@ db.useOneConnection(1)
 
 relBcp = open('MGI_Relationship.bcp', 'w')
 
-doMouse()
-#doNonMouse1()
+#doMouse()
+doNonMouse1()
 
 #
 #

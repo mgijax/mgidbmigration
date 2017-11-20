@@ -105,8 +105,16 @@ def doNonMouse1():
 	    continue
         else:
 	    #print sql
-	    print 'invalid marker: ', marker, organism, chromosome
-	    continue
+	    print 'adding new marker: ', marker, organism, chromosome
+	    db.sql('''
+	    	insert into MRK_Marker values 
+		(
+		(select max(_Marker_key) + 1 from MRK_Marker),
+		(select _Organism_key from MGI_Organism where commonname = '%s'),
+		1,1,'%s','%s','%s',null,1001,1001,now(),now()
+	    	)
+	    	''' % (organism, marker, marker, chromosome), 'auto')
+	    db.commit()
 
 	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))
 	relKey += 1
@@ -122,12 +130,8 @@ db.useOneConnection(1)
 
 relBcp = open('MGI_Relationship.bcp', 'w')
 
-#doMouse()
+doMouse()
 doNonMouse1()
-
-#
-#
-#
 
 relBcp.close()
  

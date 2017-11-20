@@ -10,8 +10,7 @@
 # tr12262 branches:
 # pgmgddbschema
 # ei
-#
-# needs branch:
+# allcacheload
 # entrezgeneload
 #
 # run on production when ready to add "Allele" organisms
@@ -77,6 +76,8 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 echo 'driver notes' | tee -a $LOG
 ./drivernotes.csh | tee -a $LOG
+echo 'allelecrecache.csh' | tee -a $LOG
+${MGICACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

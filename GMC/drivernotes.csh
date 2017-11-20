@@ -19,9 +19,10 @@ touch $LOG
  
 date | tee -a $LOG
  
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from MGI_Relationship where _Category_key = 1006;
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#delete from MGI_Relationship where _Category_key = 1006;
+#delete from MGI_Relationship where (creation_date between '11/20/2017' and ('11/20/2017'::date + '1 day'::interval))
+#EOSQL
 
 setenv COLDELIM "|" 
 setenv LINEDELIM  "\n"
@@ -47,6 +48,8 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} MGI_Relationship ${DBUTI
 #delete from MGI_Note where _NoteType_key = 1034;
 #delete from MGI_NoteType where _NoteType_key = 1034;
 #EOSQL
+
+${MGICACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 
 date |tee -a $LOG
 

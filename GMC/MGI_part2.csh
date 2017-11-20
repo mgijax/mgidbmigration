@@ -36,14 +36,22 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # copy /data/downloads files needed for loads
 # this only needs to happen on development servers
 #
-switch (`uname -n`)
-    case bhmgiapp14ld:
-    case bhmgidevapp01:
-        date | tee -a ${LOG}
-        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
-        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
-        breaksw
-endsw
+#switch (`uname -n`)
+#    case bhmgiapp14ld:
+#    case bhmgidevapp01:
+#        date | tee -a ${LOG}
+#        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
+#        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+#        breaksw
+#endsw
+
+date | tee -a ${LOG}
+echo 'driver notes' | tee -a $LOG
+./drivernotes.csh | tee -a $LOG
+
+date | tee -a ${LOG}
+echo 'allelecrecache.csh' | tee -a $LOG
+${MGICACHELOAD}/allelecrecache.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

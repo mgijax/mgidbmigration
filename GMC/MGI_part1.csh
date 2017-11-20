@@ -75,14 +75,8 @@ ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
-date | tee -a ${LOG}
-echo 'driver notes' | tee -a $LOG
-./drivernotes.csh | tee -a $LOG
-echo 'allelecrecache.csh' | tee -a $LOG
-${MGICACHELOAD}/allelecrecache.csh | tee -a ${LOG}
-
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
 #
 # cleanobjects.sh : removing stray mgi_notes

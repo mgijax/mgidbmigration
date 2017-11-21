@@ -85,7 +85,7 @@ def doNonMouse1():
 	    organizer = results[0]['_Allele_key']
 	    refsKey = results[0]['_Refs_key']
 	elif len(results) > 1:
-	    print 'more than 1 allele: ', results
+	    print 'more than 1 allele: ', results, allele
 	    continue
         else:
 	    print 'invalid allele: ', allele
@@ -96,13 +96,14 @@ def doNonMouse1():
 		where m.symbol = '%s' 
 		and m._Organism_key = o._Organism_key
 		and o.commonname = '%s'
+		and m._Marker_Status_key = 1
 		''' % (marker, organism)
 	#print sql
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
 	    participant = results[0]['_Marker_key']
 	elif len(results) > 1:
-	    print 'more than 1 marker: ', results
+	    print 'more than 1 marker: ', results, marker, organism
 	    continue
         else:
 	    print 'adding new marker: ', marker, organism, chromosome

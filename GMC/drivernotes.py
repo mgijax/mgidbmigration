@@ -24,6 +24,8 @@ currentDate = mgi_utils.date('%m/%d/%Y')
 def doMouse():
     global relKey
 
+    print 'start : doMouse()'
+
     sql = '''
 	select a._Allele_key, a.symbol, m._Marker_key, m.symbol, min(r._Refs_key) as _Refs_key
 	from ALL_Allele a, MRK_Marker m, MGI_Reference_Assoc r
@@ -57,12 +59,12 @@ def doMouse():
 	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))
 	relKey += 1
 
-#
-# non-mouse : marker = yes, mol note = yes
-# testing using rat
-#
-def doNonMouse1():
+    print 'end: doMouse()'
+
+def doComplicated():
     global relKey
+
+    print 'start : doComplicated()'
 
     inFile = open('complicated_cre_markers.txt', 'r')
 
@@ -124,6 +126,8 @@ def doNonMouse1():
 
     inFile.close()
 
+    print 'end : doComplicated()'
+
 #
 # main
 #
@@ -134,7 +138,7 @@ db.useOneConnection(1)
 relBcp = open('MGI_Relationship.bcp', 'w')
 
 doMouse()
-doNonMouse1()
+doComplicated()
 
 relBcp.close()
  

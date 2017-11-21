@@ -24,6 +24,7 @@ currentDate = mgi_utils.date('%m/%d/%Y')
 def doMouse():
     global relKey
 
+    print '\n******\n'
     print 'start : doMouse()'
 
     sql = '''
@@ -60,10 +61,12 @@ def doMouse():
 	relKey += 1
 
     print 'end: doMouse()'
+    print '\n******\n'
 
 def doComplicated():
     global relKey
 
+    print '\n******\n'
     print 'start : doComplicated()'
 
     inFile = open('complicated_cre_markers.txt', 'r')
@@ -127,6 +130,7 @@ def doComplicated():
     inFile.close()
 
     print 'end : doComplicated()'
+    print '\n******\n'
 
 #
 # main

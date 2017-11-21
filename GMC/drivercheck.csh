@@ -23,6 +23,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+\echo ''
 \echo 'all MGI_Relationship'
 \echo ''
 
@@ -41,6 +42,7 @@ and r._Refs_key = b._Refs_key
 order by a.symbol
 ;
 
+\echo ''
 \echo 'drivermouse that are not in MGI_Relationship'
 \echo 'no molecular reference'
 \echo ''
@@ -68,6 +70,7 @@ select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
 	;
 
 
+\echo ''
 \echo 'MGI_Relationship that are not in drivermouse'
 \echo 'no drive note'
 \echo ''

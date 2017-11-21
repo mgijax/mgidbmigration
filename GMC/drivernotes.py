@@ -88,7 +88,7 @@ def doNonMouse1():
 	    print 'more than 1 allele: ', results, allele
 	    continue
         else:
-	    print 'invalid allele: ', allele
+	    print 'invalid allele, check molecular reference: ', allele
 	    continue
 
 	sql = '''select m._Marker_key 

@@ -97,6 +97,7 @@ def doNonMouse1():
 		and m._Organism_key = o._Organism_key
 		and o.commonname = '%s'
 		''' % (marker, organism)
+	print sql
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
 	    participant = results[0]['_Marker_key']
@@ -104,16 +105,17 @@ def doNonMouse1():
 	    print 'more than 1 marker: ', results
 	    continue
         else:
-	    #print sql
 	    print 'adding new marker: ', marker, organism, chromosome
-	    db.sql('''
+	    sql = '''
 	    	insert into MRK_Marker values 
 		(
 		(select max(_Marker_key) + 1 from MRK_Marker),
 		(select _Organism_key from MGI_Organism where commonname = '%s'),
 		1,1,'%s','%s','%s',null,1001,1001,now(),now()
 	    	)
-	    	''' % (organism, marker, marker, chromosome), 'auto')
+	    	''' % (organism, marker, marker, chromosome)
+	    print sql
+	    db.sql(sql, None)
 	    db.commit()
 
 	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))

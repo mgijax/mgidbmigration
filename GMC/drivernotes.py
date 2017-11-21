@@ -97,7 +97,7 @@ def doNonMouse1():
 		and m._Organism_key = o._Organism_key
 		and o.commonname = '%s'
 		''' % (marker, organism)
-	print sql
+	#print sql
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
 	    participant = results[0]['_Marker_key']

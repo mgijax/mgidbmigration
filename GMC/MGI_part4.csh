@@ -31,35 +31,35 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 ###------------------------------###
 ###--- MGI Marker feed report ---###
 ###------------------------------###
-date | tee -a ${LOG}
-echo 'MGI Marker feed report' | tee -a ${LOG}
-${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
+#date | tee -a ${LOG}
+#echo 'MGI Marker feed report' | tee -a ${LOG}
+#${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
 
 ###----------------------###
 ###--- Public reports ---###
 ###----------------------###
 date | tee -a ${LOG}
 echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_daily.csh
+./run_weekly.csh
 
 ###----------------------###
 ###---   QC reports   ---###
 ###----------------------###
-date | tee -a ${LOG}
-echo 'Nightly QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcnightly_reports.csh
+#date | tee -a ${LOG}
+#echo 'Nightly QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcnightly_reports.csh
 
-date | tee -a ${LOG}
-echo 'Weekly QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcweekly_reports.csh
+#date | tee -a ${LOG}
+#echo 'Weekly QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcweekly_reports.csh
 
-date | tee -a ${LOG}
-echo 'Sunday QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcsunday_reports.csh
+#date | tee -a ${LOG}
+#echo 'Sunday QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcsunday_reports.csh
 
-date | tee -a ${LOG}
-echo 'Monthly QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcmonthly_reports.csh
+#date | tee -a ${LOG}
+#echo 'Monthly QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcmonthly_reports.csh
 
 date | tee -a ${LOG}
 echo '--- finished part 4' | tee -a $LOG

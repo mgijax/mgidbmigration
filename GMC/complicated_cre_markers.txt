@@ -1,14 +1,6 @@
-Gt(ROSA)26Sor<tm3(rtTA,tetO-cre/ERT)Nat>	tetO	UN	bacteria
-Tg(tetO-cre,-EGFP)2Mull	tetO	UN	bacteria
-Tg(tetO-cre,-EGFP)3Mull	tetO	UN	bacteria
-Tg(tetO-cre)1Dgt	tetO	UN	bacteria
-Tg(tetO-cre)1Jaw	tetO	UN	bacteria
-Tg(tetO-cre)1Kdmc	tetO	UN	bacteria
-Tg(tetO-cre)1Lin	tetO	UN	bacteria
-Tg(tetO-cre)3Jig	tetO	UN	bacteria
-Tg(tetO-cre)LC1Bjd	tetO	UN	bacteria
-Tg(tetO-EGFP/cre)1Kdmc	tetO	UN	bacteria
-Tg(tetO-PyVT,-cre)#Mul	tetO	UN	bacteria
+Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik		mouse, laboratory
+Tg(Bglap2-cre)1Kry	Bglap2		Not Specified
+Tg(Bglap2-cre)2Kry	Bglap2		Not Specified
 Col1a1<tm1.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Col1a1<tm2.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1.1(CAG-cre)Jphe>	CAG	UN	chicken
@@ -48,8 +40,33 @@ Tg(CAG-flpe)37Ito	CAG	UN	chicken
 Tg(CAG-flpe/ERT2)1Dym	CAG	UN	chicken
 Tg(CAG-flpo)1Afst	CAG	UN	chicken
 Tg(CAG-XBP1*/cre/ERT2)#Grtn	CAG	UN	chicken
-Tg(AAT-cre)31Rbrc	SERPINA1	14	human
-Tg(AAT-cre)50Rbrc	SERPINA1	14	human
+Hprt<tm1(CMV-cre)Brd>	CMV	UN	virus
+Hprt<tm1(CMV-cre)Wtsi>	CMV	UN	virus
+Tg(CMV-cre)#Bgmn	CMV	UN	virus
+Tg(CMV-cre)1And	CMV	UN	virus
+Tg(CMV-cre)1Cgn	CMV	UN	virus
+Tg(CMV-cre)1Ipc	CMV	UN	virus
+Tg(CMV-cre)1Mem	CMV	UN	virus
+Tg(CMV-cre)1Nagy	CMV	UN	virus
+Tg(CMV-cre)27Rbrc	CMV	UN	virus
+Tg(CMV-cre)64Rbrc	CMV	UN	virus
+Tg(CMV-cre/ERT)1Ipc	CMV	UN	virus
+Tg(CMV-flpe)14Narl	CMV	UN	virus
+Tg(CMV-flpe)15Narl	CMV	UN	virus
+Tg(CMV-rtTA/cre)2Jcha	CMV	UN	virus
+Tg(Colgalt2-cre)NF107Gsat	Colgalt2	1	mouse, laboratory
+Tg(D630045J12Rik-cre)SG2Gsat	D630045J12Rik	6	mouse, laboratory
+Tg(Drd1-cre)120Mxu	Drd1	13	mouse, laboratory
+Tg(Drd1-cre)EY217Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1-cre)EY242Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1-cre)EY262Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1-cre)EY266Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1-cre)FK150Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1-cre)FK164Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1a-cre)1Gsc	Drd1	13	mouse, laboratory
+Tg(Drd1a-cre)AGsc	Drd1	13	mouse, laboratory
+Tg(Drd1a-cre)FK161Gsat	Drd1	13	mouse, laboratory
+Tg(Drd1a-cre/ERT2)61.3Gsc	Drd1	13	mouse, laboratory
 Gt(ROSA)26Sor<tm1.1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1(cre/ERT)Brn>	Gt(ROSA)26Sor	6	mouse, laboratory
@@ -85,29 +102,6 @@ Hprt<tm345(icre/ERT2)Ems>	Hprt	X	mouse, laboratory
 Hprt<tm5(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
 Tg(A230065H16Rik-cre)RA13Gsat	Lbhd2	12	mouse, laboratory
 Tg(A230065H16Rik-cre)RA31Gsat	Lbhd2	12	mouse, laboratory
-Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik		mouse, laboratory
-Tg(A930038C07Rik-cre)1Aibs	Ndnf	6	mouse, laboratory
-Tg(A930038C07Rik-cre)4Aibs	Ndnf	6	mouse, laboratory
-Tg(Chx10-cre)5Tfur	Vsx2	12	mouse, laboratory
-Tg(Chx10-EGFP/cre,-ALPP)2Clc	Vsx2	12	mouse, laboratory
-Tg(Colgalt2-cre)NF107Gsat	Colgalt2	1	mouse, laboratory
-Tg(Abpa-cre)1Cmal	Shbg	10	rat
-Tg(Bglap2-cre)1Kry	Bglap2	UN	Not Specified
-Tg(Bglap2-cre)2Kry	Bglap2	UN	Not Specified
-Hprt<tm1(CMV-cre)Brd>	CMV	UN	virus
-Hprt<tm1(CMV-cre)Wtsi>	CMV	UN	virus
-Tg(CMV-cre)#Bgmn	CMV	UN	virus
-Tg(CMV-cre)1And	CMV	UN	virus
-Tg(CMV-cre)1Cgn	CMV	UN	virus
-Tg(CMV-cre)1Ipc	CMV	UN	virus
-Tg(CMV-cre)1Mem	CMV	UN	virus
-Tg(CMV-cre)1Nagy	CMV	UN	virus
-Tg(CMV-cre)27Rbrc	CMV	UN	virus
-Tg(CMV-cre)64Rbrc	CMV	UN	virus
-Tg(CMV-cre/ERT)1Ipc	CMV	UN	virus
-Tg(CMV-flpe)14Narl	CMV	UN	virus
-Tg(CMV-flpe)15Narl	CMV	UN	virus
-Tg(CMV-rtTA/cre)2Jcha	CMV	UN	virus
 Tg(MMTV-cre)#Mam	MMTV	UN	virus
 Tg(MMTV-cre)#Tfln	MMTV	UN	virus
 Tg(MMTV-cre)105Ayn	MMTV	UN	virus
@@ -119,3 +113,24 @@ Tg(MMTV-cre)AElee	MMTV	UN	virus
 Tg(MMTV-cre)BElee	MMTV	UN	virus
 Tg(MMTV-cre)FMam	MMTV	UN	virus
 Tg(MMTV-Erbb2*,-cre)1Mul	MMTV	UN	virus
+Tg(A930038C07Rik-cre)1Aibs	Ndnf	6	mouse, laboratory
+Tg(A930038C07Rik-cre)4Aibs	Ndnf	6	mouse, laboratory
+Tg(AAT-cre)31Rbrc	SERPINA1	14	human
+Tg(AAT-cre)50Rbrc	SERPINA1	14	human
+Tg(Abpa-cre)1Cmal	Shbg	10	rat
+Gt(ROSA)26Sor<tm3(rtTA,tetO-cre/ERT)Nat>	tetO	UN	bacteria
+Tg(tetO-cre,-EGFP)2Mull	tetO	UN	bacteria
+Tg(tetO-cre,-EGFP)3Mull	tetO	UN	bacteria
+Tg(tetO-cre)1Dgt	tetO	UN	bacteria
+Tg(tetO-cre)1Jaw	tetO	UN	bacteria
+Tg(tetO-cre)1Kdmc	tetO	UN	bacteria
+Tg(tetO-cre)1Lin	tetO	UN	bacteria
+Tg(tetO-cre)3Jig	tetO	UN	bacteria
+Tg(tetO-cre)LC1Bjd	tetO	UN	bacteria
+Tg(tetO-EGFP/cre)1Kdmc	tetO	UN	bacteria
+Tg(tetO-PyVT,-cre)#Mul	tetO	UN	bacteria
+Hprt<tm349(Ple293-icre/ERT2)Ems>	unknown	1	human
+Hprt<tm363(Ple297-icre/ERT2)Ems>	unknown	14	human
+Hprt<tm367(Ple251-icre/ERT2)Ems>	unknown	8	human
+Tg(Chx10-cre)5Tfur	Vsx2	12	mouse, laboratory
+Tg(Chx10-EGFP/cre,-ALPP)2Clc	Vsx2	12	mouse, laboratory

@@ -13,7 +13,6 @@
 # alleleload : no branch; just add comments
 # allcacheload
 # entrezgeneload
-# reports_db
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh
@@ -51,8 +50,6 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-12', public_version = 'MGI 6.12';
---coordinate with ei
---drop view MGI_NoteType_AllDriver_View_create.object
 EOSQL
 date | tee -a ${LOG}
 

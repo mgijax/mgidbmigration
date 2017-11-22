@@ -129,8 +129,8 @@ Tg(tetO-cre)3Jig	tetO	UN	bacteria
 Tg(tetO-cre)LC1Bjd	tetO	UN	bacteria
 Tg(tetO-EGFP/cre)1Kdmc	tetO	UN	bacteria
 Tg(tetO-PyVT,-cre)#Mul	tetO	UN	bacteria
-Hprt<tm349(Ple293-icre/ERT2)Ems>	unknown	1	human
-Hprt<tm363(Ple297-icre/ERT2)Ems>	unknown	14	human
-Hprt<tm367(Ple251-icre/ERT2)Ems>	unknown	8	human
+Hprt<tm349(Ple293-icre/ERT2)Ems>	unknown 1	1	human
+Hprt<tm363(Ple297-icre/ERT2)Ems>	unknown 14	14	human
+Hprt<tm367(Ple251-icre/ERT2)Ems>	unknown 8	8	human
 Tg(Chx10-cre)5Tfur	Vsx2	12	mouse, laboratory
 Tg(Chx10-EGFP/cre,-ALPP)2Clc	Vsx2	12	mouse, laboratory

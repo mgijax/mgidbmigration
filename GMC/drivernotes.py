@@ -78,6 +78,9 @@ def doComplicated():
 	chromosome = tokens[2]
 	organism = tokens[3]
 
+	if organism != 'mouse, laboratory' and len(chromosome) == 0:
+	    chromosome = 'UN'
+
 	results = db.sql('''select a._Allele_key, min(r._Refs_key) as _Refs_key
 		from ALL_Allele a, MGI_Reference_Assoc r
 		where a.symbol = '%s' 
@@ -96,17 +99,28 @@ def doComplicated():
 	    print 'invalid allele, check molecular reference: ', allele
 	    continue
 
-	sql = '''select m._Marker_key 
-		from MRK_Marker m, MGI_Organism o
-		where m.symbol = '%s' 
-		and m._Organism_key = o._Organism_key
-		and o.commonname = '%s'
-		and m._Marker_Status_key = 1
-		''' % (marker, organism)
+	if organism == 'mouse, laboratory':
+		sql = '''select m._Marker_key, m.chromosome
+			from MRK_Marker m, MGI_Organism o
+			where m.symbol = '%s' 
+			and m._Organism_key = o._Organism_key
+			and o.commonname = '%s'
+			and m._Marker_Status_key = 1
+			''' % (marker, organism)
+	else:
+		sql = '''select m._Marker_key, m.chromosome
+			from MRK_Marker m, MGI_Organism o
+			where m.symbol = '%s' 
+			and m._Organism_key = o._Organism_key
+			and o.commonname = '%s'
+			and m._Marker_Status_key = 1
+			and m.chromosome = '%s'
+			''' % (marker, organism, chromosome)
 	#print sql
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
 	    participant = results[0]['_Marker_key']
+	    chromosome = results[0]['chromosome']
 	elif len(results) > 1:
 	    print 'more than 1 marker: ', results, marker, organism
 	    continue

@@ -78,6 +78,7 @@ def doComplicated():
 	chromosome = tokens[2]
 	organism = tokens[3]
 
+	# use UN chromosome if none given
 	if organism != 'mouse, laboratory' and len(chromosome) == 0:
 	    chromosome = 'UN'
 
@@ -99,6 +100,7 @@ def doComplicated():
 	    print 'invalid allele, check molecular reference: ', allele
 	    continue
 
+	# if mouse, then ignore chromosome/allow user to leave blank
 	if organism == 'mouse, laboratory':
 		sql = '''select m._Marker_key, m.chromosome
 			from MRK_Marker m, MGI_Organism o
@@ -107,6 +109,8 @@ def doComplicated():
 			and o.commonname = '%s'
 			and m._Marker_Status_key = 1
 			''' % (marker, organism)
+
+	# if non-mouse, then chromosome is required
 	else:
 		sql = '''select m._Marker_key, m.chromosome
 			from MRK_Marker m, MGI_Organism o
@@ -137,6 +141,7 @@ def doComplicated():
 	    print sql
 	    db.sql(sql, None)
 	    db.commit()
+	    # get the new particpant key
 	    results = db.sql('select max(_Marker_key) as _Marker_key from MRK_Marker', 'auto')
 	    participant = results[0]['_Marker_key']
 

@@ -102,7 +102,7 @@ def doComplicated():
 
 	# if mouse, then ignore chromosome/allow user to leave blank
 	if organism == 'mouse, laboratory':
-		sql = '''select m._Marker_key, m.chromosome
+		sql = '''select m._Marker_key, m.chromosome, m._Marker_Status_key
 			from MRK_Marker m, MGI_Organism o
 			where m.symbol = '%s' 
 			and m._Organism_key = o._Organism_key
@@ -112,7 +112,7 @@ def doComplicated():
 
 	# if non-mouse, then chromosome is required
 	else:
-		sql = '''select m._Marker_key, m.chromosome
+		sql = '''select m._Marker_key, m.chromosome, m._Marker_Status_key
 			from MRK_Marker m, MGI_Organism o
 			where m.symbol = '%s' 
 			and m._Organism_key = o._Organism_key
@@ -123,11 +123,11 @@ def doComplicated():
 	#print sql
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
+	    if results[0]['_Marker_Status_key'] == 3:
+	        print 'reserved marker: ', marker, organism
+		continue
 	    participant = results[0]['_Marker_key']
 	    chromosome = results[0]['chromosome']
-	elif len(results) > 1:
-	    print 'more than 1 marker: ', results, marker, organism
-	    continue
         else:
 	    print 'adding new marker: ', marker, organism, chromosome
 	    sql = '''

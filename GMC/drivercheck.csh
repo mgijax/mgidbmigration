@@ -104,6 +104,22 @@ and not exists (select 1 from MGI_Note n, MGI_NoteChunk c
 	)
 ;
 
+
+\echo ''
+\echo 'drivers that are not in MGI_Relationship'
+\echo ''
+
+select a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
+        from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m
+        where n._NoteType_key = 1034 
+        and n._Object_key = a._Allele_key
+        and n._Note_key = c._Note_key
+        and a._Marker_key = m._Marker_key
+        and not exists (select 1 from MGI_Relationship r
+                where a._Allele_key = r._Object_key_1
+                and r._Category_key = 1006
+                )
+
 EOSQL
 
 date |tee -a $LOG

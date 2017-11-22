@@ -107,6 +107,7 @@ and not exists (select 1 from MGI_Note n, MGI_NoteChunk c
 
 \echo ''
 \echo 'drivers that are not in MGI_Relationship'
+\echo 'SHOULD BE ZERO'
 \echo ''
 
 select a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)

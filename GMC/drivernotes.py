@@ -107,7 +107,7 @@ def doComplicated():
 			where m.symbol = '%s' 
 			and m._Organism_key = o._Organism_key
 			and o.commonname = '%s'
-			and m._Marker_Status_key = 1
+			and m._Marker_Status_key in (1,3)
 			''' % (marker, organism)
 
 	# if non-mouse, then chromosome is required
@@ -117,7 +117,7 @@ def doComplicated():
 			where m.symbol = '%s' 
 			and m._Organism_key = o._Organism_key
 			and o.commonname = '%s'
-			and m._Marker_Status_key = 1
+			and m._Marker_Status_key in (1,3)
 			and m.chromosome = '%s'
 			''' % (marker, organism, chromosome)
 	#print sql

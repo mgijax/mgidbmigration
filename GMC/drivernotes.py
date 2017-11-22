@@ -137,6 +137,8 @@ def doComplicated():
 	    print sql
 	    db.sql(sql, None)
 	    db.commit()
+	    results = db.sql('select max(_Marker_key) as _Marker_key from MRK_Marker', 'auto')
+	    participant = results[0]['_Marker_key']
 
 	relBcp.write(relFormat % (relKey, organizer, participant, refsKey, currentDate, currentDate))
 	relKey += 1

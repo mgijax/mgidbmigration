@@ -82,14 +82,36 @@ def doComplicated():
 	if organism != 'mouse, laboratory' and len(chromosome) == 0:
 	    chromosome = 'UN'
 
-	results = db.sql('''select a._Allele_key, min(r._Refs_key) as _Refs_key
-		from ALL_Allele a, MGI_Reference_Assoc r
-		where a.symbol = '%s' 
-		and a._Allele_key = r._Object_key
-		and r._MGIType_key = 11
-		and r._RefAssocType_key in (1012)
-		group by a._Allele_key
-		''' % (allele), 'auto')
+	#results = db.sql('''select a._Allele_key, min(r._Refs_key) as _Refs_key
+	#	from ALL_Allele a, MGI_Reference_Assoc r
+	#	where a.symbol = '%s' 
+	#	and a._Allele_key = r._Object_key
+	#	and r._MGIType_key = 11
+	#	and r._RefAssocType_key in (1012)
+	#	group by a._Allele_key
+	#	''' % (allele), 'auto')
+
+	results = db.sql('''
+		with bib_year AS (
+		select min(br.year) as minyear 
+                	from ALL_Allele a, MGI_Reference_Assoc r, BIB_Refs br
+                	where a.symbol = '%s' 
+                	and a._Allele_key = r._Object_key
+                	and r._MGIType_key = 11
+                	and r._RefAssocType_key in (1012)
+                	and r._Refs_key = br._Refs_key
+		)
+		select a._Allele_key, min(r._Refs_key) as _Refs_key
+                		from ALL_Allele a, MGI_Reference_Assoc r, BIB_Refs br, bib_year y
+                		where a.symbol = '%s' 
+                		and a._Allele_key = r._Object_key
+                		and r._MGIType_key = 11
+                		and r._RefAssocType_key in (1012)
+                		and r._Refs_key = br._Refs_key
+                		and br.year = y.minyear
+				group by _Allele_key
+		''' % (allele, allele), 'auto')
+		
 	if len(results) == 1:
 	    organizer = results[0]['_Allele_key']
 	    refsKey = results[0]['_Refs_key']

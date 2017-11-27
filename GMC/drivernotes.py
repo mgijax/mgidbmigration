@@ -78,19 +78,6 @@ def doComplicated():
 	chromosome = tokens[2]
 	organism = tokens[3]
 
-	# use UN chromosome if none given
-	if organism != 'mouse, laboratory' and len(chromosome) == 0:
-	    chromosome = 'UN'
-
-	#results = db.sql('''select a._Allele_key, min(r._Refs_key) as _Refs_key
-	#	from ALL_Allele a, MGI_Reference_Assoc r
-	#	where a.symbol = '%s' 
-	#	and a._Allele_key = r._Object_key
-	#	and r._MGIType_key = 11
-	#	and r._RefAssocType_key in (1012)
-	#	group by a._Allele_key
-	#	''' % (allele), 'auto')
-
 	results = db.sql('''
 		WITH bib_year AS (
 		select min(br.year) as minyear 
@@ -132,8 +119,8 @@ def doComplicated():
 			and m._Marker_Status_key in (1,3)
 			''' % (marker, organism)
 
-	# if non-mouse, then chromosome is required
-	else:
+	# if non-mouse and chromosome
+	elif len(chromosome) > 0:
 		sql = '''select m._Marker_key, m.chromosome, m._Marker_Status_key
 			from MRK_Marker m, MGI_Organism o
 			where m.symbol = '%s' 
@@ -142,6 +129,16 @@ def doComplicated():
 			and m._Marker_Status_key in (1,3)
 			and m.chromosome = '%s'
 			''' % (marker, organism, chromosome)
+	# if non-mouse and no chromosome
+	else:
+		sql = '''select m._Marker_key, m.chromosome, m._Marker_Status_key
+			from MRK_Marker m, MGI_Organism o
+			where m.symbol = '%s' 
+			and m._Organism_key = o._Organism_key
+			and o.commonname = '%s'
+			and m._Marker_Status_key in (1,3)
+			''' % (marker, organism)
+
 	#print sql
 	results = db.sql(sql, 'auto')
 	if len(results) == 1:
@@ -150,8 +147,13 @@ def doComplicated():
 		continue
 	    participant = results[0]['_Marker_key']
 	    chromosome = results[0]['chromosome']
+	elif len(results) == 0 and organism == 'mouse, laboratory':
+	        print 'mouse marker not found: ', marker
+		continue
         else:
-	    print 'adding new marker: ', marker, organism, chromosome
+	    print 'adding new non-mouse marker: ', marker, organism, chromosome
+	    if len(chromosome) == 0:
+	    	chromosome = 'UN'
 	    sql = '''
 	    	insert into MRK_Marker values 
 		(

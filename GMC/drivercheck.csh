@@ -135,7 +135,8 @@ and not exists (select 1 from MGI_Note n, MGI_NoteChunk c
 \echo 'SHOULD BE ZERO'
 \echo ''
 
-select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
+--select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
+select count(a._Allele_key)
         from ALL_Allele a, MRK_Marker m, MGI_Note n, MGI_NoteChunk c
 	where a._Marker_key = m._Marker_key
         and a._Allele_key = n._Object_key
@@ -155,7 +156,8 @@ select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
 
 union
 
-select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
+--select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
+select count(a._Allele_key)
         from ALL_Allele a, MRK_Marker m
 	where a._Marker_key = m._Marker_key
 
@@ -203,6 +205,19 @@ select count(distinct a._Allele_key) as "number_of_Recombinase_Alleles_(with_Mar
                 )
 ;
 
+select a._Allele_key, a.symbol as "number_of_Recombinase_Alleles_(with_no_Markers)"
+        from ALL_Allele a
+	where not exists (select 1 from MRK_Marker m
+        	where a._Marker_key = m._Marker_key
+		)
+
+        and exists (select 1 from VOC_Annot va
+                where va._AnnotType_key = 1014
+                and a._Allele_key = va._Object_key
+                and va._Term_key = 11025588
+                )
+
+;
 EOSQL
 
 date |tee -a $LOG

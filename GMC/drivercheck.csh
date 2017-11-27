@@ -47,11 +47,11 @@ order by a.symbol
 \echo 'no molecular reference'
 \echo ''
 select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
-        from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m
-        where n._NoteType_key = 1034 
+        from ALL_Allele a, MRK_Marker m, MGI_Note n, MGI_NoteChunk c
+        where a._Marker_key = m._Marker_key
+	and a._Allele_key = n._Object_key
+        and n._NoteType_key = 1034 
         and n._Note_key = c._Note_key
-        and n._Object_key = a._Allele_key
-        and a._Marker_key = m._Marker_key
 	and a._Allele_Status_key != 847112
         and exists (select 1 from VOC_Annot va
                 where va._AnnotType_key = 1014 
@@ -67,6 +67,31 @@ select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
         	where a._Allele_key = r._Object_key_1
         	and r._Category_key = 1006
         	)
+
+union
+select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
+        from ALL_Allele a, MRK_Marker m
+        where a._Marker_key = m._Marker_key
+	and a._Allele_Status_key != 847112
+        and exists (select 1 from VOC_Annot va
+                where va._AnnotType_key = 1014 
+                and a._Allele_key = va._Object_key
+                and va._Term_key = 11025588
+                )
+        and a._Allele_Type_key in (847116, 11927650)
+        and a.symbol not like 'Gt(ROSA)%'
+        and a.symbol not like 'Hprt<%'
+        and a.symbol not like 'Col1a1<%'
+        and a.symbol not like 'Evx2/Hoxd13<tm4(cre)Ddu>'
+	and not exists (select 1 from MGI_Relationship r
+        	where a._Allele_key = r._Object_key_1
+        	and r._Category_key = 1006
+        	)
+
+	and not exists (select 1 from MGI_Note n
+		where a._Allele_key = n._Object_key
+        	and n._NoteType_key = 1034 
+		)
 	;
 
 
@@ -110,7 +135,7 @@ and not exists (select 1 from MGI_Note n, MGI_NoteChunk c
 \echo 'SHOULD BE ZERO'
 \echo ''
 
-select a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
+select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
         from ALL_Allele a, MRK_Marker m, MGI_Note n, MGI_NoteChunk c
 	where a._Marker_key = m._Marker_key
         and a._Allele_key = n._Object_key
@@ -130,8 +155,7 @@ select a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
 
 union
 
-select a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
-
+select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
         from ALL_Allele a, MRK_Marker m
 	where a._Marker_key = m._Marker_key
 
@@ -152,7 +176,34 @@ select a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
                 )
 ;
 
+select count(distinct a._Allele_key) as "number_of_Recombinase_Alleles_(with_Markers)"
+        from ALL_Allele a, MRK_Marker m
+        where a._Marker_key = m._Marker_key
+
+        and exists (select 1 from VOC_Annot va
+                where va._AnnotType_key = 1014
+                and a._Allele_key = va._Object_key
+                and va._Term_key = 11025588
+                )
+;
+
+select count(distinct a._Allele_key) as "number_of_Recombinase_Alleles_(with_Markers)_not_migrated"
+        from ALL_Allele a, MRK_Marker m
+        where a._Marker_key = m._Marker_key
+
+        and exists (select 1 from VOC_Annot va
+                where va._AnnotType_key = 1014
+                and a._Allele_key = va._Object_key
+                and va._Term_key = 11025588
+                )
+
+        and not exists (select 1 from MGI_Relationship r
+                where a._Allele_key = r._Object_key_1
+                and r._Category_key = 1006
+                )
+;
+
 EOSQL
 
 date |tee -a $LOG
-
+        

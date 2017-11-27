@@ -92,7 +92,7 @@ def doComplicated():
 	#	''' % (allele), 'auto')
 
 	results = db.sql('''
-		with bib_year AS (
+		WITH bib_year AS (
 		select min(br.year) as minyear 
                 	from ALL_Allele a, MGI_Reference_Assoc r, BIB_Refs br
                 	where a.symbol = '%s' 

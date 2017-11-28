@@ -33,11 +33,11 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #
 # update schema-version and public-version
 #
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-10', public_version = 'MGI 6.010';
-EOSQL
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#update MGI_dbinfo set schema_version = '6-0-10', public_version = 'MGI 6.010';
+#EOSQL
+#date | tee -a ${LOG}
 
 #
 # indexes
@@ -48,6 +48,22 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+CREATE SEQUENCE bib_workflow_status_serial;    
+ALTER TABLE BIB_Workflow_Status ALTER _Assoc_key SET DEFAULT NEXTVAL('bib_workflow_status_serial');
+select setval('bib_workflow_status_serial', (select max(_Assoc_key) + 1 from BIB_Workflow_Status));
+select currval('bib_workflow_status_serial');
+
+EOSQL
+
+${PG_MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_Assay_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_Index_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MGI_Reference_Assoc_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MLD_Expts_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG || exit 1
+
 #
 # reconfig.sh:
 # Drop and re-create database triggers, stored procedures, views and comments
@@ -55,7 +71,7 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

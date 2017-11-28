@@ -12,10 +12,10 @@
 # ei
 # alleleload : no branch; just add comments
 # allcacheload
-# entrezgeneload
+# entrezgeneload : already installed on production
 #
 # run on production when ready to add "Allele" organisms
-# organism.csh
+# organism.csh : done
 #
 
 ###----------------------###

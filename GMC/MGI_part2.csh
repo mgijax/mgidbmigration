@@ -50,8 +50,4 @@ echo 'driver notes' | tee -a $LOG
 ./drivernotes.csh | tee -a $LOG
 
 date | tee -a ${LOG}
-echo 'allelecrecache.csh' | tee -a $LOG
-${ALLCACHELOAD}/allelecrecache.csh | tee -a ${LOG}
-
-date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

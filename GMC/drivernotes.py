@@ -104,7 +104,7 @@ def doComplicated():
 	    refsKey = results[0]['_Refs_key']
 	    alleleStatus = results[0]['_Allele_Status_key']
 	    if alleleStatus == 847112:
-	    	print 'deleted allele: ', results
+	    	print 'deleted allele: ', results, allele
 		continue
 
 	elif len(results) > 1:

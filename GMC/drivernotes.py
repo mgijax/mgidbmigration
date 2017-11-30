@@ -88,7 +88,7 @@ def doComplicated():
                 	and r._RefAssocType_key in (1012)
                 	and r._Refs_key = br._Refs_key
 		)
-		select a._Allele_key, min(r._Refs_key) as _Refs_key
+		select a._Allele_key, min(r._Refs_key) as _Refs_key, a._Allele_Status_key
                 		from ALL_Allele a, MGI_Reference_Assoc r, BIB_Refs br, bib_year y
                 		where a.symbol = '%s' 
                 		and a._Allele_key = r._Object_key
@@ -102,9 +102,15 @@ def doComplicated():
 	if len(results) == 1:
 	    organizer = results[0]['_Allele_key']
 	    refsKey = results[0]['_Refs_key']
+	    alleleStatus = results[0]['_Allele_Status_key']
+	    if alleleStatus == 847112:
+	    	print 'deleted allele: ', results
+		continue
+
 	elif len(results) > 1:
 	    print 'more than 1 allele: ', results, allele
 	    continue
+
         else:
 	    print 'invalid allele, check molecular reference: ', allele
 	    continue

@@ -52,7 +52,7 @@ scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/uberon.obo /data/download
 
 date | tee -a ${LOG}
 echo 'Run MP/EMAPA Relationship Load' | tee -a ${LOG}
-${MP_EMAPALOAD}/bin/mp_emapaload.sh | tee -a ${LOG}
+${MPEMAPALOAD}/bin/mp_emapaload.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'driver notes' | tee -a $LOG

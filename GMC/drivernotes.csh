@@ -45,10 +45,10 @@ ${PG_DBUTILS}/bin/bcpin.csh ${PG_DBSERVER} ${PG_DBNAME} MGI_Relationship ${DBUTI
 # query using mgi_relationship data
 ./drivercheck.csh
 
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#delete from MGI_Note where _NoteType_key = 1034;
-#delete from MGI_NoteType where _NoteType_key = 1034;
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete from MGI_Note where _NoteType_key = 1034;
+delete from MGI_NoteType where _NoteType_key = 1034;
+EOSQL
 
 date |tee -a $LOG
 

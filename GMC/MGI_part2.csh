@@ -36,19 +36,16 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # copy /data/downloads files needed for loads
 # this only needs to happen on development servers
 #
-#switch (`uname -n`)
-#    case bhmgiapp14ld:
-#    case bhmgidevapp01:
-#        date | tee -a ${LOG}
-#        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
-#        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
-#        breaksw
-#endsw
-date | tee -a ${LOG}
-echo 'Copy MP/Uberon/EMAPA files from production' | tee -a $LOG || exit 1
-scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/mp.owl /data/loads/mgi/vocload/runTimeMP
-scp bhmgiapp01:/data/loads/mgi/vocload/emap/input/EMAPA.obo /data/loads/mgi/vocload/emap/input
-scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/uberon.obo /data/downloads/purl.obolibrary.org
+switch (`uname -n`)
+    case bhmgiapp14ld:
+    case bhmgidevapp01:
+        date | tee -a ${LOG}
+	echo 'Copy MP/Uberon/EMAPA files from production' | tee -a $LOG || exit 1
+	scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/mp.owl /data/loads/mgi/vocload/runTimeMP
+	scp bhmgiapp01:/data/loads/mgi/vocload/emap/input/EMAPA.obo /data/loads/mgi/vocload/emap/input
+	scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/uberon.obo /data/downloads/purl.obolibrary.org
+        breaksw
+endsw
 
 #date | tee -a ${LOG}
 #echo 'Run MP/EMAPA Relationship Load' | tee -a ${LOG}

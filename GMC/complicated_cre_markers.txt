@@ -90,7 +90,7 @@ Tg(Alb-cre)21Mgn	Alb		mouse, laboratory
 Tg(Alb-cre/ERT)1Xue	Alb		mouse, laboratory
 Tg(Aldh1l1-cre)JD1884Htz	Aldh1l1		mouse, laboratory
 Tg(Aldh1l1-cre)PB1Gsat	Aldh1l1		mouse, laboratory
-Tg(Alx4-cre/ERT2)1Bky	Alx		mouse, laboratory
+Tg(Alx4-cre/ERT2)1Bky	Alx4		mouse, laboratory
 Tg(Amh-cre/ERT)#Sabe	Amh		mouse, laboratory
 Tg(Amigo1-cre)NP210Gsat	Amigo1		mouse, laboratory
 Tg(Amigo1-cre)NP231Gsat	Amigo1		mouse, laboratory
@@ -119,7 +119,6 @@ Tg(CAG-cre)1Kymm	CAG	UN	chicken
 Tg(CAG-cre)1Nagy	CAG	UN	chicken
 Tg(CAG-cre)2Osb	CAG	UN	chicken
 Tg(CAG-cre/ERT2)#Rlb	CAG	UN	chicken
-Tg(CAG-cre/ERT2)#Rlb	CAG		chicken
 Tg(CAG-cre/ERT2)F34Fmr	CAG	UN	chicken
 Tg(CAG-cre/ERT2/Hif1a)#Hhas	CAG	UN	chicken
 Tg(CAG-cre/Esr1*)1Egwa	CAG	UN	chicken
@@ -377,10 +376,10 @@ Tg(hs192-cre/ERT2,-GFP)1034Jlr	hs192	3	human
 Tg(hs204-cre/ERT2,-GFP)35Jlr	hs204	1	human
 Tg(hs752-Ncre,-lacZ)1Fawa	hs752	UN	human
 Tg(hs799-cre/ERT2,-GFP)405Jlr	hs799	7	human
-Tg(Hsp70-1-cre)#Arge	Hsp70-1		mouse, laboratory
-Tg(Hsp70-1-cre)1Arge	Hsp70-1		mouse, laboratory
+Tg(Hsp70-1-cre)#Arge	Hspa1b		mouse, laboratory
+Tg(Hsp70-1-cre)1Arge	Hspa1b		mouse, laboratory
 Tg(Hsp70-1-cre)6Arge	Hspa1b		mouse, laboratory
-Tg(Hsp70-1-cre)7Arge	Hsp70-1		mouse, laboratory
+Tg(Hsp70-1-cre)7Arge	Hspa1b		mouse, laboratory
 Tg(Hspa2-cre)1Eddy	Hspa2		mouse, laboratory
 Tg(Htr2a-cre)KM207Gsat	Htr2a		mouse, laboratory
 Tg(Htr2a-cre)KM208Gsat	Htr2a		mouse, laboratory
@@ -578,7 +577,7 @@ Tg(Pou4f1-cre/ERT2)#Jiz	Pou4f1		mouse, laboratory
 Tg(Pou4f3-cre)1Devet	Pou4f3		mouse, laboratory
 Tg(Ppp1r17-cre)NL146Gsat	Ppp1r17		mouse, laboratory
 Tg(Ppp1r17-cre)NL163Gsat	Ppp1r17		mouse, laboratory
-Tg(Pres-cre)1Jnz	Pres		mouse, laboratory
+Tg(Pres-cre)1Jnz	Slc26a5		mouse, laboratory
 Tg(Prkcd-glc-1/CFP,-cre)EH124Gsat	Prkcd		mouse, laboratory
 Tg(Prl3b1-cre)2Hoi	Prl3b1		mouse, laboratory
 Tg(Prl-cre)1Levy	Prl		rat
@@ -616,7 +615,7 @@ Tg(Rbp4-cre)KL105Gsat	Rbp4		mouse, laboratory
 Tg(Rcan2-cre)ON50Gsat	Rcan2		mouse, laboratory
 Tg(Ren1-cre)1Sjs	Ren1		mouse, laboratory
 Tg(Ren1-cre/ERT2)1Sjs	Ren1		mouse, laboratory
-Tg(Ren-cre)#Kwg	Ren		mouse, laboratory
+Tg(Ren-cre)#Kwg	Ren1		mouse, laboratory
 Tg(Rgs14-cre)SR63Gsat	Rgs14		mouse, laboratory
 Tg(Rgs8-cre)OK14Gsat	Rgs8		mouse, laboratory
 Tg(Rho-cre)#Yzl	Rho		mouse, laboratory

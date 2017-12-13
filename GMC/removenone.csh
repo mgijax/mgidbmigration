@@ -24,7 +24,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select c.mgiID, a.authors, a._primary, a.title
 from BIB_Refs a, BIB_Citation_Cache c
 where a._primary = 'None'
-and a._Refs_ke = c._Refs_key
+and a._Refs_key = c._Refs_key
 ;
 
 update BIB_Refs
@@ -35,13 +35,13 @@ where _primary = 'None'
 select c.mgiID, a.authors, a._primary, a.title
 from BIB_Refs a, BIB_Citation_Cache c
 where a._primary = 'None'
-and a._Refs_ke = c._Refs_key
+and a._Refs_key = c._Refs_key
 ;
 
 select c.mgiID, a.authors, a._primary, a.title
 from BIB_Refs a, BIB_Citation_Cache c
 where a._primary is null
-and a._Refs_ke = c._Refs_key
+and a._Refs_key = c._Refs_key
 ;
 
 EOSQL

@@ -52,5 +52,7 @@ and a._Refs_key = c._Refs_key
 
 EOSQL
 
+${MGICACHELOAD}/bibcitation.csh | tee -a $LOG
+
 date |tee -a $LOG
 

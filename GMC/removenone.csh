@@ -44,6 +44,12 @@ where a._primary is null
 and a._Refs_key = c._Refs_key
 ;
 
+select c.mgiID
+from BIB_Refs a, BIB_Citation_Cache c
+where a._primary is null
+and a._Refs_key = c._Refs_key
+;
+
 EOSQL
 
 date |tee -a $LOG

@@ -24,11 +24,8 @@ for r in results:
     else:
 	toReplace = match.group(1)
 	newNote = note.replace(toReplace, replaceWith)
-	print 'before:'
-        print note 
-	print 'after:'
+	newNote = newNote.replace("'", "\'")
 	print newNote
-	print CRT
 	db.sql('''update MGI_NoteChunk
-		set note = \'%s\'
+		set note = '%s'
 		where _note_key = %s''' % (newNote, noteKey), None)

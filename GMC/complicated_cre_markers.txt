@@ -2,6 +2,63 @@ A1cf<Tg(Myh6-cre/Esr1*)1Jmk>	Myh6		mouse, laboratory
 Bmpr1b<Tg(ACTB-FLP)4917Dym>	ACTB	7	human
 Col1a1<tm1.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Col1a1<tm2.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
+Et(cre)TFC.09Lois	Et(cre)TFC.09Lois	UN	mouse, laboratory
+Et(cre/ERT2)119Rdav	Et(cre/ERT2)119Rdav	UN	mouse, laboratory
+Et(cre/ERT2)1382Rdav	Et(cre/ERT2)1382Rdav	UN	mouse, laboratory
+Et(cre/ERT2)13866Rdav	Et(cre/ERT2)13866Rdav	UN	mouse, laboratory
+Et(cre/ERT2)1642Rdav	Et(cre/ERT2)1642Rdav	UN	mouse, laboratory
+Et(cre/ERT2)1645Rdav	Et(cre/ERT2)1645Rdav	UN	mouse, laboratory
+Et(cre/ERT2)1957Rdav	Et(cre/ERT2)1957Rdav	UN	mouse, laboratory
+Et(cre/ERT2)2007Rdav	Et(cre/ERT2)2007Rdav	UN	mouse, laboratory
+Et(cre/ERT2)2047Rdav	Et(cre/ERT2)2047Rdav	UN	mouse, laboratory
+Et(cre/ERT2)21Rdav	Et(cre/ERT2)21Rdav	UN	mouse, laboratory
+Et(cre/ERT2)25175Rdav	Et(cre/ERT2)25175Rdav	UN	mouse, laboratory
+Et(cre/ERT2)25279Rdav	Et(cre/ERT2)25279Rdav	UN	mouse, laboratory
+Et(cre/ERT2)25378Rdav	Et(cre/ERT2)25378Rdav	UN	mouse, laboratory
+Et(cre/ERT2)25422Rdav	Et(cre/ERT2)25422Rdav	UN	mouse, laboratory
+Et(cre/ERT2)25463Rdav	Et(cre/ERT2)25463Rdav	UN	mouse, laboratory
+Et(cre/ERT2)278Rdav	Et(cre/ERT2)278Rdav	UN	mouse, laboratory
+Et(cre/ERT2)296Rdav	Et(cre/ERT2)296Rdav	UN	mouse, laboratory
+Et(cre/ERT2)398Rdav	Et(cre/ERT2)398Rdav	UN	mouse, laboratory
+Et(cre/ERT2)4Rdav	Et(cre/ERT2)4Rdav	UN	mouse, laboratory
+Et(cre/ERT2)6691Rdav	Et(cre/ERT2)6691Rdav	UN	mouse, laboratory
+Et(cre/ERT2)6959Rdav	Et(cre/ERT2)6959Rdav	UN	mouse, laboratory
+Et(cre/ERT2)7089Rdav	Et(cre/ERT2)7089Rdav	UN	mouse, laboratory
+Et(cre/ERT2)7149Rdav	Et(cre/ERT2)7149Rdav	UN	mouse, laboratory
+Et(cre/ERT2)7381Rdav	Et(cre/ERT2)7381Rdav	UN	mouse, laboratory
+Et(cre/ERT2)8120Rdav	Et(cre/ERT2)8120Rdav	UN	mouse, laboratory
+Et(cre/ERT2)8131Rdav	Et(cre/ERT2)8131Rdav	UN	mouse, laboratory
+Et(cre/ERT2)837Rdav	Et(cre/ERT2)837Rdav	UN	mouse, laboratory
+Et(cre/ERT2)9699Rdav	Et(cre/ERT2)9699Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16053Rdav	Et(EGFP/cre)16053Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16055Rdav	Et(EGFP/cre)16055Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16059Rdav	Et(EGFP/cre)16059Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16102Rdav	Et(EGFP/cre)16102Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16218Rdav	Et(EGFP/cre)16218Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16250Rdav	Et(EGFP/cre)16250Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16255Rdav	Et(EGFP/cre)16255Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16261Rdav	Et(EGFP/cre)16261Rdav	UN	mouse, laboratory
+Et(EGFP/cre)16279Rdav	Et(EGFP/cre)16279Rdav	UN	mouse, laboratory
+Et(icre)1402Rdav	Et(icre)1402Rdav	UN	mouse, laboratory
+Et(icre)1470Rdav	Et(icre)1470Rdav	UN	mouse, laboratory
+Et(icre)1555Rdav	Et(icre)1555Rdav	UN	mouse, laboratory
+Et(icre)21468Rdav	Et(icre)21468Rdav	UN	mouse, laboratory
+Et(icre)21603Rdav	Et(icre)21603Rdav	UN	mouse, laboratory
+Et(icre)21605Rdav	Et(icre)21605Rdav	UN	mouse, laboratory
+Et(icre)21614Rdav	Et(icre)21614Rdav	UN	mouse, laboratory
+Et(icre)21733Rdav	Et(icre)21733Rdav	UN	mouse, laboratory
+Et(icre)22787Rdav	Et(icre)22787Rdav	UN	mouse, laboratory
+Et(icre)23031Rdav	Et(icre)23031Rdav	UN	mouse, laboratory
+Et(icre)23033Rdav	Et(icre)23033Rdav	UN	mouse, laboratory
+Et(icre)754Rdav	Et(icre)754Rdav	UN	mouse, laboratory
+Et(icre/ERT2)10596Rdav	Et(icre/ERT2)10596Rdav	UN	mouse, laboratory
+Et(icre/ERT2)10727Rdav	Et(icre/ERT2)10727Rdav	UN	mouse, laboratory
+Et(icre/ERT2)14163Rdav	Et(icre/ERT2)14163Rdav	UN	mouse, laboratory
+Et(icre/ERT2)14208Rdav	Et(icre/ERT2)14208Rdav	UN	mouse, laboratory
+Et(icre/ERT2)14374Rdav	Et(icre/ERT2)14374Rdav	UN	mouse, laboratory
+Et(icre/ERT2)14602Rdav	Et(icre/ERT2)14602Rdav	UN	mouse, laboratory
+Et(icre/ERT2)14624Rdav	Et(icre/ERT2)14624Rdav	UN	mouse, laboratory
+Et(icre/ERT2)14915Rdav	Et(icre/ERT2)14915Rdav	UN	mouse, laboratory
 Gt(ROSA)26Sor<tm1(CAG-cre)Jphe>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1(CAG-flpe)Arte>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1(CAG-flpe)Hmpr>	CAG	UN	chicken
@@ -70,6 +127,7 @@ Tg(AAT-cre)43Rbrc	SERPINA1	14	human
 Tg(AAT-cre)50Rbrc	SERPINA1	14	human
 Tg(Abcb1a-cre)NIDA045Htz	Abcb1a		mouse, laboratory
 Tg(Abpa-cre)1Cmal	Shbg	10	rat
+Tg(Acta2-cre)1Rkl	Acta2		mouse, laboratory
 Tg(Acta2-cre/ERT2)#Pcn	Acta2		mouse, laboratory
 Tg(Acta2-cre/ERT2)12Pcn	Acta2		mouse, laboratory
 Tg(Acta2-cre/ERT2)51Pcn	Acta2		mouse, laboratory
@@ -370,12 +428,23 @@ Tg(Hmx3-cre)NM2Gsat	Hmx3		mouse, laboratory
 Tg(Hoxa1-cre)1Tlu	Hoxa1		mouse, laboratory
 Tg(Hoxb2-cre)1Ksec	Hoxb2		mouse, laboratory
 Tg(Hoxb7-cre)13Amc	Hoxb7		mouse, laboratory
+Tg(hs1056-cre/ERT2,-GFP)1705Jlr	hs1056	18	human
 Tg(hs1060-cre/ERT2,-GFP)1593Jlr	hs1060	5	human
 Tg(hs1163-Ccre,-lacZ)1Fawa	hs1163	UN	human
+Tg(hs1324-cre/ERT,-GFP)1138Jlr	hs1324	1	human
+Tg(hs1336-cre/ERT2,-GFP)1651Jlr	hs1336	7	human
+Tg(hs1538-cre/ERT2,-GFP)1608Jlr	hs1538	14	human
 Tg(hs192-cre/ERT2,-GFP)1034Jlr	hs192	3	human
 Tg(hs204-cre/ERT2,-GFP)35Jlr	hs204	1	human
+Tg(hs218-Ccre,-lacZ)1Fawa	hs218	7	human
+Tg(hs23-Ccre,-lacZ)1Fawa	hs23	16	human
+Tg(hs599-cre/ERT2,-GFP)119Jlr	hs599	15	human
+Tg(hs611-Ncre,-lacZ)1Fawa	hs611	12	human
+Tg(hs692-cre/ERT2,-GFP)103Jlr	hs692	11	human
 Tg(hs752-Ncre,-lacZ)1Fawa	hs752	UN	human
 Tg(hs799-cre/ERT2,-GFP)405Jlr	hs799	7	human
+Tg(hs841-cre/ERT2,-GFP)522Jlr	hs841	10	human
+Tg(hs953-cre/ERT2,-GFP)526Jlr	hs953	2	human
 Tg(Hsp70-1-cre)#Arge	Hspa1b		mouse, laboratory
 Tg(Hsp70-1-cre)1Arge	Hspa1b		mouse, laboratory
 Tg(Hsp70-1-cre)6Arge	Hspa1b		mouse, laboratory

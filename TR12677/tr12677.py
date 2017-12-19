@@ -15,7 +15,7 @@ results = db.sql('''select _note_key, note from MGI_NoteChunk
 #
 # count before updates
 #
-print 'Before count: %s' % len(results)
+print 'MMR Before count: %s' % len(results)
 for r in results:
     noteKey = r['_note_key']
     note = r['note']
@@ -53,6 +53,12 @@ results = db.sql('''select _note_key, note from MGI_NoteChunk
     where note like '%http://www.jax.org/mmr/%'
     order by _Note_key''', 'auto')
 
-print 'After count: %s' % len(results)
+print 'MMR After count: %s' % len(results)
+
+results = db.sql('''select *
+    from MGI_NoteChunk
+    where note like '%https://www.jax.org/research-and-faculty/tools/mouse-mutant-resource%' ''', 'auto')
+    
+print 'New URL Count: %s' % len(results)
 
 print 'done'

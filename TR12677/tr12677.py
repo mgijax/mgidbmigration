@@ -8,9 +8,12 @@ MMR_RE = re.compile('(http.*html)')
 MMR2_RE = re.compile('(http.*mmr/)')
 replaceWith = 'https://www.jax.org/research-and-faculty/tools/mouse-mutant-resource'
 
-results = db.sql('''select _note_key, note from MGI_NoteChunk
-    where note like '%http://www.jax.org/mmr/%'
-    order by _Note_key''', 'auto')
+results = db.sql('''select nc._note_key, nc.note 
+    from MGI_NoteChunk nc, MGI_Note n
+    where nc.note like '%http://www.jax.org/mmr/%'
+    and nc._Note_key = n._Note_key
+    and n._NoteType_key = 1023
+    order by nc. _Note_key''', 'auto')
 
 #
 # count before updates
@@ -49,16 +52,21 @@ for r in results:
 #
 # count after updates
 #
-results = db.sql('''select _note_key, note from MGI_NoteChunk
-    where note like '%http://www.jax.org/mmr/%'
-    order by _Note_key''', 'auto')
+results = db.sql('''select nc._note_key, nc.note
+    from MGI_NoteChunk nc, MGI_Note n
+    where nc.note like '%http://www.jax.org/mmr/%'
+    and nc._Note_key = n._Note_key
+    and n._NoteType_key = 1023
+    order by nc. _Note_key''', 'auto')
 
 print 'MMR After count: %s' % len(results)
+results = db.sql('''select nc._note_key, nc.note
+    from MGI_NoteChunk nc, MGI_Note n
+    where nc.note like '%https://www.jax.org/research-and-faculty/tools/mouse-mutant-resource%'
+    and nc._Note_key = n._Note_key
+    and n._NoteType_key = 1023
+    order by nc. _Note_key''', 'auto')
 
-results = db.sql('''select *
-    from MGI_NoteChunk
-    where note like '%https://www.jax.org/research-and-faculty/tools/mouse-mutant-resource%' ''', 'auto')
-    
 print 'New URL Count: %s' % len(results)
 
 print 'done'

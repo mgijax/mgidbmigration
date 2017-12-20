@@ -12,8 +12,7 @@ results = db.sql('''select nc._note_key, nc.note
     from MGI_NoteChunk nc, MGI_Note n
     where nc.note like '%http://www.jax.org/mmr/%'
     and nc._Note_key = n._Note_key
-    and n._NoteType_key = 1023
-    order by nc. _Note_key''', 'auto')
+    and n._NoteType_key = 1023''', 'auto')
 
 #
 # count before updates
@@ -56,16 +55,14 @@ results = db.sql('''select nc._note_key, nc.note
     from MGI_NoteChunk nc, MGI_Note n
     where nc.note like '%http://www.jax.org/mmr/%'
     and nc._Note_key = n._Note_key
-    and n._NoteType_key = 1023
-    order by nc. _Note_key''', 'auto')
+    and n._NoteType_key = 1023''', 'auto')
 
 print 'MMR After count: %s' % len(results)
 results = db.sql('''select nc._note_key, nc.note
     from MGI_NoteChunk nc, MGI_Note n
     where nc.note like '%https://www.jax.org/research-and-faculty/tools/mouse-mutant-resource%'
     and nc._Note_key = n._Note_key
-    and n._NoteType_key = 1023
-    order by nc. _Note_key''', 'auto')
+    and n._NoteType_key = 1023''', 'auto')
 
 print 'New URL Count: %s' % len(results)
 

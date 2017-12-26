@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-11-32
+DATE: 12/19/2017
+STAFF: sc
+1) TR12578 - deletion of sequences with no Acc_Accession IDs
+
 TAG: mgidbmigration-6-0-11-31
 TAG: mgidbmigration-6-0-11-30
 TAG: mgidbmigration-6-0-11-29

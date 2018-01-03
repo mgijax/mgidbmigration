@@ -5,7 +5,7 @@ if ( ${?MGICONFIG} == 0 ) then
 endif
 
 source ${MGICONFIG}/master.config.csh
-
+echo "${PG_DBSERVER} ${PG_DBNAME}"
 cd `dirname $0`
 
 setenv LOG $0.log

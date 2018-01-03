@@ -198,7 +198,7 @@ Hprt<tm360a(Ple253-icre/ERT2)Ems>	PITX3	10	human
 Hprt<tm361a(Ple267-icre/ERT2)Ems>	UGT8	4	human
 Hprt<tm362a(Ple304-icre/ERT2)Ems>	OLIG1	21	human
 Hprt<tm363a(Ple297-icre/ERT2)Ems>	hs1218	14	human
-Hprt<tm364a(CAG-icre/ERT2)Ems>	CAG	UN	chicken
+Hprt<tm364a(CAGGS-icre/ERT2)Ems>	CAG	UN	chicken
 Hprt<tm365a(Ple266-icre/ERT2)Ems>	S100B	21	human
 Hprt<tm366a(Ple67-icre/ERT2)Ems>	FEV	2	human
 Hprt<tm367a(Ple251-icre/ERT2)Ems>	C8ORF46		human
@@ -1050,7 +1050,7 @@ Tg(Trp63,-cre,-Cerulean)4Grsr	Trp63		mouse, laboratory
 Tg(Trps1-cre)#Osud	Trps1		mouse, laboratory
 Tg(Trpv1-cre)SK30Gsat	Trpv1		mouse, laboratory
 Tg(Trpv1-icre)1Kldr	Trpv1		mouse, laboratory
-Tg(TSPY-cre)33aYfcl	TSPY1	Y	human
+Tg(TSPY1-cre)33aYfcl	TSPY1	Y	human
 Tg(Ttr-cre)1Hadj	Ttr		mouse, laboratory
 Tg(Ttr-cre/Esr1*)1Vco	Ttr		mouse, laboratory
 Tg(Tuba1-cre)1Tes	Tuba1		Not Specified

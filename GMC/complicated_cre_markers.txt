@@ -59,6 +59,7 @@ Et(icre/ERT2)14374Rdav	Et(icre/ERT2)14374Rdav	UN	mouse, laboratory
 Et(icre/ERT2)14602Rdav	Et(icre/ERT2)14602Rdav	UN	mouse, laboratory
 Et(icre/ERT2)14624Rdav	Et(icre/ERT2)14624Rdav	UN	mouse, laboratory
 Et(icre/ERT2)14915Rdav	Et(icre/ERT2)14915Rdav	UN	mouse, laboratory
+Gt(ROSA)26Sor<tm1(ACTB-cre,-EGFP)Ics>	ACTB	UN	Not Specified
 Gt(ROSA)26Sor<tm1(CAG-cre)Jphe>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1(CAG-flpe)Arte>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1(CAG-flpe)Hmpr>	CAG	UN	chicken
@@ -71,6 +72,7 @@ Gt(ROSA)26Sor<tm1(cre/Esr1*)Nns>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1(creB)Dwi>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1(FLP1)Dym>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1(FLP1)Wtsi>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1(PGK1-cre)Ozg>	PGK1	UN	Not Specified
 Gt(ROSA)26Sor<tm1.1(CAG-cre)Jphe>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1.1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	Gt(ROSA)26Sor	6	mouse, laboratory
@@ -97,11 +99,62 @@ Hhat<Tg(TFAP2A-cre)1Will>	TFAP2A		human
 Hprt<tm1(CAG-cre)Mnn>	CAG	UN	chicken
 Hprt<tm1(CMV-cre)Brd>	CMV	UN	virus
 Hprt<tm1(CMV-cre)Wtsi>	CMV	UN	virus
+Hprt<tm1(TG-cre)1Sasr>	TG	14	cattle
+Hprt<tm10(Ple162-EGFP/cre)Ems>	PITX3	10	human
+Hprt<tm11(Ple176-EGFP/cre)Ems>	RGS16	6	human
+Hprt<tm111(Ple48-EGFP/cre)Ems>	DBH	9	human
 Hprt<tm113(Ple49-EGFP/cre)Ems>	DBH		human
+Hprt<tm115(Ple51-EGFP/cre)Ems>	DBH	9	human
 Hprt<tm12(Ple177-EGFP/cre)Ems>	RGS16		human
+Hprt<tm130(Ple78-cre/EGFP)Ems>	GABRA6	5	human
+Hprt<tm137(Ple85-EGFP/cre)Ems>	GCHFR	15	human
 Hprt<tm14(Ple103-EGFP/cre)Ems>	HAP1		human
+Hprt<tm141(Ple90-EGFP/cre)Ems>	GFAP	17	human
+Hprt<tm150(Ple99-cre/EGFP)Ems>	GRP	18	human
+Hprt<tm152(Ple100-cre/EGFP)Ems>	GRP	18	human
+Hprt<tm157(Ple104-EGFP/cre)Ems>	HAP1	17	human
+Hprt<tm159(Ple105-EGFP/cre)Ems>	HAP1	17	human
+Hprt<tm16(Ple167-EGFP/cre)Ems>	POGZ	1	human
+Hprt<tm161(Ple106-EGFP/cre)Ems>	HAP1	17	human
 Hprt<tm168(Ple111-cre/EGFP)Ems>	HCRT		human
+Hprt<tm169(Ple112-cre/EGFP)Ems>	HCRT	17	human
+Hprt<tm173(Ple117-cre/EGFP)Ems>	HTR1A	5	human
+Hprt<tm175(Ple118-cre/EGFP)Ems>	HTR1A	5	human
 Hprt<tm178(Ple120-cre/EGFP)Ems>	HTR1A		human
+Hprt<tm189(Ple138-cre/EGFP)Ems>	NR2E1	6	human
+Hprt<tm199(Ple154-cre/EGFP)Ems>	PCP2	19	human
+Hprt<tm201(Ple155-cre/EGFP)Ems>	PCP2	19	human
+Hprt<tm203(Ple156-cre/EGFP)Ems>	PCP2	19	human
+Hprt<tm205(Ple157-cre/EGFP)Ems>	PCP2	19	human
+Hprt<tm212(Ple168-EGFP/cre)Ems>	POGZ	1	human
+Hprt<tm214(Ple169-EGFP/cre)Ems>	POGZ	1	human
+Hprt<tm216(Ple171-EGFP/cre)Ems>	RAMP3	7	human
+Hprt<tm218(Ple172-EGFP/cre)Ems>	RAMP3	7	human
+Hprt<tm220(Ple173-EGFP/cre)Ems>	RAMP3	7	human
+Hprt<tm222(Ple174-EGFP/cre)Ems>	RAMP3	7	human
+Hprt<tm224(Ple175-EGFP/cre)Ems>	RGS16	1	human
+Hprt<tm234(Ple183-EGFP/cre)Ems>	S100B	21	human
+Hprt<tm239(Ple190-EGFP/cre)Ems>	SLC6A2	16	human
+Hprt<tm243(Ple193-cre/EGFP)Ems>	SLC6A3	5	human
+Hprt<tm246(Ple194-cre/EGFP)Ems>	SLC6A3	5	human
+Hprt<tm251(Ple199-EGFP/cre)Ems>	SLC6A5	11	human
+Hprt<tm253(Ple200-EGFP/cre)Ems>	SLC6A5	11	human
+Hprt<tm255(Ple201-EGFP/cre)Ems>	SLC6A5	11	human
+Hprt<tm26(Ple161-EGFP/cre)Ems>	PITX3	10	human
+Hprt<tm263(Ple207-EGFP/cre)Ems>	SLITRK6	13	human
+Hprt<tm265(Ple208-EGFP/cre)Ems>	SLITRK6	13	human
+Hprt<tm267(Ple210-EGFP/cre)Ems>	SLITRK6	13	human
+Hprt<tm27(Ple160-EGFP/cre)Ems>	PITX3	10	human
+Hprt<tm28(Ple77-cre/EGFP)Ems>	GABRA6	5	human
+Hprt<tm283(Ple227-cre/EGFP)Ems>	THY1	11	human
+Hprt<tm285(Ple228-cre/EGFP)Ems>	THY1	11	human
+Hprt<tm287(Ple229-cre/EGFP)Ems>	THY1	11	human
+Hprt<tm29(Ple79-cre/EGFP)Ems>	GABRA6	5	human
+Hprt<tm290(Ple230-cre/EGFP)Ems>	THY1	11	human
+Hprt<tm292(Ple231-EGFP/cre)Ems>	TNNT1	19	human
+Hprt<tm294(Ple232-EGFP/cre)Ems>	TNNT1	19	human
+Hprt<tm296(Ple233-EGFP/cre)Ems>	TNNT1	19	human
+Hprt<tm30(Ple80-cre/EGFP)Ems>	GABRA6	5	human
 Hprt<tm313(cre/EGFP)Ems>	Hprt	X	mouse, laboratory
 Hprt<tm314(cre/EGFP)Ems>	Hprt	X	mouse, laboratory
 Hprt<tm315(CAG-EGFP/cre)Ems>	CAG	UN	chicken
@@ -109,14 +162,51 @@ Hprt<tm318(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
 Hprt<tm319(CAG-cre)Ems>	CAG	UN	chicken
 Hprt<tm320(cre)Ems>	Hprt	X	mouse, laboratory
 Hprt<tm322(cre/EGFP)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm325(Ple157-cre/EGFP)Ems>	PCP2	19	human
+Hprt<tm327(Ple77-cre/EGFP)Ems>	GABRA6	5	human
 Hprt<tm328(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
-Hprt<tm345(icre/ERT2)Ems>	Hprt	X	mouse, laboratory
-Hprt<tm349(Ple293-icre/ERT2)Ems>	hs671	1	human
-Hprt<tm352(Ple291-icre/ERT2)Ems>	Hspa1a		mouse, laboratory
-Hprt<tm363(Ple297-icre/ERT2)Ems>	hs1218	14	human
-Hprt<tm364(CAG-icre/ERT2)Ems>	CAG	UN	chicken
-Hprt<tm367(Ple251-icre/ERT2)Ems>	C8ORF46		human
+Hprt<tm331a(Ple275-icre/ERT2)Ems>	GABRA6	5	human
+Hprt<tm332a(Ple272-icre/ERT2)Ems>	CLDN5	22	human
+Hprt<tm333a(Ple281-icre/ERT2)Ems>	NEUROD6	7	human
+Hprt<tm334a(Ple279-icre/ERT2)Ems>	KDM5C	X	human
+Hprt<tm335a(Ple277-icre/ERT2)Ems>	HTR1B	6	human
+Hprt<tm336a(Ple134-icre/ERT2)Ems>	NOV	8	human
+Hprt<tm337a(Ple285-icre/ERT2)Ems>	POU4F2	4	human
+Hprt<tm338a(Ple284-icre/ERT2)Ems>	NR2E1	6	human
+Hprt<tm339a(Ple280-icre/ERT2)Ems>	MKI67	10	human
+Hprt<tm340a(Ple252-icre/ERT2)Ems>	SLITRK6	13	human
+Hprt<tm341a(Ple273-icre/ERT2)Ems>	CLVS2	6	human
+Hprt<tm342a(Ple282-icre/ERT2)Ems>	NKX6-1	4	human
+Hprt<tm343a(Ple270-icre/ERT2)Ems>	AGTR1	3	human
+Hprt<tm344a(Ple5-icre/ERT2)Ems>	AMOTL1	11	human
+Hprt<tm345a(icre/ERT2)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm346a(Ple264-icre/ERT2)Ems>	NR2E1	6	human
+Hprt<tm347a(Ple155-icre/ERT2)Ems>	PCP2	19	human
+Hprt<tm348a(Ple265-icre/ERT2)Ems>	PCP2	19	human
+Hprt<tm349a(Ple293-icre/ERT2)Ems>	hs671	1	human
+Hprt<tm350a(Ple232-icre/ERT2)Ems>	TNNT1	19	human
+Hprt<tm351a(Ple198-icre/ERT2)Ems>	SLC6A4	17	human
+Hprt<tm352a(Ple291-icre/ERT2)Ems>	Hspa1a		mouse, laboratory
+Hprt<tm353a(Ple274-icre/ERT2)Ems>	CRH	8	human
+Hprt<tm354a(Ple283-icre/ERT2)Ems>	NPY2R	4	human
+Hprt<tm355a(Ple286-icre/ERT2)Ems>	SOX3	X	human
+Hprt<tm356a(Ple271-icre/ERT2)Ems>	CARTPT	5	human
+Hprt<tm357a(Ple278-icre/ERT2)Ems>	KCNA4	11	human
+Hprt<tm358a(Ple287-icre/ERT2)Ems>	SPRY1	4	human
+Hprt<tm359a(Ple94-icre/ERT2)Ems>	GPR88	1	human
+Hprt<tm360a(Ple253-icre/ERT2)Ems>	PITX3	10	human
+Hprt<tm361a(Ple267-icre/ERT2)Ems>	UGT8	4	human
+Hprt<tm362a(Ple304-icre/ERT2)Ems>	OLIG1	21	human
+Hprt<tm363a(Ple297-icre/ERT2)Ems>	hs1218	14	human
+Hprt<tm364a(CAG-icre/ERT2)Ems>	CAG	UN	chicken
+Hprt<tm365a(Ple266-icre/ERT2)Ems>	S100B	21	human
+Hprt<tm366a(Ple67-icre/ERT2)Ems>	FEV	2	human
+Hprt<tm367a(Ple251-icre/ERT2)Ems>	C8ORF46		human
 Hprt<tm5(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
+Hprt<tm80(Ple9-EGFP/cre)Ems>	ATP6V1C2	2	human
+Hprt<tm9(Ple178-EGFP/cre)Ems>	RGS16	1	human
+Plekha5<Tg(AMH-cre)1Flor>	AMH	19	human
+Rprd1b<Tg(CAG-GFP/neo*,-cre/Esr1*)32Ichi>	CAG	UN	chicken
 Tg(A230065H16Rik-cre)RA13Gsat	Lbhd2	12	mouse, laboratory
 Tg(A230065H16Rik-cre)RA31Gsat	Lbhd2	12	mouse, laboratory
 Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik		mouse, laboratory
@@ -126,11 +216,26 @@ Tg(AAT-cre)31Rbrc	SERPINA1	14	human
 Tg(AAT-cre)43Rbrc	SERPINA1	14	human
 Tg(AAT-cre)50Rbrc	SERPINA1	14	human
 Tg(Abcb1a-cre)NIDA045Htz	Abcb1a		mouse, laboratory
+Tg(ABCG2-cre/ERT2)1Cns	ABCG2	4	human
 Tg(Abpa-cre)1Cmal	Shbg	10	rat
+Tg(ACTA1-cre)1Jdz	ACTA1	1	human
+Tg(ACTA1-cre)1Mll	ACTA1	1	human
+Tg(ACTA1-cre)79Jme	ACTA1	1	human
+Tg(ACTA1-cre)AMcle	ACTA1	1	human
+Tg(ACTA1-cre/ERT2)97.16Mtz	ACTA1	1	human
+Tg(ACTA1-cre/Esr1*)2Kesr	ACTA1	1	human
+Tg(ACTA1-rtTA,tetO-cre)102Monk	ACTA1	1	human
+Tg(ACTA2-cre)1Miwa	ACTA2	10	human
 Tg(Acta2-cre)1Rkl	Acta2		mouse, laboratory
 Tg(Acta2-cre/ERT2)#Pcn	Acta2		mouse, laboratory
 Tg(Acta2-cre/ERT2)12Pcn	Acta2		mouse, laboratory
 Tg(Acta2-cre/ERT2)51Pcn	Acta2		mouse, laboratory
+Tg(ACTB-cre)1Tes	ACTB	7	human
+Tg(ACTB-cre)3Mrt	ACTB	7	human
+Tg(ACTB-EGFP/cre)21Klin	ACTB	UN	Not Specified
+Tg(ACTB-EGFP/cre)36Klin	ACTB	UN	Not Specified
+Tg(ACTC1-cre)1Miwa	ACTC1	15	human
+Tg(ACTFLPe)9205Dym	ACTB	7	human
 Tg(Actl6b-cre)4092Jiwu	Actl6b		mouse, laboratory
 Tg(Ada*-cre)5Xiay	Tpbpa		mouse, laboratory
 Tg(Adipoq-cre)1Evdr	Adipoq		mouse, laboratory
@@ -149,11 +254,14 @@ Tg(Alb-cre/ERT)1Xue	Alb		mouse, laboratory
 Tg(Aldh1l1-cre)JD1884Htz	Aldh1l1		mouse, laboratory
 Tg(Aldh1l1-cre)PB1Gsat	Aldh1l1		mouse, laboratory
 Tg(Alx4-cre/ERT2)1Bky	Alx4		mouse, laboratory
+Tg(AMELX-cre)A1Kul	AMELX	X	cattle
 Tg(Amh-cre/ERT)#Sabe	Amh		mouse, laboratory
 Tg(Amigo1-cre)NP210Gsat	Amigo1		mouse, laboratory
 Tg(Amigo1-cre)NP231Gsat	Amigo1		mouse, laboratory
 Tg(Amy2-cre)1Herr	Amy	3	mouse, laboratory
+Tg(APOE-cre)VITew	APOE	19	human
 Tg(Aqp2-cre)1Dek	Aqp2		mouse, laboratory
+Tg(AQP2-cre)2Dek	AQP2	12	human
 Tg(Aqp2-cre/ERT2)4Gsc	Aqp2		mouse, laboratory
 Tg(Aqp2-icre)1Gsc	Aqp2		mouse, laboratory
 Tg(Arc-cre/ERT2)MRhn	Arc		mouse, laboratory
@@ -163,14 +271,22 @@ Tg(Ascl1-cre)ND216Gsat	Ascl1		mouse, laboratory
 Tg(Ascl1-EGFP,-cre)1Jejo	Ascl1		mouse, laboratory
 Tg(Atoh1-cre/Esr1*)14Fsh	Atoh1		mouse, laboratory
 Tg(Atp4b-cre)1Jig	Atp4b		mouse, laboratory
+Tg(ATP6V1B1-cre)45Rnel	ATP6V1B1	2	human
 Tg(Avp-cre)QZ20Gsat	Avp		mouse, laboratory
 Tg(Avp-cre)QZ27Gsat	Avp		mouse, laboratory
 Tg(Ayu1-cre)#Imeg	Gtayu1		mouse, laboratory
+Tg(BEST1-cre)1Jdun	BEST1	11	human
+Tg(BEST1-cre)1Taf	BEST1	11	human
+Tg(BEST1-rtTA,tetO-cre)1Yzl	BEST1	11	human
 Tg(Bglap2-cre)1Kry	Bglap2		Not Specified
 Tg(Bglap2-cre)2Kry	Bglap2		Not Specified
+Tg(BGLAP-cre)1Clem	BGLAP	1	human
+Tg(BGLAP-cre/ERT2)#Stko	BGLAP	1	human
 Tg(Bmx-cre/ERT2)1Rha	Bmx		mouse, laboratory
 Tg(Bsx-cre)NS106Gsat	Bsx		mouse, laboratory
 Tg(Bsx-cre)NS92Gsat	Bsx		mouse, laboratory
+Tg(CA2-cre)1Subw	CA2	8	human
+Tg(CA2-cre/Esr1*)1Subw	CA2	8	human
 Tg(CAG-cre)13Miya	CAG	UN	chicken
 Tg(CAG-cre)1Htak	CAG	UN	chicken
 Tg(CAG-cre)1Kymm	CAG	UN	chicken
@@ -218,7 +334,16 @@ Tg(Cbln4-cre)SN7Gsat	Cbln4		mouse, laboratory
 Tg(Ccdc3-cre)PO24Gsat	Ccdc3		mouse, laboratory
 Tg(Ccdc3-cre)PO33Gsat	Ccdc3		mouse, laboratory
 Tg(Ccdc3-cre)PO34Gsat	Ccdc3		mouse, laboratory
+Tg(CD19-cre/ERT2)1Cgn	CD19	16	human
+Tg(CD19-cre/ERT2)1Sjv	CD19	16	human
+Tg(CD207-cre)1Dhka	CD207	2	human
+Tg(CD207-cre/ERT2)1Dhka	CD207	2	human
+Tg(CD2-cre)1Lov	CD2	1	human
+Tg(CD2-cre)1Sriv	CD2	1	human
+Tg(CD2-cre)1Tjw	CD2	1	human
+Tg(CD2-icre)4Kio	CD2	1	human
 Tg(Cd4-cre)1Cwi	Cd4		mouse, laboratory
+Tg(CD68-icre)1Bwlx	CD68	17	human
 Tg(Cdh16-cre/ERT2)F427Djmp	Cdh16		mouse, laboratory
 Tg(Cdh3-cre/ERT2)NIDA158Htz	Cdh3		mouse, laboratory
 Tg(Cdh5-cre,-GFP)21Msri	Cdh5		mouse, laboratory
@@ -227,7 +352,12 @@ Tg(Cdh5-cre/ERT2)CIVE23Mlia	Cdh5		mouse, laboratory
 Tg(Cdhr1-cre)KG66Gsat	Cdhr1		mouse, laboratory
 Tg(Cdhr1-cre)KG76Gsat	Cdhr1		mouse, laboratory
 Tg(Cdx1-cre)23Kem	Cdx1		mouse, laboratory
+Tg(CDX2-cre)101Erf	CDX2	13	human
 Tg(Cdx2-cre)R337Npln	Cdx2		mouse, laboratory
+Tg(CDX2-cre*)189Erf	CDX2	13	human
+Tg(CDX2-cre/ERT)#Erf	CDX2	13	human
+Tg(CDX2-cre/ERT2)752Erf	CDX2	13	human
+Tg(CDX2-flpo)#Gld	CDX2	13	human
 Tg(Cdx2-flpo)2Ddg	Cdx2		mouse, laboratory
 Tg(Cela1-cre/ERT)1Lgdn	Cela1		mouse, laboratory
 Tg(Cfc1-cre/Esr1*)#Hmd	Cfc1		mouse, laboratory
@@ -275,12 +405,14 @@ Tg(Col1a1-cre/ERT2)1Crm	Col1a1		mouse, laboratory
 Tg(Col1a1-cre/ERT2,-DsRed)1Smkm	Col1a1		mouse, laboratory
 Tg(Col2a1-cre)1Asz	Col2a1		mouse, laboratory
 Tg(Col2a1-cre)1Star	Col2a1		mouse, laboratory
+Tg(COL2A1-cre)1Wag	COL2A1	12	human
 Tg(Colgalt2-cre)NF107Gsat	Colgalt2	1	mouse, laboratory
 Tg(Colgalt2-cre)NF111Htz	Colgalt2		mouse, laboratory
 Tg(Cort-cre)IM42Gsat	Cort		mouse, laboratory
 Tg(Crh-cre)1Kres	Crh		mouse, laboratory
 Tg(Crh-cre)KN282Gsat	Crh		mouse, laboratory
 Tg(Crhr2-cre)RT30Gsat	Crhr2		mouse, laboratory
+Tg(CRP-cre)1Iz	CRP	1	human
 Tg(Crx-Atoh7,-cre)251Gla	Crx		mouse, laboratory
 Tg(Cryaa-cre)10Mlr	Cryaa		mouse, laboratory
 Tg(Cryaa-cre)37Mlr	Cryaa		mouse, laboratory
@@ -301,12 +433,19 @@ Tg(Cyp39a1-cre)7Aibs	Cyp39a1		mouse, laboratory
 Tg(D630045J12Rik-cre)SG2Gsat	D630045J12Rik	6	mouse, laboratory
 Tg(Dach1-cre)1Krs	Dach1		mouse, laboratory
 Tg(Dact2-cre)SJ48Gsat	Dact2		mouse, laboratory
+Tg(DBH-cre)1Cse	DBH	9	human
+Tg(DBH-cre)6-8Koba	DBH	9	human
+Tg(DBH-cre)9-9Koba	DBH	9	human
 Tg(Dbh-cre)KH210Gsat	Dbh		mouse, laboratory
 Tg(Dbh-cre)KH212Gsat	Dbh		mouse, laboratory
+Tg(DBH-cre,-taulacZ)1Wgt	DBH	9	human
 Tg(Dbh-cre/ERT2)198.1Hroh	Dbh		mouse, laboratory
 Tg(Dbp-cre)MN120Gsat	Dbp		mouse, laboratory
 Tg(Dclk1-cre/ERT2)#Tcw	Dclk1		mouse, laboratory
+Tg(DCX-cre)35Mull	DCX	X	human
 Tg(Dcx-cre)38Mull	Dcx		mouse, laboratory
+Tg(DCX-cre/ERT2)1Mull	DCX	X	human
+Tg(DCX-cre/ERT2)2Wrst	DCX	X	human
 Tg(Ddc-cre)SD56Gsat	Ddc		mouse, laboratory
 Tg(Des-cre)1Zli	Des		mouse, laboratory
 Tg(Dlg3-cre)KG118Gsat	Mpp3		mouse, laboratory
@@ -319,6 +458,7 @@ Tg(Dlx5-cre)MO36Gsat	Dlx5		mouse, laboratory
 Tg(Dmp1-cre)1Btm	Dmp1		mouse, laboratory
 Tg(Dmp1-cre,-EGFP)2Kikd	Dmp1		mouse, laboratory
 Tg(Dmp1-cre/ERT2)0022Pdp	Dmp1		mouse, laboratory
+Tg(DMRT1-cre)1Svs	DMRT1	1	pig, domestic
 Tg(Drd1a-cre)1Gsc	Drd1	13	mouse, laboratory
 Tg(Drd1a-cre)AGsc	Drd1	13	mouse, laboratory
 Tg(Drd1a-cre)FK161Gsat	Drd1	13	mouse, laboratory
@@ -366,9 +506,13 @@ Tg(Fcer2a-cre)5Mbu	Fcer2a		mouse, laboratory
 Tg(Fev-cre)#Pasq	Fev		mouse, laboratory
 Tg(Fgfr3-icre/ERT2)4-2Wdr	Fgfr3		mouse, laboratory
 Tg(Flt4-cre)44Ichi	Flt4		mouse, laboratory
+Tg(FOXJ1-cre)F14Htzm	FOXJ1	17	human
+Tg(FOXJ1-cre)F26Htzm	FOXJ1	17	human
+Tg(FOXJ1-cre/ERT2,-EGFP)1Jf	FOXJ1	17	human
 Tg(Foxn1-cre)1Tbo	Foxn1		mouse, laboratory
 Tg(Foxp3-EGFP/cre)1cJbs	Foxp3		mouse, laboratory
 Tg(Foxp3-EGFP/icre)1aJbs	Foxp3		mouse, laboratory
+Tg(FSHB-icre)#Kmar	FSHB	15	sheep
 Tg(Fzd10-cre/Esr1*)1Chzh	Fzd10		mouse, laboratory
 Tg(Gabra6-cre)B1Lfr	Gabra6		mouse, laboratory
 Tg(Gabra6-cre)CWwis	Gabra6		mouse, laboratory
@@ -386,15 +530,30 @@ Tg(Gck-cre)TG7Gsat	Gck		mouse, laboratory
 Tg(Gcm2-cre)OC103Gsat	Gcm2		mouse, laboratory
 Tg(Gdf10-cre)OR10Gsat	Gdf10		mouse, laboratory
 Tg(GDF6-cre/ERT2)L2Kng	GDF6		chimpanzee
+Tg(GFAP-Ccre)FFki	GFAP	17	human
+Tg(GFAP-cre)#Gtm	GFAP	17	human
 Tg(Gfap-cre)#Mvs	Gfap		mouse, laboratory
+Tg(GFAP-cre)#Mzhu	GFAP	17	human
+Tg(GFAP-cre)1Gtm	GFAP	17	human
+Tg(GFAP-cre)1Kdmc	GFAP	17	human
 Tg(Gfap-cre)1Sbk	Gfap		Not Specified
+Tg(GFAP-cre)25Mes	GFAP	17	human
 Tg(Gfap-cre)2Brn	Gfap		mouse, laboratory
 Tg(Gfap-cre)2Kmik	Gfap		mouse, laboratory
 Tg(Gfap-cre)73.12Mvs	Gfap		mouse, laboratory
 Tg(Gfap-cre)77.6Mvs	Gfap		mouse, laboratory
+Tg(GFAP-cre)8Gtm	GFAP	17	human
 Tg(Gfap-cre)PK90Gsat	Gfap		mouse, laboratory
+Tg(GFAP-cre/ERT2)13Kdmc	GFAP	17	human
 Tg(GFAP-cre/ERT2)1Fki	GFAP		human
 Tg(Gfap-cre/ERT2)2Narl	Gfap		mouse, laboratory
+Tg(GFAP-cre/ERT2)505Fmv	GFAP	17	human
+Tg(GFAP-cre/Esr1*)10Kdmc	GFAP	17	human
+Tg(GFAP-cre/Esr1*,-lacZ)ASbk	GFAP	17	human
+Tg(GFAP-cre/Esr1*,-lacZ)BSbk	GFAP	17	human
+Tg(GFAP-cre/PGR)2Kdmc	GFAP	17	human
+Tg(Gfap-cre/PGR)473Gkl	Gfap	11	mouse, laboratory
+Tg(GFAP-Ncre)VFki	GFAP	17	human
 Tg(Ggt1-cre/ERT2)1Pepe	Ggt1		mouse, laboratory
 Tg(Gng7-cre)KH67Gsat	Gng7		mouse, laboratory
 Tg(Gng7-cre)KH71Gsat	Gng7		mouse, laboratory
@@ -416,11 +575,17 @@ Tg(Grp-cre)KH288Gsat	Grp		mouse, laboratory
 Tg(Gsc2-cre)RD32Gsat	Gsc2		mouse, laboratory
 Tg(Gsx1-cre)6Wql	Gsx1		mouse, laboratory
 Tg(Gt(ROSA)26Sor-cre)15Eps	Gt(ROSA)26Sor		mouse, laboratory
+Tg(GZMB-cre)1Jcb	GZMB	14	human
 Tg(Gzmb-cre/ERT2)1Dtf	Gzmb		mouse, laboratory
 Tg(H2-Ea<d>-cre)158Jcb	H2		mouse, laboratory
 Tg(H2-T3<b>-cre)1Kyio	H2-T3		mouse, laboratory
 Tg(Hap1-cre)RE55Gsat	Hap1		mouse, laboratory
+Tg(HBB-cre)12Kpe	HBB	11	human
+Tg(HBB-cre)1Phi	HBB	UN	Not Specified
+Tg(HBB-cre)27038Kpe	HBB	11	human
+Tg(HBB-cre)27053Kpe	HBB	11	human
 Tg(hCMV-cre)140Sau	HCMV		virus
+Tg(HCRT-cre)1Stak	HCRT	17	human
 Tg(HCRT-EGFP,-cre)#aAhky	HCRT		human
 Tg(Hdc-cre)IM1Gsat	Hdc		mouse, laboratory
 Tg(Hdc-cre)IM4Gsat	Hdc		mouse, laboratory
@@ -428,6 +593,7 @@ Tg(Hmx3-cre)NM2Gsat	Hmx3		mouse, laboratory
 Tg(Hoxa1-cre)1Tlu	Hoxa1		mouse, laboratory
 Tg(Hoxb2-cre)1Ksec	Hoxb2		mouse, laboratory
 Tg(Hoxb7-cre)13Amc	Hoxb7		mouse, laboratory
+Tg(hs1050-cre/ERT2,-GFP)393Jlr	hs1050	4	human
 Tg(hs1056-cre/ERT2,-GFP)1705Jlr	hs1056	18	human
 Tg(hs1060-cre/ERT2,-GFP)1593Jlr	hs1060	5	human
 Tg(hs1163-Ccre,-lacZ)1Fawa	hs1163	UN	human
@@ -466,6 +632,9 @@ Tg(Inha-cre)3Zuk	Inha		mouse, laboratory
 Tg(Ins1-cre/ERT)1Lphi	Ins1		mouse, laboratory
 Tg(Ins1-RFP,-cre)14Narl	Ins1		mouse, laboratory
 Tg(Ins1-RFP,-cre/ERT2)23Narl	Ins1		mouse, laboratory
+Tg(INS-cre)2Rms	INS	11	human
+Tg(INS-icre)18Msdr	INS	2	pig, domestic
+Tg(ITGAM-cre)2781Gkl	ITGAM	16	human
 Tg(Itgam-cre/ERT2,U6-RNAi:Cacna1b)17Ttan	Itgam		mouse, laboratory
 Tg(Itgax-cre)1-1Reiz	Itgax		mouse, laboratory
 Tg(Itgax-cre/ERT)61Gkl	Itgax		mouse, laboratory
@@ -480,11 +649,37 @@ Tg(Kit-cre)143Hmb	Kit		mouse, laboratory
 Tg(Kit-cre)151Eks	Kit		mouse, laboratory
 Tg(Kit-RFP,-cre/ERT2)26Narl	Kit		mouse, laboratory
 Tg(Klf4-cre/ERT)1Wai	Klf4		mouse, laboratory
+Tg(KLK3-cre)13Saa	KLK3	19	human
+Tg(KLK3-cre)1Ches	KLK3	19	human
+Tg(KLK3-cre)D4Trp	KLK3	19	human
 Tg(Klk8-cre)NP157Gsat	Klk8		mouse, laboratory
 Tg(Klk8-cre)NP171Gsat	Klk8		mouse, laboratory
+Tg(KLKB1-cre/ERT2)1Pcn	KLKB1	4	human
 Tg(Krt1-15-cre/PGR)22Cot	Krt15		mouse, laboratory
+Tg(KRT14-cre)#Smr	KRT14	UN	Not Specified
+Tg(KRT14-cre)1Amc	KRT14	17	human
+Tg(KRT14-cre)1Arte	KRT14	17	human
+Tg(KRT14-cre)1Cgn	KRT14	17	human
+Tg(KRT14-cre)1Efu	KRT14	17	human
+Tg(KRT14-cre)1Ipc	KRT14	17	human
+Tg(KRT14-cre)40Smr	KRT14	UN	Not Specified
+Tg(KRT14-cre)43Smr	KRT14	UN	Not Specified
+Tg(KRT14-cre)52Smr	KRT14	UN	Not Specified
+Tg(KRT14-cre)8Brn	KRT14	17	human
+Tg(KRT14-cre/ERT)20Efu	KRT14	17	human
+Tg(KRT14-cre/ERT2)1Ipc	KRT14	UN	Not Specified
+Tg(KRT14-cre/Esr1*)3Brst	KRT14	UN	Not Specified
+Tg(KRT14-cre/PGR)1Der	KRT14	17	human
 Tg(Krt17-cre)#Mjd	Krt17		mouse, laboratory
+Tg(KRT18-cre/ERT2)1Rgo	KRT18	12	human
+Tg(KRT18-cre/ERT2)23Blpn	KRT18	12	human
 Tg(Krt2-6a-cre)1Ism	Krt2		mouse, laboratory
+Tg(KRT5-cre)1Tak	KRT5	12	human
+Tg(KRT5-cre)1Xya	KRT5	12	human
+Tg(KRT5-cre)5132Jlj	KRT5	5	cattle
+Tg(KRT5-cre/ERT)ICmch	KRT5	5	cattle
+Tg(KRT5-cre/ERT)SCmch	KRT5	5	cattle
+Tg(KRT5-cre/ERT2)1Blh	KRT5	12	human
 Tg(KRT5-cre/PGR)1Der	KRT5	12	human
 Tg(Krt6,-cre,-Cerulean)1Grsr	Krt6		mouse, laboratory
 Tg(Krt6,-cre,-Cerulean)2Grsr	Krt6		mouse, laboratory
@@ -502,7 +697,12 @@ Tg(Lck-cre)I57Jxm	Lck		mouse, laboratory
 Tg(Lfng-TagRFP/cre/ERT2)8Amc	Lfng		mouse, laboratory
 Tg(LGB-cre)74Acl	LGB		sheep
 Tg(Lhb-cre)1Sac	LHB		cattle
+Tg(LHX3-cre)#Sjr	LHX3	9	human
 Tg(Lmx1a-EGFP/cre)#Kjmi	Lmx1a		mouse, laboratory
+Tg(LPV-cre)607Roho	LPV	UN	virus
+Tg(LTF-EGFP/cre/PGR)11Klin	LTF	3	human
+Tg(LTF-EGFP/cre/PGR)15Klin	LTF	3	human
+Tg(LTF-EGFP/cre/PGR)7Klin	LTF	3	human
 Tg(Lypd1-cre)NR149Gsat	Lypd1		mouse, laboratory
 Tg(Lypd1-cre)NR151Gsat	Lypd1		mouse, laboratory
 Tg(Lypd1-cre)SE5Gsat	Lypd1		mouse, laboratory
@@ -527,12 +727,14 @@ Tg(MMTV-cre)AElee	MMTV	UN	virus
 Tg(MMTV-cre)BElee	MMTV	UN	virus
 Tg(MMTV-cre)FMam	MMTV	UN	virus
 Tg(MMTV-Erbb2*,-cre)1Mul	MMTV	UN	virus
+Tg(MMTV-tTA,PyVT-tetO-cre)6Atai	MMTV	UN	virus
 Tg(Mnx1-cre)1Jrs	Mnx1		mouse, laboratory
 Tg(Mpz-cre)26Mes	Mpz		mouse, laboratory
 Tg(Mybpc1-cre)2Aibs	Mybpc1		mouse, laboratory
 Tg(Myh11-cre,-EGFP)2Mik	Myh11		mouse, laboratory
 Tg(Myh11-cre/ERT2)1Soff	Myh11		mouse, laboratory
 Tg(Myh6-cre/Esr1*)1Liao	Myh6		mouse, laboratory
+Tg(Myh6-icre/ERT2)#Wet	Myh6	14	mouse, laboratory
 Tg(Myh6-RFP,-cre)44Narl	Myh6		mouse, laboratory
 Tg(Myh6-RFP,-cre/ERT2)56Narl	Myh6		mouse, laboratory
 Tg(Myh7-cre)1Jmk	Myh7		mouse, laboratory
@@ -540,14 +742,17 @@ Tg(Myh7-cre)1Zli	Myh7		mouse, laboratory
 Tg(Myhca-cre)1Lrsn	Myh6		mouse, laboratory
 Tg(myl2-cre)1118Tmhn	myl2		frog, western clawed
 Tg(myl2-cre)1141Tmhn	myl2		frog, western clawed
+Tg(MYOD1-cre)M23Glh	MYOD1	11	human
 Tg(Ncr1-cre/EGFP)#Cajv	Ncr1		mouse, laboratory
 Tg(Nefh-cre)12Kul	Nefh		mouse, laboratory
 Tg(Nefh-cre)7Kul	Nefh		mouse, laboratory
+Tg(NEFL-cre)1Arte	NEFL	8	human
 Tg(Nes-cre)1Hhan	Nes		mouse, laboratory
 Tg(Neurod1-cre)RZ24Gsat	Neurod1		mouse, laboratory
 Tg(Neurod1-cre/ERT2)M1Fcal	Neurod1		mouse, laboratory
 Tg(Neurod4-cre)OU98Gsat	Neurod4		mouse, laboratory
 Tg(Neurog3-cre)1Dam	Neurog3		mouse, laboratory
+Tg(NEUROG3-cre)1Herr	NEUROG3	10	human
 Tg(Neurog3-cre)C1Able	Neurog3		mouse, laboratory
 Tg(Nkx2-1-cre)2Sand	Nkx2-1		mouse, laboratory
 Tg(Nkx2-5-cre)9Eno	Nkx2-5		mouse, laboratory
@@ -564,6 +769,10 @@ Tg(Nphs1-cre)33Mska	Nphs1		mouse, laboratory
 Tg(Nphs1-flpo)1Jhm	Nphs1		mouse, laboratory
 Tg(Nphs2-cre)#Anec	Nphs2		mouse, laboratory
 Tg(Nphs2-cre)1Seq	Nphs2		mouse, laboratory
+Tg(NPHS2-cre)295Lbh	NPHS2	1	human
+Tg(NPHS2-cre/ERT2)#Mkas	NPHS2	1	human
+Tg(NPHS2-icre/ERT2)1Dnsh	NPHS2	1	human
+Tg(NPHS2-rtTA,tetO-cre)1Holt	NPHS2	1	human
 Tg(Nppa-cre)#Vmc	Nppa		mouse, laboratory
 Tg(Nppa-cre)3Vmc	Nppa		mouse, laboratory
 Tg(Nppa-cre)4Vmc	Nppa		mouse, laboratory
@@ -585,6 +794,7 @@ Tg(Nts-cre)RH4Gsat	Nts		mouse, laboratory
 Tg(Ntsr1-cre)GN209Gsat	Ntsr1		mouse, laboratory
 Tg(Ntsr1-cre)GN220Gsat	Ntsr1		mouse, laboratory
 Tg(Opalin-icre/ERT2)#Rjfl	Opalin		mouse, laboratory
+Tg(OPN1LW-cre)#Yzl	OPN1LW	X	human
 Tg(Opn1mw-cre)1Asw	Opn1mw		mouse, laboratory
 Tg(Opn1sw-cre)1Asw	Opn1sw		mouse, laboratory
 Tg(Opn4-cre)SA9Gsat	Opn4		mouse, laboratory
@@ -632,6 +842,7 @@ Tg(Phox2b-cre)NP91Gsat	Phox2b		mouse, laboratory
 Tg(Phox2b-flpo)3276Grds	Phox2b		mouse, laboratory
 Tg(Pitx2-cre)#Hmd	Pitx2		mouse, laboratory
 Tg(Pkhd1-cre)1Igr	Pkhd1		mouse, laboratory
+Tg(PLAT-cre)116Sdu	PLAT	8	human
 Tg(Plp1-Ccre)RFki	Plp1		mouse, laboratory
 Tg(Plp1-cre)F627Rako	Plp1		mouse, laboratory
 Tg(Plp1-cre)F633Rako	Plp1		mouse, laboratory
@@ -642,6 +853,7 @@ Tg(Pmch-cre)1Rck	Pmch		mouse, laboratory
 Tg(Pmch-cre)KY133Gsat	Pmch		mouse, laboratory
 Tg(Postn-cre)1Sjc	Postn		mouse, laboratory
 Tg(Pou3f4-cre)32Cren	Pou3f4		mouse, laboratory
+Tg(POU3F4-cre)M51Cren	POU3F4	X	human
 Tg(Pou4f1-cre/ERT2)#Jiz	Pou4f1		mouse, laboratory
 Tg(Pou4f3-cre)1Devet	Pou4f3		mouse, laboratory
 Tg(Ppp1r17-cre)NL146Gsat	Ppp1r17		mouse, laboratory
@@ -667,6 +879,7 @@ Tg(Prss12-cre)SP41Gsat	Prss12		mouse, laboratory
 Tg(Prss12-cre)SP43Gsat	Prss12		mouse, laboratory
 Tg(Ptger2-cre)SC30Gsat	Ptger2		mouse, laboratory
 Tg(Ptger2-cre)SC31Gsat	Ptger2		mouse, laboratory
+Tg(PTH-cre)4167Slib	PTH	11	human
 Tg(Ptprc-cre)1Kpf	Ptprc		mouse, laboratory
 Tg(Ptprc-cre)NM127Gsat	Ptprc		mouse, laboratory
 Tg(Ptprc-cre)NM130Gsat	Ptprc		mouse, laboratory
@@ -685,14 +898,20 @@ Tg(Rcan2-cre)ON50Gsat	Rcan2		mouse, laboratory
 Tg(Ren1-cre)1Sjs	Ren1		mouse, laboratory
 Tg(Ren1-cre/ERT2)1Sjs	Ren1		mouse, laboratory
 Tg(Ren-cre)#Kwg	Ren1		mouse, laboratory
+Tg(REN-cre)1Haca	REN	1	human
 Tg(Rgs14-cre)SR63Gsat	Rgs14		mouse, laboratory
 Tg(Rgs8-cre)OK14Gsat	Rgs8		mouse, laboratory
 Tg(Rho-cre)#Yzl	Rho		mouse, laboratory
+Tg(RHO-cre)16Eap	RHO	3	human
+Tg(RHO-cre)1Qliu	RHO	22	cattle
 Tg(Rho-cre)1Yzl	Rho		mouse, laboratory
 Tg(Rho-cre)2Yzl	Rho		mouse, laboratory
+Tg(RHO-cre)8Eap	RHO	3	human
 Tg(Rorc-cre)1Litt	Rorc		mouse, laboratory
 Tg(rtetR-tetO-cre)1Mhz	tetO		bacteria
 Tg(rtetR-tetO-cre)40Mhz	tetO		bacteria
+Tg(rx3-cre,-EGFP)MB31Zkoz	rax	12	medaka
+Tg(rx3-icre)1Mjam	rax	12	medaka
 Tg(Rxfp3-cre)RS38Gsat	Rxfp3		mouse, laboratory
 Tg(Satb2-cre)MO18Gsat	Satb2		mouse, laboratory
 Tg(Satb2-cre)MO23Gsat	Satb2		mouse, laboratory
@@ -709,6 +928,12 @@ Tg(Selenow-cre)NP72Gsat	Selenow		mouse, laboratory
 Tg(Sema3e-cre)OX19Gsat	Sema3e		mouse, laboratory
 Tg(Sema7a-cre)NO117Gsat	Sema7a		mouse, laboratory
 Tg(Sept4-cre)OX54Gsat	Sept4		mouse, laboratory
+Tg(SERPINA1-cre)1Arge	SERPINA1	14	human
+Tg(SERPINA1-cre/ERT)1Ipc	SERPINA1	14	human
+Tg(SFTPC-cre)#Mliu	SFTPC	8	human
+Tg(SFTPC-cre)11Yo	SFTPC	8	human
+Tg(SFTPC-cre/ERT2)#Hbji	SFTPC	8	human
+Tg(SFTPC-cre/ERT2)F42Kfx	SFTPC	8	human
 Tg(Sftpc-rtTA,Nudt18-tetO-cre)1Ptch	Sftpc		mouse, laboratory
 Tg(Shf-cre)SO5Gsat	Shf		mouse, laboratory
 Tg(Siglech-cre,-mCherry)#Spar	Siglech		mouse, laboratory
@@ -727,6 +952,9 @@ Tg(Slc17a8-icre)1Edw	Slc17a8		mouse, laboratory
 Tg(Slc18a2-cre)OZ13Gsat	Slc18a2		mouse, laboratory
 Tg(Slc18a2-cre)OZ14Gsat	Slc18a2		mouse, laboratory
 Tg(Slc18a2-cre)OZ27Gsat	Slc18a2		mouse, laboratory
+Tg(SLC18A3-cre)AMisa	SLC18A3	10	human
+Tg(SLC18A3-cre)KMisa	SLC18A3	10	human
+Tg(SLC18A3-cre)Misa	SLC18A3	10	human
 Tg(Slc32a1-cre)RO29Gsat	Slc32a1		mouse, laboratory
 Tg(Slc32a1-cre)RO32Gsat	Slc32a1		mouse, laboratory
 Tg(Slc32a1-icre/ERT2)3Gloss	Slc32a1		mouse, laboratory
@@ -746,6 +974,7 @@ Tg(Slc6a4-cre/ERT2)EZ13Gsat	Slc6a4		mouse, laboratory
 Tg(Slc6a4-cre/ERT2)EZ8Gsat	Slc6a4		mouse, laboratory
 Tg(Slc6a5-cre)KF109Gsat	Slc6a5		mouse, laboratory
 Tg(Slc6a5-cre)KF91Gsat	Slc6a5		mouse, laboratory
+Tg(SLC8A1-cre)1Shou	SLC8A1	A3	cat, domestic
 Tg(Slco1c1-icre/ERT2)1Mrks	Slco1c1		mouse, laboratory
 Tg(Slfn4-EGFP/cre/ERT2)1Jmer	Slfn4		mouse, laboratory
 Tg(Sox1-icre/ERT2)#Cruh	Sox1		mouse, laboratory
@@ -753,9 +982,11 @@ Tg(Sox2-cre)1Amc	Sox2		mouse, laboratory
 Tg(Sp7-cre/ERT)1Hmk	Sp7		mouse, laboratory
 Tg(Sp7-tTA,tetO-EGFP/cre)1Amc	Sp7		mouse, laboratory
 Tg(Sprr2f-cre)1Dcas	Sprr2f		Not Specified
+Tg(SRY-cre)1Svs	SRY	Y	pig, domestic
 Tg(Sst-mCherry,-icre)#Fmgb	Sst		mouse, laboratory
 Tg(Sst-mCherry,-icre)44Fmgb	Sst		mouse, laboratory
 Tg(Sycp1-cre)4Min	Sycp1		mouse, laboratory
+Tg(SYN1-icre/mRFP1)9934Rdav	SYN1	X	human
 Tg(Syndig1l-cre)TD15Gsat	Syndig1l		mouse, laboratory
 Tg(Syndig1l-cre)TD24Gsat	Syndig1l		mouse, laboratory
 Tg(Syt17-cre)NO14Gsat	Syt17		mouse, laboratory
@@ -805,16 +1036,21 @@ Tg(Tlr2-RFP,-cre/ERT2)67Narl	Tlr2		mouse, laboratory
 Tg(Tlx3-cre)PL56Gsat	Tlx3		mouse, laboratory
 Tg(Tlx3-cre)PL58Gsat	Tlx3		mouse, laboratory
 Tg(Tnfrsf19-cre/ERT2)1Kori	Tnfrsf19		mouse, laboratory
+Tg(TNNI2-icre)1Vrmn	TNNI2	UN	Not Specified
 Tg(Tnnt2-rtTA,tetO-cre)1Wtp	Tnnt2		rat
+Tg(TNS4-cre)1Shlo	TNS4	17	human
 Tg(Tph2-cre)RH35Gsat	Tph2		mouse, laboratory
 Tg(Tph2-cre/ERT2)1.38Zi	Tph2		mouse, laboratory
 Tg(Tph2-icre/ERT2)6Gloss	Tph2		mouse, laboratory
+Tg(TPO-cre)1Shk	TPO	2	human
+Tg(TPO-cre/ERT2)1139Tyj	TPO	2	human
 Tg(Trp63,-cre,-Cerulean)10Grsr	Trp63		mouse, laboratory
 Tg(Trp63,-cre,-Cerulean)3Grsr	Trp63		mouse, laboratory
 Tg(Trp63,-cre,-Cerulean)4Grsr	Trp63		mouse, laboratory
 Tg(Trps1-cre)#Osud	Trps1		mouse, laboratory
 Tg(Trpv1-cre)SK30Gsat	Trpv1		mouse, laboratory
 Tg(Trpv1-icre)1Kldr	Trpv1		mouse, laboratory
+Tg(TSPY-cre)33aYfcl	TSPY1	Y	human
 Tg(Ttr-cre)1Hadj	Ttr		mouse, laboratory
 Tg(Ttr-cre/Esr1*)1Vco	Ttr		mouse, laboratory
 Tg(Tuba1-cre)1Tes	Tuba1		Not Specified
@@ -823,6 +1059,9 @@ Tg(Tyr-cre)1Lru	Tyr		mouse, laboratory
 Tg(Tyr-cre)2Lru	Tyr		mouse, laboratory
 Tg(Tyr-cre/ERT,-Hras1*,-Trap1a)10BJvde	Tyr		mouse, laboratory
 Tg(Tyr-cre/ERT,-Hras1*,-Trap1a)14Jvde	Tyr		mouse, laboratory
+Tg(UBC-cre)8Narl	UBC	UN	Not Specified
+Tg(UBC-cre/ERT2)1Ejb	UBC	12	human
+Tg(UBE2I-cre)1Xxh	UBE2I	16	human
 Tg(Uchl1-cre)NO63Gsat	Uchl1		mouse, laboratory
 Tg(Ucn3-cre)KF31Gsat	Ucn3		mouse, laboratory
 Tg(Ucn3-cre)KF43Gsat	Ucn3		mouse, laboratory
@@ -846,6 +1085,7 @@ Tg(Vipr2-cre)KE2Gsat	Vipr2		mouse, laboratory
 Tg(Vipr2-cre)KH234Gsat	Vipr2		mouse, laboratory
 Tg(Vmn1r206-cre)SN45Gsat	Vmn1r206		mouse, laboratory
 Tg(Vsx2-cre)TC9Gsat	Vsx2		mouse, laboratory
+Tg(VWF-cre)1304Roho	VWF	12	human
 Tg(Wap-cre)11738Mam	Wap		mouse, laboratory
 Tg(Wap-cre)15Nki	Wap		mouse, laboratory
 Tg(Wap-cre)51Nki	Wap		mouse, laboratory
@@ -857,6 +1097,8 @@ Tg(Wnt1-cre)2Sor	Wnt1		mouse, laboratory
 Tg(Wnt5a-cre)ML10Gsat	Wnt5a		mouse, laboratory
 Tg(Wnt5a-cre)ML21Gsat	Wnt5a		mouse, laboratory
 Tg(Wnt5a-cre)ML7Gsat	Wnt5a		mouse, laboratory
+Tg(WT1-cre)1Asc	WT1	11	human
+Tg(WT1-cre)AG11Dbdr	WT1	11	human
 Tg(Zp3-cre)3Mrt	Zp3		mouse, laboratory
 Tg(Zp3-cre)82Knw	Zp3		mouse, laboratory
 Tg(Zp3-cre)93Knw	Zp3		mouse, laboratory

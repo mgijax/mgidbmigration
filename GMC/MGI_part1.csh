@@ -54,8 +54,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-12', public_version = 'MGI 6.12';
 
 drop view MRK_Classes_View;
-drop table MRK_Class;
 drop table MRK_Classes;
+drop table MRK_Class;
 
 EOSQL
 date | tee -a ${LOG}

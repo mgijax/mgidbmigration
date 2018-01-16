@@ -1,5 +1,6 @@
 A1cf<Tg(Myh6-cre/Esr1*)1Jmk>	Myh6		mouse, laboratory
 Bmpr1b<Tg(ACTB-FLP)4917Dym>	ACTB	7	human
+Col1a1<tm1(tetO-cre)Haho>	tetO	UN	bacteria
 Col1a1<tm1.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Col1a1<tm2.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Et(cre)TFC.09Lois	Et(cre)TFC.09Lois	UN	mouse, laboratory
@@ -59,8 +60,8 @@ Et(icre/ERT2)14374Rdav	Et(icre/ERT2)14374Rdav	UN	mouse, laboratory
 Et(icre/ERT2)14602Rdav	Et(icre/ERT2)14602Rdav	UN	mouse, laboratory
 Et(icre/ERT2)14624Rdav	Et(icre/ERT2)14624Rdav	UN	mouse, laboratory
 Et(icre/ERT2)14915Rdav	Et(icre/ERT2)14915Rdav	UN	mouse, laboratory
-Evx2/Hoxd13<tm4(cre)Ddu>	Hoxd11	UN	Not Specified
-Evx2/Hoxd13<tm4(cre)Ddu>	Hoxd11	UN	Not Specified
+Evx2/Hoxd13<tm4(cre)Ddu>	Hoxd11	2	mouse, laboratory
+Evx2/Hoxd13<tm4(cre)Ddu>	Hoxd11	2	mouse, laboratory
 Gt(ROSA)26Sor<tm1(ACTB-cre,-EGFP)Ics>	ACTB	UN	Not Specified
 Gt(ROSA)26Sor<tm1(CAG-cre)Jphe>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1(CAG-flpe)Arte>	CAG	UN	chicken
@@ -615,6 +616,7 @@ Tg(Dbh-cre/ERT2)198.1Hroh	Dbh		mouse, laboratory
 Tg(Dbh-icre)1Gsc	Dbh	UN	Not Specified
 Tg(Dbp-cre)MN120Gsat	Dbp		mouse, laboratory
 Tg(Dbx1-cre)1Wdr	Dbx1	UN	Not Specified
+Tg(Dcdc2a-cre)NIDA056Htz	Dcdc2a	13	mouse, laboratory
 Tg(Dclk1-cre/ERT2)#Tcw	Dclk1		mouse, laboratory
 Tg(Dclk1-EGFP/cre)#Tcw	Dclk1	3	mouse, laboratory
 Tg(Dct-cre)1Apdn	Dct	UN	Not Specified
@@ -1318,6 +1320,7 @@ Tg(Nrl-cre)1Smgc	Nrl		mouse, laboratory
 Tg(Nrp2-cre,-EGFP)#Qsch	Nrp2	1	mouse, laboratory
 Tg(Nrp2-cre/ERT2,-Kikume)1Qsch	Nrp2	1	mouse, laboratory
 Tg(Nsmf-cre)NR133Gsat	Nsmf		mouse, laboratory
+Tg(Ntng2-Ncre)#Gsat	Ntg2	2	mouse, laboratory
 Tg(Nts-cre)RH4Gsat	Nts		mouse, laboratory
 Tg(Ntsr1-cre)GN209Gsat	Ntsr1		mouse, laboratory
 Tg(Ntsr1-cre)GN220Gsat	Ntsr1		mouse, laboratory
@@ -1720,6 +1723,7 @@ Tg(Tbx22,-cre,-mCherry)1Grsr	Tbx22		mouse, laboratory
 Tg(Tbx4-cre)#Kras	Tbx4		mouse, laboratory
 Tg(Tbx4-cre/ERT2)#Kras	Tbx4		mouse, laboratory
 Tg(Tbx5*-cre)1Mlgn	Tbx5	UN	Not Specified
+Tg(Tbx6-cre/ERT2)1Pa	Tbx6	7	mouse, laboratory
 Tg(Tbx6-cre/ERT2)5769Fan	Tbx6	7	mouse, laboratory
 Tg(TCF/Lef1-cre/ERT2)1Dje	Fos	UN	Not Specified
 Tg(Tcfap2a-cre)1Will	Tcfap2a	UN	Not Specified

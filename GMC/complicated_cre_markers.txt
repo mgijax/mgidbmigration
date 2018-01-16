@@ -1007,7 +1007,6 @@ Tg(Itgam-cre)AJva	Itgam	UN	Not Specified
 Tg(Itgam-cre)BJva	Itgam	UN	Not Specified
 Tg(Itgam-cre/ERT2,U6-RNAi:Cacna1b)17Ttan	Itgam		mouse, laboratory
 Tg(Itgax-cre)1-1Reiz	Itgax		mouse, laboratory
-Tg(Itgax-Cre)1Ach	Itgax	UN	Not Specified
 Tg(Itgax-cre,-EGFP)4097Ach	Itgax	UN	Not Specified
 Tg(Itgax-cre/ERT)61Gkl	Itgax		mouse, laboratory
 Tg(Itgax-EGFP,-cre,-DTR,-luc)2Gjh	Itgax	7	mouse, laboratory

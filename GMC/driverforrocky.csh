@@ -52,8 +52,7 @@ select a._allele_key, a.symbol
         	)
 )
 order by symbol
-TO STDOUT (DELIMITER '|')
-;
+) TO STDOUT (DELIMITER '|');
 
 
 EOSQL

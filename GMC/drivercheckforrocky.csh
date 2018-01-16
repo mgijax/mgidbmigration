@@ -30,7 +30,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, rtrim(c.note)
         from ALL_Allele a, MRK_Marker m, MGI_Note n, MGI_NoteChunk c
-	where a._Marker_key = m._Marker_key
+	where a.symbol not like '%deleted'
+	and a._Marker_key = m._Marker_key
         and a._Allele_key = n._Object_key
 	and n._NoteType_key = 1034 
         and n._Note_key = c._Note_key
@@ -50,7 +51,8 @@ union
 
 select distinct a._Allele_key, a.symbol, m._Marker_key, m.symbol, null
         from ALL_Allele a, MRK_Marker m
-	where a._Marker_key = m._Marker_key
+	where a.symbol not like '%deleted'
+	and a._Marker_key = m._Marker_key
 
         and not exists (select 1 from MGI_Note n
 		where a._Allele_key = n._Object_key

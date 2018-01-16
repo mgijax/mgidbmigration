@@ -21,11 +21,10 @@ touch $LOG
  
 date | tee -a $LOG
  
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 COPY (
 (
-select a.symbol, rtrim(c.note), null, null, rtrim(mnc.note)
+select a._allele_key, a.symbol
         from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m,
 		MGI_Note mn, MGI_NoteChunk mnc
         where n._NoteType_key = 1034 
@@ -40,7 +39,7 @@ select a.symbol, rtrim(c.note), null, null, rtrim(mnc.note)
         	and r._Category_key = 1006
         	)
 union
-select a.symbol, rtrim(c.note), null, null, null
+select a._allele_key, a.symbol
         from MGI_Note n, MGI_NoteChunk c, ALL_Allele a, MRK_Marker m
         where n._NoteType_key = 1034 
         and n._Note_key = c._Note_key
@@ -53,7 +52,8 @@ select a.symbol, rtrim(c.note), null, null, null
         	)
 )
 order by symbol
-) TO STDOUT (DELIMITER '|');
+TO STDOUT (DELIMITER '|')
+;
 
 
 EOSQL

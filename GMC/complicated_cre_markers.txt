@@ -193,7 +193,7 @@ Hprt<tm348a(Ple265-icre/ERT2)Ems>	PCP2	19	human
 Hprt<tm349a(hs671-icre/ERT2)Ems>	hs671	1	human
 Hprt<tm350a(Ple232-icre/ERT2)Ems>	TNNT1	19	human
 Hprt<tm351a(Ple198-icre/ERT2)Ems>	SLC6A4	17	human
-Hprt<tm352a(Ple291-icre/ERT2)Ems>	Hspa1a		mouse, laboratory
+Hprt<tm352a(Hspa1a-icre/ERT2)Ems>	Hspa1a		mouse, laboratory
 Hprt<tm353(Ple274-icre/ERT2)Ems>	CRH	8	human
 Hprt<tm354(Ple283-icre/ERT2)Ems>	NPY2R	4	human
 Hprt<tm355(Ple286-icre/ERT2)Ems>	SOX3	X	human
@@ -1203,8 +1203,8 @@ Tg(Myhca-cre)1Lrsn	Myh6		mouse, laboratory
 Tg(Myhc-cre)1Xya	Myhc	UN	Not Specified
 Tg(Myl1-cre)13Nros	Myl1	9	rat
 Tg(Myl1-cre)1Sjl	Myl1	9	rat
-Tg(myl2-cre)1118Tmhn	myl2		frog, western clawed
-Tg(myl2-cre)1141Tmhn	myl2		frog, western clawed
+Tg(myl2-cre)1118Tmhn	myl2		frog, African clawed
+Tg(myl2-cre)1141Tmhn	myl2		frog, African clawed
 Tg(Mylk-cre)1Ljm	Mylk	UN	Not Specified
 Tg(Mylpf-cre)3Kraj	Mylpf	1	rat
 Tg(MYOD1-cre)M23Glh	MYOD1	11	human

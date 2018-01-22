@@ -5,7 +5,7 @@ Col1a1<tm1(tetO-cre)Haho>	tetO	UN	bacteria
 Col1a1<tm1.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Col1a1<tm2.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Commd10<Tg(Vav1-icre)A2Kio>	Vav1	UN	Not Specified
-E2f1Tg(Wnt1-cre)2Sor	Wnt1		mouse, laboratory
+E2f1<Tg(Wnt1-cre)2Sor>	Wnt1		mouse, laboratory
 Edil3<Tg(Sox2-cre)1Amc>	Sox2		mouse, laboratory
 Et(cre)TFC.09Lois	Et(cre)TFC.09Lois	UN	mouse, laboratory
 Et(cre/ERT2)119Rdav	Et(cre/ERT2)119Rdav	UN	mouse, laboratory

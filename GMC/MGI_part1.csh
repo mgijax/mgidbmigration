@@ -58,8 +58,6 @@ drop table MRK_Classes;
 drop table MRK_Class;
 
 ALTER TABLE mgd.GXD_Index ADD FOREIGN KEY (_ConditionalMutants_key) REFERENCES mgd.VOC_Term DEFERRABLE;
-ALTER TABLE mgd.PRB_Source DROP CONSTRAINT PRB_Source__Refs_key_fkey CASCADE;
-ALTER TABLE mgd.PRB_Reference DROP CONSTRAINT PRB_Reference__Refs_key_fkey CASCADE;
 
 EOSQL
 date | tee -a ${LOG}
@@ -74,6 +72,8 @@ ${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

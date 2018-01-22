@@ -25,7 +25,6 @@ select count(*) from MLD_Notes where sequenceNum > 1;
 select count(*) from PRB_Ref_Notes where sequenceNum > 1;
 select count(*) from PRB_Notes where sequenceNum > 1;
 select count(*) from BIB_Notes where sequenceNum > 1;
-select count(*) from GXD_AssayNote where sequenceNum > 1;
 select count(*) from MRK_Notes where sequenceNum > 1;
 select count(*) from MLD_Expt_Notes;
 select count(*) from MLD_Notes;

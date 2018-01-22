@@ -63,6 +63,11 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# Notes
+#
+./notes.csh | tee -a $LOG || exit 1
+
+#
 # triggers
 # only run the ones needed per schema changes
 #

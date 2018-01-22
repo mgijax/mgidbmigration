@@ -1,8 +1,12 @@
+7630403G23Rik<Tg(Th-cre)1Tmd>	Th	1	rat
 A1cf<Tg(Myh6-cre/Esr1*)1Jmk>	Myh6		mouse, laboratory
 Bmpr1b<Tg(ACTB-FLP)4917Dym>	ACTB	7	human
 Col1a1<tm1(tetO-cre)Haho>	tetO	UN	bacteria
 Col1a1<tm1.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
 Col1a1<tm2.1(CAG-cre/ERT2)Dgk>	CAG	UN	chicken
+Commd10<Tg(Vav1-icre)A2Kio>	Vav1	UN	Not Specified
+E2f1Tg(Wnt1-cre)2Sor	Wnt1		mouse, laboratory
+Edil3<Tg(Sox2-cre)1Amc>	Sox2		mouse, laboratory
 Et(cre)TFC.09Lois	Et(cre)TFC.09Lois	UN	mouse, laboratory
 Et(cre/ERT2)119Rdav	Et(cre/ERT2)119Rdav	UN	mouse, laboratory
 Et(cre/ERT2)1382Rdav	Et(cre/ERT2)1382Rdav	UN	mouse, laboratory
@@ -100,6 +104,7 @@ Gt(ROSA)26Sor<tm7(Cdh5-cre)Npa>	Cdh5	UN	Not Specified
 Gt(ROSA)26Sor<tm7(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm8(cre/Esr1*)Nat>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm9(cre/ESR1)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
+H2afv<Tg(Wnt1-cre)11Rth>	Wnt1	UN	Not Specified
 Hhat<Tg(TFAP2A-cre)1Will>	TFAP2A		human
 Hprt<tm1(CAG-cre)Mnn>	CAG	UN	chicken
 Hprt<tm1(CMV-cre)Brd>	CMV	UN	virus
@@ -212,9 +217,12 @@ Hprt<tm367a(Ple251-icre/ERT2)Ems>	C8ORF46		human
 Hprt<tm5(EGFP/cre)Ems>	Hprt	X	mouse, laboratory
 Hprt<tm80(Ple9-EGFP/cre)Ems>	ATP6V1C2	2	human
 Hprt<tm9(Ple178-EGFP/cre)Ems>	RGS16	1	human
+Ifi208<Tg(Cspg4-cre)1Akik>	Cspg4		mouse, laboratory
+Ndor1<Tg(UBC-cre/ERT2)1Ejb>	UBC	12	human
 Plekha5<Tg(AMH-cre)1Flor>	AMH	19	human
 Rprd1b<Tg(CAG-cre/Esr1*)32Ichi>	Rprd1b	2	mouse, laboratory
 Rprd1b<Tg(CAG-GFP/neo*,-cre/Esr1*)32Ichi>	CAG	UN	chicken
+Speer6-ps1<Tg(Alb-cre)21Mgn>	Alb		mouse, laboratory
 Tg(A230065H16Rik-cre)RA13Gsat	Lbhd2	12	mouse, laboratory
 Tg(A230065H16Rik-cre)RA31Gsat	Lbhd2	12	mouse, laboratory
 Tg(A830010M20Rik-cre)KJ227Gsat	A830010M20Rik		mouse, laboratory
@@ -282,7 +290,6 @@ Tg(Alb1-cre)1Dlr	Alb	UN	Not Specified
 Tg(Alb1-cre)1Khk	Alb	UN	Not Specified
 Tg(Alb1-cre)1Rck	Alb	UN	Not Specified
 Tg(Alb1-cre)7Gsc	Alb		mouse, laboratory
-Tg(Alb-cre)21Mgn	Alb		mouse, laboratory
 Tg(ALB-cre,CMV-rtTA)#Wcyy	ALB	4	human
 Tg(Alb-cre/ERT)1Xue	Alb		mouse, laboratory
 Tg(Aldh1l1-cre)JD1884Htz	Aldh1l1		mouse, laboratory
@@ -575,7 +582,6 @@ Tg(Crym-Ncre,Crym-Ccre)RL89Gsat	Crym		mouse, laboratory
 Tg(Csf1r-cre)1Mnz	Csf1r		mouse, laboratory
 Tg(Csf1r-cre/Esr1*)1Jwp	Csf1r	UN	Not Specified
 Tg(Csf1r-icre)1Jwp	Csf1r	UN	Not Specified
-Tg(Cspg4-cre)1Akik	Cspg4		mouse, laboratory
 Tg(Cspg4-cre)1Rkl	Cspg4	UN	Not Specified
 Tg(Cspg4-cre/Esr1*)BAkik	Cspg4		mouse, laboratory
 Tg(Csrp1-cre)1Sjc	Csrp1	UN	Not Specified
@@ -1673,7 +1679,6 @@ Tg(Sox10-icre/ERT2)2Ldim	Sox10	15	mouse, laboratory
 Tg(Sox10-icre/ERT2)388Wdr	Sox10	15	mouse, laboratory
 Tg(Sox10-icre/ERT2)93Vpa	Sox10	15	mouse, laboratory
 Tg(Sox1-icre/ERT2)#Cruh	Sox1		mouse, laboratory
-Tg(Sox2-cre)1Amc	Sox2		mouse, laboratory
 Tg(Sox2-cre/ERT2)1Skn	Sox2	UN	Not Specified
 Tg(Sox2-cre/Esr1*)20Jheb	Sox2	3	mouse, laboratory
 Tg(Sox9-cre/ERT2)1Msan	Sox9	11	mouse, laboratory
@@ -1764,7 +1769,6 @@ Tg(Tg-cre/ERT2)1Kero	Tg	UN	Not Specified
 Tg(Thbs3-cre)SW52Gsat	Thbs3		mouse, laboratory
 Tg(Th-cre)#Gsat	Th		mouse, laboratory
 Tg(Th-cre)12Mrub	Th	1	rat
-Tg(Th-cre)1Tmd	Th	1	rat
 Tg(Th-cre)FI12Gsat	Th		mouse, laboratory
 Tg(Th-cre)FI172Gsat	Th		mouse, laboratory
 Tg(Th-phiC31*)1Imayo	Th		rat
@@ -1828,7 +1832,6 @@ Tg(Tyr-cre/ERT2)1Lru	Tyr	UN	Not Specified
 Tg(Tyrp1-cre)1Ipc	Tyrp1	UN	Not Specified
 Tg(Tyrp1-cre/ERT2)1Mtz	Tyrp1	UN	Not Specified
 Tg(UBC-cre)8Narl	UBC	UN	Not Specified
-Tg(UBC-cre/ERT2)1Ejb	UBC	12	human
 Tg(UBE2I-cre)1Xxh	UBE2I	16	human
 Tg(Uchl1-cre)NO63Gsat	Uchl1		mouse, laboratory
 Tg(Ucn3-cre)KF31Gsat	Ucn3		mouse, laboratory
@@ -1852,7 +1855,6 @@ Tg(Vav1-cre)1Awr	Vav1	UN	Not Specified
 Tg(Vav1-cre)1Cgp	Vav1		mouse, laboratory
 Tg(Vav1-cre)1Graf	Vav1	UN	Not Specified
 Tg(Vav1-cre)8Cgp	Vav1	UN	Not Specified
-Tg(Vav1-icre)A2Kio	Vav1	UN	Not Specified
 Tg(Vil1-cre)1000Gum	Vil1		mouse, laboratory
 Tg(Vil1-cre)997Gum	Vil1	UN	Not Specified
 Tg(Vil1-RFP,-cre)3Narl	Vil1		mouse, laboratory
@@ -1878,8 +1880,6 @@ Tg(Wfs1-cre/ERT2)2Aibs	Wfs1		mouse, laboratory
 Tg(Wfs1-cre/ERT2)3Aibs	Wfs1		mouse, laboratory
 Tg(Wnt11-cre/ERT2)1Jwng	Wnt11		mouse, laboratory
 Tg(Wnt11-TagRFP/cre/ERT2)28Amc	Wnt11		mouse, laboratory
-Tg(Wnt1-cre)11Rth	Wnt1	UN	Not Specified
-Tg(Wnt1-cre)2Sor	Wnt1		mouse, laboratory
 Tg(Wnt1-cre/ERT)1Alj	Wnt1	UN	Not Specified
 Tg(Wnt1-cre/Esr1*)10Rth	Wnt1	UN	Not Specified
 Tg(Wnt1-FLP1)1Dym	Wnt1	UN	Not Specified

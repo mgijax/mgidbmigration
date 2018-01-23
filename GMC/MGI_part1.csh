@@ -11,9 +11,9 @@
 # pgmgddbschema
 # ei
 # pgdbutilities
+# mgipython
 # alleleload : no branch; just add comments
 # allcacheload
-# entrezgeneload : already installed on production
 # assayload : on demand
 # probeload : on demand
 # mappingload : nomenload

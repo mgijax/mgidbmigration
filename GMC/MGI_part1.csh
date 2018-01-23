@@ -14,6 +14,9 @@
 # alleleload : no branch; just add comments
 # allcacheload
 # entrezgeneload : already installed on production
+# assayload : on demand
+# probeload : on demand
+# mappingload : nomenload
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done

@@ -17,6 +17,9 @@
 # assayload : on demand
 # probeload : on demand
 # mappingload : nomenload
+# reports_db
+# lib_py_vocload
+# vocload
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done

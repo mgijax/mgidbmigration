@@ -2,3 +2,4 @@ Configuration
 *.log
 *log*
 *.bcp
+*.sql

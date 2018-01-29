@@ -73,6 +73,7 @@ date | tee -a ${LOG}
 #
 ./notes.csh | tee -a $LOG || exit 1
 
+
 #
 # triggers
 # only run the ones needed per schema changes
@@ -85,6 +86,8 @@ ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

@@ -88,6 +88,9 @@ ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/GXD_addEMAPASet_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MGI_insertReferenceAssoc_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

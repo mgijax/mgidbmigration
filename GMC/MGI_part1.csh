@@ -73,13 +73,14 @@ ALTER TABLE VOC_GO_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
 ALTER TABLE VOC_GO_Cache ALTER COLUMN _Cache_key SET NOT NULL;
 ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
 ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET NOT NULL;
+EOSQL
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP SEQUENCE IF EXISTS bib_workflow_status_serial;
 DROP SEQUENCE IF EXISTS voc_allele_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_annot_count_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_go_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_marker_cache__cache_key_seq;
-
 EOSQL
 date | tee -a ${LOG}
 

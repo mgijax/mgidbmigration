@@ -20,6 +20,7 @@
 # reports_db
 # lib_py_vocload
 # vocload
+# littriageload
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done
@@ -63,7 +64,19 @@ drop view MRK_Classes_View;
 drop table MRK_Classes;
 drop table MRK_Class;
 
-ALTER TABLE mgd.GXD_Index ADD FOREIGN KEY (_ConditionalMutants_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE VOC_Allele_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
+ALTER TABLE VOC_Allele_Cache ALTER COLUMN _Cache_key SET NOT NULL;
+ALTER TABLE VOC_Annot_Count_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
+ALTER TABLE VOC_Annot_Count_Cache ALTER COLUMN _Cache_key SET NOT NULL;
+ALTER TABLE VOC_GO_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
+ALTER TABLE VOC_GO_Cache ALTER COLUMN _Cache_key SET NOT NULL;
+ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
+ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET NOT NULL;
+
+DROP SEQUENCE IF EXISTS voc_allele_cache__cache_key_seq;
+DROP SEQUENCE IF EXISTS voc_annot_count_cache__cache_key_seq;
+DROP SEQUENCE IF EXISTS voc_go_cache__cache_key_seq;
+DROP SEQUENCE IF EXISTS voc_marker_cache__cache_key_seq;
 
 EOSQL
 date | tee -a ${LOG}

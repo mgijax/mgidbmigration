@@ -21,6 +21,7 @@
 # lib_py_vocload
 # vocload
 # littriageload
+# annotload
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done
@@ -73,6 +74,7 @@ ALTER TABLE VOC_GO_Cache ALTER COLUMN _Cache_key SET NOT NULL;
 ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
 ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET NOT NULL;
 
+DROP SEQUENCE IF EXISTS bib_workflow_status_serial;
 DROP SEQUENCE IF EXISTS voc_allele_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_annot_count_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_go_cache__cache_key_seq;

@@ -762,6 +762,7 @@ Tg(Flt3-cre/ERT2)#Ccb	Flt3	5	mouse, laboratory
 Tg(Flt3-RFP,-cre)33Narl	Flt3	UN	Not Specified
 Tg(Flt3-RFP,-cre/ERT2)59Narl	Flt3	UN	Not Specified
 Tg(Flt4-cre)44Ichi	Flt4		mouse, laboratory
+Tg(Fn1-cre)41Stl	Fn1	1	mouse, laboratory
 Tg(Foxa2*-cre)#Mku	Foxa2	UN	Not Specified
 Tg(Foxa2*-cre)1Mtse	Foxa2	UN	Not Specified
 Tg(Foxa3-cre)1Khk	Foxa3	UN	Not Specified
@@ -907,6 +908,7 @@ Tg(HCRT-EGFP,-cre)#aAhky	HCRT		human
 Tg(Hdc-cre)#Jmz	Hdc	2	mouse, laboratory
 Tg(Hdc-cre)IM1Gsat	Hdc		mouse, laboratory
 Tg(Hdc-cre)IM4Gsat	Hdc		mouse, laboratory
+Tg(Hdc-cre/ERT2)#Tcw	Hdc	2	mouse, laboratory
 Tg(Hes5-cre/ERT2)2Vtlr	Hes5	UN	Not Specified
 Tg(Hes7-cre)10Ysa	Hes7	UN	Not Specified
 Tg(Hes7-cre)13Ysa	Hes7	UN	Not Specified
@@ -1177,6 +1179,7 @@ Tg(Mpz-cre)1Brn	Mpz	13	rat
 Tg(Mpz-cre)26Mes	Mpz		mouse, laboratory
 Tg(Mpz-cre)94Imeg	Mpz	13	rat
 Tg(Mpz-cre/ERT2)2Ueli	Mpz	13	rat
+Tg(Mrc1-cre/ERT2)#Tobe	Mrc1	2	mouse, laboratory
 Tg(Mrgpra3-GFP/cre)#Xzd	Mrgpra3	7	mouse, laboratory
 Tg(Mrgprb2-EGFP/cre)#Xzd	Mrgprb2	7	mouse, laboratory
 Tg(Mrgprb2-EGFP/cre)2Xzd	Mrgprb2	7	mouse, laboratory
@@ -1855,6 +1858,7 @@ Tg(Vav1-cre)1Awr	Vav1	UN	Not Specified
 Tg(Vav1-cre)1Cgp	Vav1		mouse, laboratory
 Tg(Vav1-cre)1Graf	Vav1	UN	Not Specified
 Tg(Vav1-cre)8Cgp	Vav1	UN	Not Specified
+Tg(Vav1-cre/ERT2)#Boui	Vav1	7	mouse, laboratory
 Tg(Vil1-cre)1000Gum	Vil1		mouse, laboratory
 Tg(Vil1-cre)997Gum	Vil1	UN	Not Specified
 Tg(Vil1-RFP,-cre)3Narl	Vil1		mouse, laboratory

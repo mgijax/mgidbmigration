@@ -19,7 +19,7 @@
 # mappingload : nomenload
 # reports_db
 # lib_py_vocload
-# vocload
+# vocload (proisoformload, proload)
 # littriageload
 # annotload
 #
@@ -107,6 +107,10 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_addEMAPASet_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_insertReferenceAssoc_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGO_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGXD_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusQTL_create.object | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

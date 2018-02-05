@@ -22,6 +22,8 @@
 # vocload (proisoformload, proload)
 # littriageload
 # annotload
+# htmpload
+# strainload : on demand
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done

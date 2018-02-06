@@ -12,18 +12,18 @@
 # ei
 # pgdbutilities
 # mgipython
-# alleleload : no branch; just add comments
-# allcacheload
-# assayload : on demand
-# probeload : on demand
-# mappingload : nomenload
 # reports_db
 # lib_py_vocload
-# vocload (proisoformload, proload)
-# littriageload
+# allcacheload
+# alleleload : no branch; just add comments
 # annotload
+# assayload : on demand
 # htmpload
+# littriageload
+# mappingload : nomenload
+# probeload : on demand
 # strainload : on demand
+# vocload (proisoformload, proload)
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done

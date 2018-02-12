@@ -600,6 +600,7 @@ Tg(Cyp11a1-cre)30Mchu	Cyp11a1	UN	Not Specified
 Tg(Cyp11a1-icre)1Aswn	Cyp11a1	UN	Not Specified
 Tg(Cyp17a1-cre,-GFP)1Dbhl	Cyp17a1	UN	Not Specified
 Tg(Cyp17a1-icre)AJako	Cyp17a1	UN	Not Specified
+Tg(Cyp19a1-cre)#Dlc	Cyp19a1	UN	Not Specified
 Tg(CYP19A1-cre)1Jri	CYP19A1	15	human
 Tg(Cyp19a1-cre)5909Gle	Cyp19a1	UN	Not Specified
 Tg(Cyp19a1-cre)5912Gle	Cyp19a1	UN	Not Specified
@@ -1645,6 +1646,7 @@ Tg(Slc32a1-cre)65Kzy	Slc32a1	UN	Not Specified
 Tg(Slc32a1-cre)RO29Gsat	Slc32a1		mouse, laboratory
 Tg(Slc32a1-cre)RO32Gsat	Slc32a1		mouse, laboratory
 Tg(Slc32a1-icre/ERT2)3Gloss	Slc32a1		mouse, laboratory
+Tg(Slc5a2-cre)#Tka	Slc5a2	7	mouse, laboratory
 Tg(Slc5a2-cre)1Tauc	Slc5a2	UN	Not Specified
 Tg(Slc5a2-cre/ERT2)2Narl	Slc5a2		mouse, laboratory
 Tg(Slc6a11-cre/ERT2)1Khakh	Slc6a11	6	mouse, laboratory
@@ -1811,6 +1813,7 @@ Tg(Trh-cre)5Anh	Trh	UN	Not Specified
 Tg(Trp63,-cre,-Cerulean)10Grsr	Trp63		mouse, laboratory
 Tg(Trp63,-cre,-Cerulean)3Grsr	Trp63		mouse, laboratory
 Tg(Trp63,-cre,-Cerulean)4Grsr	Trp63		mouse, laboratory
+Tg(Trpc4-cre)#Stl	Trpc4	3	mouse, laboratory
 Tg(Trps1-cre)#Osud	Trps1		mouse, laboratory
 Tg(Trpv1-cre)1Hoon	Trpv1	11	mouse, laboratory
 Tg(Trpv1-cre)SK30Gsat	Trpv1		mouse, laboratory
@@ -1852,6 +1855,7 @@ Tg(Upk2-cre)6Xrw	Upk2		mouse, laboratory
 Tg(Upk2-cre,-EGFP)#Akli	Upk2		mouse, laboratory
 Tg(Upk2-icre/ERT2)1Ccc	Upk2		mouse, laboratory
 Tg(Upk3a-GFP/cre/ERT2)26Amc	Upk3a	15	mouse, laboratory
+Tg(Upk3b-cre)#Skur	Upk3b	5	mouse, laboratory
 Tg(Ure2-cre)1Jlr	Ure2		mouse, laboratory
 Tg(Vav1-cre)#Cgp	Vav1		mouse, laboratory
 Tg(Vav1-cre)1Awr	Vav1	UN	Not Specified

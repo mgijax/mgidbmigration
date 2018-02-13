@@ -91,7 +91,6 @@ ALTER TABLE PRB_Strain_Marker ALTER COLUMN _Qualifier_key SET NOT NULL;
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-DROP SEQUENCE IF EXISTS bib_workflow_status_serial;
 DROP SEQUENCE IF EXISTS voc_allele_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_annot_count_cache__cache_key_seq;
 DROP SEQUENCE IF EXISTS voc_go_cache__cache_key_seq;
@@ -126,6 +125,10 @@ ${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGO_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGXD_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusQTL_create.object | tee -a $LOG || exit 1
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+DROP SEQUENCE IF EXISTS bib_workflow_status_serial;
+EOSQL
 
 #
 # reconfig.sh:

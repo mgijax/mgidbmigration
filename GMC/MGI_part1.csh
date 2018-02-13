@@ -85,6 +85,8 @@ ALTER TABLE VOC_GO_Cache ALTER COLUMN _Cache_key SET NOT NULL;
 ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
 ALTER TABLE VOC_Marker_Cache ALTER COLUMN _Cache_key SET NOT NULL;
 
+ALTER TABLE PRB_Strain_Marker ALTER COLUMN _Marker_key SET NOT NULL;
+
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

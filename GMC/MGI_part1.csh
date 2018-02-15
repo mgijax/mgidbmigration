@@ -103,6 +103,10 @@ date | tee -a ${LOG}
 #
 ./notes.csh | tee -a $LOG || exit 1
 
+#
+# VOC_Text
+#
+./voctext.csh | tee -a $LOG || exit 1
 
 #
 # triggers
@@ -118,13 +122,8 @@ ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/GXD_addEMAPASet_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/MGI_insertReferenceAssoc_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusAP_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGO_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusGXD_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_updateWFStatusQTL_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP SEQUENCE IF EXISTS bib_workflow_status_serial;

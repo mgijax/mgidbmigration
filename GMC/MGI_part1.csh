@@ -75,6 +75,8 @@ update MGI_dbinfo set schema_version = '6-0-12', public_version = 'MGI 6.12';
 drop view MRK_Classes_View;
 drop table MRK_Classes;
 drop table MRK_Class;
+drop table BIB_DataSet_Assoc;
+drop table BIB_DataSet;
 
 ALTER TABLE VOC_Allele_Cache ALTER COLUMN _Cache_key SET DATA TYPE int;
 ALTER TABLE VOC_Allele_Cache ALTER COLUMN _Cache_key SET NOT NULL;

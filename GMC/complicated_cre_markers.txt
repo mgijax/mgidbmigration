@@ -352,6 +352,7 @@ Tg(Bsx-cre)NS106Gsat	Bsx		mouse, laboratory
 Tg(Bsx-cre)NS92Gsat	Bsx		mouse, laboratory
 Tg(CA2-cre)1Subw	CA2	8	human
 Tg(CA2-cre/Esr1*)1Subw	CA2	8	human
+Tg(Cacng5-cre)181Tjmc	Cancng5	11	mouse, laboratory
 Tg(CAG-cre)13Miya	CAG	UN	chicken
 Tg(CAG-cre)1Htak	CAG	UN	chicken
 Tg(CAG-cre)1Kymm	CAG	UN	chicken
@@ -430,7 +431,7 @@ Tg(Cck-cre,-lacZ)1Mini	Cck	9	mouse, laboratory
 Tg(Ccl19-cre)489Biat	Ccl19	4	mouse, laboratory
 Tg(Ccr7-cre/ERT2)1Jen	Ccr7	UN	Not Specified
 Tg(CD19-cre/ERT2)1Cgn	CD19	16	human
-Tg(CD19-cre/ERT2)1Sjv	CD19	16	human
+Tg(CD19-cre/ERT2)1Jsv	CD19	16	human
 Tg(CD207-cre)1Dhka	CD207	2	human
 Tg(CD207-cre/ERT2)1Dhka	CD207	2	human
 Tg(CD2-cre)1Lov	CD2	1	human
@@ -661,6 +662,7 @@ Tg(Dmp1-cre,-EGFP)2Kikd	Dmp1		mouse, laboratory
 Tg(Dmp1-cre/ERT2)0022Pdp	Dmp1		mouse, laboratory
 Tg(Dmp1-cre/ERT2)D77Pdp	Dmp1	UN	Not Specified
 Tg(DMRT1-cre)1Svs	DMRT1	1	pig, domestic
+Tg(Dock10-cre)#Stl	Dock10	1	mouse, laboratory
 Tg(Dpp4-RFP,-cre)63Narl	Dpp4	UN	Not Specified
 Tg(Dpp4-RFP,-cre/ERT2)83Narl	Dpp4	UN	Not Specified
 Tg(Dppa3-cre/Esr1*)3Sait	Dppa3	UN	Not Specified
@@ -777,6 +779,7 @@ Tg(Foxn1-cre)1Tbo	Foxn1		mouse, laboratory
 Tg(Foxn1-cre)8Ghr	Foxn1	11	mouse, laboratory
 Tg(Foxn4-cre)1Xia	Foxn4	5	mouse, laboratory
 Tg(Foxn4-icre)1Smal	Foxn4	UN	Not Specified
+Tg(Foxp3*-cre,-Thy1)#Xzhou	Foxp3	X	mouse, laboratory
 Tg(Foxp3-EGFP/cre)1cJbs	Foxp3		mouse, laboratory
 Tg(Foxp3-EGFP/icre)1aJbs	Foxp3		mouse, laboratory
 Tg(Foxp3-RFP,-cre)1Narl	Foxp3	UN	Not Specified
@@ -1641,6 +1644,7 @@ Tg(Slc1a3-cre/ERT2)45-72Fwp	Slc1a3	15	mouse, laboratory
 Tg(Slc26a5-cre)#Jnz	Slc26a5	UN	Not Specified
 Tg(Slc2a2-cre)#Thor	Slc2a2	UN	Not Specified
 Tg(Slc2a4-cre)546Dac	Slc2a4	UN	Not Specified
+Tg(Slc32a1-cre)#Oki	Slc32a1	2	mouse, laboratory
 Tg(Slc32a1-cre)2.1Hzo	Slc32a1	2	mouse, laboratory
 Tg(Slc32a1-cre)65Kzy	Slc32a1	UN	Not Specified
 Tg(Slc32a1-cre)RO29Gsat	Slc32a1		mouse, laboratory
@@ -1727,6 +1731,7 @@ Tg(Tbx18-icre)3Fech	Tbx18		mouse, laboratory
 Tg(Tbx1-cre)#Dsr	Tbx1	UN	Not Specified
 Tg(Tbx1-cre)1Joe	Tbx1		mouse, laboratory
 Tg(Tbx21-cre)1Dlc	Tbx21	11	mouse, laboratory
+Tg(Tbx21-Dre,-Thy1)#Xzhou	Tbx21	11	mouse, laboratory
 Tg(Tbx21-ZsGreen,-cre/ERT2)H3Jfz	Tbx21	11	mouse, laboratory
 Tg(Tbx22,-cre,-mCherry)1Grsr	Tbx22		mouse, laboratory
 Tg(Tbx4-cre)#Kras	Tbx4		mouse, laboratory

@@ -82,7 +82,7 @@ Gt(ROSA)26Sor<tm1(FLP1)Wtsi>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm1(PGK1-cre)Ozg>	PGK1	UN	Not Specified
 Gt(ROSA)26Sor<tm1.1(CAG-cre)Jphe>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm1.1(cre/ERT2)Alj>	Gt(ROSA)26Sor	6	mouse, laboratory
-Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	Gt(ROSA)26Sor	6	mouse, laboratory
+Gt(ROSA)26Sor<tm1.1(rtTA,tetO-cre)Bkmn>	tetO	UN	bacteria
 Gt(ROSA)26Sor<tm16(cre)Arte>	Gt(ROSA)26Sor	6	mouse, laboratory
 Gt(ROSA)26Sor<tm2(CAG-flpo,-EYFP)Ics>	CAG	UN	chicken
 Gt(ROSA)26Sor<tm2(cre/ERT2)Brn>	Gt(ROSA)26Sor	6	mouse, laboratory
@@ -714,6 +714,7 @@ Tg(En2-cre)3Alj	En2	UN	Not Specified
 Tg(En2-cre)4Alj	En2	UN	Not Specified
 Tg(En2-cre)6Alj	En2	UN	Not Specified
 Tg(En2-cre/ERT)1Alj	En2	UN	Not Specified
+Tg(Eno2-cre)#Lfp	Eno2	4	rat
 Tg(Eno2-cre)#Mlit	Eno2	4	rat
 Tg(Eno2-cre)1Lfp	Eno2	4	rat
 Tg(Eno2-cre)26Fsky	Eno2	UN	Not Specified
@@ -1098,6 +1099,7 @@ Tg(Krt6,-cre,-Cerulean)1Grsr	Krt6		mouse, laboratory
 Tg(Krt6,-cre,-Cerulean)2Grsr	Krt6		mouse, laboratory
 Tg(Krt6,-cre,-Cerulean)4Grsr	Krt6		mouse, laboratory
 Tg(Krt6,-cre,-Cerulean)5Grsr	Krt6		mouse, laboratory
+Tg(Krt79-cre)#Swo	Krt79	15	mouse, laboratory
 Tg(Krt8-cre/ERT2)17Blpn	Krt8		mouse, laboratory
 Tg(Krt8-cre/ERT2)1Xin	Krt8	15	mouse, laboratory
 Tg(Lamp5-cre)SN25Gsat	Lamp5		mouse, laboratory

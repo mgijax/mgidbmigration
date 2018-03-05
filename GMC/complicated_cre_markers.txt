@@ -352,7 +352,7 @@ Tg(Bsx-cre)NS106Gsat	Bsx		mouse, laboratory
 Tg(Bsx-cre)NS92Gsat	Bsx		mouse, laboratory
 Tg(CA2-cre)1Subw	CA2	8	human
 Tg(CA2-cre/Esr1*)1Subw	CA2	8	human
-Tg(Cacng5-cre)181Tjmc	Cancng5	11	mouse, laboratory
+Tg(Cacng5-cre)181Tjmc	Cacng5	11	mouse, laboratory
 Tg(CAG-cre)13Miya	CAG	UN	chicken
 Tg(CAG-cre)1Htak	CAG	UN	chicken
 Tg(CAG-cre)1Kymm	CAG	UN	chicken

@@ -33,10 +33,10 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # assemblyseqload
 scp bhmgiapp01:/data/loads/mgi/genemodelload/output/vega_genemodels_load.txt /data/loads/mgi/genemodelload/output/ | tee -a $LOG || exit 1
 scp bhmgiapp01:/data/loads/mgi/genemodelload/output/vega_assoc_load.txt /data/loads/mgi/genemodelload/output/ | tee -a $LOG || exit 1
-# gbseqload files from radar.APP_FilesMirrored
-scp bhmgiapp01:/data/downloads/ftp.ncbi.nih.gov/refseq_gbpreprocessor/output/RefSeq.469.001.gz /data/downloads/ftp.ncbi.nih.gov/refseq_gbpreprocessor/output/
 # refseqload files from radar.APP_FilesMirrored
-scp bhmgiapp01:/data/downloads/ftp.ncbi.nih.gov/genbank_gbpreprocessor/output/GenBank.475.001.gz /data/downloads/ftp.ncbi.nih.gov/genbank_gbpreprocessor/output/
+scp bhmgiapp01:/data/downloads/ftp.ncbi.nih.gov/refseq_gbpreprocessor/output/RefSeq.473.001.gz /data/downloads/ftp.ncbi.nih.gov/refseq_gbpreprocessor/output/
+# gbseqload files from radar.APP_FilesMirrored
+scp bhmgiapp01:/data/downloads/ftp.ncbi.nih.gov/genbank_gbpreprocessor/output/GenBank.479.001.gz /data/downloads/ftp.ncbi.nih.gov/genbank_gbpreprocessor/output/
 # spseqload
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot/ | tee -a $LOG || exit 1
 # vega_ensemblseqloade

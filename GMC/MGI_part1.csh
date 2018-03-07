@@ -21,20 +21,23 @@
 # annotload
 # htmpload
 # littriageload
-# mappingload
-# nomenload
 # pubmed2geneload
 # vocload (proisoformload, proload)
+#
 # assemblyseqload
 # gbseqload
 # refseqload
 # spseqload
 # vega_ensemblseqload
 # targetedalleleload
-# assayload : on demand
-# probeload : on demand
-# referenceload : on demand/not tested/never converted to postgres
-# strainload : on demand
+#
+# on demand:
+# mappingload
+# nomenload
+# assayload
+# probeload
+# referenceload : not tested/never converted to postgres
+# strainload
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done

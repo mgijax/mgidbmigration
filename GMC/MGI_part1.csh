@@ -9,9 +9,8 @@
 #
 # tr12262 branches:
 # pgmgddbschema
-# ei
+# ei 
 # pgdbutilities
-# mgipython
 # reports_db
 # lib_py_vocload
 # allcacheload
@@ -20,7 +19,7 @@
 # alleleload
 # annotload
 # htmpload
-# littriageload
+# littriageload : not merged yet
 # pubmed2geneload
 # vocload (proisoformload, proload)
 #

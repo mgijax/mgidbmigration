@@ -7,7 +7,6 @@
 #
 # (part 1 running schema changes)
 #
-# tr12262 branches:
 # pgmgddbschema
 # ei 
 # pgdbutilities
@@ -19,7 +18,7 @@
 # alleleload
 # annotload
 # htmpload
-# littriageload : not merged yet
+# littriageload
 # pubmed2geneload
 # vocload (proisoformload, proload)
 #

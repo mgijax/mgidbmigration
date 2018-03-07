@@ -14,19 +14,16 @@
 # mgipython
 # reports_db
 # lib_py_vocload
-# mp_emapaload : sharon
 # allcacheload
-# alleleload : no branch; just add comments
+# mp_emapaload : new/sharon
+#
+# alleleload
 # annotload
-# assayload : on demand
 # htmpload
 # littriageload
 # mappingload
 # nomenload
 # pubmed2geneload
-# probeload : on demand
-# referenceload : on demand/not tested/never converted to postgres
-# strainload : on demand
 # vocload (proisoformload, proload)
 # assemblyseqload
 # gbseqload
@@ -34,6 +31,10 @@
 # spseqload
 # vega_ensemblseqload
 # targetedalleleload
+# assayload : on demand
+# probeload : on demand
+# referenceload : on demand/not tested/never converted to postgres
+# strainload : on demand
 #
 # run on production when ready to add "Allele" organisms
 # organism.csh : done

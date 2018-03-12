@@ -103,6 +103,17 @@ delete from voc_annot where _annottype_key = 1002 and _object_key in (82750,8274
 delete from gxd_genotype where _strain_key between 76936 and 76942;
 delete from prb_strain where _strain_key between 76936 and 76942;
 
+-- for littriageload
+select r._Refs_key, c.mgiID, c.pubmedID, c.doiID
+from BIB_Refs r, BIB_Citation_Cache c
+where (r.creation_date between '03/09/2018' and ('03/09/2018'::date + '1 day'::interval))
+and r._Refs_key = c._Refs_key
+;
+
+delete from BIB_Refs
+where (creation_date between '03/09/2018' and ('03/09/2018'::date + '1 day'::interval))
+;
+
 EOSQL
 rm -rf ${DATALOADSOUTPUT}/mgi/htmpload/*/input/last*
 

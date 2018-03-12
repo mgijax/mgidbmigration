@@ -420,6 +420,7 @@ Tg(Capn8-cre)1Xya	Capn8		mouse, laboratory
 Tg(Car1-cre)5Flt	Car1		mouse, laboratory
 Tg(Cartpt-cre)1Aibs	Cartpt		mouse, laboratory
 Tg(Cartpt-cre)RY16Gsat	Cartpt		mouse, laboratory
+Tg(Cbln2-cre/ERT2)NIDA167Htz	Cbln2	18	mouse, laboratory
 Tg(Cbln4-cre)SN7Gsat	Cbln4		mouse, laboratory
 Tg(Ccdc3-cre)PO24Gsat	Ccdc3		mouse, laboratory
 Tg(Ccdc3-cre)PO33Gsat	Ccdc3		mouse, laboratory
@@ -890,6 +891,7 @@ Tg(Grm6-cre)#Brsk	Grm6	11	mouse, laboratory
 Tg(Grm6-icre)1Rlbn	Grm6	11	mouse, laboratory
 Tg(Grp-cre)KH107Gsat	Grp		mouse, laboratory
 Tg(Grp-cre)KH288Gsat	Grp		mouse, laboratory
+Tg(Grpr-icre)#Mlag	Grpr	X	mouse, laboratory
 Tg(Gsc2-cre)RD32Gsat	Gsc2		mouse, laboratory
 Tg(Gsx1-cre)6Wql	Gsx1		mouse, laboratory
 Tg(Gsx2-icre)1Kess	Gsx2	UN	Not Specified
@@ -1123,6 +1125,7 @@ Tg(Lck-icre)3779Nik	Lck	UN	Not Specified
 Tg(Lcn5-cre)1Ylzh	Lcn5	UN	Not Specified
 Tg(Leftb-cre)1Hmd	Leftb	UN	Not Specified
 Tg(Lefty2-cre)21bHmd	Lefty2	UN	Not Specified
+Tg(Lfng-cre/ERT2)#Mmsa	Lfng	5	mouse, laboratory
 Tg(Lfng-TagRFP/cre/ERT2)8Amc	Lfng		mouse, laboratory
 Tg(LGB-cre)74Acl	LGB		sheep
 Tg(Lhb-cre)1Sac	LHB		cattle
@@ -1353,7 +1356,7 @@ Tg(Otog-cre)1Ugds	Otog		mouse, laboratory
 Tg(Otp-cre)1Hzo	Otp	13	mouse, laboratory
 Tg(Otx1-cre)1Eag	Otx1	UN	Not Specified
 Tg(Otx2-cre/Esr1*)1Sia	Otx2	UN	Not Specified
-Tg(Ovgp1-icre/ERT2)#Chok	Ovgp1	3	mouse, laboratory
+Tg(Ovgp1-icre/ERT2)746Chok	Ovgp1	3	mouse, laboratory
 Tg(Oxr1-cre)C14Stl	Oxr1	UN	Not Specified
 Tg(Oxtr-cre)ON66Gsat	Oxtr		mouse, laboratory
 Tg(Oxtr-cre)ON82Gsat	Oxtr		mouse, laboratory
@@ -1499,7 +1502,7 @@ Tg(Prokr2-cre)MG17Gsat	Prokr2		mouse, laboratory
 Tg(Prokr2-cre)MG22Gsat	Prokr2		mouse, laboratory
 Tg(Prokr2-cre)MG32Gsat	Prokr2		mouse, laboratory
 Tg(Prop1-cre)#Rsd	Prop1	UN	Not Specified
-Tg(Prop1-icre)1Sac	Prop1	11	mouse, laboratory
+Tg(Prop1-icre)517Sac	Prop1	11	mouse, laboratory
 Tg(Prox1-cre)SJ32Gsat	Prox1		mouse, laboratory
 Tg(Prox1-cre)SJ39Gsat	Prox1		mouse, laboratory
 Tg(Prox1-cre/ERT2)#aTmak	Prox1	1	mouse, laboratory
@@ -1909,6 +1912,7 @@ Tg(Wt1-cre)1Jbeb	Wt1	2	mouse, laboratory
 Tg(WT1-cre)AG11Dbdr	WT1	11	human
 Tg(Wt1-EGFP/cre)1Akis	Wt1	2	mouse, laboratory
 Tg(Zbtb16-cre)1Sant	Zbtb16	UN	Not Specified
+Tg(Zic4-cre)NIDA016Htz	Zic4	9	mouse, laboratory
 Tg(Zic4-icre)1Kess	Zic4	UN	Not Specified
 Tg(Zp3-cre)1Gsv	Zp3	UN	Not Specified
 Tg(Zp3-cre)1Gwh	Zp3	UN	Not Specified

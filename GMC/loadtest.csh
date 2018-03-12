@@ -56,8 +56,6 @@ scp bhmgiapp01:${DATADOWNLOADS}/goa/HUMAN/goa_human.gaf.gz ${DATADOWNLOADS}/goa/
 scp bhmgiapp01:${DATADOWNLOADS}/goa/HUMAN/goa_human_isoform.gaf.gz ${DATADOWNLOADS}/goa/HUMAN
 scp bhmgiapp01:${DATADOWNLOADS}/goa/MOUSE/goa_mouse.gaf.gz ${DATADOWNLOADS}/goa/MOUSE
 scp bhmgiapp01:${DATADOWNLOADS}/goa/MOUSE/goa_mouse_isoform.gaf.gz ${DATADOWNLOADS}/goa/MOUSE
-scp bhmgiapp01:${DATADOWNLOADS}/goa/MOUSE/goa_mouse_complex.gaf.gz ${DATADOWNLOADS}/goa/MOUSE
-scp bhmgiapp01:${DATADOWNLOADS}/goa/MOUSE/goa_mouse_rna.gaf.gz ${DATADOWNLOADS}/goa/MOUSE
 scp bhmgiapp01:${DATADOWNLOADS}/purl.obolibrary.org/obo/uberon.obo ${DATADOWNLOADS}/purl.obolibrary.org/obo
 scp bhmgiapp01:${DATADOWNLOADS}/build.berkeleybop.org/job/gaf-check-mgi/lastSuccessfulBuild/artifact/gene_association.mgi.inf.gaf ${DATADOWNLOADS}/build.berkeleybop.org/job/gaf-check-mgi/lastSuccessfulBuild/artifact
 scp bhmgiapp01:${DATADOWNLOADS}/go_noctua/mgi.gpad ${DATADOWNLOADS}/go_noctua

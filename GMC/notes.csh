@@ -58,8 +58,6 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Notes_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Notes_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/key/VOC_Text_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/VOC_Text_View_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE MLD_Expt_Notes DROP COLUMN sequenceNum;
@@ -69,7 +67,6 @@ ALTER TABLE PRB_Notes DROP COLUMN sequenceNum;
 ALTER TABLE BIB_Notes DROP COLUMN sequenceNum;
 ALTER TABLE MRK_Notes DROP COLUMN sequenceNum;
 ALTER TABLE GXD_AssayNote DROP COLUMN sequenceNum;
-ALTER TABLE VOC_Text DROP COLUMN sequenceNum;
 select count(*) from MLD_Expt_Notes;
 select count(*) from MLD_Notes;
 select count(*) from PRB_Ref_Notes;
@@ -87,8 +84,6 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Notes_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Notes_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/key/VOC_Text_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/VOC_Text_View_create.object | tee -a $LOG
 
 date |tee -a $LOG
 

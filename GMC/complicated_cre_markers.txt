@@ -993,6 +993,7 @@ Tg(Ikzf1-cre)GCayo	Ikzf1	11	mouse, laboratory
 Tg(Il17f-cre)1Awai	Il17f	UN	Not Specified
 Tg(Il21-cre)GLipp	Il21		mouse, laboratory
 Tg(Il7-cre)CRche	Il7		mouse, laboratory
+Tg(Il7-EGFP,-icre,-HBEGF,-luc)#Tslr	Il7	3	mouse, laboratory
 Tg(Il9-cre)#Stck	Il9	13	mouse, laboratory
 Tg(Inha-cre)1Zuk	Inha		mouse, laboratory
 Tg(Inha-cre)2Zuk	Inha		mouse, laboratory

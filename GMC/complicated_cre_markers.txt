@@ -294,6 +294,7 @@ Tg(ALB-cre,CMV-rtTA)#Wcyy	ALB	4	human
 Tg(Alb-cre/ERT)1Xue	Alb		mouse, laboratory
 Tg(Aldh1l1-cre)JD1884Htz	Aldh1l1		mouse, laboratory
 Tg(Aldh1l1-cre)PB1Gsat	Aldh1l1		mouse, laboratory
+Tg(Aldh1l1-cre/ERT2)02Kan	Aldh1l1	6	mouse, laboratory
 Tg(Aldh1l1-cre/ERT2)1Khakh	Aldh1l1	6	mouse, laboratory
 Tg(Alpl-cre/ERT2)12Gcos	Alpl	4	mouse, laboratory
 Tg(Alx4-cre/ERT2)1Bky	Alx4		mouse, laboratory
@@ -1659,6 +1660,7 @@ Tg(Slc5a2-cre)#Tka	Slc5a2	7	mouse, laboratory
 Tg(Slc5a2-cre)1Tauc	Slc5a2	UN	Not Specified
 Tg(Slc5a2-cre/ERT2)2Narl	Slc5a2		mouse, laboratory
 Tg(Slc6a11-cre/ERT2)1Khakh	Slc6a11	6	mouse, laboratory
+Tg(Slc6a2-cre)#Stl	Slc6a2	8	mouse, laboratory
 Tg(Slc6a2-cre)FV317Gsat	Slc6a2		mouse, laboratory
 Tg(Slc6a2-cre)FV319Gsat	Slc6a2		mouse, laboratory
 Tg(Slc6a3-cre)SG56Gsat	Slc6a3		mouse, laboratory

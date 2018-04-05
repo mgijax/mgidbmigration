@@ -49,6 +49,7 @@ echo 'createing MRK_StrainGene' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/table/MRK_StrainGene_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_StrainGene_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MRK_StrainGene_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MRK_StrainGene_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MRK_StrainGene_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

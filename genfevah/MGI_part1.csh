@@ -30,7 +30,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 #
 # update schema-version and public-version
@@ -42,13 +42,21 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# indexes
-# only run the ones needed per schema changes
+# MRK_StrainGene
 #
-#date | tee -a ${LOG}
-#echo 'running indexes' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'createing MRK_StrainGene' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/MRK_StrainGene_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_StrainGene_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MRK_StrainGene_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/MRK_StrainGene_create.object | tee -a $LOG || exit 1
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_Strain_key) REFERENCES mgd.PRB_Strain DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+EOSQL
 
 #
 # reconfig.sh:
@@ -58,6 +66,7 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

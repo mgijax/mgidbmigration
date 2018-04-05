@@ -42,21 +42,21 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# MRK_StrainGene
+# MRK_StrainMarker
 #
 date | tee -a ${LOG}
-echo 'createing MRK_StrainGene' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/table/MRK_StrainGene_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_StrainGene_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/MRK_StrainGene_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/MRK_StrainGene_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/comments/MRK_StrainGene_create.object | tee -a $LOG || exit 1
+echo 'createing MRK_StrainMarker' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_Strain_key) REFERENCES mgd.PRB_Strain DEFERRABLE;
-ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker ON DELETE CASCADE DEFERRABLE;
-ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
-ALTER TABLE mgd.MRK_StrainGene ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_Strain_key) REFERENCES mgd.PRB_Strain DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 EOSQL
 
 #

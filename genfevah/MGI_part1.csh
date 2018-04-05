@@ -1,7 +1,7 @@
 #!/bin/csh -fx
 
 #
-# TR12374/Genome FeVah
+# TR12734/Genome FeVah
 #
 # (part 1 running schema changes)
 #

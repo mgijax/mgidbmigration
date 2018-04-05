@@ -5,6 +5,9 @@
 #
 # (part 1 running schema changes)
 #
+# tr12734 branch:
+# pgmgddbschema
+#
 
 ###----------------------###
 ###--- initialization ---###

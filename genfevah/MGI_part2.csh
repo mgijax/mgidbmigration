@@ -44,4 +44,8 @@ switch (`uname -n`)
 endsw
 
 date | tee -a ${LOG}
+echo '--- Strain/Marker load' | tee -a $LOG
+${STRAINMARKERLOAD}/bin/strainmarkerload.sh | tee -a $LOG
+
+date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

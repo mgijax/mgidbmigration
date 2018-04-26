@@ -120,17 +120,27 @@ source ./Configuration
 cd mgd
 foreach i in (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py)
 $i
-done
+end
+foreach i (MRK_MultMarkerGeneModels.sql)
+${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${PG_DBSERVER} ${PG_DBNAME}
+end
 cd ../weekly
 foreach i in (MRK_C4AM_GeneModel.py)
 $i
-done
-#MRK_MultMarkerGeneModels.sql
+end
 
 date |tee -a $LOG
 echo ${PUBRPTS} | tee -a $LOG
 cd ${PUBRPTS}
 source ./Configuration
+cd daily
+foreach i in (GO_gene_association GO_gpi.py)
+$i
+end
+cd ../weekly
+foreach i in (GO_gp2protein.py HGNC_homologene.py MGI_BioTypeConflict.py MGI_Gene_Model_Coord.py MRK_ENSEMBL.py MRK_Sequence.py)
+$i
+end
 
 cd ${DBUTILS}/mgidbmigration/genfevah
 

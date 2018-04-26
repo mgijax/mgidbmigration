@@ -112,6 +112,28 @@ date |tee -a $LOG
 echo ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
 ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
 
+# after story passes, the reports can be commented out as they will all run at end of migration
+date |tee -a $LOG
+echo ${QCRPTS} | tee -a $LOG
+cd ${QCRPTS}
+source ./Configuration
+cd mgd
+foreach i in (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py)
+$i
+done
+cd ../weekly
+foreach i in (MRK_C4AM_GeneModel.py)
+$i
+done
+#MRK_MultMarkerGeneModels.sql
+
+date |tee -a $LOG
+echo ${PUBRPTS} | tee -a $LOG
+cd ${PUBRPTS}
+source ./Configuration
+
+cd ${DBUTILS}/mgidbmigration/genfevah
+
 date | tee -a $LOG
 echo "after counts..." | tee -a $LOG
 

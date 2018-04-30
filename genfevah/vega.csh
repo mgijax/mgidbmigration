@@ -58,7 +58,7 @@ select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collectio
 select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 97 and c._Map_key = f._Map_key;
 
 -- biotype stuff
-select count(*) from VOC_Vocab where name like 'BioType%';
+select * from VOC_Vocab where name like 'BioType%';
 select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 105;
 select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 103;
 select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 104;
@@ -68,11 +68,10 @@ select count(*) from MRK_BioTypeMapping;
 
 -- VEGA accession associations
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
-select count(*) from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
-select count(*) from MGI_User where name ilike ('%vega%');
+select * from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
+select * from MGI_User where name ilike ('%vega%');
 
 EOSQL
-exit 0
 
 date | tee -a $LOG
 echo "delete VEGA data..." | tee -a $LOG
@@ -106,6 +105,11 @@ EOSQL
 date |tee -a $LOG
 date |tee -a $LOG
 echo ${GOLOAD}/go.sh | tee -a $LOG
+${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform
+${MIRROR_WGET}/download_package build.berkeleybop.org.goload
+${MIRROR_WGET}/download_package build.berkeleybop.org.gpad.goload
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+${MIRROR_WGET}/download_package ftp.geneontology.org.goload
 ${GOLOAD}/go.sh | tee -a $LOG
 
 date |tee -a $LOG
@@ -184,7 +188,7 @@ select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collectio
 select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 97 and c._Map_key = f._Map_key;
 
 -- biotype stuff
-select count(*) from VOC_Vocab where name like 'BioType%';
+select * from VOC_Vocab where name like 'BioType%';
 select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 105;
 select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 103;
 select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 104;
@@ -194,8 +198,8 @@ select count(*) from MRK_BioTypeMapping;
 
 -- VEGA accession associations
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
-select count(*) from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
-select count(*) from MGI_User where name ilike ('%vega%');
+select * from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
+select * from MGI_User where name ilike ('%vega%');
 
 EOSQL
 

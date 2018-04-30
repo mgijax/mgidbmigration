@@ -122,11 +122,13 @@ date |tee -a $LOG
 echo ${QCRPTS} | tee -a $LOG
 cd ${QCRPTS}
 source ./Configuration
+# fix documentation:  qcr.shtml, mgd/MRK_NoENSEMBL.py
+# remove : mgd/MGI_VEGA_Associations.py, mgd/MRK_NoVEGA.py
 cd mgd
-foreach i in (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py)
+foreach i in (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py MRK_NoENSEMBL.py)
 $i
 end
-foreach i (MRK_MultMarkerGeneModels.sql)
+foreach i (MRK_MultMarkerGeneModels.sql MRK_GmNoGeneModel.sql)
 ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${PG_DBSERVER} ${PG_DBNAME}
 end
 cd ../weekly
@@ -138,6 +140,7 @@ date |tee -a $LOG
 echo ${PUBRPTS} | tee -a $LOG
 cd ${PUBRPTS}
 source ./Configuration
+# remove : weekly/MRK_VEGA.py
 cd daily
 foreach i in (GO_gene_association GO_gpi.py)
 $i

@@ -21,6 +21,11 @@ touch $LOG
 date | tee -a $LOG
 echo "before counts..." | tee -a $LOG
 
+#
+# manually remove VEGA from
+# http://prodwww.informatics.jax.org/all/wts_projects/10300/10308/RawBioTypeEquivalence/biotypemap.txt
+#
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select distinct s._Sequenceprovider_key, t.term , t._Vocab_key

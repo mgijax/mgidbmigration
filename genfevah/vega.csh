@@ -69,6 +69,7 @@ select count(*) from MRK_BioTypeMapping;
 -- VEGA accession associations
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
 select count(*) from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
+select count(*) from MGI_User where name ilike ('%vega%');
 
 EOSQL
 
@@ -97,6 +98,7 @@ delete from VOC_Term where _Vocab_key = 25 and _Term_key in (1865333,5112894,511
 -- delete VEGA accession associations
 delete from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
 delete from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
+delete from MGI_User where name ilike ('%vega%');
 
 EOSQL
 
@@ -192,6 +194,7 @@ select count(*) from MRK_BioTypeMapping;
 -- VEGA accession associations
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
 select count(*) from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
+select count(*) from MGI_User where name ilike ('%vega%');
 
 EOSQL
 

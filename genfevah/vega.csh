@@ -72,6 +72,7 @@ select count(*) from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 1
 select count(*) from MGI_User where name ilike ('%vega%');
 
 EOSQL
+exit 0
 
 date | tee -a $LOG
 echo "delete VEGA data..." | tee -a $LOG

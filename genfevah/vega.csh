@@ -50,6 +50,7 @@ select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_k
 select count(s.*) from SEQ_Coord_Cache s;
 
 -- VEGA coordinates
+select * from MAP_Coord_Collection where _Collection_key in (91,93,97)
 select count(*) from MAP_Coordinate where _Collection_key = 91;
 select count(*) from MAP_Coordinate where _Collection_key = 93;
 select count(*) from MAP_Coordinate where _Collection_key = 97;
@@ -180,6 +181,7 @@ select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_k
 select count(s.*) from SEQ_Coord_Cache s;
 
 -- VEGA coordinates
+select * from MAP_Coord_Collection where _Collection_key in (91,93,97)
 select count(*) from MAP_Coordinate where _Collection_key = 91; 
 select count(*) from MAP_Coordinate where _Collection_key = 93; 
 select count(*) from MAP_Coordinate where _Collection_key = 97; 

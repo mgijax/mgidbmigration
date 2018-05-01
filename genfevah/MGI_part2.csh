@@ -43,6 +43,11 @@ switch (`uname -n`)
         breaksw
 endsw
 
+# this can be commented out/removed once biotypemapping is installed on production
+date |tee -a $LOG
+echo ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
+${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
+
 date | tee -a ${LOG}
 echo '--- Strain/Marker load' | tee -a $LOG
 ${STRAINMARKERLOAD}/bin/strainmarkerload.sh | tee -a $LOG

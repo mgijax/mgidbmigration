@@ -132,14 +132,14 @@ source ./Configuration
 # fix documentation:  qcr.shtml, mgd/MRK_NoENSEMBL.py
 # remove : mgd/MGI_VEGA_Associations.py, mgd/MRK_NoVEGA.py
 cd mgd
-foreach i in (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py MRK_NoENSEMBL.py)
+foreach i (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py MRK_NoENSEMBL.py)
 $i
 end
 foreach i (MRK_MultMarkerGeneModels.sql MRK_GmNoGeneModel.sql)
 ${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${PG_DBSERVER} ${PG_DBNAME}
 end
 cd ../weekly
-foreach i in (MRK_C4AM_GeneModel.py)
+foreach i (MRK_C4AM_GeneModel.py)
 $i
 end
 
@@ -149,11 +149,11 @@ cd ${PUBRPTS}
 source ./Configuration
 # remove : weekly/MRK_VEGA.py
 cd daily
-foreach i in (GO_gene_association GO_gpi.py)
+foreach i (GO_gene_association GO_gpi.py)
 $i
 end
 cd ../weekly
-foreach i in (GO_gp2protein.py HGNC_homologene.py MGI_BioTypeConflict.py MGI_Gene_Model_Coord.py MRK_ENSEMBL.py MRK_Sequence.py)
+foreach i (GO_gp2protein.py HGNC_homologene.py MGI_BioTypeConflict.py MGI_Gene_Model_Coord.py MRK_ENSEMBL.py MRK_Sequence.py)
 $i
 end
 

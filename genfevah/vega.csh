@@ -29,9 +29,6 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
 
-date | tee -a $LOG
-echo "before counts..." | tee -a $LOG
-
 #
 # manually remove VEGA from
 # http://prodwww.informatics.jax.org/all/wts_projects/10300/10308/RawBioTypeEquivalence/biotypemap.txt
@@ -42,9 +39,13 @@ echo "before counts..." | tee -a $LOG
 #
 rm -rf ${DATALOADSOUTPUT}/mgi/genemodelload/*/vega*
 rm -rf ${DATALOADSOUTPUT}/vega
+rm -rf ${DATALOADSOUTPUT}/assembly/vega*
 rm -rf $DATALOAD}/genemodelload/genemodel_vega.config
 rm -rf ${DATALOADSOUTPUT}/mgi/vocload/archiveBiotype/vega
 rm -rf ${DATALOADSOUTPUT}/mgi/vocload/runTimeBiotype/vega
+
+date | tee -a $LOG
+echo "before counts..." | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -62,11 +63,12 @@ group by s._SequenceProvider_key, t.term
 order by t.term
 ;
 
-select count(s.*), t.term 
-from SEQ_Marker_Cache s, VOC_Term t
+select count(s.*), t.term, tt.term
+from SEQ_Marker_Cache s, VOC_Term t, VOC_Term tt
 where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
 and s._SequenceProvider_key = t._Term_key
-group by s._SequenceProvider_key, t.term
+and s._qualifier_key = tt._Term_key
+group by s._SequenceProvider_key, t.term, tt.term
 order by t.term
 ;
 
@@ -95,6 +97,25 @@ group by t.name
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
 select * from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
 select * from MGI_User where name ilike ('%vega%');
+
+-- markers that only have VEGA gene models
+WITH dataset as (
+select s._Marker_key
+from SEQ_Marker_Cache s, ACC_Accession sa
+where s._LogicalDB_key = 85
+and s._Marker_key = sa._Object_key
+and sa._MGIType_key = 2
+and sa._Logicaldb_key in (9,13,27,41,59,60,85,131,132,133,134)
+group by _Marker_key having count(*) = 1
+)
+select m.symbol, sa.accID
+from dataset s, MRK_Marker m, ACC_Accession sa
+where s._Marker_key = m._Marker_key
+and s._Marker_key = sa._Object_key
+and sa._MGIType_key = 2
+and sa._Logicaldb_key in (9,13,27,41,59,60,85,131,132,133,134)
+order by m.symbol
+;
 
 EOSQL
 
@@ -128,13 +149,12 @@ delete from MGI_User where name ilike ('%vega%');
 EOSQL
 
 date |tee -a $LOG
-date |tee -a $LOG
 echo ${GOLOAD}/go.sh | tee -a $LOG
-${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform
-${MIRROR_WGET}/download_package build.berkeleybop.org.goload
-${MIRROR_WGET}/download_package build.berkeleybop.org.gpad.goload
-${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
-${MIRROR_WGET}/download_package ftp.geneontology.org.goload
+#${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform
+#${MIRROR_WGET}/download_package build.berkeleybop.org.goload
+#${MIRROR_WGET}/download_package build.berkeleybop.org.gpad.goload
+#${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+#${MIRROR_WGET}/download_package ftp.geneontology.org.goload
 ${GOLOAD}/go.sh | tee -a $LOG
 
 date |tee -a $LOG
@@ -189,6 +209,12 @@ echo "after counts..." | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+select distinct s._Sequenceprovider_key, t.term , t._Vocab_key
+from SEQ_Marker_Cache s, VOC_Term t
+where s._SequenceProvider_key = t._term_key
+and t.term like 'VEGA%'
+;
+
 select count(s.*), t.term 
 from SEQ_Sequence s, VOC_Term t
 where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
@@ -197,11 +223,13 @@ group by s._SequenceProvider_key, t.term
 order by t.term
 ;
 
-select count(s.*), t.term 
-from SEQ_Marker_Cache s, VOC_Term t
+scrumdog-> ;
+select count(s.*), t.term, tt.term
+from SEQ_Marker_Cache s, VOC_Term t, VOC_Term tt
 where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
 and s._SequenceProvider_key = t._Term_key
-group by s._SequenceProvider_key, t.term
+and s._qualifier_key = tt._Term_key
+group by s._SequenceProvider_key, t.term, tt.term
 order by t.term
 ;
 
@@ -218,10 +246,6 @@ where c._Collection_key in (91, 93, 97)
 and c._Collection_key = cn._Collection_key
 group by cn.name
 ;
-
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key in (91,93,97) and c._Map_key = f._Map_key;
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 93 and c._Map_key = f._Map_key;
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 97 and c._Map_key = f._Map_key;
 
 -- biotype stuff
 select count(m.*), t.name

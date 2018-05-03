@@ -37,6 +37,15 @@ echo "before counts..." | tee -a $LOG
 # http://prodwww.informatics.jax.org/all/wts_projects/10300/10308/RawBioTypeEquivalence/biotypemap.txt
 #
 
+#
+# remove vega logs
+#
+rm -rf ${DATALOADSOUTPUT}/mgi/genemodelload/*/vega*
+rm -rf ${DATALOADSOUTPUT}/vega
+rm -rf $DATALOAD}/genemodelload/genemodel_vega.config
+rm -rf ${DATALOADSOUTPUT}/mgi/vocload/archiveBiotype/vega
+rm -rf ${DATALOADSOUTPUT}/mgi/vocload/runTimeBiotype/vega
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select distinct s._Sequenceprovider_key, t.term , t._Vocab_key
@@ -45,38 +54,42 @@ where s._SequenceProvider_key = t._term_key
 and t.term like 'VEGA%'
 ;
 
-select count(*) from SEQ_Sequence where _SequenceProvider_key in (1865333,5112894,5112895);
-select count(*) from SEQ_Sequence where _SequenceProvider_key in (615429,5112897,5112896);
-select count(*) from SEQ_Sequence where _SequenceProvider_key in (706915);
-select count(*) from SEQ_Sequence;
+select count(s.*), t.term 
+from SEQ_Sequence s, VOC_Term t
+where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
+and s._SequenceProvider_key = t._Term_key
+group by s._SequenceProvider_key, t.term
+order by t.term
+;
 
-select count(*) from SEQ_Marker_Cache where _SequenceProvider_key in (1865333,5112894,5112895);
-select count(*) from SEQ_Marker_Cache where _SequenceProvider_key in (615429,5112897,5112896);
-select count(*) from SEQ_Marker_Cache where _SequenceProvider_key in (706915);
-select count(*) from SEQ_Marker_Cache;
+select count(s.*), t.term 
+from SEQ_Marker_Cache s, VOC_Term t
+where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
+and s._SequenceProvider_key = t._Term_key
+group by s._SequenceProvider_key, t.term
+order by t.term
+;
 
-select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_key = 91 and c._Map_key = s._Map_key;
-select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_key = 93 and c._Map_key = s._Map_key;
-select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_key = 97 and c._Map_key = s._Map_key;
-select count(s.*) from SEQ_Coord_Cache s;
+select count(s.*), s.provider
+from SEQ_Coord_Cache s
+group by s.provider
+order by s.provider
+;
 
 -- VEGA coordinates
-select * from MAP_Coord_Collection where _Collection_key in (91,93,97)
-select count(*) from MAP_Coordinate where _Collection_key = 91;
-select count(*) from MAP_Coordinate where _Collection_key = 93;
-select count(*) from MAP_Coordinate where _Collection_key = 97;
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 91 and c._Map_key = f._Map_key;
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 93 and c._Map_key = f._Map_key;
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 97 and c._Map_key = f._Map_key;
+select count(*), cn.name
+from MAP_Coordinate c, MAP_Coord_Collection cn
+where c._Collection_key in (91, 93, 97) 
+and c._Collection_key = cn._Collection_key
+group by cn.name
+;
 
 -- biotype stuff
-select * from VOC_Vocab where name like 'BioType%';
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 105;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 103;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 104;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 136;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 76;
-select count(*) from MRK_BioTypeMapping;
+select count(m.*), t.name
+from MRK_BioTypeMapping m, VOC_Vocab t
+where m._biotypevocab_key = t._Vocab_key
+group by t.name
+;
 
 -- VEGA accession associations
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
@@ -176,38 +189,46 @@ echo "after counts..." | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select count(*) from SEQ_Sequence where _SequenceProvider_key in (1865333,5112894,5112895);
-select count(*) from SEQ_Sequence where _SequenceProvider_key in (615429,5112897,5112896);
-select count(*) from SEQ_Sequence where _SequenceProvider_key in (706915);
-select count(*) from SEQ_Sequence;
+select count(s.*), t.term 
+from SEQ_Sequence s, VOC_Term t
+where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
+and s._SequenceProvider_key = t._Term_key
+group by s._SequenceProvider_key, t.term
+order by t.term
+;
 
-select count(*) from SEQ_Marker_Cache where _SequenceProvider_key in (1865333,5112894,5112895);
-select count(*) from SEQ_Marker_Cache where _SequenceProvider_key in (615429,5112897,5112896);
-select count(*) from SEQ_Marker_Cache where _SequenceProvider_key in (706915);
-select count(*) from SEQ_Marker_Cache;
+select count(s.*), t.term 
+from SEQ_Marker_Cache s, VOC_Term t
+where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)
+and s._SequenceProvider_key = t._Term_key
+group by s._SequenceProvider_key, t.term
+order by t.term
+;
 
-select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_key = 91 and c._Map_key = s._Map_key;
-select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_key = 93 and c._Map_key = s._Map_key;
-select count(s.*) from SEQ_Coord_Cache s, MAP_Coordinate c where c._Collection_key = 97 and c._Map_key = s._Map_key;
-select count(s.*) from SEQ_Coord_Cache s;
+select count(s.*), s.provider
+from SEQ_Coord_Cache s
+group by s.provider
+order by s.provider
+;
 
 -- VEGA coordinates
-select * from MAP_Coord_Collection where _Collection_key in (91,93,97)
-select count(*) from MAP_Coordinate where _Collection_key = 91; 
-select count(*) from MAP_Coordinate where _Collection_key = 93; 
-select count(*) from MAP_Coordinate where _Collection_key = 97; 
-select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 91 and c._Map_key = f._Map_key;
+select count(*), cn.name
+from MAP_Coordinate c, MAP_Coord_Collection cn
+where c._Collection_key in (91, 93, 97) 
+and c._Collection_key = cn._Collection_key
+group by cn.name
+;
+
+select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key in (91,93,97) and c._Map_key = f._Map_key;
 select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 93 and c._Map_key = f._Map_key;
 select count(f.*) from MAP_Coordinate c , MAP_Coord_Feature f where c._Collection_key = 97 and c._Map_key = f._Map_key;
 
 -- biotype stuff
-select * from VOC_Vocab where name like 'BioType%';
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 105;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 103;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 104;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 136;
-select count(*) from MRK_BioTypeMapping where _BiotypeVocab_key = 76; 
-select count(*) from MRK_BioTypeMapping;
+select count(m.*), t.name
+from MRK_BioTypeMapping m, VOC_Vocab t
+where m._biotypevocab_key = t._Vocab_key
+group by t.name
+;
 
 -- VEGA accession associations
 select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);

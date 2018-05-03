@@ -49,12 +49,12 @@ echo ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 
 date | tee -a ${LOG}
+echo '--- remove VEGA data/code | tee -a $LOG
+./vega.csh | tee -a $LOG
+
+date | tee -a ${LOG}
 echo '--- Strain/Marker load' | tee -a $LOG
 ${STRAINMARKERLOAD}/bin/strainmarkerload.sh | tee -a $LOG
-
-#date | tee -a ${LOG}
-#echo '--- remove VEGA data/code | tee -a $LOG
-#./vega.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

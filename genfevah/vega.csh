@@ -5,6 +5,17 @@
 #
 # see sw:VEGA_retired
 #
+# pgmgddbschema
+# genemodelload
+# goload
+# vocload
+# seqcacheload
+# qcreports_db
+# reports_db
+#
+# ei
+# pwi
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig

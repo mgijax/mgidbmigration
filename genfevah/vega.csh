@@ -124,6 +124,56 @@ echo "delete VEGA data..." | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+select m.*, a._Allele_key, a.symbol 
+from MRK_Marker m, ALL_Allele a
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471', 
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535'
+)
+and m._Marker_key = a._Marker_key
+;
+
+-- delete VEGA markers that only have VEGA gene models
+delete from ALL_Allele a
+using MRK_Marker m
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471', 
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535'
+)
+and m._Marker_key = a._Marker_key
+;
+
+delete from MLD_Expt_Marker a
+using MRK_Marker m
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471', 
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535'
+)
+and m._Marker_key = a._Marker_key
+;
+
+delete from VOC_Annot a
+using MRK_Marker m
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471', 
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535'
+)
+and m._Marker_key = a._Object_key
+and a._AnnotType_key = 1011
+;
+
+delete from MRK_Marker m
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471', 
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535'
+)
+;
+
 -- delete data that relies on _SequenceProvider_key
 delete from SEQ_Marker_Cache where _SequenceProvider_key in (1865333,5112894,5112895);
 
@@ -208,6 +258,16 @@ date | tee -a $LOG
 echo "after counts..." | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+select m.*, a._Allele_key, a.symbol
+from MRK_Marker m, ALL_Allele a
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471',
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535'
+)
+and m._Marker_key = a._Marker_key
+;
 
 select distinct s._Sequenceprovider_key, t.term , t._Vocab_key
 from SEQ_Marker_Cache s, VOC_Term t

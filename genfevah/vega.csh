@@ -121,6 +121,23 @@ and m._Marker_key = a._Marker_key
 ;
 
 -- delete VEGA markers that only have VEGA gene models
+
+delete from MGI_Relationship a
+using MRK_Marker m
+where m.symbol in (
+'Gm37034', 'Gm37038', 'Gm37149', 'Gm37188', 'Gm37271', 'Gm37379', 'Gm37408', 'Gm37414', 'Gm37471', 
+'Gm37546', 'Gm37605', 'Gm37615', 'Gm37823', 'Gm37874', 'Gm37888', 'Gm37938', 'Gm38052', 'Gm38129',
+'Gm38175', 'Gm38179', 'Gm38193', 'Gm38206', 'Gm38219', 'Gm38354', 'Gm45138', 'Gm45535',
+'Gm42691', 'Gm43543', 'Gm43687', 'Gm11291', 'Gm11345', 'Gm11374', 'Gm11375', 'Gm13434', 'Gm13734',
+'Gm13741', 'Gm13747', 'Gm13753', 'Gm13759', 'Gm13760', 'Gm13763', 'Gm15662', 'Gm20497', 'Gm20677',
+'Gm20678', 'Gm20699', 'Gm27157', 'Gm28479', 'Gm28498', 'Gm28621', 'Gm28904', 'Gm28933', 'Gm29006',
+'Gm29095', 'Gm29172', 'Gm29176', 'Gm29236', 'Gm29375', 'Gm3719', 'Gm37276', 'Gm43296', 'Gm44568',
+'Gm44572', 'Gm44774', 'Gm45000', 'Gm45057', 'Gm45302', 'Gm45810'
+)
+and m._Marker_key = a._Object_key_2
+and a._Category_key = 1003
+;
+
 delete from ALL_Allele a
 using MRK_Marker m
 where m.symbol in (

@@ -228,6 +228,7 @@ echo ${GOLOAD}/go.sh | tee -a $LOG
 #${MIRROR_WGET}/download_package build.berkeleybop.org.gpad.goload
 #${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 #${MIRROR_WGET}/download_package ftp.geneontology.org.goload
+#${MIRROR_WGET}/download_package purl.obolibrary.org.pr.obo
 ${GOLOAD}/go.sh | tee -a $LOG
 
 date |tee -a $LOG

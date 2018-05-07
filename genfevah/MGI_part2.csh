@@ -43,13 +43,8 @@ switch (`uname -n`)
         breaksw
 endsw
 
-# this can be commented out/removed once biotypemapping is installed on production
-date |tee -a $LOG
-echo ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
-${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
-
 date | tee -a ${LOG}
-echo '--- remove VEGA data/code | tee -a $LOG
+echo '--- remove VEGA data/code' | tee -a $LOG
 ./vega.csh | tee -a $LOG
 
 date | tee -a ${LOG}

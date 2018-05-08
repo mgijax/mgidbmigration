@@ -181,7 +181,7 @@ where m.symbol in (
 'Gm44572', 'Gm44774', 'Gm45000', 'Gm45057', 'Gm45302', 'Gm45810'
 )
 and m._Marker_key = a._Object_key
-and a._AnnotType_key = 1011
+and a._AnnotType_key in (1000, 1003, 1007, 1010, 1011, 1015, 1022, 1023, 1017)
 ;
 
 delete from MRK_Marker m
@@ -242,6 +242,10 @@ ${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
 date |tee -a $LOG
 echo ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
 ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
+
+date |tee -a $LOG
+echo ${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
+${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
 
 # after story passes, the reports can be commented out as they will all run at end of migration
 date |tee -a $LOG

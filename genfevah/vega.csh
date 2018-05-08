@@ -241,12 +241,12 @@ echo ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 
 date |tee -a $LOG
-echo ${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
-${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
-
-date |tee -a $LOG
 echo ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
 ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
+
+date |tee -a $LOG
+echo ${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
+${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
 
 date |tee -a $LOG
 echo ${MRKCACHELOAD}/mrkref.csh | tee -a $LOG

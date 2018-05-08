@@ -71,7 +71,8 @@ EOSQL
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/MRK_AccRef2_View_create.object | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

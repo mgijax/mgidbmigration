@@ -219,6 +219,11 @@ delete from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 176);
 delete from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
 delete from MGI_User where name ilike ('%vega%');
 
+-- J:109762
+delete from MLD_Expts a
+where a._Refs_key = 110841;
+;
+
 EOSQL
 
 date |tee -a $LOG

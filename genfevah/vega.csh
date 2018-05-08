@@ -321,7 +321,6 @@ group by s._SequenceProvider_key, t.term
 order by t.term
 ;
 
-scrumdog-> ;
 select count(s.*), t.term, tt.term
 from SEQ_Marker_Cache s, VOC_Term t, VOC_Term tt
 where s._SequenceProvider_key in (1865333,5112894,5112895, 615429,5112897,5112896, 706915)

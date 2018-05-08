@@ -252,6 +252,10 @@ date |tee -a $LOG
 echo ${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
 ${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
 
+date |tee -a $LOG
+echo ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
+${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
+
 # after story passes, the reports can be commented out as they will all run at end of migration
 date |tee -a $LOG
 echo ${QCRPTS} | tee -a $LOG

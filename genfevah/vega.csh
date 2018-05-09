@@ -256,41 +256,6 @@ date |tee -a $LOG
 echo ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
 ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
 
-# after story passes, the reports can be commented out as they will all run at end of migration
-date |tee -a $LOG
-echo ${QCRPTS} | tee -a $LOG
-cd ${QCRPTS}
-source ./Configuration
-# fix documentation:  qcr.shtml, mgd/MRK_NoENSEMBL.py
-# remove : mgd/MGI_VEGA_Associations.py, mgd/MRK_NoVEGA.py
-cd mgd
-foreach i (GO_GPI_verify.py MGI_GenesAndPseudogenesWithSequence.py MRK_NoENSEMBL.py)
-$i
-end
-foreach i (MRK_MultMarkerGeneModels.sql MRK_GmNoGeneModel.sql)
-${QCRPTS}/reports.csh $i ${QCOUTPUTDIR}/$i.rpt ${PG_DBSERVER} ${PG_DBNAME}
-end
-cd ../weekly
-foreach i (MRK_C4AM_GeneModel.py)
-$i
-end
-
-date |tee -a $LOG
-echo ${PUBRPTS} | tee -a $LOG
-cd ${PUBRPTS}
-source ./Configuration
-# remove : weekly/MRK_VEGA.py
-cd daily
-foreach i (GO_gene_association GO_gpi.py)
-$i
-end
-cd ../weekly
-foreach i (GO_gp2protein.py HGNC_homologene.py MGI_BioTypeConflict.py MGI_Gene_Model_Coord.py MRK_ENSEMBL.py MRK_Sequence.py)
-$i
-end
-
-cd ${DBUTILS}/mgidbmigration/genfevah
-
 date | tee -a $LOG
 echo "after counts..." | tee -a $LOG
 

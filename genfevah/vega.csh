@@ -248,14 +248,6 @@ date |tee -a $LOG
 echo ${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
 ${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
 
-date |tee -a $LOG
-echo ${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
-${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
-
-date |tee -a $LOG
-echo ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
-${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
-
 date | tee -a $LOG
 echo "after counts..." | tee -a $LOG
 

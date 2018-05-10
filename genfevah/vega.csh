@@ -317,5 +317,12 @@ select count(*) from ACC_Accession where _Logicaldb_key in (85, 131, 132, 141, 1
 select * from ACC_Logicaldb where _Logicaldb_key in (85, 131, 132, 141, 176);
 select * from MGI_User where name ilike ('%vega%');
 
+-- the OK list
+select count(*) from MGI_Synonym where _Refs_key = 110841;
+select count(*) from MRK_History where _Refs_key = 110841;
+select count(*) from MRK_Reference where _Refs_key = 110841;
+select count(*) from PRB_Marker where _Refs_key = 110841;
+select count(*) from VOC_Evidence where _Refs_key = 110841;
+
 EOSQL
 

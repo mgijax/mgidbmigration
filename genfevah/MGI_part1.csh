@@ -67,6 +67,13 @@ drop view MGI_Statistic_View;
 drop table MGI_StatisticSql;
 drop table MGI_Measurement;
 drop table MGI_Statistic;
+delete from MGI_Set where _Set_key in (1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034,
+1035, 1036, 1037, 1038, 1039, 1040, 1044, 1045);
+delete from MGI_SetMember where _Set_key in (1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034,
+1035, 1036, 1037, 1038, 1039, 1040, 1044, 1045);
+delete from MGI_Set where _MGIType_key = 34;
+delete from ACC_MGIType where _MGIType_key = 34;
+
 
 EOSQL
 

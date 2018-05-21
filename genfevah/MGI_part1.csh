@@ -61,6 +61,13 @@ ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MR
 ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_Refs_key) REFERENCES mgd.BIB_Refs DEFERRABLE;
 ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+
+DROP FUNCTION IF EXISTS MGI_recordMeasurement(text,int,numeric);
+drop view MGI_Statistic_View;
+drop table MGI_StatisticSql;
+drop table MGI_Measurement;
+drop table MGI_Statistic;
+
 EOSQL
 
 #

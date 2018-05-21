@@ -42,6 +42,9 @@ date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-13', public_version = 'MGI 6.013';
 EOSQL
+
+rm -rf ${LIBDIRS}/stats_pg.* | tee -a ${LOG}
+
 date | tee -a ${LOG}
 
 #

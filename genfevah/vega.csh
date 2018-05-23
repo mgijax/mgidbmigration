@@ -35,6 +35,12 @@ touch $LOG
 #
 
 #
+# keep copy of VEGA report
+#
+cp -rf ${REPORTOUTPUTDIR}/MGI_Gene_Model_Coord.rpt /mgi/all/wts_projects/12700/12734
+cp -rf ${REPORTOUTPUTDIR}/MGI_Gene_Model_Coord.rpt .
+
+#
 # remove vega logs
 #
 rm -rf ${DATALOADSOUTPUT}/mgi/genemodelload/*/vega*

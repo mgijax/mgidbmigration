@@ -6,7 +6,21 @@
 # (part 1 running schema changes)
 #
 # tr12734 branch:
+# lib_py_postgres
+# pgdbutilities
 # pgmgddbschema
+# seqcacheload
+# lib_java_dbsmgd
+# lib_java_dla
+# assemblyseqload
+# assocload
+# genemodelload
+# goload
+# seqseqassocload
+# vega_ensemblseqload
+# vocload
+# qcreports_db
+# reports_db
 #
 
 ###----------------------###

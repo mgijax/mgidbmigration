@@ -28,6 +28,7 @@ EOSQL
 
 date |tee -a $LOG
 echo ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
+cp FANTOM5_Associations.txt ${DATALOADSOUTPUT}/mgi/tssgeneload/input/tssgene.txt
 ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 
 date | tee -a $LOG

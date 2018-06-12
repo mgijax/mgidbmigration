@@ -41,6 +41,15 @@ cp -rf ${REPORTOUTPUTDIR}/MGI_Gene_Model_Coord.rpt /mgi/all/wts_projects/12700/1
 cp -rf ${REPORTOUTPUTDIR}/MGI_Gene_Model_Coord.rpt .
 
 #
+# remove vega from /data/downloads
+#
+rm -rf ${DATADOWNLOADS}/vega_mus_cdna
+rm -rf ${DATADOWNLOADS}/vega_mus_gtf
+rm -rf ${DATADOWNLOADS}/vega_mus_ncrna
+rm -rf ${DATADOWNLOADS}/vega_mus_protein
+rm -rf ${DATADOWNLOADS}/ftp.sanger.ac.uk
+
+#
 # remove vega logs
 #
 rm -rf ${DATALOADSOUTPUT}/mgi/genemodelload/*/vega*

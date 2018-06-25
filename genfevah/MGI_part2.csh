@@ -22,6 +22,8 @@ setenv LOG $0.log
 rm -rf ${LOG}
 touch ${LOG}
 
+cd ${DBUTILS}/mgidbmigration/genfevah
+
 date | tee -a ${LOG}
 echo '--- starting part 2' | tee -a $LOG
 

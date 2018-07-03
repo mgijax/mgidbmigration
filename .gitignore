@@ -3,3 +3,4 @@ Configuration
 *log*
 *.bcp
 *.sql
+*/*.out

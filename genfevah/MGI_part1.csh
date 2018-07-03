@@ -109,6 +109,23 @@ ALTER TABLE mgd.MRK_Location_Cache ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.
 EOSQL
 
 #
+# MRK_BiotypeMarker
+# drop/rebuild/adding primaryFeatureType
+#
+${PG_MGD_DBSCHEMADIR}/table/MRK_BiotypeMapping_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/MRK_BiotypeMapping_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MRK_BiotypeMapping_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_BiotypeMapping_create.object | tee -a $LOG || exit 1
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_biotypeterm_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_MCVTerm_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_Marker_Type_key) REFERENCES mgd.MRK_Types DEFERRABLE;
+ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_biotypevocab_key) REFERENCES mgd.VOC_Vocab DEFERRABLE;
+EOSQL
+
+#
 # reconfig.sh:
 # Drop and re-create database triggers, stored procedures, views and comments
 # always a good idea to do to make sure that nothing was missed with schema changes

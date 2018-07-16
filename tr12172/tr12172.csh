@@ -47,10 +47,10 @@ and abbreviation is not null
 
 EOSQL
 
-echo '---Running slim term loads ---'
-${SLIMTERMLOAD}/bin/slimtermload.sh emapslimload.config
-${SLIMTERMLOAD}/bin/slimtermload.sh goslimload.config
-${SLIMTERMLOAD}/bin/slimtermload.sh mpslimload.config
+#echo '---Running slim term loads ---'
+#${SLIMTERMLOAD}/bin/slimtermload.sh emapslimload.config
+#${SLIMTERMLOAD}/bin/slimtermload.sh goslimload.config
+#${SLIMTERMLOAD}/bin/slimtermload.sh mpslimload.config
 
 date | tee -a ${LOG}
 

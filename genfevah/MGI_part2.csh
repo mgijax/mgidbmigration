@@ -49,10 +49,6 @@ date | tee -a ${LOG}
 echo '--- remove VEGA data/code' | tee -a $LOG
 ./vega.csh | tee -a $LOG
 
-date | tee -a ${LOG}
-echo '--- TSS-to-Gene load' | tee -a $LOG
-./tsstogene.csh | tee -a $LOG
-
 # only run if *not* running straingenemodelload
 #date | tee -a ${LOG}
 #echo '--- new mrk_biotypemapping ' | tee -a $LOG
@@ -61,6 +57,10 @@ echo '--- TSS-to-Gene load' | tee -a $LOG
 date | tee -a ${LOG}
 echo '--- Strain Gene Model load' | tee -a $LOG
 ${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh | tee -a $LOG
+
+date | tee -a ${LOG}
+echo '--- TSS-to-Gene load' | tee -a $LOG
+./tsstogene.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

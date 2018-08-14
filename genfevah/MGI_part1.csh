@@ -130,7 +130,7 @@ EOSQL
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP FUNCTION IF EXISTS PRB_setStrainReview(int,int);
 EOSQL
-${PG_MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_create_object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_create.object | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

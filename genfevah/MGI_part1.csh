@@ -71,7 +71,6 @@ ${PG_MGD_DBSCHEMADIR}/key/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/MRK_StrainMarker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.MRK_StrainMarker ADD FOREIGN KEY (_Strain_key) REFERENCES mgd.PRB_Strain DEFERRABLE;
@@ -102,6 +101,7 @@ ${PG_MGD_DBSCHEMADIR}/table/MRK_Location_Cache_drop.object | tee -a $LOG || exit
 ${PG_MGD_DBSCHEMADIR}/table/MRK_Location_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MRK_Location_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Location_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.MRK_Location_Cache ADD FOREIGN KEY (_Organism_key) REFERENCES mgd.MGI_Organism DEFERRABLE;
 ALTER TABLE mgd.MRK_Location_Cache ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;

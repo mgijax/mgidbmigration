@@ -126,6 +126,12 @@ ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_Marker_Type_key) REFERENCES
 ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_biotypevocab_key) REFERENCES mgd.VOC_Vocab DEFERRABLE;
 EOSQL
 
+# in preparation for TR11855...
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+DROP FUNCTION IF EXISTS PRB_setStrainReview(int,int);
+EOSQL
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_setStrainReview_create_object | tee -a $LOG || exit 1
+
 #
 # reconfig.sh:
 # Drop and re-create database triggers, stored procedures, views and comments

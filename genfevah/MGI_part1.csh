@@ -127,6 +127,7 @@ ALTER TABLE mgd.MRK_BiotypeMapping ADD FOREIGN KEY (_biotypevocab_key) REFERENCE
 EOSQL
 
 # in preparation for TR11855...
+#insert into voc_term values((select max(_Term_key) + 1 from VOC_Term), 56, 'Needs Review - Chr', 'Needs Review - Chr',null,4,0,1001,1001,now(),now())
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP FUNCTION IF EXISTS PRB_setStrainReview(int,int);
 EOSQL

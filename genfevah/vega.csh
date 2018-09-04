@@ -38,7 +38,6 @@ touch $LOG
 # keep copy of VEGA report
 #
 source $PUBRPTS/Configuration
-cp -rf ${REPORTOUTPUTDIR}/MGI_Gene_Model_Coord.rpt /mgi/all/wts_projects/12700/12734
 cp -rf ${REPORTOUTPUTDIR}/MGI_Gene_Model_Coord.rpt .
 
 #

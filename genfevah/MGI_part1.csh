@@ -7,27 +7,27 @@
 #
 # tr12734 branch:
 #
-# lib_py_postgres
-# lib_java_dbsmgd
-# lib_java_dla
+# lib_py_postgres : merge
+# lib_java_dbsmgd : merge
+# lib_java_dla : merge
 #
-# ei
-# pgdbutilities
-# pgmgddbschema
+# ei : merge
+# pgdbutilities : merge
+# pgmgddbschema : merge
 #
-# mrkcacheload
-# seqcacheload
+# mrkcacheload : merge
+# seqcacheload : merge
 #
-# assemblyseqload
-# assocload
-# genemodelload
-# goload
-# seqseqassocload
-# vega_ensemblseqload
-# vocload
+# assemblyseqload : merge
+# assocload : merge
+# genemodelload : merge
+# goload : merge
+# seqseqassocload : merge
+# vega_ensemblseqload : merge
+# vocload : merge
 #
-# qcreports_db
-# reports_db
+# qcreports_db : merge
+# reports_db : merge
 #
 
 ###----------------------###

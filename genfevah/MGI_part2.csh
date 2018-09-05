@@ -51,6 +51,8 @@ echo '--- remove VEGA data/code' | tee -a $LOG
 
 if ( ${INSTALL_TYPE} == "dev" ) then
 cp biotypemapping.config ${GENEMODELLOAD}
+else
+cp biotypemap.txt /mgi/all/wts_projects/10300/10308/RawBioTypeEquivalence
 endif
 
 # only run if *not* running straingenemodelload

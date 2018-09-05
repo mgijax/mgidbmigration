@@ -1,0 +1,136 @@
+Source	Raw BioType	Feature Type Equivalence	Primary Feature Type	RawBioType > MarkerType	Notes	Use Child To Determine Equivalence	no
+Ensembl	antisense	antisense lncRNA gene	antisense lncRNA gene	Gene	no		
+Ensembl	antisense_RNA	antisense lncRNA gene	antisense lncRNA gene	Gene	no
+Ensembl	IG_C_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_D_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_J_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_LV_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_M_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_V_gene	gene segment	gene segment	Gene	no		
+Ensembl	IG_Z_gene	gene segment	gene segment	Gene	no		
+Ensembl	TR_C_gene	gene segment	gene segment	Gene	no		
+Ensembl	TR_D_gene	gene segment	gene segment	Gene	no		
+Ensembl	TR_gene	gene segment	gene segment	Gene	no		
+Ensembl	TR_J_gene	gene segment	gene segment	Gene	no		
+Ensembl	TR_V_gene	gene segment	gene segment	Gene	no		
+Ensembl	lincRNA	lincRNA gene	lincRNA gene	Gene	no		
+Ensembl	sense_intronic	sense intronic lncRNA gene	sense intronic lncRNA gene	Gene	no		
+Ensembl	3prime_overlapping_ncRNA	lncRNA gene	lncRNA gene	Gene	no		
+Ensembl	bidirectional_promoter_lncRNA	bidirectional promoter lncRNA gene	bidirectional promoter lncRNA gene	Gene	no		
+Ensembl	macro_lncRNA	lncRNA gene	lncRNA gene	Gene	no		
+Ensembl	ncrna_host	lncRNA gene	lncRNA gene	Gene	no		
+Ensembl	sense_overlapping	sense overlapping lncRNA gene	sense overlapping lncRNA gene	Gene	no		
+Ensembl	miRNA	miRNA gene	miRNA gene	Gene	no		
+Ensembl	non_coding	non-coding RNA gene	unclassified non-coding RNA gene	Gene	yes		
+Ensembl	polymorphic_pseudogene	polymorphic pseudogene	polymorphic pseudogene	Pseudogene	no		
+Ensembl	protein_coding	protein coding gene	protein coding gene	Gene	no		
+Ensembl	processed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	retrotransposed	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	transcribed_processed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	transcribed_unitary_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	transcribed_unprocessed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	translated_processed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	translated_unprocessed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	unitary_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	unprocessed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+Ensembl	IG_C_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	IG_D_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	IG_J_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	IG_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	IG_V_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	TR_J_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	TR_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	TR_V_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+Ensembl	ribozyme	ribozyme gene	ribozyme gene	Gene	no		
+Ensembl	Mt_rRNA	rRNA gene	rRNA gene	Gene	no		
+Ensembl	rRNA	rRNA gene	rRNA gene	Gene	no		
+Ensembl	scaRNA	snoRNA gene	snoRNA gene	Gene	no		
+Ensembl	snoRNA	snoRNA gene	snoRNA gene	Gene	no		
+Ensembl	snRNA	snRNA gene	snRNA gene	Gene	no		
+Ensembl	Mt_tRNA	tRNA gene	tRNA gene	Gene	no		
+Ensembl	TEC	all feature types	unclassified gene	Gene	no		
+Ensembl	misc_RNA	unclassified gene|non-coding RNA gene	unclassified non-coding RNA gene	Gene	yes		
+Ensembl	sRNA	unclassified non-coding RNA gene	unclassified non-coding RNA gene	Gene	no		
+Ensembl	scRNA	scRNA gene|SRP RNA gene	scRNA gene	Gene	no		
+Ensembl	processed_transcript	unclassified non-coding RNA gene|unclassified gene|lncRNA gene	unclassified non-coding RNA gene	Gene	no		
+NCBI	null	all feature types	unclassified gene	Gene	yes		
+NCBI	other	all feature types	unclassified gene	Gene	yes		
+NCBI	unknown	all feature types	unclassified gene	Gene	yes		
+NCBI	antisense_RNA	antisense lncRNA gene	antisense lncRNA gene	Gene	no		
+NCBI	lncRNA	lncRNA gene|lincRNA gene	lncRNA gene	Gene	no		
+NCBI	miRNA	miRNA gene	miRNA gene	Gene	no		
+NCBI	ncRNA	non-coding RNA gene	unclassified non-coding RNA gene	Gene	yes		
+NCBI	protein-coding	protein coding gene|polymorphic pseudogene	protein coding gene	Gene	no		
+NCBI	pseudo	pseudogene|pseudogenic gene segment|polymorphic pseudogene	pseudogene	Pseudogene	no		
+NCBI	RNase_MRP_RNA	RNase MRP RNA gene	RNase MRP RNA gene	Gene	no		
+NCBI	RNase_P_RNA	RNase P RNA gene	RNase P RNA gene	Gene	no		
+NCBI	rRNA	rRNA gene	rRNA gene	Gene	no		
+NCBI	scRNA	scRNA gene|SRP RNA gene	scRNA gene	Gene	no		
+NCBI	Y_RNA	scRNA gene	scRNA gene	Gene	no		
+NCBI	guide_RNA	snoRNA gene	snoRNA gene	Gene	no		
+NCBI	snoRNA	snoRNA gene	snoRNA gene	Gene	no		
+NCBI	snRNA	snRNA gene	snRNA gene	Gene	no		
+NCBI	telomerase_RNA	telomerase RNA gene	telomerase RNA gene	Gene	no		
+NCBI	tRNA	tRNA gene	tRNA gene	Gene	no		
+NCBI	miscRNA	unclassified gene|non-coding RNA gene	unclassified non-coding RNA gene	Gene	yes		
+MGP	3prime_overlapping_ncrna	lncRNA gene	lncRNA gene	Gene	no		
+MGP	3prime_overlapping_ncRNA	lncRNA gene	lncRNA gene	Gene	no		
+MGP	antisense	antisense lncRNA gene	antisense lncRNA gene	Gene	no		
+MGP	antisense_RNA	antisense lncRNA gene	antisense lncRNA gene	Gene	no		
+MGP	bidirectional_promoter_lncrna	bidirectional promoter lncRNA gene	bidirectional promoter lncRNA gene	Gene	no		
+MGP	bidirectional_promoter_lncRNA	bidirectional promoter lncRNA gene	bidirectional promoter lncRNA gene	Gene	no		
+MGP	IG_C_gene	gene segment	gene segment	Gene	no		
+MGP	IG_C_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	IG_D_gene	gene segment	gene segment	Gene	no		
+MGP	IG_D_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	IG_gene	gene segment	gene segment	Gene	no		
+MGP	IG_J_gene	gene segment	gene segment	Gene	no		
+MGP	IG_J_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	IG_LV_gene	gene segment	gene segment	Gene	no		
+MGP	IG_M_gene	gene segment	gene segment	Gene	no		
+MGP	IG_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	IG_V_gene	gene segment	gene segment	Gene	no		
+MGP	IG_V_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	IG_Z_gene	gene segment	gene segment	Gene	no		
+MGP	lincRNA	lincRNA gene	lincRNA gene	Gene	no		
+MGP	macro_lncRNA	lncRNA gene	lncRNA gene	Gene	no		
+MGP	miRNA	miRNA gene	miRNA gene	Gene	no		
+MGP	misc_RNA	unclassified gene|non-coding RNA gene	unclassified non-coding RNA gene	Gene	yes		
+MGP	Mt_rRNA	rRNA gene	rRNA gene	Gene	no		
+MGP	Mt_tRNA	tRNA gene	tRNA gene	Gene	no		
+MGP	ncrna_host	lncRNA gene	lncRNA gene	Gene	no		
+MGP	non_coding	non-coding RNA gene	unclassified non-coding RNA gene	Gene	yes		
+MGP	polymorphic_pseudogene	polymorphic pseudogene	polymorphic pseudogene	Pseudogene	no		
+MGP	processed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	processed_transcript	unclassified non-coding RNA gene|unclassified gene|lncRNA gene	unclassified non-coding RNA gene	Gene	no		
+MGP	protein_coding	protein coding gene	protein coding gene	Gene	no		
+MGP	pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	retrotransposed	pseudogene	pseudogene	Pseudogene	no		
+MGP	ribozyme	ribozyme gene	ribozyme gene	Gene	no		
+MGP	rRNA	rRNA gene	rRNA gene	Gene	no		
+MGP	scaRNA	snoRNA gene	snoRNA gene	Gene	no		
+MGP	scRNA	scRNA gene|SRP RNA gene	scRNA gene	Gene	no		
+MGP	sense_intronic	sense intronic lncRNA gene	sense intronic lncRNA gene	Gene	no		
+MGP	sense_overlapping	sense overlapping lncRNA gene	sense overlapping lncRNA gene	Gene	no		
+MGP	snoRNA	snoRNA gene	snoRNA gene	Gene	no		
+MGP	snRNA	snRNA gene	snRNA gene	Gene	no		
+MGP	sRNA	unclassified non-coding RNA gene	unclassified non-coding RNA gene	Gene	no		
+MGP	TEC	all feature types	unclassified gene	Gene	no		
+MGP	TR_C_gene	gene segment	gene segment	Gene	no		
+MGP	TR_D_gene	gene segment	gene segment	Gene	no		
+MGP	TR_gene	gene segment	gene segment	Gene	no		
+MGP	TR_J_gene	gene segment	gene segment	Gene	no		
+MGP	TR_J_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	TR_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	TR_V_gene	gene segment	gene segment	Gene	no		
+MGP	TR_V_pseudogene	pseudogenic gene segment	pseudogenic gene segment	Pseudogene	no		
+MGP	transcribed_processed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	transcribed_unitary_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	transcribed_unprocessed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	translated_processed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	translated_unprocessed_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	unitary_pseudogene	pseudogene	pseudogene	Pseudogene	no		
+MGP	unknown_likely_coding	protein coding gene	protein coding gene	Gene	no		
+MGP	unprocessed_pseudogene	pseudogene	pseudogene	Pseudogene	no		

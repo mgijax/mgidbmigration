@@ -49,6 +49,10 @@ date | tee -a ${LOG}
 echo '--- remove VEGA data/code' | tee -a $LOG
 ./vega.csh | tee -a $LOG
 
+if ( ${INSTALL_TYPE} == "dev" ) then
+cp biotypemapping.config ${GENEMODELLOAD}
+endif
+
 # only run if *not* running straingenemodelload
 #date | tee -a ${LOG}
 #echo '--- new mrk_biotypemapping ' | tee -a $LOG

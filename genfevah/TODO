@@ -1,0 +1,6 @@
+
+vega_ensemblseqload -> ensemblseqload
+1. change Git/vega_ensemblseqload to Git/ensemblseqload
+2. affects mgiconfig/manifest, mgiconfig/default/common.config.default
+
+

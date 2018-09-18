@@ -42,6 +42,7 @@ switch (`uname -n`)
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
         #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+	${MIRROR_WGET}/download_package ftp.ensembl.org.mouse_gff3 | tee -a $LOG || exit 1
         breaksw
 endsw
 

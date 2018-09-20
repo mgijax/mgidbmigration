@@ -1,3 +1,10 @@
+TAG: mgidbmigration-6-0-13-4
+DATE: 09/20/2018
+STAFF: sc
+CHANGES: TR12734/Genome FeVah
+1) commented out removal of files/directories
+     in public and qc reports
+
 TAG: mgidbmitration-6-0-13-3
 TAG: mgidbmitration-6-0-13-2
 TAG: mgidbmitration-6-0-13-1

@@ -1,14 +1,17 @@
 #!/bin/csh -f
 
 #
+# has tr12963 branch:
 # ei
+# mrkcacheload
+# pgmgddbschema
+# pgdbutilities
+# 
+# no branch yet:
 # femover
 # genemapload
 # mgd_java_api
-# mrkcacheload
 # nomenload
-# pgdbutilities
-# pgmgddbschema
 # qcreports_db
 # reprots_db
 # unistsload

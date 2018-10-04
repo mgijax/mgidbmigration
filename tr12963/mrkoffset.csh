@@ -23,6 +23,9 @@ date | tee -a $LOG
 # MRK_Marker : adding cmOffset
 # MRK_Offset : removing
 #
+${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE MRK_Marker RENAME TO MRK_Marker_old;
 ALTER TABLE mgd.MRK_Marker_old DROP CONSTRAINT MRK_Marker_pkey CASCADE;
@@ -60,15 +63,39 @@ ALTER TABLE mgd.MRK_Marker ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_
 ALTER TABLE mgd.MRK_Marker ADD FOREIGN KEY (_Marker_Status_key) REFERENCES mgd.MRK_Status DEFERRABLE;
 ALTER TABLE mgd.MRK_Marker ADD FOREIGN KEY (_Marker_Type_key) REFERENCES mgd.MRK_Types DEFERRABLE;
 
+-- obsolete/remove
+DROP FUNCTION IF EXISTS MRK_updateOffset(int,int);
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
+
+${PG_MGD_DBSCHEMADIR}/procedure/ALL_convertAllele_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/ALL_createWildType_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_alleleWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/SEQ_deleteObsoleteDummy_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1
+
+${PG_MGD_DBSCHEMADIR}/view/MRK_Mouse_View_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+select count(*) from MRK_Marker_old;
+select count(*) from MRK_Marker;
+
 --drop table mgd.MRK_Marker_old;
 --drop table mgd.MRK_Offset;
 EOSQL
+
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date |tee -a $LOG
 

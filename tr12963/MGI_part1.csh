@@ -48,13 +48,17 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 
+date | tee -a ${LOG}
+echo 'mrkoffset migration' | tee -a $LOG
+./mrkoffset.csh | tee -a $LOG || exit 1
+
 #
 # reconfig.sh:
 # Drop and re-create database triggers, stored procedures, views and comments
 # always a good idea to do to make sure that nothing was missed with schema changes
 #
 date | tee -a ${LOG}
-echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
+echo 'running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1

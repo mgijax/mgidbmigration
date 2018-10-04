@@ -1,7 +1,17 @@
 #!/bin/csh -f
 
 #
-# Template
+# ei
+# femover
+# genemapload
+# mgd_java_api
+# mrkcacheload
+# nomenload
+# pgdbutilities
+# pgmgddbschema
+# qcreports_db
+# reprots_db
+# unistsload
 #
 
 
@@ -27,6 +37,13 @@ ${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__Organism_key_fkey CASCADE;
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__CreatedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker_pkey CASCADE;
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker_pkey CASCADE;
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__Marker_Status_key_fkey CASCADE;
+ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__Marker_Type_key_fkey CASCADE;
 ALTER TABLE MRK_Marker RENAME TO MRK_Marker_old;
 ALTER TABLE mgd.MRK_Marker_old DROP CONSTRAINT MRK_Marker_pkey CASCADE;
 EOSQL
@@ -83,8 +100,6 @@ ${PG_MGD_DBSCHEMADIR}/procedure/SEQ_deleteObsoleteDummy_create.object | tee -a $
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1
 
-${PG_MGD_DBSCHEMADIR}/view/MRK_Mouse_View_create.object | tee -a $LOG || exit 1
-
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select count(*) from MRK_Marker_old;
@@ -94,6 +109,7 @@ select count(*) from MRK_Marker;
 --drop table mgd.MRK_Offset;
 EOSQL
 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 

@@ -9,11 +9,11 @@
 # 
 # no branch yet:
 # femover
-# genemapload
-# mgd_java_api
 # nomenload
+# mgd_java_api
 # qcreports_db
 # reprots_db
+# genemapload
 # unistsload
 #
 
@@ -39,6 +39,8 @@ date | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__Organism_key_fkey CASCADE;
 ALTER TABLE mgd.MRK_Marker DROP CONSTRAINT MRK_Marker__ModifiedBy_key_fkey CASCADE;

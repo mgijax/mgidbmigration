@@ -3,13 +3,13 @@
 #
 # has tr12963 branch:
 # ei
-# mrkcacheload
 # pgmgddbschema
 # pgdbutilities
+# mrkcacheload
+# nomenload
 # 
 # no branch yet:
 # femover
-# nomenload
 # mgd_java_api
 # qcreports_db
 # reprots_db

@@ -48,9 +48,10 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 
-date | tee -a ${LOG}
-echo 'mrkalias remove' | tee -a $LOG
-./mrkalias.csh | tee -a $LOG || exit 1
+# do as support TR
+#date | tee -a ${LOG}
+#echo 'mrkalias remove' | tee -a $LOG
+#./mrkalias.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'mrkoffset migration' | tee -a $LOG

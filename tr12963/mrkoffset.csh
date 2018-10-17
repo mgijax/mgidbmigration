@@ -111,8 +111,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from MRK_Marker_old;
 select count(*) from MRK_Marker;
 
---drop table mgd.MRK_Marker_old;
---drop table mgd.MRK_Offset;
+drop table mgd.MRK_Marker_old;
+drop table mgd.MRK_Offset;
 EOSQL
 
 ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG || exit 1

@@ -36,7 +36,7 @@ date | tee -a $LOG
 # MRK_Marker : adding cmOffset
 # MRK_Offset : removing
 #
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Offset ${MGI_LIVE}/mgidbmigration/tr12963/MRK_Offset.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Offset ${MGI_LIVE}/dbutils/mgidbmigration/tr12963/MRK_Offset.bcp "|"
 ${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_drop.object | tee -a $LOG || exit 1

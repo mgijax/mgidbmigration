@@ -110,6 +110,13 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select count(*) from MRK_Marker_old;
 select count(*) from MRK_Marker;
+select count(*) from MRK_Marker where _Organism_key = 1 and cmOffset is null;
+select m._Marker_key, m.symbol, m.cmOffset
+from MRK_Marker m, MRK_Offset o
+where m._Marker_key = o._Marker_key
+and o.source = 0
+and m.cmOffset != o.cmOffset
+;
 
 drop table mgd.MRK_Marker_old;
 drop table mgd.MRK_Offset;

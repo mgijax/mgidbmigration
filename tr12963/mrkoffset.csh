@@ -94,6 +94,7 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/MRK_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/MRK_Marker_create.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/procedure/ALL_convertAllele_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/ALL_createWildType_create.object | tee -a $LOG || exit 1
@@ -128,7 +129,6 @@ EOSQL
 
 ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG || exit 1
 
-${PG_MGD_DBSCHEMADIR}/autosequence/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

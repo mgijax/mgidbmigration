@@ -89,6 +89,9 @@ ALTER TABLE mgd.MRK_Marker ADD FOREIGN KEY (_Marker_Type_key) REFERENCES mgd.MRK
 -- obsolete/remove
 DROP FUNCTION IF EXISTS MRK_updateOffset(int,int);
 
+-- need to change int->bigint, so need to drop obsolete function
+DROP FUNCTION IF EXISTS MRK_insertHistory(int,int,int,int,int,int,text,timestamp,int,int,timestamp,timestamp);
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/MRK_Marker_create.object | tee -a $LOG || exit 1
@@ -103,6 +106,7 @@ ${PG_MGD_DBSCHEMADIR}/procedure/MRK_deleteWithdrawal_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadLocation_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/SEQ_deleteObsoleteDummy_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOGAFRed_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LOG || exit 1

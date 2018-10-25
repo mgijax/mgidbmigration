@@ -109,8 +109,11 @@ ${PG_MGD_DBSCHEMADIR}/procedure/VOC_deleteGOWithdrawn_create.object | tee -a $LO
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select count(*) from MRK_Marker_old;
+
 select count(*) from MRK_Marker;
+
 select count(*) from MRK_Marker where _Organism_key = 1 and cmOffset is null;
+
 select m._Marker_key, m.symbol, m.cmOffset
 from MRK_Marker m, MRK_Offset o
 where m._Marker_key = o._Marker_key
@@ -120,10 +123,12 @@ and m.cmOffset != o.cmOffset
 
 drop table mgd.MRK_Marker_old;
 drop table mgd.MRK_Offset;
+
 EOSQL
 
 ${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG || exit 1
 
+${PG_MGD_DBSCHEMADIR}/autosequence/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

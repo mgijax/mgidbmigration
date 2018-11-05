@@ -37,6 +37,10 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-14', public_version = 'MGI 6.14';
+
+-- remove not applicable/not specified
+delete from MRK_Status where _Marker_Status_key < 0;
+
 EOSQL
 date | tee -a ${LOG}
 

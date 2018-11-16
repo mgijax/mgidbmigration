@@ -46,7 +46,7 @@ insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 
 ;
 insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 1368, 'PWK/PhJ', 1)
 ;
-insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 18, 'RF/J1', 1)
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 18, 'RF/J', 1)
 ;
 
 insert into snp_population values((select max(_population_key) + 1 from snp_population), 'SC_MOUSE_GENOMES', 10125533, 'EVA_MGPV3')

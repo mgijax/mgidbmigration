@@ -71,6 +71,10 @@ echo 'new autosequences' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/MGI_Synonym_create.object | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
+echo 'add variant tables' | tee -a $LOG
+./vartables.csh | tee -a $LOG || exit 1
+
+date | tee -a ${LOG}
 echo 'new stored procedures | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_insertNote_create.object | tee -a $LOG || exit 1
 

@@ -22,12 +22,14 @@ date | tee -a $LOG
 echo "Adding VAR_* tables to ${MGD_DBSERVER}..${MGD_DBNAME}" 
 
 # 1. add VAR_* tables
-# 2. add comments for VAR_* tables
-# 3. add indexes for VAR_* tables
-# 4. add keys on VAR_* tables
-# 5. add keys from VAR_* tables to pre-existing tables
+# 2. add autosequences for primary keys of VAR_* tables
+# 3. add comments for VAR_* tables
+# 4. add indexes for VAR_* tables
+# 5. add keys on VAR_* tables
+# 6. add keys from VAR_* tables to pre-existing tables
 
 ${PG_MGD_DBSCHEMADIR}/table/VAR_create.logical | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/VAR_create.logical | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/comments/VAR_Effect_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/VAR_Sequence_create.object | tee -a $LOG || exit 1

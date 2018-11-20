@@ -42,6 +42,7 @@ ${PG_MGD_DBSCHEMADIR}/key/VAR_create.logical | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
 
+grant select on all sequences in schema mgd to public;
 `grep VAR_ ${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_create.object`
 `grep VAR_ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object`
 `grep VAR_ ${PG_MGD_DBSCHEMADIR}/key/PRB_Strain_create.object`

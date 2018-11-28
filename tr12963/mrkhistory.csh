@@ -81,7 +81,7 @@ select count(*) from MRK_History_old;
 
 select count(*) from MRK_History;
 
---drop table mgd.MRK_History_old;
+drop table mgd.MRK_History_old;
 
 EOSQL
 

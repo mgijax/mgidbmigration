@@ -41,8 +41,10 @@ update MGI_dbinfo set schema_version = '6-0-14', public_version = 'MGI 6.14';
 -- remove not applicable/not specified
 delete from MRK_Status where _Marker_Status_key < 0;
 
--- obsolete view
+-- obsolete
 drop view if exists mgd.MRK_AccRef3_View;
+DROP FUNCTION IF EXISTS ACC_insertNoChecks(int,int,text,int,text,int,int,int,int);
+
 
 EOSQL
 date | tee -a ${LOG}

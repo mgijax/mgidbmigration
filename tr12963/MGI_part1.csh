@@ -84,8 +84,9 @@ echo 'add variant tables' | tee -a $LOG
 ./vartables.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
-echo 'new stored procedures' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/MGI_processNote_create.object | tee -a $LOG || exit 1
+echo 'stored procedures' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

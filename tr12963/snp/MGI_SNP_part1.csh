@@ -35,13 +35,13 @@ drop index if exists snp.SNP_Accession_idx_prefixPart;
 drop index if exists snp.DP_SNP_Marker_idx_entrezGeneId;
 drop index if exists snp.DP_SNP_Marker_idx_accID;
 
-drop index if exists snp.SNP_Coord_Cache_idx_clustered;
+drop index if exists snp.SNP_Coord_Cache_idx_chromstartcoord; 
 
 drop index if exists snp.SNP_Population_idx_name;
 
 drop index if exists snp.SNP_Strain_idx_strain;
 
-drop index if exists snp.SNP_Transcript_Protein_idx_clustered;
+drop index if exists snp.SNP_Transcript_Protein_idx_transcript_protein;
 
 ALTER TABLE SNP_Accession ALTER COLUMN accID TYPE text;
 ALTER TABLE SNP_Accession ALTER COLUMN prefixPart TYPE text;
@@ -82,16 +82,18 @@ create index SNP_Accession_idx_prefixPart on snp.SNP_Accession (prefixPart);
 
 create index DP_SNP_Marker_idx_entrezGeneId on snp.DP_SNP_Marker (entrezGeneId);create index DP_SNP_Marker_idx_accID on snp.DP_SNP_Marker (accID);
 
-create index SNP_Coord_Cache_idx_clustered on snp.SNP_Coord_Cache(chromosome, startCoordinate);
-CLUSTER snp.SNP_Coord_Cache USING SNP_Coord_Cache_idx_clustered;
+create index SNP_Coord_Cache_idx_chromstartcoord on snp.SNP_Coord_Cache(chromosome, startCoordinate);
 
 create index SNP_Population_idx_name on snp.SNP_Population (name);
 
 create index SNP_Strain_idx_strain on snp.SNP_Strain (strain);
 
-create index SNP_Transcript_Protein_idx_clustered on snp.SNP_Transcript_Protein (transcriptID, proteinID);
+create index SNP_Transcript_Protein_idx_transcript_protein on snp.SNP_Transcript_Protein (transcriptID, proteinID);
 
-CLUSTER snp.SNP_Transcript_Protein USING SNP_Transcript_Protein_idx_clustered;
+ALTER TABLE snp.SNP_ConsensusSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
+
+
+ALTER TABLE snp.SNP_SubSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
 
 EOSQL
 
@@ -104,7 +106,7 @@ echo 'rebuilding Java Frameworks libraries' | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
-echo 'gxdexpression migration' | tee -a $LOG
+echo 'strain/population migration' | tee -a $LOG
 ./snpStrainsPop.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

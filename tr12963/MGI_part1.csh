@@ -59,6 +59,10 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
+echo 'mrkec migration' | tee -a $LOG
+./mrkec.csh | tee -a $LOG || exit 1
+
+date | tee -a ${LOG}
 echo 'mrkoffset migration' | tee -a $LOG
 ./mrkoffset.csh | tee -a $LOG || exit 1
 

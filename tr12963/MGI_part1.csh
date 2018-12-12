@@ -58,11 +58,6 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 
-# do as support TR
-#date | tee -a ${LOG}
-#echo 'mrkalias remove' | tee -a $LOG
-#./mrkalias.csh | tee -a $LOG || exit 1
-
 date | tee -a ${LOG}
 echo 'mrkoffset migration' | tee -a $LOG
 ./mrkoffset.csh | tee -a $LOG || exit 1
@@ -70,6 +65,10 @@ echo 'mrkoffset migration' | tee -a $LOG
 date | tee -a ${LOG}
 echo 'mrkhistory migration' | tee -a $LOG
 ./mrkhistory.csh | tee -a $LOG || exit 1
+
+date | tee -a ${LOG}
+echo 'mrkcurrent migration' | tee -a $LOG
+./mrkcurrent.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'gxdexpression migration' | tee -a $LOG
@@ -84,7 +83,9 @@ echo 'add variant tables' | tee -a $LOG
 ./vartables.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
-echo 'stored procedures' | tee -a $LOG
+echo 'views/stored procedures' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 

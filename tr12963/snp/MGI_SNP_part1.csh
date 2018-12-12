@@ -29,6 +29,9 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+ALTER TABLE snp.SNP_SubSnp_StrainAllele DROP CONSTRAINT IF EXISTS SNP_SubSnp_StrainAllele__mgdStrain_key_fkey CASCADE;
+ALTER TABLE snp.SNP_ConsensusSnp_StrainAllele DROP CONSTRAINT IF EXISTS SNP_ConsensusSnp_StrainAllele__mgdStrain_key_fkey CASCADE;
+
 drop index if exists snp.SNP_Accession_idx_accID;
 drop index if exists snp.SNP_Accession_idx_prefixPart;
 
@@ -77,6 +80,10 @@ ALTER TABLE SNP_SubSnp_StrainAllele ALTER COLUMN allele TYPE text;
 ALTER TABLE SNP_Transcript_Protein ALTER COLUMN transcriptID TYPE text;
 ALTER TABLE SNP_Transcript_Protein ALTER COLUMN proteinID TYPE text;
 
+ALTER TABLE snp.SNP_ConsensusSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
+
+ALTER TABLE snp.SNP_SubSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
+
 create index SNP_Accession_idx_accID on snp.SNP_Accession (accID);
 create index SNP_Accession_idx_prefixPart on snp.SNP_Accession (prefixPart);
 
@@ -89,11 +96,6 @@ create index SNP_Population_idx_name on snp.SNP_Population (name);
 create index SNP_Strain_idx_strain on snp.SNP_Strain (strain);
 
 create index SNP_Transcript_Protein_idx_transcript_protein on snp.SNP_Transcript_Protein (transcriptID, proteinID);
-
-ALTER TABLE snp.SNP_ConsensusSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
-
-
-ALTER TABLE snp.SNP_SubSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
 
 EOSQL
 

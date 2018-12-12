@@ -67,10 +67,6 @@ echo 'mrkhistory migration' | tee -a $LOG
 ./mrkhistory.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
-echo 'mrkcurrent migration' | tee -a $LOG
-./mrkcurrent.csh | tee -a $LOG || exit 1
-
-date | tee -a ${LOG}
 echo 'gxdexpression migration' | tee -a $LOG
 ./gxdexpression.csh | tee -a $LOG || exit 1
 

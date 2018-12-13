@@ -61,7 +61,7 @@ ALTER TABLE mgd.GXD_Expression ADD FOREIGN KEY (_EMAPA_Term_key) REFERENCES mgd.
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 # full table load
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG

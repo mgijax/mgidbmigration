@@ -34,7 +34,7 @@ select a._accession_key, 22864, 1001, 1001, now(), now()
 from ACC_Accession a
 where a._logicaldb_key = 8
 and not exists (select 1 from acc_accessionreference r where a._accession_key = r._accession_key)
-and exists (select 1 from mrk_marker r where a._object_key = a._marker_key)
+and exists (select 1 from mrk_marker r where a._object_key = r._marker_key)
 ;
 
 select m.symbol, a.accid

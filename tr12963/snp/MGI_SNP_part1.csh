@@ -29,9 +29,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-ALTER TABLE snp.SNP_SubSnp_StrainAllele DROP CONSTRAINT IF EXISTS SNP_SubSnp_StrainAllele__mgdStrain_key_fkey CASCADE;
-ALTER TABLE snp.SNP_ConsensusSnp_StrainAllele DROP CONSTRAINT IF EXISTS SNP_ConsensusSnp_StrainAllele__mgdStrain_key_fkey CASCADE;
-
 drop index if exists snp.SNP_Accession_idx_accID;
 drop index if exists snp.SNP_Accession_idx_prefixPart;
 
@@ -80,10 +77,6 @@ ALTER TABLE SNP_SubSnp_StrainAllele ALTER COLUMN allele TYPE text;
 ALTER TABLE SNP_Transcript_Protein ALTER COLUMN transcriptID TYPE text;
 ALTER TABLE SNP_Transcript_Protein ALTER COLUMN proteinID TYPE text;
 
-ALTER TABLE snp.SNP_ConsensusSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
-
-ALTER TABLE snp.SNP_SubSnp_StrainAllele ADD FOREIGN KEY (_mgdStrain_key) REFERENCES snp.SNP_Strain(_mgdStrain_key) ON DELETE CASCADE;
-
 create index SNP_Accession_idx_accID on snp.SNP_Accession (accID);
 create index SNP_Accession_idx_prefixPart on snp.SNP_Accession (prefixPart);
 
@@ -97,6 +90,8 @@ create index SNP_Strain_idx_strain on snp.SNP_Strain (strain);
 
 create index SNP_Transcript_Protein_idx_transcript_protein on snp.SNP_Transcript_Protein (transcriptID, proteinID);
 
+insert into snp_population values((select max(_population_key) + 1 from snp_population), 'SC_MOUSE_GENOMES', 10125533, 'EVA_MGPV3');
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
@@ -107,9 +102,6 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 echo 'rebuilding Java Frameworks libraries' | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
-
-echo 'strain/population migration' | tee -a $LOG
-./snpStrainsPop.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo '--- finished SNP part 1' | tee -a ${LOG}

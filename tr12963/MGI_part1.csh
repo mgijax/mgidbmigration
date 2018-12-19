@@ -71,10 +71,6 @@ echo 'mrkhistory migration' | tee -a $LOG
 ./mrkhistory.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
-echo 'gxdexpression migration' | tee -a $LOG
-./gxdexpression.csh | tee -a $LOG || exit 1
-
-date | tee -a ${LOG}
 echo 'new autosequences' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/MGI_Synonym_create.object | tee -a $LOG || exit 1
 

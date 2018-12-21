@@ -113,6 +113,13 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 ${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
+#
+# run SO vocab load
+#
+#date | tee -a ${LOG}
+#echo 'run SO vocab load' | tee -a $LOG
+$VOCLOAD/runOBOFullLoad.sh SO.config | tee -a $LOG || exit 1
+
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}
 

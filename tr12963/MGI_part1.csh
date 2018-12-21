@@ -116,8 +116,8 @@ ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 #
 # run SO vocab load
 #
-#date | tee -a ${LOG}
-#echo 'run SO vocab load' | tee -a $LOG
+date | tee -a ${LOG}
+echo 'run SO vocab load' | tee -a $LOG
 $VOCLOAD/runOBOFullLoad.sh SO.config | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

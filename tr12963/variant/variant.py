@@ -55,7 +55,7 @@ PAGE = reportlib.PAGE
 # Main
 #
 
-variantBCP = '%s|%s||%s|0|%s|1000|1000|%s|%s\n'
+variantBCP = '%s|%s||%s|0|%s|1001|1001|%s|%s\n'
 variantFile = open('ALL_Variant.bcp', 'w')
 variantKey = 1
 
@@ -77,8 +77,6 @@ for line in inFile.readlines():
 	alleleId = tokens[5]
 	allele = tokens[6]
 	description = tokens[13]
-	print strain, alleleId, allele
-
 	results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
 	if len(results) == 0:
 		print 'Invalid Strain: ', strain
@@ -94,6 +92,8 @@ for line in inFile.readlines():
 		alleleKey = r['_Object_key']
 
 	if error == 1:
+	        print lineNum, strain, alleleId, allele
+		print '#####'
 		continue
 
 	variantFile.write(variantBCP % (variantKey, alleleKey, strainKey, description, cdate, cdate))

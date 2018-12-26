@@ -39,7 +39,10 @@
 import sys 
 import os
 import db
+import mgi_utils
 import reportlib
+
+cdate = mgi_utils.date('%m/%d/%Y')
 
 db.setTrace()
 
@@ -52,31 +55,58 @@ PAGE = reportlib.PAGE
 # Main
 #
 
-db.useOneConnection(1)
+variantBCP = '%s|%s||%s|0|%s|1000|1000|%s|%s\n'
+variantFile = open('ALL_Variant.bcp', 'w')
+variantKey = 1
 
-inFile = open('', 'r')
+inFile = open('122018_alleles.txt', 'r')
 lineNum = 0
 for line in inFile.readlines():
+
+	error = 0
 	lineNum = lineNum + 1
 
 	tokens = line[:-1].split('\t')
 
-fp = reportlib.init(sys.argv[0], printHeading = None)
+	# 3.  strain name			: var_variant._strain_key
+	# 6.  mgi id allele			: var_variant._allele_key
+	# 7.  allele symbol
+	# 14. jannovar_hgvs 			: var_variant.description
 
-#
-# cmd = sys.argv[1]
-#
-# or
-#
-# cmd = 'select * from MRK_Marker where _Species_key = 1 and chromosome = "1"'
-#
+	strain = tokens[2]
+	alleleId = tokens[5]
+	allele = tokens[6]
+	description = tokens[13]
+	print strain, alleleId, allele
 
-results = db.sql(cmd, 'auto')
+	results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
+	if len(results) == 0:
+		print 'Invalid Strain: ', strain
+		error = 1
+	for r in results:
+		strainKey = r['_Strain_key']
 
-for r in results:
-    fp.write(r['item'] + CRT)
+	results = db.sql('''select _Object_key from ACC_Accession where _mgitype_key = 11 and accID = '%s' '''  % (alleleId), 'auto')
+	if len(results) == 0:
+		print 'Invalid Allele: ', alleleId
+		error = 1
+	for r in results:
+		alleleKey = r['_Object_key']
+
+	if error == 1:
+		continue
+
+	variantFile.write(variantBCP % (variantKey, alleleKey, strainKey, description, cdate, cdate))
+	variantKey += 1
 
 inFile.close()
-reportlib.finish_nonps(fp)	# non-postscript file
-db.useOneConnection(0)
+variantFile.close()
+
+bcpCommand = os.environ['PG_DBUTILS'] + '/bin/bcpin.csh'
+currentDir = os.getcwd()
+
+bcp1 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'ALL_Variant', currentDir, 'ALL_Variant.bcp')
+
+os.system(bcp1)
 

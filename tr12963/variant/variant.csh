@@ -22,7 +22,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/table/ALL_Variant_truncate.csh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/ALL_Variant_truncate.object | tee -a $LOG
 
 ./variant.py | tee -a $LOG
 

@@ -55,7 +55,7 @@ PAGE = reportlib.PAGE
 # Main
 #
 
-variantBCP = '%s|%s||%s|0|%s|1001|1001|%s|%s\n'
+variantBCP = '%s|%s|%s|%s|0|%s|1001|1001|%s|%s\n'
 sequenceBCP = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
 
 variantFile = open('ALL_Variant.bcp', 'w')
@@ -113,10 +113,15 @@ for line in inFile.readlines():
 		print '#####'
 		continue
 
-	variantFile.write(variantBCP % (variantKey, alleleKey, strainKey, description, cdate, cdate))
-
+	sourceVariantKey = ''
+	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
+	sourceVariantKey = variantKey
+	variantKey += 1
+	sequenceKey += 1
 
+	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
+	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
 	variantKey += 1
 	sequenceKey += 1
 
@@ -133,6 +138,8 @@ bcp2 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'ALL_Variant_Sequence', currentDir, 'ALL_Variant_Sequence.bcp')
 
 
+print bcp1
 os.system(bcp1)
+print bcp2
 os.system(bcp2)
 

@@ -34,14 +34,21 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # copy /data/downloads files needed for loads
 # this only needs to happen on development servers
 #
-switch (`uname -n`)
-    case bhmgiapp14ld:
-    case bhmgidevapp01:
-        date | tee -a ${LOG}
-        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
-        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
-        breaksw
-endsw
+#switch (`uname -n`)
+#    case bhmgiapp14ld:
+#    case bhmgidevapp01:
+#        date | tee -a ${LOG}
+#        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
+#        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+#        breaksw
+#endsw
+
+
+date | tee -a ${LOG}
+echo 'run variant migration' | tee -a $LOG
+cd variant
+./variant.csh | tee -a $LOG
+cd ..
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

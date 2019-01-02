@@ -28,6 +28,8 @@ ${PG_MGD_DBSCHEMADIR}/table/ALL_Variant_truncate.object | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_Sequence_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_Sequence_create.object | tee -a $LOG
 
 date |tee -a $LOG
 

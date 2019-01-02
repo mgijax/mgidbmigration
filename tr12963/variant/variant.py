@@ -6,21 +6,21 @@
 #       load Meiyee's spreadsheet
 #
 #
-# 1.  mgi id marker
-# 2.  marker symbol
-# 3.  strain name			: var_variant._strain_key
-# 4.  pubmedid				: acc_accession:  _mgitype_key = ?, ldb = 29
-# 5.  J:				: mgi_reference_assoc: _mgitype_key = ?, _object_key = _refs_key
-# 6.  mgi id allele			: var_variant._allele_key
-# 7.  allele symbol
-# 8.  molecular note			: mgi_note: _mgitype_key = ?, _notetype_key = ?
-# 9.  chromosome (format is in "chr")
-# 10. start coordinate			: map
-# 11. end coordinate			: map
-# 12. ref_allele			: var_sequence.referenceSequence
-# 13. alt_allele			: var_sequence.variantSequence
-# 14. jannovar_hgvs 			: var_variant.description
-# 15. jannovar_functional_class		: lookup terms in SO vocab (21)
+# 1/A.  mgi id marker
+# 2/B.  marker symbol
+# 3/C.  strain name			: var_variant._strain_key
+# 4/D.  pubmedid				: acc_accession:  _mgitype_key = ?, ldb = 29
+# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = ?, _object_key = _refs_key
+# 6/F.  mgi id allele			: var_variant._allele_key
+# 7/G.  allele symbol
+# 8/H.  molecular note			: mgi_note: _mgitype_key = ?, _notetype_key = ?
+# 9/I.  chromosome (format is in "chr")
+# 10/J. start coordinate			: var_sequence.startCoord
+# 11/K. end coordinate			: var_sequence.endCoord
+# 12/L. ref_allele			: var_sequence.referenceSequence
+# 13/M. alt_allele			: var_sequence.variantSequence
+# 14/N. jannovar_hgvs 			: var_variant.description
+# 15/O. jannovar_functional_class		: lookup terms in SO vocab (21)
 #
 # database fields not in spreadsheet/but need to be set
 #
@@ -56,8 +56,13 @@ PAGE = reportlib.PAGE
 #
 
 variantBCP = '%s|%s||%s|0|%s|1001|1001|%s|%s\n'
+sequenceBCP = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
+
 variantFile = open('ALL_Variant.bcp', 'w')
+sequenceFile = open('ALL_Variant_Sequence.bcp', 'w')
+
 variantKey = 1
+sequenceKey = 1
 
 inFile = open('122018_alleles.txt', 'r')
 lineNum = 0
@@ -72,11 +77,23 @@ for line in inFile.readlines():
 	# 6.  mgi id allele			: var_variant._allele_key
 	# 7.  allele symbol
 	# 14. jannovar_hgvs 			: var_variant.description
+	#
+	# 10/J. start coordinate			: var_sequence.startCoord
+	# 11/K. end coordinate			: var_sequence.endCoord
+	# 12/L. ref_allele			: var_sequence.referenceSequence
+	# 13/M. alt_allele			: var_sequence.variantSequence
+	#
 
 	strain = tokens[2]
 	alleleId = tokens[5]
 	allele = tokens[6]
 	description = tokens[13]
+
+	startCoord = tokens[9]
+	endCoord = tokens[10]
+	refSequence = tokens[11]
+	varSequence = tokens[12]
+
 	results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
 	if len(results) == 0:
 		print 'Invalid Strain: ', strain
@@ -97,16 +114,25 @@ for line in inFile.readlines():
 		continue
 
 	variantFile.write(variantBCP % (variantKey, alleleKey, strainKey, description, cdate, cdate))
+
+	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
+
 	variantKey += 1
+	sequenceKey += 1
 
 inFile.close()
 variantFile.close()
+sequenceFile.close()
 
 bcpCommand = os.environ['PG_DBUTILS'] + '/bin/bcpin.csh'
 currentDir = os.getcwd()
 
 bcp1 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'ALL_Variant', currentDir, 'ALL_Variant.bcp')
+bcp2 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'ALL_Variant_Sequence', currentDir, 'ALL_Variant_Sequence.bcp')
+
 
 os.system(bcp1)
+os.system(bcp2)
 

@@ -20,16 +20,15 @@ touch $LOG
 date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete * from ALL_Variant;
 EOSQL
-
-${PG_MGD_DBSCHEMADIR}/table/ALL_Variant_truncate.object | tee -a $LOG
-
-./variant.py | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_Sequence_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_Sequence_create.object | tee -a $LOG
+
+./variant.py | tee -a $LOG
 
 date |tee -a $LOG
 

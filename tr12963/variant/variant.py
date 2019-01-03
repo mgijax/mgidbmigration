@@ -58,14 +58,20 @@ PAGE = reportlib.PAGE
 variantBCP = '%s|%s|%s|%s|0|%s|1001|1001|%s|%s\n'
 sequenceBCP = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
 referenceBCP = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
+vocAnnotBCP = '%s|1026|%s|%s|1614158|%s|%s\n'
+vocEvidenceBCP = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
 
 variantFile = open('ALL_Variant.bcp', 'w')
 sequenceFile = open('ALL_Variant_Sequence.bcp', 'w')
 referenceFile = open('MGI_Reference_Assoc.bcp', 'w')
+vocAnnotFile = open('VOC_Annot.bcp', 'w')
+vocEvidenceFile = open('VOC_Evidence.bcp', 'w')
 
 variantKey = db.sql(''' select nextval('all_variant_seq') ''', 'auto')[0]['nextval']
 sequenceKey = db.sql(''' select nextval('all_variantsequence_seq') ''', 'auto')[0]['nextval']
 referenceKey = db.sql(''' select nextval('mgi_reference_assoc_seq') ''', 'auto')[0]['nextval']
+annotKey = db.sql(''' select max(_annot_key) + 1 from voc_annot ''', 'auto')[0]['']
+evidenceKey = db.sql(''' select max(_annotevidence_key) + 1 from voc_evidence ''', 'auto')[0]['']
 
 inFile = open('122018_alleles.txt', 'r')
 lineNum = 0
@@ -87,6 +93,8 @@ for line in inFile.readlines():
 	# 13/M. alt_allele			: var_sequence.variantSequence
 	#
 	# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = ?, _object_key = _refs_key
+	#
+	# 15/O. jannovar_functional_class		: lookup terms in SO vocab (21)
 
 	strain = tokens[2]
 	alleleId = tokens[5]
@@ -97,8 +105,12 @@ for line in inFile.readlines():
 	endCoord = tokens[10]
 	refSequence = tokens[11]
 	varSequence = tokens[12]
-
 	jnumId = tokens[4]
+
+	try:
+	    soTerm = tokens[14].lower()
+        except:
+	    pass
 
 	results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
 	if len(results) == 0:
@@ -121,6 +133,13 @@ for line in inFile.readlines():
 	for r in results:
 		refsKey = r['_Refs_key']
 
+	results = db.sql('''select _term_key from VOC_Term where term = '%s' ''' % (soTerm), 'auto')
+	if len(results) == 0:
+		print 'Invalid SO term: ', soTerm
+		error = 1
+	for r in results:
+		soKey = r['_Term_key']
+
 	if error == 1:
 	        print lineNum, strain, alleleId, allele
 		print '#####'
@@ -130,10 +149,15 @@ for line in inFile.readlines():
 	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
 	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
+        vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey))
+        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey))
+
 	sourceVariantKey = variantKey
 	variantKey += 1
 	sequenceKey += 1
 	referenceKey += 1
+	annotKey += 1
+	evidenceKey += 1
 
 	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
@@ -144,6 +168,8 @@ inFile.close()
 variantFile.close()
 sequenceFile.close()
 referenceFile.close()
+vocAnnotFile.close()
+vocEvidenceFile.close()
 
 bcpCommand = os.environ['PG_DBUTILS'] + '/bin/bcpin.csh'
 currentDir = os.getcwd()
@@ -154,6 +180,10 @@ bcp2 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'ALL_Variant_Sequence', currentDir, 'ALL_Variant_Sequence.bcp')
 bcp3 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'MGI_Reference_Assoc', currentDir, 'MGI_Reference_Assoc.bcp')
+bcp4 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Annot', currentDir, 'VOC_Annot.bcp')
+bcp5 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Evidence', currentDir, 'VOC_Evidence.bcp')
 
 
 print bcp1
@@ -162,6 +192,10 @@ print bcp2
 os.system(bcp2)
 print bcp3
 os.system(bcp3)
+print bcp4
+os.system(bcp4)
+print bcp5
+os.system(bcp5)
 
 db.sql(''' select setval('all_variant_seq', (select max(_Variant_key) from ALL_Variant)) ''', None)
 db.sql(''' select setval('all_variantsequence_seq', (select max(_VariantSequence_key) from ALL_Variant_Sequence)) ''', None)

@@ -43,6 +43,7 @@ ${PG_MGD_DBSCHEMADIR}/index/ALL_Variant_Sequence_create.object | tee -a $LOG || 
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Variant_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Variant_Sequence_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Variant_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/ALL_Variant_create.object | tee -a $LOG || exit 1
 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0

@@ -55,23 +55,28 @@ PAGE = reportlib.PAGE
 # Main
 #
 
-variantBCP = '%s|%s|%s|%s|0|%s|1001|1001|%s|%s\n'
-sequenceBCP = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
-referenceBCP = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
-vocAnnotBCP = '%s|1026|%s|%s|1614158|%s|%s\n'
-vocEvidenceBCP = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
+variantBCP      = '%s|%s|%s|%s|0|%s|1001|1001|%s|%s\n'
+sequenceBCP     = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
+referenceBCP    = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
+vocAnnotBCP     = '%s|1026|%s|%s|1614158|%s|%s\n'
+vocEvidenceBCP  = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
+noteBCP         = '%s|%s|45|1050|1001|1001|%s|%s\n'
+noteChunkBCP    = '%s|1|%s|1001|1001|%s|%s\n'
 
-variantFile = open('ALL_Variant.bcp', 'w')
-sequenceFile = open('ALL_Variant_Sequence.bcp', 'w')
-referenceFile = open('MGI_Reference_Assoc.bcp', 'w')
-vocAnnotFile = open('VOC_Annot.bcp', 'w')
+variantFile     = open('ALL_Variant.bcp', 'w')
+sequenceFile    = open('ALL_Variant_Sequence.bcp', 'w')
+referenceFile   = open('MGI_Reference_Assoc.bcp', 'w')
+vocAnnotFile    = open('VOC_Annot.bcp', 'w')
 vocEvidenceFile = open('VOC_Evidence.bcp', 'w')
+noteFile        = open('MGI_Note.bcp', 'w')
+noteChunkFile   = open('MGI_NoteChunk.bcp', 'w')
 
-variantKey = db.sql(''' select nextval('all_variant_seq') ''', 'auto')[0]['nextval']
-sequenceKey = db.sql(''' select nextval('all_variantsequence_seq') ''', 'auto')[0]['nextval']
-referenceKey = db.sql(''' select nextval('mgi_reference_assoc_seq') ''', 'auto')[0]['nextval']
-annotKey = db.sql(''' select max(_annot_key) + 1 from voc_annot ''', 'auto')[0]['']
-evidenceKey = db.sql(''' select max(_annotevidence_key) + 1 from voc_evidence ''', 'auto')[0]['']
+variantKey      = db.sql(''' select nextval('all_variant_seq') ''', 'auto')[0]['nextval']
+sequenceKey     = db.sql(''' select nextval('all_variantsequence_seq') ''', 'auto')[0]['nextval']
+referenceKey    = db.sql(''' select nextval('mgi_reference_assoc_seq') ''', 'auto')[0]['nextval']
+annotKey        = db.sql(''' select max(_annot_key) + 1 as maxKey from voc_annot ''', 'auto')[0]['maxKey']
+evidenceKey     = db.sql(''' select max(_annotevidence_key) + 1 as maxKey from voc_evidence ''', 'auto')[0]['maxKey']
+noteKey         = db.sql(''' select max(_note_key) + 1 as maxKey from mgi_note ''', 'auto')[0]['maxKey']
 
 inFile = open('122018_alleles.txt', 'r')
 lineNum = 0
@@ -149,8 +154,8 @@ for line in inFile.readlines():
 	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
 	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
-        vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey))
-        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey))
+        vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
+        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
 
 	sourceVariantKey = variantKey
 	variantKey += 1
@@ -170,6 +175,8 @@ sequenceFile.close()
 referenceFile.close()
 vocAnnotFile.close()
 vocEvidenceFile.close()
+
+db.commit()
 
 bcpCommand = os.environ['PG_DBUTILS'] + '/bin/bcpin.csh'
 currentDir = os.getcwd()
@@ -196,8 +203,10 @@ print bcp4
 os.system(bcp4)
 print bcp5
 os.system(bcp5)
+db.commit()
 
 db.sql(''' select setval('all_variant_seq', (select max(_Variant_key) from ALL_Variant)) ''', None)
 db.sql(''' select setval('all_variantsequence_seq', (select max(_VariantSequence_key) from ALL_Variant_Sequence)) ''', None)
 db.sql(''' select setval('mgi_reference_assoc_seq', (select max(_Assoc_key) from MGI_Reference_Assoc)) ''', None)
+db.commit()
 

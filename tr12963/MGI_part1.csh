@@ -51,6 +51,15 @@ update voc_term set sequencenum = 2 where _term_key =  20225942;
 update voc_term set sequencenum = 3 where _term_key =  20225943;
 update voc_term set sequencenum = 4 where _term_key =  20225944;
 
+update voc_term set sequencenum = 10 where _term_key = 20475447;
+update voc_term set sequencenum = 11 where _term_key = 20475448;
+update voc_term set sequencenum = 12 where _term_key = 20475449;
+update voc_term set sequencenum = 13 where _term_key = 32413494;
+update voc_term set sequencenum = 14 where _term_key = 32413495;
+update voc_term set sequencenum = 15 where _term_key = 32413496;
+
+
+
 EOSQL
 date | tee -a ${LOG}
 

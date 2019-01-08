@@ -92,14 +92,16 @@ for line in inFile.readlines():
 	# 7.  allele symbol
 	# 14. jannovar_hgvs 			: var_variant.description
 	#
-	# 10/J. start coordinate			: var_sequence.startCoord
+	# 10/J. start coordinate		: var_sequence.startCoord
 	# 11/K. end coordinate			: var_sequence.endCoord
 	# 12/L. ref_allele			: var_sequence.referenceSequence
 	# 13/M. alt_allele			: var_sequence.variantSequence
 	#
 	# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = ?, _object_key = _refs_key
 	#
-	# 15/O. jannovar_functional_class		: lookup terms in SO vocab (21)
+	# 15/O. jannovar_functional_class	: lookup terms in SO vocab (21)
+	#
+	# 8/H.  molecular note			: mgi_note: _mgitype_key = ?, _notetype_key = ?
 
 	strain = tokens[2]
 	alleleId = tokens[5]
@@ -111,6 +113,7 @@ for line in inFile.readlines():
 	refSequence = tokens[11]
 	varSequence = tokens[12]
 	jnumId = tokens[4]
+	notes = tokens[7]
 
 	try:
 	    soTerm = tokens[14].lower()
@@ -156,6 +159,8 @@ for line in inFile.readlines():
 	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
         vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
         vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
+	noteFile.write(noteBCP % (noteKey, variantKey, cdate, cdate))
+	noteChunkFile.write(noteChunkBCP % (noteKey, notes, cdate, cdate))
 
 	sourceVariantKey = variantKey
 	variantKey += 1
@@ -163,6 +168,7 @@ for line in inFile.readlines():
 	referenceKey += 1
 	annotKey += 1
 	evidenceKey += 1
+	noteKey += 1;
 
 	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
@@ -180,6 +186,8 @@ sequenceFile.close()
 referenceFile.close()
 vocAnnotFile.close()
 vocEvidenceFile.close()
+noteFile.close()
+noteChunkFile.close()
 
 db.commit()
 
@@ -196,6 +204,10 @@ bcp4 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Annot', currentDir, 'VOC_Annot.bcp')
 bcp5 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Evidence', currentDir, 'VOC_Evidence.bcp')
+bcp6 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'MGI_Note', currentDir, 'MGI_Note.bcp')
+bcp7 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'MGI_NoteChunk', currentDir, 'MGI_NoteChunk.bcp')
 
 
 print bcp1
@@ -208,6 +220,10 @@ print bcp4
 os.system(bcp4)
 print bcp5
 os.system(bcp5)
+print bcp6
+os.system(bcp6)
+print bcp7
+os.system(bcp7)
 db.commit()
 
 db.sql(''' select setval('all_variant_seq', (select max(_Variant_key) from ALL_Variant)) ''', None)

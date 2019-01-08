@@ -166,8 +166,13 @@ for line in inFile.readlines():
 
 	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
+	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
+        vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
 	variantKey += 1
 	sequenceKey += 1
+	referenceKey += 1
+	annotKey += 1
+	evidenceKey += 1
 
 inFile.close()
 variantFile.close()

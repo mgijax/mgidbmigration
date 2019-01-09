@@ -55,7 +55,7 @@ PAGE = reportlib.PAGE
 # Main
 #
 
-variantBCP      = '%s|%s|%s|%s|0|%s|1001|1001|%s|%s\n'
+variantBCP      = '%s|%s|%s|%s|%s|%s|1001|1001|%s|%s\n'
 sequenceBCP     = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
 referenceBCP    = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
 vocAnnotBCP     = '%s|1026|%s|%s|1614158|%s|%s\n'
@@ -153,24 +153,28 @@ for line in inFile.readlines():
 		print '#####'
 		continue
 
+	# source variant
 	sourceVariantKey = ''
-	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
+	isReviewed = 0
+	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, isReviewed, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
-	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
-        vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
-        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
-	noteFile.write(noteBCP % (noteKey, variantKey, cdate, cdate))
-	noteChunkFile.write(noteChunkBCP % (noteKey, notes, cdate, cdate))
+	#referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
+        #vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
+        #vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
+	#noteFile.write(noteBCP % (noteKey, variantKey, cdate, cdate))
+	#noteChunkFile.write(noteChunkBCP % (noteKey, notes, cdate, cdate))
 
 	sourceVariantKey = variantKey
 	variantKey += 1
 	sequenceKey += 1
-	referenceKey += 1
-	annotKey += 1
-	evidenceKey += 1
-	noteKey += 1;
+	#referenceKey += 1
+	#annotKey += 1
+	#evidenceKey += 1
+	#noteKey += 1;
 
-	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, description, cdate, cdate))
+	# curated variant
+	isReviewed = 1
+	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, isReviewed, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
 	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
         vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))

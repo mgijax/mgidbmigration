@@ -4,22 +4,6 @@
 #
 # load variant spreadsheet
 #
-# 1/A.  mgi id marker
-# 2/B.  marker symbol
-# 3/C.  strain name			: var_variant._strain_key
-# 4/D.  pubmedid			: acc_accession:  _mgitype_key = ?, ldb = 29
-# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = 45, _object_key = _refs_key
-# 6/F.  mgi id allele			: var_variant._allele_key
-# 7/G.  allele symbol
-# 8/H.  molecular note			: mgi_note: _mgitype_key = 45, _notetype_key = 1050
-# 9/I.  chromosome 
-# 10/J. start coordinate		: var_sequence.startCoord
-# 11/K. end coordinate			: var_sequence.endCoord
-# 12/L. ref_allele			: var_sequence.referenceSequence
-# 13/M. alt_allele			: var_sequence.variantSequence
-# 14/N. jannovar_hgvs 			: var_variant.description
-# 15/O. jannovar_functional_class	: lookup terms in SO vocab (21)
-#
 # 1/A:  taxon id
 # 2/B:  mgi_allele_id			: var_variant._allele_key
 # 3/C:  external_id
@@ -105,17 +89,6 @@ for line in inFile.readlines():
 
 	tokens = line[:-1].split('\t')
 
-	#strain = tokens[2]
-	#alleleId = tokens[5]
-	#allele = tokens[6]
-	#description = tokens[13]
-	#startCoord = tokens[9]
-	#endCoord = tokens[10]
-	#refSequence = tokens[11]
-	#varSequence = tokens[12]
-	#refId = tokens[4]
-	#notes = tokens[7]
-
 	#strain = tokens[?]
 	alleleId = tokens[1]
 	allele = tokens[3]
@@ -128,7 +101,6 @@ for line in inFile.readlines():
 	notes = tokens[18]
 
 	try:
-	    #soTerm = tokens[14].lower()
 	    soIdType = tokens[13]
 	    soIdEffect = tokens[16]
         except:
@@ -156,12 +128,6 @@ for line in inFile.readlines():
 	for r in results:
 		refsKey = r['_Refs_key']
 
-	#results = db.sql('''select _term_key from VOC_Term where term = '%s' ''' % (soTerm), 'auto')
-	#if len(results) == 0:
-	#	print 'Invalid SO term: ', soTerm
-	#	error = 1
-	#for r in results:
-	#	soKey = r['_term_key']
 	results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdType), 'auto')
 	if len(results) == 0:
 		print 'Invalid SO ID: ', soIdType
@@ -174,7 +140,6 @@ for line in inFile.readlines():
 		error = 1
 	for r in results:
 		soEffectKey = r['_object_key']
-
 
 	if error == 1:
 	        print lineNum, alleleId, allele

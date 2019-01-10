@@ -85,6 +85,8 @@ echo 'mrkhistory migration' | tee -a $LOG
 date | tee -a ${LOG}
 echo 'new autosequences' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/MGI_Synonym_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Annot_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_create.object | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'add variant tables' | tee -a $LOG

@@ -130,6 +130,8 @@ ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 #
 # run SO vocab load
 #
+#insert into DAG_DAG values (52, 159965, 13, 'Sequence Ontology', 'SO', now(), now())
+#
 date | tee -a ${LOG}
 echo 'run SO vocab load' | tee -a $LOG
 $VOCLOAD/runOBOFullLoad.sh SO.config | tee -a $LOG || exit 1

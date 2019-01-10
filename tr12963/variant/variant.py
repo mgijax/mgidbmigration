@@ -2,37 +2,55 @@
 
 '''
 #
-# Report:
-#       load Meiyee's spreadsheet
-#
+# load variant spreadsheet
 #
 # 1/A.  mgi id marker
 # 2/B.  marker symbol
 # 3/C.  strain name			: var_variant._strain_key
-# 4/D.  pubmedid				: acc_accession:  _mgitype_key = ?, ldb = 29
-# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = ?, _object_key = _refs_key
+# 4/D.  pubmedid			: acc_accession:  _mgitype_key = ?, ldb = 29
+# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = 45, _object_key = _refs_key
 # 6/F.  mgi id allele			: var_variant._allele_key
 # 7/G.  allele symbol
-# 8/H.  molecular note			: mgi_note: _mgitype_key = ?, _notetype_key = ?
-# 9/I.  chromosome (format is in "chr")
-# 10/J. start coordinate			: var_sequence.startCoord
+# 8/H.  molecular note			: mgi_note: _mgitype_key = 45, _notetype_key = 1050
+# 9/I.  chromosome 
+# 10/J. start coordinate		: var_sequence.startCoord
 # 11/K. end coordinate			: var_sequence.endCoord
 # 12/L. ref_allele			: var_sequence.referenceSequence
 # 13/M. alt_allele			: var_sequence.variantSequence
 # 14/N. jannovar_hgvs 			: var_variant.description
-# 15/O. jannovar_functional_class		: lookup terms in SO vocab (21)
+# 15/O. jannovar_functional_class	: lookup terms in SO vocab (21)
+#
+# 1/A:  taxon id
+# 2/B:  mgi_allele_id			: var_variant._allele_key
+# 3/C:  external_id
+# 4/D:  mgi_allele_symbol		: var_variant._allele_key
+# 5/E:  reference_ids			: mgi_reference_assoc: _mgitype_key = 45, _object_key = _refs_key
+# 6/F:  genome_assembly_version
+# 7/G:  chromosome
+# 8/H:  start				: var_sequence.startCoord
+# 9/I:  end				: var_sequence.endCoord
+# 10/J: ref_allele			: var_sequence.referenceSequence
+# 11/K: alt_allele			: var_sequence.variantSequence
+# 12/L: strand
+# 13/M: variant_group_type
+# 14/N: variant type SO_id		: voc_annot/_annottype_key = 1026
+# 15/O: variant type label
+# 16/P: HGVS notation (refseq)		: var_variant.description
+# 17/Q: variant effect SO_id		: voc_annot/_annottype_key = 1027
+# 18/R: variant effect SO label
+# 19/S: curator_note			: mgi_note: _mgitype_key = 45, _notetype_key = 1050
+# 20/T: public_note			: mgi_note: _mgitype_key = 45, _notetype_key = ?
+# 21/U: protein_sequence
+# 22/V: protein_start
+# 23/W: protein_end
 #
 # database fields not in spreadsheet/but need to be set
 #
-# var_variant._sourcevariant_key = ?
-# var_variant.isReviewed = ?
+# var_variant._sourcevariant_key = null for Source, previous variantKey for Curated
+# var_variant.isReviewed = 0 for Source, 1 for Curated
 #
 # var_sequence
 # _sequence_type_key = ? where voc_term._vocab_key = 21 (RNA, DNA, Polypeptide, Not Loaded)
-#
-# var_effect, from SO
-#
-# var_type, from SO
 #
 '''
  
@@ -58,7 +76,7 @@ PAGE = reportlib.PAGE
 variantBCP      = '%s|%s|%s|%s|%s|%s|1001|1001|%s|%s\n'
 sequenceBCP     = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
 referenceBCP    = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
-vocAnnotBCP     = '%s|1026|%s|%s|1614158|%s|%s\n'
+vocAnnotBCP     = '%s|%s|%s|%s|1614158|%s|%s\n'
 vocEvidenceBCP  = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
 noteBCP         = '%s|%s|45|1050|1001|1001|%s|%s\n'
 noteChunkBCP    = '%s|1|%s|1001|1001|%s|%s\n'
@@ -78,7 +96,7 @@ annotKey        = db.sql(''' select max(_annot_key) + 1 as maxKey from voc_annot
 evidenceKey     = db.sql(''' select max(_annotevidence_key) + 1 as maxKey from voc_evidence ''', 'auto')[0]['maxKey']
 noteKey         = db.sql(''' select max(_note_key) + 1 as maxKey from mgi_note ''', 'auto')[0]['maxKey']
 
-inFile = open('122018_alleles.txt', 'r')
+inFile = open('Mouse_phenotypic_allele_variants.txt', 'r')
 lineNum = 0
 for line in inFile.readlines():
 
@@ -87,45 +105,42 @@ for line in inFile.readlines():
 
 	tokens = line[:-1].split('\t')
 
-	# 3.  strain name			: var_variant._strain_key
-	# 6.  mgi id allele			: var_variant._allele_key
-	# 7.  allele symbol
-	# 14. jannovar_hgvs 			: var_variant.description
-	#
-	# 10/J. start coordinate		: var_sequence.startCoord
-	# 11/K. end coordinate			: var_sequence.endCoord
-	# 12/L. ref_allele			: var_sequence.referenceSequence
-	# 13/M. alt_allele			: var_sequence.variantSequence
-	#
-	# 5/E.  J:				: mgi_reference_assoc: _mgitype_key = ?, _object_key = _refs_key
-	#
-	# 15/O. jannovar_functional_class	: lookup terms in SO vocab (21)
-	#
-	# 8/H.  molecular note			: mgi_note: _mgitype_key = ?, _notetype_key = ?
+	#strain = tokens[2]
+	#alleleId = tokens[5]
+	#allele = tokens[6]
+	#description = tokens[13]
+	#startCoord = tokens[9]
+	#endCoord = tokens[10]
+	#refSequence = tokens[11]
+	#varSequence = tokens[12]
+	#refId = tokens[4]
+	#notes = tokens[7]
 
-	strain = tokens[2]
-	alleleId = tokens[5]
-	allele = tokens[6]
-	description = tokens[13]
-
-	startCoord = tokens[9]
-	endCoord = tokens[10]
-	refSequence = tokens[11]
-	varSequence = tokens[12]
-	jnumId = tokens[4]
-	notes = tokens[7]
+	#strain = tokens[?]
+	alleleId = tokens[1]
+	allele = tokens[3]
+	description = tokens[15]
+	startCoord = tokens[7]
+	endCoord = tokens[8]
+	refSequence = tokens[9]
+	varSequence = tokens[10]
+	refId = tokens[4]
+	notes = tokens[18]
 
 	try:
-	    soTerm = tokens[14].lower()
+	    #soTerm = tokens[14].lower()
+	    soIdType = tokens[13]
+	    soIdEffect = tokens[16]
         except:
 	    pass
 
-	results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
-	if len(results) == 0:
-		print 'Invalid Strain: ', strain
-		error = 1
-	for r in results:
-		strainKey = r['_Strain_key']
+	strainKey = -1
+	#results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
+	#if len(results) == 0:
+	#	print 'Invalid Strain: ', strain
+	#	error = 1
+	#for r in results:
+	#	strainKey = r['_Strain_key']
 
 	results = db.sql('''select _Object_key from ACC_Accession where _mgitype_key = 11 and accID = '%s' '''  % (alleleId), 'auto')
 	if len(results) == 0:
@@ -134,55 +149,71 @@ for line in inFile.readlines():
 	for r in results:
 		alleleKey = r['_Object_key']
 
-	results = db.sql('''select _Refs_key from BIB_Citation_Cache where jnumID = '%s' '''  % (jnumId), 'auto')
+	results = db.sql('''select _Refs_key from BIB_Citation_Cache where jnumid = '%s' or pubmedid = '%s' '''  % (refId, refId), 'auto')
 	if len(results) == 0:
-		print 'Invalid J#: ', jnumId
+		print 'Invalid Reference: ', refId
 		error = 1
 	for r in results:
 		refsKey = r['_Refs_key']
 
-	results = db.sql('''select _term_key from VOC_Term where term = '%s' ''' % (soTerm), 'auto')
+	#results = db.sql('''select _term_key from VOC_Term where term = '%s' ''' % (soTerm), 'auto')
+	#if len(results) == 0:
+	#	print 'Invalid SO term: ', soTerm
+	#	error = 1
+	#for r in results:
+	#	soKey = r['_term_key']
+	results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdType), 'auto')
 	if len(results) == 0:
-		print 'Invalid SO term: ', soTerm
+		print 'Invalid SO ID: ', soIdType
 		error = 1
 	for r in results:
-		soKey = r['_Term_key']
+		soTypeKey = r['_object_key']
+	results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdEffect), 'auto')
+	if len(results) == 0:
+		print 'Invalid SO ID: ', soIdEffect
+		error = 1
+	for r in results:
+		soEffectKey = r['_object_key']
+
 
 	if error == 1:
-	        print lineNum, strain, alleleId, allele
+	        print lineNum, alleleId, allele
 		print '#####'
 		continue
 
 	# source variant
-	sourceVariantKey = ''
+	sVariantKey = ''
+	sDescription = ''
 	isReviewed = 0
-	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, isReviewed, description, cdate, cdate))
+	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, strainKey, isReviewed, sDescription, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
-	#referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
-        #vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
-        #vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
-	#noteFile.write(noteBCP % (noteKey, variantKey, cdate, cdate))
-	#noteChunkFile.write(noteChunkBCP % (noteKey, notes, cdate, cdate))
 
-	sourceVariantKey = variantKey
+	sVariantKey = variantKey
 	variantKey += 1
 	sequenceKey += 1
-	#referenceKey += 1
-	#annotKey += 1
-	#evidenceKey += 1
-	#noteKey += 1;
 
 	# curated variant
 	isReviewed = 1
-	variantFile.write(variantBCP % (variantKey, alleleKey, sourceVariantKey, strainKey, isReviewed, description, cdate, cdate))
+	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, strainKey, isReviewed, description, cdate, cdate))
 	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
 	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
-        vocAnnotFile.write(vocAnnotBCP % (annotKey, variantKey, soKey, cdate, cdate))
+
+        vocAnnotFile.write(vocAnnotBCP % (annotKey, 1026, variantKey, soTypeKey, cdate, cdate))
+        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
+	annotKey += 1
+	evidenceKey += 1
+        vocAnnotFile.write(vocAnnotBCP % (annotKey, 1027, variantKey, soEffectKey, cdate, cdate))
+        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
+
+	#noteFile.write(noteBCP % (noteKey, variantKey, cdate, cdate))
+	#noteChunkFile.write(noteChunkBCP % (noteKey, notes, cdate, cdate))
+
 	variantKey += 1
 	sequenceKey += 1
 	referenceKey += 1
 	annotKey += 1
 	evidenceKey += 1
+	noteKey += 1
 
 inFile.close()
 variantFile.close()

@@ -59,6 +59,22 @@ update voc_term set sequencenum = 14 where _term_key = 32413495;
 update voc_term set sequencenum = 15 where _term_key = 32413496;
 
 
+insert into DAG_DAG values (52, 159965, 13, 'Sequence Ontology', 'SO', now(), now());
+insert into voc_vocabdag values (138, 52, now(), now());
+insert into dag_label values(11, 'derives_from', now(), now());
+insert into dag_label values(12, 'has_quality', now(), now());
+insert into dag_label values(13, 'has_part', now(), now());
+insert into dag_label values(14, 'has_origin', now(), now());
+insert into dag_label values(15, 'overlaps', now(), now());
+insert into dag_label values(16, 'contains', now(), now());
+insert into dag_label values(17, 'transcribed_to', now(), now());
+insert into dag_label values(18, 'transcribed_from', now(), now());
+insert into dag_label values(19, 'non_functional_homolog_of', now(), now());
+insert into dag_label values(20, 'member_of', now(), now());
+insert into dag_label values(21, 'adjacent_to', now(), now());
+insert into dag_label values(22, 'guided_by', now(), now());
+insert into dag_label values(23, 'variant_of', now(), now());
+
 
 EOSQL
 date | tee -a ${LOG}
@@ -130,7 +146,6 @@ ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 #
 # run SO vocab load
 #
-#insert into DAG_DAG values (52, 159965, 13, 'Sequence Ontology', 'SO', now(), now())
 #
 date | tee -a ${LOG}
 echo 'run SO vocab load' | tee -a $LOG

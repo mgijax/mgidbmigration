@@ -27,6 +27,10 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_Sequence_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_Sequence_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Annot_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Annot_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_create.object | tee -a $LOG
 
 ./variant.py | tee -a $LOG
 

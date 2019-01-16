@@ -15,18 +15,13 @@
 # 9/I:  end				: var_sequence.endCoord
 # 10/J: ref_allele			: var_sequence.referenceSequence
 # 11/K: alt_allele			: var_sequence.variantSequence
-# 12/L: strand
-# 13/M: variant_group_type
-# 14/N: variant type SO_id		: voc_annot/_annottype_key = 1026
-# 15/O: variant type label
-# 16/P: HGVS notation (refseq)		: var_variant.description
-# 17/Q: variant effect SO_id		: voc_annot/_annottype_key = 1027
-# 18/R: variant effect SO label
-# 19/S: curator_note			: mgi_note: _mgitype_key = 45, _notetype_key = 1050
-# 20/T: public_note			: mgi_note: _mgitype_key = 45, _notetype_key = ?
-# 21/U: protein_sequence
-# 22/V: protein_start
-# 23/W: protein_end
+# 12/L: variant type SO_id		: voc_annot/_annottype_key = 1026
+# 13/M: variant type label
+# 14/N: HGVS notation (refseq)		: var_variant.description
+# 15/O: variant effect SO_id		: voc_annot/_annottype_key = 1027
+# 16/P: variant effect SO label
+# 17/Q: curator_note			: mgi_note: _mgitype_key = 45, _notetype_key = 1050
+# 18/R: public_note			: mgi_note: _mgitype_key = 45, _notetype_key = ?
 #
 # database fields not in spreadsheet/but need to be set
 #
@@ -57,12 +52,12 @@ PAGE = reportlib.PAGE
 # Main
 #
 
-variantBCP      = '%s|%s|%s|%s|%s|%s|1001|1001|%s|%s\n'
-sequenceBCP     = '%s|%s|316347|%s|%s|%s|%s|1001|1001|%s|%s\n'
+variantBCP      = '%s|%s|%s|38048|%s|%s|1001|1001|%s|%s\n'
+sequenceBCP     = '%s|%s|316347|%s|%s|%s|%s|%s|1001|1001|%s|%s\n'
 referenceBCP    = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
 vocAnnotBCP     = '%s|%s|%s|%s|1614158|%s|%s\n'
 vocEvidenceBCP  = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
-noteBCP         = '%s|%s|45|1050|1001|1001|%s|%s\n'
+noteBCP         = '%s|%s|45|%s|1001|1001|%s|%s\n'
 noteChunkBCP    = '%s|1|%s|1001|1001|%s|%s\n'
 
 variantFile     = open('ALL_Variant.bcp', 'w')
@@ -89,30 +84,23 @@ for line in inFile.readlines():
 
 	tokens = line[:-1].split('\t')
 
-	#strain = tokens[?]
 	alleleId = tokens[1]
 	allele = tokens[3]
-	description = tokens[15]
+	refIds = tokens[4]
+	version = tokens[5]
 	startCoord = tokens[7]
 	endCoord = tokens[8]
 	refSequence = tokens[9]
 	varSequence = tokens[10]
-	refId = tokens[4]
-	notes = tokens[18]
+	description = tokens[13]
+	curatornotes = tokens[16]
+	publicnotes = tokens[17]
 
 	try:
-	    soIdType = tokens[13]
-	    soIdEffect = tokens[16]
+	    soIdType = tokens[11]
+	    soIdEffects = tokens[14].split(',')
         except:
 	    pass
-
-	strainKey = -1
-	#results = db.sql('''select _Strain_key, strain from PRB_Strain where strain = '%s' ''' % (strain), 'auto')
-	#if len(results) == 0:
-	#	print 'Invalid Strain: ', strain
-	#	error = 1
-	#for r in results:
-	#	strainKey = r['_Strain_key']
 
 	results = db.sql('''select _Object_key from ACC_Accession where _mgitype_key = 11 and accID = '%s' '''  % (alleleId), 'auto')
 	if len(results) == 0:
@@ -121,64 +109,87 @@ for line in inFile.readlines():
 	for r in results:
 		alleleKey = r['_Object_key']
 
-	results = db.sql('''select _Refs_key from BIB_Citation_Cache where jnumid = '%s' or pubmedid = '%s' '''  % (refId, refId), 'auto')
-	if len(results) == 0:
-		print 'Invalid Reference: ', refId
-		error = 1
-	for r in results:
-		refsKey = r['_Refs_key']
+	# references allow > 1, comma-separated
+	refIds = refIds.replace('PMID:', '').split(',')
+	refKeys = []
+	for refId in refIds:
+	    results = db.sql('''select _Refs_key from BIB_Citation_Cache 
+		    where jnumid = '%s' or pubmedid = '%s' or mgiid = '%s' '''  % (refId, refId, refId), 'auto')
+	    if len(results) == 0:
+		    print 'Invalid Reference: ', refId
+		    error = 1
+	    for r in results:
+		    refKey = r['_Refs_key']
+		    refKeys.append(refKey)
 
 	results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdType), 'auto')
 	if len(results) == 0:
 		print 'Invalid SO ID: ', soIdType
 		error = 1
-	for r in results:
-		soTypeKey = r['_object_key']
-	results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdEffect), 'auto')
-	if len(results) == 0:
-		print 'Invalid SO ID: ', soIdEffect
-		error = 1
-	for r in results:
-		soEffectKey = r['_object_key']
+
+	# variant effects allow > 1, comma-separated
+	soEffectKeys = []
+	for soIdEffect in soIdEffects:
+	    for r in results:
+		    soTypeKey = r['_object_key']
+	    results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdEffect), 'auto')
+	    if len(results) == 0:
+		    print 'Invalid SO ID: ', soIdEffect
+		    error = 1
+	    for r in results:
+		    soEffectKey = r['_object_key']
+		    soEffectKeys.append(soEffectKey)
 
 	if error == 1:
 	        print lineNum, alleleId, allele
 		print '#####'
 		continue
 
+	#
 	# source variant
+	#
 	sVariantKey = ''
 	sDescription = ''
 	isReviewed = 0
-	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, strainKey, isReviewed, sDescription, cdate, cdate))
-	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
-
+	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, isReviewed, sDescription, cdate, cdate))
+	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, version, cdate, cdate))
 	sVariantKey = variantKey
 	variantKey += 1
 	sequenceKey += 1
 
+	#
 	# curated variant
+	#
 	isReviewed = 1
-	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, strainKey, isReviewed, description, cdate, cdate))
-	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, cdate, cdate))
-	referenceFile.write(referenceBCP % (referenceKey, refsKey, variantKey, cdate, cdate))
+	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, isReviewed, description, cdate, cdate))
+	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, version, cdate, cdate))
+
+	for refKey in refKeys:
+	    referenceFile.write(referenceBCP % (referenceKey, refKey, variantKey, cdate, cdate))
+	    referenceKey += 1
 
         vocAnnotFile.write(vocAnnotBCP % (annotKey, 1026, variantKey, soTypeKey, cdate, cdate))
-        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
+        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refKey, cdate, cdate))
 	annotKey += 1
 	evidenceKey += 1
-        vocAnnotFile.write(vocAnnotBCP % (annotKey, 1027, variantKey, soEffectKey, cdate, cdate))
-        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refsKey, cdate, cdate))
 
-	#noteFile.write(noteBCP % (noteKey, variantKey, cdate, cdate))
-	#noteChunkFile.write(noteChunkBCP % (noteKey, notes, cdate, cdate))
+	for soEffectKey in soEffectKeys:
+            vocAnnotFile.write(vocAnnotBCP % (annotKey, 1027, variantKey, soEffectKey, cdate, cdate))
+            vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refKey, cdate, cdate))
+	    annotKey += 1
+	    evidenceKey += 1
+
+	if len(curatornotes) > 0:
+		noteFile.write(noteBCP % (noteKey, variantKey, 1050, cdate, cdate))
+		noteChunkFile.write(noteChunkBCP % (noteKey, curatornotes, cdate, cdate))
+		noteKey += 1
+	if len(publicnotes) > 0:
+		noteFile.write(noteBCP % (noteKey, variantKey, 1051, cdate, cdate))
+		noteChunkFile.write(noteChunkBCP % (noteKey, publicnotes, cdate, cdate))
+		noteKey += 1
 
 	variantKey += 1
 	sequenceKey += 1
-	referenceKey += 1
-	annotKey += 1
-	evidenceKey += 1
-	noteKey += 1
 
 inFile.close()
 variantFile.close()

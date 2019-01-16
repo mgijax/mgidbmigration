@@ -58,6 +58,10 @@ update voc_term set sequencenum = 13 where _term_key = 32413494;
 update voc_term set sequencenum = 14 where _term_key = 32413495;
 update voc_term set sequencenum = 15 where _term_key = 32413496;
 
+-- reference types
+--insert into mgi_notetype values(1051, 45, 'Public', 0, 1001, 1001, now(), now());
+--update mgi_notetype set notetype = 'Curated' where _notetype_key = 1050;
+
 EOSQL
 date | tee -a ${LOG}
 

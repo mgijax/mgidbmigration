@@ -93,8 +93,8 @@ for line in inFile.readlines():
 	refSequence = tokens[9]
 	varSequence = tokens[10]
 	description = tokens[13]
-	curatornotes = tokens[16]
-	publicnotes = tokens[17]
+	curatornotes = tokens[16].replace('|', '\\|')
+	publicnotes = tokens[17].replace('|', '\\|')
 
 	try:
 	    soIdType = tokens[11]
@@ -113,6 +113,7 @@ for line in inFile.readlines():
 	refIds = refIds.replace('PMID:', '').split(',')
 	refKeys = []
 	for refId in refIds:
+	    refId = refId.replace(' ', '')
 	    results = db.sql('''select _Refs_key from BIB_Citation_Cache 
 		    where jnumid = '%s' or pubmedid = '%s' or mgiid = '%s' '''  % (refId, refId, refId), 'auto')
 	    if len(results) == 0:

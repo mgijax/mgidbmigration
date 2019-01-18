@@ -56,7 +56,7 @@ variantBCP      = '%s|%s|%s|38048|%s|%s|1001|1001|%s|%s\n'
 sequenceBCP     = '%s|%s|316347|%s|%s|%s|%s|%s|1001|1001|%s|%s\n'
 referenceBCP    = '%s|%s|%s|45|1030|1001|1001|%s|%s\n'
 vocAnnotBCP     = '%s|%s|%s|%s|1614158|%s|%s\n'
-vocEvidenceBCP  = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
+#vocEvidenceBCP  = '%s|%s|47380031|%s||1001|1001|%s|%s\n'
 noteBCP         = '%s|%s|45|%s|1001|1001|%s|%s\n'
 noteChunkBCP    = '%s|1|%s|1001|1001|%s|%s\n'
 
@@ -64,7 +64,7 @@ variantFile     = open('ALL_Variant.bcp', 'w')
 sequenceFile    = open('ALL_Variant_Sequence.bcp', 'w')
 referenceFile   = open('MGI_Reference_Assoc.bcp', 'w')
 vocAnnotFile    = open('VOC_Annot.bcp', 'w')
-vocEvidenceFile = open('VOC_Evidence.bcp', 'w')
+#vocEvidenceFile = open('VOC_Evidence.bcp', 'w')
 noteFile        = open('MGI_Note.bcp', 'w')
 noteChunkFile   = open('MGI_NoteChunk.bcp', 'w')
 
@@ -169,15 +169,15 @@ for line in inFile.readlines():
 	    referenceKey += 1
 
         vocAnnotFile.write(vocAnnotBCP % (annotKey, 1026, variantKey, soTypeKey, cdate, cdate))
-        vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refKey, cdate, cdate))
+        #vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refKey, cdate, cdate))
 	annotKey += 1
-	evidenceKey += 1
+	#evidenceKey += 1
 
 	for soEffectKey in soEffectKeys:
             vocAnnotFile.write(vocAnnotBCP % (annotKey, 1027, variantKey, soEffectKey, cdate, cdate))
-            vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refKey, cdate, cdate))
+            #vocEvidenceFile.write(vocEvidenceBCP % (evidenceKey, annotKey, refKey, cdate, cdate))
 	    annotKey += 1
-	    evidenceKey += 1
+	    #evidenceKey += 1
 
 	if len(curatornotes) > 0:
 		noteFile.write(noteBCP % (noteKey, variantKey, 1050, cdate, cdate))
@@ -196,7 +196,7 @@ variantFile.close()
 sequenceFile.close()
 referenceFile.close()
 vocAnnotFile.close()
-vocEvidenceFile.close()
+#vocEvidenceFile.close()
 noteFile.close()
 noteChunkFile.close()
 
@@ -213,8 +213,8 @@ bcp3 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'MGI_Reference_Assoc', currentDir, 'MGI_Reference_Assoc.bcp')
 bcp4 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Annot', currentDir, 'VOC_Annot.bcp')
-bcp5 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
-        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Evidence', currentDir, 'VOC_Evidence.bcp')
+#bcp5 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
+#        (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'VOC_Evidence', currentDir, 'VOC_Evidence.bcp')
 bcp6 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
         (bcpCommand, db.get_sqlServer(), db.get_sqlDatabase(), 'MGI_Note', currentDir, 'MGI_Note.bcp')
 bcp7 = '%s %s %s %s %s %s "|" "\\n" mgd' % \
@@ -229,8 +229,8 @@ print bcp3
 os.system(bcp3)
 print bcp4
 os.system(bcp4)
-print bcp5
-os.system(bcp5)
+#print bcp5
+#os.system(bcp5)
 print bcp6
 os.system(bcp6)
 print bcp7

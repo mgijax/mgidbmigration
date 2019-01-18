@@ -96,6 +96,10 @@ echo 'add variant tables' | tee -a $LOG
 ./vartables.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
+echo 'delete marker feature types : VOC_Evidence' | tee -a $LOG
+./mrkfeaturetypes.csh | tee -a $LOG || exit 1
+
+date | tee -a ${LOG}
 echo 'views/stored procedures' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1

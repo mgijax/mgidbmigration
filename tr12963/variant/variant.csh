@@ -34,5 +34,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_create.object | tee -a $LOG
 
 ./variant.py | tee -a $LOG
 
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Annot_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_create.object | tee -a $LOG
+
 date |tee -a $LOG
 

@@ -75,7 +75,7 @@ annotKey        = db.sql(''' select max(_annot_key) + 1 as maxKey from voc_annot
 evidenceKey     = db.sql(''' select max(_annotevidence_key) + 1 as maxKey from voc_evidence ''', 'auto')[0]['maxKey']
 noteKey         = db.sql(''' select max(_note_key) + 1 as maxKey from mgi_note ''', 'auto')[0]['maxKey']
 
-inFile = open('Mouse_phenotypic_allele_variants.txt', 'r')
+inFile = open('mouse_phenotypic_allele_variants_Final.txt', 'r')
 lineNum = 0
 for line in inFile.readlines():
 

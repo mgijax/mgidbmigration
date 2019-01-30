@@ -127,12 +127,12 @@ for line in inFile.readlines():
 	if len(results) == 0:
 		print 'Invalid SO ID: ', soIdType
 		error = 1
+	for r in results:
+	    soTypeKey = r['_object_key']
 
 	# variant effects allow > 1, comma-separated
 	soEffectKeys = []
 	for soIdEffect in soIdEffects:
-	    for r in results:
-		    soTypeKey = r['_object_key']
 	    results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdEffect), 'auto')
 	    if len(results) == 0:
 		    print 'Invalid SO ID: ', soIdEffect

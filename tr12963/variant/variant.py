@@ -152,7 +152,7 @@ for line in inFile.readlines():
 	sVariantKey = ''
 	isReviewed = 0
 	variantFile.write(variantBCP % (variantKey, alleleKey, sVariantKey, isReviewed, description, cdate, cdate))
-	sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, version, cdate, cdate))
+	#sequenceFile.write(sequenceBCP % (sequenceKey, variantKey, startCoord, endCoord, refSequence, varSequence, version, cdate, cdate))
 	sVariantKey = variantKey
 	variantKey += 1
 	sequenceKey += 1

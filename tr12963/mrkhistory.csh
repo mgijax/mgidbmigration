@@ -24,7 +24,6 @@ date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_History ${MGI_LIVE}/dbutils/mgidbmigration/tr12963/MRK_History.bcp "|"
 ${PG_MGD_DBSCHEMADIR}/index/MRK_History_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_History_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -65,7 +64,6 @@ ALTER TABLE mgd.MRK_History ADD FOREIGN KEY (_History_key) REFERENCES mgd.MRK_Ma
 ALTER TABLE mgd.MRK_History ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker ON DELETE CASCADE DEFERRABLE;
 
 EOSQL
-${PG_MGD_DBSCHEMADIR}/key/MRK_History_create.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/index/MRK_History_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetSequenceNum_create.object | tee -a $LOG || exit 1
@@ -74,6 +72,9 @@ ${PG_MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a $LOG ||
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_mergeWithdrawal_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadReference_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG || exit 1
+
+${PG_MGD_DBSCHEMADIR}/key/MRK_History_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MRK_History_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

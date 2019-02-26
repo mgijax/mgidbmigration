@@ -45,7 +45,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Workflow_Data_create.object | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into BIB_Workflow_Data
-select (select nextval('bib_workflow_data_seq')),
+select (nextval('bib_workflow_data_seq')),
 d._refs_key, d.hasPDF, d._supplemental_key, 
 (select _term_key from voc_term where _vocab_key = 142 and term = 'body'),
 d.linkSupplemental, d.extractedText,

@@ -1,0 +1,120 @@
+#!/bin/csh -f
+
+#
+# has tr12963 branch:
+# littriageload
+# 
+
+if ( ${?MGICONFIG} == 0 ) then
+        setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
+cd `dirname $0`
+
+setenv LOG $0.log
+rm -rf $LOG
+touch $LOG
+ 
+date | tee -a $LOG
+ 
+#
+# BIB_Workflow_Data : add new field extractedTextWithRef
+#
+${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_Workflow_Data_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/BIB_Refs_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/ACC_assignJ_drop.object | tee -a $LOG || exit 1
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.BIB_Workflow_Data DROP CONSTRAINT BIB_Workflow_Data__Refs_key_fkey CASCADE;
+ALTER TABLE mgd.BIB_Workflow_Data DROP CONSTRAINT BIB_Workflow_Data_pkey CASCADE;
+ALTER TABLE mgd.BIB_Workflow_Data DROP CONSTRAINT BIB_Workflow_Data__Supplemental_key_fkey CASCADE;
+ALTER TABLE BIB_Workflow_Data RENAME TO BIB_Workflow_Data_old;
+ALTER TABLE mgd.BIB_Workflow_Data_old DROP CONSTRAINT BIB_Workflow_Data_pkey CASCADE;
+EOSQL
+
+# new table
+${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
+
+#
+# insert data int new table
+#
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+insert into BIB_Workflow_Data
+select (select nextval('bib_workflow_data_seq')),
+d._refs_key, d.hasPDF, d._supplemental_key, 
+(select _term_key from voc_term where _vocab_key = 142 and term = 'body'),
+d.linkSupplemental, d.extractedText,
+d._createdBy_key, d._modifiedBy_key, d.creation_date, d.modification_date
+from BIB_Workflow_Data_old d
+;
+
+--ALTER TABLE mgd.BIB_Workflow_Data ADD PRIMARY KEY (_Assoc_key);
+ALTER TABLE mgd.BIB_Workflow_Data ADD FOREIGN KEY (_Refs_key) REFERENCES mgd.BIB_Refs ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Data ADD FOREIGN KEY (_Supplemental_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Data ADD FOREIGN KEY (_ExtractedText_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+
+ALTER TABLE mgd.BIB_Workflow_Data ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Data ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Status ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Status ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Tag ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.BIB_Workflow_Tag ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE; 
+
+EOSQL
+
+${PG_MGD_DBSCHEMADIR}/key/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/ACC_assignJ_create.object | tee -a $LOG || exit 1
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select count(*) from BIB_Workflow_Data_old;
+select count(*) from BIB_Workflow_Data;
+--drop table mgd.BIB_Workflow_Data_old;
+EOSQL
+
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#update BIB_Workflow_Data
+#set extractedText = extractedText + referenceSection, referenceSection = null
+#where referenceSection is not null
+#;
+#EOSQL
+
+#./bibworkflow.py | tee -a $LOG
+
+#
+# not all pdfs wind up with reference sections
+#
+
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#
+#-- those that do not have referenceSection
+#-- after running the refsection-resolver
+#select count(d._refs_key) as counter
+#from BIB_Refs r, BIB_Workflow_Data d
+#where r._referencetype_key = 31576687
+#and r._refs_key = d._refs_key
+#and d.extractedText is not null
+#and d.referenceSection is null
+#;
+#
+#-- those that do have referenceSection
+#-- after running the refsection-resolver
+#select count(d._refs_key) as counter
+#from BIB_Refs r, BIB_Workflow_Data d
+#where r._referencetype_key = 31576687
+#and r._refs_key = d._refs_key
+#and d.extractedText is not null
+#and d.referenceSection is not null
+#;
+#
+#EOSQL
+
+date |tee -a $LOG
+

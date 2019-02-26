@@ -29,8 +29,8 @@ EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-insert into voc_vocab values(140, 22864, -1, 1, 0, 'Genome Build', now(), now());
-insert into voc_vocab values(141, 22864, -1, 1, 0, 'Amino Acid', now(), now());
+insert into voc_vocab values(140, 353895, -1, 1, 0, 'Genome Build', now(), now());
+insert into voc_vocab values(141, 353896, -1, 1, 0, 'Amino Acid', now(), now());
 
 EOSQL
 

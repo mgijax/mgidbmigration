@@ -7,6 +7,7 @@
 import sys 
 import os
 import db
+import re
 import reportlib
 import refSectionLib
 
@@ -25,7 +26,15 @@ rm = refSectionLib.RefSectionRemover()
 
 # peer reveiwed articles
 # have extracted text
-# do not have reference section text
+# include
+# 
+# 31576675 | Db found supplement
+# 31576676 | Db supplement not found
+# 34026998 | No supplemental data
+# 34027000 | Curator found supplement
+# 37334479 | Supplement at publisher 
+#
+
 keys = db.sql('''
 select r._refs_key
 from BIB_Refs r
@@ -34,6 +43,7 @@ and exists (select 1 from BIB_Workflow_Data d
 	where r._refs_key = d._refs_key
 	and d.extractedText is not null
 	and d.referenceSection is null
+	and d._supplemental_key in (31576675, 31576676, 34026998, 34027000, 37334479)
 	)
 ''', 'auto')
 
@@ -48,15 +58,23 @@ for k in keys:
     extractedText = r['extractedText']
     bodySection = rm.getBody(extractedText)
     referenceSection = rm.getRefSection(extractedText)
+    print extractedText
+    print "XXXXXXXXXXXXX"
+    print bodySection
+    print "XXXXXXXXXXXXX"
+    print referenceSection
+    print "XXXXXXXXXXXXX"
 
     if len(referenceSection) > 0:
 
+	bodySection = re.sub(r'[^\x00-\x7F]','', bodySection)
         bodySection = bodySection.replace('\\', '\\\\')
         bodySection = bodySection.replace('\n', '\\n')
         bodySection = bodySection.replace('\r', '\\r')
         bodySection = bodySection.replace('|', '\\n')
         bodySection = bodySection.replace("'", "''")
 
+	referenceSection = re.sub(r'[^\x00-\x7F]','', referenceSection)
         referenceSection = referenceSection.replace('\\', '\\\\')
         referenceSection = referenceSection.replace('\n', '\\n')
         referenceSection = referenceSection.replace('\r', '\\r')

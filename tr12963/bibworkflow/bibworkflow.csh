@@ -76,7 +76,7 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from BIB_Workflow_Data_old;
 select count(*) from BIB_Workflow_Data;
---drop table mgd.BIB_Workflow_Data_old;
+drop table mgd.BIB_Workflow_Data_old;
 EOSQL
 
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

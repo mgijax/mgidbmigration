@@ -25,10 +25,10 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select e.*
-from VOC_Evidence e
-where exists (select 1 from VOC_Annot a where a._Annottype_key = 1011 and a._Annot_key = e._Annot_key)
-;
+--select e.*
+--from VOC_Evidence e
+--where exists (select 1 from VOC_Annot a where a._Annottype_key = 1011 and a._Annot_key = e._Annot_key)
+--;
 
 delete from VOC_Evidence e
 using VOC_Annot a

@@ -35,35 +35,49 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 ###------------------------------###
 ###--- MGI Marker feed report ---###
 ###------------------------------###
-date | tee -a ${LOG}
-echo 'MGI Marker feed report' | tee -a ${LOG}
-${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
+#date | tee -a ${LOG}
+#echo 'MGI Marker feed report' | tee -a ${LOG}
+#${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
 
 ###----------------------###
 ###--- Public reports ---###
 ###----------------------###
-date | tee -a ${LOG}
-echo 'Public Reports' | tee -a ${LOG}
-${PUBRPTS}/run_daily.csh
+#date | tee -a ${LOG}
+#echo 'Public Reports' | tee -a ${LOG}
+#${PUBRPTS}/run_daily.csh
 
 ###----------------------###
 ###---   QC reports   ---###
 ###----------------------###
-date | tee -a ${LOG}
-echo 'Nightly QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcnightly_reports.csh
+#date | tee -a ${LOG}
+#echo 'Nightly QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcnightly_reports.csh
+
+#date | tee -a ${LOG}
+#echo 'Weekly QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcweekly_reports.csh
+
+#date | tee -a ${LOG}
+#echo 'Sunday QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcsunday_reports.csh
+
+#date | tee -a ${LOG}
+#echo 'Monthly QC Reports' | tee -a ${LOG}
+#${QCRPTS}/qcmonthly_reports.csh
 
 date | tee -a ${LOG}
-echo 'Weekly QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcweekly_reports.csh
-
-date | tee -a ${LOG}
-echo 'Sunday QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcsunday_reports.csh
-
-date | tee -a ${LOG}
-echo 'Monthly QC Reports' | tee -a ${LOG}
-${QCRPTS}/qcmonthly_reports.csh
+echo 'QC Reports' | tee -a ${LOG}
+cd ${QCRPTS}
+source ./Configuration
+cd mgd
+./WF_AP_NewAlleleNomenTag.py    | tee -a ${LOG}
+./WF_AP_NewDiseaseModelTag.py   | tee -a ${LOG}
+./WF_AP_Routed.py               | tee -a ${LOG}
+./WF_SupplementalData.py        | tee -a ${LOG}
+cd ../monthly
+./WF_AP_Discard.py        	| tee -a ${LOG}
+cd ../weekly
+./WF_GXD_secondary.py     	| tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo '--- finished part 4' | tee -a $LOG

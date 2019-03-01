@@ -69,15 +69,18 @@ date | tee -a ${LOG}
 echo 'QC Reports' | tee -a ${LOG}
 cd ${QCRPTS}
 source ./Configuration
+rm -rf ${QCREPORTDIR}/output/WF_AP_NewDiseaseModelTag.rpt
 cd mgd
 ./WF_AP_NewAlleleNomenTag.py    | tee -a ${LOG}
-./WF_AP_NewDiseaseModelTag.py   | tee -a ${LOG}
 ./WF_AP_Routed.py               | tee -a ${LOG}
 ./WF_SupplementalData.py        | tee -a ${LOG}
 cd ../monthly
 ./WF_AP_Discard.py        	| tee -a ${LOG}
+${QCRPTS}/reports.csh BIB_MissingPDFs.sql ${QCOUTPUTDIR}/BIB_MissingPDFs.rpt ${PG_DBSERVER} ${PG_DBNAME}
 cd ../weekly
 ./WF_GXD_secondary.py     	| tee -a ${LOG}
+${QCRPTS}/reports.csh GXD_References.sql ${QCOUTPUTDIR}/GXD_References.rpt ${PG_DBSERVER} ${PG_DBNAME}
+${QCRPTS}/reports.csh GXD_Triage.sql ${QCOUTPUTDIR}/GXD_Triage.rpt ${PG_DBSERVER} ${PG_DBNAME}
 
 date | tee -a ${LOG}
 echo '--- finished part 4' | tee -a $LOG

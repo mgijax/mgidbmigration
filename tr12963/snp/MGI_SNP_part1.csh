@@ -92,6 +92,23 @@ create index SNP_Transcript_Protein_idx_transcript_protein on snp.SNP_Transcript
 
 insert into snp_population values((select max(_population_key) + 1 from snp_population), 'SC_MOUSE_GENOMES', 10125533, 'EVA_MGPV3');
 
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 28319, '129P2/OlaHsd', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 39224, '129S5/SvEvBrd', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 11, 'C3H/HeH', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 39344, 'C57BL/6NJ', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 29001, 'LEWES/EiJ', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 32915, 'NZO/HlLtJ', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 1368, 'PWK/PhJ', 1)
+;
+insert into snp_strain values((select max(_snpstrain_key) + 1 from snp_strain), 18, 'RF/J', 1)
+;
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

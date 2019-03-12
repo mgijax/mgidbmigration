@@ -113,6 +113,8 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
+./dpsnpmarker.csh | tee -a $LOG || exit 1
+
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 

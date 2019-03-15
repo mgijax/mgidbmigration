@@ -46,6 +46,7 @@ drop view if exists mgd.MRK_AccRef3_View;
 DROP FUNCTION IF EXISTS ACC_insertNoChecks(int,int,text,int,text,int,int,int,int);
 drop table MGI_ApiLog_Object;
 drop table MGI_ApiLog_Event;
+DROP FUNCTION IF EXISTS MGI_insertSynonym(int,int,int,int,text,int);
 
 -- gxd ordering
 update voc_term set sequencenum = 1 where _term_key = 20225941;

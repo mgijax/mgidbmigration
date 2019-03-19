@@ -68,6 +68,10 @@ ALTER TABLE mgd.BIB_Workflow_Status ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES
 ALTER TABLE mgd.BIB_Workflow_Tag ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.BIB_Workflow_Tag ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE; 
 
+delete from VOC_Term where _vocab_key = 134 and sequenceNum > 1;
+update VOC_Vocab set name = 'Lit Triage Journal : ignore splitter' where _vocab_key = 134;
+update VOC_Term set term = 'Nature' where _Term_key = 37583021;
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Workflow_Data_create.object | tee -a $LOG || exit 1
@@ -79,8 +83,8 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from BIB_Workflow_Data_old;
 select count(*) from BIB_Workflow_Data;
-delete from VOC_Term where _vocab_key = 134;
-delete from VOC_Vocab where _vocab_key = 134;
+--delete from VOC_Term where _vocab_key = 134;
+--delete from VOC_Vocab where _vocab_key = 134;
 drop table mgd.BIB_Workflow_Data_old;
 
 -- update pwi_reports

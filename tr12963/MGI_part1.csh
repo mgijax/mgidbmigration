@@ -61,6 +61,8 @@ update voc_term set sequencenum = 13 where _term_key = 32413494;
 update voc_term set sequencenum = 14 where _term_key = 32413495;
 update voc_term set sequencenum = 15 where _term_key = 32413496;
 
+delete from MGI_UserRole where _Role_key = 6763215 and _User_key not in (1000,1001);
+
 -- reference types
 --insert into mgi_notetype values(1051, 45, 'Public', 0, 1001, 1001, now(), now());
 --update mgi_notetype set notetype = 'Curated' where _notetype_key = 1050;

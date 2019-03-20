@@ -83,8 +83,6 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from BIB_Workflow_Data_old;
 select count(*) from BIB_Workflow_Data;
---delete from VOC_Term where _vocab_key = 134;
---delete from VOC_Vocab where _vocab_key = 134;
 drop table mgd.BIB_Workflow_Data_old;
 
 -- update pwi_reports

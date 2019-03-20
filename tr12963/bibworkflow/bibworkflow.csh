@@ -90,7 +90,7 @@ drop table mgd.BIB_Workflow_Data_old;
 update PWI_Report 
 set 
 description = 
-'Search Extracted Text : body + start methods + supplemental data.
+'Search Extracted Text : body + start methods + supplemental data + autor manuscript fig legands.
 Exclude references.
 Note:  extracted text is pre-supplementary data
 
@@ -100,7 +100,7 @@ sql_text =
 'select r.pubmedID
 from BIB_Citation_Cache r, BIB_Workflow_Data d
 where r._Refs_key = d._Refs_key
-and d._ExtractedText_key not in (48734896) 
+and d._ExtractedText_key not in (48804491) 
 and lower(d.extractedText) like lower(''%###Extracted Text###%'')
 '
 where id = 14
@@ -151,7 +151,7 @@ and s.isCurrent = 1
 and s._Group_key = 31576667
 and s._Status_key = 31576669
 and r._Refs_key = d._Refs_key
-and d._ExtractedText_key in (48804490, 48734897)
+and d._ExtractedText_key in (48804490, 48804492)
 and not exists (select 1 from BIB_Workflow_Tag tt
      where r._Refs_key = tt._Refs_key
      and tt._Tag_key in (32970313))

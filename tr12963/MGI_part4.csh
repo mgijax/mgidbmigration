@@ -72,7 +72,6 @@ source ./Configuration
 rm -rf ${QCREPORTDIR}/output/WF_AP_NewDiseaseModelTag.rpt
 cd mgd
 ./WF_AP_NewAlleleNomenTag.py    | tee -a ${LOG}
-./WF_AP_NewDiseaseModelTag.py   | tee -a ${LOG}
 ./WF_AP_Routed.py               | tee -a ${LOG}
 ./WF_SupplementalData.py        | tee -a ${LOG}
 cd ../monthly

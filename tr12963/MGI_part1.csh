@@ -116,6 +116,7 @@ ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTExperiment_create.object | tee -a $LOG || exit 1
 
 #
 # reconfig.sh:

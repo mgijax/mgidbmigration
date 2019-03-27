@@ -90,7 +90,7 @@ drop table mgd.BIB_Workflow_Data_old;
 update PWI_Report 
 set 
 description = 
-'Search Extracted Text : body + start methods + supplemental data + author manuscript fig legands.
+'Search Extracted Text : body + start methods + supplemental data + author manuscript fig legends.
 Exclude references.
 Note:  extracted text is pre-supplementary data
 

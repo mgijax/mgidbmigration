@@ -115,7 +115,7 @@ References where:
 . group = Tumor
 . status = Not Routed
 . tag is not Tumor:NotSelected
-. extracted text (body, supplemental) like
+. extracted text (body, supplemental, author manuscript fig legends) like
 %tumo%
 %inoma%
 %adenoma%

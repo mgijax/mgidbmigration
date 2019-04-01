@@ -67,6 +67,9 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'QC Reports' | tee -a ${LOG}
+#obsolete reports
+rm -rf ${QCREPORTDIR}/output/WF_AP_NewAlleleNomenTag.rpt | tee -a ${LOG}
+rm -rf ${QCREPORTDIR}/output/GXD_EarlyPapers.rpt | tee -a ${LOG}
 cd ${QCRPTS}
 source ./Configuration
 rm -rf ${QCREPORTDIR}/output/WF_AP_NewDiseaseModelTag.rpt

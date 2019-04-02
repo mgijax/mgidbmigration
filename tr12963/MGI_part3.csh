@@ -27,6 +27,17 @@ echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
 echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 ###--------------------------------------------------------------###
+###---run pdfdownload
+###--------------------------------------------------------------###
+date | tee -a ${LOG}
+echo 'Run PDF Download' | tee -a ${LOG}
+${PDFDOWNLOAD}/download_papers.sh
+
+date | tee -a ${LOG}
+echo 'Identify Missing Paper' | tee -a ${LOG}
+${PDFDOWNLOAD}/identify_missed_papers_plos.sh
+
+###--------------------------------------------------------------###
 ###--- run cache loads       	      	                      ---###
 ###--------------------------------------------------------------###
 #

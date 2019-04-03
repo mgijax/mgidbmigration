@@ -42,9 +42,9 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 ###----------------------###
 ###--- Public reports ---###
 ###----------------------###
-#date | tee -a ${LOG}
-#echo 'Public Reports' | tee -a ${LOG}
-#${PUBRPTS}/run_daily.csh
+date | tee -a ${LOG}
+echo 'Public Reports' | tee -a ${LOG}
+${PUBRPTS}/run_daily.csh
 
 ###----------------------###
 ###---   QC reports   ---###

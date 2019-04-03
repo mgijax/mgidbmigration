@@ -55,17 +55,4 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 
 date | tee -a ${LOG}
 
-###--------------------------------------------------------------###
-###---run pdfdownload
-###--------------------------------------------------------------###
-date | tee -a ${LOG}
-echo 'Run PDF Download' | tee -a ${LOG}
-${PDFDOWNLOAD}/download_papers.sh
-
-date | tee -a ${LOG}
-echo 'Identify Missing Paper' | tee -a ${LOG}
-${PDFDOWNLOAD}/identify_missed_papers_plos.sh
-
-date | tee -a ${LOG}
-
 echo '--- finished part 2' | tee -a ${LOG}

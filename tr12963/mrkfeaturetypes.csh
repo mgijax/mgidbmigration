@@ -21,7 +21,7 @@ touch $LOG
 date | tee -a $LOG
  
 # turn trigger off: VOC_Evidence or VOC_Annot records will also get deleted
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -47,7 +47,7 @@ and a._Annot_key = e._Annot_key
 EOSQL
 
 # turn trigger back on : VOC_Evidence
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
 
 date |tee -a $LOG
 

@@ -53,6 +53,10 @@ cd ..
 ${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 
+date | tee -a ${LOG}
+echo 'Run Lit Triage Load' | tee -a ${LOG}
+${LITTRIAGELOAD}/bin/littriageload.sh
+
 exit 0
 
 # after migration

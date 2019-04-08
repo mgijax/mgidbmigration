@@ -61,7 +61,21 @@ exit 0
 
 # after migration
 
-date | tee -a ${LOG}
+${MIRROR_WGET}/download_package pir.georgetown.edu.proisoform 
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload 
+${MIRROR_WGET}/download_package ftp.geneontology.org.goload 
+${MIRROR_WGET}/download_package snapshot.geneontology.org.goload
+${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua
+${MIRROR_WGET}/download_package www.mousephenotype.org.reports
+${MIRROR_WGET}/download_package dmdd.org.uk.htmpload
+${MIRROR_WGET}/download_package www.ebi.ac.uk.impc.json
+${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene
+
+#cd /data/loads/mgi/vocload/emap/input
+#scp bhmgiapp01:/data/loads/mgi/vocload/emap/input/EMAPA.obo .
+#rm -rf lastrun
+#date | tee -a ${LOG}
+
 echo 'Run Mammalian Phenotype Load' | tee -a ${LOG}
 ${VOCLOAD}/runOBOIncLoad.sh MP.config
 

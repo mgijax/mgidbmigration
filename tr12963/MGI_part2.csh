@@ -67,7 +67,7 @@ ${MIRROR_WGET}/download_package ftp.geneontology.org.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua
 ${MIRROR_WGET}/download_package www.mousephenotype.org.reports
-${MIRROR_WGET}/download_package dmdd.org.uk.htmpload
+#${MIRROR_WGET}/download_package dmdd.org.uk.htmpload
 ${MIRROR_WGET}/download_package www.ebi.ac.uk.impc.json
 ${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene
 

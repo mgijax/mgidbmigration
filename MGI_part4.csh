@@ -26,12 +26,6 @@ echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
 echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
 echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
-# remove reports
-#date | tee -a ${LOG}
-#echo 'remove existing report outputs' | tee -a ${LOG}
-#rm -rf ${PUBREPORTDIR}/output/* | tee -a ${LOG}
-#rm -rf ${QCREPORTDIR}/output/* | tee -a ${LOG}
-
 ###------------------------------###
 ###--- MGI Marker feed report ---###
 ###------------------------------###

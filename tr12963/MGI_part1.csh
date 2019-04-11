@@ -147,6 +147,11 @@ ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a 
 ${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
+#
+# TR13081/remove obsolete dmdd
+#
+rm -rf /data/downloads/dmdd.org.uk
+
 #${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

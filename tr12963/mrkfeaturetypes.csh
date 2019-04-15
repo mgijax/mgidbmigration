@@ -25,10 +25,8 @@ date | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
---select e.*
---from VOC_Evidence e
---where exists (select 1 from VOC_Annot a where a._Annottype_key = 1011 and a._Annot_key = e._Annot_key)
---;
+select count(*) from voc_annot where _annottype_key = 1011
+;
 
 --delete from MGI_Note n
 --using VOC_Annot a, VOC_Evidence e
@@ -42,6 +40,9 @@ delete from VOC_Evidence e
 using VOC_Annot a
 where a._Annottype_key = 1011 
 and a._Annot_key = e._Annot_key
+;
+
+select count(*) from voc_annot where _annottype_key = 1011
 ;
 
 EOSQL

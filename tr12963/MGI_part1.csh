@@ -100,9 +100,9 @@ date | tee -a ${LOG}
 echo 'add variant tables' | tee -a $LOG
 ./vartables.csh | tee -a $LOG || exit 1
 
-date | tee -a ${LOG}
-echo 'delete marker feature types : VOC_Evidence' | tee -a $LOG
-./mrkfeaturetypes.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+#echo 'delete marker feature types : VOC_Evidence' | tee -a $LOG
+#./mrkfeaturetypes.csh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'update actualDB url from nucgss to nuccore' | tee -a $LOG

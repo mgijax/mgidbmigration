@@ -123,20 +123,20 @@ for line in inFile.readlines():
 		    refKey = r['_Refs_key']
 		    refKeys.append(refKey)
 
-	results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdType), 'auto')
+	results = db.sql('''select _object_key from ACC_Accession where prefixpart = 'SO:' and accID = '%s' ''' % (soIdType), 'auto')
 	if len(results) == 0:
-		print 'Invalid SO ID: ', soIdType
-		error = 1
+		print 'Invalid SO ID: ', alleleId, allele, soIdType
+		#error = 1
 	for r in results:
 	    soTypeKey = r['_object_key']
 
 	# variant effects allow > 1, comma-separated
 	soEffectKeys = []
 	for soIdEffect in soIdEffects:
-	    results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (soIdEffect), 'auto')
+	    results = db.sql('''select _object_key from ACC_Accession where prefixpart = 'SO:' and accID = '%s' ''' % (soIdEffect), 'auto')
 	    if len(results) == 0:
 		    print 'Invalid SO ID: ', soIdEffect
-		    error = 1
+		    #error = 1
 	    for r in results:
 		    soEffectKey = r['_object_key']
 		    soEffectKeys.append(soEffectKey)

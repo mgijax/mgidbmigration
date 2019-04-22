@@ -21,6 +21,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from ALL_Variant;
+delete from VOC_Annot where _AnnotType_key in (1026,1027);
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Variant_drop.object | tee -a $LOG

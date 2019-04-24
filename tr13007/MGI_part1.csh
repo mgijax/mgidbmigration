@@ -43,6 +43,7 @@ date | tee -a ${LOG}
 # add autosequencing
 #
 date | tee -a ${LOG}
+echo 'step 1: adding autosequence for IMG tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/IMG_Image_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/IMG_ImagePane_create.object | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -68,7 +69,7 @@ date | tee -a ${LOG}
 # always a good idea to do to make sure that nothing was missed with schema changes
 #
 date | tee -a ${LOG}
-echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
+echo 'step 2: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1

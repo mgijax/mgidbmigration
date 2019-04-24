@@ -55,6 +55,23 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# add new RNA Seq tables
+#
+date | tee -a ${LOG}
+echo 'step 1: adding new RNA Seq tables' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_Sample_key) REFERENCES mgd.GXD_HTSample ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+EOSQL
+date | tee -a ${LOG}
+
+#
 # indexes
 # only run the ones needed per schema changes
 #
@@ -71,7 +88,7 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step 2: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1

@@ -65,7 +65,7 @@ select count(*) from IMG_Image_old;
 
 select count(*) from IMG_Image;
 
---drop table mgd.IMG_Image_old;
+drop table mgd.IMG_Image_old;
 
 EOSQL
 

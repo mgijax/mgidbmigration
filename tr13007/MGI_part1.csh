@@ -40,21 +40,6 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# add autosequencing
-#
-date | tee -a ${LOG}
-echo 'step 1: adding autosequence for IMG tables' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/IMG_Image_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/IMG_ImagePane_create.object | tee -a $LOG || exit 1
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-select max(_Image_key) from IMG_Image;
-select last_value from img_image_seq;
-select max(_ImagePane_key) from IMG_ImagePane;
-select last_value from img_imagepane_seq;
-EOSQL
-date | tee -a ${LOG}
-
-#
 # add new RNA Seq tables
 #
 date | tee -a ${LOG}
@@ -69,6 +54,14 @@ ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_Marker_key) REFERENCES mgd
 ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 EOSQL
+date | tee -a ${LOG}
+
+#
+# img_image stuff
+#
+date | tee -a ${LOG}
+echo 'step 1: IMG tables' | tee -a $LOG
+./img_image.csh | tee -a $LOG
 date | tee -a ${LOG}
 
 #

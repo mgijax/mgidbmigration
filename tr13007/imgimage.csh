@@ -58,6 +58,7 @@ ${PG_MGD_DBSCHEMADIR}/key/IMG_Image_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/IMG_Image_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/IMG_Image_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/IMG_ImagePane_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

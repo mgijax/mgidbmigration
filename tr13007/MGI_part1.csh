@@ -61,7 +61,7 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'step 1: IMG tables' | tee -a $LOG
-./img_image.csh | tee -a $LOG
+./imgimage.csh | tee -a $LOG
 date | tee -a ${LOG}
 
 #

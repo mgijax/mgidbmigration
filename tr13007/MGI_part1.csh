@@ -65,6 +65,14 @@ echo 'step 1: IMG tables' | tee -a $LOG
 date | tee -a ${LOG}
 
 #
+# elsevier
+#
+date | tee -a ${LOG}
+echo 'step 2: elsevier stuff' | tee -a $LOG
+./elsevier.csh | tee -a $LOG
+date | tee -a ${LOG}
+
+#
 # indexes
 # only run the ones needed per schema changes
 #

@@ -45,14 +45,27 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step 1: adding new RNA Seq tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_RNASeqCombined_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeqCombined_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqCombined_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeqCombined_create.object | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_Sample_key) REFERENCES mgd.GXD_HTSample ON DELETE CASCADE DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample_RNASeq ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Marker_key) REFERENCES mgd.MRK_Marker DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Level_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Organism_key) REFERENCES mgd.MGI_Organism DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Sex_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Emapa_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Stage_key) REFERENCES mgd.GXD_TheilerStage DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_Genotype_key) REFERENCES mgd.GXD_Genotype DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 EOSQL
 date | tee -a ${LOG}
 
@@ -65,12 +78,12 @@ echo 'step 1: IMG tables' | tee -a $LOG
 date | tee -a ${LOG}
 
 #
-# elsevier
+# elsevier/going out to production asap
 #
-date | tee -a ${LOG}
-echo 'step 2: elsevier stuff' | tee -a $LOG
-./elsevier.csh | tee -a $LOG
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#echo 'step 2: elsevier stuff' | tee -a $LOG
+#./elsevier.csh | tee -a $LOG
+#date | tee -a ${LOG}
 
 #
 # indexes

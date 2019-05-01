@@ -76,7 +76,7 @@ select count(*) from GXD_HTSample_old;
 
 select count(*) from GXD_HTSample;
 
---drop table mgd.GXD_HTSample_old;
+drop table mgd.GXD_HTSample_old;
 
 EOSQL
 

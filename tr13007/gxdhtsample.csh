@@ -81,15 +81,17 @@ select count(*) from GXD_HTSample;
 EOSQL
 
 # create SP
-./gxdhtsampleAgeMinMax.csh
+./gxdhtsampleAgeMinMax.csh | tee -a $LOG
 
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#select * from zMGI_resetAgeMinMax();
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select * from zMGI_resetAgeMinMax();
+EOSQL
 
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
-#DROP FUNCTION IF EXISTS zMGI_resetAgeMinMax();
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+DROP FUNCTION IF EXISTS zMGI_resetAgeMinMax();
+EOSQL
+
+./gxdhtsampleqc.csh | tee -a $LOG
 
 date |tee -a $LOG
 

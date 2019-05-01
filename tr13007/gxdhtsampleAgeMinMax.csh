@@ -23,6 +23,7 @@ BEGIN
 FOR v_pkey, v_age IN
 SELECT _Sample_key, age
 FROM GXD_HTSample
+WHERE age not in ('postnatal year')
 LOOP
 	--FETCH age_cursor INTO v_pkey, v_age;
 	--EXIT WHEN NOT FOUND;

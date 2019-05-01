@@ -40,10 +40,18 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# gxd_htsample
+#
+date | tee -a ${LOG}
+echo 'step 1: GXD_HTSample tables' | tee -a $LOG
+./gxdhtsample.csh | tee -a $LOG
+date | tee -a ${LOG}
+
+#
 # add new RNA Seq tables
 #
 date | tee -a ${LOG}
-echo 'step 1: adding new RNA Seq tables' | tee -a $LOG
+echo 'step 2: adding new RNA Seq tables' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_RNASeqCombined_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeq_create.object | tee -a $LOG || exit 1
@@ -73,7 +81,7 @@ date | tee -a ${LOG}
 # img_image stuff
 #
 date | tee -a ${LOG}
-echo 'step 1: IMG tables' | tee -a $LOG
+echo 'step 3: IMG tables' | tee -a $LOG
 ./imgimage.csh | tee -a $LOG
 date | tee -a ${LOG}
 
@@ -81,7 +89,7 @@ date | tee -a ${LOG}
 # elsevier/going out to production asap
 #
 #date | tee -a ${LOG}
-#echo 'step 2: elsevier stuff' | tee -a $LOG
+#echo 'step ?: elsevier stuff' | tee -a $LOG
 #./elsevier.csh | tee -a $LOG
 #date | tee -a ${LOG}
 
@@ -100,7 +108,7 @@ date | tee -a ${LOG}
 # always a good idea to do to make sure that nothing was missed with schema changes
 #
 date | tee -a ${LOG}
-echo 'step 2: running triggers, procedures, views, comments' | tee -a $LOG
+echo 'step 4: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1

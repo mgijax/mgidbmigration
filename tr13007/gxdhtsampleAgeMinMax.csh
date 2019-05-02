@@ -1,12 +1,12 @@
 #!/bin/sh
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
-DROP FUNCTION IF EXISTS zMGI_resetAgeMinMax();
+DROP FUNCTION IF EXISTS gxdhtsampleAgeMinMax();
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0
 
-CREATE OR REPLACE FUNCTION zMGI_resetAgeMinMax (
+CREATE OR REPLACE FUNCTION gxdhtsampleAgeMinMax (
 )
 RETURNS VOID AS
 \$\$
@@ -44,6 +44,6 @@ END;
 \$\$
 LANGUAGE plpgsql;
 
-GRANT EXECUTE ON FUNCTION zMGI_resetAgeMinMax() TO public;
+GRANT EXECUTE ON FUNCTION gxdhtsampleAgeMinMax() TO public;
 
 EOSQL

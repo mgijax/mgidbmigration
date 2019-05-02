@@ -84,7 +84,7 @@ EOSQL
 ./gxdhtsampleAgeMinMax.csh | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-select * from zMGI_resetAgeMinMax();
+select * from gxdhtsampleAgeMinMax();
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

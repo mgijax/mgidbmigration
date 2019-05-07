@@ -34,6 +34,12 @@ select distinct age, agemin, agemax
 from gxd_htsample 
 order by age;
 
+select e.*, s.age, s.agemin, s.agemax
+from GXD_HTExperiment e, GXD_HTSample s
+where e._Experiment_key = s._Experiment_key
+and s.agemin is null
+;
+
 EOSQL
 
 date |tee -a $LOG

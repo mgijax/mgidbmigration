@@ -34,7 +34,7 @@ where n._notetype_key = 1026
 and n._note_key = c._note_key
 and n._object_key = t._term_key
 and t.term = r.journal
-limit 5
+limit 10
 ;
 
 EOSQL

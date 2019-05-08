@@ -112,6 +112,11 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
 
+# obsolete qcreports
+rm -rf /data/reports/qcreports_db/output/GXD_HTSampleIncompAgeAndTS.rpt
+rm -rf /data/reports/qcreports_db/output/GXD_HTSampleNoAge.rpt
+rm -rf /data/reports/qcreports_db/output/GXD_HTSampleWrongAge.sql.rpt
+
 #
 # cleanobjects.sh : removing stray mgi_notes
 #

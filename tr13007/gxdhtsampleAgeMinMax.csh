@@ -25,18 +25,33 @@ SELECT _Sample_key, age
 FROM GXD_HTSample
 WHERE age not in ('postnatal year')
 LOOP
-	--FETCH age_cursor INTO v_pkey, v_age;
-	--EXIT WHEN NOT FOUND;
-
 	SELECT * FROM PRB_ageMinMax(v_age) into v_ageMin, v_ageMax;
-
 	UPDATE GXD_HTSample
 	SET ageMin = v_ageMin, ageMax = v_ageMax 
 	WHERE _Sample_key = v_pkey;
-
 END LOOP;
 
---CLOSE age_cursor;
+FOR v_pkey, v_age IN
+SELECT _GelLane_key, age
+FROM GXD_GelLane
+WHERE ageMin = 5000
+LOOP
+	SELECT * FROM PRB_ageMinMax(v_age) into v_ageMin, v_ageMax;
+	UPDATE GXD_GelLane
+	SET ageMin = v_ageMin, ageMax = v_ageMax 
+	WHERE _GelLane_key = v_pkey;
+END LOOP;
+
+FOR v_pkey, v_age IN
+SELECT _Specimen_key, age
+FROM GXD_Specimen
+WHERE ageMin = 5000
+LOOP
+	SELECT * FROM PRB_ageMinMax(v_age) into v_ageMin, v_ageMax;
+	UPDATE GXD_Specimen
+	SET ageMin = v_ageMin, ageMax = v_ageMax 
+	WHERE _Specimen_key = v_pkey;
+END LOOP;
 
 RETURN;
 

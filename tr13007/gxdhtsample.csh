@@ -86,7 +86,7 @@ select * from gxdhtsampleAgeMinMax();
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-DROP FUNCTION IF EXISTS zMGI_resetAgeMinMax();
+DROP FUNCTION IF EXISTS gxdhtsampleAgeMinMax();
 EOSQL
 
 ./gxdhtsampleqc.csh | tee -a $LOG

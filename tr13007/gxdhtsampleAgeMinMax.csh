@@ -34,7 +34,7 @@ END LOOP;
 FOR v_pkey, v_age IN
 SELECT _GelLane_key, age
 FROM GXD_GelLane
-WHERE ageMin = 5000
+WHERE ageMin = 5000 or ageMin is null
 LOOP
 	SELECT * FROM PRB_ageMinMax(v_age) into v_ageMin, v_ageMax;
 	UPDATE GXD_GelLane
@@ -45,7 +45,7 @@ END LOOP;
 FOR v_pkey, v_age IN
 SELECT _Specimen_key, age
 FROM GXD_Specimen
-WHERE ageMin = 5000
+WHERE ageMin = 5000 or ageMin is null
 LOOP
 	SELECT * FROM PRB_ageMinMax(v_age) into v_ageMin, v_ageMax;
 	UPDATE GXD_Specimen

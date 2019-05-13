@@ -40,6 +40,14 @@ where e._Experiment_key = s._Experiment_key
 and s.agemin is null
 ;
 
+select distinct age, agemin, agemax 
+from gxd_specimen
+order by age;
+
+select distinct age, agemin, agemax 
+from gxd_gellane
+order by age;
+
 EOSQL
 
 date |tee -a $LOG

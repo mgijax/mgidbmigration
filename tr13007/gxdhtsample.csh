@@ -67,6 +67,7 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_create.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTSample_create.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_ageMinMax_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

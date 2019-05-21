@@ -44,6 +44,7 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'step 1: GXD_HTSample tables' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 ./gxdhtsample.csh | tee -a $LOG
 date | tee -a ${LOG}
 
@@ -105,7 +106,6 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'step 4: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
@@ -121,9 +121,9 @@ rm -rf /data/reports/qcreports_db/output/GXD_HTSampleWrongAge.sql.rpt
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-#date | tee -a ${LOG}
-#echo 'data cleanup' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'data cleanup' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 
 #
 # rebuild the java dla, if needed due to schema changes

@@ -107,6 +107,14 @@ echo 'step 3: IMG tables' | tee -a $LOG
 date | tee -a ${LOG}
 
 #
+# first space convert to underscore
+#
+date | tee -a ${LOG}
+echo 'step 4: gxdpane.csh' | tee -a $LOG
+./gxdpane.csh | tee -a $LOG
+date | tee -a ${LOG}
+
+#
 # elsevier/going out to production asap
 #
 #date | tee -a ${LOG}

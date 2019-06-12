@@ -95,6 +95,10 @@ ALTER TABLE mgd.GXD_HTSample_RNASeqSetMember ADD FOREIGN KEY (_Sample_key) REFER
 ALTER TABLE mgd.GXD_HTSample_RNASeqSetMember ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample_RNASeqSetMember ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 
+-- remove BGEM/159
+delete from acc_accession where _logicaldb_key = 159;
+delete from acc_logicaldb where _logicaldb_key = 159;
+
 EOSQL
 date | tee -a ${LOG}
 

@@ -32,10 +32,10 @@ db.useOneConnection(1)
 TAB = '\t'
 CRT = '\n'
 
-fpEAIn = open('/mgi/all/wts_projects/13000/13007/data/EAlinks.txt', 'r')
+fpEAIn = open('/mgi/all/wts_projects/13000/13007/data/EAlinks2.txt', 'r')
 fpEAOut =  open('/mgi/all/wts_projects/13000/13007/data/ea_setload/EAlinks.setload.txt', 'w')
 
-fpRNASeqIn = open('/mgi/all/wts_projects/13000/13007/data/RNASeq_Experiments_from_Connie.txt', 'r')
+fpRNASeqIn = open('/mgi/all/wts_projects/13000/13007/data/RNASeq_Experiments_from_Connie2.txt', 'r')
 fpRNASeqOut = open('/mgi/all/wts_projects/13000/13007/data/rnaseq_setload/RNASeq_Experiments_from_Connie.setload.txt', 'w')
 
 # create setload files

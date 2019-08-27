@@ -119,12 +119,12 @@ echo 'step 4: gxdpane.csh' | tee -a $LOG
 date | tee -a ${LOG}
 
 #
-# elsevier/going out to production asap
+# add autosequence for bib_refs
 #
-#date | tee -a ${LOG}
-#echo 'step ?: elsevier stuff' | tee -a $LOG
-#./elsevier.csh | tee -a $LOG
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+echo 'add autosequence for bib_refs' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Refs_create.object | tee -a $LOG || exit 1
+date | tee -a ${LOG}
 
 #
 # indexes

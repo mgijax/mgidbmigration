@@ -99,6 +99,8 @@ ALTER TABLE mgd.GXD_HTSample_RNASeqSetMember ADD FOREIGN KEY (_CreatedBy_key) RE
 delete from acc_accession where _logicaldb_key = 159;
 delete from acc_logicaldb where _logicaldb_key = 159;
 
+DROP FUNCTION IF EXISTS MGI_updateReferenceAssoc(int,int,int,int,text);
+
 EOSQL
 date | tee -a ${LOG}
 

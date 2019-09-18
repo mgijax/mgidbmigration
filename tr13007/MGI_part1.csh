@@ -100,6 +100,7 @@ delete from acc_accession where _logicaldb_key = 159;
 delete from acc_logicaldb where _logicaldb_key = 159;
 
 DROP FUNCTION IF EXISTS MGI_updateReferenceAssoc(int,int,int,int,text);
+drop index if exists mgd.MGI_Reference_Assoc_idx_clustered;
 
 EOSQL
 date | tee -a ${LOG}

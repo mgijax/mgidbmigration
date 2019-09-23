@@ -9,19 +9,22 @@ WITH mpAnnot AS (
 select _object_key, _term_key  
 from voc_annot 
 where _annottype_key = 1002 
-group by _object_key, _term_key having count(*) > 1
+group by _object_key, _term_key having count(*) > 1 
 )
-select a._annot_key, a._object_key, a._term_key, e._annotevidence_key, aa.accID
-from voc_annot a, mpAnnot m, voc_evidence e, acc_accession aa
-where a._annottype_key = 1002
-and a._object_key = m._object_key
-and a._term_key = m._term_key
+select a._annot_key, a._object_key, a._term_key, e._annotevidence_key, p._EvidenceProperty_key, p.value, aa.accID
+from mpAnnot m, voc_annot a, voc_evidence e, voc_evidence_property p, voc_term t, acc_accession aa
+where m._object_key = a._object_key
+and m._term_key = a._term_key
+and a._annottype_key = 1002
 and a._annot_key = e._annot_key
+and e._AnnotEvidence_key = p._AnnotEvidence_key    
+and p._PropertyTerm_key = t._Term_key    
+and t._Vocab_key = 86    
+and t._Term_key = 8836535
 and a._object_key = aa._object_key
 and aa._mgitype_key = 12
-and aa._logicaldb_key = 1
+and aa._logicaldb_key = 1 
 order by a._object_key, a._term_key, a._annot_key
-;
 '''
 
 results = db.sql(sql, 'auto')
@@ -44,7 +47,7 @@ for r in results:
 		badKey = aKey
 
 		if goodKey != badKey:
-			print "processing: " , objectKey, termKey, aKey, accID
+			print "processing: " , objectKey, termKey, accID, badKey, goodKey
 			sql += 'update VOC_Evidence set _annot_key = %s where _annotevidence_key = %s;\n' % (goodKey, eKey)
 			sql += 'delete from VOC_Annot where _annot_key = %s;\n' % (badKey)
 		else:

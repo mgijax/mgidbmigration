@@ -39,6 +39,7 @@ for r in results:
 	aKey = r['_annot_key']
 	eKey = r['_annotevidence_key']
 	accID = r['accID']
+	term = r['term']
 
 	if prevKey != currentKey:
 		goodKey = aKey
@@ -47,11 +48,11 @@ for r in results:
 		badKey = aKey
 
 		if goodKey != badKey:
-			print "processing: " , objectKey, termKey, accID, badKey, goodKey
+			print "processing: " , objectKey, termKey, accID, badKey, goodKey, term
 			sql += 'update VOC_Evidence set _annot_key = %s where _annotevidence_key = %s;\n' % (goodKey, eKey)
 			sql += 'delete from VOC_Annot where _annot_key = %s;\n' % (badKey)
 		else:
-			print "skipping: good key == bad key ", objectKey, termKey, aKey, accID
+			print "skipping: good key == bad key ", objectKey, termKey, aKey, accID, term
 
 try:
 	db.sql(sql, None)

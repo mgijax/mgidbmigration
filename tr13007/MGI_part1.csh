@@ -165,6 +165,9 @@ rm -rf /data/reports/qcreports_db/output/GXD_HTSampleWrongAge.sql.rpt
 date | tee -a ${LOG}
 echo 'data cleanup' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+echo 'data cleanup mp annotations' | tee -a $LOG
+./mpannot.sh | tee -a $LOG || exit 1
 
 #
 # rebuild the java dla, if needed due to schema changes

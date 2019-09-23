@@ -11,19 +11,16 @@ from voc_annot
 where _annottype_key = 1002 
 group by _object_key, _term_key having count(*) > 1 
 )
-select a._annot_key, a._object_key, a._term_key, e._annotevidence_key, p._EvidenceProperty_key, p.value, aa.accID
-from mpAnnot m, voc_annot a, voc_evidence e, voc_evidence_property p, voc_term t, acc_accession aa
+select a._annot_key, a._object_key, a._term_key, e._annotevidence_key, aa.accID, t.term
+from mpAnnot m, voc_annot a, voc_evidence e, voc_term t, acc_accession aa
 where m._object_key = a._object_key
 and m._term_key = a._term_key
 and a._annottype_key = 1002
 and a._annot_key = e._annot_key
-and e._AnnotEvidence_key = p._AnnotEvidence_key    
-and p._PropertyTerm_key = t._Term_key    
-and t._Vocab_key = 86    
-and t._Term_key = 8836535
 and a._object_key = aa._object_key
 and aa._mgitype_key = 12
 and aa._logicaldb_key = 1 
+and a._term_key = t._term_key
 order by a._object_key, a._term_key, a._annot_key
 '''
 

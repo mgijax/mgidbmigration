@@ -30,10 +30,10 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 WITH mpAnnot AS (
-select _object_key, _term_key  
+select _object_key, _term_key, _qualifier_key
 from voc_annot 
 where _annottype_key = 1002 
-group by _object_key, _term_key having count(*) > 1 
+group by _object_key, _term_key, _qualifier_key having count(*) > 1 
 )
 select a._annot_key, a._object_key, a._term_key, e._annotevidence_key, aa.accID, t.term
 from voc_annot a, mpAnnot m, voc_evidence e, voc_term t, acc_accession aa

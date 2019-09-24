@@ -44,12 +44,12 @@ switch (`uname -n`)
 endsw
 
 date | tee -a ${LOG}
-echo 'RNA Seq load' | tee -a $LOG
-${RNASEQLOAD}/bin/rnaseqload.sh | tee -a $LOG
-
-date | tee -a ${LOG}
 echo 'Create HT Experiment Sets' | tee -a $LOG
 ./createSets.csh | tee -a $LOG
+
+date | tee -a ${LOG}
+echo 'RNA Seq load' | tee -a $LOG
+${RNASEQLOAD}/bin/rnaseqload.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 

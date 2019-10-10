@@ -122,11 +122,12 @@ echo 'step 4: gxdpane.csh' | tee -a $LOG
 date | tee -a ${LOG}
 
 #
-# add autosequence for bib_refs
+# add autosequence for bib_refs, voc_evidence_property
 #
 date | tee -a ${LOG}
-echo 'add autosequence for bib_refs' | tee -a $LOG
+echo 'add autosequence for bib_refs, voc_evidence_property' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Refs_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_Property_create.object | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 
 #
@@ -162,12 +163,12 @@ rm -rf /data/reports/qcreports_db/output/GXD_HTSampleWrongAge.sql.rpt
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
 echo 'data cleanup' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
-date | tee -a ${LOG}
-echo 'data cleanup mp annotations' | tee -a $LOG
-./mpannot.csh | tee -a $LOG || exit 1
+#date | tee -a ${LOG}
+#echo 'data cleanup mp annotations' | tee -a $LOG
+#./mpannot.csh | tee -a $LOG || exit 1
 
 #
 # rebuild the java dla, if needed due to schema changes

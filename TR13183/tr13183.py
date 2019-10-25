@@ -51,24 +51,17 @@ results = db.sql('''select distinct u._Marker_key, a.accid
 for r in results:
     repProteinDict[r['_Marker_key']] = r['accid']
 
-# these annotations have IDA or IMP with no inferred from and 
-# also have an IPI annotation that has inferredFrom
-# these will be updated to GO:0042802 'identical protein binding'
-db.sql('''select distinct va._Annot_key, m._Marker_key, m.symbol, ve._annotevidence_key, 
-	ve._evidenceTerm_key, ve.inferredFrom
-    into temporary table alsoHasIPI
+# these annotations have an IPI annotation, these will be updated 
+# to GO:0042802 'identical protein binding'
+db.sql('''select distinct va._Annot_key, m._Marker_key, m.symbol, ve._annotevidence_key,
+        ve._evidenceTerm_key, ve.inferredFrom
+    into temporary table withIPI
     from VOC_Annot va, VOC_Evidence ve, MRK_Marker m
     where va._AnnotType_key = 1000
     and va._Term_key = 63642 -- GO:0042803
     and va._Annot_key = ve._Annot_key
-    and ve._evidenceTerm_key in (109, 110) -- IDA, IMP
-    and ve.inferredFrom is null
+    and ve._evidenceTerm_key = 111 -- IPI
     and va._Object_key = m._Marker_key
-    and exists (select 1
-    from VOC_Annot va2, VOC_Evidence ve2
-    where va._Annot_key = ve2._Annot_key
-    and ve2._evidenceTerm_key = 111 
-    and inferredFrom is not null) -- IPI
     order by va._Annot_key''', None)
 
 print 'REQUEST 1A'
@@ -115,10 +108,10 @@ for annotKey in toUpdateDict:
 	db.commit()       
 
 print '\nREQUEST 1B'
-print 'GO annotations to GO:0042803 with evidenceCode of IDA or IMP that also have IPI'
+print 'GO annotations to GO:0042803 with evidenceCode of IPI'
 print 'These are updated to GO:0042802 "identical protein binding"'
 
-results = db.sql('''select * from alsoHasIPI''', 'auto')
+results = db.sql('''select * from withIPI''', 'auto')
 for r in results:
     print r
     sql = '''update VOC_Annot
@@ -154,14 +147,8 @@ results = db.sql('''select distinct va._Annot_key, m._Marker_key, m.symbol, ve._
     where va._AnnotType_key = 1000
     and va._Term_key = 63642 -- GO:0042803
     and va._Annot_key = ve._Annot_key
-    and ve._evidenceTerm_key in (109, 110) -- IDA, IMP
-    and ve.inferredFrom is null
+    and ve._evidenceTerm_key = 111 -- IPI
     and va._Object_key = m._Marker_key
-    and exists (select 1
-    from VOC_Annot va2, VOC_Evidence ve2
-    where va._Annot_key = ve2._Annot_key
-    and ve2._evidenceTerm_key = 111
-    and inferredFrom is not null) -- IPI
     order by va._Annot_key''', 'auto')
 for r in results:
     print r

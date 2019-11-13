@@ -129,7 +129,12 @@ echo 'add autosequence for bib_refs, voc_evidence_property' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_Property_create.object | tee -a $LOG || exit 1
 date | tee -a ${LOG}
+i
+#
+# add autoseequence for gxd_allelepair, gxd_genotype
+#
 
+#
 #
 # indexes
 # only run the ones needed per schema changes
@@ -169,6 +174,9 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 echo 'data cleanup mp annotations' | tee -a $LOG
 ./mpannot.csh | tee -a $LOG || exit 1
+
+echo 'data cleanup allele/do annotations'  | tee -a $LOG
+./doannot.csh | tee -a $LOG || exit 1
 
 #
 # rebuild the java dla, if needed due to schema changes

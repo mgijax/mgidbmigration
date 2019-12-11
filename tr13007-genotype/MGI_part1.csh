@@ -42,6 +42,10 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #
 # add auto-sequence 
 #
+echo 'add autsequence for ACC_LogicalDB and ACC_ActualDB' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/ACC_LogicalDB_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/ACC_ActualDB_create.object | tee -a $LOG || exit 1
+
 echo 'add autosequence for GXD_Genotype, GXD_AllelePair and PRB_Strain' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Genotype_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AllelePair_create.object | tee -a $LOG || exit 1

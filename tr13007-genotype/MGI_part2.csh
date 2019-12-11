@@ -37,11 +37,28 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 switch (`uname -n`)
     case bhmgiapp14ld:
     case bhmgidevapp01:
+    case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
-        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
-        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+        echo 'copying htmpload files' | tee -a $LOG || exit 1
+        scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk/
+	scp bhmgiapp01:/data/downloads/www.mousephenotype.org/mp2_load_phenotyping_colonies_report.tsv /data/downloads/www.mousephenotype.org
+	
         breaksw
 endsw
+
+# run IMPC htmpload - autsequence change to GXD_Genotype, GXD_AllelePair
+date | tee -a ${LOG}
+echo 'Run MP Annotation Load' | tee -a ${LOG}
+${HTMPLOAD}/bin/runMpLoads.sh
+
+date | tee -a ${LOG}
+echo 'Run Test Strain Load' | tee -a ${LOG}
+${STRAINLOAD}/strainload.csh ./test_strainload/test_strainload.config
+
+#
+# run autosequence report
+# 
+${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh >& autosequencecheck.csh.out
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

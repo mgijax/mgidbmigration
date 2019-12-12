@@ -55,7 +55,6 @@ echo 'other schema stuff'
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP FUNCTION IF EXISTS GXD_checkDuplicateGenotype(int);
-DROP FUNCTION IF EXISTS VOC_copyAnnotEvidenceNotes(int,int,bigint);
 EOSQL
 date | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a $LOG

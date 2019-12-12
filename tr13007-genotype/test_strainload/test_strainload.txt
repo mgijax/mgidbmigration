@@ -1,0 +1,2 @@
+01XFA	qrstuvwxyz	MGI:3050880	coisogenic	laboratory mouse	1		54	10		sc		0	
+01XH6	def123ghi456	MGI:3839659	coisogenic	laboratory mouse	1		54	10		sc		0		

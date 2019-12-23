@@ -78,6 +78,14 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'data cleanup mp annotations' | tee -a $LOG
+./mpannot.csh | tee -a $LOG || exit 1
+echo 'data cleanup allele/do annotations'  | tee -a $LOG
+./doannot.csh | tee -a $LOG || exit 1
+echo 'data cleanup genotype/do annotations'  | tee -a $LOG
+./genotypedo.csh | tee -a $LOG || exit 1
+
 #
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary

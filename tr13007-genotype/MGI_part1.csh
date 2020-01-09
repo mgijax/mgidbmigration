@@ -50,6 +50,7 @@ echo 'add autosequence for GXD_Genotype, GXD_AllelePair and PRB_Strain' | tee -a
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Genotype_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AllelePair_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/PRB_Strain_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/MGI_SetMember_create.object | tee -a $LOG || exit 1
 
 echo 'other schema stuff'
 date | tee -a ${LOG}

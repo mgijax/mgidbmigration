@@ -59,6 +59,7 @@ EOSQL
 date | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_checkDuplicateGenotype_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetSequenceNum_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/GXD_addGenotypeSet_create.object | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'step 4: running triggers, procedures, views, comments' | tee -a $LOG

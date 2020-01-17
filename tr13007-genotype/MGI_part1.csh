@@ -96,5 +96,9 @@ echo 'data cleanup genotype/do annotations'  | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
 date | tee -a ${LOG}
+echo 'Run RNA Seq load Prep Script' | tee -a $LOG
+./rnaseqPrep.csh | tee -a $LOG  || exit 1
+
+date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}
 

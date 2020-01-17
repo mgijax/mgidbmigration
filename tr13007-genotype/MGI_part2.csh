@@ -55,6 +55,10 @@ date | tee -a ${LOG}
 echo 'Run Test Strain Load' | tee -a ${LOG}
 ${STRAINLOAD}/strainload.csh ./test_strainload/test_strainload.config
 
+date | tee -a ${LOG}
+echo 'RNA Seq load' | tee -a $LOG
+${RNASEQLOAD}/bin/rnaseqload.sh | tee -a $LOG
+
 #
 # run autosequence report
 # 

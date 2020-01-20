@@ -32,11 +32,11 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'Create HT Experiment Sets' | tee -a $LOG
-./createSets.csh | tee -a $LOG
+./createSets.csh  | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'Download Experiment Files' | tee -a $LOG
-${RNASEQLOAD}/bin/run_downloadFiles.sh | tee -a $LOG
+${RNASEQLOAD}/bin/run_downloadFiles.sh  | tee -a $LOG || exit 1
 
 #
 # copy 'old' rnaseq files that have not been updated at the source in the new
@@ -67,8 +67,6 @@ date | tee -a ${LOG}
 echo 'Create the download_ok file in the raw_input directory' | tee -a $LOG
 
 touch /data/loads/mgi/rnaseqload/raw_input/download_ok
-
-date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo '--- finished rnaseqPrep.csh' | tee -a ${LOG}

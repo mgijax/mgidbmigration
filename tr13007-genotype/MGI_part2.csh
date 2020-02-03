@@ -47,13 +47,13 @@ switch (`uname -n`)
 endsw
 
 # run IMPC htmpload - autsequence change to GXD_Genotype, GXD_AllelePair
-date | tee -a ${LOG}
-echo 'Run MP Annotation Load' | tee -a ${LOG}
-${HTMPLOAD}/bin/runMpLoads.sh
+#date | tee -a ${LOG}
+#echo 'Run MP Annotation Load' | tee -a ${LOG}
+#${HTMPLOAD}/bin/runMpLoads.sh
 
-date | tee -a ${LOG}
-echo 'Run Test Strain Load' | tee -a ${LOG}
-${STRAINLOAD}/strainload.csh ./test_strainload/test_strainload.config
+#date | tee -a ${LOG}
+#echo 'Run Test Strain Load' | tee -a ${LOG}
+#${STRAINLOAD}/strainload.csh ./test_strainload/test_strainload.config
 
 date | tee -a ${LOG}
 echo 'RNA Seq load' | tee -a $LOG

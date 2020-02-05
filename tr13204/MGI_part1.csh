@@ -30,9 +30,30 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
 # create autosequence on VOC_Term table
+#${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+delete from VOC_Term where _vocab_key in (145, 146);
+
+EOSQL
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run LTE include load' | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.include.config
+
+date | tee -a ${LOG}
+echo 'Run LTE exclude load' | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.exclude.config
+
+date | tee -a ${LOG}
+echo 'autosequence check' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
 
 #
 # update schema-version and public-version
@@ -72,7 +93,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 #date | tee -a ${LOG}
 #echo 'data cleanup' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
+
 #
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary

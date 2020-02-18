@@ -56,7 +56,6 @@ switch (`uname -n`)
         scp /mgi/all/wts_projects/13000/13007/data/old_exp_toload/E-GEOD-43717.eae.txt /data/loads/mgi/rnaseqload/raw_input/E-GEOD-43717.eae.txt
         scp /mgi/all/wts_projects/13000/13007/data/old_exp_toload/E-MTAB-3725.eae.txt /data/loads/mgi/rnaseqload/raw_input/E-MTAB-3725.eae.txt
         scp /mgi/all/wts_projects/13000/13007/data/old_exp_toload/E-MTAB-3718.eae.txt /data/loads/mgi/rnaseqload/raw_input/E-MTAB-3718.eae.txt
-        scp /mgi/all/wts_projects/13000/13007/data/old_exp_toload/E-ERAD-499.eae.txt /data/loads/mgi/rnaseqload/raw_input/E-ERAD-499.eae.txt
 	
         breaksw
 endsw

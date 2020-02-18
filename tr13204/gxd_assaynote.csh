@@ -54,7 +54,7 @@ select count(*) from GXD_AssayNote_old;
 
 select count(*) from GXD_AssayNote;
 
---drop table mgd.GXD_AssayNote_old;
+drop table mgd.GXD_AssayNote_old;
 
 EOSQL
 

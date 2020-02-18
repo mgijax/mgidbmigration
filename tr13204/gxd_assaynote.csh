@@ -44,7 +44,9 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_AssayNote_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

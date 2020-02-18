@@ -32,14 +32,22 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 # create autosequence on VOC_Term table
 #${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AllelePair_drop.object | tee -a $LOG || exit 1
+
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AllelePair_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antigen_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antibody_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AntibodyPrep_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_ProbePrep_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Assay_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
+
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AllelePair_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antigen_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antigen_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antibody_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antibody_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Assay_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AntibodyPrep_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_ProbePrep_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Assay_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AssayNote_create.object | tee -a $LOG || exit 1
 
 # remove term accession ids and the voc_term insert trigger that creates them
 ./deleteTermIDs.csh | tee -a $LOG || exit 1

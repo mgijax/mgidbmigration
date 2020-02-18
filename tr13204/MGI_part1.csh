@@ -44,6 +44,9 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Assay_create.object | tee -a $LOG || exit
 # remove term accession ids and the voc_term insert trigger that creates them
 ./deleteTermIDs.csh | tee -a $LOG || exit 1
 
+# add real primary key to GXD_AntibodyMarker
+./gxd.csh | tee -a $LOG || exit 1
+
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}

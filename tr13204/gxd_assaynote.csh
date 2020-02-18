@@ -19,8 +19,7 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.GXD_AssayNote DROP CONSTRAINT GXD_AssayNote_pkey CASCADE;
-ALTER TABLE mgd.GXD_AssayNote DROP CONSTRAINT GXD_AssayNote__Marker_key_fkey CASCADE;
-ALTER TABLE mgd.GXD_AssayNote DROP CONSTRAINT GXD_AssayNote__Antibody_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_AssayNote DROP CONSTRAINT GXD_AssayNote__Assay_key_fkey CASCADE;
 ALTER TABLE GXD_AssayNote RENAME TO GXD_AssayNote_old;
 EOSQL
 

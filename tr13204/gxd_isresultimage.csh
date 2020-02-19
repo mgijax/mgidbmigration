@@ -34,7 +34,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_InSituResultImage_create.object | tee -a 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into GXD_InSituResultImage
-select nextval('gxd_isresultstructure_seq'), m._Result_key, m._ImagePane_key, m.creation_date, m.modification_date
+select nextval('gxd_insituresultimage_seq'), m._Result_key, m._ImagePane_key, m.creation_date, m.modification_date
 from GXD_InSituResultImage_old m
 ;
 

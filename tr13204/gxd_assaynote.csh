@@ -37,7 +37,7 @@ select nextval('gxd_assaynote_seq'), m._Assay_key, m.assayNote, m.creation_date,
 from GXD_AssayNote_old m
 ;
 
-ALTER TABLE mgd.GXD_AssayNote ADD PRIMARY KEY (_AssayNote_key, sequenceNum);
+ALTER TABLE mgd.GXD_AssayNote ADD PRIMARY KEY (_AssayNote_key);
 ALTER TABLE mgd.GXD_AssayNote ADD FOREIGN KEY (_Assay_key) REFERENCES mgd.GXD_Assay ON DELETE CASCADE DEFERRABLE;
 
 EOSQL
@@ -45,8 +45,8 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/index/GXD_AssayNote_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_duplicateAssay_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayNote_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

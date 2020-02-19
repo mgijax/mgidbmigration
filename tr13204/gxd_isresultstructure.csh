@@ -65,7 +65,7 @@ select count(*) from GXD_ISResultStructure_old;
 
 select count(*) from GXD_ISResultStructure;
 
---drop table mgd.GXD_ISResultStructure_old;
+drop table mgd.GXD_ISResultStructure_old;
 
 EOSQL
 

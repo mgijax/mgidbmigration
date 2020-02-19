@@ -40,6 +40,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG || exit 
 #${PG_MGD_DBSCHEMADIR}/autosequence/GXD_ProbePrep_drop.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Assay_drop.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Specimen_drop.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/autosequence/GXD_InSituResult_drop.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AllelePair_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Antigen_create.object | tee -a $LOG || exit 1
@@ -48,6 +50,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AntibodyPrep_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_ProbePrep_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Assay_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AssayNote_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_Specimen_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/GXD_InSituResult_create.object | tee -a $LOG || exit 1
 
 # remove term accession ids and the voc_term insert trigger that creates them
 ./deleteTermIDs.csh | tee -a $LOG || exit 1

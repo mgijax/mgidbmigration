@@ -32,7 +32,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'Run RNA Seq load Prep Script' | tee -a $LOG
-./rnaseqPrep.csh | tee -a $LOG  || exit 1
+./test_rnaseqPrep.csh | tee -a $LOG  || exit 1
 
 date | tee -a ${LOG}
 echo 'RNA Seq load' | tee -a $LOG

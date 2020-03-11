@@ -60,7 +60,7 @@ select count(*) from GXD_InSituResultImage_old;
 
 select count(*) from GXD_InSituResultImage;
 
---drop table mgd.GXD_InSituResultImage_old;
+drop table mgd.GXD_InSituResultImage_old;
 
 EOSQL
 

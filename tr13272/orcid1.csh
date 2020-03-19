@@ -21,7 +21,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
--- no property at all
+-- property exists
 select distinct m.symbol, a.accid, substring(t.term,1,30) as term, u.orcid, p.stanza, e.*
 into temp table toAdd
 from voc_annot v, voc_evidence e, mgi_user u, mrk_marker m, acc_accession a, voc_term t, voc_evidence_property p

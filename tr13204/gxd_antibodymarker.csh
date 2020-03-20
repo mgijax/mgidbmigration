@@ -34,8 +34,6 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AntibodyMarker_create.object | tee -a $LO
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-drop index gxd_antibodymarker_idx_antibody_key;
-
 insert into GXD_AntibodyMarker
 select nextval('gxd_antibodymarker_seq'), m._Antibody_key, m._Marker_key, m.creation_date, m.modification_date
 from GXD_AntibodyMarker_old m
@@ -49,7 +47,6 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_AntibodyMarker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/GXD_Antibody_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Antibody_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AntibodyMarker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AntibodyMarker_create.object | tee -a $LOG || exit 1

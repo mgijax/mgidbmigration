@@ -34,6 +34,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_ISResultStructure_create.object | tee -a 
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+drop index gxd_isresultstructure_idx_result_key;
+
 insert into GXD_ISResultStructure
 select nextval('gxd_isresultstructure_seq'), m._Result_key, m._EMAPA_Term_key, m._Stage_key, m.creation_date, m.modification_date
 from GXD_ISResultStructure_old m

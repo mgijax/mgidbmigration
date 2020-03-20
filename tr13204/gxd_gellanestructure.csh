@@ -34,6 +34,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_GelLaneStructure_create.object | tee -a $
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+drop index gxd_gellanestructure_idx_gellane_key;
+
 insert into GXD_GelLaneStructure
 select nextval('gxd_gellanestructure_seq'), m._GelLane_key, m._EMAPA_Term_key, m._Stage_key, m.creation_date, m.modification_date
 from GXD_GelLaneStructure_old m

@@ -32,6 +32,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_AssayNote_create.object | tee -a $LOG || 
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+drop index gxd_assaynote_idx_assay_key;
+
 insert into GXD_AssayNote
 select nextval('gxd_assaynote_seq'), m._Assay_key, m.assayNote, m.creation_date, m.modification_date
 from GXD_AssayNote_old m

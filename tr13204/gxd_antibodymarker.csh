@@ -22,6 +22,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.GXD_AntibodyMarker DROP CONSTRAINT GXD_AntibodyMarker_pkey CASCADE;
 ALTER TABLE mgd.GXD_AntibodyMarker DROP CONSTRAINT GXD_AntibodyMarker__Antibody_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_AntibodyMarker DROP CONSTRAINT GXD_AntibodyMarker__Marker_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_AntibodyAlias DROP CONSTRAINT GXD_AntibodyMarker__Antibody_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyMarker__Antibody_key_fkey CASCADE;
 ALTER TABLE GXD_AntibodyMarker RENAME TO GXD_AntibodyMarker_old;
 EOSQL
 

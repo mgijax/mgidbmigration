@@ -37,11 +37,12 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 
 ./deleteTermIDs.csh | tee -a $LOG || exit 1
 
 # add real primary key to GXD_AntibodyMarker
-./gxd_antibodymarker.csh | tee -a $LOG || exit 1
-./gxd_assaynote.csh | tee -a $LOG || exit 1
-./gxd_isresultstructure.csh | tee -a $LOG || exit 1
-./gxd_isresultimage.csh | tee -a $LOG || exit 1
-./gxd_gellanestructure.csh | tee -a $LOG || exit 1
+./gxd_all.csh | tee -a $LOG || exit 1
+#./gxd_antibodymarker.csh | tee -a $LOG || exit 1
+#./gxd_assaynote.csh | tee -a $LOG || exit 1
+#./gxd_isresultstructure.csh | tee -a $LOG || exit 1
+#./gxd_isresultimage.csh | tee -a $LOG || exit 1
+#./gxd_gellanestructure.csh | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 

@@ -35,6 +35,12 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 
 
 # remove term accession ids and the voc_term insert trigger that creates them
 ./deleteTermIDs.csh | tee -a $LOG || exit 1
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete from VOC_Term where _vocab_key in (145, 146);
+DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
+EOSQL
+date | tee -a ${LOG}
 
 # add real primary key to GXD_AntibodyMarker
 ./gxd_all.csh | tee -a $LOG || exit 1
@@ -44,37 +50,14 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 
 #./gxd_isresultimage.csh | tee -a $LOG || exit 1
 #./gxd_gellanestructure.csh | tee -a $LOG || exit 1
 
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
-
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-delete from VOC_Term where _vocab_key in (145, 146);
-DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
-
-EOSQL
-date | tee -a ${LOG}
-
-date | tee -a ${LOG}
-echo 'Run LTE include load' | tee -a ${LOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.include.config
-
-date | tee -a ${LOG}
-echo 'Run LTE exclude load' | tee -a ${LOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.exclude.config
-
-date | tee -a ${LOG}
-echo 'autosequence check' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
-
 #
 # update schema-version and public-version
 #
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#update MGI_dbinfo set schema_version = '6-0-13', public_version = 'MGI 6.13';
-#EOSQL
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update MGI_dbinfo set schema_version = '6-0-16', public_version = 'MGI 6.16';
+EOSQL
+date | tee -a ${LOG}
 
 #
 # indexes
@@ -110,8 +93,8 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary
 #
-#${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

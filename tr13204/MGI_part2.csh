@@ -47,6 +47,18 @@ switch (`uname -n`)
         breaksw
 endsw
 
+date | tee -a ${LOG}
+echo 'Run LTE include load' | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.include.config
+
+date | tee -a ${LOG}
+echo 'Run LTE exclude load' | tee -a ${LOG}
+${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.exclude.config
+
+date | tee -a ${LOG}
+echo 'autosequence check' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
+
 # For testing the vocload voc_term autosequence
 #date | tee -a ${LOG}
 #echo 'Run Mammalian Phenotype Load' | tee -a ${LOG}

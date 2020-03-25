@@ -47,13 +47,11 @@ DROP FUNCTION IF EXISTS VOC_Annot_update();
 EOSQL
 date | tee -a ${LOG}
 
+# clean up go-annotations
+./goannot.csh | tee -a $LOG || exit 1
+
 # add real primary key to GXD_AntibodyMarker
 ./gxd_all.csh | tee -a $LOG || exit 1
-#./gxd_antibodymarker.csh | tee -a $LOG || exit 1
-#./gxd_assaynote.csh | tee -a $LOG || exit 1
-#./gxd_isresultstructure.csh | tee -a $LOG || exit 1
-#./gxd_isresultimage.csh | tee -a $LOG || exit 1
-#./gxd_gellanestructure.csh | tee -a $LOG || exit 1
 
 #
 # update schema-version and public-version

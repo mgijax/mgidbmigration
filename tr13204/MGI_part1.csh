@@ -68,6 +68,17 @@ date | tee -a ${LOG}
 #
 #date | tee -a ${LOG}
 #echo 'running indexes' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_create.object | tee -a $LOG || exit 1
+
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
 

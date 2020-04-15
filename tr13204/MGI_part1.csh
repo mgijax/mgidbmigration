@@ -37,7 +37,6 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 
 ./deleteTermIDs.csh | tee -a $LOG || exit 1
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from VOC_Term where _vocab_key in (145, 146);
 DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
 
 -- done in API

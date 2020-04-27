@@ -33,6 +33,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 EOSQL
 
-${PYTHON} inferredfrom.py | tee -a $LOG
+#${PYTHON} inferredfrom.py | tee -a $LOG
+./inferredfrom.py | tee -a $LOG
 
 date |tee -a $LOG

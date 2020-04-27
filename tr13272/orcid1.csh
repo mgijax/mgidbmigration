@@ -53,6 +53,7 @@ and not exists (select 1 from voc_evidence_property p where e._annotevidence_key
 select last_value from voc_evidence_property_seq;
 
 select _annotevidence_key, symbol, accid, term, orcid, stanza from toAdd order by symbol, accid ;
+
 insert into voc_evidence_property
 select nextval('voc_evidence_property_seq'), _annotevidence_key, 18583062, stanza, 1, orcid, _createdby_key, _modifiedby_key
 from toAdd

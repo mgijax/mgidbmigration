@@ -21,7 +21,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-delete from voc_evidence_property where creation_date between '2020-03-20' and ('2020-03-20'::date + '1 day'::interval)
+delete from voc_evidence_property where creation_date between '2020-04-16' and ('2020-04-16'::date + '1 day'::interval)
 ;
 
 EOSQL

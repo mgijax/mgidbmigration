@@ -52,6 +52,9 @@ date | tee -a ${LOG}
 # add real primary key to GXD_AntibodyMarker
 ./gxd_all.csh | tee -a $LOG || exit 1
 
+# add real primary key to ALL
+./allele.csh | tee -a $LOG || exit 1
+
 #
 # update schema-version and public-version
 #

@@ -44,6 +44,10 @@ DROP TRIGGER IF EXISTS VOC_Annot_update_trigger ON VOC_Annot;
 DROP FUNCTION IF EXISTS VOC_Annot_update();
 
 EOSQL
+
+# recreate GXD_Antigen trigger - will no delete an antigens source
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antigen_create.object
+
 date | tee -a ${LOG}
 
 # clean up go-annotations

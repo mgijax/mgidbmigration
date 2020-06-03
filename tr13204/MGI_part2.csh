@@ -38,31 +38,15 @@ switch (`uname -n`)
     case bhmgiapp14ld:
     case bhmgidevapp01:
     case bhmgiap09lt.jax.org:
-        #date | tee -a ${LOG}
-        #echo 'mirror files/copy from production' | tee -a $LOG || exit 1
-        #scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology /data/loads/sc/mgi/vocload/runTimeMP
-	#scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.synonym /data/loads/sc/mgi/vocload/runTimeMP
-	#scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.header /data/loads/sc/mgi/vocload/runTimeMP
-	#scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.note /data/loads/sc/mgi/vocload/runTimeMP
+        date | tee -a ${LOG}
+        echo 'mirror files/copy from production' | tee -a $LOG || exit 1
+        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot/uniprotmus.dat
         breaksw
 endsw
 
 date | tee -a ${LOG}
-echo 'Run LTE include load' | tee -a ${LOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.include.config
-
-date | tee -a ${LOG}
-echo 'Run LTE exclude load' | tee -a ${LOG}
-${VOCLOAD}/runSimpleFullLoadNoArchive.sh /home/sc/work/dbutils/mgidbmigration/tr13204/test_vocload/LTE.exclude.config
-
-date | tee -a ${LOG}
 echo 'autosequence check' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
-
-# For testing the vocload voc_term autosequence
-#date | tee -a ${LOG}
-#echo 'Run Mammalian Phenotype Load' | tee -a ${LOG}
-#${VOCLOAD}/runOBOIncLoad.sh MP.config
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

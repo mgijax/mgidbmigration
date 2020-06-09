@@ -46,16 +46,18 @@ DROP FUNCTION IF EXISTS VOC_Annot_update();
 EOSQL
 
 # recreate GXD_Antigen trigger - will no delete an antigens source
+date | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antigen_create.object
 
 date | tee -a ${LOG}
-
 # clean up go-annotations
 ./goannot.csh | tee -a $LOG || exit 1
 
+date | tee -a ${LOG}
 # add real primary key to GXD_AntibodyMarker
 ./gxd_all.csh | tee -a $LOG || exit 1
 
+date | tee -a ${LOG}
 # add real primary key to ALL
 ./allele.csh | tee -a $LOG || exit 1
 

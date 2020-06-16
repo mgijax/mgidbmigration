@@ -17,10 +17,10 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo '---  deleting term IDs' | tee -a $LOG
 
-echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
-echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
-echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
-echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 # remove the term insert trigger, delete all term accession ids
 date | tee -a ${LOG}

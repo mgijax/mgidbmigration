@@ -20,11 +20,11 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_GelLan
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_InSituResultImage ${MGI_LIVE}/dbutils/mgidbmigration/tr13204/GXD_InSituResultImage.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_ISResultStructure ${MGI_LIVE}/dbutils/mgidbmigration/tr13204/GXD_ISResultStructure.bcp "|"
 
-${PG_MGD_DBSCHEMADIR}/index/GXD_AntibodyMarker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/GXD_AssayNote_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/GXD_InSituResultImage_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultStructure_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_AntibodyMarker_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/GXD_AssayNote_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/GXD_GelLaneStructure_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/GXD_InSituResultImage_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultStructure_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.GXD_AntibodyMarker DROP CONSTRAINT GXD_AntibodyMarker_pkey CASCADE;

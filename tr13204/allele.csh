@@ -16,7 +16,7 @@ date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ALL_Allele_Mutation ${MGI_LIVE}/dbutils/mgidbmigration/tr13204/ALL_Allele_Mutation.bcp "|"
 
-${PG_MGD_DBSCHEMADIR}/index/ALL_Allele_Mutation_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/ALL_Allele_Mutation_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -28,10 +28,10 @@ ALTER TABLE ALL_Allele_Mutation RENAME TO ALL_Allele_Mutation_old;
 EOSQL
 
 # new table
-${PG_MGD_DBSCHEMADIR}/table/ALL_Allele_Mutation_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/ALL_Allele_Mutation_create.object | tee -a $LOG 
 
 # autosequence
-${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Allele_Mutation_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/ALL_Allele_Mutation_create.object | tee -a $LOG 
 
 #
 # insert data int new table
@@ -49,15 +49,15 @@ ALTER TABLE mgd.ALL_Allele_Mutation ADD FOREIGN KEY (_Mutation_key) REFERENCES m
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/index/ALL_Allele_Mutation_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/ALL_Allele_Mutation_drop.object | tee -a $LOG 
 
-${PG_MGD_DBSCHEMADIR}/index/ALL_Allele_Mutation_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/ALL_Allele_Mutation_create.object | tee -a $LOG 
 
-${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_Mutation_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_Mutation_drop.object | tee -a $LOG 
 
-${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_Mutation_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_Mutation_create.object | tee -a $LOG 
 
-${PG_MGD_DBSCHEMADIR}/view/ALL_Allele_Mutation_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/ALL_Allele_Mutation_View_create.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

@@ -25,10 +25,10 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo '--- starting part 2' | tee -a $LOG
 
-echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
-echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
-echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
-echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 #
 # copy /data/downloads files needed for loads
@@ -39,14 +39,14 @@ switch (`uname -n`)
     case bhmgidevapp01:
     case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
-        echo 'mirror files/copy from production' | tee -a $LOG || exit 1
+        echo 'mirror files/copy from production' | tee -a $LOG 
         #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot/uniprotmus.dat
         breaksw
 endsw
 
 date | tee -a ${LOG}
 echo 'autosequence check' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

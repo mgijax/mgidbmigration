@@ -25,10 +25,10 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo '--- starting part 2' | tee -a $LOG
 
-echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
-echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
-echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
-echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 #
 # copy /data/downloads files needed for loads
@@ -38,7 +38,7 @@ switch (`uname -n`)
     case bhmgiapp14ld:
     case bhmgidevapp01:
         date | tee -a ${LOG}
-        echo 'run mirror_wget downloads' | tee -a $LOG || exit 1
+        echo 'run mirror_wget downloads' | tee -a $LOG 
         #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
         breaksw
 endsw

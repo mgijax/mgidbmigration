@@ -21,18 +21,18 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo '--- starting part 1' | tee -a $LOG
 
-echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
-echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
-echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
-echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
 echo 'add autsequence for VOC_Term' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG 
 
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 
 #
 # update schema-version and public-version
@@ -49,8 +49,8 @@ date | tee -a ${LOG}
 #
 #date | tee -a ${LOG}
 #echo 'running indexes' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:
@@ -59,19 +59,19 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
-#${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
+#${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
+#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
 #date | tee -a ${LOG}
 #echo 'data cleanup' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 
 #
 # rebuild the java dla, if needed due to schema changes

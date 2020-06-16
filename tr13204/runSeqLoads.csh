@@ -17,10 +17,10 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo '--- starting file download' | tee -a $LOG
 
-echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
-echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
-echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
-echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 #
 # copy /data/downloads files needed for loads
@@ -31,7 +31,7 @@ switch (`uname -n`)
     case bhmgidevapp01:
     case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
-        echo 'mirror files/copy from production' | tee -a $LOG || exit 1
+        echo 'mirror files/copy from production' | tee -a $LOG 
         ${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.gbNC
         ${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.refseqDaily
         scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot/uniprotmus.dat

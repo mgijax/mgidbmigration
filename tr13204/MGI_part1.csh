@@ -21,20 +21,20 @@ touch ${LOG}
 date | tee -a ${LOG}
 echo '--- starting part 1' | tee -a $LOG
 
-echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG || exit 1
-echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG || exit 1
-echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG || exit 1
-echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG || exit 1
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
 # create autosequence on VOC_Term table
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
 
 # remove term accession ids and the voc_term insert trigger that creates them
-./deleteTermIDs.csh | tee -a $LOG || exit 1
+./deleteTermIDs.csh | tee -a $LOG 
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
@@ -43,7 +43,13 @@ DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
 DROP TRIGGER IF EXISTS VOC_Annot_update_trigger ON VOC_Annot;
 DROP FUNCTION IF EXISTS VOC_Annot_update();
 
+DROP FUNCTION IF EXISTS MGI_insertReferenceAssoc(int,int,int,int,text);
+
 EOSQL
+
+date | tee -a ${LOG}
+${PG_MGD_DBSCHEMADIR}/procedure/MGI_insertReferenceAssoc_create.object
+${PG_MGD_DBSCHEMADIR}/procedure/MGI_updateReferenceAssoc_create.object
 
 # recreate GXD_Antigen trigger - will no delete an antigens source
 date | tee -a ${LOG}
@@ -51,15 +57,15 @@ ${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antigen_create.object
 
 date | tee -a ${LOG}
 # clean up go-annotations
-./goannot.csh | tee -a $LOG || exit 1
+./goannot.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
 # add real primary key to GXD_AntibodyMarker
-./gxd_all.csh | tee -a $LOG || exit 1
+./gxd_all.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
 # add real primary key to ALL
-./allele.csh | tee -a $LOG || exit 1
+./allele.csh | tee -a $LOG 
 
 #
 # update schema-version and public-version
@@ -76,19 +82,19 @@ date | tee -a ${LOG}
 #
 #date | tee -a ${LOG}
 #echo 'running indexes' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/MRK_DO_Cache_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPS_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_create.object | tee -a $LOG 
 
-#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:
@@ -97,19 +103,19 @@ ${PG_MGD_DBSCHEMADIR}/index/VOC_Term_EMAPA_create.object | tee -a $LOG || exit 1
 #
 date | tee -a ${LOG}
 echo 'running triggers, procedures, views, comments' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1
-#${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
-#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
+#${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
+#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
 #date | tee -a ${LOG}
 #echo 'data cleanup' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 
 #
 # rebuild the java dla, if needed due to schema changes

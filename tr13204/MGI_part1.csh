@@ -48,8 +48,8 @@ DROP FUNCTION IF EXISTS MGI_insertReferenceAssoc(int,int,int,int,text);
 EOSQL
 
 date | tee -a ${LOG}
-${PG_MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_create.object
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_insertReferenceAssoc_create.object
+${PG_MGD_DBSCHEMADIR}/procedure/ALL_insertAllele_create.object
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_updateReferenceAssoc_create.object
 
 # recreate GXD_Antigen trigger - will no delete an antigens source

@@ -34,6 +34,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
 
 # remove term accession ids and the voc_term insert trigger that creates them
+# remove obsolete procedures
 ./deleteTermIDs.csh | tee -a $LOG 
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -43,7 +44,9 @@ DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
 DROP TRIGGER IF EXISTS VOC_Annot_update_trigger ON VOC_Annot;
 DROP FUNCTION IF EXISTS VOC_Annot_update();
 
+-- obsolete procedures
 DROP FUNCTION IF EXISTS MGI_insertReferenceAssoc(int,int,int,int,text);
+DROP FUNCTION IF EXISTS PRB_processAntigenAnonSource(int,int,int,int,int,int,int,text,text,int);
 
 EOSQL
 

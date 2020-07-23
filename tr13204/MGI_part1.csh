@@ -44,9 +44,12 @@ DROP TRIGGER IF EXISTS VOC_Term_insert_trigger ON VOC_Term;
 DROP TRIGGER IF EXISTS VOC_Annot_update_trigger ON VOC_Annot;
 DROP FUNCTION IF EXISTS VOC_Annot_update();
 
--- obsolete procedures
+-- obsolete
 DROP FUNCTION IF EXISTS MGI_insertReferenceAssoc(int,int,int,int,text);
 DROP FUNCTION IF EXISTS PRB_processAntigenAnonSource(int,int,int,int,int,int,int,text,text,int);
+
+DROP TRIGGER IF EXISTS ALL_CellLine_Derivation_update_trigger ON ALL_CellLine_Derivation;
+DROP FUNCTION IF EXISTS ALL_CellLine_Derivation_update();
 
 EOSQL
 

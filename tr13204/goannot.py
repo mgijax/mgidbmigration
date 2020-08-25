@@ -1,5 +1,3 @@
-#!/usr/local/bin/python
-
 import sys
 import os
 import db
@@ -48,11 +46,11 @@ for r in results:
 		badKey = aKey
 
 		if goodKey != badKey:
-			print "processing: " , objectKey, termKey, qualifierKey, accID, badKey, goodKey, term
+			print("processing: " , objectKey, termKey, qualifierKey, accID, badKey, goodKey, term)
 			sql += 'update VOC_Evidence set _annot_key = %s where _annotevidence_key = %s;\n' % (goodKey, eKey)
 			deletesql += 'delete from VOC_Annot where _annot_key = %s;\n' % (badKey)
 		else:
-			print "skipping: good key == bad key ", objectKey, termKey, qualifierKey, aKey, accID, term
+			print("skipping: good key == bad key ", objectKey, termKey, qualifierKey, aKey, accID, term)
 try:
 	db.sql(sql, None)
 	db.sql(deletesql, None)

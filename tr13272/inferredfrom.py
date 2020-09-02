@@ -1,4 +1,3 @@
-#!/usr/local/bin/python
 #
 # Report:
 #       Enter TR # and describe report inputs/output

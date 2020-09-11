@@ -25,14 +25,15 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --for testing only
---delete from voc_evidence_property where _evidenceproperty_key > 1060194930;
+delete from voc_evidence_property where _evidenceproperty_key > 1060194930;
 
 select distinct m.symbol, a.accid, substring(t.term,1,30) as term, e._annotevidence_key, p.stanza, 1 as hasStanza
 into temp table toAdd
-from voc_annot v, voc_evidence e, mrk_marker m, acc_accession a, voc_term t, voc_evidence_property p
+from voc_annot v, voc_evidence e, mrk_marker m, acc_accession a, voc_term t, mgi_user u, voc_evidence_property p
 where v._annottype_key = 1000
 and v._annot_key = e._annot_key
 and v._object_key = m._marker_key
+and e._createdby_key = u._user_key and u.orcid is not null
 and v._term_key = a._object_key
 and a._mgitype_key = 13
 and a.preferred = 1
@@ -2146,10 +2147,11 @@ and e._annotevidence_key = p._annotevidence_key
 and not exists (select 1 from voc_evidence_property p where e._annotevidence_key = p._annotevidence_key and p._propertyterm_key in (18583064))
 union
 select distinct m.symbol, a.accid, substring(t.term,1,30) as term, e._annotevidence_key, 1, 0
-from voc_annot v, voc_evidence e, mrk_marker m, acc_accession a, voc_term t
+from voc_annot v, voc_evidence e, mrk_marker m, acc_accession a, voc_term t, mgi_user u
 where v._annottype_key = 1000
 and v._annot_key = e._annot_key
 and v._object_key = m._marker_key
+and e._createdby_key = u._user_key and u.orcid is not null
 and v._term_key = a._object_key
 and a._mgitype_key = 13
 and a.preferred = 1

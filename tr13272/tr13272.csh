@@ -21,8 +21,8 @@ date | tee -a $LOG
  
 ./orcid1.csh | tee -a $LOG
 ./orcid2.csh | tee -a $LOG
-./ro.csh | tee -a $LOG
 ./proteincomplex.csh | tee -a $LOG
+./ro.csh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration

@@ -2140,7 +2140,8 @@ and a.accid in (
 'GO:1990972',
 'GO:0106095',
 'GO:1990483',
-'GO:0071204'
+'GO:0071204',
+'GO:0032991'
 )
 and v._term_key = t._term_key
 and e._annotevidence_key = p._annotevidence_key
@@ -4258,7 +4259,8 @@ and a.accid in (
 'GO:1990972',
 'GO:0106095',
 'GO:1990483',
-'GO:0071204'
+'GO:0071204',
+'GO:0032991'
 )
 and v._term_key = t._term_key
 -- no stanza exist

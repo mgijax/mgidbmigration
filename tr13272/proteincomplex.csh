@@ -25,7 +25,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --for testing only
-delete from voc_evidence_property where _evidenceproperty_key > 1060194930;
+--delete from voc_evidence_property where _evidenceproperty_key > 1060194930;
 
 select distinct m.symbol, a.accid, substring(t.term,1,30) as term, e._annotevidence_key, p.stanza, 1 as hasStanza
 into temp table toAdd

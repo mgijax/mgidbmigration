@@ -27,7 +27,7 @@ date | tee -a $LOG
 cd ${PUBRPTS}
 source ./Configuration
 cd daily
-$PYTHON GO_gene_association_2.0.py | tee -a $LOG
-$PYTHON GO_gpi_2.0.py | tee -a $LOG
+$PYTHON GO_gene_association2.py | tee -a $LOG
+$PYTHON GO_gpi2.py | tee -a $LOG
 
 date |tee -a $LOG

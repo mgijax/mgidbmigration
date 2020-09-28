@@ -2,7 +2,8 @@
 1. move notes into MGI_Note, MGI_NoteChunk
 
 PRB_Notes
-PRB_Ref_Notes
+PRB_Ref_Notes : not needed in pwi/do nothing/leave as-is
+add to MGI_NoteType:  Probe Note, Probe/Reference Note
 
 probeload
 

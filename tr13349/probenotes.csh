@@ -14,17 +14,16 @@ touch $LOG
  
 date | tee -a $LOG
 
-# PRB_Notes
-
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Notes.bcp "|"
 
-${PYTHON} probenotes.py | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete from MGI_Note where _notetype_key = 1052;
+EOSQL
 
+${PYTHON} probenotes.py | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_NoteChunk_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_drop.object | tee -a $LOG
-
 ${NOTELOAD}/mginoteload.csh ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/probenotes.config
-
 ${PG_MGD_DBSCHEMADIR}/index/MGI_NoteChunk_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_create.object | tee -a $LOG
 

@@ -1,0 +1,21 @@
+
+1. move notes into MGI_Note, MGI_NoteChunk
+
+PRB_Notes
+PRB_Ref_Notes
+
+probeload
+
+2. add primary key
+
+PRB_Marker
+
+3. add autosequence
+
+PRB_Alias
+PRB_Marker
+PRB_Probe
+PRB_Reference
+
+3. make sure EI version works too
+

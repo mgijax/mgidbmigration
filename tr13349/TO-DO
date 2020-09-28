@@ -1,22 +1,17 @@
-
-1. move notes into MGI_Note, MGI_NoteChunk
-
-PRB_Notes
-PRB_Ref_Notes : not needed in pwi/do nothing/leave as-is
-add to MGI_NoteType:  Probe Note, Probe/Reference Note
-
-probeload
-
-2. add primary key
+1. add primary key
 
 PRB_Marker
+PRB_Notes       : leave as-is
 
-3. add autosequence
+2. add autosequence
 
-PRB_Alias
-PRB_Marker
-PRB_Probe
-PRB_Reference
+PRB_Alias       :
+PRB_Marker      : done
+PRB_Notes       : done
+PRB_Probe       : done
+PRB_Reference   :
 
-3. make sure EI version works too
+3. probeload
+
+4.  EI version will not work, unless we have time to make it work
 

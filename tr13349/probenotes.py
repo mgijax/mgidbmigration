@@ -18,7 +18,7 @@ db.setTrace()
 # Main
 #
 
-outFile = open('probenote.txt', 'w')
+outFile = open('probenotes.txt', 'w')
 
 results = db.sql('''
 select a.accID, n.*
@@ -30,6 +30,7 @@ and a._mgitype_key = 3
 
 for r in results:
     note = r['note'].replace('\r', ' ')
+    note = note.replace('\n', ' ')
     outFile.write(r['accID'] + '\t' + note + '\n')
 
 outFile.close()

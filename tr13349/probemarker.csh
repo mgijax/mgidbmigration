@@ -45,29 +45,35 @@ from PRB_Marker_old m
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_drop.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_create.object | tee -a $LOG || exit 1
 
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadReference_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
-
-${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select count(*) from PRB_Marker_old;
 select count(*) from PRB_Marker;
 
---drop table mgd.PRB_Marker_old;
+drop table mgd.PRB_Marker_old;
 
 EOSQL
+
+${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG || exit 1
 
 date |tee -a $LOG
 

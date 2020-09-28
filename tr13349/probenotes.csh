@@ -29,7 +29,7 @@ ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_create.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select count(*) from MGI_Note where _notetype_key = 1052
+select count(*) from MGI_Note where _notetype_key = 1052;
 select count(*) from PRB_Notes;
 
 --drop table mgd.PRB_Notes;

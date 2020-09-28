@@ -29,7 +29,8 @@ and a._mgitype_key = 3
 , 'auto')
 
 for r in results:
-    outFile.write(r['accID'] + '\t' + r['note'] + '\n')
+    note = r['note'].replace('\r', ' ')
+    outFile.write(r['accID'] + '\t' + note + '\n')
 
 outFile.close()
 

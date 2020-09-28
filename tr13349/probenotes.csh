@@ -18,12 +18,12 @@ date | tee -a $LOG
 
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Notes.bcp "|"
 
-${PYTHON} probenote.py | tee -a $LOG
+${PYTHON} probenotes.py | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_NoteChunk_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_drop.object | tee -a $LOG
 
-${NOTELOAD}/mginoteload.csh probenote.config
+${NOTELOAD}/mginoteload.csh ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/probenotes.config
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_NoteChunk_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_create.object | tee -a $LOG

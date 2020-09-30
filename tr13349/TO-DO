@@ -1,17 +1,38 @@
 1. add primary key
 
 PRB_Marker
-PRB_Notes       : leave as-is
+PRB_Notes
 
 2. add autosequence
 
-PRB_Alias       :
+PRB_Alias       : done
 PRB_Marker      : done
 PRB_Notes       : done
 PRB_Probe       : done
-PRB_Reference   :
+PRB_Reference   : done
 
-3. probeload
+3. probeload : branched/python 3/schema changes made
+        since this is on-demand only dataload, did not test
+
+4. API
+
+need "create, update, delete"
+PRB_Probe       : dao, entity, domain, translator
+
+need "process()":
+PRB_Marker      : dao, entity, domain, translator, process()
+PRB_Notes       : dao, entity, domain, translator, process()
+PRB_Reference   : dao, entity, domain, translator, process(), has PRB_Alias
+        hasRMAP default = 0 (done), remove from display
+        hasSequence default = 0 (done), remove from display
+PRB_Alias       : dao, entity, domain, translator, process()
+
+MGI_Note/MGI_NoteChunk
+Raw Sequence Notes : _notetype_key = 1037
+
+not used by new PWI module
+PRB_Ref_Notes 
+PRB_RFLV
 
 4.  EI version will not work, unless we have time to make it work
 

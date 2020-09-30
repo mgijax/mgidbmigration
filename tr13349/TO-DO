@@ -44,19 +44,17 @@ PRB_RFLV
 
 _segmenttype_key
 select * from voc_term where _vocab_key = 10;
-delete from voc_term where _term_key = 74802
+delete from voc_term where _term_key = 74802;
 
 _vector_key
 select * from voc_term where _vocab_key = 24;
-delete from voc_term where _term_key = 316371
+delete from voc_term where _term_key = 316371;
 
 _gender_key
 select * from voc_term where _vocab_key = 17;
---usesd
-delete from voc_term where _term_key = 315170
-
-
-age
+--usesd in SEQ_Source_Assoc
+delete from voc_term where _term_key = 315170;
+delete from prb_source where age = 'Not Loaded';
 
 5.  EI version will not work, unless we have time to make it work
 

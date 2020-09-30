@@ -11,8 +11,13 @@ PRB_Notes       : done
 PRB_Probe       : done
 PRB_Reference   : done
 
-3. probeload : branched/python 3/schema changes made
-        since this is on-demand only dataload, did not test
+3. branched dataloads/etc
+
+   mrkcacheload/mrkprobe.py : done
+
+   on-demand/not tested
+   probeload
+   uniprotload/regenPutative.py
 
 4. API
 
@@ -34,5 +39,24 @@ not used by new PWI module
 PRB_Ref_Notes 
 PRB_RFLV
 
-4.  EI version will not work, unless we have time to make it work
+4.  TODO: Segment Type, Vector Type, Age, Gender : Not Loaded
+    remove 'Not Loaded' term from vocabulary, if possible
+
+_segmenttype_key
+select * from voc_term where _vocab_key = 10;
+delete from voc_term where _term_key = 74802
+
+_vector_key
+select * from voc_term where _vocab_key = 24;
+delete from voc_term where _term_key = 316371
+
+_gender_key
+select * from voc_term where _vocab_key = 17;
+--usesd
+delete from voc_term where _term_key = 315170
+
+
+age
+
+5.  EI version will not work, unless we have time to make it work
 

@@ -35,6 +35,17 @@ EOSQL
 
 date | tee -a ${LOG}
 ./probe.csh | tee -a $LOG 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+-- delete "Not Loaded" terms
+--_segmenttype_key
+--select * from voc_term where _vocab_key = 10;
+delete from voc_term where _term_key = 74802
+--_vector_key
+--select * from voc_term where _vocab_key = 24;
+delete from voc_term where _term_key = 316371
+
+EOSQL
 
 # create autosequence
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 

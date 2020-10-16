@@ -69,6 +69,11 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 
+date | tee -a ${LOG}
+echo 'running views' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG 
+
 #
 # reconfig.sh:
 # Drop and re-create database triggers, stored procedures, views and comments

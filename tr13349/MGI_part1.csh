@@ -70,7 +70,9 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 
 date | tee -a ${LOG}
-echo 'running views' | tee -a $LOG
+echo 'running procedures/views' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_insertReference_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_insertReference_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG 
 

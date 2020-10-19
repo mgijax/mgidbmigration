@@ -14,8 +14,8 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Marker ${MGI_LIVE}/dbutils/mgidbmigration/tr13204/PRB_Marker.bcp "|"
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13204/PRB_Marker.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Marker ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Marker.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Marker.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_drop.object | tee -a $LOG 
@@ -92,8 +92,9 @@ drop table mgd.PRB_Notes_old;
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG || exit 1
+#done in MGI_part1.csh
+#${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG || exit 1
 
 date |tee -a $LOG
 

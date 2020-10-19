@@ -72,16 +72,15 @@ date | tee -a ${LOG}
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
-#echo 'running indexes' | tee -a $LOG
+#echo 'running indexes, procedures, views, triggers' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
-
-date | tee -a ${LOG}
-echo 'running procedures/views' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/PRB_insertReference_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/procedure/PRB_insertReference_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:

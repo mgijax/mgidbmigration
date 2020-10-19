@@ -44,6 +44,13 @@ delete from voc_term where _term_key = 74802;
 --_vector_key
 --select * from voc_term where _vocab_key = 24;
 delete from voc_term where _term_key = 316371;
+--select * from voc_term where _vocab_key = 147;
+--age
+delete from voc_term where _term_key = 64242117;
+
+--select * from voc_term where _vocab_key = 17;
+update prb_source set _gender_key = 315168 where _gender_key = 315170;
+delete from voc_term where _term_key = 315170;
 
 EOSQL
 

@@ -62,7 +62,6 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_drop.object | tee -a $LOG || exit 1
 
@@ -77,7 +76,6 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -89,6 +87,20 @@ select count(*) from PRB_Notes;
 
 drop table mgd.PRB_Marker_old;
 drop table mgd.PRB_Notes_old;
+
+-- delete "Not Loaded" terms
+--_segmenttype_key
+--select * from voc_term where _vocab_key = 10;
+delete from voc_term where _term_key = 74802;
+--_vector_key
+--select * from voc_term where _vocab_key = 24;
+delete from voc_term where _term_key = 316371;
+--select * from voc_term where _vocab_key = 147;
+--age
+delete from voc_term where _term_key = 64242117;
+--select * from voc_term where _vocab_key = 17;
+update prb_source set _gender_key = 315168 where _gender_key = 315170;
+delete from voc_term where _term_key = 315170;
 
 EOSQL
 

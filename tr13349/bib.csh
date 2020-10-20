@@ -68,9 +68,7 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Workflow_Relevance_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Relevance_create.object | tee -a $LOG || exit 1

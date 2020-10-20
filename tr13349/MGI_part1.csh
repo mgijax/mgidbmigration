@@ -33,31 +33,6 @@ date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
-date | tee -a ${LOG}
-./probe.csh | tee -a $LOG 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
--- delete "Not Loaded" terms
---_segmenttype_key
---select * from voc_term where _vocab_key = 10;
-delete from voc_term where _term_key = 74802;
---_vector_key
---select * from voc_term where _vocab_key = 24;
-delete from voc_term where _term_key = 316371;
---select * from voc_term where _vocab_key = 147;
---age
-delete from voc_term where _term_key = 64242117;
---select * from voc_term where _vocab_key = 17;
-update prb_source set _gender_key = 315168 where _gender_key = 315170;
-delete from voc_term where _term_key = 315170;
-EOSQL
-
-date | tee -a ${LOG}
-./bib.csh | tee -a $LOG 
-
-# create autosequence
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
-
 #
 # update schema-version and public-version
 #
@@ -67,6 +42,12 @@ update MGI_dbinfo set schema_version = '6-0-17', public_version = 'MGI 6.17';
 EOSQL
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+./probe.csh | tee -a $LOG 
+
+date | tee -a ${LOG}
+./bib.csh | tee -a $LOG 
+
 #
 # indexes
 # only run the ones needed per schema changes
@@ -75,6 +56,10 @@ date | tee -a ${LOG}
 #echo 'running indexes, procedures, views, triggers' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 

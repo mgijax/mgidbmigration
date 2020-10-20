@@ -32,6 +32,8 @@ EOSQL
 # new table
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Relevance_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Workflow_Relevance_create.object | tee -a $LOG || exit 1
 
@@ -65,25 +67,34 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Workflow_Relevance_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Workflow_Relevance_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_reloadCache_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+select  * from BIB_reloadCache();
 
 select count(*) from BIB_Refs_old;
 select count(*) from BIB_Refs;
 select count(*) from BIB_Workflow_Relevance;
+select count(*) from BIB_Citation_Cache;
 
 drop table mgd.BIB_Refs_old;
 
 EOSQL
 
+${PG_MGD_DBSCHEMADIR}/index/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
+
 #done in MGI_part1.csh
 #${PG_MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a $LOG || exit 1
+#${PG_MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a $LOG || exit 1
 #${PG_MGD_DBSCHEMADIR}/view/BIB_Refs_View_create.object | tee -a $LOG || exit 1
 
 date |tee -a $LOG

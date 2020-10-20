@@ -56,6 +56,7 @@ from BIB_Refs_old m
 where m.isDiscard = 1
 ;
 
+-- _releance_key = Not Specified, confidence = null
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594667, 1, null,
 m._CreatedBy_key, m._ModifiedBy_key, m.creation_date, m.modification_date

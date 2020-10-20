@@ -36,7 +36,6 @@ EOSQL
 date | tee -a ${LOG}
 ./probe.csh | tee -a $LOG 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
 -- delete "Not Loaded" terms
 --_segmenttype_key
 --select * from voc_term where _vocab_key = 10;
@@ -47,12 +46,13 @@ delete from voc_term where _term_key = 316371;
 --select * from voc_term where _vocab_key = 147;
 --age
 delete from voc_term where _term_key = 64242117;
-
 --select * from voc_term where _vocab_key = 17;
 update prb_source set _gender_key = 315168 where _gender_key = 315170;
 delete from voc_term where _term_key = 315170;
-
 EOSQL
+
+date | tee -a ${LOG}
+./bib.csh | tee -a $LOG 
 
 # create autosequence
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
@@ -63,7 +63,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-16', public_version = 'MGI 6.16';
+update MGI_dbinfo set schema_version = '6-0-17', public_version = 'MGI 6.17';
 EOSQL
 date | tee -a ${LOG}
 

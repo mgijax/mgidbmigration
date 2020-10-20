@@ -57,7 +57,7 @@ where m.isDiscard = 1
 ;
 
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594667, 1, 
+select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594667, 1, null,
 m._CreatedBy_key, m._ModifiedBy_key, m.creation_date, m.modification_date
 from BIB_Refs_old m
 where m.isDiscard = 0
@@ -84,7 +84,7 @@ select count(*) from BIB_Refs;
 select count(*) from BIB_Workflow_Relevance;
 select count(*) from BIB_Citation_Cache;
 
-drop table mgd.BIB_Refs_old;
+--drop table mgd.BIB_Refs_old;
 
 EOSQL
 

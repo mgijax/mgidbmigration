@@ -85,6 +85,12 @@ select count(*) from BIB_Refs;
 select count(*) from BIB_Workflow_Relevance;
 select count(*) from BIB_Citation_Cache;
 
+select count(*) from BIB_Refs_old where isdiscard = 0;
+select count(*) from BIB_Workflow_Relevance where _relevance_key = 70594667;
+
+select count(*) from BIB_Refs_old where isdiscard = 1;
+select count(*) from BIB_Workflow_Relevance where _relevance_key = 70594666;
+
 drop table mgd.BIB_Refs_old;
 
 EOSQL

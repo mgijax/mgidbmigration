@@ -44,6 +44,10 @@ m._CreatedBy_key, m._ModifiedBy_key, m.creation_date, m.modification_date
 from MGI_Organism_MGIType_old m
 ;
 
+-- there is no longer a orthology or sequence module, so we don't need this association
+delete from mgi_organism_mgitype where _mgitype_key in (18, 19)
+;
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
@@ -55,6 +59,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select count(*) from MGI_Organism_MGIType_old;
 select count(*) from MGI_Organism_MGIType;
+
+update acc_logicaldb set _organism_key = 76 where _organism_key is null;
 
 drop table mgd.MGI_Organism_MGIType_old;
 

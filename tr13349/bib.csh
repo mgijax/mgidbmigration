@@ -17,10 +17,8 @@ date | tee -a $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd BIB_Refs ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/BIB_Refs.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Refs_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/BIB_Refs_drop.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.BIB_Refs DROP CONSTRAINT BIB_Refs__ModifiedBy_key_fkey CASCADE;
@@ -96,11 +94,6 @@ drop table mgd.BIB_Refs_old;
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Citation_Cache_create.object | tee -a $LOG || exit 1
-
-#done in MGI_part1.csh
-#${PG_MGD_DBSCHEMADIR}/trigger/BIB_Refs_create.object | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/trigger/ACC_Accession_create.object | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/view/BIB_Refs_View_create.object | tee -a $LOG || exit 1
 
 date |tee -a $LOG
 

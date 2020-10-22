@@ -62,14 +62,9 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_drop.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_create.object | tee -a $LOG || exit 1
-
-${PG_MGD_DBSCHEMADIR}/procedure/MRK_reloadReference_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/MRK_updateKeys_create.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_create.object | tee -a $LOG || exit 1
@@ -103,10 +98,6 @@ update prb_source set _gender_key = 315168 where _gender_key = 315170;
 delete from voc_term where _term_key = 315170;
 
 EOSQL
-
-#done in MGI_part1.csh
-#${PG_MGD_DBSCHEMADIR}/trigger/PRB_Marker_create.object | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/view/PRB_Marker_View_create.object | tee -a $LOG || exit 1
 
 date |tee -a $LOG
 

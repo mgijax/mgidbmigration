@@ -43,6 +43,15 @@ EOSQL
 date | tee -a ${LOG}
 
 date | tee -a ${LOG}
+echo 'dropping indexes, procedures, views, triggers' | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+
+date | tee -a ${LOG}
 ./probe.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
@@ -55,19 +64,13 @@ date | tee -a ${LOG}
 # indexes
 # only run the ones needed per schema changes
 #
-#date | tee -a ${LOG}
-#echo 'running indexes, procedures, views, triggers' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
+date | tee -a ${LOG}
+echo 'creating indexes, procedures, views, triggers' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #

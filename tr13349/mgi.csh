@@ -56,7 +56,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from MGI_Organism_MGIType_old;
 select count(*) from MGI_Organism_MGIType;
 
---drop table mgd.MGI_Organism_MGIType_old;
+drop table mgd.MGI_Organism_MGIType_old;
 
 EOSQL
 

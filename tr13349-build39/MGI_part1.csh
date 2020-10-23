@@ -43,11 +43,11 @@ EOSQL
 #
 # update schema-version and public-version
 #
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#update MGI_dbinfo set schema_version = '6-0-16', public_version = 'MGI 6.16';
-#EOSQL
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+update MGI_dbinfo set schema_version = '6-0-17', public_version = 'MGI 6.17';
+EOSQL
+date | tee -a ${LOG}
 
 #
 # indexes

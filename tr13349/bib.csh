@@ -16,7 +16,6 @@ date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd BIB_Refs ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/BIB_Refs.bcp "|"
 
-${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
 

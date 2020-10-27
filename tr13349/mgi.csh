@@ -64,6 +64,8 @@ update acc_logicaldb set _organism_key = 76 where _organism_key is null;
 
 drop table mgd.MGI_Organism_MGIType_old;
 
+insert into VOC_Vocab values(151,22864,1,1,0,'Antibody Class',now(), now());
+
 EOSQL
 
 date |tee -a $LOG

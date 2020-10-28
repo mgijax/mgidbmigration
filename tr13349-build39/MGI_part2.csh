@@ -49,8 +49,32 @@ echo 'run marker coordinate load' | tee -a $LOG
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
 date | tee -a ${LOG}
-echo 'autosequence check' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 
+echo 'run tss gene load' | tee -a $LOG
+${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
+
+date | tee -a ${LOG}
+echo 'Run Gene Trap Coordinate Load' | tee -a ${LOG}
+${GTCOORDLOAD}/gtcoordload.csh
+
+# seqcoord.csh, mrklocation.csh must be run before alomrkload.sh
+# run alomrkload only after the genemodel and marker coordinates have been 
+# updated
+
+#date | tee -a ${LOG}
+#echo 'Run Sequence/Coordinate Cache Load' | tee -a ${LOG}
+#${SEQCACHELOAD}/seqcoord.csh
+
+#date | tee -a ${LOG}
+#echo 'Run Marker/Location Cache Load' | tee -a ${LOG}
+#${MRKCACHELOAD}/mrklocation.csh
+
+#date | tee -a ${LOG}
+#echo 'Run ALO/Marker Load' | tee -a ${LOG}
+#${ALOMRKLOAD}/bin/alomrkload.sh
+
+#date | tee -a ${LOG}
+#echo 'autosequence check' | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

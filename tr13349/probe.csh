@@ -15,7 +15,7 @@ touch $LOG
 date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Marker ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Marker.bcp "|"
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Marker.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PRB_Notes.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_drop.object | tee -a $LOG 

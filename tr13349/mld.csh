@@ -65,7 +65,6 @@ ${PG_MGD_DBSCHEMADIR}/key/MLD_Assay_Types_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Notes_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MLD_Expts_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
@@ -75,7 +74,6 @@ ${PG_MGD_DBSCHEMADIR}/key/MLD_Assay_Types_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Notes_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MLD_Expts_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

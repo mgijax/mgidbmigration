@@ -60,8 +60,6 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object | tee -a $LOG || exit 1
 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_create.object | tee -a $LOG || exit 1
@@ -69,8 +67,6 @@ ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

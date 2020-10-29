@@ -60,9 +60,9 @@ ${GTCOORDLOAD}/gtcoordload.csh
 # run alomrkload only after the genemodel and marker coordinates have been 
 # updated
 
-#date | tee -a ${LOG}
-#echo 'Run Sequence/Coordinate Cache Load' | tee -a ${LOG}
-#${SEQCACHELOAD}/seqcoord.csh
+date | tee -a ${LOG}
+echo 'Run Sequence/Coordinate Cache Load' | tee -a ${LOG}
+${SEQCACHELOAD}/seqcoord.csh
 
 #date | tee -a ${LOG}
 #echo 'Run Marker/Location Cache Load' | tee -a ${LOG}

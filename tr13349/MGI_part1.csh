@@ -44,14 +44,14 @@ date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'dropping indexes, procedures, views, triggers' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/index/BIB_drop.logical | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/MLD_drop.logical | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/PRB_drop.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 
+${PG_MGD_DBSCHEMADIR}/index/BIB_drop.logical | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/MLD_drop.logical | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/PRB_drop.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/ALL_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_drop.logical | tee -a $LOG
@@ -78,14 +78,14 @@ date | tee -a ${LOG}
 #
 date | tee -a ${LOG}
 echo 'creating indexes, procedures, views, triggers' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/MLD_create.logical | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/PRB_create.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
+${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/MLD_create.logical | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/PRB_create.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/ALL_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_create.logical | tee -a $LOG

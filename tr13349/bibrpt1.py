@@ -186,10 +186,12 @@ order by c.mgiid
 for r in results:
     key = r['_refs_key']
 
-    if key not in tagLookup:
-        continue
+    fp.write(str(r['jnumid']) + '\t' + r['mgiid'] + '\t')
 
-    fp.write(r['jnumid'] + '\t' + r['mgiid'] + '\t' + ','.join(tagLookup[key]) + '\t')
+    if key in tagLookup:
+        fp.write(','.join(tagLookup[key]) + '\t')
+    else:
+        fp.write('\t')
 
     if key in markerLookup:
         fp.write(str(len(markerLookup[key])) + '\t')

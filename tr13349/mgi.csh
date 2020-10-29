@@ -54,7 +54,7 @@ select count(*) from MGI_Organism_MGIType;
 
 update acc_logicaldb set _organism_key = 76 where _organism_key is null;
 
-drop table MGI_Organism_MGIType_old;
+drop table mgi_organism_mgitype_old;
 
 -- add to Production when ready
 insert into VOC_Vocab values(151,22864,1,1,0,'GXD Antibody Class',now(), now());

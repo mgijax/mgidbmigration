@@ -82,7 +82,15 @@ where m.isDiscard = 0
 and m._referencetype_key = 31576687
 and exists (select 1 from bib_workflow_status s
         where m._refs_key = s._refs_key and s.isCurrent = 1
-        and s._group_key in (31576664, 31576665, 31576666) and s._status_key in (31576672)
+        and s._group_key in (31576664) and s._status_key in (31576672)
+        )
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576665) and s._status_key in (31576672)
+        )
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576666) and s._status_key in (31576672)
         )
 and exists (select 1 from bib_workflow_status s
         where m._refs_key = s._refs_key and s.isCurrent = 1

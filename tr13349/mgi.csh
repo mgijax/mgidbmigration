@@ -16,11 +16,8 @@ date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Organism_MGIType ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MGI_Organism_MGIType.bcp "|"
 
-${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.MGI_Organism_MGIType DROP CONSTRAINT MGI_Organism_MGIType__ModifiedBy_key_fkey CASCADE;
@@ -50,9 +47,7 @@ delete from mgi_organism_mgitype where _mgitype_key in (18, 19)
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -62,7 +57,7 @@ select count(*) from MGI_Organism_MGIType;
 
 update acc_logicaldb set _organism_key = 76 where _organism_key is null;
 
-drop table mgd.MGI_Organism_MGIType_old;
+drop table MGI_Organism_MGIType_old;
 
 -- add to Production when ready
 insert into VOC_Vocab values(151,22864,1,1,0,'GXD Antibody Class',now(), now());

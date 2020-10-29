@@ -16,14 +16,6 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
--- insert new BIB_Refs table (isDiscard removed)
-insert into BIB_Refs
-select m._Refs_key, m._ReferenceType_key, m.authors, m._primary, m.title,
-m.journal, m.vol, m.issue, m.date, m.year, m.pgs, m.abstract, m.isReviewArticle,
-m._CreatedBy_key, m._ModifiedBy_key, m.creation_date, m.modification_date
-from BIB_Refs_old m
-;
-
 -- (0)
 -- if isDiscard = 1
 --      then _relevance_key = 70594666 (discard)
@@ -129,6 +121,13 @@ from BIB_Refs_old m
 where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
 
+-- rebuild cache
+select  * from BIB_reloadCache();
+
+--- counts
+select count(*) from bib_refs;
+select count(*) from bib_citation_cache;
+select count(*) from bib_workflow_relevance;
 -- discard
 select count(*) from bib_workflow_relevance where _relevance_key = 70594666;
 -- keep

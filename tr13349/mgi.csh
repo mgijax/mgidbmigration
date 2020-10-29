@@ -18,6 +18,7 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Organi
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE MGI_Organism_MGIType RENAME TO MGI_Organism_MGIType_old;
@@ -46,6 +47,7 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

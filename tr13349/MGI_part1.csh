@@ -59,6 +59,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MLD_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MRK_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/PRB_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a $LOG
 
 date | tee -a ${LOG}
 ./probe.csh | tee -a $LOG 
@@ -93,6 +94,7 @@ ${PG_MGD_DBSCHEMADIR}/key/MLD_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MRK_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/PRB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a $LOG
 
 #
 # reconfig.sh:

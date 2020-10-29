@@ -32,6 +32,7 @@ and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._re
 
 -- (1)
 -- if isDiscard = 0 and _referencetype_key != 31576687 (Peer Reviewed Article)
+-- if reference does not already exist in bib_workflow_relevance
 --      then _relevance_key = 70594667 (keep)
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
@@ -44,12 +45,15 @@ and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._re
 -- (2)
 -- if workflow status is: Chosen, Indexed, Full Coded for ANY group
 -- if isDiscard = 0 
+-- if _referencetype_key = 31576687 (Peer Reviewed Article)
+-- if reference does not already exist in bib_workflow_relevance
 -- exclude created by = pm2geneload
 --      then _relevance_key = 70594667 (keep)
 select distinct m._refs_key
 into temp table toadd2
 from BIB_Refs_old m, bib_workflow_status s
 where m.isDiscard = 0
+and m._referencetype_key = 31576687
 and m._createdby_key != 1571
 and m._refs_key = s._refs_key
 and s.isCurrent = 1
@@ -65,14 +69,17 @@ from toadd2
 -- (3)
 -- if _refs_key does not exist in bib_workflow_relevance
 -- if isDiscard = 0 
+-- if _referencetype_key = 31576687 (Peer Reviewed Article)
 -- if workflow status is: Rejected for AP, GXD, GO
 -- if workflow status is: Rejected or Not Routed for QTL
 -- if worlflow status is: Rejected for Tumor or tag = Tumor:NotSelected (32970313)
+-- if reference does not already exist in bib_workflow_relevance
 --      then _relevance_key = 70594666 (discard)
 select distinct m._refs_key
 into temp table toadd3
 from BIB_Refs_old m
 where m.isDiscard = 0
+and m._referencetype_key = 31576687
 and exists (select 1 from bib_workflow_status s
         where m._refs_key = s._refs_key and s.isCurrent = 1
         and s._group_key in (31576664, 31576665, 31576666) and s._status_key in (31576672)
@@ -100,11 +107,14 @@ from toadd3
 
 -- (4)
 --if workflow status is Routed for some group?
+-- if _referencetype_key = 31576687 (Peer Reviewed Article)
+-- if reference does not already exist in bib_workflow_relevance
 --      then _relevance_key = 70594667 (keep)
 --insert into BIB_Workflow_Relevance
 --select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
 --from BIB_Refs_old m
---where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
+--where m._referencetype_key = 31576687
+--and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 --;
 
 -- (5)

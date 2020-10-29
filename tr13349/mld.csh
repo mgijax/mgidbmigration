@@ -1,5 +1,14 @@
 #!/bin/csh -f
 
+#
+# TEXT-QTL
+# TEXT-Physical Mapping
+# TEXT-Congenic
+# TEXT-QTL-Candidate Genes
+# TEXT-Meta Analysis
+# TEXT
+#
+
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif

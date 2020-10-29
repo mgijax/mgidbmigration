@@ -101,7 +101,7 @@ ${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG
 #
 date | tee -a ${LOG}
 echo 'running triggers, procedures, views, comments' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 

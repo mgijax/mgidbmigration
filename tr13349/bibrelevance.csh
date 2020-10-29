@@ -14,6 +14,8 @@ touch $LOG
  
 date | tee -a $LOG
  
+${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Workflow_Relevance_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/BIB_Workflow_Relevance_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/table/BIB_Workflow_Relevance_truncate.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

@@ -52,7 +52,6 @@ ${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 
 date | tee -a ${LOG}
 ./probe.csh | tee -a $LOG 

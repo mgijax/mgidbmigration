@@ -26,18 +26,7 @@ date | tee -a $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Expt_Marker ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MLD_Expt_Marker.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Expt_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MLD_Expt_Notes.bcp "|"
 
-${PG_MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/MLD_Expt_Notes_drop.object | tee -a $LOG 
-
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-ALTER TABLE mgd.MLD_Expt_Marker DROP CONSTRAINT MLD_Expt_Marker_pkey CASCADE;
-ALTER TABLE mgd.MLD_Expt_Marker DROP CONSTRAINT MLD_Expt_Marker__Expt_key_fkey CASCADE;
-ALTER TABLE mgd.MLD_Expt_Marker DROP CONSTRAINT MLD_Expt_Marker__Marker_key_fkey CASCADE;
-ALTER TABLE mgd.MLD_Expt_Marker DROP CONSTRAINT MLD_Expt_Marker__Allele_key_fkey CASCADE;
-ALTER TABLE mgd.MLD_Expt_Marker DROP CONSTRAINT MLD_Expt_Marker__Assay_Type_key_fkey CASCADE;
-ALTER TABLE MLD_Expt_Marker RENAME TO MLD_Expt_Marker_old;
-
-ALTER TABLE mgd.MLD_Expt_Notes DROP CONSTRAINT MLD_Expt_Notes_pkey CASCADE;
 ALTER TABLE MLD_Expt_Notes RENAME TO MLD_Expt_Notes_old;
 EOSQL
 
@@ -69,21 +58,6 @@ from MLD_Expt_Notes_old m
 ;
 
 EOSQL
-
-${PG_MGD_DBSCHEMADIR}/key/MLD_Assay_Types_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Marker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Notes_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MLD_Expts_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object | tee -a $LOG || exit 1
-
-${PG_MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/MLD_Expt_Notes_create.object | tee -a $LOG || exit 1
-
-${PG_MGD_DBSCHEMADIR}/key/MLD_Assay_Types_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MLD_Expt_Notes_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MLD_Expts_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

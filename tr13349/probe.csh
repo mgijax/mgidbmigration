@@ -21,14 +21,7 @@ ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-ALTER TABLE mgd.PRB_Marker DROP CONSTRAINT PRB_Marker_pkey CASCADE;
-ALTER TABLE mgd.PRB_Marker DROP CONSTRAINT PRB_Marker__Probe_key_fkey CASCADE;
-ALTER TABLE mgd.PRB_Marker DROP CONSTRAINT PRB_Marker__Marker_key_fkey CASCADE;
-ALTER TABLE mgd.PRB_Marker DROP CONSTRAINT PRB_Marker__Refs_key_fkey CASCADE;
 ALTER TABLE PRB_Marker RENAME TO PRB_Marker_old;
-
-ALTER TABLE mgd.PRB_Notes DROP CONSTRAINT PRB_Notes_pkey CASCADE;
-ALTER TABLE mgd.PRB_Notes_Notes__Probe_key_fkey CASCADE;
 ALTER TABLE PRB_Notes RENAME TO PRB_Notes_old;
 EOSQL
 
@@ -57,16 +50,8 @@ from PRB_Notes_old m
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_drop.object | tee -a $LOG || exit 1
-
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_create.object | tee -a $LOG || exit 1
-
-${PG_MGD_DBSCHEMADIR}/key/PRB_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_Notes_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_create.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

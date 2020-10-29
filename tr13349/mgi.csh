@@ -20,9 +20,6 @@ ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-ALTER TABLE mgd.MGI_Organism_MGIType DROP CONSTRAINT MGI_Organism_MGIType__ModifiedBy_key_fkey CASCADE;
-ALTER TABLE mgd.MGI_Organism_MGIType DROP CONSTRAINT MGI_Organism_MGIType__CreatedBy_key_fkey CASCADE;
-ALTER TABLE mgd.MGI_Organism_MGIType DROP CONSTRAINT MGI_Organism_MGIType__ReferenceType_key_fkey CASCADE;
 ALTER TABLE MGI_Organism_MGIType RENAME TO MGI_Organism_MGIType_old;
 EOSQL
 

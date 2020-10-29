@@ -61,8 +61,8 @@ select count(*) from PRB_Marker;
 select count(*) from PRB_Notes_old;
 select count(*) from PRB_Notes;
 
-drop table mgd.PRB_Marker_old;
-drop table mgd.PRB_Notes_old;
+drop table PRB_Marker_old;
+drop table PRB_Notes_old;
 
 -- delete "Not Loaded" terms
 --_segmenttype_key

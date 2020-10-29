@@ -29,11 +29,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
-echo 'add autsequence for VOC_Term' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG 
-
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
-
 #
 # update schema-version and public-version
 #
@@ -44,13 +39,22 @@ EOSQL
 date | tee -a ${LOG}
 
 #
-# indexes
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
-#echo 'running indexes' | tee -a $LOG
+#echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:

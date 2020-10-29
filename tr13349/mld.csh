@@ -27,6 +27,7 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Expt_M
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Expt_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MLD_Expt_Notes.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE MLD_Expt_Marker RENAME TO MLD_Expt_Marker_old;
 ALTER TABLE MLD_Expt_Notes RENAME TO MLD_Expt_Notes_old;
 EOSQL
 
@@ -67,8 +68,8 @@ select count(*) from MLD_Expt_Marker;
 select count(*) from MLD_Expt_Notes_old;
 select count(*) from MLD_Expt_Notes;
 
-drop table mgd.MLD_Expt_Marker_old;
-drop table mgd.MLD_Expt_Notes_old;
+drop table MLD_Expt_Marker_old;
+drop table MLD_Expt_Notes_old;
 
 EOSQL
 

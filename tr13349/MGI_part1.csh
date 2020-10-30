@@ -80,10 +80,6 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 echo 'creating indexes, procedures, views, triggers' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
-
 ${PG_MGD_DBSCHEMADIR}/key/ALL_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/BIB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_create.logical | tee -a $LOG
@@ -95,6 +91,9 @@ ${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/BIB_create.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/MLD_create.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_create.logical | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:

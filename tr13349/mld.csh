@@ -24,19 +24,13 @@ touch $LOG
 date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Expt_Marker ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MLD_Expt_Marker.bcp "|"
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Expt_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MLD_Expt_Notes.bcp "|"
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MLD_Notes ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MLD_Notes.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE MLD_Expt_Marker RENAME TO MLD_Expt_Marker_old;
-ALTER TABLE MLD_Expt_Notes RENAME TO MLD_Expt_Notes_old;
-ALTER TABLE MLD_Notes RENAME TO MLD_Notes_old;
 EOSQL
 
 # new table
 ${PG_MGD_DBSCHEMADIR}/table/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/MLD_Expt_Notes_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/MLD_Notes_create.object | tee -a $LOG || exit 1
 
 # autosequence
 ${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Assay_Types_create.object | tee -a $LOG || exit 1
@@ -57,16 +51,6 @@ m.creation_date, m.modification_date
 from MLD_Expt_Marker_old m
 ;
 
-insert into MLD_Expt_Notes
-select nextval('mld_expt_notes_seq'), m._Expt_key, m.note, m.creation_date, m.modification_date
-from MLD_Expt_Notes_old m
-;
-
-insert into MLD_Notes
-select nextval('mld_notes_seq'), m._Refs_key, m.note, m.creation_date, m.modification_date
-from MLD_Notes_old m
-;
-
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -74,15 +58,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from MLD_Expt_Marker_old;
 select count(*) from MLD_Expt_Marker;
 
-select count(*) from MLD_Expt_Notes_old;
-select count(*) from MLD_Expt_Notes;
-
-select count(*) from MLD_Notes_old;
-select count(*) from MLD_Notes;
-
 drop table MLD_Expt_Marker_old;
-drop table MLD_Expt_Notes_old;
-drop table MLD_Notes_old;
 
 EOSQL
 

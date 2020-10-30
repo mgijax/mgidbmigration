@@ -139,7 +139,7 @@ where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._
 ;
 
 -- rebuild cache
---select  * from BIB_reloadCache();
+select  * from BIB_reloadCache();
 
 --- counts
 select count(*) from bib_refs;

@@ -23,11 +23,22 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- (0)
 -- if isDiscard = 1
 --      then _relevance_key = 70594666 (discard)
-insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select distinct m._Refs_key
+into temp table toadd0
 from BIB_Refs_old m
 where m.isDiscard = 1
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
+;
+select m._Refs_key, a.accID
+from toadd0 m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
+insert into BIB_Workflow_Relevance
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+from toadd0
 ;
 
 -- (1)
@@ -35,12 +46,23 @@ and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._re
 -- if _referencetype_key != 31576687 (Peer Reviewed Article)
 -- if reference does not already exist in bib_workflow_relevance
 --      then _relevance_key = 70594667 (keep)
-insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select distinct m._Refs_key
+into temp table toadd1
 from BIB_Refs_old m
 where m.isDiscard = 0
 and m._referencetype_key != 31576687
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
+;
+select m._Refs_key, a.accID
+from toadd1 m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
+insert into BIB_Workflow_Relevance
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+from toadd1
 ;
 
 -- (2)
@@ -61,7 +83,13 @@ and s.isCurrent = 1
 and s._Status_key in (31576671, 31576673, 31576674)
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
-
+select m._Refs_key, a.accID
+from toadd2 m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
 from toadd2
@@ -150,6 +178,13 @@ and (
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
 
+select m._Refs_key, a.accID
+from todd3 m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
 from toadd3
@@ -160,8 +195,8 @@ from toadd3
 -- if reference does not already exist in bib_workflow_relevance
 -- if workflow status is Routed for any group
 --      then _relevance_key = 70594667 (keep)
-insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select distinct m._Refs_key
+into temp table toadd4
 from BIB_Refs_old m
 where m._referencetype_key = 31576687
 and exists (select 1 from bib_workflow_status s
@@ -170,15 +205,38 @@ and exists (select 1 from bib_workflow_status s
         )
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
+select m._Refs_key, a.accID
+from toadd4 m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
+insert into BIB_Workflow_Relevance
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+from toadd4
+;
 
 -- (5)
 -- if anything is left in bib_refs_old that is not in bib_workflow_relevance
 --      then _relevance_key = 70594668 (Not Specified)
-insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), m._Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select distinct m._Refs_key
+into temp table toadd5
 from BIB_Refs_old m
 where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
+select m._Refs_key, a.accID
+from toadd5 m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
+insert into BIB_Workflow_Relevance
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+from toadd5
+;
+
 
 -- rebuild cache
 select  * from BIB_reloadCache();

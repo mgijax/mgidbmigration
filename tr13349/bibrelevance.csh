@@ -68,31 +68,30 @@ from toadd2
 ;
 
 -- (3)
+--
 -- if isDiscard = 0 
 -- if reference does not already exist in bib_workflow_relevance
 -- if _referencetype_key = 31576687 (Peer Reviewed Article)
 -- if workflow status is: Rejected for AP, GXD, GO
 -- if workflow status is: Rejected or Not Routed for QTL
--- if worlflow status is: Rejected for Tumor or tag = Tumor:NotSelected (32970313)
---      then _relevance_key = 70594666 (discard)
--- *data_tag set
--- AP:DiseaseReview
--- AP:NewTransgene
--- AP:strains
--- MGI:mapping
--- MGI:markers
--- MGI:nomen_selected
--- MGI:PRO_selected
--- MGI:PRO_used
--- MGI:probe
+--
+-- AND
+--      worlflow status is: Rejected for Tumor 
+--      OR 
+--      tag = Tumor:NotSelected (32970313)
+--
+-- AND
+--      *data_tag set
+--      AP:DiseaseReview AP:NewTransgene AP:strains 
+==      MGI:mapping MGI:markers MGI:nomen_selected MGI:PRO_selected MGI:PRO_used MGI:probe
+--
+--      OR
 -- 
--- **mgi_data type set
--- markers
--- alleles
--- probes
--- strains
--- sequences
--- antibodies
+--      **mgi_data type set
+--      markers, alleles , probes, strains, sequences, antibodies
+--
+-- then _relevance_key = 70594666 (discard)
+--
 select distinct m._refs_key
 into temp table toadd3
 from BIB_Refs_old m

@@ -75,6 +75,24 @@ from toadd2
 -- if workflow status is: Rejected or Not Routed for QTL
 -- if worlflow status is: Rejected for Tumor or tag = Tumor:NotSelected (32970313)
 --      then _relevance_key = 70594666 (discard)
+-- *data_tag set
+-- AP:DiseaseReview
+-- AP:NewTransgene
+-- AP:strains
+-- MGI:mapping
+-- MGI:markers
+-- MGI:nomen_selected
+-- MGI:PRO_selected
+-- MGI:PRO_used
+-- MGI:probe
+-- 
+-- **mgi_data type set
+-- markers
+-- alleles
+-- probes
+-- strains
+-- sequences
+-- antibodies
 select distinct m._refs_key
 into temp table toadd3
 from BIB_Refs_old m
@@ -104,6 +122,31 @@ and (
         or exists (select 1 from bib_workflow_tag s
                 where m._refs_key = s._refs_key and s._tag_key in (3297031)
                 )
+)
+and (
+        exists (select 1 from bib_workflow_tag wt, voc_term t
+                where m._refs_key = wt._refs_key
+                and wt._tag_key = t._term_key
+                and t.term in (
+                'AP:DiseaseReview',
+                'AP:NewTransgene',
+                'AP:strains',
+                'MGI:mapping',
+                'MGI:markers',
+                'MGI:nomen_selected',
+                'MGI:PRO_selected',
+                'MGI:PRO_used',
+                'MGI:probe'
+                )
+        )
+        or ( 
+                exists (select 1 from mrk_reference t where m._refs_key = t._refs_key)
+                or exists (select 1 from prb_reference t where m._refs_key = t._refs_key)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 11)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 10)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 19)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 6)
+        )
 )
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;

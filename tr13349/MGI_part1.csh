@@ -29,10 +29,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-EOSQL
-
 #
 # update schema-version and public-version
 #

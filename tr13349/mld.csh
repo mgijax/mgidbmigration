@@ -55,6 +55,8 @@ EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+delete from mld_assay_types where _assay_type_key in (129, 130);
+
 select count(*) from MLD_Expt_Marker_old;
 select count(*) from MLD_Expt_Marker;
 

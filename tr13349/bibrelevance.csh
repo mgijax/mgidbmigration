@@ -95,12 +95,12 @@ select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0
 from toadd2
 ;
 
--- (3)
+-- (3a)
 --
 -- if isDiscard = 0 
 -- if reference does not already exist in bib_workflow_relevance
 -- if _referencetype_key = 31576687 (Peer Reviewed Article)
--- if workflow status is: Rejected for AP, GXD, GO
+-- if workflow status is: Rejected AP GXD GO
 -- if workflow status is: Rejected or Not Routed for QTL
 --
 -- AND
@@ -111,17 +111,17 @@ from toadd2
 -- AND
 --      *data_tag set
 --      AP:DiseaseReview AP:NewTransgene AP:strains 
-==      MGI:mapping MGI:markers MGI:nomen_selected MGI:PRO_selected MGI:PRO_used MGI:probe
+--      MGI:mapping MGI:markers MGI:nomen_selected MGI:PRO_selected MGI:PRO_used MGI:probe
 --
 --      OR
 -- 
 --      **mgi_data type set
 --      markers, alleles , probes, strains, sequences, antibodies
 --
--- then _relevance_key = 70594666 (discard)
+-- then _relevance_key = 70594667 (keep)
 --
 select distinct m._refs_key
-into temp table toadd3
+into temp table toadd3a
 from BIB_Refs_old m
 where m.isDiscard = 0
 and m._referencetype_key = 31576687
@@ -177,9 +177,69 @@ and (
 )
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
-
 select m._Refs_key, a.accID
-from todd3 m, ACC_Accession a
+from toadd3a m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
+insert into BIB_Workflow_Relevance
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+from toadd3a
+;
+
+--
+-- (3b)
+--
+-- if isDiscard = 0 
+-- if reference does not already exist in bib_workflow_relevance
+-- if _referencetype_key = 31576687 (Peer Reviewed Article)
+-- if workflow status is: Rejected for AP, GXD, GO
+-- if workflow status is: Rejected or Not Routed for QTL
+--
+-- AND
+--      worlflow status is: Rejected for Tumor 
+--      OR 
+--      tag = Tumor:NotSelected (32970313)
+--
+-- then _relevance_key = 70594666 (discard)
+--
+select distinct m._refs_key
+into temp table toadd3b
+from BIB_Refs_old m
+where m.isDiscard = 0
+and m._referencetype_key = 31576687
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576664) and s._status_key in (31576672)
+        )
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576665) and s._status_key in (31576672)
+        )
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576666) and s._status_key in (31576672)
+        )
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576668) and s._status_key in (31576672, 31576669)
+        )
+and (
+        exists (select 1 from bib_workflow_status s
+                where m._refs_key = s._refs_key and s.isCurrent = 1
+                and s._group_key in (31576667) and s._status_key in (31576672)
+                )
+        or exists (select 1 from bib_workflow_tag s
+                where m._refs_key = s._refs_key and s._tag_key in (3297031)
+                )
+)
+)
+and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
+;
+select m._Refs_key, a.accID
+from toadd3b m, ACC_Accession a
 where m._Refs_key = a._object_key
 and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
@@ -187,7 +247,7 @@ limit 200
 ;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
-from toadd3
+from toadd3b
 ;
 
 -- (4)
@@ -236,7 +296,6 @@ insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
 from toadd5
 ;
-
 
 -- rebuild cache
 select  * from BIB_reloadCache();

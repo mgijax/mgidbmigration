@@ -46,7 +46,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into MLD_Expt_Marker
 select nextval('mld_expt_marker_seq'), m._Expt_key, m._Marker_key, m._Allele_key, m._Assay_Type_key,
-m.sequenceNum, m.gene, m.description, m.matrixdata,
+m.sequenceNum, m.description, m.matrixdata,
 m.creation_date, m.modification_date
 from MLD_Expt_Marker_old m
 ;

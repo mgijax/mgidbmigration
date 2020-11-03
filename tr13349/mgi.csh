@@ -54,8 +54,6 @@ select count(*) from MGI_Organism_MGIType;
 
 update acc_logicaldb set _organism_key = 76 where _organism_key is null;
 
-drop table mgi_organism_mgitype_old;
-
 -- add to Production when ready
 insert into VOC_Vocab values(151,22864,1,1,0,'GXD Antibody Class',now(), now());
 insert into VOC_Vocab values(152,22864,1,1,0,'GXD Label',now(), now());
@@ -64,6 +62,8 @@ insert into VOC_Vocab values(154,22864,1,1,0,'GXD Gel Control',now(), now());
 insert into VOC_Vocab values(155,22864,1,1,0,'GXD Embedding Method`',now(), now());
 insert into VOC_Vocab values(156,22864,1,1,0,'GXD Fixation Method',now(), now());
 insert into VOC_Vocab values(157,22864,1,1,0,'GXD Visualization Method',now(), now());
+
+drop table mgi_organism_mgitype_old;
 
 EOSQL
 

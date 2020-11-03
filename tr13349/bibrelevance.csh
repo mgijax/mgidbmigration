@@ -147,7 +147,7 @@ and (
                 and s._group_key in (31576667) and s._status_key in (31576672)
                 )
         or exists (select 1 from bib_workflow_tag s
-                where m._refs_key = s._refs_key and s._tag_key in (3297031)
+                where m._refs_key = s._refs_key and s._tag_key in (32970313)
                 )
 )
 and (
@@ -232,7 +232,7 @@ and (
                 and s._group_key in (31576667) and s._status_key in (31576672)
                 )
         or exists (select 1 from bib_workflow_tag s
-                where m._refs_key = s._refs_key and s._tag_key in (3297031)
+                where m._refs_key = s._refs_key and s._tag_key in (32970313)
                 )
 )
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 

@@ -235,7 +235,6 @@ and (
                 where m._refs_key = s._refs_key and s._tag_key in (3297031)
                 )
 )
-)
 and not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 ;
 select m._Refs_key, a.accID

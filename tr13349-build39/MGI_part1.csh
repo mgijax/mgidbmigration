@@ -30,13 +30,15 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
 date | tee -a ${LOG}
+echo "deleting coordinate collections MGI, miRBase, GtRNAdb, ePCR BLAST, UniSTS, Tom Sproule, UCSC, MGI_Curation, djr"
+echo "deleting B38 location notes, these were all created on 2017-04-25 and are noteKey 633229215 through 633229231"
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-delete from MAP_Coord_Collection where _collection_key in (select distinct c.*
-from map_coord_collection c, map_coordinate mc, map_coord_feature mf
-where c._collection_key = mc._collection_key
-and mc._map_key = mf._map_key
-and mf._mgitype_key = 2);
+delete from MAP_Coord_Collection where _collection_key in (64, 57, 58, 68, 59, 62, 85, 56, 94)
+;
+
+delete from MGI_Note where _note_key between 633229215 and 633229231
+;
 
 EOSQL
 

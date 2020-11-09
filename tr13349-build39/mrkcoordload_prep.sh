@@ -28,8 +28,6 @@ echo "MRKCOORDLOAD: $MRKCOORDLOAD"
 cd `dirname $0`
 LOG=`pwd`/mrkcoordload_prep.log
 rm -f ${LOG}
-
-rm -rf ${LOG}
 touch ${LOG}
 
 date | tee -a ${LOG}

@@ -109,9 +109,7 @@ from toadd2
 --      tag = Tumor:NotSelected (32970313)
 --
 -- AND
---      *data_tag set
---      AP:DiseaseReview AP:NewTransgene AP:strains 
---      MGI:mapping MGI:markers MGI:nomen_selected MGI:PRO_selected MGI:PRO_used MGI:probe
+--      *data_tag set (see below)
 --
 --      OR
 -- 
@@ -156,14 +154,34 @@ and (
                 and wt._tag_key = t._term_key
                 and t.term in (
                 'AP:DiseaseReview',
-                'AP:NewTransgene',
+                'AP:Incomplete',
+                'AP:NewAlleleNomenclature',
+                'AP:NoImages',
                 'AP:strains',
+                'AP:strains_CHOSEN',
+                'AP:strains_INDEXED',
+                'COV:comorbidity',
+                'COV:HCoV-OC43',
+                'COV:Infection',
+                'COV:Mouse_Hepatitis',
+                'COV:Pathology',
+                'COV:SARS_CoV2',
+                'COV:treatment',
+                'COV:vaccine',
+                'GXD:Loads',
                 'MGI:mapping',
                 'MGI:markers',
                 'MGI:nomen_selected',
                 'MGI:PRO_selected',
                 'MGI:PRO_used',
-                'MGI:probe'
+                'MGI:probe',
+                'MGI:Pubmed2geneload_error',
+                'QTL:CollaborativeCross',
+                'QTL:eQTL',
+                'QTL:General_Association',
+                'QTL:Idd',
+                'QTL:Integrate/w/ExistingQTL',
+                'QTL:MetaData'
                 )
         )
         or ( 
@@ -276,16 +294,72 @@ select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0
 from toadd4
 ;
 
--- (5)
+-- (5a) Remaining refs (set to "keep")
 -- if anything is left in bib_refs_old that is not in bib_workflow_relevance
---      then _relevance_key = 70594668 (Not Specified)
+-- if tag in (keep_tag set*) or reference has associated mgi_data**
+--      then _relevance_key = 70594667 (keep)
 select distinct m._Refs_key
 into temp table toadd5
 from BIB_Refs_old m
 where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
+and exists (select 1 from bib_workflow_tag wt, voc_term t
+                where m._refs_key = wt._refs_key
+                and wt._tag_key = t._term_key
+                and t.term in (
+                'AP:DiseaseReview',
+                'AP:Incomplete',
+                'AP:NewAlleleNomenclature',
+                'AP:NoImages',
+                'AP:strains',
+                'AP:strains_CHOSEN',
+                'AP:strains_INDEXED',
+                'COV:comorbidity',
+                'COV:HCoV-OC43',
+                'COV:Infection',
+                'COV:Mouse_Hepatitis',
+                'COV:Pathology',
+                'COV:SARS_CoV2',
+                'COV:treatment',
+                'COV:vaccine',
+                'GXD:Loads',
+                'MGI:mapping',
+                'MGI:markers',
+                'MGI:nomen_selected',
+                'MGI:PRO_selected',
+                'MGI:PRO_used',
+                'MGI:probe',
+                'MGI:Pubmed2geneload_error',
+                'QTL:CollaborativeCross',
+                'QTL:eQTL',
+                'QTL:General_Association',
+                'QTL:Idd',
+                'QTL:Integrate/w/ExistingQTL',
+                'QTL:MetaData'
+                )
+        )
 ;
 select m._Refs_key, a.accID
-from toadd5 m, ACC_Accession a
+from toadd5a m, ACC_Accession a
+where m._Refs_key = a._object_key
+and a._mgitype_key = 1
+and a.prefixpart = 'MGI:'
+limit 200
+;
+insert into BIB_Workflow_Relevance
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+from toadd5a
+;
+
+-- (5b) Remaining refs (set to "Not Specified" - assumes 5a has been run)
+-- if anything is left in bib_refs_old that is not in bib_workflow_relevance
+--      then _relevance_key = 70594668 (Not Specified)
+select distinct m._Refs_key
+into temp table toadd5b
+from BIB_Refs_old m
+where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
+;
+select m._Refs_key, a.accID
+from toadd5b m, ACC_Accession a
 where m._Refs_key = a._object_key
 and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
@@ -293,8 +367,26 @@ limit 200
 ;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
-from toadd5
+from toadd5b
 ;
+
+-- rebuild cache
+select  * from BIB_reloadCache();
+
+--- counts
+select count(*) from bib_refs;
+select count(*) from bib_citation_cache;
+select count(*) from bib_workflow_relevance;
+-- discard
+select count(*) from bib_workflow_relevance where _relevance_key = 70594666;
+-- keep
+select count(*) from bib_workflow_relevance where _relevance_key = 70594667;
+-- Not Specified
+select count(*) from bib_workflow_relevance where _relevance_key = 70594668;
+
+EOSQL
+
+date |tee -a $LOG
 
 -- rebuild cache
 select  * from BIB_reloadCache();

@@ -47,5 +47,13 @@ EOSQL
 # make changes to procedure/BIB_getCopyright
 ${PG_MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object | tee -a $LOG
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select term, abbreviation, note
+from voc_term
+where _vocab_key = 48
+order by term
+;
+EOSQL
+
 date |tee -a $LOG
 

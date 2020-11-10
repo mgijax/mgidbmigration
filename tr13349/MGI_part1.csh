@@ -69,6 +69,9 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ./mgi.csh | tee -a $LOG 
 
+date | tee -a ${LOG}
+./journal.csh | tee -a $LOG 
+
 #
 # indexes
 # only run the ones needed per schema changes

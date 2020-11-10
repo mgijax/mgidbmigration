@@ -30,12 +30,12 @@ ALTER TABLE MLD_Expt_Marker RENAME TO MLD_Expt_Marker_old;
 EOSQL
 
 # new table
-${PG_MGD_DBSCHEMADIR}/table/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/MLD_Expt_Marker_create.object | tee -a $LOG 
 
 # autosequence
-${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Assay_Types_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Expts_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Expt_Marker_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Assay_Types_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Expts_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/MLD_Expt_Marker_create.object | tee -a $LOG 
 
 #
 # insert data int new table

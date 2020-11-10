@@ -17,15 +17,15 @@ date | tee -a $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Organism_MGIType ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MGI_Organism_MGIType.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE MGI_Organism_MGIType RENAME TO MGI_Organism_MGIType_old;
 EOSQL
 
 # new table
-${PG_MGD_DBSCHEMADIR}/table/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/MGI_Organism_MGIType_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/MGI_Organism_MGIType_create.object | tee -a $LOG 
 
 #
 # insert data int new table
@@ -44,8 +44,8 @@ delete from mgi_organism_mgitype where _mgitype_key in (18, 19)
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_create.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

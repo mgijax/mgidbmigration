@@ -200,7 +200,6 @@ from toadd3a m, ACC_Accession a
 where m._Refs_key = a._object_key
 and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
-limit 200
 ;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
@@ -260,7 +259,6 @@ from toadd3b m, ACC_Accession a
 where m._Refs_key = a._object_key
 and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
-limit 200
 ;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
@@ -302,7 +300,8 @@ select distinct m._Refs_key
 into temp table toadd5a
 from BIB_Refs_old m
 where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
-and exists (select 1 from bib_workflow_tag wt, voc_term t
+and (
+        exists (select 1 from bib_workflow_tag wt, voc_term t
                 where m._refs_key = wt._refs_key
                 and wt._tag_key = t._term_key
                 and t.term in (
@@ -337,6 +336,15 @@ and exists (select 1 from bib_workflow_tag wt, voc_term t
                 'QTL:MetaData'
                 )
         )
+        or ( 
+                exists (select 1 from mrk_reference t where m._refs_key = t._refs_key)
+                or exists (select 1 from prb_reference t where m._refs_key = t._refs_key)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 11)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 10)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 19)
+                or exists (select 1 from mgi_reference_assoc t where m._refs_key = t._refs_key and t._mgitype_key = 6)
+        )
+)
 ;
 select m._Refs_key, a.accID
 from toadd5a m, ACC_Accession a
@@ -363,7 +371,6 @@ from toadd5b m, ACC_Accession a
 where m._Refs_key = a._object_key
 and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
-limit 200
 ;
 insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()

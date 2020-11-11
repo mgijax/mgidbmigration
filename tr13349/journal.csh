@@ -55,5 +55,7 @@ order by term
 ;
 EOSQL
 
+$PYTHON journal.py | tee -a $LOG
+
 date |tee -a $LOG
 

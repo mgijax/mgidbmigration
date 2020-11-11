@@ -299,7 +299,7 @@ from toadd4
 -- if tag in (keep_tag set*) or reference has associated mgi_data**
 --      then _relevance_key = 70594667 (keep)
 select distinct m._Refs_key
-into temp table toadd5
+into temp table toadd5a
 from BIB_Refs_old m
 where not exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key) 
 and exists (select 1 from bib_workflow_tag wt, voc_term t
@@ -369,24 +369,6 @@ insert into BIB_Workflow_Relevance
 select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
 from toadd5b
 ;
-
--- rebuild cache
-select  * from BIB_reloadCache();
-
---- counts
-select count(*) from bib_refs;
-select count(*) from bib_citation_cache;
-select count(*) from bib_workflow_relevance;
--- discard
-select count(*) from bib_workflow_relevance where _relevance_key = 70594666;
--- keep
-select count(*) from bib_workflow_relevance where _relevance_key = 70594667;
--- Not Specified
-select count(*) from bib_workflow_relevance where _relevance_key = 70594668;
-
-EOSQL
-
-date |tee -a $LOG
 
 -- rebuild cache
 select  * from BIB_reloadCache();

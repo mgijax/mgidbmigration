@@ -72,7 +72,7 @@ Immunol Cell Biol	This image is from *, and is displayed with the permission of 
 Int J Obes (Lond)	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 Int J Oral Sci	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 J Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-J Biol Chem	This image is from * and is displayed with the permission of the American Society for Biochemistry and Molecular Biology who owns the Copyright. Full text from \JBiolChem.	By special permission
+J Biol Chem	This image is from * and is displayed with the permission of the American Society for Biochemistry and Molecular Biology who owns the Copyright. Full text from \JBiolChem(||).	By special permission
 J Biomed Sci	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
 J Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
 J Cereb Blood Flow Metab	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
@@ -83,7 +83,7 @@ J Gen Physiol	This image is from *, and is displayed under the terms of the <A H
 J Gerontol A Biol Sci Med Sci	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
 J Hum Genet	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 J Invest Dermatol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
-J Lipid Res	This image is from * and is displayed with the permission of the American Society for Biochemistry and Molecular Biology who owns the Copyright. Full text is from \JLipidRes.	By special permission
+J Lipid Res	This image is from * and is displayed with the permission of the American Society for Biochemistry and Molecular Biology who owns the Copyright. Full text is from \JLipidRes(||).	By special permission
 J Neurosci	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</A>.	CC-BY-NC-ND 4.0
 Kidney Int	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 Lab Invest	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)

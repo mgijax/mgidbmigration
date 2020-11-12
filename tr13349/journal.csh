@@ -41,11 +41,10 @@ and n._Object_key = t._Term_key
 -- remove _notetype_key = 1026
 delete from MGI_Note where _NoteType_key = 1026;
 delete from MGI_NoteType where _NoteType_key = 1026;
+-- remove procedure/BIB_getCopyright
+DROP FUNCTION IF EXISTS BIB_getCopyright(int);
 
 EOSQL
-
-# make changes to procedure/BIB_getCopyright
-${PG_MGD_DBSCHEMADIR}/procedure/BIB_getCopyright_create.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select term, abbreviation, note
@@ -56,6 +55,7 @@ order by term
 EOSQL
 
 $PYTHON journal.py | tee -a $LOG
+
 
 date |tee -a $LOG
 

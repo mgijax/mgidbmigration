@@ -41,7 +41,7 @@ Cell Death Dis	This image is from *, and is displayed under the terms of the <A 
 Cell Rep	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
 Cell Rep	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/3.0/>Creative Commons Attribution 3.0 International License</A>.	CC-BY 3.0
 Cell Rep	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-nd/3.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 International License</A>.	CC-BY-NC-ND 3.0
-J Neurosci	This image is from *. Copyright [year] Society for Neuroscience.	<2010
+J Neurosci	This image is from *. Copyright [year] Society for Neuroscience.	SQL(<2010)
 J Neurosci	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA
 Nucleic Acids Res	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
 J Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-Noncommercial-Share Alike 4.0 Unported License</A>.	CC-BY-NC-SA 4.0

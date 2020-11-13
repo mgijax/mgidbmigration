@@ -1,42 +1,45 @@
-Biol Open	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License.</A>	CC-BY 4.0
-BMC Biochem	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Biochem	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>C177</A>.	CC-BY 4.0
-BMC Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Biotechnol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Biotechnol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Cancer	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Cancer	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Complement Altern Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Dev Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Dev Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Evol Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Gastroenterol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Genet	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Genet	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Genomics	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Genomics	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Immunol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Immunol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Med Genet	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Mol Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Mol Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Nephrol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Nephrol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Neurosci	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Neurosci	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Ophthalmol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Ophthalmol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Pharmacol Toxicol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Physiol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Physiol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Res Notes	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Res Notes	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-BMC Syst Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	CC-BY 2.0
-BMC Syst Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+term	abbreviation	Definition
+Acta Biochim Biophys Sin (Shanghai)		No image permissions
+Biol Open	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/3.0/>Creative Commons Attribution 3.0 International License.</A>	SQL(between 2014 and 2018)
+Biol Open	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License.</A>	SQL(>=2019)
+BMC Biochem	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Biochem	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/</A>.	SQL(>=2014)
+BMC Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Biotechnol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Biotechnol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Cancer	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Cancer	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Complement Altern Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Dev Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Dev Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Evol Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Gastroenterol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Genet	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Genet	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Genomics	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Genomics	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Immunol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Immunol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Med Genet	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Mol Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Mol Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Nephrol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Nephrol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Neurosci	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Neurosci	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Ophthalmol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Ophthalmol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Pharmacol Toxicol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Physiol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Physiol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Res Notes	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Res Notes	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+BMC Syst Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/2.0/>Creative Commons Attribution 2.0 International License</A>.	SQL(between 2008 and 2013)
+BMC Syst Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
 Cell Death Dis	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-nd/3.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 International License</A>.	CC-BY-NC-ND 3.0
 Cell Rep	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/3.0/>Creative Commons Attribution 3.0 International License</A>.	CC-BY 3.0
 Cell Rep	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0

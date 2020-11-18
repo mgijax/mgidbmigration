@@ -26,12 +26,12 @@ ALTER TABLE PRB_Notes RENAME TO PRB_Notes_old;
 EOSQL
 
 # new table
-${PG_MGD_DBSCHEMADIR}/table/PRB_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/table/PRB_Notes_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/table/PRB_Marker_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/table/PRB_Notes_create.object | tee -a $LOG 
 
 # autosequence
-${PG_MGD_DBSCHEMADIR}/autosequence/PRB_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/autosequence/PRB_Notes_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/autosequence/PRB_Marker_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/autosequence/PRB_Notes_create.object | tee -a $LOG 
 
 #
 # insert data int new table
@@ -50,8 +50,8 @@ from PRB_Notes_old m
 
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/PRB_Marker_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/PRB_Notes_create.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

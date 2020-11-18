@@ -19,14 +19,6 @@ fp.write('#count of antibodies\n')
 fp.write('#\n')
 
 #
-# For references that satisfy the following conditions:
-#
-# iscurrent workflow status = Rejected for groups: A&P and GXD,
-#
-# iscurrent workflow status = Rejected or Not Routed for group: QTL
-#
-# [(iscurrent workflow status = Rejected for group: Tumor) OR (bib_workflow Tag = "Tumor:not selected")]
-#
 # columns for Report1
 # jnumid
 # mgiid
@@ -35,17 +27,34 @@ fp.write('#\n')
 # sort by mgiid
 #
 
+#- (3a, 3b)
+#-
+#- if isDiscard = 0 
+#- if _referencetype_key = 31576687 (Peer Reviewed Article)
+#- if workflow status is: Rejected AP GXD GO
+#- if workflow status is: Rejected or Not Routed for QTL
+#-
+#- AND
+#-      worlflow status is: Rejected for Tumor 
+#-      OR 
+#-      tag = Tumor:NotSelected (32970313)
+#-
 db.sql('''
 select distinct m._refs_key
 into temp table results
-from BIB_Refs m
-where exists (select 1 from bib_workflow_status s
+from BIB_Refs_old m
+where m.isDiscard = 0
+and exists (select 1 from bib_workflow_status s
         where m._refs_key = s._refs_key and s.isCurrent = 1
         and s._group_key in (31576664) and s._status_key in (31576672)
         )
 and exists (select 1 from bib_workflow_status s
         where m._refs_key = s._refs_key and s.isCurrent = 1
         and s._group_key in (31576665) and s._status_key in (31576672)
+        )
+and exists (select 1 from bib_workflow_status s
+        where m._refs_key = s._refs_key and s.isCurrent = 1
+        and s._group_key in (31576666) and s._status_key in (31576672)
         )
 and exists (select 1 from bib_workflow_status s
         where m._refs_key = s._refs_key and s.isCurrent = 1
@@ -57,7 +66,7 @@ and (
                 and s._group_key in (31576667) and s._status_key in (31576672)
                 )
         or exists (select 1 from bib_workflow_tag s
-                where m._refs_key = s._refs_key and s._tag_key in (3297031)
+                where m._refs_key = s._refs_key and s._tag_key in (32970313)
                 )
 )
 ''', None)
@@ -226,5 +235,4 @@ for r in results:
     fp.write('\n')
 
 reportlib.finish_nonps(fp)      # non-postscript file
-
 

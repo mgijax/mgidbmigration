@@ -27,7 +27,6 @@ db.sql('''
 select distinct m._refs_key
 into temp table results
 from BIB_Refs m
-where exists (select 1 from bib_workflow_relevance r where m._refs_key = r._refs_key and r._relevance_key = 70594668)
 ''', None)
 
 # tags

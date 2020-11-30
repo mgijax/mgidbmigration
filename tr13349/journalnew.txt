@@ -64,7 +64,9 @@ Hum Mol Genet		No image permissions
 Hum Reprod		No image permissions
 J Cell Biol	This image is from *. Originally published in Journal of Cell Biology  \DXDOI(||).	SQL(<=2008)
 J Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-Noncommercial-Share Alike 4.0 Unported License</A>.	SQL(>=2016)
+J Exp Med	This image is from *. Originally published in Journal of Cell Biology  \DXDOI(||).	SQL(<=2008)
 J Exp Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-Noncommercial-Share Alike 4.0 Unported License</A>.	CC-BY-NC-SA 4.0
+J Gen Physiol	This image is from *. Originally published in Journal of Cell Biology  \DXDOI(||).	SQL(<=2008)
 J Gen Physiol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-Noncommercial-Share Alike 4.0 Unported License</A>.	CC-BY-NC-SA 4.0
 J Neurosci	This image is from *. Copyright * Society for Neuroscience.	SQL(<2010)
 J Neurosci	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	SQL(between 2010 and 2014)

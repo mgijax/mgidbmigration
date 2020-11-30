@@ -107,7 +107,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 # must be run after autosequence/procedure/etc.
 date | tee -a ${LOG}
-./bibrelvance.csh | tee -a $LOG 
+./bibrelevance.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 ./journal.csh | tee -a $LOG 

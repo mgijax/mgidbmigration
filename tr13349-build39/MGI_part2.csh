@@ -94,10 +94,9 @@ echo 'Run Marker/Coordinate Load' | tee -a $LOG
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
 # DATA: is from the database
-# commented out for now because in main migration for now.
-#date | tee -a ${LOG}
-#echo 'run tss gene load' | tee -a $LOG
-#${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
+date | tee -a ${LOG}
+echo 'run tss gene load' | tee -a $LOG
+${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 
 # DATA: is configured and is in a TR directory
 #date | tee -a ${LOG}
@@ -142,9 +141,9 @@ ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
 # This recreates the location notes that were deleted in part 1
 # DATA: From TR directory
-# date | tee -a ${LOG}
-# echo 'Run Location Note Load in incremental mode'| tee -a ${LOG}
-# ${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/LocationNotes/location.config
+#date | tee -a ${LOG}
+#echo 'Run Location Note Load in incremental mode'| tee -a ${LOG}
+#${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/LocationNotes/location.config
 
 #date | tee -a ${LOG}
 #echo 'autosequence check' | tee -a $LOG

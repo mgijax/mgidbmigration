@@ -45,10 +45,6 @@ switch (`uname -n`)
 endsw
 
 date | tee -a ${LOG}
-echo 'run tss gene load' | tee -a $LOG
-${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
-
-date | tee -a ${LOG}
 echo 'autosequence check' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 
 

@@ -55,6 +55,10 @@ switch (`uname -n`)
         breaksw
 endsw
 
+date | tee -a ${LOG}
+echo 'Run Problem Alignment Sequence Load' | tee -a ${LOG}
+${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
+
 # commented out loads below are awaiting Ensembl and NCBI Gene models and the mgigff file. Once they are ready
 # we can uncommment these loads
 #date | tee -a ${LOG}
@@ -124,6 +128,14 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 #date | tee -a ${LOG}
 #echo 'Run Strain Gene Model Load' | tee -a ${LOG}
 #${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh
+
+# DATA: data is on bhmgiapp14ld and bhmgiap09lt - it needs to be downloaded
+# on bhmgidevapp01 before the build.
+# load is configured to NOT check the MGI_Set - just drop and reload existing
+# experiments
+#date | tee -a ${LOG}
+#echo 'Run RNA Sequence Load' | tee -a ${LOG}
+#${RNASEQLOAD}/bin/rnaseqload.sh
 
 # DATA: Copied from production above
 #date | tee -a ${LOG}

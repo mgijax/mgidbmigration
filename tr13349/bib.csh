@@ -43,7 +43,7 @@ from BIB_Refs_old m
 select count(*) from BIB_Refs_old;
 select count(*) from BIB_Refs;
 
---drop table BIB_Refs_old;
+drop table BIB_Refs_old;
 
 EOSQL
 

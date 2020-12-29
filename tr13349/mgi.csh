@@ -60,6 +60,7 @@ insert into VOC_Vocab values(154,22864,1,1,0,'GXD Gel Control',now(), now());
 insert into VOC_Vocab values(155,22864,1,1,0,'GXD Embedding Method',now(), now());
 insert into VOC_Vocab values(156,22864,1,1,0,'GXD Fixation Method',now(), now());
 insert into VOC_Vocab values(157,22864,1,1,0,'GXD Visualization Method',now(), now());
+insert into VOC_Vocab values(158,22864,1,1,0,'GXD Assay Type',now(), now());
 
 drop table mgi_organism_mgitype_old;
 

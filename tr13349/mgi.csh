@@ -64,6 +64,8 @@ insert into VOC_Vocab values(158,22864,1,1,0,'GXD Assay Type',now(), now());
 
 drop table mgi_organism_mgitype_old;
 
+delete from gxd_assaytype where _assaytype_key in (-1,-2);
+
 EOSQL
 
 date |tee -a $LOG

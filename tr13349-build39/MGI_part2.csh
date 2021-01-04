@@ -157,6 +157,18 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 #echo 'Run Location Note Load in incremental mode'| tee -a ${LOG}
 #${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/LocationNotes/location.config
 
+# This creates noteload file by parsing the parsed notes file with new coordinates added in last two
+# columns
+# DATA: From file provided by Paul (he starts with output from parse_molecular_notes.csh
+# 
+date | tee -a ${LOG}
+echo 'Run script to create updated molecular noteload file'| tee -a ${LOG}
+/mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/update_molecular_notes.csh
+
+date | tee -a ${LOG}
+echo 'Run Molecular note load'| tee -a ${LOG}
+${NOTELOAD}/mginotload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
+
 #date | tee -a ${LOG}
 #echo 'autosequence check' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 

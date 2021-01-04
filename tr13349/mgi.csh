@@ -63,6 +63,17 @@ insert into VOC_Vocab values(157,22864,1,1,0,'GXD Visualization Method',now(), n
 insert into VOC_Vocab values(158,22864,1,1,0,'GXD Assay Type',now(), now());
 insert into VOC_Vocab values(159,22864,1,1,0,'GXD Probe Sense',now(), now());
 insert into VOC_Vocab values(160,22864,1,1,0,'GXD Secondary',now(), now());
+insert into VOC_Vocab values(161,22864,1,1,0,'GXD Assay Age',now(), now());
+
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'embryonic day', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal day', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal week', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal month', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal year', null, null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal adult', null, null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal newborn', null, null, 8, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'Not Applicable', null, null, 9, 0, 1001, 1001, now(), now());
 
 drop table mgi_organism_mgitype_old;
 

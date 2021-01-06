@@ -393,5 +393,10 @@ select count(*) from bib_workflow_relevance where _relevance_key = 70594668;
 
 EOSQL
 
+#make sure we turn this on!
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#drop table BIB_Refs_old;
+#EOSQL
+
 date |tee -a $LOG
 

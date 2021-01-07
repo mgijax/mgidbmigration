@@ -39,7 +39,7 @@ and a.prefixpart = 'MGI:'
 limit 200
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, null, 1001, 1001, now(), now()
 from toadd0
 ;
 
@@ -63,7 +63,7 @@ and a.prefixpart = 'MGI:'
 limit 200
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, null, 1001, 1001, now(), now()
 from toadd1
 ;
 
@@ -93,7 +93,7 @@ and a.prefixpart = 'MGI:'
 limit 200
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, null, 1001, 1001, now(), now()
 from toadd2
 ;
 
@@ -204,7 +204,7 @@ and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, null, 1001, 1001, now(), now()
 from toadd3a
 ;
 
@@ -263,7 +263,7 @@ and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594666, 1, null, null, 1001, 1001, now(), now()
 from toadd3b
 ;
 
@@ -290,7 +290,7 @@ and a.prefixpart = 'MGI:'
 limit 200
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, null, 1001, 1001, now(), now()
 from toadd4
 ;
 
@@ -356,7 +356,7 @@ and a.prefixpart = 'MGI:'
 limit 200
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594667, 1, null, null, 1001, 1001, now(), now()
 from toadd5a
 ;
 
@@ -375,7 +375,7 @@ and a._mgitype_key = 1
 and a.prefixpart = 'MGI:'
 ;
 insert into BIB_Workflow_Relevance
-select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, '6-0-17-1', 1001, 1001, now(), now()
+select nextval('bib_workflow_relevance_seq'), _Refs_key, 70594668, 1, null, null, 1001, 1001, now(), now()
 from toadd5b
 ;
 

@@ -8,7 +8,7 @@ source ${MGICONFIG}/master.config.csh
 
 cd `dirname $0`
 
-timestamp=`date '+%Y%m%d'`
+set timestamp=`date '+%Y%m%d'`
 
 setenv LOG $0.log.${timestamp}
 rm -rf $LOG

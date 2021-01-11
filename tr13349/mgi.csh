@@ -15,6 +15,7 @@ touch $LOG
 date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Organism_MGIType ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MGI_Organism_MGIType.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PWI_Report ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PWI_Report.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG 
@@ -87,6 +88,9 @@ insert into VOC_Term values(nextval('voc_term_seq'), 162, 'Not Applicable', null
 drop table mgi_organism_mgitype_old;
 
 delete from gxd_assaytype where _assaytype_key in (-1,-2);
+
+-- remove obsolete pwi_report
+delete from pwi_report where id in (9,10,11,12,13,36);
 
 EOSQL
 

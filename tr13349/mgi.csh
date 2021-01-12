@@ -90,7 +90,7 @@ drop table mgi_organism_mgitype_old;
 delete from gxd_assaytype where _assaytype_key in (-1,-2);
 
 -- remove obsolete pwi_report
-delete from pwi_report where id in (9,10,11,12,13,36);
+delete from pwi_report where id in (9,10,11,12,13,36,17);
 
 EOSQL
 

@@ -94,5 +94,8 @@ delete from pwi_report where id in (9,10,11,12,13,36,17);
 
 EOSQL
 
+# obsolete reports
+rm -rf ${QCREPORTDIR}/output/WF_AP_Routed.rpt
+
 date |tee -a $LOG
 

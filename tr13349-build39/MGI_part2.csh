@@ -162,10 +162,6 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 # DATA: From file provided by Paul (he starts with output from parse_molecular_notes.csh
 # 
 date | tee -a ${LOG}
-echo 'Run script to create updated molecular noteload file'| tee -a ${LOG}
-/mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/update_molecular_notes.csh
-
-date | tee -a ${LOG}
 echo 'Run Molecular note load'| tee -a ${LOG}
 ${NOTELOAD}/mginotload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
 

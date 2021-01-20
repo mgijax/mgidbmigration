@@ -57,6 +57,7 @@ endsw
 
 date | tee -a ${LOG}
 echo 'Run Problem Alignment Sequence Load' | tee -a ${LOG}
+rm -f $DATALOADSOUTPUT/mgi/problemseqsetload/input/lastrun
 ${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
 
 # commented out loads below are awaiting Ensembl and NCBI Gene models and the mgigff file. Once they are ready

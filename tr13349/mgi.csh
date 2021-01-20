@@ -15,6 +15,7 @@ touch $LOG
 date | tee -a $LOG
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Organism_MGIType ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/MGI_Organism_MGIType.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PWI_Report ${MGI_LIVE}/dbutils/mgidbmigration/tr13349/PWI_Report.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Organism_MGIType_drop.object | tee -a $LOG 
@@ -63,12 +64,38 @@ insert into VOC_Vocab values(157,22864,1,1,0,'GXD Visualization Method',now(), n
 insert into VOC_Vocab values(158,22864,1,1,0,'GXD Assay Type',now(), now());
 insert into VOC_Vocab values(159,22864,1,1,0,'GXD Probe Sense',now(), now());
 insert into VOC_Vocab values(160,22864,1,1,0,'GXD Secondary',now(), now());
+insert into VOC_Vocab values(161,22864,1,1,0,'GXD Assay Age',now(), now());
+insert into VOC_Vocab values(162,22864,1,1,0,'GXD Hybridization',now(), now());
+insert into VOC_Vocab values(163,22864,1,1,0,'GXD Strength',now(), now());
+
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'embryonic day', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal day', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal week', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal month', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal year', null, null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal adult', null, null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal newborn', null, null, 8, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 161, 'Not Applicable', null, null, 9, 0, 1001, 1001, now(), now());
+
+insert into VOC_Term values(nextval('voc_term_seq'), 162, 'whole mount', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 162, 'section', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 162, 'section from whole mount', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 162, 'optical section', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 162, 'Not Specified', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 162, 'Not Applicable', null, null, 6, 0, 1001, 1001, now(), now());
 
 drop table mgi_organism_mgitype_old;
 
 delete from gxd_assaytype where _assaytype_key in (-1,-2);
 
+-- remove obsolete pwi_report
+delete from pwi_report where id in (9,10,11,12,13,36,17);
+
 EOSQL
+
+# obsolete reports
+rm -rf ${QCREPORTDIR}/output/WF_AP_Routed.rpt
 
 date |tee -a $LOG
 

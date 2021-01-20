@@ -49,4 +49,8 @@ echo 'autosequence check' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
+echo 'processRelevance.sh' | tee -a $LOG
+${LITTRIAGELOAD}/bin/processRelevance.sh | tee -a $LOG 
+
+date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

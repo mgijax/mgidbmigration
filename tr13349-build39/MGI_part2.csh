@@ -152,6 +152,13 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 #echo 'Run UniProt Load' | tee -a ${LOG}
 #${UNIPROTLOAD}/bin/uniprotload.sh
 
+# new homology loads, these are run from sunday tasks so putting at end
+# # DATA: from /data/downloads
+date | tee -a ${LOG}
+echo 'Run Homology Loads' | tee -a ${LOG}
+#${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
+#${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusterload.config
+
 # This recreates the location notes that were deleted in part 1
 # DATA: From TR directory
 #date | tee -a ${LOG}
@@ -164,7 +171,7 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 # 
 date | tee -a ${LOG}
 echo 'Run Molecular note load'| tee -a ${LOG}
-${NOTELOAD}/mginotload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
+${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
 
 #date | tee -a ${LOG}
 #echo 'autosequence check' | tee -a $LOG

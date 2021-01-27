@@ -52,6 +52,7 @@ switch (`uname -n`)
         scp bhmgiapp01:/data/downloads/go_translation/ec2go /data/downloads/go_translation/ec2go
         scp bhmgiapp01:/data/downloads/go_translation/interpro2go /data/downloads/go_translation/interpro2go
         scp bhmgiapp01:/data/downloads/go_translation/uniprotkb_kw2go /data/downloads/go_translation/uniprotkb_kw2go
+        scp bhmgiapp01:/data/downloads/download.alliancegenome.org/3.2.0/ORTHOLOGY-ALLIANCE/COMBINED/ORTHOLOGY-ALLIANCE_COMBINED_37.tsv
         breaksw
 endsw
 
@@ -80,9 +81,8 @@ ${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
 #echo 'Run NCBI Gene Model/Association Load' | tee -a ${LOG}
 #${GENEMODELLOAD}/bin/genemodelload.sh ncbi
 
-# DATA: curators will prepare and publish files. script to catenate files into one
-# file and QC as a whole 11/4 to be done. Part of migration or part of mrkcoordload?
-
+# DATA: curators will prepare and publish files. script to catenate files into
+# one file and QC as a whole then publish if QC successful
 date | tee -a ${LOG}
 echo 'Run Marker/Coordinate Load Prep' | tee -a $LOG
 ./mrkcoordload_prep.sh
@@ -94,6 +94,7 @@ if ( $STAT == 1 ) then
     exit 1
 endif
 
+# DATA: run on data catenated, qc'd and published from above mrkcoordload_prep.sh
 date | tee -a ${LOG}
 echo 'Run Marker/Coordinate Load' | tee -a $LOG
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
@@ -153,11 +154,11 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 #${UNIPROTLOAD}/bin/uniprotload.sh
 
 # new homology loads, these are run from sunday tasks so putting at end
-# # DATA: from /data/downloads
+# # DATA: copied from production /data/downloads above
 date | tee -a ${LOG}
 echo 'Run Homology Loads' | tee -a ${LOG}
-#${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
-#${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusterload.config
+${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
+${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusterload.config
 
 # This recreates the location notes that were deleted in part 1
 # DATA: From TR directory

@@ -1,5 +1,12 @@
 #!/bin/csh -f
 
+#
+# create new group = PRO
+# create new bib_workflow_status/isCurrent = 1 for group/PRO
+# delete obsolete MGI:PRO tags from bib_workflow_tag
+# no qc report changes
+#
+
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
@@ -77,6 +84,9 @@ order by status, tgterm, c.short_citation
 --and r._refs_key = tg._refs_key
 --and tg._tag_key in (34693808,31576693)
 --;
+
+-- delete MGI:PRO tags
+--delete from voc_term where _term_key in (34693808, 31576693);
 
 EOSQL
 

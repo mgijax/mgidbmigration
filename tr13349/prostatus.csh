@@ -46,7 +46,7 @@ and s._group_key = 31576666
 and r._refs_key = tg._refs_key
 and tg._tag_key in (31576693)
 and not exists (select 1 from bib_workflow_status ss 
-        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'));
+        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
 --  GO:hjd_PRO_in_progress (51604409) -> Full-coded (31576674)
@@ -60,7 +60,7 @@ and s._group_key = 31576666
 and r._refs_key = tg._refs_key
 and tg._tag_key in (51604409)
 and not exists (select 1 from bib_workflow_status ss 
-        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'));
+        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
 --  MGI:PRO_selected (34693808) -> Chosen (31576671)
@@ -74,13 +74,13 @@ and s._group_key = 31576666
 and r._refs_key = tg._refs_key
 and tg._tag_key in (34693808)
 and not exists (select 1 from bib_workflow_status ss 
-        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'));
+        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
 -- rest = 'Not Routed'/31576669
 insert into BIB_Workflow_Status
 select nextval('bib_workflow_status_seq'), r._refs_key, 
-      (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'), 71027551, 1, 1001, 1001, now(), now()
+      (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'), 31576669, 1, 1001, 1001, now(), now()
 from bib_refs r, bib_workflow_status s, bib_workflow_tag tg
 where r._refs_key = s._refs_key
 and s.isCurrent = 1
@@ -88,21 +88,21 @@ and s._group_key = 31576666
 and r._refs_key = tg._refs_key
 and tg._tag_key not in (34693808,31576669,51604409)
 and not exists (select 1 from bib_workflow_status ss 
-        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'));
+        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
-select c._refs_key, c.mgiID, c.jnumid, c.pubmedid,
-tg.term as tgterm, ts.term as tsterm, c.short_citation
-from bib_citation_cache c, bib_workflow_tag g, voc_term tg, bib_workflow_status s, voc_term ts
-where c._refs_key = g._refs_key
-and g._tag_key in (34693808,31576693,51604409)
-and g._tag_key = tg._term_key
-and c._refs_key = s._refs_key
-and s.isCurrent = 1
-and s._group_key = 75601866
-and s._status_key = ts._term_key
-order by tgterm, c.short_citation
-;
+--select c._refs_key, c.mgiID, c.jnumid, c.pubmedid,
+--tg.term as tgterm, ts.term as tsterm, c.short_citation
+--from bib_citation_cache c, bib_workflow_tag g, voc_term tg, bib_workflow_status s, voc_term ts
+--where c._refs_key = g._refs_key
+--and g._tag_key in (34693808,31576693,51604409)
+--and g._tag_key = tg._term_key
+--and c._refs_key = s._refs_key
+--and s.isCurrent = 1
+--and s._group_key = 75601866
+--and s._status_key = ts._term_key
+--order by tgterm, c.short_citation
+--;
 
 -- delete MGI:PRO tags
 --delete from voc_term where _term_key in (34693808, 31576693);

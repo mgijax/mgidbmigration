@@ -54,7 +54,7 @@ ${LITTRIAGELOAD}/bin/processRelevance.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'processSecndary.sh' | tee -a $LOG
-${LITTRIAGELOAD}/bin/processSecndary.sh | tee -a $LOG 
+${LITTRIAGELOAD}/bin/processSecondary.sh | tee -a $LOG 
 
 date | tee -a ${LOG}
 echo '/bin/pubmed2geneload.sh' | tee -a $LOG

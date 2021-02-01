@@ -43,8 +43,6 @@ from BIB_Refs_old m
 select count(*) from BIB_Refs_old;
 select count(*) from BIB_Refs;
 
---drop table BIB_Refs_old;
-
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/index/BIB_Refs_create.object | tee -a $LOG 

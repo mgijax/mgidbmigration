@@ -42,6 +42,12 @@ delete from MGI_Note where _note_key between 633229215 and 633229231
 
 EOSQL
 
+#
+# date | tee -a ${LOG}
+# echo 'Run Molecular note load'| tee -a ${LOG}
+# ${NOTELOAD}/mginotload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
+#
+#
 date | tee -a ${LOG}
 echo "deleting Homologene, HGNC and Hybrid clusters"
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

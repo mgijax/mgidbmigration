@@ -1,5 +1,12 @@
 #!/bin/csh -f
 
+#
+# tags needed:
+#
+# reports_db
+# goload
+#
+
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
@@ -39,5 +46,7 @@ cd ${PUBRPTS}
 source ./Configuration
 cd daily
 $PYTHON GO_gene_association.py | tee -a $LOG
+cd ../weekly
+$PYTHON GO_gene_association_nonmouse.py | tee -a $LOG
 
 date |tee -a $LOG

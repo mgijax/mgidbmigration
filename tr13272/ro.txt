@@ -59,3 +59,4 @@ RO:0002356	results_in_specification_of
 RO:0002313	transports_or_maintains_localization_of
 RO:0002325	colocalizes_with
 RO:0002326	contributes_to
+RO:0002432	is_active_in

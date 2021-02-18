@@ -31,7 +31,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 
 date | tee -a ${LOG}
 echo "deleting coordinate collections RIKEN, MGI, miRBase, GtRNAdb, ePCR BLAST, UniSTS, Tom Sproule, UCSC, MGI_Curation, djr"
-echo "deleting B38 location notes, these were all created on 2017-04-25 and are noteKey 633229215 through 633229231"
+echo "deleting B38 *loaded* location notes, these were all created on 2017-04-25 and are noteKey 633229215 through 633229231"
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 delete from MAP_Coord_Collection where _collection_key in (96, 64, 57, 58, 68, 59, 62, 85, 56, 94)
@@ -42,14 +42,8 @@ delete from MGI_Note where _note_key between 633229215 and 633229231
 
 EOSQL
 
-#
-# date | tee -a ${LOG}
-# echo 'Run Molecular note load'| tee -a ${LOG}
-# ${NOTELOAD}/mginotload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
-#
-#
 date | tee -a ${LOG}
-echo "deleting Homologene, HGNC and Hybrid clusters"
+echo "deleting Homologene, HGNC and Hybrid clusters and their terms in the Marker Cluster Source vocabulary"
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 delete from MRK_Cluster where _clustersource_key in (9272151, 13437099, 13764519)

@@ -178,5 +178,11 @@ ${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularN
 #echo 'autosequence check' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG 
 
+# Update the variant coordinates to B39
+# DATA: From file provided by Paul ( he starts with the output of variant_coords.csh - variant_coords.rpt)
+#date | tee -a ${LOG}
+#echo 'Run Variant Coordinate  update' | tee -a ${LOG}
+#/mgi/all/wts_projects/13300/13349/Build39/Variants/coord_updates/update_variant_coords.csh | tee -a $LOG
+
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

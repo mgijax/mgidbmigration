@@ -1,136 +1,136 @@
-Acta Biochim Biophys Sin (Shanghai)	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Acta Pharmacol Sin	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Biol Open	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported license.</A>	CC-BY 3.0
-Biotechnology	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-BMC Biochem	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Bioinformatics	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Biotechnol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Blood Disord	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Cancer	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Cell Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Complement Altern Med	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Dev Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Evol Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Gastroenterol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Genet	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Genomics	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Immunol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Med	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Med Genet	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Mol Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Nephrol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Neurosci	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Ophthalmol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Pharmacol Toxicol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Physiol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Res Notes	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Struct Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-BMC Syst Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-Bone Marrow Transplant	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Brain	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
+Acta Biochim Biophys Sin (Shanghai)	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License.</A>"	CC-BY-NC 4.0
+Acta Pharmacol Sin	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Biol Open	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	SQL(<=2013)
+Biotechnology		No image permissions
+BMC Biochem	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2003)
+BMC Bioinformatics	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	only 3 in database
+BMC Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2003)
+BMC Biotechnol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2003)
+BMC Blood Disord	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	only 1 in database 2006
+BMC Cancer	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Cell Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Complement Altern Med	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2003)
+BMC Dev Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2003)
+BMC Evol Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2007)
+BMC Gastroenterol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Genet	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Genomics	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Immunol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Med	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Med Genet	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Mol Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Nephrol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Neurosci	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Ophthalmol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Pharmacol Toxicol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	Only 2 in database from 2014
+BMC Physiol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2004)
+BMC Res Notes	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	SQL(between 2008 and 2014)
+BMC Struct Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	1 in db in 2003 (GO)
+BMC Syst Biol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2014)
+Bone Marrow Transplant	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Br J Cancer	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Brain	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License.</A>"	CC-BY-NC 4.0
 Brain Res Gene Expr Patterns	Reprinted with permission from Elsevier from \DXDOI(||) \Elsevier(||).	By special permission
-Breast Cancer Res	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-Br J Cancer	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Cancer Gene Ther	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Carcinogenesis	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Cardiovasc Res	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Cell Commun Signal	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-Cell Cycle	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Cell Death Differ	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Cell Death Dis	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-Cell Mol Immunol	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Cell Rep	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</A>.	CC-BY-NC-ND 4.0
-Cell Res	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Cereb Cortex	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Chem Senses	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
+Breast Cancer Res	This image is from *, an open-access article, licensee BioMed Central Ltd.	BMC Ltd
+Cancer Gene Ther	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Carcinogenesis	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Cardiovasc Res	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Cell Commun Signal	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	SQL(between 2005 and 2014)
+Cell Cycle	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License.</A>"	CC-BY-NC 4.0
+Cell Death Differ	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Cell Death Dis	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2015)
+Cell Mol Immunol	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Cell Rep	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</A>.	CC-BY-NC-ND 4.0
+Cell Res	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Cereb Cortex	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Chem Senses	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
 Dev Biol	Reprinted with permission from Elsevier from \DXDOI(||) \Elsevier(||).	By special permission
 Dev Dyn	This image is from * and is displayed with the permission of Wiley-Blackwell, who owns the Copyright.	By special permission
 Development	This image is from * and is displayed with the permission of The Company of Biologists Limited who owns the Copyright.	By special permission
 Direct Data Submission from Genetic Resource Science	Direct data submission from Genetic Resource Science at The Jackson Laboratory.	By special permission
-Dis Model Mech	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommerical-Share Alike 3.0 Unported License.</A>	CC-BY-NC-SA 3.0
-DNA Res	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Elife	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-EMBO J	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-eNeuro	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License.</A>	CC-BY 4.0
-Eur J Clin Nutr	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Eur J Hum Genet	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Exp Mol Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommerical-Share Alike 3.0 Unported License.</A>	CC-BY-NC-SA 3.0
-Eye (Lond)	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Dis Model Mech	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	SQL(between 2011 and 2013)
+DNA Res	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</A>.	CC-BY 3.0
+Elife	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2015)
+EMBO J	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+eNeuro	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</A>"	SQL(>=2015)
+Eur J Clin Nutr	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Eur J Hum Genet	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Exp Mol Med	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
+Eye (Lond)	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 Gene Expr Patterns	Reprinted with permission from Elsevier from \DXDOI(||) \Elsevier(||).	By special permission
+Gene Ther	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 Genes Dev	This image is from *, and is displayed with the permission of Cold Spring Harbor Laboratory Press, who owns the Copyright.	By special permission
-Genes Immun	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Genes Immun	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 Genesis	This image is from *, and is displayed with the permission of Wiley-Blackwell, who owns the Copyright.	By special permission
-Gene Ther	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Genome Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-Glycobiology	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Heredity (Edinb)	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Hum Mol Genet	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Hum Reprod	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Hypertens Res	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Immunol Cell Biol	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Int J Obes (Lond)	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Int J Oral Sci	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-J Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
+Genome Biol	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(between 2002 and 2007)
+Glycobiology	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</A>.	CC-BY 3.0
+Heredity (Edinb)	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Hum Mol Genet	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Hum Reprod	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Hypertens Res	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Immunol Cell Biol		No image permissions
+Int J Obes (Lond)	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Int J Oral Sci	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+J Biol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	SQL(>=2005)
 J Biol Chem	This image is from * and is displayed with the permission of the American Society for Biochemistry and Molecular Biology who owns the Copyright. Full text from \JBiolChem(||).	By special permission
-J Biomed Sci	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-J Cell Biol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
-J Cereb Blood Flow Metab	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+J Biomed Sci	This image is from *, an open-access article, licensee BioMed Central Ltd.	SQL(<=2008)
+J Cell Biol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	SQL(between 2009 and 2015)
+J Cereb Blood Flow Metab		No image permissions
 J Clin Invest	This image is from * and is displayed with the permission of the American Society for Clinical Investigation who owns the Copyright.	By special permission
 J Comp Neurol	This image is from *, and is displayed with the permission of Wiley-Blackwell, who owns the Copyright.	By special permission
-J Exp Med	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
-J Gen Physiol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
-J Gerontol A Biol Sci Med Sci	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-J Hum Genet	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-J Invest Dermatol	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
+J Exp Med	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
+J Gen Physiol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
+J Gerontol A Biol Sci Med Sci	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</A>.	CC-BY-NC 4.0
+J Hum Genet	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+J Invest Dermatol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
 J Lipid Res	This image is from * and is displayed with the permission of the American Society for Biochemistry and Molecular Biology who owns the Copyright. Full text is from \JLipidRes(||).	By special permission
-J Neurosci	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</A>.	CC-BY-NC-ND 4.0
-Kidney Int	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Lab Invest	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Leukemia	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+J Neurosci	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2015)
+Kidney Int	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Lab Invest	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Leukemia	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
 Mamm Genome	This image is from * and is displayed with the permission of Springer Science + Business Media, Inc., New York who owns the copyright.	By special permission
 Mech Dev	Reprinted with permission from Elsevier from \DXDOI(||) \Elsevier(||).	By special permission
 MGI Direct Data Submission (B2B/CvDC)	This image is from the Laboratory of Dr. Cecilia Lo, a member of the Cardiovascular Development Consortium (CvDC), Bench to Bassinet (B2B) program of the National Heart Lung and Blood Institute (NHLBI), and is displayed with the permission of the authors.	By special permission
-Mol Biol Evol	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Mol Psychiatry	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by-nc-sa/3.0/>Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
+Mol Biol Evol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</A>.	CC-BY-NC 3.0
+Mol Psychiatry	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-ShareAlike 3.0 Unported License</A>.	CC-BY-NC-SA 3.0
 Mol Reprod Dev	This image is from *, and is displayed with the permission of Wiley-Blackwell, who owns the Copyright.	By special permission
-Mucosal Immunol	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Biotechnol	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Cell Biol	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Chem Biol	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Commun	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-Nat Genet	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Immunol	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Med	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Methods	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Neurosci	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Protoc	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Rev Cancer	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Rev Drug Discov	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Rev Genet	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Rev Immunol	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Rev Mol Cell Biol	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Rev Neurosci	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Struct Biol	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nat Struct Mol Biol	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Nature	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Neural Dev	This image is from *, an open-access article, licensee BioMed Central Ltd.	<2008
-Nucleic Acids Res	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution License.	CC-BY
-Oncogene	This image is from * and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Pediatr Res	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-PeerJ	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution License.	CC-BY
-Pharmacogenomics J	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-PLoS Biol	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS Comput Biol	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS Curr	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS Genet	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS Med	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS Negl Trop Dis	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS One	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-PLoS Pathog	This image is from *, and is displayed under the terms of the <A HREF=https://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Mucosal Immunol	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Biotechnol	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Cell Biol	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Chem Biol	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Commun	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Nat Genet	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Immunol	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Med	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Methods	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Neurosci	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Protoc	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Rev Cancer	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Rev Drug Discov	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Rev Genet	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Rev Immunol	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Rev Mol Cell Biol	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Rev Neurosci	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Struct Biol	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nat Struct Mol Biol	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Nature	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Neural Dev	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	SQL(between 2006 and 2014)
+Nucleic Acids Res	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Oncogene	This image is from * and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Pediatr Res	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+PeerJ	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</A>.	SQL(between 2013 and 2014)
+Pharmacogenomics J	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+PLoS Biol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2016)
+PLoS Comput Biol	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2016)
+PLoS Curr	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2017)
+PLoS Genet	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2016)
+PLoS Med	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2015)
+PLoS Negl Trop Dis	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2016)
+PLoS One	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2016)
+PLoS Pathog	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	SQL(>=2017)
 Proc Natl Acad Sci U S A	This image is from *. Copyright * National Academy of Sciences, U.S.A.	By special permission
-Prostate Cancer Prostatic Dis	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Sci Rep	This image is from *, and is displayed under the terms of the <A HREF=http://creativecommons.org/licenses/by/4.0/>Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
-Spinal Cord	This image is from *, and is displayed with the permission of <A HREF=http://www.nature.com/>The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
-Toxicol Sci	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial License.	CC-BY-NC
-Vasc Cell	This image is from *, an open-access article distributed under the terms of the Creative Commons Attribution License.	CC-BY
+Prostate Cancer Prostatic Dis	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Sci Rep	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</A>.	CC-BY 4.0
+Spinal Cord	This image is from *, and is displayed with the permission of <A HREF="http://www.nature.com/">The Nature Publishing Group</A> who owns the Copyright.	Through Rightslink (fee)
+Toxicol Sci	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License.</A>"	CC-BY-NC 4.0
+Vasc Cell	This image is from *, and is displayed under the terms of the <A HREF="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</A>.	SQL(between 2012 and 2014)

@@ -54,7 +54,7 @@ order by term
 ;
 
 --FOR TESTING ONLY/TO REMOVE NEW TERMS
---delete from voc_term where _vocab_key = 48 and _term_key >= 71751797;
+--delete from voc_term where _vocab_key = 48 and _term_key >= 75601550;
 
 EOSQL
 

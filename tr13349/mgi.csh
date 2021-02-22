@@ -53,6 +53,12 @@ select count(*) from MGI_Organism_MGIType_old;
 select count(*) from MGI_Organism_MGIType;
 
 update acc_logicaldb set _organism_key = 76 where _organism_key is null;
+drop table mgi_organism_mgitype_old;
+delete from gxd_assaytype where _assaytype_key in (-1,-2);
+-- remove obsolete pwi_report
+delete from pwi_report where id in (9,10,11,12,13,36,17);
+
+-- insert new VOC_Vocab
 
 insert into VOC_Vocab values(151,22864,1,1,0,'GXD Antibody Class',now(), now());
 insert into VOC_Vocab values(152,22864,1,1,0,'GXD Label',now(), now());
@@ -67,6 +73,7 @@ insert into VOC_Vocab values(160,22864,1,1,0,'GXD Secondary',now(), now());
 insert into VOC_Vocab values(161,22864,1,1,0,'GXD Assay Age',now(), now());
 insert into VOC_Vocab values(162,22864,1,1,0,'GXD Hybridization',now(), now());
 insert into VOC_Vocab values(163,22864,1,1,0,'GXD Strength',now(), now());
+
 --already existsinsert into VOC_Vocab values(164,22864,1,1,0,'Lit Triage Tumor ignore extracted text',now(), now());
 insert into VOC_Vocab values(165,22864,1,1,0,'Lit Triage AP extracted text',now(), now());
 insert into VOC_Vocab values(166,22864,1,1,0,'Lit Triage GXD extracted text',now(), now());
@@ -74,6 +81,10 @@ insert into VOC_Vocab values(167,22864,1,1,0,'Lit Triage Tumor extracted text',n
 insert into VOC_Vocab values(168,22864,1,1,0,'Lit Triage QTL extracted text',now(), now());
 insert into VOC_Vocab values(169,22864,1,1,0,'Lit Triage PRO extracted text',now(), now());
 insert into VOC_Vocab values(170,22864,1,1,0,'Lit Triage PRO ignore extracted text',now(), now());
+
+EOSQL
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into VOC_Term values(nextval('voc_term_seq'), 161, 'embryonic day', null, null, 1, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal', null, null, 2, 0, 1001, 1001, now(), now());
@@ -380,14 +391,6 @@ insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype matched', null
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype-matched', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotypematched', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'preprogrammed', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
-
-
-drop table mgi_organism_mgitype_old;
-
-delete from gxd_assaytype where _assaytype_key in (-1,-2);
-
--- remove obsolete pwi_report
-delete from pwi_report where id in (9,10,11,12,13,36,17);
 
 EOSQL
 

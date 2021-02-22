@@ -44,6 +44,8 @@ EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+delete from voc_term where _vocab_key in (161,162,165,166,167,168,169,170);
+
 insert into VOC_Term values(nextval('voc_term_seq'), 161, 'embryonic day', null, null, 1, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal', null, null, 2, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 161, 'postnatal day', null, null, 3, 0, 1001, 1001, now(), now());
@@ -74,7 +76,7 @@ insert into VOC_Term values(nextval('voc_term_seq'), 165, 'generation of mice', 
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'generation of mutant mice', null, null, 11, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'generation of transgenic mice', null, null, 12, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'heterozygote', null, null, 13, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'homozygote', null, null, 14 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'homozygote', null, null, 14, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'induced mutation', null, null, 15, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'jax', null, null, 16, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'knock-in mice', null, null, 17, 0, 1001, 1001, now(), now());
@@ -88,29 +90,30 @@ insert into VOC_Term values(nextval('voc_term_seq'), 165, 'knockout mouse', null
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'komp', null, null, 25, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mice were created', null, null, 26, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mice were generated', null, null, 27, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mmrrc', 'mutant mice', null, null, 28, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mutant mouse', null, null, 29, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'novel mutant', null, null, 30, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'novel mutation', null, null, 31, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'ozgene', null, null, 32, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_imsr', null, null, 33, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_jax', null, null, 34, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_mgi', null, null, 35, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_mmrrc', null, null, 36, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:imsr', null, null, 37, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:jax', null, null, 38, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:mgi', null, null, 39, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:mmrrc', null, null, 40, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'spontaneous mutant', null, null, 41, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mmrrc', null, null, 28, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mutant mice', null, null, 29, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'mutant mouse', null, null, 30, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'novel mutant', null, null, 31, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'novel mutation', null, null, 32, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'ozgene', null, null, 33, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_imsr', null, null, 34, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_jax', null, null, 35, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_mgi', null, null, 36, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid_mmrrc', null, null, 37, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:imsr', null, null, 38, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:jax', null, null, 39, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:mgi', null, null, 40, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'rrid:mmrrc', null, null, 41, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 165, 'spontaneous mutant', null, null, 42, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'spontaneous mutation', null, null, 43, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'talen', null, null, 44, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'targeted mutation', null, null, 45, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'targeting construct', null, null, 46, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'targeting vector', null, null, 47, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'transgene', null, null, 48, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'transgenic mice', null, null, 49, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 165, 'transgenic mouse', null, null, 50, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'spontaneous mutant', null, null, 43, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'spontaneous mutation', null, null, 44, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'talen', null, null, 45, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'targeted mutation', null, null, 46, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'targeting construct', null, null, 47, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'targeting vector', null, null, 48, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'transgene', null, null, 49, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'transgenic mice', null, null, 50, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 165, 'transgenic mouse', null, null, 51, 0, 1001, 1001, now(), now());
 
 insert into VOC_Term values(nextval('voc_term_seq'), 166, 'embryo', null, null, 1, 0, 1001, 1001, now(), now());
 
@@ -342,13 +345,15 @@ insert into VOC_Term values(nextval('voc_term_seq'), 170,'control isotype', null
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'ctrl isotype', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype control', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype-control', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype ctrl', null, null, (select max(sequenceNum) + 1 + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype ctrl', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype igg', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'iggl isotype', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype matched', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotype-matched', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'isotypematched', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 170,'preprogrammed', null, null, (select max(sequenceNum) + 1 from voc_term where _vocab_key = 170), 0, 1001, 1001, now(), now());
+
+select _vocab_key, count(*) from voc_term where _vocab_key in (161,162,165,166,167,168,169,170) group by _vocab_key;
 
 EOSQL
 

@@ -105,6 +105,9 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 
+date | tee -a ${LOG}
+./vocab.csh | tee -a $LOG 
+
 # must be run after autosequence/procedure/etc.
 date | tee -a ${LOG}
 ./bibrelevance.csh | tee -a $LOG

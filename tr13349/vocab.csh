@@ -33,12 +33,12 @@ insert into VOC_Vocab values(162,22864,1,1,0,'GXD Hybridization',now(), now());
 insert into VOC_Vocab values(163,22864,1,1,0,'GXD Strength',now(), now());
 
 --already existsinsert into VOC_Vocab values(164,22864,1,1,0,'Lit Triage Tumor ignore extracted text',now(), now());
-insert into VOC_Vocab values(165,22864,1,1,0,'Lit Triage AP extracted text',now(), now());
-insert into VOC_Vocab values(166,22864,1,1,0,'Lit Triage GXD extracted text',now(), now());
-insert into VOC_Vocab values(167,22864,1,1,0,'Lit Triage Tumor extracted text',now(), now());
-insert into VOC_Vocab values(168,22864,1,1,0,'Lit Triage QTL extracted text',now(), now());
-insert into VOC_Vocab values(169,22864,1,1,0,'Lit Triage PRO extracted text',now(), now());
-insert into VOC_Vocab values(170,22864,1,1,0,'Lit Triage PRO ignore extracted text',now(), now());
+--insert into VOC_Vocab values(165,22864,1,1,0,'Lit Triage AP extracted text',now(), now());
+--insert into VOC_Vocab values(166,22864,1,1,0,'Lit Triage GXD extracted text',now(), now());
+--insert into VOC_Vocab values(167,22864,1,1,0,'Lit Triage Tumor extracted text',now(), now());
+--insert into VOC_Vocab values(168,22864,1,1,0,'Lit Triage QTL extracted text',now(), now());
+--insert into VOC_Vocab values(169,22864,1,1,0,'Lit Triage PRO extracted text',now(), now());
+--insert into VOC_Vocab values(170,22864,1,1,0,'Lit Triage PRO ignore extracted text',now(), now());
 
 EOSQL
 

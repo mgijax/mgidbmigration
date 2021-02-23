@@ -59,4 +59,11 @@ ${ALLCACHELOAD}/allelecrecache.csh
 ${MGICACHELOAD}/bibcitation.csh
 
 date | tee -a ${LOG}
+echo 'Load SNP/Marker Cache table' | tee -a ${LOG}
+# This is running in out of sync mode - we need to remove this
+# before Alpha as this generally is run from the public data
+# generation pipeline
+ ${SNPCACHELOAD}/snpcacheload.sh
+
+date | tee -a ${LOG}
 echo '--- finished part 3' | tee -a $LOG

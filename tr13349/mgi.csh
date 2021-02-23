@@ -60,6 +60,32 @@ delete from pwi_report where id in (9,10,11,12,13,36,17);
 
 EOSQL
 
+date | tee -a ${LOG}
+# delete coordinate collections RIKEN, MGI, miRBase, GtRNAdb, ePCR BLAST, 
+# UniSTS, Tom Sproule, UCSC, MGI_Curation, djr
+# 
+# delete B38 *loaded* location notes, these were all created on 2017-04-25 
+#  and are noteKey 633229215 through 633229231"
+#
+# delete Homologene, HGNC and Hybrid clusters and their terms in the 
+# Marker Cluster Source vocabulary
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+delete from MAP_Coord_Collection where _collection_key in (96, 64, 57, 58, 68, 59, 62, 85, 56, 94)
+;
+
+delete from MGI_Note where _note_key between 633229215 and 633229231
+;
+
+delete from MRK_Cluster where _clustersource_key in (9272151, 13437099, 13764519)
+;
+
+delete from VOC_Term where _vocab_key = 89 and _term_key in (9272151, 13437099, 13764519)
+;
+
+EOSQL
+
 # obsolete reports
 rm -rf ${QCREPORTDIR}/output/WF_AP_Routed.rpt
 

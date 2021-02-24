@@ -39,6 +39,7 @@ ${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
 date | tee -a ${LOG}
 echo 'Public Reports' | tee -a ${LOG}
 ${PUBRPTS}/run_daily.csh
+${PUBRPTS}/run_weekly.csh
 
 ###----------------------###
 ###---   QC reports   ---###

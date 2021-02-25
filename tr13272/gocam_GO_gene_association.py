@@ -1078,15 +1078,17 @@ doSetup()
 doGAFCol16()
 doIsoform()
 
+gocamoutputdir = os.environ['DBUTILS'] + '/mgidbmigration/tr13272'
+
 #
 # GAF 2.2
 #
-fp = reportlib.init('go_cam_gene_association', fileExt = '.mgi', outputdir = os.environ['REPORTOUTPUTDIR'], printHeading = None)
+fp = reportlib.init('go_cam_gene_association', fileExt = '.mgi', outputdir = gocamoutputdir, printHeading = None)
 fp.write('!gaf-version: 2.2\n')
 fp.write('!generated-by: MGI\n')
 fp.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
 
-fp2 = reportlib.init('go_cam_gene_association_pro', fileExt = '.mgi', outputdir = os.environ['REPORTOUTPUTDIR'], printHeading = None)
+fp2 = reportlib.init('go_cam_gene_association_pro', fileExt = '.mgi', outputdir = gocamoutputdir, printHeading = None)
 fp2.write('!gaf-version: 2.2\n')
 fp2.write('!generated-by: MGI\n')
 fp2.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
@@ -1110,7 +1112,7 @@ reportlib.finish_nonps(fp2)
 #
 # GPAD 2.0
 #
-fp = reportlib.init('go_cam_mgi', fileExt = '.gpad', outputdir = os.environ['REPORTOUTPUTDIR'], printHeading = None)
+fp = reportlib.init('go_cam_mgi', fileExt = '.gpad', outputdir = gocamoutputdir, printHeading = None)
 fp.write('!gpa-version: 2.0\n') 
 fp.write('!generated-by: MGI\n')
 fp.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))

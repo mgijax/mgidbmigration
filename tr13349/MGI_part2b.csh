@@ -52,7 +52,6 @@ switch (`uname -n`)
         scp bhmgiapp01:/data/downloads/go_translation/ec2go /data/downloads/go_translation/ec2go
         scp bhmgiapp01:/data/downloads/go_translation/interpro2go /data/downloads/go_translation/interpro2go
         scp bhmgiapp01:/data/downloads/go_translation/uniprotkb_kw2go /data/downloads/go_translation/uniprotkb_kw2go
-        scp bhmgiapp01:/data/downloads/download.alliancegenome.org/3.2.0/ORTHOLOGY-ALLIANCE/COMBINED/ORTHOLOGY-ALLIANCE_COMBINED_37.tsv /data/downloads/download.alliancegenome.org/3.2.0/ORTHOLOGY-ALLIANCE/COMBINED/
         scp bhmgidevapp01:/data/reports/reports_db/output/mgi.gpi /data/reports/reports_db/output/mgi.gpi
         cp -p /mgi/all/wts_projects/13300/13349/Build39/GeneTraps/gtblatpipeline_files/best_blat_hits_single_Gbrowse.gff /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline/output
         breaksw
@@ -154,13 +153,6 @@ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 #date | tee -a ${LOG}
 #echo 'Run UniProt Load' | tee -a ${LOG}
 #${UNIPROTLOAD}/bin/uniprotload.sh
-
-# new homology loads, these are run from sunday tasks so putting at end
-# # DATA: copied from production /data/downloads above
-date | tee -a ${LOG}
-echo 'Run Homology Loads' | tee -a ${LOG}
-${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
-${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusterload.config
 
 # This recreates the location notes that were deleted in part 1
 # DATA: From TR directory

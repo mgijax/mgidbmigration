@@ -115,6 +115,9 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ./journal.csh | tee -a $LOG 
 
+date | tee -a ${LOG}
+./prostatus.csh | tee -a $LOG 
+
 #
 # cleanobjects.sh : removing stray mgi_notes
 #

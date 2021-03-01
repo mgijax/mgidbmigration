@@ -107,7 +107,8 @@ order by c._refs_key, tgterm, c.short_citation
 ;
 
 -- delete MGI:PRO tags
---delete from voc_term where _term_key in (34693808, 31576693);
+delete from bib_workflow_tag where _tag_key in (34693808, 31576693);
+delete from voc_term where _term_key in (34693808, 31576693);
 
 EOSQL
 

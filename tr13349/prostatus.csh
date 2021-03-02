@@ -24,7 +24,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- add new group 'PRO'
-insert into VOC_Term values(nextval('voc_term_seq'), 127, 'PRO', 'PRO', null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 127, 'PRO', 'PRO', null, 6, 0, 1001, 1001, now(), now());
 
 select c._refs_key, c.mgiID, c.jnumid, c.pubmedid,
 tgterm.term as tgterm, c.short_citation

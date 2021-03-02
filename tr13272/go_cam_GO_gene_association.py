@@ -213,6 +213,7 @@ def doSetup():
             g._Object_key, g._AnnotEvidence_key, g._EvidenceTerm_key, g.symbol, g.name, g.markerType, 
             to_char(g.creation_date, 'YYYY-MM-DD') as cDate,
             to_char(g.modification_date, 'YYYY-MM-DD') as mDate,
+            to_char(g.modification_date, 'YYYYMMDD') as gafDate,
             g._CreatedBy_key,
             g._ModifiedBy_key,
             ma.accID as markerID, 
@@ -813,7 +814,7 @@ def doGAFFinish():
         reportRow = reportRow + 'taxon:10090' + TAB
 
         #!14 Date                     
-        reportRow = reportRow + str(r['mDate']) + TAB
+        reportRow = reportRow + str(r['gafDate']) + TAB
 
         #!15 Assigned By             
         # remove "GOA_"; for example:  "GOA_IntAct" ==> "IntAct"

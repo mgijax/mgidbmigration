@@ -85,7 +85,7 @@ delete from VOC_Term where _vocab_key = 89 and _term_key in (9272151, 13437099, 
 ;
 
 delete from mgi_notechunk c where not exists (select 1 from mgi_note s where c._note_key = s._note_key);
-delete from mgi_clustermember c where not exists (select 1 from mgi_cluster s where c._cluster_key = s._cluster_key);
+delete from mrk_clustermember c where not exists (select 1 from mrk_cluster s where c._cluster_key = s._cluster_key);
 
 EOSQL
 

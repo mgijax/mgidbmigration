@@ -122,10 +122,10 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-date | tee -a ${LOG}
-echo 'data cleanup' | tee -a $LOG
+#date | tee -a ${LOG}
+#echo 'data cleanup' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
 #
 # rebuild the java dla, if needed due to schema changes

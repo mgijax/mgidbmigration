@@ -56,7 +56,6 @@ ${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/BIB_drop.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/MLD_drop.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_drop.logical | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 date | tee -a ${LOG}
 ./probe.csh | tee -a $LOG 
@@ -68,6 +67,7 @@ date | tee -a ${LOG}
 ./mld.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 ./mgi.csh | tee -a $LOG 
 
 #

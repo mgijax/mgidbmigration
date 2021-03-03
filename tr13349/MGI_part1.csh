@@ -67,7 +67,6 @@ date | tee -a ${LOG}
 ./mld.csh | tee -a $LOG 
 
 date | tee -a ${LOG}
-${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 ./mgi.csh | tee -a $LOG 
 
 #
@@ -90,6 +89,7 @@ ${PG_MGD_DBSCHEMADIR}/index/MLD_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/PRB_create.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:

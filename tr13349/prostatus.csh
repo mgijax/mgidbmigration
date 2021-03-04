@@ -101,6 +101,13 @@ and not exists (select 1 from bib_workflow_status ss
         where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
+select count(s.*)
+from bib_workflow_status s
+where s.isCurrent = 1
+and s._group_key = 78678148
+and s._status_key = 31576669
+;
+
 select c._refs_key, c.mgiID, c.jnumid, c.pubmedid,
 tg.term as tgterm, ts.term as tsterm, c.short_citation
 from bib_citation_cache c, bib_workflow_tag g, voc_term tg, bib_workflow_status s, voc_term ts

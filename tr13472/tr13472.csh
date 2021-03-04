@@ -18,7 +18,7 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PYTHON} proteincomplex.py
+${PYTHON} proteincomplex.py | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL

@@ -24,7 +24,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- add new group 'PRO'
---insert into VOC_Term values(nextval('voc_term_seq'), 127, 'PRO', 'PRO', null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 127, 'PRO', 'PRO', null, 6, 0, 1001, 1001, now(), now());
 
 select c._refs_key, c.mgiID, c.jnumid, c.pubmedid,
 tgterm.term as tgterm, c.short_citation
@@ -35,6 +35,8 @@ and tg._tag_key = tgterm._term_key
 order by tgterm, c.short_citation
 ;
 
+-- If reference has tag: "MGI:PRO_used", then set PRO status to: Full Coded 
+-- (tag MGI:PRO_used will no longer be needed and can be deleted)
 --  MGI:PRO_used (31576693) -> Full-coded (31576674)
 insert into BIB_Workflow_Status
 select nextval('bib_workflow_status_seq'), r._refs_key, 
@@ -49,20 +51,8 @@ and not exists (select 1 from bib_workflow_status ss
         where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
---  GO:hjd_PRO_in_progress (51604409) -> Full-coded (31576674)
-insert into BIB_Workflow_Status
-select nextval('bib_workflow_status_seq'), r._refs_key, 
-      (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'), 31576674, 1, 1001, 1001, now(), now()
-from bib_refs r, bib_workflow_status s, bib_workflow_tag tg
-where r._refs_key = s._refs_key
-and s.isCurrent = 1
-and s._group_key = 31576666
-and r._refs_key = tg._refs_key
-and tg._tag_key in (51604409)
-and not exists (select 1 from bib_workflow_status ss 
-        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
-;
-
+-- If reference has tag: "MGI:PRO_selected", then set PRO status to: Chosen 
+-- (tag MGI:PRO_selected will no longer be needed and can be deleted)
 --  MGI:PRO_selected (34693808) -> Chosen (31576671)
 insert into BIB_Workflow_Status
 select nextval('bib_workflow_status_seq'), r._refs_key, 
@@ -77,6 +67,24 @@ and not exists (select 1 from bib_workflow_status ss
         where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
+-- If reference has tag: "GO:hjd_PRO_in_progress", then set PRO status to: Chosen 
+-- (tag GO:hjd_PRO_in_progress will remain in the database and associated with existing papers)
+--  GO:hjd_PRO_in_progress (51604409) -> Chosen (31576671)
+insert into BIB_Workflow_Status
+select nextval('bib_workflow_status_seq'), r._refs_key, 
+      (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'), 31576671, 1, 1001, 1001, now(), now()
+from bib_refs r, bib_workflow_status s, bib_workflow_tag tg
+where r._refs_key = s._refs_key
+and s.isCurrent = 1
+and s._group_key = 31576666
+and r._refs_key = tg._refs_key
+and tg._tag_key in (51604409)
+and not exists (select 1 from bib_workflow_status ss 
+        where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
+;
+
+-- Else set PRO status to: Not Routed 
+-- (we do not want papers already in the database to go through PRO secondary triage at this point in time; going forwards is all we want)
 -- rest = 'Not Routed'/31576669
 insert into BIB_Workflow_Status
 select nextval('bib_workflow_status_seq'), r._refs_key, 
@@ -93,6 +101,13 @@ and not exists (select 1 from bib_workflow_status ss
         where r._refs_key = ss._refs_key and ss._group_key = (select _term_key from voc_term where _vocab_key = 127 and abbreviation = 'PRO'))
 ;
 
+select count(s.*)
+from bib_workflow_status s
+where s.isCurrent = 1
+and s._group_key = 78678148
+and s._status_key = 31576669
+;
+
 select c._refs_key, c.mgiID, c.jnumid, c.pubmedid,
 tg.term as tgterm, ts.term as tsterm, c.short_citation
 from bib_citation_cache c, bib_workflow_tag g, voc_term tg, bib_workflow_status s, voc_term ts
@@ -101,12 +116,13 @@ and g._tag_key in (34693808,31576693,51604409)
 and g._tag_key = tg._term_key
 and c._refs_key = s._refs_key
 and s.isCurrent = 1
-and s._group_key = 75601866
+and s._group_key = 78678148
 and s._status_key = ts._term_key
 order by c._refs_key, tgterm, c.short_citation
 ;
 
 -- delete MGI:PRO tags
+--delete from bib_workflow_tag where _tag_key in (34693808, 31576693);
 --delete from voc_term where _term_key in (34693808, 31576693);
 
 EOSQL

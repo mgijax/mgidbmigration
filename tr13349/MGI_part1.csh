@@ -101,7 +101,6 @@ echo 'running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 
@@ -115,13 +114,18 @@ date | tee -a ${LOG}
 date | tee -a ${LOG}
 ./journal.csh | tee -a $LOG 
 
+date | tee -a ${LOG}
+./prostatus.csh | tee -a $LOG 
+
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
+
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-date | tee -a ${LOG}
-echo 'data cleanup' | tee -a $LOG
+#date | tee -a ${LOG}
+#echo 'data cleanup' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
 #
 # rebuild the java dla, if needed due to schema changes

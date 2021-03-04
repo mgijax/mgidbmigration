@@ -65,7 +65,7 @@ ${PUBMED2GENELOAD}/bin/pubmed2geneload.sh | tee -a $LOG
 date | tee -a ${LOG}
 echo 'Run Homology Loads' | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
-${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusterload.config
+${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusteredload.config
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

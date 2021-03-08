@@ -62,8 +62,8 @@ echo 'Run Problem Alignment Sequence Load' | tee -a ${LOG}
 rm -f $DATALOADSOUTPUT/mgi/problemseqsetload/input/lastrun
 ${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
 
-# commented out loads below are awaiting Ensembl and NCBI Gene models and the mgigff file. Once they are ready
-# we can uncommment these loads
+# Sophia says she will not add any MCV til after production release
+# leaving these in and commented out in case she changes her mind. 
 #date | tee -a ${LOG}
 #echo 'Run MCV Vocabulary Load' | tee -a ${LOG}
 #${MCVLOAD}/bin/run_mcv_vocload.sh
@@ -73,14 +73,23 @@ ${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
 #echo 'Run MCV Annotation Load' | tee -a ${LOG}
 #${MCVLOAD}/bin/mcvload.sh
 
-# DATA: Sophia will test then publish files for GMs and associations
-#date | tee -a ${LOG}
-#echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}
-#${GENEMODELLOAD}/bin/genemodelload.sh ensembl
 
-#date | tee -a ${LOG}
-#echo 'Run NCBI Gene Model/Association Load' | tee -a ${LOG}
-#${GENEMODELLOAD}/bin/genemodelload.sh ncbi
+# DATA: Sophia will test  on test server then we run:
+date | tee -a ${LOG}
+echo 'Copying  ensembl input files from production' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copydownloads.csh ensembl
+
+date | tee -a ${LOG}
+echo 'Copying  ncbi input files from production' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copydownloads.csh ncbi
+
+date | tee -a ${LOG}
+echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/genemodelload.sh ensembl
+
+date | tee -a ${LOG}
+echo 'Run NCBI Gene Model/Association Load' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/genemodelload.sh ncbi
 
 # DATA: curators will prepare and publish files. script to catenate files into
 # one file and QC as a whole then publish if QC successful

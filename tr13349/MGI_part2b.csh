@@ -77,11 +77,11 @@ ${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
 # DATA: Sophia will test  on test server then we run:
 date | tee -a ${LOG}
 echo 'Copying  ensembl input files from production' | tee -a ${LOG}
-${GENEMODELLOAD}/bin/copydownloads.csh ensembl
+${GENEMODELLOAD}/bin/copydownloads.sh ensembl
 
 date | tee -a ${LOG}
 echo 'Copying  ncbi input files from production' | tee -a ${LOG}
-${GENEMODELLOAD}/bin/copydownloads.csh ncbi
+${GENEMODELLOAD}/bin/copydownloads.sh ncbi
 
 date | tee -a ${LOG}
 echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}

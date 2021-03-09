@@ -40,7 +40,14 @@ switch (`uname -n`)
     case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
         echo 'mirror files/copy from production' | tee -a $LOG
-        scp bhmgiapp01:/data/downloads/download.alliancegenome.org/3.2.0/ORTHOLOGY-ALLIANCE/COMBINED/ORTHOLOGY-ALLIANCE_COMBINED_37.tsv /data/downloads/download.alliancegenome.org/3.2.0/ORTHOLOGY-ALLIANCE/COMBINED/
+	${MIRROR_WGET}/download_package alliancegenome.org.orthology
+	${MIRROR_WGET}/download_package purl.obolibrary.org.pr
+	${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
+	${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+	${MIRROR_WGET}/download_package ftp.geneontology.org.goload
+	${MIRROR_WGET}/download_package snapshot.geneontology.org.goload
+	${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua
+
         breaksw
 endsw
 
@@ -66,6 +73,10 @@ date | tee -a ${LOG}
 echo 'Run Homology Loads' | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
 ${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusteredload.config
+
+date | tee -a ${LOG}
+echo 'Run go loads - some updated to use Alliance homology' | tee -a ${LOG}
+${GOLOAD}/go.sh | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

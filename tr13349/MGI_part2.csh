@@ -71,8 +71,8 @@ ${PUBMED2GENELOAD}/bin/pubmed2geneload.sh | tee -a $LOG
 #  DATA: copied from production /data/downloads above
 date | tee -a ${LOG}
 echo 'Run Homology Loads' | tee -a ${LOG}
-${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
-${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusteredload.config
+${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config | tee -a $LOG || exit 1
+${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusteredload.config | tee -a $LOG || exit 1
 
 date | tee -a ${LOG}
 echo 'Run go loads - some updated to use Alliance homology' | tee -a ${LOG}

@@ -26,6 +26,10 @@ echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG
 echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
 echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
+# remove existing reports
+rm -rf ${QCREPORTDIR}/output/*
+rm -rf ${PUBREPORTDIR}/output/*
+
 ###------------------------------###
 ###--- MGI Marker feed report ---###
 ###------------------------------###

@@ -85,7 +85,7 @@ ${GENEMODELLOAD}/bin/copydownloads.sh ncbi
 
 date | tee -a ${LOG}
 echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}
-rm -f $DATALOADSOUTPUT/mgi/genemodelload/input/ENSEMBL.lastrun
+rm -f $DATALOADSOUTPUT/mgi/genemodelload/input/Ensembl.lastrun
 ${GENEMODELLOAD}/bin/genemodelload.sh ensembl
 
 date | tee -a ${LOG}

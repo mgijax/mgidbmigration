@@ -99,6 +99,10 @@ where a._mgitype_key = 39
 and not exists (select 1 from mrk_cluster s where a._object_key = s._cluster_key)
 ;
 
+-- remove obsolete _mgitype_key = ('GXD_Index', 'Orthology')
+delete from acc_mgitype where _mgitype_key in (17,18)
+;
+
 EOSQL
 
 # obsolete reports

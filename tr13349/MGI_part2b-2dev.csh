@@ -4,20 +4,22 @@
 # Build 39 Loads
 # part 2b-2
 #
-# * copy input files for this and all other 2b parts
-# * run problemseqsetload - this will inform mgigff3
-# * run mrkcoordload, this will load coordinates for whatever collections are
+# * 8d run problemseqsetload it may have changed since 2b-1 - this will inform mgigff3
+# * 9d run mrkcoordload, this will load coordinates for whatever collections are
 #    present in /data/mrkcoord/current and SHOULD INCLUDE gff3blat collection 
 #    output of the mgigff3 run in 2b-1
-# * run gene trap coordinate load
-# * run some cacheloads that alomrkload needs
-# * run alomrkload
-# * run mgigff3 refresh - this will generate the gff3blat coordinate file is
+# * 10a run some cacheloads that alomrkload needs
+# * 11a run gene trap coordinate load
+# * 11g run alomrkload
+# * 11b run mgigff3 refresh - this will generate the gff3blat coordinate file is
 #     input for strainmarkerload (run from straingenemodelload)
-# * run straingenemodelload
-# * run rnaseqload
-# * run mouse entrezgene load
-# * run uniprotload
+# * 11c/d run straingenemodelload
+# * no point in running refseqload, there will be no seqs to load til the next saturday
+# * 12 run mouse entrezgene load
+# * 12 run uniprotload
+# * 11e run molecular notes updates
+# * 11f run variant coordinate updates
+#
 # BEFORE adding a call to a load in this script
 # . Delete any "lastrun" files that may exist in the "input" directory
 # . Copy any new /data/downloads files OR run mirror_wget package, if necessary
@@ -96,11 +98,6 @@ date | tee -a ${LOG}
 echo 'Run Marker/Coordinate Load' | tee -a $LOG
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
-# DATA: is configured and is in a TR directory
-date | tee -a ${LOG}
-echo 'Run Gene Trap Coordinate Load' | tee -a ${LOG}
-${GTCOORDLOAD}/bin/gtcoordload.sh
-
 # seqmarker.csh, seqcoord.csh, mrklocation.csh must be run before alomrkload.sh
 # run alomrkload only after the genemodel and marker coordinates have been 
 # updated
@@ -116,6 +113,11 @@ ${SEQCACHELOAD}/seqcoord.csh
 date | tee -a ${LOG}
 echo 'Run Marker/Location Cache Load' | tee -a ${LOG}
 ${MRKCACHELOAD}/mrklocation.csh
+
+# DATA: is configured and is in a TR directory
+date | tee -a ${LOG}
+echo 'Run Gene Trap Coordinate Load' | tee -a ${LOG}
+${GTCOORDLOAD}/bin/gtcoordload.sh
 
 # DATA: is from the database
 date | tee -a ${LOG}
@@ -133,6 +135,7 @@ echo 'run mgigff3 using the new gene models' | tee -a $LOG
 #echo 'Run Strain Gene Model Load' | tee -a ${LOG}
 #${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh
 
+#3/15 Richard's spreadsheet does not reflect running rnaseqload
 # DATA: data is on bhmgiapp14ld and bhmgiap09lt - it needs to be downloaded
 # on bhmgidevapp01 before the build.
 # load is configured to NOT check the MGI_Set - just drop and reload existing
@@ -154,12 +157,6 @@ ${EGLOAD}/bin/egload.sh
 date | tee -a ${LOG}
 echo 'Run UniProt Load' | tee -a ${LOG}
 ${UNIPROTLOAD}/bin/uniprotload.sh
-
-# This recreates the location notes that were deleted in part 1
-# DATA: From TR directory
-#date | tee -a ${LOG}
-#echo 'Run Location Note Load in incremental mode'| tee -a ${LOG}
-#${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/LocationNotes/location.config
 
 # This creates noteload file by parsing the parsed notes file with new coordinates added in last two
 # columns

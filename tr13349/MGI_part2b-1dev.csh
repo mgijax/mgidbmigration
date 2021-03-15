@@ -1,19 +1,16 @@
 #!/bin/csh -fx
 
 # Build 39 Loads
-# part 2b-1
-#
+# part 2b-1dev
+# * assumes migration part 1 has been done 7a
 # * copy input files for this and all other 2b parts
-# * Run ensembl and ncbi genemodelload using Sophia's B39* files
-# ** associations
+# * 7b. Run ensembl and ncbi genemodelload using Sophia's B39* files
 # ** gene models
-# * run mrkcoordload, this will load coordinates for whatever collections are
-# *    present in /data/mrkcoord/current
-# * run tssgenelod since tss genes have been available since last fall they will be 
-#     loaded by the mrkcoordload step 
-# * run mgigff3blat - this will generate the gff3blat coordinate file that Sophia may edit
-#    then put in the current directory
-#
+# ** marker associations
+# * There is a set already defined, so run problemseqsetload to inform mgigff3
+# * 8a. run mgigff3 refresh - this will generate the gff3blat coordinate file that Sophia may edit
+#    then put in the /data/mrkcoord/current directory
+# * once gff3blat file in place and, if applicable, 8b problemseqsetload published run db-2dev
 #
 # BEFORE adding a call to a load in this script:
 # . Delete any "lastrun" files that may exist in the "input" directory
@@ -117,36 +114,10 @@ date | tee -a ${LOG}
 echo 'Run Caches' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/runGeneModelCache.sh
 
-# Sophia must verify and put gff3blat file in /data/mrkcoord/current
-#
-# DATA: curators will prepare and publish files. script to catenate files into
-# one file and QC as a whole then publish if QC successful
-date | tee -a ${LOG}
-echo 'Run Marker/Coordinate Load Prep' | tee -a $LOG
-./mrkcoordload_prep.sh
-set STAT=$?
-echo "STAT: $STAT"
-
-if ( $STAT == 1 ) then
-    echo "mrkcoordload_prep.sh failed"
-    exit 1
-endif
-
-# DATA: run on data catenated, qc'd and published from above mrkcoordload_prep.sh
-# the data here will be anything that Paul is working on (not gff3blat it comes later)
-date | tee -a ${LOG}
-echo 'Run Marker/Coordinate Load' | tee -a $LOG
-${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
-
-# DATA: is from the database
-date | tee -a ${LOG}
-echo 'run tss gene load' | tee -a $LOG
-${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
-
 # DATA: uses database and files that it downloads
 date | tee -a ${LOG}
 echo 'run mgigff3 using the new gene models' | tee -a $LOG
 /usr/local/mgi/live/mgigff3/bin/refresh
 
 date | tee -a ${LOG}
-echo '--- finished part 2b-1' | tee -a ${LOG}
+echo '--- finished part 2b-1dev' | tee -a ${LOG}

@@ -63,6 +63,10 @@ drop table radar.DP_HomoloGene;
 
 EOSQL
 
+# drop/recreate because we removed "ALTER TABLE radar.DP_HomoloGene DROP CONSTRAINT DP_HomoloGene_geneID_fkey CASCADE"
+${PG_RADAR_DBSCHEMADIR}/key/DP_EntrezGene_Info_drop.object
+${PG_RADAR_DBSCHEMADIR}/key/DP_EntrezGene_Info_create.object
+
 date | tee -a ${LOG}
 # delete coordinate collections RIKEN, MGI, miRBase, GtRNAdb, ePCR BLAST, 
 # UniSTS, Tom Sproule, UCSC, MGI_Curation, djr

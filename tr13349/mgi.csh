@@ -114,6 +114,7 @@ EOSQL
 
 # obsolete reports
 rm -rf ${QCREPORTDIR}/output/WF_AP_Routed.rpt
-
+rm -rf ${QCREPORTDIR}/output/MRK_Homology_Class2.rpt
+rm -rf ${QCREPORTDIR}/output/MRK_Homology_Class3.rpt
 date |tee -a $LOG
 

@@ -161,9 +161,11 @@ echo 'run mgigff3 using the new gene models' | tee -a $LOG
 #echo 'Run Strain Gene Model Load' | tee -a ${LOG}
 #${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh
 
+#3/15 per Richard, we won't run this now, but configure to reload all experiments
+# next project when we add more data
 # DATA: data is on bhmgiapp14ld and bhmgiap09lt - it needs to be downloaded
 # on bhmgidevapp01 before the build.
-# load is configured to NOT check the MGI_Set - just drop and reload existing
+# if we run this then set LOAD_MODE="test" to NOT check the MGI_Set - just drop and reload existing
 # experiments
 #date | tee -a ${LOG}
 #echo 'Run RNA Sequence Load' | tee -a ${LOG}

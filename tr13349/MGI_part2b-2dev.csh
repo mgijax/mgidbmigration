@@ -97,6 +97,11 @@ date | tee -a ${LOG}
 echo 'Run Marker/Coordinate Load' | tee -a $LOG
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
+# DATA: is from the database
+ date | tee -a ${LOG}
+ echo 'run tss gene load' | tee -a $LOG
+ ${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
+
 # seqmarker.csh, seqcoord.csh, mrklocation.csh must be run before alomrkload.sh
 # run alomrkload only after the genemodel and marker coordinates have been 
 # updated

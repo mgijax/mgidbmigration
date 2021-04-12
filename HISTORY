@@ -1,3 +1,10 @@
+TAG: mgidbmigration-6-0-16-11
+DATE: 04/07/2021
+STAFF: lec
+CHANGES:
+TR13489/Include additional properties in comments in MGI GO-CAM import file
+tr13272/go_cam_GO_gene_association.py
+
 TAG: mgidbmigration-6-0-16-10
 DATE: 03/04/2021
 STAFF: lec

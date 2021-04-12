@@ -431,7 +431,8 @@ def doSetup():
             and p._PropertyTerm_key = t._Term_key
             and t.term in ('noctua-model-id', 'model-state', 
                 'has_participant', 'regulates_o_has_participant',
-                'text'
+                'text', 
+                'anatomy', 'cell type', 'target', 'external ref', 'evidence'
                 )
             ''', 'auto')
     for r in results:
@@ -454,6 +455,8 @@ def doSetup():
                 value = 'comment=' + value
         elif term in ('has_participant', 'regulates_o_has_participant'):
                 value = 'comment=' + term + '(' + value + ')'
+        elif term in ('anatomy', 'cell type', 'target', 'external ref', 'evidence'):
+                value = 'comment=' + term + ' ' + value
 
         if key not in gpadCol12Lookup:
             gpadCol12Lookup[key] = []

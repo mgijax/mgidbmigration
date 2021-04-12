@@ -1,4 +1,4 @@
-The top-level wrapper scripts
+Descriptions of the top-level wrapper scripts
 # This script runs both B39 and project database migration
 1. MGI_part1.csh >& MGI_part1.csh.out
 
@@ -21,14 +21,14 @@ The top-level wrapper scripts
 # This is our standard part 4 which runs all the reports
 6. MGI_part4.csh >& MGI_part4.csh.out
 
-Development migration bhmgiapp14ld.scrumdog --> mgi-testdb4.scrumdog
-MGI_part2b-1dev.csh:
+Development migration scrumdog bhmgiapp14ld --> mgi-testdb4.scrumdog
+For MGI_part2b-1dev.csh:
     1. Sophia need to update GM or Assoc files in TR directory?
     2. Configure Genemodelload to load GMs - done as long as you don't
         cp genemodelload.config.default genemodelload.config
     3. Sophia need to review mgigff3 output? (to update problem seq set and/or
         gff3blat coord file?, if so publish)
-MGI_part2b-1dev.csh:
+For MGI_part2b-2dev.csh:
     1. Sophia need to review mgigff3 output? (to update problem seq set and/or
         gff3blat file?, if so publish)
     2. If we have non-gene coords (Paul's remap files), uncomment straingenemodelload
@@ -37,20 +37,31 @@ MGI_part2b-1dev.csh:
 Run:
     1. MGI_part1.csh >& MGI_part1.csh.out
     2. MGI_part2.csh >& MGI_part2.csh.out
-    3. MGI_part2b-1dev.csh >& MGI_part2b-1dev.csh.out
-    4. MGI_part2b-2dev.csh >& MGI_part2b-2dev.csh.out
+    3. IF Sophia NEEDS TO REVIEW mgigff3 output - if she updates problem seq set, she should publish, if she needs to
+        update gff3blat coordinate file, she should place in /data/mrkcoord/current
+        3a. MGI_part2b-1dev.csh >& MGI_part2b-1dev.csh.out
+        3b. If Sophia updates problem seq set, she should publish, if she needs to
+            update gff3blat coordinate file, she should place in /data/mrkcoord/current
+        3c. run MGI_part2b-2dev.csh >& MGI_part2b-2dev.csh.out
+    4. If Sophia DOES NOT NEED TO REVIEW mgigff3 output, etc.
+        Run MGI_part2b.csh >& MGI_part2b.csh.out - this script runs everything in 2b-1dev and 2b-2dev and eliminates a second
+        mgigff3/refresh call
     5. MGI_part3.csh >& MGI_part3.csh.out
     6. MGI_part4.csh >& MGI_part4.csh.out
 
-Alpha migration on TEST
-MGI_part2b.csh: 
+Alpha migration on TEST bhmgidevapp01 --> bhmgidevdb01.prod
+For MGI_part2b.csh: 
     1. If we have non-gene coords (Paul's remap files), uncomment straingenemodelload
-    2. Do we have molecular note coordinates? if yes uncomment.
-    3. Do we have variant coordinates? If yes uncomment.
-    4. tag/install mgidbmigration
-    5. Sophia publish problem seq set file
-    6. Sophia need to update GM or Assoc files in TR directory?
-    7. Dave Configure Genemodelload to load GMs
+    2. If we have molecular note coords (Paul's remap file), uncomment mginoteload
+    3. If we have variant coord file (Paul's remap file), uncomment update_variant_coords.csh
+    4. rm call to snpcacheload
+    5. tag/install mgidbmigration
+    6. copy riken and gff3blat files from bhmgiapp14ld:/data/mrkcoord/current to bhmgidevapp01:/data/mrkcoord/current
+    7. If we have non-gene coords (Paul's remap files), copy all files from bhmgiapp14ld:/data/mrkcoord/current to bhmgidevapp
+01:/data/mrkcoord/current
+    8. Sophia publish problem seq set file
+    9. Sophia need to update GM or Assoc files in TR directory?
+    10. Dave Configure Genemodelload to load GMs
 Run:
     1. MGI_part1.csh >& MGI_part1.csh.out
     2. MGI_part2.csh >& MGI_part2.csh.out
@@ -59,15 +70,16 @@ Run:
     5. MGI_part4.csh >& MGI_part4.csh.out
 
 Production migration:
-MGI_part2b.csh:
+For MGI_part2b.csh:
     1. rm two calls to copydownloads.sh ensembl and copyinputs.sh ncbi
-    2. there are calls to ${GENEMODELLOAD}/bin/copyinputs.sh in this script for both ensembl and ncbi
+    2. Note: there are calls to ${GENEMODELLOAD}/bin/copyinputs.sh in this script for both ensembl and ncbi that need to run
     3. tag/install mgidbmigration with MGI_part3.csh change below
-    3. Sophia publish problem seq set file
-    4. Dave Configure Genemodelload to load GMs
+    4. copy riken and gff3blat files from bhmgiapp14ld:/data/mrkcoord/current to bhmgiapp01:/data/mrkcoord/current
+    5. If we have non-gene coords (Paul's remap files), copy all files from bhmgiapp14ld:/data/mrkcoord/current to bhmgiapp01:/data/mrkcoord/current
+    6. Sophia publish problem seq set file
+    7. Dave Configure Genemodelload to load GMs
 
-MGI_Part3.csh:
-    1. rm call to snpcacheload
+For MGI_Part3.csh:
 Run:
     1. MGI_part1.csh >& MGI_part1.csh.out
     2. MGI_part2.csh >& MGI_part2.csh.out

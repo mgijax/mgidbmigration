@@ -63,6 +63,7 @@ echo 'Load SNP/Marker Cache table' | tee -a ${LOG}
 # This is running in out of sync mode - we need to remove this
 # before Alpha as this generally is run from the public data
 # generation pipeline
+# REMOVE PRIOR TO ALPHA
 ${SNPCACHELOAD}/snpmarker.sh
 
 date | tee -a ${LOG}

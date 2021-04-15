@@ -31,7 +31,7 @@ For MGI_part2b-1dev.csh:
 For MGI_part2b-2dev.csh:
     1. Sophia need to review mgigff3 output? (to update problem seq set and/or
         gff3blat file?, if so publish)
-    2. If we have non-gene coords (Paul's remap files), uncomment straingenemodelload
+    2. If we have non-gene coords (Paul's remap files), uncomment straingenemodelload, and config to load B6 and MGP:B6_ONLY=false
     3. if we have molecular note coords (Paul's remap file), uncomment mginoteload
     4. If we have variant coord file (Paul's remap file), uncomment update_variant_coords.csh
 Run:
@@ -51,7 +51,7 @@ Run:
 
 Alpha migration on TEST bhmgidevapp01 --> bhmgidevdb01.prod
 For MGI_part2b.csh: 
-    1. If we have non-gene coords (Paul's remap files), uncomment straingenemodelload
+    1. If we have non-gene coords (Paul's remap files), uncomment straingenemodelload and config to load B6 and MGP:B6_ONLY=false
     2. If we have molecular note coords (Paul's remap file), uncomment mginoteload
     3. If we have variant coord file (Paul's remap file), uncomment update_variant_coords.csh
     4. tag/install mgidbmigration

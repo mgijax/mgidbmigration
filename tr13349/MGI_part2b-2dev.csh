@@ -137,6 +137,7 @@ echo 'run mgigff3 using the new gene models' | tee -a $LOG
 # DATA: is from mgigff3 file it is fetched from ${FTPROOT}/pub/mgigff3/MGIlgff3.gz
 date | tee -a ${LOG}
 echo 'Run Strain Gene Model Load' | tee -a ${LOG}
+rm -f ${DATALOADSOUTPUT}/mgi/strainmarkerload/output/lastrun
 ${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh
 
 #3/15 per Richard, we won't run this now, but configure to reload all experiments

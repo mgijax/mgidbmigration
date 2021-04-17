@@ -196,9 +196,9 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 
 # Update the variant coordinates to B39
 # DATA: From file provided by Paul ( he starts with the output of variant_coords.csh - variant_coords.rpt)
-#date | tee -a ${LOG}
-#echo 'Run Variant Coordinate  update' | tee -a ${LOG}
-#/mgi/all/wts_projects/13300/13349/Build39/Variants/coord_updates/update_variant_coords.csh | tee -a $LOG
+date | tee -a ${LOG}
+echo 'Run Variant Coordinate  update' | tee -a ${LOG}
+/mgi/all/wts_projects/13300/13349/Build39/Variants/coord_updates/update_variant_coords.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2b' | tee -a ${LOG}

@@ -168,9 +168,9 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 # columns
 # DATA: From file provided by Paul (he starts with output from parse_molecular_notes.csh
 # 
-#date | tee -a ${LOG}
-#echo 'Run Molecular note load'| tee -a ${LOG}
-#${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
+date | tee -a ${LOG}
+echo 'Run Molecular note load'| tee -a ${LOG}
+${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
 
 # Update the variant coordinates to B39
 # DATA: From file provided by Paul ( he starts with the output of variant_coords.csh - variant_coords.rpt)

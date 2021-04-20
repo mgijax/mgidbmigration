@@ -135,9 +135,10 @@ echo 'run mgigff3 using the new gene models' | tee -a $LOG
 /usr/local/mgi/live/mgigff3/bin/refresh
 
 # DATA: is from mgigff3 file it is fetched from ${FTPROOT}/pub/mgigff3/MGIlgff3.gz
-#date | tee -a ${LOG}
-#echo 'Run Strain Gene Model Load' | tee -a ${LOG}
-#${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh
+date | tee -a ${LOG}
+echo 'Run Strain Gene Model Load' | tee -a ${LOG}
+rm -f ${DATALOADSOUTPUT}/mgi/strainmarkerload/output/lastrun
+${STRAINGENEMODELLOAD}/bin/straingenemodelload.sh
 
 #3/15 per Richard, we won't run this now, but configure to reload all experiments
 # next project when we add more data
@@ -167,15 +168,15 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 # columns
 # DATA: From file provided by Paul (he starts with output from parse_molecular_notes.csh
 # 
-#date | tee -a ${LOG}
-#echo 'Run Molecular note load'| tee -a ${LOG}
-#${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
+date | tee -a ${LOG}
+echo 'Run Molecular note load'| tee -a ${LOG}
+${NOTELOAD}/mginoteload.csh /mgi/all/wts_projects/13300/13349/Build39/MolecularNotes/molecularnote.config
 
 # Update the variant coordinates to B39
 # DATA: From file provided by Paul ( he starts with the output of variant_coords.csh - variant_coords.rpt)
-#date | tee -a ${LOG}
-#echo 'Run Variant Coordinate  update' | tee -a ${LOG}
-#/mgi/all/wts_projects/13300/13349/Build39/Variants/coord_updates/update_variant_coords.csh | tee -a $LOG
+date | tee -a ${LOG}
+echo 'Run Variant Coordinate  update' | tee -a ${LOG}
+/mgi/all/wts_projects/13300/13349/Build39/Variants/coord_updates/update_variant_coords.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2b-2' | tee -a ${LOG}

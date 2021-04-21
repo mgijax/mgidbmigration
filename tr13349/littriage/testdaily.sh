@@ -8,6 +8,10 @@ source ${MGICONFIG}/master.config.csh
 
 cd `dirname $0`
 
+#setenv LOG $0.log
+#rm -rf $LOG
+#touch $LOG
+
 #dumpTableData.csh mgi-testdb4 lec mgd BIB_Workflow_Relevance /home/mgi/dataload/littriageload-trunk/bin/BIB_Workflow_Relevance.bcp "|"
 #dumpTableData.csh mgi-testdb4 lec mgd BIB_Workflow_Status /home/mgi/dataload/littriageload-trunk/bin/BIB_Workflow_Status.bcp "|"
 

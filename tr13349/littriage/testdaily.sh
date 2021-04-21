@@ -20,6 +20,8 @@ rm -rf lit*/*
 
 ${LITTRIAGELOAD}/bin/littriageload.sh
 
+${$PUBMED2GENELOAD}/bin/pubmed2geneload.sh
+
 cd ${MGI_LIVE}/dataload/littriageload-trunk/bin
 testRelevance.sh
 testStatus.sh

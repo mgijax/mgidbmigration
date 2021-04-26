@@ -1,3 +1,10 @@
+TAG: mgidbmigration-6-0-16-12
+DATE: 04/26/2021
+STAFF: lec
+CHANGES:
+b39-467/adjustment needed to 'complete' in GO EI (TR13354)
+added : wts2-526
+
 TAG: mgidbmigration-6-0-16-11
 DATE: 04/07/2021
 STAFF: lec

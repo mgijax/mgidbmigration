@@ -9,6 +9,7 @@ select m._marker_key, m.symbol, a.accID
 from go_tracking gt, mrk_marker m, acc_accession a
 where gt._completedby_key is not null
 and gt._marker_key = m._marker_key
+and m._marker_type_key in (1, 7)
 and gt._marker_key = a._object_key
 and a._mgitype_key = 2
 and a._logicaldb_key = 1

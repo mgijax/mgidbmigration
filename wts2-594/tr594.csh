@@ -1,9 +1,15 @@
 #!/bin/csh -f
 
 #
-# Template
+# gxd_genotype._genotype_key
+# change 1 to 3
+# change -1 to 1
+# change -2 to 2
 #
-
+# prb_strain
+# change -1 to 1
+# change -2 to 2
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig

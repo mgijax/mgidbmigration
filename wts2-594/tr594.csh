@@ -19,6 +19,9 @@ touch $LOG
  
 date | tee -a $LOG
  
+${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
+wc -l ${PUBREPORTDIR}/output/mgimarkerfeed/genotype.bcp ${PUBREPORTDIR}/output/mgimarkerfeed/strain.bcp
+
 ${MGD_DBSCHEMADIR}/table/GXD_Expression_truncate.object 
 ${MGD_DBSCHEMADIR}/table/MRK_DO_Cache_truncate.object 
 
@@ -404,6 +407,9 @@ EOSQL
 
 ${MGICACHELOAD}/gxdexpression.csh
 ${MRKCACHELOAD}/mrkdo.csh
+
+${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
+wc -l ${PUBREPORTDIR}/output/mgimarkerfeed/genotype.bcp ${PUBREPORTDIR}/output/mgimarkerfeed/strain.bcp
 
 date |tee -a $LOG
 

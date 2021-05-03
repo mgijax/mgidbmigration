@@ -1,3 +1,17 @@
+TAG: mgidbmigration-6-0-16-15
+TAG: mgidbmigration-6-0-16-14
+DATE: 04/29/2021
+STAFF: lec
+CHANGES:
+wts2-594/change -1/-2 primary keys to 1/2
+
+TAG: mgidbmigration-6-0-16-13
+TAG: mgidbmigration-6-0-16-12
+DATE: 04/26/2021
+STAFF: lec
+CHANGES:
+wts2-526/b39-467/adjustment needed to 'complete' in GO EI (TR13354)
+
 TAG: mgidbmigration-6-0-16-11
 DATE: 04/07/2021
 STAFF: lec

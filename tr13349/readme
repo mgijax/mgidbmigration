@@ -79,6 +79,7 @@ For MGI_part2b.csh:
     1. straingenemodelload configure to load B6 and MGP: B6_ONLY=false
     2. genemodelload configure to reload genemodels RELOAD_GENEMODELS=true
     3. rm two calls to copydownloads.sh ensembl/ncbi, tag/install mgidbmigration
+    3b. rm scp from prod
     4. Note: there are calls to ${GENEMODELLOAD}/bin/copyinputs.sh in this 
         script for both ensembl and ncbi that need to run
     5. copy from bhmgiapp14ld:/data/mrkcoord/current to 

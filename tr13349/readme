@@ -55,18 +55,19 @@ For MGI_part2b.csh:
     2. genemodelload configure to reload genemodels RELOAD_GENEMODELS=true
     3. tag/install mgidbmigration
     4. copy from bhmgiapp14ld:/data/mrkcoord/current to 
-            bhmgidevapp01:/data/mrkcoord/current
+            bhmgidevapp01:/data/mrkcoord/current - sc done 5/10
         a) blat.c4am_Load.txt
         b) DNA_Segments_with_PrimerPairs_39.txt
         c) FANTOM5_C4AM.txt
         d) mgi_collection_coords_39.txt
         e)  MGI_non-Gene_non-Pseudogene_39.txt
-    5. Sophia publish problem seq set file
-    6. Sophia need to update GM or Assoc files in TR directory?
+    5. copy problem seq set file from scrum server - added to the migration - directory won't exist til Dave does installs
+    6. We are going with what Sophia currently has for GMs/Assocs in the TR directories. Genemodelload
+        is configured to those directories on the branch TR 13291/NCBI TRi 13291/ENSEMBL
 
 For MGI_Part3.csh:
     1. rm call to snpcacheload, this is run on different server on test and prod
-    2. configure snpcacheload to out of sync mode
+    2. configure snpcacheload to out of sync mode, this has been done on the branch Configuration.default
 
 Run:
     1. MGI_part1.csh >& MGI_part1.csh.out

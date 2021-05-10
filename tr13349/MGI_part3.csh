@@ -64,7 +64,7 @@ echo 'Load SNP/Marker Cache table' | tee -a ${LOG}
 # before Alpha as this generally is run from the public data
 # generation pipeline
 # REMOVE PRIOR TO ALPHA
-${SNPCACHELOAD}/snpmarker.sh
+#${SNPCACHELOAD}/snpmarker.sh
 
 date | tee -a ${LOG}
 echo '--- finished part 3' | tee -a $LOG

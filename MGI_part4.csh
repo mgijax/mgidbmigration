@@ -27,8 +27,8 @@ echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG
 echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
 
 # remove existing reports
-rm -rf ${QCREPORTDIR}/output/*
-rm -rf ${PUBREPORTDIR}/output/*
+rm -f ${QCREPORTDIR}/output/*
+rm -f ${PUBREPORTDIR}/output/*
 
 ###------------------------------###
 ###--- MGI Marker feed report ---###

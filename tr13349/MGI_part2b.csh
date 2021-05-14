@@ -59,6 +59,9 @@ endsw
 # copy the problemseqset file from scrum server - we will use this for alpha and for release.
 scp bhmgiapp14ld:/data/loads/mgi/problemseqsetload/input/problemseqsetload.txt /data/loads/mgi/problemseqsetload/input/problemseqsetload.txt
 
+# copy the gene trap master gff file
+ scp bhmgiapp14ld:/data/downloads/ftp.ncbi.nih.gov/gtblatpipeline/output/best_blat_hits_single_Gbrowse.master.gff /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline/output/best_blat_hits_single_Gbrowse.master.gff
+
 # DATA: Sophia publishes the file on the server scrum, test, prod
 date | tee -a ${LOG}
 echo 'Run Problem Alignment Sequence Load' | tee -a ${LOG}

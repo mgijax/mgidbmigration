@@ -17,9 +17,9 @@ cd `dirname $0`
 
 cd ${DATALOADSOUTPUT}/mgi/littriageload
 rm -rf lec.tar
-scp bhmgiapp01:/data/loads/mgi/littriageload/lec.tar .
+scp bhmgiapp01:/data/loads/mgi/littriageload/input.tar .
 cd input
-tar -xvf ../lec.tar
+tar -xvf ../input.tar
 rm -rf lit*/*
 
 ${LITTRIAGELOAD}/bin/littriageload.sh

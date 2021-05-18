@@ -24,15 +24,13 @@ rm -rf lit*/*
 
 ${LITTRIAGELOAD}/bin/littriageload.sh
 
-${$PUBMED2GENELOAD}/bin/pubmed2geneload.sh
+${PUBMED2GENELOAD}/bin/pubmed2geneload.sh
 
-cd ${MGI_LIVE}/dataload/littriageload-trunk/bin
-testRelevance.sh
-testStatus.sh
+cd ${MGI_LIVE}/dbutils/mgidbmigration/littriage
+./testRelevance.sh
+./testStatus.sh
 cp testRelevance.sh.log ${DATALOADSOUTPUT}/mgi/littriageload/output
 cp testStatus.sh.log ${DATALOADSOUTPUT}/mgi/littriageload/output
-cp ${DATALOADSOUTPUT}/mgi/littriageload/output/* ${DATALOADSOUTPUT}/mgi/littriageload/output
-cp ${DATALOADSOUTPUT}/mgi/littriageload/logs/* ${DATALOADSOUTPUT}/mgi/littriageload/logs
 
 cd ${MGI_LIVE}/qcreports_db
 source ./Configuration

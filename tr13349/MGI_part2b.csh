@@ -130,14 +130,9 @@ date | tee -a ${LOG}
 echo 'Run Marker/Coordinate Load' | tee -a $LOG
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
-# DATA: is from the database
-date | tee -a ${LOG}
-echo 'run tss gene load' | tee -a $LOG
-${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
-
 # seqmarker.csh, seqcoord.csh, mrklocation.csh must be run before alomrkload.sh
 # and mgigff3. Run them only after the genemodel and marker coordinates have 
-# been updated
+# been updated. Also must be run before tssgeneload!!
 
 date | tee -a ${LOG}
 echo 'Run Sequence/Marker Cache Load' | tee -a ${LOG}
@@ -155,6 +150,11 @@ ${MRKCACHELOAD}/mrklocation.csh
 date | tee -a ${LOG}
 echo 'Run Gene Trap Coordinate Load' | tee -a ${LOG}
 ${GTCOORDLOAD}/bin/gtcoordload.sh
+
+# DATA: is from the database
+date | tee -a ${LOG}
+echo 'run tss gene load' | tee -a $LOG
+${TSSGENELOAD}/bin/tssgeneload.sh | tee -a $LOG
 
 # Note: we will status as deleted gene trap alleles that lose
 # their coordinates in B39. This will be done POST release 

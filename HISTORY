@@ -1,3 +1,4 @@
+TAG: mgidbmigration-6-0-17-5
 TAG: mgidbmigration-6-0-17-4
 TAG: mgidbmigration-6-0-17-3
 TAG: mgidbmigration-6-0-17-2
@@ -6,6 +7,7 @@ DATE: 05/11/2021, 05/13/2021
 STAFF: lec
 TR13349/Genome Build 39
     6-0-17-4 - moved tssgeneload to after mrklocation cacheload
+    6-0-17-5 - removed copydownloads calls from part2b for prod release
 
 TAG: mgidbmigration-6-0-16-15
 TAG: mgidbmigration-6-0-16-14

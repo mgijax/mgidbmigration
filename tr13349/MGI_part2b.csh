@@ -81,17 +81,17 @@ ${PROBLEMSEQSETLOAD}/bin/problemseqsetload.sh
 
 
 # DATA: Sophia will test  on test server then we run:
-date | tee -a ${LOG}
-echo 'Copying  ensembl input files from production' | tee -a ${LOG}
-${GENEMODELLOAD}/bin/copydownloads.sh ensembl
+#date | tee -a ${LOG}
+#echo 'Copying  ensembl input files from production' | tee -a ${LOG}
+#${GENEMODELLOAD}/bin/copydownloads.sh ensembl
 
 date | tee -a ${LOG}
 echo 'Copying  ensembl input files from local /data/downloads to local input directories ' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/copyinputs.sh ensembl
 
-date | tee -a ${LOG}
-echo 'Copying  ncbi input files from production' | tee -a ${LOG}
-${GENEMODELLOAD}/bin/copydownloads.sh ncbi
+#date | tee -a ${LOG}
+#echo 'Copying  ncbi input files from production' | tee -a ${LOG}
+#${GENEMODELLOAD}/bin/copydownloads.sh ncbi
 
 date | tee -a ${LOG}
 echo 'Copying  ncbi input files from local /data/downloads to local input directories ' | tee -a ${LOG}

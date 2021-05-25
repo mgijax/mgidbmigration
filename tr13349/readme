@@ -78,22 +78,22 @@ Run:
 
 Production migration:
 For MGI_part2b.csh:
-    1. straingenemodelload configure to load B6 and MGP: B6_ONLY=false
-    2. genemodelload configure to reload genemodels RELOAD_GENEMODELS=true
+    1. straingenemodelload configure to load B6 and MGP: B6_ONLY=false - Dave
+    2. genemodelload configure to reload genemodels RELOAD_GENEMODELS=true - Dave
     3. rm two calls to copydownloads.sh ensembl/ncbi, tag/install mgidbmigration
-    3b. rm scp from prod
+        these copy from production to current server. Sharon - done 
     4. Note: there are calls to ${GENEMODELLOAD}/bin/copyinputs.sh in this 
         script for both ensembl and ncbi that need to run
     5. copy from bhmgiapp14ld:/data/mrkcoord/current to 
-            bhmgidevapp01:/data/mrkcoord/current
+            bhmgiapp01:/data/mrkcoord/current - Sharon done
         a) blat.c4am_Load.txt
         b) DNA_Segments_with_PrimerPairs_39.txt
         c) FANTOM5_C4AM.txt
         d) mgi_collection_coords_39.txt
         e)  MGI_non-Gene_non-Pseudogene_39.txt
-    6. Sophia publish problem seq set file
+    6. scp problem seq set file added to the migration - directory won't exist til Dave does installs
 For MGI_Part3.csh
-    1. configure snpcacheload to out of sync mode    
+    1. configure snpcacheload to out of sync mode - this is done on master
 Run:
     1. MGI_part1.csh >& MGI_part1.csh.out
     2. MGI_part2.csh >& MGI_part2.csh.out

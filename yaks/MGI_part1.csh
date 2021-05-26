@@ -35,11 +35,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-18', public_version = 'MGI 6.18';
-
--- 4  | RatMap
--- 47 | Rat Genome Database 
-update acc_accession set private = 0 where _logicaldb_key in (4,47) and private = 1;
-
 EOSQL
 date | tee -a ${LOG}
 
@@ -80,7 +75,8 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #
 date | tee -a ${LOG}
 echo 'data cleanup' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
+./acccleanup.csh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
 #

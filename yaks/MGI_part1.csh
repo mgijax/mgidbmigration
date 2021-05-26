@@ -38,7 +38,7 @@ update MGI_dbinfo set schema_version = '6-0-18', public_version = 'MGI 6.18';
 
 -- 4  | RatMap
 -- 47 | Rat Genome Database 
-update acc_accession set private = 0 where _logicaldb_key in (4,47);
+update acc_accession set private = 0 where _logicaldb_key in (4,47) and private = 1;
 
 EOSQL
 date | tee -a ${LOG}

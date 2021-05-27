@@ -128,7 +128,7 @@ where t._accession_key = a._accession_key
 --from acc_accession a, acc_logicaldb l, mrk_marker m 
 --where a.private = 0 
 --and a._mgitype_key = 2 
---and a._logicaldb_key not in (9,13,27)
+--and a._logicaldb_key not in (9,118)
 --and a._logicaldb_key = l._logicaldb_key
 --and a._object_key = m._marker_key
 --and m._organism_key != 1

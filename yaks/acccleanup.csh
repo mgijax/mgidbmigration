@@ -87,28 +87,29 @@ where t._accession_key = a._accession_key
 -- 118 | GENSAT
 -- 117 | GEO
 -- 25 | RIKEN Cluster
-select m.symbol, m._marker_status_key, m._organism_key, a.accid, a._logicaldb_key, l.name, a.creation_date
-from acc_accession a, acc_logicaldb l, mrk_marker m 
-where a.private = 1 
-and a._mgitype_key = 2 
-and a._logicaldb_key = l._logicaldb_key
-and a._object_key = m._marker_key
-and m._organism_key = 1
-order by l.name, m.symbol
-;
+--select m.symbol, m._marker_status_key, m._organism_key, a.accid, a._logicaldb_key, l.name, a.creation_date
+--from acc_accession a, acc_logicaldb l, mrk_marker m 
+--where a.private = 1 
+--and a._mgitype_key = 2 
+--and a._logicaldb_key = l._logicaldb_key
+--and a._object_key = m._marker_key
+--and m._organism_key = 1
+--order by l.name, m.symbol
+--;
 
 -- non-mouse markers/should be private = 1/leave as is
 -- 118 | GENSAT
-select m.symbol, m._organism_key, a.accid, a._logicaldb_key, l.name
-from acc_accession a, acc_logicaldb l, mrk_marker m 
-where a.private = 1 
-and a._mgitype_key = 2 
-and a._logicaldb_key not in (9,13,27)
-and a._logicaldb_key = l._logicaldb_key
-and a._object_key = m._marker_key
-and m._organism_key != 1
-order by m._organism_key, l.name, m.symbol
-;
+--select m.symbol, m._organism_key, a.accid, a._logicaldb_key, l.name
+--from acc_accession a, acc_logicaldb l, mrk_marker m 
+--where a.private = 1 
+--and a._mgitype_key = 2 
+--and a._logicaldb_key not in (9,13,27)
+--and a._logicaldb_key = l._logicaldb_key
+--and a._object_key = m._marker_key
+--and m._organism_key != 1
+--order by m._organism_key, l.name, m.symbol
+--;
+
 -- non-mouse/should be private = 0/leave as is
 -- 55 | Entrez Gene
 -- 64 | HGNC
@@ -117,16 +118,16 @@ order by m._organism_key, l.name, m.symbol
 -- 15 | OMIM
 -- 47 | Rat Genome Database
 -- 172 | Zebrafish Model Organism Database
-select m.symbol, m._organism_key, a.accid, a._logicaldb_key, l.name
-from acc_accession a, acc_logicaldb l, mrk_marker m 
-where a.private = 0 
-and a._mgitype_key = 2 
-and a._logicaldb_key not in (9,13,27)
-and a._logicaldb_key = l._logicaldb_key
-and a._object_key = m._marker_key
-and m._organism_key != 1
-order by m._organism_key, l.name, m.symbol
-;
+--select m.symbol, m._organism_key, a.accid, a._logicaldb_key, l.name
+--from acc_accession a, acc_logicaldb l, mrk_marker m 
+--where a.private = 0 
+--and a._mgitype_key = 2 
+--and a._logicaldb_key not in (9,13,27)
+--and a._logicaldb_key = l._logicaldb_key
+--and a._object_key = m._marker_key
+--and m._organism_key != 1
+--order by m._organism_key, l.name, m.symbol
+--;
 
 -- allele
 -- 138 | EUCOMM-projects

@@ -98,17 +98,22 @@ where t._accession_key = a._accession_key
 --;
 
 -- non-mouse markers/should be private = 1/leave as is
+-- 9 | Sequence DB
 -- 118 | GENSAT
---select m.symbol, m._organism_key, a.accid, a._logicaldb_key, l.name
---from acc_accession a, acc_logicaldb l, mrk_marker m 
---where a.private = 1 
---and a._mgitype_key = 2 
---and a._logicaldb_key not in (9,13,27)
---and a._logicaldb_key = l._logicaldb_key
---and a._object_key = m._marker_key
---and m._organism_key != 1
---order by m._organism_key, l.name, m.symbol
---;
+select a.*
+into temp table toUpdate5
+from acc_accession a, acc_logicaldb l, mrk_marker m
+where a.private = 1 
+and a._mgitype_key = 2 
+and a._logicaldb_key = l._logicaldb_key
+and a._object_key = m._marker_key
+and m._organism_key != 1
+;
+update acc_accession a
+set private = 0 
+from toUpdate5 t
+where t._accession_key = a._accession_key
+;
 
 -- non-mouse/should be private = 0/leave as is
 -- 55 | Entrez Gene

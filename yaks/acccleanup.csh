@@ -54,14 +54,14 @@ select a.*
 into temp table toUpdate1
 from acc_accession a, acc_logicaldb l, mrk_marker m 
 where a._mgitype_key = 2 
-and a._logicaldb_key in (9)
-and a.private = 0
+and a._logicaldb_key in (9,13,27)
+and a.private = 1
 and a._logicaldb_key = l._logicaldb_key
 and a._object_key = m._marker_key
 and m._organism_key != 1
 ;
 update acc_accession a
-set private = 1 
+set private = 0 
 from toUpdate1 t
 where t._accession_key = a._accession_key
 ;
@@ -156,25 +156,8 @@ where t._accession_key = a._accession_key
 ;
 
 --strain/must check with Michelle
---             90 | APB
---             57 | CARD
---             71 | CMMR
---             37 | EMMA
---            206 | genOway
---            216 | GPT
---             39 | Harwell
 --             22 | JAX Registry
---            217 | KMPC
 --              1 | MGI
---             38 | MMRRC
---            188 | MPD
---             54 | NCIMR
---             93 | NIG
---             70 | RIKEN BRC
---            161 | RMRC-NLAC
---            184 | SMOC
---             94 | TAC
---            219 | VCMR
 --select substring(s.strain,1,50), a.accid, a._logicaldb_key, l.name
 --from acc_accession a, acc_logicaldb l, prb_strain s
 --where a.private = 1 
@@ -237,6 +220,17 @@ where t._accession_key = a._accession_key
 --and a._logicaldb_key = l._logicaldb_key
 --order by l.name
 --;
+
+-- _mgitype_key that have private = true accession ids
+select distinct a._mgitype_key, t.name, a._logicaldb_key, l.name, a.private
+from acc_accession a, acc_logicaldb l, acc_mgitype t
+where a._logicaldb_key = l._logicaldb_key
+and a._mgitype_key = t._mgitype_key
+and a.private = 1
+and a._mgitype_key not in (1, 3, 9, 12, 13, 20, 25, 28)
+and a._logicaldb_key not in (1)
+order by a._mgitype_key, a._logicaldb_key
+;
 
 EOSQL
 

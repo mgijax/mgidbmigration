@@ -31,7 +31,7 @@ where a._logicaldb_key = l._logicaldb_key
 and a._mgitype_key = t._mgitype_key
 and a.private = 1
 and a._mgitype_key not in (1, 3, 9, 12, 13, 20, 25, 28)
-and a._logicaldb_key not in (1)
+and a._logicaldb_key not in (1, 107, 130, 118, 117)
 order by a._mgitype_key, a._logicaldb_key
 ;
 
@@ -231,7 +231,7 @@ where a._logicaldb_key = l._logicaldb_key
 and a._mgitype_key = t._mgitype_key
 and a.private = 1
 and a._mgitype_key not in (1, 3, 9, 12, 13, 20, 25, 28)
-and a._logicaldb_key not in (1)
+and a._logicaldb_key not in (1, 107, 130, 118, 117)
 order by a._mgitype_key, a._logicaldb_key
 ;
 

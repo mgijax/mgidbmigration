@@ -41,8 +41,8 @@ date | tee -a ${LOG}
 #
 # only run the ones needed per schema changes
 #
-#date | tee -a ${LOG}
-#echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
+date | tee -a ${LOG}
+echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 

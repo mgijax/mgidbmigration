@@ -103,14 +103,14 @@ where t._accession_key = a._accession_key
 select a.*
 into temp table toUpdate5
 from acc_accession a, acc_logicaldb l, mrk_marker m
-where a.private = 1 
+where a.private = 0 
 and a._mgitype_key = 2 
 and a._logicaldb_key = l._logicaldb_key
 and a._object_key = m._marker_key
 and m._organism_key != 1
 ;
 update acc_accession a
-set private = 0 
+set private = 1 
 from toUpdate5 t
 where t._accession_key = a._accession_key
 ;

@@ -85,12 +85,11 @@ from toUpdate2 t
 where t._accession_key = a._accession_key
 ;
 
--- mouse markers/should be private = 1
+-- mouse markers/should be private = 1/leave as is
 -- 107 | ABA
 -- 130 | ArrayExpress
 -- 118 | GENSAT
 -- 117 | GEO
--- 25 | RIKEN Cluster
 --select m.symbol, m._marker_status_key, m._organism_key, a.accid, a._logicaldb_key, l.name, a.creation_date
 --from acc_accession a, acc_logicaldb l, mrk_marker m 
 --where a.private = 1 

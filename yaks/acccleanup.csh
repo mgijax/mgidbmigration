@@ -69,21 +69,6 @@ set private = 0
 from toUpdate1 t
 where t._accession_key = a._accession_key
 ;
-select a.*
-into temp table toUpdate2
-from acc_accession a, acc_logicaldb l, mrk_marker m 
-where a._mgitype_key = 2 
-and a._logicaldb_key in (13,27)
-and a.private = 1
-and a._logicaldb_key = l._logicaldb_key
-and a._object_key = m._marker_key
-and m._organism_key != 1
-;
-update acc_accession a
-set private = 0 
-from toUpdate2 t
-where t._accession_key = a._accession_key
-;
 
 -- mouse markers/should be private = 1/leave as is
 -- 107 | ABA

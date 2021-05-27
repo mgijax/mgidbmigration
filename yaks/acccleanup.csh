@@ -20,6 +20,10 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+-- delete RIKEN Clusters (25) accession ids
+delete from acc_accession where _logicaldb_key = 25;
+delete from acc_logicaldb where _logicaldb_key = 25;
+
 -- _mgitype_key that have private = true accession ids
 select distinct a._mgitype_key, t.name, a._logicaldb_key, l.name, a.private
 from acc_accession a, acc_logicaldb l, acc_mgitype t

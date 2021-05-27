@@ -97,7 +97,7 @@ where t._accession_key = a._accession_key
 --order by l.name, m.symbol
 --;
 
--- non-mouse markers/should be private = 1/leave as is
+-- non-mouse markers/should be private = 1
 -- 9 | Sequence DB
 -- 118 | GENSAT
 select a.*
@@ -105,6 +105,7 @@ into temp table toUpdate5
 from acc_accession a, acc_logicaldb l, mrk_marker m
 where a.private = 0 
 and a._mgitype_key = 2 
+and a._logicaldb_key in (9,118)
 and a._logicaldb_key = l._logicaldb_key
 and a._object_key = m._marker_key
 and m._organism_key != 1

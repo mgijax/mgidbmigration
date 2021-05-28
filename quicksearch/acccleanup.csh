@@ -20,9 +20,10 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
--- delete RIKEN Clusters (25) accession ids
-delete from acc_accession where _logicaldb_key = 25;
-delete from acc_logicaldb where _logicaldb_key = 25;
+-- delete RatMap (4)
+-- delete RIKEN Clusters (25)
+delete from acc_accession where _logicaldb_key in (4,25);
+delete from acc_logicaldb where _logicaldb_key in (4,25);
 
 -- _mgitype_key that have private = true accession ids
 select distinct a._mgitype_key, t.name, a._logicaldb_key, l.name, a.private
@@ -36,9 +37,8 @@ order by a._mgitype_key, a._logicaldb_key
 ;
 
 -- Rat ids
--- 4  | RatMap
 -- 47 | Rat Genome Database
-update acc_accession set private = 0 where _logicaldb_key in (4,47) and private = 1;
+update acc_accession set private = 0 where _logicaldb_key in (47) and private = 1;
 
 -- non-mouse/private or not?
 -- 27 | RefSeq

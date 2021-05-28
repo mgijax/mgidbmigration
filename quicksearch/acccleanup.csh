@@ -144,29 +144,46 @@ where t._accession_key = a._accession_key
 ;
 
 --strain/must check with Michelle
---             22 | JAX Registry
---              1 | MGI
---select substring(s.strain,1,50), a.accid, a._logicaldb_key, l.name
---from acc_accession a, acc_logicaldb l, prb_strain s
---where a.private = 1 
+--select substring(s.strain,1,50), a.accid, a._logicaldb_key, l.name, s.private, a.private, u.login
+--from acc_accession a, acc_logicaldb l, prb_strain s, mgi_user u
+--where a._logicaldb_key not in (22)
 --and a._mgitype_key = 10
 --and a._logicaldb_key = l._logicaldb_key
 --and a._object_key = s._strain_key
+--and s.private != a.private
+--and s._createdby_key = u._user_key
 --order by l.name, s.strain
 --;
--- strain
 select a.*
-into temp table toUpdate4
-from acc_accession a, acc_logicaldb l, prb_strain m
-where a.private = 1 
+into temp table toStrain1
+from acc_accession a, acc_logicaldb l, prb_strain s, mgi_user u
+where a._logicaldb_key not in (22)
 and a._mgitype_key = 10
-and a._logicaldb_key not in (1,22)
 and a._logicaldb_key = l._logicaldb_key
-and a._object_key = m._strain_key
+and a._object_key = s._strain_key
+and s.private = 1
+and s.private != a.private
+and s._createdby_key = u._user_key
+;
+update acc_accession a
+set private = 1 
+from toStrain1 t
+where t._accession_key = a._accession_key
+;
+select a.*
+into temp table toStrain2
+from acc_accession a, acc_logicaldb l, prb_strain s, mgi_user u
+where a._logicaldb_key not in (22)
+and a._mgitype_key = 10
+and a._logicaldb_key = l._logicaldb_key
+and a._object_key = s._strain_key
+and s.private = 0
+and s.private != a.private
+and s._createdby_key = u._user_key
 ;
 update acc_accession a
 set private = 0 
-from toUpdate4 t
+from toStrain2 t
 where t._accession_key = a._accession_key
 ;
 

@@ -46,6 +46,11 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 
+#
+# mgd_java_api/prb, acc
+# pgmgddbschema/ACC_update()
+# pwi/strain
+#
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP FUNCTION IF EXISTS ACC_update(int,int,text,int,int);
 EOSQL

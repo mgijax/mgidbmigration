@@ -220,6 +220,70 @@ and a._logicaldb_key not in (1, 107, 130, 118, 117)
 order by a._mgitype_key, a._logicaldb_key
 ;
 
+--
+-- obsolete acc_logicaldb
+--
+
+select l.*, d.url 
+from acc_logicaldb l, acc_actualdb d
+where not exists (select 1 from acc_accession a where l._logicaldb_key = a._logicaldb_key) 
+and l._logicaldb_key = d._logicaldb_key
+order by l.creation_date
+;
+
+select l._logicaldb_key, l.name, l.description
+from acc_logicaldb l
+where not exists (select 1 from acc_accession a where l._logicaldb_key = a._logicaldb_key)
+and not exists (select 1 from acc_actualdb d where l._logicaldb_key = d._logicaldb_key)
+order by l.creation_date
+;
+
+-- 80             UniSTS
+-- 81             HomoloGene
+-- 156            Europhenome
+delete from acc_logicaldb where _logicaldb_key in (80,81,156)
+;
+
+-- check assocload/AssocLoad.config.default
+--select * from acc_logicaldb where name in (
+--'ABA',
+--'Affy 1.0 ST',
+--'Affy 430 2.0',
+--'Affy U74',
+--'ArrayExpress',
+--'BayGenomics',
+--'BROAD',
+--'CMHD',
+--'Consensus CDS Project',
+--'Download data from the QTL Archive',
+--'EC',
+--'EGTC',
+--'Ensembl Gene Model',
+--'Ensembl Protein',
+--'Ensembl Transcript',
+--'ESDB',
+--'FHCRC',
+--'FuncBase',
+--'GGTC',
+--'Lexicon',
+--'MGC',
+--'miRBase',
+--'MyGene',
+--'NCBI Gene Model',
+--'neXtProt',
+--'PDB',
+--'Protein Ontology',
+--'RefSeq',
+--'Sequence DB',
+--'SIGTR',
+--'SWISS-PROT',
+--'TIGEM',
+--'TIGM',
+--'TrEMBL'
+--)
+--order by name
+--;
+
 EOSQL
 
 date |tee -a $LOG

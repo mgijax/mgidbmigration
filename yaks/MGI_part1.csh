@@ -45,12 +45,6 @@ date | tee -a ${LOG}
 echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
-
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-DROP FUNCTION IF EXISTS ACC_update(int,int,text,int,int);
-EOSQL
-${PG_MGD_DBSCHEMADIR}/procedure/ACC_update_create.object | tee -a $LOG 
-
 #${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
@@ -79,9 +73,8 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-date | tee -a ${LOG}
-echo 'data cleanup' | tee -a $LOG
-./acccleanup.csh | tee -a $LOG
+#date | tee -a ${LOG}
+#echo 'data cleanup' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 

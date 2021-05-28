@@ -144,16 +144,6 @@ where t._accession_key = a._accession_key
 ;
 
 --strain/must check with Michelle
---select substring(s.strain,1,50), a.accid, a._logicaldb_key, l.name, s.private, a.private, u.login
---from acc_accession a, acc_logicaldb l, prb_strain s, mgi_user u
---where a._logicaldb_key not in (22)
---and a._mgitype_key = 10
---and a._logicaldb_key = l._logicaldb_key
---and a._object_key = s._strain_key
---and s.private != a.private
---and s._createdby_key = u._user_key
---order by l.name, s.strain
---;
 select a.*
 into temp table toStrain1
 from acc_accession a, acc_logicaldb l, prb_strain s, mgi_user u
@@ -185,6 +175,16 @@ update acc_accession a
 set private = 0 
 from toStrain2 t
 where t._accession_key = a._accession_key
+;
+select substring(s.strain,1,50), a.accid, a._logicaldb_key, l.name, s.private, a.private, u.login
+from acc_accession a, acc_logicaldb l, prb_strain s, mgi_user u
+where a._logicaldb_key not in (22)
+and a._mgitype_key = 10
+and a._logicaldb_key = l._logicaldb_key
+and a._object_key = s._strain_key
+and s.private != a.private
+and s._createdby_key = u._user_key
+order by l.name, s.strain
 ;
 
 -- genotype/leave as is/no changes

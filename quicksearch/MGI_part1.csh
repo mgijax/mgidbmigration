@@ -47,9 +47,11 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 
 #
-# mgd_java_api/prb, acc
-# pgmgddbschema/ACC_update()
+# ON 'quicksearch' branch
+# pgmgddbschema/ACC_update()/add "private"
+# mgd_java_api
 # pwi/strain
+# pwi/actualdb/fix delete row
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 DROP FUNCTION IF EXISTS ACC_update(int,int,text,int,int);

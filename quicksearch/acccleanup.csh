@@ -261,45 +261,33 @@ order by l.creation_date
 delete from acc_logicaldb where _logicaldb_key in (80,81,156)
 ;
 
--- check assocload/AssocLoad.config.default
---select * from acc_logicaldb where name in (
---'ABA',
---'Affy 1.0 ST',
---'Affy 430 2.0',
---'Affy U74',
---'ArrayExpress',
---'BayGenomics',
---'BROAD',
---'CMHD',
---'Consensus CDS Project',
---'Download data from the QTL Archive',
---'EC',
---'EGTC',
---'Ensembl Gene Model',
---'Ensembl Protein',
---'Ensembl Transcript',
---'ESDB',
---'FHCRC',
---'FuncBase',
---'GGTC',
---'Lexicon',
---'MGC',
---'miRBase',
---'MyGene',
---'NCBI Gene Model',
---'neXtProt',
---'PDB',
---'Protein Ontology',
---'RefSeq',
---'Sequence DB',
---'SIGTR',
---'SWISS-PROT',
---'TIGEM',
---'TIGM',
---'TrEMBL'
---)
---order by name
---;
+select a._logicaldb_key, a.name from acc_logicaldb a where not exists (select 1 from acc_actualdb u where a._logicaldb_key = u._logicaldb_key)
+order by a.name
+;
+
+select a._logicaldb_key, a.name, u.url
+from acc_logicaldb a, acc_actualdb u
+where a._logicaldb_key = u._logicaldb_key
+order by a.name
+;
+
+select a._logicaldb_key, a.name, u.url
+from acc_logicaldb a, acc_actualdb u
+where a._logicaldb_key = u._logicaldb_key
+and not exists (select 1 from acc_accession aa where a._logicaldb_key = aa._logicaldb_key)
+order by a.name
+;
+
+delete from acc_logicaldb where _logicaldb_key in (3,72,124,112,113,88,86,74,76);
+;
+
+--http://www.kazusa.or.jp/rouge exists but not http://www.kazusa.or.jp/rouge/gfpage/
+--BIND is now at https://bio.tools/bind 
+--All the SNP stuff at NCBI are obsolete. 
+--Treefam is now at http://www.treefam.org, though I don't think we link to them anymore. 
+--Journal of Biological Chemistry exists, but the lookup doesn't work. 
+--Journal of Lipid Research exists, but the lookup doesn't work.
+--I think FuncBase is history.
 
 EOSQL
 

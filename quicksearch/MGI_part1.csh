@@ -92,6 +92,10 @@ echo 'data cleanup' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
+date | tee -a ${LOG}
+echo 'running entrezgeneload/rat' | tee -a ${LOG}
+${ENTREZGENELOAD}/rat/load.csh | tee -a ${LOG}
+
 #
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary

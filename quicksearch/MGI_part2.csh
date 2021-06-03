@@ -44,8 +44,8 @@ switch (`uname -n`)
 endsw
 
 date | tee -a ${LOG}
-echo 'running entrezgeneload' | tee -a ${LOG}
-${ENTREZGENELOAD}/loadAll.csh | tee -a ${LOG}
+echo 'running entrezgeneload/rat' | tee -a ${LOG}
+${ENTREZGENELOAD}/rat/load.csh | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

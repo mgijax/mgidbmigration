@@ -278,7 +278,10 @@ and not exists (select 1 from acc_accession aa where a._logicaldb_key = aa._logi
 order by a.name
 ;
 
-delete from acc_logicaldb where _logicaldb_key in (3,72,124,112,113,88,86,74,76);
+delete from acc_logicaldb where _logicaldb_key in (3,72,124,112,113,88,86,);
+;
+
+delete from acc_actualdb where _logicaldb_key in (73,74,75,76,77)
 ;
 
 --http://www.kazusa.or.jp/rouge exists but not http://www.kazusa.or.jp/rouge/gfpage/

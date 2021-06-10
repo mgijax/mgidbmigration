@@ -53,7 +53,6 @@ import sys
 import os
 import mgi_utils
 import reportlib
-import go_annot_extensions
 import go_isoforms
 import db
 
@@ -519,38 +518,41 @@ def doGAFCol16():
     #
     # objectKey = marker key:annotation/evidence key (must match objectKey in doGAFFinish())
     #
-    # including properties that use go-sanctioned-property list
-    # and we also include mgi-property ('cell type', 'anatomy', 'target')
-    #
-    # include: _Vocab_key = 82
-    # include: go-sanctioned-properties (use _Term_key > 6481780 or sequenceNum > 9)
-    # include: mgi-properties
     # exclude: annotations where evidence = ISO (3251466)
+    # exclude: certain properties
     #
-
-    # Query the valid _term_keys for properties and evidence codes
-    extensionProcessor = go_annot_extensions.Processor()
-    sanctionedPropertyKeys = extensionProcessor.querySanctionedPropertyTermKeys()
-    sanctionedEvidenceTermKeys = extensionProcessor.querySanctionedEvidenceTermKeys()
-
-    propertyKeyClause = ",".join([str(k) for k in sanctionedPropertyKeys])
-    evidenceKeyClause = ",".join([str(k) for k in sanctionedEvidenceTermKeys])
 
     cmd = '''
-    select r.symbol, r._Object_key, r._AnnotEvidence_key, t.term as property, p.value, p.stanza
-            from gomarker2 r, VOC_Evidence_Property p, VOC_Term t
-            where r._EvidenceTerm_key in (%s)
+    select r.symbol, r._Object_key, r._AnnotEvidence_key, t1.term as property, p.value, p.stanza
+            from gomarker2 r, VOC_Evidence_Property p, VOC_Term t1, VOC_Term t2
+            where r._EvidenceTerm_key = t2._Term_key
+            and t2.abbreviation not in ('ISO')
             and r._AnnotEvidence_key = p._AnnotEvidence_key
-            and p._PropertyTerm_key = t._Term_key
-            and p._PropertyTerm_key in (%s)
-            and t.note is not null
+            and p._PropertyTerm_key = t1._Term_key
+            and t1.term not in (
+                'anatomy',
+                'cell type',
+                'contributor',
+                'dual-taxon ID',
+                'evidence',
+                'external ref',
+                'gene product',
+                'go_qualifier',
+                'individual',
+                'model-state',
+                'modification',
+                'noctua-model-id',
+                'target',
+                'text'
+            )
+            and t2.note is not null
             order by r.symbol, 
                 r._Object_key, 
                 r._AnnotEvidence_key, 
                 p.stanza, 
                 p.sequenceNum,
                 property
-    ''' % (evidenceKeyClause, propertyKeyClause)
+    '''
 
     results = db.sql(cmd, 'auto')
 
@@ -558,8 +560,14 @@ def doGAFCol16():
         objectKey = str(r['_Object_key']) + ':' + str(r['_AnnotEvidence_key'])
         value = r['value'].replace('MGI:', 'MGI:MGI:')
 
-        # process out the comments, etc
-        value = extensionProcessor.processValue(value)
+        # xxxx ; zzzz -> zzzz
+        tokens = value.split(';')
+        value = tokens[-1]
+        value = value.strip()
+
+        # EMAPA:xxx TS:xxx -> EMAPA:xxx
+        if value.startswith('EMAPA:'):
+                value = value.split(' ')[0]
 
         if objectKey not in gafCol16Lookup:
                 gafCol16Lookup[objectKey] = []

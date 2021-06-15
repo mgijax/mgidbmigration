@@ -23,19 +23,14 @@ date | tee -a $LOG
 #
 # TAGS
 #
-# mirror_wget
-#       remove from mirror_wget/ftp.ncbi.nih.gov
-#
+# mirror_wget : remove mim2gene_medgen from mirror_wget/ftp.ncbi.nih.gov
 # entrezgeneload
-# radardbschema
+# radardbschema : remove DP_EntrezGene_MIM
 #
 
 rm -rf ${DATADOWNLOADS}/ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
--- delete J:98535?
---delete from bib_refs where _refs_key = 99561;
 
 select va._Term_key, mm._Marker_key, mo.commonName
         from voc_annot va, mrk_marker mm, mgi_organism mo

@@ -70,6 +70,10 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 
+date | tee -a ${LOG}
+echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
+./vocab.csh | tee -a ${LOG}
+
 #
 # cleanobjects.sh : removing stray mgi_notes
 #

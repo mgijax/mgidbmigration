@@ -36,15 +36,59 @@ date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-18', public_version = 'MGI 6.18';
 EOSQL
+
+
+echo "--- Create tables ---" | tee -a $LOG
 date | tee -a ${LOG}
+${PG_MGD_DBSCHEMADIR}/table/GXD_HTRawSample_drop.object
+${PG_MGD_DBSCHEMADIR}/table/MGI_KeyValue_drop.object
+
+${PG_MGD_DBSCHEMADIR}/table/GXD_HTRawSample_create.object
+${PG_MGD_DBSCHEMADIR}/table/MGI_KeyValue_create.object
 
 #
 # only run the ones needed per schema changes
 #
+
 date | tee -a ${LOG}
-echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
+echo 'step ??: creating tables, keys, indexes, triggers' | tee -a $LOG
+echo "--- Create keys --- " | tee -a $LOG
+
+# primary keys for new tables
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTRawSample_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTRawSample_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/MGI_KeyValue_drop.object
+${PG_MGD_DBSCHEMADIR}/key/MGI_KeyValue_create.object
+
+# foreign keys
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object
+
+echo "--- Create indexes --- " | tee -a $LOG
+
+${PG_MGD_DBSCHEMADIR}/index/GXD_HTRawSample_drop.object
+${PG_MGD_DBSCHEMADIR}/index/GXD_HTRawSample_create.object
+
+${PG_MGD_DBSCHEMADIR}/index/MGI_KeyValue_drop.object
+${PG_MGD_DBSCHEMADIR}/index/MGI_KeyValue_create.object
+
+echo "--- Create triggers --- " | tee -a $LOG
+
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_drop.object
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_create.object
+
+echo "--- Recreate all autosequence --- " | tee -a $LOG
+
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
+
 #${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
@@ -57,21 +101,21 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
-# reconfig.sh:
+# reconfig.sh
 # Drop and re-create database triggers, stored procedures, views and comments
 # always a good idea to do to make sure that nothing was missed with schema changes
 #
 date | tee -a ${LOG}
-echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
+echo 'step ??: Running comments permissions, objectCounter' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 
 date | tee -a ${LOG}
-echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
+echo 'step ??: running vocab.csh' | tee -a $LOG
 ./vocab.csh | tee -a ${LOG}
 
 #

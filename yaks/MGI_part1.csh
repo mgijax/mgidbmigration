@@ -122,6 +122,12 @@ date | tee -a ${LOG}
 echo 'step ??: running vocab.csh' | tee -a $LOG
 ./vocab.csh | tee -a ${LOG}
 
+# delete desired GEO experiments so they may be reloaded
+# save notes for those that have them for later reloading
+date | tee -a ${LOG}
+echo 'step ??: running expt_delete.csh' | tee -a $LOG
+./expt_delete.csh | tee -a ${LOG}
+
 #
 # cleanobjects.sh : removing stray mgi_notes
 #

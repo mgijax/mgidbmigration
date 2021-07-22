@@ -38,6 +38,7 @@ update MGI_dbinfo set schema_version = '6-0-18', public_version = 'MGI 6.18';
 
 -- obsolete procedure
 DROP FUNCTION IF EXISTS GXD_duplicateAssay(int,int,int);
+DROP FUNCTION IF EXISTS GXD_replaceGenotype(int,int,int,int);
 
 EOSQL
 
@@ -87,6 +88,9 @@ echo "--- Create triggers --- " | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_drop.object
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_create.object
+
+echo "--- GXD_replaceGenotype --- " | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/GXD_replaceGenotype_create.object | tee -a $LOG 
 
 echo "--- Recreate all autosequence --- " | tee -a $LOG
 

@@ -22,8 +22,14 @@ TAB = '\t'
 CRT = '\n'
 NOTE_TYPE_KEY = 1047    # GXD HT Experiment Note
 MGI_TYPE_KEY = 42       # GXD_HT_Experiment
-CREATED_BY = 1001       # note creator - same as currently in db
+CREATED_BY = 1001       # note creator 
 SEQUENCE_NUM = 1
+
+# experiment updates
+evalState = 20225943
+curState = 20475420
+evalBy = 1064
+table = 'GXD_HTExperiment'
 
 # the next note key to use in the db
 nextNoteKey = db.sql('''select max(_note_key) + 1 as maxKey from mgi_note ''', 'auto')[0]['maxKey']
@@ -49,6 +55,7 @@ bcpCommand = os.getenv('PG_DBUTILS') + '/bin/bcpin.csh'
 fpIn = open(inFile, 'r')
 fpNote = open(noteBcp, 'w')
 fpChunk = open(chunkBcp, 'w')
+sqlFile = open(table + '.sql', 'w')
 
 # get notes from those we will delete
 results = db.sql('''select e._experiment_key, a.accid, e.name
@@ -74,6 +81,11 @@ for line in fpIn.readlines():
         fpNote.write("%s|%s|%s|%s|%s|%s|%s|%s%s" % (nextNoteKey, exptKey, MGI_TYPE_KEY, NOTE_TYPE_KEY, CREATED_BY, CREATED_BY, loadDate, loadDate, CRT))
         fpChunk.write("%s|%s|%s|%s|%s|%s|%s%s" % (nextNoteKey, SEQUENCE_NUM, note, CREATED_BY, CREATED_BY, loadDate, loadDate, CRT))
 
+        updateSQL = '''update %s set _evaluationstate_key = %s, 
+            _curationstate_key = %s, _evaluatedby_key = %s
+            where _experiment_key = %s;''' % \
+                (table, evalState, curState, evalBy, exptKey)
+        sqlFile.write(updateSQL + "\n")
         nextNoteKey += 1
     else:
         print('No experiment in database for %s' % geoID)
@@ -94,3 +106,4 @@ os.system(chunkCmd)
 fpIn.close()
 fpNote.close()
 fpChunk.close()
+sqlFile.close()

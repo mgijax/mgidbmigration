@@ -37,11 +37,20 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 switch (`uname -n`)
     case bhmgiapp14ld:
     case bhmgidevapp01:
+    case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
         #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
         breaksw
 endsw
+
+date | tee -a ${LOG}
+echo 'autosequence check' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG
+
+#date | tee -a ${LOG}
+#echo 'Running GEO HT Experiment Load' | tee -a $LOG
+#${GXDHTLOAD}/bin/geo_htload.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

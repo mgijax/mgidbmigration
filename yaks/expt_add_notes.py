@@ -82,9 +82,9 @@ for line in fpIn.readlines():
         fpChunk.write("%s|%s|%s|%s|%s|%s|%s%s" % (nextNoteKey, SEQUENCE_NUM, note, CREATED_BY, CREATED_BY, loadDate, loadDate, CRT))
 
         updateSQL = '''update %s set _evaluationstate_key = %s, 
-            _curationstate_key = %s, _evaluatedby_key = %s
+            _curationstate_key = %s, _evaluatedby_key = %s, evaluated_date = '%s'
             where _experiment_key = %s;''' % \
-                (table, evalState, curState, evalBy, exptKey)
+                (table, evalState, curState, evalBy, loadDate, exptKey)
         sqlFile.write(updateSQL + "\n")
         nextNoteKey += 1
     else:
@@ -100,10 +100,10 @@ chunkCmd = '%s %s %s %s %s %s "|" "\\n" mgd' % \
 print(noteCmd)
 print(chunkCmd)
 
-os.system(noteCmd)
-os.system(chunkCmd)
-
 fpIn.close()
 fpNote.close()
 fpChunk.close()
 sqlFile.close()
+
+os.system(noteCmd)
+os.system(chunkCmd)

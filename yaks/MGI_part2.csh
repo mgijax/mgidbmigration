@@ -52,5 +52,10 @@ date | tee -a ${LOG}
 echo 'Running GEO HT Experiment Load' | tee -a $LOG
 ${GXDHTLOAD}/bin/geo_htload.sh | tee -a $LOG
 
+# running this separately for now so can check geo load first
+#date | tee -a ${LOG}
+#echo 'Running expt_add_notes.csh' | tee -a $LOG
+#./expt_add_notes.csh | tee -a $LOG
+
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

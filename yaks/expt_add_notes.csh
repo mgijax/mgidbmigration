@@ -22,4 +22,8 @@ date | tee -a $LOG
 echo "adding notes to existing experiments" | tee -a $LOG 
 ${PYTHON} "${DBUTILS}/mgidbmigration/yaks/expt_add_notes.py" | tee -a $LOG
 
+echo "updating gxd_htexperiment"  | tee -a $LOG
+
+psql -h ${MGD_DBSERVER} -U ${MGD_DBUSER} -d ${MGD_DBNAME} -e -f GXD_HTExperiment.sql | tee -a ${LOG}
+
 date | tee -a $LOG

@@ -18,8 +18,26 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into VOC_Vocab values(172,22864,1,1,0,'GXD Gel RNA Type',now(), now());
 
+delete from VOC_Term where _vocab_key = 154;
 delete from VOC_Term where _vocab_key = 158;
 delete from VOC_Term where _vocab_key = 172;
+
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Control', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Transgenic sample: no data stored', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'In vitro data: no data stored', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Non-mouse sample: no data stored', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Mol. Wt. Marker Lane', null, null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Lane not used in this assay', null, null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Treated sample: no data stored', null, null, 8, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Cultured cells: no data stored', null, null, 9, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No data stored', null, null, 10, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Fractionated sample: no data stored', null, null, 11, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Cultured sample: no data stored', null, null, 12, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Tissue age not specified: no data stored', null, null, 13, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot assay different gene(s)', null, null, 14, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot use different probe(s)', null, null, 15, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Allele not specified: no data stored', null, null, 16, 0, 1001, 1001, now(), now());
 
 insert into VOC_Term values(nextval('voc_term_seq'), 158, 'RNA in situ', 'InSitu', null, 1, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 158, 'Northern blot', 'North', null, 2, 0, 1001, 1001, now(), now());

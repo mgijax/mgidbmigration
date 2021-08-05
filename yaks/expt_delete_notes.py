@@ -20,10 +20,12 @@ import db
 TAB = '\t'
 CRT = '\n'
 
-outFile = '%s/mgidbmigration/yaks/expt_notes_save.txt' % os.getenv('DBUTILS')
-print(outFile)
+notesOutFile = '%s/mgidbmigration/yaks/expt_notes_save.txt' % os.getenv('DBUTILS')
+print(notesOutFile)
+accessionOutFile = '%s/mgidbmigration/yaks/accessions_save.txt'  % os.getenv('DBUTILS')
 
-fpOut = open(outFile, 'w')
+fpNotesOut = open(notesOutFile, 'w')
+fpAccessionOut = open(accessionOutFile, 'w')
 
 # the set of experiments to delete
 # curation state 'Not Applicable' or 'Not Done'
@@ -59,6 +61,13 @@ results = db.sql('''select d._experiment_key, d.accid, d.name, v1.term as evalua
 
 # _experiment_key       accid   name    evaluationstate curationstate   note
 for r in results:
-    fpOut.write('%s%s%s%s%s%s%s%s%s%s%s%s' % (r['_experiment_key'], TAB, r['accid'], TAB, r['name'], TAB, r['evaluationState'], TAB, r['curationState'], TAB, r['note'], CRT))
+    fpNotesOut.write('%s%s%s%s%s%s%s%s%s%s%s%s' % (r['_experiment_key'], TAB, r['accid'], TAB, r['name'], TAB, r['evaluationState'], TAB, r['curationState'], TAB, r['note'], CRT))
 
-fpOut.close()
+# write out accessions for all deleted experiments. We add a AE secondary ID to each once reloaded.
+results = db.sql('''select accid from toDelete''', 'auto')
+
+for r in results:
+    fpAccessionOut.write('%s%s' % (r['accid'], CRT))
+
+fpNotesOut.close()
+fpAccessionOut.close()

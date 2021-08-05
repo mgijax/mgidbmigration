@@ -104,7 +104,6 @@ for line in fpNotesIn.readlines():
                 (table, evalState, curState, evalBy, loadDate, exptKey)
         sqlFile.write(updateSQL + "\n")
         nextNoteKey += 1
-        nextAccKey += 1
     else:
         print('Notes: No experiment in database for %s' % geoID)
 
@@ -119,6 +118,7 @@ for line in fpAccessionIn.readlines():
         print('Found experiment for %s' % geoID)
 
         fpAccession.write('%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s%s' % (nextAccKey, aeID, prefixPart, numericPart, AE_LDB_KEY, exptKey, MGI_TYPE_KEY, private, preferred, CREATED_BY, CREATED_BY, loadDate, loadDate, CRT ))
+        nextAccKey += 1
     else:
         print('Accession: No experiment in database for %s' % geoID)
 
@@ -145,5 +145,5 @@ sqlFile.close()
 
 #os.system(noteCmd)
 #os.system(chunkCmd)
-#os.system(accessionCmd)
+os.system(accessionCmd)
 

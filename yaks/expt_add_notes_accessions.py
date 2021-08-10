@@ -143,7 +143,7 @@ fpChunk.close()
 fpAccession.close()
 sqlFile.close()
 
-#os.system(noteCmd)
-#os.system(chunkCmd)
+os.system(noteCmd)
+os.system(chunkCmd)
 os.system(accessionCmd)
 

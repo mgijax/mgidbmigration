@@ -19,8 +19,8 @@ touch $LOG
  
 date | tee -a $LOG
 
-echo "adding notes to existing experiments" | tee -a $LOG 
-${PYTHON} "${DBUTILS}/mgidbmigration/yaks/expt_add_notes.py" | tee -a $LOG
+echo "adding notes and accessions to newly reloaded experiments" | tee -a $LOG 
+${PYTHON} "${DBUTILS}/mgidbmigration/yaks/expt_add_notes_accessions.py" | tee -a $LOG
 
 echo "updating gxd_htexperiment"  | tee -a $LOG
 

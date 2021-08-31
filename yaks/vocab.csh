@@ -17,10 +17,12 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into VOC_Vocab values(172,22864,1,1,0,'GXD Gel RNA Type',now(), now());
+insert into VOC_Vocab values(173,22864,1,1,0,'GXD Gel Units',now(), now());
 
 delete from VOC_Term where _vocab_key = 154;
 delete from VOC_Term where _vocab_key = 158;
 delete from VOC_Term where _vocab_key = 172;
+delete from VOC_Term where _vocab_key = 173;
 
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No', 'No', null, 1, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Control', 'Control', null, 2, 0, 1001, 1001, now(), now());
@@ -54,6 +56,14 @@ insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Specified', null,
 insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 172, 'poly-A+', null, null, 3, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 172, 'total', null, null, 4, 0, 1001, 1001, now(), now());
+
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'b', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'bp', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kb', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'Da', null, null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kDa', null, null, 7, 0, 1001, 1001, now(), now());
 
 EOSQL
 

@@ -41,6 +41,9 @@ DROP FUNCTION IF EXISTS GXD_duplicateAssay(int,int,int);
 DROP FUNCTION IF EXISTS GXD_replaceGenotype(int,int,int,int);
 DROP FUNCTION IF EXISTS GXD_addEMAPASet(int,int);
 
+-- make Cell Ontology DAG
+update VOC_Vocab set issimple = 0 where _vocab_key = 102;
+
 EOSQL
 
 

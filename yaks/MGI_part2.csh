@@ -40,9 +40,15 @@ switch (`uname -n`)
     case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
-        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+        scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/cl/cl-basic.obo /data/downloads/purl.obolibrary.org/obo/cl
         breaksw
 endsw
+
+# this load is now a DAG
+date | tee -a ${LOG}
+echo 'Run Cell Ontology Load' | tee -a ${LOG}
+${VOCLOAD}/runOBOFullLoad.sh CL.config
+
 
 date | tee -a ${LOG}
 echo 'autosequence check' | tee -a $LOG

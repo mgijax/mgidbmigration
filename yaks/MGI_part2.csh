@@ -55,6 +55,10 @@ echo 'autosequence check' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG
 
 date | tee -a ${LOG}
+echo 'Downloading GEO HT Experiments and Samples' | tee -a $LOG
+${GXDHTLOAD}//bin/mirror_geo_exp.sh | tee -a $LOG
+
+date | tee -a ${LOG}
 echo 'Running GEO HT Experiment Load' | tee -a $LOG
 ${GXDHTLOAD}/bin/geo_htload.sh | tee -a $LOG
 

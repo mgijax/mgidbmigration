@@ -65,7 +65,7 @@ ${GXDHTLOAD}/bin/geo_htload.sh | tee -a $LOG
 # running this separately for now so can check geo load first
 date | tee -a ${LOG}
 echo 'Running expt_add_notes_accessions.csh' | tee -a $LOG
-./expt_add_notes_accessions.csh | tee -a $LOG
+${DBUTILS}/mgidbmigration/yaks/expt_add_notes_accessions.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

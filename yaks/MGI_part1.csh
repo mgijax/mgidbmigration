@@ -50,17 +50,27 @@ EOSQL
 echo "--- Create tables ---" | tee -a $LOG
 date | tee -a ${LOG}
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTRawSample_drop.object
-${PG_MGD_DBSCHEMADIR}/table/MGI_KeyValue_drop.object
-
 ${PG_MGD_DBSCHEMADIR}/table/GXD_HTRawSample_create.object
+
+${PG_MGD_DBSCHEMADIR}/table/MGI_KeyValue_drop.object
 ${PG_MGD_DBSCHEMADIR}/table/MGI_KeyValue_create.object
+
+${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultCellType_drop.object
+${PG_MGD_DBSCHEMADIR}/table/GXD_ISResultCellType_create.object
+
+echo "--- Drop/Create gxd_expression and all_cre_cache tables ---" | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_drop.object
+${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_create.object
+
+${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_drop.object
+${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object
 
 #
 # only run the ones needed per schema changes
 #
 
 date | tee -a ${LOG}
-echo 'step ??: creating tables, keys, indexes, triggers' | tee -a $LOG
+echo 'step ??: creating indexes, triggers' | tee -a $LOG
 echo "--- Create keys --- " | tee -a $LOG
 
 # primary keys for new tables
@@ -70,7 +80,17 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_HTRawSample_create.object
 ${PG_MGD_DBSCHEMADIR}/key/MGI_KeyValue_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/MGI_KeyValue_create.object
 
-# foreign keys
+${PG_MGD_DBSCHEMADIR}/key/GXD_ISResultCellType_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_ISResultCellType_create.object
+
+# primary keys for caches
+${PG_MGD_DBSCHEMADIR}/key/GXD_Expression_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Expression_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_drop.object
+${PG_MGD_DBSCHEMADIR}/key/ALL_Cre_Cache_create.object
+
+# foreign keys 
 ${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object
 
@@ -80,6 +100,36 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object
 
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object
+${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_AssayType_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_AssayType_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_GelLane_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_GelLane_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_Specimen_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Specimen_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object
+${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_create.object
+
 echo "--- Create indexes --- " | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTRawSample_drop.object
@@ -88,14 +138,14 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_HTRawSample_create.object
 ${PG_MGD_DBSCHEMADIR}/index/MGI_KeyValue_drop.object
 ${PG_MGD_DBSCHEMADIR}/index/MGI_KeyValue_create.object
 
-echo "--- Create triggers --- " | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultCellType_drop.object
+${PG_MGD_DBSCHEMADIR}/index/GXD_ISResultCellType_create.object
 
-${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_drop.object
-${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_create.object
+${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_drop.object
+${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object
 
-echo "--- GXD procedures --- " | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/GXD_replaceGenotype_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/procedure/GXD_addEMAPASet_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_drop.object
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object
 
 echo "--- Recreate all autosequence --- " | tee -a $LOG
 
@@ -106,12 +156,12 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh
@@ -129,7 +179,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'step ??: running vocab.csh' | tee -a $LOG
-./vocab.csh | tee -a ${LOG}
+#./vocab.csh | tee -a ${LOG}
 
 # delete desired GEO experiments so they may be reloaded
 # save notes for those that have them for later reloading

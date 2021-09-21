@@ -20,6 +20,7 @@ insert into VOC_Vocab values(172,22864,1,1,0,'GXD Gel RNA Type',now(), now());
 insert into VOC_Vocab values(173,22864,1,1,0,'GXD Gel Units',now(), now());
 
 delete from VOC_Term where _vocab_key = 154;
+delete from VOC_Term where _vocab_key = 155;
 delete from VOC_Term where _vocab_key = 156;
 delete from VOC_Term where _vocab_key = 158;
 delete from VOC_Term where _vocab_key = 172;
@@ -94,6 +95,16 @@ insert into VOC_Term values(nextval('voc_term_seq'), 173, 'bp', null, null, 4, 0
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kb', null, null, 5, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'Da', null, null, 6, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kDa', null, null, 7, 0, 1001, 1001, now(), now());
+
+update VOC_Term set abbreviation = 'emb day' where _term_key = 84171427;
+update VOC_Term set abbreviation = 'postnatal' where _term_key = 84171428;
+update VOC_Term set abbreviation = 'p day' where _term_key = 84171429;
+update VOC_Term set abbreviation = 'p week' where _term_key = 84171430;
+update VOC_Term set abbreviation = 'p month' where _term_key = 84171431;
+update VOC_Term set abbreviation = 'p year' where _term_key = 84171432;
+update VOC_Term set abbreviation = 'p adult' where _term_key = 84171433;
+update VOC_Term set abbreviation = 'p newborn' where _term_key = 84171434;
+update VOC_Term set abbreviation = 'Not Appl' where _term_key = 84171435;
 
 EOSQL
 

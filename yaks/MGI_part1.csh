@@ -147,20 +147,6 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_drop.object
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object
 
-echo "--- Create triggers --- " | tee -a $LOG
-
-${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_drop.object
-${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTRawSample_create.object
- 
-echo "--- Create views --- " | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/BIB_AssociatedData_View_create.object
-${PG_MGD_DBSCHEMADIR}/view/GXD_Genotype_DataSet_View_create.object
-
-echo "--- GXD procedures --- " | tee -a $LOG
-
-${PG_MGD_DBSCHEMADIR}/procedure/GXD_replaceGenotype_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/procedure/GXD_addEMAPASet_create.object | tee -a $LOG 
-
 echo "--- Recreate all autosequence --- " | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
@@ -170,12 +156,12 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh

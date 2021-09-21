@@ -179,7 +179,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'step ??: running vocab.csh' | tee -a $LOG
-#./vocab.csh | tee -a ${LOG}
+./vocab.csh | tee -a ${LOG}
 
 # delete desired GEO experiments so they may be reloaded
 # save notes for those that have them for later reloading

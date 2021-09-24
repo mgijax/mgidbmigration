@@ -46,8 +46,12 @@ DROP FUNCTION IF EXISTS GXD_duplicateAssay(int,int,int);
 DROP FUNCTION IF EXISTS GXD_replaceGenotype(int,int,int,int);
 DROP FUNCTION IF EXISTS GXD_addEMAPASet(int,int);
 
--- make Cell Ontology DAG
+-- change Cell Ontology to DAG
 update VOC_Vocab set issimple = 0 where _vocab_key = 102;
+
+-- create DAG for existing Cell Line terms; Inc mode, so must create DAG first
+insert into DAG_DAG values(52, 225167, 13, 'Cell Ontology', 'CL', now(), now());
+insert into VOC_VocabDAG values(102, 52, now(), now())
 
 EOSQL
 
@@ -190,7 +194,7 @@ ${MGI_LIVE}/dbutils/mgidbmigration/yaks/vocab.csh | tee -a ${LOG}
 # save notes for those that have them for later reloading
 date | tee -a ${LOG}
 echo 'step ??: running expt_delete.csh' | tee -a $LOG
-./expt_delete.csh | tee -a ${LOG}
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/expt_delete.csh | tee -a ${LOG}
 
 #
 # cleanobjects.sh : removing stray mgi_notes

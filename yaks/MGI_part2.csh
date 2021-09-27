@@ -47,7 +47,7 @@ endsw
 # this load is now a DAG
 date | tee -a ${LOG}
 echo 'Run Cell Ontology Load' | tee -a ${LOG}
-${VOCLOAD}/runOBOFullLoad.sh CL.config
+${VOCLOAD}/runOBOIncLoad.sh CL.config
 
 
 date | tee -a ${LOG}
@@ -56,7 +56,7 @@ ${PG_MGD_DBSCHEMADIR}/test/autosequencecheck.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'Downloading GEO HT Experiments and Samples' | tee -a $LOG
-${GXDHTLOAD}//bin/mirror_geo_exp.sh | tee -a $LOG
+${GXDHTLOAD}/bin/mirror_geo_exp.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'Running GEO HT Experiment Load' | tee -a $LOG

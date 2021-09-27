@@ -29,6 +29,11 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec radar /bhmgidevdb01/dump/radar.dump
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
+# dump the cache tables we are dropping and recreateing
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Expression ${MGI_LIVE}/dbutils/mgidbmigration/yaks/GXD_Expression.bcp "|"
+
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ALL_Cre_Cache ${MGI_LIVE}/dbutils/mgidbmigration/yaks/ALL_Cre_Cache.bcp "|"
+
 #
 # update schema-version and public-version
 #
@@ -41,8 +46,12 @@ DROP FUNCTION IF EXISTS GXD_duplicateAssay(int,int,int);
 DROP FUNCTION IF EXISTS GXD_replaceGenotype(int,int,int,int);
 DROP FUNCTION IF EXISTS GXD_addEMAPASet(int,int);
 
--- make Cell Ontology DAG
+-- change Cell Ontology to DAG
 update VOC_Vocab set issimple = 0 where _vocab_key = 102;
+
+-- create DAG for existing Cell Line terms; Inc mode, so must create DAG first
+insert into DAG_DAG values(52, 225167, 13, 'Cell Ontology', 'CL', now(), now());
+insert into VOC_VocabDAG values(102, 52, now(), now())
 
 EOSQL
 
@@ -179,13 +188,13 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'step ??: running vocab.csh' | tee -a $LOG
-#./vocab.csh | tee -a ${LOG}
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/vocab.csh | tee -a ${LOG}
 
 # delete desired GEO experiments so they may be reloaded
 # save notes for those that have them for later reloading
 date | tee -a ${LOG}
 echo 'step ??: running expt_delete.csh' | tee -a $LOG
-./expt_delete.csh | tee -a ${LOG}
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/expt_delete.csh | tee -a ${LOG}
 
 #
 # cleanobjects.sh : removing stray mgi_notes
@@ -203,6 +212,19 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+
+# 
+#  load test data for GXD_ISResultCellType
+#
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/create_gxd_celltype.csh
+
+# 
+#  run cache loads to load newly migrated caches
+# 
+${MGICACHELOAD}/gxdexpression.csh
+
+# cre cache depends on gxdexpression cache
+${ALLCACHELOAD}/allelecrecache.csh
 
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

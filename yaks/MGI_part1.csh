@@ -115,9 +115,6 @@ ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/BIB_Refs_create.object
 
-${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object
-${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_create.object
-
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayType_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/GXD_AssayType_create.object
 
@@ -132,6 +129,9 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_Specimen_create.object
 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_InSituResult_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_InSituResult_create.object
 
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object

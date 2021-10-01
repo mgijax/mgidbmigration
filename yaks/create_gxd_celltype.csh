@@ -73,6 +73,8 @@ insert into gxd_isresultcelltype values (19, 1763464, 90888981, now(), now());
 insert into gxd_isresultcelltype values (20, 1920381, 90888981, now(), now());
 insert into gxd_isresultcelltype values (21, 1920126, 90888981, now(), now());
 
+select setval('gxd_isresultcelltype_seq', (select max(_resultcelltype_key) from GXD_ISResultCellType));
+
 EOSQL
 
 date | tee -a ${LOG}

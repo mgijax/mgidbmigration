@@ -178,8 +178,8 @@ def doSetup():
         and m._Marker_Type_key = mt._Marker_Type_key 
         and a._Qualifier_key = q._Term_key 
         and e._ModifiedBy_key = u._User_key
-        -- for Dustin/only MGI_curated
-        and u.orcid is not null
+        -- for Dustin/only MGI_curated/add tr9612_annotload/1497)
+        and (u.orcid is not null or u._user_key = 1497)
         and e._Refs_key not in (156949, 165659)
         ''', None)
     db.sql('create index gomarker1_idx1 on gomarker1(_Object_key)', None)

@@ -1,7 +1,8 @@
-TAG: mgidbmigration-6-0-17-1?
-DATE: 09/27/2021
+TAG: mgidbmigration-6-0-17-15
+DATE: 09/30/2021
 STAFF: lec
-tr13272/wts703/GO Annotation pipeline
+CHANGES:
+tr13272/go_cam_GO_gene_association.py
 
 TAG: mgidbmigration-6-0-17-14
 DATE: 08/04/2021

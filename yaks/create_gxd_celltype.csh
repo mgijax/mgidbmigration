@@ -27,51 +27,52 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 # create test cases for gxd_isresultcelltype
 #
 #one-to-one
-#EMAPA:35223 cerebellum Purkinje cell layer (resultKey in (1926250, 1925572, 1925577)) - CL:0000121 Purkinje cell (termKey=90887561)
-#EMAPA:35739 retina ganglion cell layer (resultKey in (1924417, 1923898, 1923896)) – CL:0000740 retinal ganglion cell #EMAPA:35217 cerebellum granule cell layer - CL:0001031 cerebellar granule cell (termKey=90888451)
-#EMAPA:35406 hippocampus granule cell layer (resultKey in (1784262, 1784279, 1784263)) - CL:0001033 hippocampal granule cell (termKey=90888453)
-#
-#many-to-one
-#EMAPA:35609 main olfactory bulb granule cell layer (resultKey in (1926020, 1924181, 1922738)) - CL:0000626 olfactory granule cell (termKey=90888053)
-#EMAPA:35109 accessory olfactory bulb granule cell layer (resultKey in (1788176, 1788173, 1765609)) - CL:0000626 olfactory granule cell (termKey=90888053)
-#
+# J:122606      MGI:6162057     4i      Zic1    28      cerebellum internal granule cell layer  Expression in mature granule cells.     CL:0001031      cerebellar granule cell 
+
 #one-to-many
-#EMAPA:29106 Sertoli cell (resultKey in (1763464, 1920381, 1920126)) - CL:0000216 Sertoli cell (termKey=90887652)
-#EMAPA:29106 Sertoli cell (resultKey in (1763464, 1920381, 1920126)) - CL:0002481 peritubular myoid cell (termKey=90888981)
-#
+# J:17847 MGI:5304804     2B      Gfap    28      cerebellum Purkinje cell layer  Expression in Bergmann glia and astrocytes    CL:0000644      Bergmann glial cell 
+#             CL:0000127      astrocyte 
+
+#many-to-one
+# J:210150        MGI:5754355     2D +/+  Cux1    28      cortical layer II       Expression is in pyramidal cells.       CL:0000598      pyramidal neuron
+# J:210150        MGI:5754355     2D +/+  Cux1    28      cortical layer III      Expression is in pyramidal cells.       CL:0000598      pyramidal neuron
+
+#many-to-many
+# J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko
+# P     accessory olfactory bulb external plexiform layer       Expression is observed only in mitral and       CL:1001502
+# J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     accessory olfactory bulb mitral cell layer      tufted cells of the accessory olfactory bulb    CL:1001503
+# J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     main olfactory bulb external plexiform layer    Expression is observed only in mitral and       
+# J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     main olfactory bulb mitral cell layer   tufted cells of the main olfactory bulb 
+
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --one-to-one
-insert into gxd_isresultcelltype values (1, 1926250, 90887561, now(), now());
-insert into gxd_isresultcelltype values (2, 1925572, 90887561, now(), now());
-insert into gxd_isresultcelltype values (3, 1925577, 90887561, now(), now());
-
-insert into gxd_isresultcelltype values (4, 1924417, 90888451, now(), now());
-insert into gxd_isresultcelltype values (5, 1923898, 90888451, now(), now());
-insert into gxd_isresultcelltype values (6, 1923896, 90888451, now(), now());
-
-insert into gxd_isresultcelltype values (7, 1784262, 90888453, now(), now());
-insert into gxd_isresultcelltype values (8, 1784279, 90888453, now(), now());
-insert into gxd_isresultcelltype values (9, 1784263, 90888453, now(), now());
+insert into gxd_isresultcelltype values (1, 1723155, 90888451, now(), now());
+--_results_key = 1723155, _celltype_term_key = 90888451
 
 --many-to-one
-insert into gxd_isresultcelltype values (10, 1926020, 90888053, now(), now());
-insert into gxd_isresultcelltype values (11, 1924181, 90888053, now(), now());
-insert into gxd_isresultcelltype values (12, 1922738, 90888053, now(), now());
-
-insert into gxd_isresultcelltype values (13, 1788176, 90888053, now(), now());
-insert into gxd_isresultcelltype values (14, 1788173, 90888053, now(), now());
-insert into gxd_isresultcelltype values (15, 1765609, 90888053, now(), now());
+insert into gxd_isresultcelltype values (2, 1473081, 90888025, now(), now());
+insert into gxd_isresultcelltype values (3, 1473082, 90888025, now(), now());
+-- _results_key =1473081 , _celltype_term_key = 90888025
+-- _results_key =1473082 , _celltype_term_key = 90888025
 
 --one-to-many
-insert into gxd_isresultcelltype values (16, 1763464, 90887652, now(), now());
-insert into gxd_isresultcelltype values (17, 1920381, 90887652, now(), now());
-insert into gxd_isresultcelltype values (18, 1920126, 90887652, now(), now());
+insert into gxd_isresultcelltype values (4, 945152, 90888069, now(), now());
+insert into gxd_isresultcelltype values (5, 945152, 90888067, now(), now());
+-- _results_key = 945152, _celltype_term_key = 90888069 
+-- _results_key = 945152, _celltype_term_key = 90887567
 
-insert into gxd_isresultcelltype values (19, 1763464, 90888981, now(), now());
-insert into gxd_isresultcelltype values (20, 1920381, 90888981, now(), now());
-insert into gxd_isresultcelltype values (21, 1920126, 90888981, now(), now());
+--many-to-many
+insert into gxd_isresultcelltype values (6, 779469, 90889746, now(), now());
+insert into gxd_isresultcelltype values (7, 779469, 90889747, now(), now());
+insert into gxd_isresultcelltype values (8, 779470, 90889746, now(), now());
+insert into gxd_isresultcelltype values (9, 779470, 90889747, now(), now());
+
+--  _results_key =779469 , _celltype_term_key = 90889746
+--  _results_key =779469 , _celltype_term_key = 90889747
+--  _results_key = 779470, _celltype_term_key = 90889746
+--  _results_key = 779470, , _celltype_term_key = 90889747
 
 select setval('gxd_isresultcelltype_seq', (select max(_resultcelltype_key) from GXD_ISResultCellType));
 

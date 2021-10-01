@@ -139,6 +139,9 @@ ${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_create.object
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_drop.object
 ${PG_MGD_DBSCHEMADIR}/key/ALL_Allele_create.object
 
+${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_drop.object
+${PG_MGD_DBSCHEMADIR}/key/GXD_Assay_create.object
+
 echo "--- Create indexes --- " | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTRawSample_drop.object

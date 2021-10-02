@@ -217,11 +217,6 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
 # 
-#  load test data for GXD_ISResultCellType
-#
-${MGI_LIVE}/dbutils/mgidbmigration/yaks/create_gxd_celltype.csh
-
-# 
 #  run cache loads to load newly migrated caches
 # 
 ${MGICACHELOAD}/gxdexpression.csh

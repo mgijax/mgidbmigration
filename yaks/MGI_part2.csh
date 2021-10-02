@@ -49,6 +49,10 @@ date | tee -a ${LOG}
 echo 'Run Cell Ontology Load' | tee -a ${LOG}
 ${VOCLOAD}/runOBOIncLoad.sh CL.config
 
+#
+#  load test data for GXD_ISResultCellType
+#
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/create_gxd_celltype.csh
 
 date | tee -a ${LOG}
 echo 'autosequence check' | tee -a $LOG

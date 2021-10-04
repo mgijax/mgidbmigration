@@ -43,36 +43,38 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 # J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     accessory olfactory bulb mitral cell layer      tufted cells of the accessory olfactory bulb    CL:1001503
 # J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     main olfactory bulb external plexiform layer    Expression is observed only in mitral and       
 # J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     main olfactory bulb mitral cell layer   tufted cells of the main olfactory bulb 
-
+# insert into gxd_isresultcelltype
+# values(23, 1723155, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0000598'), now(), now())
+#
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --one-to-one
-insert into gxd_isresultcelltype values (1, 1723155, 90888451, now(), now());
---_results_key = 1723155, _celltype_term_key = 90888451
+insert into gxd_isresultcelltype values (1, 1723155, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001031'), now(), now());
+--_results_key = 1723155, CL:0001031
 
 --many-to-one
-insert into gxd_isresultcelltype values (2, 1473081, 90888025, now(), now());
-insert into gxd_isresultcelltype values (3, 1473082, 90888025, now(), now());
--- _results_key =1473081 , _celltype_term_key = 90888025
--- _results_key =1473082 , _celltype_term_key = 90888025
+insert into gxd_isresultcelltype values (2, 1473081, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0000598'), now(), now());
+insert into gxd_isresultcelltype values (3, 1473082, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0000598'), now(), now());
+-- _results_key =1473081 ,  CL:0000598
+-- _results_key =1473082 ,   CL:0000598
 
 --one-to-many
-insert into gxd_isresultcelltype values (4, 945152, 90888069, now(), now());
-insert into gxd_isresultcelltype values (5, 945152, 90888067, now(), now());
--- _results_key = 945152, _celltype_term_key = 90888069 
--- _results_key = 945152, _celltype_term_key = 90887567
+insert into gxd_isresultcelltype values (4, 945152, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0000644'), now(), now());
+insert into gxd_isresultcelltype values (5, 945152, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0000127'), now(), now());
+-- _results_key = 945152, CL:0000644
+-- _results_key = 945152, CL:0000127
 
 --many-to-many
-insert into gxd_isresultcelltype values (6, 779469, 90889746, now(), now());
-insert into gxd_isresultcelltype values (7, 779469, 90889747, now(), now());
-insert into gxd_isresultcelltype values (8, 779470, 90889746, now(), now());
-insert into gxd_isresultcelltype values (9, 779470, 90889747, now(), now());
+insert into gxd_isresultcelltype values (6, 779469, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001052'), now(), now());
+insert into gxd_isresultcelltype values (7, 779469, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001053'), now(), now());
+insert into gxd_isresultcelltype values (8, 779470, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001052') , now(), now());
+insert into gxd_isresultcelltype values (9, 779470, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001053') , now(), now());
 
---  _results_key =779469 , _celltype_term_key = 90889746
---  _results_key =779469 , _celltype_term_key = 90889747
---  _results_key = 779470, _celltype_term_key = 90889746
---  _results_key = 779470, , _celltype_term_key = 90889747
+--  _results_key =779469 ,   CL:1001502
+--  _results_key =779469 ,  CL:1001503
+--  _results_key = 779470,  CL:1001502
+--  _results_key = 779470, , CL:1001503
 
 select setval('gxd_isresultcelltype_seq', (select max(_resultcelltype_key) from GXD_ISResultCellType));
 

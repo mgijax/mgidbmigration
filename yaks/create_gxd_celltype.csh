@@ -43,9 +43,8 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 # J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     accessory olfactory bulb mitral cell layer      tufted cells of the accessory olfactory bulb    CL:1001503
 # J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     main olfactory bulb external plexiform layer    Expression is observed only in mitral and       
 # J:100919      MGI:4940881     1C top brain section    Tg(Pcdh21-cre)BYoko P     main olfactory bulb mitral cell layer   tufted cells of the main olfactory bulb 
-# insert into gxd_isresultcelltype
-# values(23, 1723155, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0000598'), now(), now())
 #
+
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

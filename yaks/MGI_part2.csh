@@ -66,10 +66,15 @@ date | tee -a ${LOG}
 echo 'Running GEO HT Experiment Load' | tee -a $LOG
 ${GXDHTLOAD}/bin/geo_htload.sh | tee -a $LOG
 
-# running this separately for now so can check geo load first
 date | tee -a ${LOG}
 echo 'Running expt_add_notes_accessions.csh' | tee -a $LOG
 ${DBUTILS}/mgidbmigration/yaks/expt_add_notes_accessions.csh | tee -a $LOG
+
+# run caches /adding cell type
+date | tee -a ${LOG}
+echo 'running expression and cre cache/adding cell type' | tee -a $LOG
+${MGICACHELOAD}/gxdexpression.csh
+${ALLCACHELOAD}/allelecrecache.csh
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

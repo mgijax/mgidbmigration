@@ -44,10 +44,10 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from voc_annot where _annottype_key = 1000;
 EOSQL
 
-cd ${GOLOAD}/gomousenoctua
-./gomousenoctua.sh | tee -a $LOG
+#cd ${GOLOAD}/gomousenoctua
+#./gomousenoctua.sh | tee -a $LOG
 
-#${GOLOAD}/go.sh | tee -a $LOG
+${GOLOAD}/go.sh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration

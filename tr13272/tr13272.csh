@@ -56,4 +56,9 @@ $PYTHON GO_gene_association.py | tee -a $LOG
 cd ../weekly
 $PYTHON GO_gene_association_nonmouse.py | tee -a $LOG
 
+cd ${QCRPTS}
+source ./Configuration
+cd weekly
+$PYTHON GO_stats.py
+
 date |tee -a $LOG

@@ -159,8 +159,10 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_Expression_create.object
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_drop.object
 ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object
 
-echo "--- Recreate all autosequence --- " | tee -a $LOG
+echo "--- drop obsolete views, procedures --- " | tee -a $LOG
+./obsolete.csh | tee -a $LOG
 
+echo "--- Recreate all autosequence --- " | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 

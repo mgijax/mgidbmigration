@@ -17,7 +17,6 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 DROP FUNCTION IF EXISTS MAP_deleteByCollection(text);
-
 DROP FUNCTION IF EXISTS MGI_checkUserRole(varchar,text);
 DROP FUNCTION IF EXISTS MGI_checkUserTask(text,int);
 

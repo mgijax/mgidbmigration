@@ -21,7 +21,6 @@ DROP FUNCTION IF EXISTS MGI_checkUserRole(varchar,text);
 DROP FUNCTION IF EXISTS MGI_checkUserTask(text,int);
 
 drop view if exists mgd.ACC_LogicalDB_View CASCADE;
-drop view if exists mgd.ALL_Annot_View CASCADE;
 drop view if exists mgd.ALL_Derivation_Summary_View CASCADE;
 
 drop view if exists mgd.BIB_All2_View CASCADE;
@@ -64,7 +63,6 @@ drop view if exists mgd.MGI_SynonymType_Allele_View CASCADE;
 drop view if exists mgd.MGI_SynonymType_GOTerm_View CASCADE;
 drop view if exists mgd.MGI_SynonymType_MusMarker_View CASCADE;
 
-drop view if exists mgd.MRK_AccRef2_View CASCADE;
 drop view if exists mgd.MRK_AccRef_View CASCADE;
 drop view if exists mgd.MRK_Anchors_View CASCADE;
 drop view if exists mgd.MRK_NonMouse_View CASCADE;
@@ -83,9 +81,6 @@ drop view if exists mgd.MLD_RI_View CASCADE;
 drop view if exists mgd.MLD_Statistics_View CASCADE;
 drop view if exists mgd.MLD_Summary_View CASCADE;
 drop view if exists mgd.RI_RISet_View CASCADE;
-
-drop view if exists mgd.MGI_UserTask_View CASCADE;
-drop view if exists mgd.MGI_UserRole_View CASCADE;
 
 drop view if exists mgd.PWI_ALL_Allele_View CASCADE;
 drop view if exists mgd.PWI_BIB_Refs_View CASCADE;

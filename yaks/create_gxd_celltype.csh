@@ -65,10 +65,10 @@ insert into gxd_isresultcelltype values (5, 945152, (select _object_key from acc
 -- _results_key = 945152, CL:0000127
 
 --many-to-many
-insert into gxd_isresultcelltype values (6, 779469, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001502'), now(), now());
-insert into gxd_isresultcelltype values (7, 779469, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001503'), now(), now());
-insert into gxd_isresultcelltype values (8, 779470, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001502') , now(), now());
-insert into gxd_isresultcelltype values (9, 779470, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:0001503') , now(), now());
+insert into gxd_isresultcelltype values (6, 779469, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:1001502'), now(), now());
+insert into gxd_isresultcelltype values (7, 779469, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:1001503'), now(), now());
+insert into gxd_isresultcelltype values (8, 779470, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:1001502') , now(), now());
+insert into gxd_isresultcelltype values (9, 779470, (select _object_key from acc_accession where _mgitype_key = 13 and accid = 'CL:1001503') , now(), now());
 
 --  _results_key =779469 ,   CL:1001502
 --  _results_key =779469 ,  CL:1001503

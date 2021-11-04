@@ -51,7 +51,6 @@ drop view if exists mgd.MGI_NoteType_Sequence_View CASCADE;
 drop view if exists mgd.MGI_NoteType_Source_View CASCADE;
 drop view if exists mgd.MGI_NoteType_VocEvidence_View CASCADE;
 drop view if exists mgd.MGI_Organism_Acc_View CASCADE;
-drop view if exists mgd.MGI_Organism_Marker_View CASCADE;
 drop view if exists mgd.MGI_Organism_Summary_View CASCADE;
 drop view if exists mgd.MGI_Organism_View CASCADE;
 drop view if exists mgd.MGI_Reference_Sequence_View CASCADE;

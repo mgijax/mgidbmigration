@@ -21,11 +21,6 @@ touch $LOG
  
 date | tee -a $LOG
  
-cd ${PUBRPTS}
-source ./Configuration
-cd daily
-$PYTHON GO_gpi.py | tee -a $LOG
-
 # run goload
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr | tee -a $LOG
@@ -34,6 +29,7 @@ ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua | tee -a $LOG
+scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
@@ -59,9 +55,12 @@ delete from voc_annot where _annottype_key = 1000;
 
 EOSQL
 
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
+
 ${GOLOAD}/go.sh | tee -a $LOG
 
-${UNIPROTLoAD}/bin/uniprotload.sh | tee -a $LOG
+${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration

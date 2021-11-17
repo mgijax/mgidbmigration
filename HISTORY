@@ -1,3 +1,4 @@
+TAG: mgidbmigration-6-0-17-23
 TAG: mgidbmigration-6-0-17-22
 TAG: mgidbmigration-6-0-17-21
 TAG: mgidbmigration-6-0-17-20
@@ -10,6 +11,7 @@ STAFF: lec
 CHANGES:
 yaks-247/wts2-703/new Noctua -> GO Annotation pipeline
 yaks-315/wts2-703/new Noctua -> GO Annotation pipeline
+yaks-347/wts2-703/new Noctua -> GO Annotation pipeline
 
 TAG: mgidbmigration-6-0-17-15
 DATE: 09/30/2021

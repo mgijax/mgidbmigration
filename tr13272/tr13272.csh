@@ -53,7 +53,7 @@ where toDelete._annot_key = voc_evidence._annot_key and voc_evidence._annotevide
 
 delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence._annot_key;
 
-delete from acc_accession from toDelete where toDelete._annot_key = acc_accession._object_key and acc_accession._mgitype_key = 25;
+delete from acc_accession using toDelete where toDelete._annot_key = acc_accession._object_key and acc_accession._mgitype_key = 25;
 
 delete from voc_annot where _annottype_key = 1000;
 

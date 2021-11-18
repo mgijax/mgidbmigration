@@ -31,8 +31,9 @@ ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua | tee -a $LOG
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
+# start-copy to goload/go.sh
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -49,14 +50,14 @@ where toDelete._annot_key = voc_evidence._annot_key and voc_evidence._annotevide
 
 delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence._annot_key;
 
-delete from acc_accession using toDelete where toDelete._annot_key = acc_accession._object_key and acc_accession._mgitype_key = 25;
-
 delete from voc_annot where _annottype_key = 1000;
 
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
+
+# end-copy to goload/go.sh
 
 ${GOLOAD}/go.sh | tee -a $LOG
 

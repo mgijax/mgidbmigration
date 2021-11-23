@@ -83,8 +83,8 @@ insert into VOC_Term values(nextval('voc_term_seq'), 158, 'In situ reporter (kno
 insert into VOC_Term values(nextval('voc_term_seq'), 158, 'In situ reporter (transgenic)', 'Transg', null, 9, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 158, 'Recombinase reporter', 'Recomb', null, 10, 0, 1001, 1001, now(), now());
 
-insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Applicable', 'Not Appl', null, 1, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Specimen', 'Not Spec' , null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Specified', 'Not Spec', null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Applicable', 'Not Appl' , null, 2, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 172, 'poly-A+', 'poly-A+', null, 3, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 172, 'total', 'total', null, 4, 0, 1001, 1001, now(), now());
 

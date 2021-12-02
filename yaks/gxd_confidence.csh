@@ -16,7 +16,12 @@ date | tee -a $LOG
 
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_HTExperiment ${MGI_LIVE}/dbutils/mgidbmigration/yaks/GXD_HTExperiment.bcp "|"
 
-${PG_MGD_DBSCHEMADIR}/index/GXD_HTExperiment_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperimentVariable_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
+
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_drop.object | tee -a $LOG || exit 1
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -54,5 +59,11 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTExperiment_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/comments/GXD_HTExperiment_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTExperiment_create.object | tee -a $LOG || exit 1
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperimentVariable_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 
 date |tee -a $LOG

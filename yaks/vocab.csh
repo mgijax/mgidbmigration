@@ -106,6 +106,10 @@ update VOC_Term set abbreviation = 'p adult' where _term_key = 84171433;
 update VOC_Term set abbreviation = 'p newborn' where _term_key = 84171434;
 update VOC_Term set abbreviation = 'Not Appl' where _term_key = 84171435;
 
+-- for gxdhtclassifier
+insert into VOC_Term values(nextval('voc_term_seq'), 116, 'Predicted Yes', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 116, 'Predicted No', null, null, 6, 0, 1001, 1001, now(), now());
+
 EOSQL
 
 date |tee -a $LOG

@@ -63,6 +63,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTExperiment_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperimentVariable_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_create.object | tee -a $LOG || exit 1
+
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 

@@ -74,6 +74,11 @@ ${PG_MGD_DBSCHEMADIR}/table/GXD_Expression_create.object
 ${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_drop.object
 ${PG_MGD_DBSCHEMADIR}/table/ALL_Cre_Cache_create.object
 
+# add confidence column to gxd_htexperiment
+date | tee -a ${LOG}
+echo 'step ??: running gxd_confidence.csh' | tee -a $LOG
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/gxd_confidence.csh | tee -a ${LOG}
+
 #
 # only run the ones needed per schema changes
 #
@@ -177,7 +182,6 @@ ${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
-#
 # reconfig.sh
 # Drop and re-create database triggers, stored procedures, views and comments
 # always a good idea to do to make sure that nothing was missed with schema changes

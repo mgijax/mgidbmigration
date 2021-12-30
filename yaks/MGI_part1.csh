@@ -205,6 +205,11 @@ date | tee -a ${LOG}
 echo 'step ??: running expt_delete.csh' | tee -a $LOG
 ${MGI_LIVE}/dbutils/mgidbmigration/yaks/expt_delete.csh | tee -a ${LOG}
 
+# remove data and associated objects from the defunct genesummaryload
+date | tee -a ${LOG}
+echo 'step ??: running genesummary_delete.csh' | tee -a $LOG
+${MGI_LIVE}/dbutils/mgidbmigration/yaks/genesummary_delete.csh | tee -a ${LOG}
+
 #
 # cleanobjects.sh : removing stray mgi_notes
 #

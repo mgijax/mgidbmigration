@@ -1,0 +1,9 @@
+MGI_C4AM_master.original.txt - master file copied from production 1/3/2022
+QTL_master.txt - New QTL master file
+MGI_C4AM_master.new.txt - new MGI master file w/o QTL
+MGI_QTL.txt - file containing both MGI and QTL so we can delete/reload MGI and load QTL
+update.sh - runs update.py
+update.py - parses original MGI master file, creates new QTL and MGI master files, creates file of both to load adhoc
+
+Run this after new coordinates have been loaded to compare input files to collections in the database
+mgi_collection.sh

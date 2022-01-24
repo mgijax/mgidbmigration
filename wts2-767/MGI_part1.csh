@@ -39,6 +39,10 @@ EOSQL
 date | tee -a ${LOG}
 
 #
+# migrate mgi_note
+./mginotechunk.csh | tee -a $LOG
+
+#
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
@@ -49,12 +53,12 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:
@@ -64,7 +68,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
@@ -82,10 +86,10 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary
 #
-#${MGI_JAVALIB}/lib_java_core/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_core/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

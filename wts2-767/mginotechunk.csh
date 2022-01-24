@@ -61,8 +61,8 @@ select count(*) from MGI_Note_old;
 select count(*) from MGI_Note;
 select count(*) from MGI_NoteChunk;
 
---drop table MGI_NoteChunk;
---drop table MGI_Note_old;
+drop table MGI_NoteChunk;
+drop table MGI_Note_old;
 
 EOSQL
 

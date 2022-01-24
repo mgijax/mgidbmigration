@@ -21,8 +21,13 @@ ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Note_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_NoteType_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/MGI_NoteType_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.MGI_NoteChunk DROP CONSTRAINT MGI_NoteChunk__Note_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_NoteChunk DROP CONSTRAINT MGI_NoteChunk__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_NoteChunk DROP CONSTRAINT MGI_NoteChunk__CreatedBy_key_fkey CASCADE;
 ALTER TABLE MGI_Note RENAME TO MGI_Note_old;
 EOSQL
 
@@ -43,10 +48,12 @@ where m._Note_key = c._Note_key
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/MGI_Note_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/index/MGI_Note_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Note_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_NoteType_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/MGI_NoteType_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/MGI_Note_create.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -54,8 +61,8 @@ select count(*) from MGI_Note_old;
 select count(*) from MGI_Note;
 select count(*) from MGI_NoteChunk;
 
-drop table MGI_NoteChunk;
-drop table MGI_Note_old;
+--drop table MGI_NoteChunk;
+--drop table MGI_Note_old;
 
 EOSQL
 

@@ -52,18 +52,17 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_Note_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_NoteType_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/ACC_MGIType_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/key/MGI_NoteType_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/MGI_Note_create.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
 select count(*) from MGI_Note_old;
 select count(*) from MGI_Note;
 select count(*) from MGI_NoteChunk;
+EOSQL
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table MGI_NoteChunk;
 drop table MGI_Note_old;
-
 EOSQL
 
 date |tee -a $LOG

@@ -34,7 +34,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-13', public_version = 'MGI 6.13';
+update MGI_dbinfo set schema_version = '6-0-18', public_version = 'MGI 6.18';
 EOSQL
 date | tee -a ${LOG}
 

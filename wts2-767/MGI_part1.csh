@@ -85,8 +85,8 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 # cache loads
 ${MRKCACHELOAD}/mrkmcv.csh | tee -a $LOG
 ${ALLCACHELOAD}/allelecombination.csh | tee -a $LOG
-${MGICACHELOAD}/${PYTHON}/go_annot_extensions_display_load.csh | tee -a $LOG
-${MGICACHELOAD}/${PYTHON}/go_isoforms_display_load.csh | tee -a $LOG
+${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a $LOG
+${MGICACHELOAD}/go_isoforms_display_load.csh | tee -a $LOG
 
 #
 # rebuild the java dla, if needed due to schema changes

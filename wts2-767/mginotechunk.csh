@@ -60,10 +60,5 @@ select count(*) from MGI_Note;
 select count(*) from MGI_NoteChunk;
 EOSQL
 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-drop table MGI_NoteChunk;
-drop table MGI_Note_old;
-EOSQL
-
 date |tee -a $LOG
 

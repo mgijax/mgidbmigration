@@ -1,24 +1,13 @@
 #
-# Report:
-#       Enter TR # and describe report inputs/output
 #
-# History:
-#
-# lec	01/18/99
-#	- created
+# merge single vocabulary tables into voc_vocab/voc_term
 #
  
 import sys 
 import os
 import db
-import reportlib
 
 db.setTrace()
-
-CRT = reportlib.CRT
-SPACE = reportlib.SPACE
-TAB = reportlib.TAB
-PAGE = reportlib.PAGE
 
 vocabs = { 
         '151': ('GXD_AntibodyClass', '_antibodyclass_key', 'class', ['GXD_Antibody']),

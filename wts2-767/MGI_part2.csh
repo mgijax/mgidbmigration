@@ -43,5 +43,18 @@ switch (`uname -n`)
         breaksw
 endsw
 
+#mcvload
+#rollupload
+#targetedallelelload
+#alomrkload
+#fearload
+#homologyload
+#htmpload : genotypeload, strainload ; may need to make a test input file
+#rnaseqload : delete 1 experiment set
+#straingenemodelload : strainmarkerload
+#vocload : run MP
+#nomenload : need a test input file
+#${ALLELELOAD}/bin/makeIKMC.sh ikmc.config
+
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

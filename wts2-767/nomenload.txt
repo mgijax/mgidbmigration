@@ -1,0 +1,1 @@
+Pseudogene	lec-1	predicted gene, 52946	16	official	J:91388			ENSMUSG00000118529 is on chr16:3635472-3636960, - strand. ENSEMBL annotation of mouse reference assembly GRCm38.p6, Gene type: processed_pseudogene; Gene Name: AC140982.1.	yz

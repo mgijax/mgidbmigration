@@ -40,9 +40,10 @@ switch (`uname -n`)
     case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
-        scp bhmgiapp01:/data/loads/mgi/mcvload/input/mcvload.txt /data/loads/mgi/mcvload/input/
-        scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology /data/loads/mgi/vocload/runTimeMP/
-        scp bhmgiapp01:/data/loads/mgi/fearload/input/fearload.txt /data/loads/mgi/fearload/input/
+        scp bhmgiapp01:/data/loads/mgi/mcvload/input/mcvload.txt  ${DATALOADSOUTPUT}/mgi/mcvload/input/
+        scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology  ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP/
+        scp ${DBUTILS}/mgidbmigration/wts2-767/nomenload.txt  ${DATALOADSOUTPUT}/mgi/nomenload/input
+        scp bhmgiapp01:/data/loads/mgi/fearload/input/fearload.txt ${DATALOADSOUTPUT}/mgi/fearload/input/
         scp bhmgiapp01:/data/downloads/www.mousephenotype.org/mgi_modification_allele_report.tsv /data/downloads/www.mousephenotype.org/
         scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk/
         scp bhmgiapp01:/export/gondor/ftp/pub/mgigff3/MGI.gff3.gz ${FTPROOT}/pub/mgigff3/
@@ -99,7 +100,8 @@ echo 'Run Homology Loads' | tee -a ${LOG}
 ${HOMOLOGYLOAD}/bin/homologyload.sh alliance_directload.config
 ${HOMOLOGYLOAD}/bin/homologyload.sh alliance_clusteredload.config
 
-#targetedallelelload
+#targetedallelelload - this load not running in prod, will test this once it is updated to use new
+# input file in the CREAM project
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

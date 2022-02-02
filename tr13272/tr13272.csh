@@ -53,7 +53,7 @@ delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence
 
 delete from voc_annot where _annottype_key = 1000;
 
-insert into voc_term values(nextval('voc_term_seq'), 82, 'has_direct_output', 'has_direct_output', null, 1, 0, 1001, 1001, now(), now());
+insert into voc_term values(nextval('voc_term_seq'), 82, 'has_primary_input', 'has_primary_input', 'RO:0004009', 1, 0, 1001, 1001, now(), now());
 
 EOSQL
 

@@ -53,8 +53,11 @@ delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence
 
 delete from voc_annot where _annottype_key = 1000;
 
--- per David 02/02/2022
-insert into voc_term values(nextval('voc_term_seq'), 82, 'has_primary_input', 'has_primary_input', 'RO:0004009', 1, 0, 1001, 1001, now(), now());
+-- per David/Dustin 02/02/2022
+-- do nothing until we hear from Dustin
+-- transports or maintains localization of (RO:0002313) -> has primary input (RO:0004009)
+-- imports (RO:0002340) -> has primary input (RO:0004009)
+-- exports (RO:0002345) -> has primary output (RO:0004008)
 
 EOSQL
 

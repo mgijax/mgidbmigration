@@ -69,7 +69,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table MGI_NoteChunk;
 drop table MGI_Note_old;
-drop table MRK_Anchors;
+drop table MRK_Anchor;
 EOSQL
 
 #

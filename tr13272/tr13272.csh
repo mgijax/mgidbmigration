@@ -5,6 +5,13 @@
 #
 # reports_db
 # goload
+# annotload
+# lib_py_report
+#
+# delete *all* GO Annotations
+# run goload
+# run uniprotload
+# generate reports
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -70,16 +77,14 @@ ${GOLOAD}/go.sh | tee -a $LOG
 
 #${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
-#cd ${PUBRPTS}
-#source ./Configuration
-#cd daily
-#$PYTHON GO_gene_association.py | tee -a $LOG
-#cd ../weekly
-#$PYTHON GO_gene_association_nonmouse.py | tee -a $LOG
+cd ${PUBRPTS}
+source ./Configuration
+cd daily
+$PYTHON GO_gene_association.py | tee -a $LOG
 
-#cd ${QCRPTS}
-#source ./Configuration
-#cd weekly
-#$PYTHON GO_stats.py
+cd ${QCRPTS}
+source ./Configuration
+cd weekly
+$PYTHON GO_stats.py
 
 date |tee -a $LOG

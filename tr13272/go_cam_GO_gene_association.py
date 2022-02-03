@@ -21,6 +21,11 @@
 #
 # IMPORTANT THINGS TO KNOW:
 #
+#    gaf/col11 (annotation extension) and gpad/col16 should be equal.
+#    except :  ISO annotations are excluded from gaf/col11 (blank)
+#    see "lib_py_report/go_annot_extensions.py" for the list of
+#	excluded Properties and excluded Evidence
+#
 #    gpad/col16 : will *never* contains > 1 stanza, and will always use the "," delimiter
 #
 # lec   08/25/2020
@@ -142,6 +147,11 @@ def doSetup():
     #   and m.symbol = 'Birc3'
     #	and m.symbol = 'Hk1'
     #
+    # for Dustin, exclude:
+    # _refs_key |    mgiid    |  jnumid  |                       short_citation
+    # -----------+-------------+----------+-------------------------------------------------------------
+    #     156949 | MGI:4417868 | J:155856 | Mouse Genome Informatics Scientific Curators,  2010 Jan;():
+    #     165659 | MGI:4834177 | J:164563 | Mouse Genome Informatics Scientific Curators,  2010 Oct;():
 
     db.sql('''select distinct a._Term_key, t.term, ta.accID as termID, q.term as qualifier, a._Object_key, 
             e._AnnotEvidence_key, e.inferredFrom, e._EvidenceTerm_key, 
@@ -159,8 +169,8 @@ def doSetup():
         where a._AnnotType_key = 1000 
         and a._Annot_key = e._Annot_key 
         and a._Object_key = m._Marker_key 
+        --and m._Marker_Type_key = 1 
         and m._Marker_Status_key = 1
-        and m._Marker_Type_key = 1 
         and a._Term_key = t._Term_key 
         and a._Term_key = ta._Object_key 
         and ta._MGIType_key = 13 
@@ -168,7 +178,9 @@ def doSetup():
         and m._Marker_Type_key = mt._Marker_Type_key 
         and a._Qualifier_key = q._Term_key 
         and e._ModifiedBy_key = u._User_key
-        and u.login like 'NOCTUA%'
+        -- for Dustin/only MGI_curated/add tr9612_annotload/1497)
+        and u.orcid is not null
+        and e._Refs_key not in (156949, 165659)
         ''', None)
     db.sql('create index gomarker1_idx1 on gomarker1(_Object_key)', None)
     db.sql('create index gomarker1_idx2 on gomarker1(_EvidenceTerm_key)', None)
@@ -220,7 +232,10 @@ def doSetup():
         and b._LogicalDB_key = 1 
         and g._EvidenceTerm_key = t._Term_key 
         and g._ModifiedBy_key = u._User_key
-        and u.login like 'NOCTUA%'
+
+        -- for Dustin/only MGI_curated
+        and u.orcid is not null
+
         ''', None)
 
     db.sql('create index gomarker2_idx1 on gomarker2(symbol)', None)
@@ -351,7 +366,7 @@ def doSetup():
                 'evidence', 'anatomy', 'cell type', 'gene product', 'modification', 'target', 
                 'external ref', 'text', 'dual-taxon ID',
                 'noctua-model-id', 'contributor', 'individual', 'go_qualifier', 'model-state',
-                'has_participant', 'regulates_o_has_participant', 'creation-date'
+                'has_participant', 'regulates_o_has_participant'
                 )
             and t.note is not null
             order by a._AnnotEvidence_key, p.stanza
@@ -415,7 +430,8 @@ def doSetup():
             and p._PropertyTerm_key = t._Term_key
             and t.term in ('noctua-model-id', 'model-state', 
                 'has_participant', 'regulates_o_has_participant',
-                'text'
+                'text', 
+                'anatomy', 'cell type', 'target', 'external ref', 'evidence'
                 )
             ''', 'auto')
     for r in results:
@@ -432,6 +448,14 @@ def doSetup():
 
         if term in ('noctua-model-id', 'model-state'):
                 value = term + '=' + value
+
+        # "comment" is part of Dustin's initial noctua load; then it can be removed
+        if term in ('text'):
+                value = 'comment=' + value
+        elif term in ('has_participant', 'regulates_o_has_participant'):
+                value = 'comment=' + term + '(' + value + ')'
+        elif term in ('anatomy', 'cell type', 'target', 'external ref', 'evidence'):
+                value = 'comment=' + term + ' ' + value
 
         if key not in gpadCol12Lookup:
             gpadCol12Lookup[key] = []
@@ -827,6 +851,7 @@ def doGAFFinish():
         #!16 Annotation Extension   
         # column 16
         # contains property/value information
+        # see lib_py_report/go_annot_extensions.py for list of excluded properties
         properties = ''
         if objectKey in gafCol16Lookup:
             properties = ''.join(gafCol16Lookup[objectKey])
@@ -994,7 +1019,7 @@ def addGPADReportRow(reportRow, r):
         reportRow = reportRow + '|'.join(references) + TAB
 
         #! 6  Evidence_type
-        if r['assignedBy'].find('NOCTUA_') >= 0 and key in evidenceLookup:
+        if key in evidenceLookup:
             reportRow = reportRow + evidenceLookup[key][0]
         elif r['evidenceCode'] in ecoLookupByEvidence:
             reportRow = reportRow + ecoLookupByEvidence[r['evidenceCode']]

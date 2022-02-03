@@ -42,7 +42,7 @@ switch (`uname -n`)
         echo 'run mirror_wget downloads' | tee -a $LOG 
         scp bhmgiapp01:/data/loads/mgi/mcvload/input/mcvload.txt  ${DATALOADSOUTPUT}/mgi/mcvload/input/
         scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology  ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP/
-        scp ${DBUTILS}/mgidbmigration/wts2-767/nomenload.txt  ${DATALOADSOUTPUT}/mgi/nomenload/input
+        scp ${DBUTILS}/mgidbmigration/wts2-767/nomenload.txt  /data/nomen/current
         scp bhmgiapp01:/data/loads/mgi/fearload/input/fearload.txt ${DATALOADSOUTPUT}/mgi/fearload/input/
         scp bhmgiapp01:/data/downloads/www.mousephenotype.org/mgi_modification_allele_report.tsv /data/downloads/www.mousephenotype.org/
         scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk/

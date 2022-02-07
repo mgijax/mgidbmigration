@@ -102,6 +102,9 @@ ${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
 ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
+# mgi_notechunk fix for pwi_report sql_text
+./pwireport.csh | tee -a $LOG
+
 #
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

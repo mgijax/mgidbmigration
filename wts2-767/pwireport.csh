@@ -38,6 +38,8 @@ update PWI_Report set sql_text = 'select al.symbol as alleleSymbol, aa.accid as 
 where id = 48
 ;
 
+select * from pwi_report where sql_text ilike '%chunk%';
+
 EOSQL
 
 date |tee -a $LOG

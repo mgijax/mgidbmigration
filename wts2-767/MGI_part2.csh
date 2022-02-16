@@ -43,7 +43,8 @@ switch (`uname -n`)
         scp bhmgiapp01:/data/loads/mgi/mcvload/input/mcvload.txt  ${DATALOADSOUTPUT}/mgi/mcvload/input/
         scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology  ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP/
         scp ${DBUTILS}/mgidbmigration/wts2-767/nomenload.txt  /data/nomen/current
-        scp bhmgiapp01:/data/loads/mgi/fearload/input/fearload.txt ${DATALOADSOUTPUT}/mgi/fearload/input/
+        scp ${DBUTILS}/mgidbmigration/wts2-767/fearload.txt ${DATALOADSOUTPUT}/mgi/fearload/input/
+#        scp bhmgiapp01:/data/loads/mgi/fearload/input/fearload.txt ${DATALOADSOUTPUT}/mgi/fearload/input/
         scp bhmgiapp01:/data/downloads/www.mousephenotype.org/mgi_modification_allele_report.tsv /data/downloads/www.mousephenotype.org/
         scp bhmgiapp01:/data/downloads/www.ebi.ac.uk/impc.json /data/downloads/www.ebi.ac.uk/
         scp bhmgiapp01:/export/gondor/ftp/pub/mgigff3/MGI.gff3.gz ${FTPROOT}/pub/mgigff3/

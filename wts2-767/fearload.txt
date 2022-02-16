@@ -1,0 +1,41 @@
+Action	Category	Organizer ID	Organizer symbol	Relationship ID	Relationship Name	Participant ID	Participant Name	Qualifier Abbreviation	Evidence Code	jnum_id	Curator ID	Notes	Property:Non-mouse_Organism	Property:Non-mouse_Gene_Symbol	Property:Non-mouse_NCBI_Gene_ID					
+add	expresses_component	MGI:6850022	Gt(ROSA)26Sor<em1(Eef1a1-IGFBP5)Cfbos>	RV:0000211	expresses_an_orthologous_gene	MGI:96440	Igfbp5		EXP	J:317161	mnk		Human	IGFBP5	3488					
+add	expresses_component	MGI:6850165	Tg(Acp5-Selenow)#Djeo	RV:0000210	expresses_mouse_gene	MGI:1100878	Selenow		EXP	J:317012	monikat									
+add	expresses_component	MGI:6850607	Tg(CAG-TNFRSF14)7Hgh	RV:0000211	expresses_an_orthologous_gene	MGI:2675303	Tnfrsf14		EXP	J:304481	mnk		Human	TNFRSF14	8764					
+add	expresses_component	MGI:6850608	Tg(CAG-TNFRSF14*Y61A)23Hgh	RV:0000211	expresses_an_orthologous_gene	MGI:2675303	Tnfrsf14		EXP	J:304481	mnk	Y61A mutation	Human	TNFRSF14	8764					
+add	expresses_component	MGI:6850609	Tg(CAG-Tnfrsf14*Y61A)22Hgh	RV:0000210	expresses_mouse_gene	MGI:2675303	Tnfrsf14		EXP	J:304481	mnk	Y61A mutation								
+add	expresses_component	MGI:6850678	Tg(Chrna6/GFP)4Lst	RV:0000210	expresses_mouse_gene	MGI:106213	Chrna6		EXP	J:304873	mnk									
+add	expresses_component	MGI:6850678	Tg(Chrna6/GFP)4Lst	RV:0000210	expresses_mouse_gene	MGI:1921539	Tex24		EXP	J:304873	mnk									
+add	expresses_component	MGI:6850678	Tg(Chrna6/GFP)4Lst	RV:0000210	expresses_mouse_gene	MGI:1918202	Poteg		EXP	J:304873	mnk									
+add	expresses_component	MGI:6852559	Tg(DBH-SNCA)#Dwei	RV:0000211	expresses_an_orthologous_gene	MGI:1277151	Snca		EXP	J:296218	monikat		Human	SNCA	6622					
+add	expresses_component	MGI:6852586	Tg(Rho-Sag*F86A*F198A)175Seva	RV:0000210	expresses_mouse_gene	MGI:98227	Sag		EXP	J:296598	mnk	mutations F86A;F198A								
+add	expresses_component	MGI:6852589	Tg(Rho-Sag*F86A*F198A)292Seva	RV:0000210	expresses_mouse_gene	MGI:98227	Sag		EXP	J:296598	mnk	mutations F86A;F198A								
+add	expresses_component	MGI:6852593	Tg(Rho-Sag*F86A*F198A)77Seva	RV:0000210	expresses_mouse_gene	MGI:98227	Sag		EXP	J:296598	mnk	mutations F86A;F198A								
+add	expresses_component	MGI:6852595	Tg(RHO*T17M)5Asl	RV:0000211	expresses_an_orthologous_gene	MGI:97914	Rho		EXP	J:200547	mnk	mutation T17M	Human	RHO	6010					
+add	expresses_component	MGI:6852596	Tg(RHO*P23H)UF1Asl	RV:0000211	expresses_an_orthologous_gene	MGI:97914	Rho		EXP	J:123311	mnk	mutation P23H	Human	RHO	6010					
+add	expresses_component	MGI:6856507	Gt(ROSA)26Sor<tm1(Fabp5)Galf>	RV:0000210	expresses_mouse_gene	MGI:101790	Fabp5		EXP	J:317465	acv									
+add	expresses_component	MGI:6856511	Sod1<em1(SOD1)Emcf>	RV:0000211	expresses_an_orthologous_gene	MGI:98351	Sod1		EXP	J:90559	mnk	NM_000454.4(SOD1):c.14CtoT (p.Ala5Val)	Human	SOD1	6647					
+add	expresses_component	MGI:6856586	Tg(Igkv3-5*-MYC)24Plbe	RV:0000211	expresses_an_orthologous_gene	MGI:97250	Myc		EXP	J:131912	mnk		Human	MYC	4609					
+add	expresses_component	MGI:6856583	Tg(APOA1*)1Smijd	RV:0000211	expresses_an_orthologous_gene	MGI:88049	Apoa1		EXP	J:304480	mnk		Human	APOA1	335					
+add	expresses_component	MGI:6856591	Tg(Igkv3-5*-MYC)4Plbe	RV:0000211	expresses_an_orthologous_gene	MGI:97250	Myc		EXP	J:131912	mnk		Human	MYC	4609					
+add	expresses_component	MGI:6856593	Tg(Prnp-MAPT*)18Toco	RV:0000211	expresses_an_orthologous_gene	MGI:97180	Mapt		EXP	J:94077	mnk	proline-to-serine at codon 301 (P301S) and four serine-to-glutamate substitutions at positions 262, 293, 324, and 356 in splice isoform #2 (NM_005910.5/NP_005901.2)	Human	MAPT	4137					
+add	expresses_component	MGI:6856595	Tg(Prnp-MAPT*P301S*K280Q)13Toco	RV:0000211	expresses_an_orthologous_gene	MGI:97180	Mapt		EXP	J:94077	mnk	P301S mutation, four microtubule-binding domains, one N-terminal insert (1N4R) and a single acetylation-mimicking mutation in the tau transgene at residue K280 (K280Q)	Human	MAPT	4137					
+add	expresses_component	MGI:6856620	Ace2<em1(ACE2)Mbp>	RV:0000211	expresses_an_orthologous_gene	MGI:1917258	Ace2		EXP	J:94077	mnk		Human	ACE2	59272					
+add	expresses_component	MGI:6856706	Dpp4<em1(DPP4)Mbp>	RV:0000211	expresses_an_orthologous_gene	MGI:94919	Dpp4		EXP	J:94077	mnk		Human	DPP4	1803					
+add	expresses_component	MGI:6856764	Tmprss2<em1(TMPRSS2)Mbp>	RV:0000211	expresses_an_orthologous_gene	MGI:1354381	Tmprss2		EXP	J:94077	mnk		Human	TMPRSS2	7113					
+add	expresses_component	MGI:6780678	Apoe<tm3.1(APOE_i4)Hol>	RV:0000211	expresses_an_orthologous_gene	MGI:88057	Apoe		EXP	J:311531	mnk	isoform 4	Human	APOE	348					
+add	expresses_component	MGI:6856833	Entpd1<tm1.1(ENTPD1)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:102805	Entpd1		EXP	J:317752	mnk		Human	ENTPD1	953					
+add	expresses_component	MGI:6857637	Tg(Col1a1-Sost)1Hhtg	RV:0000210	expresses_mouse_gene	MGI:1921749	Sost		EXP	J:233348	mnk									
+add	expresses_component	MGI:6856833	Entpd1<tm2.1(ENTPD1)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:102805	Entpd1		EXP	J:317752	mnk		Human	ENTPD1	953					
+add	expresses_component	MGI:6857639	Cd274<tm1.1(CD274)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:1926446	Cd274		EXP	J:94077	mnk		Human	CD274	29126					
+add	expresses_component	MGI:6857657	Cd3e<tm3.1(CD3E)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:88332	Cd3e		EXP	J:94077	mnk		Human	CD3E	916					
+add	expresses_component	MGI:6857660	Sting1<tm1.1(STING1)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:1919762	Sting1		EXP	J:94077	mnk		Human	STING1	340061					
+add	expresses_component	MGI:6857662	Sting1<tm2.1(STING1)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:1919762	Sting1		EXP	J:94077	mnk		Human	STING1	340061					
+add	expresses_component	MGI:6857664	Sting1<tm3.1(STING1)Geno>	RV:0000211	expresses_an_orthologous_gene	MGI:1919762	Sting1		EXP	J:94077	mnk		Human	STING1	340061					
+add	expresses_component	MGI:6857986	Tg(Myh6-CYLD)247E3Cuit	RV:0000211	expresses_an_orthologous_gene	MGI:1921506	Cyld		EXP	J:94077	mnk		Human	CYLD	1540					
+add	expresses_component	MGI:6857997	Tg(Myh6-UCHL1)248B1Cuit	RV:0000211	expresses_an_orthologous_gene	MGI:103149	Uchl1		EXP	J:94077	mnk		Human	UCHL1	7345					
+add	expresses_component	MGI:6858037	Tg(Actb-Dlx6os1)1Jhdk	RV:0000210	expresses_mouse_gene	MGI:2443217	Dlx6os1		EXP	J:94077	mnk									
+add	expresses_component	MGI:6864331	Tg(EEF1A1-IL15)K2Sidub	RV:0000211	expresses_an_orthologous_gene	MGI:103014	Il15		EXP	J:65262	acv		Human	IL15	3600					
+add	expresses_component	MGI:6865788	Cxcr2<tm1(CXCR2)Rale>	RV:0000211	expresses_an_orthologous_gene	MGI:105303	Cxcr2		EXP	J:319853	monikat		Human	CXCR2	3579					
+add	expresses_component	MGI:6357826	"Tg(DMPK*,DMWD,RSPH6A)24Lutzy"	RV:0000211	expresses_an_orthologous_gene	MGI:94907	Dmwd		EXP	J:101977	acv		Human	DMWD	1762					
+add	expresses_component	MGI:6357826	"Tg(DMPK*,DMWD,RSPH6A)24Lutzy"	RV:0000211	expresses_an_orthologous_gene	MGI:1927643	Rsph6a		EXP	J:101977	acv		Human	RSPH6A	81492					

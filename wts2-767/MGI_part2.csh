@@ -53,6 +53,11 @@ switch (`uname -n`)
 endsw
 
 date | tee -a ${LOG}
+echo 'Run Nomen/Mapping load' | tee -a ${LOG}
+rm -f ${DATALOADSOUTPUT}/mgi/nomenload/input/lastrun
+${NOMENLOAD}/bin/nomenload.sh ${NOMENLOAD}/nomenload.config
+
+date | tee -a ${LOG}
 echo 'Run MCV Annotation Load' | tee -a ${LOG}
 ${MCVLOAD}/bin/mcvload.sh
 
@@ -60,11 +65,6 @@ date | tee -a ${LOG}
 echo 'Run Mammalian Phenotype Load' | tee -a ${LOG}
 rm -f ${DATALOADSOUTPUT}/mgi/mcvload/input/lastrun
 ${VOCLOAD}/runOBOIncLoad.sh MP.config
-
-date | tee -a ${LOG}
-echo 'Run Nomen/Mapping load' | tee -a ${LOG}
-rm -f ${DATALOADSOUTPUT}/mgi/nomenload/input/lastrun
-${NOMENLOAD}/bin/nomenload.sh ${NOMENLOAD}/nomenload.config
 
 date | tee -a ${LOG}
 echo 'Run FeaR Load' | tee -a ${LOG}

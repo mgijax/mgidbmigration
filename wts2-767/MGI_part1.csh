@@ -34,7 +34,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-18', public_version = 'MGI 6.18';
 
 --Delete all but the desired experiment(s) from 'RNA Seq Load Experiment' MGI_Set. This sql deletes all experiment except for'E-ERAD-169'
 delete from MGI_Setmember
@@ -105,7 +104,10 @@ ${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 # mgi_notechunk fix for pwi_report sql_text
 ./pwireport.csh | tee -a $LOG
 
-#
+rm -rf /data/loads/mgi/*/output/MGI_NoteChunk.bcp
+rm -rf /data/loads/mgi/*/*/output/MGI_NoteChunk.bcp
+rm -rf /data/loads/mgi/*/*/*/output/MGI_NoteChunk.bcp
+
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}
 

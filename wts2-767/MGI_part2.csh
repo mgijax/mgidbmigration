@@ -52,6 +52,13 @@ switch (`uname -n`)
         breaksw
 endsw
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+--Delete all but the desired experiment(s) from 'RNA Seq Load Experiment' MGI_Set. This sql deletes all experiment except for'E-ERAD-169'
+delete from MGI_Setmember
+where _Set_key = 1057
+and _object_key != 6078
+EOSQL
+
 #date | tee -a ${LOG}
 #echo 'Run Nomen/Mapping load' | tee -a ${LOG}
 #rm -f ${DATALOADSOUTPUT}/mgi/nomenload/input/lastrun

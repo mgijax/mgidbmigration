@@ -52,10 +52,10 @@ switch (`uname -n`)
         breaksw
 endsw
 
-date | tee -a ${LOG}
-echo 'Run Nomen/Mapping load' | tee -a ${LOG}
-rm -f ${DATALOADSOUTPUT}/mgi/nomenload/input/lastrun
-${NOMENLOAD}/bin/nomenload.sh ${NOMENLOAD}/nomenload.config
+#date | tee -a ${LOG}
+#echo 'Run Nomen/Mapping load' | tee -a ${LOG}
+#rm -f ${DATALOADSOUTPUT}/mgi/nomenload/input/lastrun
+#${NOMENLOAD}/bin/nomenload.sh ${NOMENLOAD}/nomenload.config
 
 date | tee -a ${LOG}
 echo 'Run MCV Annotation Load' | tee -a ${LOG}

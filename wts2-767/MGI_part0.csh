@@ -35,5 +35,11 @@ update GXD_GelLane set agemin = -1, agemax = -1 where agemin is null;
 -- 130232 | \x13
 update PRB_Strain set strain = 'Not Specified' where _strain_key = 130232;
 
+-- for testing part 2
+--Delete all but the desired experiment(s) from 'RNA Seq Load Experiment' MGI_Set. This sql deletes all experiment except for'E-ERAD-169'
+delete from MGI_Setmember
+where _Set_key = 1057
+and _object_key != 6078
+
 EOSQL
 date | tee -a ${LOG}

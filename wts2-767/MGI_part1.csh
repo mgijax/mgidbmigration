@@ -30,20 +30,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_DBUTILS}/bin/loadDB.csh mgi-testdb4 lec mgd /bhmgidevdb01/dump/mgd.dump
 
 #
-# update schema-version and public-version
-#
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
---Delete all but the desired experiment(s) from 'RNA Seq Load Experiment' MGI_Set. This sql deletes all experiment except for'E-ERAD-169'
-delete from MGI_Setmember
-where _Set_key = 1057
-and _object_key != 6078
-
-EOSQL
-date | tee -a ${LOG}
-
-#
 # migrate mgi_note
 ./mginotechunk.csh | tee -a $LOG
 

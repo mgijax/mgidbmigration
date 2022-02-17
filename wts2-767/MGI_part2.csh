@@ -57,6 +57,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from MGI_Setmember
 where _Set_key = 1057
 and _object_key != 6078
+;
 EOSQL
 
 #date | tee -a ${LOG}

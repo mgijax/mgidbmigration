@@ -95,7 +95,7 @@ insert into VOC_Term values(nextval('voc_term_seq'), 175, 'Polyclonal', null, nu
 
 EOSQL
 
-#./vocab.py | tee -a $LOG
+./vocab.py | tee -a $LOG
 
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 #drop table mgd.GXD_AntibodyClass;

@@ -54,7 +54,4 @@ EOSQL
 
 date |tee -a $LOG
 
-EOSQL
-
-date |tee -a $LOG
 

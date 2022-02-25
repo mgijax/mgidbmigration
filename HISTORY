@@ -1,3 +1,9 @@
+TAG: mgidbmigration-6-0-18-4
+DATE: 02/25/2022
+STAFF: lec
+CHANGES:
+cre2022/organismfix.csh/some mgi_relationship_property/value cleanup
+
 TAG: mgidbmigration-6-0-18-3
 DATE: 02/21/2022
 STAFF: lec

@@ -41,11 +41,15 @@ ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua | tee -a $LOG
-scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/go_ec_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/go_ip_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/go_spkw_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/marker_ip_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/mgi_uniprot_load.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/mgi_acc_assoc.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/uniprot_acc_assoc.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
 
 ${GOLOAD}/go.sh | tee -a $LOG
-
-${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration

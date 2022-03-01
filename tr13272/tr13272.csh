@@ -49,6 +49,7 @@ scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/mgi_uniprot_load.txt ${DAT
 scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/mgi_acc_assoc.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
 scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/uniprot_acc_assoc.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
 
+${GOLOAD}/gopreprocess.sh | tee -a $LOG
 ${GOLOAD}/go.sh | tee -a $LOG
 
 cd ${PUBRPTS}

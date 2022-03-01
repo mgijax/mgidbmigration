@@ -51,6 +51,9 @@ scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/uniprot_acc_assoc.txt ${DA
 
 ${GOLOAD}/gopreprocess.sh | tee -a $LOG
 ${GOLOAD}/go.sh | tee -a $LOG
+${UNIPROTLOAD}/bin/makeGOAnnot.sh | tee -a $LOG
+${UNIPROTLOAD}/bin/makeInterProAnnot.sh | tee -a $LOG
+${MGICACHELOAD}/bin/inferredfrom.csh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration

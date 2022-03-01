@@ -28,6 +28,11 @@ touch $LOG
  
 date | tee -a $LOG
  
+# save copy of....go_cam files
+scp bhmgiapp01:/export/gondor/ftp/pub/custom/go_cam_gene_association.mgi .
+scp bhmgiapp01:/export/gondor/ftp/pub/custom/go_cam_gene_association_pro.mgi .
+scp bhmgiapp01:/export/gondor/ftp/pub/custom/go_cam_mgi.gpad .
+
 # run goload
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr | tee -a $LOG

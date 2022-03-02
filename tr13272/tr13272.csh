@@ -75,10 +75,10 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object  | tee -a $LOG
 # end: truncate all GO Annotations
 
 date | tee -a $LOG
-${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
+${GOLOAD}/go.sh | tee -a $LOG
 
 date | tee -a $LOG
-${GOLOAD}/go.sh | tee -a $LOG
+${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
 date | tee -a $LOG
 cd ${PUBRPTS}

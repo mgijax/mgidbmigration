@@ -43,6 +43,12 @@ ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua | tee -a $LOG
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
+# obsolete output file
+rm -rf ${DATALOADSOUTPUT}/go/gomousenoctua/output/pubmed.error
+
+# start: truncate all GO Annotations
+date | tee -a $LOG
+
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0  | tee -a $LOG
@@ -66,10 +72,15 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object  | tee -a $LOG
 
+# end: truncate all GO Annotations
+
+date | tee -a $LOG
 ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
+date | tee -a $LOG
 ${GOLOAD}/go.sh | tee -a $LOG
 
+date | tee -a $LOG
 cd ${PUBRPTS}
 source ./Configuration
 cd daily

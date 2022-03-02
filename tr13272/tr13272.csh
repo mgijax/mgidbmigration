@@ -45,6 +45,7 @@ scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 # obsolete output file
 rm -rf ${DATALOADSOUTPUT}/go/gomousenoctua/output/pubmed.error
+rm -rf ${DATALOADSOUTPUT}/go/lastrun
 
 # start: truncate all GO Annotations
 date | tee -a $LOG

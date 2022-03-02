@@ -41,19 +41,34 @@ ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua | tee -a $LOG
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/go_ec_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/go_ip_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/go_spkw_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/marker_ip_annot.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/mgi_uniprot_load.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/mgi_acc_assoc.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
-scp bhmgiapp01:/data/loads/uniprot/uniprotload/output/uniprot_acc_assoc.txt ${DATALOADSOUTPUT}/uniprot/uniprotload/output
+scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
-${GOLOAD}/gopreprocess.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_drop.object | tee -a $LOG
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0  | tee -a $LOG
+select _annot_key into temp toDelete from voc_annot where _annottype_key = 1000;
+create index idxtodelete on toDelete(_annot_key);
+
+delete from mgi_note using toDelete, voc_evidence, voc_evidence_property
+where toDelete._annot_key = voc_evidence._annot_key 
+and voc_evidence._annotevidence_key = voc_evidence_property._annotevidence_key
+and voc_evidence_property._evidenceproperty_key = mgi_note._object_key 
+and mgi_note._mgitype_key = 41;
+
+delete from voc_evidence_property using toDelete, voc_evidence 
+where toDelete._annot_key = voc_evidence._annot_key and voc_evidence._annotevidence_key = voc_evidence_property._annotevidence_key;
+
+delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence._annot_key;
+
+delete from voc_annot where _annottype_key = 1000;
+
+EOSQL
+
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object  | tee -a $LOG
+
+${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
+
 ${GOLOAD}/go.sh | tee -a $LOG
-${UNIPROTLOAD}/bin/makeGOAnnot.sh | tee -a $LOG
-${UNIPROTLOAD}/bin/makeInterProAnnot.sh | tee -a $LOG
-${MGICACHELOAD}/bin/inferredfrom.csh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration

@@ -41,6 +41,7 @@ ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package ftp.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload | tee -a $LOG
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.noctua | tee -a $LOG
+${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology | tee -a $LOG
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 # obsolete output file

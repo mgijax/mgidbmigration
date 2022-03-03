@@ -93,4 +93,13 @@ source ./Configuration
 cd weekly
 $PYTHON GO_stats.py
 
+#ssh bhmgiapp01
+#cd /export/gondor/ftp/pub/custom/noctua
+#scp bhmgiapp14ld:/data/reports/lec/reports_db/output/gene_association.mgi .
+#scp bhmgiapp14ld:/data/reports/lec/reports_db/output/gene_association_nonoctua.mgi .
+#scp bhmgiapp14ld:/data/reports/lec/reports_db/output/gene_association_pro.mgi .
+#scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi.gpad .
+#scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi.gpi .
+#scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi_nonoctua.gpad .
+
 date |tee -a $LOG

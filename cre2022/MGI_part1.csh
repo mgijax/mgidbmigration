@@ -36,6 +36,7 @@ date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-19', public_version = 'MGI 6.19';
 update MGI_Set set _mgitype_key = 12 where _set_key = 1055;
+delete from mgi_notetype where _notetype_key in (1043, 1044);
 EOSQL
 date | tee -a ${LOG}
 

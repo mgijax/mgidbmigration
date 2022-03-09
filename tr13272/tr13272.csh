@@ -70,6 +70,8 @@ delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence
 
 delete from voc_annot where _annottype_key = 1000;
 
+DROP FUNCTION IF EXISTS VOC_deleteGOGAFRed(text);
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object  | tee -a $LOG

@@ -71,6 +71,8 @@ delete from voc_evidence using toDelete where toDelete._annot_key = voc_evidence
 delete from voc_annot where _annottype_key = 1000;
 
 DROP FUNCTION IF EXISTS VOC_deleteGOGAFRed(text);
+DROP TRIGGER IF EXISTS PRB_Source_insert_trigger ON PRB_Source;
+DROP FUNCTION IF EXISTS PRB_Source_insert();
 
 EOSQL
 

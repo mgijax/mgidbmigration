@@ -80,10 +80,10 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
-# vocabularies
+# property migration
 date | tee -a ${LOG}
-echo 'vocabularies' | tee -a $LOG
-./vocab.csh | tee -a $LOG
+echo 'mgi_relationship_property' | tee -a $LOG
+./property.csh | tee -a $LOG
 
 #
 # rebuild the java dla, if needed due to schema changes

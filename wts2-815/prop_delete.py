@@ -42,7 +42,7 @@ results = db.sql('''select d.*, p._property_key
     where d._experiment_key = p._object_key
     and p._PropertyTerm_key = 20475430
     and p._PropertyType_key = 1002
-    order by _experiment_key, _property_key''', 'auto')
+    order by _experiment_key, _property_key desc''', 'auto')
 
 pubmedDupeDict = {}
 for r in results:

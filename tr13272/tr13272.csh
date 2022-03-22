@@ -106,4 +106,7 @@ $PYTHON GO_stats.py
 #scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi.gpi .
 #scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi_nonoctua.gpad .
 
+date | tee -a $LOG
+./property.csh | tee -a $LOG
+
 date |tee -a $LOG

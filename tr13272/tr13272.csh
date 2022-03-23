@@ -28,6 +28,9 @@ touch $LOG
  
 date | tee -a $LOG
  
+date | tee -a $LOG
+./property.csh | tee -a $LOG
+
 # save copy of....go_cam files
 scp bhmgiapp01:/export/gondor/ftp/pub/custom/go_cam_gene_association.mgi .
 scp bhmgiapp01:/export/gondor/ftp/pub/custom/go_cam_gene_association_pro.mgi .
@@ -105,8 +108,5 @@ $PYTHON GO_stats.py
 #scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi.gpad .
 #scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi.gpi .
 #scp bhmgiapp14ld:/data/reports/lec/reports_db/output/mgi_nonoctua.gpad .
-
-date | tee -a $LOG
-./property.csh | tee -a $LOG
 
 date |tee -a $LOG

@@ -37,7 +37,18 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 update MGI_dbinfo set schema_version = '6-0-19', public_version = 'MGI 6.19';
 update MGI_Set set _mgitype_key = 12 where _set_key = 1055;
 delete from mgi_notetype where _notetype_key in (1043, 1044);
+DROP TRIGGER IF EXISTS PRB_Source_insert_trigger ON PRB_Source;
+DROP FUNCTION IF EXISTS PRB_Source_insert();
 EOSQL
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+echo 'running HT Sample' | tee -a $LOG
+#./htsample.csh | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table GXD_HTSample_old;
+EOSQL
+
 date | tee -a ${LOG}
 
 #
@@ -75,10 +86,10 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-#date | tee -a ${LOG}
-#echo 'data cleanup' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
+date | tee -a ${LOG}
+echo 'data cleanup' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
 #
 # rebuild the java dla, if needed due to schema changes

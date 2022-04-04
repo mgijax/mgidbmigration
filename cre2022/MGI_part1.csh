@@ -44,7 +44,7 @@ date | tee -a ${LOG}
 
 date | tee -a ${LOG}
 echo 'running HT Sample' | tee -a $LOG
-#./htsample.csh | tee -a $LOG
+./htsample.csh | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table GXD_HTSample_old;
 EOSQL
@@ -66,8 +66,8 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
 #
 # reconfig.sh:

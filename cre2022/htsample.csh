@@ -39,7 +39,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 insert into GXD_HTSample
 select _sample_key, _experiment_key, _relevance_key, name ,age, agemin, agemax, _organism_key, _sex_key, _emapa_key, _stage_key, _genotype_key, 
-99536377, _createdby_key, _modifiedby_key, creation_date , modification_date
+null, _createdby_key, _modifiedby_key, creation_date , modification_date
 from GXD_HTSample_old
 ;
 

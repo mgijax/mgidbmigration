@@ -31,6 +31,8 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG 
 
+${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG 
+
 #${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG
 
 date |tee -a $LOG

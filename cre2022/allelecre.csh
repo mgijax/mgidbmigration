@@ -35,5 +35,7 @@ ${PG_MGD_DBSCHEMADIR}/index/ALL_Cre_Cache_create.object | tee -a $LOG
 
 ${ALLCACHELOAD}/allelecrecache.csh | tee -a $LOG
 
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
+
 date |tee -a $LOG
 

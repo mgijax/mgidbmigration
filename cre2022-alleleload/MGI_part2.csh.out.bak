@@ -1,0 +1,308 @@
+if ( 1 == 0 ) then
+source /home/sc/work/mgiconfig/master.config.csh
+setenv ABALOAD /home/sc/work/dataload/abaload
+setenv ALLCACHELOAD /home/sc/work/dbutils/allcacheload
+setenv ALLELELOAD /home/sc/work/dataload/alleleload
+setenv ALOMRKLOAD /home/sc/work/dataload/alomrkload
+setenv ANACONDAPYTHONLIB /home/sc/work/lib/python_anaconda
+setenv ANACONDAPYTHON /opt/anaconda/bin/python
+setenv ANNOTLOAD /home/sc/work/dataload/annotload
+setenv ANT_HOME /usr/local/apache-ant-1.7.1
+setenv ANT /usr/local/apache-ant-1.7.1/bin/ant
+setenv ARRAYEXPLOAD /home/sc/work/dataload/arrayexpload
+setenv ASSAYLOAD /home/sc/work/dataload/assayload
+setenv ASSEMBLYSEQLOAD /home/sc/work/dataload/assemblyseqload
+setenv ASSEMBLY_TO_NIB /home/sc/work/assemblyToNib
+setenv ASSOCLOAD /home/sc/work/dataload/assocload
+setenv BLAT_HOST bhmgidevapp01.jax.org
+setenv BLAT_PORT 9039
+setenv CCDSLOAD /home/sc/work/dataload/ccdsload
+setenv CLASSPATH /usr/java/default/jre/lib/rt.jar:/home/sc/work/lib/sharelib/postgresql-42.2.17.jre7.jar
+setenv COMMON_CLASSPATH /usr/java/default/jre/lib/rt.jar:/home/sc/work/lib/sharelib/postgresql-42.2.17.jre7.jar
+setenv COORDLOAD /home/sc/work/dataload/coordload
+setenv CURATORALLELELOAD /home/sc/work/dataload/curatoralleleload
+setenv DATADOWNLOADS /data/downloads
+setenv DATALOAD /home/sc/work/dataload
+setenv DATALOADSOUTPUT /data/loads/sc
+setenv DB_BACKUP_DIR /bhmgidevdb01/dump
+setenv DBSGEN /home/sc/work/dbsgen
+setenv DBSNPLOAD /home/sc/work/dataload/dbsnpload
+setenv DBUTILS /home/sc/work/dbutils
+setenv DERIVATIONLOAD /home/sc/work/dataload/derivationload
+setenv DLAINSTALL /home/sc/work/dbutils/dlautils/DLAInstall
+setenv DLAJOBSTREAMFUNC /home/sc/work/dbutils/dlautils/DLAJobStreamFunctions.sh
+setenv DLA_UTILS /home/sc/work/dbutils/dlautils
+setenv EGLOAD /home/sc/work/dataload/egload
+setenv EMAGELOAD /home/sc/work/dataload/emageload
+setenv EMALLOAD /home/sc/work/dataload/emalload
+setenv ENSEMBLSEQLOAD /home/sc/work/dataload/ensemblseqload
+setenv ENTREZGENELOAD /home/sc/work/dataload/entrezgeneload
+setenv ETC /home/sc/work/etc
+setenv EUTILS_API_KEY 93420e6fa0a8dcf419d7a62e185706572e08
+setenv EXPORTDIR /export
+setenv FEARLOAD /home/sc/work/dataload/fearload
+setenv FEINDEXER /home/sc/work/feindexer
+setenv FEMOVER /home/sc/work/femover
+setenv FGREP /usr/bin/fgrep
+setenv FJBUCKETIZER /home/sc/work/mgiutils/fjbucketizer
+setenv FREEBCP /usr/local/bin/freebcp
+setenv FTPCUSTOM /data/ftp/pub/custom
+setenv FTPREPORTDIR /data/ftp/pub/reports
+setenv FTPROOT /data/ftp
+setenv FTPURL http://test.informatics.jax.org/downloads
+setenv GBPREPROCESSOR /home/sc/work/mgiutils/gbpreprocessor
+setenv GBSEQLOAD /home/sc/work/dataload/gbseqload
+setenv GD_HOME /usr/local/depot/gd-2.0.33
+setenv GENEMODELLOAD /home/sc/work/dataload/genemodelload
+setenv GENMAPLOAD /home/sc/work/dataload/genmapload
+setenv GENOTYPELOAD /home/sc/work/dataload/genotypeload
+setenv GENSATLOAD /home/sc/work/dataload/gensatload
+setenv GEOLOAD /home/sc/work/dataload/geoload
+setenv GNUSORT /usr/bin/sort
+setenv GOGRAPHTOOLS /home/sc/work/mgiutils/gographtools
+setenv GOLOAD /home/sc/work/dataload/goload
+setenv GOTEXTLOAD /home/sc/work/dataload/gotextload
+setenv GOTOOLS /home/sc/work/gotools
+setenv GXDHTLOAD /home/sc/work/dataload/gxdhtload
+setenv GXDIMAGELOAD /home/sc/work/dataload/gxdimageload
+setenv GXDINDEXER /home/sc/work/gxdindexer
+setenv GXDLOAD /home/sc/work/dataload/gxdload
+setenv HOMOLOGYLOAD /home/sc/work/dataload/homologyload
+setenv HTMPLOAD /home/sc/work/dataload/htmpload
+setenv INSTALL_TYPE dev
+setenv JAVA_API_PORT 8098
+setenv JAVA_API_TOKEN myDefaultToken
+setenv JAVA_API_URL http://bhmgiweb06ld.jax.org:8098/api/
+setenv JAVA_HOME /usr/java/default
+setenv JAVA /usr/java/default/bin/java
+setenv JBOSS /home/sc/work/jboss
+setenv JGETOPT /home/sc/work/lib/sharelib/java-getopt-1.0.10.jar
+setenv JOBEND_CSH /home/sc/work/dbutils/radardbutilities/bin/endJobStream.csh
+setenv JOBSTART_CSH /home/sc/work/dbutils/radardbutilities/bin/startJobStream.csh
+setenv JPEGINCLUDE /usr/include
+setenv JPEGLIB /usr/lib64
+setenv JUNIT /home/sc/work/lib/sharelib/junit.jar
+setenv LD_LIBRARY_PATH /usr/pgsql-12/lib:/usr/lib:/usr/local/lib
+setenv LIBDIRS /home/sc/work/lib/python
+setenv LIBRARYLOAD /home/sc/work/dataload/libraryload
+setenv LITPARSER /home/sc/work/mgiutils/litparser
+setenv LITREFSECTION /home/sc/work/mgiutils/litrefsection
+setenv LITTRIAGELOAD /home/sc/work/dataload/littriageload
+setenv LITTRIAGE_MASTER /data/littriage
+setenv LITTRIAGE_NEWNEW /data/loads/_New_Newcurrent
+setenv LOADADMIN /home/sc/work/loadadmin
+setenv LOG4J /home/sc/work/lib/sharelib/log4j-1.2.15.jar
+setenv MAIL_LOG_PROC 
+setenv MAPPINGLOAD /home/sc/work/dataload/mappingload
+setenv MAPVIEWLOAD /home/sc/work/dataload/mapviewload
+setenv MCVLOAD /home/sc/work/dataload/mcvload
+setenv MGD_DBNAME sc
+setenv MGD_DBPASSWORDFILE /home/sc/work/dbutils/pgdbutilities/.pgpass_1
+setenv MGD_DBSCHEMADIR /home/sc/work/dbutils/mgd/pgmgddbschema
+setenv MGD_DBSERVER bhmgidb03lt
+setenv MGD_DBURL bhmgidb03lt
+setenv MGD_DBUSER mgd_dbo
+setenv MGD_JAVA_API /home/sc/work/mgd_java_api
+setenv MGD_JDBC_URL jdbc:postgresql://bhmgidb03lt.jax.org:5432/sc
+setenv MGIBIN /home/sc/work/bin
+setenv MGICACHELOAD /home/sc/work/dbutils/mgicacheload
+setenv MGI_JAVALIB /home/sc/work/lib/java
+setenv MGI_LIVE /home/sc/work
+setenv MGI_PUBLICPASSWORD mgdpub
+setenv MGI_PUBLICUSER mgd_public
+setenv MGIPYTHON /home/sc/work/mgipython
+setenv MGI_PYTHONLIB /home/sc/work/lib/python
+setenv MGI_PYTHONMODULES /home/sc/work/lib/modules
+setenv MGIUTILS /home/sc/work/mgiutils
+setenv MIRBASELOAD /home/sc/work/dataload/mirbaseload
+setenv MIRROR_WGET /home/sc/work/mirror_wget
+setenv MPEMAPALOAD /home/sc/work/dataload/mp_emapaload
+setenv MPHPOLOAD /home/sc/work/dataload/mp_hpoload
+setenv MRKCACHELOAD /home/sc/work/dbutils/mrkcacheload
+setenv MRKCOORDLOAD /home/sc/work/dataload/mrkcoordload
+setenv MYSQL_DBPASSWORDFILE /home/sc/work/dbutils/mysqldbutilities/.mgd_dbo_password
+setenv MYSQL_DBUTILS /home/sc/work/dbutils/mysqldbutilities
+setenv NEXTPROTLOAD /home/sc/work/dataload/nextprotload
+setenv NOMENLOAD /home/sc/work/dataload/nomenload
+setenv NOTELOAD /home/sc/work/dataload/noteload
+setenv OMIMHPOLOAD /home/sc/work/dataload/omim_hpoload
+setenv PATH .:/usr/pgsql-12/bin:/usr/bin:/usr/sbin:/bin:/usr/local/bin:/usr/local/apache-ant-1.7.1/bin:/usr/java/default/bin
+setenv PDFDOWNLOAD /home/sc/work/pdfdownload
+setenv PDFSPLITTER_URL http://bheidev01.jax.org/usrlocalmgi/live/pdfviewer/splitter.cgi
+setenv PDFTOTEXT /usr/local/bin/pdftotext
+setenv PDFVIEWER_URL http://bheidev01.jax.org/usrlocalmgi/live/pdfviewer/pdfviewer.cgi?id=
+setenv PERL_HOME /usr
+setenv PERL /usr/bin/perl
+setenv PG_1LINE_PASSFILE /home/sc/work/dbutils/pgdbutilities/.pgpass_1
+setenv PG_DBNAME sc
+setenv PG_DBPASSWORDFILE /home/sc/work/dbutils/pgdbutilities/.pgpass
+setenv PG_DBSERVER bhmgidb03lt
+setenv PG_DBUSER mgd_dbo
+setenv PG_DBUTILS /home/sc/work/dbutils/pgdbutilities
+setenv PGJDBC /home/sc/work/lib/sharelib/postgresql-42.2.17.jre7.jar
+setenv PG_MGD_DBSCHEMADIR /home/sc/work/dbutils/mgd/pgmgddbschema
+setenv PGPASSFILE /home/sc/work/dbutils/pgdbutilities/.pgpass
+setenv PG_RADAR_DBSCHEMADIR /home/sc/work/dbutils/radar/pgradardbschema
+setenv PG_SNP_DBSCHEMADIR /home/sc/work/dbutils/snp/pgsnpdbschema
+setenv PIRSFLOAD /home/sc/work/dataload/pirsfload
+setenv PIXELDB /data/pixeldb
+setenv POSTGRES_HOME /usr/pgsql-12
+setenv PROBELOAD /home/sc/work/dataload/probeload
+setenv PROBLEMSEQSETLOAD /home/sc/work/dataload/problemseqsetload
+setenv PROISOFORMLOAD /home/sc/work/dataload/proisoformload
+setenv PROLOAD /home/sc/work/dataload/proload
+setenv PUBMED2GENELOAD /home/sc/work/dataload/pubmed2geneload
+setenv PUBREPORTDIR /data/reports/sc/reports_db
+setenv PUBRPTS /home/sc/work/reports_db
+setenv PWI /home/sc/work/pwi
+setenv PYTHON_HOME /opt/python3.7
+setenv PYTHONINCLUDE /opt/python3.7/include/python3.7m
+setenv PYTHONLIB /opt/python3.7/lib
+setenv PYTHON /opt/python3.7/bin/python3
+setenv PYTHONPATH /opt/python3.7/lib:/home/sc/work/lib/python
+setenv QCREPORTDIR /data/reports/sc/qcreports_db
+setenv QCRPTS /home/sc/work/qcreports_db
+setenv QTLARCHIVELOAD /home/sc/work/dataload/qtlarchiveload
+setenv RADAR_DBNAME sc
+setenv RADAR_DBPASSWORDFILE /home/sc/work/dbutils/pgdbutilities/.pgpass_1
+setenv RADAR_DBSCHEMADIR /home/sc/work/dbutils/radar/pgradardbschema
+setenv RADAR_DBSERVER bhmgidb03lt
+setenv RADAR_DBURL bhmgidb03lt
+setenv RADAR_DBUSER mgd_dbo
+setenv RADAR_DBUTILS /home/sc/work/dbutils/radardbutilities
+setenv REFERENCELOAD /home/sc/work/dataload/referenceload
+setenv REFSEQLOAD /home/sc/work/dataload/refseqload
+setenv RETRY_WAIT_TIME 2
+setenv RNASEQLOAD /home/sc/work/dataload/rnaseqload
+setenv ROLLUPLOAD /home/sc/work/dataload/rollupload
+setenv RVLOAD /home/sc/work/dataload/rvload
+setenv SEQCACHELOAD /home/sc/work/dbutils/seqcacheload
+setenv SEQDELETER /home/sc/work/dataload/seqdeleter
+setenv SEQSEQASSOCLOAD /home/sc/work/dataload/seqseqassocload
+setenv SERVER_NAME bhmgiap09lt
+setenv SETLOAD /home/sc/work/dataload/setload
+setenv SHARELIB /home/sc/work/lib/sharelib
+setenv SLIMTERMLOAD /home/sc/work/dataload/slimtermload
+setenv SNPCACHELOAD /home/sc/work/dbutils/snpcacheload
+setenv SNP_DBSCHEMADIR /home/sc/work/dbutils/snp/pgsnpdbschema
+setenv SNPINDEXER /home/sc/work/snpindexer
+setenv SPSEQLOAD /home/sc/work/dataload/spseqload
+setenv STAXAPI /home/sc/work/lib/sharelib/jsr173_1.0_api.jar
+setenv STAXRI /home/sc/work/lib/sharelib/jsr173_1.0_ri.jar
+setenv STRAINGENEMODELLOAD /home/sc/work/dataload/straingenemodelload
+setenv STRAINLOAD /home/sc/work/dataload/strainload
+setenv STRAINMARKERLOAD /home/sc/work/dataload/strainmarkerload
+setenv SYNONYMLOAD /home/sc/work/dataload/synonymload
+setenv TARGETEDALLELELOAD /home/sc/work/dataload/targetedalleleload
+setenv TIMES_TO_RETRY 5
+setenv TRANSLATIONLOAD /home/sc/work/dataload/translationload
+setenv TSSGENELOAD /home/sc/work/dataload/tssgeneload
+setenv UNIPROTLOAD /home/sc/work/dataload/uniprotload
+setenv UNIPROTMUSFILTER /home/sc/work/mgiutils/uniprotmusfilter
+setenv USRLOCALMGI /home/sc/work
+setenv VELOCITY /home/sc/work/lib/sharelib/velocity-dep-1.3.1.jar
+setenv VOCLOAD /home/sc/work/dataload/vocload
+setenv WILDFLY /home/sc/work/wildfly
+setenv WI_URL http://test.informatics.jax.org/
+if ( sc != mgiadmin && -r /home/sc/.pgpass ) then
+setenv PGPASSFILE /home/sc/.pgpass
+endif
+setenv LOG MGI_part2.csh.log
+rm -rf MGI_part2.csh.log
+touch MGI_part2.csh.log
+date
+tee -a MGI_part2.csh.log
+Mon Apr 18 12:35:52 EDT 2022
+echo --- starting part 2
+tee -a MGI_part2.csh.log
+--- starting part 2
+echo MGD_DBNAME=sc
+tee -a MGI_part2.csh.log
+MGD_DBNAME=sc
+echo MGD_DBPASSWORDFILE=/home/sc/work/dbutils/pgdbutilities/.pgpass_1
+tee -a MGI_part2.csh.log
+MGD_DBPASSWORDFILE=/home/sc/work/dbutils/pgdbutilities/.pgpass_1
+echo MGD_DBSERVER=bhmgidb03lt
+tee -a MGI_part2.csh.log
+MGD_DBSERVER=bhmgidb03lt
+echo MGD_DBUSER=mgd_dbo
+tee -a MGI_part2.csh.log
+MGD_DBUSER=mgd_dbo
+date
+tee -a MGI_part2.csh.log
+Mon Apr 18 12:35:52 EDT 2022
+echo copy curatoralleleload test file to input directory
+tee -a MGI_part2.csh.log
+copy curatoralleleload test file to input directory
+switch ( `uname -n` )
+uname -n
+rm /data/loads/sc/mgi/curatoralleleload/input/lastrun
+scp /mgi/all/wts2_projects/800/WTS2-814/alleloaderinputfile_final.txt /data/loads/sc/mgi/curatoralleleload/input/curatoralleleload.txt
+breaksw
+date
+tee -a MGI_part2.csh.log
+Mon Apr 18 12:35:52 EDT 2022
+echo Running Derivation Load
+tee -a MGI_part2.csh.log
+Running Derivation Load
+/home/sc/work/dataload/derivationload/bin/derivationload.sh /mgi/all/wts2_projects/800/WTS2-814/MCAL_derivations_needed.txt
+tee -a MGI_part2.csh.log
+Sourcing config file
+Running derivation load using /mgi/all/wts2_projects/800/WTS2-814/MCAL_derivations_needed.txt
+derivationload.py completed successfully
+
+Mon Apr 18 12:35:57 EDT 2022
+Drop indexes on ALL_CellLine_Derivation table
+Mon Apr 18 12:35:58 EDT 2022
+bcp in  ALL_CellLine_Derivation 
+
+
+Mon Apr 18 12:36:04 EDT 2022
+date
+tee -a MGI_part2.csh.log
+Mon Apr 18 12:36:06 EDT 2022
+echo Running Curator Allele Load
+tee -a MGI_part2.csh.log
+Running Curator Allele Load
+/home/sc/work/dataload/curatoralleleload/bin/curatoralleleload.sh
+tee -a MGI_part2.csh.log
+MGD_DBSERVER: bhmgidb03lt
+MGD_DBNAME: sc
+Run QC checks
+Warn and Skipped Alleles in QC. Warn alleles were loaded - See /data/loads/sc/mgi/curatoralleleload/reports/qc.rpt. alleleQC.sh
+Run curatoralleleload.py
+synonymKey: 182675876
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList: 618245 derivationKey: 
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 2342
+mclKeyList:  derivationKey: 5088
+mclKeyList:  derivationKey: 5033
+mclKeyList: 618245 derivationKey: 
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 1171
+mclKeyList:  derivationKey: 1162
+mclKeyList: 57718 derivationKey: 
+mclKeyList:  derivationKey: 1702
+mclKeyList:  derivationKey: 4910
+mclKeyList: 689984 derivationKey: 
+mclKeyList:  derivationKey: 4910
+mclKeyList:  derivationKey: 4910
+/home/sc/work/dataload/curatoralleleload/bin/curatoralleleload.py completed successfully
+date
+tee -a MGI_part2.csh.log
+Mon Apr 18 12:36:32 EDT 2022
+echo --- finished part 2
+tee -a MGI_part2.csh.log
+--- finished part 2

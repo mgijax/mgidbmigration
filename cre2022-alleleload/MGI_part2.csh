@@ -50,9 +50,9 @@ switch (`uname -n`)
         breaksw
 endsw
 
-#date | tee -a ${LOG}
-#echo 'Running Derivation Load' | tee -a $LOG
-#${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts2_projects/800/WTS2-814/MCAL_derivations_needed.txt | tee -a $LOG
+date | tee -a ${LOG}
+echo 'Running Derivation Load' | tee -a $LOG
+${DERIVATIONLOAD}/bin/derivationload.sh /mgi/all/wts2_projects/800/WTS2-814/MCAL_derivations_needed.txt | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'Running Curator Allele Load' | tee -a $LOG

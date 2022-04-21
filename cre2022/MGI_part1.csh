@@ -50,8 +50,8 @@ drop table GXD_HTSample_old;
 EOSQL
 
 #date | tee -a ${LOG}
-#echo 'running ALL_Cre_Cache' | tee -a $LOG
-#./allelecre.csh | tee -a $LOG
+echo 'running ALL_Cre_Cache' | tee -a $LOG
+./allelecre.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 

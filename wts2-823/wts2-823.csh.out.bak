@@ -1,0 +1,1480 @@
+if ( 1 == 0 ) then
+source /home/sc/work/mgiconfig/master.config.csh
+setenv ABALOAD /home/sc/work/dataload/abaload
+setenv ALLCACHELOAD /home/sc/work/dbutils/allcacheload
+setenv ALLELELOAD /home/sc/work/dataload/alleleload
+setenv ALOMRKLOAD /home/sc/work/dataload/alomrkload
+setenv ANACONDAPYTHONLIB /home/sc/work/lib/python_anaconda
+setenv ANACONDAPYTHON /opt/anaconda/bin/python
+setenv ANNOTLOAD /home/sc/work/dataload/annotload
+setenv ANT_HOME /usr/local/apache-ant-1.7.1
+setenv ANT /usr/local/apache-ant-1.7.1/bin/ant
+setenv ARRAYEXPLOAD /home/sc/work/dataload/arrayexpload
+setenv ASSAYLOAD /home/sc/work/dataload/assayload
+setenv ASSEMBLYSEQLOAD /home/sc/work/dataload/assemblyseqload
+setenv ASSEMBLY_TO_NIB /home/sc/work/assemblyToNib
+setenv ASSOCLOAD /home/sc/work/dataload/assocload
+setenv BLAT_HOST bhmgidevapp01.jax.org
+setenv BLAT_PORT 9039
+setenv CCDSLOAD /home/sc/work/dataload/ccdsload
+setenv CLASSPATH /usr/java/default/jre/lib/rt.jar:/home/sc/work/lib/sharelib/postgresql-42.2.17.jre7.jar
+setenv COMMON_CLASSPATH /usr/java/default/jre/lib/rt.jar:/home/sc/work/lib/sharelib/postgresql-42.2.17.jre7.jar
+setenv COORDLOAD /home/sc/work/dataload/coordload
+setenv CURATORALLELELOAD /home/sc/work/dataload/curatoralleleload
+setenv DATADOWNLOADS /data/downloads
+setenv DATALOAD /home/sc/work/dataload
+setenv DATALOADSOUTPUT /data/loads/sc
+setenv DB_BACKUP_DIR /bhmgidevdb01/dump
+setenv DBSGEN /home/sc/work/dbsgen
+setenv DBSNPLOAD /home/sc/work/dataload/dbsnpload
+setenv DBUTILS /home/sc/work/dbutils
+setenv DERIVATIONLOAD /home/sc/work/dataload/derivationload
+setenv DLAINSTALL /home/sc/work/dbutils/dlautils/DLAInstall
+setenv DLAJOBSTREAMFUNC /home/sc/work/dbutils/dlautils/DLAJobStreamFunctions.sh
+setenv DLA_UTILS /home/sc/work/dbutils/dlautils
+setenv EGLOAD /home/sc/work/dataload/egload
+setenv EMAGELOAD /home/sc/work/dataload/emageload
+setenv EMALLOAD /home/sc/work/dataload/emalload
+setenv ENSEMBLSEQLOAD /home/sc/work/dataload/ensemblseqload
+setenv ENTREZGENELOAD /home/sc/work/dataload/entrezgeneload
+setenv ETC /home/sc/work/etc
+setenv EUTILS_API_KEY 93420e6fa0a8dcf419d7a62e185706572e08
+setenv EXPORTDIR /export
+setenv FEARLOAD /home/sc/work/dataload/fearload
+setenv FEINDEXER /home/sc/work/feindexer
+setenv FEMOVER /home/sc/work/femover
+setenv FGREP /usr/bin/fgrep
+setenv FJBUCKETIZER /home/sc/work/mgiutils/fjbucketizer
+setenv FREEBCP /usr/local/bin/freebcp
+setenv FTPCUSTOM /data/ftp/pub/custom
+setenv FTPREPORTDIR /data/ftp/pub/reports
+setenv FTPROOT /data/ftp
+setenv FTPURL http://test.informatics.jax.org/downloads
+setenv GBPREPROCESSOR /home/sc/work/mgiutils/gbpreprocessor
+setenv GBSEQLOAD /home/sc/work/dataload/gbseqload
+setenv GD_HOME /usr/local/depot/gd-2.0.33
+setenv GENEMODELLOAD /home/sc/work/dataload/genemodelload
+setenv GENMAPLOAD /home/sc/work/dataload/genmapload
+setenv GENOTYPELOAD /home/sc/work/dataload/genotypeload
+setenv GENSATLOAD /home/sc/work/dataload/gensatload
+setenv GEOLOAD /home/sc/work/dataload/geoload
+setenv GNUSORT /usr/bin/sort
+setenv GOGRAPHTOOLS /home/sc/work/mgiutils/gographtools
+setenv GOLOAD /home/sc/work/dataload/goload
+setenv GOTEXTLOAD /home/sc/work/dataload/gotextload
+setenv GOTOOLS /home/sc/work/gotools
+setenv GXDHTLOAD /home/sc/work/dataload/gxdhtload
+setenv GXDIMAGELOAD /home/sc/work/dataload/gxdimageload
+setenv GXDINDEXER /home/sc/work/gxdindexer
+setenv GXDLOAD /home/sc/work/dataload/gxdload
+setenv HOMOLOGYLOAD /home/sc/work/dataload/homologyload
+setenv HTMPLOAD /home/sc/work/dataload/htmpload
+setenv INSTALL_TYPE dev
+setenv JAVA_API_PORT 8098
+setenv JAVA_API_TOKEN myDefaultToken
+setenv JAVA_API_URL http://bhmgiweb06ld.jax.org:8098/api/
+setenv JAVA_HOME /usr/java/default
+setenv JAVA /usr/java/default/bin/java
+setenv JBOSS /home/sc/work/jboss
+setenv JGETOPT /home/sc/work/lib/sharelib/java-getopt-1.0.10.jar
+setenv JOBEND_CSH /home/sc/work/dbutils/radardbutilities/bin/endJobStream.csh
+setenv JOBSTART_CSH /home/sc/work/dbutils/radardbutilities/bin/startJobStream.csh
+setenv JPEGINCLUDE /usr/include
+setenv JPEGLIB /usr/lib64
+setenv JUNIT /home/sc/work/lib/sharelib/junit.jar
+setenv LD_LIBRARY_PATH /usr/pgsql-12/lib:/usr/lib:/usr/local/lib
+setenv LIBDIRS /home/sc/work/lib/python
+setenv LIBRARYLOAD /home/sc/work/dataload/libraryload
+setenv LITPARSER /home/sc/work/mgiutils/litparser
+setenv LITREFSECTION /home/sc/work/mgiutils/litrefsection
+setenv LITTRIAGELOAD /home/sc/work/dataload/littriageload
+setenv LITTRIAGE_MASTER /data/littriage
+setenv LITTRIAGE_NEWNEW /data/loads/_New_Newcurrent
+setenv LOADADMIN /home/sc/work/loadadmin
+setenv LOG4J /home/sc/work/lib/sharelib/log4j-1.2.15.jar
+setenv MAIL_LOG_PROC 
+setenv MAPPINGLOAD /home/sc/work/dataload/mappingload
+setenv MAPVIEWLOAD /home/sc/work/dataload/mapviewload
+setenv MCVLOAD /home/sc/work/dataload/mcvload
+setenv MGD_DBNAME sc
+setenv MGD_DBPASSWORDFILE /home/sc/work/dbutils/pgdbutilities/.pgpass_1
+setenv MGD_DBSCHEMADIR /home/sc/work/dbutils/mgd/pgmgddbschema
+setenv MGD_DBSERVER bhmgidb03lt
+setenv MGD_DBURL bhmgidb03lt
+setenv MGD_DBUSER mgd_dbo
+setenv MGD_JAVA_API /home/sc/work/mgd_java_api
+setenv MGD_JDBC_URL jdbc:postgresql://bhmgidb03lt.jax.org:5432/sc
+setenv MGIBIN /home/sc/work/bin
+setenv MGICACHELOAD /home/sc/work/dbutils/mgicacheload
+setenv MGI_JAVALIB /home/sc/work/lib/java
+setenv MGI_LIVE /home/sc/work
+setenv MGI_PUBLICPASSWORD mgdpub
+setenv MGI_PUBLICUSER mgd_public
+setenv MGIPYTHON /home/sc/work/mgipython
+setenv MGI_PYTHONLIB /home/sc/work/lib/python
+setenv MGI_PYTHONMODULES /home/sc/work/lib/modules
+setenv MGIUTILS /home/sc/work/mgiutils
+setenv MIRBASELOAD /home/sc/work/dataload/mirbaseload
+setenv MIRROR_WGET /home/sc/work/mirror_wget
+setenv MPEMAPALOAD /home/sc/work/dataload/mp_emapaload
+setenv MPHPOLOAD /home/sc/work/dataload/mp_hpoload
+setenv MRKCACHELOAD /home/sc/work/dbutils/mrkcacheload
+setenv MRKCOORDLOAD /home/sc/work/dataload/mrkcoordload
+setenv MYSQL_DBPASSWORDFILE /home/sc/work/dbutils/mysqldbutilities/.mgd_dbo_password
+setenv MYSQL_DBUTILS /home/sc/work/dbutils/mysqldbutilities
+setenv NEXTPROTLOAD /home/sc/work/dataload/nextprotload
+setenv NOMENLOAD /home/sc/work/dataload/nomenload
+setenv NOTELOAD /home/sc/work/dataload/noteload
+setenv OMIMHPOLOAD /home/sc/work/dataload/omim_hpoload
+setenv PATH .:/usr/pgsql-12/bin:/usr/bin:/usr/sbin:/bin:/usr/local/bin:/usr/local/apache-ant-1.7.1/bin:/usr/java/default/bin
+setenv PDFDOWNLOAD /home/sc/work/pdfdownload
+setenv PDFSPLITTER_URL http://bheidev01.jax.org/usrlocalmgi/live/pdfviewer/splitter.cgi
+setenv PDFTOTEXT /usr/local/bin/pdftotext
+setenv PDFVIEWER_URL http://bheidev01.jax.org/usrlocalmgi/live/pdfviewer/pdfviewer.cgi?id=
+setenv PERL_HOME /usr
+setenv PERL /usr/bin/perl
+setenv PG_1LINE_PASSFILE /home/sc/work/dbutils/pgdbutilities/.pgpass_1
+setenv PG_DBNAME sc
+setenv PG_DBPASSWORDFILE /home/sc/work/dbutils/pgdbutilities/.pgpass
+setenv PG_DBSERVER bhmgidb03lt
+setenv PG_DBUSER mgd_dbo
+setenv PG_DBUTILS /home/sc/work/dbutils/pgdbutilities
+setenv PGJDBC /home/sc/work/lib/sharelib/postgresql-42.2.17.jre7.jar
+setenv PG_MGD_DBSCHEMADIR /home/sc/work/dbutils/mgd/pgmgddbschema
+setenv PGPASSFILE /home/sc/work/dbutils/pgdbutilities/.pgpass
+setenv PG_RADAR_DBSCHEMADIR /home/sc/work/dbutils/radar/pgradardbschema
+setenv PG_SNP_DBSCHEMADIR /home/sc/work/dbutils/snp/pgsnpdbschema
+setenv PIRSFLOAD /home/sc/work/dataload/pirsfload
+setenv PIXELDB /data/pixeldb
+setenv POSTGRES_HOME /usr/pgsql-12
+setenv PROBELOAD /home/sc/work/dataload/probeload
+setenv PROBLEMSEQSETLOAD /home/sc/work/dataload/problemseqsetload
+setenv PROISOFORMLOAD /home/sc/work/dataload/proisoformload
+setenv PROLOAD /home/sc/work/dataload/proload
+setenv PUBMED2GENELOAD /home/sc/work/dataload/pubmed2geneload
+setenv PUBREPORTDIR /data/reports/sc/reports_db
+setenv PUBRPTS /home/sc/work/reports_db
+setenv PWI /home/sc/work/pwi
+setenv PYTHON_HOME /opt/python3.7
+setenv PYTHONINCLUDE /opt/python3.7/include/python3.7m
+setenv PYTHONLIB /opt/python3.7/lib
+setenv PYTHON /opt/python3.7/bin/python3
+setenv PYTHONPATH /opt/python3.7/lib:/home/sc/work/lib/python
+setenv QCREPORTDIR /data/reports/sc/qcreports_db
+setenv QCRPTS /home/sc/work/qcreports_db
+setenv QTLARCHIVELOAD /home/sc/work/dataload/qtlarchiveload
+setenv RADAR_DBNAME sc
+setenv RADAR_DBPASSWORDFILE /home/sc/work/dbutils/pgdbutilities/.pgpass_1
+setenv RADAR_DBSCHEMADIR /home/sc/work/dbutils/radar/pgradardbschema
+setenv RADAR_DBSERVER bhmgidb03lt
+setenv RADAR_DBURL bhmgidb03lt
+setenv RADAR_DBUSER mgd_dbo
+setenv RADAR_DBUTILS /home/sc/work/dbutils/radardbutilities
+setenv REFERENCELOAD /home/sc/work/dataload/referenceload
+setenv REFSEQLOAD /home/sc/work/dataload/refseqload
+setenv RETRY_WAIT_TIME 2
+setenv RNASEQLOAD /home/sc/work/dataload/rnaseqload
+setenv ROLLUPLOAD /home/sc/work/dataload/rollupload
+setenv RVLOAD /home/sc/work/dataload/rvload
+setenv SEQCACHELOAD /home/sc/work/dbutils/seqcacheload
+setenv SEQDELETER /home/sc/work/dataload/seqdeleter
+setenv SEQSEQASSOCLOAD /home/sc/work/dataload/seqseqassocload
+setenv SERVER_NAME bhmgiap09lt
+setenv SETLOAD /home/sc/work/dataload/setload
+setenv SHARELIB /home/sc/work/lib/sharelib
+setenv SLIMTERMLOAD /home/sc/work/dataload/slimtermload
+setenv SNPCACHELOAD /home/sc/work/dbutils/snpcacheload
+setenv SNP_DBSCHEMADIR /home/sc/work/dbutils/snp/pgsnpdbschema
+setenv SNPINDEXER /home/sc/work/snpindexer
+setenv SPSEQLOAD /home/sc/work/dataload/spseqload
+setenv STAXAPI /home/sc/work/lib/sharelib/jsr173_1.0_api.jar
+setenv STAXRI /home/sc/work/lib/sharelib/jsr173_1.0_ri.jar
+setenv STRAINGENEMODELLOAD /home/sc/work/dataload/straingenemodelload
+setenv STRAINLOAD /home/sc/work/dataload/strainload
+setenv STRAINMARKERLOAD /home/sc/work/dataload/strainmarkerload
+setenv SYNONYMLOAD /home/sc/work/dataload/synonymload
+setenv TARGETEDALLELELOAD /home/sc/work/dataload/targetedalleleload
+setenv TIMES_TO_RETRY 5
+setenv TRANSLATIONLOAD /home/sc/work/dataload/translationload
+setenv TSSGENELOAD /home/sc/work/dataload/tssgeneload
+setenv UNIPROTLOAD /home/sc/work/dataload/uniprotload
+setenv UNIPROTMUSFILTER /home/sc/work/mgiutils/uniprotmusfilter
+setenv USRLOCALMGI /home/sc/work
+setenv VELOCITY /home/sc/work/lib/sharelib/velocity-dep-1.3.1.jar
+setenv VOCLOAD /home/sc/work/dataload/vocload
+setenv WILDFLY /home/sc/work/wildfly
+setenv WI_URL http://test.informatics.jax.org/
+if ( sc != mgiadmin && -r /home/sc/.pgpass ) then
+setenv PGPASSFILE /home/sc/.pgpass
+endif
+setenv LOG wts2-823.csh.log
+rm -rf wts2-823.csh.log
+touch wts2-823.csh.log
+date
+tee -a wts2-823.csh.log
+Mon Apr 25 09:54:14 EDT 2022
+echo --- starting part 1
+tee -a wts2-823.csh.log
+--- starting part 1
+echo MGD_DBNAME=sc
+tee -a wts2-823.csh.log
+MGD_DBNAME=sc
+echo MGD_DBPASSWORDFILE=/home/sc/work/dbutils/pgdbutilities/.pgpass_1
+tee -a wts2-823.csh.log
+MGD_DBPASSWORDFILE=/home/sc/work/dbutils/pgdbutilities/.pgpass_1
+echo MGD_DBSERVER=bhmgidb03lt
+tee -a wts2-823.csh.log
+MGD_DBSERVER=bhmgidb03lt
+echo MGD_DBUSER=mgd_dbo
+tee -a wts2-823.csh.log
+MGD_DBUSER=mgd_dbo
+date
+tee -a wts2-823.csh.log
+Mon Apr 25 09:54:14 EDT 2022
+echo downloading the latest geo experiment files
+tee -a wts2-823.csh.log
+downloading the latest geo experiment files
+/home/sc/work/dataload/gxdhtload/bin/mirror_geo_exp.sh
+Mon Apr 25 09:54:14 EDT 2022
+Mon Apr 25 09:54:14 EDT 2022
+STAT: 0
+fileCount: 1
+retrieve_start: 0
+fileCount: 2
+retrieve_start: 5000
+fileCount: 3
+retrieve_start: 10000
+fileCount: 4
+retrieve_start: 15000
+fileCount: 5
+retrieve_start: 20000
+fileCount: 6
+retrieve_start: 25000
+fileCount: 7
+retrieve_start: 30000
+fileCount: 8
+retrieve_start: 35000
+fileCount: 9
+retrieve_start: 40000
+fileCount: 10
+retrieve_start: 45000
+fileCount: 11
+retrieve_start: 50000
+ALL_FILES in mirror_geo_exp.sh: /data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.1
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.10
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.11
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.2
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.3
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.4
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.5
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.6
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.7
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.8
+/data/downloads/eutils.ncbi.nlm.nih.gov.geo/geo.xml.9
+Mon Apr 25 09:54:47 EDT 2022
+Running ./mirror_geo_sample.sh
+Running mirror_geo_sample.py
+Mon Apr 25 09:54:47 EDT 2022
+STAT: 0
+Mon Apr 25 10:05:14 EDT 2022
+Mon Apr 25 10:05:14 EDT 2022
+date
+tee -a wts2-823.csh.log
+Mon Apr 25 10:05:14 EDT 2022
+echo updating evaluation state of experiments that have no raw samples
+tee -a wts2-823.csh.log
+updating evaluation state of experiments that have no raw samples
+date
+tee -a wts2-823.csh.log
+Mon Apr 25 10:05:14 EDT 2022
+cat -
+/home/sc/work/dbutils/pgdbutilities/bin/doisql.csh wts2-823.csh
+tee -a wts2-823.csh.log
+select e._experiment_key
+    into temporary table toUpdate
+    from gxd_htexperiment e, acc_accession a
+    where e.creation_date >= '2/19/2022'
+    and e._experiment_key = a._object_key
+    and a._logicaldb_key = 190 
+    and a._mgitype_key = 42 
+;
+SELECT 1152
+create index idx2 on toUpdate(_experiment_key)
+;
+CREATE INDEX
+select * from toUpdate;
+ _experiment_key 
+-----------------
+           66447
+           66448
+           66449
+           66450
+           66451
+           66452
+           66453
+           66454
+           66455
+           66456
+           66457
+           66458
+           66459
+           66460
+           66461
+           66462
+           66463
+           66464
+           66465
+           66466
+           66467
+           66468
+           66469
+           66470
+           66471
+           66472
+           66473
+           66474
+           66475
+           66476
+           66477
+           66478
+           66479
+           66480
+           66481
+           66482
+           66483
+           66484
+           66485
+           66486
+           66487
+           66488
+           66489
+           66490
+           66491
+           66492
+           66493
+           66494
+           66495
+           66496
+           66497
+           66498
+           66499
+           66500
+           66501
+           66502
+           66503
+           66504
+           66505
+           66506
+           66507
+           66508
+           66509
+           66510
+           66511
+           66512
+           66513
+           66514
+           66515
+           66516
+           66517
+           66518
+           66519
+           66520
+           66521
+           66522
+           66523
+           66524
+           66525
+           66526
+           66527
+           66528
+           66529
+           66530
+           66531
+           66532
+           66533
+           66534
+           66535
+           66536
+           66537
+           66538
+           66539
+           66540
+           66541
+           66542
+           66543
+           66544
+           66545
+           66546
+           66547
+           66548
+           66549
+           66550
+           66551
+           66552
+           66553
+           66554
+           66555
+           66556
+           66557
+           66558
+           66559
+           66560
+           66561
+           66562
+           66563
+           66564
+           66565
+           66566
+           66567
+           66568
+           66569
+           66570
+           66571
+           66572
+           66573
+           66574
+           66575
+           66576
+           66577
+           66578
+           66579
+           66580
+           66581
+           66582
+           66583
+           66584
+           66585
+           66586
+           66587
+           66588
+           66589
+           66590
+           66591
+           66592
+           66593
+           66594
+           66595
+           66596
+           66597
+           66598
+           66599
+           66600
+           66601
+           66602
+           66603
+           66604
+           66605
+           66606
+           66607
+           66608
+           66609
+           66610
+           66611
+           66612
+           66613
+           66614
+           66615
+           66616
+           66617
+           66618
+           66619
+           66620
+           66621
+           66622
+           66623
+           66624
+           66625
+           66626
+           66627
+           66628
+           66629
+           66630
+           66631
+           66632
+           66633
+           66634
+           66635
+           66636
+           66637
+           66638
+           66639
+           66640
+           66641
+           66642
+           66643
+           66644
+           66645
+           66646
+           66647
+           66648
+           66649
+           66650
+           66651
+           66652
+           66653
+           66654
+           66655
+           66656
+           66657
+           66658
+           66659
+           66660
+           66661
+           66662
+           66663
+           66664
+           66665
+           66666
+           66667
+           66668
+           66669
+           66670
+           66671
+           66672
+           66673
+           66674
+           66675
+           66676
+           66677
+           66678
+           66679
+           66680
+           66681
+           66682
+           66683
+           66684
+           66685
+           66686
+           66687
+           66688
+           66689
+           66690
+           66691
+           66692
+           66693
+           66694
+           66695
+           66696
+           66697
+           66698
+           66699
+           66700
+           66701
+           66702
+           66703
+           66704
+           66705
+           66706
+           66707
+           66708
+           66709
+           66710
+           66711
+           66712
+           66713
+           66714
+           66715
+           66716
+           66717
+           66718
+           66719
+           66720
+           66721
+           66722
+           66723
+           66724
+           66725
+           66726
+           66727
+           66728
+           66729
+           66730
+           66731
+           66732
+           66733
+           66734
+           66735
+           66736
+           66737
+           66738
+           66739
+           66740
+           66741
+           66742
+           66743
+           66744
+           66745
+           66746
+           66747
+           66748
+           66749
+           66750
+           66751
+           66752
+           66753
+           66754
+           66755
+           66756
+           66757
+           66758
+           66759
+           66760
+           66761
+           66762
+           66763
+           66764
+           66765
+           66766
+           66767
+           66768
+           66769
+           66770
+           66771
+           66772
+           66773
+           66774
+           66775
+           66776
+           66777
+           66778
+           66779
+           66780
+           66781
+           66782
+           66783
+           66784
+           66785
+           66786
+           66787
+           66788
+           66789
+           66790
+           66791
+           66792
+           66793
+           66794
+           66795
+           66796
+           66797
+           66798
+           66799
+           66800
+           66801
+           66802
+           66803
+           66804
+           66805
+           66806
+           66807
+           66808
+           66809
+           66810
+           66811
+           66812
+           66813
+           66814
+           66815
+           66816
+           66817
+           66818
+           66819
+           66820
+           66821
+           66822
+           66823
+           66824
+           66825
+           66826
+           66827
+           66828
+           66829
+           66830
+           66831
+           66832
+           66833
+           66834
+           66835
+           66836
+           66837
+           66838
+           66839
+           66840
+           66841
+           66842
+           66843
+           66844
+           66845
+           66846
+           66847
+           66848
+           66849
+           66850
+           66851
+           66852
+           66853
+           66854
+           66855
+           66856
+           66857
+           66858
+           66859
+           66860
+           66861
+           66862
+           66863
+           66864
+           66865
+           66866
+           66867
+           66868
+           66869
+           66870
+           66871
+           66872
+           66873
+           66874
+           66875
+           66876
+           66877
+           66878
+           66879
+           66880
+           66881
+           66882
+           66883
+           66884
+           66885
+           66886
+           66887
+           66888
+           66889
+           66890
+           66891
+           66892
+           66893
+           66894
+           66895
+           66896
+           66897
+           66898
+           66899
+           66900
+           66901
+           66902
+           66903
+           66904
+           66905
+           66906
+           66907
+           66908
+           66909
+           66910
+           66911
+           66912
+           66913
+           66914
+           66915
+           66916
+           66917
+           66918
+           66919
+           66920
+           66921
+           66922
+           66923
+           66924
+           66925
+           66926
+           66927
+           66928
+           66929
+           66930
+           66931
+           66932
+           66933
+           66934
+           66935
+           66936
+           66937
+           66938
+           66939
+           66940
+           66941
+           66942
+           66943
+           66944
+           66945
+           66946
+           66947
+           66948
+           66949
+           66950
+           66951
+           66952
+           66953
+           66954
+           66955
+           66956
+           66957
+           66958
+           66959
+           66960
+           66961
+           66962
+           66963
+           66964
+           66965
+           66966
+           66967
+           66968
+           66969
+           66970
+           66971
+           66972
+           66973
+           66974
+           66975
+           66976
+           66977
+           66978
+           66979
+           66980
+           66981
+           66982
+           66983
+           66984
+           66985
+           66986
+           66987
+           66988
+           66989
+           66990
+           66991
+           66992
+           66993
+           66994
+           66995
+           66996
+           66997
+           66998
+           66999
+           67000
+           67001
+           67002
+           67003
+           67004
+           67005
+           67006
+           67007
+           67008
+           67009
+           67010
+           67011
+           67012
+           67013
+           67014
+           67015
+           67016
+           67017
+           67018
+           67019
+           67020
+           67021
+           67022
+           67023
+           67024
+           67025
+           67026
+           67027
+           67028
+           67029
+           67030
+           67031
+           67032
+           67033
+           67034
+           67035
+           67036
+           67037
+           67038
+           67039
+           67040
+           67041
+           67042
+           67043
+           67044
+           67045
+           67046
+           67047
+           67048
+           67049
+           67050
+           67051
+           67052
+           67053
+           67054
+           67055
+           67056
+           67057
+           67058
+           67059
+           67060
+           67061
+           67062
+           67063
+           67064
+           67065
+           67066
+           67067
+           67068
+           67069
+           67070
+           67071
+           67072
+           67073
+           67074
+           67075
+           67076
+           67300
+           67301
+           67302
+           67303
+           67304
+           67305
+           67306
+           67307
+           67308
+           67309
+           67310
+           67311
+           67312
+           67313
+           67314
+           67315
+           67316
+           67317
+           67318
+           67319
+           67320
+           67321
+           67322
+           67323
+           67324
+           67325
+           67326
+           67327
+           67328
+           67329
+           67330
+           67331
+           67332
+           67333
+           67334
+           67335
+           67336
+           67337
+           67338
+           67339
+           67340
+           67341
+           67342
+           67343
+           67344
+           67345
+           67346
+           67347
+           67348
+           67349
+           67350
+           67351
+           67352
+           67353
+           67354
+           67355
+           67356
+           67357
+           67358
+           67359
+           67360
+           67361
+           67362
+           67363
+           67364
+           67365
+           67366
+           67367
+           67368
+           67369
+           67370
+           67371
+           67372
+           67373
+           67374
+           67375
+           67376
+           67377
+           67378
+           67379
+           67380
+           67381
+           67382
+           67383
+           67384
+           67385
+           67386
+           67387
+           67388
+           67389
+           67390
+           67391
+           67392
+           67393
+           67394
+           67395
+           67396
+           67397
+           67398
+           67399
+           67400
+           67401
+           67402
+           67403
+           67404
+           67405
+           67406
+           67407
+           67408
+           67409
+           67410
+           67505
+           67506
+           67507
+           67508
+           67509
+           67510
+           67511
+           67512
+           67513
+           67514
+           67515
+           67516
+           67517
+           67518
+           67519
+           67520
+           67521
+           67522
+           67523
+           67524
+           67525
+           67526
+           67527
+           67528
+           67529
+           67530
+           67531
+           67532
+           67533
+           67534
+           67535
+           67536
+           67537
+           67538
+           67539
+           67540
+           67541
+           67542
+           67543
+           67544
+           67545
+           67546
+           67547
+           67548
+           67549
+           67550
+           67551
+           67552
+           67553
+           67554
+           67555
+           67556
+           67557
+           67558
+           67559
+           67560
+           67561
+           67562
+           67563
+           67564
+           67565
+           67566
+           67567
+           67568
+           67569
+           67570
+           67571
+           67572
+           67573
+           67574
+           67575
+           67576
+           67577
+           67578
+           67579
+           67580
+           67581
+           67582
+           67583
+           67584
+           67585
+           67586
+           67587
+           67588
+           67589
+           67590
+           67591
+           67592
+           67593
+           67594
+           67595
+           67596
+           67597
+           67598
+           67077
+           67078
+           67079
+           67080
+           67081
+           67082
+           67083
+           67084
+           67085
+           67086
+           67087
+           67088
+           67089
+           67090
+           67091
+           67092
+           67093
+           67094
+           67095
+           67096
+           67097
+           67098
+           67099
+           67100
+           67101
+           67102
+           67103
+           67104
+           67105
+           67106
+           67107
+           67108
+           67109
+           67110
+           67111
+           67112
+           67113
+           67114
+           67115
+           67116
+           67117
+           67118
+           67119
+           67120
+           67121
+           67122
+           67123
+           67124
+           67125
+           67126
+           67127
+           67128
+           67129
+           67130
+           67131
+           67132
+           67133
+           67134
+           67135
+           67136
+           67137
+           67138
+           67139
+           67140
+           67141
+           67142
+           67143
+           67144
+           67145
+           67146
+           67147
+           67148
+           67149
+           67150
+           67151
+           67152
+           67153
+           67154
+           67155
+           67156
+           67411
+           67412
+           67413
+           67414
+           67415
+           67416
+           67417
+           67418
+           67419
+           67420
+           67421
+           67422
+           67423
+           67424
+           67425
+           67426
+           67427
+           67428
+           67429
+           67430
+           67431
+           67432
+           67433
+           67434
+           67435
+           67436
+           67437
+           67438
+           67439
+           67440
+           67441
+           67442
+           67443
+           67444
+           67445
+           67446
+           67447
+           67448
+           67449
+           67450
+           67451
+           67452
+           67453
+           67454
+           67455
+           67456
+           67457
+           67458
+           67459
+           67460
+           67461
+           67462
+           67463
+           67464
+           67465
+           67466
+           67467
+           67468
+           67469
+           67470
+           67471
+           67472
+           67473
+           67474
+           67475
+           67476
+           67477
+           67478
+           67479
+           67480
+           67481
+           67482
+           67483
+           67484
+           67485
+           67486
+           67487
+           67488
+           67489
+           67490
+           67491
+           67492
+           67493
+           67494
+           67495
+           67496
+           67497
+           67498
+           67499
+           67500
+           67501
+           67502
+           67503
+           67504
+           67157
+           67158
+           67159
+           67160
+           67161
+           67162
+           67163
+           67164
+           67165
+           67166
+           67167
+           67168
+           67169
+           67170
+           67171
+           67172
+           67173
+           67174
+           67175
+           67176
+           67177
+           67178
+           67179
+           67180
+           67181
+           67182
+           67183
+           67184
+           67185
+           67186
+           67187
+           67188
+           67189
+           67190
+           67191
+           67192
+           67193
+           67194
+           67195
+           67196
+           67197
+           67198
+           67199
+           67200
+           67201
+           67202
+           67203
+           67204
+           67205
+           67206
+           67207
+           67208
+           67209
+           67210
+           67211
+           67212
+           67213
+           67214
+           67215
+           67216
+           67217
+           67218
+           67219
+           67220
+           67221
+           67222
+           67223
+           67224
+           67225
+           67226
+           67227
+           67228
+           67229
+           67230
+           67231
+           67232
+           67233
+           67234
+           67235
+           67236
+           67237
+           67238
+           67239
+           67240
+           67241
+           67242
+           67243
+           67244
+           67245
+           67246
+           67247
+           67248
+           67249
+           67250
+           67251
+           67252
+           67253
+           67254
+           67255
+           67256
+           67257
+           67258
+           67259
+           67260
+           67261
+           67262
+           67263
+           67264
+           67265
+           67266
+           67267
+           67268
+           67269
+           67270
+           67271
+           67272
+           67273
+           67274
+           67275
+           67276
+           67277
+           67278
+           67279
+           67280
+           67281
+           67282
+           67283
+           67284
+           67285
+           67286
+           67287
+           67288
+           67289
+           67290
+           67291
+           67292
+           67293
+           67294
+           67295
+           67296
+           67297
+           67298
+           67299
+(1152 rows)
+
+;
+update gxd_htexperiment 
+    set _evaluationstate_key = 100079348 
+from toUpdate u
+    where gxd_htexperiment._experiment_key = u._experiment_key
+;
+UPDATE 1152
+select count(*)
+from gxd_htexperiment
+where _evaluationstate_key = 100079348
+;
+ count 
+-------
+  1152
+(1 row)
+
+date
+tee -a wts2-823.csh.log
+Mon Apr 25 10:05:20 EDT 2022

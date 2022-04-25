@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-19-1
+DATE: 04/25/2022
+STAFF: sc
+CHANGES: wts2-823 'exclude HT experiments without samples from the classifier'
+
 TAG: mgidbmigration-6-0-18-10
 TAG: mgidbmigration-6-0-18-9
 DATE: 03/23/2022

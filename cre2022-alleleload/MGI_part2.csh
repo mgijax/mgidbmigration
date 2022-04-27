@@ -39,7 +39,7 @@ echo 'copy curatoralleleload test file to input directory' | tee -a $LOG
 
 switch (`uname -n`)
 
-    case bhmgiapp14ld
+    case bhmgiapp14ld:
         rm /data/loads/mgi/curatoralleleload/input/lastrun
         scp /mgi/all/wts2_projects/800/WTS2-814/alleloaderinputfile_final.txt /data/loads/mgi/curatoralleleload/input/curatoralleleload.txt
     case bhmgiap09lt.jax.org:

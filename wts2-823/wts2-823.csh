@@ -25,9 +25,9 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 # download the latest geo experiment and sample files
 #
-date | tee -a ${LOG}
-echo "downloading the latest geo experiment files" | tee -a ${LOG}
-${GXDHTLOAD}/bin/mirror_geo_exp.sh
+#date | tee -a ${LOG}
+#echo "downloading the latest geo experiment files" | tee -a ${LOG}
+#${GXDHTLOAD}/bin/mirror_geo_exp.sh
 
 date | tee -a ${LOG}
 echo "updating evaluation state of experiments that have no raw samples" | tee -a ${LOG}

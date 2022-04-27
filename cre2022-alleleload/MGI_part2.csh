@@ -35,17 +35,16 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 # this only needs to happen on development servers
 #
 date | tee -a ${LOG}
-echo 'copy curatoralleleload test file to input directory' | tee -a $LOG
+#echo 'copy curatoralleleload test file to input directory' | tee -a $LOG
 
 switch (`uname -n`)
 
     case bhmgiapp14ld:
         rm /data/loads/mgi/curatoralleleload/input/lastrun
-        scp /mgi/all/wts2_projects/800/WTS2-814/alleloaderinputfile_final.txt /data/loads/mgi/curatoralleleload/input/curatoralleleload.txt
+        #scp /mgi/all/wts2_projects/800/WTS2-814/alleloaderinputfile_final.txt /data/loads/mgi/curatoralleleload/input/curatoralleleload.txt
     case bhmgiap09lt.jax.org:
         rm /data/loads/sc/mgi/curatoralleleload/input/lastrun
-        scp /mgi/all/wts2_projects/800/WTS2-814/alleloaderinputfile_final.txt /data/loads/sc/mgi/curatoralleleload/input/curatoralleleload.txt
-    #case bhmgidevapp01:
+        #scp /mgi/all/wts2_projects/800/WTS2-814/alleloaderinputfile_final.txt /data/loads/sc/mgi/curatoralleleload/input/curatoralleleload.txt
         
         breaksw
 endsw

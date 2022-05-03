@@ -34,15 +34,15 @@ echo "updating evaluation state of experiments that have no raw samples" | tee -
 
 #
 # update experiment evaluation state to 'Not Evaluated' for all
-# experiments loaded since 2/19/2022
+# experiments loaded since 2/8/2022
 #
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
--- get all GEO experiments created on or after 2/19/2022
+-- get all GEO experiments created on or after 2/8/2022
 select e._experiment_key
     into temporary table toUpdate
     from gxd_htexperiment e, acc_accession a
-    where e.creation_date >= '2/19/2022'
+    where e.creation_date >= '2/8/2022'
     and e._experiment_key = a._object_key
     and a._logicaldb_key = 190 -- GEO Series
     and a._mgitype_key = 42 -- HT Experiment

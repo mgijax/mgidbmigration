@@ -56,7 +56,8 @@ select * from toUpdate;
 ;
 
 update gxd_htexperiment 
-    set _evaluationstate_key = 100079348 -- 'Not Evaluated'
+    set _evaluationstate_key = 100079348, -- 'Not Evaluated'
+        confidence = 0.0
 from toUpdate u
     where gxd_htexperiment._experiment_key = u._experiment_key
 ;

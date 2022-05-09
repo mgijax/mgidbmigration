@@ -39,6 +39,8 @@ update MGI_Set set _mgitype_key = 12 where _set_key = 1055;
 delete from mgi_notetype where _notetype_key in (1043, 1044);
 DROP TRIGGER IF EXISTS PRB_Source_insert_trigger ON PRB_Source;
 DROP FUNCTION IF EXISTS PRB_Source_insert();
+DROP TRIGGER IF EXISTS BIB_Refs_update_trigger ON BIB_Refs;
+DROP FUNCTION IF EXISTS BIB_Refs_update();
 EOSQL
 date | tee -a ${LOG}
 

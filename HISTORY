@@ -1,8 +1,13 @@
+TAG: mgidbmigration-6-0-19-4
+DATE: 05/04/2022
+STAFF: sc
+CHANGES:wts2-823 - also set confidence to 0.0 in updates
+
 TAG: mgidbmigration-6-0-19-3
 DATE: 04/27/2022
 STAFF: sc
 CHANGES: cre2022-alleleload, comment out copy of test files
-        wts0823 - commented out downloading of most recent geo files
+        wts2-823 - commented out downloading of most recent geo files
 
 TAG: mgidbmigration-6-0-19-2
 TAG: mgidbmigration-6-0-19-1

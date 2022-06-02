@@ -32,19 +32,26 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 # update schema-version and public-version
 #
+#date | tee -a ${LOG}
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#update MGI_dbinfo set schema_version = '6-0-13', public_version = 'MGI 6.13';
+#EOSQL
+#date | tee -a ${LOG}
+
 date | tee -a ${LOG}
+echo 'running gxdindex' | tee -a $LOG
+./gxdindex.sh | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-update MGI_dbinfo set schema_version = '6-0-13', public_version = 'MGI 6.13';
+drop table GXD_Index_Stages_old;
 EOSQL
-date | tee -a ${LOG}
 
 #
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
 #echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 

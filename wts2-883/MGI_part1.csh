@@ -40,7 +40,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'running gxdindex' | tee -a $LOG
-./gxdindex.sh | tee -a $LOG
+./gxdindex.csh | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table GXD_Index_Stages_old;
 create index BIB_Workflow_Data_idx_Refs_key on mgd.BIB_Workflow_Data (_Refs_key);

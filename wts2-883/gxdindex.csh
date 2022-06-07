@@ -14,7 +14,7 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Index_Stages ${MGI_LIVE}/dbutils/mgidbmigration/cre2022/GXD_Index_Stages.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Index_Stages ${MGI_LIVE}/dbutils/mgidbmigration/wts2-883/GXD_Index_Stages.bcp "|"
 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_Index_Stages_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Index_Stages_drop.object | tee -a $LOG

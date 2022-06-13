@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-20-2
+DATE: 06/13/2022
+STAFF: lec
+wts2-883/Move PWI/GXD Index page from SQLAlchemy to Java API
+
 TAG: mgidbmigration-6-0-20-1
 DATE: 05/31/2022
 STAFF: lec

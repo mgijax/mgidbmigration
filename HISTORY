@@ -1,3 +1,9 @@
+TAG: mgidbmigration-6-0-20-3
+DATE: 06/21/2022
+STAFF: sc
+CHANGES: cre2022-alleleload, remove call to curatoralleleload
+    we just want to run the derivationload
+
 TAG: mgidbmigration-6-0-20-2
 DATE: 06/13/2022
 STAFF: lec

@@ -58,8 +58,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 
 # wts2-761/MGD db cleanup/mgi_userrole, mgi_roletask obsolete tables
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from VOC_Term where _vocab_key in (33,34);
-delete from VOC_Vocab where _vocab_key in (33,34);
 drop view if exists mgd.MGI_UserRole_View;
 drop view if exists mgd.MGI_UserTask_View;
 ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__ModifiedBy_key_fkey CASCADE;
@@ -71,6 +69,8 @@ ALTER TABLE mgd.MGI_RoleTask ADD FOREIGN KEY (_Task_key) REFERENCES mgd.VOC_Term
 ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__Role_key_fkey CASCADE;
 ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__Task_key_fkey CASCADE;
 ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__Role_key_fkey CASCADE;
+delete from VOC_Term where _vocab_key in (33,34);
+delete from VOC_Vocab where _vocab_key in (33,34);
 drop table mgd.MGI_UserRole CASCADE ;
 drop table mgd.MGI_RoleTask CASCADE ;
 EOSQL
@@ -86,7 +86,7 @@ ${PG_MGD_DBSCHEMADIR}/view/GXD_GenotypeAnnotHeader_View_create.object | tee -a $
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 

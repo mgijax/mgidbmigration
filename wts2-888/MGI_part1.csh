@@ -56,6 +56,25 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 
+# wts2-761/MGD db cleanup/mgi_userrole, mgi_roletask obsolete tables
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete from VOC_Term where _vocab_key in (33,34);
+delete from VOC_Vocab where _vocab_key in (33,34);
+drop view if exists mgd.MGI_UserRole_View;
+drop view if exists mgd.MGI_UserTask_View;
+ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__CreatedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__CreatedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask ADD FOREIGN KEY (_Role_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.MGI_RoleTask ADD FOREIGN KEY (_Task_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__Role_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__Task_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__Role_key_fkey CASCADE;
+drop table mgd.MGI_UserRole CASCADE ;
+drop table mgd.MGI_RoleTask CASCADE ;
+EOSQL
+
 # wts888 things
 ${PG_MGD_DBSCHEMADIR}/view/GXD_GenotypeAnnotHeader_View_create.object | tee -a $LOG 
 

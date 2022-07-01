@@ -1,0 +1,321 @@
+5 PRIME 3 PRIME
+5'-3'
+abcam
+AbD Serotec
+Abgent
+Abmart
+Abnova
+Abnova-Novus Biologicals
+ABR Affinity BioReagents/Thermo Fisher Scientific
+Accurate Chemical and Scientific Corporation
+Acris Antibodies
+Active Motif
+Advanced Targeting Systems
+Affiniti
+Affiniti Research Products
+ABR Affinity BioReagents
+Affymetrix eBioscience
+Alexis Biochemicals
+Alomone Labs
+Alpha Diagnostic International
+Alpha Diagnostics
+AMAC, Inc
+Amano Pharmaceutical
+American Research Products
+American Type Culture Collection
+Amersham
+Amgen
+AnaSpec
+AngioBio
+Angio-Proteomie
+Aprogen
+Arnel Products
+ATCC
+Atlas Antibodies
+Auspep
+Aves Labs
+Aviva Systems Biology
+BabCo-Eurogenetech
+Bachem
+BD bioscience
+BD Biosciences/Pharmingen
+BD Pharmingen
+BD Transduction Laboratories
+Becton Dickinson
+Behringwerke Marburg
+Berkeley Antibody Co
+Berkeley Covance/Babco
+Beta Cell Biology Consortium (BCBC)
+Bethesda Research Laboratories
+Bethyl and Protein Tech
+Bethyl inc
+Bethyl Laboratories
+Bio Matrix Research
+Bio Med Tek
+Biogen Idec
+Biogenesis
+BioGenex
+BioLegend
+Biomeda
+BioMol
+Biomol International, inc
+BIOMOL Research Laboratories
+BioMosaics
+Biopat
+Bio-Rad
+BIO-RAD/AbD Serotec
+Bio-Science Products
+Bioscience
+Biosite
+Biosource
+Biotechnology
+Biotrend
+Bioworld
+BMA Biomedicals
+Boehringer Mannheim
+Boster
+Boster-BioImmunogen
+BRL Gibco
+Calbiochem
+Calbiochem/Millipore
+Cambridge Bioscience
+Cambridge Medical Diagnostic
+Cappel
+Cappel/ICN
+Capralogics
+Cascade Bioscience
+Cayman
+Cayman Chemical
+Cayman Chemicals
+Cedarlane
+Cell Signal
+Cell Signaling Technology
+CeMines
+Chemicon
+ChemoCentryx
+Chromotek
+CLB Company
+Clontech
+Cocalico Biologicals
+Collaborative Research, inc
+Convance
+Cortex Biochem
+Cortex Biotech
+Cosmo Bio
+Covalab
+Covance
+Covance Research Products
+Covance/Babco
+Cytoskeleton, inc
+Daiichi Fine Chemical
+Dako
+DAKO Diagnostics
+Dakocytomation
+Dakopatts
+Developmental Studies Hybridoma Bank
+Diagenode
+Dianova
+DiaSorin
+Diatheva
+DPC-Biermann/Acris Antibodies
+DSHB
+eBioscience
+eBioscience/affymetrix
+Elastin Products inc
+EMD Biosciences
+EMD Millipore
+EME Biosciences
+Emfret Analytics
+Endogen
+Enzo Life Sciences
+Epitomics
+Eppendorf-5 Prime
+Eppendorf-5 Prime, inc
+Eugene Tech International
+Euro-Diagnostica
+Eurogentec
+Europa Bioproducts
+Everest Biotech
+Exalpha Biologicals
+F&D
+FabGennix, inc
+Fitzgerald Industries Intermational
+Frontier Inst
+GeneTex
+Genosys
+GenScript
+GenWay
+GenWay Biotech
+Genzyme
+GIBCO
+Gramsch Laboratories
+Harlan
+Hoffmann La Roche
+Hybridoma bank
+Hycult Biotech
+IBL
+IBT
+ICL labs
+ICN
+ICN Biochemicals
+ICN Biomedicals
+ICN ImmunoBiologicals
+ICN Pharmaceutical
+ICN Pharmaceuticals
+Imgenex
+Immuno-Biological Laboratories
+Immunology Consultants Laboratory
+ImmunoStar
+IncStar
+Innovagen
+Insight Biotechnology
+Institute Jacques Boy
+Invitrogen
+Invitrogen/Zymed
+Kamiya Biomedical Co
+Lab Frontier
+Lab Vision
+Lab Vision Corp
+Lab Vision/Neomarkers
+Labsystems
+Labvision
+LAE Biotech Int
+Leica
+Leinco Technologies
+Life Technologies
+Life Technologies/Thermo Fisher Scientific
+LifeSpan Biosciences
+Linco
+Linco Research
+Linco/Millipore
+LSBio
+LSL Biolafitte
+Maine Biotechnologies
+MBL
+MBL International
+MBL International Corporation
+Medac
+Medical and Biological Laboratories
+Medicorp, inc
+Merck
+Merck Millipore
+Microbiological Associates
+Millipore
+Millipore Bioscience Research Reagents
+Millipore/Chemicon
+Millipore/Upstate Biotechnology
+MitoSciences
+Molecular Probes
+Molecular Probes/Invitrogen
+Monosan
+MP Biomedicals
+MP Biomedicals/Cappel
+Nacalai Tesque
+NanoTools
+National Hormone and Peptide program
+National Hormone and Pituitary Program
+NeoMarkers
+NeoMarkers-Lab Vision
+NeuroMab
+New England Biolabs
+Nichirei
+NIDDK
+Nordic BioSite AB
+Nordic Immunological Laboratories
+Novagen/EMD Biosciences
+Novagen/Merck
+Novo Industries
+Novocastra
+Novocastra Laboratories
+Novo-Nordisk
+Novus
+Novus Biologicals
+Omadsen
+Oncogene
+Oncogene Research Products
+Oncogene Science
+Oncogene Scientific
+Orbigen
+Origene
+Oxford Biomedical Research
+Ozyme
+PelFreez
+Pel-Freez Biologicals
+PelFreeze
+Peninsula Laboratories
+Perseus Proteomics
+Pharmingen
+Phoenix Pharmaceuticals, inc
+Pierce Antibody
+Polysciences, inc
+Primm
+Progen
+Progen Biotechnik GmbH
+Promega
+ProSci
+Protein Tech Group
+ProteinTech
+Proteintech Group
+Proteus Biosciences
+Quartett
+R & D Systems
+RDI Research Diagnostics inc
+Regeneron
+ReliaTech
+Research Diagnostics
+Roche
+Roche Biochemicals
+Roche Diagnostics
+Rockland
+Rockland Immunochemicals
+Sanbio
+Santa Cruz Biotechnology
+Seikagaku Corp
+Serotec
+Seven Hills Bioreagents
+Sigma
+Sigma-Aldrich
+Signet Laboratories, inc
+Southern Biotech
+Sternberger Monoclonals
+StressGen
+Stressgen Bioreagents
+StressGen Biotechnologies
+Stressgen Biotechnologies Corp
+StressGen/Enzo
+Sugen
+Swant
+Synaptic Systems
+Tago
+tebu-bio
+The Binding Site
+Thermo
+Thermo Fisher Scientific
+Transduction Laboratories
+Transductional Signaling Cell
+TransGenic
+Triple Point Biologics
+UBI
+UCB Bioproducts
+Ultra Clone
+Ultraclone
+UltraClone Limited
+UltraClone Ltd
+United States Biochemicals
+Upstate Biochem
+Upstate Biotechnology
+Upstate Biotechnology/Millipore
+Upstate Cell Signaling Solutions
+US Biological
+US Biologicals
+UX Biologicals
+Vector
+Vector Laboratories
+Vector Labs
+Wako
+Wako Chemicals
+Wako Pure Chemicals Industries
+Yanaihara Inst
+YLEM
+Zymed
+Zymed Laboratories

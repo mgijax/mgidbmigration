@@ -19,6 +19,10 @@ touch $LOG
  
 date | tee -a $LOG
  
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete from voc_term where _vocab_key = 179;
+EOSQL
+
 $PYTHON wts524.py | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

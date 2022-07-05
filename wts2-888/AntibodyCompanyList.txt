@@ -1,321 +1,196 @@
 5 PRIME 3 PRIME
-5'-3'
 abcam
 AbD Serotec
 Abgent
 Abmart
 Abnova
-Abnova-Novus Biologicals
-ABR Affinity BioReagents/Thermo Fisher Scientific
+ABR Affinity BioReagents
 Accurate Chemical and Scientific Corporation
 Acris Antibodies
 Active Motif
 Advanced Targeting Systems
-Affiniti
-Affiniti Research Products
-ABR Affinity BioReagents
-Affymetrix eBioscience
+Affiniti Biologicals
+Affymetrix
 Alexis Biochemicals
 Alomone Labs
-Alpha Diagnostic International
-Alpha Diagnostics
-AMAC, Inc
-Amano Pharmaceutical
-American Research Products
-American Type Culture Collection
-Amersham
-Amgen
+Alpha Diagnostic International (ADI)
+Amano Enzyme
+Amano Pharmceutical Co.
+American Research Products (ARP)
+American Type Culture Collection (ATCC)
+Amersham plc
+Amgen Inc
 AnaSpec
 AngioBio
 Angio-Proteomie
+Applied Biosystems
 Aprogen
-Arnel Products
-ATCC
 Atlas Antibodies
 Auspep
 Aves Labs
 Aviva Systems Biology
-BabCo-Eurogenetech
 Bachem
-BD bioscience
-BD Biosciences/Pharmingen
+BD Bioscience
 BD Pharmingen
-BD Transduction Laboratories
-Becton Dickinson
-Behringwerke Marburg
-Berkeley Antibody Co
-Berkeley Covance/Babco
+Becton Dickinson (BD)
+Berkely Antibody Co (BabCo)
 Beta Cell Biology Consortium (BCBC)
 Bethesda Research Laboratories
-Bethyl and Protein Tech
-Bethyl inc
 Bethyl Laboratories
-Bio Matrix Research
-Bio Med Tek
-Biogen Idec
+Bio Matrix Research, Inc
+Biogen
 Biogenesis
 BioGenex
 BioLegend
 Biomeda
-BioMol
-Biomol International, inc
-BIOMOL Research Laboratories
+Biomol
 BioMosaics
 Biopat
 Bio-Rad
-BIO-RAD/AbD Serotec
-Bio-Science Products
-Bioscience
-Biosite
-Biosource
-Biotechnology
 Biotrend
-Bioworld
+bioWORLD
 BMA Biomedicals
 Boehringer Mannheim
-Boster
-Boster-BioImmunogen
-BRL Gibco
+Boster Bio
 Calbiochem
-Calbiochem/Millipore
 Cambridge Bioscience
-Cambridge Medical Diagnostic
+Cambridge Medical Diagnostics
 Cappel
-Cappel/ICN
 Capralogics
 Cascade Bioscience
-Cayman
 Cayman Chemical
-Cayman Chemicals
-Cedarlane
-Cell Signal
-Cell Signaling Technology
-CeMines
+Cedarlane Labs
+Cell Signaling Technology (CST)
 Chemicon
 ChemoCentryx
-Chromotek
-CLB Company
-Clontech
+ChromoTek
+Clontech Laboratories, Inc
 Cocalico Biologicals
-Collaborative Research, inc
-Convance
 Cortex Biochem
-Cortex Biotech
 Cosmo Bio
 Covalab
 Covance
-Covance Research Products
-Covance/Babco
-Cytoskeleton, inc
+Cytoskeleton, Inc
 Daiichi Fine Chemical
-Dako
-DAKO Diagnostics
+Dako Products
 Dakocytomation
-Dakopatts
-Developmental Studies Hybridoma Bank
+Developmental Studies Hybridoma Bank (DSHB)
 Diagenode
 Dianova
-DiaSorin
+DiaSorin Inc
 Diatheva
-DPC-Biermann/Acris Antibodies
-DSHB
+DPC Biermann
 eBioscience
-eBioscience/affymetrix
-Elastin Products inc
 EMD Biosciences
 EMD Millipore
-EME Biosciences
 Emfret Analytics
-Endogen
 Enzo Life Sciences
+EPC Elastin Products Co.
 Epitomics
-Eppendorf-5 Prime
-Eppendorf-5 Prime, inc
 Eugene Tech International
-Euro-Diagnostica
+Euro Diagnostica AB
 Eurogentec
-Europa Bioproducts
-Everest Biotech
+Europa Bioproducts Ltd.
+Everest Biotech Ltd.
 Exalpha Biologicals
-F&D
-FabGennix, inc
+FabGennix International
 Fitzgerald Industries Intermational
-Frontier Inst
+Fortis Life Sciences
 GeneTex
 Genosys
 GenScript
-GenWay
 GenWay Biotech
 Genzyme
-GIBCO
+Gibco-BRL
 Gramsch Laboratories
-Harlan
-Hoffmann La Roche
-Hybridoma bank
 Hycult Biotech
 IBL
-IBT
-ICL labs
-ICN
-ICN Biochemicals
-ICN Biomedicals
-ICN ImmunoBiologicals
-ICN Pharmaceutical
+IBT Bioservices
 ICN Pharmaceuticals
 Imgenex
 Immuno-Biological Laboratories
-Immunology Consultants Laboratory
+Immunology Consultants Laboratory (ICL Lab)
 ImmunoStar
 IncStar
-Innovagen
+Innovagen AB
 Insight Biotechnology
-Institute Jacques Boy
 Invitrogen
-Invitrogen/Zymed
 Kamiya Biomedical Co
-Lab Frontier
-Lab Vision
 Lab Vision Corp
-Lab Vision/Neomarkers
-Labsystems
-Labvision
-LAE Biotech Int
+Labcorp Drug Development
+Labsystems Diagnostics
+LAE Biotech International
 Leica
 Leinco Technologies
 Life Technologies
-Life Technologies/Thermo Fisher Scientific
-LifeSpan Biosciences
-Linco
-Linco Research
-Linco/Millipore
-LSBio
-LSL Biolafitte
-Maine Biotechnologies
-MBL
-MBL International
-MBL International Corporation
-Medac
-Medical and Biological Laboratories
-Medicorp, inc
-Merck
+LifeSpan Biosciences (LSBio)
+Linco Research Inc
+MBL International Corporation (MBLI)
 Merck Millipore
-Microbiological Associates
-Millipore
-Millipore Bioscience Research Reagents
-Millipore/Chemicon
-Millipore/Upstate Biotechnology
+Millipore Corp.
+MilliporeSigma
 MitoSciences
 Molecular Probes
-Molecular Probes/Invitrogen
 Monosan
 MP Biomedicals
-MP Biomedicals/Cappel
 Nacalai Tesque
 NanoTools
-National Hormone and Peptide program
-National Hormone and Pituitary Program
 NeoMarkers
-NeoMarkers-Lab Vision
 NeuroMab
-New England Biolabs
-Nichirei
-NIDDK
+New England Biolabs (NEB)
+Nichirei Bioscience
 Nordic BioSite AB
 Nordic Immunological Laboratories
-Novagen/EMD Biosciences
-Novagen/Merck
-Novo Industries
-Novocastra
+Nordic-MUbio
+Novagen, Inc
+Novo Nordisk
 Novocastra Laboratories
-Novo-Nordisk
-Novus
 Novus Biologicals
-Omadsen
-Oncogene
 Oncogene Research Products
 Oncogene Science
-Oncogene Scientific
-Orbigen
-Origene
+OriGene
 Oxford Biomedical Research
 Ozyme
-PelFreez
 Pel-Freez Biologicals
-PelFreeze
-Peninsula Laboratories
-Perseus Proteomics
+Peninsula Laboratories International
+Perseus Proteomics, Inc
 Pharmingen
-Phoenix Pharmaceuticals, inc
+Phoenix Pharmaceuticals, Inc
 Pierce Antibody
-Polysciences, inc
-Primm
+Polysciences, Inc
 Progen
-Progen Biotechnik GmbH
 Promega
-ProSci
-Protein Tech Group
-ProteinTech
-Proteintech Group
-Proteus Biosciences
-Quartett
+Proteintech
+Proteus BioSciences
 R & D Systems
-RDI Research Diagnostics inc
-Regeneron
+Regeneron Pharmaceuticals
 ReliaTech
-Research Diagnostics
+Research Diagnostics Inc (RDI)
 Roche
-Roche Biochemicals
-Roche Diagnostics
-Rockland
 Rockland Immunochemicals
-Sanbio
+SanBio
+Sanofi
 Santa Cruz Biotechnology
 Seikagaku Corp
-Serotec
 Seven Hills Bioreagents
-Sigma
 Sigma-Aldrich
-Signet Laboratories, inc
+Signet Laboratories
 Southern Biotech
 Sternberger Monoclonals
-StressGen
-Stressgen Bioreagents
 StressGen Biotechnologies
-Stressgen Biotechnologies Corp
-StressGen/Enzo
-Sugen
-Swant
+Svar Life Science
+Swant Inc
 Synaptic Systems
-Tago
+Takara Bio
 tebu-bio
 The Binding Site
-Thermo
 Thermo Fisher Scientific
 Transduction Laboratories
-Transductional Signaling Cell
-TransGenic
 Triple Point Biologics
-UBI
 UCB Bioproducts
-Ultra Clone
-Ultraclone
-UltraClone Limited
-UltraClone Ltd
-United States Biochemicals
-Upstate Biochem
 Upstate Biotechnology
-Upstate Biotechnology/Millipore
 Upstate Cell Signaling Solutions
 US Biological
-US Biologicals
-UX Biologicals
-Vector
 Vector Laboratories
-Vector Labs
-Wako
 Wako Chemicals
-Wako Pure Chemicals Industries
-Yanaihara Inst
-YLEM
-Zymed
 Zymed Laboratories

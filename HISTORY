@@ -1,7 +1,7 @@
 TAG: mgidbmigration-6-0-21-3
 DATE: 07/19/2022
 STAFF: lec
-wts2-840/PWI/Strain : add Private = Yes validation
+wts2-940/PWI/Strain : add Private = Yes validation
 added test/probesource.csh
 added GXD_HTExperiment to key/PRB_Source
 

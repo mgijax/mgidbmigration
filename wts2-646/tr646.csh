@@ -29,6 +29,7 @@ date | tee -a $LOG
 #
 
 rm -rf ${DATADOWNLOADS}/ftp.ncbi.nih.gov/gene/DATA/mim2gene_medgen
+${MIRROR_WGET}/download_package alliancegenome.org.humandisease
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table if exists DP_EntrezGene_MIM;

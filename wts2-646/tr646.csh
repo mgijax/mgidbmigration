@@ -22,9 +22,9 @@ date | tee -a $LOG
 #
 # TAGS
 #
-# mgidbmigration-6-0-21-
+# mgidbmigration-6-0-21-4
 # mirror_wget-6-0-21-3
-# entrezgeneload-6-0-21-
+# entrezgeneload-6-0-21-1
 # radardbschema-6-0-21-1
 #
 

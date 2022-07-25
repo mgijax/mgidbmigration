@@ -1,6 +1,7 @@
+TAG: mgidbmigration-6-0-22-1
 TAG: mgidbmigration-6-0-21-5
 TAG: mgidbmigration-6-0-21-4
-DATE: 07/21/2022
+DATE: 07/21/2022, 07/25/2022
 STAFF: lec
 wts2-646/Switch load of Human gene to disease associations to use the Alliance file.
 

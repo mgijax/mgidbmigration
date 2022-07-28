@@ -29,6 +29,8 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Histor
 #remove after new production backup is available
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from VOC_Term where _vocab_key in (33,34);
+update voc_vocab set name = 'Marker Event' where _vocab_key = 33;
+update voc_vocab set name = 'Marker Event Reason' where _vocab_key = 34;
 insert into VOC_Term values(106563602, 33, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(106563603, 33, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(106563604, 33, 'assigned', null, null, 3, 0, 1001, 1001, now(), now());
@@ -77,10 +79,10 @@ ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/MRK_History_View_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.objectMRK_History_View_create.object | tee -a $LOG
 
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#drop table mgd.MRK_Event;
-#drop table mgd.MRK_EventReason;
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table mgd.MRK_Event;
+drop table mgd.MRK_EventReason;
+EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 

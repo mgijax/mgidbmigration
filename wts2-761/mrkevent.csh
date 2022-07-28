@@ -27,28 +27,28 @@ date | tee -a $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_History ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/MRK_History.bcp "|"
 
 #remove after new production backup is available
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from VOC_Term where _vocab_key in (33,34);
-update voc_vocab set name = 'Marker Event' where _vocab_key = 33;
-update voc_vocab set name = 'Marker Event Reason' where _vocab_key = 34;
-insert into VOC_Term values(106563602, 33, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563603, 33, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563604, 33, 'assigned', null, null, 3, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563605, 33, 'rename', null, null, 4, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563606, 33, 'merged', null, null, 5, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563607, 33, 'allele of', null, null, 6, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563608, 33, 'split', null, null, 7, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563609, 33, 'deleted', null, null, 8, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563610, 34, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563611, 34, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563612, 34, 'per gene family revision', null, null, 3, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563613, 34, 'sequence removed by provider', null, null, 4, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563614, 34, 'problematic sequences', null, null, 5, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563615, 34, 'to conform w/nomen guidelines', null, null, 6, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563616, 34, 'to conform w/human', null, null, 7, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563617, 34, 'personal comm w/authors', null, null, 8, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(106563618, 34, 'personal comm w/expert', null, null, 9, 0, 1001, 1001, now(), now());
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#delete from VOC_Term where _vocab_key in (33,34);
+#update voc_vocab set name = 'Marker Event' where _vocab_key = 33;
+#update voc_vocab set name = 'Marker Event Reason' where _vocab_key = 34;
+#insert into VOC_Term values(106563602, 33, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563603, 33, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563604, 33, 'assigned', null, null, 3, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563605, 33, 'rename', null, null, 4, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563606, 33, 'merged', null, null, 5, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563607, 33, 'allele of', null, null, 6, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563608, 33, 'split', null, null, 7, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563609, 33, 'deleted', null, null, 8, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563610, 34, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563611, 34, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563612, 34, 'per gene family revision', null, null, 3, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563613, 34, 'sequence removed by provider', null, null, 4, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563614, 34, 'problematic sequences', null, null, 5, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563615, 34, 'to conform w/nomen guidelines', null, null, 6, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563616, 34, 'to conform w/human', null, null, 7, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563617, 34, 'personal comm w/authors', null, null, 8, 0, 1001, 1001, now(), now());
+#insert into VOC_Term values(106563618, 34, 'personal comm w/expert', null, null, 9, 0, 1001, 1001, now(), now());
+#EOSQL
 
 # drop foreign key contraints
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

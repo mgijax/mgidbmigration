@@ -26,7 +26,6 @@ ALTER TABLE radar.QC_MS_InvalidTissue DROP CONSTRAINT QC_MS_InvalidTissue__JobSt
 ALTER TABLE radar.QC_MS_InvalidStrain DROP CONSTRAINT QC_MS_InvalidStrain__JobStream_key_fkey CASCADE;
 ALTER TABLE radar.QC_MS_InvalidLibrary DROP CONSTRAINT QC_MS_InvalidLibrary__JobStream_key_fkey CASCADE;
 
-drop table if exists DP_EntrezGene_MIM;
 drop table QC_MS_InvalidCellLine;
 drop table QC_MS_InvalidGender;
 drop table QC_MS_InvalidLibrary;   

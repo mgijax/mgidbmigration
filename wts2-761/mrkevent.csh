@@ -77,7 +77,8 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/MRK_History_View_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.objectMRK_History_View_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_insertHistory_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/procedure/MRK_simpleWithdrawal_create.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table mgd.MRK_Event;

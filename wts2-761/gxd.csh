@@ -226,6 +226,7 @@ insert into VOC_Term values(nextval('voc_term_seq'), 173, 'Da', null, null, 5, 0
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kb', null, null, 6, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kDa', null, null, 7, 0, 1001, 1001, now(), now());
 
+--ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyClass_key_fkey CASCADE;
 update GXD_Antibody m
 set _AntibodyClass_key = t._term_key
 from GXD_AntibodyClass e, VOC_Term t
@@ -234,22 +235,16 @@ and e.class = t.term
 and t._vocab_key = 151
 ;
 
-update GXD_GelLane m
-set _lane_key = t._term_key
-from GXD_GelLane e, VOC_Term t
-where m._lane_key = e._lane_key
-and e.lane = t.term
-and t._vocab_key = 152
-;
-
+--ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyPrep__Label_key_fkey CASCADE;
 update GXD_AntibodyPrep m
-set _lane_key = t._term_key
-from GXD_GelLane e, VOC_Term t
-where m._lane_key = e._lane_key
-and e.lane = t.term
+set _label_key = t._term_key
+from GXD_Label e, VOC_Term t
+where m._label_key = e._label_key
+and e.label = t.term
 and t._vocab_key = 152
 ;
 
+--ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Label_key_fkey CASCADE;
 update GXD_ProbePrep m
 set _label_key = t._term_key
 from GXD_Label e, VOC_Term t
@@ -258,22 +253,25 @@ and e.label = t.term
 and t._vocab_key = 152
 ;
 
+--ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
 update GXD_InSituResult m
 set _pattern_key = t._term_key
-from GXD_GelUnits e, VOC_Term t
+from GXD_Pattern e, VOC_Term t
 where m._pattern_key = e._pattern_key
 and e.pattern = t.term
 and t._vocab_key = 153
 ;
 
+--ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
 update GXD_GelLane m
 set _gelcontrol_key = t._term_key
-from GXD_GelLane e, VOC_Term t
+from GXD_GelControl e, VOC_Term t
 where m._gelcontrol_key = e._gelcontrol_key
 and e.gellanecontent = t.term
 and t._vocab_key = 154
 ;
 
+--ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Embedding_key_fkey CASCADE;
 update GXD_Specimen m
 set _Embedding_key = t._term_key
 from GXD_EmbeddingMethod e, VOC_Term t
@@ -282,6 +280,7 @@ and e.embeddingmethod = t.term
 and t._vocab_key = 155
 ;
 
+--ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Fixation_key_fkey CASCADE;
 update GXD_Specimen m
 set _Fixation_key = t._term_key
 from GXD_FixationMethod e, VOC_Term t
@@ -290,6 +289,7 @@ and e.fixation = t.term
 and t._vocab_key = 156
 ;
 
+--ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Visualization_key_fkey CASCADE;
 update GXD_ProbePrep m
 set _visualization_key = t._term_key
 from GXD_VisualizationMethod e, VOC_Term t
@@ -298,6 +298,7 @@ and e.visualization = t.term
 and t._vocab_key = 157
 ;
 
+--ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Sense_key_fkey CASCADE;
 update GXD_ProbePrep m
 set _sense_key = t._term_key
 from GXD_ProbeSense e, VOC_Term t
@@ -306,6 +307,7 @@ and e.sense = t.term
 and t._vocab_key = 159
 ;
 
+--ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyPrep__Secondary_key_fkey CASCADE;
 update GXD_AntibodyPrep m
 set _secondary_key = t._term_key
 from GXD_Secondary e, VOC_Term t
@@ -314,14 +316,16 @@ and e.secondary = t.term
 and t._vocab_key = 160
 ;
 
+--ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelRNAType_key_fkey CASCADE;
 update GXD_GelLane m
 set _gelrnatype_key = t._term_key
-from GXD_GelLane e, VOC_Term t
+from GXD_GelRNAType e, VOC_Term t
 where m._gelrnatype_key = e._gelrnatype_key
 and e.rnatype = t.term
 and t._vocab_key = 172
 ;
 
+--ALTER TABLE mgd.GXD_GelRow DROP CONSTRAINT GXD_GelRow__GelUnits_key_fkey CASCADE;
 update GXD_GelRow m
 set _gelunits_key = t._term_key
 from GXD_GelUnits e, VOC_Term t

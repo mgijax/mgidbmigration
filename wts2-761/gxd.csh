@@ -157,7 +157,7 @@ insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No data stored', 'No 
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Non-mouse sample: no data stored', 'Non-mouse', null, 11, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot assay different gene(s)', 'Diff gene(s)', null, 12, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot use different probe(s)', 'Diff probe(s)', null, 13, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Tissue age not specified: no data stored', 'Age Not Spec;, null, 14, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Tissue age not specified: no data stored', 'Age Not Spec', null, 14, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Transgenic sample: no data stored', 'Transgenic', null, 15, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Treated sample: no data stored', 'Treated', null, 16, 0, 1001, 1001, now(), now());
 
@@ -169,7 +169,7 @@ insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Agarose', 'Agarose', 
 insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Cryosection', 'Cryosection', null, 4, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Gelatin', 'Gelatin', null, 5, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Methacrylate', 'Methacrylate', null, 6, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Other - See Notes', 'Other - See Notes, null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Other - See Notes', 'Other - See Notes', null, 7, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Paraffin', 'Paraffin', null, 8, 0, 1001, 1001, now(), now());
 
 -- 156 | GXD_FixationMethod  _fixation_key |      fixation 

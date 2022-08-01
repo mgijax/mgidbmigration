@@ -1,3 +1,12 @@
+TAG: mgidbmigration-6-0-22-5
+DATE: 08/01/2022
+STAFF: lec
+wts2-646/Switch load of Human gene to disease associations to use the Alliance file.
+reinstall DP_EntrezGene_MIM
+
+--STAFF: lec
+--wts2-761/MGD db cleanup - gxd vocabs -> voc_vocab/voc_term
+
 TAG: mgidbmigration-6-0-22-4
 TAG: mgidbmigration-6-0-22-3
 DATE: 07/28/2022

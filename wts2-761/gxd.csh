@@ -23,10 +23,13 @@ date | tee -a $LOG
 #157 | GXD_VisualizationMethod
 #159 | GXD_ProbeSense
 #160 | GXD_Secondary
-#163 | GXD Hybridization : already in VOC_Vocab/VOC_Term; do nothing
 #172 | GXD_GelRNAType
 #173 | GXD_GelUnits
- 
+
+#158 | GXD Assay Type : do nothing
+#162 | GXD Hybridization : just in voc_term; do nothing
+#163 | GXD Strength
+
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_AntibodyClass ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_AntibodyClass.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_EmbeddingMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_EmbeddingMethod.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_FixationMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_FixationMethod.bcp "|"
@@ -37,6 +40,7 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Label 
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Pattern ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Pattern.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_ProbeSense ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_ProbeSense.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Secondary ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Secondary.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Strength ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Strength.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_VisualizationMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_VisualizationMethod.bcp "|"
 
 # drop foreign key contraints
@@ -45,9 +49,11 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyClass_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyPrep__Label_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyPrep__Secondary_key_fkey CASCADE;
+--ALTER TABLE mgd.GXD_GelBand DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelRNAType_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelRow DROP CONSTRAINT GXD_GelRow__GelUnits_key_fkey CASCADE;
+--ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Label_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Sense_key_fkey CASCADE;
@@ -222,6 +228,19 @@ insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Biotinylated secondar
 insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Protein A', null, null, 4, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Secondary antibody', null, null, 5, 0, 1001, 1001, now(), now());
 
+-- 163 | GXD_Strength _strength_key | strength
+--delete from voc_term where _vocab_key = 163;
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Absent', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Present', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Ambiguous', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Trace', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Weak', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Moderate', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Strong', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Very strong', null, null, 1, 0, 1001, 1001, now(), now());
+
 -- 172 | GXD_GelRNAType _gelrnatype_key |    rnatype
 delete from voc_term where _vocab_key = 172;
 insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Applicable', 'Not Appl', null, 1, 0, 1001, 1001, now(), now());
@@ -266,7 +285,7 @@ and e.label = t.term
 and t._vocab_key = 152
 ;
 
---ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
 update GXD_InSituResult m
 set _pattern_key = t._term_key
 from GXD_Pattern e, VOC_Term t
@@ -275,7 +294,7 @@ and e.pattern = t.term
 and t._vocab_key = 153
 ;
 
---ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
 update GXD_GelLane m
 set _gelcontrol_key = t._term_key
 from GXD_GelControl e, VOC_Term t
@@ -328,6 +347,24 @@ where m._secondary_key = e._secondary_key
 and e.secondary = t.term
 and t._vocab_key = 160
 ;
+
+--ALTER TABLE mgd.mgd.GXD_GelBand DROP CONSTRAINT mgd.GXD_GelBand__Strength_key_fkey CASCADE;
+--update mgd.GXD_GelBand m
+--set _strength_key = t._term_key
+--from GXD_Strength e, VOC_Term t
+--where m._strength_key = e._strength_key
+--and e.strength = t.term
+--and t._vocab_key = 163
+--;
+
+--ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Strength_key_fkey CASCADE;
+--update GXD_InSituResult m
+--set _pattern_key = t._term_key
+--from GXD_Strength e, VOC_Term t
+--where m._strength_key = e._strength_key
+--and e.strength = t.term
+--and t._vocab_key = 163
+--;
 
 --ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelRNAType_key_fkey CASCADE;
 update GXD_GelLane m

@@ -336,27 +336,28 @@ and t._vocab_key = 173
 
 EOSQL
 
-exit 0
-
+${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/GXD_Antibody_View_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/GXD_AntibodyPrep_View_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#drop table mgd.GXD_AntibodyClass;
-#drop table mgd.GXD_Label;
-#drop table mgd.GXD_Pattern;
-#drop table mgd.GXD_GelControl;
-#drop table mgd.GXD_EmbeddingMethod;
-#drop table mgd.GXD_FixationMethod;
-#drop table mgd.GXD_VisualizationMethod;
-#drop table mgd.GXD_ProbeSense;
-#drop table mgd.GXD_Secondary;
-#drop table mgd.GXD_GelRNAType;
-#drop table mgd.GXD_GelUnits;
-#EOSQL
+exit 0
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table mgd.GXD_AntibodyClass;
+drop table mgd.GXD_Label;
+drop table mgd.GXD_Pattern;
+drop table mgd.GXD_GelControl;
+drop table mgd.GXD_EmbeddingMethod;
+drop table mgd.GXD_FixationMethod;
+drop table mgd.GXD_VisualizationMethod;
+drop table mgd.GXD_ProbeSense;
+drop table mgd.GXD_Secondary;
+drop table mgd.GXD_GelRNAType;
+drop table mgd.GXD_GelUnits;
+EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 

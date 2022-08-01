@@ -43,13 +43,6 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Second
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Strength ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Strength.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_VisualizationMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_VisualizationMethod.bcp "|"
 
--- only needed during testing so we can re-set and start with the same voc_term._term_key as before
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from voc_term where _vocab_key in (151,152,153,154,155,156,157,159,160,172,173);
-EOSQL
-${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Term_create.object | tee -a $LOG
-
 # drop foreign key contraints
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -292,7 +285,7 @@ and e.label = t.term
 and t._vocab_key = 152
 ;
 
-ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
+--ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
 update GXD_InSituResult m
 set _pattern_key = t._term_key
 from GXD_Pattern e, VOC_Term t
@@ -301,7 +294,7 @@ and e.pattern = t.term
 and t._vocab_key = 153
 ;
 
-ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
+--ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
 update GXD_GelLane m
 set _gelcontrol_key = t._term_key
 from GXD_GelControl e, VOC_Term t
@@ -392,6 +385,8 @@ and t._vocab_key = 173
 ;
 
 EOSQL
+
+exit 0
 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG

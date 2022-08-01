@@ -13,6 +13,19 @@ rm -rf $LOG
 touch $LOG
  
 date | tee -a $LOG
+
+#151 | GXD_AntibodyClass
+#152 | GXD_Label
+#153 | GXD_Pattern
+#154 | GXD_GelControl
+#155 | GXD_EmbeddingMethod
+#156 | GXD_FixationMethod
+#157 | GXD_VisualizationMethod
+#159 | GXD_ProbeSense
+#160 | GXD_Secondary
+#163 | GXD Hybridization : already in VOC_Vocab/VOC_Term; do nothing
+#172 | GXD_GelRNAType
+#173 | GXD_GelUnits
  
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_AntibodyClass ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_AntibodyClass.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_EmbeddingMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_EmbeddingMethod.bcp "|"
@@ -125,33 +138,33 @@ insert into VOC_Term values(nextval('voc_term_seq'), 153, 'Widespread', null, nu
 
 -- 154 | GXD_GelControl, _gelcontrol_key, gellanecontent
 delete from voc_term where _vocab_key = 154;
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Allele not specified: no data stored', null, null, 1, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Control', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Cultured cells: no data stored', null, null, 3, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Cultured sample: no data stored', null, null, 4, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Fractionated sample: no data stored', null, null, 5, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'In vitro data: no data stored', null, null, 6, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Lane not used in this assay', null, null, 7, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Mol. Wt. Marker Lane', null, null, 8, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No', null, null, 9, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No data stored', null, null, 10, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Non-mouse sample: no data stored', null, null, 11, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot assay different gene(s)', null, null, 12, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot use different probe(s)', null, null, 13, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Tissue age not specified: no data stored', null, null, 14, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Transgenic sample: no data stored', null, null, 15, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Treated sample: no data stored', null, null, 16, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Allele not specified: no data stored', 'Allele Not Spec', null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Control', 'Control', null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Cultured cells: no data stored', 'Cultured cells', null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Cultured sample: no data stored', 'Cultured samp', null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Fractionated sample: no data stored', 'Fractionated', null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'In vitro data: no data stored', 'In vitro', null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Lane not used in this assay', 'Lane not used', null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Mol. Wt. Marker Lane', 'Mol Wt Marker', null, 8, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No', 'No', null, 9, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'No data stored', 'No data stored', null, 10, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Non-mouse sample: no data stored', 'Non-mouse', null, 11, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot assay different gene(s)', 'Diff gene(s)', null, 12, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Other lane(s) in blot use different probe(s)', 'Diff probe(s)', null, 13, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Tissue age not specified: no data stored', 'Age Not Spec;, null, 14, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Transgenic sample: no data stored', 'Transgenic', null, 15, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 154, 'Treated sample: no data stored', 'Treated', null, 16, 0, 1001, 1001, now(), now());
 
 -- 155 | GXD_EmbeddingMethod _embedding_key |  embeddingmethod
 delete from voc_term where _vocab_key = 155;
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Not Specified', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Agarose', null, null, 3, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Cryosection', null, null, 4, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Gelatin', null, null, 5, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Methacrylate', null, null, 6, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Other - See Notes', null, null, 7, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Paraffin', null, null, 8, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Not Applicable', 'Not Appl', null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Not Specified', 'Not Spec', null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Agarose', 'Agarose', null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Cryosection', 'Cryosection', null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Gelatin', 'Gelatin', null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Methacrylate', 'Methacrylate', null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Other - See Notes', 'Other - See Notes, null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 155, 'Paraffin', 'Paraffin', null, 8, 0, 1001, 1001, now(), now());
 
 -- 156 | GXD_FixationMethod  _fixation_key |      fixation 
 delete from voc_term where _vocab_key = 156;
@@ -211,10 +224,10 @@ insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Secondary antibody', 
 
 -- 172 | GXD_GelRNAType _gelrnatype_key |    rnatype
 delete from voc_term where _vocab_key = 172;
-insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Specified', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 172, 'poly-A+', null, null, 3, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 172, 'total', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Applicable', 'Not Appl', null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 172, 'Not Specified', 'Not Spec', null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 172, 'poly-A+', 'poly-A+', null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 172, 'total', 'total', null, 4, 0, 1001, 1001, now(), now());
 
 -- 173 | GXD_GelUnits  _gelunits_key |     units
 delete from voc_term where _vocab_key = 173;
@@ -340,8 +353,9 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_drop.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_create.logical | tee -a $LOG
 
 exit 0
 

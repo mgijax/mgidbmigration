@@ -43,23 +43,33 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Second
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Strength ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Strength.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_VisualizationMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_VisualizationMethod.bcp "|"
 
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Antibody ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Antibody.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_AntibodyPrep ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_AntibodyPrep.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_GelLane ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_GelLane.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_GelRow ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_GelRow.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_InSituResult ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_InSituResult.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_ProbePrep ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_ProbePrep.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Specimen ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Specimen.bcp "|"
+
 # drop foreign key contraints
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
 ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyClass_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyPrep__Label_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_AntibodyPrep DROP CONSTRAINT GXD_AntibodyPrep__Secondary_key_fkey CASCADE;
---ALTER TABLE mgd.GXD_GelBand DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelControl_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelRNAType_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelRow DROP CONSTRAINT GXD_GelRow__GelUnits_key_fkey CASCADE;
---ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Pattern_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Label_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Sense_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Visualization_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Embedding_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Fixation_key_fkey CASCADE;
+--ALTER TABLE mgd.GXD_GelBand DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
+--ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
+EOSQL
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- 151 | GXD_AntibodyClass
 delete from voc_term where _vocab_key = 151;
@@ -198,20 +208,20 @@ insert into VOC_Term values(nextval('voc_term_seq'), 156, 'Ste. Marie''s', null,
 delete from voc_term where _vocab_key = 157;
 insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Not Specified', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Alkaline phosphatase', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Autoradiography', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Beta-galactosidase', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Chromogenic', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Cy2', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Cy3', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Cy5', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'cyanine dye', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Ethidium bromide', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Fluorescein', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Fluorescence', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Horseradish peroxidase', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Not Applicable', null, null, 2, 0, 1001, 1001, now(), now());
-insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Rhodamine', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Alkaline phosphatase', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Autoradiography', null, null, 4, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Beta-galactosidase', null, null, 5, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Chromogenic', null, null, 6, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Cy2', null, null, 7, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Cy3', null, null, 8, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Cy5', null, null, 9, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'cyanine dye', null, null, 10, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Ethidium bromide', null, null, 11, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Fluorescein', null, null, 12, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Fluorescence', null, null, 13, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Horseradish peroxidase', null, null, 14, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Phosphorimaging', null, null, 15, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 157, 'Rhodamine', null, null, 16, 0, 1001, 1001, now(), now());
 
 -- 159 | GXD_ProbeSense  _sense_key |      sense
 delete from voc_term where _vocab_key = 159;
@@ -227,19 +237,6 @@ insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Not Specified', null,
 insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Biotinylated secondary antibody/[Strept]avidin', null, null, 3, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Protein A', null, null, 4, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 160, 'Secondary antibody', null, null, 5, 0, 1001, 1001, now(), now());
-
--- 163 | GXD_Strength _strength_key | strength
---delete from voc_term where _vocab_key = 163;
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Absent', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Present', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Ambiguous', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Trace', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Weak', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Moderate', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Strong', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Very strong', null, null, 1, 0, 1001, 1001, now(), now());
 
 -- 172 | GXD_GelRNAType _gelrnatype_key |    rnatype
 delete from voc_term where _vocab_key = 172;
@@ -257,6 +254,23 @@ insert into VOC_Term values(nextval('voc_term_seq'), 173, 'bp', null, null, 4, 0
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'Da', null, null, 5, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kb', null, null, 6, 0, 1001, 1001, now(), now());
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kDa', null, null, 7, 0, 1001, 1001, now(), now());
+
+-- 163 | GXD_Strength _strength_key | strength
+--delete from voc_term where _vocab_key = 163;
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Absent', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Present', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Ambiguous', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Trace', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Weak', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Moderate', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Strong', null, null, 1, 0, 1001, 1001, now(), now());
+--insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Very strong', null, null, 1, 0, 1001, 1001, now(), now());
+
+EOSQL
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyClass_key_fkey CASCADE;
 update GXD_Antibody m
@@ -348,24 +362,6 @@ and e.secondary = t.term
 and t._vocab_key = 160
 ;
 
---ALTER TABLE mgd.mgd.GXD_GelBand DROP CONSTRAINT mgd.GXD_GelBand__Strength_key_fkey CASCADE;
---update mgd.GXD_GelBand m
---set _strength_key = t._term_key
---from GXD_Strength e, VOC_Term t
---where m._strength_key = e._strength_key
---and e.strength = t.term
---and t._vocab_key = 163
---;
-
---ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Strength_key_fkey CASCADE;
---update GXD_InSituResult m
---set _pattern_key = t._term_key
---from GXD_Strength e, VOC_Term t
---where m._strength_key = e._strength_key
---and e.strength = t.term
---and t._vocab_key = 163
---;
-
 --ALTER TABLE mgd.GXD_GelLane DROP CONSTRAINT GXD_GelLane__GelRNAType_key_fkey CASCADE;
 update GXD_GelLane m
 set _gelrnatype_key = t._term_key
@@ -384,6 +380,25 @@ and e.units = t.term
 and t._vocab_key = 173
 ;
 
+--ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Strength_key_fkey CASCADE;
+--update GXD_InSituResult m
+--set _strength_key = t._term_key
+--from GXD_Strength e, VOC_Term t
+--where m._strength_key = e._strength_key
+--and e.strength = t.term
+--and t._vocab_key = 163
+--;
+
+--ALTER TABLE mgd.mgd.GXD_GelBand DROP CONSTRAINT mgd.GXD_GelBand__Strength_key_fkey CASCADE;
+--update mgd.GXD_GelBand m
+--set _strength_key = t._term_key
+--from GXD_Strength e, VOC_Term t
+--where m._strength_key = e._strength_key
+--and e.strength = t.term
+--and t._vocab_key = 163
+--;
+
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG
@@ -391,10 +406,7 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/GXD_drop.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_create.logical | tee -a $LOG
-
-exit 0
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table mgd.GXD_AntibodyClass;

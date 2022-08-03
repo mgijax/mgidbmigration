@@ -425,5 +425,8 @@ EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
+${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG
+./gxdreports.csh | tee -a $LOG
+
 date |tee -a $LOG
 

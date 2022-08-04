@@ -17,10 +17,9 @@ setenv LOG $0.log
 rm -rf $LOG
 touch $LOG
 
-echo 'running GOA/Mouse Load' | tee -a ${GOLOG}
-${GOLOAD}/goamouse/goamouse.sh | tee -a ${GOLOG} || exit 1
+${GOLOAD}/go.sh | tee -a ${LOG} || exit 1
 
-echo 'running reports' | tee -a ${GOLOG}
+echo 'running reports' | tee -a ${LOG}
 cd ${PUBRPTS}
 source ./Configuration
 cd daily

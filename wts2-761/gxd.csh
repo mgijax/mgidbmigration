@@ -23,12 +23,12 @@ date | tee -a $LOG
 #157 | GXD_VisualizationMethod
 #159 | GXD_ProbeSense
 #160 | GXD_Secondary
+#163 | GXD Strength
 #172 | GXD_GelRNAType
 #173 | GXD_GelUnits
 
 #158 | GXD Assay Type : do nothing
 #162 | GXD Hybridization : just in voc_term; do nothing
-#163 | GXD Strength : convert
 
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_AntibodyClass ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_AntibodyClass.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_EmbeddingMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_EmbeddingMethod.bcp "|"
@@ -65,8 +65,8 @@ ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Sense_key_fkey CASC
 ALTER TABLE mgd.GXD_ProbePrep DROP CONSTRAINT GXD_ProbePrep__Visualization_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Embedding_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Fixation_key_fkey CASCADE;
---ALTER TABLE mgd.GXD_GelBand DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
---ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_GelBand DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Strength_key_fkey CASCADE;
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -256,17 +256,17 @@ insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kb', null, null, 6, 0
 insert into VOC_Term values(nextval('voc_term_seq'), 173, 'kDa', null, null, 7, 0, 1001, 1001, now(), now());
 
 -- 163 | GXD_Strength _strength_key | strength
---delete from voc_term where _vocab_key = 163;
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Absent', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Present', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Ambiguous', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Trace', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Weak', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Moderate', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Strong', null, null, 1, 0, 1001, 1001, now(), now());
---insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Very strong', null, null, 1, 0, 1001, 1001, now(), now());
+delete from voc_term where _vocab_key = 163;
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Not Specified', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Absent', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Present', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Ambiguous', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Trace', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Weak', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Moderate', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Strong', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 163, 'Very strong', null, null, 1, 0, 1001, 1001, now(), now());
 
 EOSQL
 
@@ -381,22 +381,22 @@ and t._vocab_key = 173
 ;
 
 --ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Strength_key_fkey CASCADE;
---update GXD_InSituResult m
---set _strength_key = t._term_key
---from GXD_Strength e, VOC_Term t
---where m._strength_key = e._strength_key
---and e.strength = t.term
---and t._vocab_key = 163
---;
+update GXD_InSituResult m
+set _strength_key = t._term_key
+from GXD_Strength e, VOC_Term t
+where m._strength_key = e._strength_key
+and e.strength = t.term
+and t._vocab_key = 163
+;
 
 --ALTER TABLE mgd.mgd.GXD_GelBand DROP CONSTRAINT mgd.GXD_GelBand__Strength_key_fkey CASCADE;
---update mgd.GXD_GelBand m
---set _strength_key = t._term_key
---from GXD_Strength e, VOC_Term t
---where m._strength_key = e._strength_key
---and e.strength = t.term
---and t._vocab_key = 163
---;
+update mgd.GXD_GelBand m
+set _strength_key = t._term_key
+from GXD_Strength e, VOC_Term t
+where m._strength_key = e._strength_key
+and e.strength = t.term
+and t._vocab_key = 163
+;
 
 
 EOSQL
@@ -419,8 +419,8 @@ drop table mgd.GXD_Label;
 drop table mgd.GXD_Pattern;
 drop table mgd.GXD_ProbeSense;
 drop table mgd.GXD_Secondary;
+drop table mgd.GXD_Strength;
 drop table mgd.GXD_VisualizationMethod;
---drop table mgd.GXD_Strength;
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG

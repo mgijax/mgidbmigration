@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-22-8
+DATE: 08/16/2022
+STAFF: lec
+wts2-761/MGD db cleanup - gxd vocabs -> voc_vocab/voc_term
+
 TAG: mgidbmigration-6-0-22-7
 TAG: mgidbmigration-6-0-22-6
 DATE: 08/04/2022

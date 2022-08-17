@@ -26,6 +26,7 @@ date | tee -a $LOG
 #163 | GXD Strength
 #172 | GXD_GelRNAType
 #173 | GXD_GelUnits
+#180 | GXD_AntibodyType
 
 #158 | GXD Assay Type : do nothing
 #162 | GXD Hybridization : just in voc_term; do nothing
@@ -42,6 +43,7 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_ProbeS
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Secondary ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Secondary.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Strength ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Strength.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_VisualizationMethod ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_VisualizationMethod.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_AntibodyType ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_AntibodyType.bcp "|"
 
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_Antibody ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_Antibody.bcp "|"
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd GXD_AntibodyPrep ${MGI_LIVE}/dbutils/mgidbmigration/wts2-761/GXD_AntibodyPrep.bcp "|"
@@ -67,6 +69,17 @@ ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Embedding_key_fkey CA
 ALTER TABLE mgd.GXD_Specimen DROP CONSTRAINT GXD_Specimen__Fixation_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_GelBand DROP CONSTRAINT GXD_GelBand__Strength_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_InSituResult DROP CONSTRAINT GXD_InSituResult__Strength_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyType_key_fkey CASCADE;
+EOSQL
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+-- 180 | GXD_AntibodyType _antibodytype_key | antibodytype
+--insert into voc_vocab values(180,22864,1,1,0,'GXD Antibody Type',now(),now());
+delete from voc_term where _vocab_key = 180;
+insert into VOC_Term values(nextval('voc_term_seq'), 180, 'Not Applicable', null, null, 1, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 180, 'Not Specified', null, null, 2, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 180, 'Monoclonal', null, null, 3, 0, 1001, 1001, now(), now());
+insert into VOC_Term values(nextval('voc_term_seq'), 180, 'Polyclonal', null, null, 4, 0, 1001, 1001, now(), now());
 EOSQL
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -198,6 +211,15 @@ and t._vocab_key = 163
 ;
 
 
+--ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyType_key_fkey CASCADE;
+update mgd.GXD_Antibody m
+set _antibodytype_key = t._term_key
+from GXD_AntibodyType e, VOC_Term t
+where m._antibodytype_key = e._antibodytype_key
+and e.antibodytype = t.term
+and t._vocab_key = 180
+;
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_drop.logical | tee -a $LOG
@@ -220,6 +242,7 @@ drop table mgd.GXD_ProbeSense;
 drop table mgd.GXD_Secondary;
 drop table mgd.GXD_Strength;
 drop table mgd.GXD_VisualizationMethod;
+drop table mgd.GXD_AntibodyType;
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG

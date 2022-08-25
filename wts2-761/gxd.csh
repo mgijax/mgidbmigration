@@ -245,6 +245,7 @@ drop table mgd.GXD_VisualizationMethod;
 drop table mgd.GXD_AntibodyType;
 EOSQL
 
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 ${MGICACHELOAD}/gxdexpression.csh | tee -a $LOG

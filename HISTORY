@@ -1,3 +1,9 @@
+TAG: mgidbmigration-6-0-22-11
+DATE: 09/13/2022
+STAFF: sc
+WTS2-492 - new table gxd_htsample_rnaseqset_cache
+         - load the cache table
+
 TAG: mgidbmigration-6-0-22-10
 TAG: mgidbmigration-6-0-22-9
 DATE: 08/22/2022, 08/25/2022

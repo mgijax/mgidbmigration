@@ -67,11 +67,21 @@ date | tee -a ${LOG}
 # Drop and re-create database triggers, stored procedures, views and comments
 # always a good idea to do to make sure that nothing was missed with schema changes
 #
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_Cache_drop.object  | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeq_drop.object  | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSetMember_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG
+
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqCombined_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSetMember_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeq_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_Cache_create.object | tee -a $LOG
+
+
 date | tee -a ${LOG}
-echo 'step 4: running triggers, procedures, views, comments' | tee -a $LOG
-#${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG || exit 1
-#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG || exit 1
+echo 'running comments, perms, objectCounter' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG || exit 1
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG || exit 1

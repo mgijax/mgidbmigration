@@ -45,13 +45,16 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/VOC_TermFamily_View_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/VOC_TermFamilyEdges_View_create.object | tee -a $LOG 
+
 #${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
@@ -62,7 +65,7 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 # always a good idea to do to make sure that nothing was missed with schema changes
 #
 date | tee -a ${LOG}
-echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
+echo 'running grantPublic, objectCount, etc.' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 

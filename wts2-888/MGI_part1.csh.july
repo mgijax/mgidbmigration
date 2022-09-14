@@ -34,7 +34,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 #date | tee -a ${LOG}
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#update MGI_dbinfo set schema_version = '6-0-20', public_version = 'MGI 6.13';
+#update MGI_dbinfo set schema_version = '6-0-13', public_version = 'MGI 6.13';
 #EOSQL
 #date | tee -a ${LOG}
 
@@ -42,19 +42,41 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
-echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
+#echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/key/key_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+
+# wts2-761/MGD db cleanup/mgi_userrole, mgi_roletask obsolete tables
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop view if exists mgd.MGI_UserRole_View;
+drop view if exists mgd.MGI_UserTask_View;
+ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__CreatedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__CreatedBy_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask ADD FOREIGN KEY (_Role_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.MGI_RoleTask ADD FOREIGN KEY (_Task_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.MGI_UserRole DROP CONSTRAINT MGI_UserRole__Role_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__Task_key_fkey CASCADE;
+ALTER TABLE mgd.MGI_RoleTask DROP CONSTRAINT MGI_RoleTask__Role_key_fkey CASCADE;
+delete from VOC_Term where _vocab_key in (33,34);
+delete from VOC_Vocab where _vocab_key in (33,34);
+drop table mgd.MGI_UserRole CASCADE ;
+drop table mgd.MGI_RoleTask CASCADE ;
+EOSQL
+
+# wts888 things
+${PG_MGD_DBSCHEMADIR}/view/GXD_GenotypeAnnotHeader_View_create.object | tee -a $LOG 
 
 #
 # reconfig.sh:
@@ -64,11 +86,13 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 date | tee -a ${LOG}
 echo 'step ??: running triggers, procedures, views, comments' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/reconfig.csh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 #${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
 #${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} | tee -a $LOG 
+
+./wts524.csh | tee -a $LOG
 
 #
 # cleanobjects.sh : removing stray mgi_notes
@@ -82,10 +106,10 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary
 #
-#${MGI_JAVALIB}/lib_java_core/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_core/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

@@ -48,6 +48,9 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/PRB_create.logical | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/VOC_TermFamily_View_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/VOC_TermFamilyEdges_View_create.object | tee -a $LOG 
 
+echo 'run migration to add primary key to PRB_Allele_Strain'
+./prballelestrain.csh
+
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/key/key_drop.sh | tee -a $LOG 

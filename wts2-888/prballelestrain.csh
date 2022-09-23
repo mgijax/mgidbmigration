@@ -18,6 +18,7 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Allele
 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Allele_Strain_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Allele_Strain_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/PRB_Allele_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Strain_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG
 
@@ -44,6 +45,7 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Allele_Strain_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/comments/PRB_Allele_Strain_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Allele_Strain_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/PRB_Allele_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Strain_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
 

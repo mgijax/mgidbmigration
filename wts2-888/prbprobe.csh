@@ -71,6 +71,7 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Probe_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/PRB_create.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/GXD_GenotypeAnnotHeader_View_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/PRB_Probe_create.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

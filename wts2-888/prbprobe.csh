@@ -1,5 +1,10 @@
 #!/bin/csh -f
 
+# pgmgddbschema
+# pwi
+# mgd_java_api
+# probeload
+
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif

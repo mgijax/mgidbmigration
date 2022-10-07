@@ -60,15 +60,15 @@ and a._mgitype_key = 3
 and a._logicaldb_key = 1
 ;
 
-update prb_probe p
-set ampPrimer = a._object_key
-from prb_notes n, acc_accession a
-where p._probe_key = n._probe_key
-and n.note like '%MGI:%'
-and p._probe_key = a._object_key
-and a._mgitype_key = 3
-and a._logicaldb_key = 1
-;
+--update prb_probe p
+--set ampPrimer = a._object_key
+--from prb_notes n, acc_accession a
+--where p._probe_key = n._probe_key
+--and n.note like '%MGI:%'
+--and p._probe_key = a._object_key
+--and a._mgitype_key = 3
+--and a._logicaldb_key = 1
+--;
 
 EOSQL
 

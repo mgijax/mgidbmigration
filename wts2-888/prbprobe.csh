@@ -24,7 +24,7 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PRB_Probe 
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Probe_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/PRB_drop.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE PRB_Probe RENAME TO PRB_Probe_old;
@@ -70,7 +70,7 @@ EOSQL
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Probe_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Probe_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/PRB_create.logical | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/comments/PRB_Probe_create.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

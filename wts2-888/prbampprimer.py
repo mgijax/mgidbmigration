@@ -35,6 +35,7 @@ for line in inFile.readlines():
 
     if len(results) == 0:
         print('invalid amp primer : ' , probeKey, name, ampId)
+        #print(ampId)
         continue
 
     ampKey = results[0]['_object_key']

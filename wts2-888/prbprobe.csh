@@ -70,5 +70,7 @@ ${PG_MGD_DBSCHEMADIR}/view/GXD_ProbePrep_View_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/PRB_Probe_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/comments/PRB_Probe_create.object | tee -a $LOG
 
+$PYTHON prbampprimer.py | tee -a $LOG
+
 date |tee -a $LOG
 

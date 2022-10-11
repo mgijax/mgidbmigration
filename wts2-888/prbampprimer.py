@@ -11,6 +11,9 @@ db.setTrace()
 
 db.useOneConnection(1)
 
+db.sql('update prb_probe set ampPrimer = null where ampPrimer is not null', None)
+db.commit()
+
 inFile = open('migrationIDs.txt', 'r')
 for line in inFile.readlines():
 
@@ -31,7 +34,7 @@ for line in inFile.readlines():
         ''' % (ampId), 'auto')
 
     if len(results) == 0:
-        print('invalid amp primer : ' , ampId)
+        print('invalid amp primer : ' , probeKey, name, ampId)
         continue
 
     ampKey = results[0]['_object_key']

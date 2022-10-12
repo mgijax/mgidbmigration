@@ -72,5 +72,11 @@ ${PG_MGD_DBSCHEMADIR}/comments/PRB_Probe_create.object | tee -a $LOG
 
 $PYTHON prbampprimer.py | tee -a $LOG
 
+wc -l migrationIDs.txt | tee -a $LOG
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select count(*) from prb_probe where ampprimer is not null
+EOSQL
+
 date |tee -a $LOG
 

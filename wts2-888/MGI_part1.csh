@@ -58,7 +58,6 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 
 echo 'dumping PWI_Report tables' | tee -a $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd PWI_Report ${MGI_LIVE}/dbutils/mgidbmigration/wts2-888/PWI_Report.bcp "|" | tee -a $LOG
-pwireport.csh | tee -a $LOG
 
 echo 'removing PWI_Report tables' | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

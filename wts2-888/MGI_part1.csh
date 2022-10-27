@@ -38,22 +38,10 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #EOSQL
 #date | tee -a ${LOG}
 
-#
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
-echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/PRB_drop.logical | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/autosequence/PRB_create.logical | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/VOC_TermFamily_View_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/view/VOC_TermFamilyEdges_View_create.object | tee -a $LOG 
-
-echo 'run migration to add primary key to PRB_Allele_Strain'
-./prballelestrain.csh
-
-echo 'run migration to add amp primer to PRB_Probe'
-./prbprobe.csh
-
+#echo 'running autosequence, indexes, key, procedure, trigger, view' | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_drop.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/autosequence/autosequence_create.sh | tee -a $LOG
@@ -67,6 +55,12 @@ echo 'run migration to add amp primer to PRB_Probe'
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+
+echo 'removing PWI_Report tables' | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table PWI_Report_Label;
+drop table PWI_Report;
+EOSQL
 
 #
 # reconfig.sh:
@@ -85,9 +79,9 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 #
 # cleanobjects.sh : removing stray mgi_notes
 #
-date | tee -a ${LOG}
-echo 'data cleanup' | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
+#date | tee -a ${LOG}
+#echo 'data cleanup' | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh | tee -a $LOG 
 
 #

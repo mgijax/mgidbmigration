@@ -1,0 +1,28 @@
+
+how to move this into PWI or new Python produt
+
+
+pwi/edit/emapaBrowser
+  Search EMAPA
+    function refreshTreeView()
+        window.emapTree = new MGITreeView()
+          dataUrl: $scope.PWI_BASE_URL + "edit/emapaTreeJson/" + termId,
+          childUrl: $scope.PWI_BASE_URL + "edit/emapaTreeChildrenJson/",
+
+emapaTreeJson/emapaTreeChildrenJson are pwi/endpoints : pwi/views/edit/emap_browser.py
+pwi/views/edit/emap_browser.py
+  from mgipython.util.dag import TreeView : mgipython/utils/dag/TreeView.py
+
+pwi/edit/emapaBrowser -> Search EMAPA -> refreshTreeView -> creates MGITreeView -> emapaTreeJson end point -> mgipython/utils/TreeView.py
+
+option 1:
+1. replace "edit/emapaTreeJson/" and "edit/emapaTreeChildrenJson/" with mgd_java_api end points
+2. the mgd_java_api end points will use RunCommand (mrk/MarkerService/mrkrefByMarkerUtilities example)
+3. replace "mgipython/utils/dag/TreeView.py" with 
+        new pwi python 
+        OR new "dagtreeview" product?
+ 
+option 2:
+1. leave "edit/emapaTreeJson/" and "edit/emapaTreeChildrenJson/" alone
+2. replace "mgipython/utils/dag/TreeView.py", etc. with new python product
+

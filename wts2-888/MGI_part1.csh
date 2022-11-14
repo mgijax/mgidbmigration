@@ -65,6 +65,8 @@ drop table PWI_Report_Label;
 drop table PWI_Report;
 EOSQL
 
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_processAnonymousSource_create.object | tee -a $LOG
+
 #
 # reconfig.sh:
 # Drop and re-create database triggers, stored procedures, views and comments

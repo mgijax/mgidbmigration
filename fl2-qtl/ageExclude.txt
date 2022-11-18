@@ -1,0 +1,157 @@
+bovine
+chick
+chimaer
+chimer
+electroporat
+explant
+fetal death
+fetal dna
+fetal-like
+fetal survival
+fetal viability
+fetal weight
+human
+larvae
+monkey
+morpholino
+organoid
+porcine
+resorption
+transduct
+transfect
+transferred
+transplanted
+#xenopus
+zebra
+# below: spaces before so they match only at the beginning of words
+_arrested
+_cultur
+_fin bud
+_infect
+#_inject
+_microinject
+_treat
+_vitrifi
+_vitro
+# below: spaces before and after so they don't match parts of words
+#_bat_
+#_cat_
+_pig_
+_rat_
+_rats_
+# Age 10 additional age exclude word experiments
+# Age11Assay22: experiment 1
+facs
+cytometry
+# Age12Assay22: experiment 2
+chip-seq
+atac-seq
+microarray
+tsne
+_tpm_
+fpkm
+_umap_
+heatmap
+transcriptom
+dataset
+# Age13Assay22: experiment 3
+rna-seq
+rnaseq
+# Age14Assay22: experiment 4
+exposure
+electrodes
+oil red
+necrotic
+
+#dose
+dose of
+high dose
+low dose
+lps dose
+doses
+dosed
+highest dose
+lowest dose
+tm dose
+administered dose
+viral dose
+gy dose
+
+#diabet
+resistance
+glucose
+transposon
+#pregnant female
+#survival
+implantation site
+#uteri
+#uterus
+#maternal
+surgery
+pulse
+aggregate
+infant
+#tumor
+#tumour
+blastoid
+weight
+transplant
+exposed
+microfluid
+enhancer
+transduce
+vehicle
+#gross
+wound
+#pregnant
+primary mefs
+mefs derived
+dmso
+methylation
+_iue_
+neurosphere
+pluripotent
+mendelian
+ter119+
+cd43+
+pseudotime
+temperature
+dendritic spine
+social
+# Age15Assay22: experiment 5
+giemsa
+#eosin
+h&e
+nissl
+luciferase
+alizarin
+trichrome
+von kossa
+toluidine
+# Age16Assay22: experiment 6
+tropicalis
+drosophila
+worm
+cynomolgus
+macaque
+virus
+opossum
+hpf
+tadpole
+turtle
+hamilton and hamburger
+hamburger and hamilton
+hamburger hamilton
+hamburger-hamilton
+_hh##_
+_hh ##_
+_hh-##_
+# Age17Assay22: experiment 7
+dox
+tamoxifen
+# Age18Assay22: experiment 8
+chameleon
+equine
+quail
+zikv
+bursa

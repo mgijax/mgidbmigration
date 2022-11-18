@@ -98,13 +98,6 @@ porcine embryo
 postembryon
 quail embryo
 rat embryo
-transferred embryo
-transgenic embryo
-treated embryo
-tropicalis embryo
-urchin embryo
-worm embryo
-Xenopus embryo
 the expression of control
 the expression of diphtheria
 the expression of egfp-tag
@@ -125,8 +118,15 @@ the expression of tet
 the expression of the cre recombinase
 the expression of the reporter
 the expression of the transgen
-The expression of transgen
 the expression of transfect
+The expression of transgen
 the expression of transposable
 the expression of undiffer
 the expression of viral
+transferred embryo
+transgenic embryo
+treated embryo
+tropicalis embryo
+urchin embryo
+worm embryo
+Xenopus embryo

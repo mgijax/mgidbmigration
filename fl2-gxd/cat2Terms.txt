@@ -1,80 +1,80 @@
 alexa fluor
-wish
-wmish
-dorsal
-sagittal
-frontal
-coronal
-transverse
-lateral
-ventral
-rostral
-caudal
 antibody stain
+blot
+caudal
+co-expression
+coronal
 costain
 co-stain
+dorsal
 double stain
-stained with anti
-staining pattern
-staining with anti
-strong stain
-expression in
-expression is
-expression of
-expression was
 embryonic expression
 expression analysis
+expression in
+expression is
 expression level
+expression of
 expression pattern
 expression profile
+expression was
+flatmount
+flat mount
+flat-mount
+frontal
+-galactosidase stain
+-gal stain
 gene expression
+immuno
+in situ
+in-situ
+lacz detect
+lacz express
+lacz positive
+lacz-positive
+lacz stain
+lacz-stain
+lateral
 level of expression
 levels of expression
 mirna expression
 mrna expression
-rna expression
-strong expression
-immuno
+mrna level
+northern
 qpcr
 q-pcr
 qrtpcr
 quantitative pcr
 quantitative-pcr
 real time pcr
-realtime pcr
 real-time pcr
 real-time-pcr
+realtime pcr
 reverse transcriptase pcr
 reverse transcription pcr
 reverse transcription-pcr
 reverse-transcription pcr
-rt pcr
-rt)-pcr
-rtpcr
-rt-pcr
-blot
-flat mount
-flatmount
-flat-mount
-in situ
-in-situ
-lacz detect
-lacz express
-lacz positive
-lacz stain
-lacz-positive
-lacz-stain
-mrna level
-northern
+rna expression
 rnascope
+rostral
+rtpcr
+rt pcr
+rt-pcr
+rt)-pcr
+sagittal
+section
 smfish
+stained with anti
+staining pattern
+staining with anti
+strong expression
+strong stain
+transverse
+ventral
 western
-whole mount
 wholemount
+whole mount
 whole-mount
+wish
+wmish
 xgal
 x-gal
--gal stain
--galactosidase stain
-section
-co-expression

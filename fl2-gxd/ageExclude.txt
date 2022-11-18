@@ -1,128 +1,128 @@
+administered dose
+aggregate
+alizarin
+_arrested
+atac-seq
+blastoid
 bovine
+bursa
+cd43+
+chameleon
 chick
 chimaer
 chimer
+chip-seq
+_cultur
+cynomolgus
+cytometry
+dataset
+dendritic spine
+dmso
+dosed
+dose of
+doses
+dox
+drosophila
+electrodes
 electroporat
+enhancer
+equine
 explant
+exposed
+exposure
+facs
 fetal death
 fetal dna
 fetal-like
 fetal survival
 fetal viability
 fetal weight
-human
-larvae
-monkey
-morpholino
-organoid
-porcine
-resorption
-transduct
-transfect
-transferred
-transplanted
-zebra
-_arrested
-_cultur
 _fin bud
-_infect
-_microinject
-_treat
-_vitrifi
-_vitro
-_pig_
-_rat_
-_rats_
-facs
-cytometry
-chip-seq
-atac-seq
-microarray
-tsne
-_tpm_
 fpkm
-_umap_
-heatmap
-transcriptom
-dataset
-rna-seq
-rnaseq
-exposure
-electrodes
-oil red
-necrotic
-dose of
-high dose
-low dose
-lps dose
-doses
-dosed
-highest dose
-lowest dose
-tm dose
-administered dose
-viral dose
-gy dose
-resistance
-glucose
-transposon
-implantation site
-surgery
-pulse
-aggregate
-infant
-blastoid
-weight
-transplant
-exposed
-microfluid
-enhancer
-transduce
-vehicle
-wound
-primary mefs
-mefs derived
-dmso
-methylation
-_iue_
-neurosphere
-pluripotent
-mendelian
-ter119+
-cd43+
-pseudotime
-temperature
-dendritic spine
-social
 giemsa
-h&e
-nissl
-luciferase
-alizarin
-trichrome
-von kossa
-toluidine
-tropicalis
-drosophila
-worm
-cynomolgus
-macaque
-virus
-opossum
-hpf
-tadpole
-turtle
-hamilton and hamburger
+glucose
+gy dose
 hamburger and hamilton
 hamburger hamilton
 hamburger-hamilton
-_hh##_
+hamilton and hamburger
+h&e
+heatmap
 _hh ##_
 _hh-##_
-dox
-tamoxifen
-chameleon
-equine
+_hh##_
+high dose
+highest dose
+hpf
+human
+implantation site
+infant
+_infect
+_iue_
+larvae
+low dose
+lowest dose
+lps dose
+luciferase
+macaque
+mefs derived
+mendelian
+methylation
+microarray
+microfluid
+_microinject
+monkey
+morpholino
+necrotic
+neurosphere
+nissl
+oil red
+opossum
+organoid
+_pig_
+pluripotent
+porcine
+primary mefs
+pseudotime
+pulse
 quail
+_rat_
+_rats_
+resistance
+resorption
+rnaseq
+rna-seq
+social
+surgery
+tadpole
+tamoxifen
+temperature
+ter119+
+tm dose
+toluidine
+_tpm_
+transcriptom
+transduce
+transduct
+transfect
+transferred
+transplant
+transplanted
+transposon
+_treat
+trichrome
+tropicalis
+tsne
+turtle
+_umap_
+vehicle
+viral dose
+virus
+_vitrifi
+_vitro
+von kossa
+weight
+worm
+wound
+zebra
 zikv
-bursa

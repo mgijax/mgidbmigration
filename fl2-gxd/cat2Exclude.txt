@@ -6,12 +6,12 @@ chip-qpcr
 chip-q-pcr
 chip-quantitative pcr
 chip-real-time pcr
-coexpression analys
 co-expression analys
-coexpression module
+coexpression analys
 co-expression module
-coexpression network
+coexpression module
 co-expression network
+coexpression network
 collateral
 contralateral
 c-section
@@ -20,13 +20,19 @@ dorsal fin
 erna expression
 expression in cell
 expression in control
+expression increased
 expression in cultured
+expression independ
+expression indicate
 expression in dissociate
+expression induce
 expression in escs
 expression in facs
 expression in fibroblast
+expression influenc
 expression in hek293
 expression in hela
+expression inhibit
 expression in human
 expression in huvec
 expression in isolated
@@ -44,14 +50,8 @@ expression in undifferentiate
 expression in uninject
 expression in untreat
 expression in vitro
-expression in zebrafish
-expression increased
-expression independ
-expression indicate
-expression induce
-expression influenc
-expression inhibit
 expression involv
+expression in zebrafish
 expression is direct
 expression is drive
 expression is inhibit
@@ -77,15 +77,15 @@ expression of tet
 expression of the cre recombinase
 expression of the reporter
 expression of the transgen
-Expression of transgen
 expression of transfect
+Expression of transgen
 expression of transposable
 expression of undiffer
 expression of viral
 expression was knocked down
 gene expression array
-gene expression heat map
 gene expression heatmap
+gene expression heat map
 gene expression master mix
 gene expression matrix
 gene expression microarray
@@ -134,17 +134,17 @@ northern white gibbon
 northwestern
 over-expression in
 overexpression in
-overexpression is
 over-expression is
-overexpression level
+overexpression is
 over-expression level
-overexpression of
+overexpression level
 over-expression of
-overexpression was
+overexpression of
 over-expression was
+overexpression was
 quadrilateral
-reexpression of
 re-expression of
+reexpression of
 resection
 re-section
 results section
@@ -166,10 +166,10 @@ trisection
 unilateral
 western clawed frog
 western diet
+western-diet
 western equine
 western european
 western han
-western-diet
 western-style diet
 western-type diet
 wish cell

@@ -16,7 +16,7 @@ PAGE = reportlib.PAGE
 
 db.useOneConnection(1)
 
-db.sql('delete from VOC_Term where _vocab_key = 134',None)
+db.sql('delete from VOC_Term where _vocab_key = 184',None)
 
 # select all jouranls that have been Indexed/Full-coded at least once
 db.sql('''
@@ -55,15 +55,31 @@ for r in results:
 	term = r['journal'].replace("'","''")
 	addSQL = '''
 	insert into VOC_Term values(
-	(select max(_Term_key) + 1 from VOC_Term),134,'%s',null,null,%d,0,1001,1001,now(),now());
+	(select max(_Term_key) + 1 from VOC_Term),184,'%s',null,null,%d,0,1001,1001,now(),now());
 	''' % (term, seqNum)
 	seqNum += 1
 	print(addSQL)
 	db.sql(addSQL, None)
 	db.commit()
 
-results = db.sql('select count(*) as count from voc_term where _vocab_key = 134', 'auto')
+results = db.sql('select count(*) as count from voc_term where _vocab_key = 184', 'auto')
 print(str(results['']))
+
+results = db.sql('''
+select r.*
+from bib_refs r, voc_term t
+where r.journal is not null
+and r.journal = t.term
+and t._vocab_key = 184
+and exists (select 1 from bib_workflow_status s
+        where r._refs_key = s._refs_key
+        and s._group_key = 31576665
+        and s.isCurrent = 1
+        and s._status_key in (31576673,31576674)
+        )
+''', 'auto')
+for r in results:
+        print(r)
 
 db.useOneConnection(0)
 

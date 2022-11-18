@@ -22,6 +22,7 @@ update voc_vocab set name = 'Lit Triage GXD Category 1 Exclude' where _vocab_key
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Lit Triage GXD Age Excluded',now(),now());
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Lit Triage GXD Category 2 Exclude',now(),now());
 insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Lit Triage GXD Category 2 Terms',now(),now());
+insert into VOC_Vocab values((select max(_Vocab_key) + 1 from VOC_Vocab),22864,-1,1,0,'Lit Triage GXD Journal skipped',now(),now());
 
 EOSQL
 

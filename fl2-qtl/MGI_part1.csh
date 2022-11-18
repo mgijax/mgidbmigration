@@ -59,8 +59,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 date | tee -a ${LOG}
 echo 'new QTL views' | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_MarkerQTLCandidate_View_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_MarkerQTLInteraction1_View_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_MarkerQTLInteraction2_View_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_MarkerQTLInteraction_View_create.object | tee -a $LOG
 
 #
 # reconfig.sh:

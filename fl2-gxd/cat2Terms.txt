@@ -1,10 +1,6 @@
-# post 2005 cat2 experiments
-# Assay23
 alexa fluor
 wish
 wmish
-#confocal
-# Assay24
 dorsal
 sagittal
 frontal
@@ -14,48 +10,18 @@ lateral
 ventral
 rostral
 caudal
-# Assay25
 antibody stain
-#antibody-stain
-#antisera stain
 costain
 co-stain
 double stain
-#double-stain
-#ihc stain
-#no staining
-#prominent stain
-#single stain
-#single-stain
-#stained by ish
-#stained using anti
-#stained with a mouse
-#stained with a primary
-#stained with a rabbit
-#stained with alexa
-#stained with an anti
 stained with anti
-#stained with fluor
-#stained with mono
-#stained with mouse
-#stained with poly
-#stained with primary
-#stained with rabbit
-#stained with second
 staining pattern
-#staining with an anti
 staining with anti
 strong stain
-# Assay26
-#expression at
-#expression during
 expression in
 expression is
 expression of
 expression was
-###
-#
-#expression
 embryonic expression
 expression analysis
 expression level
@@ -66,13 +32,9 @@ level of expression
 levels of expression
 mirna expression
 mrna expression
-#protein expression
 rna expression
 strong expression
-
 immuno
-
-#pcr
 qpcr
 q-pcr
 qrtpcr
@@ -90,7 +52,6 @@ rt pcr
 rt)-pcr
 rtpcr
 rt-pcr
-
 blot
 flat mount
 flatmount
@@ -111,12 +72,9 @@ western
 whole mount
 wholemount
 whole-mount
-#x gal
 xgal
 x-gal
 -gal stain
 -galactosidase stain
-
 section
 co-expression
-#overexpression

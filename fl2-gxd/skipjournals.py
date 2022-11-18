@@ -63,7 +63,7 @@ for r in results:
 	db.commit()
 
 results = db.sql('select count(*) as count from voc_term where _vocab_key = 184', 'auto')
-print(str(results['']))
+print(results)
 
 results = db.sql('''
 select r.*

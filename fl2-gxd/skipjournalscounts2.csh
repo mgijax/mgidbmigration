@@ -20,7 +20,7 @@ select r.journal, count(r.journal)
 from bib_refs r, voc_term t
 where r.journal = t.term
 and t._vocab_key = 184
-and r.year between 2018 and 2022
+and r.year >= 2018
 group by r.journal
 order by r.journal
 ;

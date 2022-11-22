@@ -24,6 +24,7 @@ select distinct r.journal
 into temp table journalsUsed
 from bib_refs r
 where r.journal is not null
+and r.year >= 2018
 and exists (select 1 from bib_workflow_status s
         where r._refs_key = s._refs_key
         and s._group_key = 31576665
@@ -39,6 +40,7 @@ results = db.sql('''
 select distinct journal
 from bib_refs r
 where r.journal is not null
+and r.year >= 2018
 and not exists (select 1 from bib_workflow_status s
         where r._refs_key = s._refs_key
         and s._group_key = 31576665
@@ -69,6 +71,7 @@ results = db.sql('''
 select r.*
 from bib_refs r, voc_term t
 where r.journal is not null
+and r.year >= 2018
 and r.journal = t.term
 and t._vocab_key = 184
 and exists (select 1 from bib_workflow_status s

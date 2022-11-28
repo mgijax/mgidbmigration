@@ -48,7 +48,6 @@ embryonic fibroblast
 embryonic kidney 293
 embryonic kidney cells
 embryonic kidney hek
-embryonic kidney hek
 embryonic lethal
 embryonic-lethal
 embryonic medium

@@ -7,12 +7,9 @@ db.setTrace()
 
 db.useOneConnection(1)
 
-db.sql('delete from VOC_Term where _vocab_key = 184',None)
-
-
 inFile = open('skipJournals.txt', 'r')
 seqNum = 1
-db.sql('delete from VOC_Term where _vocab_key = 184',None)
+#db.sql('delete from VOC_Term where _vocab_key = 184',None)
 for line in inFile.readlines():
         term = line[:-1].replace("'","''")
         addSQL = '''

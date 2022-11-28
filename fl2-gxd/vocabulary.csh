@@ -21,7 +21,6 @@ insert into VOC_Term values((select max(_Term_key) + 1 from VOC_Term),166,'the e
 EOSQL
 
 ${PYTHON} vocabulary.py | tee -a $LOG
-${PYTHON} skipjournals.py | tee -a $LOG
 
 date |tee -a $LOG
 

@@ -80,7 +80,7 @@ embryo yield
 fish embryo
 fly embryo
 goat embryo
-HEK293T embryo
+hek293t embryo
 hpf embryo
 human embryo
 injected embryo

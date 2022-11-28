@@ -1,5 +1,5 @@
 anat embryol
-Anat. Embryol.
+anat. embryol.
 ascidian embryo
 avian embryo
 bovine embryo
@@ -118,7 +118,7 @@ the expression of the cre recombinase
 the expression of the reporter
 the expression of the transgen
 the expression of transfect
-The expression of transgen
+the expression of transgen
 the expression of transposable
 the expression of undiffer
 the expression of viral
@@ -128,4 +128,4 @@ treated embryo
 tropicalis embryo
 urchin embryo
 worm embryo
-Xenopus embryo
+xenopus embryo

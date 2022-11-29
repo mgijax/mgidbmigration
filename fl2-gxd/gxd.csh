@@ -23,5 +23,8 @@ date | tee -a $LOG
 
 ./vocabulary.csh | tee -a $LOG
 
+rm -rf ${DATALOADSOUTPUT}/mgi/littriageload/logs/secondary.GXD.log
+mkdir ${DATALOADSOUTPUT}/mgi/littriageload/logs/gxd
+
 date |tee -a $LOG
 

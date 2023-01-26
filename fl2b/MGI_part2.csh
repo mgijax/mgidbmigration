@@ -43,9 +43,9 @@ switch (`uname -n`)
         breaksw
 endsw
 
-echo 'allele-to-driver gene load' | tee -a $LOG
+#echo 'allele-to-driver gene load' | tee -a $LOG
 #cp fearload.txt ${DATALOAD}/mgi/fearload/input
-${FEARLOAD}/bin/fearload.sh | tee -a $LOG
+#${FEARLOAD}/bin/fearload.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

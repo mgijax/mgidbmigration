@@ -15,10 +15,13 @@ touch $LOG
 date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-insert into VOC_Term values(nextval('voc_term_seq'), 96, 'driver_component', null, null, null, 0, 1001, 1001, now(), now());
+insert into dag_dag values(53,207078,13,'driver_component','drive',now(),now());
+insert into voc_vocabdag values(96,53,now(),now());
 EOSQL
 
-${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_FEAR_View_create.object | tee -a $LOG
+${RVLOAD}/bin/rvload.sh | tee -a $LOG
+#${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_FEAR_View_create.object | tee -a $LOG
+#${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG
 
 date |tee -a $LOG
 

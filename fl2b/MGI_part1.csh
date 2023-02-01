@@ -50,8 +50,8 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/index/index_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/index/index_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_drop.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 

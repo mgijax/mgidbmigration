@@ -55,8 +55,8 @@ for r in results:
         deleteSQL += 'delete from MGI_Relationship_Property where _relationship_key = ' + str(r['_relationship_key']) + ';\n';
 
 #print(addSQL)
-print(updateSQL)
-print(deleteSQL)
+#print(updateSQL)
+#print(deleteSQL)
 #db.sql(addSQL, None)
 db.sql(updateSQL, None)
 db.sql(deleteSQL, None)

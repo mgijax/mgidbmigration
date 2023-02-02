@@ -52,7 +52,8 @@ and r._Category_key = 1004
 and r._Object_key_1 = a._Allele_key
 and r._Relationship_key = p1._Relationship_key
 and p1._PropertyName_key = 12948290
-and p1.value = o.commonname
+and lower(p1.value) = lower(o.commonname)
+and p1.value!= 'Not Specified'
 and r._Relationship_key = p2._Relationship_key
 and p2._PropertyName_key = 12948291
 and not exists (select 1 from MRK_Marker m where o._Organism_key = m._Organism_key and p2.value = m.symbol)

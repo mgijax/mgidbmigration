@@ -28,6 +28,7 @@ and r._relationship_key = p2._relationship_key
 and p2._propertyName_key = 12948291
 and o._organism_key = h._organism_key 
 and p2.value = h.symbol
+and m._marker_key = 296
 order by p1.value, p2.value, m.symbol
 ''', 'auto')
 

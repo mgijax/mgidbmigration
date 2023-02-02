@@ -23,7 +23,7 @@ and r._Category_key = 1004
 and r._Object_key_1 = a._Allele_key
 and r._Relationship_key = p1._Relationship_key
 and p1._PropertyName_key = 12948290
-and not exists (select 1 from MGI_Organism o where p1.value = o.commonname)
+and not exists (select 1 from MGI_Organism o where lower(p1.value) = lower(o.commonname))
 order by p1.value, m.symbol
 ;
 

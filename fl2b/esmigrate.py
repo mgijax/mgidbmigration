@@ -4,9 +4,6 @@
 # existing MGI_Relationship_Property for 1004 (expresses component)
 # need to be convertred from using the mouse gene to the non-mouse gene
 #
-# find the existing mouse (MGI_Relationship._object_key_2) and non-mouse (MGI_Relationship_Property)
-#       update mgi_relationship set _object_key_2 = non-mouse symbol
-#
  
 import sys 
 import os
@@ -39,22 +36,25 @@ updateSQL = ""
 deleteSQL = ""
 for r in results:
 
+        print(r)
+
         # for testing, add a new record so we can look at both
         addSQL += '''insert into mgi_relationship values(nextval('mgi_relationship_seq'),%s,%s,%s,%s,%s,%s,%s,%s,%s,'%s','%s');\n'''  \
                 % (r['_category_key'], r['_object_key_1'], r['newKey'], r['_relationshipterm_key'], \
                         r['_qualifier_key'], r['_evidence_key'], r['_refs_key'], \
                         r['_createdby_key'], r['_modifiedby_key'], r['creation_date'], r['modification_date'])
 
+        # for real, simply convert from mouse to non-mouse
         updateSQL += 'update MGI_Relationship set _object_key_2 = ' + str(r['newKey']) + ' where _relationship_key = ' + str(r['_relationship_key']) + ';\n';
         deleteSQL += 'delete from MGI_Relationship_Property where _relationship_key = ' + str(r['_relationship_key']) + ';\n';
 
 #print(addSQL)
 #print(updateSQL)
 #print(deleteSQL)
-#db.sql(addSQL, None)
+db.sql(addSQL, None)
 #db.sql(updateSQL, None)
 #db.sql(deleteSQL, None)
-#db.commit()
+db.commit()
 
 db.useOneConnection(0)
 

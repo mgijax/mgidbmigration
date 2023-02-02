@@ -54,6 +54,7 @@ for r in results:
 #db.sql(addSQL, None)
 #db.sql(updateSQL, None)
 #db.sql(deleteSQL, None)
+#db.commit()
 
 db.useOneConnection(0)
 

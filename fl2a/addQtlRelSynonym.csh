@@ -29,9 +29,9 @@ date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --Candidate gene
-insert into mgi_synonym values(nextval('mgi_synonym_seq'), 105563920,   13,      1032,    null,    'has candidate', 1001, 1001, now(), now())
+insert into mgi_synonym values(nextval('mgi_synonym_seq'), 105563920,   13,      1033,    null,    'has candidate', 1001, 1001, now(), now())
 ;
-insert into mgi_synonym values(nextval('mgi_synonym_seq'), 105563920,   13,      1033,    null,    'is candidate for', 1001, 1001, now(), now())
+insert into mgi_synonym values(nextval('mgi_synonym_seq'), 105563920,   13,      1032,    null,    'is candidate for', 1001, 1001, now(), now())
 ;
 
 --QTL-QTL

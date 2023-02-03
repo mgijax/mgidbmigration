@@ -89,6 +89,9 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
 #${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
+echo 'running expresses-component migration' | tee -a $LOG
+./esmigrate.csh | tee -a $LOG
+
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}
 

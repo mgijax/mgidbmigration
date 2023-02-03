@@ -32,11 +32,13 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 # update schema-version and public-version
 #
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 #update MGI_dbinfo set schema_version = '6-0-20', public_version = 'MGI 6.13';
-#EOSQL
-#date | tee -a ${LOG}
+drop view if exists mgd.ALL_SummaryByMarker_View cascade;
+drop view if exists mgd.ALL_SummaryByReference_View cascade;
+EOSQL
+date | tee -a ${LOG}
 
 #
 # only run the ones needed per schema changes

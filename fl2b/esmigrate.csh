@@ -35,7 +35,7 @@ and p1.value = o.commonname
 and r._Relationship_key = p2._Relationship_key
 and p2._PropertyName_key = 12948291
 and not exists (select 1 from MRK_Marker m where o._Organism_key = m._Organism_key and p2.value = m.symbol)
-order by value, nssymol, msymbol
+order by value, nssymbol, msymbol
 ;
 
 EOSQL

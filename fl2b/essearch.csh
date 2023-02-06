@@ -57,6 +57,18 @@ and p2._PropertyName_key = 12948291
 order by p1.value, p2.value, m.symbol
 ;
 
+select m._Marker_key, m.symbol as msymbol, a.symbol as asymbol, p1.value
+from MRK_Marker m, MGI_Relationship r, ALL_Allele a,
+MGI_Relationship_Property p1
+where r._Object_key_2 = m._Marker_key
+and r._Category_key = 1004
+and r._Object_key_1 = a._Allele_key
+and r._Relationship_key = p1._Relationship_key
+and p1._PropertyName_key = 12948292
+and not exists (select 1 from ACC_Accession aa where aa._MGIType_key = 2 and aa._LogicalDB_key = 55 and aa.accid = p1.value)
+order by m.symbol
+;
+
 --and a._allele_key = 5949
 
 EOSQL

@@ -21,13 +21,15 @@ and r._Relationship_key = p1._Relationship_key
 and p1._PropertyName_key = 12948290
 and lower(p1.value) = lower(o.commonname)
 
--- property/organism = Not Specified
-and p1.value = 'Not Specified'
-
 -- property/gene symbol does not exist in MRK_Marker
 and r._Relationship_key = p2._Relationship_key
 and p2._PropertyName_key = 12948291
 and not exists (select 1 from MRK_Marker m where o._Organism_key = m._Organism_key and p2.value = m.symbol)
+
+-- property/ncbi id does not exist
+and not exists (select 1 from MGI_Relationship_Property p3 where r._relationship_key = p3._relationship_key
+        and p3._propertyName_key = 12948292
+        )
 
 order by p1.value, p2.value, m.symbol
 ''', 'auto')

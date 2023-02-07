@@ -31,7 +31,7 @@ select t._term_key, t.term from voc_term t where t._term_key in (12948293, 12438
 select count(*), _relationshipterm_key, t.term
 from mgi_relationship r, voc_term t
 where r._relationshipterm_key = t._term_key
-and r._relationshipterm_key in (12948293, 12438346, 12965808, 111135297)
+and r._relationshipterm_key in (12948293, 12965808, 111135297, 12438346)
 group by _relationshipterm_key, term;
 ;
 
@@ -42,7 +42,7 @@ delete from VOC_Term where _term_key in (12948293,12965808,111135297);
 select count(*), _relationshipterm_key, t.term
 from mgi_relationship r, voc_term t
 where r._relationshipterm_key = t._term_key
-and r._relationshipterm_key in (12948293, 12438346, 12965808, 111135297)
+and r._relationshipterm_key in (12948293, 12965808, 111135297, 12438346)
 group by _relationshipterm_key, term;
 ;
 

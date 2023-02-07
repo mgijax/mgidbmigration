@@ -14,7 +14,7 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Relationship ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/MGI_Relationship.bcp "|"
+#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MGI_Relationship ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/MGI_Relationship.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

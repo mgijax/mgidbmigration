@@ -47,7 +47,11 @@ endsw
 
 date | tee -a ${LOG}
 echo 'Running PAR Mapping Load' | tee -a $LOG
-${MAPPINGLOAD}/mappingonlyload.sh /mgi/all/wts2_projects/1000/WTS2-1080/parmappingload.config | tee -a $LOG
+${MAPPINGLOAD}/mappingonlyload.sh /mgi/all/wts2_projects/1000/WTS2-1080/test_parmappingload.config | tee -a $LOG
+
+date | tee -a ${LOG}
+echo 'Running PARtnerOf  Load' | tee -a $LOG
+${PARTNEROFLOAD}/bin/partnerofload.sh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished par.csh' | tee -a ${LOG}

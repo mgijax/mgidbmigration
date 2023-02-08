@@ -42,7 +42,7 @@ def process(results):
 # "categoryTerm": "expresses_component",
 # "organismKey": "1",
 # "organism": "mouse, laboratory",
-# "relationshipTermKey": "12948293",
+# "relationshipTermKey": "12438346",
 # "relationshipTerm": "expresses_an_orthologous_gene",
 
 #
@@ -55,7 +55,7 @@ MGI_Relationship_Property p1, MGI_Organism o,
 MGI_Relationship_Property p2, MRK_Marker h
 where r._object_key_2 = m._marker_key
 and r._category_key = 1004
-and r._relationshipterm_key = 12948293
+and r._relationshipterm_key = 12438346
 and r._object_key_1 = a._allele_key
 and r._relationship_key = p1._relationship_key
 and p1._propertyName_key = 12948290
@@ -80,7 +80,7 @@ MGI_Relationship_Property p1, MGI_Organism o,
 MGI_Relationship_Property p2, ACC_Accession aa, MRK_Marker h
 where r._object_key_2 = m._marker_key
 and r._category_key = 1004
-and r._relationshipterm_key = 12948293
+and r._relationshipterm_key = 12438346
 and r._object_key_1 = a._allele_key
 and r._relationship_key = p1._relationship_key
 and p1._propertyName_key = 12948290

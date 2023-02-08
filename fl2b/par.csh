@@ -51,6 +51,10 @@ ${MAPPINGLOAD}/mappingonlyload.sh /mgi/all/wts2_projects/1000/WTS2-1080/parmappi
 
 date | tee -a ${LOG}
 echo 'Running PARtnerOf  Load' | tee -a $LOG
+
+# rm lastrun file
+rm ${DATALOADSOUTPUT}/mgi/partnerofload/input/lastrun
+
 ${PARTNEROFLOAD}/bin/partnerofload.sh | tee -a $LOG
 
 date | tee -a ${LOG}

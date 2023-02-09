@@ -52,7 +52,7 @@ results = db.sql('select max(_Accession_key) + 1 as maxKey from ACC_Accession', 
 accKey = results[0]['maxKey']
 
 results = db.sql('''
-select distinct m._Marker_key, m.symbol as msymbol, p1.value, p2.value as nssymbol, p3.value as accid, o._organism_key, o.commonname
+select distinct p1.value, p2.value as nssymbol, p3.value as accid, o._organism_key, o.commonname
 from MRK_Marker m, MGI_Relationship r,
 MGI_Relationship_Property p1, MGI_Organism o,
 MGI_Relationship_Property p2, MGI_Relationship_Property p3
@@ -68,13 +68,14 @@ and p1.value != 'Not Specified'
 -- property/gene symbol does not exist in MRK_Marker
 and r._Relationship_key = p2._Relationship_key
 and p2._PropertyName_key = 12948291
-and not exists (select 1 from MRK_Marker m where o._Organism_key = m._Organism_key and p2.value = m.symbol)
+--and not exists (select 1 from MRK_Marker m where o._Organism_key = m._Organism_key and lower(p2.value) = lower(m.symbol))
 
 -- property contains NCBI id
 and r._relationship_key = p3._relationship_key
 and p3._propertyName_key = 12948292
+--and not exists (select 1 from Acc_Accession a where a._mgitype_key = 2 and a._logicaldb_key = 55 and p3.value = a.accid)
 
-order by p1.value, p2.value, m.symbol
+order by p1.value, p2.value
 
 ''', 'auto')
 

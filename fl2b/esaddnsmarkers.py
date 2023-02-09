@@ -73,7 +73,7 @@ and p2._PropertyName_key = 12948291
 -- property contains NCBI id
 and r._relationship_key = p3._relationship_key
 and p3._propertyName_key = 12948292
---and not exists (select 1 from Acc_Accession a where a._mgitype_key = 2 and a._logicaldb_key = 55 and p3.value = a.accid)
+and not exists (select 1 from Acc_Accession a where a._mgitype_key = 2 and a._logicaldb_key = 55 and p3.value = a.accid)
 
 order by p1.value, p2.value
 

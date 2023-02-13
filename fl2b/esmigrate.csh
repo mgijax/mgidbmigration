@@ -48,9 +48,9 @@ group by _relationshipterm_key, term;
 
 EOSQL
 
--- add new markers
+# add new markers
 $PYTHON esaddnsmarkers.py | tee -a $LOG
--- move mgi_relationship_property to mgi_relationship
+# move mgi_relationship_property to mgi_relationship
 $PYTHON esproperties.py | tee -a $LOG
 
 date | tee -a $LOG

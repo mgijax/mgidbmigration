@@ -134,7 +134,7 @@ addAccSQL = ""
 for r in results:
         print(r)
         addAccSQL += '''insert into acc_accession values(%s,'%s',null,%s,55,%s,2,0,1,1098,1098,now(),now());\n''' \
-                % (accKey, r['accid'], r['accid'], markerKey)
+                % (accKey, r['accid'], r['accid'], r['_marker_key'])
         accKey += 1
 
 if len(results) > 0:

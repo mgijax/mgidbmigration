@@ -55,6 +55,9 @@ $PYTHON esproperties.py | tee -a $LOG
 
 date | tee -a $LOG
 
+# check duplicates
+esduplicates.csh | tee -a $LOG
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- rows still exist in MGI_Relationship_Property after migration

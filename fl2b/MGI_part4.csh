@@ -33,9 +33,9 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 ###------------------------------###
 ###--- MGI Marker feed report ---###
 ###------------------------------###
-date | tee -a ${LOG}
-echo 'MGI Marker feed report' | tee -a ${LOG}
-${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
+#date | tee -a ${LOG}
+#echo 'MGI Marker feed report' | tee -a ${LOG}
+#${PUBRPTS}/mgimarkerfeed/mgimarkerfeed_reports.csh
 
 ###----------------------###
 ###--- Public reports ---###

@@ -37,6 +37,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 --update MGI_dbinfo set schema_version = '6-0-20', public_version = 'MGI 6.13';
 drop view if exists mgd.ALL_SummaryByMarker_View cascade;
 drop view if exists mgd.ALL_SummaryByReference_View cascade;
+DROP FUNCTION IF EXISTS MGI_addSetMember(int,int,int,text);
 EOSQL
 date | tee -a ${LOG}
 
@@ -57,6 +58,7 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/MGI_addSetMember_create.object | tee -a $LOG 
 
 #
 # reconfig.sh:

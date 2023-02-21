@@ -59,6 +59,7 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_addSetMember_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/procedure/MGI_updateSetMember_create.object | tee -a $LOG 
 
 #
 # reconfig.sh:

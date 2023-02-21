@@ -1,3 +1,8 @@
+TAG: mgidbmigration-6-0-22-25
+DATE: 02/21/2023
+STAFF: lec
+wts2-1125/fl2-220/Modify the Noctua load to only include the noctua_mgi file." ; git push
+
 TAG: mgidbmigration-6-0-22-24
 TAG: mgidbmigration-6-0-22-23
 DATE: 01/30/2023

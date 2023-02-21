@@ -32,7 +32,7 @@ cd ${GOLOAD}
 go.sh
 
 cd $PUBRPTS
-source .
+source ./Configuration
 cd ${PUBRPTS}/daily
 $PYTHON GO_gene_association.py
 $PYTHON GO_gpi.py

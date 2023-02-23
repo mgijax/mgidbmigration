@@ -18,11 +18,10 @@ driverComponents = {
         '7':['MGI:6197565', '', 'J:248533', 'CMV', 150],
         '8':['MGI:5308012', '', 'J:180282', 'ED-L2', 151],
         '9':['MGI:5544911', '944566', 'J:81098', 'HBVX', 152],
+        '10':['MGI:5313507', '', 'J:181433', 'CRYBB1', 63],
+        '11':['MGI:3716165', '', 'J:122914', 'AMELX', 11],
 }
-# these are entrezgeneload, so NCBI ids should already be in place
-#        '10':['MGI:5313507', 'NCBI:374000', 'J:181433', 'CRYBB1', 63],
-#        '11':['MGI:3716165', 'NCBI:281620', 'J:122914', 'AMELX', 11],
-#        '12':['MGI:5476534', 'NCBI:394379', 'J:195112', 'mix1.L', 86],
+#        '12':['MGI:5476534', '', 'J:195112', 'mix1.L', 86],
 
 addSQL = ""
 addSQL += '''insert into mrk_marker values(nextval('mrk_marker_seq'),76,1,1,'tetO','tetO','UN',null,null,1098,1098,now(),now());\n'''
@@ -44,6 +43,7 @@ for r in driverComponents:
         results = db.sql('''select _marker_key from MRK_Marker where _organism_key = %s and symbol = '%s' '''  \
                 % (driverComponents[r][4],driverComponents[r][3]))
         markerKey = results[0]['_marker_key']
+        print(markerKey)
         addSQL += '''insert into acc_accession values(%s,'%s',null,%s,55,%s,2,0,1,1098,1098,now(),now());\n''' \
                 % (accKey, driverComponents[r][1], driverComponents[r][1], markerKey)
         accKey += 1

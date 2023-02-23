@@ -21,7 +21,12 @@ driverComponents = {
         '10':['MGI:5313507', '', 'J:181433', 'CRYBB1', 63],
         '11':['MGI:3716165', '', 'J:122914', 'AMELX', 11],
 }
+
+#
+# this one is frog, Afrian clawed, which is loaded by the entrezgeneload.
+# so, i'm skipping it
 #        '12':['MGI:5476534', '', 'J:195112', 'mix1.L', 86],
+#
 
 addSQL = ""
 addSQL += '''insert into mrk_marker values(nextval('mrk_marker_seq'),76,1,1,'tetO','tetO','UN',null,null,1098,1098,now(),now());\n'''

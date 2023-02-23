@@ -52,6 +52,8 @@ EOSQL
 $PYTHON esaddnsmarkers.py | tee -a $LOG
 # move mgi_relationship_property to mgi_relationship
 $PYTHON esproperties.py | tee -a $LOG
+# add new driver components
+#$PYTHON esdriver.py | tee -a $LOG
 
 date | tee -a $LOG
 

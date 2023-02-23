@@ -17,19 +17,38 @@ driverComponents = {
         '6':['MGI:4819866', '', 'J:99626', 'tetO', 76],
         '7':['MGI:6197565', '', 'J:248533', 'CMV', 150],
         '8':['MGI:5308012', '', 'J:180282', 'ED-L2', 151],
+        '9':['MGI:5544911', '944566', 'J:81098', 'HBVX', 152],
 }
-
-#        '':['MGI:5313507', 'NCBI:374000', 'J:181433', '', 0],
-#        '':['MGI:5544911', 'NCBI:944566', 'J:81098', '', 0],
-#        '':['MGI:5476534', 'NCBI:394379', 'J:195112', '', 0],
-#        '':['MGI:3716165', 'NCBI:281620', 'J:122914', '', 0],
+# these are entrezgeneload, so NCBI ids should already be in place
+#        '10':['MGI:5313507', 'NCBI:374000', 'J:181433', 'CRYBB1', 63],
+#        '11':['MGI:3716165', 'NCBI:281620', 'J:122914', 'AMELX', 11],
+#        '12':['MGI:5476534', 'NCBI:394379', 'J:195112', 'mix1.L', 86],
 
 addSQL = ""
 addSQL += '''insert into mrk_marker values(nextval('mrk_marker_seq'),76,1,1,'tetO','tetO','UN',null,null,1098,1098,now(),now());\n'''
 addSQL += '''insert into mrk_marker values(nextval('mrk_marker_seq'),150,1,1,'CMV','CMV','UN',null,null,1098,1098,now(),now());\n'''
 addSQL += '''insert into mrk_marker values(nextval('mrk_marker_seq'),151,1,1,'ED-L2','ED-L2','UN',null,null,1098,1098,now(),now());\n'''
+addSQL += '''insert into mrk_marker values(nextval('mrk_marker_seq'),152,1,1,'HBVX','HBVX','UN',null,null,1098,1098,now(),now());\n'''
 #print(addSQL)
 db.sql(addSQL, None)
+db.commit()
+
+results = db.sql('select max(_Accession_key) + 1 as maxKey from ACC_Accession', 'auto')
+accKey = results[0]['maxKey']
+addSQL = ""
+for r in driverComponents:
+        if driverComponents[r][4] == 0:
+                continue
+        if driverComponents[r][1] == "":
+                continue
+        results = db.sql('''select _marker_key from MRK_Marker where _organism_key = %s and symbol = '%s' '''  \
+                % (driverComponents[r][4],driverComponents[r][3]))
+        markerKey = results[0]['_marker_key']
+        addSQL += '''insert into acc_accession values(%s,'%s',null,%s,55,%s,2,0,1,1098,1098,now(),now());\n''' \
+                % (accKey, driverComponents[r][1], driverComponents[r][1], markerKey)
+        accKey += 1
+#print(addSQL)
+db.sql(addSQL)
 db.commit()
 
 addSQL = ""

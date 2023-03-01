@@ -43,6 +43,11 @@ switch (`uname -n`)
         breaksw
 endsw
 
+echo 'running entrezgeneload/load files' | tee -a $LOG
+${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene
+cd ${ENTREZGENELOAD}
+./loadFiles.csh | tee -a $LOG
+
 echo 'running entrezgeneload/human' | tee -a $LOG
 cd ${ENTREZGENELOAD}/human
 ./load.csh | tee -a $LOG

@@ -39,23 +39,21 @@ switch (`uname -n`)
     case bhmgidevapp01:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
+        ${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene
         #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
         breaksw
 endsw
 
 echo 'running entrezgeneload/load files' | tee -a $LOG
-${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene
-cd ${ENTREZGENELOAD}
-./loadFiles.csh | tee -a $LOG
+${ENTREZGENELOAD}/loadFiles.csh | tee -a $LOG
 
 echo 'running entrezgeneload/human' | tee -a $LOG
-cd ${ENTREZGENELOAD}/human
-./load.csh | tee -a $LOG
+${ENTREZGENELOAD}/human/load.csh | tee -a $LOG
 
 echo 'running entrezgeneload/xenopuslaevis' | tee -a $LOG
-cd ${ENTREZGENELOAD}/xenopuslaevis
-./load.csh | tee -a $LOG
+${ENTREZGENELOAD}/xenopuslaevis/load.csh | tee -a $LOG
 
+cd ${DBUTILS}/mgidbmigration/fl2b
 echo 'running expresses-component migration' | tee -a $LOG
 ./esmigrate.csh | tee -a $LOG
 

@@ -43,12 +43,19 @@ switch (`uname -n`)
         breaksw
 endsw
 
-echo 'running PAR mapping load and chr update' | tee -a $LOG
-./par.csh | tee -a $LOG
-
 echo 'running entrezgeneload/human' | tee -a $LOG
 cd ${ENTREZGENELOAD}/human
 ./load.csh | tee -a $LOG
+
+echo 'running entrezgeneload/xenopuslaevis' | tee -a $LOG
+cd ${ENTREZGENELOAD}/xenopuslaevis
+./load.csh | tee -a $LOG
+
+echo 'running expresses-component migration' | tee -a $LOG
+./esmigrate.csh | tee -a $LOG
+
+echo 'running PAR mapping load and chr update' | tee -a $LOG
+./par.csh | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

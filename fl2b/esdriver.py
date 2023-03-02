@@ -72,7 +72,7 @@ for r in driverComponents:
         results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (driverComponents[r][2]))
         refsKey = results[0]['_object_key']
         addSQL += '''
-                insert into MGI_Relationship values(nextval('mgi_relationship_seq'),1006,%s,%s,36770349,11391898,11451744,%s,1098,1098,now(),now());\n
+                insert into MGI_Relationship values(nextval('mgi_relationship_seq'),1006,%s,%s,111172001,11391898,11451744,%s,1098,1098,now(),now());\n
                 ''' % (objectKey1, objectKey2, refsKey)
 
 #print(addSQL)

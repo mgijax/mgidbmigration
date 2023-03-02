@@ -46,6 +46,11 @@ and r._relationshipterm_key in (12948293, 12965808, 111135297, 12438346)
 group by _relationshipterm_key, term;
 ;
 
+update MGI_Relationship set _RelationshipTerm_key = 111172001 where _RelationshipTerm_key = 36770349;
+update mgi_relationship_category set _relationshipvocab_key = 96 where _category_key = 1006;
+delete from VOC_Term where _Vocab_key = 132;
+delete from VOC_Vocab where _Vocab_key = 132;
+
 EOSQL
 
 # add new markers

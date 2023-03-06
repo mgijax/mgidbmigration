@@ -47,10 +47,12 @@ endsw
 echo 'running entrezgeneload/load files' | tee -a $LOG
 ${ENTREZGENELOAD}/loadFiles.csh | tee -a $LOG
 
-echo 'running entrezgeneload/human' | tee -a $LOG
+echo 'running entrezgeneload/human/xenopustropicalis/xenopuslaevis' | tee -a $LOG
+rm -rf ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/output/human/*
+rm -rf ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/output/xenopus/*
+rm -rf ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/output/xenopuslaevis/*
 ${ENTREZGENELOAD}/human/load.csh | tee -a $LOG
-
-echo 'running entrezgeneload/xenopuslaevis' | tee -a $LOG
+${ENTREZGENELOAD}/xenopus/load.csh | tee -a $LOG
 ${ENTREZGENELOAD}/xenopuslaevis/load.csh | tee -a $LOG
 
 cd ${DBUTILS}/mgidbmigration/fl2b

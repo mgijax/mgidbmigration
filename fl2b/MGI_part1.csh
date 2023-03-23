@@ -87,10 +87,10 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh | tee -a $LOG
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary
 #
-#${MGI_JAVALIB}/lib_java_core/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
-#${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_core/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsmgd/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dbsrdr/Install | tee -a $LOG
+${MGI_JAVALIB}/lib_java_dla/Install | tee -a $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

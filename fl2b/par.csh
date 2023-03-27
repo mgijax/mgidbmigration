@@ -40,22 +40,53 @@ switch (`uname -n`)
     case bhmgidevapp01:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
-        #${MIRROR_WGET}/download_package ???
+        ${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene >>& ${LOG}
 
         breaksw
 endsw
 
-date | tee -a ${LOG}
-echo 'Running PAR Mapping Load' | tee -a $LOG
-${MAPPINGLOAD}/mappingonlyload.sh /mgi/all/wts2_projects/1000/WTS2-1080/parmappingload.config | tee -a $LOG
-
-date | tee -a ${LOG}
-echo 'Running PARtnerOf  Load' | tee -a $LOG
-
 # rm lastrun file
 rm ${DATALOADSOUTPUT}/mgi/partnerofload/input/lastrun
 
-${PARTNEROFLOAD}/bin/partnerofload.sh | tee -a $LOG
+date | tee -a ${LOG}
+echo 'Running PAR Mapping Load' | tee -a $LOG
+${MAPPINGLOAD}/mappingonlyload.sh /mgi/all/wts2_projects/1000/WTS2-1080/parmappingload.config >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run Partner Of Load' | tee -a ${LOG}
+${PARTNEROFLOAD}/bin/partnerofload.sh >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run genemodelload copydownload.sh ensembl' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copydownloads.sh ensembl >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run genemodelload copyinputs.sh ensembl' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copyinputs.sh ensembl >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run genemodelload copydownload.sh ncbi' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copydownloads.sh ncbi >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run genemodelload copyinputs.sh ncbi' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copyinputs.sh ncbi >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/genemodelload.sh ensembl
+
+date | tee -a ${LOG}
+echo 'Run NCBI Gene Model/Association Load' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/genemodelload.sh ncbi
+
+date | tee -a ${LOG}
+echo 'Run EntrezGene Data Provider Load' | tee -a ${LOG}
+${ENTREZGENELOAD}/loadFiles.csh >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run Mouse EntrezGene Load' | tee -a ${LOG}
+${EGLOAD}/bin/egload.sh >>& ${LOG}
 
 date | tee -a ${LOG}
 echo '--- finished par.csh' | tee -a ${LOG}

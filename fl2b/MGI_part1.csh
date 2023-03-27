@@ -60,6 +60,7 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_addSetMember_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_updateSetMember_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/view/MAP_GM_Coord_Feature_View_create.object | tee -a ${LOG}
 
 #
 # reconfig.sh:

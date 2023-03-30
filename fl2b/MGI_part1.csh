@@ -38,6 +38,8 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop view if exists mgd.ALL_SummaryByMarker_View cascade;
 drop view if exists mgd.ALL_SummaryByReference_View cascade;
 DROP FUNCTION IF EXISTS MGI_addSetMember(int,int,int,text);
+drop index if exists mgd.BIB_Workflow_Data_idx_ExtractedText_key;
+create index BIB_Workflow_Data_idx_ExtractedText_key on mgd.BIB_Workflow_Data (_ExtractedText_key);
 EOSQL
 date | tee -a ${LOG}
 

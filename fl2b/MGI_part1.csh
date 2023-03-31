@@ -41,6 +41,11 @@ DROP FUNCTION IF EXISTS MGI_addSetMember(int,int,int,text);
 EOSQL
 date | tee -a ${LOG}
 
+date | tee -a ${LOG}
+echo 'running new indexes' | tee -a $LOG
+./newindex.csh | tee -a $LOG
+date | tee -a ${LOG}
+
 #
 # only run the ones needed per schema changes
 #
@@ -61,8 +66,6 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_addSetMember_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_updateSetMember_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/MAP_GM_Coord_Feature_View_create.object | tee -a ${LOG}
-${PG_MGD_DBSCHEMADIR}/index/BIB_Citation_Cache_drop.object | tee -a ${LOG}
-${PG_MGD_DBSCHEMADIR}/index/BIB_Citation_Cache_create.object | tee -a ${LOG}
 
 #
 # reconfig.sh:

@@ -313,6 +313,13 @@ create index MRK_History_idx_ModifiedBy_key on mgd.MRK_History (_ModifiedBy_key)
 create index MRK_History_idx_creation_date on mgd.MRK_History (creation_date);
 create index MRK_History_idx_modification_date on mgd.MRK_History (modification_date);
 
+drop index if exists mgd.SEQ_Allele_Assoc_idx_Refs_key;
+drop index if exists mgd.SEQ_Allele_Assoc_idx_CreatedBy_key;
+drop index if exists mgd.SEQ_Allele_Assoc_idx_ModifiedBy_key;
+create index SEQ_Allele_Assoc_idx_Refs_key on mgd.SEQ_Allele_Assoc (_Refs_key);
+create index SEQ_Allele_Assoc_idx_CreatedBy_key on mgd.SEQ_Allele_Assoc (_CreatedBy_key);
+create index SEQ_Allele_Assoc_idx_ModifiedBy_key on mgd.SEQ_Allele_Assoc (_ModifiedBy_key);
+
 drop index if exists mgd.BIB_Citation_Cache_idx_mgiID;
 create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 

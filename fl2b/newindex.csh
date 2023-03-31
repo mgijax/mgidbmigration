@@ -295,6 +295,9 @@ drop index if exists mgd.MLD_Expts_idx_modification_date;
 create index MLD_Expts_idx_creation_date on mgd.MLD_Expts (creation_date);
 create index MLD_Expts_idx_modification_date on mgd.MLD_Expts (modification_date);
 
+drop index if exists mgd.BIB_Citation_Cache_idx_mgiID;
+create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
+
 EOSQL
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG

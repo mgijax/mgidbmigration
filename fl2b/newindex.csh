@@ -304,6 +304,15 @@ create index GXD_Index_Stages_idx_ModifiedBy_key on mgd.GXD_Index_Stages (_Modif
 create index GXD_Index_Stages_idx_creation_date on mgd.GXD_Index_Stages (creation_date);
 create index GXD_Index_Stages_idx_modification_date on mgd.GXD_Index_Stages (modification_date);
 
+drop index if exists mgd.MRK_History_idx_CreatedBy_key;
+drop index if exists mgd.MRK_History_idx_ModifiedBy_key;
+drop index if exists mgd.MRK_History_idx_creation_date;
+drop index if exists mgd.MRK_History_idx_modification_date;
+create index MRK_History_idx_CreatedBy_key on mgd.MRK_History (_CreatedBy_key);
+create index MRK_History_idx_ModifiedBy_key on mgd.MRK_History (_ModifiedBy_key);
+create index MRK_History_idx_creation_date on mgd.MRK_History (creation_date);
+create index MRK_History_idx_modification_date on mgd.MRK_History (modification_date);
+
 drop index if exists mgd.BIB_Citation_Cache_idx_mgiID;
 create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 

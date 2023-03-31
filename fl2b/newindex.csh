@@ -295,6 +295,15 @@ drop index if exists mgd.MLD_Expts_idx_modification_date;
 create index MLD_Expts_idx_creation_date on mgd.MLD_Expts (creation_date);
 create index MLD_Expts_idx_modification_date on mgd.MLD_Expts (modification_date);
 
+drop index if exists mgd.GXD_Index_Stages_idx_CreatedBy_key;
+drop index if exists mgd.GXD_Index_Stages_idx_ModifiedBy_key;
+drop index if exists mgd.GXD_Index_Stages_idx_creation_date;
+drop index if exists mgd.GXD_Index_Stages_idx_modification_date;
+create index GXD_Index_Stages_idx_CreatedBy_key on mgd.GXD_Index_Stages (_CreatedBy_key);
+create index GXD_Index_Stages_idx_ModifiedBy_key on mgd.GXD_Index_Stages (_ModifiedBy_key);
+create index GXD_Index_Stages_idx_creation_date on mgd.GXD_Index_Stages (creation_date);
+create index GXD_Index_Stages_idx_modification_date on mgd.GXD_Index_Stages (modification_date);
+
 drop index if exists mgd.BIB_Citation_Cache_idx_mgiID;
 create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 

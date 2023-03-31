@@ -22,7 +22,6 @@ drop index if exists mgd.ALL_Allele_CellLine_idx_CreatedBy_key;
 drop index if exists mgd.ALL_Allele_idx_CreatedBy_key;
 drop index if exists mgd.ALL_CellLine_Derivation_idx_CreatedBy_key;
 drop index if exists mgd.ALL_CellLine_idx_CreatedBy_key;
-drop index if exists mgd.ALL_Cre_Cache_idx_CreatedBy_key;
 drop index if exists mgd.ALL_Variant_idx_CreatedBy_key;
 drop index if exists mgd.ALL_Variant_Sequence_idx_CreatedBy_key;
 
@@ -32,7 +31,6 @@ drop index if exists mgd.ALL_Allele_CellLine_idx_ModifiedBy_key;
 drop index if exists mgd.ALL_Allele_idx_ModifiedBy_key;
 drop index if exists mgd.ALL_CellLine_Derivation_idx_ModifiedBy_key;
 drop index if exists mgd.ALL_CellLine_idx_ModifiedBy_key;
-drop index if exists mgd.ALL_Cre_Cache_idx_ModifiedBy_key;
 drop index if exists mgd.ALL_Variant_idx_ModifiedBy_key;
 drop index if exists mgd.ALL_Variant_Sequence_idx_ModifiedBy_key;
 
@@ -43,7 +41,6 @@ drop index if exists mgd.ALL_Allele_idx_creation_date;
 drop index if exists mgd.ALL_Allele_Mutation_idx_creation_date;
 drop index if exists mgd.ALL_CellLine_Derivation_idx_creation_date;
 drop index if exists mgd.ALL_CellLine_idx_creation_date;
-drop index if exists mgd.ALL_Cre_Cache_idx_creation_date;
 drop index if exists mgd.ALL_Variant_idx_creation_date;
 drop index if exists mgd.ALL_Variant_Sequence_idx_creation_date;
 
@@ -54,7 +51,6 @@ drop index if exists mgd.ALL_Allele_idx_modification_date;
 drop index if exists mgd.ALL_Allele_Mutation_idx_modification_date;
 drop index if exists mgd.ALL_CellLine_Derivation_idx_modification_date;
 drop index if exists mgd.ALL_CellLine_idx_modification_date;
-drop index if exists mgd.ALL_Cre_Cache_idx_modification_date;
 drop index if exists mgd.ALL_Variant_idx_modification_date;
 drop index if exists mgd.ALL_Variant_Sequence_idx_modification_date;
 
@@ -64,7 +60,6 @@ create index ALL_Allele_CellLine_idx_CreatedBy_key on mgd.ALL_Allele_CellLine (_
 create index ALL_Allele_idx_CreatedBy_key on mgd.ALL_Allele (_CreatedBy_key);
 create index ALL_CellLine_idx_CreatedBy_key on mgd.ALL_CellLine (_CreatedBy_key);
 create index ALL_CellLine_Derivation_idx_CreatedBy_key on mgd.ALL_CellLine_Derivation (_CreatedBy_key);
-create index ALL_Cre_Cache_idx_CreatedBy_key on mgd.ALL_Cre_Cache (_CreatedBy_key);
 create index ALL_Variant_idx_CreatedBy_key on mgd.ALL_Variant (_CreatedBy_key);
 create index ALL_Variant_Sequence_idx_CreatedBy_key on mgd.ALL_Variant_Sequence (_CreatedBy_key);
 
@@ -74,7 +69,6 @@ create index ALL_Allele_CellLine_idx_ModifiedBy_key on mgd.ALL_Allele_CellLine (
 create index ALL_Allele_idx_ModifiedBy_key on mgd.ALL_Allele (_ModifiedBy_key);
 create index ALL_CellLine_idx_ModifiedBy_key on mgd.ALL_CellLine (_ModifiedBy_key);
 create index ALL_CellLine_Derivation_idx_ModifiedBy_key on mgd.ALL_CellLine_Derivation (_ModifiedBy_key);
-create index ALL_Cre_Cache_idx_ModifiedBy_key on mgd.ALL_Cre_Cache (_ModifiedBy_key);
 create index ALL_Variant_idx_ModifiedBy_key on mgd.ALL_Variant (_ModifiedBy_key);
 create index ALL_Variant_Sequence_idx_ModifiedBy_key on mgd.ALL_Variant_Sequence (_ModifiedBy_key);
 
@@ -85,7 +79,6 @@ create index ALL_Allele_idx_creation_date on mgd.ALL_Allele (creation_date);
 create index ALL_Allele_Mutation_idx_creation_date on mgd.ALL_Allele_Mutation (creation_date);
 create index ALL_CellLine_idx_creation_date on mgd.ALL_CellLine (creation_date);
 create index ALL_CellLine_Derivation_idx_creation_date on mgd.ALL_CellLine_Derivation (creation_date);
-create index ALL_Cre_Cache_idx_creation_date on mgd.ALL_Cre_Cache (creation_date);
 create index ALL_Variant_idx_creation_date on mgd.ALL_Variant (creation_date);
 create index ALL_Variant_Sequence_idx_creation_date on mgd.ALL_Variant_Sequence (creation_date);
 
@@ -96,7 +89,6 @@ create index ALL_Allele_idx_modification_date on mgd.ALL_Allele (modification_da
 create index ALL_Allele_Mutation_idx_modification_date on mgd.ALL_Allele_Mutation (modification_date);
 create index ALL_CellLine_idx_modification_date on mgd.ALL_CellLine (modification_date);
 create index ALL_CellLine_Derivation_idx_modification_date on mgd.ALL_CellLine_Derivation (modification_date);
-create index ALL_Cre_Cache_idx_modification_date on mgd.ALL_Cre_Cache (modification_date);
 create index ALL_Variant_idx_modification_date on mgd.ALL_Variant (modification_date);
 create index ALL_Variant_Sequence_idx_modification_date on mgd.ALL_Variant_Sequence (modification_date);
 

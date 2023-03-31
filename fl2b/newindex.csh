@@ -320,6 +320,11 @@ create index SEQ_Allele_Assoc_idx_Refs_key on mgd.SEQ_Allele_Assoc (_Refs_key);
 create index SEQ_Allele_Assoc_idx_CreatedBy_key on mgd.SEQ_Allele_Assoc (_CreatedBy_key);
 create index SEQ_Allele_Assoc_idx_ModifiedBy_key on mgd.SEQ_Allele_Assoc (_ModifiedBy_key);
 
+drop index if exists mgd.SEQ_GeneTrap_idx_CreatedBy_key;
+drop index if exists mgd.SEQ_GeneTrap_idx_ModifiedBy_key;
+create index SEQ_GeneTrap_idx_CreatedBy_key on mgd.SEQ_GeneTrap (_CreatedBy_key);
+create index SEQ_GeneTrap_idx_ModifiedBy_key on mgd.SEQ_GeneTrap (_ModifiedBy_key);
+
 drop index if exists mgd.BIB_Citation_Cache_idx_mgiID;
 create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 

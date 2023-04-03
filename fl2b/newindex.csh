@@ -321,6 +321,9 @@ create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 
 EOSQL
 
+${MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_create.object | tee -a $LOG
+
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 date |tee -a $LOG

@@ -313,6 +313,9 @@ drop index if exists mgd.MGI_Set_idx_ModifiedBy_key;
 create index MGI_Set_idx_CreatedBy_key on mgd.MGI_Set (_CreatedBy_key);
 create index MGI_Set_idx_ModifiedBy_key on mgd.MGI_Set (_ModifiedBy_key);
 
+drop index if exists mgd.ALL_Cre_Cache_idx_CreatedBy_key;
+drop index if exists mgd.ALL_Cre_Cache_idx_ModifiedBy_key;
+
 drop index if exists mgd.BIB_Citation_Cache_idx_mgiID;
 create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 

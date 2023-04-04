@@ -321,6 +321,8 @@ create index BIB_Citation_Cache_idx_mgiID on mgd.BIB_Citation_Cache (mgiID);
 
 EOSQL
 
+${MGD_DBSCHEMADIR}/index/MGI_Relationship_Category_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/MGI_Relationship_Category_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/MRK_History_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/MRK_History_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_drop.object | tee -a $LOG

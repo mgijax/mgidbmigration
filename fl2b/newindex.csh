@@ -325,6 +325,8 @@ ${MGD_DBSCHEMADIR}/index/MRK_History_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/MRK_History_create.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_drop.object | tee -a $LOG
 ${MGD_DBSCHEMADIR}/index/MLD_Expt_Marker_create.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/VOC_Term_drop.object | tee -a $LOG
+${MGD_DBSCHEMADIR}/index/VOC_Term_create.object | tee -a $LOG
 
 ${MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 

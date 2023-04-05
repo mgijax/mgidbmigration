@@ -58,7 +58,7 @@ db.commit()
 
 addSQL = ""
 for r in driverComponents:
-        results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (driverComponents[r][0]))
+        results = db.sql('''select _object_key from ACC_Accession where _mgitype_key = 2 and accID = '%s' ''' % (driverComponents[r][0]))
         objectKey1 = results[0]['_object_key']
 
         if driverComponents[r][4] == 0:

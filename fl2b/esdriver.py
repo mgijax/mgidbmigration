@@ -58,11 +58,11 @@ db.commit()
 
 addSQL = ""
 for r in driverComponents:
-        results = db.sql('''select _object_key from ACC_Accession where _mgitype_key = 2 and accID = '%s' ''' % (driverComponents[r][0]))
+        results = db.sql('''select _object_key from ACC_Accession where accID = '%s' ''' % (driverComponents[r][0]))
         objectKey1 = results[0]['_object_key']
 
         if driverComponents[r][4] == 0:
-                results = db.sql('''select _object_key from ACC_Accession where _mgitype_key = 2 and accID = '%s' ''' % (driverComponents[r][1]))
+                results = db.sql('''select min(_object_key) as _object_key from ACC_Accession where accID = '%s' ''' % (driverComponents[r][1]))
                 objectKey2 = results[0]['_object_key']
         else:
                 results = db.sql('''select _marker_key from MRK_Marker where _organism_key = %s and symbol = '%s' ''' 

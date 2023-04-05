@@ -75,7 +75,7 @@ for r in driverComponents:
                 insert into MGI_Relationship values(nextval('mgi_relationship_seq'),1006,%s,%s,111172001,11391898,11451744,%s,1098,1098,now(),now());\n
                 ''' % (objectKey1, objectKey2, refsKey)
 
-#print(addSQL)
+print(addSQL)
 db.sql(addSQL, None)
 db.commit()
 

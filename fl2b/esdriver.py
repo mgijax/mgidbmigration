@@ -79,3 +79,6 @@ for r in driverComponents:
 db.sql(addSQL, None)
 db.commit()
 
+results = db.sql('select r.* from MGI_Relationship r where _category_key = 1006 and not exists (select 1 from MRK_Marker m where r._Object_key_2 = m._Marker_Key)', 'auto')
+print('missing markers: ' + str(len(results)) + '\n')
+

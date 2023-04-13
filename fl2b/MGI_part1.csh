@@ -63,6 +63,8 @@ ${PG_MGD_DBSCHEMADIR}/view/view_create.sh | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh | tee -a $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antibody_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/PRB_Probe_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_addSetMember_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_updateSetMember_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/view/MAP_GM_Coord_Feature_View_create.object | tee -a ${LOG}

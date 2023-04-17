@@ -62,5 +62,8 @@ echo 'running expresses-component migration' | tee -a $LOG
 echo 'running PAR mapping load and chr update' | tee -a $LOG
 ./par.csh | tee -a $LOG
 
+echo 'running actualdb migration' | tee -a $LOG
+./actualdb.csh | tee -a $LOG
+
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

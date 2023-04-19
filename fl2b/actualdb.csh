@@ -179,9 +179,18 @@ order by _mgitype_key, counter
 
 -- must exist : count = 81
 select _logicaldb_key, name, description from acc_logicaldb 
-where _logicaldb_key in (9,13,15,19,22,27,29,31,32,34,37,38,39,40,41,47,55,59,60,64,65,108,109,125,126,133,146,169,170,172,173,183,185,189,190,191,225,73,74,75,76,77,174,175,210,66,87,129,49,50,126,109,95,96,97,98,99,108,101,100,137,128,104,102,66,152,165,142,181,109,150,103,121,12,82,17,44,49,50,51,26,48,52,16)
-or name in ('MGI Strain Gene','Ensembl Gene Model','Ensembl Regulatory Feature','Mouse Genome Project','NCBI Gene Model','VISTA Enhancer Element','Entrez Gene','RefSeq')
-order by name, _logicaldb_key
+where _logicaldb_key in (
+9, 12, 13, 15, 16, 17, 19, 22, 26, 27, 29,
+31, 32, 34, 37, 38, 39, 40, 41, 44, 47, 48, 49,
+50, 51, 52, 55, 59, 60, 64, 65, 66, 73, 74, 75, 76, 77, 82, 87, 95, 96, 97, 98, 99,
+100, 101, 102, 103, 104, 108, 109,
+121, 125, 126, 128, 129,
+133, 137, 142, 146,
+150, 152, 165, 169,
+170, 172, 173, 174, 175, 181, 183, 185, 189,
+190, 191, 209, 210, 212, 222, 223, 225
+)
+order by _logicaldb_key
 ;
 
 EOSQL

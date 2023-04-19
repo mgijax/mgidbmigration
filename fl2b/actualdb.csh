@@ -179,3 +179,7 @@ order by _mgitype_key, counter
 
 EOSQL
 
+${MGICACHELOAD}/go_annot_extensions_display_load.csh | tee -a $LOG
+${MGICACHELOAD}/go_isoforms_display_load.csh | tee -a $LOG
+${MGICACHELOAD}/inferredfrom.csh | tee -a $LOG
+

@@ -14,8 +14,8 @@ touch $LOG
  
 date | tee -a $LOG
  
-#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
-#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -90,6 +90,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- ignore the SNP logicaldbs (73,74,75,76,77)
 -- ignore the BioType logicaldbs/used in VOC_Vocab (174,175,210)
 -- ignore the GO logicaldbs (9,13,27,60,125,173)
+-- ignore those in Richard's spreadsheet NO (66,129,87,129,49,50,126,109)
 
 -- logicaldb that are used in acc_accession and cannot be removed
 (
@@ -100,7 +101,7 @@ where exists (select 1 from acc_accession aa where l._logicaldb_key = aa._logica
 union
 select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actualname, a.url
 from acc_logicaldb l left outer join acc_actualdb a on ( l._logicaldb_key = a._logicaldb_key)
-where l._logicaldb_key in (22,38,37,39,40,54,56,57,58,70,71,83,87,90,91,93,94,154,161,177,184,188,200,206,207,208,213,215,216,217,219,220,224,73,74,75,76,77,174,175,210,9,13,27,60,125,173,9,27,55,29)
+where l._logicaldb_key in (22,38,37,39,40,54,56,57,58,70,71,83,87,90,91,93,94,154,161,177,184,188,200,206,207,208,213,215,216,217,219,220,224,73,74,75,76,77,174,175,210,9,13,27,60,125,173,9,27,55,29,66,129,87,129,49,50,126,109)
 )
 order by _logicaldb_key
 ;
@@ -117,11 +118,11 @@ select * from todelete1;
 delete from acc_logicaldb a using todelete1 d where d._logicaldb_key = a._logicaldb_key ;
 
 -- delete acc_logicaldb and acc_actualdb as noted in fl2-110
--- comments to Richard 46, 87, 139, 195
+-- comments to Richard 195
 select l._logicaldb_key, l.name, l.description
 into temp table todelete2
 from acc_logicaldb l
-where l._logicaldb_key in (61,62,63,72,110,124,46,87,139,195)
+where l._logicaldb_key in (46,61,62,63,72,110,124,195)
 order by l.name
 ;
 select * from todelete2;
@@ -133,7 +134,7 @@ select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actua
 into temp table todelete3
 from acc_logicaldb l, acc_actualdb a
 where l._logicaldb_key = a._logicaldb_key
-and a._actualdb_key in (48,51,66,112)
+and a._actualdb_key in (51,52,66,84,107,112,114,122)
 order by l.name
 ;
 select * from todelete3;

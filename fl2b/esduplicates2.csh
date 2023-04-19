@@ -79,7 +79,7 @@ and t4.symbol = t5.symbol
 order by allelesymbol
 ;
 
-select distinct max(t4._relationship_key) as _relationship_key, t5.allelesymbol_id, t5.allelesymbol, t4.allele_status, t5.symbol, t4.ncbi_id, t4.commonname
+select distinct min(t4._relationship_key) as keepKey, t5.allelesymbol_id, t5.allelesymbol, t4.allele_status, t5.symbol, t4.ncbi_id, t4.commonname
 into temp temp6
 from temp4 t4, temp5 t5
 where t4.allelesymbol_id = t5.allelesymbol_id
@@ -89,8 +89,16 @@ group by t5.allelesymbol_id, t5.allelesymbol, t4.allele_status, t5.symbol, t4.nc
 order by allelesymbol
 ;
 
-select * from temp6;
-delete from mgi_relationship r using temp6 t where t._relationship_key = r._relationship_key; 
+select temp4.*, temp6.* from temp4, temp6 
+where temp4.allelesymbol_id = temp6.allelesymbol_id
+and temp4._relationship_key != temp6.keepKey;
+;
+
+delete from mgi_relationship r using temp4, temp6 
+where temp4.allelesymbol_id = temp6.allelesymbol_id
+and temp4._relationship_key != temp6.keepKey
+and temp4._relationship_key = r._relationship_key
+;
 
 EOSQL
 

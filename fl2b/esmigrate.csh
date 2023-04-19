@@ -66,6 +66,9 @@ date | tee -a $LOG
 # check duplicates
 esduplicates.csh | tee -a $LOG
 
+# delete duplicates
+esduplicates2.csh | tee -a $LOG
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- rows still exist in MGI_Relationship_Property after migration

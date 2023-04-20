@@ -166,13 +166,18 @@ and not exists (select 1 from keep k where l._logicaldb_key = k._logicaldb_key)
 order by l._logicaldb_key
 ;
 
+-- ignore used in qcreports_db : _actualdb_key in (29)
+-- ignore used in egload : _actualdb_key in (12,35,57), _logicaldb_key in (9,27,55)
+-- ignore used in mgicacheload: _actualdb_key in (19,62,119,139), _logicaldb_key in (1,13,60,135,173)
+-- ignore used in mgicacheload: _actualdb_key in (14,19,35,119), _logicaldb_key in (1,9,13,27,135)
+-- ignore used in mgicacheload/inferredfrom.py
+-- ignore used in pwi/littriage: _logicaldb_key in (29,65)
 -- left in acc_actualdb; ldb used in acc_accession
-select count(l._logicaldb_key) as counter, aa._mgitype_key, l._logicaldb_key, l.name, l.description, a._actualdb_key, a.url
+select count(l._logicaldb_key) as counter, aa._mgitype_key, l._logicaldb_key, l.name, a._actualdb_key, a.url
 from acc_accession aa, acc_logicaldb l, acc_actualdb a
 where l._logicaldb_key = a._logicaldb_key
 and l._logicaldb_key = aa._logicaldb_key
--- skip from mgicacheload/inferredfrom.py
-and l._logicaldb_key not in (32,115,119,127,160,193,204,211,214)
+and l._logicaldb_key not in (1,9,13,27,29,32,55,60,65,115,119,127,125,173,160,193,204,211,214)
 group by aa._mgitype_key, l._logicaldb_key, l.name, a._actualdb_key, a.url
 order by _mgitype_key, counter
 ;

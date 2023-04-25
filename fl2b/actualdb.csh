@@ -14,8 +14,8 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
+#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
+#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -185,7 +185,7 @@ order by _mgitype_key, counter
 -- must exist : count = 81
 select _logicaldb_key, name, description from acc_logicaldb 
 where _logicaldb_key in (
-9, 12, 13, 15, 16, 17, 19, 22, 26, 27, 29,
+-1, 1, 9, 12, 13, 15, 16, 17, 19, 22, 26, 27, 29,
 31, 32, 34, 37, 38, 39, 40, 41, 44, 47, 48, 49,
 50, 51, 52, 55, 59, 60, 64, 65, 66, 73, 74, 75, 76, 77, 82, 87, 95, 96, 97, 98, 99,
 100, 101, 102, 103, 104, 108, 109,

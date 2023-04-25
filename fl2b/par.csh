@@ -65,6 +65,14 @@ echo 'Run genemodelload copyinputs.sh ensembl' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/copyinputs.sh ensembl >>& ${LOG}
 
 date | tee -a ${LOG}
+echo 'Run genemodelload copydownload.sh ensemblreg' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copydownloads.sh ensemblreg >>& ${LOG}
+
+date | tee -a ${LOG}
+echo 'Run genemodelload copyinputs.sh ensemblreg' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/copyinputs.sh ensemblreg >>& ${LOG}
+
+date | tee -a ${LOG}
 echo 'Run genemodelload copydownload.sh ncbi' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/copydownloads.sh ncbi >>& ${LOG}
 
@@ -75,6 +83,10 @@ ${GENEMODELLOAD}/bin/copyinputs.sh ncbi >>& ${LOG}
 date | tee -a ${LOG}
 echo 'Run Ensembl Gene Model/Association Load' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/genemodelload.sh ensembl
+
+date | tee -a ${LOG}
+echo 'Run Ensembl RR Gene Model/Association Load' | tee -a ${LOG}
+${GENEMODELLOAD}/bin/genemodelload.sh ensemblreg
 
 date | tee -a ${LOG}
 echo 'Run NCBI Gene Model/Association Load' | tee -a ${LOG}

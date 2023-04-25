@@ -80,9 +80,10 @@ date | tee -a ${LOG}
 echo 'Run NCBI Gene Model/Association Load' | tee -a ${LOG}
 ${GENEMODELLOAD}/bin/genemodelload.sh ncbi
 
-date | tee -a ${LOG}
-echo 'Run EntrezGene Data Provider Load' | tee -a ${LOG}
-${ENTREZGENELOAD}/loadFiles.csh >>& ${LOG}
+# this is being called from MGI_part2 prior to calling this script
+#date | tee -a ${LOG}
+#echo 'Run EntrezGene Data Provider Load' | tee -a ${LOG}
+#${ENTREZGENELOAD}/loadFiles.csh >>& ${LOG}
 
 date | tee -a ${LOG}
 echo 'Run Mouse EntrezGene Load' | tee -a ${LOG}

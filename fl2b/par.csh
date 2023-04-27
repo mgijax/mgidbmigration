@@ -40,8 +40,7 @@ switch (`uname -n`)
     case bhmgidevapp01:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
-        ${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene >>& ${LOG}
-
+        #${MIRROR_WGET}/download_package ftp.ncbi.nih.gov.entrez_gene >>& ${LOG}
         breaksw
 endsw
 

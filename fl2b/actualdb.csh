@@ -14,8 +14,8 @@ touch $LOG
  
 date | tee -a $LOG
  
-#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
-#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

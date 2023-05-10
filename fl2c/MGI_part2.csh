@@ -37,8 +37,10 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 switch (`uname -n`)
     case bhmgiapp14ld:
     case bhmgidevapp01:
+    case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
+        ${MIRROR_WGET}/download_package alliancegenome.org.human_coordload
         #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
         breaksw
 endsw

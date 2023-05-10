@@ -31,13 +31,19 @@ ${PYTHON} vocproperty.py | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/table/VOC_Evidence_Property_truncate.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_Property_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/VOC_Evidence_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Evidence_Property_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a $LOG
 
 ${PG_DBUTILS}/bin/loadTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd VOC_Evidence_Property ${MGI_LIVE}/dbutils/mgidbmigration/wts2-1175/VOC_Evidence_Property.new "&"
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_Property_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/VOC_Evidence_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Evidence_Property_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from VOC_Evidence_Property;

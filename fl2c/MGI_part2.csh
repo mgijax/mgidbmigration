@@ -43,7 +43,11 @@ switch (`uname -n`)
         breaksw
 endsw
 
-# run mapview human coordinate deletes
+echo "running mapview human coordinate deletes" | tee -a $LOG
 ./mapview_delete.csh >>& ${LOG}
+
+echo "running the run new human coordinate load" | tee -a $LOG
+${HUMANCOORDLOAD}/bin/humancoordload.sh >>& $LOG
+
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

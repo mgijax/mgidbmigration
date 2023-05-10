@@ -38,6 +38,8 @@ order by a.accid
 
 EOSQL
 
+${MIRROR_WGET}/download_package bhmgiimsr01.jax.org.imsr_allStrains | tee -a $LOG
+
 cd ${PUBRPTS}
 source ./Configuration
 cd weekly

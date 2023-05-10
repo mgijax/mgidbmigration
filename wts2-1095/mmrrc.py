@@ -17,8 +17,7 @@ for mmrrcTo in inFile.readlines():
     mmrrcFrom = mmrrc[0]
     updateSQL = '''update ACC_Accession set accid = '%s', prefixpart = '%s', numericpart = null, _modifiedby_key = 1001, modification_date = now() where _logicaldb_key = 38 and accid = '%s';\n''' \
         % (mmrrcTo, mmrrcTo, mmrrcFrom)
-    print(updateSQL)
-    #db.sql(updateSQL, None)
-    #db.commit()
+    db.sql(updateSQL, None)
+    db.commit()
 inFile.close()
 

@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# Template
+# update MMRRC accession ids with those in mmrrc_catalog_data-2.txt
 #
 
 

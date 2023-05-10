@@ -24,7 +24,7 @@ rm -rf VOC_Evidence_Property.bcp
 rm -rf VOC_Evidence_Property.sort
 rm -rf VOC_Evidence_Property.new
 
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd VOC_Evidence_Property ${MGI_LIVE}/dbutils/mgidbmigration/wts2-1175/VOC_Evidence_Property.bcp "|"
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd VOC_Evidence_Property ${MGI_LIVE}/dbutils/mgidbmigration/wts2-1175/VOC_Evidence_Property.bcp "&"
 sort VOC_Evidence_Property.bcp > VOC_Evidence_Property.sort
 
 ${PYTHON} vocproperty.py | tee -a $LOG
@@ -34,7 +34,7 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_Property_drop.object | tee -a $L
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Evidence_Property_drop.object | tee -a $LOG
 
-${PG_DBUTILS}/bin/loadTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd VOC_Evidence_Property ${MGI_LIVE}/dbutils/mgidbmigration/wts2-1175/VOC_Evidence_Property.new "|"
+${PG_DBUTILS}/bin/loadTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd VOC_Evidence_Property ${MGI_LIVE}/dbutils/mgidbmigration/wts2-1175/VOC_Evidence_Property.new "&"
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_Evidence_Property_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/index/VOC_Evidence_Property_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Evidence_Property_create.object | tee -a $LOG

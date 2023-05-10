@@ -38,5 +38,10 @@ order by a.accid
 
 EOSQL
 
+cd ${PUBRPTS}
+source ./Configuration
+cd weekly
+${PYTHON} MGI_DiseaseModel.py | tee -a $LOG
+
 date |tee -a $LOG
 

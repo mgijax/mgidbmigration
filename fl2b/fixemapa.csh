@@ -40,7 +40,6 @@ and isr._emapa_term_key = t1._term_key
 ;
 
 select isr._resultstructure_key, isr._emapa_term_key, t1._vocab_key as badvoc, t1.term as term1, t2._vocab_key as goodvoc, t2._term_key, t2.term as term2
-into temp table toupdate
 from gxd_isresultstructure isr, voc_term t1, voc_term t2
 where isr._emapa_term_key = t1._term_key and t1._vocab_key = 91
 and t1.term = t2.term

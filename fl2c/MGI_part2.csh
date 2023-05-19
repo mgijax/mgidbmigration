@@ -45,11 +45,15 @@ switch (`uname -n`)
         breaksw
 endsw
 
-echo "running mapview human coordinate deletes" | tee -a $LOG
-./mapview_delete.csh >>& ${LOG}
+# commenting this out for now while testing the new load for coordinate comparison to mapview
+#echo "running mapview human coordinate deletes" | tee -a $LOG
+#./mapview_delete.csh >>& ${LOG}
 
 echo "running the run new human coordinate load" | tee -a $LOG
 ${HUMANCOORDLOAD}/bin/humancoordload.sh >>& $LOG
+
+echo "running mapview/alliance comparison report" | tee -a $LOG
+${PYTHON} ./HUM_Coord_Compare.py
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

@@ -90,7 +90,7 @@ resultsA = db.sql('''select m.symbol, m._marker_key,
     and f._object_key = m._marker_key
     order by symbol''', 'auto')
 
-fp.write('Human Symbol%sNCBI ID%saChr%saStart%saEnd%saStrand%saSize%smvNCBI ID%smvChr%smvStart%smvEnd%smvStrand%smvSize%s' % ( TAB, TAB, TAB, TAB, TAB, TAB, TAB, TAB, TAB,  TAB, TAB, TAB, CRT))
+fp.write('Human Symbol%sNCBI ID%saChr%saStart%saEnd%saStrand%saSize%smvChr%smvStart%smvEnd%smvStrand%smvSize%s' % ( TAB, TAB, TAB, TAB, TAB, TAB, TAB, TAB,  TAB, TAB, TAB, CRT))
 totalInMapview = 0
 matchCt = 0
 notMatchCt = 0

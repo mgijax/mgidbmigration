@@ -39,7 +39,7 @@ switch (`uname -n`)
     case bhmgidevapp01:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
-        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot >>& $LOG
         breaksw
 endsw
 

@@ -34,29 +34,29 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 date | tee -a ${LOG}
 echo 'Run Rollup Load' | tee -a ${LOG}
-${ROLLUPLOAD}/bin/rollupload.sh
+${ROLLUPLOAD}/bin/rollupload.sh >>& ${LOG}
 
 date | tee -a ${LOG}
 echo 'Load Sequence Cache tables' | tee -a ${LOG}
-${SEQCACHELOAD}/seqcoord.csh
-${SEQCACHELOAD}/seqdummy.csh
-${SEQCACHELOAD}/seqmarker.csh
-${SEQCACHELOAD}/seqprobe.csh
+${SEQCACHELOAD}/seqcoord.csh >>& ${LOG}
+${SEQCACHELOAD}/seqdummy.csh >>& ${LOG}
+${SEQCACHELOAD}/seqmarker.csh >>& ${LOG}
+${SEQCACHELOAD}/seqprobe.csh >>& ${LOG}
 
 date | tee -a ${LOG}
 echo 'Load Marker/Allele Cache tables' | tee -a ${LOG}
-${MRKCACHELOAD}/mrklabel.csh
-${MRKCACHELOAD}/mrkref.csh
-${MRKCACHELOAD}/mrklocation.csh
-${MRKCACHELOAD}/mrkprobe.csh
-${MRKCACHELOAD}/mrkmcv.csh
-${ALOMRKLOAD}/bin/alomrkload.sh
-${ALLCACHELOAD}/alllabel.csh
-${ALLCACHELOAD}/allelecombination.csh
-${MRKCACHELOAD}/mrkdo.csh
-${ALLCACHELOAD}/allstrain.csh
-${ALLCACHELOAD}/allelecrecache.csh
-${MGICACHELOAD}/bibcitation.csh
+${MRKCACHELOAD}/mrklabel.csh >>& ${LOG}
+${MRKCACHELOAD}/mrkref.csh >>& ${LOG}
+${MRKCACHELOAD}/mrklocation.csh >>& ${LOG}
+${MRKCACHELOAD}/mrkprobe.csh >>& ${LOG}
+${MRKCACHELOAD}/mrkmcv.csh >>& ${LOG}
+${ALOMRKLOAD}/bin/alomrkload.sh >>& ${LOG}
+${ALLCACHELOAD}/alllabel.csh >>& ${LOG}
+${ALLCACHELOAD}/allelecombination.csh >>& ${LOG}
+${MRKCACHELOAD}/mrkdo.csh >>& ${LOG}
+${ALLCACHELOAD}/allstrain.csh >>& ${LOG}
+${ALLCACHELOAD}/allelecrecache.csh >>& ${LOG}
+${MGICACHELOAD}/bibcitation.csh >>& ${LOG}
 
 date | tee -a ${LOG}
 echo '--- finished part 3' | tee -a $LOG

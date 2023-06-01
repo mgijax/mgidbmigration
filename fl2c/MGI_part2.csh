@@ -40,8 +40,8 @@ switch (`uname -n`)
     case bhmgiap09lt.jax.org:
         date | tee -a ${LOG}
         echo 'run mirror_wget downloads' | tee -a $LOG 
-        ${MIRROR_WGET}/download_package alliancegenome.org.human_coordload
-        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+        ${MIRROR_WGET}/download_package alliancegenome.org.human_coordload  >>& $LOG
+        #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot >>& ${LOG}
         breaksw
 endsw
 
@@ -53,7 +53,7 @@ echo "running the run new human coordinate load" | tee -a $LOG
 ${HUMANCOORDLOAD}/bin/humancoordload.sh >>& $LOG
 
 echo "running mapview/alliance comparison report" | tee -a $LOG
-${PYTHON} ./HUM_Coord_Compare.py
+${PYTHON} ./HUM_Coord_Compare.py  >>& $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 2' | tee -a ${LOG}

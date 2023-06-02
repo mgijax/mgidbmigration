@@ -33,6 +33,8 @@ date | tee -a ${LOG}
 
 rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 rm -rf ${DATADOWNLOADS}/go_noctua
+rm -rf ${DATALOAD}/go/gomousenoctua/input/noctua_mgi.gpad
+rm -rf ${DATALOAD}/go/gomousenoctua/input/noctua_pr.gpad
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.products
 cd ${DATADOWNLOADS}

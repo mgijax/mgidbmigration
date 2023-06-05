@@ -46,8 +46,8 @@ switch (`uname -n`)
 endsw
 
 # commenting this out for now while testing the new load for coordinate comparison to mapview
-#echo "running mapview human coordinate deletes" | tee -a $LOG
-#./mapview_delete.csh >>& ${LOG}
+echo "running mapview human coordinate deletes" | tee -a $LOG
+./mapview_delete.csh >>& ${LOG}
 
 echo "running the run new human coordinate load" | tee -a $LOG
 ${HUMANCOORDLOAD}/bin/humancoordload.sh >>& $LOG

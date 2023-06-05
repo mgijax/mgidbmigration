@@ -55,6 +55,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh >>& $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh >>& $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh >>& $LOG 
+${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_DLTemplate_View_create.object >>& $LOG 
 
 #
 # reconfig.sh:

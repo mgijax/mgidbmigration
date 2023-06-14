@@ -32,18 +32,19 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #
 # update schema-version and public-version
 #
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 >>& $LOG
+#06/14 done on production
+#date | tee -a ${LOG}
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 >>& $LOG
 #update MGI_dbinfo set schema_version = '6-0-20', public_version = 'MGI 6.13';
-drop sequence if exists gxd_antibodyclass_seq;
-drop sequence if exists gxd_embedding_seq;
-drop sequence if exists gxd_fixation_seq;
-drop sequence if exists gxd_gelcontrol_seq;
-drop sequence if exists gxd_label_seq;
-drop sequence if exists gxd_pattern_seq;
-drop sequence if exists gxd_visualization_seq;
-EOSQL
-date | tee -a ${LOG}
+#drop sequence if exists gxd_antibodyclass_seq;
+#drop sequence if exists gxd_embedding_seq;
+#drop sequence if exists gxd_fixation_seq;
+#drop sequence if exists gxd_gelcontrol_seq;
+#drop sequence if exists gxd_label_seq;
+#drop sequence if exists gxd_pattern_seq;
+#drop sequence if exists gxd_visualization_seq;
+#EOSQL
+#date | tee -a ${LOG}
 
 #
 # only run the ones needed per schema changes
@@ -62,7 +63,8 @@ date | tee -a ${LOG}
 #${PG_MGD_DBSCHEMADIR}/procedure/procedure_create.sh >>& $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_drop.sh >>& $LOG 
 #${PG_MGD_DBSCHEMADIR}/trigger/trigger_create.sh >>& $LOG 
-${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_DLTemplate_View_create.object >>& $LOG 
+#06/14 done on production
+#${PG_MGD_DBSCHEMADIR}/view/GXD_Assay_DLTemplate_View_create.object >>& $LOG 
 
 #
 # reconfig.sh:

@@ -22,8 +22,10 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
+# remove old bin scripts
 rm -rf ${MGI_LIVE}/bin/publishStrain
 rm -rf ${MGI_LIVE}/bin/runStrainQC
+# remove old inputs 
 rm -rf ${DATALOADSOUTPUT}/mgi/curatorstrainload/input/*
 
 #ls -l ${MGI_LIVE}/bin/publishStrain

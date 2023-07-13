@@ -23,13 +23,12 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
 # remove old bin scripts
-rm -rf ${MGI_LIVE}/bin/publishStrain
-rm -rf ${MGI_LIVE}/bin/runStrainQC
+rm -rf ${MGIBIN}/publishStrain
+rm -rf ${MGIBIN}/runStrainQC
 # remove old inputs 
 rm -rf ${DATALOADSOUTPUT}/mgi/curatorstrainload/input/*
 
-#ls -l ${MGI_LIVE}/bin/publishStrain
-#ls -l ${MGI_LIVE}/bin/runStrainQC
+ls -l ${MGIBIN}
 
 date |tee -a $LOG
 

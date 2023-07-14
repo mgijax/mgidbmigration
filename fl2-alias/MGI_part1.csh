@@ -37,8 +37,8 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias /mgi/all/wts2_projects/700/WTS2-795/MRK_Alias.bcp "|" >>& $LOG
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias ${MGI_LIVE}/dbutils/mgidbmigration/fl2-alias/MRK_Alias.bcp "|" >>& $LOG
 ./MRK_Alias.csh >>& $LOG
-cp MRK_Alias.csh /mgi/all/wts2_projects/700/WTS2-795
-cp MRK_Alias.csh.log /mgi/all/wts2_projects/700/WTS2-795
+cp MRK_Alias.csh /mgi/all/wts2_projects/700/WTS2-765
+cp MRK_Alias.csh.log /mgi/all/wts2_projects/700/WTS2-765
 
 date | tee -a ${LOG}
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

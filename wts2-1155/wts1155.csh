@@ -51,13 +51,19 @@ delete from mgi_user where login in (
 
 EOSQL
 
+#
 # mirror_wget
 # remove: ftp.geneontology.org.goload
 # remove: snapshot.geneontology.org.goload.noctua
-# add:  snapshot.geneontology.org.goload.annotations
+# add   : snapshot.geneontology.org.goload.annotations
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
+#
 
-${MIRROR_WGET} download_package snapshot.geneontology.org.goload.annotations
+${MIRROR_WGET}/download_package purl.obolibrary.org.pr
+${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+${MIRROR_WGET}/download_package ftp.geneontology.org.goload
+${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 
 cd /data/downloads
 rm -rf current.geneontology.org

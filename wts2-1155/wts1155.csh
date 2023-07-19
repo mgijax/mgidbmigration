@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# Template
+# wts2-1155/fl2-394/gorat
 #
 
 

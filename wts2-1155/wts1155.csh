@@ -3,6 +3,10 @@
 #
 # wts2-1155/fl2-394/gorat
 #
+# mirror_wget
+# goload
+# lib_py_report
+#
 
 
 if ( ${?MGICONFIG} == 0 ) then

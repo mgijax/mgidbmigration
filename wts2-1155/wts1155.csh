@@ -5,7 +5,11 @@
 #
 # mirror_wget
 # goload
+# reports_db
+#       daily/GO_gene_association.py
 # lib_py_report
+#       go_annot_extensions.py
+#
 #
 
 
@@ -91,6 +95,9 @@ delete from mgi_user where login in (
 )
 ;
 
+update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
+insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
+
 EOSQL
 
 #
@@ -133,6 +140,11 @@ rm -rf go_noctua
 ln -s go_noctua snapshot.geneontology.org/annotations
 
 ${GOLOAD}/go.sh | tee -a $LOG
+
+cd ${PUBRPTS}
+source ./Configuration
+cd daily
+${PYTHON} GO_gene_association.py | tee -a $LOG
 
 date |tee -a $LOG
 

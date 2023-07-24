@@ -5,6 +5,8 @@
 #
 # mirror_wget
 # goload
+# qcreports_db
+#       GO_EvidenceProperty.py, GO_stats.py (NOCTUA_ may no longer exist)
 # reports_db
 #       daily/GO_gene_association.py
 # lib_py_report
@@ -119,12 +121,20 @@ rm -rf snapshot.geneontology.org/products
 rm -rf go_noctua
 ln -s go_noctua snapshot.geneontology.org/annotations
 
+rm -rf ${DATALOADSOUTPUT}/go/*/input/*
+
 ${GOLOAD}/go.sh | tee -a $LOG
 
 cd ${PUBRPTS}
 source ./Configuration
 cd daily
 ${PYTHON} GO_gene_association.py | tee -a $LOG
+
+cd ${QCRPTS}
+source ./Configuration
+cd mgd
+${PYTHON} GO_EvidenceProperty.py
+${PYTHON} GO_stats.py
 
 date |tee -a $LOG
 

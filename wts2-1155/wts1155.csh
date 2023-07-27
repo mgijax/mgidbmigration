@@ -12,6 +12,8 @@
 # lib_py_report
 #       go_annot_extensions.py
 #
+# David:  review _vocab_key = 82 and remove any obsolete terms
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
@@ -135,6 +137,35 @@ source ./Configuration
 cd mgd
 ${PYTHON} GO_EvidenceProperty.py
 ${PYTHON} GO_stats.py
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+-- property terms that are no longer used; can be deleted from voc_term
+select v.*
+from VOC_Term v
+where v._vocab_key = 82
+and not exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
+where a._annottype_key = 1000 
+and a._annot_key = e._annot_key
+and e._annotevidence_key = p._annotevidence_key
+and p._propertyterm_key = v._term_key
+)
+order by t.term
+;
+
+-- property terms that are used
+select v.*
+from VOC_Term v
+where v._vocab_key = 82
+and exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
+where a._annottype_key = 1000 
+and a._annot_key = e._annot_key
+and e._annotevidence_key = p._annotevidence_key
+and p._propertyterm_key = v._term_key
+)
+order by t.term
+;
+
+EOSQL
 
 date |tee -a $LOG
 

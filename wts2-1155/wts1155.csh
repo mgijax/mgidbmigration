@@ -110,21 +110,29 @@ delete from mgi_user where login in ('NOCTUA_SynGO-UCL');
 delete from mgi_user where login in ('NOCTUA_WormBase');
 delete from mgi_user where login in ('NOCTUA_YuBioLab');
 delete from mgi_user where login in ('NOCTUA_HGNC-UCL');
-delete from mgi_user where login in ('GOA_RHEA');
 delete from mgi_user where login in ('NOCTUA_ComplexPortal');
 delete from mgi_user where login in ('NOCTUA_DisProt');
+delete from mgi_user where login in ('GOA_RHEA');
 
-select * from mgi_user where login like 'NOCTUA_%';
---NOCTUA_AgBase
---NOCTUA_SynGO
---NOCTUA_UniProt
---NOCTUA_MGI
---NOCTUA_WB
+select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
+--update mgi_user set login = 'AgBase', name = 'AgBase' where _user_key = 1577;
+--update mgi_user set login = 'SynGO', name = 'SynGO' where _user_key = 1595;
+--update mgi_user set login = 'UniProt', name = 'UniProt' where _user_key = 1597;
+--update mgi_user set login = 'MGI', name = 'MGI' where _user_key = 1599;
+--update mgi_user set login = 'WB', name = 'WB' where _user_key = 1612;
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
 
 EOSQL
+
+# remove obsolete output files
+rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
+rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
+rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
 
 #
 #
@@ -150,14 +158,6 @@ ln -s go_noctua snapshot.geneontology.org/annotations
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 
 ${GOLOAD}/go.sh | tee -a $LOG
-
-# remove obsolete output files
-rm -rf ${PUBREPORTDIR}/gene_association.mgi*
-rm -rf ${PUBREPORTDIR}/gene_association_nonoctua.mgi*
-rm -rf ${PUBREPORTDIR}/gene_association_nonoctua_pro.mgi*
-rm -rf ${PUBREPORTDIR}/gene_association_pro.mgi*
-rm -rf ${PUBREPORTDIR}/mgi.gpad*
-rm -rf ${PUBREPORTDIR}/mgi_nonoctua.gpad*
 
 # this report is obsolete
 #cd ${PUBRPTS}

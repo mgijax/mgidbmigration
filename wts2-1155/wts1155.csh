@@ -146,10 +146,19 @@ rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 
 ${GOLOAD}/go.sh | tee -a $LOG
 
-cd ${PUBRPTS}
-source ./Configuration
-cd daily
-${PYTHON} GO_gene_association.py | tee -a $LOG
+# remove obsolete output files
+rm -rf ${PUBREPORTDIR}/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/gene_association_nonoctua.mgi*
+rm -rf ${PUBREPORTDIR}/gene_association_nonoctua_pro.mgi*
+rm -rf ${PUBREPORTDIR}/gene_association_pro.mgi*
+rm -rf ${PUBREPORTDIR}/mgi.gpad*
+rm -rf ${PUBREPORTDIR}/mgi_nonoctua.gpad*
+
+# this report is obsolete
+#cd ${PUBRPTS}
+#source ./Configuration
+#cd daily
+#${PYTHON} GO_gene_association.py | tee -a $LOG
 
 cd ${QCRPTS}
 source ./Configuration

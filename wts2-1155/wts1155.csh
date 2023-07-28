@@ -50,71 +50,68 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-delete from mgi_user where login in (
-'dots_seqload',
-'dfci_seqload',
-'nia_seqload',
-'mkiaa_load',
-'nia_assocload',
-'snp_load',
-'dots_assocload',
-'dfci_assocload',
-'unists_nomenload',
-'unists_coordload',
-'mirbase_coordload',
-'mirbase_load',
-'qtl_coordload',
-'treefam_assocload',
-'gtlite_assocload',
-'roopenian-sts_coordload',
-'mousecyc_load',
-'gbpreprocessor',
-'gbgtfilter',
-'mousefunc_assocload',
-'gtblatpipeline',
-'tr9601dna_coordload',
-'tr9583micro_coordload',
-'tr9873mirbase_coordload',
-'tr9612_annotload',
-'mtoload',
-'genmapload',
-'trna_coordload',
-'orthology_load',
-'eurogenoannot_load',
-'mapviewload',
-'qtlarchiveload',
-'emapload',
-'rvload',
-'fearload',
-'uniprot_override_load',
-'omim_hpoload',
-'human_coordload',
-'NOCTUA_Alzheimers_University_of_Toronto',
-'NOCTUA_ARUK-UCL',
-'NOCTUA_BHF-UCL',
-'NOCTUA_CACAO',
-'NOCTUA_CAFA',
-'NOCTUA_DFLAT',
-'NOCTUA_dictyBase',
-'NOCTUA_FlyBase',
-'NOCTUA_GO_Central',
-'NOCTUA_GOC-OWL',
-'NOCTUA_HGNC',
-'NOCTUA_IntAct',
-'NOCTUA_NTNU_SB',
-'NOCTUA_ParkinsonsUK-UCL',
-'NOCTUA_PINC',
-'NOCTUA_Reactome',
-'NOCTUA_Roslin_Institute',
-'NOCTUA_SynGO-UCL',
-'NOCTUA_WormBase',
-'NOCTUA_YuBioLab',
-'NOCTUA_HGNC-UCL',
-'GOA_RHEA',
-'NOCTUA_ComplexPortal',
-'NOCTUA_DisProt'
-)
-;
+delete from mgi_user where login in ('dots_seqload');
+delete from mgi_user where login in ('dfci_seqload');
+delete from mgi_user where login in ('nia_seqload');
+delete from mgi_user where login in ('mkiaa_load');
+delete from mgi_user where login in ('nia_assocload');
+delete from mgi_user where login in ('snp_load');
+delete from mgi_user where login in ('dots_assocload');
+delete from mgi_user where login in ('dfci_assocload');
+delete from mgi_user where login in ('unists_nomenload');
+delete from mgi_user where login in ('unists_coordload');
+delete from mgi_user where login in ('mirbase_coordload');
+delete from mgi_user where login in ('mirbase_load');
+delete from mgi_user where login in ('qtl_coordload');
+delete from mgi_user where login in ('treefam_assocload');
+delete from mgi_user where login in ('gtlite_assocload');
+delete from mgi_user where login in ('roopenian-sts_coordload');
+delete from mgi_user where login in ('mousecyc_load');
+delete from mgi_user where login in ('gbpreprocessor');
+delete from mgi_user where login in ('gbgtfilter');
+delete from mgi_user where login in ('mousefunc_assocload');
+delete from mgi_user where login in ('gtblatpipeline');
+delete from mgi_user where login in ('tr9601dna_coordload');
+delete from mgi_user where login in ('tr9583micro_coordload');
+delete from mgi_user where login in ('tr9873mirbase_coordload');
+delete from mgi_user where login in ('tr9612_annotload');
+delete from mgi_user where login in ('mtoload');
+delete from mgi_user where login in ('genmapload');
+delete from mgi_user where login in ('trna_coordload');
+delete from mgi_user where login in ('orthology_load');
+delete from mgi_user where login in ('eurogenoannot_load');
+delete from mgi_user where login in ('mapviewload');
+delete from mgi_user where login in ('qtlarchiveload');
+delete from mgi_user where login in ('emapload');
+delete from mgi_user where login in ('rvload');
+delete from mgi_user where login in ('fearload');
+delete from mgi_user where login in ('uniprot_override_load');
+delete from mgi_user where login in ('omim_hpoload');
+delete from mgi_user where login in ('human_coordload');
+delete from mgi_user where login in ('NOCTUA_Alzheimers_University_of_Toronto');
+delete from mgi_user where login in ('NOCTUA_ARUK-UCL');
+delete from mgi_user where login in ('NOCTUA_BHF-UCL');
+delete from mgi_user where login in ('NOCTUA_CACAO');
+delete from mgi_user where login in ('NOCTUA_CAFA');
+delete from mgi_user where login in ('NOCTUA_DFLAT');
+delete from mgi_user where login in ('NOCTUA_dictyBase');
+delete from mgi_user where login in ('NOCTUA_FlyBase');
+delete from mgi_user where login in ('NOCTUA_GO_Central');
+delete from mgi_user where login in ('NOCTUA_GOC-OWL');
+delete from mgi_user where login in ('NOCTUA_HGNC');
+delete from mgi_user where login in ('NOCTUA_IntAct');
+delete from mgi_user where login in ('NOCTUA_NTNU_SB');
+delete from mgi_user where login in ('NOCTUA_ParkinsonsUK-UCL');
+delete from mgi_user where login in ('NOCTUA_PINC');
+delete from mgi_user where login in ('NOCTUA_Reactome');
+delete from mgi_user where login in ('NOCTUA_Roslin_Institute');
+delete from mgi_user where login in ('NOCTUA_SynGO-UCL');
+delete from mgi_user where login in ('NOCTUA_WormBase');
+delete from mgi_user where login in ('NOCTUA_YuBioLab');
+delete from mgi_user where login in ('NOCTUA_HGNC-UCL');
+delete from mgi_user where login in ('GOA_RHEA');
+delete from mgi_user where login in ('NOCTUA_ComplexPortal');
+delete from mgi_user where login in ('NOCTUA_DisProt');
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());

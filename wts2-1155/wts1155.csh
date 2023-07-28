@@ -4,11 +4,30 @@
 # wts2-1155/fl2-394/gorat
 #
 # mirror_wget
+#
 # goload
+#
 # qcreports_db
-#       GO_EvidenceProperty.py, GO_stats.py (NOCTUA_ may no longer exist)
+#       mgf/GO_EvidenceProperty.py
+#       mgf/GO_stats.py (NOCTUA_ may no longer exist)
+#       mgd/GO_PM2GeneRefsNotInMGI.py
+#       monthly/MRK_GOAnnot.py
+#       qcr.shtml:
+#               remove: QC: GOAMouse/invalid pubmedids (ln)
+#               keep  : QC: GOMouseNoctua/invalid pubmedids (ln)
 # reports_db
-#       daily/GO_gene_association.py
+#       remove: daily/GO_gene_association.py
+#
+#       GOC needs to make these:
+#       gene_association.mgi (GAF)
+#       gene_association_pro.mgi (GAF)
+#       mgi.gpad
+#
+#       become obsolete:
+#       gene_association_nonoctua.mgi (GAF)
+#       gene_association_nonoctua_pro.mgi (GAF)
+#       mgi_nonoctua.gpad
+#
 # lib_py_report
 #       go_annot_extensions.py
 #
@@ -138,7 +157,11 @@ cd mgd
 ${PYTHON} GO_EvidenceProperty.py
 ${PYTHON} GO_stats.py
 
+#
+# David:  review _vocab_key = 82 and remove any obsolete terms
+#
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
 -- property terms that are no longer used; can be deleted from voc_term
 select v.*
 from VOC_Term v

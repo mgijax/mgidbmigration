@@ -31,7 +31,8 @@
 # lib_py_report
 #       go_annot_extensions.py
 #
-# David:  review _vocab_key = 82 and remove any obsolete terms
+# 1. MGI_User.login; do we remove "NOCTUA_" from "NOCTUA_xxx" users?
+# 2. David:  review _vocab_key = 82 and remove any obsolete terms
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -112,6 +113,13 @@ delete from mgi_user where login in ('NOCTUA_HGNC-UCL');
 delete from mgi_user where login in ('GOA_RHEA');
 delete from mgi_user where login in ('NOCTUA_ComplexPortal');
 delete from mgi_user where login in ('NOCTUA_DisProt');
+
+select * from mgi_user where login like 'NOCTUA_%';
+--NOCTUA_AgBase
+--NOCTUA_SynGO
+--NOCTUA_UniProt
+--NOCTUA_MGI
+--NOCTUA_WB
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());

@@ -47,6 +47,23 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 #date | tee -a ${LOG}
 
 #
+# update schema-version and public-version
+# archive MRK_Alias 
+#
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias /mgi/all/wts2_projects/700/WTS2-795/MRK_Alias.bcp "|" >>& $LOG
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias ${MGI_LIVE}/dbutils/mgidbmigration/fl2-alias/MRK_Alias.bcp "|" >>& $LOG
+./MRK_Alias.csh >>& $LOG
+cp MRK_Alias.csh /mgi/all/wts2_projects/700/WTS2-765
+cp MRK_Alias.csh.log /mgi/all/wts2_projects/700/WTS2-765
+
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table mgd.MRK_Alias CASCADE;
+drop view if exists mgd.MRK_Alias_View CASCADE;
+EOSQL
+date | tee -a ${LOG}
+
+#
 # only run the ones needed per schema changes
 #
 #date | tee -a ${LOG}
@@ -92,10 +109,10 @@ ${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh >>& $LOG
 # rebuild the java dla, if needed due to schema changes
 # this can be commented out if not necessary
 #
-#${MGI_JAVALIB}/lib_java_core/Install >>& $LOG
-#${MGI_JAVALIB}/lib_java_dbsmgd/Install >>& $LOG
-#${MGI_JAVALIB}/lib_java_dbsrdr/Install >>& $LOG
-#${MGI_JAVALIB}/lib_java_dla/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_core/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_dbsmgd/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_dbsrdr/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_dla/Install >>& $LOG
 
 date | tee -a ${LOG}
 echo '--- finished part 1' | tee -a ${LOG}

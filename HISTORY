@@ -1,7 +1,9 @@
+TAG: mgidbmigration-6-0-22-43
 TAG: mgidbmigration-6-0-22-42
 DATE: 08/02/2023
 STAFF: lec
 wts2-765/fl2-222/Remove mrk_alias table: backend components
+fl2-alias copied to fl2c folder
 
 TAG: mgidbmigration-6-0-22-41
 TAG: mgidbmigration-6-0-22-40

@@ -32,7 +32,8 @@
 #       go_annot_extensions.py
 #
 # 1. MGI_User.login; do we remove "NOCTUA_" from "NOCTUA_xxx" users?
-# 2. David:  review _vocab_key = 82 and remove any obsolete terms
+# 2. David: review _vocab_key = 82 and remove any obsolete terms
+# 3. David: change description for GO_REF references at MGI and at GO
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -50,6 +51,12 @@ touch $LOG
 date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+-- GO_REF references
+select a2.jnumid, a1.accid, a2.short_citation 
+from acc_accession a1, bib_citation_cache a2 
+where a1.accid like ('GO_REF%') and a1._object_key = a2._refs_key
+;
 
 delete from mgi_user where login in ('dots_seqload');
 delete from mgi_user where login in ('dfci_seqload');

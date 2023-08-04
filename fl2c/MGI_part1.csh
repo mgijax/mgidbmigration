@@ -50,18 +50,20 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 # update schema-version and public-version
 # archive MRK_Alias 
 #
+rm -rf /mgi/all/wts2_projects/700/WTS2-795/*
+rm -rf ${MGI_LIVE}/dbutils/mgidbmigration/fl2c/MRK_Alias.bcp
 ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias /mgi/all/wts2_projects/700/WTS2-795/MRK_Alias.bcp "|" >>& $LOG
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias ${MGI_LIVE}/dbutils/mgidbmigration/fl2/MRK_Alias.bcp "|" >>& $LOG
+${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias ${MGI_LIVE}/dbutils/mgidbmigration/fl2c/MRK_Alias.bcp "|" >>& $LOG
 ./MRK_Alias.csh >>& $LOG
 cp MRK_Alias.csh /mgi/all/wts2_projects/700/WTS2-765
 cp MRK_Alias.csh.log /mgi/all/wts2_projects/700/WTS2-765
 
-date | tee -a ${LOG}
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-drop table mgd.MRK_Alias CASCADE;
-drop view if exists mgd.MRK_Alias_View CASCADE;
-EOSQL
-date | tee -a ${LOG}
+#date | tee -a ${LOG}
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#drop table mgd.MRK_Alias CASCADE;
+#drop view if exists mgd.MRK_Alias_View CASCADE;
+#EOSQL
+#date | tee -a ${LOG}
 
 #
 # only run the ones needed per schema changes

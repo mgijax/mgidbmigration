@@ -58,12 +58,12 @@ ${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd MRK_Alias 
 cp MRK_Alias.csh /mgi/all/wts2_projects/700/WTS2-765
 cp MRK_Alias.csh.log /mgi/all/wts2_projects/700/WTS2-765
 
-#date | tee -a ${LOG}
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#drop table mgd.MRK_Alias CASCADE;
-#drop view if exists mgd.MRK_Alias_View CASCADE;
-#EOSQL
-#date | tee -a ${LOG}
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table mgd.MRK_Alias CASCADE;
+drop view if exists mgd.MRK_Alias_View CASCADE;
+EOSQL
+date | tee -a ${LOG}
 
 #
 # only run the ones needed per schema changes

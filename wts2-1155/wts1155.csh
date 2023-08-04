@@ -6,6 +6,10 @@
 # mirror_wget
 #
 # goload
+#       gomousenoctua.py: : change from 
+#
+#       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
+#       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
 # qcreports_db
 #       mgf/GO_EvidenceProperty.py

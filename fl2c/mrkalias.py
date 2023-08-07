@@ -73,7 +73,7 @@ ACC_Accession a1, ACC_Accession a2
 where a._alias_key = m1._marker_key
 and a._marker_key = m2._marker_key
 and m1._marker_type_key in (1,7,9,10)
-and m2._marker_type_key in (2,8)
+and m2._marker_type_key in (2,3,8)
 and m1._marker_key = mcv1._marker_key
 and mcv1.qualifier = 'D'
 and m2._marker_key = mcv2._marker_key

@@ -21,6 +21,7 @@ PAGE = reportlib.PAGE
 
 db.sql('update mrk_alias set _marker_key = 1477664 where _marker_key = 18476', None)
 db.sql('update mrk_alias set _alias_key = 1477664 where _alias_key = 18476', None)
+#db.sql('insert into mrk_alias values (387770,5045,now(),now())', None)
 db.commit()
 
 fp = reportlib.init(sys.argv[0], printHeading = None)
@@ -31,22 +32,22 @@ fp.write('''
 This report lists MGI-curated relationships between STS markers and genome features (genes, pseudogenes, other genome features, etc.).  Coordinates listed reflect the coordinates in MGI at the time the report was created (from mouse genome build GRCm39).
 ''' + 2*CRT)
 
-fp.write('GF MGI ID (genome feature ID)' + TAB)
-fp.write('Genome Feature (genome feature symbol)' + TAB)
-fp.write('GF Type (genome feature marker type)' + TAB)
-fp.write('GF chr (genome feature chromosome)' + TAB)
-fp.write('GF start coordinate (genome feature start coordinate - GRCm39)' + TAB)
-fp.write('GF end coordinate (genome feature end coordinate - GRCm39)' + TAB)
-fp.write('GF strand (genome feature strand - GRCm39)' + TAB)
-fp.write('GF cytogenetic offset (genome feature cytogenetic offset)' + TAB)
-fp.write('GF CM offset (genome feature centimorgan offset)' + TAB)
-fp.write('STS MGI ID (STS marker ID)' + TAB)
-fp.write('STS (STS marker symbol)' + TAB)
-fp.write('STS chr (STS marker chromosome)' + TAB)
-fp.write('STS start coordinate (STS marker start coordinate)' + TAB)
-fp.write('STS end coordinate (STS marker end coordinate)' + TAB)
-fp.write('STS cytogenetic offset (STS marker cytogenetic offset)' + TAB)
-fp.write('STS CM offset (STS marker centimorgan offset)' + CRT)
+fp.write('GF MGI ID' + TAB)
+fp.write('GF symbol' + TAB)
+fp.write('GF type' + TAB)
+fp.write('GF chr' + TAB)
+fp.write('GF start coordinate (genome build: GRCm39)' + TAB)
+fp.write('GF end coordinate (genome build: GRCm39)' + TAB)
+fp.write('GF strand' + TAB)
+fp.write('GF cytogenetic offset' + TAB)
+fp.write('GF CM offset' + TAB)
+fp.write('STS MGI ID' + TAB)
+fp.write('STS symbol' + TAB)
+fp.write('STS chr' + TAB)
+fp.write('STS start coordinate (genome build: GRCm39)' + TAB)
+fp.write('STS end coordinate (genome build: GRCm39)' + TAB)
+fp.write('STS cytogenetic offset' + TAB)
+fp.write('STS CM offset' + CRT)
 
 cmd = '''
 select 
@@ -61,7 +62,6 @@ l1.cytogeneticoffset as cyto1,
 l1.cmoffset as cm1, 
 a2.accid as accid2, 
 m2.symbol as symbol2, 
-mcv2.directterms as directterms2, 
 l2.chromosome as chr2, 
 l2.startcoordinate as s2, 
 l2.endcoordinate as e2, 
@@ -132,7 +132,6 @@ for r in results:
 
     fp.write(r['accid2'] + TAB)
     fp.write(r['symbol2'] + TAB)
-    fp.write(r['directterms2'] + TAB)
     fp.write(r['chr2'] + TAB)
 
     if r['s2'] != None:

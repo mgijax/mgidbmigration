@@ -65,7 +65,6 @@ m2.symbol as symbol2,
 l2.chromosome as chr2, 
 l2.startcoordinate as s2, 
 l2.endcoordinate as e2, 
-l2.strand as strand2, 
 l2.cytogeneticoffset as cyto2, 
 l2.cmoffset as cm2
 from MRK_Alias a, MRK_Marker m1, MRK_Marker m2, MRK_MCV_Cache mcv1, MRK_MCV_Cache mcv2, MRK_Location_Cache l1, MRK_Location_Cache l2,
@@ -140,10 +139,6 @@ for r in results:
 
     if r['e2'] != None:
         fp.write(str(r['e2']))
-    fp.write(TAB)
-
-    if r['strand2'] != None:
-        fp.write(str(r['strand2']))
     fp.write(TAB)
 
     if r['cyto2'] != None:

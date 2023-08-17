@@ -131,12 +131,12 @@ EOSQL
 #
 #
 # mirror_wget
+# remove: ftp.geneontology.org.external2go
 # remove: ftp.geneontology.org.goload
 # remove: snapshot.geneontology.org.goload.noctua
 # add   : snapshot.geneontology.org.goload.annotations
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
 #
-
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
@@ -155,7 +155,9 @@ rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
+#
 # delete all GO annotations
+#
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -165,6 +167,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
 
 #${GOLOAD}/go.sh | tee -a $LOG
+
 ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
 # remove obsolete output files

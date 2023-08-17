@@ -81,7 +81,7 @@ select a2.jnumid, a1.accid, a2.short_citation
 from acc_accession a1, bib_citation_cache a2 
 where a1._logicaldb_key = 185
 and a1.prefixpart = 'GO_REF:'
-and a2._object_key = a2._refs_key
+and a1._object_key = a2._refs_key
 ;
 
 delete from mgi_user where login in ('dots_seqload');
@@ -121,7 +121,6 @@ delete from mgi_user where login in ('rvload');
 delete from mgi_user where login in ('fearload');
 delete from mgi_user where login in ('uniprot_override_load');
 delete from mgi_user where login in ('omim_hpoload');
-delete from mgi_user where login in ('human_coordload');
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
@@ -137,16 +136,19 @@ EOSQL
 # add   : snapshot.geneontology.org.goload.annotations
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
 #
-${MIRROR_WGET}/download_package purl.obolibrary.org.pr
-${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
-${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
-${MIRROR_WGET}/download_package ftp.geneontology.org.goload
-${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 
 cd /data/downloads
 rm -rf current.geneontology.org
 rm -rf snapshot.geneontology.org/products
 rm -rf go_translation
+
+${MIRROR_WGET}/download_package purl.obolibrary.org.pr
+${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+${MIRROR_WGET}/download_package ftp.geneontology.org.goload
+${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
+${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.products
+
 rm -rf go_noctua
 ln -s go_noctua snapshot.geneontology.org/annotations
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot

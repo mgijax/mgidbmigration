@@ -128,15 +128,6 @@ insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_
 
 EOSQL
 
-# delete all GO annotations
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from voc_annot where _annottype_key = 1000;
-EOSQL
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
-
 #
 #
 # mirror_wget
@@ -163,6 +154,15 @@ scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
+
+# delete all GO annotations
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+delete from voc_annot where _annottype_key = 1000;
+EOSQL
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
 
 #${GOLOAD}/go.sh | tee -a $LOG
 ${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG

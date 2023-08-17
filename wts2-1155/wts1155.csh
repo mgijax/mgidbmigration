@@ -32,6 +32,14 @@
 #       gene_association_nonoctua_pro.mgi (GAF)
 #       mgi_nonoctua.gpad
 #
+# mgicacheload
+#       inferredfrom.goahumanload : remove
+#       inferredfrom.goratload    : remove
+#       inferredfrom.gomousenoctua: change "NOCTUA"%" to "GO_Central"
+#       inferredfrom.goaload
+#       inferredfrom.gocfpload
+#       inferredfrom.gorefgenload
+#
 # lib_py_report
 #       go_annot_extensions.py
 #
@@ -104,6 +112,63 @@ delete from mgi_user where login in ('human_coordload');
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
+
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1446; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1447; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1448; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1450; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1458; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1470; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1471;
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1509; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1517; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1531; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1532; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1533; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1534; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1544; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1545; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1546; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1551; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1562;
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1564; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1565; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1566; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1568; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1577; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1578; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1579; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1580; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1581; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1582; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1583;
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1584; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1585; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1586; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1587; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1588; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1589; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1590; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1591; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1592; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1593; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1594;
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1595; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1596; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1597; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1598; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1599; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1606; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1607; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1611; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1612; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1614; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1615;
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1622; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1624; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1625; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1633; 
+update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1634;
 
 EOSQL
 

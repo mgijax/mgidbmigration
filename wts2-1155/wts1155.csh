@@ -82,7 +82,9 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- GO_REF references
 select a2.jnumid, a1.accid, a2.short_citation 
 from acc_accession a1, bib_citation_cache a2 
-where a1.accid like ('GO_REF%') and a1._object_key = a2._refs_key
+where a1._logicaldb_key = 185
+and a1.prefixpart = 'GO_REF:'
+and a2._object_key = a2._refs_key
 ;
 
 delete from mgi_user where login in ('dots_seqload');
@@ -156,13 +158,14 @@ rm -rf snapshot.geneontology.org/products
 rm -rf go_translation
 rm -rf go_noctua
 ln -s go_noctua snapshot.geneontology.org/annotations
+scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
-${GOLOAD}/go.sh | tee -a $LOG
-#${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
+#${GOLOAD}/go.sh | tee -a $LOG
+${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
 
 # remove obsolete output files
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*

@@ -3,11 +3,13 @@
 #
 # wts2-1155/fl2-394/gorat
 #
-# mirror_wget
+# mirror_wget : remove
+#       ftp.geneontology.org.external2go
+#       snapshot.geneontology.org.goload
+#       snapshot.geneontology.org.goload.noctua
 #
 # goload
-#       gomousenoctua.py: : change from 
-#
+#       gomousenoctua.py:
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
@@ -40,11 +42,20 @@
 #       inferredfrom.gocfpload
 #       inferredfrom.gorefgenload
 #
+# uniprotload: remove
+#       makeGOAnnot.sh
+#       makeGOAnnot.py
+#       goecannot.config.default
+#       goipannot.config.default
+#       gospkwannot.config.default
+#       /data/downloads/go_translation
+#       /data/downloads/current.geneontology.org/ontology/external2go
+#
 # lib_py_report
 #       go_annot_extensions.py
 #
 # 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
-#       leave only "GO_Central"
+#       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
 # 3. David: change description for GO_REF references at MGI and at GO
 #
@@ -63,6 +74,9 @@ touch $LOG
  
 date | tee -a $LOG
  
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_drop.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- GO_REF references
@@ -113,72 +127,13 @@ delete from mgi_user where login in ('human_coordload');
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1446; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1447; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1448; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1450; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1458; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1470; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1471;
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1509; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1517; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1531; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1532; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1533; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1534; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1544; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1545; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1546; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1551; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1562;
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1564; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1565; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1566; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1568; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1577; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1578; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1579; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1580; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1581; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1582; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1583;
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1584; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1585; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1586; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1587; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1588; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1589; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1590; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1591; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1592; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1593; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1594;
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1595; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1596; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1597; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1598; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1599; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1606; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1607; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1611; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1612; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1614; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1615;
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1622; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1624; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1625; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1633; 
-update VOC_Evidence set _createdby_key = 1539 where _createdby_key = 1634;
+-- delete all GO Annotations
+delete from voc_annot where _annottype_key = 1000;
 
 EOSQL
 
-# remove obsolete output files
-rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
-rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
-rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
-rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
-rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
-rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_create.object | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
 
 #
 #
@@ -198,12 +153,24 @@ ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 cd /data/downloads
 rm -rf current.geneontology.org
 rm -rf snapshot.geneontology.org/products
+rm -rf go_translation
 rm -rf go_noctua
 ln -s go_noctua snapshot.geneontology.org/annotations
 
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
+rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
+rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 ${GOLOAD}/go.sh | tee -a $LOG
+#${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
+
+# remove obsolete output files
+rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
+rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
+rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
 
 # this report is obsolete
 #cd ${PUBRPTS}
@@ -251,7 +218,8 @@ order by t.term
 -- remove NOCTUA_ and GOA_ users; only GO_Central should be left
 select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
 delete from mgi_user where login like 'NOCTUA_%';
-delete from mgi_user where login like 'GOA_%';
+--keep; still used by other go loads
+--delete from mgi_user where login like 'GOA_%';
 select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
 
 EOSQL

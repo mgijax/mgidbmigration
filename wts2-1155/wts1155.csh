@@ -35,7 +35,8 @@
 # lib_py_report
 #       go_annot_extensions.py
 #
-# 1. MGI_User.login; do we remove "NOCTUA_" from "NOCTUA_xxx" users?
+# 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
+#       leave only "GO_Central"
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
 # 3. David: change description for GO_REF references at MGI and at GO
 #
@@ -100,37 +101,6 @@ delete from mgi_user where login in ('fearload');
 delete from mgi_user where login in ('uniprot_override_load');
 delete from mgi_user where login in ('omim_hpoload');
 delete from mgi_user where login in ('human_coordload');
-delete from mgi_user where login in ('NOCTUA_Alzheimers_University_of_Toronto');
-delete from mgi_user where login in ('NOCTUA_ARUK-UCL');
-delete from mgi_user where login in ('NOCTUA_BHF-UCL');
-delete from mgi_user where login in ('NOCTUA_CACAO');
-delete from mgi_user where login in ('NOCTUA_CAFA');
-delete from mgi_user where login in ('NOCTUA_DFLAT');
-delete from mgi_user where login in ('NOCTUA_dictyBase');
-delete from mgi_user where login in ('NOCTUA_FlyBase');
-delete from mgi_user where login in ('NOCTUA_GO_Central');
-delete from mgi_user where login in ('NOCTUA_GOC-OWL');
-delete from mgi_user where login in ('NOCTUA_HGNC');
-delete from mgi_user where login in ('NOCTUA_IntAct');
-delete from mgi_user where login in ('NOCTUA_NTNU_SB');
-delete from mgi_user where login in ('NOCTUA_ParkinsonsUK-UCL');
-delete from mgi_user where login in ('NOCTUA_PINC');
-delete from mgi_user where login in ('NOCTUA_Reactome');
-delete from mgi_user where login in ('NOCTUA_Roslin_Institute');
-delete from mgi_user where login in ('NOCTUA_SynGO-UCL');
-delete from mgi_user where login in ('NOCTUA_WormBase');
-delete from mgi_user where login in ('NOCTUA_YuBioLab');
-delete from mgi_user where login in ('NOCTUA_HGNC-UCL');
-delete from mgi_user where login in ('NOCTUA_ComplexPortal');
-delete from mgi_user where login in ('NOCTUA_DisProt');
-delete from mgi_user where login in ('GOA_RHEA');
-
-select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
---update mgi_user set login = 'AgBase', name = 'AgBase' where _user_key = 1577;
---update mgi_user set login = 'SynGO', name = 'SynGO' where _user_key = 1595;
---update mgi_user set login = 'UniProt', name = 'UniProt' where _user_key = 1597;
---update mgi_user set login = 'MGI', name = 'MGI' where _user_key = 1599;
---update mgi_user set login = 'WB', name = 'WB' where _user_key = 1612;
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
@@ -212,6 +182,12 @@ and p._propertyterm_key = v._term_key
 )
 order by t.term
 ;
+
+-- remove NOCTUA_ and GOA_ users; only GO_Central should be left
+select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
+delete from mgi_user where login like 'NOCTUA_%';
+delete from mgi_user where login like 'GOA_%';
+select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
 
 EOSQL
 

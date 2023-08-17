@@ -13,6 +13,8 @@
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
+#       proteincomplex.sh : remove
+#
 # qcreports_db
 #       mgf/GO_EvidenceProperty.py
 #       mgf/GO_stats.py (NOCTUA_ may no longer exist)
@@ -150,23 +152,15 @@ ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.products
 
 rm -rf go_noctua
-ln -s go_noctua snapshot.geneontology.org/annotations
+ln -s ./snapshot.geneontology.org/annotations go_noctua
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
+rm -rf ${DATALOADSOUTPUT}/go/goahuman
+rm -rf ${DATALOADSOUTPUT}/go/gorat
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
+rm -rf ${DATALOADSOUTPUT}/go/godaily.log
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
-
-#
-# delete all GO annotations
-#
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_drop.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object | tee -a $LOG
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-delete from voc_annot where _annottype_key = 1000;
-EOSQL
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Annot_create.object | tee -a $LOG
-${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object | tee -a $LOG
 
 #${GOLOAD}/go.sh | tee -a $LOG
 

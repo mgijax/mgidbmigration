@@ -141,7 +141,7 @@ EOSQL
 
 cd /data/downloads
 rm -rf current.geneontology.org
-rm -rf snapshot.geneontology.org/products
+rm -rf snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 rm -rf go_translation
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr

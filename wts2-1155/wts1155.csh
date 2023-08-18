@@ -23,6 +23,7 @@
 #       qcr.shtml:
 #               remove: QC: GOAMouse/invalid pubmedids (ln)
 #               keep  : QC: GOMouseNoctua/invalid pubmedids (ln)
+#
 # reports_db
 #       remove: daily/GO_gene_association.py
 #
@@ -70,13 +71,9 @@ source ${MGICONFIG}/master.config.csh
 
 cd `dirname $0`
 
-setenv LOG $0.log
-rm -rf $LOG
-touch $LOG
+date
  
-date | tee -a $LOG
- 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
 -- GO_REF references
 select a2.jnumid, a1.accid, a2.short_citation 
@@ -140,8 +137,9 @@ EOSQL
 #
 
 cd /data/downloads
+rm -rf go_noctua
 rm -rf current.geneontology.org
-rm -rf snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
+rm -rf snapshot.geneontology.org
 rm -rf go_translation
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
@@ -151,7 +149,6 @@ ${MIRROR_WGET}/download_package ftp.geneontology.org.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.products
 
-rm -rf go_noctua
 ln -s ./snapshot.geneontology.org/annotations go_noctua
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
@@ -162,9 +159,9 @@ rm -rf ${DATALOADSOUTPUT}/go/godaily.log
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
-#${GOLOAD}/go.sh | tee -a $LOG
+${GOLOAD}/go.sh 
 
-${UNIPROTLOAD}/bin/uniprotload.sh | tee -a $LOG
+${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # remove obsolete output files
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
@@ -178,7 +175,7 @@ rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
 #cd ${PUBRPTS}
 #source ./Configuration
 #cd daily
-#${PYTHON} GO_gene_association.py | tee -a $LOG
+#${PYTHON} GO_gene_association.py 
 
 cd ${QCRPTS}
 source ./Configuration
@@ -189,7 +186,7 @@ ${PYTHON} GO_stats.py
 #
 # David:  review _vocab_key = 82 and remove any obsolete terms
 #
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
 -- property terms that are no longer used; can be deleted from voc_term
 select v.*
@@ -226,5 +223,5 @@ select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order b
 
 EOSQL
 
-date |tee -a $LOG
+date 
 

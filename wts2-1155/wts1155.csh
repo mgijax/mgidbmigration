@@ -152,12 +152,15 @@ rm -rf ${DATALOADSOUTPUT}/go/goahuman
 rm -rf ${DATALOADSOUTPUT}/go/gorat
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 rm -rf ${DATALOADSOUTPUT}/go/godaily.log
+rm -rf ${DATALOADSOUTPUT}/go/lastrun
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 ${GOLOAD}/go.sh 
 
 ${UNIPROTLOAD}/bin/uniprotload.sh 
+
+exit 0
 
 # remove obsolete output files
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*

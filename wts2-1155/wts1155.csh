@@ -23,6 +23,7 @@
 #       qcr.shtml:
 #               remove: QC: GOAMouse/invalid pubmedids (ln)
 #               keep  : QC: GOMouseNoctua/invalid pubmedids (ln)
+#               remove: Data Loads:  GOA/Human Load, GOA/Rat Load
 #
 # reports_db
 #       remove: daily/GO_gene_association.py
@@ -137,10 +138,7 @@ EOSQL
 #
 
 cd /data/downloads
-rm -rf go_noctua
-rm -rf current.geneontology.org
-rm -rf snapshot.geneontology.org
-rm -rf go_translation
+rm -rf go_noctua go_translation current.geneontology.org snapshot.geneontology.org
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
@@ -148,7 +146,6 @@ ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.products
 
-ln -s ./snapshot.geneontology.org/annotations go_noctua
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 rm -rf ${DATALOADSOUTPUT}/go/goahuman

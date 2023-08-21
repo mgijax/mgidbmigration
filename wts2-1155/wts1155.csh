@@ -7,11 +7,9 @@
 #
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
+#       ftp.ebi.ac.uk.goload
 #       snapshot.geneontology.org.goload
 #       snapshot.geneontology.org.goload.noctua
-#
-#       soon:
-#       ftp.ebi.ac.uk.goload
 #
 # goload
 #       gomousenoctua.py:
@@ -19,6 +17,12 @@
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
 #       proteincomplex.sh : remove
+#
+# annotload : changing isGOmouseNoctua -> isGO
+#       isGO       : remove
+#       isGOAmouse : remove
+#       isGOAhuman : remove
+#       isGOrat    : remove
 #
 # qcreports_db
 #       mgf/GO_EvidenceProperty.py
@@ -46,10 +50,10 @@
 # mgicacheload
 #       inferredfrom.goahumanload : remove
 #       inferredfrom.goratload    : remove
-#       inferredfrom.gomousenoctua: change "NOCTUA"%" to "GO_Central"
 #       inferredfrom.goaload
 #       inferredfrom.gocfpload
 #       inferredfrom.gorefgenload
+#       inferredfrom.gomousenoctua -> inferredfrom.go && change "NOCTUA"%" to "GO_Central"
 #
 # uniprotload: remove
 #       makeGOAnnot.sh
@@ -67,6 +71,8 @@
 #       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
 # 3. David: change description for GO_REF references at MGI and at GO
+# 4. Do we need this logic in annotload:
+#        # delete any go-annotations that are using withdrawn markers
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -129,6 +135,7 @@ delete from mgi_user where login in ('omim_hpoload');
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
+
 EOSQL
 
 #
@@ -148,13 +155,20 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object
 # mirror_wget
 # remove: ftp.geneontology.org.external2go
 # remove: ftp.geneontology.org.goload
+# remove: ftp.ebi.ac.uk.goload
 # remove: snapshot.geneontology.org.goload.noctua
 # add   : snapshot.geneontology.org.goload.annotations
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
 #
 
-cd /data/downloads
-rm -rf go_noctua go_translation current.geneontology.org snapshot.geneontology.org
+rm -rf ${DATADOWNLOADS}/go_noctua 
+rm -rf ${DATADOWNLOADS}/go_translation 
+rm -rf ${DATADOWNLOADS}/go_translation 
+rm -rf ${DATADOWNLOADS}/go_gene_assoc
+rm -rf ${DATADOWNLOADS}/goa
+rm -rf ${DATADOWNLOADS}/current.geneontology.org 
+rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
+rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
@@ -165,16 +179,16 @@ scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 rm -rf ${DATALOADSOUTPUT}/go/goahuman
 rm -rf ${DATALOADSOUTPUT}/go/gorat
-#rm -rf ${DATALOADSOUTPUT}/go/goamouse
-#rm -rf ${DATALOADSOUTPUT}/go/gocfp
-#rm -rf ${DATALOADSOUTPUT}/go/gorefgen
+rm -rf ${DATALOADSOUTPUT}/go/goamouse
+rm -rf ${DATALOADSOUTPUT}/go/gocfp
+rm -rf ${DATALOADSOUTPUT}/go/gorefgen
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 rm -rf ${DATALOADSOUTPUT}/go/godaily.log
 rm -rf ${DATALOADSOUTPUT}/go/lastrun
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
-${GOLOAD}/go.sh 
+#${GOLOAD}/go.sh 
 
 ${UNIPROTLOAD}/bin/uniprotload.sh 
 

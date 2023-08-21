@@ -3,10 +3,15 @@
 #
 # wts2-1155/fl2-394/gorat
 #
+# per David/Cindy : move *all* before we push to production
+#
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
 #       snapshot.geneontology.org.goload
 #       snapshot.geneontology.org.goload.noctua
+#
+#       soon:
+#       ftp.ebi.ac.uk.goload
 #
 # goload
 #       gomousenoctua.py:
@@ -124,8 +129,19 @@ delete from mgi_user where login in ('omim_hpoload');
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
-
 EOSQL
+
+#
+# set all GO annotations = GO_Central (1539)
+# the goload will delete them later
+#
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
+select _Annot_key into temp toUpdate from VOC_Annot where _AnnotType_key = 1000 ;
+create index td_idx1 on toUpdate(_Annot_key);
+update voc_evidence e set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate t where t._annot_key = e._annot_key;
+EOSQL
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object
 
 #
 #
@@ -144,12 +160,14 @@ ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
-${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.products
 
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
 rm -rf ${DATALOADSOUTPUT}/go/goahuman
 rm -rf ${DATALOADSOUTPUT}/go/gorat
+#rm -rf ${DATALOADSOUTPUT}/go/goamouse
+#rm -rf ${DATALOADSOUTPUT}/go/gocfp
+#rm -rf ${DATALOADSOUTPUT}/go/gorefgen
 rm -rf ${DATALOADSOUTPUT}/go/*/input/*
 rm -rf ${DATALOADSOUTPUT}/go/godaily.log
 rm -rf ${DATALOADSOUTPUT}/go/lastrun

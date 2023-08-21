@@ -27,6 +27,8 @@
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
+# Do we need this logic in annotload:
+#        # delete any go-annotations that are using withdrawn markers
 #
 # qcreports_db
 #       mgf/GO_EvidenceProperty.py
@@ -75,8 +77,6 @@
 #       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
 # 3. David: change description for GO_REF references at MGI and at GO
-# 4. Do we need this logic in annotload:
-#        # delete any go-annotations that are using withdrawn markers
 #
 
 if ( ${?MGICONFIG} == 0 ) then

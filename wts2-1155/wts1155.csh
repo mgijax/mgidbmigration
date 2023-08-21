@@ -5,6 +5,10 @@
 #
 # per David/Cindy : move *all* before we push to production
 #
+# loadadmin:
+#       dailytasks.csh:${GOLOAD}/godaily.sh -> ${GOLOAD}/bin/go.sh
+#       sundaytasks.csh:${GOLOAD}/go.sh -> ${GOLOAD}/bin/go.sh
+#
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
 #       ftp.ebi.ac.uk.goload
@@ -182,7 +186,7 @@ rm -rf ${DATALOADSOUTPUT}/go/gorat
 rm -rf ${DATALOADSOUTPUT}/go/goamouse
 rm -rf ${DATALOADSOUTPUT}/go/gocfp
 rm -rf ${DATALOADSOUTPUT}/go/gorefgen
-rm -rf ${DATALOADSOUTPUT}/go/*/input/*
+rm -rf ${DATALOADSOUTPUT}/go/gomousenoctua
 rm -rf ${DATALOADSOUTPUT}/go/godaily.log
 rm -rf ${DATALOADSOUTPUT}/go/lastrun
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*

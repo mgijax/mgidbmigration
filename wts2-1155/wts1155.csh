@@ -12,6 +12,7 @@
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
 #       ftp.ebi.ac.uk.goload
+#       ftp.geneontology.org.goload
 #       snapshot.geneontology.org.goload
 #       snapshot.geneontology.org.goload.noctua
 #
@@ -176,7 +177,6 @@ rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
-${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
@@ -192,8 +192,7 @@ rm -rf ${DATALOADSOUTPUT}/go/lastrun
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
-#${GOLOAD}/go.sh 
-
+${GOLOAD}/go.sh 
 ${UNIPROTLOAD}/bin/uniprotload.sh 
 
 exit 0

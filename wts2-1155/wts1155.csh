@@ -174,6 +174,10 @@ rm -rf ${DATADOWNLOADS}/goa
 rm -rf ${DATADOWNLOADS}/current.geneontology.org 
 rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
 rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo

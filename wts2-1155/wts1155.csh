@@ -145,6 +145,18 @@ delete from mgi_user where login in ('GOA_HGNC-UCL');
 delete from mgi_user where login in ('GOA_RHEA');
 delete from mgi_user where login in ('GOA_ComplexPortal');
 delete from mgi_user where login in ('GOA_DisProt');
+delete from mgi_user where login in ('hgnc_homologyload');
+delete from mgi_user where login in ('homologeneload');
+delete from mgi_user where login in ('hybrid_homologyload');
+delete from mgi_user where login in ('ps');
+delete from mgi_user where login in ('smc');
+
+update mgi_user set _userstatus_key = 316351
+where login in ('adiehl','benjal','bobs','cml','dbl','dbradt','deg','drj','dlb','hdene','hdt','hjd','il','jbd','jbubier','jchu','jte','ksf','ljm','llw2','lmc', 'mac', 'rbabiuk', 'tbreddy', 'tmeehan', 'wpitman', 'fantom2', 'djd', 'dow', 'jak', 'jblake', 'jlewis', 'jsb', 'jw', 'klf', 'kstone', 'kub', 'lnh', 'mbw', 'mjv', 'mikem', 'jrecla')
+;
+
+update mgi_user set _usertype_key = 316352 where login in ('jrecla');
+delete from voc_term where _term_key in (316358,316356);
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());

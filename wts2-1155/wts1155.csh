@@ -137,6 +137,14 @@ delete from mgi_user where login in ('rvload');
 delete from mgi_user where login in ('fearload');
 delete from mgi_user where login in ('uniprot_override_load');
 delete from mgi_user where login in ('omim_hpoload');
+delete from mgi_user where login in ('scrum-dog');
+delete from mgi_user where login in ('GOA_dictyBase');
+delete from mgi_user where login in ('GOA_YuBioLab');
+delete from mgi_user where login in ('GOA_WB');
+delete from mgi_user where login in ('GOA_HGNC-UCL');
+delete from mgi_user where login in ('GOA_RHEA');
+delete from mgi_user where login in ('GOA_ComplexPortal');
+delete from mgi_user where login in ('GOA_DisProt');
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
@@ -149,9 +157,14 @@ EOSQL
 #
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
+
 select _Annot_key into temp toUpdate from VOC_Annot where _AnnotType_key = 1000 ;
+
 create index td_idx1 on toUpdate(_Annot_key);
 update voc_evidence e set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate t where t._annot_key = e._annot_key;
+
+delete from mgi_user where login like 'NOCTUA_%';
+
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object
 
@@ -198,8 +211,6 @@ rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 ${GOLOAD}/go.sh 
 ${UNIPROTLOAD}/bin/uniprotload.sh 
-
-exit 0
 
 # remove obsolete output files
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
@@ -257,13 +268,6 @@ and p._propertyterm_key = v._term_key
 )
 order by t.term
 ;
-
--- remove NOCTUA_ and GOA_ users; only GO_Central should be left
-select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
-delete from mgi_user where login like 'NOCTUA_%';
---keep; still used by other go loads
---delete from mgi_user where login like 'GOA_%';
-select * from mgi_user where login like 'NOCTUA_%' or login like 'GOA_%' order by login;
 
 EOSQL
 

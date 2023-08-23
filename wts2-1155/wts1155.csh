@@ -29,7 +29,7 @@
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
-# Do we need this logic in annotload:
+# David: Do we need this logic in annotload:
 #        # delete any go-annotations that are using withdrawn markers
 #
 # qcreports_db
@@ -223,7 +223,7 @@ rm -rf ${DATALOADSOUTPUT}/go/lastrun
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
-${GOLOAD}/go.sh 
+#${GOLOAD}/go.sh 
 ${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # remove obsolete output files

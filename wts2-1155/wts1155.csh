@@ -11,10 +11,11 @@
 #
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
-#       ftp.ebi.ac.uk.goload
 #       ftp.geneontology.org.goload
 #       snapshot.geneontology.org.goload
 #       snapshot.geneontology.org.goload.noctua
+#
+#       ftp.ebi.ac.uk.goload : still need for reports_db/GO_gpi.py
 #
 # goload
 #       gomousenoctua.py:
@@ -32,8 +33,8 @@
 #        # delete any go-annotations that are using withdrawn markers
 #
 # qcreports_db
-#       mgf/GO_EvidenceProperty.py
-#       mgf/GO_stats.py (NOCTUA_ may no longer exist)
+#       mgd/GO_EvidenceProperty.py
+#       mgd/GO_stats.py (NOCTUA_ may no longer exist)
 #       mgd/GO_PM2GeneRefsNotInMGI.py
 #       monthly/MRK_GOAnnot.py
 #       qcr.shtml:
@@ -151,6 +152,7 @@ delete from mgi_user where login in ('hybrid_homologyload');
 delete from mgi_user where login in ('ps');
 delete from mgi_user where login in ('smc');
 
+-- set users to Inactive
 update mgi_user set _userstatus_key = 316351
 where login in ('adiehl','benjal','bobs','cml','dbl','dbradt','deg','drj','dlb','hdene','hdt','hjd','il','jbd','jbubier','jchu','jte','ksf','ljm','llw2','lmc', 'mac', 'rbabiuk', 'tbreddy', 'tmeehan', 'wpitman', 'fantom2', 'djd', 'dow', 'jak', 'jblake', 'jlewis', 'jsb', 'jw', 'klf', 'kstone', 'kub', 'lnh', 'mbw', 'mjv', 'mikem', 'jrecla')
 ;
@@ -185,7 +187,6 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object
 # mirror_wget
 # remove: ftp.geneontology.org.external2go
 # remove: ftp.geneontology.org.goload
-# remove: ftp.ebi.ac.uk.goload
 # remove: snapshot.geneontology.org.goload.noctua
 # add   : snapshot.geneontology.org.goload.annotations
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
@@ -206,6 +207,7 @@ rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua
 
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot

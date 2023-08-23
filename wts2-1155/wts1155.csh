@@ -139,13 +139,6 @@ delete from mgi_user where login in ('fearload');
 delete from mgi_user where login in ('uniprot_override_load');
 delete from mgi_user where login in ('omim_hpoload');
 delete from mgi_user where login in ('scrum-dog');
-delete from mgi_user where login in ('GOA_dictyBase');
-delete from mgi_user where login in ('GOA_YuBioLab');
-delete from mgi_user where login in ('GOA_WB');
-delete from mgi_user where login in ('GOA_HGNC-UCL');
-delete from mgi_user where login in ('GOA_RHEA');
-delete from mgi_user where login in ('GOA_ComplexPortal');
-delete from mgi_user where login in ('GOA_DisProt');
 delete from mgi_user where login in ('hgnc_homologyload');
 delete from mgi_user where login in ('homologeneload');
 delete from mgi_user where login in ('hybrid_homologyload');
@@ -170,17 +163,33 @@ EOSQL
 # the goload will delete them later
 #
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_drop.object
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
-select _Annot_key into temp toUpdate from VOC_Annot where _AnnotType_key = 1000 ;
+select _Annot_key into temp toUpdate1 from VOC_Annot where _AnnotType_key = 1000;
+select p._AnnotEvidence_key into temp toUpdate2 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p
+where a._AnnotType_key = 1000
+and a._Annot_key = e._Annot_key
+and e._AnnotEvidence_key = p._AnnotEvidence_key;
+;
 
-create index td_idx1 on toUpdate(_Annot_key);
-update voc_evidence e set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate t where t._annot_key = e._annot_key;
+create index td_idx1 on toUpdate1(_Annot_key);
+create index td_idx2 on toUpdate2(_AnnotEvidence_key);
+update voc_evidence e set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate1 t where t._annot_key = e._annot_key;
+update voc_evidence_property p set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate2 t where t._annotevidence_key = p._annotevidence_key;
 
 delete from mgi_user where login like 'NOCTUA_%';
+delete from mgi_user where login in ('GOA_dictyBase');
+delete from mgi_user where login in ('GOA_YuBioLab');
+delete from mgi_user where login in ('GOA_WB');
+delete from mgi_user where login in ('GOA_HGNC-UCL');
+delete from mgi_user where login in ('GOA_RHEA');
+delete from mgi_user where login in ('GOA_ComplexPortal');
+delete from mgi_user where login in ('GOA_DisProt');
 
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object
+${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 
 #
 #
@@ -268,7 +277,7 @@ and a._annot_key = e._annot_key
 and e._annotevidence_key = p._annotevidence_key
 and p._propertyterm_key = v._term_key
 )
-order by t.term
+order by v.term
 ;
 
 -- property terms that are used
@@ -281,7 +290,7 @@ and a._annot_key = e._annot_key
 and e._annotevidence_key = p._annotevidence_key
 and p._propertyterm_key = v._term_key
 )
-order by t.term
+order by v.term
 ;
 
 EOSQL

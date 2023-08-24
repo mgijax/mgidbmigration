@@ -233,7 +233,16 @@ rm -rf ${DATALOADSOUTPUT}/go/lastrun
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
+# run go/annotations/delete
+# this can be removed as soon as we can turn on the goload
+rm -rf ${DATALOADSOUTPUT}/go/input/goload.annot
+touch ${DATALOADSOUTPUT}/go/input/goload.annot
+${ANNOTLOAD}/annotload.py ${GOLOAD}/goannotdelete.config go
+
+# run go/annotations
 #${GOLOAD}/go.sh 
+
+# run uniprotload/now without GO annotations
 ${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # remove obsolete output files

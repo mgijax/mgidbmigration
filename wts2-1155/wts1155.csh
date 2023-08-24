@@ -237,7 +237,7 @@ rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 # this can be removed as soon as we can turn on the goload
 rm -rf ${DATALOADSOUTPUT}/go/input/goload.annot
 touch ${DATALOADSOUTPUT}/go/input/goload.annot
-${ANNOTLOAD}/annotload.py ${GOLOAD}/goannotdelete.config go
+${ANNOTLOAD}/annotload.csh ${GOLOAD}/goannotdelete.config go
 
 # run go/annotations
 #${GOLOAD}/go.sh 

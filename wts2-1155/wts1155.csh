@@ -222,18 +222,12 @@ ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
-rm -rf ${DATALOADSOUTPUT}/go/goahuman
-rm -rf ${DATALOADSOUTPUT}/go/gorat
-rm -rf ${DATALOADSOUTPUT}/go/goamouse
-rm -rf ${DATALOADSOUTPUT}/go/gocfp
-rm -rf ${DATALOADSOUTPUT}/go/gorefgen
-rm -rf ${DATALOADSOUTPUT}/go/gomousenoctua
-rm -rf ${DATALOADSOUTPUT}/go/godaily.log
-rm -rf ${DATALOADSOUTPUT}/go/lastrun
+rm -rf ${DATALOADSOUTPUT}/go
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 # run go/annotations
+${GOLOAD}/Install
 #${GOLOAD}/go.sh 
 
 # run uniprotload/now without GO annotations

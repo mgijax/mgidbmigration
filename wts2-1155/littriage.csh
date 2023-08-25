@@ -3,6 +3,9 @@
 #
 # wts2-1155/fl2-491/GOC:  littriageload/merge littriage_goa/littriage_noctua folders to littriage_go
 #
+# littriageload
+# autolittriage : comments changed from littriage_goa -> littriage_go
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
@@ -25,7 +28,6 @@ delete from MGI_User where _user_key = 1623;
 select * from mgi_user where _user_key in (1575,1623);
 EOSQL
 
-# run littriageload
 #cd /mgi/all/Triage/PDF_files/Alpha_New_New
 #rm -rf littriage_goa
 #mv -f littriage_noctua littriage_go

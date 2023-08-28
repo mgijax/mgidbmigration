@@ -37,8 +37,8 @@ EOSQL
 cd ${DATALOADSOUTPUT}/mgi/littriageload/input
 rm -rf littriage_goa littriage_noctua
 mkdir -p littriage_go
-cd ${DBUTILS}/mgidbmigration/wts2-1155
-cp littriage_go/* ${DATALOADSOUTPUT}/mgi/littriageload/input/littriage_go
+#cd ${DBUTILS}/mgidbmigration/wts2-1155
+#cp littriage_go/* ${DATALOADSOUTPUT}/mgi/littriageload/input/littriage_go
 ${LITTRIAGELOAD}/bin/littriageload.sh
 
 date 

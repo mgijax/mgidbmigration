@@ -28,18 +28,23 @@ delete from MGI_User where _user_key = 1623;
 select * from mgi_user where _user_key in (1575,1623);
 EOSQL
 
-#cd /mgi/all/Triage/PDF_files/Alpha_New_New
-#rm -rf littriage_goa
-#mv -f littriage_noctua littriage_go
-#cd /mgi/all/Triage/PDF_files/_New_Newcurent
-#rm -rf littriage_goa
-#mv -f littriage_noctua littriage_go
+if ( "`uname -n | cut -d'.' -f1`" == "bhmgiapp01" ) then
+cd /mgi/all/Triage/PDF_files/Alpha_New_New
+rm -rf littriage_goa
+mv -f littriage_noctua littriage_go
+cd /mgi/all/Triage/PDF_files/_New_Newcurent
+rm -rf littriage_goa
+mv -f littriage_noctua littriage_go
 cd ${DATALOADSOUTPUT}/mgi/littriageload/input
 rm -rf littriage_goa littriage_noctua
 mkdir -p littriage_go
-#cd ${DBUTILS}/mgidbmigration/wts2-1155
-#cp littriage_go/* ${DATALOADSOUTPUT}/mgi/littriageload/input/littriage_go
+endif
+
+if ( "`uname -n | cut -d'.' -f1`" == "bhmgidevapp01" ) then
+cd ${DBUTILS}/mgidbmigration/wts2-1155
+cp littriage_go/* ${DATALOADSOUTPUT}/mgi/littriageload/input/littriage_go
 ${LITTRIAGELOAD}/bin/littriageload.sh
+endif
 
 date 
 

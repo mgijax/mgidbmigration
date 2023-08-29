@@ -38,8 +38,8 @@
 #       mgd/GO_PM2GeneRefsNotInMGI.py
 #       monthly/MRK_GOAnnot.py
 #       qcr.shtml:
-#               remove: QC: GOAMouse/invalid pubmedids (ln)
-#               keep  : QC: GOMouseNoctua/invalid pubmedids (ln)
+#               remove: 7. QC: GOAMouse/invalid pubmedids (ln)
+#               keep  : 8. QC: GOMouseNoctua/invalid pubmedids (ln)
 #               remove: Data Loads:  GOA/Human Load, GOA/Rat Load
 #
 # reports_db
@@ -155,6 +155,9 @@ delete from voc_term where _term_key in (316358,316356);
 
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
+
+# probably remove
+DROP FUNCTION IF EXISTS VOC_deleteGOWithdrawn();
 
 EOSQL
 

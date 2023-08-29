@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# wts2-1155/fl2-394/gorat
+# wts2-1155/fl2-394/GOC taking over GOA mouse, GOA human, etc.
 #
 # per David/Cindy : move *all* before we push to production
 #

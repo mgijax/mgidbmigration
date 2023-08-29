@@ -29,7 +29,7 @@
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
-# David: Do we need this logic in annotload:
+# remove this log:
 #        # delete any go-annotations that are using withdrawn markers
 #
 # qcreports_db
@@ -229,12 +229,13 @@ rm -rf ${DATALOADSOUTPUT}/go
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
+# run uniprotload/now without GO annotations
+# this must run before the GO load, which will generate the GPI file, which uses uniprot info
+${UNIPROTLOAD}/bin/uniprotload.sh 
+
 # run go/annotations
 ${GOLOAD}/Install
 #${GOLOAD}/go.sh 
-
-# run uniprotload/now without GO annotations
-${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # remove obsolete output files
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
@@ -250,7 +251,7 @@ rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
 rm -rf ${FTPREPORTDIR}/mgi.gpad*
 rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 
-# this report is obsolete
+# this report is obsolete; but we can use it for testing purposes
 #cd ${PUBRPTS}
 #source ./Configuration
 #cd daily

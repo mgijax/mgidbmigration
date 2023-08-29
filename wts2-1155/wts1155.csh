@@ -237,25 +237,26 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 ${GOLOAD}/Install
 #${GOLOAD}/go.sh 
 
-# remove obsolete output files
+# per David: GO should provide: gene_association.mgi, mgi.gpad
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
+rm -rf ${FTPREPORTDIR}/gene_association.mgi*
+rm -rf ${FTPREPORTDIR}/mgi.gpad*
+
+# per David: won’t be needed since they only exist to be picked up by GO:
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
-rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
-rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
 rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
-rm -rf ${FTPREPORTDIR}/gene_association.mgi*
 rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
 rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
-rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
-rm -rf ${FTPREPORTDIR}/mgi.gpad*
 rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 
-# this report is obsolete; but we can use it for testing purposes
-#cd ${PUBRPTS}
-#source ./Configuration
-#cd daily
-#${PYTHON} GO_gene_association.py 
+# per David: unknown          : gene_association_pro.mgi
+#rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
+#rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
+
+# this report is obsolete; but run this version to help with testing
+${PYTHON} GO_gene_association.py 
 
 cd ${QCRPTS}
 source ./Configuration

@@ -11,6 +11,8 @@ import db
 
 db.setTrace()
 
+print('\n\ncase 3 start: delete all "no phenotypic analysis (MP:0003012)" annotations\n')
+
 results = db.sql('''
 select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid, v._annot_key
 from voc_annot v, voc_evidence e, 
@@ -39,6 +41,7 @@ order by note
 
 deleteSQL = ''
 for r in results:
+        print(r)
         deleteSQL += "delete from voc_annot where _annot_key = " + str(r['_annot_key']) + ";\n"
 
 print(deleteSQL)
@@ -46,3 +49,4 @@ print(len(results))
 #db.sql(deleteSQL, None)
 #db.commit()
 
+print('\n\ncase 3 end: delete all "no phenotypic analysis (MP:0003012)" annotations\n\n')

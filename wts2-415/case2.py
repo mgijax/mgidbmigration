@@ -17,15 +17,13 @@ db.setTrace()
 print('\n\ncase 2 start: add PWI lit triage tag AP:NoPhenotypicAnalysis\n')
 
 results = db.sql('''
-select distinct c.jnumid, s.strain, c._refs_key
+select distinct c.jnumid, c._refs_key
 from voc_annot v, voc_evidence e, 
-bib_citation_cache c, gxd_genotype g, prb_strain s
+bib_citation_cache c
 where v._annottype_key = 1002
 and v._term_key = 293594
 and v._annot_key = e._annot_key
 and e._refs_key = c._refs_key
-and v._object_key = g._genotype_key
-and g._strain_key = s._strain_key
 and not exists (select 1 from BIB_Workflow_Tag tg where c._refs_key = tg._refs_key and tg._tag_key = 31576706)
 order by jnumid
 ''', 'auto')

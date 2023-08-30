@@ -26,11 +26,11 @@ date | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-#
-# References
-# annot type = MP/Genotype
-# MP:0003012/no phenotypic analysis
-#
+--
+-- References
+-- annot type = MP/Genotype
+-- MP:0003012/no phenotypic analysis
+--
 select distinct c.jnumid, s.strain, c._refs_key
 from voc_annot v, voc_evidence e, 
 bib_citation_cache c, gxd_genotype g, prb_strain s

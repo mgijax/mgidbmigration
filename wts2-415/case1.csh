@@ -19,11 +19,11 @@ date | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-#
-# Allele/Reference assoc = USED-FC
-# annot type = MP/Genotype
-# MP:0003012/no phenotypic analysis
-#
+--
+-- Allele/Reference assoc = USED-FC
+-- annot type = MP/Genotype
+-- MP:0003012/no phenotypic analysis
+--
 select distinct c.jnumid, aa.symbol, mrt.assoctype, s.strain, mr._assoc_key
 from voc_annot v, voc_evidence e, 
 bib_citation_cache c, gxd_genotype g, prb_strain s, gxd_allelegenotype ga, all_allele aa,

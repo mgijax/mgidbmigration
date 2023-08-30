@@ -29,7 +29,7 @@
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
-# remove this log:
+# remove this logic:
 #        # delete any go-annotations that are using withdrawn markers
 #
 # qcreports_db

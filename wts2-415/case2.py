@@ -32,6 +32,7 @@ order by jnumid
 
 addSQL = ''
 for r in results:
+        print(r)
         addSQL += "insert into BIB_Workflow_Tag values(nextval('bib_workflow_tag_seq')," + str(r['_refs_key']) + ", 31576706, 1001, 1001, now(), now());\n"
 
 print(addSQL)

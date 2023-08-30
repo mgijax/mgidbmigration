@@ -13,6 +13,8 @@ import sys
 import os
 import db
 
+print('\n\ncase 1 start: Change the reference type from USED-FC to Not Used\n')
+
 db.setTrace()
 
 results = db.sql('''
@@ -38,9 +40,11 @@ order by c.jnumid, aa.symbol
 
 updateSQL = ''
 for r in results:
+        print(r)
         updateSQL += "update mgi_reference_assoc set _refassoctype_key = 1014 where _assoc_key = " + str(r['_assoc_key']) + ";\n"
 
 print(updateSQL)
 #db.sql(updateSQL, None)
 #db.commit()
+print('\n\ncase 1 end: Change the reference type from USED-FC to Not Used\n\n')
 

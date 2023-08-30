@@ -40,4 +40,4 @@ print(addSQL)
 #db.commit()
 print(len(results))
 
-print('\n\ncase 2 end: add PWI lit triage tag AP:NoPhenotypicAnalysis\n')
+print('\n\ncase 2 end: add PWI lit triage tag AP:NoPhenotypicAnalysis\n\n')

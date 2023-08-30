@@ -36,8 +36,8 @@ for r in results:
         addSQL += "insert into BIB_Workflow_Tag values(nextval('bib_workflow_tag_seq')," + str(r['_refs_key']) + ", 31576706, 1001, 1001, now(), now());\n"
 
 print(addSQL)
-#db.sql(addSQL, None)
-#db.commit()
+db.sql(addSQL, None)
+db.commit()
 print(len(results))
 
 print('\n\ncase 2 end: add PWI lit triage tag AP:NoPhenotypicAnalysis\n\n')

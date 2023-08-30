@@ -40,6 +40,7 @@ and v._annot_key = e._annot_key
 and e._refs_key = c._refs_key
 and v._object_key = g._genotype_key
 and g._strain_key = s._strain_key
+and not exists (select 1 from BIB_Workflow_Tag tg where c._refs_key = tg._refs_key and tg._tag_key = 31576706)
 order by jnumid
 ;
 

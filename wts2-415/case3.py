@@ -42,6 +42,7 @@ for r in results:
         deleteSQL += "delete from voc_annot where _annot_key = " + str(r['_annot_key']) + ";\n"
 
 print(deleteSQL)
+print(len(results))
 #db.sql(deleteSQL, None)
 #db.commit()
 

@@ -13,9 +13,9 @@ import sys
 import os
 import db
 
-print('\n\ncase 1 start: Change the reference type from USED-FC to Not Used\n')
-
 db.setTrace()
+
+print('\n\ncase 1 start: Change the reference type from USED-FC to Not Used\n')
 
 results = db.sql('''
 select distinct c.jnumid, aa.symbol, mrt.assoctype, s.strain, mr._assoc_key

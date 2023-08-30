@@ -7,6 +7,8 @@
 # J:207447 2 genotypes, genotype for allele Del(17)4Mom has annotation to no phenotypic analysis, 2 other genotypes have annotations 
 # Change the reference type of J:207447/Del(17)4Mom allele record 
 # from 'USED-FC' (_refassoctype_key=1017) to 'Not Used' (_refassoctype_key=1014)
+# if iswildtype == 0, then change 'USED-FC' to 'Not Used'
+# if iswildtype == 1, then delete the USED-FC
 #
 
 import sys 

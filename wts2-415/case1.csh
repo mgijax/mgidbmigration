@@ -23,6 +23,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- Allele/Reference assoc = USED-FC
 -- annot type = MP/Genotype
 -- MP:0003012/no phenotypic analysis
+-- exclude wild type
 --
 select distinct c.jnumid, aa.symbol, mrt.assoctype, s.strain, mr._assoc_key
 from voc_annot v, voc_evidence e, 
@@ -36,6 +37,7 @@ and v._object_key = g._genotype_key
 and g._strain_key = s._strain_key
 and g._genotype_key = ga._genotype_key
 and ga._allele_key = aa._allele_key
+and aa.iswildtype = 0
 and aa._allele_key = mr._object_key
 and mr._mgitype_key = 11
 and e._refs_key = mr._refs_key

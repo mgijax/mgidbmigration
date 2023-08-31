@@ -30,7 +30,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- annot type = MP/Genotype
 -- only contains annotations to MP:0003012/no phenotypic analysis
 --
-select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid
+select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid, g._genotype_key
 from voc_annot v, voc_evidence e, 
 bib_citation_cache c, gxd_genotype g, prb_strain s, mgi_note n,
 acc_accession a

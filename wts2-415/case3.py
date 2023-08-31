@@ -1,7 +1,7 @@
 #
-#3. Delete all 'no phenotypic analysis (MP:0003012)' annotations and genotypes 
-#unless annotated to another term.
-#The list is available in the database https://www.informatics.jax.org/mp/annotations/MP:0003012
+#3. 
+#Delete all 'no phenotypic analysis (MP:0003012)' annotations 
+#Delete genotypes (unless annotated to another term)
 #Example: Genotype MGI:3842698 involves: 129S1/SvImJ  Abcb1a<tm1Kane>/Abcb1a<+>
 # 
 
@@ -13,8 +13,9 @@ db.setTrace()
 
 print('\n\ncase 3 start: delete all "no phenotypic analysis (MP:0003012)" annotations\n')
 
-results = db.sql('''
-select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid, v._annot_key
+db.sql('''
+select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid, v._annot_key, g._genotype_key
+into temp table annotations
 from voc_annot v, voc_evidence e, 
 bib_citation_cache c, gxd_genotype g, prb_strain s, mgi_note n,
 acc_accession a
@@ -37,20 +38,42 @@ and not exists (select 1 from voc_annot vv
         and vv._term_key != 293594
         )
 order by note
-''', 'auto')
+''', None)
+
+db.sql('''create index idx1 on annotations(_genotype_key)''', None)
+
+aresults = db.sql('select * from annotations', 'auto')
 
 deleteSQL = ''
-for r in results:
+for r in aresults:
         print(r)
         deleteSQL += "delete from voc_annot where _annot_key = " + str(r['_annot_key']) + ";\n"
 
 print(deleteSQL)
-print(len(results))
+print(len(aresults))
+db.sql(deleteSQL, None)
+db.commit()
+
+gresults = db.sql('''
+select a._genotype_key
+from annotations a
+where not exists (select 1 from voc_annot vv where a._genotype_key = vv._object_key and vv._annottype_key = 1002)
+and not exists (select 1 from prb_strain_genotype vv where a._genotype_key = vv._genotype_key)
+and not exists (select 1 from gxd_expression vv where a._genotype_key = vv._genotype_key)
+and not exists (select 1 from gxd_htsample vv where a._genotype_key = vv._genotype_key)
+''', 'auto')
+
+deleteSQL = ''
+for r in gresults:
+        print(r)
+        deleteSQL += "delete from gxd_genotype where _genotype_key = " + str(r['_genotype_key']) + ";\n"
+print(deleteSQL)
+print(len(gresults))
 db.sql(deleteSQL, None)
 db.commit()
 
 results = db.sql('''
-select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid, v._annot_key
+select distinct a.accid, substring(n.note,1,100) as note, s.strain, c.jnumid, v._annot_key, g._genotype_key
 from voc_annot v, voc_evidence e, 
 bib_citation_cache c, gxd_genotype g, prb_strain s, mgi_note n,
 acc_accession a
@@ -77,3 +100,4 @@ order by note
 print(len(results))
 
 print('\n\ncase 3 end: delete all "no phenotypic analysis (MP:0003012)" annotations\n\n')
+

@@ -23,6 +23,9 @@ date | tee -a $LOG
 #unless annotated to another term.
 #The list is available in the database https://www.informatics.jax.org/mp/annotations/MP:0003012
 #Example: Genotype MGI:3842698 involves: 129S1/SvImJ  Abcb1a<tm1Kane>/Abcb1a<+>
+#
+#4. Delete all Genotypes associated with set from case 3.  Exclude Genotypes that have other non-MP:0003012 annotations.
+#
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

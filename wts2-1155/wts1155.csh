@@ -300,33 +300,8 @@ order by v.term
 
 EOSQL
 
-# 1. /data/reports/qcreports_db/output/MRK_GOUnknown.rpt">QC: All genes with 'unknown' annotations with new indexed literature
-# 2. /data/reports/qcreports_db/output/GO_done.mgi">QC: "Done" Genes with Literature
-# 3. /data/reports/qcreports_db/output/MRK_GOSymbolChange.sql.rpt">QC: MGI gene symbols that have changed and with Noctua GO annotationsi
-# 4. /data/reports/qcreports_db/output/MRK_NoGO_D.html">QC: Genes with no GO Annotations with references with GO status = Indexed but not yet annotated
-# 5. /data/reports/qcreports_db/output/MRK_GOIEA.html">QC: Genes with only IEA GO Annotations with references with GO status = Indexed or Chosen
-# 6. /data/reports/qcreports_db/output/GO_MRK_NoGO_Has_Alleles.rpt">QC: Mouse Genes that have Alleles but no GO Annotations
 # remove: 7. /data/loads/go/goamouse/output/pubmed.error">QC: GOAMouse/invalid pubmedids
 # keep:   8. /data/loads/go/gomousenoctua/output/pubmed.error">QC: GOMouseNoctua/invalid pubmedids
-# 9. /data/reports/qcreports_db/output/GO_Unannotationed.rpt">QC: Underannotated genes
-# 10. /data/reports/qcreports_db/output/MRK_RatNoGO.sql.rpt">Report: Mouse Genes that have Rat/Human Homologs but no GO Annotations
-# 11. /data/reports/qcreports_db/output/GO_MRK_NoGO.rpt">Report: Mouse Genes with no GO Annotations
-# 12. /data/reports/qcreports_db/output/MRK_GOGold_B.rpt">Report: All Genes with Annotations to IDA, IGI, IMP, IPI
-# 13. /data/reports/qcreports_db/output/MRK_GOGold_D.rpt">Report: All Genes with multiple Annotations to IDA, IGI, IMP, IPI
-# 14. /data/reports/qcreports_db/archive/go">Report: Archive of GO Statistics and Reports
-# 15. /data/reports/qcreports_db/output/GO_Combined_Report.rpt">Report: Combined QC Report
-# 16. /data/reports/qcreports_db/output/GO_stats.rpt">Report: GO Statistics
-# 17. /data/reports/qcreports_db/output/GO_InvalidInferredFrom.rpt">Report: IC Annotations with Invalid GO IDs in With/Inferred From
-# 18. /data/reports/qcreports_db/output/VOC_InvalidInferred.rpt">Report: Invalid "Inferred From" Values in GO Annotations
-# 19. /data/reports/qcreports_db/output/VOC_InvalidProperties.rpt">Report: Invalid "Properties" Values in GO Annotations
-# 20. /data/reports/qcreports_db/output/GO_EvidenceProperty.rpt">Report: J:73065 GO annotations
-# 21. /data/reports/qcreports_db/output/VOC_GOObsolete.rpt">Report: Markers with Annotations to Obsolete GO Terms
-# 22. /data/reports/qcreports_db/output/GO_NotGene.sql.rpt">Report: Non-Gene Markers with GO Annotations
-# 23. /data/reports/qcreports_db/output/WF_GO_FullCodeNoAnnot.rpt">Report: Papers marked as Full-coded with no GO annotations
-# 24. /data/reports/qcreports_db/output/GO_EvidenceCodeStats.sql.rpt">Report: Total # of Annotations by GO Evidence Code
-# 25. /data/reports/qcreports_db/output/MRK_GOAnnot.rpt">Report: Total GO Annotations per Gene
-# 26. /data/reports/qcreports_db/output/GO_GPI_verify.rpt">Report: Verify GPI file
-# 27. /data/reports/qcreports_db/output/GO_PM2GeneRefsNotInMGI.rpt">Report: Papers not in MGI for genes without experimental GO annotations
 #
 # remove: goload/goamouse/index.html">GOA/Mouse Load</A> <B>(krc)</B>
 # remove: goload/goahuman/index.html">GOA/Human Load</A> <B>(krc)</B>

@@ -300,9 +300,9 @@ order by v.term
 
 EOSQL
 
-# remove: 7. /data/loads/go/goamouse/output/pubmed.error">QC: GOAMouse/invalid pubmedids
-# keep:   8. /data/loads/go/gomousenoctua/output/pubmed.error">QC: GOMouseNoctua/invalid pubmedids
 #
+# remove: 7. QC: GOAMouse/invalid pubmedids (ln)
+# keep  : 8. QC: GOMouseNoctua/invalid pubmedids (ln)
 # remove: goload/goamouse/index.html">GOA/Mouse Load</A> <B>(krc)</B>
 # remove: goload/goahuman/index.html">GOA/Human Load</A> <B>(krc)</B>
 # remove: goload/gorat/index.html">GO/Rat Load</A> <B>(krc)</B>

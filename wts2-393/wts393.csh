@@ -3,6 +3,12 @@
 #
 # wts2-393/Disease to reference annotation
 #
+# mgidbmigration
+# pgmgddbschema
+# pwi
+# mgd_java_api
+# curatorbulkindexload
+#
 
 
 if ( ${?MGICONFIG} == 0 ) then

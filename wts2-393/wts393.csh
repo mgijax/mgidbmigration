@@ -1,0 +1,29 @@
+#!/bin/csh -f
+
+#
+# wts2-393/Disease to reference annotation
+#
+
+
+if ( ${?MGICONFIG} == 0 ) then
+        setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
+cd `dirname $0`
+
+setenv LOG $0.log
+rm -rf $LOG
+touch $LOG
+ 
+date | tee -a $LOG
+ 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+insert into MGI_RefAssocType values(1032, 13, 'Indexed', 1, 1000, 1000, now(), now());
+EOSQL
+
+${CURATORBULKINDEXLOAD}/bin/curatorbulkindexload.sh | tee -a $LOG
+
+date |tee -a $LOG
+

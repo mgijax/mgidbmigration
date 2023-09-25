@@ -1,8 +1,8 @@
 140761	Mycobacterium tuberculosis disease progression
 140798	Epilepsy/seizures
 140388	radioresistant model for human lymphohaematopoietic engraftment
-140937	NOD2-deficient mice in model of i.m. bacillus Calmette-Gue ́ rin (BCG) infection
-140934	Itgam null mice in a MPTP (chemically induced) Model of Parkinson’s Disease
+140937	NOD2-deficient mice in model of i.m. bacillus Calmette-Guerin (BCG) infection
+140934	Itgam null mice in a MPTP (chemically induced) Model of Parkinson''s Disease
 139972	model for fatigue associated with immune deregulation
 141276	human dilated cardiomyopathy
 141460	coronavirus infection
@@ -25,7 +25,7 @@
 144463	graft-versus-host disease
 144443	graft-versus-host disease
 144440	experimental keratitis
-144433	murine ileitis model similar to Crohn's disease
+144433	murine ileitis model similar to Crohn''s disease
 143617	induced asthma and RA
 142729	antiphospholipid-induced fetal loss
 144431	collaen induced arthritis
@@ -41,7 +41,7 @@
 145371	colitis
 145653	experiementally induced hypertension (DOCA)
 145483	diet induced obesity resistance in extra chromosome strains
-145626	chronic ileitis symptom similar to crohn's disease
+145626	chronic ileitis symptom similar to crohn''s disease
 142893	mAb/LPS-induced arthritis in BALB/c and DBA/J
 142881	induced Necrotizing enterocolitis
 146108	induction of experimental epidermolysis bullosa acquisita
@@ -76,12 +76,12 @@
 148113	induced diabetes
 147976	Experimental Crescentic Glomerulonephritis
 148317	induced atopic dermatitis
-149416	Sjogren’s Syndrome-Like Disease of the Nonobese Diabetic Mouse
+149416	Sjogren''s Syndrome-Like Disease of the Nonobese Diabetic Mouse
 149390	MS induced by TNF-alpha implantation into the corpus callosum
 149322	pharmacologically induced model of schizophrenia
 149605	lupus
-149582	Crohn's disease
-149592	   Focal Segmental Glomerulosclerosis
+149582	Crohn''s disease
+149592	Focal Segmental Glomerulosclerosis
 149569	induced asthma
 149511	relapsing-remitting experimental autoimmune encephalomyelitis
 150039	graft-versus-house in strains
@@ -128,7 +128,7 @@
 157677	ova-induced asthma
 159416	strain models of Systemic Lupus Erythematosus
 159413	NOD diabetic mouse
-158445	lentivirus expressing a Huntington's construct
+158445	lentivirus expressing a Huntington''s construct
 159375	induced IBD in SAMP mice
 160438	experimental autoimmune encephalomyelitis
 160842	experimental cerebral malaria
@@ -141,8 +141,8 @@
 160644	senile lung
 160780	Measles Virus-Induced Immunosuppression
 161420	strain model of anxiety
-160763	anti–glomerular basement membrane (GBM) nephritis is induced by injection of heterologous anti-GBM antibodies
-160332	3′-methylcholanthrene (MCA) induction of fibrosarcoma model
+160763	anti-glomrular basement membrance (GBM) nephritis is induced by injection of heterologous anti-GBM antibodies
+160332	3''-methylcholanthrene (MCA) induction of fibrosarcoma model
 160297	induced atopic dermatitis
 162137	induced asthma
 161644	LPS-induced endotoxemia
@@ -186,7 +186,7 @@
 176185	hemolytic uremic syndrome
 177277	crescentic glomerulonephritis
 177827	rheumatoid arthritis 
-179501	MPTP (chemically induced) Model of Parkinson’s Disease
+179501	MPTP (chemically induced) Model of Parkinson''s Disease
 179642	IL-23 injection induced psoriasiform dermatitis
 180372	autism
 181443	uveitis (Blau syndrome)
@@ -201,7 +201,7 @@
 183104	autoimmune hemolytic anemia
 182103	Epidermolysis Bullosa Acquisita
 182365	heart failure
-183304	Parkinson’s disease
+183304	Parkinson''s disease
 181964	Hemolytic Uremic Syndrome
 181959	Endometriosis
 182337	DCM
@@ -231,24 +231,24 @@
 188653	TTP
 188760	Alopecia Areata
 189169	prenatal androgenization
-188811	MPTP (chemically induced) Model of Parkinson’s Disease
+188811	MPTP (chemically induced) Model of Parkinson''s Disease
 189625	anxiety
 127935	genetic model of FMR1 in Tg
 188774	genetic model of FMR1 in Tg
 189224	general heart disease
 189275	STZ-induced Diabetes
-189701	T gondii-induced Chron's
+189701	T gondii-induced Chron''s
 189693	odorant-induced seizures
 189857	Lyme disease
 189843	graft-versus-host disease
 189823	DYT1
-189814	experimental autoimmune Graves' disease
+189814	experimental autoimmune Graves'' disease
 190627	EAE
 190481	autism
 191109	inflammatory bowel disease, colitis
 192489	chemically induced Parkinson Disease
 192324	chemically induced experimental autoimmune encephalomyelitis
-193258	gastric aspiration–induced ALI/ARDS models
+193258	gastric aspiration-induced ALI/ARDS models
 193273	Lupus Nephritis
 190190	erythroleukemia
 180372	autism
@@ -262,7 +262,7 @@
 196737	senile osteoporosis
 197159	Catalepsy
 192953	colitis-associated cancer
-192491	Alzheimer's disease
+192491	Alzheimer''s disease
 196370	acute colitis
 197565	systemic lupus erythematosus
 198098	Kawasaki Disease
@@ -298,7 +298,7 @@
 194635	type 1 diabetes
 193421	arthritis
 193762	nonalcoholic steatohepatitis 
-202007	jogren’s syndrome
+202007	jogren''s syndrome
 201978	Temporal lobe epilepsy
 198182	chronic kidney disease
 198165	epilepsy and autism 
@@ -314,7 +314,7 @@
 199391	Scrapie
 196412	diabetes
 197192	diabetes
-199108	Alzheimer’s disease
+199108	Alzheimer''s disease
 199965	abdominal aortic aneurysm
 199543	type I diabetes
 203171	ocular hypertension
@@ -384,7 +384,7 @@
 204775	autoimmune arthritis
 204766	Graft-versus-host disease
 208027	type 1 diabetes
-208025	Parkinson's disease
+208025	Parkinson''s disease
 208023	Lyme disease and rheumatoid arthritis
 208011	mucormycosis
 100472	Creutzfeldt Jakob Disease and chronic wasting disease
@@ -420,7 +420,7 @@
 210383	acute pancreatitis
 210382	asthma
 210371	experimental autoimmune encephalomyelitis
-206819	Kaposi's sarcoma-associated herpesvirus infection
+206819	Kaposi''s sarcoma-associated herpesvirus infection
 210894	acute respiratory distress syndrome
 210881	type 1 diabetes
 207711	acute myloid leukemia
@@ -431,7 +431,7 @@
 205582	pancreatic cancer
 209407	autoimmune diabetes
 207548	Graft-versus-host disease
-207276	Parkinson's disease
+207276	Parkinson''s disease
 207664	motor endplate disease
 208979	lung cancer
 210041	preterm birth
@@ -439,7 +439,7 @@
 208166	mesothelioma
 210559	COPD
 210520	diabetes
-211976	Alzheimer's disease
+211976	Alzheimer''s disease
 211961	uveitis
 211931	EAE, arthritis
 208596	diabetes 
@@ -464,7 +464,7 @@
 213632	acute respiratory distress syndrome
 214115	sepsis
 211598	chronic lymphocytic leukemia
-214864	Parkinson's disease
+214864	Parkinson''s disease
 214835	autoimmune neuritis
 214822	psoriasis-arthritis
 214814	GVHD
@@ -509,7 +509,7 @@
 218998	experimental autoimmune encephalomyelitis
 218108	diabetic cardiomyopathy
 216381	age-related macular degeneration
-215899	Alzheimer’s disease
+215899	Alzheimer''s disease
 216374	abdominal aortic aneurysm
 216362	Nonalcoholic fatty liver disease
 217711	bladder cancer
@@ -522,15 +522,15 @@
 218532	diabetes (diabetic retinopathy)
 218528	rheumatoid arthritis
 218523	Nonalcoholic fatty liver disease
-212740	Alzheimer's disease
+212740	Alzheimer''s disease
 220096	Hepatitis
 212778	atopic dermatitis
 219472	breast cancer
 219458	experimental autoimmune encephalomyelitis
 219843	metabolic syndrome1
-219846	Parkinson's disease
+219846	Parkinson''s disease
 219850	stroke
-219873	Huntington's disease
+219873	Huntington''s disease
 219875	posttraumatic stress disorder
 212893	pulmonary arterial hypertension
 219427	glioma
@@ -558,20 +558,20 @@
 216957	alcoholic liver disease
 221176	diabetes
 216592	depression
-221457	Parkinson's disease
+221457	Parkinson''s disease
 221451	Sepsis
 221447	Malaria
-221436	Bell's palsy
+221436	Bell''s palsy
 221435	sleeping sickness
 221433	malaria
 221211	graft-versus-host disease
 221182	Bronchiolitis Obliterans
 221174	periodontitis
 221923	type 1 diabetes
-221693	Parkinson's disease
+221693	Parkinson''s disease
 221686	Experimental Autoimmune Orchitis
-221904	Parkinson's disease
-221664	Parkinson's disease 
+221904	Parkinson''s disease
+221664	Parkinson''s disease 
 221890	diabetes
 222046	skin cancer
 222069	abdominal sepsis
@@ -603,7 +603,7 @@
 223616	type II diabetes
 223615	pulmonary arterial hypertension
 223602	abdominal aortic aneurysm
-223969	Parkinson's disease
+223969	Parkinson''s disease
 223980	atopic dermatitis
 223984	nonalcoholic steatohepatitis
 223971	autism

@@ -33,7 +33,8 @@ date | tee -a $LOG
 #${PG_MGD_DBSCHEMADIR}/view/MGI_Reference_DOID_View_create.object | tee -a $LOG
 #${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG
 
-${CURATORBULKINDEXLOAD}/bin/curatorbulkindexload.sh | tee -a $LOG
+#${CURATORBULKINDEXLOAD}/bin/curatorbulkindexload.sh | tee -a $LOG
+$PYTHON wts393.py | tee -a $LOG
 
 date |tee -a $LOG
 

@@ -12,7 +12,13 @@ for line in inFile.readlines():
     jnumid = tokens[0]
     note = tokens[1]
 
-    results = db.sql(''' select _refs_key from bib_citation_cache where jnumid = '%s' ''' % (jnumid), 'auto')
+    results = db.sql(''' 
+        select r._refs_key from bib_citation_cache r, bib_workflow_tag bt, voc_term t
+        where r.jnumid = '%s' 
+        and r._refs_key = bt._refs_key
+        and bt._tag_key = t._term_key
+        and t.term = 'AP:MiscellaneousDisease'
+        ''' % (jnumid), 'auto')
 
     for r in results:
         db.sql('delete from BIB_Notes where _refs_key = %s' % (r['_refs_key']), None)

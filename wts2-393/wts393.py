@@ -1,0 +1,22 @@
+import sys 
+import os
+import db
+
+db.setTrace()
+
+inFile = open('TopSheets_MiscDiseaseModels.tsv', 'r')
+lineNum = 0
+for line in inFile.readlines():
+    lineNum = lineNum + 1
+    tokens = line[:-1].split('\t')
+    jnumid = 'J:' + tokens[0]
+    note = tokens[1]
+
+    results = db.sql(''' select _refs_key from bib_citation_cache where jnumid = '%s' ''' % (jnumid), 'auto')
+
+    for r in results:
+        cmd = ''' insert into BIB_Notes value(%s, '%s', now(), now()); ''' % (r['_refs_key'], note)
+        db.sql(cmd, None)
+        db.commit()
+
+inFile.close()

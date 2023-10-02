@@ -34,6 +34,7 @@ scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology ${DATALOADS
 scp bhmgiapp01:/data/loads/mgi/vocload/emap/input/EMAPA.obo ${DATALOADSOUTPUT}/mgi/vocload/emap/input
 scp bhmgiapp01:/data/loads/mgi/mcvload/input/MCV_Vocab.obo ${DATALOADSOUTPUT}/mgi/mcvload/input
 scp bhmgiapp01:/data/loads/mgi/rvload/input/RelationshipVocab.obo ${DATALOADSOUTPUT}/mgi/rvload/input
+scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat ${DATADOWNLOADS}/uniprot
 
 # input files using mirror_wget
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config

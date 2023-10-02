@@ -46,8 +46,7 @@ ${VOCLOAD}/runOBOIncLoad.sh GO.config
 ${VOCLOAD}/runOBOIncLoad.sh HPO.config
 ${VOCLOAD}/runOBOIncLoad.sh SO.config
 ${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
-#${GOLOAD}/godaily.sh
-#${UNIPROTLOAD}/bin/uniprotload.sh
+${UNIPROTLOAD}/bin/makeInterProAnnot.sh
 
 # input files copied from production
 ${VOCLOAD}/runOBOIncLoad.sh MP.config

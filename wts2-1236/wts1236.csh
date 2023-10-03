@@ -15,6 +15,8 @@ touch $LOG
 date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+-- MouseCyc
+delete from dag_dag where _dag_key = 48;
 EOSQL
 
 # this looks obsolete: research.bioinformatics.udel.edu

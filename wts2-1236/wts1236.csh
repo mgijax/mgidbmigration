@@ -1,5 +1,9 @@
 #!/bin/csh -f
 
+#
+# vocload
+#
+
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
 endif
@@ -22,34 +26,34 @@ EOSQL
 # this looks obsolete: research.bioinformatics.udel.edu
 
 # OMIM.config
-#${MIRROR_WGET}/download_package data.omim.org.omim
+${MIRROR_WGET}/download_package data.omim.org.omim
 
 # CL.config
-#${MIRROR_WGET}/download_package purl.obolibrary.org.cl-basic.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.cl-basic.obo
 
 # GO.config
-#${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
 
 # HPO.config
-#${MIRROR_WGET}/download_package purl.obolibrary.org.hp-basic.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.hp-basic.obo
 
 # SO.config
-#${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
+${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
 
 # DO.config
-#${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
+${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
 
 # IP.config
-#${MIRROR_WGET}/download_package ftp.ebi.ac.uk.interpro
+${MIRROR_WGET}/download_package ftp.ebi.ac.uk.interpro
 
 # proload
-#${MIRROR_WGET}/download_package proconsortium.org
+${MIRROR_WGET}/download_package proconsortium.org
 
 # proisoformload
-#${MIRROR_WGET}/download_package purl.obolibrary.org.pr
+${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 
 # pirsfload
-#${MIRROR_WGET}/download_package www.uniprot.org.pirsfload
+${MIRROR_WGET}/download_package www.uniprot.org.pirsfload
 
 scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMA/adult_mouse_anatomy.obo ${DATALOADSOUTPUT}/mgi/vocload/runTimeMA
 scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP

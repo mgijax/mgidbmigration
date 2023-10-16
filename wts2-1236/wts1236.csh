@@ -67,6 +67,7 @@ scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat ${DATADOWNLOADS}/uniprot
 
 rm -rf ${DATALOADSOUTPUT}/mgi/mcvload/input/lastrun
 rm -rf ${DATALOADSOUTPUT}/mgi/rvload/input/lastrun
+rm -rf ${DATALOADSOUTPUT}/mgi/pro/proload/input/lastrun
 
 # input files using mirror_wget
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config

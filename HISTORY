@@ -1,7 +1,9 @@
+TAG: mgidbmigration-6-0-22-54
 TAG: mgidbmigration-6-0-22-53
-DATE: 10/05/2023
+DATE: 10/05/2023, 10/16/2023
 STAFF: lec
 wts2-1236/fl2-574/improve vocload/remove obsolete VOC_GO_Cache
+wts2-1236/fl2-580/improve vocload/remove vocgo.csh from VOClib.config
 vocgocache.csh
 
 TAG: mgidbmigration-6-0-22-52

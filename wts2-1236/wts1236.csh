@@ -69,6 +69,9 @@ rm -rf ${DATALOADSOUTPUT}/mgi/mcvload/input/lastrun
 rm -rf ${DATALOADSOUTPUT}/mgi/rvload/input/lastrun
 rm -rf ${DATALOADSOUTPUT}/mgi/pro/proload/input/lastrun
 
+# remove old lib/python scripts that are moved to vocload/lib
+rm -rf ${LIBDIRS}/dbTable.py  ${LIBDIRS}/loadDAG.py  ${LIBDIRS}/Log.py  ${LIBDIRS}/Ontology.py  ${LIBDIRS}/voc_html.py  ${LIBDIRS}/vocloadDAG.py  ${LIBDIRS}/vocloadlib.py
+
 # input files using mirror_wget
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
 ${VOCLOAD}/runOBOIncLoad.sh CL.config

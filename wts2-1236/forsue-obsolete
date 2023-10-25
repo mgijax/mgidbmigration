@@ -1,0 +1,837 @@
+***
+genotypes & headers that should not be there
+***
+
+select aa.accid, t.term
+from voc_annotheader_lec a, acc_accession aa, voc_term t
+where a._object_key = aa._object_key
+and aa._logicaldb_key = 1
+and aa._mgitype_key = 12
+and a._term_key = t._term_key
+and not exists (select 1 from voc_annotheader b
+        where a._object_key = b._object_key
+        and a._term_key = b._term_key
+        )
+order by aa.accid
+;
+    accid    |                term                
+-------------+------------------------------------
+ MGI:2167384 | embryo phenotype
+ MGI:2174882 | cellular phenotype
+ MGI:2175008 | integument phenotype
+ MGI:2175134 | integument phenotype
+ MGI:2175145 | integument phenotype
+ MGI:2175170 | integument phenotype
+ MGI:2175280 | integument phenotype
+ MGI:2175396 | immune system phenotype
+ MGI:2175412 | immune system phenotype
+ MGI:2175444 | immune system phenotype
+ MGI:2175468 | integument phenotype
+ MGI:2175469 | integument phenotype
+ MGI:2175470 | integument phenotype
+ MGI:2175489 | growth/size/body region phenotype
+ MGI:2175623 | growth/size/body region phenotype
+ MGI:2175638 | integument phenotype
+ MGI:2175639 | integument phenotype
+ MGI:2175680 | integument phenotype
+ MGI:2175754 | integument phenotype
+ MGI:2175826 | nervous system phenotype
+ MGI:2175864 | integument phenotype
+ MGI:2175866 | integument phenotype
+ MGI:2176382 | integument phenotype
+ MGI:2177572 | nervous system phenotype
+ MGI:2177777 | obsolete other phenotype
+ MGI:2178678 | integument phenotype
+ MGI:2181627 | embryo phenotype
+ MGI:2181753 | integument phenotype
+ MGI:2384320 | integument phenotype
+ MGI:2384398 | obsolete other phenotype
+ MGI:2386301 | growth/size/body region phenotype
+ MGI:2387345 | nervous system phenotype
+ MGI:2387932 | integument phenotype
+ MGI:2446649 | integument phenotype
+ MGI:2450130 | immune system phenotype
+ MGI:2450163 | growth/size/body region phenotype
+ MGI:2451052 | integument phenotype
+ MGI:2451225 | cellular phenotype
+ MGI:2651586 | integument phenotype
+ MGI:2651883 | cardiovascular system phenotype
+ MGI:2652468 | integument phenotype
+ MGI:2653058 | obsolete other phenotype
+ MGI:2653380 | skeleton phenotype
+ MGI:2653497 | obsolete other phenotype
+ MGI:2655634 | integument phenotype
+ MGI:2655634 | nervous system phenotype
+ MGI:2656216 | integument phenotype
+ MGI:2656746 | integument phenotype
+ MGI:2656748 | integument phenotype
+ MGI:2656749 | integument phenotype
+ MGI:2656750 | integument phenotype
+ MGI:2662490 | integument phenotype
+ MGI:2662619 | integument phenotype
+ MGI:2665538 | hematopoietic system phenotype
+ MGI:2665845 | integument phenotype
+ MGI:2668046 | endocrine/exocrine gland phenotype
+ MGI:2669172 | integument phenotype
+ MGI:2670955 | cellular phenotype
+ MGI:2671985 | integument phenotype
+ MGI:2672088 | obsolete other phenotype
+ MGI:2672782 | growth/size/body region phenotype
+ MGI:2672787 | integument phenotype
+ MGI:2672965 | nervous system phenotype
+ MGI:2673115 | skeleton phenotype
+ MGI:2673248 | integument phenotype
+ MGI:2675332 | integument phenotype
+ MGI:2675333 | integument phenotype
+ MGI:2675334 | integument phenotype
+ MGI:2675335 | integument phenotype
+ MGI:2675747 | cellular phenotype
+ MGI:2677161 | obsolete other phenotype
+ MGI:2679085 | nervous system phenotype
+ MGI:2679304 | integument phenotype
+ MGI:2679853 | immune system phenotype
+ MGI:2680918 | immune system phenotype
+ MGI:2680920 | immune system phenotype
+ MGI:2680921 | immune system phenotype
+ MGI:2680922 | immune system phenotype
+ MGI:2680923 | immune system phenotype
+ MGI:2681147 | nervous system phenotype
+ MGI:2681148 | nervous system phenotype
+ MGI:2682534 | integument phenotype
+ MGI:2682637 | nervous system phenotype
+ MGI:2683491 | integument phenotype
+ MGI:2683730 | obsolete other phenotype
+ MGI:2687088 | nervous system phenotype
+ MGI:2687352 | nervous system phenotype
+ MGI:2687353 | nervous system phenotype
+ MGI:2687467 | integument phenotype
+ MGI:2687468 | integument phenotype
+ MGI:2687469 | integument phenotype
+ MGI:2687470 | integument phenotype
+ MGI:3029187 | integument phenotype
+ MGI:3029221 | integument phenotype
+ MGI:3029329 | integument phenotype
+ MGI:3029342 | integument phenotype
+ MGI:3029892 | integument phenotype
+ MGI:3032767 | skeleton phenotype
+ MGI:3036536 | integument phenotype
+ MGI:3037555 | integument phenotype
+ MGI:3037556 | integument phenotype
+ MGI:3038375 | cellular phenotype
+ MGI:3039500 | growth/size/body region phenotype
+ MGI:3039502 | growth/size/body region phenotype
+ MGI:3039525 | cellular phenotype
+ MGI:3041528 | integument phenotype
+ MGI:3042106 | integument phenotype
+ MGI:3042191 | growth/size/body region phenotype
+ MGI:3042299 | cardiovascular system phenotype
+ MGI:3042580 | integument phenotype
+ MGI:3042778 | growth/size/body region phenotype
+ MGI:3043034 | integument phenotype
+ MGI:3043777 | integument phenotype
+ MGI:3044965 | nervous system phenotype
+ MGI:3045585 | integument phenotype
+ MGI:3045812 | integument phenotype
+ MGI:3047563 | cellular phenotype
+ MGI:3047565 | cellular phenotype
+ MGI:3047566 | cellular phenotype
+ MGI:3051529 | growth/size/body region phenotype
+ MGI:3051777 | growth/size/body region phenotype
+ MGI:3051778 | growth/size/body region phenotype
+ MGI:3052168 | integument phenotype
+ MGI:3052339 | cellular phenotype
+ MGI:3053686 | integument phenotype
+ MGI:3054657 | integument phenotype
+ MGI:3054835 | integument phenotype
+ MGI:3054841 | integument phenotype
+ MGI:3055226 | integument phenotype
+ MGI:3055961 | integument phenotype
+ MGI:3497823 | growth/size/body region phenotype
+ MGI:3510553 | growth/size/body region phenotype
+ MGI:3510554 | growth/size/body region phenotype
+ MGI:3510693 | nervous system phenotype
+ MGI:3511894 | nervous system phenotype
+ MGI:3512550 | growth/size/body region phenotype
+ MGI:3513395 | integument phenotype
+ MGI:3513482 | integument phenotype
+ MGI:3513547 | integument phenotype
+ MGI:3513548 | integument phenotype
+ MGI:3514290 | integument phenotype
+ MGI:3522670 | integument phenotype
+ MGI:3524999 | integument phenotype
+ MGI:3525001 | integument phenotype
+ MGI:3525154 | vision/eye phenotype
+ MGI:3528141 | integument phenotype
+ MGI:3529677 | embryo phenotype
+ MGI:3529677 | cardiovascular system phenotype
+ MGI:3530251 | integument phenotype
+ MGI:3530651 | integument phenotype
+ MGI:3574281 | integument phenotype
+ MGI:3575503 | integument phenotype
+ MGI:3575537 | integument phenotype
+ MGI:3575891 | integument phenotype
+ MGI:3575895 | integument phenotype
+ MGI:3575896 | integument phenotype
+ MGI:3577344 | growth/size/body region phenotype
+ MGI:3580371 | growth/size/body region phenotype
+ MGI:3581026 | nervous system phenotype
+ MGI:3581129 | integument phenotype
+ MGI:3581145 | cellular phenotype
+ MGI:3581146 | cellular phenotype
+ MGI:3582059 | nervous system phenotype
+ MGI:3582300 | obsolete other phenotype
+ MGI:3582341 | integument phenotype
+ MGI:3582534 | growth/size/body region phenotype
+ MGI:3582535 | growth/size/body region phenotype
+ MGI:3582589 | integument phenotype
+ MGI:3582596 | integument phenotype
+ MGI:3582726 | integument phenotype
+ MGI:3582727 | integument phenotype
+ MGI:3587802 | cardiovascular system phenotype
+ MGI:3588645 | integument phenotype
+ MGI:3588730 | integument phenotype
+ MGI:3588768 | integument phenotype
+ MGI:3588769 | integument phenotype
+ MGI:3589173 | nervous system phenotype
+ MGI:3589906 | integument phenotype
+ MGI:3590235 | integument phenotype
+ MGI:3590236 | integument phenotype
+ MGI:3603185 | nervous system phenotype
+ MGI:3603186 | nervous system phenotype
+ MGI:3603834 | integument phenotype
+ MGI:3604390 | nervous system phenotype
+ MGI:3604661 | nervous system phenotype
+ MGI:3605003 | integument phenotype
+ MGI:3605003 | nervous system phenotype
+ MGI:3606164 | obsolete other phenotype
+ MGI:3606447 | integument phenotype
+ MGI:3606454 | integument phenotype
+ MGI:3606461 | integument phenotype
+ MGI:3606473 | integument phenotype
+ MGI:3606520 | integument phenotype
+ MGI:3606563 | growth/size/body region phenotype
+ MGI:3606584 | integument phenotype
+ MGI:3606607 | integument phenotype
+ MGI:3606629 | integument phenotype
+ MGI:3606633 | integument phenotype
+ MGI:3606637 | integument phenotype
+ MGI:3606648 | integument phenotype
+ MGI:3606678 | integument phenotype
+ MGI:3606693 | integument phenotype
+ MGI:3606701 | integument phenotype
+ MGI:3606862 | cellular phenotype
+ MGI:3607781 | integument phenotype
+ MGI:3608499 | integument phenotype
+ MGI:3609818 | integument phenotype
+ MGI:3609945 | growth/size/body region phenotype
+ MGI:3611274 | growth/size/body region phenotype
+ MGI:3611777 | nervous system phenotype
+ MGI:3612981 | integument phenotype
+ MGI:3613490 | integument phenotype
+ MGI:3613555 | integument phenotype
+ MGI:3615295 | nervous system phenotype
+ MGI:3615485 | integument phenotype
+ MGI:3615497 | integument phenotype
+ MGI:3617155 | cellular phenotype
+ MGI:3617156 | cellular phenotype
+ MGI:3617157 | cellular phenotype
+ MGI:3618230 | obsolete other phenotype
+ MGI:3618747 | nervous system phenotype
+ MGI:3619726 | integument phenotype
+ MGI:3620632 | integument phenotype
+ MGI:3620991 | obsolete other phenotype
+ MGI:3621373 | integument phenotype
+ MGI:3621374 | integument phenotype
+ MGI:3621555 | obsolete other phenotype
+ MGI:3621927 | integument phenotype
+ MGI:3622146 | integument phenotype
+ MGI:3622150 | integument phenotype
+ MGI:3622151 | integument phenotype
+ MGI:3622188 | cellular phenotype
+ MGI:3622189 | cellular phenotype
+ MGI:3623032 | integument phenotype
+ MGI:3623103 | integument phenotype
+ MGI:3623104 | integument phenotype
+ MGI:3623105 | integument phenotype
+ MGI:3623123 | nervous system phenotype
+ MGI:3623125 | nervous system phenotype
+ MGI:3623127 | nervous system phenotype
+ MGI:3623255 | obsolete other phenotype
+ MGI:3623257 | obsolete other phenotype
+ MGI:3623749 | integument phenotype
+ MGI:3624351 | integument phenotype
+ MGI:3624365 | integument phenotype
+ MGI:3624705 | integument phenotype
+ MGI:3624801 | integument phenotype
+ MGI:3624980 | integument phenotype
+ MGI:3625358 | integument phenotype
+ MGI:3625851 | integument phenotype
+ MGI:3625861 | integument phenotype
+ MGI:3625879 | integument phenotype
+ MGI:3628546 | integument phenotype
+ MGI:3628569 | integument phenotype
+ MGI:3629072 | obsolete other phenotype
+ MGI:3629073 | obsolete other phenotype
+ MGI:3629984 | integument phenotype
+ MGI:3629992 | integument phenotype
+ MGI:3639144 | integument phenotype
+ MGI:3639145 | integument phenotype
+ MGI:3639302 | integument phenotype
+ MGI:3639521 | integument phenotype
+ MGI:3640007 | integument phenotype
+ MGI:3640966 | integument phenotype
+ MGI:3640967 | integument phenotype
+ MGI:3652525 | nervous system phenotype
+ MGI:3652680 | integument phenotype
+ MGI:3653508 | integument phenotype
+ MGI:3653874 | integument phenotype
+ MGI:3653875 | integument phenotype
+ MGI:3654636 | integument phenotype
+ MGI:3654637 | nervous system phenotype
+ MGI:3654638 | nervous system phenotype
+ MGI:3655954 | integument phenotype
+ MGI:3656478 | growth/size/body region phenotype
+ MGI:3656488 | growth/size/body region phenotype
+ MGI:3662844 | integument phenotype
+ MGI:3663258 | obsolete other phenotype
+ MGI:3663266 | integument phenotype
+ MGI:3665456 | integument phenotype
+ MGI:3687277 | integument phenotype
+ MGI:3688436 | integument phenotype
+ MGI:3688850 | hematopoietic system phenotype
+ MGI:3689001 | hematopoietic system phenotype
+ MGI:3689211 | integument phenotype
+ MGI:3689929 | integument phenotype
+ MGI:3689930 | integument phenotype
+ MGI:3690623 | cardiovascular system phenotype
+ MGI:3690623 | renal/urinary system phenotype
+ MGI:3692445 | integument phenotype
+ MGI:3692523 | cellular phenotype
+ MGI:3693869 | renal/urinary system phenotype
+ MGI:3693951 | cellular phenotype
+ MGI:3693953 | integument phenotype
+ MGI:3694549 | integument phenotype
+ MGI:3694784 | integument phenotype
+ MGI:3695130 | integument phenotype
+ MGI:3696685 | obsolete other phenotype
+ MGI:3696849 | integument phenotype
+ MGI:3696957 | integument phenotype
+ MGI:3697681 | nervous system phenotype
+ MGI:3697813 | integument phenotype
+ MGI:3698246 | growth/size/body region phenotype
+ MGI:3698787 | growth/size/body region phenotype
+ MGI:3698788 | growth/size/body region phenotype
+ MGI:3698789 | growth/size/body region phenotype
+ MGI:3698790 | growth/size/body region phenotype
+ MGI:3699201 | nervous system phenotype
+ MGI:3699423 | growth/size/body region phenotype
+ MGI:3699424 | growth/size/body region phenotype
+ MGI:3699427 | growth/size/body region phenotype
+ MGI:3700232 | integument phenotype
+ MGI:3701788 | integument phenotype
+ MGI:3704912 | nervous system phenotype
+ MGI:3709060 | nervous system phenotype
+ MGI:3709277 | nervous system phenotype
+ MGI:3709974 | integument phenotype
+ MGI:3711885 | cellular phenotype
+ MGI:3713771 | nervous system phenotype
+ MGI:3714770 | nervous system phenotype
+ MGI:3714931 | nervous system phenotype
+ MGI:3715311 | integument phenotype
+ MGI:3716692 | growth/size/body region phenotype
+ MGI:3717430 | integument phenotype
+ MGI:3717466 | integument phenotype
+ MGI:3717467 | integument phenotype
+ MGI:3717468 | integument phenotype
+ MGI:3718026 | integument phenotype
+ MGI:3718092 | nervous system phenotype
+ MGI:3718199 | integument phenotype
+ MGI:3718404 | integument phenotype
+ MGI:3718509 | integument phenotype
+ MGI:3719564 | integument phenotype
+ MGI:3720333 | obsolete other phenotype
+ MGI:3720334 | obsolete other phenotype
+ MGI:3720566 | integument phenotype
+ MGI:3720651 | obsolete other phenotype
+ MGI:3720680 | immune system phenotype
+ MGI:3720951 | integument phenotype
+ MGI:3721273 | integument phenotype
+ MGI:3721936 | integument phenotype
+ MGI:3721938 | integument phenotype
+ MGI:3722690 | integument phenotype
+ MGI:3722691 | integument phenotype
+ MGI:3723171 | nervous system phenotype
+ MGI:3723217 | growth/size/body region phenotype
+ MGI:3757984 | integument phenotype
+ MGI:3758325 | growth/size/body region phenotype
+ MGI:3758858 | integument phenotype
+ MGI:3759076 | obsolete other phenotype
+ MGI:3760844 | integument phenotype
+ MGI:3761724 | integument phenotype
+ MGI:3761790 | integument phenotype
+ MGI:3762131 | integument phenotype
+ MGI:3767229 | obsolete other phenotype
+ MGI:3770780 | nervous system phenotype
+ MGI:3771333 | cellular phenotype
+ MGI:3773313 | integument phenotype
+ MGI:3773451 | growth/size/body region phenotype
+ MGI:3773672 | integument phenotype
+ MGI:3774594 | nervous system phenotype
+ MGI:3774843 | obsolete other phenotype
+ MGI:3776670 | integument phenotype
+ MGI:3777147 | integument phenotype
+ MGI:3777148 | integument phenotype
+ MGI:3783650 | nervous system phenotype
+ MGI:3784592 | growth/size/body region phenotype
+ MGI:3784595 | growth/size/body region phenotype
+ MGI:3789014 | integument phenotype
+ MGI:3793503 | nervous system phenotype
+ MGI:3793728 | nervous system phenotype
+ MGI:3794864 | integument phenotype
+ MGI:3795243 | integument phenotype
+ MGI:3795243 | obsolete other phenotype
+ MGI:3795356 | cellular phenotype
+ MGI:3799532 | hematopoietic system phenotype
+ MGI:3800821 | growth/size/body region phenotype
+ MGI:3803754 | integument phenotype
+ MGI:3806461 | cardiovascular system phenotype
+ MGI:3807513 | cellular phenotype
+ MGI:3807577 | integument phenotype
+ MGI:3809534 | obsolete other phenotype
+ MGI:3809892 | respiratory system phenotype
+ MGI:3810360 | nervous system phenotype
+ MGI:3810361 | nervous system phenotype
+ MGI:3810415 | growth/size/body region phenotype
+ MGI:3810621 | integument phenotype
+ MGI:3810739 | nervous system phenotype
+ MGI:3811102 | integument phenotype
+ MGI:3812188 | obsolete other phenotype
+ MGI:3817461 | integument phenotype
+ MGI:3817462 | integument phenotype
+ MGI:3817490 | integument phenotype
+ MGI:3826989 | cardiovascular system phenotype
+ MGI:3826997 | obsolete other phenotype
+ MGI:3826998 | obsolete other phenotype
+ MGI:3829188 | cellular phenotype
+ MGI:3830994 | obsolete other phenotype
+ MGI:3831675 | integument phenotype
+ MGI:3834639 | integument phenotype
+ MGI:3834945 | growth/size/body region phenotype
+ MGI:3837401 | nervous system phenotype
+ MGI:3837405 | nervous system phenotype
+ MGI:3837439 | integument phenotype
+ MGI:3838166 | integument phenotype
+ MGI:3839882 | immune system phenotype
+ MGI:3840540 | integument phenotype
+ MGI:3840672 | integument phenotype
+ MGI:3841014 | cardiovascular system phenotype
+ MGI:3841782 | integument phenotype
+ MGI:3843285 | nervous system phenotype
+ MGI:3843520 | integument phenotype
+ MGI:3843521 | integument phenotype
+ MGI:3844607 | obsolete other phenotype
+ MGI:3844894 | hematopoietic system phenotype
+ MGI:3844897 | growth/size/body region phenotype
+ MGI:3844980 | embryo phenotype
+ MGI:3845023 | integument phenotype
+ MGI:3845908 | integument phenotype
+ MGI:3846702 | integument phenotype
+ MGI:3846703 | integument phenotype
+ MGI:3846838 | integument phenotype
+ MGI:3848163 | growth/size/body region phenotype
+ MGI:3848333 | obsolete other phenotype
+ MGI:3848614 | growth/size/body region phenotype
+ MGI:3848801 | immune system phenotype
+ MGI:3849872 | integument phenotype
+ MGI:3849998 | integument phenotype
+ MGI:3849999 | integument phenotype
+ MGI:3850978 | obsolete other phenotype
+ MGI:3851005 | integument phenotype
+ MGI:3851148 | nervous system phenotype
+ MGI:3851170 | integument phenotype
+ MGI:3851906 | nervous system phenotype
+ MGI:3852220 | nervous system phenotype
+ MGI:3852355 | integument phenotype
+ MGI:3852409 | integument phenotype
+ MGI:3852410 | integument phenotype
+ MGI:4352856 | immune system phenotype
+ MGI:4353223 | integument phenotype
+ MGI:4353816 | nervous system phenotype
+ MGI:4353893 | cardiovascular system phenotype
+ MGI:4353990 | cellular phenotype
+ MGI:4354586 | integument phenotype
+ MGI:4355164 | obsolete other phenotype
+ MGI:4355171 | obsolete other phenotype
+ MGI:4355965 | obsolete other phenotype
+ MGI:4355995 | integument phenotype
+ MGI:4357792 | cellular phenotype
+ MGI:4357966 | cellular phenotype
+ MGI:4359380 | obsolete other phenotype
+ MGI:4359889 | growth/size/body region phenotype
+ MGI:4359897 | growth/size/body region phenotype
+ MGI:4359898 | growth/size/body region phenotype
+ MGI:4362040 | cellular phenotype
+ MGI:4365394 | integument phenotype
+ MGI:4366271 | integument phenotype
+ MGI:4366288 | integument phenotype
+ MGI:4398702 | integument phenotype
+ MGI:4414756 | nervous system phenotype
+ MGI:4414796 | obsolete other phenotype
+ MGI:4414946 | cellular phenotype
+ MGI:4414948 | cellular phenotype
+ MGI:4415816 | behavior/neurological phenotype
+ MGI:4415817 | behavior/neurological phenotype
+ MGI:4415818 | integument phenotype
+ MGI:4417970 | integument phenotype
+ MGI:4418090 | integument phenotype
+ MGI:4418129 | integument phenotype
+ MGI:4418497 | integument phenotype
+ MGI:4418966 | nervous system phenotype
+ MGI:4418966 | integument phenotype
+ MGI:4418975 | cellular phenotype
+ MGI:4420469 | integument phenotype
+ MGI:4420470 | integument phenotype
+ MGI:4421789 | obsolete other phenotype
+ MGI:4429975 | obsolete other phenotype
+ MGI:4430302 | integument phenotype
+ MGI:4430303 | integument phenotype
+ MGI:4430562 | integument phenotype
+ MGI:4436909 | integument phenotype
+ MGI:4437073 | integument phenotype
+ MGI:4437822 | integument phenotype
+ MGI:4437823 | integument phenotype
+ MGI:4450988 | integument phenotype
+ MGI:4451190 | integument phenotype
+ MGI:4452361 | integument phenotype
+ MGI:4453872 | nervous system phenotype
+ MGI:4457132 | obsolete other phenotype
+ MGI:4457410 | obsolete other phenotype
+ MGI:4461268 | integument phenotype
+ MGI:4461321 | vision/eye phenotype
+ MGI:4462366 | integument phenotype
+ MGI:4818894 | integument phenotype
+ MGI:4818925 | integument phenotype
+ MGI:4820873 | growth/size/body region phenotype
+ MGI:4821000 | integument phenotype
+ MGI:4821001 | nervous system phenotype
+ MGI:4821001 | integument phenotype
+ MGI:4821132 | integument phenotype
+ MGI:4829794 | cellular phenotype
+ MGI:4829948 | obsolete other phenotype
+ MGI:4830779 | nervous system phenotype
+ MGI:4833779 | integument phenotype
+ MGI:4834180 | integument phenotype
+ MGI:4834182 | nervous system phenotype
+ MGI:4835040 | obsolete other phenotype
+ MGI:4837183 | integument phenotype
+ MGI:4838022 | integument phenotype
+ MGI:4838205 | nervous system phenotype
+ MGI:4838299 | obsolete other phenotype
+ MGI:4839336 | integument phenotype
+ MGI:4868483 | integument phenotype
+ MGI:4887241 | integument phenotype
+ MGI:4887828 | integument phenotype
+ MGI:4888258 | integument phenotype
+ MGI:4888635 | obsolete other phenotype
+ MGI:4888636 | obsolete other phenotype
+ MGI:4888637 | obsolete other phenotype
+ MGI:4939606 | integument phenotype
+ MGI:4941809 | vision/eye phenotype
+ MGI:4941907 | nervous system phenotype
+ MGI:4941978 | obsolete other phenotype
+ MGI:4943461 | integument phenotype
+ MGI:4943733 | immune system phenotype
+ MGI:4947861 | integument phenotype
+ MGI:4948249 | integument phenotype
+ MGI:4950062 | cellular phenotype
+ MGI:4950559 | craniofacial phenotype
+ MGI:4950909 | integument phenotype
+ MGI:4950910 | integument phenotype
+ MGI:5004869 | obsolete other phenotype
+ MGI:5004979 | cellular phenotype
+ MGI:5007487 | integument phenotype
+ MGI:5009033 | integument phenotype
+ MGI:5013919 | obsolete other phenotype
+ MGI:5049966 | nervous system phenotype
+ MGI:5140011 | obsolete other phenotype
+ MGI:5140578 | integument phenotype
+ MGI:5140579 | integument phenotype
+ MGI:5140581 | integument phenotype
+ MGI:5285207 | integument phenotype
+ MGI:5285375 | craniofacial phenotype
+ MGI:5285451 | integument phenotype
+ MGI:5286072 | cellular phenotype
+ MGI:5286073 | cellular phenotype
+ MGI:5287987 | cellular phenotype
+ MGI:5292337 | integument phenotype
+ MGI:5293232 | integument phenotype
+ MGI:5294565 | obsolete other phenotype
+ MGI:5294568 | obsolete other phenotype
+ MGI:5295049 | integument phenotype
+ MGI:5295437 | integument phenotype
+ MGI:5296379 | nervous system phenotype
+ MGI:5296380 | nervous system phenotype
+ MGI:5297920 | nervous system phenotype
+ MGI:5298033 | integument phenotype
+ MGI:5298402 | integument phenotype
+ MGI:5298865 | integument phenotype
+ MGI:5301109 | nervous system phenotype
+ MGI:5304356 | cellular phenotype
+ MGI:5305344 | nervous system phenotype
+ MGI:5306390 | growth/size/body region phenotype
+ MGI:5307250 | nervous system phenotype
+ MGI:5307923 | integument phenotype
+ MGI:5314375 | mortality/aging
+ MGI:5314376 | mortality/aging
+ MGI:5314953 | obsolete other phenotype
+ MGI:5317144 | integument phenotype
+ MGI:5319318 | integument phenotype
+ MGI:5426387 | obsolete other phenotype
+ MGI:5426691 | behavior/neurological phenotype
+ MGI:5427823 | integument phenotype
+ MGI:5427826 | integument phenotype
+ MGI:5427842 | integument phenotype
+ MGI:5427852 | integument phenotype
+ MGI:5427856 | integument phenotype
+ MGI:5427949 | cardiovascular system phenotype
+ MGI:5427951 | cardiovascular system phenotype
+ MGI:5428218 | growth/size/body region phenotype
+ MGI:5428681 | integument phenotype
+ MGI:5428691 | integument phenotype
+ MGI:5428886 | growth/size/body region phenotype
+ MGI:5429069 | growth/size/body region phenotype
+ MGI:5429070 | growth/size/body region phenotype
+ MGI:5429072 | growth/size/body region phenotype
+ MGI:5429073 | growth/size/body region phenotype
+ MGI:5429075 | growth/size/body region phenotype
+ MGI:5429076 | growth/size/body region phenotype
+ MGI:5429079 | growth/size/body region phenotype
+ MGI:5429080 | growth/size/body region phenotype
+ MGI:5429081 | growth/size/body region phenotype
+ MGI:5429556 | integument phenotype
+ MGI:5430992 | growth/size/body region phenotype
+ MGI:5431497 | integument phenotype
+ MGI:5431886 | nervous system phenotype
+ MGI:5432033 | cardiovascular system phenotype
+ MGI:5433500 | integument phenotype
+ MGI:5435871 | nervous system phenotype
+ MGI:5438099 | growth/size/body region phenotype
+ MGI:5438277 | immune system phenotype
+ MGI:5438280 | immune system phenotype
+ MGI:5440896 | integument phenotype
+ MGI:5440963 | nervous system phenotype
+ MGI:5444514 | integument phenotype
+ MGI:5444635 | integument phenotype
+ MGI:5449976 | immune system phenotype
+ MGI:5449982 | vision/eye phenotype
+ MGI:5449982 | cardiovascular system phenotype
+ MGI:5449983 | craniofacial phenotype
+ MGI:5449983 | vision/eye phenotype
+ MGI:5449983 | adipose tissue phenotype
+ MGI:5449985 | behavior/neurological phenotype
+ MGI:5449985 | immune system phenotype
+ MGI:5450473 | integument phenotype
+ MGI:5450479 | skeleton phenotype
+ MGI:5450479 | integument phenotype
+ MGI:5450479 | behavior/neurological phenotype
+ MGI:5450498 | homeostasis/metabolism phenotype
+ MGI:5450498 | behavior/neurological phenotype
+ MGI:5450519 | homeostasis/metabolism phenotype
+ MGI:5450519 | adipose tissue phenotype
+ MGI:5450543 | immune system phenotype
+ MGI:5450543 | hematopoietic system phenotype
+ MGI:5450543 | behavior/neurological phenotype
+ MGI:5450543 | skeleton phenotype
+ MGI:5450543 | limbs/digits/tail phenotype
+ MGI:5450546 | immune system phenotype
+ MGI:5450546 | behavior/neurological phenotype
+ MGI:5450546 | skeleton phenotype
+ MGI:5450563 | integument phenotype
+ MGI:5450563 | adipose tissue phenotype
+ MGI:5450563 | behavior/neurological phenotype
+ MGI:5450608 | homeostasis/metabolism phenotype
+ MGI:5450637 | integument phenotype
+ MGI:5450641 | skeleton phenotype
+ MGI:5450641 | integument phenotype
+ MGI:5450645 | obsolete other phenotype
+ MGI:5450673 | growth/size/body region phenotype
+ MGI:5450673 | hematopoietic system phenotype
+ MGI:5450673 | homeostasis/metabolism phenotype
+ MGI:5450701 | integument phenotype
+ MGI:5450701 | cardiovascular system phenotype
+ MGI:5450701 | adipose tissue phenotype
+ MGI:5461653 | nervous system phenotype
+ MGI:5461654 | nervous system phenotype
+ MGI:5461824 | integument phenotype
+ MGI:5461825 | integument phenotype
+ MGI:5461826 | integument phenotype
+ MGI:5461827 | integument phenotype
+ MGI:5466878 | growth/size/body region phenotype
+ MGI:5467972 | obsolete other phenotype
+ MGI:5469451 | obsolete other phenotype
+ MGI:5469981 | nervous system phenotype
+ MGI:5471253 | integument phenotype
+ MGI:5473296 | integument phenotype
+ MGI:5478744 | integument phenotype
+ MGI:5485992 | immune system phenotype
+ MGI:5486218 | obsolete other phenotype
+ MGI:5490222 | integument phenotype
+ MGI:5490602 | integument phenotype
+ MGI:5495280 | cellular phenotype
+ MGI:5495812 | obsolete other phenotype
+ MGI:5496441 | integument phenotype
+ MGI:5504374 | integument phenotype
+ MGI:5504375 | integument phenotype
+ MGI:5504444 | cellular phenotype
+ MGI:5509328 | obsolete other phenotype
+ MGI:5509330 | obsolete other phenotype
+ MGI:5516190 | nervous system phenotype
+ MGI:5517427 | immune system phenotype
+ MGI:5517429 | immune system phenotype
+ MGI:5517669 | nervous system phenotype
+ MGI:5520077 | nervous system phenotype
+ MGI:5521285 | obsolete other phenotype
+ MGI:5526039 | nervous system phenotype
+ MGI:5527284 | nervous system phenotype
+ MGI:5527449 | integument phenotype
+ MGI:5529272 | growth/size/body region phenotype
+ MGI:5544568 | integument phenotype
+ MGI:5544725 | integument phenotype
+ MGI:5550465 | obsolete other phenotype
+ MGI:5552013 | integument phenotype
+ MGI:5554934 | obsolete other phenotype
+ MGI:5554936 | integument phenotype
+ MGI:5559041 | integument phenotype
+ MGI:5562353 | integument phenotype
+ MGI:5563203 | integument phenotype
+ MGI:5563662 | nervous system phenotype
+ MGI:5563665 | nervous system phenotype
+ MGI:5563686 | nervous system phenotype
+ MGI:5577087 | integument phenotype
+ MGI:5587824 | obsolete other phenotype
+ MGI:5588103 | integument phenotype
+ MGI:5588371 | integument phenotype
+ MGI:5588818 | respiratory system phenotype
+ MGI:5607777 | integument phenotype
+ MGI:5608798 | integument phenotype
+ MGI:5620310 | obsolete other phenotype
+ MGI:5638539 | integument phenotype
+ MGI:5641392 | integument phenotype
+ MGI:5643713 | growth/size/body region phenotype
+ MGI:5661346 | integument phenotype
+ MGI:5688559 | integument phenotype
+ MGI:5689329 | integument phenotype
+ MGI:5693761 | nervous system phenotype
+ MGI:5695443 | integument phenotype
+ MGI:5698703 | integument phenotype
+ MGI:5699417 | obsolete no phenotypic analysis
+ MGI:5699563 | integument phenotype
+ MGI:5707290 | obsolete other phenotype
+ MGI:5707781 | integument phenotype
+ MGI:5749248 | integument phenotype
+ MGI:5751602 | integument phenotype
+ MGI:5755101 | integument phenotype
+ MGI:5756879 | mortality/aging
+ MGI:5774851 | integument phenotype
+ MGI:5781564 | mortality/aging
+ MGI:5781590 | integument phenotype
+ MGI:5781601 | mortality/aging
+ MGI:5781616 | mortality/aging
+ MGI:5781631 | reproductive system phenotype
+ MGI:5781642 | hematopoietic system phenotype
+ MGI:5781642 | immune system phenotype
+ MGI:5781661 | mortality/aging
+ MGI:5781665 | integument phenotype
+ MGI:5781665 | reproductive system phenotype
+ MGI:5781693 | reproductive system phenotype
+ MGI:5781695 | mortality/aging
+ MGI:5781716 | integument phenotype
+ MGI:5781718 | integument phenotype
+ MGI:5781740 | mortality/aging
+ MGI:5781749 | mortality/aging
+ MGI:5781795 | integument phenotype
+ MGI:5782019 | integument phenotype
+ MGI:5782024 | integument phenotype
+ MGI:5782031 | integument phenotype
+ MGI:5782037 | reproductive system phenotype
+ MGI:5782071 | integument phenotype
+ MGI:5782079 | integument phenotype
+ MGI:5782084 | integument phenotype
+ MGI:5782119 | integument phenotype
+ MGI:5782192 | integument phenotype
+ MGI:5782205 | integument phenotype
+ MGI:5782209 | integument phenotype
+ MGI:5782226 | integument phenotype
+ MGI:5790982 | nervous system phenotype
+ MGI:5791061 | integument phenotype
+ MGI:5791913 | integument phenotype
+ MGI:5796139 | integument phenotype
+ MGI:5812016 | nervous system phenotype
+ MGI:5824895 | integument phenotype
+ MGI:5827985 | integument phenotype
+ MGI:5829549 | nervous system phenotype
+ MGI:5882211 | integument phenotype
+ MGI:5882503 | nervous system phenotype
+ MGI:5882505 | nervous system phenotype
+ MGI:5896603 | integument phenotype
+ MGI:5896605 | integument phenotype
+ MGI:5896987 | nervous system phenotype
+ MGI:5903048 | nervous system phenotype
+ MGI:5903636 | integument phenotype
+ MGI:5906824 | integument phenotype
+ MGI:5907140 | integument phenotype
+ MGI:6121436 | cellular phenotype
+ MGI:6162678 | integument phenotype
+ MGI:6188064 | nervous system phenotype
+ MGI:6189202 | integument phenotype
+ MGI:6201144 | integument phenotype
+ MGI:6201442 | integument phenotype
+ MGI:6201596 | integument phenotype
+ MGI:6260058 | integument phenotype
+ MGI:6262341 | homeostasis/metabolism phenotype
+ MGI:6270171 | nervous system phenotype
+ MGI:6274313 | integument phenotype
+ MGI:6286096 | integument phenotype
+ MGI:6294467 | integument phenotype
+ MGI:6332960 | nervous system phenotype
+ MGI:6357188 | integument phenotype
+ MGI:6367626 | nervous system phenotype
+ MGI:6368879 | integument phenotype
+ MGI:6377093 | integument phenotype
+ MGI:6377264 | nervous system phenotype
+ MGI:6377667 | nervous system phenotype
+ MGI:6380699 | integument phenotype
+ MGI:6380700 | integument phenotype
+ MGI:6388458 | integument phenotype
+ MGI:6388521 | integument phenotype
+ MGI:6392909 | integument phenotype
+ MGI:6393881 | integument phenotype
+ MGI:6400801 | nervous system phenotype
+ MGI:6400803 | nervous system phenotype
+ MGI:6401062 | integument phenotype
+ MGI:6402053 | nervous system phenotype
+ MGI:6403626 | nervous system phenotype
+ MGI:6404457 | nervous system phenotype
+ MGI:6441736 | integument phenotype
+ MGI:6455506 | integument phenotype
+ MGI:6473224 | integument phenotype
+ MGI:6473225 | integument phenotype
+ MGI:6473973 | integument phenotype
+ MGI:6479992 | integument phenotype
+ MGI:6480498 | homeostasis/metabolism phenotype
+ MGI:6488233 | integument phenotype
+ MGI:6491326 | nervous system phenotype
+ MGI:6491327 | nervous system phenotype
+ MGI:6491328 | nervous system phenotype
+ MGI:6501115 | integument phenotype
+ MGI:6506871 | integument phenotype
+ MGI:6509028 | integument phenotype
+ MGI:6510865 | integument phenotype
+ MGI:6510869 | integument phenotype
+ MGI:6511251 | integument phenotype
+ MGI:6514728 | nervous system phenotype
+ MGI:6514808 | nervous system phenotype
+ MGI:6695901 | nervous system phenotype
+ MGI:6696404 | integument phenotype
+ MGI:6711061 | integument phenotype
+(818 rows)

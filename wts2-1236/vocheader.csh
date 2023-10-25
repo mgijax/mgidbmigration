@@ -28,9 +28,10 @@ ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_AnnotHeader_create.object
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeaderAll_create.object
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 
+# comment out before creating tag for Dave
 # for testing
 ${PG_MGD_DBSCHEMADIR}/table/VOC_AnnotHeader_truncate.object
-loadTableData.csh mgi-testdb4 lec mgd VOC_AnnotHeader /home/lec/mgi/dbutils/mgidbmigration-trunk/wts2-1236/VOC_AnnotHeader.bcp.bak "|"
+loadTableData.csh mgi-testdb4 lec mgd VOC_AnnotHeader /home/lec/mgi/dbutils/mgidbmigration-trunk/wts2-1236/VOC_AnnotHeader.bcp "|"
 
 # before/after
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

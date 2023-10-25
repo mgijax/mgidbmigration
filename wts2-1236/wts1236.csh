@@ -44,10 +44,6 @@ ${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
 
 scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMA/adult_mouse_anatomy.obo ${DATALOADSOUTPUT}/mgi/vocload/runTimeMA
-scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP
-scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.header ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP
-scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.note ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP
-scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.synonym ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP
 scp bhmgiapp01:/data/loads/mgi/vocload/emap/input/EMAPA.obo ${DATALOADSOUTPUT}/mgi/vocload/emap/input
 
 # remove old lib/python scripts that are moved to vocload/lib
@@ -61,7 +57,6 @@ ${VOCLOAD}/runOBOIncLoad.sh GO.config
 ${VOCLOAD}/runOBOIncLoad.sh HPO.config
 ${VOCLOAD}/runOBOIncLoad.sh SO.config
 ${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
-${VOCLOAD}/runOBOIncLoad.sh MP.config
 ${VOCLOAD}/runOBOIncLoad.sh MA.config
 ${VOCLOAD}/emap/emapload.sh
 ${SLIMTERMLOAD}/bin/slimtermload.sh emapslimload.config

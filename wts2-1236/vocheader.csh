@@ -27,6 +27,7 @@ scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MP.synonym ${DATALOADSOUTPUT}/m
 ${PG_MGD_DBSCHEMADIR}/autosequence/VOC_AnnotHeader_create.object
 ${PG_MGD_DBSCHEMADIR}/procedure/VOC_processAnnotHeaderAll_create.object
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh
 
 # comment out before creating tag for Dave
 # for testing

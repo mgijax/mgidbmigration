@@ -59,7 +59,6 @@ ${VOCLOAD}/runOBOIncLoad.sh SO.config
 ${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
 ${VOCLOAD}/runOBOIncLoad.sh MA.config
 ${VOCLOAD}/emap/emapload.sh
-${SLIMTERMLOAD}/bin/slimtermload.sh emapslimload.config
 
 ${MGICACHELOAD}/go_annot_extensions_display_load.csh
 ${MGICACHELOAD}/go_isoforms_display_load.csh

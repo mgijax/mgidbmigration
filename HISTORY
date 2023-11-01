@@ -1,5 +1,6 @@
+TAG: mgidbmigration-6-0-22-59
 TAG: mgidbmigration-6-0-22-58
-DATE: 10/25/2023
+DATE: 10/25/2023, 11/01/2023
 STAFF: lec
 wts2-1311/improve lib_py_postgres/product changes
 using scripts from wts2-1236

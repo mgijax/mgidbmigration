@@ -26,7 +26,7 @@ select count(*) from VOC_Term_EMAPS;
 select count(*) from MGI_Note where _notetype_key = 1045;
 select count(*) from MGI_Note where _notetype_key = 1046;
 select count(*) from GXD_Expression;
-select count(*) from MGI_Note where _notetype_key = 1021 and _mgitype_key = 11;
+select count(*) from MGI_Note where _notetype_key = 1021 and _mgitype_key = 11 and _modifiedby_key = 1480;
 EOSQL
 
 wc -l ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_annot_extensions.bcp

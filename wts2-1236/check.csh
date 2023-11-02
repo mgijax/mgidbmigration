@@ -35,19 +35,5 @@ wc -l ${DATALOADSOUTPUT}/mgi/mgicacheload/output/GXD_Expression.bcp
 wc -l ${DATALOADSOUTPUT}/mgi/mgicacheload/output/ACC_Accession.bcp
 wc -l ${DATALOADSOUTPUT}/mgi/alomrkload/output/MGI_Note.bcp
 
-${MGICACHELOAD}/gxdexpression.csh
-${MGICACHELOAD}/inferredfrom.csh
-
-${ALOMRKLOAD}/bin/alomrkload.sh
-
-#${VOCLOAD}/runOBOIncLoad.sh CL.config
-#${UNIPROTLOAD}/bin/makeInterProAnnot.sh
-#${PROLOAD}/bin/proload.sh
-#${PROISOFORMLOAD}/bin/proisoform.sh
-#${PIRSFLOAD}/bin/pirsfload.sh
-#${MCVLOAD}/bin/mcvload.sh
-#${RVLOAD}/bin/rvload.sh
-#${GENEMODELLOAD}/bin/biotypemapping.sh
-
 date |tee -a $LOG
 

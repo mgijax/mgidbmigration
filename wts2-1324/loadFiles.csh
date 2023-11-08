@@ -1,38 +1,14 @@
 #!/bin/csh -f
 
-cd `dirname $0` && source ./Configuration
+cd `dirname $0` && source ${ENTREZGENELOAD}/Configuration
 
 cd ${EGINPUTDIR}
 
-setenv LOG      ${EGLOGSDIR}/`basename $0`.log
-rm -rf ${LOG}
-touch ${LOG}
-
-date >> ${LOG}
-
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession.new ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2pubmed ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2pubmed.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq.new ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_dbxref.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_history ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_history.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_synonym.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-
 # truncate existing tables
-${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_truncate.logical >>& ${LOG}
+${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_truncate.logical 
 
 # drop indexes
-${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_drop.logical >>& ${LOG}
+${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_drop.logical 
 
 # bcp new data into tables
 ${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_Info ${EGINPUTDIR} gene_info.bcp "\t" "\n" radar
@@ -45,9 +21,9 @@ ${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_History 
 ${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_MIM ${EGINPUTDIR} mim2gene_medgen.mgi "\t" "\n" radar
 
 # create indexes
-${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_create.logical >>& ${LOG}
+${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_create.logical 
 
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 >>& ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
  
 /* convert the EG mapPosition values to MGI format (remove the leading chromosome value) */
 
@@ -123,5 +99,4 @@ where not exists (select DP_EntrezGene_Info.* from DP_EntrezGene_Info
 
 EOSQL
 
-date >> ${LOG}
 

@@ -11,8 +11,6 @@ endif
 
 source ${MGICONFIG}/master.config.csh
 
-cd `dirname $0`
-
 date
 
 #rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
@@ -33,58 +31,45 @@ date
 #rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
 #rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
 
-# try run of entezgeneload for each table; should fail
+# truncate all of the dp_entrezgene tables
+source ${ENTREZGENELOAD}/Configuration
+${RADAR_DBSCHEMADIR}/table/DP_EntrezGene_truncate.logical
+${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_drop.logical
+
+# foreach dp_entrezgene table
+#       sanity check the table; should fail; should skip the egload/entrezgeneload
+#       reload the dp_entrezgene table
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_Info ${EGINPUTDIR} gene_info.bcp "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_Accession ${EGINPUTDIR} gene2accession.new "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_DBXRef ${EGINPUTDIR} gene_dbxref.bcp "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_PubMed ${EGINPUTDIR} gene2pubmed.mgi "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_RefSeq ${EGINPUTDIR} gene2refseq.new "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_Synonym ${EGINPUTDIR} gene_synonym.bcp "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_History ${EGINPUTDIR} gene_history.mgi "\t" "\n" radar
+
+${ENTREZGENELOAD}/loadAll.csh
+${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_MIM ${EGINPUTDIR} mim2gene_medgen.mgi "\t" "\n" radar
+
+# all dp_entrezgene tables have been tested for false sanity check
+# reload all of the radar tables again
 ./loadFiles.csh
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-truncate table radar.dp_entrezgene_accession;
-EOSQL
-${ENTREZGENELOAD}/bin/loadAll.csh
 
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_dbxref;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_history;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_info;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_mim;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_pubmed;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_refseq;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-#./loadFiles.csh
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-#truncate table radar.dp_entrezgene_synonym;
-#EOSQL
-#${ENTREZGENELOAD}/bin/loadAll.csh
-
-# try run of entrezgeneload; should be successful
-#./loadFiles.csh
-#${ENTREZGENELOAD}/bin/loadAll.csh
+# run entrezgeneload again; verify this run is successful
+#${ENTREZGENELOAD}/loadAll.csh
 
 date
 

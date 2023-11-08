@@ -69,7 +69,7 @@ ${PG_DBUTILS}/bin/bcpin.csh ${MGD_DBSERVER} ${MGD_DBNAME} DP_EntrezGene_MIM ${EG
 ./loadFiles.csh
 
 # run entrezgeneload again; verify this run is successful
-#${ENTREZGENELOAD}/loadAll.csh
+${ENTREZGENELOAD}/loadAll.csh
 
 date
 

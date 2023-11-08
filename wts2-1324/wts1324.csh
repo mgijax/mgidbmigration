@@ -13,23 +13,23 @@ source ${MGICONFIG}/master.config.csh
 
 date
 
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession.new ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2pubmed ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2pubmed.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq.new ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_dbxref.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_history ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_history.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_synonym.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
-#rcp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2accession.new ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2pubmed ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2pubmed.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene2refseq.new ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_dbxref.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_history ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_history.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_info.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/gene_synonym.bcp ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
+#scp bhmgiapp01:/data/loads/entrezgene/entrezgeneload/input/mim2gene_medgen.mgi ${DATALOADSOUTPUT}/entrezgene/entrezgeneload/input
 
 # truncate all of the dp_entrezgene tables/drop indexes
 source ${ENTREZGENELOAD}/Configuration

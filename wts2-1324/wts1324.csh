@@ -80,8 +80,8 @@ ${RADAR_DBSCHEMADIR}/index/DP_EntrezGene_create.logical
 ./loadFiles.csh
 
 # run egload, entrezgeneload again; verify runs are successful
-${EGLOAD}/bin/egload.sh
-${ENTREZGENELOAD}/loadAll.csh
+#${EGLOAD}/bin/egload.sh
+#${ENTREZGENELOAD}/loadAll.csh
 
 date
 

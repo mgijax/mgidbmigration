@@ -9,6 +9,8 @@
 #       dailytasks.csh:${GOLOAD}/godaily.sh -> ${GOLOAD}/bin/go.sh
 #       sundaytasks.csh:${GOLOAD}/go.sh -> ${GOLOAD}/bin/go.sh
 #
+#       new:  ${GOLOAD}//bin/goload.sh
+#
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
 #       ftp.geneontology.org.goload
@@ -21,6 +23,8 @@
 #       gomousenoctua.py:
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
+#
+#       will need to add uberon id -> emapa id
 #
 #       proteincomplex.sh : remove
 #
@@ -81,6 +85,11 @@
 #       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
 # 3. David: change description for GO_REF references at MGI and at GO
+# 4. goload.error : Reactome references are not in MGI
+#       when we process the GOA/Mouse, we save all of the Reactome rows 
+#       (for which we do not have the reference in MGI) to a goamouse.gaf file. 
+#       Then we append the goamouse.gaf to the end of our mgi/gaf.
+#       Since MGI will no longer be generating the MGI/GAF (GO will), we need another solution
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -103,49 +112,49 @@ and a1.prefixpart = 'GO_REF:'
 and a1._object_key = a2._refs_key
 ;
 
-delete from mgi_user where login in ('dots_seqload');
-delete from mgi_user where login in ('dfci_seqload');
-delete from mgi_user where login in ('nia_seqload');
-delete from mgi_user where login in ('mkiaa_load');
-delete from mgi_user where login in ('nia_assocload');
-delete from mgi_user where login in ('snp_load');
-delete from mgi_user where login in ('dots_assocload');
-delete from mgi_user where login in ('dfci_assocload');
-delete from mgi_user where login in ('unists_nomenload');
-delete from mgi_user where login in ('unists_coordload');
-delete from mgi_user where login in ('mirbase_coordload');
-delete from mgi_user where login in ('mirbase_load');
-delete from mgi_user where login in ('qtl_coordload');
-delete from mgi_user where login in ('treefam_assocload');
-delete from mgi_user where login in ('gtlite_assocload');
-delete from mgi_user where login in ('roopenian-sts_coordload');
-delete from mgi_user where login in ('mousecyc_load');
-delete from mgi_user where login in ('gbpreprocessor');
-delete from mgi_user where login in ('gbgtfilter');
-delete from mgi_user where login in ('mousefunc_assocload');
-delete from mgi_user where login in ('gtblatpipeline');
-delete from mgi_user where login in ('tr9601dna_coordload');
-delete from mgi_user where login in ('tr9583micro_coordload');
-delete from mgi_user where login in ('tr9873mirbase_coordload');
-delete from mgi_user where login in ('tr9612_annotload');
-delete from mgi_user where login in ('mtoload');
-delete from mgi_user where login in ('genmapload');
-delete from mgi_user where login in ('trna_coordload');
-delete from mgi_user where login in ('orthology_load');
-delete from mgi_user where login in ('eurogenoannot_load');
-delete from mgi_user where login in ('mapviewload');
-delete from mgi_user where login in ('qtlarchiveload');
-delete from mgi_user where login in ('emapload');
-delete from mgi_user where login in ('rvload');
-delete from mgi_user where login in ('fearload');
-delete from mgi_user where login in ('uniprot_override_load');
-delete from mgi_user where login in ('omim_hpoload');
-delete from mgi_user where login in ('scrum-dog');
-delete from mgi_user where login in ('hgnc_homologyload');
-delete from mgi_user where login in ('homologeneload');
-delete from mgi_user where login in ('hybrid_homologyload');
-delete from mgi_user where login in ('ps');
-delete from mgi_user where login in ('smc');
+--delete from mgi_user where login in ('dots_seqload');
+--delete from mgi_user where login in ('dfci_seqload');
+--delete from mgi_user where login in ('nia_seqload');
+--delete from mgi_user where login in ('mkiaa_load');
+--delete from mgi_user where login in ('nia_assocload');
+--delete from mgi_user where login in ('snp_load');
+--delete from mgi_user where login in ('dots_assocload');
+--delete from mgi_user where login in ('dfci_assocload');
+--delete from mgi_user where login in ('unists_nomenload');
+--delete from mgi_user where login in ('unists_coordload');
+--delete from mgi_user where login in ('mirbase_coordload');
+--delete from mgi_user where login in ('mirbase_load');
+--delete from mgi_user where login in ('qtl_coordload');
+--delete from mgi_user where login in ('treefam_assocload');
+--delete from mgi_user where login in ('gtlite_assocload');
+--delete from mgi_user where login in ('roopenian-sts_coordload');
+--delete from mgi_user where login in ('mousecyc_load');
+--delete from mgi_user where login in ('gbpreprocessor');
+--delete from mgi_user where login in ('gbgtfilter');
+--delete from mgi_user where login in ('mousefunc_assocload');
+--delete from mgi_user where login in ('gtblatpipeline');
+--delete from mgi_user where login in ('tr9601dna_coordload');
+--delete from mgi_user where login in ('tr9583micro_coordload');
+--delete from mgi_user where login in ('tr9873mirbase_coordload');
+--delete from mgi_user where login in ('tr9612_annotload');
+--delete from mgi_user where login in ('mtoload');
+--delete from mgi_user where login in ('genmapload');
+--delete from mgi_user where login in ('trna_coordload');
+--delete from mgi_user where login in ('orthology_load');
+--delete from mgi_user where login in ('eurogenoannot_load');
+--delete from mgi_user where login in ('mapviewload');
+--delete from mgi_user where login in ('qtlarchiveload');
+--delete from mgi_user where login in ('emapload');
+--delete from mgi_user where login in ('rvload');
+--delete from mgi_user where login in ('fearload');
+--delete from mgi_user where login in ('uniprot_override_load');
+--delete from mgi_user where login in ('omim_hpoload');
+--delete from mgi_user where login in ('scrum-dog');
+--delete from mgi_user where login in ('hgnc_homologyload');
+--delete from mgi_user where login in ('homologeneload');
+--delete from mgi_user where login in ('hybrid_homologyload');
+--delete from mgi_user where login in ('ps');
+--delete from mgi_user where login in ('smc');
 
 -- set users to Inactive
 update mgi_user set _userstatus_key = 316351

@@ -164,7 +164,7 @@ delete from voc_term where _term_key in (316358,316356);
 update voc_term set term = 'go_qualifier_term', abbreviation = 'go_qualifier_term' where _term_key = 18583064;
 insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_id', 'go_qualifier_id', null, 137, 0, 1001, 1001, now(), now());
 
-# probably remove
+-- probably remove
 DROP FUNCTION IF EXISTS VOC_deleteGOWithdrawn();
 
 EOSQL

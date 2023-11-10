@@ -9,7 +9,7 @@
 #       dailytasks.csh:${GOLOAD}/godaily.sh -> ${GOLOAD}/bin/go.sh
 #       sundaytasks.csh:${GOLOAD}/go.sh -> ${GOLOAD}/bin/go.sh
 #
-#       new:  ${GOLOAD}//bin/goload.sh
+#       new:  ${GOLOAD}/bin/goload.sh
 #
 # mirror_wget : remove
 #       ftp.geneontology.org.external2go
@@ -24,12 +24,11 @@
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
-#       will need to add uberon id -> emapa id
+#       will need to add uberon id -> emapa id : sierra did this in the mgd.gpad file already
 #
 #       proteincomplex.sh : remove
 #
 # annotload : changing isGOmouseNoctua -> isGO
-#       isGO       : remove
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
@@ -153,8 +152,8 @@ and a1._object_key = a2._refs_key
 --delete from mgi_user where login in ('hgnc_homologyload');
 --delete from mgi_user where login in ('homologeneload');
 --delete from mgi_user where login in ('hybrid_homologyload');
---delete from mgi_user where login in ('ps');
---delete from mgi_user where login in ('smc');
+delete from mgi_user where login in ('ps');
+delete from mgi_user where login in ('smc');
 
 -- set users to Inactive
 update mgi_user set _userstatus_key = 316351
@@ -180,6 +179,8 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_drop.object
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_drop.object
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
+-- move all of the GOA_*, NOCTUA_* -> GO_Central
+
 select _Annot_key into temp toUpdate1 from VOC_Annot where _AnnotType_key = 1000;
 select p._AnnotEvidence_key into temp toUpdate2 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p
 where a._AnnotType_key = 1000
@@ -192,14 +193,28 @@ create index td_idx2 on toUpdate2(_AnnotEvidence_key);
 update voc_evidence e set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate1 t where t._annot_key = e._annot_key;
 update voc_evidence_property p set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate2 t where t._annotevidence_key = p._annotevidence_key;
 
+select s._Assoc_key 
+into temp toUpdate3 
+from MGI_Reference_Assoc s, MGI_User u 
+where s._createdby_key = u._user_key
+and u.login like 'GOA_%'
+;
+create index td_idx3 on toUpdate3(_Assoc_key);
+update MGI_Reference_Assoc s set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate3 t where t._assoc_key = s._assoc_key;
+
+select s._Assoc_key 
+into temp toUpdate4 
+from BIB_Workflow_Status s, MGI_User u 
+where s._createdby_key = u._user_key
+and u.login like 'GOA_%'
+;
+create index td_idx4 on toUpdate4(_Assoc_key);
+update BIB_Workflow_Status s set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate4 t where t._assoc_key = s._assoc_key;
+
+-- set 'GOC' -> GO_MGI to re-use this object
+update MGI_User set login = 'GO_MGI', name = 'GO_MGI' where _user_key = 1503;
+delete from MGI_User where login like 'GOA_%';
 delete from mgi_user where login like 'NOCTUA_%';
-delete from mgi_user where login in ('GOA_dictyBase');
-delete from mgi_user where login in ('GOA_YuBioLab');
-delete from mgi_user where login in ('GOA_WB');
-delete from mgi_user where login in ('GOA_HGNC-UCL');
-delete from mgi_user where login in ('GOA_RHEA');
-delete from mgi_user where login in ('GOA_ComplexPortal');
-delete from mgi_user where login in ('GOA_DisProt');
 
 EOSQL
 ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_create.object
@@ -215,66 +230,67 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
 #
 
-rm -rf ${DATADOWNLOADS}/go_noctua 
-rm -rf ${DATADOWNLOADS}/go_translation 
-rm -rf ${DATADOWNLOADS}/go_translation 
-rm -rf ${DATADOWNLOADS}/go_gene_assoc
-rm -rf ${DATADOWNLOADS}/goa
-rm -rf ${DATADOWNLOADS}/current.geneontology.org 
-rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
-rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
-rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
-rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
-rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
-rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
+#rm -rf ${DATADOWNLOADS}/go_noctua 
+#rm -rf ${DATADOWNLOADS}/go_translation 
+#rm -rf ${DATADOWNLOADS}/go_translation 
+#rm -rf ${DATADOWNLOADS}/go_gene_assoc
+#rm -rf ${DATADOWNLOADS}/goa
+#rm -rf ${DATADOWNLOADS}/current.geneontology.org 
+#rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
+#rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
+#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
+#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
+#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
+#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
 
-${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
-${MIRROR_WGET}/download_package purl.obolibrary.org.pr
-${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
-${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
-${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+#${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
+#${MIRROR_WGET}/download_package purl.obolibrary.org.pr
+#${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
+#${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
+#${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 
-scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+#scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 
-rm -rf ${DATALOADSOUTPUT}/go
-rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
-rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
+#rm -rf ${DATALOADSOUTPUT}/go
+#rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
+#rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info
-${UNIPROTLOAD}/bin/uniprotload.sh 
+#${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # run go/annotations
-${GOLOAD}/Install
-#${GOLOAD}/go.sh 
+#${GOLOAD}/Install
+${GOLOAD}/bin/goload.sh
 
 # per David: GO should provide
-rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
-rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
-rm -rf ${FTPREPORTDIR}/gene_association.mgi*
-rm -rf ${FTPREPORTDIR}/mgi.gpad*
+#rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+#rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
+#rm -rf ${FTPREPORTDIR}/gene_association.mgi*
+#rm -rf ${FTPREPORTDIR}/mgi.gpad*
 
 # per David: won’t be needed since they only exist to be picked up by GO:
-rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
-rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
-rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
-rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
-rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
-rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
+#rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
+#rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
+#rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
+#rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
+#rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
+#rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 
+# 11/10 : ask dave
 # per David: unknown
-#rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
-#rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
+##rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
+##rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
 
-# this report is obsolete; but run this version to help with testing
-rm -rf *.mgi *.gpad
-${PYTHON} GO_gene_association.py 
+# this report is obsolete; but run this version to help with testing?
+#rm -rf *.mgi *.gpad
+##${PYTHON} GO_gene_association.py 
 
-cd ${QCRPTS}
-source ./Configuration
-cd mgd
-${PYTHON} GO_EvidenceProperty.py
-${PYTHON} GO_stats.py
+#cd ${QCRPTS}
+#source ./Configuration
+#cd mgd
+#${PYTHON} GO_EvidenceProperty.py
+#${PYTHON} GO_stats.py
 
 #
 # David:  review _vocab_key = 82 and remove any obsolete terms

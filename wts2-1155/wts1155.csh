@@ -209,7 +209,7 @@ and u.login like 'GOA_%'
 create index td_idx4 on toUpdate4(_Assoc_key);
 update BIB_Workflow_Status s set _createdby_key = 1539, _modifiedby_key = 1539 from toUpdate4 t where t._assoc_key = s._assoc_key;
 
--- set 'GOC' -> GO_MGI to re-use this object
+-- set 'GOC' -> GO_MGI to re-use this _user_key
 update MGI_User set login = 'GO_MGI', name = 'GO_MGI' where _user_key = 1503;
 delete from MGI_User where login like 'GOA_%';
 delete from mgi_user where login like 'NOCTUA_%';

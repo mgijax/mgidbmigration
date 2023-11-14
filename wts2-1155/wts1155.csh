@@ -80,6 +80,9 @@
 # lib_py_report
 #       go_annot_extensions.py
 #
+# lib_py_vocabbrowser : obsolete
+# vocload
+#
 # 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
 #       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
@@ -101,6 +104,8 @@ cd `dirname $0`
 
 date
  
+vocabbrowser.csh
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
 -- GO_REF references

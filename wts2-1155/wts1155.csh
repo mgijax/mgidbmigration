@@ -170,6 +170,22 @@ insert into voc_term values((select nextval('voc_term_seq')), 82, 'go_qualifier_
 -- probably remove
 DROP FUNCTION IF EXISTS VOC_deleteGOWithdrawn();
 
+-- duplicate voc_term.note
+-- occurs_at | BFO:0000066
+-- during | RO:0002092
+-- results_in_division_of | RO:0002233
+-- has_regulation_target | RO:0002233
+-- has_direct_input | RO:0002233
+-- has_end_location | RO:0002339
+-- exists_during | RO:0002491
+update VOC_Term set note = null where _vocab_key = 82 and term = 'occurs_at';
+update VOC_Term set note = null where _vocab_key = 82 and term = 'during';
+update VOC_Term set note = null where _vocab_key = 82 and term = 'results_in_division_of';
+update VOC_Term set note = null where _vocab_key = 82 and term = 'has_regulation_target';
+update VOC_Term set note = null where _vocab_key = 82 and term = 'has_direct_input';
+update VOC_Term set note = null where _vocab_key = 82 and term = 'has_end_location';
+update VOC_Term set note = null where _vocab_key = 82 and term = 'exists_during';
+
 EOSQL
 
 #

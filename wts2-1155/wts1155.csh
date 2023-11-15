@@ -104,8 +104,6 @@ cd `dirname $0`
 
 date
  
-vocabbrowser.csh
-
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
 -- GO_REF references

@@ -63,10 +63,10 @@
 # mgicacheload
 #       inferredfrom.goahumanload : remove
 #       inferredfrom.goratload    : remove
-#       inferredfrom.goaload
-#       inferredfrom.gocfpload
-#       inferredfrom.gorefgenload
-#       inferredfrom.gomousenoctua -> inferredfrom.go && change "NOCTUA"%" to "GO_Central"
+#       inferredfrom.goaload      : remove
+#       inferredfrom.gocfpload    : remove
+#       inferredfrom.gorefgenload : remove
+#       inferredfrom.gomousenoctua -> inferredfrom.go && change "NOCTUA"%" to "GO_%"
 #
 # uniprotload: remove
 #       makeGOAnnot.sh
@@ -300,8 +300,8 @@ ${GOLOAD}/bin/goload.sh
 ##rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
 
 # this report is obsolete; but run this version to help with testing?
-#rm -rf *.mgi *.gpad
-##${PYTHON} GO_gene_association.py 
+rm -rf *.mgi *.gpad
+${PYTHON} GO_gene_association.py 
 
 #cd ${QCRPTS}
 #source ./Configuration

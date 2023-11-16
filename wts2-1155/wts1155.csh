@@ -20,11 +20,8 @@
 #       ftp.ebi.ac.uk.goload : still need for reports_db/GO_gpi.py
 #
 # goload
-#       gomousenoctua.py:
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
-#
-#       will need to add uberon id -> emapa id : sierra did this in the mgd.gpad file already
 #
 #       proteincomplex.sh : remove
 #

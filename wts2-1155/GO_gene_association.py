@@ -1285,12 +1285,12 @@ doIsoform()
 #
 # GAF 2.2
 #
-fp = reportlib.init('gene_association', fileExt = '.mgi', printHeading = None)
+fp = reportlib.init('gene_association', fileExt = '.mgi', printHeading = None, outputdir = os.environ['DATALOADSOUTPUT'] + "/mgi/goload/reports")
 fp.write('!gaf-version: 2.2\n')
 fp.write('!generated-by: MGI\n')
 fp.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
 
-fp2 = reportlib.init('gene_association_pro', fileExt = '.mgi', printHeading = None)
+fp2 = reportlib.init('gene_association_pro', fileExt = '.mgi', printHeading = None, outputdir = os.environ['DATALOADSOUTPUT'] + "/mgi/goload/reports")
 fp2.write('!gaf-version: 2.2\n')
 fp2.write('!generated-by: MGI\n')
 fp2.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
@@ -1314,7 +1314,7 @@ reportlib.finish_nonps(fp2)
 # GPAD 2.0
 #
 
-fp = reportlib.init('mgi', fileExt = '.gpad', printHeading = None)
+fp = reportlib.init('mgi', fileExt = '.gpad', printHeading = None, outputdir = os.environ['DATALOADSOUTPUT'] + "/mgi/goload/reports")
 fp.write('!gpa-version: 2.0\n') 
 fp.write('!generated-by: MGI\n')
 fp.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
@@ -1343,12 +1343,12 @@ doSetup2()
 doGAFCol16()
 doIsoform()
 
-fp = reportlib.init('gene_association_nonoctua', fileExt = '.mgi', printHeading = None)
+fp = reportlib.init('gene_association_nonoctua', fileExt = '.mgi', printHeading = None, outputdir = os.environ['DATALOADSOUTPUT'] + "/mgi/goload/reports")
 fp.write('!gaf-version: 2.2\n')
 fp.write('!generated-by: MGI\n')
 fp.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
 
-fp2 = reportlib.init('gene_association_nonoctua_pro', fileExt = '.mgi', printHeading = None)
+fp2 = reportlib.init('gene_association_nonoctua_pro', fileExt = '.mgi', printHeading = None, outputdir = os.environ['DATALOADSOUTPUT'] + "/mgi/goload/reports")
 fp2.write('!gaf-version: 2.2\n')
 fp2.write('!generated-by: MGI\n')
 fp2.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))
@@ -1372,7 +1372,7 @@ reportlib.finish_nonps(fp2)
 # GPAD 2.0
 #
 
-fp = reportlib.init('mgi_nonoctua', fileExt = '.gpad', printHeading = None)
+fp = reportlib.init('mgi_nonoctua', fileExt = '.gpad', printHeading = None, outputdir = os.environ['DATALOADSOUTPUT'] + "/mgi/goload/reports")
 fp.write('!gpa-version: 2.0\n') 
 fp.write('!generated-by: MGI\n')
 fp.write('!date-generated: %s\n' % (mgi_utils.date("%Y-%m-%d")))

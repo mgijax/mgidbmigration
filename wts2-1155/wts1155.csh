@@ -352,5 +352,13 @@ EOSQL
 # add: goload/index.html">GO Load</A> <B>(???)</B>
 #
 
+# make sure annotload did not break other loads
+#${MGI_LIVE}/loadadmin/prod/removeLastrunFiles.sh
+#${MCVLOAD}/bin/mcvload.sh
+#${OMIMHPOLOAD}/bin/omim_hpoload.sh
+#${PROLOAD}/bin/proload.sh
+#${ROLLUPLOAD}/bin/rollupload.sh
+#${HTMPLOAD}/bin/runMpLoads.sh
+
 date 
 

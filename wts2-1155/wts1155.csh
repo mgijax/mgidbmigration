@@ -3,7 +3,11 @@
 #
 # wts2-1155/fl2-394/GOC taking over GOA mouse, GOA human, etc.
 #
-# per David/Cindy : move *all* before we push to production
+# sierra : driver area to pick up gpad:
+#       https://drive.google.com/drive/folders/1aZxvumsODSvXGbk_gMdFtuGhhAq4MKdL
+#       cp merged_gpad_11_16_2023.txt /data/loads/lec/mgi/goload/input/mgi.gpad
+#
+# per David/Li/Cindy : move *all* before we push to production
 #
 # loadadmin:
 #       dailytasks.csh:${GOLOAD}/godaily.sh -> ${GOLOAD}/bin/go.sh
@@ -19,18 +23,18 @@
 #
 #       ftp.ebi.ac.uk.goload : still need for reports_db/GO_gpi.py
 #
-# goload
+# goload : wts1155 branch
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
 #       proteincomplex.sh : remove
 #
-# annotload : changing isGOmouseNoctua -> isGO
+# annotload : wts1155 branch
+#       changing isGOmouseNoctua -> isGO
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
-# remove this logic:
-#        # delete any go-annotations that are using withdrawn markers
+#       remove this logic: delete any go-annotations that are using withdrawn markers
 #
 # qcreports_db
 #       mgd/GO_EvidenceProperty.py
@@ -77,6 +81,7 @@
 # lib_py_report
 #       go_annot_extensions.py
 #
+# lib_py_misc
 # lib_py_vocabbrowser : obsolete
 # vocload
 #

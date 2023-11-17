@@ -9,13 +9,13 @@
 #
 # per David/Li/Cindy : move *all* before we push to production
 #
-# loadadmin:
+# fl2-394/loadadmin:
 #       dailytasks.csh:${GOLOAD}/godaily.sh -> ${GOLOAD}/bin/go.sh
 #       sundaytasks.csh:${GOLOAD}/go.sh -> ${GOLOAD}/bin/go.sh
 #
 #       new:  ${GOLOAD}/bin/goload.sh
 #
-# mirror_wget : remove
+# fl2-394/mirror_wget : remove
 #       ftp.geneontology.org.external2go
 #       ftp.geneontology.org.goload
 #       snapshot.geneontology.org.goload
@@ -23,20 +23,40 @@
 #
 #       ftp.ebi.ac.uk.goload : still need for reports_db/GO_gpi.py
 #
-# goload : wts1155 branch
+# fl2-394/goload : wts1155 branch
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz
 #
 #       proteincomplex.sh : remove
 #
-# annotload : wts1155 branch
+# fl2-394/annotload : wts1155 branch
 #       changing isGOmouseNoctua -> isGO
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
 #       remove this logic: delete any go-annotations that are using withdrawn markers
 #
-# qcreports_db
+# fl2-394/mgicacheload
+#       inferredfrom.goahumanload : remove
+#       inferredfrom.goratload    : remove
+#       inferredfrom.goaload      : remove
+#       inferredfrom.gocfpload    : remove
+#       inferredfrom.gorefgenload : remove
+#       inferredfrom.gomousenoctua -> inferredfrom.go && change "NOCTUA"%" to "GO_%"
+#
+# fl2-394/lib_py_report
+#       go_annot_extensions.py
+#
+# fl2-492/uniprotload: remove
+#       makeGOAnnot.sh
+#       makeGOAnnot.py
+#       goecannot.config.default
+#       goipannot.config.default
+#       gospkwannot.config.default
+#       /data/downloads/go_translation
+#       /data/downloads/current.geneontology.org/ontology/external2go
+#
+# fl2-644/qcreports_db
 #       mgd/GO_EvidenceProperty.py
 #       mgd/GO_stats.py (NOCTUA_ may no longer exist)
 #       mgd/GO_PM2GeneRefsNotInMGI.py
@@ -46,7 +66,7 @@
 #               keep  : 8. QC: GOMouseNoctua/invalid pubmedids (ln)
 #               remove: Data Loads:  GOA/Human Load, GOA/Rat Load
 #
-# reports_db
+# fl2-645/reports_db
 #       remove: daily/GO_gene_association.py
 #
 #       per David: GO should provide
@@ -60,26 +80,6 @@
 #       gene_association_nonoctua.mgi
 #       gene_association_nonoctua_pro.mgi
 #       mgi_nonoctua.gpad
-#
-# mgicacheload
-#       inferredfrom.goahumanload : remove
-#       inferredfrom.goratload    : remove
-#       inferredfrom.goaload      : remove
-#       inferredfrom.gocfpload    : remove
-#       inferredfrom.gorefgenload : remove
-#       inferredfrom.gomousenoctua -> inferredfrom.go && change "NOCTUA"%" to "GO_%"
-#
-# uniprotload: remove
-#       makeGOAnnot.sh
-#       makeGOAnnot.py
-#       goecannot.config.default
-#       goipannot.config.default
-#       gospkwannot.config.default
-#       /data/downloads/go_translation
-#       /data/downloads/current.geneontology.org/ontology/external2go
-#
-# lib_py_report
-#       go_annot_extensions.py
 #
 # lib_py_misc
 # lib_py_vocabbrowser : obsolete
@@ -282,6 +282,7 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 # run go/annotations
 #${GOLOAD}/Install
 ${GOLOAD}/bin/goload.sh
+${GOLOAD}/bin/ecocheck.sh
 
 # per David: GO should provide
 #rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*

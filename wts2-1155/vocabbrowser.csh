@@ -2,7 +2,6 @@
 
 #
 # lib_py_vocabbrowser : retire
-# lib_py_misc : move CGI.py from vocabbrowser to misc
 # vocload
 # mgidbmigration
 #

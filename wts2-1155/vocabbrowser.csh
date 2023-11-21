@@ -22,7 +22,7 @@ date | tee -a $LOG
  
 # CGI.py is still used by
 # at some point, DAG.py, Node.py can be removed from this product
-rm -rf ${LIBDIRS}/DAG.py ${LIBDIRS}/Node.py
+rm -rf ${LIBDIRS/CGI.py ${LIBDIRS}/DAG.py ${LIBDIRS}/Node.py
 scp bhmgiapp01:/data/loads/mgi/vocload/runTimeMP/MPheno_OBO.ontology ${DATALOADSOUTPUT}/mgi/vocload/runTimeMP
 ${VOCLOAD}/runOBOIncLoad.sh MP.config
 

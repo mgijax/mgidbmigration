@@ -108,11 +108,13 @@ date
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
 -- GO_REF references
-select a2.jnumid, a1.accid, a2.short_citation 
-from acc_accession a1, bib_citation_cache a2 
+
+select a1._accession_key, a2.jnumid, a1.accid, a1.prefixpart, a1.numericpart, a2.short_citation
+from acc_accession a1, bib_citation_cache a2
 where a1._logicaldb_key = 185
-and a1.prefixpart = 'GO_REF:'
+and a1.accid like 'GO_REF:%'
 and a1._object_key = a2._refs_key
+order by a1.accid
 ;
 
 delete from mgi_user where login in ('dots_seqload');
@@ -275,7 +277,7 @@ rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info
-#${UNIPROTLOAD}/bin/uniprotload.sh 
+${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # run go/annotations
 #${GOLOAD}/Install

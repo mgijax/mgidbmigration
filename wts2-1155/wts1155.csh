@@ -272,11 +272,12 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 #${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 #${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 
-#scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
+scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/pr/pr-dev.gpi /data/downloads/purl.obolibrary.org/obo/pr
 
 #rm -rf ${DATALOADSOUTPUT}/go
-#rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
-#rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
+rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
+rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info

@@ -284,6 +284,10 @@ ${UNIPROTLOAD}/bin/uniprotload.sh
 ${GOLOAD}/bin/goload.sh
 ${GOLOAD}/bin/ecocheck.sh
 
+cd ${QCRPTS}
+source ./Configuration
+./qcgo_reports.csh
+
 # per David: GO should provide
 #rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
 #rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
@@ -302,10 +306,6 @@ ${GOLOAD}/bin/ecocheck.sh
 # per David: unknown
 ##rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
 ##rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
-
-cd ${QCRPTS}
-source ./Configuration
-./qcgo_reports.csh
 
 #
 # David:  review _vocab_key = 82 and remove any obsolete terms

@@ -303,10 +303,6 @@ ${GOLOAD}/bin/ecocheck.sh
 ##rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
 ##rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
 
-# this report is obsolete; but run this version to help with testing?
-rm -rf *.mgi *.gpad
-#${PYTHON} GO_gene_association.py 
-
 cd ${QCRPTS}
 source ./Configuration
 ./qcgo_reports.csh

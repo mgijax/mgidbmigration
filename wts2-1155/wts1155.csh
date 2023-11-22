@@ -250,8 +250,6 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 #
 
 #rm -rf ${DATADOWNLOADS}/go_noctua 
-#rm -rf ${DATADOWNLOADS}/go_translation 
-#rm -rf ${DATADOWNLOADS}/go_translation 
 #rm -rf ${DATADOWNLOADS}/go_gene_assoc
 #rm -rf ${DATADOWNLOADS}/goa
 #rm -rf ${DATADOWNLOADS}/current.geneontology.org 

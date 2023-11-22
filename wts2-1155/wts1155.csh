@@ -84,10 +84,6 @@
 #       gene_association_nonoctua_pro.mgi
 #       mgi_nonoctua.gpad
 #
-# lib_py_misc
-# lib_py_vocabbrowser : obsolete
-# vocload
-#
 # 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
 #       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
@@ -309,13 +305,11 @@ ${GOLOAD}/bin/ecocheck.sh
 
 # this report is obsolete; but run this version to help with testing?
 rm -rf *.mgi *.gpad
-${PYTHON} GO_gene_association.py 
+#${PYTHON} GO_gene_association.py 
 
-#cd ${QCRPTS}
-#source ./Configuration
-#cd mgd
-#${PYTHON} GO_EvidenceProperty.py
-#${PYTHON} GO_stats.py
+cd ${QCRPTS}
+source ./Configuration
+./qcgo_reports.csh
 
 #
 # David:  review _vocab_key = 82 and remove any obsolete terms
@@ -361,14 +355,6 @@ EOSQL
 # remove: goload/gomousenoctua/index.html">GO/Mouse/Noctua Load</A> <B>(dph)</B>
 # add: goload/index.html">GO Load</A> <B>(???)</B>
 #
-
-# make sure annotload did not break other loads
-#${MGI_LIVE}/loadadmin/prod/removeLastrunFiles.sh
-#${MCVLOAD}/bin/mcvload.sh
-#${OMIMHPOLOAD}/bin/omim_hpoload.sh
-#${PROLOAD}/bin/proload.sh
-#${ROLLUPLOAD}/bin/rollupload.sh
-#${HTMPLOAD}/bin/runMpLoads.sh
 
 date 
 

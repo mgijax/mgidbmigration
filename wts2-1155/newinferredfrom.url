@@ -1,0 +1,24 @@
+ ARBA
+ CHEBI
+ ComplexPortal          https://www.ebi.ac.uk/complexportal/complex/
+ EC                     https://enzyme.expasy.org/EC/
+ EMBL
+ ENSEMBL_GeneID         http://www.ensembl.org/id/
+ GO                     accession_report.cgi?id=
+ HGNC                   https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/
+ InterPro               http://www.ebi.ac.uk/interpro/entry/
+ NCBI_Gene              https://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&list_uids=
+ PIR
+ PomBase                http://www.pombase.org/spombe/result/
+ PR
+ protein_id
+ RefSeq                 https://www.ncbi.nlm.nih.gov/entrez/viewer.cgi?val=
+ RGD                    http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=
+ RHEA
+ RNAcentral
+ SGD                    https://www.yeastgenome.org/locus/
+ UniPathway
+ UniProtKB              http://www.uniprot.org/entry/
+ UniProtKB-SubCell      https://www.uniprot.org/locations/
+ UniRule
+ Xenbase

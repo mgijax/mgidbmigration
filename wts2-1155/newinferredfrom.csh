@@ -31,7 +31,8 @@ order by ve.inferredfrom
 
 EOSQL
 
-#cut -f1 -d":" newinferredfrom.csh.log | sort | uniq > newinferred
+rm -rf newinferredfrom
+#cut -f1 -d":" newinferredfrom.csh.log | sort | uniq > newinferredfrom
 
 date |tee -a $LOG
 

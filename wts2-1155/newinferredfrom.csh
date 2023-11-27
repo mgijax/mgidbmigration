@@ -21,18 +21,16 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select distinct ve.inferredfrom
+select distinct split_part(ve.inferredfrom, ':', 1) as inferredfrom
 from voc_annot v, voc_evidence ve
 where v._annottype_key = 1000
 and v._annot_key = ve._annot_key
 and ve.inferredfrom is not null
-order by ve.inferredfrom
+and ve.inferredfrom like '%:%'
+order by inferredfrom
 ;
 
 EOSQL
-
-rm -rf newinferredfrom
-#cut -f1 -d":" newinferredfrom.csh.log | sort | uniq > newinferredfrom
 
 date |tee -a $LOG
 

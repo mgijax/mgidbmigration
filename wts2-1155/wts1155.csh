@@ -6,6 +6,7 @@
 # sierra : driver area to pick up gpad:
 #       https://drive.google.com/drive/folders/1aZxvumsODSvXGbk_gMdFtuGhhAq4MKdL
 #       cp merged_gpad_11_16_2023.txt /data/loads/lec/mgi/goload/input/mgi.gpad
+#       cp merged_gpad_11_16_2023.txt /data/loads/mgi/goload/input/mgi.gpad
 #
 # per David/Li/Cindy : move *all* before we push to production
 #

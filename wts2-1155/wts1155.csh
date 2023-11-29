@@ -39,7 +39,7 @@
 #       isGOrat    : remove
 #       remove this logic: delete any go-annotations that are using withdrawn markers
 #
-# fl2-394/mgicacheload
+# fl2-394/mgicacheload : moved to goload
 #       inferredfrom.goahumanload : remove
 #       inferredfrom.goratload    : remove
 #       inferredfrom.goaload      : remove
@@ -274,6 +274,11 @@ scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/pr/pr-dev.gpi /data/downl
 #rm -rf ${DATALOADSOUTPUT}/go
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
+# inferredfrom/go_annot_extension/go_isoforms moved to goload
+rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/ACC_Accession.bcp
+rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_annot_extensions.bcp
+rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_isoforms.bcp
+rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/VOC_GO_Cache.bcp
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info

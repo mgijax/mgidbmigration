@@ -40,13 +40,20 @@
 #       isGOrat    : remove
 #       remove this logic: delete any go-annotations that are using withdrawn markers
 #
-# fl2-394/mgicacheload : moved to goload
+# fl2-394/mgicacheload
 #       inferredfrom.goahumanload : remove
 #       inferredfrom.goratload    : remove
 #       inferredfrom.goaload      : remove
 #       inferredfrom.gocfpload    : remove
 #       inferredfrom.gorefgenload : remove
-#       inferredfrom.gomousenoctua -> inferredfrom.go && change "NOCTUA"%" to "GO_%"
+#       inferredfrom.gomousenoctua -> inferredfrom.py && change "NOCTUA"%" to "GO_%"
+#       moved to goload:
+#       inferredfrom.sh
+#       inferredfrom.py
+#       go_annot_extensions_display_load.csh
+#       go_annot_extensions_display_load.py
+#       go_isoforms_display_load.csh
+#       go_isoforms_display_load.py
 #
 # fl2-394/lib_py_report
 #       go_annot_extensions.py

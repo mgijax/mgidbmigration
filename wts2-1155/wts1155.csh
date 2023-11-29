@@ -271,10 +271,9 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/pr/pr-dev.gpi /data/downloads/purl.obolibrary.org/obo/pr
 
-#rm -rf ${DATALOADSOUTPUT}/go
+rm -rf ${DATALOADSOUTPUT}/go
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/logs/*
-# inferredfrom/go_annot_extension/go_isoforms moved to goload
 rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/ACC_Accession.bcp
 rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_annot_extensions.bcp
 rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_isoforms.bcp

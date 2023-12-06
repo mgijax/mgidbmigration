@@ -92,9 +92,8 @@
 #       gene_association_nonoctua_pro.mgi
 #       mgi_nonoctua.gpad
 #
-#       what about these:
+#       leave these alone:
 #       weekly/GO_gp2protein.py: gp2protein.mgi, gp2rna.mgi, gp_unlocalized.mgi
-#
 #
 # 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
 #       leave only GO_Central and other GOA_% 

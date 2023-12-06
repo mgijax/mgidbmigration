@@ -306,6 +306,9 @@ source ./Configuration
 #rm -rf ${FTPREPORTDIR}/gene_association.mgi*
 #rm -rf ${FTPREPORTDIR}/mgi.gpad*
 
+rm -rf ${PUBREPORTDIR}/output/BIB_PubMed.rpt
+rm -rf ${FTPREPORTDIR}/BIB_PubMed.rpt
+
 # per David: won’t be needed since they only exist to be picked up by GO:
 #rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
 #rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*

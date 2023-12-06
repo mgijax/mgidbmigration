@@ -34,11 +34,13 @@
 #       added 'gorefid' to src/main/java/org/jax/mgi/mgd/api/model/bib/service/ReferenceService.java
 #
 # fl2-394/annotload : wts1155 branch
+# fl2-394/lib_py_dataload
 #       changing isGOmouseNoctua -> isGO
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
 #       remove this logic: delete any go-annotations that are using withdrawn markers
+#       mv lib_py_dataload/vocabloadlib.py -> annotload/lib
 #
 # fl2-394/mgicacheload
 #       inferredfrom.goahumanload : remove
@@ -290,6 +292,7 @@ rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/ACC_Accession.bcp
 rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_annot_extensions.bcp
 rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/MGI_Note.go_isoforms.bcp
 rm -rf ${DATALOADSOUTPUT}/mgi/mgicacheload/output/VOC_GO_Cache.bcp
+rm -rf ${LIBDIRS}/vocabloadlib.py
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info

@@ -73,9 +73,10 @@
 #       /data/downloads/current.geneontology.org/ontology/external2go
 #
 # fl2-644/qcreports_db
-#       mgd/GO_EvidenceProperty.py : excluces GO_Central, NOCTUA
+#       mgd/GO_EvidenceProperty.py : 'external ref' : no annotations exist; obsolete
+#               do not remove 'external ref' from voc_term because it is used by proisoformload
 #       mgd/GO_stats.py : includes GOC, NOCTUA_NonSynGO, NOCTUA_SynGO, GOA, GO/Rat, GOA/Human
-#       monthly/MRK_GOAnnot.py : excludes GOC, GO_Central, UniProtKB
+#       monthly/MRK_GOAnnot.py : excludes GOC, GO_Central, UniProtKB : may be obsolete per Cindy
 #       qcr.shtml:
 #               remove: 7. QC: GOAMouse/invalid pubmedids (ln)
 #               keep  : 8. QC: GOMouseNoctua/invalid pubmedids (ln)

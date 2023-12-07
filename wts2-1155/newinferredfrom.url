@@ -1,24 +1,25 @@
- ARBA
- CHEBI
+ ARBA                   new: https://www.uniprot.org/arba/
+ CHEBI                  http://www.ebi.ac.uk/chebi/searchId.do?chebiId=
  ComplexPortal          https://www.ebi.ac.uk/complexportal/complex/
  EC                     https://enzyme.expasy.org/EC/
- EMBL
+ EMBL                   http://www.ebi.ac.uk/ena/data/view/
  ENSEMBL_GeneID         http://www.ensembl.org/id/
+ Ensembl                new: http://useast.ensembl.org/Multi/Search/Results?q=ENSRNOP00000064260;site=ensembl_all
  GO                     accession_report.cgi?id=
  HGNC                   https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/
  InterPro               http://www.ebi.ac.uk/interpro/entry/
  NCBI_Gene              https://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&list_uids=
- PIR
+ PIR                    http://pir.georgetown.edu/cgi-bin/ipcSF?id=
  PomBase                http://www.pombase.org/spombe/result/
- PR
- protein_id
+ PR                     http://purl.obolibrary.org/obo@
+ protein_id (same as RefSeq)             https://www.ncbi.nlm.nih.gov/entrez/viewer.cgi?val=
  RefSeq                 https://www.ncbi.nlm.nih.gov/entrez/viewer.cgi?val=
  RGD                    http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=
- RHEA
- RNAcentral
+ RHEA                   new: https://www.rhea-db.org/rhea/
+ RNAcentral             http://rnacentral.org/rna/
  SGD                    https://www.yeastgenome.org/locus/
- UniPathway
+ UniPathway             new: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=
  UniProtKB              http://www.uniprot.org/entry/
- UniProtKB-SubCell      https://www.uniprot.org/locations/
+ UniProtKB-SubCell      new: https://www.uniprot.org/locations/
  UniRule
  Xenbase

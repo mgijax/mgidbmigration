@@ -30,9 +30,6 @@
 #
 #       proteincomplex.sh : remove
 #
-# fl2-394/mgd_java_api
-#       added 'gorefid' to src/main/java/org/jax/mgi/mgd/api/model/bib/service/ReferenceService.java
-#
 # fl2-394/annotload : wts1155 branch
 # fl2-394/lib_py_dataload
 # fl2-394/lib_py_age : moved to lib_py_dataload; retire

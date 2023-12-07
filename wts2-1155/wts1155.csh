@@ -354,7 +354,7 @@ select v.*
 from VOC_Term v
 where v._vocab_key = 82
 and not exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
-where a._annottype_key = 1000 
+where a._annottype_key in (1000 , 1019)
 and a._annot_key = e._annot_key
 and e._annotevidence_key = p._annotevidence_key
 and p._propertyterm_key = v._term_key
@@ -367,7 +367,7 @@ select v.*
 from VOC_Term v
 where v._vocab_key = 82
 and exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
-where a._annottype_key = 1000 
+where a._annottype_key in (1000, 1019)
 and a._annot_key = e._annot_key
 and e._annotevidence_key = p._annotevidence_key
 and p._propertyterm_key = v._term_key

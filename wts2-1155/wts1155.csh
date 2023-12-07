@@ -35,12 +35,14 @@
 #
 # fl2-394/annotload : wts1155 branch
 # fl2-394/lib_py_dataload
+# fl2-394/lib_py_age : moved to lib_py_dataload; retire
 #       changing isGOmouseNoctua -> isGO
 #       isGOAmouse : remove
 #       isGOAhuman : remove
 #       isGOrat    : remove
 #       remove this logic: delete any go-annotations that are using withdrawn markers
 #       mv lib_py_dataload/vocabloadlib.py -> annotload/lib
+#       mv lib_py_age/agelib.py -> lib_py_dataload
 #
 # fl2-394/mgicacheload
 #       inferredfrom.goahumanload : remove

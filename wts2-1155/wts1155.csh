@@ -305,34 +305,47 @@ rm -rf ${LIBDIRS}/vocabloadlib.py
 ${GOLOAD}/bin/goload.sh
 ${GOLOAD}/bin/ecocheck.sh
 
-cd ${QCRPTS}
-source ./Configuration
-./qcgo_reports.csh
+# GO should provide
+rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
+rm -rf ${FTPREPORTDIR}/gene_association.mgi*
+rm -rf ${FTPREPORTDIR}/mgi.gpad*
 
-# per David: GO should provide
-#rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
-#rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
-#rm -rf ${FTPREPORTDIR}/gene_association.mgi*
-#rm -rf ${FTPREPORTDIR}/mgi.gpad*
-
+# per Steven Grubb/Cindy
 rm -rf ${PUBREPORTDIR}/output/BIB_PubMed.rpt
 rm -rf ${FTPREPORTDIR}/BIB_PubMed.rpt
 
-# per David: won’t be needed since they only exist to be picked up by GO:
-#rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
-#rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
-#rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
-#rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
-#rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
-#rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
+# won’t be needed since they only exist to be picked up by GO:
+rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
+rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
+rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
+rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
+rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 
 # 11/10 : ask dave
 # per David: unknown
 ##rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
 ##rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
 
+# run qc reports
+cd ${QCRPTS}
+source ./Configuration
+./qcgo_reports.csh
+
+# run public reports
+cd ${PUBRPTS}
+source ./Configuration
+./qcgo_reports.csh
+cd daily
+${PYTHON} GO_gpi.py
+cd ../weekly
+${PYTHON} GO_gene_association_pro.py
+${PYTHON} GO_gp2protein.py
+${PYTHON} GO_terms.py
+
 #
-# David:  review _vocab_key = 82 and remove any obsolete terms
+# review _vocab_key = 82 and remove any obsolete terms
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 

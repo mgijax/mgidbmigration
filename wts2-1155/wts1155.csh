@@ -295,7 +295,7 @@ rm -rf ${LIBDIRS}/vocabloadlib.py
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info
-#${UNIPROTLOAD}/bin/uniprotload.sh 
+${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # run go/annotations
 #${GOLOAD}/Install

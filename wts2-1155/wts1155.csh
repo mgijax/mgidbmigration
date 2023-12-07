@@ -169,6 +169,10 @@ delete from mgi_user where login in ('trna_coordload');
 delete from mgi_user where login in ('treefam_assocload');
 delete from mgi_user where login in ('unists_nomenload');
 delete from mgi_user where login in ('unists_coordload');
+delete from mgi_user where login in ('UniProtKB');
+delete from mgi_user where login in ('mapview_coordload');
+delete from mgi_user where login in ('uniprot_override_load');
+delete from mgi_user where login in ('omim_hpoload');
 delete from mgi_user where login in ('ps');
 delete from mgi_user where login in ('smc');
 

@@ -97,6 +97,9 @@
 #       leave these alone:
 #       weekly/GO_gp2protein.py: gp2protein.mgi, gp2rna.mgi, gp_unlocalized.mgi
 #
+#       remove:
+#       weekly/MGI_GTRNA.py : MGI_GTRNA.gff
+#
 # 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
 #       leave only GO_Central and other GOA_% 
 # 2. David: review _vocab_key = 82 and remove any obsolete terms
@@ -315,6 +318,10 @@ rm -rf ${FTPREPORTDIR}/mgi.gpad*
 # per Steven Grubb/Cindy
 rm -rf ${PUBREPORTDIR}/output/BIB_PubMed.rpt
 rm -rf ${FTPREPORTDIR}/BIB_PubMed.rpt
+
+# per Richard
+#rm -rf /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline
+#rm -rf ${FTPREPORTDIR}/MGI_GTRNA.gff
 
 # won’t be needed since they only exist to be picked up by GO:
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*

@@ -97,8 +97,11 @@
 #       leave these alone:
 #       weekly/GO_gp2protein.py: gp2protein.mgi, gp2rna.mgi, gp_unlocalized.mgi
 #
-#       remove:
-#       weekly/MGI_GTRNA.py : MGI_GTRNA.gff
+#       remove: but do not remove reports from pulic website
+#       weekly/MGI_GTdbGSS_info.py
+#       weekly/MGI_GTDNA.py
+#       weekly/MGI_GTGUP.py
+#       weekly/MGI_GTRNA.py
 #
 # 1. MGI_User.login; remove "NOCTUA_" from "NOCTUA_xxx" users
 #       leave only GO_Central and other GOA_% 

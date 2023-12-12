@@ -124,6 +124,8 @@ cd `dirname $0`
 
 date
  
+${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
 
 -- GO_REF references

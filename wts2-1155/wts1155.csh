@@ -175,7 +175,6 @@ delete from mgi_user where login in ('trna_coordload');
 delete from mgi_user where login in ('treefam_assocload');
 delete from mgi_user where login in ('unists_nomenload');
 delete from mgi_user where login in ('unists_coordload');
-delete from mgi_user where login in ('UniProtKB');
 delete from mgi_user where login in ('mapview_coordload');
 delete from mgi_user where login in ('uniprot_override_load');
 delete from mgi_user where login in ('omim_hpoload');
@@ -323,8 +322,8 @@ rm -rf ${PUBREPORTDIR}/output/BIB_PubMed.rpt
 rm -rf ${FTPREPORTDIR}/BIB_PubMed.rpt
 
 # per Richard
-#rm -rf /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline
-#rm -rf ${FTPREPORTDIR}/MGI_GTRNA.gff
+rm -rf /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline
+#do not remove reports from FTP site
 
 # won’t be needed since they only exist to be picked up by GO:
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
@@ -342,12 +341,11 @@ rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 # run qc reports
 cd ${QCRPTS}
 source ./Configuration
-./qcgo_reports.csh
+${QCRPTS}/qcgo_reports.csh
 
 # run public reports
 cd ${PUBRPTS}
 source ./Configuration
-./qcgo_reports.csh
 cd daily
 ${PYTHON} GO_gpi.py
 cd ../weekly

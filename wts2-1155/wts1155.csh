@@ -292,6 +292,23 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 #${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 #${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 
+#these have all been tested on scrum, so only running the GO on Test server
+#${MIRROR_WGET}/download_package data.omim.org.omim
+#${MIRROR_WGET}/download_package purl.obolibrary.org.hp.obo
+#${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
+#${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
+#${VOCLOAD}/runOBOIncLoad.sh MP.config
+#${VOCLOAD}/emap/emapload.sh
+#${VOCLOAD}/runOBOIncLoad.sh MA.config
+#${VOCLOAD}/runOBOIncLoad.sh CL.config
+#${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
+#${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
+#${VOCLOAD}/runOBOIncLoad.sh SO.config
+#${VOCLOAD}/runOBOIncLoad.sh HPO.config
+
+${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
+${VOCLOAD}/runOBOIncLoad.sh GO.config
+
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/pr/pr-dev.gpi /data/downloads/purl.obolibrary.org/obo/pr
 
@@ -399,21 +416,6 @@ EOSQL
 # remove: goload/gomousenoctua/index.html">GO/Mouse/Noctua Load</A> <B>(dph)</B>
 # add: goload/index.html">GO Load</A> <B>(???)</B>
 #
-
-${MIRROR_WGET}/download_package data.omim.org.omim
-${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
-${MIRROR_WGET}/download_package purl.obolibrary.org.hp.obo
-${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
-${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
-${VOCLOAD}/runOBOIncLoad.sh MP.config
-${VOCLOAD}/emap/emapload.sh
-${VOCLOAD}/runOBOIncLoad.sh GO.config
-${VOCLOAD}/runOBOIncLoad.sh MA.config
-${VOCLOAD}/runOBOIncLoad.sh CL.config
-${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
-${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
-${VOCLOAD}/runOBOIncLoad.sh SO.config
-${VOCLOAD}/runOBOIncLoad.sh HPO.config
 
 date 
 

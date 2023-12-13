@@ -419,5 +419,8 @@ EOSQL
 # add: goload/index.html">GO Load</A> <B>(???)</B>
 #
 
+# other things to test due to annotload, etc. changes
+${PIRSFLOAD}/bin/pirsfload.sh
+
 date 
 

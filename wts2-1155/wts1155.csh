@@ -400,5 +400,20 @@ EOSQL
 # add: goload/index.html">GO Load</A> <B>(???)</B>
 #
 
+${MIRROR_WGET}/download_package data.omim.org.omim
+${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.hp-basic.obo
+${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
+${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
+${VOCLOAD}/runOBOIncLoad.sh MP.config
+${VOCLOAD}/emap/emapload.sh
+${VOCLOAD}/runOBOIncLoad.sh GO.config
+${VOCLOAD}/runOBOIncLoad.sh MA.config
+${VOCLOAD}/runOBOIncLoad.sh CL.config
+${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
+${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
+${VOCLOAD}/runOBOIncLoad.sh SO.config
+${VOCLOAD}/runOBOIncLoad.sh HPO.config
+
 date 
 

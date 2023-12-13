@@ -307,6 +307,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 #${VOCLOAD}/runOBOIncLoad.sh SO.config
 #${VOCLOAD}/runOBOIncLoad.sh HPO.config
 
+# change to vocload to create unique DAG bcp file names
 ${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
 ${VOCLOAD}/runOBOIncLoad.sh GO.config
 

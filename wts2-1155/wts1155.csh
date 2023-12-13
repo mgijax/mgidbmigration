@@ -402,7 +402,7 @@ EOSQL
 
 ${MIRROR_WGET}/download_package data.omim.org.omim
 ${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
-${MIRROR_WGET}/download_package purl.obolibrary.org.hp-basic.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.hp.obo
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
 ${VOCLOAD}/runOBOIncLoad.sh MP.config

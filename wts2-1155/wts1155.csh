@@ -139,22 +139,26 @@ and a1._object_key = a2._refs_key
 order by a1.accid
 ;
 
-delete from mgi_user where login in ('dots_assocload');
-delete from mgi_user where login in ('emapload');
-delete from mgi_user where login in ('fearload');
-delete from mgi_user where login in ('gbpreprocessor');
+--delete from mgi_user where login in ('emapload');
+--delete from mgi_user where login in ('fearload');
+--delete from mgi_user where login in ('gbpreprocessor');
+--delete from mgi_user where login in ('gtblatpipeline');
+--delete from mgi_user where login in ('omim_hpoload');
+--delete from mgi_user where login in ('rvload');
+--delete from mgi_user where login in ('uniprot_override_load');
+--delete from mgi_user where login in ('hgnc_homologyload');
+--delete from mgi_user where login in ('homologeneload');
+--delete from mgi_user where login in ('hybrid_homologyload');
+--delete from mgi_user where login in ('qtlarchiveload');
+
 delete from mgi_user where login in ('gbgtfilter');
-delete from mgi_user where login in ('gtblatpipeline');
-delete from mgi_user where login in ('hgnc_homologyload');
-delete from mgi_user where login in ('homologeneload');
-delete from mgi_user where login in ('hybrid_homologyload');
+delete from mgi_user where login in ('dots_assocload');
 delete from mgi_user where login in ('mapviewload');
 delete from mgi_user where login in ('mousecyc_load');
 delete from mgi_user where login in ('mousefunc_assocload');
 delete from mgi_user where login in ('nia_assocload');
-delete from mgi_user where login in ('qtlarchiveload');
-delete from mgi_user where login in ('rvload');
 delete from mgi_user where login in ('dfci_assocload');
+
 delete from mgi_user where login in ('dfci_seqload');
 delete from mgi_user where login in ('dots_seqload');
 delete from mgi_user where login in ('eurogenoannot_load');
@@ -179,8 +183,6 @@ delete from mgi_user where login in ('treefam_assocload');
 delete from mgi_user where login in ('unists_nomenload');
 delete from mgi_user where login in ('unists_coordload');
 delete from mgi_user where login in ('mapview_coordload');
-delete from mgi_user where login in ('uniprot_override_load');
-delete from mgi_user where login in ('omim_hpoload');
 delete from mgi_user where login in ('ps');
 delete from mgi_user where login in ('smc');
 

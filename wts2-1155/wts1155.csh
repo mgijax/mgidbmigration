@@ -347,6 +347,7 @@ rm -rf /data/downloads/ftp.ncbi.nih.gov/gtblatpipeline
 #do not remove reports from FTP site
 
 # won’t be needed since they only exist to be picked up by GO:
+rm -rf ${QCREPORTDIR}/output/GO_EvidenceProperty.rpt
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
 rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*

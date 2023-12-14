@@ -24,7 +24,7 @@
 #
 #       ftp.ebi.ac.uk.goload : still need for reports_db/GO_gpi.py
 #
-# fl2-394/vocload : wts1155 branch
+# fl2-394/vocload : trunk
 # fl2-394/goload : wts1155 branch
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz
 #       to  : http://snapshot.geneontology.org/annotations/mgi.gpad.gz

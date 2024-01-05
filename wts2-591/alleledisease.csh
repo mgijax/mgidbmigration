@@ -58,6 +58,7 @@ and va._term_key = t._term_key
 
 and e._refs_key = b._refs_key
 
+-- allele does not have a mgi_relationship
 and not exists (select 1 from mgi_relationship mr where a._allele_key = mr._object_key_1 and mr._category_key in (1003,1004,1006))
 
 --and a.symbol in ('Pten<tm1Hwu>', 'Gt(ROSA)26Sor<tm1(CAG-Kcnj11*,-GFP)Nich>')

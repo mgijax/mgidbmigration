@@ -67,7 +67,7 @@ and va._term_key = t._term_key
 and e._refs_key = b._refs_key
 
 -- allele has a mgi_relationship
-and exists (select 1 from mgi_relationship mr where a._allele_key = mr._object_key_1 and mr._category_key in (1003,1004,1006))
+and exists (select 1 from mgi_relationship mr where a._allele_key = mr._object_key_1 and mr._category_key in (1004))
 
 order by a.symbol, b.jnumid
 ;

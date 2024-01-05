@@ -45,6 +45,7 @@ and a1._logicaldb_key = 1
 and a1.preferred = 1
 and a1.prefixPart = 'MGI:'
 
+and a._marker_key not in (1092, 37270, 1647950)
 and a._marker_key = m._marker_key
 and m._marker_key = a2._object_key
 and a2._mgitype_key = 2
@@ -52,7 +53,6 @@ and a2._logicaldb_key = 1
 and a2.preferred = 1
 and a2.prefixPart = 'MGI:'
 and m._marker_type_key != 12
-and m._marker_key not in (1092, 37270, 1647950)
 
 and a._allele_key = va._object_key
 and va._annottype_key = 1021

@@ -1,0 +1,27 @@
+
+Allele
+
+bucket 1: simple
+* marker type != Transgene
+* marker != Gt(ROSA)26Sor, Col1a1, Hprt
+* no Relationships/Expresses Component
+Pten<tm1Hwu>
+
+bucket 2: any expresses component/not docking site marker
+* marker type != Transgene
+* marker != Gt(ROSA)26Sor, Col1a1, Hprt
+* has Relationships/Expresses Component
+* Gene ID : leave empty because there are many
+Apoe<tm3(APOE*4)Mae>, J:200786, DOID:10652
+
+bucket 3: docking sites
+* Gt(ROSA)26Sor, Col1a1, Hprt
+* has Relationships/Expresses Component
+* only 1 Relationships/Expresses Component
+* Associated gene/Gene id = mouse gene from Relationships/Expresses Component
+Gt(ROSA)26Sor<tm1(CAG-Kcnj11*,-GFP)Nich>
+
+bucket 4: transgenes
+* marker type = Transgene
+Tg(Thy1-APPSw,Thy1-PSEN1*L166P)21Jckr
+

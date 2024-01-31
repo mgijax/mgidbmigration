@@ -81,6 +81,14 @@
 #               remove: Data Loads:  GOA/Human Load, GOA/Rat Load
 #
 # fl2-645/reports_db
+#       gene_association_mgi
+#       gene_association_non_noctua.mgi
+#       gene_association_pro.mgi
+#       mgi.gpad
+#       mgi.gpi
+#       mgi_nonoctua.gpad
+#       go_terms.mgi
+#
 #       remove: daily/GO_gene_association.py
 #
 #       per David: GO should provide

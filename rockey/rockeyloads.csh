@@ -1,7 +1,10 @@
 #!/bin/csh -fx
 #
-# autotriage
+# autolittriage
 # lib_py_littriage
+# htmpload
+# gxdhtload
+# pdfdownload
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -46,5 +49,6 @@ EOSQL
 
 ${LITTRIAGELOAD}/bin/processRelevance.sh | tee -a ${LOG}
 ${LITTRIAGELOAD}/bin/processSecondary.sh | tee -a ${LOG}
+${PDFDOWNLOAD}/download_papers.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}

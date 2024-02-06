@@ -45,6 +45,6 @@ and wr.isCurrent = 1;
 EOSQL
 
 ${LITTRIAGELOAD}/bin/processRelevance.sh | tee -a ${LOG}
-${HTMPLOAD}/bin/runMpLoads.sh | tee -a ${LOG}
+${LITTRIAGELOAD}/bin/processSecondary.sh | tee -a ${LOG}
 
 date | tee -a ${LOG}

@@ -295,7 +295,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 #rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
 #rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
 #rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
-#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
+#rstom -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
 
 #${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
@@ -335,7 +335,7 @@ rm -rf ${LIBDIRS}/vocabloadlib.py
 
 # run uniprotload/now without GO annotations
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info
-${UNIPROTLOAD}/bin/uniprotload.sh 
+#${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # run go/annotations
 #${GOLOAD}/Install

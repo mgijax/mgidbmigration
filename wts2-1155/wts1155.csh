@@ -361,9 +361,13 @@ rm -rf ${QCREPORTDIR}/output/GO_EvidenceProperty.rpt
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua.mgi*
 rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
 rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
+rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
 rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
 rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
 rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
+rm -rf ${FTPREPORTDIR}/output/gene_association.mgi*
+rm -rf ${FTPREPORTDIR}/output/mgi.gpad*
 
 # 11/10 : ask dave
 # per David: unknown

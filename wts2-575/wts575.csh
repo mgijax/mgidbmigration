@@ -25,6 +25,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+-- 02/16/2024: added to Production
 --insert into voc_vocab values(188,664937,233,1,0,'GlyGen/UniProtKB',now(), now());
 --insert into voc_annottype values(1030,2,188,139,53,'GlyGen/Marker',now(),now());
 
@@ -42,7 +43,8 @@ EOSQL
 mkdir -p ${DATALOADSOUTPUT}/mgi/vocload/runTimeGlyGen
 mkdir -p ${DATALOADSOUTPUT}/mgi/vocload/archiveGlyGen
 
-# for testing
+# just to test GlyGen or run all
+# chose one
 ${UNIPROTLOAD}/bin/makeGlyGenAnnot.sh
 #${UNIPROTLOAD}/bin/uniprotload.sh
 

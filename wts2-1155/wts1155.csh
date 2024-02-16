@@ -303,26 +303,12 @@ ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 
-#these have all been tested on scrum, so only running the GO on Test server
-#${MIRROR_WGET}/download_package data.omim.org.omim
-#${MIRROR_WGET}/download_package purl.obolibrary.org.hp.obo
-#${MIRROR_WGET}/download_package raw.githubusercontent.com.sequenceontology
-#${MIRROR_WGET}/download_package raw.githubusercontent.com.diseaseontology
-#${VOCLOAD}/runOBOIncLoad.sh MP.config
-#${VOCLOAD}/emap/emapload.sh
-#${VOCLOAD}/runOBOIncLoad.sh MA.config
-#${VOCLOAD}/runOBOIncLoad.sh CL.config
-#${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
-#${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config
-#${VOCLOAD}/runOBOIncLoad.sh SO.config
-#${VOCLOAD}/runOBOIncLoad.sh HPO.config
-
 # change to vocload to create unique DAG bcp file names
 ${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${VOCLOAD}/runOBOIncLoad.sh GO.config
 
 scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
-scp bhmgiapp01:/data/downloads/purl.obolibrary.org/obo/pr/pr-dev.gpi /data/downloads/purl.obolibrary.org/obo/pr
 
 rm -rf ${DATALOADSOUTPUT}/go
 rm -rf ${DATALOADSOUTPUT}/uniprot/uniprotload/output/*
@@ -369,11 +355,6 @@ rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 rm -rf ${FTPREPORTDIR}/output/gene_association.mgi*
 rm -rf ${FTPREPORTDIR}/output/mgi.gpad*
 
-# 11/10 : ask dave
-# per David: unknown
-##rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
-##rm -rf ${FTPREPORTDIR}/gene_association_pro.mgi*
-
 # run qc reports
 cd ${QCRPTS}
 source ./Configuration
@@ -382,12 +363,8 @@ ${QCRPTS}/qcgo_reports.csh
 # run public reports
 cd ${PUBRPTS}
 source ./Configuration
-cd daily
-${PYTHON} GO_gpi.py
-cd ../weekly
+cd weekly
 ${PYTHON} GO_gene_association_pro.py
-${PYTHON} GO_gp2protein.py
-${PYTHON} GO_terms.py
 
 #
 # review _vocab_key = 82 and remove any obsolete terms
@@ -422,20 +399,11 @@ order by v.term
 
 EOSQL
 
-#
-# remove: 7. QC: GOAMouse/invalid pubmedids (ln)
-# keep  : 8. QC: GOMouseNoctua/invalid pubmedids (ln)
-# remove: goload/goamouse/index.html">GOA/Mouse Load</A> <B>(krc)</B>
-# remove: goload/goahuman/index.html">GOA/Human Load</A> <B>(krc)</B>
-# remove: goload/gorat/index.html">GO/Rat Load</A> <B>(krc)</B>
-# remove: goload/gorefgen/index.html">GO/PAINT Load</A> <B>(krc)</B>
-# remove: goload/gocfp/index.html">GO/CFP (aka GOC) Load</A> <B>(krc)</B>
-# remove: goload/gomousenoctua/index.html">GO/Mouse/Noctua Load</A> <B>(dph)</B>
-# add: goload/index.html">GO Load</A> <B>(???)</B>
-#
-
 # other things to test due to annotload, etc. changes
 ${PIRSFLOAD}/bin/pirsfload.sh
+
+# glygen
+../wts2-575/wts2-575.ch
 
 date 
 

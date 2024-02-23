@@ -321,39 +321,41 @@ ${PYTHON} GO_gene_association_pro.py
 
 #
 # review _vocab_key = 82 and remove any obsolete terms
+# commenting out; GO is ok with leaving things as-is
 #
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
-
--- property terms that are no longer used; can be deleted from voc_term
-select v.*
-from VOC_Term v
-where v._vocab_key = 82
-and not exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
-where a._annottype_key in (1000 , 1019)
-and a._annot_key = e._annot_key
-and e._annotevidence_key = p._annotevidence_key
-and p._propertyterm_key = v._term_key
-)
-order by v.term
-;
-
--- property terms that are used
-select v.*
-from VOC_Term v
-where v._vocab_key = 82
-and exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
-where a._annottype_key in (1000, 1019)
-and a._annot_key = e._annot_key
-and e._annotevidence_key = p._annotevidence_key
-and p._propertyterm_key = v._term_key
-)
-order by v.term
-;
-
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 
+#
+#-- property terms that are no longer used; can be deleted from voc_term
+#select v.*
+#from VOC_Term v
+#where v._vocab_key = 82
+#and not exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
+#where a._annottype_key in (1000 , 1019)
+#and a._annot_key = e._annot_key
+#and e._annotevidence_key = p._annotevidence_key
+#and p._propertyterm_key = v._term_key
+#)
+#order by v.term
+#;
+#
+#-- property terms that are used
+#select v.*
+#from VOC_Term v
+#where v._vocab_key = 82
+#and exists (select 1 from VOC_Annot a, VOC_Evidence e, VOC_Evidence_Property p 
+#where a._annottype_key in (1000, 1019)
+#and a._annot_key = e._annot_key
+#and e._annotevidence_key = p._annotevidence_key
+#and p._propertyterm_key = v._term_key
+#)
+#order by v.term
+#;
+#
+#EOSQL
 
 # other things to test due to annotload, etc. changes
-${PIRSFLOAD}/bin/pirsfload.sh
+# this has been run during lec-testing mucho times, so commenting out
+#${PIRSFLOAD}/bin/pirsfload.sh
 
 date 
 

@@ -15,6 +15,10 @@
 # fl2-394/mirror_wget : remove
 #       see mirror_wget/HISTORY
 #
+# fl2-394/pgmgddbschema : trunk ; remove
+#       VOC_deleteGOWithdrawn_create.object
+#       VOC_deleteGOWithdrawn_drop.object
+#
 # fl2-394/vocload : trunk
 # fl2-394/goload : wts1155 branch
 #       from: https://snapshot.geneontology.org/products/upstream_and_raw_data/noctua_mgi.gpad.gz

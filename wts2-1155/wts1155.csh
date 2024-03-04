@@ -277,8 +277,8 @@ rm -rf ${LIBDIRS}/vocabloadlib.py
 # this must run before the GO load, which will generate the GPI file, which uses uniprot info
 #scp bhmgiapp01:/data/downloads/uniprot/uniprotmus.dat /data/downloads/uniprot
 # glygen : tweek the wts575.csh to only run the scripts needed
-#../wts2-575/wts575.csh
-#${UNIPROTLOAD}/bin/uniprotload.sh 
+../wts2-575/wts575.csh
+${UNIPROTLOAD}/bin/uniprotload.sh 
 
 # run go/annotations
 #${GOLOAD}/Install

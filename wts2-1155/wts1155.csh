@@ -152,7 +152,7 @@ delete from mgi_user where login in ('smc');
 
 -- set users to Inactive
 update mgi_user set _userstatus_key = 316351
-where login in ('adiehl','benjal','bobs','cml','dbl','dbradt','deg','drj','dlb','hdene','hdt','hjd','il','jbd','jbubier','jchu','jte','ksf','ljm','llw2','lmc', 'mac', 'rbabiuk', 'tbreddy', 'tmeehan', 'wpitman', 'fantom2', 'djd', 'dow', 'jak', 'jblake', 'jlewis', 'jsb', 'jw', 'klf', 'kstone', 'kub', 'lnh', 'mbw', 'mjv', 'mikem', 'jrecla')
+where login in ('adiehl','benjal','bobs','cml','dbl','dbradt','deg','drj','dlb','hdene','hdt','hjd','il','jbd','jbubier','jchu','jte','ksf','ljm','llw2','lmc', 'mac', 'rbabiuk', 'tbreddy', 'tmeehan', 'wpitman', 'fantom2', 'djd', 'dow', 'jak', 'jblake', 'jlewis', 'jsb', 'jw', 'klf', 'kstone', 'kub', 'lnh', 'mbw', 'mjv', 'mikem', 'jrecla', 'acv', 'dbm' )
 ;
 
 update mgi_user set _usertype_key = 316352 where login in ('jrecla');

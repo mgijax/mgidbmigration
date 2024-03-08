@@ -242,17 +242,18 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
 #
 
-#rm -rf ${DATADOWNLOADS}/go_noctua 
-#rm -rf ${DATADOWNLOADS}/go_gene_assoc
-#rm -rf ${DATADOWNLOADS}/goa
-#rm -rf ${DATADOWNLOADS}/current.geneontology.org 
-#rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
-#rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
-#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
-#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
-#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
-#rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
+rm -rf ${DATADOWNLOADS}/go_noctua 
+rm -rf ${DATADOWNLOADS}/go_gene_assoc
+rm -rf ${DATADOWNLOADS}/goa
+rm -rf ${DATADOWNLOADS}/current.geneontology.org 
+rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
+rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
+rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
 
+# this will need to be changed to grab the "new" Sierra file when it is ready
 #${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo

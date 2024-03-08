@@ -287,6 +287,7 @@ ${GOLOAD}/bin/ecocheck.sh
 
 # GO should provide
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
+rm -rf ${PUBREPORTDIR}/output/gene_association_pro.mgi*
 rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
 rm -rf ${FTPREPORTDIR}/gene_association.mgi*
 rm -rf ${FTPREPORTDIR}/mgi.gpad*

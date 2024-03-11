@@ -238,14 +238,13 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 # remove: ftp.geneontology.org.external2go
 # remove: ftp.geneontology.org.goload
 # remove: snapshot.geneontology.org.goload.noctua
-# add   : snapshot.geneontology.org.goload.annotations
+# add   : 
 # add to packagelist.daily:  snapshot.geneontology.org.goload.annotations
 #
 
 rm -rf ${DATADOWNLOADS}/go_noctua 
 rm -rf ${DATADOWNLOADS}/go_gene_assoc
 rm -rf ${DATADOWNLOADS}/goa
-rm -rf ${DATADOWNLOADS}/current.geneontology.org 
 rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
 rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
 rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
@@ -254,15 +253,15 @@ rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.ebi.ac.uk.goload*
 rm -rf ${DATADOWNLOADS}/mirror_wget_logs/snapshot.geneontology.org.goload.noctua*
 
 # this will need to be changed to grab the "new" Sierra file when it is ready
-#${MIRROR_WGET}/download_package snapshot.geneontology.org.goload.annotations
 ${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
+${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
+${MIRROR_WGET}/download_package current.geneontology.org.goload
+${MIRROR_WGET}/download_package current.geneontology.org.uniprotload
 
 # change to vocload to create unique DAG bcp file names
-${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
-${MIRROR_WGET}/download_package purl.obolibrary.org.pr
 ${VOCLOAD}/runOBOIncLoad.sh GO.config
 
 rm -rf ${DATALOADSOUTPUT}/go

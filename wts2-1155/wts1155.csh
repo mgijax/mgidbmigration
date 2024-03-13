@@ -307,22 +307,18 @@ rm -rf ${PUBREPORTDIR}/output/gene_association_nonoctua_pro.mgi*
 rm -rf ${PUBREPORTDIR}/output/mgi_nonoctua.gpad*
 rm -rf ${PUBREPORTDIR}/output/gene_association.mgi*
 rm -rf ${PUBREPORTDIR}/output/mgi.gpad*
+rm -rf ${PUBREPORTDIR}/output/go_term.mgi*
 rm -rf ${FTPREPORTDIR}/gene_association_nonoctua.mgi*
 rm -rf ${FTPREPORTDIR}/gene_association_nonoctua_pro.mgi*
 rm -rf ${FTPREPORTDIR}/mgi_nonoctua.gpad*
 rm -rf ${FTPREPORTDIR}/output/gene_association.mgi*
 rm -rf ${FTPREPORTDIR}/output/mgi.gpad*
+rm -rf ${FTPREPORTDIR}/output/go_term.mgi*
 
 # run qc reports
 cd ${QCRPTS}
 source ./Configuration
 ${QCRPTS}/qcgo_reports.csh
-
-# run public reports
-cd ${PUBRPTS}
-source ./Configuration
-cd weekly
-${PYTHON} GO_gene_association_pro.py
 
 #
 # review _vocab_key = 82 and remove any obsolete terms

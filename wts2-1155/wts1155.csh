@@ -243,6 +243,7 @@ ${PG_MGD_DBSCHEMADIR}/trigger/VOC_Evidence_Property_create.object
 #
 
 rm -rf ${DATADOWNLOADS}/go_noctua 
+rm -rf ${DATADOWNLOADS}/go_translation
 rm -rf ${DATADOWNLOADS}/go_gene_assoc
 rm -rf ${DATADOWNLOADS}/goa
 rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
@@ -261,6 +262,7 @@ ${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.uniprotload
+ln -s ${DATADOWNLOADS}/snapshot.geneontology.org/ontology/external2go ${DATADOWNLOADS}/go_translation
 
 # change to vocload to create unique DAG bcp file names
 ${VOCLOAD}/runOBOIncLoad.sh GO.config

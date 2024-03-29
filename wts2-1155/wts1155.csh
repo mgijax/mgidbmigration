@@ -262,6 +262,7 @@ ${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.goload
 ${MIRROR_WGET}/download_package snapshot.geneontology.org.uniprotload
+${MIRROR_WGET}/download_package data.glygen.org
 ln -s ${DATADOWNLOADS}/snapshot.geneontology.org/ontology/external2go ${DATADOWNLOADS}/go_translation
 
 # change to vocload to create unique DAG bcp file names

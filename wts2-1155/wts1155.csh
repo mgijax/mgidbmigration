@@ -246,6 +246,7 @@ rm -rf ${DATADOWNLOADS}/go_noctua
 rm -rf ${DATADOWNLOADS}/go_gene_assoc
 rm -rf ${DATADOWNLOADS}/goa
 rm -rf ${DATADOWNLOADS}/snapshot.geneontology.org
+rm -rf ${DATADOWNLOADS}/current.geneontology.org
 rm -rf ${DATADOWNLOADS}/ftp.ebi.ac.uk/pub/databases/GO
 rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.external2go*
 rm -rf ${DATADOWNLOADS}/mirror_wget_logs/ftp.geneontology.org.goload*
@@ -258,8 +259,8 @@ ${MIRROR_WGET}/download_package purl.obolibrary.org.uberon.obo
 ${MIRROR_WGET}/download_package purl.obolibrary.org.go-basic.obo
 ${MIRROR_WGET}/download_package raw.githubusercontent.com.evidenceontology
 ${MIRROR_WGET}/download_package ftp.ebi.ac.uk.goload
-${MIRROR_WGET}/download_package current.geneontology.org.goload
-${MIRROR_WGET}/download_package current.geneontology.org.uniprotload
+${MIRROR_WGET}/download_package snapshot.geneontology.org.goload
+${MIRROR_WGET}/download_package snapshot.geneontology.org.uniprotload
 
 # change to vocload to create unique DAG bcp file names
 ${VOCLOAD}/runOBOIncLoad.sh GO.config

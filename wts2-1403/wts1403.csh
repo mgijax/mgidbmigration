@@ -56,6 +56,7 @@ cd weekly
 ${PYTHON}/VOC_OMIMDOObsolete.py | tee -a $LOG
 
 # pwi/static/ap/edit/voctermdetail/help.html
+# can be done at any time
 
 date |tee -a $LOG
 

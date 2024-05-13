@@ -51,7 +51,7 @@ ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
 ${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG
 
 # qcrpeorts_db/weekly/VOC_OMIMDOObsolete.py
-cd ${QCREPORTS_DB}
+cd ${QCRPTS}
 source ./Configuration
 cd weekly
 ${PYTHON}/VOC_OMIMDOObsolete.py | tee -a $LOG

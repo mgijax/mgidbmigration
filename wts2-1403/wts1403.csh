@@ -40,16 +40,22 @@ select * from acc_accession where _logicaldb_key = 15 ;
 
 EOSQL
 
-# pwi/static/ap/edit/voctermdetail/help.html
 # vocload/bin/DOpostprocess.py
 # vocload/bin/OMIM.py
 # vocload/bin/loadTerms.py
 # vocload/bin/OBOParser.py
-# gxdindexer:src/org/jax/mgi/indexer/Indexer.java
-# qcrpeorts_db/weekly/VOC_OMIMDOObsolete.py
-# entrezgeneload/humuman/createBuckets.csh
+${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
 
-#${ENTREZGENELOAD}/loadAll.csh | tee -a $LOG
+# entrezgeneload/human/createBuckets.csh
+${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG
+
+# qcrpeorts_db/weekly/VOC_OMIMDOObsolete.py
+cd ${QCREPORTS_DB}
+source ./Configuration
+cd weekly
+${PYTHON}/VOC_OMIMDOObsolete.py | tee -a $LOG
+
+# pwi/static/ap/edit/voctermdetail/help.html
 
 date |tee -a $LOG
 

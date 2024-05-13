@@ -44,6 +44,7 @@ EOSQL
 # vocload/bin/OMIM.py
 # vocload/bin/loadTerms.py
 # vocload/bin/OBOParser.py
+scp bhmgiapp01:/data/loads/mgi/vocload/OMIM/omim.txt ${DATALOADSOUTPUT}/mgi/vocload/OMIM
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
 
 # entrezgeneload/human/createBuckets.csh
@@ -57,6 +58,13 @@ ${PYTHON}/VOC_OMIMDOObsolete.py | tee -a $LOG
 
 # pwi/static/ap/edit/voctermdetail/help.html
 # can be done at any time
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select count(*) from acc_accession where prefixpart = 'OMIM:';
+select count(*) from acc_accession where prefixpart = 'MIM:';
+select * from acc_accession where _logicaldb_key = 15 and prefixpart != 'MIM:';
+select * from acc_accession where _logicaldb_key = 15 ;
+EOSQL
 
 date |tee -a $LOG
 

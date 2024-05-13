@@ -44,7 +44,6 @@ EOSQL
 # vocload/bin/OMIM.py
 # vocload/bin/loadTerms.py
 # vocload/bin/OBOParser.py
-cp ${VOCLOAD}/OMIMinputs/OMIM.synonym ${DATALOADSOUTPUT}/mgi/vocload/OMIM
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config
 
 # entrezgeneload/human/createBuckets.csh

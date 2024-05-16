@@ -1,7 +1,7 @@
 #!/bin/csh -f
 
 #
-# Template
+# change OMIM -> MIM
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -23,7 +23,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select count(*) from acc_accession where _logicaldb_key = 15;
 select count(*) from acc_accession where prefixpart = 'OMIM:';
 select * from acc_accession where _logicaldb_key = 15 and prefixpart != 'OMIM:';
-select * into temp table omim from acc_accession where _logicaldb_key = 15 ;
+select * into temp table omim from acc_accession where prefixpart = 'OMIM:';
 select * from omim;
 
 update acc_accession a
@@ -33,10 +33,8 @@ where o._accession_key = a._accession_key
 ;
 
 select count(*) from acc_accession where prefixpart = 'OMIM:';
+select count(*) from acc_accession where prefixpart = 'OMIM:PS';
 select count(*) from acc_accession where prefixpart = 'MIM:';
-
-select * from acc_accession where _logicaldb_key = 15 and prefixpart != 'MIM:';
-select * from acc_accession where _logicaldb_key = 15 ;
 
 EOSQL
 

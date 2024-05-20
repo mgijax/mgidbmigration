@@ -26,6 +26,8 @@ select * from acc_accession where _logicaldb_key = 15 and prefixpart != 'OMIM:';
 select * into temp table omim from acc_accession where prefixpart = 'OMIM:' or prefixpart = 'OMIM:PS';
 select * from omim;
 
+update acc_logicaldb set name = 'MIM:PS' where _logicaldb_key = 201;
+
 update acc_accession a
 set prefixpart = 'MIM:', accid = replace(a.accid,'OMIM','MIM')
 from omim o

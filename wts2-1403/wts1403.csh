@@ -44,8 +44,8 @@ EOSQL
 # vocload/bin/OMIM.py
 # vocload/bin/loadTerms.py
 # vocload/bin/OBOParser.py
-scp bhmgiapp01:/data/loads/mgi/vocload/OMIM/omim.txt ${DATALOADSOUTPUT}/mgi/vocload/OMIM
-scp bhmgiapp01:${DATADOWNLOADS}/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/main/src/ontology/doid-merged.obo ${DATADOWNLOADS}/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/main/src/ontology
+#scp bhmgiapp01:/data/loads/mgi/vocload/OMIM/omim.txt ${DATALOADSOUTPUT}/mgi/vocload/OMIM
+#scp bhmgiapp01:${DATADOWNLOADS}/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/main/src/ontology/doid-merged.obo ${DATADOWNLOADS}/raw.githubusercontent.com/DiseaseOntology/HumanDiseaseOntology/main/src/ontology
 ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG
 ${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config | tee -a $LOG
 

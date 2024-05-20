@@ -21,9 +21,9 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 select count(*) from acc_accession where _logicaldb_key = 15;
-select count(*) from acc_accession where prefixpart = 'OMIM:';
+select count(*) from acc_accession where prefixpart = 'OMIM:' || prefixpart = 'OMIM:PS';
 select * from acc_accession where _logicaldb_key = 15 and prefixpart != 'OMIM:';
-select * into temp table omim from acc_accession where prefixpart = 'OMIM:';
+select * into temp table omim from acc_accession where prefixpart = 'OMIM:' || prefixpart = 'OMIM:PS';
 select * from omim;
 
 update acc_accession a

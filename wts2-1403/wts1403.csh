@@ -50,7 +50,7 @@ ${VOCLOAD}/runSimpleIncLoadNoArchive.sh OMIM.config | tee -a $LOG
 ${VOCLOAD}/runOBOIncLoadNoArchive.sh DO.config | tee -a $LOG
 
 # entrezgeneload/human/createBuckets.csh
-#${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG
+${ENTREZGENELOAD}/loadHuman.csh | tee -a $LOG
 
 # qcrpeorts_db/weekly/VOC_OMIMDOObsolete.py
 cd ${QCRPTS}

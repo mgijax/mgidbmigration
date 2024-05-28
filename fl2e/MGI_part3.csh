@@ -60,7 +60,7 @@ echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG
 
 date | tee -a ${LOG}
 echo 'Load SNP/Marker Cache table' | tee -a ${LOG}
-${SNPCACHELOAD}/snpcacheload.sh
+${SNPCACHELOAD}/snpmarker.sh 
 
 date | tee -a ${LOG}
 echo '--- finished part 3' | tee -a $LOG

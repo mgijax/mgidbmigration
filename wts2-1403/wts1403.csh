@@ -42,6 +42,7 @@ cd ${PUBRPTS}
 source ./Configuration
 cd weekly
 ${PYTHON} MGI_DO.py | tee -a $LOG
+${PYTHON} MGI_GenePheno.py | tee -a $LOG
 
 date |tee -a $LOG
 

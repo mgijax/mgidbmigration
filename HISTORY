@@ -1,3 +1,9 @@
+TAG: mgidbmigration-6-0-24-1
+DATE: 07/09/2024
+STAFF: lec
+CHANGES:
+wts2-1516/rename not moving MGI:xxx to new marker
+
 TAG: mgidbmigration-6-0-23-8
 TAG: mgidbmigration-6-0-23-7
 DATE: 05/28/2024

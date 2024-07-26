@@ -35,5 +35,7 @@ order by a.symbol
 
 EOSQL
 
+$PYTHON wts859.py | tee -a $LOG
+
 date |tee -a $LOG
 

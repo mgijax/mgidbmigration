@@ -27,6 +27,7 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 insert into dag_dag values(54, 207078, 13, 'regulates_expression', 'regul', now(), now());
+insert into voc_vocabdag values(96, 54, now(), now());
 insert into mgi_relationship_category values(1013,'regulates_expression', 96, 54, 2, 2, 94, 95, 1001, 1001, now(), now());
 EOSQL
 

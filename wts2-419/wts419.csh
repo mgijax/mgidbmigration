@@ -38,6 +38,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from MGI_Relationship where _category_key = 1013;
 EOSQL
 rm -rf ${DATALOADSOUTPUT}/mgi/fearload/input/lastrun
+cp /mgi/all/wts2_projects/400/WTS2-419/Updated_RR_testdata.txt ${DATALOADSOUTPUT}/mgi/fearload/input/fearload.txt
 ./fearload.sh
 
 date |tee -a $LOG

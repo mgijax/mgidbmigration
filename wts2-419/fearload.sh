@@ -88,56 +88,6 @@ preload ${OUTPUTDIR}
 
 cleanDir ${OUTPUTDIR}
 
-# NOTE: keep this commented out until production release
-#
-# There should be a "lastrun" file in the input directory that was created
-# the last time the load was run for this input file. If this file exists
-# and is more recent than the input file, the load does not need to be run.
-#
-#LASTRUN_FILE=${INPUTDIR}/lastrun
-#if [ -f ${LASTRUN_FILE} ]
-#then
-#    if test ${LASTRUN_FILE} -nt ${INPUT_FILE_DEFAULT}
-#    then
-#
-#        echo "Input file has not been updated - skipping load" | tee -a ${LOG_PROC}
-#        # set STAT for shutdown
-#        STAT=0
-#        echo 'shutting down'
-#        shutDown
-#        exit 0
-#    fi
-#fi
-
-#echo "" >> ${LOG_DIAG}
-#date >> ${LOG_DIAG}
-#echo "Run sanity/QC checks"  | tee -a ${LOG_DIAG}
-#${FEARLOAD}/bin/fearQC.sh ${INPUT_FILE_DEFAULT} live
-#STAT=$?
-#if [ ${STAT} -eq 1 ]
-#then
-#    checkStatus ${STAT} "Sanity errors detected. See ${SANITY_RPT}. fearQC.sh"
-#    # run postload cleanup and email logs
-#    shutDown
-#fi
-
-#if [ ${STAT} -eq 2 ]
-#then
-#    checkStatus ${STAT} "An error occurred while generating the sanity/QC reports - See ${QC_LOGFILE}. fearQC.sh"
-#
-#    # run postload cleanup and email logs
-#    shutDown
-#fi
-#
-#if [ ${STAT} -eq 3 ]
-#then
-#    checkStatus ${STAT} "QC errors detected. See ${QC_RPT}. fearQC.sh"
-#    
-#    # run postload cleanup and email logs
-#    shutDown
-#
-#fi
-
 #
 # run the load
 #
@@ -224,25 +174,6 @@ select setval('mgi_relationship_seq', (select max(_Relationship_key) from MGI_Re
 select setval('mgi_relationship_property_seq', (select max(_RelationshipProperty_key) from MGI_Relationship_Property));
 select setval('mgi_note_seq', (select max(_Note_key) from MGI_Note));
 EOSQL
-
-#
-# Archive a copy of the input file, adding a timestamp suffix.
-#
-echo "" >> ${LOG_DIAG}
-date >> ${LOG_DIAG}
-echo "Archive input file" >> ${LOG_DIAG}
-TIMESTAMP=`date '+%Y%m%d.%H%M'`
-ARC_FILE=`basename ${INPUT_FILE_DEFAULT}`.${TIMESTAMP}
-cp -p ${INPUT_FILE_DEFAULT} ${ARCHIVEDIR}/${ARC_FILE}
-
-#
-# Touch the "lastrun" file to note when the load was run.
-#
-#if [ ${STAT} = 0 ]
-#then
-#    touch ${LASTRUN_FILE}
-#fi
-
 
 # run postload cleanup and email logs
 

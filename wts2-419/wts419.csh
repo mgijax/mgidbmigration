@@ -25,6 +25,10 @@ touch $LOG
  
 date | tee -a $LOG
  
+rm -rf ${DATALOADSOUTPUT}/mgi/rvload/input/lastrun
+scp bhmgiapp01:/data/loads/mgi/rvload/input/RelationshipVocab.obo ${DATALOADSOUTPUT}/mgi/rvload/input
+
+# already installed on production
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 #insert into dag_dag values(54, 207078, 13, 'regulates_expression', 'regul', now(), now());
 #insert into voc_vocabdag values(96, 54, now(), now());

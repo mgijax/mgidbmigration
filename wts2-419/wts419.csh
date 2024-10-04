@@ -36,6 +36,7 @@ scp bhmgiapp01:/data/loads/mgi/rvload/input/RelationshipVocab.obo ${DATALOADSOUT
 #EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/view/MGI_Relationship_FEARByMarker_View_create.object
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd
 ${RVLOAD}/bin/rvload.sh
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

@@ -41,8 +41,10 @@ order by p.value
 ''', 'auto')
 
 for p in results:
+
     pid = p['value']
     pubMedRef = pma.getReferenceInfo(pid)
+    print()
     print(pubMedRef.getPubMedID(), pubMedRef.getPmcID())
     if pubMedRef.getPmcID() == None:
         continue
@@ -51,7 +53,6 @@ for p in results:
     os.system('rm -rf %s' % (filename))
     cmd = CURL1 % (pubMedRef.getPmcID(), filename)
     print(cmd)
-    print()
     os.system(cmd)
 
     # extract ftp file from curl1
@@ -66,7 +67,6 @@ for p in results:
             print(tokens3[8])
             cmd = CURL2 % (tokens2[1], 'littriage_gxdht/' + id + '.tar.gz')
             print(cmd)
-            print()
             os.system(cmd)
         inFile.close()
     except:

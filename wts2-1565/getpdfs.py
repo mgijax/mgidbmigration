@@ -40,7 +40,7 @@ order by p.value
 
 for p in results:
     pid = p['value']
-    filename = 'littriage_gxdhtml/PMID_' + pid + '.pdf'
+    filename = 'littriage_gxdht/PMID_' + pid + '.pdf'
     os.system('rm -rf %s' % (filename))
     pubMedRef = pma.getReferenceInfo(pid)
     print(pubMedRef.getPubMedID(), pubMedRef.getPmcID())

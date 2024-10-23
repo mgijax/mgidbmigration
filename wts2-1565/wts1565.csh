@@ -37,21 +37,23 @@ date | tee -a $LOG
 #EOSQL
 #
 
-#$PYTHON getpdfs.py | tee -a $LOG
+$PYTHON getpdfs.py | tee -a $LOG
 
 cd littriage_gxdht
-#for i in 39185904_PMC11357696.tar.gz
 for i in *tar.gz
 do
 bfile=`basename $i .tar.gz`
 pid=$(echo `basename $i .tar.gz` | cut -d"_" -f1)
 pmc=$(echo `basename $i .tar.gz` | cut -d"_" -f2)
+echo $pid
 gunzip -f $i
 tar -xvf $bfile.tar
 rm -rf 'PMID_'$pid.pdf
 for p in $pmc/*pdf
 do
-cat $p >> 'PMID_'$pid.pdf
+pmid=PMID_$pid.pdf
+cat $p >> $pmid
+break
 done
 rm -rf $pmc
 done

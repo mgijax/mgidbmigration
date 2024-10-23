@@ -37,7 +37,7 @@ date | tee -a $LOG
 #EOSQL
 #
 
-$PYTHON getpdfs.py | tee -a $LOG
+#$PYTHON getpdfs.py | tee -a $LOG
 
 cd littriage_gxdht
 for i in *tar.gz

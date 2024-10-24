@@ -23,7 +23,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 -- add new group 'GXDHT'
---insert into voc_term values(114000000, 127, 'GXD HT Index', 'GXDHT' , null, 7, 0, 1001, 1001, now(), now());
+insert into voc_term values(114000000, 127, 'GXD HT Index', 'GXDHT' , null, 7, 0, 1001, 1001, now(), now());
 
 delete from BIB_Workflow_Status where _group_key = 114000000;
 

@@ -25,88 +25,95 @@ pma = PubMedAgent.PubMedAgentMedline()
 CURL1 = '''/usr/bin/curl "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=%s" > %s '''
 CURL2 = '''/usr/bin/curl "%s" > %s '''
 
-#results = db.sql('''
-#select distinct p.value
-#from GXD_HTExperiment e, ACC_Accession a, MGI_Property p
-#where e._curationstate_key = 20475421 /* Done */
-#and e._experiment_key = a._object_key
-#and a._mgitype_key = 42 /* ht experiment type */
-#and a.preferred = 1
-#and e._experiment_key = p._object_key
-#and p._mgitype_key = 42
-#and p._propertyterm_key = 20475430
-#and not exists (select 1 from BIB_Citation_Cache c where p.value = c.pubmedid)
-#and p.value in ('16547197')
-#order by p.value
-#''', 'auto')
-
 results = db.sql('''
-select pubmedid as value
-from bib_citation_cache 
-where mgiid in (
-'MGI:7736783',
-'MGI:7736784',
-'MGI:7736671',
-'MGI:7736677',
-'MGI:7736691',
-'MGI:7736679',
-'MGI:7736682',
-'MGI:7736694',
-'MGI:7736698',
-'MGI:7736707',
-'MGI:7736719',
-'MGI:7736747',
-'MGI:7736766',
-'MGI:7736767',
-'MGI:7736768',
-'MGI:7736775',
-'MGI:7736781',
-'MGI:7736788',
-'MGI:7736803',
-'MGI:7736814',
-'MGI:7736821',
-'MGI:7736822',
-'MGI:7736830',
-'MGI:7736836',
-'MGI:7736875',
-'MGI:7736894',
-'MGI:7736895',
-'MGI:7736902',
-'MGI:7736905',
-'MGI:7736919',
-'MGI:7736923',
-'MGI:7736933',
-'MGI:7736935',
-'MGI:7736936',
-'MGI:7736937',
-'MGI:7736946',
-'MGI:7736965',
-'MGI:7736971',
-'MGI:7736972',
-'MGI:7736994',
-'MGI:7737003',
-'MGI:7737037',
-'MGI:7737046',
-'MGI:7737052',
-'MGI:7737061',
-'MGI:7737064',
-'MGI:7737071',
-'MGI:7737072',
-'MGI:7737076',
-'MGI:7737078',
-'MGI:7737080',
-'MGI:7737088',
-'MGI:7737116',
-'MGI:7737119',
-'MGI:7737140',
-'MGI:7737124',
-'MGI:7737129',
-'MGI:7737146',
-'MGI:7737153',
-'MGI:7737154',
-'MGI:7737158'
-)
+select distinct p.value
+from GXD_HTExperiment e, ACC_Accession a, MGI_Property p
+where e._curationstate_key = 20475421 /* Done */
+and e._experiment_key = a._object_key
+and a._mgitype_key = 42 /* ht experiment type */
+and a.preferred = 1
+and e._experiment_key = p._object_key
+and p._mgitype_key = 42
+and p._propertyterm_key = 20475430
+and not exists (select 1 from BIB_Citation_Cache c where p.value = c.pubmedid)
+order by p.value
 ''', 'auto')
+
+#results = db.sql('''
+#select pubmedid as value
+#from bib_citation_cache 
+#where mgiid in (
+#'MGI:7736783',
+#'MGI:7736784',
+#'MGI:7736671',
+#'MGI:7736677',
+#'MGI:7736691',
+#'MGI:7736679',
+#'MGI:7736682',
+##'MGI:7736694',
+#'MGI:7736698',
+#'MGI:7736707',
+#'MGI:7736719',
+#'MGI:7736747',
+#'MGI:7736766',
+#'MGI:7736767',
+#'MGI:7736768',
+#'MGI:7736775',
+#'MGI:7736781',
+#'MGI:7736788',
+#'MGI:7736803',
+#'MGI:7736814',
+#'MGI:7736821',
+#'MGI:7736822',
+#'MGI:7736830',
+#'MGI:7736836',
+#'MGI:7736875',
+#'MGI:7736894',
+#'MGI:7736895',
+#'MGI:7736902',
+#'MGI:7736905',
+#'MGI:7736919',
+#'MGI:7736923',
+#'MGI:7736933',
+#'MGI:7736935',
+#'MGI:7736936',
+#'MGI:7736937',
+#'MGI:7736946',
+#'MGI:7736965',
+#'MGI:7736971',
+#'MGI:7736972',
+#'MGI:7736994',
+#'MGI:7737003',
+#'MGI:7737037',
+#'MGI:7737046',
+#'MGI:7737052',
+#'MGI:7737061',
+#'MGI:7737064',
+#'MGI:7737071',
+#'MGI:7737072',
+#'MGI:7737076',
+#'MGI:7737078',
+##'MGI:7737080',
+#'MGI:7737088',
+#'MGI:7737116',
+#'MGI:7737119',
+#'MGI:7737140',
+#'MGI:7737124',
+#'MGI:7737129',
+#'MGI:7737146',
+#'MGI:7737153',
+#'MGI:7737154',
+#'MGI:7737158'
+#)
+#''', 'auto')
+#MGI:7737167
+#MGI:7737182
+#MGI:7737197
+#MGI:7737203
+#MGI:7737205
+#MGI:7737207
+#MGI:7737183
+#MGI:7737346
 
 for p in results:
 

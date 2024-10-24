@@ -44,5 +44,7 @@ select count(*) from bib_refs;
 
 EOSQL
 
+${PG_MGD_DBSCHEMADIR}/view/BIB_AssociatedData_View_create.object
+
 date |tee -a $LOG
 

@@ -21,6 +21,7 @@ date | tee -a $LOG
  
 #cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 #--insert into mgi_user values(1667,316353,316350,'littriage_gxdht','littriage_gxdht',null,null,1000,1000,now(),now());
+#--delete from bib_refs where _createdby_key = 1667;
 #select distinct p.value
 #from GXD_HTExperiment e, ACC_Accession a, MGI_Property p
 #where e._curationstate_key = 20475421 /* Done */

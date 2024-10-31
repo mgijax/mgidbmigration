@@ -91,10 +91,6 @@ where e._experiment_key = s._experiment_key
 and s._relevance_key = 20475450
 and not exists (select 1 from GXD_HTSample ss where ss._sample_key = s._sample_key)
 ;
-select distinct e._experiment_key, a.accid
-from singleVariable e, acc_accession a
-where e._experiment_key = a._object_key and a._logicaldb_key = 190
-;
 insert into GXD_HTSample
 select s._sample_key, s._experiment_key, s._relevance_key , s.name, s.age, s.agemin, s.agemax, s._organism_key, s._sex_key, s._emapa_key,
 s._stage_key, s._genotype_key, s._celltype_term_key, t2._term_key,
@@ -105,6 +101,10 @@ and s._experiment_key = v._experiment_key
 and v._term_key = t1._term_key
 and t1.term = t2.term
 and t2._vocab_key = 189
+;
+select distinct e._experiment_key, a.accid
+from singleVariable e, acc_accession a
+where e._experiment_key = a._object_key and a._logicaldb_key = 190
 ;
 
 -- those that are left, set to 'Not Specified'

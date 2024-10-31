@@ -20,10 +20,10 @@ touch $LOG
 date | tee -a $LOG
  
 #${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
-${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
-${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
-${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/home/lec/mgi/dbutils/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
-${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
+#${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
+#${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
+#${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
+#${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -47,54 +47,81 @@ ${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_create.object | tee -a $LOG
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
--- if relevance != Yes, then set to 'Not Applicable'
+-- if Experiment Type = transcription profiling by array, then set to "Not Applicable"
+-- 65327
 insert into GXD_HTSample
-select _sample_key, _experiment_key, _relevance_key , name, age, agemin, agemax, _organism_key, _sex_key, _emapa_key,
-_stage_key, _genotype_key, _celltype_term_key, 114866228,
-_createdby_key, _modifiedby_key, creation_date, modification_date
-from GXD_HTSample_old
-where _relevance_key != 20475450
+select s._sample_key, s._experiment_key, s._relevance_key , s.name, s.age, s.agemin, s.agemax, s._organism_key, s._sex_key, s._emapa_key,
+s._stage_key, s._genotype_key, s._celltype_term_key, 114866228,
+s._createdby_key, s._modifiedby_key, s.creation_date, s.modification_date
+from GXD_HTSample_old s, GXD_HTExperiment e
+where e._experimenttype_key = 20475436
+and e._experiment_key = s._experiment_key
 ;
 
--- thse that are single variable in ('bulk RNA-seq', 'scRNA-seq', 'spatial RNA-seq'), 
--- set to experiment variable of same name
-select g._experiment_key
-into temp table singleVariable
-from GXD_HTExperiment e, GXD_HTExperimentVariable g, VOC_Term t
+-- if Experiment Type = RNA-Seq, relevance != Yes, then set to 'Not Applicable'
+-- 25745
+insert into GXD_HTSample
+select s._sample_key, s._experiment_key, s._relevance_key , s.name, s.age, s.agemin, s.agemax, s._organism_key, s._sex_key, s._emapa_key,
+s._stage_key, s._genotype_key, s._celltype_term_key, 114866228,
+s._createdby_key, s._modifiedby_key, s.creation_date, s.modification_date
+from GXD_HTSample_old s, GXD_HTExperiment e
 where e._experimenttype_key = 20475437
-and e._experiment_key = g._experiment_key
-and g._term_key = t._term_key
+and e._experiment_key = s._experiment_key
+and s._relevance_key != 20475450
+and not exists (select 1 from GXD_HTSample ss where s._sample_key = ss._sample_key)
+;
+
+-- if Experiment Type = RNA-Seq, relevance = Yes, then set to 'Not Applicable'
+-- those that are single variable in ('bulk RNA-seq', 'scRNA-seq', 'spatial RNA-seq'), 
+-- set to experiment variable of same name
+-- 65393
+WITH experiments AS (
+select e._experiment_key
+from GXD_HTExperiment e, GXD_HTExperimentVariable v, VOC_Term t
+where e._experimenttype_key = 20475437
+and e._experiment_key = v._experiment_key
+and v._term_key = t._term_key
 and t.term in ('bulk RNA-seq', 'scRNA-seq', 'spatial RNA-seq')
-and not exists (select 1 from GXD_HTSample gg where gg._experiment_key = g._experiment_key)
-group by g._experiment_key having count(*) = 1
-order by g._experiment_key
+group by e._experiment_key having count(*) = 1
+)
+select s._experiment_key, s._sample_key
+into temp table singleVariable
+from experiments e, GXD_HTSample_old s
+where e._experiment_key = s._experiment_key
+and s._relevance_key = 20475450
+and not exists (select 1 from GXD_HTSample ss where ss._sample_key = s._sample_key)
+;
+select distinct e._experiment_key, a.accid
+from singleVariable e, acc_accession a
+where e._experiment_key = a._object_key and a._logicaldb_key = 190
 ;
 insert into GXD_HTSample
-select g._sample_key, g._experiment_key, g._relevance_key , g.name, g.age, g.agemin, g.agemax, g._organism_key, g._sex_key, g._emapa_key,
-g._stage_key, g._genotype_key, g._celltype_term_key, t2._term_key,
-g._createdby_key, g._modifiedby_key, g.creation_date, g.modification_date
-from singleVariable s, GXD_HTSample_old g, GXD_HTExperimentVariable v, VOC_Term t1, VOC_Term t2
-where s._experiment_key = g._experiment_key
-and g._experiment_key = v._experiment_key
+select s._sample_key, s._experiment_key, s._relevance_key , s.name, s.age, s.agemin, s.agemax, s._organism_key, s._sex_key, s._emapa_key,
+s._stage_key, s._genotype_key, s._celltype_term_key, t2._term_key,
+s._createdby_key, s._modifiedby_key, s.creation_date, s.modification_date
+from singleVariable sv, GXD_HTSample_old s, GXD_HTExperimentVariable v, VOC_Term t1, VOC_Term t2
+where sv._sample_key = s._sample_key
+and s._experiment_key = v._experiment_key
 and v._term_key = t1._term_key
 and t1.term = t2.term
 and t2._vocab_key = 189
 ;
 
 -- those that are left, set to 'Not Specified'
-select distinct g1._sample_key
+select distinct s._sample_key
 into temp table whatIsLeft
-from GXD_HTSample_old g1
-where not exists (select 1 from GXD_HTSample g2 where g1._sample_key = g2._sample_key)
+from GXD_HTSample_old s
+where not exists (select 1 from GXD_HTSample ss where s._sample_key = ss._sample_key)
 ;
 insert into GXD_HTSample
-select g._sample_key, g._experiment_key, g._relevance_key , g.name, g.age, g.agemin, g.agemax, g._organism_key, g._sex_key, g._emapa_key,
-g._stage_key, g._genotype_key, g._celltype_term_key, 114866227,
-g._createdby_key, g._modifiedby_key, g.creation_date, g.modification_date
-from GXD_HTSample_old g, whatIsLeft w
-where g._sample_key = w._sample_key
+select s._sample_key, s._experiment_key, s._relevance_key , s.name, s.age, s.agemin, s.agemax, s._organism_key, s._sex_key, s._emapa_key,
+s._stage_key, s._genotype_key, s._celltype_term_key, 114866227,
+s._createdby_key, s._modifiedby_key, s.creation_date, s.modification_date
+from GXD_HTSample_old s, whatIsLeft w
+where s._sample_key = w._sample_key
 ;
 
+-- 207336
 select count(*) from GXD_HTSample;
 select count(*) from GXD_HTSample_old;
 
@@ -134,8 +161,8 @@ ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a $LOG 
 
-${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
-${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
+#${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
+#${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 

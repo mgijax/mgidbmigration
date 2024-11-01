@@ -126,6 +126,8 @@ EOSQL
 # remove "old" table
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table mgd.GXD_HTSample_old;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 EOSQL
 
 # new table
@@ -147,8 +149,8 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a $LOG 

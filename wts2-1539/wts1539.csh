@@ -124,9 +124,9 @@ select count(*) from GXD_HTSample_old;
 EOSQL
 
 # remove "old" table
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#drop table mgd.GXD_HTSample_old;
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table mgd.GXD_HTSample_old;
+EOSQL
 
 # new table
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_drop.object | tee -a $LOG 

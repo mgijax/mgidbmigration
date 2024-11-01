@@ -124,7 +124,12 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table mgd.GXD_HTSample_old;
 ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_CellType_Term_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_EMAPA_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_Relevance_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_Sex_key) REFERENCES mgd.VOC_Term DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_RNASeqType_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_Organism_key) REFERENCES mgd.MGI_Organism DEFERRABLE;
 EOSQL
 
 # new table
@@ -145,6 +150,7 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTSample_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a $LOG 

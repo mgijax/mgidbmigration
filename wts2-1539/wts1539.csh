@@ -19,17 +19,13 @@ touch $LOG
  
 date | tee -a $LOG
  
-#${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
-#${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
-#${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
-#${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
+# for testing only; if need to refres/clear GXD_HTSample
 #${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
 
+${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_drop.object | tee -a $LOG 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
 ALTER TABLE GXD_HTSample RENAME TO GXD_HTSample_old;
 ALTER TABLE mgd.GXD_HTSample_old DROP CONSTRAINT GXD_HTSample_pkey CASCADE;
-
 EOSQL
 
 # new table
@@ -128,13 +124,11 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 drop table mgd.GXD_HTSample_old;
 ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample ADD FOREIGN KEY (_RNASeqType_key) REFERENCES mgd.VOC_Term DEFERRABLE;
 EOSQL
 
 # new table
-${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/VOC_drop.logical | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/VOC_create.logical | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
@@ -149,17 +143,12 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_create.object | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG 
-#${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a $LOG 
-
-#${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
-#${PG_DBUTILS}/bin/loadTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 

@@ -23,7 +23,7 @@ date | tee -a $LOG
 #${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
 #${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
 #${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
-${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
+#${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 

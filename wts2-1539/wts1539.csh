@@ -23,16 +23,9 @@ date | tee -a $LOG
 #${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample.bcp '|' >>& $LOG
 #${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeq ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeq.bcp '|' >>& $LOG
 #${PG_DBUTILS}/bin/dumpTableData.csh ${PG_DBSERVER} ${PG_DBNAME} mgd GXD_HTSample_RNASeqSetMember ${DBUTILS}/mgidbmigration/wts2-1539/GXD_HTSample_RNASeqSetMember.bcp '|' >>& $LOG
-#${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_truncate.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
---insert into voc_vocab values(189,22864,1,1,0,'GXD HT RNA-Seq Type', now(), now());
---insert into voc_term values(nextval('voc_term_seq'),189,'bulk RNA-seq',null,null,1,0,1001,1001,now(),now());
---insert into voc_term values(nextval('voc_term_seq'),189,'scRNA-seq',null,null,2,0,1001,1001,now(),now());
---insert into voc_term values(nextval('voc_term_seq'),189,'spatial RNA-seq',null,null,3,0,1001,1001,now(),now());
---insert into voc_term values(nextval('voc_term_seq'),189,'Not Specified',null,null,4,0,1001,1001,now(),now());
---insert into voc_term values(nextval('voc_term_seq'),189,'Not Applicable',null,null,5,0,1001,1001,now(),now());
 
 ALTER TABLE GXD_HTSample RENAME TO GXD_HTSample_old;
 ALTER TABLE mgd.GXD_HTSample_old DROP CONSTRAINT GXD_HTSample_pkey CASCADE;
@@ -47,6 +40,7 @@ ${PG_MGD_DBSCHEMADIR}/table/GXD_HTSample_create.object | tee -a $LOG
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
+-- case 1
 -- if Experiment Type = transcription profiling by array, then set to "Not Applicable"
 -- 65327
 insert into GXD_HTSample
@@ -58,6 +52,7 @@ where e._experimenttype_key = 20475436
 and e._experiment_key = s._experiment_key
 ;
 
+-- case 2
 -- if Experiment Type = RNA-Seq, relevance != Yes, then set to 'Not Applicable'
 -- 25745
 insert into GXD_HTSample
@@ -71,17 +66,17 @@ and s._relevance_key != 20475450
 and not exists (select 1 from GXD_HTSample ss where s._sample_key = ss._sample_key)
 ;
 
+-- case 3
 -- if Experiment Type = RNA-Seq, relevance = Yes, then set to 'Not Applicable'
--- those that are single variable in ('bulk RNA-seq', 'scRNA-seq', 'spatial RNA-seq'), 
+-- those that are single variable in ('bulk RNA-seq', 'single cell RNA-seq', 'spatial RNA-seq'), 
 -- set to experiment variable of same name
 -- 65393
 WITH experiments AS (
 select e._experiment_key
-from GXD_HTExperiment e, GXD_HTExperimentVariable v, VOC_Term t
+from GXD_HTExperiment e, GXD_HTExperimentVariable v
 where e._experimenttype_key = 20475437
 and e._experiment_key = v._experiment_key
-and v._term_key = t._term_key
-and t.term in ('bulk RNA-seq', 'scRNA-seq', 'spatial RNA-seq')
+and v._term_key in (114732569,114732570,114732571)
 group by e._experiment_key having count(*) = 1
 )
 select s._experiment_key, s._sample_key
@@ -104,9 +99,10 @@ and t2._vocab_key = 189
 ;
 select distinct e._experiment_key, a.accid
 from singleVariable e, acc_accession a
-where e._experiment_key = a._object_key and a._logicaldb_key = 190
+where e._experiment_key = a._object_key and a._logicaldb_key in (189,190)
 ;
 
+-- case 4
 -- those that are left, set to 'Not Specified'
 select distinct s._sample_key
 into temp table whatIsLeft
@@ -128,9 +124,9 @@ select count(*) from GXD_HTSample_old;
 EOSQL
 
 # remove "old" table
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-drop table mgd.GXD_HTSample_old;
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#drop table mgd.GXD_HTSample_old;
+#EOSQL
 
 # new table
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_drop.object | tee -a $LOG 
@@ -155,7 +151,6 @@ ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_create.object | tee -a $LOG 
-
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/GXD_getGenotypesDataSets_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_drop.object | tee -a $LOG 
@@ -166,6 +161,8 @@ ${PG_MGD_DBSCHEMADIR}/procedure/MGI_resetAgeMinMax_create.object | tee -a $LOG
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
+
+./checkMigration.csh | tee -a $LOG
 
 date |tee -a $LOG
 

@@ -37,9 +37,11 @@ setenv SNPLOG snpalliance.log
 setenv SNPTSV snpalliance.tsv
 rm -rf $SNPLOG $SNPTSV Mrpl15
 touch $SNPLOG
-$PYTHON snpfunc.py | tee -a $SNPLOG
+$PYTHON snpfunc.py > $SNPLOG
 sort $SNPLOG | uniq > $SNPTSV
 grep Mrpl15 $SNPTSV > Mrpl15
+grep rs46043568 Mrpl15
+cut -f1 -d"|" snpalliance.tsv | uniq | wc -l
 
 date |tee -a $LOG
 

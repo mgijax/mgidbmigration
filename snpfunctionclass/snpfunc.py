@@ -40,7 +40,7 @@ for line in inFile:
                 symbol = fields[3]
                 mgiid = fields[4]
                 for term in cterms:
-                    print(rsid + "|" + symbol + "|" + mgiid + "|" + term)
+                    print(symbol + "|" + mgiid + "|" + term + "|" + rsid)
                     #x = (rsid,symbol,mgiid,term)
                     #if x not in mgiids:
                     #    mgiids.append(x)

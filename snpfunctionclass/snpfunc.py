@@ -33,20 +33,20 @@ for line in inFile:
             # split by ',' to find consequence entries
             centries = property.split(',')
             for entry in centries:
+                fields = entry.split('|')
                 if not fields[4].startswith("MGI:") :
                     continue
-                fields = entry.split('|')
                 cterms = fields[1].split('&')
                 symbol = fields[3]
                 mgiid = fields[4]
                 for term in cterms:
-                    print(rsid,symbol,mgiid,term)
-                    x = (rsid,symbol,mgiid,term)
-                    if x not in mgiids:
-                        mgiids.append(x)
+                    print(rsid + "|" + symbol + "|" + mgiid + "|" + term)
+                    #x = (rsid,symbol,mgiid,term)
+                    #if x not in mgiids:
+                    #    mgiids.append(x)
 
 inFile.close()
 
-for r in mgiids:
-    print(r)
+#for r in mgiids:
+#    print(r)
 

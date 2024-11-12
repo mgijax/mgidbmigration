@@ -146,8 +146,8 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/GXD_Organism_create.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_HTSample_create.object | tee -a $LOG

@@ -25,8 +25,20 @@ pma = PubMedAgent.PubMedAgentMedline()
 CURL1 = '''/usr/bin/curl "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=%s" > %s '''
 CURL2 = '''/usr/bin/curl "%s" > %s '''
 
+#results = db.sql('''
+#(
+#select distinct p.value
+#from GXD_HTExperiment e, ACC_Accession a, MGI_Property p
+#where e._curationstate_key = 20475421 /* Done */
+#and e._experiment_key = a._object_key
+#and a._mgitype_key = 42 /* ht experiment type */
+#and a.preferred = 1
+#and e._experiment_key = p._object_key
+#and p._mgitype_key = 42
+#and p._propertyterm_key = 20475430
+#and not exists (select 1 from BIB_Citation_Cache c where p.value = c.pubmedid)
+#union
 results = db.sql('''
-(
 select distinct p.value
 from GXD_HTExperiment e, ACC_Accession a, MGI_Property p
 where e._curationstate_key = 20475421 /* Done */
@@ -36,20 +48,7 @@ and a.preferred = 1
 and e._experiment_key = p._object_key
 and p._mgitype_key = 42
 and p._propertyterm_key = 20475430
-and not exists (select 1 from BIB_Citation_Cache c where p.value = c.pubmedid)
-union
-select distinct p.value, array_to_string(array_agg(distinct a.accid),'|') as exptId
-from GXD_HTExperiment e, ACC_Accession a, MGI_Property p
-where e._curationstate_key = 20475421 /* Done */
-and e._experiment_key = a._object_key
-and a._mgitype_key = 42 /* ht experiment type */
-and a.preferred = 1
-and e._experiment_key = p._object_key
-and p._mgitype_key = 42
-and p._propertyterm_key = 20475430
 and exists (select 1 from BIB_Citation_Cache c where p.value = c.pubmedid and c.jnumid is null)
-group by p.value
-)
 order by value
 ''', 'auto')
 

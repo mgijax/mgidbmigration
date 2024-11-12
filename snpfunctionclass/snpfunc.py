@@ -6,9 +6,7 @@ import sys
 import os
 import gzip
 
-mgiids = []
 inFile = gzip.open('/data/downloads/download.alliancegenome.org/variants/7.4.0/MGI/MGI.vep.vcf.gz', 'rt')
-
 for line in inFile:
 
     if line.startswith("##"):
@@ -41,12 +39,5 @@ for line in inFile:
                 mgiid = fields[4]
                 for term in cterms:
                     print(symbol + "|" + mgiid + "|" + rsid + "|" + term)
-                    #x = (rsid,symbol,mgiid,term)
-                    #if x not in mgiids:
-                    #    mgiids.append(x)
 
 inFile.close()
-
-#for r in mgiids:
-#    print(r)
-

@@ -33,7 +33,13 @@ select * from mgi_translation where _translationtype_key = 1014
 
 EOSQL
 
-$PYTHON snpfunc.py | tee -a $LOG
+setenv SNPLOG snpalliance.log
+setenv SNPTSV snpalliance.tsv
+rm -rf $SNPLOG $SNPTSV Mrpl15
+touch $SNPLOG
+$PYTHON snpfunc.py | tee -a $SNPLOG
+sort $SNPLOG | uniq > $SNPTSV
+grep Mrpl15 $SNPTSV > Mrpl15
 
 date |tee -a $LOG
 

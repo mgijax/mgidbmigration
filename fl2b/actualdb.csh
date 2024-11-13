@@ -14,8 +14,8 @@ touch $LOG
  
 date | tee -a $LOG
  
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
-${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
+#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_LogicalDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_LogicalDB.bcp "|"
+#${PG_DBUTILS}/bin/dumpTableData.csh ${MGD_DBSERVER} ${MGD_DBNAME} mgd ACC_ActualDB ${MGI_LIVE}/dbutils/mgidbmigration/fl2b/ACC_ActualDB.bcp "|"
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -93,18 +93,18 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 -- ignore those in Richard's spreadsheet NO (66,129,87,129,49,50,126,109)
 
 -- logicaldb that are used in acc_accession and cannot be removed
---(
---select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actualname, a.url
---into temp keep
---from acc_logicaldb l left outer join acc_actualdb a on ( l._logicaldb_key = a._logicaldb_key)
---where exists (select 1 from acc_accession aa where l._logicaldb_key = aa._logicaldb_key)
---union
---select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actualname, a.url
---from acc_logicaldb l left outer join acc_actualdb a on ( l._logicaldb_key = a._logicaldb_key)
---where l._logicaldb_key in (22,38,37,39,40,54,56,57,58,70,71,83,87,90,91,93,94,154,161,177,184,188,200,206,207,208,213,215,216,217,219,220,224,73,74,75,76,77,174,175,210,9,13,27,60,125,173,9,27,55,29,66,129,87,129,49,50,126,109,195,139)
---)
---order by _logicaldb_key
---;
+(
+select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actualname, a.url
+into temp keep
+from acc_logicaldb l left outer join acc_actualdb a on ( l._logicaldb_key = a._logicaldb_key)
+where exists (select 1 from acc_accession aa where l._logicaldb_key = aa._logicaldb_key)
+union
+select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actualname, a.url
+from acc_logicaldb l left outer join acc_actualdb a on ( l._logicaldb_key = a._logicaldb_key)
+where l._logicaldb_key in (22,38,37,39,40,54,56,57,58,70,71,83,87,90,91,93,94,154,161,177,184,188,200,206,207,208,213,215,216,217,219,220,224,73,74,75,76,77,174,175,210,9,13,27,60,125,173,9,27,55,29,66,129,87,129,49,50,126,109,195,139)
+)
+order by _logicaldb_key
+;
 
 -- logicaldb that are not used in acc_accession and can be removed
 select l._logicaldb_key, l.name, l.description, a._actualdb_key, a.name as actualname, a.url

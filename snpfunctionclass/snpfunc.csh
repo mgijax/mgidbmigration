@@ -30,6 +30,12 @@ select _term_key, term from voc_term where _vocab_key = 49;
 select * from mgi_translation where _translationtype_key = 1014
 --select distinct s._fxn_key, t.term from snp.dp_snp_marker s, voc_term t where s._fxn_key = t._term_key;
 --select distinct s._fxn_key, t.term from snp.snp_consensussnp_marker s, voc_term t where s._fxn_key = t._term_key;
+select t._term_key, t.term, s.badname
+from voc_term t, mgi_translation s
+where t._vocab_key = 49
+and s._translationtype_key = 1014
+and s._object_key = t._term_key
+;
 
 EOSQL
 

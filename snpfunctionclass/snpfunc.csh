@@ -35,13 +35,15 @@ EOSQL
 
 setenv SNPLOG snpalliance.log
 setenv SNPTSV snpalliance.tsv
-rm -rf $SNPLOG $SNPTSV Mrpl15
+setenv SNPTERMS allianceterms.tsv
+rm -rf $SNPLOG $SNPTSV $SNPTERMS Mrpl15
 touch $SNPLOG
 $PYTHON snpfunc.py > $SNPLOG
 sort $SNPLOG | uniq > $SNPTSV
 grep Mrpl15 $SNPTSV > Mrpl15
 grep rs46043568 Mrpl15
 cut -f1 -d"|" snpalliance.tsv | uniq | wc -l
+cut -f4 -d"|" snpalliance.tsv | sort | uniq > $SNPTERMS
 
 date |tee -a $LOG
 

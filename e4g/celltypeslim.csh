@@ -2,8 +2,13 @@
 
 #
 # cell type slim
+#
+# products:
+# mgidbmigration
 # slimtermload
-# loadadmin : add to daily/sunday tasks?
+# loadadmin : add to daily and sunday tasks
+# add to slimtermload wiki
+#       http://bhmgiwk01lp.jax.org/mediawiki/index.php/sw:Slimtermload
 #
 
 if ( ${?MGICONFIG} == 0 ) then

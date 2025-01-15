@@ -33,10 +33,11 @@ and a._logicaldb_key = 173
 limit 5
 ;
 
-insert into MGI_Set values(1060, 13, 'Cell Type Slim', 1, 1001, 1001, now(), now());
+--insert into MGI_Set values(1060, 13, 'Cell Type Slim', 1, 1001, 1001, now(), now());
 
 EOSQL
 
+rm -rf ${DATALOADSOUTPUT}/mgi/slimtermload/celltypeslimload/input/lastrun | tee -a $LOG
 ${SLIMTERMLOAD}/bin/slimtermload.sh celltypeslimload.config | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
@@ -48,5 +49,6 @@ and s._createdby_key = u._user_key
 and t._term_key = a._object_key
 and a._logicaldb_key = 173
 ;
+
 EOSQL
 

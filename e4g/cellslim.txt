@@ -1,0 +1,31 @@
+CL:0000000	all cell types	cell
+CL:0000066		epithelial cell
+CL:0000115		endothelial cell
+CL:0000077		mesothelial cell
+CL:0002320		connective tissue cell
+CL:4030031		interstitial cell
+CL:0000219		motile cell
+CL:0000183		contractile cell
+CL:0000988		hematopoietic cell
+CL:0011115		precursor cell
+CL:0000151		secretory cell
+CL:0000197		sensory receptor cell
+CL:0000630		supporting cell
+CL:0000325	accumulating cell	stuff accumulating cell
+CL:0000007	early embryonic cell	early embryonic cell (metazoa)
+CL:0000221		ectodermal cell
+CL:0000223		endodermal cell
+CL:0000222		mesodermal cell
+CL:0011012		neural crest cell
+CL:0000349		extraembryonic cell 
+CL:0000039		germ line cell
+CL:0002319		neural cell 
+CL:0000540		neuron
+CL:0000125		glial cell
+CL:0001035		bone cell
+CL:0002494		cardiocyte
+CL:0000188	skeletal muscle cell	cell of skeletal muscle 
+CL:4033054		perivascular cell
+CL:1000497		kidney cell
+CL:1000600		lower urinary tract cell
+CL:1000601		ureteral cell

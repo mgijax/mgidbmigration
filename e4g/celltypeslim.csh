@@ -38,6 +38,8 @@ limit 5
 EOSQL
 
 rm -rf ${DATALOADSOUTPUT}/mgi/slimtermload/celltypeslimload/input/lastrun | tee -a $LOG
+cp celltypeslimload.txt /data/slimterm/current/celltypeslim
+cp celltypeslimload.txt ${DATALOADSOUTPUT}/mgi/slimtermload/celltypeslimload/input
 ${SLIMTERMLOAD}/bin/slimtermload.sh celltypeslimload.config | tee -a $LOG
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

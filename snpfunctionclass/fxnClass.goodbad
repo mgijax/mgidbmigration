@@ -1,23 +1,21 @@
-	Coding	cds-indel	dbsnp_load
-	Coding-Synonymous	coding-synonymous	dbsnp_load
-	Locus-Region	downstream-variant-500B	dbsnp_load
-	Coding	frameshift	dbsnp_load
-	Coding	frameshift-variant	dbsnp_load
-	Intron	intron	dbsnp_load
-	Intron	intron-variant	dbsnp_load
-	Coding-NonSynonymous	missense	dbsnp_load
-	Noncoding-Transcript-Variant	nc-transcript-variant	dbsnp_load
-	Locus-Region	near-gene-3	dbsnp_load
-	Locus-Region	near-gene-5	dbsnp_load
-	Contig-Reference	reference	dbsnp_load
-	Splice-Site	splice-acceptor-variant	dbsnp_load
-	Splice-Site	splice-donor-variant	dbsnp_load
-	Coding-NonSynonymous	stop-gain	dbsnp_load
-	Coding-NonSynonymous	stop-gained	dbsnp_load
-	Coding-NonSynonymous	stop-lost	dbsnp_load
-	Coding-Synonymous	synonymous-codon	dbsnp_load
-	Locus-Region	upstream-variant-2KB	dbsnp_load
-	mRNA-UTR	utr-3	dbsnp_load
-	mRNA-UTR	utr-5	dbsnp_load
-	mRNA-UTR	utr-variant-3-prime	dbsnp_load
-	mRNA-UTR	utr-variant-5-prime	dbsnp_load
+SM:0000026|mRNA-UTR|3_prime_UTR_variant|rmb
+SM:0000026|mRNA-UTR|5_prime_UTR_variant|rmb
+SM:0000027|Coding|coding_sequence_variant|rmb
+SM:0000027|Coding|frameshift_variant|rmb
+SM:0000027|Coding|incomplete_terminal_codon_variant|rmb
+SM:0000027|Coding|inframe_deletion|rmb
+SM:0000027|Coding|inframe_insertion|rmb
+SM:0000025|Intron|intron_variant|rmb
+SM:0000022|Coding|NonSynonymous	missense_variant|rmb
+SM:0000029|Noncoding-Transcript-Variant|non_coding_transcript_exon_variant|rmb
+SM:0000029|Noncoding-Transcript-Variant|non_coding_transcript_variant|rmb
+SM:0000027|Coding|protein_altering_variant|rmb
+SM:0000024|Splice-Site|splice_acceptor_variant|rmb
+SM:0000024|Splice-Site|splice_donor_variant|rmb
+SM:0000024|Splice-Site|splice_region_variant|rmb
+SM:0000022|Coding-NonSynonymous|start_lost|rmb
+SM:0000027|Coding|start_retained_variant|rmb
+SM:0000022|Coding-NonSynonymous|stop_gained|rmb
+SM:0000022|Coding-NonSynonymous|stop_lost|rmb
+SM:0000027|Coding|stop_retained_variant|rmb
+SM:0000022|Coding-Synonymous|synonymous_variant|rmb

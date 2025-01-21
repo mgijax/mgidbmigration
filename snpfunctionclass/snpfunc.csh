@@ -50,19 +50,24 @@ and term in (
 ;
 
 -- SNP Function Class/49
---select _term_key, term from voc_term where _vocab_key = 49;
+select t._term_key, t.term, a.accid 
+from voc_term t, acc_accession a 
+where t._vocab_key = 49
+and a._mgitype_key = 13
+and t._term_key = a._object_key
+;
 --select _term_key, term from voc_term where _vocab_key = 79 order by term;
 --select * from mgi_translation where _translationtype_key = 1014;
 --select distinct s._fxn_key, t.term from snp.dp_snp_marker s, voc_term t where s._fxn_key = t._term_key;
 --select distinct s._fxn_key, t.term from snp.snp_consensussnp_marker s, voc_term t where s._fxn_key = t._term_key;
-select t._term_key, t.term, s.badname, a.accid
-from voc_term t, mgi_translation s, acc_accession a
-where t._vocab_key = 49
-and s._translationtype_key = 1014
-and s._object_key = t._term_key
-and t._term_key = a._object_key
-and a._mgitype_key = 13
-;
+--select t._term_key, t.term, s.badname, a.accid
+--from voc_term t, mgi_translation s, acc_accession a
+--where t._vocab_key = 49
+--and s._translationtype_key = 1014
+--and s._object_key = t._term_key
+--and t._term_key = a._object_key
+--and a._mgitype_key = 13
+--;
 
 EOSQL
 
@@ -82,7 +87,28 @@ EOSQL
 #${VOCLOAD}/runDAGFullLoad.sh fxnClassDag.config
 
 # need new translation
-#${TRANSLATIONLOAD}/translationload.csh fxnClassTrans.config
+setenv TRANSINPUTFILE   ${DBUTILS}/mgidbmigration/snpfunctionclass/fxnClass.goodbad
+setenv TRANSLOG   	${DBUTILS}/mgidbmigration/snpfunctionclass/fxnClassTrans.log
+setenv TRANSOUTPUTDIR   ${DBUTILS}/mgidbmigration/snpfunctionclass
+setenv TRANSTYPENAME    "SNP Function Class"
+setenv TRANSMGITYPE     "Vocabulary Term"
+setenv VOCABNAME        "SNP Function Class"
+setenv TRANSCOMPRESSION ""
+setenv CREATEDBY        "rmb"
+source fxnClassTrans.config
+${PYTHON} ${TRANSLATIONLOAD}/translationload.py
+${DBUTILS}/pgdbutilities/bin/bcpin.csh ${MGD_DBURL} ${MGD_DBNAME} MGI_Translation ${DBUTILS}/mgidbmigration/snpfunctionclass MGI_Translation.bcp "|" "\n" mgd
+${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_create.object
 
-date |tee -a $LOG
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+select t._term_key, t.term, s.badname, a.accid
+from voc_term t, mgi_translation s, acc_accession a
+where t._vocab_key = 49
+and s._translationtype_key = 1014
+and s._object_key = t._term_key
+and t._term_key = a._object_key
+and a._mgitype_key = 13
+;
+
+EOSQL
 

@@ -1,0 +1,26 @@
+1) Source of SNP Function Class Data
+1.1) The Alliance Molecular Consequence VCF files
+a) The Alliance has VCF file/all mouse Chr of SNP Molecular Consequences
+https://download.alliancegenome.org/variants/7.4.0/MGI/MGI.vep.vcf.gz
+b) File Contents
+Preliminary analysis of the Chr1 file indicates that it contains most of the SNPs in MGI that fall within coordinates of a marker (see slides 6 and 7 in E4G_Other_notGXD.pptx).
+c) Parsing Information
+See slide 8 in E4G_Other_notGXD.pptx) for parsing information.
+
+2) Translation of raw Function Class terms to MGI Function Class Values
+a) Translation type: SNP Function Class
+The translation type used by the dbsnpload is SNP Function Class (_translationtype_key=1014) and the function class vocab is SNP Function Class (_vocab_key=49). We should follow this model, since it simplifies display for users, and may be easier to implement if we follow what we've done for dbSNP.
+- It is most likely that we will need to add some translations to _translationtype_key=1014, since we haven't loaded function class data from dbSNP in such a long time.
+
+3) The Load Process : snpcacheload/snpmrkwithin.py
+Delete snp_consensussnp_marker table and then reload
+3.1) Obtain SNP/Marker/Raw Function Class info from the input file
+3.2) Translate Raw Function Class values to MGI Function Class terms (might need to add to the translation table)
+3.3) Generate a load file (Alliance File) with three fields (SNP ID, Marker ID, MGI Function Class term)
+3.4) Update the snpcacheload/snpmrkwithin.py to use the Alliance File from step 3.3.
+3.5) Run the modified snpcacheload (step 3.4) in conjusction with snpmrkwithin.py. 
+This will delete the snp_consensussnp_marker table, load SNP function classes from the Alliance File 
+and then run the snpmrkwitin.py script which assigns "within coordinates of" and "within distance of" function classes.
+Need to make sure the snpmrkwitin.py script only makes "within coordinates of" function class associations for 
+SNP/Marker pairs that don't have a function class assignment from the Alliance File.
+3.6) Subsequent weekly runs of snpcacheload/snpmrkwithin.py will just repeat the processing in step 3.5.

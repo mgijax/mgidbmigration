@@ -55,12 +55,14 @@ and term in (
 --select * from mgi_translation where _translationtype_key = 1014;
 --select distinct s._fxn_key, t.term from snp.dp_snp_marker s, voc_term t where s._fxn_key = t._term_key;
 --select distinct s._fxn_key, t.term from snp.snp_consensussnp_marker s, voc_term t where s._fxn_key = t._term_key;
---select t._term_key, t.term, s.badname
---from voc_term t, mgi_translation s
---where t._vocab_key = 49
---and s._translationtype_key = 1014
---and s._object_key = t._term_key
---;
+select t._term_key, t.term, s.badname, a.accid
+from voc_term t, mgi_translation s, acc_accession a
+where t._vocab_key = 49
+and s._translationtype_key = 1014
+and s._object_key = t._term_key
+and t._term_key = a._object_key
+and a._mgitype_key = 13
+;
 
 EOSQL
 
@@ -75,6 +77,12 @@ EOSQL
 #grep rs46043568 Mrpl15
 #cut -f1 -d"|" snpalliance.tsv | uniq | wc -l
 #cut -f4 -d"|" snpalliance.tsv | sort | uniq > $SNPTERMS
+
+# don't need to replace; use existing SNP Function Class (_vocab_key = 79)
+#${VOCLOAD}/runDAGFullLoad.sh fxnClassDag.config
+
+# need new translation
+#${TRANSLATIONLOAD}/translationload.csh fxnClassTrans.config
 
 date |tee -a $LOG
 

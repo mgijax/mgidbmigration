@@ -6,7 +6,7 @@ SM:0000027|Coding|incomplete_terminal_codon_variant|rmb
 SM:0000027|Coding|inframe_deletion|rmb
 SM:0000027|Coding|inframe_insertion|rmb
 SM:0000025|Intron|intron_variant|rmb
-SM:0000022|Coding|NonSynonymous	missense_variant|rmb
+SM:0000022|Coding-NonSynonymous|missense_variant|rmb
 SM:0000029|Noncoding-Transcript-Variant|non_coding_transcript_exon_variant|rmb
 SM:0000029|Noncoding-Transcript-Variant|non_coding_transcript_variant|rmb
 SM:0000027|Coding|protein_altering_variant|rmb

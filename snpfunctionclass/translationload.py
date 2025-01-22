@@ -1,3 +1,4 @@
+'''
 #
 # Input(s):
 #
@@ -31,38 +32,26 @@ import os
 import db
 import loadlib
 
-inputFile = 'fxnClass.goodbad'
-transFileName = 'MGI_Translation.bcp'
 transTypeKey = 1014
 userKey = 1031
-transFile = ''
+vocabKey = 49
 
 loaddate = loadlib.loaddate
 
-# if 'add' mode, this is reset to max(sequenceNum) + 1
-seqNum = 1
-
-try:
-    inputFile = open(inputFileName, 'r')
-except:
-    exit(1, 'Could not open file %s\n' % inputFileName)
-                
-try:
-    transFile = open(transFileName, 'w')
-except:
-    exit(1, 'Could not open file %s\n' % transFileName)
+inputFile = open('fxnClass.goodbad', 'r')
+outputFile = open('MGI_Translation.bcp', 'w')
                 
 results = db.sql(''' select nextval('mgi_translation_seq') as maxKey ''', 'auto')
 transKey = results[0]['maxKey']
 lineNum = 0
+seqNum = 1
 
-# For each line in the input file
+db.sql('delete from MGI_Translation where _translationtype_key = %s' % (transTypeKey), None)
+db.commit()
 
 for line in inputFile.readlines():
-
     lineNum = lineNum + 1
 
-    # Split the line into tokens
     tokens = str.split(line[:-1], '|')
 
     objectID = tokens[0]
@@ -70,20 +59,18 @@ for line in inputFile.readlines():
     term = tokens[2]
     #userID = tokens[3]
 
-    if vocabKey > 0:
-        objectKey = loadlib.verifyTerm(objectID, vocabKey, objectDescription, lineNum, errorFile)
-    else:
-        objectKey = loadlib.verifyObject(objectID, mgiTypeKey, objectDescription, lineNum, errorFile)
+    objectKey = loadlib.verifyTerm(objectID, vocabKey, objectDescription, lineNum, None)
 
     # add term to translation file
     values = [transKey, transTypeKey, objectKey, term, seqNum, userKey, userKey, loaddate, loaddate]
     strvalues = []
     for v in values:
         strvalues.append(str(v))
-    fp.write('%s\n' % ("|".join(strvalues)))
+    outputFile.write('%s\n' % ("|".join(strvalues)))
     transKey = transKey + 1
     seqNum = seqNum + 1
 
 inputFile.close()
-fp.close()
+outputFile.close()
+
 

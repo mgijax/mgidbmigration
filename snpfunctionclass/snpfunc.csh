@@ -83,21 +83,10 @@ EOSQL
 #cut -f1 -d"|" snpalliance.tsv | uniq | wc -l
 #cut -f4 -d"|" snpalliance.tsv | sort | uniq > $SNPTERMS
 
-# don't need to replace; use existing SNP Function Class (_vocab_key = 79)
-#${VOCLOAD}/runDAGFullLoad.sh fxnClassDag.config
-
 # need new translation
-setenv TRANSINPUTFILE   ${DBUTILS}/mgidbmigration/snpfunctionclass/fxnClass.goodbad
-setenv TRANSLOG   	${DBUTILS}/mgidbmigration/snpfunctionclass/fxnClassTrans.log
-setenv TRANSOUTPUTDIR   ${DBUTILS}/mgidbmigration/snpfunctionclass
-setenv TRANSTYPENAME    "SNP Function Class"
-setenv TRANSMGITYPE     "Vocabulary Term"
-setenv VOCABNAME        "SNP Function Class"
-setenv TRANSCOMPRESSION ""
-setenv CREATEDBY        "rmb"
-source fxnClassTrans.config
-${PYTHON} ${TRANSLATIONLOAD}/translationload.py
+${PYTHON} translationload.py
 ${DBUTILS}/pgdbutilities/bin/bcpin.csh ${MGD_DBURL} ${MGD_DBNAME} MGI_Translation ${DBUTILS}/mgidbmigration/snpfunctionclass MGI_Translation.bcp "|" "\n" mgd
+${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_drop.object
 ${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_create.object
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

@@ -25,37 +25,37 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-select _term_key, term from voc_term 
-where _vocab_key = 79
-and term in (
-'CTCF binding site',
-'enhancer',
-'histone modification',
-'imprinting control region',
-'insulator',
-'insulator binding site',
-'intronic regulatory region',
-'locus control region',
-'matrix attachment site',
-'open chromatin region',
-'origin of replication',
-'promoter',
-'promoter flanking region',
-'response element',
-'silencer',
-'splice enhancer',
-'transcriptional cis regulatory region',
-'transcription factor binding site'
-)
-;
+--select _term_key, term from voc_term 
+--where _vocab_key = 79
+--and term in (
+--'CTCF binding site',
+--'enhancer',
+--'histone modification',
+--'imprinting control region',
+--'insulator',
+--'insulator binding site',
+--'intronic regulatory region',
+--'locus control region',
+--'matrix attachment site',
+--'open chromatin region',
+--'origin of replication',
+--'promoter',
+--'promoter flanking region',
+--'response element',
+--'silencer',
+--'splice enhancer',
+--'transcriptional cis regulatory region',
+--'transcription factor binding site'
+--)
+--;
 
 -- SNP Function Class/49
-select t._term_key, t.term, a.accid 
-from voc_term t, acc_accession a 
-where t._vocab_key = 49
-and a._mgitype_key = 13
-and t._term_key = a._object_key
-;
+--select t._term_key, t.term, a.accid 
+--from voc_term t, acc_accession a 
+--where t._vocab_key = 49
+--and a._mgitype_key = 13
+--and t._term_key = a._object_key
+--;
 --select _term_key, term from voc_term where _vocab_key = 79 order by term;
 --select * from mgi_translation where _translationtype_key = 1014;
 --select distinct s._fxn_key, t.term from snp.dp_snp_marker s, voc_term t where s._fxn_key = t._term_key;

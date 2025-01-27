@@ -99,5 +99,7 @@ and t._term_key = a._object_key
 and a._mgitype_key = 13
 ;
 
+drop index if exists snp.SNP_ConsensusSnp_Marker_idx_consensussnp_key;
+
 EOSQL
 

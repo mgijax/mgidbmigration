@@ -46,8 +46,9 @@ transKey = results[0]['maxKey']
 lineNum = 0
 seqNum = 1
 
-db.sql('delete from MGI_Translation where _translationtype_key = %s' % (transTypeKey), None)
-db.commit()
+# do not delete; simply add new translations
+#db.sql('delete from MGI_Translation where _translationtype_key = %s' % (transTypeKey), None)
+#db.commit()
 
 for line in inputFile.readlines():
     lineNum = lineNum + 1

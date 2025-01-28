@@ -71,19 +71,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 EOSQL
 
-#setenv SNPLOG snpalliance.log
-#setenv SNPTSV snpalliance.tsv
-#setenv SNPTERMS allianceterms.tsv
-#rm -rf $SNPLOG $SNPTSV $SNPTERMS Mrpl15
-#touch $SNPLOG
-#$PYTHON snpfunc.py > $SNPLOG
-#sort $SNPLOG | uniq > $SNPTSV
-#grep Mrpl15 $SNPTSV > Mrpl15
-#grep rs46043568 Mrpl15
-#cut -f1 -d"|" snpalliance.tsv | uniq | wc -l
-#cut -f4 -d"|" snpalliance.tsv | sort | uniq > $SNPTERMS
-
-# need new translation
+# new translation
 ${PYTHON} translationload.py
 ${DBUTILS}/pgdbutilities/bin/bcpin.csh ${MGD_DBURL} ${MGD_DBNAME} MGI_Translation ${DBUTILS}/mgidbmigration/snpfunctionclass MGI_Translation.bcp "|" "\n" mgd
 ${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_drop.object

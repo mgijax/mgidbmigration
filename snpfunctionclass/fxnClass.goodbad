@@ -18,4 +18,4 @@ SM:0000027|Coding|start_retained_variant|rmb
 SM:0000022|Coding-NonSynonymous|stop_gained|rmb
 SM:0000022|Coding-NonSynonymous|stop_lost|rmb
 SM:0000027|Coding|stop_retained_variant|rmb
-SM:0000022|Coding-Synonymous|synonymous_variant|rmb
+SM:0000021|Coding-Synonymous|synonymous_variant|rmb

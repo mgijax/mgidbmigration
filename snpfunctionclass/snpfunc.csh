@@ -72,10 +72,10 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
 # new translation
-${PYTHON} translationload.py
-${DBUTILS}/pgdbutilities/bin/bcpin.csh ${MGD_DBURL} ${MGD_DBNAME} MGI_Translation ${DBUTILS}/mgidbmigration/snpfunctionclass MGI_Translation.bcp "|" "\n" mgd
-${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_drop.object
-${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_create.object
+#${PYTHON} translationload.py
+#${DBUTILS}/pgdbutilities/bin/bcpin.csh ${MGD_DBURL} ${MGD_DBNAME} MGI_Translation ${DBUTILS}/mgidbmigration/snpfunctionclass MGI_Translation.bcp "|" "\n" mgd
+#${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_drop.object
+#${MGD_DBSCHEMADIR}/autosequence/MGI_Translation_create.object
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 select t._term_key, t.term, s.badname, a.accid
@@ -87,7 +87,7 @@ and t._term_key = a._object_key
 and a._mgitype_key = 13
 ;
 
-drop index if exists snp.SNP_ConsensusSnp_Marker_idx_consensussnp_key;
+--drop index if exists snp.SNP_ConsensusSnp_Marker_idx_consensussnp_key;
 
 EOSQL
 

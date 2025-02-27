@@ -19,28 +19,27 @@ touch $LOG
  
 date | tee -a $LOG
  
-cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-
-EOSQL
+#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+#EOSQL
 
 # make the Ensembl Reg 108 ID an Exact Synonym of the Marker
 $PYTHON marker.py | tee -a $LOG
 
 # delete Ensembl Reg 108
 # delete Ensembl Reg 108 Markers that do not have Alleles, or any other object
-./delete108.csh | tee -a $LOG
+#./delete108.csh | tee -a $LOG
 
-cp mrkcoordload.txt ${DATALOADSOUTPUT}/mgi/mrkcoordload/input
-${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
+#cp mrkcoordload.txt ${DATALOADSOUTPUT}/mgi/mrkcoordload/input
+#${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
 # refresh the cache tables
-${GENEMODELLOAD}/bin/runGeneModelCache.sh | tee -a $LOG
+#${GENEMODELLOAD}/bin/runGeneModelCache.sh | tee -a $LOG
 
 # reports
-cd $QCRPTS
-source ./Configuration
-cd weekly
-$PYTHON MRK_C4AM_GeneModel.py | tee -a $LOG
+#cd $QCRPTS
+#source ./Configuration
+#cd weekly
+#$PYTHON MRK_C4AM_GeneModel.py | tee -a $LOG
 
 date |tee -a $LOG
 

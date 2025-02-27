@@ -8,7 +8,7 @@ import db
 import mgi_utils
 
 results = db.sql('''
-select m.symbol, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
+select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
 from seq_marker_cache s, mrk_marker m, acc_accession a, mrk_location_cache l
 where s._logicaldb_key = 222
 and s._marker_key = m._marker_key
@@ -25,8 +25,8 @@ def processSynonym():
     synFileName = 'MGI_Synonym.bcp'
     synFile = open(synFileName, 'w')
 
-    results = db.sql(''' select nextval('mgi_synonym_seq') as maxKey ''', 'auto')
-    synKey = results[0]['maxKey']
+    maxresults = db.sql(''' select nextval('mgi_synonym_seq') as maxKey ''', 'auto')
+    synKey = maxresults[0]['maxKey']
 
     mgiTypeKey = 2
     synTypeKey = 1004

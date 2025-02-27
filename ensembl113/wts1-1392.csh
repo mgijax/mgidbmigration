@@ -32,7 +32,15 @@ $PYTHON marker.py | tee -a $LOG
 
 cp mrkcoordload.txt ${DATALOADSOUTPUT}/mgi/mrkcoordload/input
 ${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
+
+# refresh the cache tables
 ${GENEMODELLOAD}/bin/runGeneModelCache.sh | tee -a $LOG
+
+# reports
+cd $QCRPTS
+source ./Configuration
+cd weekly
+$PYTHON MRK_C4AM_GeneModel.py | tee -a $LOG
 
 date |tee -a $LOG
 

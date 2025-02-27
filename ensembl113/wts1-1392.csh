@@ -30,6 +30,8 @@ $PYTHON marker.py | tee -a $LOG
 # delete Ensembl Reg 108 Markers that do not have Alleles, or any other object
 ./delete108.csh | tee -a $LOG
 
+cp mrkcoordload.txt ${DATALOADSOUTPUT}/mgi/mrkcoordload/input
+${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 ${GENEMODELLOAD}/bin/runGeneModelCache.sh | tee -a $LOG
 
 date |tee -a $LOG

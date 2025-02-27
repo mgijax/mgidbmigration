@@ -28,7 +28,9 @@ $PYTHON marker.py | tee -a $LOG
 
 # delete Ensembl Reg 108
 # delete Ensembl Reg 108 Markers that do not have Alleles, or any other object
-#./delete108.csh | tee -a $LOG
+./delete108.csh | tee -a $LOG
+
+${GENEMODELLOAD}/bin/runGeneModelCache.sh | tee -a $LOG
 
 date |tee -a $LOG
 

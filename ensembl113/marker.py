@@ -71,7 +71,7 @@ def processMrkCoord():
 
     mcFile.close()
 
-#processSynonym()
+processSynonym()
 processMrkCoord()
 
 

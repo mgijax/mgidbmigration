@@ -24,7 +24,6 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --
 -- MRK and MLD tables
--- do this before deleting the sequences
 --
 
 select m._marker_key, m.symbol, a.accid as mgiId

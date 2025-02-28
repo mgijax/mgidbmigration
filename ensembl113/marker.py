@@ -8,7 +8,8 @@ import db
 import mgi_utils
 
 results = db.sql('''
-select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
+select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*,
+m.symbol || ' from ENSEMBL 108 has alleles' as note
 from seq_marker_cache s, mrk_marker m, acc_accession a, mrk_location_cache l
 where s._logicaldb_key = 222
 and s._marker_key = m._marker_key
@@ -19,7 +20,8 @@ and a.preferred = 1
 and s._marker_key = l._marker_key
 and exists (select 1 from all_allele a where a._marker_key = s._marker_key )
 union
-select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
+select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*,
+m.symbol || ' from ENSEMBL 108 has relationship' as note
 from seq_marker_cache s, mrk_marker m, acc_accession a, mrk_location_cache l
 where s._logicaldb_key = 222
 and s._marker_key = m._marker_key
@@ -30,7 +32,8 @@ and a.preferred = 1
 and s._marker_key = l._marker_key
 and exists (select 1 from MGI_Relationship r where m._marker_key = r._object_key_1 and r._category_key in (1000,1002,1003,1004,1006,1008,1009,1010,1012,1013))
 union
-select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
+select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*,
+m.symbol || ' from ENSEMBL 108 has relationship' as note
 from seq_marker_cache s, mrk_marker m, acc_accession a, mrk_location_cache l
 where s._logicaldb_key = 222
 and s._marker_key = m._marker_key
@@ -81,7 +84,6 @@ def processMrkCoord():
     mcFile = open(mcFileName, 'w')
 
     for r in results:
-        note = r['symbol'] + ' from ENSEMBL 108 has alleles'
         mcFile.write(r['mgiId'] + '\t')
         mcFile.write(r['chromosome'] + '\t')
         mcFile.write(str(r['startCoordinate']) + '\t')
@@ -90,7 +92,7 @@ def processMrkCoord():
         mcFile.write('MGI Curation' + '\t')
         mcFile.write('MGI' + '\t')
         mcFile.write('\t')
-        mcFile.write(note + '\n')
+        mcFile.write(r['note'] + '\n')
 
     mcFile.close()
 

@@ -18,6 +18,28 @@ and a._logicaldb_key = 1
 and a.preferred = 1
 and s._marker_key = l._marker_key
 and exists (select 1 from all_allele a where a._marker_key = s._marker_key )
+union
+select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
+from seq_marker_cache s, mrk_marker m, acc_accession a, mrk_location_cache l
+where s._logicaldb_key = 222
+and s._marker_key = m._marker_key
+and s._marker_key = a._object_key
+and a._mgitype_key = 2
+and a._logicaldb_key = 1
+and a.preferred = 1
+and s._marker_key = l._marker_key
+and exists (select 1 from MGI_Relationship r where m._marker_key = r._object_key_1 and r._category_key in (1000,1002,1003,1004,1006,1008,1009,1010,1012,1013))
+union
+select m.symbol, m._marker_key, a.accid as mgiId, l.chromosome, l.startCoordinate, l.endCoordinate, l.strand, s.*
+from seq_marker_cache s, mrk_marker m, acc_accession a, mrk_location_cache l
+where s._logicaldb_key = 222
+and s._marker_key = m._marker_key
+and s._marker_key = a._object_key
+and a._mgitype_key = 2
+and a._logicaldb_key = 1
+and a.preferred = 1
+and s._marker_key = l._marker_key
+and exists (select 1 from MGI_Relationship r where m._marker_key = r._object_key_2 and r._category_key in (1000,1002,1003,1004,1006,1008,1009,1010,1012,1013))
 ''', 'auto')
 
 def processSynonym():

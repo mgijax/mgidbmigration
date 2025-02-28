@@ -24,6 +24,7 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
 --
 -- MRK and MLD tables
+-- do this before deleting the sequences
 --
 
 select m._marker_key, m.symbol, a.accid as mgiId
@@ -58,15 +59,10 @@ and not exists (select 1 from all_allele a where a._marker_key = s._marker_key )
 --
 -- MAP & SEQ tables
 --
-
---delete from map_coord_collection where _collection_key = 150;
---delete from seq_sequence s where s._sequenceprovider_key = 102032586;
---select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
---select count(s.*)
---from seq_sequence s, seq_sequence_raw sr
---where s._sequenceprovider_key = 102032586
---and s._sequence_key = sr._sequence_key
---;
+select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
+delete from map_coord_collection where _collection_key = 150;
+delete from seq_sequence s where s._sequenceprovider_key = 102032586;
+select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
 
 EOSQL
 

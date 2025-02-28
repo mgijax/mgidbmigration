@@ -23,7 +23,7 @@ date | tee -a $LOG
 #EOSQL
 
 # make the Ensembl Reg 108 ID an Exact Synonym of the Marker
-#$PYTHON marker.py | tee -a $LOG
+$PYTHON marker.py | tee -a $LOG
 
 # delete Ensembl Reg 108
 # delete Ensembl Reg 108 Markers that do not have Alleles, or any other object
@@ -34,18 +34,10 @@ date | tee -a $LOG
 #${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
 # refresh the cache tables
-${SEQCACHELOAD}/seqmarker.csh
-${MRKCACHELOAD}/mrklabel.csh
-${MRKCACHELOAD}/mrkref.csh
-${MRKCACHELOAD}/mrklocation.csh
-
-date
-
-# reports
-#cd $QCRPTS
-#source ./Configuration
-#cd weekly
-#$PYTHON MRK_C4AM_GeneModel.py | tee -a $LOG
+${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
+${MRKCACHELOAD}/mrklabel.csh | tee -a $LOG
+${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
+${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
 
 date |tee -a $LOG
 

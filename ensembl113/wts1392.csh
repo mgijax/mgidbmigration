@@ -27,6 +27,7 @@ date | tee -a $LOG
 #EOSQL
 
 # make the Ensembl Reg 108 ID an Exact Synonym of the Marker
+# create MRK_Coord text table
 $PYTHON marker.py | tee -a $MRKLOG
 
 # delete Ensembl Reg 108

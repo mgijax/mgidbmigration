@@ -39,11 +39,12 @@ $PYTHON marker.py | tee -a $MRKLOG
 #cp mrkcoordload.txt ${DATALOADSOUTPUT}/mgi/mrkcoordload/input
 #${MRKCOORDLOAD}/bin/mrkcoordload.sh | tee -a $LOG
 
+# the cascading delete takes care of this
 # refresh the cache tables
-${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
-${MRKCACHELOAD}/mrklabel.csh | tee -a $LOG
-${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
-${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
+#${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
+#${MRKCACHELOAD}/mrklabel.csh | tee -a $LOG
+#${MRKCACHELOAD}/mrkref.csh | tee -a $LOG
+#${MRKCACHELOAD}/mrklocation.csh | tee -a $LOG
 
 date |tee -a $LOG
 

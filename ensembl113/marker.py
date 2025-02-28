@@ -81,6 +81,7 @@ def processMrkCoord():
     mcFile = open(mcFileName, 'w')
 
     for r in results:
+        note = r['symbol'] + ' from ENSEMBL 108 has alleles'
         mcFile.write(r['mgiId'] + '\t')
         mcFile.write(r['chromosome'] + '\t')
         mcFile.write(str(r['startCoordinate']) + '\t')
@@ -89,7 +90,7 @@ def processMrkCoord():
         mcFile.write('MGI Curation' + '\t')
         mcFile.write('MGI' + '\t')
         mcFile.write('\t')
-        mcFile.write('\n')
+        mcFile.write(note + '\n')
 
     mcFile.close()
 

@@ -37,15 +37,17 @@ and a._mgitype_key = 2
 and a._logicaldb_key = 1
 and a.preferred = 1
 and not exists (select 1 from all_allele a where a._marker_key = s._marker_key )
+and not exists (select 1 from MGI_Relationship r where m._marker_key = r._object_key_1 and r._category_key in (1000,1002,1003,1004,1006,1008,1009,1010,1012,1013))
+and not exists (select 1 from MGI_Relationship r where m._marker_key = r._object_key_2 and r._category_key in (1000,1002,1003,1004,1006,1008,1009,1010,1012,1013))
 ;
 
 select * from toDelete;
 
 delete from mld_expt_marker using toDelete where toDelete._marker_key = mld_expt_marker._marker_key;
-delete from mld_expts e1 where not exists (select 1 from mld_expt_marker e2 where e1._expt_key = e2._expt_key)
+delete from mld_expts e1 where not exists (select 1 from mld_expt_marker e2 where e1._expt_key = e2._expt_key);
 delete from mrk_marker using toDelete where toDelete._marker_key = mrk_marker._marker_key;
 
-select m._marker_key, m.symbol, a.accid as mgiId
+select s.*
 from seq_marker_cache s, mrk_marker m, acc_accession a
 where s._logicaldb_key = 222
 and s._marker_key = m._marker_key
@@ -58,11 +60,11 @@ and not exists (select 1 from all_allele a where a._marker_key = s._marker_key )
 
 --
 -- MAP & SEQ tables
---
-select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
-delete from map_coord_collection where _collection_key = 150;
-delete from seq_sequence s where s._sequenceprovider_key = 102032586;
-select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
+-- let genemodeload do this
+--select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
+--delete from map_coord_collection where _collection_key = 150;
+--delete from seq_sequence s where s._sequenceprovider_key = 102032586;
+--select count(s.*) from seq_sequence s where s._sequenceprovider_key = 102032586;
 
 EOSQL
 

@@ -27,6 +27,7 @@ select * from acc_accession where _logicaldb_key = 168;
 
 delete from acc_accession where _logicaldb_key = 168;
 delete from acc_logicaldb where _logicaldb_key = 168;
+delete from mgi_user where _user_key = 1528;
 select count(*) from acc_accession where _logicaldb_key = 168;
 
 EOSQL

@@ -48,7 +48,7 @@ print('rows:', str(len(results)))
 for r in results:
     print(r)
     key = r['_refs_key']
-    updateSQL = '''update BIB_Workflow_Status w set _status_key = 31576673 where w._Group_key = 114000000 and w._refs_key = %s;\n''' % (key)
+    updateSQL = '''update BIB_Workflow_Status w set _status_key = 31576673 where w.isCurrent = 1 and w._Group_key = 114000000 and w._refs_key = %s;\n''' % (key)
     db.sql(updateSQL, None)
     db.commit()
 
@@ -70,9 +70,10 @@ print('\n\n3: PMIDs whose GXDHT status=Not Routed should be set to New.')
 print('rows:', str(len(results)))
 
 for r in results:
-    #print(r)
+    print(r)
+for r in results:
     key = r['_refs_key']
-    updateSQL = '''update BIB_Workflow_Status w set _status_key = 71027551 where w._Group_key = 114000000 and w._refs_key = %s;\n''' % (key)
+    updateSQL = '''update BIB_Workflow_Status w set _status_key = 71027551 where w.isCurrent = 1 and w._Group_key = 114000000 and w._refs_key = %s;\n''' % (key)
     db.sql(updateSQL, None)
     db.commit()
 

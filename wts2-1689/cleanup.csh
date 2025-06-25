@@ -33,6 +33,8 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
+$PG_MGD_DBSCHEMADIR/trigger/GXD_HTExperiment_create.object | tee -a $LOG
+
 $PYTHON cleanup.py | tee -a $LOG
 
 cd $QCRPTS

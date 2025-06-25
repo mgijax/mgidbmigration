@@ -39,7 +39,7 @@ cd $QCRPTS
 source ./Configuration
 cd mgd
 $PYTHON GXD_HTOverview.py
-${QCRPTS}/reports.csh BIB_CurationStatusMismatch_GXD.sql ${QCOUTPUTDIR}/BIB_CurationStatusMismatch_GXD.sql ${PG_DBSERVER} ${PG_DBNAME}
+${QCRPTS}/reports.csh BIB_CurationStatusMismatch_GXD.sql ${QCOUTPUTDIR}/BIB_CurationStatusMismatch_GXD.sql.rpt ${PG_DBSERVER} ${PG_DBNAME}
 
 date |tee -a $LOG
 

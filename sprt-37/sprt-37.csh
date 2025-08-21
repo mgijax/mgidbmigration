@@ -81,11 +81,11 @@ and n.newMarkerKey = m._marker_key
 ;
 delete from gxd_htsample_rnaseq
 using newrna
-where rna._marker_key = newrna._marker_key
+where gxd_htsample_rnaseq._marker_key = newrna._marker_key
 ;
 delete from gxd_htsample_rnaseqcombined
 using newrna
-where rna._marker_key = newrna._marker_key
+where gxd_htsample_rnaseqcombined._marker_key = newrna._marker_key
 ;
 
 

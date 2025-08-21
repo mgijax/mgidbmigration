@@ -30,7 +30,7 @@ from mrk_marker m, gxd_htsample_rnaseqcombined rna
 where rna._marker_key = m._marker_key
 and m._marker_status_key = 2
 ;
-
+create index idx1 on rna(_marker_key);
 select count(distinct _marker_key) from rna;
 
 -- get "new" marker key
@@ -41,7 +41,7 @@ where r._marker_key = h._history_key
 and h._marker_key = m._marker_key
 and r.name != 'withdrawn'
 ;
-create index idx1 on newrna(_marker_key);
+create index idx2 on newrna(_marker_key);
 select * from newrna;
 select count(rna.*) from gxd_htsample_rnaseq rna, newrna n where rna._marker_key = n._marker_key;
 select distinct n.*, m._marker_key, m.symbol, m.name
@@ -72,7 +72,7 @@ where r._marker_key = h._history_key
 and h._marker_key = m._marker_key
 and r.name = 'withdrawn'
 ;
-create index idx2 on nonewrna(_marker_key);
+create index idx3 on nonewrna(_marker_key);
 select * from nonewrna;
 select distinct n.*, m._marker_key, m.symbol, m.name
 from gxd_htsample_rnaseq rna, nonewrna n, mrk_marker m
@@ -80,12 +80,12 @@ where rna._marker_key = n._marker_key
 and n.newMarkerKey = m._marker_key
 ;
 delete from gxd_htsample_rnaseq
-using newrna
-where gxd_htsample_rnaseq._marker_key = newrna._marker_key
+using nonewrna
+where gxd_htsample_rnaseq._marker_key = nonewrna._marker_key
 ;
 delete from gxd_htsample_rnaseqcombined
-using newrna
-where gxd_htsample_rnaseqcombined._marker_key = newrna._marker_key
+using nonewrna
+where gxd_htsample_rnaseqcombined._marker_key = nonewrna._marker_key
 ;
 
 

@@ -79,6 +79,15 @@ from gxd_htsample_rnaseq rna, nonewrna n, mrk_marker m
 where rna._marker_key = n._marker_key
 and n.newMarkerKey = m._marker_key
 ;
+delete from gxd_htsample_rnaseq
+using newrna
+where rna._marker_key = newrna._marker_key
+;
+delete from gxd_htsample_rnaseqcombined
+using newrna
+where rna._marker_key = newrna._marker_key
+;
+
 
 EOSQL
 

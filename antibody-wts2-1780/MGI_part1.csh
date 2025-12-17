@@ -1,0 +1,74 @@
+#!/bin/csh -fx
+
+#
+# (part 1 running schema changes)
+#
+
+###----------------------###
+###--- initialization ---###
+###----------------------###
+
+if ( ${?MGICONFIG} == 0 ) then
+	setenv MGICONFIG /usr/local/mgi/live/mgiconfig
+endif
+
+source ${MGICONFIG}/master.config.csh
+
+setenv LOG $0.log
+rm -rf ${LOG}
+touch ${LOG}
+
+date | tee -a ${LOG}
+echo '--- starting part 1' | tee -a $LOG
+
+echo 'MGD_DBNAME='$MGD_DBNAME | tee -a $LOG 
+echo 'MGD_DBPASSWORDFILE='$MGD_DBPASSWORDFILE | tee -a $LOG 
+echo 'MGD_DBSERVER='$MGD_DBSERVER | tee -a $LOG 
+echo 'MGD_DBUSER='$MGD_DBUSER | tee -a $LOG 
+
+#
+# update schema-version and public-version
+#
+date | tee -a ${LOG}
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 >>& $LOG
+update MGI_dbinfo set schema_version = '6-0-27', public_version = 'MGI 6.27';
+EOSQL
+date | tee -a ${LOG}
+
+date | tee -a ${LOG}
+./antibody.csh | tee -a $LOG
+date | tee -a ${LOG}
+
+#
+# reconfig.sh:
+# Drop and re-create database triggers, stored procedures, views and comments
+# always a good idea to do to make sure that nothing was missed with schema changes
+#
+date | tee -a ${LOG}
+echo 'setting public permissions, check objectCount, etc' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh >>& $LOG 
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG 
+${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
+#${PG_DBUTILS}/bin/vacuumDB.csh ${PG_DBSERVER} ${PG_DBNAME} >>& $LOG 
+#${PG_DBUTILS}/bin/analyzeDB.csh ${PG_DBSERVER} ${PG_DBNAME} >>& $LOG 
+
+#
+# cleanobjects.sh : removing stray mgi_notes
+#
+date | tee -a ${LOG}
+echo 'data cleanup' | tee -a $LOG
+${PG_MGD_DBSCHEMADIR}/test/cleanobjects.sh >>& $LOG 
+#${PG_MGD_DBSCHEMADIR}/test/deletejnum.csh >>& $LOG 
+
+#
+# rebuild the java dla, if needed due to schema changes
+# this can be commented out if not necessary
+#
+${MGI_JAVALIB}/lib_java_core/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_dbsmgd/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_dbsrdr/Install >>& $LOG
+${MGI_JAVALIB}/lib_java_dla/Install >>& $LOG
+
+date | tee -a ${LOG}
+echo '--- finished part 1' | tee -a ${LOG}
+

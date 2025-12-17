@@ -101,6 +101,8 @@ ${PG_MGD_DBSCHEMADIR}/key/PRB_Source_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_getStrainDataSets_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_processProbeSource_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_Antibody_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antibody_create.object | tee -a $LOG || exit 1
 
 #
 # turn on when ready to remove BIB_DataSet* tables
@@ -112,7 +114,7 @@ ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_AntibodyType_key) REFERENCES mgd.
 
 select count(*) from GXD_Antibody;
 select count(*) from GXD_Antibody_old;
+drop table mgd.GXD_Antibody_old;
 drop table mgd.GXD_Antigen;
---drop table mgd.GXD_Antibody_old;
 EOSQL
 

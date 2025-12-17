@@ -3,6 +3,12 @@
 #
 # migrates gxd_antiben to gxd_antibody table
 #
+# mgidbmigration
+# pgmgddbschema
+# mgd_java_api
+# pwi
+# qcreports_db
+#
 
 
 if ( ${?MGICONFIG} == 0 ) then

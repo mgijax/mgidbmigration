@@ -104,8 +104,6 @@ ${PG_MGD_DBSCHEMADIR}/view/GXD_create.logical | tee -a $LOG || exit 1
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
 ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
-ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_AntibodyClass_key) REFERENCES mgd.VOC_Term DEFERRABLE;
-ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_AntibodyType_key) REFERENCES mgd.VOC_Term DEFERRABLE;
 select count(*) from GXD_Antibody;
 select count(*) from GXD_Antibody_old;
 drop table mgd.GXD_Antibody_old;

@@ -23,23 +23,41 @@ date | tee -a $LOG
 # GXD_Antibody changes
 #
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-ALTER TABLE GXD_Antibody RENAME TO GXD_Antibody_old;
-ALTER TABLE mgd.GXD_Antibody_old DROP CONSTRAINT GXD_Antibody_pkey CASCADE;
+
+drop index if exists mgd.GXD_Antibody_idx_AntibodyClass_key;
+drop index if exists mgd.GXD_Antibody_idx_AntibodyType_key;
+drop index if exists mgd.GXD_Antibody_idx_Organism_key;
+drop index if exists mgd.GXD_Antibody_idx_Antigen_key;
+drop index if exists mgd.GXD_Antibody_idx_CreatedBy_key;
+drop index if exists mgd.GXD_Antibody_idx_ModifiedBy_key;
+drop index if exists mgd.GXD_Antibody_idx_creation_date;
+drop index if exists mgd.GXD_Antibody_idx_modification_date;
+
+ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody_pkey CASCADE;
+ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__CreatedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antigen DROP CONSTRAINT GXD_Antigen__ModifiedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antigen DROP CONSTRAINT GXD_Antigen__CreatedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antigen DROP CONSTRAINT GXD_Antigen__Source_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyClass_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyType_key_fkey CASCADE;
+
 drop view if exists mgd.GXD_AntibodyAntigen_View CASCADE;
 drop view if exists mgd.GXD_Antigen_View CASCADE;
 drop view if exists mgd.GXD_Antigen_Acc_View CASCADE;
 drop view if exists mgd.GXD_Antigen_Summary_View CASCADE;
+
+ALTER TABLE GXD_Antibody RENAME TO GXD_Antibody_old;
+
 EOSQL
 
 ${PG_MGD_DBSCHEMADIR}/view/GXD_drop.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure/PRB_getStrainDataSets_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure/PRB_processProbeSource_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/PRB_Source_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_getStrainDataSets_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_processProbeSource_drop.object | tee -a $LOG || exit 1
 
 # new table
 # antigenName : not needed
@@ -73,30 +91,27 @@ where a._Antigen_key = b._Antigen_key
 
 EOSQL
 
-exit 0
-
 # re-set views, keys, etc.
 ${PG_MGD_DBSCHEMADIR}/view/GXD_create.logical | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/view/GXD_Antibody_View_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/GXD_Antibody_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Source_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure/PRB_getStrainDataSets_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure/PRB_processProbeSource_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
-
-exit 0
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_getStrainDataSets_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_processProbeSource_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
 
 #
 # turn on when ready to remove BIB_DataSet* tables
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_AntibodyClass_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_Antibody ADD FOREIGN KEY (_AntibodyType_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+
 select count(*) from GXD_Antibody;
 select count(*) from GXD_Antibody_old;
-drop view if exists mgd.GXD_GXD_AntibodyAntigen_View CASCADE;
-drop view if exists mgd.GXD_Antigen_Acc_View CASCADE;
-drop view if exists mgd.GXD_Antigen_Summary_View CASCADE;
-drop view if exists mgd.GXD_Antigen_View CASCADE;
 drop table mgd.GXD_Antigen;
 --drop table mgd.GXD_Antibody_old;
 EOSQL

@@ -22,25 +22,23 @@ date | tee -a $LOG
 #
 # GXD_Antibody changes
 #
+${PG_MGD_DBSCHEMADIR}/key/GXD_Antibody_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/key/PRB_Source_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_Antibody_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_getStrainDataSets_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/procedure/PRB_processProbeSource_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antibody_drop.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_drop.logical | tee -a $LOG || exit 1
+
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
-drop index if exists mgd.GXD_Antibody_idx_AntibodyClass_key;
-drop index if exists mgd.GXD_Antibody_idx_AntibodyType_key;
-drop index if exists mgd.GXD_Antibody_idx_Organism_key;
-drop index if exists mgd.GXD_Antibody_idx_Antigen_key;
-drop index if exists mgd.GXD_Antibody_idx_CreatedBy_key;
-drop index if exists mgd.GXD_Antibody_idx_ModifiedBy_key;
-drop index if exists mgd.GXD_Antibody_idx_creation_date;
-drop index if exists mgd.GXD_Antibody_idx_modification_date;
-
-ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody_pkey CASCADE;
 ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__ModifiedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__CreatedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antigen DROP CONSTRAINT GXD_Antigen__ModifiedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antigen DROP CONSTRAINT GXD_Antigen__CreatedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_Antigen DROP CONSTRAINT GXD_Antigen__Source_key_fkey CASCADE;
-ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyClass_key_fkey CASCADE;
-ALTER TABLE mgd.GXD_Antibody DROP CONSTRAINT GXD_Antibody__AntibodyType_key_fkey CASCADE;
 
 drop view if exists mgd.GXD_AntibodyAntigen_View CASCADE;
 drop view if exists mgd.GXD_Antigen_View CASCADE;
@@ -50,14 +48,6 @@ drop view if exists mgd.GXD_Antigen_Summary_View CASCADE;
 ALTER TABLE GXD_Antibody RENAME TO GXD_Antibody_old;
 
 EOSQL
-
-${PG_MGD_DBSCHEMADIR}/view/GXD_drop.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/key/PRB_Source_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/PRB_getStrainDataSets_drop.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/procedure/PRB_processProbeSource_drop.object | tee -a $LOG || exit 1
 
 # new table
 # antigenName : not needed
@@ -92,17 +82,18 @@ where a._Antigen_key = b._Antigen_key
 EOSQL
 
 # re-set views, keys, etc.
-${PG_MGD_DBSCHEMADIR}/view/GXD_create.logical | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/view/GXD_Antibody_View_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Antibody_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/key/PRB_Source_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/index/GXD_Antibody_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_getStrainDataSets_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_processProbeSource_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/procedure/PRB_processSequenceSource_create.object | tee -a $LOG || exit 1
-${PG_MGD_DBSCHEMADIR}/index/GXD_Antibody_create.object | tee -a $LOG || exit 1
 ${PG_MGD_DBSCHEMADIR}/trigger/GXD_Antibody_create.object | tee -a $LOG || exit 1
+${PG_MGD_DBSCHEMADIR}/view/GXD_create.logical | tee -a $LOG || exit 1
+
+exit 0
 
 #
 # turn on when ready to remove BIB_DataSet* tables

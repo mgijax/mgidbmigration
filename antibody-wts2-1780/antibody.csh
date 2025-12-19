@@ -111,3 +111,8 @@ drop table mgd.GXD_Antigen;
 
 EOSQL
 
+cd $QCRPTS
+source ./Configuration
+cd ${QCMONTHLY}
+${QCRPTS}/reports.csh PRB_Reference.sql $QCOUTPUTDIR/PRB_Reference.rpt ${PG_DBSERVER} ${PG_DBNAME}
+

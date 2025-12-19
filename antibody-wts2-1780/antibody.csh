@@ -114,5 +114,5 @@ EOSQL
 cd $QCRPTS
 source ./Configuration
 cd ${QCMONTHLY}
-${QCRPTS}/reports.csh PRB_Reference.sql $QCOUTPUTDIR/PRB_Reference.rpt ${PG_DBSERVER} ${PG_DBNAME}
+${QCRPTS}/reports.csh PRB_Reference.sql $QCOUTPUTDIR/PRB_Reference.sql.rpt ${PG_DBSERVER} ${PG_DBNAME}
 

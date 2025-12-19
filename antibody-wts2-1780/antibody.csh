@@ -109,6 +109,13 @@ select count(*) from GXD_Antibody_old;
 drop table mgd.GXD_Antibody_old;
 drop table mgd.GXD_Antigen;
 
+delete from ACC_Accession where _mgitype_key = 7;
+
+update ACC_MGIType 
+set tablename = 'GXD_Antibody', primarykeyname = '_Antibody_key', identitycolumnname = 'antibodyName' 
+where _mgitype_key = 7
+;
+
 EOSQL
 
 cd $QCRPTS

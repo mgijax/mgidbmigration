@@ -17,7 +17,7 @@ date | tee -a $LOG
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 EOSQL
 
-$PYTHON journal.py | tee -a $LOG
+$PYTHON journal.py >& $LOG
 
 date |tee -a $LOG
 

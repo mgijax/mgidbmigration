@@ -2,10 +2,11 @@ TAG: mgidbmigration-6-0-27-3
 DATE: 2/20/2026
 STAFF: lec
 wts2-1774/add PMIDs to GEO HT experiments
-        new file:   Missing_PMIDs_2025_12_9.txt
-        new file:   Missing_PMIDs_2026_2_19.txt
-        new file:   wts1609.csh
-        new file:   wts1609.py
+        modified:   HISTORY
+        new file:   pmidsMGIProperty/Missing_PMIDs_2025_12_9.txt
+        new file:   pmidsMGIProperty/Missing_PMIDs_2026_2_19.txt
+        new file:   pmidsMGIProperty/wts1609.csh
+        new file:   pmidsMGIProperty/wts1609.py
 
 TAG: mgidbmigration-6-0-27-2
 DATE: 2/16/2026

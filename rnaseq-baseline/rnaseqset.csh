@@ -24,12 +24,18 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/VOC_Term_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet DROP CONSTRAINT GXD_HTSample_RNASeqSet__ModifiedBy_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet DROP CONSTRAINT GXD_HTSample_RNASeqSet__CreatedBy_key_fkey CASCADE;
+
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet DROP CONSTRAINT GXD_HTSample_RNASeqSet__Sex_key_fkey CASCADE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet DROP CONSTRAINT GXD_HTSample_RNASeqSet__Emapa_key_fkey CASCADE;
+
 ALTER TABLE GXD_HTSample_RNASeqSet RENAME TO GXD_HTSample_RNASeqSet_old;
 ALTER TABLE mgd.GXD_HTSample_RNASeqSet_old DROP CONSTRAINT GXD_HTSample_RNASeqSet_pkey CASCADE;
+
 EOSQL
 
 # new table
@@ -78,8 +84,17 @@ ${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_TheilerStage_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/MGI_Organism_create.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/MGI_User_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/VOC_Term_create.object | tee -a $LOG 
+
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet ADD FOREIGN KEY (_ModifiedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet ADD FOREIGN KEY (_CreatedBy_key) REFERENCES mgd.MGI_User DEFERRABLE;
+
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet ADD FOREIGN KEY (_Emapa_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+ALTER TABLE mgd.GXD_HTSample_RNASeqSet ADD FOREIGN KEY (_Sex_key) REFERENCES mgd.VOC_Term DEFERRABLE;
+
+EOSQL
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 

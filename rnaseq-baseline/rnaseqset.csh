@@ -14,9 +14,6 @@ touch $LOG
  
 date | tee -a $LOG
  
-# for testing only; if need to refres/clear GXD_HTSample_RNASeqSet
-#${PG_MGD_DBSCHEMADIR}/table/GXD_RNASeqSet_truncate.object | tee -a $LOG 
-
 ${PG_MGD_DBSCHEMADIR}/autosequenced/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG 
@@ -98,8 +95,6 @@ EOSQL
 
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
-
-#./checkMigration.csh | tee -a $LOG
 
 date |tee -a $LOG
 

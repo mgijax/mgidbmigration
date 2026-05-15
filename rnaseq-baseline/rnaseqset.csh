@@ -1,6 +1,8 @@
 #!/bin/csh -f
 
 #
+# branch: sprtbaseline
+#
 # rnaseqload
 # pgmgddbschema
 # femover/gather/reference_counts_gatherer.py
@@ -32,6 +34,7 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG
 
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
+${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG

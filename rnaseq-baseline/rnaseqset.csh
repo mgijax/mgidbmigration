@@ -33,7 +33,6 @@ ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeqSet_drop.object | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/index/GXD_HTSample_RNASeqCombined_drop.object | tee -a $LOG 
-${PG_MGD_DBSCHEMADIR}/key/MRK_Marker_drop.object | tee -a $LOG 
 
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 
@@ -45,7 +44,6 @@ ALTER TABLE mgd.GXD_HTSample_RNASeqSet_old DROP CONSTRAINT GXD_HTSample_RNASeqSe
 
 ALTER TABLE mgd.GXD_HTSample_RNASeqCombined DROP CONSTRAINT GXD_HTSample_RNASeqCombined__ModifiedBy_key_fkey CASCADE;
 ALTER TABLE mgd.GXD_HTSample_RNASeqCombined DROP CONSTRAINT GXD_HTSample_RNASeqCombined__CreatedBy_key_fkey CASCADE;
-ALTER TABLE mgd.GXD_HTSample_RNASeqCombined DROP CONSTRAINT GXD_HTSample_RNASeqCombined__Marker_key_fkey CASCADE;
 
 ALTER TABLE GXD_HTSample_RNASeqCombined RENAME TO GXD_HTSample_RNASeqCombined_old;
 ALTER TABLE mgd.GXD_HTSample_RNASeqCombined_old DROP CONSTRAINT GXD_HTSample_RNASeqCombined_pkey CASCADE;
@@ -142,6 +140,7 @@ ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG
 
 #${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG
 
+# this report doesn't display baseline data
 #cd ${PUBRPTS}
 #source ./Configuration
 #cd gxdrnaseq

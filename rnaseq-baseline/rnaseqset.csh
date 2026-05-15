@@ -140,5 +140,12 @@ EOSQL
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 
+#${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG
+
+#cd ${PUBRPTS}
+#source ./Configuration
+#cd gxdrnaseq
+#$PYTHON GXD_RnaSeq.py | tee -a $LOG
+
 date |tee -a $LOG
 

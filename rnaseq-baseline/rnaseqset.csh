@@ -106,13 +106,12 @@ select count(*) from GXD_HTSample_RNASeqCombined_old;
 EOSQL
 
 # remove "old" table
-#cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
-#drop table mgd.GXD_HTSample_RNASeqSet_old;
-#drop table mgd.GXD_HTSample_RNASeqCombined_old;
-#drop table mgd.GXD_HTSample_RNASeqSet_Cache;
-#EOSQL
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+drop table mgd.GXD_HTSample_RNASeqSet_old;
+drop table mgd.GXD_HTSample_RNASeqCombined_old;
+drop table mgd.GXD_HTSample_RNASeqSet_Cache;
+EOSQL
 
-# new table
 ${PG_MGD_DBSCHEMADIR}/autosequence/GXD_HTSample_RNASeqSet_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_Genotype_create.object | tee -a $LOG 
 ${PG_MGD_DBSCHEMADIR}/key/GXD_HTExperiment_create.object | tee -a $LOG 

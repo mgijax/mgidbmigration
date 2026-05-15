@@ -138,7 +138,8 @@ ALTER TABLE mgd.GXD_HTSample_RNASeqCombined ADD FOREIGN KEY (_RNASeqSet_key) REF
 
 EOSQL
 
-${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd >>& $LOG
+${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG
+${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 
 #${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG

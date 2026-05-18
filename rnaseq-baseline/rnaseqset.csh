@@ -8,6 +8,13 @@
 # femover/gather/reference_counts_gatherer.py
 # reports_db/gxdrnaseq/GXD_RnaSeq.py
 #
+# GXD_HTSample_RNASeqSet
+#        provider                text                    null,
+#        groupSet                text                    null,
+#
+# move GXD_HTSample_RNASeqSet_Cache._RNASeqSet_key -> GXD_HTSample_RNASeqCombined
+# drop table mgd.GXD_HTSample_RNASeqSet_Cache;
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig

@@ -148,13 +148,19 @@ ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 
-#${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG
+${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG
+
+cd ${QCRPTS}
+source ./Configuration
+cd mgd
+${PYTHON} GXD_HTOverview.py | tee -a $LOG
 
 # this report doesn't display baseline data
+# this will take a while, so run after hours
 #cd ${PUBRPTS}
 #source ./Configuration
 #cd gxdrnaseq
-#$PYTHON GXD_RnaSeq.py | tee -a $LOG
+#${PYTHON} GXD_RnaSeq.py | tee -a $LOG
 
 date |tee -a $LOG
 

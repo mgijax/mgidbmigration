@@ -6,7 +6,11 @@
 # rnaseqload
 # pgmgddbschema
 # femover/gather/reference_counts_gatherer.py
+#
+# trunk
 # reports_db/gxdrnaseq/GXD_RnaSeq.py
+# qcreports_db/mgd/GXD_HTOverview.py
+# mgd_java_api/src/main/java/org/jax/mgi/mgd/api/model/gxd/service/HTExperimentService.java
 #
 # GXD_HTSample_RNASeqSet
 #        provider                text                    null,

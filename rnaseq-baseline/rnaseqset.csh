@@ -6,6 +6,7 @@
 # rnaseqload
 # pgmgddbschema
 # femover/gather/reference_counts_gatherer.py
+# fewi
 #
 # trunk
 # reports_db/gxdrnaseq/GXD_RnaSeq.py
@@ -156,9 +157,9 @@ ${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG
 
 cd ${QCRPTS}
 source ./Configuration
-qcgxd_reports.csh | tee -a $LOG
-#cd mgd
-#${PYTHON} GXD_HTOverview.py | tee -a $LOG
+#qcgxd_reports.csh | tee -a $LOG
+cd mgd
+${PYTHON} GXD_HTOverview.py | tee -a $LOG
 
 # this report doesn't display baseline data
 # this will take a while, so run after hours

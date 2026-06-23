@@ -153,6 +153,35 @@ ${PG_MGD_DBSCHEMADIR}/comments/comments.sh | tee -a $LOG
 ${PG_DBUTILS}/bin/grantPublicPerms.csh ${PG_DBSERVER} ${PG_DBNAME} mgd | tee -a $LOG
 ${PG_MGD_DBSCHEMADIR}/objectCounter.sh | tee -a $LOG 
 
+# run baseline set
+${RNASEQLOAD}/bin/run_setBaseline.sh | tee -a $LOG
+
+# delete _CreatedBy_key = 1613 for the baseline experiments
+# only needs to be run once
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
+
+select s.*
+into temp toDelete
+from GXD_HTSample_RNASeqSet s, MGI_SetMember sm
+where s._createdBy_key = 1613
+and s._experiment_key = sm._object_key
+and sm._set_key = 1061
+;
+
+create index idx1 on toDelete (_rnaseqset_key);
+
+delete from GXD_HTSample_RNASeqCombined s
+using toDelete d
+where d._rnaseqset_key = s._rnaseqset_key
+;
+
+delete from GXD_HTSample_RNASeqSet s
+using toDelete d
+where d._rnaseqset_key = s._rnaseqset_key
+;
+
+EOSQL
+
 ${RNASEQLOAD}/bin/run_rnaseqBaseline.sh | tee -a $LOG
 
 cd ${QCRPTS}

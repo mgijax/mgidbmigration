@@ -6,17 +6,11 @@
 # strainmarkerload : 
 #
 # Code changes:
-# 
 # 1. DONE: merge some redudant qc reports
-# 
 # 2. DONE: use ldb = 60 for ENS, else 209
-# 
 # 3. DONE: if projection_parent_gene > 1, then just use the first projection_parent_gene
-# 
 # 4. DONE : if projection_parent_gene contains MGP id, then old MGP add to ACC_Accession as secondary id
-# 
 # 5. DONE : add call to patched script
-# 
 # 6. genemodelload : remove patched lastrun script (see snpcacheload)
 # 
 

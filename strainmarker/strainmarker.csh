@@ -1,12 +1,24 @@
 #!/bin/csh -f
 
 #
-# mirror_wget : ftp.ensembl.org.mouse_gff3_116
-# strainmarkerload : 
-# 	strainmarkerload.config.default
-#	bin/strainmarkerload.sh : -W ignore:SyntaxWarning
+# mirror_wget : ftp.ensembl.org.mouse_gff3
 #
-
+# strainmarkerload : 
+#
+# Code changes:
+# 
+# 1. DONE: merge some redudant qc reports
+# 
+# 2. DONE: use ldb = 60 for ENS, else 209
+# 
+# 3. DONE: if projection_parent_gene > 1, then just use the first projection_parent_gene
+# 
+# 4. DONE : if projection_parent_gene contains MGP id, then old MGP add to ACC_Accession as secondary id
+# 
+# 5. DONE : add call to patched script
+# 
+# 6. genemodelload : remove patched lastrun script (see snpcacheload)
+# 
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig
@@ -36,6 +48,7 @@ EOSQL
 #gzip archive_mgps.csh.log
 
 # pick up new biotypes
+# lncRNA  lncRNA gene
 date | tee -a $LOG
 ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 

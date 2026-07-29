@@ -30,6 +30,16 @@ date | tee -a $LOG
  
 cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 delete from app_jobstream where returncode is null;
+
+-- delete old 282407 | J:259852 | Database Release 2018;()
+select _StrainMarker_key
+into temporary table toDelete
+from MRK_StrainMarker
+where _Refs_key in (282407)
+;
+create index idx1 on toDelete(_StrainMarker_key);
+delete from MRK_StrainMarker sm using toDelete d where d._StrainMarker_key = sm._StrainMarker_key;
+
 EOSQL
 
 #

@@ -13,6 +13,8 @@
 # 5. DONE : add call to patched script
 # 6. genemodelload : remove patched lastrun script (see snpcacheload)
 # 
+# straingenemodelload :
+#
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig

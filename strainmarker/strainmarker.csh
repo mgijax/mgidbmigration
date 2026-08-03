@@ -44,6 +44,9 @@ delete from MRK_StrainMarker sm using toDelete d where d._StrainMarker_key = sm.
 
 EOSQL
 
+# delete annotations
+${ANNOTLOAD}/annotload.csh mgp_annotloaddelete.config | tee -a $LOG
+
 #
 # run one more timae
 # github : save and tag the strainmarkerload product

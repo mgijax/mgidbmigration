@@ -13,7 +13,8 @@
 # 5. DONE : add call to patched script
 # 6. genemodelload : remove patched lastrun script (see snpcacheload)
 # 
-# straingenemodelload :
+# straingenemodelload (sprte) :
+# assemblyseqload (sprte) :
 #
 
 if ( ${?MGICONFIG} == 0 ) then

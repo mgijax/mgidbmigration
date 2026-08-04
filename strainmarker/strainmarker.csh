@@ -15,7 +15,7 @@
 # 
 # straingenemodelload (sprte) :
 # assemblyseqload (sprte) :
-# genemodelload (sprte)
+# genemodelload (sprte) :
 #
 
 if ( ${?MGICONFIG} == 0 ) then

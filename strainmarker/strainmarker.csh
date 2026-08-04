@@ -15,6 +15,7 @@
 # 
 # straingenemodelload (sprte) :
 # assemblyseqload (sprte) :
+# genemodelload (sprte)
 #
 
 if ( ${?MGICONFIG} == 0 ) then
@@ -45,11 +46,11 @@ delete from MRK_StrainMarker sm using toDelete d where d._StrainMarker_key = sm.
 
 EOSQL
 
-# delete annotations
+# delete annotations old 282407 | J:259852
 ${ANNOTLOAD}/annotload.csh mgp_annotloaddelete.config | tee -a $LOG
 
 #
-# run one more timae
+# run one more time
 # github : save and tag the strainmarkerload product
 #
 #date | tee -a $LOG

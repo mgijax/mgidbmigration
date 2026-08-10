@@ -68,7 +68,8 @@ ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 # /export/gondor/ftp/pub/mgigff3/MGI.gff3.gz
 
 date | tee -a $LOG
-${STRAINMARKERLOAD}/bin/strainmarkerload.sh | tee -a $LOG
+${STRAINGENEMODELLOAD}/bin/seqgenemodelload.sh | tee -a $LOG
+${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
 
 date |tee -a $LOG
 

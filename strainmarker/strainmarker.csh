@@ -70,6 +70,8 @@ ${GENEMODELLOAD}/bin/biotypemapping.sh | tee -a $LOG
 date | tee -a $LOG
 ${STRAINGENEMODELLOAD}/bin/seqgenemodelload.sh | tee -a $LOG
 ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
+${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
+${SEQCACHELOAD}/seqprobe.csh | tee -a $LOG
 
 date |tee -a $LOG
 

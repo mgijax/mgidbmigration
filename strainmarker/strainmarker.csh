@@ -73,5 +73,9 @@ ${SEQCACHELOAD}/seqcoord.csh | tee -a $LOG
 ${SEQCACHELOAD}/seqmarker.csh | tee -a $LOG
 ${SEQCACHELOAD}/seqprobe.csh | tee -a $LOG
 
+cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 date |tee -a $LOG
+-- 41010712 |         25 | Wellcome Sanger Institute's Mouse Genomes Project (MGP) Strain Gene Model
+delete from voc_term where _term_key = 41010712;
+EOSQL
 

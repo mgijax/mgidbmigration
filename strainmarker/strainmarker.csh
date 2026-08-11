@@ -77,5 +77,18 @@ cat - <<EOSQL | ${PG_DBUTILS}/bin/doisql.csh $0 | tee -a $LOG
 date |tee -a $LOG
 -- 41010712 |         25 | Wellcome Sanger Institute's Mouse Genomes Project (MGP) Strain Gene Model
 delete from voc_term where _term_key = 41010712;
+-- 316381 |         25 | DFCI Mouse Gene Index
+delete from voc_Term where _term_key = 316381;
+-- 316382 |         25 | DoTS
+delete from voc_Term where _term_key = 316382;
+-- 3311121 |         25 | GenBank/EMBL/DDBJ:TSA
+delete from voc_Term where _term_key = 3311121;
+-- 316383 |         25 | NIA Mouse Gene Index
+delete from voc_Term where _term_key = 316383;
+
+select v.* from voc_Term v where v._vocab_key = 25
+and not exists (select 1 from seq_sequence s where v._term_key = s._sequenceprovider_key)
+;
+
 EOSQL
 

@@ -3,7 +3,7 @@
 #
 # mirror_wget : ftp.ensembl.org.mouse_gff3
 #
-# strainmarkerload : 
+# strainmarkerload (master): 
 #
 # Code changes:
 # 1. DONE: merge some redudant qc reports
@@ -15,8 +15,9 @@
 # 
 # straingenemodelload (sprte) :
 # assemblyseqload (sprte) :
-# genemodelload (sprte) :
+# genemodelload (master) :
 #
+# examples:  Pakap, Xkr4
 
 if ( ${?MGICONFIG} == 0 ) then
         setenv MGICONFIG /usr/local/mgi/live/mgiconfig

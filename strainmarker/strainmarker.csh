@@ -45,6 +45,9 @@ where _Refs_key in (282407)
 create index idx1 on toDelete(_StrainMarker_key);
 delete from MRK_StrainMarker sm using toDelete d where d._StrainMarker_key = sm._StrainMarker_key;
 
+update acc_logicaldb set name = 'Ensembl Strain Gene Model' 
+where _logicaldb_key = 209;
+
 EOSQL
 
 # delete annotations old 282407 | J:259852

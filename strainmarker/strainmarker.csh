@@ -45,7 +45,8 @@ where _Refs_key in (282407)
 create index idx1 on toDelete(_StrainMarker_key);
 delete from MRK_StrainMarker sm using toDelete d where d._StrainMarker_key = sm._StrainMarker_key;
 
-update acc_logicaldb set name = 'Ensembl Strain Gene Model' 
+update acc_logicaldb set name = 'Ensembl Strain Gene Model',
+description = 'Ensembl gene models for non-C57BL/6J strains, including legacy identifiers from the Mouse Genomes Project (MGP)'
 where _logicaldb_key = 209;
 
 EOSQL

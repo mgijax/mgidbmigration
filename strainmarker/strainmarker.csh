@@ -50,7 +50,7 @@ description = 'Ensembl gene models for non-C57BL/6J strains, including legacy id
 where _logicaldb_key = 209;
 
 -- so lori can test
---insert into prb_source values(nextval('prb_source_seq'),63474,316370,1,69579,5784,315167,316336,null,'Not Specified',null,'Not Applicable',-1.0,-1.0,1,1060,1060,now(),now());
+--insert into prb_source values(nextval('prb_source_seq'),83333,316369,1,69579,-1,315168,316336,282660,'Sequenced Mouse Inbred Strain Genome Meta-data','Biological source meta-data for sequenced mouse inbred strain genomes from the Mouse Genomes Project (at the Wellcome Sanger Institute) and the Vertebrate Genomics Team (at EMBL-EBI).','Not Specified',-1.0,-1.0,0,1001,1001,now(),now());
 
 EOSQL
 

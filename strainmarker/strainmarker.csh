@@ -49,7 +49,7 @@ update acc_logicaldb set name = 'Ensembl Strain Gene Model',
 description = 'Ensembl gene models for non-C57BL/6J strains, including legacy identifiers from the Mouse Genomes Project (MGP)'
 where _logicaldb_key = 209;
 
--- so lori can test
+-- already done on production
 --insert into prb_source values(nextval('prb_source_seq'),83333,316369,1,69579,-1,315168,316336,282660,'Sequenced Mouse Inbred Strain Genome Meta-data','Biological source meta-data for sequenced mouse inbred strain genomes from the Mouse Genomes Project (at the Wellcome Sanger Institute) and the Vertebrate Genomics Team (at EMBL-EBI).','Not Specified',-1.0,-1.0,0,1001,1001,now(),now());
 
 EOSQL

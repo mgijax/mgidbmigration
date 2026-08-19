@@ -49,6 +49,9 @@ update acc_logicaldb set name = 'Ensembl Strain Gene Model',
 description = 'Ensembl gene models for non-C57BL/6J strains, including legacy identifiers from the Mouse Genomes Project (MGP)'
 where _logicaldb_key = 209;
 
+-- so lori can test
+--insert into prb_source values(nextval('prb_source_seq'),63474,316370,1,69579,5784,315167,316336,null,'Not Specified',null,'Not Applicable',-1.0,-1.0,1,1060,1060,now(),now());
+
 EOSQL
 
 # delete annotations old 282407 | J:259852

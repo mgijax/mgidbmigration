@@ -99,3 +99,4 @@ and not exists (select 1 from seq_sequence s where v._term_key = s._sequenceprov
 
 EOSQL
 
+date | tee -a $LOG
